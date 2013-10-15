@@ -35,6 +35,7 @@
 
 const ExtensionUtils = imports.misc.extensionUtils;
 const Me = ExtensionUtils.getCurrentExtension();
+const Config = imports.misc.config;
 const Convenience = Me.imports.convenience;
 const Cairo = imports.cairo;
 const Clutter = imports.gi.Clutter;
@@ -196,16 +197,26 @@ const WeatherMenuButton = new Lang.Class({
 	this._futureWeather = new St.Bin({ style_class: 'forecast'});
 
 	// Putting the popup item together
-	this._itemCurrent = new PopupMenu.PopupBaseMenuItem({reactive:false,style_class: 'current'});
-	this._itemCurrent.actor.add_actor(this._currentWeather);
-	this.menu.addMenuItem(this._itemCurrent);
+    let _itemCurrent = new PopupMenu.PopupBaseMenuItem({reactive:false});
+    let _itemFuture = new PopupMenu.PopupBaseMenuItem({reactive:false});
 
-	let item = new PopupMenu.PopupSeparatorMenuItem();
-	this.menu.addMenuItem(item);
+    if(ExtensionUtils.versionCheck(['3.9','3.10'], Config.PACKAGE_VERSION))
+    {
+        _itemCurrent.actor.add_actor(this._currentWeather);
+        _itemFuture.actor.add_actor(this._futureWeather);
+    }
+    else
+    {
+        _itemCurrent.addActor(this._currentWeather);
+        _itemFuture.addActor(this._futureWeather);
+    }
 
-	this._itemFuture = new PopupMenu.PopupBaseMenuItem({reactive:false,style_class: 'forecast'});
-	this._itemFuture.actor.add_actor(this._futureWeather);
-	this.menu.addMenuItem(this._itemFuture);
+    this.menu.addMenuItem(_itemCurrent);
+
+    let item = new PopupMenu.PopupSeparatorMenuItem();
+    this.menu.addMenuItem(item);
+
+    this.menu.addMenuItem(_itemFuture);
 
 	let item = new PopupMenu.PopupSeparatorMenuItem();
 	this.menu.addMenuItem(item);
@@ -521,7 +532,13 @@ const WeatherMenuButton = new Lang.Class({
 		item = new PopupMenu.PopupMenuItem(this.extractLocation(cities[i]));
 		item.location = i;
 			if(i == this._actual_city)
-			item.setOrnament(PopupMenu.Ornament.DOT);
+            {
+                if(ExtensionUtils.versionCheck(['3.9','3.10'], Config.PACKAGE_VERSION))
+                    item.setOrnament(PopupMenu.Ornament.DOT);
+                else
+                    item.setShowDot(true);
+            }
+
 		this._selectCity.menu.addMenuItem(item);
 			item.connect('activate', function(actor,event)
 			{
