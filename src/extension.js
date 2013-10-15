@@ -196,12 +196,16 @@ const WeatherMenuButton = new Lang.Class({
 	this._futureWeather = new St.Bin({ style_class: 'forecast'});
 
 	// Putting the popup item together
-	this.menu.addActor(this._currentWeather);
+	this._itemCurrent = new PopupMenu.PopupBaseMenuItem({reactive:false,style_class: 'current'});
+	this._itemCurrent.actor.add_actor(this._currentWeather);
+	this.menu.addMenuItem(this._itemCurrent);
 
 	let item = new PopupMenu.PopupSeparatorMenuItem();
 	this.menu.addMenuItem(item);
 
-	this.menu.addActor(this._futureWeather);
+	this._itemFuture = new PopupMenu.PopupBaseMenuItem({reactive:false,style_class: 'forecast'});
+	this._itemFuture.actor.add_actor(this._futureWeather);
+	this.menu.addMenuItem(this._itemFuture);
 
 	let item = new PopupMenu.PopupSeparatorMenuItem();
 	this.menu.addMenuItem(item);
@@ -517,7 +521,7 @@ const WeatherMenuButton = new Lang.Class({
 		item = new PopupMenu.PopupMenuItem(this.extractLocation(cities[i]));
 		item.location = i;
 			if(i == this._actual_city)
-			item.setShowDot(true);
+			item.setOrnament(PopupMenu.Ornament.DOT);
 		this._selectCity.menu.addMenuItem(item);
 			item.connect('activate', function(actor,event)
 			{

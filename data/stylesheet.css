@@ -7,11 +7,11 @@
 }
 
 .weather-current-databox {
-    padding: 5px 15px 0px 30px;
+    padding: 5px 15px 0px;
 }
 
 .weather-current-icon {
-    padding: 0px 30px;
+    padding-right: 30px;
 }
 
 .weather-current-iconbox {
@@ -33,7 +33,7 @@
 }
 
 .weather-forecast-icon {
-  padding: 0 15px 0px 25px;
+  padding-right: 15px;
 }
 
 .weather-forecast-databox {
