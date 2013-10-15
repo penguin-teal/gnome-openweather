@@ -581,7 +581,7 @@ const WeatherMenuButton = new Lang.Class({
 					if(typeof city == "object" && typeof city.results == "object")
 					city = city.results.place;
 					else
-					return 0;
+					return;
 				let cityText = city.woeid+">"+city.name;
 					if(city.admin1)
 					cityText += ", "+city.admin1.content;
@@ -997,7 +997,7 @@ const WeatherMenuButton = new Lang.Class({
 			if(!message.response_body.data)
 			{
 			fun.call(here,0);
-			return 0;
+			return;
 			}
 
 			try
@@ -1008,7 +1008,7 @@ const WeatherMenuButton = new Lang.Class({
 			catch(e)
 			{
 			fun.call(here,0);
-			return 0;
+			return;
 			}
 		});
 	return 0;
