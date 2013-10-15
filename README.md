@@ -1,4 +1,4 @@
-![Screenshot](https://github.com/neroth/gnome-shell-extension-weather/raw/master/data/Screenshot.jpg)
+![Screenshot](https://github.com/jenslody/gnome-shell-extension-weather/raw/master/data/Screenshot.jpg)
 
 *gnome-shell-extension-weather* is a simple extension for displaying weather conditions and forecasts in GNOME Shell, featuring support for multiple locations, no need for WOEID, a symmetrical layout and a settings panel through *gnome-shell-extension-prefs*.
 
@@ -10,47 +10,9 @@ Currently, the weather report, including forecasts for today and tomorrow, is fe
 
 After the installation, restart GNOME Shell (`Alt`+`F2`, `r`, `Enter`) and enable the extension through *gnome-tweak-tool*.
 
-## Through extensions.gnome.org
+**Currently only the generic installation is possible, sorry.**
 
-[Weather](https://extensions.gnome.org/extension/613/weather/)
-
-## Through a package manager
-
-### [Ubuntu, Mint, Debian and derivatives](https://launchpad.net/~gnome-shell-extensions/+archive/ppa/+packages)
-
-Add the PPA *ppa:gnome-shell-extensions* to your source list, update the package list and install *gnome-shell-extension-weather*:
-
-	sudo add-apt-repository ppa:gnome-shell-extensions
-	sudo apt-get update
-	sudo apt-get install gnome-shell-extension-weather
-
-### [Fedora](http://rpmfusion.org/)
-
-Packages for Fedora are available in the [RPM Fusion](http://rpmfusion.org/) repositories. If these are not enabled on your system, please install them through the following command (root password required):
-
-	su -c 'yum localinstall --nogpgcheck http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-stable.noarch.rpm'
-Then, install *gnome-shell-extension-weather* (root password required):
-
-	su -c 'yum install gnome-shell-extension-weather'
-
-### [Arch Linux](https://aur.archlinux.org/packages/gnome-shell-extension-weather-git/)
-
-**2013-02-17 : gnome-shell-extension-weather-neroth-git => gnome-shell-extension-weather-git**
-
-Download the package from AUR, make and install it:
-
-	wget https://aur.archlinux.org/packages/gn/gnome-shell-extension-weather-git/gnome-shell-extension-weather-git.tar.gz
-	tar xvzf gnome-shell-extension-weather-git.tar.gz
-	cd gnome-shell-extension-weather-git && makepkg -si
-
-### [ALT Linux](http://packages.altlinux.org/en/Sisyphus/srpms/gnome-shell-extension-weather)
-
-Install *gnome-shell-extension-weather* with apt-rpm from Sisyphus:
-
-	sudo apt-get update
-	sudo apt-get install gnome-shell-extension-weather
-
-## Generic
+## Generic (Local installation)
 
 Make sure you have the following dependencies installed:
 * *dconf*,
@@ -66,7 +28,7 @@ Make sure you have the following dependencies installed:
 
 Run the following commands:
 
-	cd ~ && git clone git://github.com/Neroth/gnome-shell-extension-weather.git
+	cd ~ && git clone git://github.com/jenslody/gnome-shell-extension-weather.git
 	cd ~/gnome-shell-extension-weather
 	./autogen.sh && make local-install
 
@@ -76,7 +38,7 @@ Run the following commands:
 
 Launch *gnome-shell-extension-prefs* (reachable also through the *Weather Settings* button on the extension popup) and select *Weather* from the drop-down menu to edit the configuration.
 
-![Screenshot](https://github.com/neroth/gnome-shell-extension-weather/raw/master/data/weather-settings.gif)
+![Screenshot](https://github.com/jenslody/gnome-shell-extension-weather/raw/master/data/weather-settings.gif)
 
 You can also use *dconf-editor* or *gsettings* to configure the extension through the command line.
 
