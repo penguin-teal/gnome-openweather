@@ -1,11 +1,12 @@
 /*
  *
- *  Weather extension for GNOME Shell preferences 
+ *  Weather extension for GNOME Shell preferences
  *  - Creates a widget to set the preferences of the weather extension
  *
- * Copyright (C) 2012
+ * Copyright (C) 2012 - 2013
  *     Canek Peláez <canek@ciencias.unam.mx>,
  *     Christian METZLER <neroth@xeked.com>,
+ *     Jens Lody <jens@jenslody.de>,
  *
  * This file is part of gnome-shell-extension-weather.
  *
@@ -545,7 +546,7 @@ Extends: Gtk.Box,
 	loadConfig : function()
 	{
 	let that = this;
-   	this.Settings = Convenience.getSettings(WEATHER_SETTINGS_SCHEMA);	
+	this.Settings = Convenience.getSettings(WEATHER_SETTINGS_SCHEMA);
 	this.Settings.connect("changed", function(){that.refreshUI();});
 	},
 

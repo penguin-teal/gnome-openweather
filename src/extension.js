@@ -12,7 +12,8 @@
  *     Christian METZLER <neroth@xeked.com>,
  *     Mark Benjamin weather.gnome.Markie1@dfgh.net,
  *     Mattia Meneguzzo odysseus@fedoraproject.org,
- *     Meng Zhuo <mengzhuo1203+spam@gmail.com>
+ *     Meng Zhuo <mengzhuo1203+spam@gmail.com>,
+ *     Jens Lody <jens@jenslody.de>
  *
  *
  * This file is part of gnome-shell-extension-weather.
@@ -556,7 +557,7 @@ const WeatherMenuButton = new Lang.Class({
 	{
 	let that = this;
 	let cities = this._cities;
-	
+
 	cities = cities.split(" && ");
 		if(cities && typeof cities == "string")
 		cities = [cities];
@@ -605,7 +606,7 @@ const WeatherMenuButton = new Lang.Class({
 	},
 
     _onPreferencesActivate : function() {
-    Util.spawn(["gnome-shell-extension-prefs","weather-extension@xeked.com"]);
+    Util.spawn(["gnome-shell-extension-prefs","weather-extension@jenslody.de"]);
     return 0;
     },
 
@@ -1014,7 +1015,7 @@ const WeatherMenuButton = new Lang.Class({
 	},
 
 	refreshWeather: function(recurse)
-	{    
+	{
 		if(!this.extractWoeid(this._city))
 		{
 		this.updateCities();
@@ -1436,15 +1437,15 @@ const WeatherMenuButton = new Lang.Class({
 	this._currentWeatherSunset = new St.Label({ text: '-' });
 	this._currentWeatherBuild = new St.Label({ text: '-' });
 
-	let ab = new St.BoxLayout({	
-	style_class: 'weather-current-infobox'	
+	let ab = new St.BoxLayout({
+	style_class: 'weather-current-infobox'
 	});
 
 	ab.add_actor(this._sunriseIcon);
 	ab.add_actor(this._currentWeatherSunrise);
-	ab.add_actor(this._sunsetIcon);	
+	ab.add_actor(this._sunsetIcon);
 	ab.add_actor(this._currentWeatherSunset);
-	ab.add_actor(this._buildIcon);	
+	ab.add_actor(this._buildIcon);
 	ab.add_actor(this._currentWeatherBuild);
 	bb.add_actor(ab);
 

@@ -1,7 +1,7 @@
 # Change these to modify how installation is performed
 topextensiondir = $(datadir)/gnome-shell/extensions
 
-uuid = weather-extension@xeked.com
+uuid = weather-extension@jenslody.de
 
 extensiondir = $(topextensiondir)/$(uuid)
 

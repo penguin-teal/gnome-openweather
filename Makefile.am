@@ -2,7 +2,7 @@ ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
 
 SUBDIRS = src data po
 
-uuid = "weather-extension@xeked.com"
+uuid = "weather-extension@jenslody.de"
 
 localprefix = $(HOME)/.local/share/gnome-shell/extensions
 
