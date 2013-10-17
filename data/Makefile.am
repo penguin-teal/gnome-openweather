@@ -1,4 +1,4 @@
-extensionurl = https://github.com/Neroth/gnome-shell-extension-weather
+extensionurl = https://github.com/jenslody/gnome-shell-extension-weather
 
 # Change these to modify how installation is performed
 topextensiondir = $(datadir)/gnome-shell/extensions
