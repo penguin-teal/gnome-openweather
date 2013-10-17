@@ -559,7 +559,7 @@ const WeatherMenuButton = new Lang.Class({
             cities = [];
 
         if (cities.length == 0) {
-            this._cities = "2373572>Cambridge, Massachusetts (US)";
+            this._cities = "12478500>Ibiza, Balearic Islands (ES)";
             this.updateCities();
             return 0;
         }
