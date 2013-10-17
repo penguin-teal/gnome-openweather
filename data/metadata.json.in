@@ -1,7 +1,7 @@
 {
 "uuid": "@uuid@",
 "name": "YAWE",
-"description": "Yet another weather extension to displayg weather information from several cities in GNOME Shell",
+"description": "Yet another weather extension to display weather information from several cities in GNOME Shell",
 "shell-version": [ "3.8", "3.10" ],
 "localedir": "@LOCALEDIR@",
 "url": "@url@"
