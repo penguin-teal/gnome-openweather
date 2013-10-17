@@ -744,7 +744,10 @@ const WeatherMenuButton = new Lang.Class({
                 // scattered thunderstorms
                     return ['weather-storm'];
             case 39:
+                // The API-description differs from the use by !Yahoo, see:
                 // http://developer.yahoo.com/forum/YDN-Documentation/Yahoo-Weather-API-Wrong-Condition-Code/1290534174000-1122fc3d-da6d-34a2-9fb9-d0863e6c5bc6
+                // guessed as isolated showers
+                    return ['weather-showers-isolated', 'weather-showers'];
             case 40:
                 // scattered showers
                     return ['weather-showers-scattered', 'weather-showers'];
@@ -904,9 +907,12 @@ const WeatherMenuButton = new Lang.Class({
                     return _('Isolated thunderstorms');
             case 38:
                 // scattered thunderstorms
-            case 39:
-                // scattered thunderstorms
                     return _('Scattered thunderstorms');
+            case 39:
+                // The API-description differs from the use by !Yahoo, see:
+                // http://developer.yahoo.com/forum/YDN-Documentation/Yahoo-Weather-API-Wrong-Condition-Code/1290534174000-1122fc3d-da6d-34a2-9fb9-d0863e6c5bc6
+                // guessed as isolated showers
+                    return _('Isolated showers');
             case 40:
                 // scattered showers
                     return _('Scattered showers');
