@@ -88,5 +88,9 @@
       <default>300</default>
       <_summary>Refresh interval</_summary>
     </key>
+    <key name="days-forecast" type="i">
+      <default>2</default>
+      <_summary>Number of days in forecast</_summary>
+    </key>
   </schema>
 </schemalist>

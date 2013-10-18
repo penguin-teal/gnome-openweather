@@ -54,6 +54,7 @@ const WEATHER_SHOW_TEXT_IN_PANEL_KEY = 'show-text-in-panel';
 const WEATHER_POSITION_IN_PANEL_KEY = 'position-in-panel';
 const WEATHER_SHOW_COMMENT_IN_PANEL_KEY = 'show-comment-in-panel';
 const WEATHER_REFRESH_INTERVAL = 'refresh-interval';
+const WEATHER_DAYS_FORECAST = 'days-forecast';
 
 // Soup session (see https://bugzilla.gnome.org/show_bug.cgi?id=661323#c64) (Simon Legner)
 const _httpSession = new Soup.SessionAsync();
@@ -132,6 +133,8 @@ const WeatherPrefsWidget = new GObject.Class({
         this.addSwitch("text_in_panel");
         this.addLabel(_("Conditions in Panel"));
         this.addSwitch("comment_in_panel");
+        this.addLabel(_("Number of days in forecast"));
+        this.addComboBox(["2", "3", "4", "5"], "days_forecast");
     },
 
     refreshUI: function() {
@@ -696,6 +699,18 @@ const WeatherPrefsWidget = new GObject.Class({
         if (!this.Settings)
             this.loadConfig();
         this.Settings.set_int(WEATHER_REFRESH_INTERVAL, v);
+    },
+
+    get days_forecast() {
+        if (!this.Settings)
+            this.loadConfig();
+        return this.Settings.get_int(WEATHER_DAYS_FORECAST) - 2;
+    },
+
+    set days_forecast(v) {
+        if (!this.Settings)
+            this.loadConfig();
+        this.Settings.set_int(WEATHER_DAYS_FORECAST, v + 2);
     },
 
     extractLocation: function(a) {

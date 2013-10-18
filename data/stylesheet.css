@@ -36,7 +36,11 @@ color: #999999;
 padding-right: 15px;
 }
 
+.weather-forecasts {
+-st-hfade-offset: 60px;
+}
 .weather-forecast-databox {
+min-width: 120px;
 padding-right: 30px;
 }
 

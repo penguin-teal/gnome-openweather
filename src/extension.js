@@ -68,6 +68,7 @@ const WEATHER_SHOW_TEXT_IN_PANEL_KEY = 'show-text-in-panel';
 const WEATHER_POSITION_IN_PANEL_KEY = 'position-in-panel';
 const WEATHER_SHOW_COMMENT_IN_PANEL_KEY = 'show-comment-in-panel';
 const WEATHER_REFRESH_INTERVAL = 'refresh-interval';
+const WEATHER_DAYS_FORECAST = 'days-forecast';
 
 // Keep enums in sync with GSettings schemas
 const WeatherUnits = {
@@ -247,6 +248,8 @@ const WeatherMenuButton = new Lang.Class({
 
         // Show weather
         this.refreshWeather(true);
+
+        this.menu.connect('open-state-changed', Lang.bind(this, this._onOpenStateChanged));
     },
 
     stop: function() {
@@ -268,6 +271,7 @@ const WeatherMenuButton = new Lang.Class({
         let that = this;
         this._settings = Convenience.getSettings(WEATHER_SETTINGS_SCHEMA);
         this._settingsC = this._settings.connect("changed", function() {
+            that.rebuildFutureWeatherUi();
             that.refreshWeather(false);
         });
     },
@@ -494,6 +498,16 @@ const WeatherMenuButton = new Lang.Class({
         this._settings.set_int(WEATHER_REFRESH_INTERVAL, v);
     },
 
+    get _days_forecast() {
+        if (!this._settings) this.loadConfig();
+        return this._settings.get_int(WEATHER_DAYS_FORECAST);
+    },
+
+    set _days_forecast(v) {
+        if (!this._settings) this.loadConfig();
+        this._settings.set_int(WEATHER_DAYS_FORECAST, v);
+    },
+
     rebuildSelectCityItem: function() {
         let that = this;
         this._selectCity.menu.removeAll();
@@ -599,6 +613,11 @@ const WeatherMenuButton = new Lang.Class({
         return 0;
     },
 
+    _onOpenStateChanged: function(menu, open) {
+        if (open && typeof this._forecastScrollBox != "undefined")
+            this._forecastScrollBox.set_width(this._currentWeather.get_width());
+    },
+
     unit_to_unicode: function() {
         if (this._units == WeatherUnits.FAHRENHEIT)
             return '\u00B0\F';
@@ -628,150 +647,150 @@ const WeatherMenuButton = new Lang.Class({
         switch (parseInt(code, 10)) {
             case 0:
                 // tornado
-                    return ['weather-severe-alert'];
+                return ['weather-severe-alert'];
             case 1:
                 // tropical storm
-                    return ['weather-severe-alert'];
+                return ['weather-severe-alert'];
             case 2:
                 // hurricane
-                    return ['weather-severe-alert'];
+                return ['weather-severe-alert'];
             case 3:
                 // severe thunderstorms
-                    return ['weather-severe-alert'];
+                return ['weather-severe-alert'];
             case 4:
                 // thunderstorms
-                    return ['weather-storm'];
+                return ['weather-storm'];
             case 5:
                 // mixed rain and snow
-                    return ['weather-snow-rain', 'weather-snow'];
+                return ['weather-snow-rain', 'weather-snow'];
             case 6:
                 // mixed rain and sleet
-                    return ['weather-snow-rain', 'weather-snow'];
+                return ['weather-snow-rain', 'weather-snow'];
             case 7:
                 // mixed snow and sleet
-                    return ['weather-snow'];
+                return ['weather-snow'];
             case 8:
                 // freezing drizzle
-                    return ['weather-freezing-rain', 'weather-showers'];
+                return ['weather-freezing-rain', 'weather-showers'];
             case 9:
                 // drizzle
-                    return ['weather-showers'];
+                return ['weather-showers'];
             case 10:
                 // freezing rain
-                    return ['weather-freezing-rain', 'weather-showers'];
+                return ['weather-freezing-rain', 'weather-showers'];
             case 11:
                 // showers
-                    return ['weather-showers'];
+                return ['weather-showers'];
             case 12:
                 // showers
-                    return ['weather-showers'];
+                return ['weather-showers'];
             case 13:
                 // snow flurries
-                    return ['weather-snow'];
+                return ['weather-snow'];
             case 14:
                 // light snow showers
-                    return ['weather-snow'];
+                return ['weather-snow'];
             case 15:
                 // blowing snow
-                    return ['weather-snow'];
+                return ['weather-snow'];
             case 16:
                 // snow
-                    return ['weather-snow'];
+                return ['weather-snow'];
             case 17:
                 // hail
-                    return ['weather-snow'];
+                return ['weather-snow'];
             case 18:
                 // sleet
-                    return ['weather-snow'];
+                return ['weather-snow'];
             case 19:
                 // dust
-                    return ['weather-fog'];
+                return ['weather-fog'];
             case 20:
                 // foggy
-                    return ['weather-fog'];
+                return ['weather-fog'];
             case 21:
                 // haze
-                    return ['weather-fog'];
+                return ['weather-fog'];
             case 22:
                 // smoky
-                    return ['weather-fog'];
+                return ['weather-fog'];
             case 23:
                 // blustery
-                    return ['weather-few-clouds'];
+                return ['weather-few-clouds'];
             case 24:
                 // windy
-                    return ['weather-few-clouds'];
+                return ['weather-few-clouds'];
             case 25:
                 // cold
-                    return ['weather-few-clouds'];
+                return ['weather-few-clouds'];
             case 26:
                 // cloudy
-                    return ['weather-overcast'];
+                return ['weather-overcast'];
             case 27:
                 // mostly cloudy (night)
-                    return ['weather-clouds-night', 'weather-few-clouds-night'];
+                return ['weather-clouds-night', 'weather-few-clouds-night'];
             case 28:
                 // mostly cloudy (day)
-                    return ['weather-clouds', 'weather-overcast'];
+                return ['weather-clouds', 'weather-overcast'];
             case 29:
                 // partly cloudy (night)
-                    return ['weather-few-clouds-night'];
+                return ['weather-few-clouds-night'];
             case 30:
                 // partly cloudy (day)
-                    return ['weather-few-clouds'];
+                return ['weather-few-clouds'];
             case 31:
                 // clear (night)
-                    return ['weather-clear-night'];
+                return ['weather-clear-night'];
             case 32:
                 // sunny
-                    return ['weather-clear'];
+                return ['weather-clear'];
             case 33:
                 // fair (night)
-                    return ['weather-clear-night'];
+                return ['weather-clear-night'];
             case 34:
                 // fair (day)
-                    return ['weather-clear'];
+                return ['weather-clear'];
             case 35:
                 // mixed rain and hail
-                    return ['weather-snow-rain', 'weather-showers'];
+                return ['weather-snow-rain', 'weather-showers'];
             case 36:
                 // hot
-                    return ['weather-clear'];
+                return ['weather-clear'];
             case 37:
                 // isolated thunderstorms
-                    return ['weather-storm'];
+                return ['weather-storm'];
             case 38:
                 // scattered thunderstorms
-                    return ['weather-storm'];
+                return ['weather-storm'];
             case 39:
                 // The API-description differs from the use by !Yahoo, see:
                 // http://developer.yahoo.com/forum/YDN-Documentation/Yahoo-Weather-API-Wrong-Condition-Code/1290534174000-1122fc3d-da6d-34a2-9fb9-d0863e6c5bc6
                 // guessed as isolated showers
-                    return ['weather-showers-isolated', 'weather-showers'];
+                return ['weather-showers-isolated', 'weather-showers'];
             case 40:
                 // scattered showers
-                    return ['weather-showers-scattered', 'weather-showers'];
+                return ['weather-showers-scattered', 'weather-showers'];
             case 41:
                 // heavy snow
-                    return ['weather-snow'];
+                return ['weather-snow'];
             case 42:
                 // scattered snow showers
-                    return ['weather-snow'];
+                return ['weather-snow'];
             case 43:
                 // heavy snow
-                    return ['weather-snow'];
+                return ['weather-snow'];
             case 44:
                 // partly cloudy
-                    return ['weather-few-clouds'];
+                return ['weather-few-clouds'];
             case 45:
                 // thundershowers
-                    return ['weather-storm'];
+                return ['weather-storm'];
             case 46:
                 // snow showers
-                    return ['weather-snow'];
+                return ['weather-snow'];
             case 47:
                 // isolated thundershowers
-                    return ['weather-storm'];
+                return ['weather-storm'];
             case 3200:
                 // not available
             default:
@@ -796,147 +815,147 @@ const WeatherMenuButton = new Lang.Class({
         switch (parseInt(code, 10)) {
             case 0:
                 // tornado
-                    return _('Tornado');
+                return _('Tornado');
             case 1:
                 // tropical storm
-                    return _('Tropical storm');
+                return _('Tropical storm');
             case 2:
                 // hurricane
-                    return _('Hurricane');
+                return _('Hurricane');
             case 3:
                 // severe thunderstorms
-                    return _('Severe thunderstorms');
+                return _('Severe thunderstorms');
             case 4:
                 // thunderstorms
-                    return _('Thunderstorms');
+                return _('Thunderstorms');
             case 5:
                 // mixed rain and snow
-                    return _('Mixed rain and snow');
+                return _('Mixed rain and snow');
             case 6:
                 // mixed rain and sleet
-                    return _('Mixed rain and sleet');
+                return _('Mixed rain and sleet');
             case 7:
                 // mixed snow and sleet
-                    return _('Mixed snow and sleet');
+                return _('Mixed snow and sleet');
             case 8:
                 // freezing drizzle
-                    return _('Freezing drizzle');
+                return _('Freezing drizzle');
             case 9:
                 // drizzle
-                    return _('Drizzle');
+                return _('Drizzle');
             case 10:
                 // freezing rain
-                    return _('Freezing rain');
+                return _('Freezing rain');
             case 11:
                 // showers
-                    return _('Showers');
+                return _('Showers');
             case 12:
                 // showers
-                    return _('Showers');
+                return _('Showers');
             case 13:
                 // snow flurries
-                    return _('Snow flurries');
+                return _('Snow flurries');
             case 14:
                 // light snow showers
-                    return _('Light snow showers');
+                return _('Light snow showers');
             case 15:
                 // blowing snow
-                    return _('Blowing snow');
+                return _('Blowing snow');
             case 16:
                 // snow
-                    return _('Snow');
+                return _('Snow');
             case 17:
                 // hail
-                    return _('Hail');
+                return _('Hail');
             case 18:
                 // sleet
-                    return _('Sleet');
+                return _('Sleet');
             case 19:
                 // dust
-                    return _('Dust');
+                return _('Dust');
             case 20:
                 // foggy
-                    return _('Foggy');
+                return _('Foggy');
             case 21:
                 // haze
-                    return _('Haze');
+                return _('Haze');
             case 22:
                 // smoky
-                    return _('Smoky');
+                return _('Smoky');
             case 23:
                 // blustery
-                    return _('Blustery');
+                return _('Blustery');
             case 24:
                 // windy
-                    return _('Windy');
+                return _('Windy');
             case 25:
                 // cold
-                    return _('Cold');
+                return _('Cold');
             case 26:
                 // cloudy
-                    return _('Cloudy');
+                return _('Cloudy');
             case 27:
                 // mostly cloudy (night)
             case 28:
                 // mostly cloudy (day)
-                    return _('Mostly cloudy');
+                return _('Mostly cloudy');
             case 29:
                 // partly cloudy (night)
             case 30:
                 // partly cloudy (day)
-                    return _('Partly cloudy');
+                return _('Partly cloudy');
             case 31:
                 // clear (night)
-                    return _('Clear');
+                return _('Clear');
             case 32:
                 // sunny
-                    return _('Sunny');
+                return _('Sunny');
             case 33:
                 // fair (night)
             case 34:
                 // fair (day)
-                    return _('Fair');
+                return _('Fair');
             case 35:
                 // mixed rain and hail
-                    return _('Mixed rain and hail');
+                return _('Mixed rain and hail');
             case 36:
                 // hot
-                    return _('Hot');
+                return _('Hot');
             case 37:
                 // isolated thunderstorms
-                    return _('Isolated thunderstorms');
+                return _('Isolated thunderstorms');
             case 38:
                 // scattered thunderstorms
-                    return _('Scattered thunderstorms');
+                return _('Scattered thunderstorms');
             case 39:
                 // The API-description differs from the use by !Yahoo, see:
                 // http://developer.yahoo.com/forum/YDN-Documentation/Yahoo-Weather-API-Wrong-Condition-Code/1290534174000-1122fc3d-da6d-34a2-9fb9-d0863e6c5bc6
                 // guessed as isolated showers
-                    return _('Isolated showers');
+                return _('Isolated showers');
             case 40:
                 // scattered showers
-                    return _('Scattered showers');
+                return _('Scattered showers');
             case 41:
                 // heavy snow
-                    return _('Heavy snow');
+                return _('Heavy snow');
             case 42:
                 // scattered snow showers
-                    return _('Scattered snow showers');
+                return _('Scattered snow showers');
             case 43:
                 // heavy snow
-                    return _('Heavy snow');
+                return _('Heavy snow');
             case 44:
                 // partly cloudy
-                    return _('Partly cloudy');
+                return _('Partly cloudy');
             case 45:
                 // thundershowers
-                    return _('Thundershowers');
+                return _('Thundershowers');
             case 46:
                 // snow showers
-                    return _('Snow showers');
+                return _('Snow showers');
             case 47:
                 // isolated thundershowers
-                    return _('Isolated thundershowers');
+                return _('Isolated thundershowers');
             case 3200:
                 // not available
             default:
@@ -1352,7 +1371,7 @@ const WeatherMenuButton = new Lang.Class({
                 this._currentWeatherWind.text = wind_direction + ' ' + parseFloat(wind).toLocaleString() + ' ' + wind_unit;
 
             // Refresh forecast
-            for (let i = 0; i <= 1; i++) {
+            for (let i = 0; i < this._days_forecast; i++) {
                 let forecastUi = this._forecast[i];
                 let forecastData = forecast[i];
 
@@ -1583,9 +1602,23 @@ const WeatherMenuButton = new Lang.Class({
 
         this._forecast = [];
         this._forecastBox = new St.BoxLayout();
-        this._futureWeather.set_child(this._forecastBox);
 
-        for (let i = 0; i <= 1; i++) {
+        this._forecastScrollBox = new St.ScrollView({
+            style_class: 'weather-forecasts'
+        });
+        this._forecastScrollBox.hscroll.margin_right = 25;
+        this._forecastScrollBox.hscroll.margin_left = 25;
+        this._forecastScrollBox.hscroll.margin_top = 10;
+        this._forecastScrollBox.hscroll.hide();
+        this._forecastScrollBox.vscrollbar_policy = Gtk.PolicyType.NEVER;
+        this._forecastScrollBox.hscrollbar_policy = Gtk.PolicyType.AUTOMATIC;
+
+        if (this._days_forecast > 2)
+            this._forecastScrollBox.hscroll.show();
+
+        this._futureWeather.set_child(this._forecastScrollBox);
+
+        for (let i = 0; i < this._days_forecast; i++) {
             let forecastWeather = {};
 
             forecastWeather.Icon = new St.Icon({
@@ -1620,6 +1653,7 @@ const WeatherMenuButton = new Lang.Class({
             this._forecast[i] = forecastWeather;
             this._forecastBox.add_actor(bb);
         }
+        this._forecastScrollBox.add_actor(this._forecastBox);
     }
 });
 
