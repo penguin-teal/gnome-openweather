@@ -129,6 +129,7 @@ const WeatherMenuButton = new Lang.Class({
 
         // Label
         this._weatherInfo = new St.Label({
+            y_align: Clutter.ActorAlign.CENTER,
             text: _('...')
         });
 
