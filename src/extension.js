@@ -68,6 +68,7 @@ const WEATHER_SHOW_TEXT_IN_PANEL_KEY = 'show-text-in-panel';
 const WEATHER_POSITION_IN_PANEL_KEY = 'position-in-panel';
 const WEATHER_SHOW_COMMENT_IN_PANEL_KEY = 'show-comment-in-panel';
 const WEATHER_REFRESH_INTERVAL = 'refresh-interval';
+const WEATHER_CENTER_FORECAST_KEY = 'center-forecast';
 const WEATHER_DAYS_FORECAST = 'days-forecast';
 
 // Keep enums in sync with GSettings schemas
@@ -499,13 +500,27 @@ const WeatherMenuButton = new Lang.Class({
         this._settings.set_int(WEATHER_REFRESH_INTERVAL, v);
     },
 
+    get _center_forecast() {
+        if (!this._settings)
+            this.loadConfig();
+        return this._settings.get_boolean(WEATHER_CENTER_FORECAST_KEY);
+    },
+
+    set _center_forecast(v) {
+        if (!this._settings)
+            this.loadConfig();
+        this._settings.set_boolean(WEATHER_CENTER_FORECAST_KEY, v);
+    },
+
     get _days_forecast() {
-        if (!this._settings) this.loadConfig();
+        if (!this._settings)
+            this.loadConfig();
         return this._settings.get_int(WEATHER_DAYS_FORECAST);
     },
 
     set _days_forecast(v) {
-        if (!this._settings) this.loadConfig();
+        if (!this._settings)
+            this.loadConfig();
         this._settings.set_int(WEATHER_DAYS_FORECAST, v);
     },
 
@@ -1610,7 +1625,10 @@ const WeatherMenuButton = new Lang.Class({
         this.destroyFutureWeather();
 
         this._forecast = [];
-        this._forecastBox = new St.BoxLayout();
+        this._forecastBox = new St.BoxLayout({
+            x_align: this._center_forecast ? St.Align.END : St.Align.START,
+            style_class: 'weather-forecast-box'
+        });
 
         this._forecastScrollBox = new St.ScrollView({
             style_class: 'weather-forecasts'
@@ -1650,7 +1668,7 @@ const WeatherMenuButton = new Lang.Class({
             by.add_actor(forecastWeather.Temperature);
 
             let bb = new St.BoxLayout({
-                style_class: 'weather-forecast-box'
+                style_class: 'weather-forecast-iconbox'
             });
             bb.add_actor(forecastWeather.Icon);
             bb.add_actor(by);

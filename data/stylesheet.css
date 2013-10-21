@@ -39,14 +39,20 @@ padding-right: 15px;
 .weather-forecasts {
 -st-hfade-offset: 60px;
 }
+
+.weather-forecast-box {
+}
+
 .weather-forecast-databox {
-min-width: 120px;
-padding-right: 30px;
+min-width: 140px;
 }
 
 .weather-forecast-day {
 color: #999999;
 font-size: 90%;
+}
+
+.weather-forecast-iconbox {
 }
 
 .weather-sunrise-icon {

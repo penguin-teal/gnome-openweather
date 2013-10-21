@@ -54,6 +54,7 @@ const WEATHER_SHOW_TEXT_IN_PANEL_KEY = 'show-text-in-panel';
 const WEATHER_POSITION_IN_PANEL_KEY = 'position-in-panel';
 const WEATHER_SHOW_COMMENT_IN_PANEL_KEY = 'show-comment-in-panel';
 const WEATHER_REFRESH_INTERVAL = 'refresh-interval';
+const WEATHER_CENTER_FORECAST_KEY = 'center-forecast';
 const WEATHER_DAYS_FORECAST = 'days-forecast';
 
 // Soup session (see https://bugzilla.gnome.org/show_bug.cgi?id=661323#c64) (Simon Legner)
@@ -133,6 +134,8 @@ const WeatherPrefsWidget = new GObject.Class({
         this.addSwitch("text_in_panel");
         this.addLabel(_("Conditions in Panel"));
         this.addSwitch("comment_in_panel");
+        this.addLabel(_("Center forecast"));
+        this.addSwitch("center_forecast");
         this.addLabel(_("Number of days in forecast"));
         this.addComboBox(["2", "3", "4", "5"], "days_forecast");
     },
@@ -699,6 +702,18 @@ const WeatherPrefsWidget = new GObject.Class({
         if (!this.Settings)
             this.loadConfig();
         this.Settings.set_int(WEATHER_REFRESH_INTERVAL, v);
+    },
+
+    get center_forecast() {
+        if (!this.Settings)
+            this.loadConfig();
+        return this.Settings.get_boolean(WEATHER_CENTER_FORECAST_KEY);
+    },
+
+    set center_forecast(v) {
+        if (!this.Settings)
+            this.loadConfig();
+        this.Settings.set_boolean(WEATHER_CENTER_FORECAST_KEY, v);
     },
 
     get days_forecast() {
