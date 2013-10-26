@@ -2,7 +2,26 @@
 
 *gnome-shell-extension-weather* is a simple extension for displaying weather conditions and forecasts in GNOME Shell, featuring support for multiple locations, no need for WOEID, a symmetrical layout and a settings panel through *gnome-shell-extension-prefs*.
 
-Currently, the weather report, including forecasts for today and tomorrow, is fetched from [Yahoo! Weather](http://weather.yahoo.com/).
+Currently, the weather report, including forecasts for up to five days, is fetched from [Yahoo! Weather](http://weather.yahoo.com/).
+
+# News
+
+I just pushed changes to the new openweathermap-branch.
+The code surely needs more cleanup, but it is ready for testing.
+
+Up to 10 days forecast can be shown.
+The weather-data is provided by http://openweathermap.org .
+
+Locations used by the master-branch ()!Yahoo) will not be deleted by the switch, but they can not be used. Make sure you use only owm locations with owm and yahoo locations with yahoo or you get incorrect (or no) results).
+
+I'm always interested in feedback.
+
+To use this branch just pull my repo and switch to it with;
+
+	cd ~ && git clone git://github.com/jenslody/gnome-shell-extension-weather.git
+	cd ~/gnome-shell-extension-weather
+	git checkout openweathermap
+	./autogen.sh && make local-install
 
 ----
 
