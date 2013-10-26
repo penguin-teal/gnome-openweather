@@ -29,7 +29,16 @@ To use this branch just pull my repo and switch to it with;
 
 After the installation, restart GNOME Shell (`Alt`+`F2`, `r`, `Enter`) and enable the extension through *gnome-tweak-tool*.
 
-**Currently only the generic installation is possible, sorry.**
+## Through a package manager
+
+### [Debian](http://packages.debian.org/source/unstable/gnome-shell-extension-weather)
+
+My fork of the extension is currently only available for unstable/sid.
+
+Install the package through APT (or use your favourite package-manager, e.g. synaptic):
+
+	sudo apt-get install gnome-shell-extension-weather
+
 
 ## Generic (Local installation)
 
