@@ -53,7 +53,8 @@ const WEATHER_USE_SYMBOLIC_ICONS_KEY = 'use-symbolic-icons';
 const WEATHER_SHOW_TEXT_IN_PANEL_KEY = 'show-text-in-panel';
 const WEATHER_POSITION_IN_PANEL_KEY = 'position-in-panel';
 const WEATHER_SHOW_COMMENT_IN_PANEL_KEY = 'show-comment-in-panel';
-const WEATHER_REFRESH_INTERVAL = 'refresh-interval';
+const WEATHER_REFRESH_INTERVAL_CURRENT = 'refresh-interval-current';
+const WEATHER_REFRESH_INTERVAL_FORECAST = 'refresh-interval-forecast';
 const WEATHER_CENTER_FORECAST_KEY = 'center-forecast';
 const WEATHER_DAYS_FORECAST = 'days-forecast';
 
@@ -696,16 +697,30 @@ const WeatherPrefsWidget = new GObject.Class({
         this.Settings.set_boolean(WEATHER_SHOW_COMMENT_IN_PANEL_KEY, v);
     },
 
-    get refresh_interval() {
+    get refresh_interval_current() {
         if (!this.Settings)
             this.loadConfig();
-        return this.Settings.get_int(WEATHER_REFRESH_INTERVAL);
+        let v = this.Settings.get_int(WEATHER_REFRESH_INTERVAL_CURRENT);
+        return ((v >= 600)?v:600);
     },
 
-    set refresh_interval(v) {
+    set refresh_interval_current(v) {
         if (!this.Settings)
             this.loadConfig();
-        this.Settings.set_int(WEATHER_REFRESH_INTERVAL, v);
+        this.Settings.set_int(WEATHER_REFRESH_INTERVAL_CURRENT, ((v >= 600)?v:600));
+    },
+
+    get refresh_interval_forecast() {
+        if (!this.Settings)
+            this.loadConfig();
+        let v = this.Settings.get_int(WEATHER_REFRESH_INTERVAL_FORECAST);
+        return ((v >= 600)?v:600);
+    },
+
+    set refresh_interval_forecast(v) {
+        if (!this.Settings)
+            this.loadConfig();
+        this.Settings.set_int(WEATHER_REFRESH_INTERVAL_FORECAST, ((v >= 600)?v:600));
     },
 
     get center_forecast() {

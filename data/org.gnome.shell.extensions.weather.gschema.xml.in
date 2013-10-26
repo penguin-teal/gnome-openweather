@@ -84,9 +84,13 @@
       <default>'center'</default>
       <_summary>Position in Panel</_summary>
     </key>
-    <key name="refresh-interval" type="i">
-      <default>300</default>
-      <_summary>Refresh interval</_summary>
+    <key name="refresh-interval-current" type="i">
+      <default>600</default>
+      <_summary>Refresh interval (actual weather)</_summary>
+    </key>
+    <key name="refresh-interval-forecast" type="i">
+      <default>3600</default>
+      <_summary>Refresh interval (forecast)</_summary>
     </key>
     <key name="center-forecast" type="b">
       <default>false</default>
