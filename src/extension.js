@@ -81,7 +81,7 @@ const WeatherUnits = {
     ROEMER: 5,
     DELISLE: 6,
     NEWTON: 7
-}
+};
 
 const WeatherWindSpeedUnits = {
     KPH: 0,
@@ -90,7 +90,7 @@ const WeatherWindSpeedUnits = {
     KNOTS: 3,
     FPS: 4,
     BEAUFORT: 5
-}
+};
 
 const WeatherPressureUnits = {
     hPa: 0,
@@ -102,22 +102,23 @@ const WeatherPressureUnits = {
     at: 6,
     Torr: 7,
     psi: 8
-}
+};
 
 const WeatherPosition = {
     CENTER: 0,
     RIGHT: 1,
     LEFT: 2
-}
+};
 
-const WEATHER_CONV_MPH_IN_MPS = 2.23693629;
-const WEATHER_CONV_KPH_IN_MPS = 3.6;
-const WEATHER_CONV_KNOTS_IN_MPS = 1.94384449;
-const WEATHER_CONV_FPS_IN_MPS = 3.2808399;
+const WEATHER_CONV_MPS_IN_MPH = 2.23693629;
+const WEATHER_CONV_MPS_IN_KPH = 3.6;
+const WEATHER_CONV_MPS_IN_KNOTS = 1.94384449;
+const WEATHER_CONV_MPS_IN_FPS = 3.2808399;
 
 // Soup session (see https://bugzilla.gnome.org/show_bug.cgi?id=661323#c64) (Simon Legner)
 const _httpSession = new Soup.SessionAsync();
 Soup.Session.prototype.add_feature.call(_httpSession, new Soup.ProxyResolverDefault());
+
 
 const WeatherMenuButton = new Lang.Class({
     Name: 'WeatherMenuButton',
@@ -569,7 +570,16 @@ const WeatherMenuButton = new Lang.Class({
         return arguments[0].split(">")[1];
     },
 
-    extractWoeid: function() {
+    extractCity: function() {
+        if (!arguments[0])
+            return "";
+        let city = this.extractLocation(arguments[0]);
+        if (city.indexOf("(") == -1)
+            return _("Invalid city");
+        return city.split("(")[0].trim();
+    },
+
+    extractId: function() {
         if (!arguments[0])
             return 0;
 
@@ -589,39 +599,40 @@ const WeatherMenuButton = new Lang.Class({
             cities = [];
 
         if (cities.length == 0) {
-            this._cities = "12478500>Ibiza, Balearic Islands (ES)";
+            this._cities = "2516479>Ibiza (ES)";
             this.updateCities();
-            return 0;
+            return;
         }
 
         for (let a in cities) {
-            if (!this.extractWoeid(cities[a])) {
-                this.load_json_async(encodeURI("http://query.yahooapis.com/v1/public/yql?format=json&q=select woeid,name,admin1,country from geo.places where text = '" + cities[a] + "' limit 1"), function() {
-                    let city = arguments[0].query;
-                    if (typeof city == "object" && typeof city.results == "object")
-                        city = city.results.place;
-                    else
-                        return;
-                    let cityText = city.woeid + ">" + city.name;
-                    if (city.admin1)
-                        cityText += ", " + city.admin1.content;
 
-                    if (city.country)
-                        cityText += " (" + city.country.code + ")";
+            if (!this.extractCity(cities[a])) {
+                this._weatherInfo.text = encodeURI('http://api.openweathermap.org/data/2.5/weather?q=' + cities[a] + '&type=accurate');
+                this.load_json_async(encodeURI('http://api.openweathermap.org/data/2.5/weather?q=' + cities[a] + '&type=like'), function() {
+                    let city = arguments[0];
+
+                    if (Number(city.cod) != 200)
+                        return;
+
+                    let cityText = city.id + ">" + city.name;
+
+                    if (city.sys)
+                        cityText += " (" + city.sys.country + ")";
 
                     cities.splice(a, 1, cityText);
+
                     cities = cities.join(" && ");
                     if (typeof cities != "string")
                         cities = cities[0];
                     that._cities = cities;
                     that.updateCities();
                 });
-                return 0;
+                return;
             } else
                 continue;
         }
         this.refreshWeather();
-        return 0;
+        return;
     },
 
     _onPreferencesActivate: function() {
@@ -661,162 +672,117 @@ const WeatherMenuButton = new Lang.Class({
             return '\u00B0\C';
     },
 
-    get_weather_url: function() {
-        return encodeURI('http://query.yahooapis.com/v1/public/yql?format=json&q=select * from weather.forecast where woeid = ' + this.extractWoeid(this._city) + ' and u="f"');
+    get_weather_current_url: function() {
+        return encodeURI('http://api.openweathermap.org/data/2.5/weather?q=' + this.extractCity(this._city) + '&units=metric');
+    },
+
+    get_weather_forecast_url: function() {
+        return encodeURI('http://api.openweathermap.org/data/2.5/forecast/daily?q=' + this.extractCity(this._city) + '&units=metric&cnt=10');
     },
 
     get_weather_icon: function(code) {
-        // see http://developer.yahoo.com/weather/#codetable
+        // see http://bugs.openweathermap.org/projects/api/wiki/Weather_Condition_Codes
         // fallback icons are: weather-clear-night weather-clear weather-few-clouds-night weather-few-clouds weather-fog weather-overcast weather-severe-alert weather-showers weather-showers-scattered weather-snow weather-storm
+        /*
+weather-clouds-night.png
+weather-freezing-rain.png
+weather-hail.png
+weather-many-clouds.png
+weather-showers-day.png
+weather-showers-night.png
+weather-showers-scattered-day.png
+weather-showers-scattered-night.png
+weather-snow-rain.png
+weather-snow-scattered-day.png
+weather-snow-scattered-night.png
+weather-snow-scattered.png
+weather-storm-day.png
+weather-storm-night.png
+
+weather-severe-alert-symbolic.svg
+
+
+weather-clear-night.png = weather-clear-night-symbolic.svg
+weather-clear.png = weather-clear-symbolic.svg
+weather-clouds.png = weather-overcast-symbolic.svg
+weather-few-clouds-night.png = weather-few-clouds-night-symbolic.svg
+weather-few-clouds.png = weather-few-clouds-symbolic.svg
+weather-mist.png = weather-fog-symbolic.svg
+weather-showers-scattered.png = weather-showers-scattered-symbolic.svg
+weather-showers.png = weather-showers-symbolic.svg
+weather-snow.png = weather-snow-symbolic.svg
+weather-storm.png = weather-storm-symbolic.svg
+
+*/
+        //        this._weatherInfo.text += "\ncode = " + code;
+        //        this._weatherInfo.text += "\ncode = " + parseInt(code, 10);
         switch (parseInt(code, 10)) {
-            case 0:
-                // tornado
-                return ['weather-severe-alert'];
-            case 1:
-                // tropical storm
-                return ['weather-severe-alert'];
-            case 2:
-                // hurricane
-                return ['weather-severe-alert'];
-            case 3:
-                // severe thunderstorms
-                return ['weather-severe-alert'];
-            case 4:
-                // thunderstorms
+            case 200: //thunderstorm with light rain
+            case 201: //thunderstorm with rain
+            case 202: //thunderstorm with heavy rain
+            case 210: //light thunderstorm
+            case 211: //thunderstorm
+            case 212: //heavy thunderstorm
+            case 221: //ragged thunderstorm
+            case 230: //thunderstorm with light drizzle
+            case 231: //thunderstorm with drizzle
+            case 232: //thunderstorm with heavy drizzle
                 return ['weather-storm'];
-            case 5:
-                // mixed rain and snow
-                return ['weather-snow-rain', 'weather-snow'];
-            case 6:
-                // mixed rain and sleet
-                return ['weather-snow-rain', 'weather-snow'];
-            case 7:
-                // mixed snow and sleet
-                return ['weather-snow'];
-            case 8:
-                // freezing drizzle
-                return ['weather-freezing-rain', 'weather-showers'];
-            case 9:
-                // drizzle
+            case 300: //light intensity drizzle
+            case 301: //drizzle
+            case 302: //heavy intensity drizzle
+            case 310: //light intensity drizzle rain
+            case 311: //drizzle rain
+            case 312: //heavy intensity drizzle rain
+            case 313: //shower rain and drizzle
+            case 314: //heavy shower rain and drizzle
+            case 321: //shower drizzle
                 return ['weather-showers'];
-            case 10:
-                // freezing rain
-                return ['weather-freezing-rain', 'weather-showers'];
-            case 11:
-                // showers
-                return ['weather-showers'];
-            case 12:
-                // showers
-                return ['weather-showers'];
-            case 13:
-                // snow flurries
-                return ['weather-snow'];
-            case 14:
-                // light snow showers
-                return ['weather-snow'];
-            case 15:
-                // blowing snow
-                return ['weather-snow'];
-            case 16:
-                // snow
-                return ['weather-snow'];
-            case 17:
-                // hail
-                return ['weather-snow'];
-            case 18:
-                // sleet
-                return ['weather-snow'];
-            case 19:
-                // dust
-                return ['weather-fog'];
-            case 20:
-                // foggy
-                return ['weather-fog'];
-            case 21:
-                // haze
-                return ['weather-fog'];
-            case 22:
-                // smoky
-                return ['weather-fog'];
-            case 23:
-                // blustery
-                return ['weather-few-clouds'];
-            case 24:
-                // windy
-                return ['weather-few-clouds'];
-            case 25:
-                // cold
-                return ['weather-few-clouds'];
-            case 26:
-                // cloudy
-                return ['weather-overcast'];
-            case 27:
-                // mostly cloudy (night)
-                return ['weather-clouds-night', 'weather-few-clouds-night'];
-            case 28:
-                // mostly cloudy (day)
-                return ['weather-clouds', 'weather-overcast'];
-            case 29:
-                // partly cloudy (night)
-                return ['weather-few-clouds-night'];
-            case 30:
-                // partly cloudy (day)
-                return ['weather-few-clouds'];
-            case 31:
-                // clear (night)
-                return ['weather-clear-night'];
-            case 32:
-                // sunny
-                return ['weather-clear'];
-            case 33:
-                // fair (night)
-                return ['weather-clear-night'];
-            case 34:
-                // fair (day)
-                return ['weather-clear'];
-            case 35:
-                // mixed rain and hail
-                return ['weather-snow-rain', 'weather-showers'];
-            case 36:
-                // hot
-                return ['weather-clear'];
-            case 37:
-                // isolated thunderstorms
-                return ['weather-storm'];
-            case 38:
-                // scattered thunderstorms
-                return ['weather-storm'];
-            case 39:
-                // The API-description differs from the use by !Yahoo, see:
-                // http://developer.yahoo.com/forum/YDN-Documentation/Yahoo-Weather-API-Wrong-Condition-Code/1290534174000-1122fc3d-da6d-34a2-9fb9-d0863e6c5bc6
-                // guessed as isolated showers
-                return ['weather-showers-isolated', 'weather-showers'];
-            case 40:
-                // scattered showers
+            case 500: //light rain
+            case 501: //moderate rain
+            case 502: //heavy intensity rain
+            case 503: //very heavy rain
+            case 504: //extreme rain
                 return ['weather-showers-scattered', 'weather-showers'];
-            case 41:
-                // heavy snow
+            case 511: //freezing rain
+                return ['weather-freezing-rain', 'weather-showers'];
+            case 520: //light intensity shower rain
+            case 521: //shower rain
+            case 522: //heavy intensity shower rain
+            case 531: //ragged shower rain
+                return ['weather-showers'];
+            case 600: //light snow
+            case 601: //snow
+            case 602: //heavy snow
+            case 611: //sleet
+            case 612: //shower sleet
+            case 615: //light rain and snow
+            case 616: //rain and snow
+            case 620: //light shower snow
+            case 621: //shower snow
+            case 622: //heavy shower snow
                 return ['weather-snow'];
-            case 42:
-                // scattered snow showers
-                return ['weather-snow'];
-            case 43:
-                // heavy snow
-                return ['weather-snow'];
-            case 44:
-                // partly cloudy
+            case 701: //mist
+            case 711: //smoke
+            case 721: //haze
+                return ['weather-fog'];
+            case 731: //Sand/Dust Whirls
+            case 741: //Fog
+            case 751: //sand
+            case 761: //dust
+            case 762: //VOLCANIC ASH
+            case 771: //SQUALLS
+            case 781: //TORNADO
+                return ['weather-severe-alert'];
+            case 800: //sky is clear
+                return ['weather-clear'];
+            case 801: //few clouds
+            case 802: //scattered clouds
                 return ['weather-few-clouds'];
-            case 45:
-                // thundershowers
-                return ['weather-storm'];
-            case 46:
-                // snow showers
-                return ['weather-snow'];
-            case 47:
-                // isolated thundershowers
-                return ['weather-storm'];
-            case 3200:
-                // not available
+            case 803: //broken clouds
+                return ['weather-many-clouds', 'weather-overcast'];
+            case 804: //overcast clouds
+                return ['weather-overcast'];
             default:
                 return ['weather-severe-alert'];
         }
@@ -837,223 +803,195 @@ const WeatherMenuButton = new Lang.Class({
 
     get_weather_condition: function(code) {
         switch (parseInt(code, 10)) {
-            case 0:
-                // tornado
-                return _('Tornado');
-            case 1:
-                // tropical storm
-                return _('Tropical storm');
-            case 2:
-                // hurricane
-                return _('Hurricane');
-            case 3:
-                // severe thunderstorms
-                return _('Severe thunderstorms');
-            case 4:
-                // thunderstorms
-                return _('Thunderstorms');
-            case 5:
-                // mixed rain and snow
-                return _('Mixed rain and snow');
-            case 6:
-                // mixed rain and sleet
-                return _('Mixed rain and sleet');
-            case 7:
-                // mixed snow and sleet
-                return _('Mixed snow and sleet');
-            case 8:
-                // freezing drizzle
-                return _('Freezing drizzle');
-            case 9:
-                // drizzle
-                return _('Drizzle');
-            case 10:
-                // freezing rain
-                return _('Freezing rain');
-            case 11:
-                // showers
-                return _('Showers');
-            case 12:
-                // showers
-                return _('Showers');
-            case 13:
-                // snow flurries
-                return _('Snow flurries');
-            case 14:
-                // light snow showers
-                return _('Light snow showers');
-            case 15:
-                // blowing snow
-                return _('Blowing snow');
-            case 16:
-                // snow
-                return _('Snow');
-            case 17:
-                // hail
-                return _('Hail');
-            case 18:
-                // sleet
-                return _('Sleet');
-            case 19:
-                // dust
-                return _('Dust');
-            case 20:
-                // foggy
-                return _('Foggy');
-            case 21:
-                // haze
-                return _('Haze');
-            case 22:
-                // smoky
-                return _('Smoky');
-            case 23:
-                // blustery
-                return _('Blustery');
-            case 24:
-                // windy
-                return _('Windy');
-            case 25:
-                // cold
-                return _('Cold');
-            case 26:
-                // cloudy
-                return _('Cloudy');
-            case 27:
-                // mostly cloudy (night)
-            case 28:
-                // mostly cloudy (day)
-                return _('Mostly cloudy');
-            case 29:
-                // partly cloudy (night)
-            case 30:
-                // partly cloudy (day)
-                return _('Partly cloudy');
-            case 31:
-                // clear (night)
-                return _('Clear');
-            case 32:
-                // sunny
-                return _('Sunny');
-            case 33:
-                // fair (night)
-            case 34:
-                // fair (day)
-                return _('Fair');
-            case 35:
-                // mixed rain and hail
-                return _('Mixed rain and hail');
-            case 36:
-                // hot
-                return _('Hot');
-            case 37:
-                // isolated thunderstorms
-                return _('Isolated thunderstorms');
-            case 38:
-                // scattered thunderstorms
-                return _('Scattered thunderstorms');
-            case 39:
-                // The API-description differs from the use by !Yahoo, see:
-                // http://developer.yahoo.com/forum/YDN-Documentation/Yahoo-Weather-API-Wrong-Condition-Code/1290534174000-1122fc3d-da6d-34a2-9fb9-d0863e6c5bc6
-                // guessed as isolated showers
-                return _('Isolated showers');
-            case 40:
-                // scattered showers
-                return _('Scattered showers');
-            case 41:
-                // heavy snow
-                return _('Heavy snow');
-            case 42:
-                // scattered snow showers
-                return _('Scattered snow showers');
-            case 43:
-                // heavy snow
-                return _('Heavy snow');
-            case 44:
-                // partly cloudy
-                return _('Partly cloudy');
-            case 45:
-                // thundershowers
-                return _('Thundershowers');
-            case 46:
-                // snow showers
-                return _('Snow showers');
-            case 47:
-                // isolated thundershowers
-                return _('Isolated thundershowers');
-            case 3200:
-                // not available
+            case 200: //thunderstorm with light rain
+                return _('thunderstorm with light rain');
+            case 201: //thunderstorm with rain
+                return _('thunderstorm with rain');
+            case 202: //thunderstorm with heavy rain
+                return _('thunderstorm with heavy rain');
+            case 210: //light thunderstorm
+                return _('light thunderstorm');
+            case 211: //thunderstorm
+                return _('thunderstorm');
+            case 212: //heavy thunderstorm
+                return _('heavy thunderstorm');
+            case 221: //ragged thunderstorm
+                return _('ragged thunderstorm');
+            case 230: //thunderstorm with light drizzle
+                return _('thunderstorm with light drizzle');
+            case 231: //thunderstorm with drizzle
+                return _('thunderstorm with drizzle');
+            case 232: //thunderstorm with heavy drizzle
+                return _('thunderstorm with heavy drizzle');
+            case 300: //light intensity drizzle
+                return _('light intensity drizzle');
+            case 301: //drizzle
+                return _('drizzle');
+            case 302: //heavy intensity drizzle
+                return _('heavy intensity drizzle');
+            case 310: //light intensity drizzle rain
+                return _('light intensity drizzle rain');
+            case 311: //drizzle rain
+                return _('drizzle rain');
+            case 312: //heavy intensity drizzle rain
+                return _('heavy intensity drizzle rain');
+            case 313: //shower rain and drizzle
+                return _('shower rain and drizzle');
+            case 314: //heavy shower rain and drizzle
+                return _('heavy shower rain and drizzle');
+            case 321: //shower drizzle
+                return _('shower drizzle');
+            case 500: //light rain
+                return _('light rain');
+            case 501: //moderate rain
+                return _('moderate rain');
+            case 502: //heavy intensity rain
+                return _('heavy intensity rain');
+            case 503: //very heavy rain
+                return _('very heavy rain');
+            case 504: //extreme rain
+                return _('extreme rain');
+            case 511: //freezing rain
+                return _('freezing rain');
+            case 520: //light intensity shower rain
+                return _('light intensity shower rain');
+            case 521: //shower rain
+                return _('shower rain');
+            case 522: //heavy intensity shower rain
+                return _('heavy intensity shower rain');
+            case 531: //ragged shower rain
+                return _('ragged shower rain');
+            case 600: //light snow
+                return _('light snow');
+            case 601: //snow
+                return _('snow');
+            case 602: //heavy snow
+                return _('heavy snow');
+            case 611: //sleet
+                return _('sleet');
+            case 612: //shower sleet
+                return _('shower sleet');
+            case 615: //light rain and snow
+                return _('light rain and snow');
+            case 616: //rain and snow
+                return _('rain and snow');
+            case 620: //light shower snow
+                return _('light shower snow');
+            case 621: //shower snow
+                return _('shower snow');
+            case 622: //heavy shower snow
+                return _('heavy shower snow');
+            case 701: //mist
+                return _('mist');
+            case 711: //smoke
+                return _('smoke');
+            case 721: //haze
+                return _('haze');
+            case 731: //Sand/Dust Whirls
+                return _('Sand/Dust Whirls');
+            case 741: //Fog
+                return _('Fog');
+            case 751: //sand
+                return _('sand');
+            case 761: //dust
+                return _('dust');
+            case 762: //VOLCANIC ASH
+                return _('VOLCANIC ASH');
+            case 771: //SQUALLS
+                return _('SQUALLS');
+            case 781: //TORNADO
+                return _('TORNADO');
+            case 800: //sky is clear
+                return _('sky is clear');
+            case 801: //few clouds
+                return _('few clouds');
+            case 802: //scattered clouds
+                return _('scattered clouds');
+            case 803: //broken clouds
+                return _('broken clouds');
+            case 804: //overcast clouds
+                return _('overcast clouds');
             default:
                 return _('Not available');
         }
     },
 
-    toCelsius: function(t) {
-        return String(Math.round((Number(t) - 32) / 1.8));
+    toFahrenheit: function(t) {
+        return String(Math.round(((Number(t) * 1.8) + 32) * 10) / 10);
+        //        return String(Math.round((Number(t) * 1.8) + 32));
     },
 
     toKelvin: function(t) {
-        return String(Math.round(((Number(t) + 459.67) / 1.8) * 100) / 100);
+        return String(Math.round((Number(t) + 273.15) * 10) / 10);
+        //        return String(Math.round(Number(t) + 273.15));
     },
 
     toRankine: function(t) {
-        return String(Math.round((Number(t) + 459.67) * 100) / 100);
+        return String(Math.round(((Number(t) * 1.8) + 491.67) * 10) / 10);
+        //        return String(Math.round((Number(t) * 1.8) + 491.67));
     },
 
     toReaumur: function(t) {
-        return String(Math.round((Number(t) - 32) / 2.25));
+        return String(Math.round((Number(t) * 0.8) * 10) / 10);
+        //        return String(Math.round(Number(t) * 0.8));
     },
 
     toRoemer: function(t) {
-        return String(Math.round((((Number(t) - 32) * 7) / 24) + 7.5));
+        return String(Math.round(((Number(t) * 21 / 40) + 7.5) * 10) / 10);
+        //        return String(Math.round((Number(t) * 21 / 40) + 7.5));
     },
 
     toDelisle: function(t) {
-        return String(Math.round(((212 - Number(t)) * 5) / 6));
+        return String(Math.round(((100 - Number(t)) * 1.5) * 10) / 10);
+        //        return String(Math.round((100 - Number(t)) * 1.5));
     },
 
     toNewton: function(t) {
-        return String(Math.round((((Number(t) - 32) * 11) / 60) * 10) / 10);
+        return String(Math.round((Number(t) - 0.33) * 10) / 10);
+        //        return String(Math.round(Number(t) - 0.33));
     },
 
-    toPascal: function(p, t) {
-        return Math.round((p * (3386.39 - ((t - 32) * 0.003407143))));
+    toInHg: function(p /*, t*/ ) {
+        //        return Math.round((p * (3386.39 - ((t - 32) * 0.003407143))));
+        return Math.round((p / 33.86530749) * 10) / 10;
+        //        return Math.round(p / 33.86530749);
     },
 
     toBeaufort: function(w, t) {
-        if (w < 1)
+        if (w < 0.3)
             return (!t) ? "0" : "(" + _("Calm") + ")";
 
-        else if (w >= 1 && w <= 3)
+        else if (w >= 0.3 && w <= 1.5)
             return (!t) ? "1" : "(" + _("Light air") + ")";
 
-        else if (w >= 4 && w <= 7)
+        else if (w > 1.5 && w <= 3.4)
             return (!t) ? "2" : "(" + _("Light breeze") + ")";
 
-        else if (w >= 8 && w <= 12)
+        else if (w > 3.4 && w <= 5.4)
             return (!t) ? "3" : "(" + _("Gentle breeze") + ")";
 
-        else if (w >= 13 && w <= 17)
+        else if (w > 5, 4 && w <= 7.9)
             return (!t) ? "4" : "(" + _("Moderate breeze") + ")";
 
-        else if (w >= 18 && w <= 24)
+        else if (w > 7.9 && w <= 10.7)
             return (!t) ? "5" : "(" + _("Fresh breeze") + ")";
 
-        else if (w >= 25 && w <= 30)
+        else if (w > 10.7 && w <= 13.8)
             return (!t) ? "6" : "(" + _("Strong breeze") + ")";
 
-        else if (w >= 31 && w <= 38)
+        else if (w > 13.8 && w <= 17.1)
             return (!t) ? "7" : "(" + _("Moderate gale") + ")";
 
-        else if (w >= 39 && w <= 46)
+        else if (w > 17.1 && w <= 20.7)
             return (!t) ? "8" : "(" + _("Fresh gale") + ")";
 
-        else if (w >= 47 && w <= 54)
+        else if (w > 20.7 && w <= 24.4)
             return (!t) ? "9" : "(" + _("Strong gale") + ")";
 
-        else if (w >= 55 && w <= 63)
+        else if (w > 24.4 && w <= 28.4)
             return (!t) ? "10" : "(" + _("Storm") + ")";
 
-        else if (w >= 64 && w <= 73)
+        else if (w > 28.4 && w <= 32.6)
             return (!t) ? "11" : "(" + _("Violent storm") + ")";
 
         else
@@ -1070,23 +1008,6 @@ const WeatherMenuButton = new Lang.Class({
         let letters = [_('N'), _('NE'), _('E'), _('SE'), _('S'), _('SW'), _('W'), _('NW')];
         let idx = Math.round(deg / 45) % arrows.length;
         return (this._wind_direction) ? arrows[idx] : letters[idx];
-    },
-
-    get_pressure_state: function(state) {
-        switch (parseInt(state, 3)) {
-            case 0:
-                return '';
-                break;
-
-            case 1:
-                return '\u2934';
-                break;
-
-            case 2:
-                return '\u2935';
-                break;
-        }
-        return 0;
     },
 
     icon_type: function(icon_name) {
@@ -1131,40 +1052,19 @@ const WeatherMenuButton = new Lang.Class({
     },
 
     refreshWeather: function(recurse) {
-        if (!this.extractWoeid(this._city)) {
+        if (!this.extractId(this._city)) {
             this.updateCities();
             return 0;
         }
-        this.load_json_async(this.get_weather_url(), function(json) {
+        this.load_json_async(this.get_weather_current_url(), function(json) {
             if (!json)
                 return 0;
-            let weather = json.query.results.channel;
-            let many = 0;
-            if (typeof weather[0] != "undefined") {
-                weather = weather[0];
-                many = 1;
-            }
-            let weather_c = weather.item.condition;
+
+            if (Number(json.cod) != 200)
+                return 0;
 
             this.rebuildSelectCityItem();
 
-            this._weatherIcon.icon_name = this.icon_type(this._weatherIcon.icon_name);
-            this._currentWeatherIcon.icon_name = this.icon_type(this._currentWeatherIcon.icon_name);
-            this._forecast[0].Icon.icon_name = this.icon_type(this._forecast[0].Icon.icon_name);
-            this._forecast[1].Icon.icon_name = this.icon_type(this._forecast[1].Icon.icon_name);
-            this._sunriseIcon.icon_name = this.icon_type(this._sunriseIcon.icon_name);
-            this._sunsetIcon.icon_name = this.icon_type(this._sunsetIcon.icon_name);
-            this._buildIcon.icon_name = this.icon_type(this._buildIcon.icon_name);
-
-            if (typeof St.IconType != "undefined") {
-                this._weatherIcon.icon_type = (this._icon_type) ? St.IconType.SYMBOLIC : St.IconType.FULLCOLOR;
-                this._currentWeatherIcon.icon_type = (this._icon_type) ? St.IconType.SYMBOLIC : St.IconType.FULLCOLOR;
-                this._forecast[0].Icon.icon_type = (this._icon_type) ? St.IconType.SYMBOLIC : St.IconType.FULLCOLOR;
-                this._forecast[1].Icon.icon_type = (this._icon_type) ? St.IconType.SYMBOLIC : St.IconType.FULLCOLOR;
-                this._sunriseIcon.icon_type = (this._icon_type) ? St.IconType.SYMBOLIC : St.IconType.FULLCOLOR;
-                this._sunsetIcon.icon_type = (this._icon_type) ? St.IconType.SYMBOLIC : St.IconType.FULLCOLOR;
-                this._buildIcon.icon_type = (this._icon_type) ? St.IconType.SYMBOLIC : St.IconType.FULLCOLOR;
-            }
 
             if (this._old_position_in_panel != this._position_in_panel) {
                 switch (this._old_position_in_panel) {
@@ -1197,26 +1097,26 @@ const WeatherMenuButton = new Lang.Class({
                 this._old_position_in_panel = this._position_in_panel;
             }
 
-            let forecast = weather.item.forecast;
             let location = this.extractLocation(this._city);
 
             // Refresh current weather
-            let comment = weather_c.text;
+            let comment = json.weather[0].description;
             if (this._translate_condition)
-                comment = this.get_weather_condition(weather_c.code);
+                comment = this.get_weather_condition(json.weather[0].id);
 
-            let temperature = weather_c.temp;
-            let chill = weather.wind.chill;
-            let humidity = weather.atmosphere.humidity + ' %';
-            let pressure = weather.atmosphere.pressure;
-            let pressure_unit = weather.units.pressure;
-            let pressure_state = weather.atmosphere.rising;
-            let wind_direction = this.get_wind_direction(weather.wind.direction);
-            let wind = weather.wind.speed;
-            let wind_unit = weather.units.speed;
-            let iconname = this.get_weather_icon_safely(weather_c.code);
-            let sunrise = weather.astronomy.sunrise;
-            let sunset = weather.astronomy.sunset;
+            let temperature = json.main.temp;
+            let cloudiness = json.clouds.all;
+            let humidity = json.main.humidity + ' %';
+            let pressure = json.main.pressure;
+            let pressure_unit = 'hPa';
+
+            let wind_direction = this.get_wind_direction(json.wind.deg);
+            let wind = json.wind.speed;
+            let wind_unit = 'm/s';
+            let iconname = this.get_weather_icon_safely(json.weather[0].id);
+
+            let sunrise = json.sys.sunrise;
+            let sunset = json.sys.sunset;
 
             if (typeof this.lastBuildId == "undefined")
                 this.lastBuildId = 0;
@@ -1224,106 +1124,99 @@ const WeatherMenuButton = new Lang.Class({
             if (typeof this.lastBuildDate == "undefined")
                 this.lastBuildDate = 0;
 
-            if (this.lastBuildId != weather_c.date || !this.lastBuildDate) {
-                this.lastBuildId = weather_c.date;
+            if (this.lastBuildId != json.dt || !this.lastBuildDate) {
+                this.lastBuildId = json.dt;
                 this.lastBuildDate = new Date();
             }
-
             let actualDate = new Date();
             let d = Math.floor((actualDate.getTime() - this.lastBuildDate.getTime()) / 86400000);
 
             switch (this._pressure_units) {
                 case WeatherPressureUnits.inHg:
+                    pressure = this.toInHg(pressure);
                     pressure_unit = "inHg";
                     break;
 
                 case WeatherPressureUnits.hPa:
-                    pressure = Math.round(this.toPascal(pressure, temperature) / 100);
+                    pressure = Math.round(pressure * 10) / 10;
                     pressure_unit = "hPa";
                     break;
 
                 case WeatherPressureUnits.bar:
-                    pressure = this.toPascal(pressure, temperature) / 100000;
+                    pressure = Math.round((pressure / 1000) * 10) / 10;
                     pressure_unit = "bar";
                     break;
 
                 case WeatherPressureUnits.Pa:
-                    pressure = this.toPascal(pressure, temperature);
+                    pressure = Math.round((pressure * 100) * 10) / 10;
                     pressure_unit = "Pa";
                     break;
 
                 case WeatherPressureUnits.kPa:
-                    pressure = Math.round(this.toPascal(pressure, temperature) / 100) / 10;
+                    pressure = Math.round((pressure / 10) * 10) / 10;
                     pressure_unit = "kPa";
                     break;
 
                 case WeatherPressureUnits.atm:
-                    pressure = Math.round((this.toPascal(pressure, temperature) * 0.00000986923267) * 100000) / 100000;
+                    pressure = Math.round((pressure * 0.000986923267) * 10) / 10;
                     pressure_unit = "atm";
                     break;
 
                 case WeatherPressureUnits.at:
-                    pressure = Math.round((this.toPascal(pressure, temperature) * 0.0000101971621298) * 100000) / 100000;
+                    pressure = Math.round((pressure * 0.00101971621298) * 10) / 10;
                     pressure_unit = "at";
                     break;
 
                 case WeatherPressureUnits.Torr:
-                    pressure = Math.round((this.toPascal(pressure, temperature) * 0.00750061683) * 100) / 100;
+                    pressure = Math.round((pressure * 0.750061683) * 10) / 10;
                     pressure_unit = "Torr";
                     break;
 
                 case WeatherPressureUnits.psi:
-                    pressure = Math.round((this.toPascal(pressure, temperature) * 0.000145037738) * 100) / 100;
+                    pressure = Math.round((pressure * 0.0145037738) * 10) / 10;
                     pressure_unit = "psi";
                     break;
             }
 
             switch (this._units) {
                 case WeatherUnits.FAHRENHEIT:
+                    temperature = this.toFahrenheit(temperature);
                     break;
 
                 case WeatherUnits.CELSIUS:
-                    temperature = this.toCelsius(temperature);
-                    chill = this.toCelsius(chill);
+                    temperature = Math.round(temperature * 10) / 10;
                     break;
 
                 case WeatherUnits.KELVIN:
                     temperature = this.toKelvin(temperature);
-                    chill = this.toKelvin(chill);
                     break;
 
                 case WeatherUnits.RANKINE:
                     temperature = this.toRankine(temperature);
-                    chill = this.toRankine(chill);
                     break;
 
                 case WeatherUnits.REAUMUR:
                     temperature = this.toReaumur(temperature);
-                    chill = this.toReaumur(chill);
                     break;
 
                 case WeatherUnits.ROEMER:
                     temperature = this.toRoemer(temperature);
-                    chill = this.toRoemer(chill);
                     break;
 
                 case WeatherUnits.DELISLE:
                     temperature = this.toDelisle(temperature);
-                    chill = this.toDelisle(chill);
                     break;
 
                 case WeatherUnits.NEWTON:
                     temperature = this.toNewton(temperature);
-                    chill = this.toNewton(chill);
                     break;
             }
 
             let lastBuild = (this.lastBuildDate.getHours() % 12) + ":" + ((this.lastBuildDate.getMinutes() < 10) ? "0" : "") + this.lastBuildDate.getMinutes() + " " + ((this.lastBuildDate.getHours() >= 12) ? "pm" : "am");
-
             if (this._clockFormat == "24h") {
-                sunrise = new Date("3 Mar 1999 " + sunrise);
+                sunrise = new Date(sunrise * 1000);
                 sunrise = sunrise.getHours() + ":" + ((sunrise.getMinutes() < 10) ? "0" : "") + sunrise.getMinutes();
-                sunset = new Date("3 Mar 1999 " + sunset);
+                sunset = new Date(sunset * 1000);
                 sunset = sunset.getHours() + ":" + ((sunset.getMinutes() < 10) ? "0" : "") + sunset.getMinutes();
                 lastBuild = this.lastBuildDate.getHours() + ":" + ((this.lastBuildDate.getMinutes() < 10) ? "0" : "") + this.lastBuildDate.getMinutes();
             }
@@ -1349,36 +1242,36 @@ const WeatherMenuButton = new Lang.Class({
 
             this._currentWeatherSummary.text = comment + ", " + parseFloat(temperature).toLocaleString() + ' ' + this.unit_to_unicode();
             this._currentWeatherLocation.text = location;
-            this._currentWeatherTemperature.text = parseFloat(chill).toLocaleString() + ' ' + this.unit_to_unicode();
+            this._currentWeatherTemperature.text = cloudiness + ' %';
             this._currentWeatherHumidity.text = parseFloat(humidity).toLocaleString() + ' %';
-            this._currentWeatherPressure.text = parseFloat(pressure).toLocaleString() + ' ' + pressure_unit + ((pressure_state) ? " " : "") + this.get_pressure_state(pressure_state);
+            this._currentWeatherPressure.text = parseFloat(pressure).toLocaleString() + ' ' + pressure_unit;
             this._currentWeatherSunrise.text = sunrise;
             this._currentWeatherSunset.text = sunset;
             this._currentWeatherBuild.text = lastBuild;
 
             // Override wind units with our preference
-            // Need to consider what units the Yahoo API has returned it in
             switch (this._wind_speed_units) {
                 case WeatherWindSpeedUnits.MPH:
+                    wind = Math.round((wind * WEATHER_CONV_MPS_IN_MPH) * 10) / 10;
+                    wind_unit = 'mph';
                     break;
 
                 case WeatherWindSpeedUnits.KPH:
-                    wind = Math.round(wind / WEATHER_CONV_MPH_IN_MPS * WEATHER_CONV_KPH_IN_MPS);
+                    wind = Math.round((wind * WEATHER_CONV_MPS_IN_KPH) * 10) / 10;
                     wind_unit = 'km/h';
                     break;
 
                 case WeatherWindSpeedUnits.MPS:
-                    wind = Math.round((wind / WEATHER_CONV_MPH_IN_MPS) * 10) / 10;
-                    wind_unit = 'm/s';
+                    wind = Math.round(wind * 10) / 10;
                     break;
 
                 case WeatherWindSpeedUnits.KNOTS:
-                    wind = Math.round(wind / WEATHER_CONV_MPH_IN_MPS * WEATHER_CONV_KNOTS_IN_MPS);
+                    wind = Math.round((wind * WEATHER_CONV_MPS_IN_KNOTS) * 10) / 10;
                     wind_unit = 'kn';
                     break;
 
                 case WeatherWindSpeedUnits.FPS:
-                    wind = Math.round(wind / WEATHER_CONV_MPH_IN_MPS * WEATHER_CONV_FPS_IN_MPS);
+                    wind = Math.round((wind * WEATHER_CONV_MPS_IN_FPS) * 10) / 10;
                     wind_unit = 'ft/s';
                     break;
 
@@ -1394,22 +1287,35 @@ const WeatherMenuButton = new Lang.Class({
             else // i.e. wind > 0 && wind_direction
                 this._currentWeatherWind.text = wind_direction + ' ' + parseFloat(wind).toLocaleString() + ' ' + wind_unit;
 
+            return 0;
+        });
+
+        this.load_json_async(this.get_weather_forecast_url(), function(json) {
+            if (!json)
+                return 0;
+
+            if (Number(json.cod) != 200)
+                return 0;
+
+            let forecast = json.list;
+
             // Refresh forecast
             for (let i = 0; i < this._days_forecast; i++) {
                 let forecastUi = this._forecast[i];
                 let forecastData = forecast[i];
 
-                let code = forecastData.code;
-                let t_low = forecastData.low;
-                let t_high = forecastData.high;
+                let t_low = forecastData.temp.min;
+                let t_high = forecastData.temp.max;
 
                 switch (this._units) {
                     case WeatherUnits.FAHRENHEIT:
+                        t_low = this.toFahrenheit(t_low);
+                        t_high = this.toFahrenheit(t_high);
                         break;
 
                     case WeatherUnits.CELSIUS:
-                        t_low = this.toCelsius(t_low);
-                        t_high = this.toCelsius(t_high);
+                        t_low = Math.round(t_low * 10) / 10;
+                        t_high = Math.round(t_high * 10) / 10;
                         break;
 
                     case WeatherUnits.KELVIN:
@@ -1443,11 +1349,12 @@ const WeatherMenuButton = new Lang.Class({
                         break;
                 }
 
-                let comment = forecastData.text;
+                let comment = forecastData.weather[0].description;
                 if (this._translate_condition)
-                    comment = this.get_weather_condition(code);
+                    comment = this.get_weather_condition(forecastData.weather[0].id);
 
-                let forecastDate = new Date(forecastData.date);
+                let forecastDate = new Date(forecastData.dt * 1000);
+                let actualDate = new Date();
                 let dayLeft = Math.floor((actualDate.getTime() - forecastDate.getTime()) / 1000 / 60 / 60 / 24);
 
                 let date_string = _("Today");
@@ -1463,12 +1370,12 @@ const WeatherMenuButton = new Lang.Class({
                 forecastUi.Day.text = date_string + ' (' + this.get_locale_day(forecastDate.getDay()) + ')';
                 forecastUi.Temperature.text = '\u2193 ' + parseFloat(t_low).toLocaleString() + ' ' + this.unit_to_unicode() + '    \u2191 ' + parseFloat(t_high).toLocaleString() + ' ' + this.unit_to_unicode();
                 forecastUi.Summary.text = comment;
-                forecastUi.Icon.icon_name = this.get_weather_icon_safely(code);
+                forecastUi.Icon.icon_name = this.get_weather_icon_safely(forecastData.weather[0].id);
             }
             return 0;
         });
 
-        // Repeatedly refresh weather if recurse is set
+        //         Repeatedly refresh weather if recurse is set
         if (recurse) {
             this._timeoutS = Mainloop.timeout_add_seconds(this._refresh_interval, Lang.bind(this, function() {
                 this.refreshWeather(true);
@@ -1593,7 +1500,7 @@ const WeatherMenuButton = new Lang.Class({
         rb.add_actor(rb_values);
 
         rb_captions.add_actor(new St.Label({
-            text: _('Feels like:')
+            text: _('Cloudiness:')
         }));
         rb_values.add_actor(this._currentWeatherTemperature);
         rb_captions.add_actor(new St.Label({

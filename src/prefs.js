@@ -137,7 +137,7 @@ const WeatherPrefsWidget = new GObject.Class({
         this.addLabel(_("Center forecast"));
         this.addSwitch("center_forecast");
         this.addLabel(_("Number of days in forecast"));
-        this.addComboBox(["2", "3", "4", "5"], "days_forecast");
+        this.addComboBox(["2", "3", "4", "5", "6", "7", "8", "9", "10"], "days_forecast");
     },
 
     refreshUI: function() {
@@ -266,6 +266,7 @@ const WeatherPrefsWidget = new GObject.Class({
     addCity: function() {
         let that = this;
         let textDialog = _("Name of the city");
+
         let dialog = new Gtk.Dialog({
             title: ""
         });
@@ -309,16 +310,20 @@ const WeatherPrefsWidget = new GObject.Class({
             if (location.search(/\[/) == -1 || location.search(/\]/) == -1)
                 return 0;
 
-            let woeid = location.split(/\[/)[1].split(/\]/)[0];
-            if (!woeid)
+            let id = location.split(/\[/)[1].split(/\]/)[0];
+            if (!id)
                 return 0;
 
-            that.loadJsonAsync(encodeURI('http://query.yahooapis.com/v1/public/yql?q=select woeid from geo.places where woeid = "' + woeid + '" limit 1&format=json'), function() {
+            that.loadJsonAsync(encodeURI('http://api.openweathermap.org/data/2.5/weather?id=' + id), function() {
                 d.sensitive = 0;
-                if (typeof arguments[0].query == "undefined")
+                if (typeof arguments[0] == "undefined")
                     return 0;
 
-                let city = arguments[0].query;
+                let city = arguments[0];
+
+                if (Number(city.cod) != 200)
+                    return 0;
+
                 if (Number(city.count) == 0)
                     return 0;
 
@@ -331,53 +336,45 @@ const WeatherPrefsWidget = new GObject.Class({
         let searchLocation = function() {
             let location = entry.get_text();
             if (testLocation(location) == 0)
-                that.loadJsonAsync(encodeURI('http://query.yahooapis.com/v1/public/yql?q=select woeid,name,admin1,country from geo.places where text = "*' + location + '*" or text = "' + location + '"&format=json'), function() {
+                that.loadJsonAsync(encodeURI('http://api.openweathermap.org/data/2.5/find?cnt=30&sort=population&type=like&units=metric&q=' + location), function() {
                     if (!arguments[0])
                         return 0;
-                    let city = arguments[0].query;
-                    let n = Number(city.count);
-                    if (n > 0)
-                        city = city.results.place;
+                    let city = arguments[0];
+
+                    if (Number(city.cod) != 200)
+                        return 0;
+
+                    if (Number(city.count) > 0)
+                        city = city.list;
                     else
                         return 0;
+
                     completionModel.clear();
 
                     let current = this.liststore.get_iter_first();
 
-                    if (n > 1) {
-                        for (var i in city) {
-                            if (typeof m == "undefined")
-                                var m = {};
+                    for (var i in city) {
+                        if (typeof m == "undefined")
+                            var m = {};
 
-                            current = completionModel.append();
-                            let cityText = city[i].name;
-                            if (city[i].admin1)
-                                cityText += ", " + city[i].admin1.content;
-
-                            if (city[i].country)
-                                cityText += " (" + city[i].country.code + ")";
-
-                            cityText += " [" + city[i].woeid + "]";
-
-                            if (m[cityText])
-                                continue;
-                            else
-                                m[cityText] = 1;
-
-                            completionModel.set_value(current, 0, cityText);
-                        }
-                    } else {
                         current = completionModel.append();
-                        let cityText = city.name;
-                        if (city.admin1)
-                            cityText += ", " + city.admin1.content;
 
-                        if (city.country)
-                            cityText += " (" + city.country.code + ")";
+                        let cityText = city[i].name;
 
-                        cityText += " [" + city.woeid + "]";
+                        if (city[i].sys)
+                            cityText += ", " + city[i].sys.country;
+
+                        if (city[i].id)
+                            cityText += " [" + city[i].id + "]";
+
+                        if (m[cityText])
+                            continue;
+                        else
+                            m[cityText] = 1;
+
                         completionModel.set_value(current, 0, cityText);
                     }
+
                     completion.complete();
                     return 0;
                 }, "getInfo");
@@ -394,28 +391,35 @@ const WeatherPrefsWidget = new GObject.Class({
                 if (entry.get_text().search(/\[/) == -1 || entry.get_text().search(/\]/) == -1)
                     return 0;
 
-                let woeid = entry.get_text().split(/\[/)[1].split(/\]/)[0];
-                if (!woeid)
+                let name = entry.get_text().split(/,/)[0];
+                if (!name)
                     return 0;
 
-                that.loadJsonAsync(encodeURI('http://query.yahooapis.com/v1/public/yql?format=json&q=select woeid,name,admin1,country from geo.places where woeid = "' + woeid + '" limit 1'), function() {
-                    let city = arguments[0].query;
-                    if (Number(city.count) > 0)
-                        city = city.results.place;
-                    else
+                that.loadJsonAsync(encodeURI('http://api.openweathermap.org/data/2.5/weather?q=' + name + '&type=accurate'), function() {
+                    if (!arguments[0])
+                        return 0;
+                    let city = arguments[0];
+
+                    if (Number(city.cod) != 200)
+                        return 0;
+
+                    let id = entry.get_text().split(/\[/)[1].split(/\]/)[0];
+                    if (!id)
+                        return 0;
+
+                    if (id != city.id)
                         return 0;
 
                     let cityText = city.name;
-                    if (city.admin1)
-                        cityText += ", " + city.admin1.content;
 
-                    if (city.country)
-                        cityText += " (" + city.country.code + ")";
+                    if (city.sys)
+                        cityText += " (" + city.sys.country + ")";
 
                     if (that.city)
-                        that.city = that.city + " && " + city.woeid + ">" + cityText;
+                        that.city = that.city + " && " + city.id + ">" + cityText;
                     else
-                        that.city = city.woeid + ">" + cityText;
+                        that.city = city.id + ">" + cityText;
+
                     return 0;
                 }, "lastTest");
             }
@@ -734,7 +738,7 @@ const WeatherPrefsWidget = new GObject.Class({
         return a.split(">")[1];
     },
 
-    extractWoeid: function(a) {
+    extractId: function(a) {
         if (a.search(">") == -1)
             return 0;
         return a.split(">")[0];

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 3.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-19 01:03+0200\n"
+"POT-Creation-Date: 2013-10-26 08:28+0200\n"
 "PO-Revision-Date: 2013-01-28 22:38+0100\n"
 "Last-Translator: Dancer69\n"
 "Language: el\n"
@@ -15,425 +15,584 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
-#: ../src/extension.js:132
+#: ../src/extension.js:135
 msgid "..."
 msgstr "..."
 
-#: ../src/extension.js:229
+#: ../src/extension.js:232
 msgid "Locations"
 msgstr "Τοποθεσίες"
 
-#: ../src/extension.js:233
+#: ../src/extension.js:236
 msgid "Reload Weather Information"
 msgstr "Επαναφόρτωση Πληροφοριών Καιρού"
 
-#: ../src/extension.js:239
+#: ../src/extension.js:242
 msgid "Weather Settings"
 msgstr "Ρυθμίσεις Καιρού"
 
-#: ../src/extension.js:283
+#: ../src/extension.js:286
 #, python-format
 msgid "Schema \"%s\" not found."
 msgstr "Το Σχήμα \"%s\" δε βρέθηκε"
 
-#: ../src/extension.js:552 ../src/prefs.js:718
+#: ../src/extension.js:569 ../src/extension.js:578 ../src/prefs.js:737
 msgid "Invalid city"
 msgstr "Μη έγκυρη πόλη"
 
-#: ../src/extension.js:826
-msgid "Tornado"
-msgstr "Τυφώνας"
+#: ../src/extension.js:807
+msgid "thunderstorm with light rain"
+msgstr ""
 
-#: ../src/extension.js:829
-msgid "Tropical storm"
-msgstr "Τροπική καταιγίδα"
+#: ../src/extension.js:809
+#, fuzzy
+msgid "thunderstorm with rain"
+msgstr "Καταιγίδες"
 
-#: ../src/extension.js:832 ../src/extension.js:1044
-msgid "Hurricane"
-msgstr "Θύελλα"
+#: ../src/extension.js:811
+msgid "thunderstorm with heavy rain"
+msgstr ""
 
-#: ../src/extension.js:835
-msgid "Severe thunderstorms"
+#: ../src/extension.js:813
+#, fuzzy
+msgid "light thunderstorm"
+msgstr "Μεμονωμένες καταιγίδες"
+
+#: ../src/extension.js:815
+#, fuzzy
+msgid "thunderstorm"
+msgstr "Καταιγίδες"
+
+#: ../src/extension.js:817
+#, fuzzy
+msgid "heavy thunderstorm"
 msgstr "Σοβαρές καταιγίδες"
 
-#: ../src/extension.js:838
-msgid "Thunderstorms"
-msgstr "Καταιγίδες"
+#: ../src/extension.js:819
+#, fuzzy
+msgid "ragged thunderstorm"
+msgstr "Μεμονωμένες καταιγίδες"
 
-#: ../src/extension.js:841
-msgid "Mixed rain and snow"
-msgstr "Μικτή βροχή και χιόνι"
+#: ../src/extension.js:821
+msgid "thunderstorm with light drizzle"
+msgstr ""
 
-#: ../src/extension.js:844
-msgid "Mixed rain and sleet"
-msgstr "Μικτή βροχή και χιονόνερο"
+#: ../src/extension.js:823
+msgid "thunderstorm with drizzle"
+msgstr ""
 
-#: ../src/extension.js:847
-msgid "Mixed snow and sleet"
-msgstr "Μικτό χιόνι και χιονόνερο"
+#: ../src/extension.js:825
+msgid "thunderstorm with heavy drizzle"
+msgstr ""
 
-#: ../src/extension.js:850
-msgid "Freezing drizzle"
-msgstr "Παγωμένο ψιλόβοροχο"
+#: ../src/extension.js:827
+msgid "light intensity drizzle"
+msgstr ""
 
-#: ../src/extension.js:853
-msgid "Drizzle"
+#: ../src/extension.js:829
+#, fuzzy
+msgid "drizzle"
 msgstr "Ψιλόβροχο"
 
-#: ../src/extension.js:856
-msgid "Freezing rain"
-msgstr "Παγωμένη βροχή"
+#: ../src/extension.js:831
+msgid "heavy intensity drizzle"
+msgstr ""
 
-#: ../src/extension.js:859 ../src/extension.js:862
-msgid "Showers"
-msgstr "Μπόρες"
+#: ../src/extension.js:833
+msgid "light intensity drizzle rain"
+msgstr ""
 
-#: ../src/extension.js:865
-msgid "Snow flurries"
-msgstr "Χιονοπτώσεις"
+#: ../src/extension.js:835
+#, fuzzy
+msgid "drizzle rain"
+msgstr "Ψιλόβροχο"
 
-#: ../src/extension.js:868
-msgid "Light snow showers"
-msgstr "Ελαφρί χιόνι και μπόρες"
+#: ../src/extension.js:837
+msgid "heavy intensity drizzle rain"
+msgstr ""
 
-#: ../src/extension.js:871
-msgid "Blowing snow"
-msgstr "Ανεμοχιόνι"
-
-#: ../src/extension.js:874
-msgid "Snow"
-msgstr "Χιόνι"
-
-#: ../src/extension.js:877
-msgid "Hail"
-msgstr "Χαλάζι"
-
-#: ../src/extension.js:880
-msgid "Sleet"
-msgstr "Χιονόνερο"
-
-#: ../src/extension.js:883
-msgid "Dust"
-msgstr "Σκόνη"
-
-#: ../src/extension.js:886
-msgid "Foggy"
-msgstr "Ομιχλώδης"
-
-#: ../src/extension.js:889
-msgid "Haze"
-msgstr "Καταχνιά"
-
-#: ../src/extension.js:892
-msgid "Smoky"
-msgstr "Καπνώδης"
-
-#: ../src/extension.js:895
-msgid "Blustery"
-msgstr "Δυνατοί άνεμοι"
-
-#: ../src/extension.js:898
-msgid "Windy"
-msgstr "Ανεμώδης"
-
-#: ../src/extension.js:901
-msgid "Cold"
-msgstr "Κρύο"
-
-#: ../src/extension.js:904
-msgid "Cloudy"
-msgstr "Νεφελώδης"
-
-#: ../src/extension.js:909
-msgid "Mostly cloudy"
-msgstr "Κυρίως νεφελώδης"
-
-#: ../src/extension.js:914 ../src/extension.js:957
-msgid "Partly cloudy"
-msgstr "Μερικώς νεφελώδης"
-
-#: ../src/extension.js:917
-msgid "Clear"
-msgstr "Καθαρός"
-
-#: ../src/extension.js:920
-msgid "Sunny"
-msgstr "Ηλιόλουστος"
-
-#: ../src/extension.js:925
-msgid "Fair"
-msgstr "Καλός"
-
-#: ../src/extension.js:928
-msgid "Mixed rain and hail"
+#: ../src/extension.js:839
+#, fuzzy
+msgid "shower rain and drizzle"
 msgstr "Μικτή βροχή και χαλάζι"
 
-#: ../src/extension.js:931
-msgid "Hot"
-msgstr "Καύσωνας"
+#: ../src/extension.js:841
+msgid "heavy shower rain and drizzle"
+msgstr ""
 
-#: ../src/extension.js:934
-msgid "Isolated thunderstorms"
-msgstr "Μεμονωμένες καταιγίδες"
-
-#: ../src/extension.js:937
-msgid "Scattered thunderstorms"
-msgstr "Σποραδικές καταιγίδες"
-
-#: ../src/extension.js:942
+#: ../src/extension.js:843
 #, fuzzy
-msgid "Isolated showers"
-msgstr "Μεμονωμένες καταιγίδες"
+msgid "shower drizzle"
+msgstr "Παγωμένο ψιλόβοροχο"
 
-#: ../src/extension.js:945
-msgid "Scattered showers"
-msgstr "Σποραδικές μπόρες"
+#: ../src/extension.js:845
+#, fuzzy
+msgid "light rain"
+msgstr "Ελαφριά αύρα"
 
-#: ../src/extension.js:948 ../src/extension.js:954
-msgid "Heavy snow"
+#: ../src/extension.js:847
+#, fuzzy
+msgid "moderate rain"
+msgstr "Μέτρια ανεμοθύελλα"
+
+#: ../src/extension.js:849
+msgid "heavy intensity rain"
+msgstr ""
+
+#: ../src/extension.js:851
+msgid "very heavy rain"
+msgstr ""
+
+#: ../src/extension.js:853
+#, fuzzy
+msgid "extreme rain"
+msgstr "Παγωμένη βροχή"
+
+#: ../src/extension.js:855
+#, fuzzy
+msgid "freezing rain"
+msgstr "Παγωμένη βροχή"
+
+#: ../src/extension.js:857
+msgid "light intensity shower rain"
+msgstr ""
+
+#: ../src/extension.js:859
+msgid "shower rain"
+msgstr ""
+
+#: ../src/extension.js:861
+msgid "heavy intensity shower rain"
+msgstr ""
+
+#: ../src/extension.js:863
+msgid "ragged shower rain"
+msgstr ""
+
+#: ../src/extension.js:865
+#, fuzzy
+msgid "light snow"
+msgstr "Ανεμοχιόνι"
+
+#: ../src/extension.js:867
+msgid "snow"
+msgstr ""
+
+#: ../src/extension.js:869
+#, fuzzy
+msgid "heavy snow"
 msgstr "Δυνατό χιόνι"
 
-#: ../src/extension.js:951
-msgid "Scattered snow showers"
-msgstr "Σποραδικές χιονοβροχές"
+#: ../src/extension.js:871
+#, fuzzy
+msgid "sleet"
+msgstr "Χιονόνερο"
 
-#: ../src/extension.js:960
-msgid "Thundershowers"
-msgstr "Καταιγίδες"
+#: ../src/extension.js:873
+#, fuzzy
+msgid "shower sleet"
+msgstr "Μπόρες"
 
-#: ../src/extension.js:963
-msgid "Snow showers"
-msgstr "Χιονοβροχές"
+#: ../src/extension.js:875
+#, fuzzy
+msgid "light rain and snow"
+msgstr "Μικτή βροχή και χιόνι"
 
-#: ../src/extension.js:966
-msgid "Isolated thundershowers"
-msgstr "Μεμονωμένες καταιγίδες"
+#: ../src/extension.js:877
+#, fuzzy
+msgid "rain and snow"
+msgstr "Μικτή βροχή και χιόνι"
 
-#: ../src/extension.js:970
+#: ../src/extension.js:879
+#, fuzzy
+msgid "light shower snow"
+msgstr "Ελαφρί χιόνι και μπόρες"
+
+#: ../src/extension.js:881
+#, fuzzy
+msgid "shower snow"
+msgstr "Μπόρες"
+
+#: ../src/extension.js:883
+#, fuzzy
+msgid "heavy shower snow"
+msgstr "Δυνατό χιόνι"
+
+#: ../src/extension.js:885
+msgid "mist"
+msgstr ""
+
+#: ../src/extension.js:887
+msgid "smoke"
+msgstr ""
+
+#: ../src/extension.js:889
+msgid "haze"
+msgstr ""
+
+#: ../src/extension.js:891
+msgid "Sand/Dust Whirls"
+msgstr ""
+
+#: ../src/extension.js:893
+#, fuzzy
+msgid "Fog"
+msgstr "Ομιχλώδης"
+
+#: ../src/extension.js:895
+msgid "sand"
+msgstr ""
+
+#: ../src/extension.js:897
+msgid "dust"
+msgstr ""
+
+#: ../src/extension.js:899
+msgid "VOLCANIC ASH"
+msgstr ""
+
+#: ../src/extension.js:901
+msgid "SQUALLS"
+msgstr ""
+
+#: ../src/extension.js:903
+msgid "TORNADO"
+msgstr ""
+
+#: ../src/extension.js:905
+msgid "sky is clear"
+msgstr ""
+
+#: ../src/extension.js:907
+msgid "few clouds"
+msgstr ""
+
+#: ../src/extension.js:909
+#, fuzzy
+msgid "scattered clouds"
+msgstr "Σποραδικές μπόρες"
+
+#: ../src/extension.js:911
+msgid "broken clouds"
+msgstr ""
+
+#: ../src/extension.js:913
+#, fuzzy
+msgid "overcast clouds"
+msgstr "Κυρίως νεφελώδης"
+
+#: ../src/extension.js:915
 msgid "Not available"
 msgstr "Μη διαθέσιμο"
 
-#: ../src/extension.js:1008
+#: ../src/extension.js:962
 msgid "Calm"
 msgstr "Ήρεμος"
 
-#: ../src/extension.js:1011
+#: ../src/extension.js:965
 msgid "Light air"
 msgstr "Ελαφριά αύρα"
 
-#: ../src/extension.js:1014
+#: ../src/extension.js:968
 msgid "Light breeze"
 msgstr "Ελαφρύ αεράκι"
 
-#: ../src/extension.js:1017
+#: ../src/extension.js:971
 msgid "Gentle breeze"
 msgstr "Ήρεμο αεράκι"
 
-#: ../src/extension.js:1020
+#: ../src/extension.js:974
 msgid "Moderate breeze"
 msgstr "Μέτριο αεράκι"
 
-#: ../src/extension.js:1023
+#: ../src/extension.js:977
 msgid "Fresh breeze"
 msgstr "Δροσερό αεράκι"
 
-#: ../src/extension.js:1026
+#: ../src/extension.js:980
 msgid "Strong breeze"
 msgstr "Δυνατό αεράκι"
 
-#: ../src/extension.js:1029
+#: ../src/extension.js:983
 msgid "Moderate gale"
 msgstr "Μέτρια ανεμοθύελλα"
 
-#: ../src/extension.js:1032
+#: ../src/extension.js:986
 msgid "Fresh gale"
 msgstr "Δροσερή ανεμοθύελλα"
 
-#: ../src/extension.js:1035
+#: ../src/extension.js:989
 msgid "Strong gale"
 msgstr "Δυνατή ανεμοθύελα"
 
-#: ../src/extension.js:1038
+#: ../src/extension.js:992
 msgid "Storm"
 msgstr "Καταιγίδα"
 
-#: ../src/extension.js:1041
+#: ../src/extension.js:995
 msgid "Violent storm"
 msgstr "Βίαια καταιγίδα"
 
-#: ../src/extension.js:1048
+#: ../src/extension.js:998
+msgid "Hurricane"
+msgstr "Θύελλα"
+
+#: ../src/extension.js:1002
 msgid "Sunday"
 msgstr "Κυριακή"
 
-#: ../src/extension.js:1048
+#: ../src/extension.js:1002
 msgid "Monday"
 msgstr "Δευτέρα"
 
-#: ../src/extension.js:1048
+#: ../src/extension.js:1002
 msgid "Tuesday"
 msgstr "Τρίτη"
 
-#: ../src/extension.js:1048
+#: ../src/extension.js:1002
 msgid "Wednesday"
 msgstr "Τετάρτη"
 
-#: ../src/extension.js:1048
+#: ../src/extension.js:1002
 msgid "Thursday"
 msgstr "Πέμπτη"
 
-#: ../src/extension.js:1048
+#: ../src/extension.js:1002
 msgid "Friday"
 msgstr "Παρασκευή"
 
-#: ../src/extension.js:1048
+#: ../src/extension.js:1002
 msgid "Saturday"
 msgstr "Σάββατο"
 
-#: ../src/extension.js:1054
+#: ../src/extension.js:1008
 msgid "N"
 msgstr "Β"
 
-#: ../src/extension.js:1054
+#: ../src/extension.js:1008
 msgid "NE"
 msgstr "ΒΑ"
 
-#: ../src/extension.js:1054
+#: ../src/extension.js:1008
 msgid "E"
 msgstr "Α"
 
-#: ../src/extension.js:1054
+#: ../src/extension.js:1008
 msgid "SE"
 msgstr "ΝΑ"
 
-#: ../src/extension.js:1054
+#: ../src/extension.js:1008
 msgid "S"
 msgstr "Ν"
 
-#: ../src/extension.js:1054
+#: ../src/extension.js:1008
 msgid "SW"
 msgstr "ΝΔ"
 
-#: ../src/extension.js:1054
+#: ../src/extension.js:1008
 msgid "W"
 msgstr "Δ"
 
-#: ../src/extension.js:1054
+#: ../src/extension.js:1008
 msgid "NW"
 msgstr "ΒΔ"
 
-#: ../src/extension.js:1316 ../src/extension.js:1443
+#: ../src/extension.js:1225 ../src/extension.js:1366
 msgid "Yesterday"
 msgstr "Χθες"
 
-#: ../src/extension.js:1318 ../src/extension.js:1445
+#: ../src/extension.js:1227 ../src/extension.js:1368
 #, python-format
 msgid "%s days ago"
 msgstr "εδώ και %s μέρες"
 
-#: ../src/extension.js:1437
+#: ../src/extension.js:1360
 msgid "Today"
 msgstr "Σήμερα"
 
-#: ../src/extension.js:1439
+#: ../src/extension.js:1362
 msgid "Tomorrow"
 msgstr "Αύριο"
 
-#: ../src/extension.js:1441
+#: ../src/extension.js:1364
 #, python-format
 msgid "In %s days"
 msgstr "Σε %s μέρες"
 
-#: ../src/extension.js:1478
+#: ../src/extension.js:1401
 msgid "Loading current weather ..."
 msgstr "Φόρτωση τρέχουσας πρόγνωσης..."
 
-#: ../src/extension.js:1481
+#: ../src/extension.js:1404
 msgid "Loading future weather ..."
 msgstr "Φόρτωση μελλοντικής πρόγνωσης..."
 
-#: ../src/extension.js:1515
+#: ../src/extension.js:1438
 msgid "Loading ..."
 msgstr "Φόρτωση..."
 
-#: ../src/extension.js:1519
+#: ../src/extension.js:1442
 msgid "Please wait"
 msgstr "Παρακαλώ περιμένετε"
 
-#: ../src/extension.js:1580
-#, fuzzy
-msgid "Feels like:"
-msgstr "Μοιάζει σαν:"
+#: ../src/extension.js:1503
+msgid "Cloudiness:"
+msgstr ""
 
-#: ../src/extension.js:1584
+#: ../src/extension.js:1507
 msgid "Humidity:"
 msgstr "Υγρασία:"
 
-#: ../src/extension.js:1588
+#: ../src/extension.js:1511
 msgid "Pressure:"
 msgstr "Πίεση:"
 
-#: ../src/extension.js:1592
+#: ../src/extension.js:1515
 msgid "Wind:"
 msgstr "Άνεμος:"
 
-#: ../src/prefs.js:118
+#: ../src/prefs.js:119
 msgid "Temperature Unit"
 msgstr "Μονάδα Θερμοκρασίας"
 
-#: ../src/prefs.js:120
+#: ../src/prefs.js:121
 msgid "Wind Speed Unit"
 msgstr "Ταχύτητα Ανέμου"
 
-#: ../src/prefs.js:122
+#: ../src/prefs.js:123
 #, fuzzy
 msgid "Pressure Unit"
 msgstr "Μονάδα Πίεσης"
 
-#: ../src/prefs.js:124
+#: ../src/prefs.js:125
 msgid "Position in Panel"
 msgstr "Θέση στον Πίνακα"
 
-#: ../src/prefs.js:125
+#: ../src/prefs.js:126
 msgid "Center"
 msgstr "Κέντρο"
 
-#: ../src/prefs.js:125
+#: ../src/prefs.js:126
 msgid "Right"
 msgstr "Δεξιά"
 
-#: ../src/prefs.js:125
+#: ../src/prefs.js:126
 msgid "Left"
 msgstr "Αριστερά"
 
-#: ../src/prefs.js:126
+#: ../src/prefs.js:127
 msgid "Wind Direction by Arrows"
 msgstr "Κατεύθυνση Ανέμου με Βέλη"
 
-#: ../src/prefs.js:128
+#: ../src/prefs.js:129
 msgid "Translate Conditions"
 msgstr "Μετάφραση Καιρικών Συνθηκών"
 
-#: ../src/prefs.js:130
+#: ../src/prefs.js:131
 msgid "Symbolic Icons"
 msgstr "Εικονίδια Συμβόλων"
 
-#: ../src/prefs.js:132
+#: ../src/prefs.js:133
 msgid "Temperature in Panel"
 msgstr "Θερμοκρασία στον Πίνακα"
 
-#: ../src/prefs.js:134
+#: ../src/prefs.js:135
 msgid "Conditions in Panel"
 msgstr "Συνθήκες στον πίνακα"
 
-#: ../src/prefs.js:136
+#: ../src/prefs.js:137
+msgid "Center forecast"
+msgstr ""
+
+#: ../src/prefs.js:139
 msgid "Number of days in forecast"
 msgstr ""
 
-#: ../src/prefs.js:265
+#: ../src/prefs.js:268
 msgid "Name of the city"
 msgstr "Όνομα πόλης"
 
-#: ../src/prefs.js:432
+#: ../src/prefs.js:439
 #, python-format
 msgid "Remove %s ?"
 msgstr "Αφαίρεση %s ;"
+
+#~ msgid "Tornado"
+#~ msgstr "Τυφώνας"
+
+#~ msgid "Tropical storm"
+#~ msgstr "Τροπική καταιγίδα"
+
+#~ msgid "Mixed rain and sleet"
+#~ msgstr "Μικτή βροχή και χιονόνερο"
+
+#~ msgid "Mixed snow and sleet"
+#~ msgstr "Μικτό χιόνι και χιονόνερο"
+
+#~ msgid "Snow flurries"
+#~ msgstr "Χιονοπτώσεις"
+
+#~ msgid "Snow"
+#~ msgstr "Χιόνι"
+
+#~ msgid "Hail"
+#~ msgstr "Χαλάζι"
+
+#~ msgid "Dust"
+#~ msgstr "Σκόνη"
+
+#~ msgid "Haze"
+#~ msgstr "Καταχνιά"
+
+#~ msgid "Smoky"
+#~ msgstr "Καπνώδης"
+
+#~ msgid "Blustery"
+#~ msgstr "Δυνατοί άνεμοι"
+
+#~ msgid "Windy"
+#~ msgstr "Ανεμώδης"
+
+#~ msgid "Cold"
+#~ msgstr "Κρύο"
+
+#~ msgid "Cloudy"
+#~ msgstr "Νεφελώδης"
+
+#~ msgid "Partly cloudy"
+#~ msgstr "Μερικώς νεφελώδης"
+
+#~ msgid "Clear"
+#~ msgstr "Καθαρός"
+
+#~ msgid "Sunny"
+#~ msgstr "Ηλιόλουστος"
+
+#~ msgid "Fair"
+#~ msgstr "Καλός"
+
+#~ msgid "Hot"
+#~ msgstr "Καύσωνας"
+
+#~ msgid "Scattered thunderstorms"
+#~ msgstr "Σποραδικές καταιγίδες"
+
+#, fuzzy
+#~ msgid "Isolated showers"
+#~ msgstr "Μεμονωμένες καταιγίδες"
+
+#~ msgid "Scattered snow showers"
+#~ msgstr "Σποραδικές χιονοβροχές"
+
+#~ msgid "Thundershowers"
+#~ msgstr "Καταιγίδες"
+
+#~ msgid "Snow showers"
+#~ msgstr "Χιονοβροχές"
+
+#~ msgid "Isolated thundershowers"
+#~ msgstr "Μεμονωμένες καταιγίδες"
+
+#, fuzzy
+#~ msgid "Feels like:"
+#~ msgstr "Μοιάζει σαν:"
