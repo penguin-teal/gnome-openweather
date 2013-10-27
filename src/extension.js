@@ -1236,13 +1236,16 @@ weather-storm.png = weather-storm-symbolic.svg
                     break;
             }
 
-            let lastBuild = (this.lastBuildDate.getHours() % 12) + ":" + ((this.lastBuildDate.getMinutes() < 10) ? "0" : "") + this.lastBuildDate.getMinutes() + " " + ((this.lastBuildDate.getHours() >= 12) ? "pm" : "am");
+            let lastBuild = '-';
+
             if (this._clockFormat == "24h") {
-                sunrise = new Date(sunrise * 1000);
-                sunrise = sunrise.getHours() + ":" + ((sunrise.getMinutes() < 10) ? "0" : "") + sunrise.getMinutes();
-                sunset = new Date(sunset * 1000);
-                sunset = sunset.getHours() + ":" + ((sunset.getMinutes() < 10) ? "0" : "") + sunset.getMinutes();
-                lastBuild = this.lastBuildDate.getHours() + ":" + ((this.lastBuildDate.getMinutes() < 10) ? "0" : "") + this.lastBuildDate.getMinutes();
+                sunrise = new Date(sunrise * 1000).toLocaleFormat("%R");
+                sunset = new Date(sunset * 1000).toLocaleFormat("%R");
+                lastBuild = this.lastBuildDate.toLocaleFormat("%R");
+            } else {
+                sunrise = new Date(sunrise * 1000).toLocaleFormat("%I:%M %p");
+                sunset = new Date(sunset * 1000).toLocaleFormat("%I:%M %p");
+                lastBuild = this.lastBuildDate.toLocaleFormat("%I:%M %p");
             }
 
             if (d >= 1) {
