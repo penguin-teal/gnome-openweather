@@ -1318,14 +1318,16 @@ const WeatherMenuButton = new Lang.Class({
                     break;
             }
 
-            let lastBuild = (this.lastBuildDate.getHours() % 12) + ":" + ((this.lastBuildDate.getMinutes() < 10) ? "0" : "") + this.lastBuildDate.getMinutes() + " " + ((this.lastBuildDate.getHours() >= 12) ? "pm" : "am");
+            let lastBuild = '-';
 
             if (this._clockFormat == "24h") {
-                sunrise = new Date("3 Mar 1999 " + sunrise);
-                sunrise = sunrise.getHours() + ":" + ((sunrise.getMinutes() < 10) ? "0" : "") + sunrise.getMinutes();
-                sunset = new Date("3 Mar 1999 " + sunset);
-                sunset = sunset.getHours() + ":" + ((sunset.getMinutes() < 10) ? "0" : "") + sunset.getMinutes();
-                lastBuild = this.lastBuildDate.getHours() + ":" + ((this.lastBuildDate.getMinutes() < 10) ? "0" : "") + this.lastBuildDate.getMinutes();
+                sunrise = new Date(actualDate.toLocaleDateString() + " " + sunrise).toLocaleFormat("%R");
+                sunset = new Date(actualDate.toLocaleDateString() + " " + sunset).toLocaleFormat("%R");
+                lastBuild = this.lastBuildDate.toLocaleFormat("%R");
+            } else {
+                sunrise = new Date(actualDate.toLocaleDateString() + " " + sunrise).toLocaleFormat("%I:%M %p");
+                sunset = new Date(actualDate.toLocaleDateString() + " " + sunset).toLocaleFormat("%I:%M %p");
+                lastBuild = this.lastBuildDate.toLocaleFormat("%I:%M %p");
             }
 
             if (d >= 1) {
