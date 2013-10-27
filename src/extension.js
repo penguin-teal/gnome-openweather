@@ -503,26 +503,26 @@ const WeatherMenuButton = new Lang.Class({
         if (!this._settings)
             this.loadConfig();
         let v = this._settings.get_int(WEATHER_REFRESH_INTERVAL_CURRENT);
-        return ((v >= 600)?v:600);
+        return ((v >= 600) ? v : 600);
     },
 
     set _refresh_interval_current(v) {
         if (!this._settings)
             this.loadConfig();
-        this._settings.set_int(WEATHER_REFRESH_INTERVAL_CURRENT, ((v >= 600)?v:600));
+        this._settings.set_int(WEATHER_REFRESH_INTERVAL_CURRENT, ((v >= 600) ? v : 600));
     },
 
     get _refresh_interval_forecast() {
         if (!this._settings)
             this.loadConfig();
         let v = this._settings.get_int(WEATHER_REFRESH_INTERVAL_FORECAST);
-        return ((v >= 600)?v:600);
+        return ((v >= 600) ? v : 600);
     },
 
     set _refresh_interval_forecast(v) {
         if (!this._settings)
             this.loadConfig();
-        this._settings.set_int(WEATHER_REFRESH_INTERVAL_FORECAST, ((v >= 600)?v:600));
+        this._settings.set_int(WEATHER_REFRESH_INTERVAL_FORECAST, ((v >= 600) ? v : 600));
     },
 
     get _center_forecast() {
