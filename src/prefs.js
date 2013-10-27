@@ -58,6 +58,11 @@ const WEATHER_REFRESH_INTERVAL_FORECAST = 'refresh-interval-forecast';
 const WEATHER_CENTER_FORECAST_KEY = 'center-forecast';
 const WEATHER_DAYS_FORECAST = 'days-forecast';
 
+//URL
+const WEATHER_URL_BASE = 'http://api.openweathermap.org/data/2.5/';
+const WEATHER_URL_CURRENT = WEATHER_URL_BASE + 'weather';
+const WEATHER_URL_FIND = WEATHER_URL_BASE + 'find';
+
 // Soup session (see https://bugzilla.gnome.org/show_bug.cgi?id=661323#c64) (Simon Legner)
 const _httpSession = new Soup.SessionAsync();
 Soup.Session.prototype.add_feature.call(_httpSession, new Soup.ProxyResolverDefault());
@@ -315,7 +320,9 @@ const WeatherPrefsWidget = new GObject.Class({
             if (!id)
                 return 0;
 
-            that.loadJsonAsync(encodeURI('http://api.openweathermap.org/data/2.5/weather?id=' + id), function() {
+            that.loadJsonAsync(WEATHER_URL_CURRENT, {
+                id: id
+            }, function() {
                 d.sensitive = 0;
                 if (typeof arguments[0] == "undefined")
                     return 0;
@@ -336,8 +343,15 @@ const WeatherPrefsWidget = new GObject.Class({
 
         let searchLocation = function() {
             let location = entry.get_text();
+            let params = {
+                cnt: '30',
+                sort: 'population',
+                type: 'like',
+                units: 'metric',
+                q: location
+            };
             if (testLocation(location) == 0)
-                that.loadJsonAsync(encodeURI('http://api.openweathermap.org/data/2.5/find?cnt=30&sort=population&type=like&units=metric&q=' + location), function() {
+                that.loadJsonAsync(WEATHER_URL_FIND, params, function() {
                     if (!arguments[0])
                         return 0;
                     let city = arguments[0];
@@ -396,7 +410,11 @@ const WeatherPrefsWidget = new GObject.Class({
                 if (!name)
                     return 0;
 
-                that.loadJsonAsync(encodeURI('http://api.openweathermap.org/data/2.5/weather?q=' + name + '&type=accurate'), function() {
+                let params = {
+                    q: name,
+                    type: 'accurate'
+                };
+                that.loadJsonAsync(WEATHER_URL_CURRENT, params, function() {
                     if (!arguments[0])
                         return 0;
                     let city = arguments[0];
@@ -493,9 +511,10 @@ const WeatherPrefsWidget = new GObject.Class({
         this.treeview.get_selection().select_path(path);
     },
 
-    loadJsonAsync: function(url, fun, id) {
+    loadJsonAsync: function(url, params, fun, id) {
         let here = this;
-        let message = Soup.Message.new('GET', url);
+
+        let message = Soup.form_request_new_from_hash('GET', url, params);
 
         if (typeof this.asyncSession == "undefined")
             this.asyncSession = {};

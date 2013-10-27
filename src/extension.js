@@ -72,6 +72,11 @@ const WEATHER_REFRESH_INTERVAL_FORECAST = 'refresh-interval-forecast';
 const WEATHER_CENTER_FORECAST_KEY = 'center-forecast';
 const WEATHER_DAYS_FORECAST = 'days-forecast';
 
+//URL
+const WEATHER_URL_BASE = 'http://api.openweathermap.org/data/2.5/';
+const WEATHER_URL_CURRENT = WEATHER_URL_BASE + 'weather';
+const WEATHER_URL_FORECAST = WEATHER_URL_BASE + 'forecast/daily';
+
 // Keep enums in sync with GSettings schemas
 const WeatherUnits = {
     CELSIUS: 0,
@@ -626,7 +631,11 @@ const WeatherMenuButton = new Lang.Class({
         for (let a in cities) {
 
             if (!this.extractCity(cities[a])) {
-                this.load_json_async(encodeURI('http://api.openweathermap.org/data/2.5/weather?q=' + cities[a] + '&type=like'), function() {
+                let params = {
+                    q: cities[a],
+                    type: 'like'
+                };
+                this.load_json_async(WEATHER_URL_CURRENT, params, function() {
                     let city = arguments[0];
 
                     if (Number(city.cod) != 200)
@@ -689,14 +698,6 @@ const WeatherMenuButton = new Lang.Class({
             return '\u00B0\N';
         else
             return '\u00B0\C';
-    },
-
-    get_weather_current_url: function() {
-        return encodeURI('http://api.openweathermap.org/data/2.5/weather?q=' + this.extractCity(this._city) + '&units=metric');
-    },
-
-    get_weather_forecast_url: function() {
-        return encodeURI('http://api.openweathermap.org/data/2.5/forecast/daily?q=' + this.extractCity(this._city) + '&units=metric&cnt=10');
     },
 
     get_weather_icon: function(code) {
@@ -1048,10 +1049,10 @@ weather-storm.png = weather-storm-symbolic.svg
             return icon_name;
     },
 
-    load_json_async: function(url, fun) {
+    load_json_async: function(url, params, fun) {
         let here = this;
 
-        let message = Soup.Message.new('GET', url);
+        let message = Soup.form_request_new_from_hash('GET', url, params);
 
         _httpSession.queue_message(message, function(_httpSession, message) {
             if (!message.response_body.data) {
@@ -1075,7 +1076,11 @@ weather-storm.png = weather-storm-symbolic.svg
             this.updateCities();
             return 0;
         }
-        this.load_json_async(this.get_weather_current_url(), function(json) {
+        let params = {
+            q: this.extractCity(this._city),
+            units: 'metric'
+        };
+        this.load_json_async(WEATHER_URL_CURRENT, params, function(json) {
             if (!json)
                 return 0;
 
@@ -1324,7 +1329,12 @@ weather-storm.png = weather-storm-symbolic.svg
             return 0;
         }
 
-        this.load_json_async(this.get_weather_forecast_url(), function(json) {
+        let params = {
+            q: this.extractCity(this._city),
+            units: 'metric'
+        };
+
+        this.load_json_async(WEATHER_URL_FORECAST, params, function(json) {
             if (!json)
                 return 0;
 
