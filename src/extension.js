@@ -1335,6 +1335,7 @@ weather-storm.png = weather-storm-symbolic.svg
         let params = {
             q: this.extractCity(this._city),
             units: 'metric'
+            cnt : '10',
         };
 
         this.load_json_async(WEATHER_URL_FORECAST, params, function(json) {
