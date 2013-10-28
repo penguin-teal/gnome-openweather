@@ -1337,7 +1337,7 @@ weather-storm.png = weather-storm-symbolic.svg
 
         let params = {
             q: this.extractCity(this._city),
-            units: 'metric'
+            units: 'metric',
             cnt : '10',
         };
 
