@@ -264,8 +264,11 @@ const WeatherMenuButton = new Lang.Class({
     },
 
     stop: function() {
-        if (this._timeoutS)
-            Mainloop.source_remove(this._timeoutS);
+        if (this._timeoutCurrent)
+            Mainloop.source_remove(this._timeoutCurrent);
+
+        if (this._timeoutForecast)
+            Mainloop.source_remove(this._timeoutForecast);
 
         if (this._settingsC) {
             this._settings.disconnect(this._settingsC);
