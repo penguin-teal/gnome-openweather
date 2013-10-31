@@ -47,7 +47,7 @@ Make sure you have the following dependencies installed:
 * *gettext*,
 * *pkg-config*,
 * *git*,
-* *glib2*,
+* *glib2 (with development packages)*,
 * *gnome-common*,
 * *autoconf*,
 * *automake*,
