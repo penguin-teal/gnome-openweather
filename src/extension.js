@@ -71,6 +71,7 @@ const WEATHER_REFRESH_INTERVAL_CURRENT = 'refresh-interval-current';
 const WEATHER_REFRESH_INTERVAL_FORECAST = 'refresh-interval-forecast';
 const WEATHER_CENTER_FORECAST_KEY = 'center-forecast';
 const WEATHER_DAYS_FORECAST = 'days-forecast';
+const WEATHER_OWM_API_KEY = 'appid';
 
 //URL
 const WEATHER_URL_BASE = 'http://api.openweathermap.org/data/2.5/';
@@ -552,6 +553,19 @@ const WeatherMenuButton = new Lang.Class({
         this._settings.set_int(WEATHER_DAYS_FORECAST, v);
     },
 
+    get _appid() {
+        if (!this._settings)
+            this.loadConfig();
+        let key = this._settings.get_string(WEATHER_OWM_API_KEY);
+        return (key.length == 32)?key:'';
+    },
+
+    set _appid(v) {
+        if (!this._settings)
+            this.loadConfig();
+        this._settings.set_string(WEATHER_OWM_API_KEY, v);
+    },
+
     rebuildSelectCityItem: function() {
         let that = this;
         this._selectCity.menu.removeAll();
@@ -638,6 +652,9 @@ const WeatherMenuButton = new Lang.Class({
                     q: cities[a],
                     type: 'like'
                 };
+                if(this._appid)
+                    params['APPID'] = this._appid;
+
                 this.load_json_async(WEATHER_URL_CURRENT, params, function() {
                     let city = arguments[0];
 
@@ -1083,6 +1100,9 @@ weather-storm.png = weather-storm-symbolic.svg
             q: this.extractCity(this._city),
             units: 'metric'
         };
+        if(this._appid)
+            params['APPID'] = this._appid;
+
         this.load_json_async(WEATHER_URL_CURRENT, params, function(json) {
             if (!json)
                 return 0;
@@ -1338,8 +1358,10 @@ weather-storm.png = weather-storm-symbolic.svg
         let params = {
             q: this.extractCity(this._city),
             units: 'metric',
-            cnt : '10',
+            cnt : '10'
         };
+        if(this._appid)
+            params['APPID'] = this._appid;
 
         this.load_json_async(WEATHER_URL_FORECAST, params, function(json) {
             if (!json)

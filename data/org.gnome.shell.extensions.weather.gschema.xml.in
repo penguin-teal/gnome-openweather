@@ -100,5 +100,9 @@
       <default>2</default>
       <_summary>Number of days in forecast</_summary>
     </key>
+    <key name="appid" type="s">
+      <default>''</default>
+      <_summary>Your personal API key from openweathermap.org</_summary>
+    </key>
   </schema>
 </schemalist>

@@ -27,6 +27,7 @@
  *
  */
 const Gtk = imports.gi.Gtk;
+const Gdk = imports.gi.Gdk;
 const GObject = imports.gi.GObject;
 const GtkBuilder = Gtk.Builder;
 const Gio = imports.gi.Gio;
@@ -57,6 +58,7 @@ const WEATHER_REFRESH_INTERVAL_CURRENT = 'refresh-interval-current';
 const WEATHER_REFRESH_INTERVAL_FORECAST = 'refresh-interval-forecast';
 const WEATHER_CENTER_FORECAST_KEY = 'center-forecast';
 const WEATHER_DAYS_FORECAST = 'days-forecast';
+const WEATHER_OWM_API_KEY = 'appid';
 
 //URL
 const WEATHER_URL_BASE = 'http://api.openweathermap.org/data/2.5/';
@@ -144,6 +146,8 @@ const WeatherPrefsWidget = new GObject.Class({
         this.addSwitch("center_forecast");
         this.addLabel(_("Number of days in forecast"));
         this.addComboBox(["2", "3", "4", "5", "6", "7", "8", "9", "10"], "days_forecast");
+        this.addLabel(_("Enter your personal Api key from openweather.org"));
+        this.addAppidEntry(("appid"));
     },
 
     refreshUI: function() {
@@ -261,6 +265,30 @@ const WeatherPrefsWidget = new GObject.Class({
         this.inc();
     },
 
+    addAppidEntry: function(a) {
+        let that = this;
+        let en = new Gtk.Entry();
+        this.configWidgets.push([en, a]);
+        en.visible = 1;
+        en.can_focus = 1;
+        en.set_width_chars(32);
+        en.text = this[a];
+        if (this[a].length != 32)
+            en.set_icon_from_icon_name(Gtk.PositionType.LEFT, 'dialog-warning');
+
+        en.connect("notify::text", function() {
+            let key = arguments[0].text;
+            let rgba = new Gdk.Color();
+            that[a] = key;
+            if (key.length == 32)
+                en.set_icon_from_icon_name(Gtk.PositionType.LEFT, '');
+            else
+                en.set_icon_from_icon_name(Gtk.PositionType.LEFT, 'dialog-warning');
+        });
+        this.right_widget.attach(en, this.x[0], this.x[1], this.y[0], this.y[1], 0, 0, 0, 0);
+        this.inc();
+    },
+
     selectionChanged: function(select) {
         let a = select.get_selected_rows(this.liststore)[0][0];
 
@@ -350,6 +378,8 @@ const WeatherPrefsWidget = new GObject.Class({
                 units: 'metric',
                 q: location
             };
+            if(this._appid)
+                params['APPID'] = this._appid;
             if (testLocation(location) == 0)
                 that.loadJsonAsync(WEATHER_URL_FIND, params, function() {
                     if (!arguments[0])
@@ -414,6 +444,8 @@ const WeatherPrefsWidget = new GObject.Class({
                     q: name,
                     type: 'accurate'
                 };
+                if(this._appid)
+                    params['APPID'] = this._appid;
                 that.loadJsonAsync(WEATHER_URL_CURRENT, params, function() {
                     if (!arguments[0])
                         return 0;
@@ -764,6 +796,18 @@ const WeatherPrefsWidget = new GObject.Class({
         if (!this.Settings)
             this.loadConfig();
         this.Settings.set_int(WEATHER_DAYS_FORECAST, v + 2);
+    },
+
+    get appid() {
+        if (!this.Settings)
+            this.loadConfig();
+        return this.Settings.get_string(WEATHER_OWM_API_KEY);
+    },
+
+    set appid(v) {
+        if (!this.Settings)
+            this.loadConfig();
+        this.Settings.set_string(WEATHER_OWM_API_KEY, v);
     },
 
     extractLocation: function(a) {
