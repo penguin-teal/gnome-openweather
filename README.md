@@ -12,7 +12,7 @@ The code surely needs more cleanup, but it is ready for testing.
 Up to 10 days forecast can be shown.
 The weather-data is provided by http://openweathermap.org .
 
-Locations used by the master-branch ()!Yahoo) will not be deleted by the switch, but they can not be used. Make sure you use only owm locations with owm and yahoo locations with yahoo or you get incorrect (or no) results).
+Locations used by the master-branch (!Yahoo) will not be deleted by the switch, but they can not be used. Make sure you use only owm locations with owm and yahoo locations with yahoo or you get incorrect (or no) results).
 
 I'm always interested in feedback.
 
@@ -22,6 +22,9 @@ To use this branch just pull my repo and switch to it with;
 	cd ~/gnome-shell-extension-weather
 	git checkout openweathermap
 	./autogen.sh && make local-install
+
+
+If you want to use openweathermap.org with gnome-shell 3.6, please use the openweathermap_3.6 branch instead.
 
 ----
 
@@ -47,11 +50,12 @@ Make sure you have the following dependencies installed:
 * *gettext*,
 * *pkg-config*,
 * *git*,
-* *glib2 (with development packages)*,
+* *glib2 (and development packages)*,
+* *zip*,
 * *gnome-common*,
 * *autoconf*,
 * *automake*,
-* *intltool*,
+* *intltool*.
 * *gnome-tweak-tool*.
 
 Run the following commands:
@@ -64,7 +68,7 @@ Run the following commands:
 
 # Configuration
 
-Launch *gnome-shell-extension-prefs* (reachable also through the *Weather Settings* button on the extension popup) and select *Weather* from the drop-down menu to edit the configuration.
+Launch *gnome-shell-extension-prefs* (reachable also through the *Weather Settings* button on the extension popup) and select *YAWE* from the drop-down menu to edit the configuration.
 
 ![Screenshot](https://github.com/jenslody/gnome-shell-extension-weather/raw/master/data/weather-settings.gif)
 
