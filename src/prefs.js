@@ -65,9 +65,7 @@ const WEATHER_URL_BASE = 'http://api.openweathermap.org/data/2.5/';
 const WEATHER_URL_CURRENT = WEATHER_URL_BASE + 'weather';
 const WEATHER_URL_FIND = WEATHER_URL_BASE + 'find';
 
-// Soup session (see https://bugzilla.gnome.org/show_bug.cgi?id=661323#c64) (Simon Legner)
-const _httpSession = new Soup.SessionAsync();
-Soup.Session.prototype.add_feature.call(_httpSession, new Soup.ProxyResolverDefault());
+const _httpSession = new Soup.Session();
 
 let mCities = null;
 

@@ -122,10 +122,7 @@ const WEATHER_CONV_MPS_IN_KPH = 3.6;
 const WEATHER_CONV_MPS_IN_KNOTS = 1.94384449;
 const WEATHER_CONV_MPS_IN_FPS = 3.2808399;
 
-// Soup session (see https://bugzilla.gnome.org/show_bug.cgi?id=661323#c64) (Simon Legner)
-const _httpSession = new Soup.SessionAsync();
-Soup.Session.prototype.add_feature.call(_httpSession, new Soup.ProxyResolverDefault());
-
+const _httpSession = new Soup.Session();
 
 const WeatherMenuButton = new Lang.Class({
     Name: 'WeatherMenuButton',
