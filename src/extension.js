@@ -837,9 +837,11 @@ weather-storm.png = weather-storm-symbolic.svg
         }
     },
 
-    get_weather_icon_safely: function(code) {
+    get_weather_icon_safely: function(code, night) {
         let iconname = this.get_weather_icon(code);
         for (let i = 0; i < iconname.length; i++) {
+            if (night && this.has_icon(iconname[i] + '-night'))
+                return iconname[i] + '-night' + this.icon_type();
             if (this.has_icon(iconname[i]))
                 return iconname[i] + this.icon_type();
         }
@@ -1145,10 +1147,12 @@ weather-storm.png = weather-storm-symbolic.svg
         let wind_direction = this.get_wind_direction(json.wind.deg);
         let wind = json.wind.speed;
         let wind_unit = 'm/s';
-        let iconname = this.get_weather_icon_safely(json.weather[0].id);
 
-        let sunrise = json.sys.sunrise;
-        let sunset = json.sys.sunset;
+        let sunrise = new Date(json.sys.sunrise * 1000);
+        let sunset = new Date(json.sys.sunset * 1000);
+        let now = new Date();
+
+        let iconname = this.get_weather_icon_safely(json.weather[0].id, now < sunrise || now > sunset);
 
         if (typeof this.lastBuildId == 'undefined')
             this.lastBuildId = 0;
@@ -1158,7 +1162,8 @@ weather-storm.png = weather-storm-symbolic.svg
 
         if (this.lastBuildId != json.dt || !this.lastBuildDate) {
             this.lastBuildId = json.dt;
-            this.lastBuildDate = new Date(this.lastBuildId * 1000);
+            //            this.lastBuildDate = new Date(this.lastBuildId * 1000);
+            this.lastBuildDate = now;
         }
 
         switch (this._pressure_units) {
@@ -1245,16 +1250,16 @@ weather-storm.png = weather-storm-symbolic.svg
         let lastBuild = '-';
 
         if (this._clockFormat == "24h") {
-            sunrise = new Date(sunrise * 1000).toLocaleFormat("%R");
-            sunset = new Date(sunset * 1000).toLocaleFormat("%R");
+            sunrise = sunrise.toLocaleFormat("%R");
+            sunset = sunset.toLocaleFormat("%R");
             lastBuild = this.lastBuildDate.toLocaleFormat("%R");
         } else {
-            sunrise = new Date(sunrise * 1000).toLocaleFormat("%I:%M %p");
-            sunset = new Date(sunset * 1000).toLocaleFormat("%I:%M %p");
+            sunrise = sunrise.toLocaleFormat("%I:%M %p");
+            sunset = sunset.toLocaleFormat("%I:%M %p");
             lastBuild = this.lastBuildDate.toLocaleFormat("%I:%M %p");
         }
 
-        let beginOfDay = new Date(new Date().setHours(0, 0, 0, 0));
+        let beginOfDay = new Date(now.setHours(0, 0, 0, 0));
         let d = Math.floor((this.lastBuildDate.getTime() - beginOfDay.getTime()) / 86400000);
         if (d < 0) {
             lastBuild = _("Yesterday");
