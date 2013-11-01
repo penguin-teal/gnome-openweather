@@ -1255,7 +1255,7 @@ weather-storm.png = weather-storm-symbolic.svg
         }
 
         let beginOfDay = new Date(new Date().setHours(0, 0, 0, 0));
-        let d = Math.floor((beginOfDay.getTime() - this.lastBuildDate.getTime()) / 86400000);
+        let d = Math.floor((this.lastBuildDate.getTime() - beginOfDay.getTime()) / 86400000);
         if (d < 0) {
             lastBuild = _("Yesterday");
             if (d < -1)
