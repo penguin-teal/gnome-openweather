@@ -284,8 +284,12 @@ const WeatherMenuButton = new Lang.Class({
         this._settings = Convenience.getSettings(WEATHER_SETTINGS_SCHEMA);
         this._settingsC = this._settings.connect("changed", function() {
             that.rebuildFutureWeatherUi();
-            that.refreshWeatherCurrent(false);
-            that.refreshWeatherForecast(false);
+            if (that.locationChanged()) {
+                that.currentWeatherCache = 'undefined';
+                that.forecastWeatherCache = 'undefined';
+            }
+            that.parseWeatherCurrent();
+            that.parseWeatherForecast();
         });
     },
 
@@ -298,9 +302,21 @@ const WeatherMenuButton = new Lang.Class({
             schema: schemaInterface
         });
         this._settingsInterfaceC = this._settingsInterface.connect("changed", function() {
-            that.refreshWeatherCurrent(false);
-            that.refreshWeatherForecast(false);
+            if (that.locationChanged()) {
+                that.currentWeatherCache = 'undefined';
+                that.forecastWeatherCache = 'undefined';
+            }
+            that.parseWeatherCurrent();
+            that.parseWeatherForecast();
         });
+    },
+
+    locationChanged: function() {
+        let location = this.extractCity(this._city);
+        if (this.oldLocation != location) {
+            return true;
+        }
+        return false;
     },
 
     get _clockFormat() {
@@ -1088,253 +1104,268 @@ weather-storm.png = weather-storm-symbolic.svg
         return 0;
     },
 
+    parseWeatherCurrent: function() {
+        if (this.currentWeatherCache == 'undefined') {
+            this.refreshWeatherCurrent();
+            return;
+        }
+
+        if (this._old_position_in_panel != this._position_in_panel) {
+            switch (this._old_position_in_panel) {
+                case WeatherPosition.LEFT:
+                    Main.panel._leftBox.remove_actor(this.actor);
+                    break;
+                case WeatherPosition.CENTER:
+                    Main.panel._centerBox.remove_actor(this.actor);
+                    break;
+                case WeatherPosition.RIGHT:
+                    Main.panel._rightBox.remove_actor(this.actor);
+                    break;
+            }
+
+            let children = null;
+            switch (this._position_in_panel) {
+                case WeatherPosition.LEFT:
+                    children = Main.panel._leftBox.get_children();
+                    Main.panel._leftBox.insert_child_at_index(this.actor, children.length);
+                    break;
+                case WeatherPosition.CENTER:
+                    children = Main.panel._centerBox.get_children();
+                    Main.panel._centerBox.insert_child_at_index(this.actor, children.length);
+                    break;
+                case WeatherPosition.RIGHT:
+                    children = Main.panel._rightBox.get_children();
+                    Main.panel._rightBox.insert_child_at_index(this.actor, 0);
+                    break;
+            }
+            this._old_position_in_panel = this._position_in_panel;
+        }
+
+        let json = this.currentWeatherCache;
+        // Refresh current weather
+        let location = this.extractLocation(this._city);
+
+        let comment = json.weather[0].description;
+        if (this._translate_condition)
+            comment = this.get_weather_condition(json.weather[0].id);
+
+        let temperature = json.main.temp;
+        let cloudiness = json.clouds.all;
+        let humidity = json.main.humidity + ' %';
+        let pressure = json.main.pressure;
+        let pressure_unit = 'hPa';
+
+        let wind_direction = this.get_wind_direction(json.wind.deg);
+        let wind = json.wind.speed;
+        let wind_unit = 'm/s';
+        let iconname = this.get_weather_icon_safely(json.weather[0].id);
+
+        let sunrise = json.sys.sunrise;
+        let sunset = json.sys.sunset;
+
+        if (typeof this.lastBuildId == 'undefined')
+            this.lastBuildId = 0;
+
+        if (typeof this.lastBuildDate == 'undefined')
+            this.lastBuildDate = 0;
+
+        if (this.lastBuildId != json.dt || !this.lastBuildDate) {
+            this.lastBuildId = json.dt;
+            this.lastBuildDate = new Date(this.lastBuildId * 1000);
+        }
+
+        switch (this._pressure_units) {
+            case WeatherPressureUnits.inHg:
+                pressure = this.toInHg(pressure);
+                pressure_unit = "inHg";
+                break;
+
+            case WeatherPressureUnits.hPa:
+                pressure = Math.round(pressure * 10) / 10;
+                pressure_unit = "hPa";
+                break;
+
+            case WeatherPressureUnits.bar:
+                pressure = Math.round((pressure / 1000) * 10) / 10;
+                pressure_unit = "bar";
+                break;
+
+            case WeatherPressureUnits.Pa:
+                pressure = Math.round((pressure * 100) * 10) / 10;
+                pressure_unit = "Pa";
+                break;
+
+            case WeatherPressureUnits.kPa:
+                pressure = Math.round((pressure / 10) * 10) / 10;
+                pressure_unit = "kPa";
+                break;
+
+            case WeatherPressureUnits.atm:
+                pressure = Math.round((pressure * 0.000986923267) * 10) / 10;
+                pressure_unit = "atm";
+                break;
+
+            case WeatherPressureUnits.at:
+                pressure = Math.round((pressure * 0.00101971621298) * 10) / 10;
+                pressure_unit = "at";
+                break;
+
+            case WeatherPressureUnits.Torr:
+                pressure = Math.round((pressure * 0.750061683) * 10) / 10;
+                pressure_unit = "Torr";
+                break;
+
+            case WeatherPressureUnits.psi:
+                pressure = Math.round((pressure * 0.0145037738) * 10) / 10;
+                pressure_unit = "psi";
+                break;
+        }
+
+        switch (this._units) {
+            case WeatherUnits.FAHRENHEIT:
+                temperature = this.toFahrenheit(temperature);
+                break;
+
+            case WeatherUnits.CELSIUS:
+                temperature = Math.round(temperature * 10) / 10;
+                break;
+
+            case WeatherUnits.KELVIN:
+                temperature = this.toKelvin(temperature);
+                break;
+
+            case WeatherUnits.RANKINE:
+                temperature = this.toRankine(temperature);
+                break;
+
+            case WeatherUnits.REAUMUR:
+                temperature = this.toReaumur(temperature);
+                break;
+
+            case WeatherUnits.ROEMER:
+                temperature = this.toRoemer(temperature);
+                break;
+
+            case WeatherUnits.DELISLE:
+                temperature = this.toDelisle(temperature);
+                break;
+
+            case WeatherUnits.NEWTON:
+                temperature = this.toNewton(temperature);
+                break;
+        }
+
+        let lastBuild = '-';
+
+        if (this._clockFormat == "24h") {
+            sunrise = new Date(sunrise * 1000).toLocaleFormat("%R");
+            sunset = new Date(sunset * 1000).toLocaleFormat("%R");
+            lastBuild = this.lastBuildDate.toLocaleFormat("%R");
+        } else {
+            sunrise = new Date(sunrise * 1000).toLocaleFormat("%I:%M %p");
+            sunset = new Date(sunset * 1000).toLocaleFormat("%I:%M %p");
+            lastBuild = this.lastBuildDate.toLocaleFormat("%I:%M %p");
+        }
+
+        let beginOfDay = new Date(new Date().setHours(0, 0, 0, 0));
+        let d = Math.floor((beginOfDay.getTime() - this.lastBuildDate.getTime()) / 86400000);
+        if (d < 0) {
+            lastBuild = _("Yesterday");
+            if (d < -1)
+                lastBuild = _("%s days ago").replace("%s", -1 * d);
+        }
+
+        this._currentWeatherIcon.icon_name = this._weatherIcon.icon_name = iconname;
+
+        let weatherInfoC = "";
+        let weatherInfoT = "";
+
+        if (this._comment_in_panel)
+            weatherInfoC = comment;
+
+        if (this._text_in_panel)
+            weatherInfoT = parseFloat(temperature).toLocaleString() + ' ' + this.unit_to_unicode();
+
+        this._weatherInfo.text = weatherInfoC + ((weatherInfoC && weatherInfoT) ? ", " : "") + weatherInfoT;
+
+        this._currentWeatherSummary.text = comment + ", " + parseFloat(temperature).toLocaleString() + ' ' + this.unit_to_unicode();
+        this._currentWeatherLocation.text = location;
+        this._currentWeatherTemperature.text = cloudiness + ' %';
+        this._currentWeatherHumidity.text = parseFloat(humidity).toLocaleString() + ' %';
+        this._currentWeatherPressure.text = parseFloat(pressure).toLocaleString() + ' ' + pressure_unit;
+        this._currentWeatherSunrise.text = sunrise;
+        this._currentWeatherSunset.text = sunset;
+        this._currentWeatherBuild.text = lastBuild;
+
+        // Override wind units with our preference
+        switch (this._wind_speed_units) {
+            case WeatherWindSpeedUnits.MPH:
+                wind = Math.round((wind * WEATHER_CONV_MPS_IN_MPH) * 10) / 10;
+                wind_unit = 'mph';
+                break;
+
+            case WeatherWindSpeedUnits.KPH:
+                wind = Math.round((wind * WEATHER_CONV_MPS_IN_KPH) * 10) / 10;
+                wind_unit = 'km/h';
+                break;
+
+            case WeatherWindSpeedUnits.MPS:
+                wind = Math.round(wind * 10) / 10;
+                break;
+
+            case WeatherWindSpeedUnits.KNOTS:
+                wind = Math.round((wind * WEATHER_CONV_MPS_IN_KNOTS) * 10) / 10;
+                wind_unit = 'kn';
+                break;
+
+            case WeatherWindSpeedUnits.FPS:
+                wind = Math.round((wind * WEATHER_CONV_MPS_IN_FPS) * 10) / 10;
+                wind_unit = 'ft/s';
+                break;
+
+            case WeatherWindSpeedUnits.BEAUFORT:
+                wind_unit = this.toBeaufort(wind, true);
+                wind = this.toBeaufort(wind);
+        }
+
+        if (!wind)
+            this._currentWeatherWind.text = '\u2013';
+        else if (wind == 0 || !wind_direction)
+            this._currentWeatherWind.text = parseFloat(wind).toLocaleString() + ' ' + wind_unit;
+        else // i.e. wind > 0 && wind_direction
+            this._currentWeatherWind.text = wind_direction + ' ' + parseFloat(wind).toLocaleString() + ' ' + wind_unit;
+
+    },
+
     refreshWeatherCurrent: function(recurse) {
         if (!this.extractId(this._city)) {
             this.updateCities();
-            return 0;
+            return;
         }
+        this.oldLocation = this.extractCity(this._city);
+
         let params = {
-            q: this.extractCity(this._city),
+            q: this.oldLocation,
             units: 'metric'
         };
-        if(this._appid)
+        if (this._appid)
             params['APPID'] = this._appid;
 
         this.load_json_async(WEATHER_URL_CURRENT, params, function(json) {
             if (!json)
-                return 0;
+                return;
 
             if (Number(json.cod) != 200)
-                return 0;
+                return;
+
+            if (this.currentWeatherCache != json)
+                this.currentWeatherCache = json;
 
             this.rebuildSelectCityItem();
 
+            this.parseWeatherCurrent();
+            this.parseWeatherForecast();
 
-            if (this._old_position_in_panel != this._position_in_panel) {
-                switch (this._old_position_in_panel) {
-                    case WeatherPosition.LEFT:
-                        Main.panel._leftBox.remove_actor(this.actor);
-                        break;
-                    case WeatherPosition.CENTER:
-                        Main.panel._centerBox.remove_actor(this.actor);
-                        break;
-                    case WeatherPosition.RIGHT:
-                        Main.panel._rightBox.remove_actor(this.actor);
-                        break;
-                }
-
-                let children = null;
-                switch (this._position_in_panel) {
-                    case WeatherPosition.LEFT:
-                        children = Main.panel._leftBox.get_children();
-                        Main.panel._leftBox.insert_child_at_index(this.actor, children.length);
-                        break;
-                    case WeatherPosition.CENTER:
-                        children = Main.panel._centerBox.get_children();
-                        Main.panel._centerBox.insert_child_at_index(this.actor, children.length);
-                        break;
-                    case WeatherPosition.RIGHT:
-                        children = Main.panel._rightBox.get_children();
-                        Main.panel._rightBox.insert_child_at_index(this.actor, 0);
-                        break;
-                }
-                this._old_position_in_panel = this._position_in_panel;
-            }
-
-            let location = this.extractLocation(this._city);
-
-            // Refresh current weather
-            let comment = json.weather[0].description;
-            if (this._translate_condition)
-                comment = this.get_weather_condition(json.weather[0].id);
-
-            let temperature = json.main.temp;
-            let cloudiness = json.clouds.all;
-            let humidity = json.main.humidity + ' %';
-            let pressure = json.main.pressure;
-            let pressure_unit = 'hPa';
-
-            let wind_direction = this.get_wind_direction(json.wind.deg);
-            let wind = json.wind.speed;
-            let wind_unit = 'm/s';
-            let iconname = this.get_weather_icon_safely(json.weather[0].id);
-
-            let sunrise = json.sys.sunrise;
-            let sunset = json.sys.sunset;
-
-            if (typeof this.lastBuildId == "undefined")
-                this.lastBuildId = 0;
-
-            if (typeof this.lastBuildDate == "undefined")
-                this.lastBuildDate = 0;
-
-            if (this.lastBuildId != json.dt || !this.lastBuildDate) {
-                this.lastBuildId = json.dt;
-                this.lastBuildDate = new Date();
-            }
-            let actualDate = new Date();
-            let d = Math.floor((actualDate.getTime() - this.lastBuildDate.getTime()) / 86400000);
-
-            switch (this._pressure_units) {
-                case WeatherPressureUnits.inHg:
-                    pressure = this.toInHg(pressure);
-                    pressure_unit = "inHg";
-                    break;
-
-                case WeatherPressureUnits.hPa:
-                    pressure = Math.round(pressure * 10) / 10;
-                    pressure_unit = "hPa";
-                    break;
-
-                case WeatherPressureUnits.bar:
-                    pressure = Math.round((pressure / 1000) * 10) / 10;
-                    pressure_unit = "bar";
-                    break;
-
-                case WeatherPressureUnits.Pa:
-                    pressure = Math.round((pressure * 100) * 10) / 10;
-                    pressure_unit = "Pa";
-                    break;
-
-                case WeatherPressureUnits.kPa:
-                    pressure = Math.round((pressure / 10) * 10) / 10;
-                    pressure_unit = "kPa";
-                    break;
-
-                case WeatherPressureUnits.atm:
-                    pressure = Math.round((pressure * 0.000986923267) * 10) / 10;
-                    pressure_unit = "atm";
-                    break;
-
-                case WeatherPressureUnits.at:
-                    pressure = Math.round((pressure * 0.00101971621298) * 10) / 10;
-                    pressure_unit = "at";
-                    break;
-
-                case WeatherPressureUnits.Torr:
-                    pressure = Math.round((pressure * 0.750061683) * 10) / 10;
-                    pressure_unit = "Torr";
-                    break;
-
-                case WeatherPressureUnits.psi:
-                    pressure = Math.round((pressure * 0.0145037738) * 10) / 10;
-                    pressure_unit = "psi";
-                    break;
-            }
-
-            switch (this._units) {
-                case WeatherUnits.FAHRENHEIT:
-                    temperature = this.toFahrenheit(temperature);
-                    break;
-
-                case WeatherUnits.CELSIUS:
-                    temperature = Math.round(temperature * 10) / 10;
-                    break;
-
-                case WeatherUnits.KELVIN:
-                    temperature = this.toKelvin(temperature);
-                    break;
-
-                case WeatherUnits.RANKINE:
-                    temperature = this.toRankine(temperature);
-                    break;
-
-                case WeatherUnits.REAUMUR:
-                    temperature = this.toReaumur(temperature);
-                    break;
-
-                case WeatherUnits.ROEMER:
-                    temperature = this.toRoemer(temperature);
-                    break;
-
-                case WeatherUnits.DELISLE:
-                    temperature = this.toDelisle(temperature);
-                    break;
-
-                case WeatherUnits.NEWTON:
-                    temperature = this.toNewton(temperature);
-                    break;
-            }
-
-            let lastBuild = '-';
-
-            if (this._clockFormat == "24h") {
-                sunrise = new Date(sunrise * 1000).toLocaleFormat("%R");
-                sunset = new Date(sunset * 1000).toLocaleFormat("%R");
-                lastBuild = this.lastBuildDate.toLocaleFormat("%R");
-            } else {
-                sunrise = new Date(sunrise * 1000).toLocaleFormat("%I:%M %p");
-                sunset = new Date(sunset * 1000).toLocaleFormat("%I:%M %p");
-                lastBuild = this.lastBuildDate.toLocaleFormat("%I:%M %p");
-            }
-
-            if (d >= 1) {
-                lastBuild = _("Yesterday");
-                if (d > 1)
-                    lastBuild = _("%s days ago").replace("%s", d);
-            }
-
-            this._currentWeatherIcon.icon_name = this._weatherIcon.icon_name = iconname;
-
-            let weatherInfoC = "";
-            let weatherInfoT = "";
-
-            if (this._comment_in_panel)
-                weatherInfoC = comment;
-
-            if (this._text_in_panel)
-                weatherInfoT = parseFloat(temperature).toLocaleString() + ' ' + this.unit_to_unicode();
-
-            this._weatherInfo.text = weatherInfoC + ((weatherInfoC && weatherInfoT) ? ", " : "") + weatherInfoT;
-
-            this._currentWeatherSummary.text = comment + ", " + parseFloat(temperature).toLocaleString() + ' ' + this.unit_to_unicode();
-            this._currentWeatherLocation.text = location;
-            this._currentWeatherTemperature.text = cloudiness + ' %';
-            this._currentWeatherHumidity.text = parseFloat(humidity).toLocaleString() + ' %';
-            this._currentWeatherPressure.text = parseFloat(pressure).toLocaleString() + ' ' + pressure_unit;
-            this._currentWeatherSunrise.text = sunrise;
-            this._currentWeatherSunset.text = sunset;
-            this._currentWeatherBuild.text = lastBuild;
-
-            // Override wind units with our preference
-            switch (this._wind_speed_units) {
-                case WeatherWindSpeedUnits.MPH:
-                    wind = Math.round((wind * WEATHER_CONV_MPS_IN_MPH) * 10) / 10;
-                    wind_unit = 'mph';
-                    break;
-
-                case WeatherWindSpeedUnits.KPH:
-                    wind = Math.round((wind * WEATHER_CONV_MPS_IN_KPH) * 10) / 10;
-                    wind_unit = 'km/h';
-                    break;
-
-                case WeatherWindSpeedUnits.MPS:
-                    wind = Math.round(wind * 10) / 10;
-                    break;
-
-                case WeatherWindSpeedUnits.KNOTS:
-                    wind = Math.round((wind * WEATHER_CONV_MPS_IN_KNOTS) * 10) / 10;
-                    wind_unit = 'kn';
-                    break;
-
-                case WeatherWindSpeedUnits.FPS:
-                    wind = Math.round((wind * WEATHER_CONV_MPS_IN_FPS) * 10) / 10;
-                    wind_unit = 'ft/s';
-                    break;
-
-                case WeatherWindSpeedUnits.BEAUFORT:
-                    wind_unit = this.toBeaufort(wind, true);
-                    wind = this.toBeaufort(wind);
-            }
-
-            if (!wind)
-                this._currentWeatherWind.text = '\u2013';
-            else if (wind == 0 || !wind_direction)
-                this._currentWeatherWind.text = parseFloat(wind).toLocaleString() + ' ' + wind_unit;
-            else // i.e. wind > 0 && wind_direction
-                this._currentWeatherWind.text = wind_direction + ' ' + parseFloat(wind).toLocaleString() + ' ' + wind_unit;
-
-            return 0;
         });
 
         //         Repeatedly refresh weather if recurse is set
@@ -1343,7 +1374,91 @@ weather-storm.png = weather-storm-symbolic.svg
                 this.refreshWeatherCurrent(true);
             }));
         }
-        return 0;
+    },
+
+    parseWeatherForecast: function() {
+        if (this.forecastWeatherCache == 'undefined') {
+            this.refreshWeatherForecast();
+            return;
+        }
+
+        let forecast = this.forecastWeatherCache;
+        let beginOfDay = new Date(new Date().setHours(0, 0, 0, 0));
+
+        // Refresh forecast
+        for (let i = 0; i < this._days_forecast; i++) {
+            let forecastUi = this._forecast[i];
+            let forecastData = forecast[i];
+            if (forecastData == 'undefined')
+                continue;
+
+            let t_low = forecastData.temp.min;
+            let t_high = forecastData.temp.max;
+
+            switch (this._units) {
+                case WeatherUnits.FAHRENHEIT:
+                    t_low = this.toFahrenheit(t_low);
+                    t_high = this.toFahrenheit(t_high);
+                    break;
+
+                case WeatherUnits.CELSIUS:
+                    t_low = Math.round(t_low * 10) / 10;
+                    t_high = Math.round(t_high * 10) / 10;
+                    break;
+
+                case WeatherUnits.KELVIN:
+                    t_low = this.toKelvin(t_low);
+                    t_high = this.toKelvin(t_high);
+                    break;
+
+                case WeatherUnits.RANKINE:
+                    t_low = this.toRankine(t_low);
+                    t_high = this.toRankine(t_high);
+                    break;
+
+                case WeatherUnits.REAUMUR:
+                    t_low = this.toReaumur(t_low);
+                    t_high = this.toReaumur(t_high);
+                    break;
+
+                case WeatherUnits.ROEMER:
+                    t_low = this.toRoemer(t_low);
+                    t_high = this.toRoemer(t_high);
+                    break;
+
+                case WeatherUnits.DELISLE:
+                    t_low = this.toDelisle(t_low);
+                    t_high = this.toDelisle(t_high);
+                    break;
+
+                case WeatherUnits.NEWTON:
+                    t_low = this.toNewton(t_low);
+                    t_high = this.toNewton(t_high);
+                    break;
+            }
+
+            let comment = forecastData.weather[0].description;
+            if (this._translate_condition)
+                comment = this.get_weather_condition(forecastData.weather[0].id);
+
+            let forecastDate = new Date(forecastData.dt * 1000);
+            let dayLeft = Math.floor((forecastDate.getTime() - beginOfDay.getTime()) / 86400000);
+
+            let date_string = _("Today");
+            if (dayLeft == 1)
+                date_string = _("Tomorrow");
+            else if (dayLeft > 1)
+                date_string = _("In %s days").replace("%s", dayLeft);
+            else if (dayLeft == -1)
+                date_string = _("Yesterday");
+            else if (dayLeft < -1)
+                date_string = _("%s days ago").replace("%s", -1 * dayLeft);
+
+            forecastUi.Day.text = date_string + ' (' + this.get_locale_day(forecastDate.getDay()) + ')';
+            forecastUi.Temperature.text = '\u2193 ' + parseFloat(t_low).toLocaleString() + ' ' + this.unit_to_unicode() + '    \u2191 ' + parseFloat(t_high).toLocaleString() + ' ' + this.unit_to_unicode();
+            forecastUi.Summary.text = comment;
+            forecastUi.Icon.icon_name = this.get_weather_icon_safely(forecastData.weather[0].id);
+        }
     },
 
     refreshWeatherForecast: function(recurse) {
@@ -1352,97 +1467,27 @@ weather-storm.png = weather-storm-symbolic.svg
             return 0;
         }
 
+        this.oldLocation = this.extractCity(this._city);
+
         let params = {
-            q: this.extractCity(this._city),
+            q: this.oldLocation,
             units: 'metric',
-            cnt : '10'
+            cnt: '13'
         };
         if(this._appid)
             params['APPID'] = this._appid;
 
         this.load_json_async(WEATHER_URL_FORECAST, params, function(json) {
             if (!json)
-                return 0;
+                return;
 
             if (Number(json.cod) != 200)
-                return 0;
+                return;
 
-            let forecast = json.list;
+            if (this.forecastWeatherCache != json.list)
+                this.forecastWeatherCache = json.list;
 
-            // Refresh forecast
-            for (let i = 0; i < this._days_forecast; i++) {
-                let forecastUi = this._forecast[i];
-                let forecastData = forecast[i];
-
-                let t_low = forecastData.temp.min;
-                let t_high = forecastData.temp.max;
-
-                switch (this._units) {
-                    case WeatherUnits.FAHRENHEIT:
-                        t_low = this.toFahrenheit(t_low);
-                        t_high = this.toFahrenheit(t_high);
-                        break;
-
-                    case WeatherUnits.CELSIUS:
-                        t_low = Math.round(t_low * 10) / 10;
-                        t_high = Math.round(t_high * 10) / 10;
-                        break;
-
-                    case WeatherUnits.KELVIN:
-                        t_low = this.toKelvin(t_low);
-                        t_high = this.toKelvin(t_high);
-                        break;
-
-                    case WeatherUnits.RANKINE:
-                        t_low = this.toRankine(t_low);
-                        t_high = this.toRankine(t_high);
-                        break;
-
-                    case WeatherUnits.REAUMUR:
-                        t_low = this.toReaumur(t_low);
-                        t_high = this.toReaumur(t_high);
-                        break;
-
-                    case WeatherUnits.ROEMER:
-                        t_low = this.toRoemer(t_low);
-                        t_high = this.toRoemer(t_high);
-                        break;
-
-                    case WeatherUnits.DELISLE:
-                        t_low = this.toDelisle(t_low);
-                        t_high = this.toDelisle(t_high);
-                        break;
-
-                    case WeatherUnits.NEWTON:
-                        t_low = this.toNewton(t_low);
-                        t_high = this.toNewton(t_high);
-                        break;
-                }
-
-                let comment = forecastData.weather[0].description;
-                if (this._translate_condition)
-                    comment = this.get_weather_condition(forecastData.weather[0].id);
-
-                let forecastDate = new Date(forecastData.dt * 1000);
-                let actualDate = new Date();
-                let dayLeft = Math.floor((actualDate.getTime() - forecastDate.getTime()) / 1000 / 60 / 60 / 24);
-
-                let date_string = _("Today");
-                if (dayLeft == -1)
-                    date_string = _("Tomorrow");
-                else if (dayLeft < -1)
-                    date_string = _("In %s days").replace("%s", -1 * dayLeft);
-                else if (dayLeft == 1)
-                    date_string = _("Yesterday");
-                else if (dayLeft > 1)
-                    date_string = _("%s days ago").replace("%s", dayLeft);
-
-                forecastUi.Day.text = date_string + ' (' + this.get_locale_day(forecastDate.getDay()) + ')';
-                forecastUi.Temperature.text = '\u2193 ' + parseFloat(t_low).toLocaleString() + ' ' + this.unit_to_unicode() + '    \u2191 ' + parseFloat(t_high).toLocaleString() + ' ' + this.unit_to_unicode();
-                forecastUi.Summary.text = comment;
-                forecastUi.Icon.icon_name = this.get_weather_icon_safely(forecastData.weather[0].id);
-            }
-            return 0;
+            this.parseWeatherForecast();
         });
 
         //         Repeatedly refresh weather if recurse is set
