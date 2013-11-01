@@ -139,7 +139,7 @@ const WeatherMenuButton = new Lang.Class({
             text: _('...')
         });
 
-        if (typeof St.TextDirection == "undefined") {
+        if (typeof St.TextDirection == 'undefined') {
             // Panel icon
             this._weatherIcon = new St.Icon({
                 icon_name: 'view-refresh' + this.icon_type(),
@@ -191,7 +191,7 @@ const WeatherMenuButton = new Lang.Class({
                 Main.panel._rightBox.insert_child_at_index(this.actor, 0);
                 break;
         }
-        if (typeof Main.panel._menus == "undefined")
+        if (typeof Main.panel._menus == 'undefined')
             Main.panel.menuManager.addMenu(this.menu);
         else
             Main.panel._menus.addMenu(this.menu);
@@ -570,7 +570,7 @@ const WeatherMenuButton = new Lang.Class({
         if (!this._settings)
             this.loadConfig();
         let key = this._settings.get_string(WEATHER_OWM_API_KEY);
-        return (key.length == 32)?key:'';
+        return (key.length == 32) ? key : '';
     },
 
     set _appid(v) {
@@ -589,7 +589,7 @@ const WeatherMenuButton = new Lang.Class({
         if (cities && typeof cities == "string")
             cities = [cities];
         if (!cities[0])
-            return 0;
+            return;
 
         for (let i = 0; cities.length > i; i++) {
             item = new PopupMenu.PopupMenuItem(this.extractLocation(cities[i]));
@@ -612,7 +612,6 @@ const WeatherMenuButton = new Lang.Class({
         else
             this._selectCity.actor.show();
 
-        return 0;
     },
 
     extractLocation: function() {
@@ -665,7 +664,7 @@ const WeatherMenuButton = new Lang.Class({
                     q: cities[a],
                     type: 'like'
                 };
-                if(this._appid)
+                if (this._appid)
                     params['APPID'] = this._appid;
 
                 this.load_json_async(WEATHER_URL_CURRENT, params, function() {
@@ -693,7 +692,6 @@ const WeatherMenuButton = new Lang.Class({
         }
         this.refreshWeatherCurrent(false);
         this.refreshWeatherForecast(false);
-        return;
     },
 
     _onPreferencesActivate: function() {
@@ -702,7 +700,7 @@ const WeatherMenuButton = new Lang.Class({
     },
 
     _onOpenStateChanged: function(menu, open) {
-        if (open && typeof this._forecastScrollBox != "undefined" && typeof this._forecastBox != "undefined" && typeof this._currentWeather != "undefined") {
+        if (open && typeof this._forecastScrollBox != 'undefined' && typeof this._forecastBox != 'undefined' && typeof this._currentWeather != 'undefined') {
             this._forecastScrollBox.set_width(this._currentWeather.get_width());
             if (this._forecastBox.get_width() > this._currentWeather.get_width()) {
                 this._forecastScrollBox.hscroll.margin_top = 10;
@@ -767,8 +765,6 @@ weather-snow.png = weather-snow-symbolic.svg
 weather-storm.png = weather-storm-symbolic.svg
 
 */
-        //        this._weatherInfo.text += "\ncode = " + code;
-        //        this._weatherInfo.text += "\ncode = " + parseInt(code, 10);
         switch (parseInt(code, 10)) {
             case 200: //thunderstorm with light rain
             case 201: //thunderstorm with rain
@@ -971,43 +967,34 @@ weather-storm.png = weather-storm-symbolic.svg
 
     toFahrenheit: function(t) {
         return String(Math.round(((Number(t) * 1.8) + 32) * 10) / 10);
-        //        return String(Math.round((Number(t) * 1.8) + 32));
     },
 
     toKelvin: function(t) {
         return String(Math.round((Number(t) + 273.15) * 10) / 10);
-        //        return String(Math.round(Number(t) + 273.15));
     },
 
     toRankine: function(t) {
         return String(Math.round(((Number(t) * 1.8) + 491.67) * 10) / 10);
-        //        return String(Math.round((Number(t) * 1.8) + 491.67));
     },
 
     toReaumur: function(t) {
         return String(Math.round((Number(t) * 0.8) * 10) / 10);
-        //        return String(Math.round(Number(t) * 0.8));
     },
 
     toRoemer: function(t) {
         return String(Math.round(((Number(t) * 21 / 40) + 7.5) * 10) / 10);
-        //        return String(Math.round((Number(t) * 21 / 40) + 7.5));
     },
 
     toDelisle: function(t) {
         return String(Math.round(((100 - Number(t)) * 1.5) * 10) / 10);
-        //        return String(Math.round((100 - Number(t)) * 1.5));
     },
 
     toNewton: function(t) {
         return String(Math.round((Number(t) - 0.33) * 10) / 10);
-        //        return String(Math.round(Number(t) - 0.33));
     },
 
     toInHg: function(p /*, t*/ ) {
-        //        return Math.round((p * (3386.39 - ((t - 32) * 0.003407143))));
         return Math.round((p / 33.86530749) * 10) / 10;
-        //        return Math.round(p / 33.86530749);
     },
 
     toBeaufort: function(w, t) {
@@ -1101,7 +1088,7 @@ weather-storm.png = weather-storm-symbolic.svg
                 return;
             }
         });
-        return 0;
+        return;
     },
 
     parseWeatherCurrent: function() {
@@ -1464,7 +1451,7 @@ weather-storm.png = weather-storm-symbolic.svg
     refreshWeatherForecast: function(recurse) {
         if (!this.extractId(this._city)) {
             this.updateCities();
-            return 0;
+            return;
         }
 
         this.oldLocation = this.extractCity(this._city);
@@ -1474,7 +1461,7 @@ weather-storm.png = weather-storm-symbolic.svg
             units: 'metric',
             cnt: '13'
         };
-        if(this._appid)
+        if (this._appid)
             params['APPID'] = this._appid;
 
         this.load_json_async(WEATHER_URL_FORECAST, params, function(json) {
@@ -1496,7 +1483,6 @@ weather-storm.png = weather-storm-symbolic.svg
                 this.refreshWeatherForecast(true);
             }));
         }
-        return 0;
     },
 
     destroyCurrentWeather: function() {

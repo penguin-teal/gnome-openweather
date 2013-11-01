@@ -376,7 +376,7 @@ const WeatherPrefsWidget = new GObject.Class({
                 units: 'metric',
                 q: location
             };
-            if(this._appid)
+            if (this._appid)
                 params['APPID'] = this._appid;
             if (testLocation(location) == 0)
                 that.loadJsonAsync(WEATHER_URL_FIND, params, function() {
@@ -442,7 +442,7 @@ const WeatherPrefsWidget = new GObject.Class({
                     q: name,
                     type: 'accurate'
                 };
-                if(this._appid)
+                if (this._appid)
                     params['APPID'] = this._appid;
                 that.loadJsonAsync(WEATHER_URL_CURRENT, params, function() {
                     if (!arguments[0])
