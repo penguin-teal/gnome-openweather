@@ -141,7 +141,7 @@ const WeatherMenuButton = new Lang.Class({
             text: _('...')
         });
 
-        if (typeof St.TextDirection == 'undefined') {
+        if (St.TextDirection == undefined) {
             // Panel icon
             this._weatherIcon = new St.Icon({
                 icon_name: 'view-refresh' + this.icon_type(),
@@ -193,7 +193,7 @@ const WeatherMenuButton = new Lang.Class({
                 Main.panel._rightBox.insert_child_at_index(this.actor, 0);
                 break;
         }
-        if (typeof Main.panel._menus == 'undefined')
+        if (Main.panel._menus == undefined)
             Main.panel.menuManager.addMenu(this.menu);
         else
             Main.panel._menus.addMenu(this.menu);
@@ -287,8 +287,8 @@ const WeatherMenuButton = new Lang.Class({
         this._settingsC = this._settings.connect("changed", function() {
             that.rebuildFutureWeatherUi();
             if (that.locationChanged()) {
-                that.currentWeatherCache = 'undefined';
-                that.forecastWeatherCache = 'undefined';
+                that.currentWeatherCache = undefined;
+                that.forecastWeatherCache = undefined;
             }
             that.parseWeatherCurrent();
             that.parseWeatherForecast();
@@ -305,8 +305,8 @@ const WeatherMenuButton = new Lang.Class({
         });
         this._settingsInterfaceC = this._settingsInterface.connect("changed", function() {
             if (that.locationChanged()) {
-                that.currentWeatherCache = 'undefined';
-                that.forecastWeatherCache = 'undefined';
+                that.currentWeatherCache = undefined;
+                that.forecastWeatherCache = undefined;
             }
             that.parseWeatherCurrent();
             that.parseWeatherForecast();
@@ -702,7 +702,7 @@ const WeatherMenuButton = new Lang.Class({
     },
 
     _onOpenStateChanged: function(menu, open) {
-        if (open && typeof this._forecastScrollBox != 'undefined' && typeof this._forecastBox != 'undefined' && typeof this._currentWeather != 'undefined') {
+        if (open && this._forecastScrollBox != undefined && this._forecastBox != undefined && this._currentWeather != undefined) {
             this._forecastScrollBox.set_width(this._currentWeather.get_width());
             if (this._forecastBox.get_width() > this._currentWeather.get_width()) {
                 this._forecastScrollBox.hscroll.margin_top = 10;
@@ -1096,7 +1096,7 @@ weather-storm.png = weather-storm-symbolic.svg
     },
 
     parseWeatherCurrent: function() {
-        if (this.currentWeatherCache == 'undefined') {
+        if (this.currentWeatherCache == undefined) {
             this.refreshWeatherCurrent();
             return;
         }
@@ -1156,10 +1156,10 @@ weather-storm.png = weather-storm-symbolic.svg
 
         let iconname = this.get_weather_icon_safely(json.weather[0].id, now < sunrise || now > sunset);
 
-        if (typeof this.lastBuildId == 'undefined')
+        if (this.lastBuildId == undefined)
             this.lastBuildId = 0;
 
-        if (typeof this.lastBuildDate == 'undefined')
+        if (this.lastBuildDate == undefined)
             this.lastBuildDate = 0;
 
         if (this.lastBuildId != json.dt || !this.lastBuildDate) {
@@ -1371,7 +1371,7 @@ weather-storm.png = weather-storm-symbolic.svg
     },
 
     parseWeatherForecast: function() {
-        if (this.forecastWeatherCache == 'undefined') {
+        if (this.forecastWeatherCache == undefined) {
             this.refreshWeatherForecast();
             return;
         }
@@ -1383,7 +1383,7 @@ weather-storm.png = weather-storm-symbolic.svg
         for (let i = 0; i < this._days_forecast; i++) {
             let forecastUi = this._forecast[i];
             let forecastData = forecast[i];
-            if (forecastData == 'undefined')
+            if (forecastData == undefined)
                 continue;
 
             let t_low = forecastData.temp.min;

@@ -159,7 +159,7 @@ const WeatherPrefsWidget = new GObject.Class({
         this.Window.get_object("tree-toolbutton-remove").sensitive = Boolean(this.city.length);
 
         if (mCities != this.city) {
-            if (typeof this.liststore != "undefined")
+            if (this.liststore != undefined)
                 this.liststore.clear();
 
             if (this.city.length > 0) {
@@ -292,7 +292,7 @@ const WeatherPrefsWidget = new GObject.Class({
     selectionChanged: function(select) {
         let a = select.get_selected_rows(this.liststore)[0][0];
 
-        if (typeof a != "undefined")
+        if (a != undefined)
             if (this.actual_city != parseInt(a.to_string()))
                 this.actual_city = parseInt(a.to_string());
     },
@@ -352,7 +352,7 @@ const WeatherPrefsWidget = new GObject.Class({
                 id: id
             }, function() {
                 d.sensitive = 0;
-                if (typeof arguments[0] == "undefined")
+                if (arguments[0] == undefined)
                     return 0;
 
                 let city = arguments[0];
@@ -399,7 +399,7 @@ const WeatherPrefsWidget = new GObject.Class({
                     let current = this.liststore.get_iter_first();
 
                     for (var i in city) {
-                        if (typeof m == "undefined")
+                        if (m == undefined)
                             var m = {};
 
                         current = completionModel.append();
@@ -548,10 +548,10 @@ const WeatherPrefsWidget = new GObject.Class({
 
         let message = Soup.form_request_new_from_hash('GET', url, params);
 
-        if (typeof this.asyncSession == "undefined")
+        if (this.asyncSession == undefined)
             this.asyncSession = {};
 
-        if (typeof this.asyncSession[id] != "undefined" && this.asyncSession[id]) {
+        if (this.asyncSession[id] != undefined && this.asyncSession[id]) {
             _httpSession.abort();
             this.asyncSession[id] = 0;
         }
