@@ -702,6 +702,7 @@ const WeatherMenuButton = new Lang.Class({
     _onOpenStateChanged: function(menu, open) {
         if (open && this._forecastScrollBox != undefined && this._forecastBox != undefined && this._currentWeather != undefined) {
             this._forecastScrollBox.set_width(this._currentWeather.get_width());
+            this._forecastScrollBox.show();
             if (this._forecastBox.get_width() > this._currentWeather.get_width()) {
                 this._forecastScrollBox.hscroll.margin_top = 10;
                 this._forecastScrollBox.hscroll.show();
@@ -1650,6 +1651,7 @@ weather-storm.png = weather-storm-symbolic.svg
         this._forecastScrollBox.hscroll.hide();
         this._forecastScrollBox.vscrollbar_policy = Gtk.PolicyType.NEVER;
         this._forecastScrollBox.hscrollbar_policy = Gtk.PolicyType.AUTOMATIC;
+        this._forecastScrollBox.hide();
 
         this._futureWeather.set_child(this._forecastScrollBox);
 
