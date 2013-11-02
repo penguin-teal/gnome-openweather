@@ -1164,8 +1164,7 @@ weather-storm.png = weather-storm-symbolic.svg
 
         if (this.lastBuildId != json.dt || !this.lastBuildDate) {
             this.lastBuildId = json.dt;
-            //            this.lastBuildDate = new Date(this.lastBuildId * 1000);
-            this.lastBuildDate = now;
+            this.lastBuildDate = new Date(this.lastBuildId * 1000);
         }
 
         switch (this._pressure_units) {
@@ -1261,7 +1260,7 @@ weather-storm.png = weather-storm-symbolic.svg
             lastBuild = this.lastBuildDate.toLocaleFormat("%I:%M %p");
         }
 
-        let beginOfDay = new Date(now.setHours(0, 0, 0, 0));
+        let beginOfDay = new Date(new Date().setHours(0, 0, 0, 0));
         let d = Math.floor((this.lastBuildDate.getTime() - beginOfDay.getTime()) / 86400000);
         if (d < 0) {
             lastBuild = _("Yesterday");
