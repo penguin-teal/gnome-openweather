@@ -1321,12 +1321,12 @@ const WeatherMenuButton = new Lang.Class({
             let lastBuild = '-';
 
             if (this._clockFormat == "24h") {
-                sunrise = new Date(actualDate.toLocaleDateString() + " " + sunrise).toLocaleFormat("%R");
-                sunset = new Date(actualDate.toLocaleDateString() + " " + sunset).toLocaleFormat("%R");
+                sunrise = new Date(actualDate.toDateString() + " " + sunrise).toLocaleFormat("%R");
+                sunset = new Date(actualDate.toDateString() + " " + sunset).toLocaleFormat("%R");
                 lastBuild = this.lastBuildDate.toLocaleFormat("%R");
             } else {
-                sunrise = new Date(actualDate.toLocaleDateString() + " " + sunrise).toLocaleFormat("%I:%M %p");
-                sunset = new Date(actualDate.toLocaleDateString() + " " + sunset).toLocaleFormat("%I:%M %p");
+                sunrise = new Date(actualDate.toDateString() + " " + sunrise).toLocaleFormat("%I:%M %p");
+                sunset = new Date(actualDate.toDateString() + " " + sunset).toLocaleFormat("%I:%M %p");
                 lastBuild = this.lastBuildDate.toLocaleFormat("%I:%M %p");
             }
 
