@@ -242,10 +242,13 @@ const WeatherMenuButton = new Lang.Class({
                 this.updateCities();
                 cityId = this.extractId(this._city);
             }
+            let url = "http://openweathermap.org";
             if (cityId)
-                Util.spawn(["gnome-open", "http://openweathermap.org/city/" + cityId]);
-            else
-                Util.spawn(["gnome-open", "http://openweathermap.org"]);
+                url += "/city/" + cityId;
+            if (this._appid)
+                url += "?APPID=" + this._appid;
+
+            Util.spawn(["gnome-open", url]);
         }));
 
         this.menu.addMenuItem(item);
