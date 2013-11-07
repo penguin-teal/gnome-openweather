@@ -235,6 +235,38 @@ const WeatherMenuButton = new Lang.Class({
         let item = new PopupMenu.PopupSeparatorMenuItem();
         this.menu.addMenuItem(item);
 
+        let item = new PopupMenu.PopupMenuItem(_("Weather data provided by:   ") + ("http://openweathermap.org/"), {
+            style_class: 'weather-provider'
+        });
+        item.connect('activate', Lang.bind(this, function() {
+            let cityId = this.extractId(this._city);
+            if (!cityId) {
+                this.updateCities();
+                cityId = this.extractId(this._city);
+            }
+            let url = "http://openweathermap.org";
+            if (cityId)
+                url += "/city/" + cityId;
+            if (this._appid)
+                url += "?APPID=" + this._appid;
+
+            try {
+                Util.trySpawn(["gnome-open", url]);
+            } catch (err) {
+                try {
+                    Util.trySpawn(["xdg-open", url]);
+                } catch (err) {
+                    let title = _("Execution of 'gnome-open' and 'xdg-open' failed.\nCan not open %s").format(url);
+                    Main.notifyError(title, err.message);
+                }
+            }
+        }));
+
+        this.menu.addMenuItem(item);
+
+        let item = new PopupMenu.PopupSeparatorMenuItem();
+        this.menu.addMenuItem(item);
+
         this._selectCity = new PopupMenu.PopupSubMenuMenuItem(_("Locations"));
         this.menu.addMenuItem(this._selectCity);
         this.rebuildSelectCityItem();
@@ -1448,7 +1480,7 @@ weather-storm.png = weather-storm-symbolic.svg
             else if (dayLeft < -1)
                 date_string = _("%s days ago").replace("%s", -1 * dayLeft);
 
-            forecastUi.Day.text = date_string + ' (' + this.get_locale_day(forecastDate.getDay()) + ')';
+            forecastUi.Day.text = date_string + ' (' + this.get_locale_day(forecastDate.getDay()) + ')\n' + forecastDate.toLocaleDateString();
             forecastUi.Temperature.text = '\u2193 ' + parseFloat(t_low).toLocaleString() + ' ' + this.unit_to_unicode() + '    \u2191 ' + parseFloat(t_high).toLocaleString() + ' ' + this.unit_to_unicode();
             forecastUi.Summary.text = comment;
             forecastUi.Icon.icon_name = this.get_weather_icon_safely(forecastData.weather[0].id);
