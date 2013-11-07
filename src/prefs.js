@@ -144,7 +144,7 @@ const WeatherPrefsWidget = new GObject.Class({
         this.addSwitch("center_forecast");
         this.addLabel(_("Number of days in forecast"));
         this.addComboBox(["2", "3", "4", "5", "6", "7", "8", "9", "10"], "days_forecast");
-        this.addLabel(_("Enter your personal Api key from openweather.org"));
+        this.addLabel(_("Personal Api key from openweather.org"));
         this.addAppidEntry(("appid"));
     },
 
