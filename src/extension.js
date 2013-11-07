@@ -233,6 +233,26 @@ const WeatherMenuButton = new Lang.Class({
         let item = new PopupMenu.PopupSeparatorMenuItem();
         this.menu.addMenuItem(item);
 
+        let item = new PopupMenu.PopupMenuItem(_("Weather data provided by:   ") + ("http://openweathermap.org/"), {
+            style_class: 'weather-provider'
+        });
+        item.connect('activate', Lang.bind(this, function() {
+            let cityId = this.extractId(this._city);
+            if (!cityId) {
+                this.updateCities();
+                cityId = this.extractId(this._city);
+            }
+            if (cityId)
+                Util.spawn(["gnome-open", "http://openweathermap.org/city/" + cityId]);
+            else
+                Util.spawn(["gnome-open", "http://openweathermap.org"]);
+        }));
+
+        this.menu.addMenuItem(item);
+
+        let item = new PopupMenu.PopupSeparatorMenuItem();
+        this.menu.addMenuItem(item);
+
         this._selectCity = new PopupMenu.PopupSubMenuMenuItem(_("Locations"));
         this.menu.addMenuItem(this._selectCity);
         this.rebuildSelectCityItem();
