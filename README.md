@@ -2,7 +2,7 @@
 
 *gnome-shell-extension-openweather* is a simple extension for displaying weather conditions and forecasts in GNOME Shell, featuring support for multiple locations, no need for WOEID, a symmetrical layout and a settings panel through *gnome-shell-extension-prefs*.
 
-Currently, the weather data, including forecasts for up to ten days, are fetched from [OpenWeatherMap](http://openweathermap.org/).
+Currently, the weather data, including forecasts for up to ten days, is fetched from [OpenWeatherMap](http://openweathermap.org/).
 
 ----
 
