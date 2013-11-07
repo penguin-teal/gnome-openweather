@@ -1466,7 +1466,7 @@ weather-storm.png = weather-storm-symbolic.svg
             else if (dayLeft < -1)
                 date_string = _("%s days ago").replace("%s", -1 * dayLeft);
 
-            forecastUi.Day.text = date_string + ' (' + this.get_locale_day(forecastDate.getDay()) + ')';
+            forecastUi.Day.text = date_string + ' (' + this.get_locale_day(forecastDate.getDay()) + ')\n' + forecastDate.toLocaleDateString();
             forecastUi.Temperature.text = '\u2193 ' + parseFloat(t_low).toLocaleString() + ' ' + this.unit_to_unicode() + '    \u2191 ' + parseFloat(t_high).toLocaleString() + ' ' + this.unit_to_unicode();
             forecastUi.Summary.text = comment;
             forecastUi.Icon.icon_name = this.get_weather_icon_safely(forecastData.weather[0].id);
