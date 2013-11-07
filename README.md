@@ -14,7 +14,7 @@ After the installation, restart GNOME Shell (`Alt`+`F2`, `r`, `Enter`) and enabl
 
 ### [Debian](http://packages.debian.org/source/unstable/gnome-shell-extension-weather)
 
-Debian uses the (old master-) Yahoo-branch !
+Debian uses the (former master now ) yahoo-branch !
 
 My fork of the extension is currently only available for unstable/sid.
 
@@ -42,14 +42,14 @@ Run the following commands:
 
 	cd ~ && git clone git://github.com/jenslody/gnome-shell-extension-weather.git
 	cd ~/gnome-shell-extension-weather
-	git checkout openweathermap
 	./autogen.sh && make local-install
 
-If you want to use openweathermap.org with gnome-shell 3.6, please use the openweathermap_3.6 branch instead.
+If you want to use openweathermap.org without deprecated Soup.SessionAsync (less TCP Retransmission), please use the openweathermap branch instead.
+You need to have at least gnome-shell version 3.8 .
 
 	cd ~ && git clone git://github.com/jenslody/gnome-shell-extension-weather.git
 	cd ~/gnome-shell-extension-weather
-	git checkout openweathermap_3.6
+	git checkout openweathermap
 	./autogen.sh && make local-install
 
 ----
@@ -61,6 +61,14 @@ Launch *gnome-shell-extension-prefs* (reachable also through the *OpenWeather Se
 ![Screenshot](https://github.com/jenslody/gnome-shell-extension-weather/raw/master/data/weather-settings.gif)
 
 You can also use *dconf-editor* or *gsettings* to configure the extension through the command line.
+
+If you switch from old openweathermap to the new master ( or openweathermap), you can load the settings with
+
+    dconf dump /org/gnome/shell/extensions/weather/ | dconf load /org/gnome/shell/extensions/openweather/
+
+This can also work for most locations, if you switch from old yahoo-based master-branch (now yahoo) to the new master-branch (openweathermap-based).
+
+The [OpenWeatherMap](http://openweathermap.org/) maintainers recommend to use an [API key](http://openweathermap.org/appid). This key can be added in the preferences dialog.
 
 ----
 
