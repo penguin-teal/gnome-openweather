@@ -4,7 +4,7 @@
 srcdir=`dirname $0`
 test -z "$srcdir" && srcdir=.
 
-PKG_NAME="gnome-shell-extension-weather"
+PKG_NAME="gnome-shell-extension-openweather"
 
 touch ChangeLog
 
