@@ -8,29 +8,30 @@
  *     Christian METZLER <neroth@xeked.com>,
  *     Jens Lody <jens@jenslody.de>,
  *
- * This file is part of gnome-shell-extension-weather.
+ * This file is part of gnome-shell-extension-openweather.
  *
- * gnome-shell-extension-weather is free software: you can
+ * gnome-shell-extension-openweather is free software: you can
  * redistribute it and/or modify it under the terms of the GNU
  * General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option)
  * any later version.
  *
- * gnome-shell-extension-weather is distributed in the hope that it
+ * gnome-shell-extension-openweather is distributed in the hope that it
  * will be useful, but WITHOUT ANY WARRANTY; without even the
  * implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
  * PURPOSE.  See the GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with gnome-shell-extension-weather.  If not, see
+ * along with gnome-shell-extension-openweather.  If not, see
  * <http://www.gnu.org/licenses/>.
  *
  */
 const Gtk = imports.gi.Gtk;
+const Gdk = imports.gi.Gdk;
 const GObject = imports.gi.GObject;
 const GtkBuilder = Gtk.Builder;
 const Gio = imports.gi.Gio;
-const Gettext = imports.gettext.domain('gnome-shell-extension-weather');
+const Gettext = imports.gettext.domain('gnome-shell-extension-openweather');
 const _ = Gettext.gettext;
 const Soup = imports.gi.Soup;
 
@@ -41,7 +42,7 @@ const Convenience = Me.imports.convenience;
 
 const EXTENSIONDIR = Me.dir.get_path();
 
-const WEATHER_SETTINGS_SCHEMA = 'org.gnome.shell.extensions.weather';
+const WEATHER_SETTINGS_SCHEMA = 'org.gnome.shell.extensions.openweather';
 const WEATHER_UNIT_KEY = 'unit';
 const WEATHER_PRESSURE_UNIT_KEY = 'pressure-unit';
 const WEATHER_WIND_SPEED_UNIT_KEY = 'wind-speed-unit';
@@ -53,9 +54,16 @@ const WEATHER_USE_SYMBOLIC_ICONS_KEY = 'use-symbolic-icons';
 const WEATHER_SHOW_TEXT_IN_PANEL_KEY = 'show-text-in-panel';
 const WEATHER_POSITION_IN_PANEL_KEY = 'position-in-panel';
 const WEATHER_SHOW_COMMENT_IN_PANEL_KEY = 'show-comment-in-panel';
-const WEATHER_REFRESH_INTERVAL = 'refresh-interval';
+const WEATHER_REFRESH_INTERVAL_CURRENT = 'refresh-interval-current';
+const WEATHER_REFRESH_INTERVAL_FORECAST = 'refresh-interval-forecast';
 const WEATHER_CENTER_FORECAST_KEY = 'center-forecast';
 const WEATHER_DAYS_FORECAST = 'days-forecast';
+const WEATHER_OWM_API_KEY = 'appid';
+
+//URL
+const WEATHER_URL_BASE = 'http://api.openweathermap.org/data/2.5/';
+const WEATHER_URL_CURRENT = WEATHER_URL_BASE + 'weather';
+const WEATHER_URL_FIND = WEATHER_URL_BASE + 'find';
 
 // Soup session (see https://bugzilla.gnome.org/show_bug.cgi?id=661323#c64) (Simon Legner)
 const _httpSession = new Soup.SessionAsync();
@@ -64,8 +72,8 @@ Soup.Session.prototype.add_feature.call(_httpSession, new Soup.ProxyResolverDefa
 let mCities = null;
 
 const WeatherPrefsWidget = new GObject.Class({
-    Name: 'WeatherExtension.Prefs.Widget',
-    GTypeName: 'WeatherExtensionPrefsWidget',
+    Name: 'OpenWeatherExtension.Prefs.Widget',
+    GTypeName: 'OpenWeatherExtensionPrefsWidget',
     Extends: Gtk.Box,
 
     _init: function(params) {
@@ -137,7 +145,9 @@ const WeatherPrefsWidget = new GObject.Class({
         this.addLabel(_("Center forecast"));
         this.addSwitch("center_forecast");
         this.addLabel(_("Number of days in forecast"));
-        this.addComboBox(["2", "3", "4", "5"], "days_forecast");
+        this.addComboBox(["2", "3", "4", "5", "6", "7", "8", "9", "10"], "days_forecast");
+        this.addLabel(_("Personal Api key from openweather.org"));
+        this.addAppidEntry(("appid"));
     },
 
     refreshUI: function() {
@@ -149,7 +159,7 @@ const WeatherPrefsWidget = new GObject.Class({
         this.Window.get_object("tree-toolbutton-remove").sensitive = Boolean(this.city.length);
 
         if (mCities != this.city) {
-            if (typeof this.liststore != "undefined")
+            if (this.liststore != undefined)
                 this.liststore.clear();
 
             if (this.city.length > 0) {
@@ -255,10 +265,34 @@ const WeatherPrefsWidget = new GObject.Class({
         this.inc();
     },
 
+    addAppidEntry: function(a) {
+        let that = this;
+        let en = new Gtk.Entry();
+        this.configWidgets.push([en, a]);
+        en.visible = 1;
+        en.can_focus = 1;
+        en.set_width_chars(32);
+        en.text = this[a];
+        if (this[a].length != 32)
+            en.set_icon_from_icon_name(Gtk.PositionType.LEFT, 'dialog-warning');
+
+        en.connect("notify::text", function() {
+            let key = arguments[0].text;
+            let rgba = new Gdk.Color();
+            that[a] = key;
+            if (key.length == 32)
+                en.set_icon_from_icon_name(Gtk.PositionType.LEFT, '');
+            else
+                en.set_icon_from_icon_name(Gtk.PositionType.LEFT, 'dialog-warning');
+        });
+        this.right_widget.attach(en, this.x[0], this.x[1], this.y[0], this.y[1], 0, 0, 0, 0);
+        this.inc();
+    },
+
     selectionChanged: function(select) {
         let a = select.get_selected_rows(this.liststore)[0][0];
 
-        if (typeof a != "undefined")
+        if (a != undefined)
             if (this.actual_city != parseInt(a.to_string()))
                 this.actual_city = parseInt(a.to_string());
     },
@@ -266,6 +300,7 @@ const WeatherPrefsWidget = new GObject.Class({
     addCity: function() {
         let that = this;
         let textDialog = _("Name of the city");
+
         let dialog = new Gtk.Dialog({
             title: ""
         });
@@ -309,16 +344,22 @@ const WeatherPrefsWidget = new GObject.Class({
             if (location.search(/\[/) == -1 || location.search(/\]/) == -1)
                 return 0;
 
-            let woeid = location.split(/\[/)[1].split(/\]/)[0];
-            if (!woeid)
+            let id = location.split(/\[/)[1].split(/\]/)[0];
+            if (!id)
                 return 0;
 
-            that.loadJsonAsync(encodeURI('http://query.yahooapis.com/v1/public/yql?q=select woeid from geo.places where woeid = "' + woeid + '" limit 1&format=json'), function() {
+            that.loadJsonAsync(WEATHER_URL_CURRENT, {
+                id: id
+            }, function() {
                 d.sensitive = 0;
-                if (typeof arguments[0].query == "undefined")
+                if (arguments[0] == undefined)
                     return 0;
 
-                let city = arguments[0].query;
+                let city = arguments[0];
+
+                if (Number(city.cod) != 200)
+                    return 0;
+
                 if (Number(city.count) == 0)
                     return 0;
 
@@ -330,54 +371,55 @@ const WeatherPrefsWidget = new GObject.Class({
 
         let searchLocation = function() {
             let location = entry.get_text();
+            let params = {
+                cnt: '30',
+                sort: 'population',
+                type: 'like',
+                units: 'metric',
+                q: location
+            };
+            if (this._appid)
+                params['APPID'] = this._appid;
             if (testLocation(location) == 0)
-                that.loadJsonAsync(encodeURI('http://query.yahooapis.com/v1/public/yql?q=select woeid,name,admin1,country from geo.places where text = "*' + location + '*" or text = "' + location + '"&format=json'), function() {
+                that.loadJsonAsync(WEATHER_URL_FIND, params, function() {
                     if (!arguments[0])
                         return 0;
-                    let city = arguments[0].query;
-                    let n = Number(city.count);
-                    if (n > 0)
-                        city = city.results.place;
+                    let city = arguments[0];
+
+                    if (Number(city.cod) != 200)
+                        return 0;
+
+                    if (Number(city.count) > 0)
+                        city = city.list;
                     else
                         return 0;
+
                     completionModel.clear();
 
                     let current = this.liststore.get_iter_first();
 
-                    if (n > 1) {
-                        for (var i in city) {
-                            if (typeof m == "undefined")
-                                var m = {};
+                    for (var i in city) {
+                        if (m == undefined)
+                            var m = {};
 
-                            current = completionModel.append();
-                            let cityText = city[i].name;
-                            if (city[i].admin1)
-                                cityText += ", " + city[i].admin1.content;
-
-                            if (city[i].country)
-                                cityText += " (" + city[i].country.code + ")";
-
-                            cityText += " [" + city[i].woeid + "]";
-
-                            if (m[cityText])
-                                continue;
-                            else
-                                m[cityText] = 1;
-
-                            completionModel.set_value(current, 0, cityText);
-                        }
-                    } else {
                         current = completionModel.append();
-                        let cityText = city.name;
-                        if (city.admin1)
-                            cityText += ", " + city.admin1.content;
 
-                        if (city.country)
-                            cityText += " (" + city.country.code + ")";
+                        let cityText = city[i].name;
 
-                        cityText += " [" + city.woeid + "]";
+                        if (city[i].sys)
+                            cityText += ", " + city[i].sys.country;
+
+                        if (city[i].id)
+                            cityText += " [" + city[i].id + "]";
+
+                        if (m[cityText])
+                            continue;
+                        else
+                            m[cityText] = 1;
+
                         completionModel.set_value(current, 0, cityText);
                     }
+
                     completion.complete();
                     return 0;
                 }, "getInfo");
@@ -394,28 +436,41 @@ const WeatherPrefsWidget = new GObject.Class({
                 if (entry.get_text().search(/\[/) == -1 || entry.get_text().search(/\]/) == -1)
                     return 0;
 
-                let woeid = entry.get_text().split(/\[/)[1].split(/\]/)[0];
-                if (!woeid)
+                let name = entry.get_text().split(/,/)[0];
+                if (!name)
                     return 0;
 
-                that.loadJsonAsync(encodeURI('http://query.yahooapis.com/v1/public/yql?format=json&q=select woeid,name,admin1,country from geo.places where woeid = "' + woeid + '" limit 1'), function() {
-                    let city = arguments[0].query;
-                    if (Number(city.count) > 0)
-                        city = city.results.place;
-                    else
+                let params = {
+                    q: name,
+                    type: 'accurate'
+                };
+                if (this._appid)
+                    params['APPID'] = this._appid;
+                that.loadJsonAsync(WEATHER_URL_CURRENT, params, function() {
+                    if (!arguments[0])
+                        return 0;
+                    let city = arguments[0];
+
+                    if (Number(city.cod) != 200)
+                        return 0;
+
+                    let id = entry.get_text().split(/\[/)[1].split(/\]/)[0];
+                    if (!id)
+                        return 0;
+
+                    if (id != city.id)
                         return 0;
 
                     let cityText = city.name;
-                    if (city.admin1)
-                        cityText += ", " + city.admin1.content;
 
-                    if (city.country)
-                        cityText += " (" + city.country.code + ")";
+                    if (city.sys)
+                        cityText += " (" + city.sys.country + ")";
 
                     if (that.city)
-                        that.city = that.city + " && " + city.woeid + ">" + cityText;
+                        that.city = that.city + " && " + city.id + ">" + cityText;
                     else
-                        that.city = city.woeid + ">" + cityText;
+                        that.city = city.id + ">" + cityText;
+
                     return 0;
                 }, "lastTest");
             }
@@ -488,14 +543,15 @@ const WeatherPrefsWidget = new GObject.Class({
         this.treeview.get_selection().select_path(path);
     },
 
-    loadJsonAsync: function(url, fun, id) {
+    loadJsonAsync: function(url, params, fun, id) {
         let here = this;
-        let message = Soup.Message.new('GET', url);
 
-        if (typeof this.asyncSession == "undefined")
+        let message = Soup.form_request_new_from_hash('GET', url, params);
+
+        if (this.asyncSession == undefined)
             this.asyncSession = {};
 
-        if (typeof this.asyncSession[id] != "undefined" && this.asyncSession[id]) {
+        if (this.asyncSession[id] != undefined && this.asyncSession[id]) {
             _httpSession.abort();
             this.asyncSession[id] = 0;
         }
@@ -692,16 +748,30 @@ const WeatherPrefsWidget = new GObject.Class({
         this.Settings.set_boolean(WEATHER_SHOW_COMMENT_IN_PANEL_KEY, v);
     },
 
-    get refresh_interval() {
+    get refresh_interval_current() {
         if (!this.Settings)
             this.loadConfig();
-        return this.Settings.get_int(WEATHER_REFRESH_INTERVAL);
+        let v = this.Settings.get_int(WEATHER_REFRESH_INTERVAL_CURRENT);
+        return ((v >= 600) ? v : 600);
     },
 
-    set refresh_interval(v) {
+    set refresh_interval_current(v) {
         if (!this.Settings)
             this.loadConfig();
-        this.Settings.set_int(WEATHER_REFRESH_INTERVAL, v);
+        this.Settings.set_int(WEATHER_REFRESH_INTERVAL_CURRENT, ((v >= 600) ? v : 600));
+    },
+
+    get refresh_interval_forecast() {
+        if (!this.Settings)
+            this.loadConfig();
+        let v = this.Settings.get_int(WEATHER_REFRESH_INTERVAL_FORECAST);
+        return ((v >= 600) ? v : 600);
+    },
+
+    set refresh_interval_forecast(v) {
+        if (!this.Settings)
+            this.loadConfig();
+        this.Settings.set_int(WEATHER_REFRESH_INTERVAL_FORECAST, ((v >= 600) ? v : 600));
     },
 
     get center_forecast() {
@@ -728,13 +798,25 @@ const WeatherPrefsWidget = new GObject.Class({
         this.Settings.set_int(WEATHER_DAYS_FORECAST, v + 2);
     },
 
+    get appid() {
+        if (!this.Settings)
+            this.loadConfig();
+        return this.Settings.get_string(WEATHER_OWM_API_KEY);
+    },
+
+    set appid(v) {
+        if (!this.Settings)
+            this.loadConfig();
+        this.Settings.set_string(WEATHER_OWM_API_KEY, v);
+    },
+
     extractLocation: function(a) {
         if (a.search(">") == -1)
             return _("Invalid city");
         return a.split(">")[1];
     },
 
-    extractWoeid: function(a) {
+    extractId: function(a) {
         if (a.search(">") == -1)
             return 0;
         return a.split(">")[0];
@@ -742,7 +824,7 @@ const WeatherPrefsWidget = new GObject.Class({
 });
 
 function init() {
-    Convenience.initTranslations('gnome-shell-extension-weather');
+    Convenience.initTranslations('gnome-shell-extension-openweather');
 }
 
 function buildPrefsWidget() {

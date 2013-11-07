@@ -8,27 +8,27 @@
  *     Christian METZLER <neroth@xeked.com>
  *
  *
- * This file is part of gnome-shell-extension-weather.
+ * This file is part of gnome-shell-extension-openweather.
  *
- * gnome-shell-extension-weather is free software: you can redistribute it and/or modify
+ * gnome-shell-extension-openweather is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * gnome-shell-extension-weather is distributed in the hope that it will be useful,
+ * gnome-shell-extension-openweather is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with gnome-shell-extension-weather.  If not, see <http://www.gnu.org/licenses/>.
+ * along with gnome-shell-extension-openweather.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
 
 Gio = imports.gi.Gio;
 
-print("Generate gnome-shell-extension-weather.pot");
-var xgettext = Seed.spawn("xgettext -o gnome-shell-extension-weather.pot -L python --from-code=utf-8 --keyword=_ -f POTFILES.in");
+print("Generate gnome-shell-extension-openweather.pot");
+var xgettext = Seed.spawn("xgettext -o gnome-shell-extension-openweather.pot -L python --from-code=utf-8 --keyword=_ -f POTFILES.in");
 
 if (xgettext.stderr)
     print(xgettext.stderr);
@@ -42,7 +42,7 @@ else {
         if (child.get_name().search(/.po$/) != -1) {
             print("Generate " + child.get_name());
             linguas += n + (child.get_name().split(".po")[0]);
-            Seed.spawn("msgmerge -U " + child.get_name() + " gnome-shell-extension-weather.pot");
+            Seed.spawn("msgmerge -U " + child.get_name() + " gnome-shell-extension-openweather.pot");
             n = "\n";
             i++;
         }

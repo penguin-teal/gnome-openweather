@@ -1,13 +1,13 @@
-# Hebrew translation for gnome-shell-extension-weather
+# Hebrew translation for gnome-shell-extension-openweather
 # Copyright (C) 2012
-# This file is distributed under the same license as the gnome-shell-extension-weather package.
+# This file is distributed under the same license as the gnome-shell-extension-openweather package.
 # Yaron Sheffer <yaronf@gmx.com>, 2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-19 01:03+0200\n"
+"POT-Creation-Date: 2013-11-07 23:41+0100\n"
 "PO-Revision-Date: 2012-01-31 21:37+0200\n"
 "Last-Translator: Yaron Sheffer <yaronf@gmx.com>\n"
 "Language-Team: Hebrew <none@example.com>\n"
@@ -17,426 +17,596 @@ msgstr ""
 "Content-Transfer-Encoding: 8bits\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
-#: ../src/extension.js:132
+#: ../src/extension.js:141
 msgid "..."
 msgstr "..."
 
-#: ../src/extension.js:229
+#: ../src/extension.js:238
+msgid "Weather data provided by:   "
+msgstr ""
+
+#: ../src/extension.js:259
+#, python-format
+msgid ""
+"Execution of 'gnome-open' and 'xdg-open' failed.\n"
+"Can not open %s"
+msgstr ""
+
+#: ../src/extension.js:270
 msgid "Locations"
 msgstr ""
 
-#: ../src/extension.js:233
+#: ../src/extension.js:274
 msgid "Reload Weather Information"
 msgstr ""
 
-#: ../src/extension.js:239
+#: ../src/extension.js:281
 msgid "Weather Settings"
 msgstr ""
 
-#: ../src/extension.js:283
+#: ../src/extension.js:334
 #, python-format
 msgid "Schema \"%s\" not found."
 msgstr ""
 
-#: ../src/extension.js:552 ../src/prefs.js:718
+#: ../src/extension.js:656 ../src/extension.js:665 ../src/prefs.js:815
 msgid "Invalid city"
 msgstr ""
 
-#: ../src/extension.js:826
-msgid "Tornado"
-msgstr "טורנדו"
-
-#: ../src/extension.js:829
-msgid "Tropical storm"
-msgstr "סופה טרופית"
-
-#: ../src/extension.js:832 ../src/extension.js:1044
-msgid "Hurricane"
-msgstr "הוריקן"
-
-#: ../src/extension.js:835
-msgid "Severe thunderstorms"
-msgstr "סופות רעמים קשות"
-
-#: ../src/extension.js:838
-msgid "Thunderstorms"
-msgstr "סופות רעמים"
-
-#: ../src/extension.js:841
-msgid "Mixed rain and snow"
-msgstr "גשם מעורב בשלג"
-
-#: ../src/extension.js:844
-msgid "Mixed rain and sleet"
-msgstr "גשם ושלג מימי"
-
-#: ../src/extension.js:847
-msgid "Mixed snow and sleet"
-msgstr "שלג מימי בחלקו"
-
-#: ../src/extension.js:850
-msgid "Freezing drizzle"
-msgstr "טפטוף קפוא"
-
-#: ../src/extension.js:853
-msgid "Drizzle"
-msgstr "טפטוף"
-
-#: ../src/extension.js:856
-msgid "Freezing rain"
-msgstr "גשם קפוא"
-
-#: ../src/extension.js:859 ../src/extension.js:862
-msgid "Showers"
-msgstr "ממטרים"
-
-#: ../src/extension.js:865
-msgid "Snow flurries"
-msgstr "מטחי שלג קצרים"
-
-#: ../src/extension.js:868
-msgid "Light snow showers"
-msgstr "ממטרי שלג קלים"
-
-#: ../src/extension.js:871
-msgid "Blowing snow"
-msgstr "שלג מנשב"
-
-#: ../src/extension.js:874
-msgid "Snow"
-msgstr "שלג"
-
-#: ../src/extension.js:877
-msgid "Hail"
-msgstr "ברד"
-
-#: ../src/extension.js:880
-msgid "Sleet"
-msgstr "שלג מימי"
-
-#: ../src/extension.js:883
-msgid "Dust"
-msgstr "אבק"
-
-#: ../src/extension.js:886
-msgid "Foggy"
-msgstr "מעורפל"
-
-#: ../src/extension.js:889
-msgid "Haze"
-msgstr "אובך"
-
-#: ../src/extension.js:892
-msgid "Smoky"
-msgstr "מלא עשן"
+#: ../src/extension.js:893
+msgid "thunderstorm with light rain"
+msgstr ""
 
 #: ../src/extension.js:895
-msgid "Blustery"
-msgstr "סוער"
-
-#: ../src/extension.js:898
-msgid "Windy"
-msgstr "סוער"
-
-#: ../src/extension.js:901
-msgid "Cold"
-msgstr "קר"
-
-#: ../src/extension.js:904
-msgid "Cloudy"
-msgstr "מעונן"
-
-#: ../src/extension.js:909
-msgid "Mostly cloudy"
-msgstr "מעונן ברובו"
-
-#: ../src/extension.js:914 ../src/extension.js:957
-msgid "Partly cloudy"
-msgstr "מעונן חלקית"
-
-#: ../src/extension.js:917
-msgid "Clear"
-msgstr "בהיר"
-
-#: ../src/extension.js:920
-msgid "Sunny"
-msgstr "שמשי"
-
-#: ../src/extension.js:925
-msgid "Fair"
-msgstr "נאה"
-
-#: ../src/extension.js:928
-msgid "Mixed rain and hail"
-msgstr "גשם מעורב בברד"
-
-#: ../src/extension.js:931
-msgid "Hot"
-msgstr "חם"
-
-#: ../src/extension.js:934
-msgid "Isolated thunderstorms"
-msgstr "סופות רעמים בודדות"
-
-#: ../src/extension.js:937
-msgid "Scattered thunderstorms"
-msgstr "סופות רעמים מקומיות"
-
-#: ../src/extension.js:942
 #, fuzzy
-msgid "Isolated showers"
-msgstr "סופות רעמים בודדות"
-
-#: ../src/extension.js:945
-msgid "Scattered showers"
-msgstr "ממטרים מקומיים"
-
-#: ../src/extension.js:948 ../src/extension.js:954
-msgid "Heavy snow"
-msgstr "שלג כבד"
-
-#: ../src/extension.js:951
-msgid "Scattered snow showers"
-msgstr "ממטרי שלג מקומיים"
-
-#: ../src/extension.js:960
-msgid "Thundershowers"
+msgid "thunderstorm with rain"
 msgstr "סופות רעמים"
 
-#: ../src/extension.js:963
-msgid "Snow showers"
-msgstr "ממטרי שלג"
+#: ../src/extension.js:897
+msgid "thunderstorm with heavy rain"
+msgstr ""
 
-#: ../src/extension.js:966
-msgid "Isolated thundershowers"
+#: ../src/extension.js:899
+#, fuzzy
+msgid "light thunderstorm"
 msgstr "סופות רעמים בודדות"
 
-#: ../src/extension.js:970
+#: ../src/extension.js:901
+#, fuzzy
+msgid "thunderstorm"
+msgstr "סופות רעמים"
+
+#: ../src/extension.js:903
+#, fuzzy
+msgid "heavy thunderstorm"
+msgstr "סופות רעמים קשות"
+
+#: ../src/extension.js:905
+#, fuzzy
+msgid "ragged thunderstorm"
+msgstr "סופות רעמים בודדות"
+
+#: ../src/extension.js:907
+msgid "thunderstorm with light drizzle"
+msgstr ""
+
+#: ../src/extension.js:909
+msgid "thunderstorm with drizzle"
+msgstr ""
+
+#: ../src/extension.js:911
+msgid "thunderstorm with heavy drizzle"
+msgstr ""
+
+#: ../src/extension.js:913
+msgid "light intensity drizzle"
+msgstr ""
+
+#: ../src/extension.js:915
+#, fuzzy
+msgid "drizzle"
+msgstr "טפטוף"
+
+#: ../src/extension.js:917
+msgid "heavy intensity drizzle"
+msgstr ""
+
+#: ../src/extension.js:919
+msgid "light intensity drizzle rain"
+msgstr ""
+
+#: ../src/extension.js:921
+#, fuzzy
+msgid "drizzle rain"
+msgstr "טפטוף"
+
+#: ../src/extension.js:923
+msgid "heavy intensity drizzle rain"
+msgstr ""
+
+#: ../src/extension.js:925
+#, fuzzy
+msgid "shower rain and drizzle"
+msgstr "גשם מעורב בברד"
+
+#: ../src/extension.js:927
+msgid "heavy shower rain and drizzle"
+msgstr ""
+
+#: ../src/extension.js:929
+#, fuzzy
+msgid "shower drizzle"
+msgstr "טפטוף קפוא"
+
+#: ../src/extension.js:931
+#, fuzzy
+msgid "light rain"
+msgstr "גשם קפוא"
+
+#: ../src/extension.js:933
+msgid "moderate rain"
+msgstr ""
+
+#: ../src/extension.js:935
+msgid "heavy intensity rain"
+msgstr ""
+
+#: ../src/extension.js:937
+msgid "very heavy rain"
+msgstr ""
+
+#: ../src/extension.js:939
+#, fuzzy
+msgid "extreme rain"
+msgstr "גשם קפוא"
+
+#: ../src/extension.js:941
+#, fuzzy
+msgid "freezing rain"
+msgstr "גשם קפוא"
+
+#: ../src/extension.js:943
+msgid "light intensity shower rain"
+msgstr ""
+
+#: ../src/extension.js:945
+msgid "shower rain"
+msgstr ""
+
+#: ../src/extension.js:947
+msgid "heavy intensity shower rain"
+msgstr ""
+
+#: ../src/extension.js:949
+msgid "ragged shower rain"
+msgstr ""
+
+#: ../src/extension.js:951
+#, fuzzy
+msgid "light snow"
+msgstr "שלג מנשב"
+
+#: ../src/extension.js:953
+msgid "snow"
+msgstr ""
+
+#: ../src/extension.js:955
+#, fuzzy
+msgid "heavy snow"
+msgstr "שלג כבד"
+
+#: ../src/extension.js:957
+#, fuzzy
+msgid "sleet"
+msgstr "שלג מימי"
+
+#: ../src/extension.js:959
+#, fuzzy
+msgid "shower sleet"
+msgstr "ממטרים"
+
+#: ../src/extension.js:961
+#, fuzzy
+msgid "light rain and snow"
+msgstr "גשם מעורב בשלג"
+
+#: ../src/extension.js:963
+#, fuzzy
+msgid "rain and snow"
+msgstr "גשם מעורב בשלג"
+
+#: ../src/extension.js:965
+#, fuzzy
+msgid "light shower snow"
+msgstr "ממטרי שלג קלים"
+
+#: ../src/extension.js:967
+#, fuzzy
+msgid "shower snow"
+msgstr "ממטרים"
+
+#: ../src/extension.js:969
+#, fuzzy
+msgid "heavy shower snow"
+msgstr "שלג כבד"
+
+#: ../src/extension.js:971
+msgid "mist"
+msgstr ""
+
+#: ../src/extension.js:973
+msgid "smoke"
+msgstr ""
+
+#: ../src/extension.js:975
+msgid "haze"
+msgstr ""
+
+#: ../src/extension.js:977
+msgid "Sand/Dust Whirls"
+msgstr ""
+
+#: ../src/extension.js:979
+#, fuzzy
+msgid "Fog"
+msgstr "מעורפל"
+
+#: ../src/extension.js:981
+msgid "sand"
+msgstr ""
+
+#: ../src/extension.js:983
+msgid "dust"
+msgstr ""
+
+#: ../src/extension.js:985
+msgid "VOLCANIC ASH"
+msgstr ""
+
+#: ../src/extension.js:987
+msgid "SQUALLS"
+msgstr ""
+
+#: ../src/extension.js:989
+msgid "TORNADO"
+msgstr ""
+
+#: ../src/extension.js:991
+msgid "sky is clear"
+msgstr ""
+
+#: ../src/extension.js:993
+msgid "few clouds"
+msgstr ""
+
+#: ../src/extension.js:995
+#, fuzzy
+msgid "scattered clouds"
+msgstr "ממטרים מקומיים"
+
+#: ../src/extension.js:997
+msgid "broken clouds"
+msgstr ""
+
+#: ../src/extension.js:999
+#, fuzzy
+msgid "overcast clouds"
+msgstr "מעונן ברובו"
+
+#: ../src/extension.js:1001
 msgid "Not available"
 msgstr "לא זמין"
 
-#: ../src/extension.js:1008
+#: ../src/extension.js:1039
 msgid "Calm"
 msgstr ""
 
-#: ../src/extension.js:1011
+#: ../src/extension.js:1042
 msgid "Light air"
 msgstr ""
 
-#: ../src/extension.js:1014
+#: ../src/extension.js:1045
 msgid "Light breeze"
 msgstr ""
 
-#: ../src/extension.js:1017
+#: ../src/extension.js:1048
 msgid "Gentle breeze"
 msgstr ""
 
-#: ../src/extension.js:1020
+#: ../src/extension.js:1051
 msgid "Moderate breeze"
 msgstr ""
 
-#: ../src/extension.js:1023
+#: ../src/extension.js:1054
 msgid "Fresh breeze"
 msgstr ""
 
-#: ../src/extension.js:1026
+#: ../src/extension.js:1057
 msgid "Strong breeze"
 msgstr ""
 
-#: ../src/extension.js:1029
+#: ../src/extension.js:1060
 msgid "Moderate gale"
 msgstr ""
 
-#: ../src/extension.js:1032
+#: ../src/extension.js:1063
 msgid "Fresh gale"
 msgstr ""
 
-#: ../src/extension.js:1035
+#: ../src/extension.js:1066
 msgid "Strong gale"
 msgstr ""
 
-#: ../src/extension.js:1038
+#: ../src/extension.js:1069
 msgid "Storm"
 msgstr ""
 
-#: ../src/extension.js:1041
+#: ../src/extension.js:1072
 msgid "Violent storm"
 msgstr ""
 
-#: ../src/extension.js:1048
+#: ../src/extension.js:1075
+msgid "Hurricane"
+msgstr "הוריקן"
+
+#: ../src/extension.js:1079
 msgid "Sunday"
 msgstr "יום א"
 
-#: ../src/extension.js:1048
+#: ../src/extension.js:1079
 msgid "Monday"
 msgstr "יום ב"
 
-#: ../src/extension.js:1048
+#: ../src/extension.js:1079
 msgid "Tuesday"
 msgstr "יום ג"
 
-#: ../src/extension.js:1048
+#: ../src/extension.js:1079
 msgid "Wednesday"
 msgstr "יום ד"
 
-#: ../src/extension.js:1048
+#: ../src/extension.js:1079
 msgid "Thursday"
 msgstr "יום ה"
 
-#: ../src/extension.js:1048
+#: ../src/extension.js:1079
 msgid "Friday"
 msgstr "יום ו"
 
-#: ../src/extension.js:1048
+#: ../src/extension.js:1079
 msgid "Saturday"
 msgstr "שבת"
 
-#: ../src/extension.js:1054
+#: ../src/extension.js:1085
 msgid "N"
 msgstr ""
 
-#: ../src/extension.js:1054
+#: ../src/extension.js:1085
 msgid "NE"
 msgstr ""
 
-#: ../src/extension.js:1054
+#: ../src/extension.js:1085
 msgid "E"
 msgstr ""
 
-#: ../src/extension.js:1054
+#: ../src/extension.js:1085
 msgid "SE"
 msgstr ""
 
-#: ../src/extension.js:1054
+#: ../src/extension.js:1085
 msgid "S"
 msgstr ""
 
-#: ../src/extension.js:1054
+#: ../src/extension.js:1085
 msgid "SW"
 msgstr ""
 
-#: ../src/extension.js:1054
+#: ../src/extension.js:1085
 msgid "W"
 msgstr ""
 
-#: ../src/extension.js:1054
+#: ../src/extension.js:1085
 msgid "NW"
 msgstr ""
 
-#: ../src/extension.js:1316 ../src/extension.js:1443
+#: ../src/extension.js:1299 ../src/extension.js:1479
 msgid "Yesterday"
 msgstr ""
 
-#: ../src/extension.js:1318 ../src/extension.js:1445
+#: ../src/extension.js:1301 ../src/extension.js:1481
 #, python-format
 msgid "%s days ago"
 msgstr ""
 
-#: ../src/extension.js:1437
+#: ../src/extension.js:1473
 msgid "Today"
 msgstr "היום"
 
-#: ../src/extension.js:1439
+#: ../src/extension.js:1475
 msgid "Tomorrow"
 msgstr "מחר"
 
-#: ../src/extension.js:1441
+#: ../src/extension.js:1477
 #, python-format
 msgid "In %s days"
 msgstr ""
 
-#: ../src/extension.js:1478
+#: ../src/extension.js:1541
 msgid "Loading current weather ..."
 msgstr "טוען מזג אויר עכשווי..."
 
-#: ../src/extension.js:1481
+#: ../src/extension.js:1544
 msgid "Loading future weather ..."
 msgstr "טוען מזג אויר עתידי..."
 
-#: ../src/extension.js:1515
+#: ../src/extension.js:1578
 msgid "Loading ..."
 msgstr "טוען..."
 
-#: ../src/extension.js:1519
+#: ../src/extension.js:1582
 msgid "Please wait"
 msgstr "נא להמתין"
 
-#: ../src/extension.js:1580
-msgid "Feels like:"
+#: ../src/extension.js:1643
+msgid "Cloudiness:"
 msgstr ""
 
-#: ../src/extension.js:1584
+#: ../src/extension.js:1647
 msgid "Humidity:"
 msgstr "לחות:"
 
-#: ../src/extension.js:1588
+#: ../src/extension.js:1651
 msgid "Pressure:"
 msgstr "לחץ ברומטרי:"
 
-#: ../src/extension.js:1592
+#: ../src/extension.js:1655
 msgid "Wind:"
 msgstr "רוח:"
 
-#: ../src/prefs.js:118
+#: ../src/prefs.js:127
 #, fuzzy
 msgid "Temperature Unit"
 msgstr "טמפרטורה:"
 
-#: ../src/prefs.js:120
+#: ../src/prefs.js:129
 msgid "Wind Speed Unit"
 msgstr ""
 
-#: ../src/prefs.js:122
+#: ../src/prefs.js:131
 #, fuzzy
 msgid "Pressure Unit"
 msgstr "לחץ ברומטרי:"
 
-#: ../src/prefs.js:124
+#: ../src/prefs.js:133
 msgid "Position in Panel"
 msgstr ""
 
-#: ../src/prefs.js:125
+#: ../src/prefs.js:134
 msgid "Center"
 msgstr ""
 
-#: ../src/prefs.js:125
+#: ../src/prefs.js:134
 msgid "Right"
 msgstr ""
 
-#: ../src/prefs.js:125
+#: ../src/prefs.js:134
 msgid "Left"
 msgstr ""
 
-#: ../src/prefs.js:126
+#: ../src/prefs.js:135
 msgid "Wind Direction by Arrows"
 msgstr ""
 
-#: ../src/prefs.js:128
+#: ../src/prefs.js:137
 msgid "Translate Conditions"
 msgstr ""
 
-#: ../src/prefs.js:130
+#: ../src/prefs.js:139
 msgid "Symbolic Icons"
 msgstr ""
 
-#: ../src/prefs.js:132
+#: ../src/prefs.js:141
 #, fuzzy
 msgid "Temperature in Panel"
 msgstr "טמפרטורה:"
 
-#: ../src/prefs.js:134
+#: ../src/prefs.js:143
 msgid "Conditions in Panel"
 msgstr ""
 
-#: ../src/prefs.js:136
+#: ../src/prefs.js:145
+msgid "Center forecast"
+msgstr ""
+
+#: ../src/prefs.js:147
 msgid "Number of days in forecast"
 msgstr ""
 
-#: ../src/prefs.js:265
+#: ../src/prefs.js:149
+msgid "Personal Api key from openweather.org"
+msgstr ""
+
+#: ../src/prefs.js:302
 msgid "Name of the city"
 msgstr ""
 
-#: ../src/prefs.js:432
+#: ../src/prefs.js:490
 #, python-format
 msgid "Remove %s ?"
 msgstr ""
+
+#~ msgid "Tornado"
+#~ msgstr "טורנדו"
+
+#~ msgid "Tropical storm"
+#~ msgstr "סופה טרופית"
+
+#~ msgid "Mixed rain and sleet"
+#~ msgstr "גשם ושלג מימי"
+
+#~ msgid "Mixed snow and sleet"
+#~ msgstr "שלג מימי בחלקו"
+
+#~ msgid "Snow flurries"
+#~ msgstr "מטחי שלג קצרים"
+
+#~ msgid "Snow"
+#~ msgstr "שלג"
+
+#~ msgid "Hail"
+#~ msgstr "ברד"
+
+#~ msgid "Dust"
+#~ msgstr "אבק"
+
+#~ msgid "Haze"
+#~ msgstr "אובך"
+
+#~ msgid "Smoky"
+#~ msgstr "מלא עשן"
+
+#~ msgid "Blustery"
+#~ msgstr "סוער"
+
+#~ msgid "Windy"
+#~ msgstr "סוער"
+
+#~ msgid "Cold"
+#~ msgstr "קר"
+
+#~ msgid "Cloudy"
+#~ msgstr "מעונן"
+
+#~ msgid "Partly cloudy"
+#~ msgstr "מעונן חלקית"
+
+#~ msgid "Clear"
+#~ msgstr "בהיר"
+
+#~ msgid "Sunny"
+#~ msgstr "שמשי"
+
+#~ msgid "Fair"
+#~ msgstr "נאה"
+
+#~ msgid "Hot"
+#~ msgstr "חם"
+
+#~ msgid "Scattered thunderstorms"
+#~ msgstr "סופות רעמים מקומיות"
+
+#, fuzzy
+#~ msgid "Isolated showers"
+#~ msgstr "סופות רעמים בודדות"
+
+#~ msgid "Scattered snow showers"
+#~ msgstr "ממטרי שלג מקומיים"
+
+#~ msgid "Thundershowers"
+#~ msgstr "סופות רעמים"
+
+#~ msgid "Snow showers"
+#~ msgstr "ממטרי שלג"
+
+#~ msgid "Isolated thundershowers"
+#~ msgstr "סופות רעמים בודדות"

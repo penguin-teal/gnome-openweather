@@ -1,13 +1,13 @@
-# Hungarian translations for Neroth-gnome-shell-extension-weather package.
-# Copyright (C) 2013 THE Neroth-gnome-shell-extension-weather'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the Neroth-gnome-shell-extension-weather package.
+# Hungarian translations for Neroth-gnome-shell-extension-openweather package.
+# Copyright (C) 2013 THE Neroth-gnome-shell-extension-openweather'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the Neroth-gnome-shell-extension-openweather package.
 # Bojtos PÃ©ter <ptr@ulx.hu>, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Neroth-gnome-shell-extension-weather 3696468\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-19 01:03+0200\n"
+"POT-Creation-Date: 2013-11-07 23:41+0100\n"
 "PO-Revision-Date: 2013-01-18 15:07+0100\n"
 "Last-Translator: Bojtos Péter <ptr@ulx.hu>\n"
 "Language-Team: Hungarian\n"
@@ -18,424 +18,598 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#: ../src/extension.js:132
+#: ../src/extension.js:141
 msgid "..."
 msgstr "..."
 
-#: ../src/extension.js:229
+#: ../src/extension.js:238
+msgid "Weather data provided by:   "
+msgstr ""
+
+#: ../src/extension.js:259
+#, python-format
+msgid ""
+"Execution of 'gnome-open' and 'xdg-open' failed.\n"
+"Can not open %s"
+msgstr ""
+
+#: ../src/extension.js:270
 msgid "Locations"
 msgstr "Helyszínek"
 
-#: ../src/extension.js:233
+#: ../src/extension.js:274
 msgid "Reload Weather Information"
 msgstr "Meteorológiai információ újratöltése"
 
-#: ../src/extension.js:239
+#: ../src/extension.js:281
 msgid "Weather Settings"
 msgstr "Meteorológiai beállítások"
 
-#: ../src/extension.js:283
+#: ../src/extension.js:334
 #, python-format
 msgid "Schema \"%s\" not found."
 msgstr "\"%s\" minta nem található."
 
-#: ../src/extension.js:552 ../src/prefs.js:718
+#: ../src/extension.js:656 ../src/extension.js:665 ../src/prefs.js:815
 msgid "Invalid city"
 msgstr "Érvénytelen város"
 
-#: ../src/extension.js:826
-msgid "Tornado"
-msgstr "Tornádó"
-
-#: ../src/extension.js:829
-msgid "Tropical storm"
-msgstr "Trópusi vihar"
-
-#: ../src/extension.js:832 ../src/extension.js:1044
-msgid "Hurricane"
-msgstr "Hurrikán"
-
-#: ../src/extension.js:835
-msgid "Severe thunderstorms"
-msgstr "Erős zivatar"
-
-#: ../src/extension.js:838
-msgid "Thunderstorms"
-msgstr "Zivatar"
-
-#: ../src/extension.js:841
-msgid "Mixed rain and snow"
-msgstr "Havas eső"
-
-#: ../src/extension.js:844
-msgid "Mixed rain and sleet"
-msgstr "Ónos eső"
-
-#: ../src/extension.js:847
-msgid "Mixed snow and sleet"
-msgstr "Ónos eső és dara"
-
-#: ../src/extension.js:850
-msgid "Freezing drizzle"
-msgstr "Fagyos szitáló eső"
-
-#: ../src/extension.js:853
-msgid "Drizzle"
-msgstr "Szitáló eső"
-
-#: ../src/extension.js:856
-msgid "Freezing rain"
-msgstr "Fagyos eső"
-
-#: ../src/extension.js:859 ../src/extension.js:862
-msgid "Showers"
-msgstr "Zápor"
-
-#: ../src/extension.js:865
-msgid "Snow flurries"
-msgstr "Hózápor"
-
-#: ../src/extension.js:868
-msgid "Light snow showers"
-msgstr "Könnyű havas zápor"
-
-#: ../src/extension.js:871
-msgid "Blowing snow"
-msgstr "Hóátfúvás"
-
-#: ../src/extension.js:874
-msgid "Snow"
-msgstr "Havazás"
-
-#: ../src/extension.js:877
-msgid "Hail"
-msgstr "Zápor"
-
-#: ../src/extension.js:880
-msgid "Sleet"
-msgstr "Ónos eső"
-
-#: ../src/extension.js:883
-msgid "Dust"
-msgstr "Por"
-
-#: ../src/extension.js:886
-msgid "Foggy"
-msgstr "Ködös"
-
-#: ../src/extension.js:889
-msgid "Haze"
-msgstr "Pára"
-
-#: ../src/extension.js:892
-msgid "Smoky"
-msgstr "Ködös"
+#: ../src/extension.js:893
+msgid "thunderstorm with light rain"
+msgstr ""
 
 #: ../src/extension.js:895
-msgid "Blustery"
-msgstr "Enyhén szeles"
+#, fuzzy
+msgid "thunderstorm with rain"
+msgstr "Zivatar"
 
-#: ../src/extension.js:898
-msgid "Windy"
-msgstr "Szeles"
+#: ../src/extension.js:897
+msgid "thunderstorm with heavy rain"
+msgstr ""
 
-#: ../src/extension.js:901
-msgid "Cold"
-msgstr "Fagy"
-
-#: ../src/extension.js:904
-msgid "Cloudy"
-msgstr "Felhős"
-
-#: ../src/extension.js:909
-msgid "Mostly cloudy"
-msgstr "Jobbára felhős"
-
-#: ../src/extension.js:914 ../src/extension.js:957
-msgid "Partly cloudy"
-msgstr "Részben felhős"
-
-#: ../src/extension.js:917
-msgid "Clear"
-msgstr "Tiszta"
-
-#: ../src/extension.js:920
-msgid "Sunny"
-msgstr "Napos"
-
-#: ../src/extension.js:925
-msgid "Fair"
-msgstr "Derült"
-
-#: ../src/extension.js:928
-msgid "Mixed rain and hail"
-msgstr "Eső és jégeső"
-
-#: ../src/extension.js:931
-msgid "Hot"
-msgstr "Forró"
-
-#: ../src/extension.js:934
-msgid "Isolated thunderstorms"
+#: ../src/extension.js:899
+#, fuzzy
+msgid "light thunderstorm"
 msgstr "Elszigetelt viharok"
 
-#: ../src/extension.js:937
-msgid "Scattered thunderstorms"
-msgstr "Szórványos viharok"
-
-#: ../src/extension.js:942
+#: ../src/extension.js:901
 #, fuzzy
-msgid "Isolated showers"
-msgstr "Elszigetelt felhőszakadás"
+msgid "thunderstorm"
+msgstr "Zivatar"
+
+#: ../src/extension.js:903
+#, fuzzy
+msgid "heavy thunderstorm"
+msgstr "Erős zivatar"
+
+#: ../src/extension.js:905
+#, fuzzy
+msgid "ragged thunderstorm"
+msgstr "Elszigetelt viharok"
+
+#: ../src/extension.js:907
+msgid "thunderstorm with light drizzle"
+msgstr ""
+
+#: ../src/extension.js:909
+msgid "thunderstorm with drizzle"
+msgstr ""
+
+#: ../src/extension.js:911
+msgid "thunderstorm with heavy drizzle"
+msgstr ""
+
+#: ../src/extension.js:913
+msgid "light intensity drizzle"
+msgstr ""
+
+#: ../src/extension.js:915
+#, fuzzy
+msgid "drizzle"
+msgstr "Szitáló eső"
+
+#: ../src/extension.js:917
+msgid "heavy intensity drizzle"
+msgstr ""
+
+#: ../src/extension.js:919
+msgid "light intensity drizzle rain"
+msgstr ""
+
+#: ../src/extension.js:921
+#, fuzzy
+msgid "drizzle rain"
+msgstr "Szitáló eső"
+
+#: ../src/extension.js:923
+msgid "heavy intensity drizzle rain"
+msgstr ""
+
+#: ../src/extension.js:925
+#, fuzzy
+msgid "shower rain and drizzle"
+msgstr "Eső és jégeső"
+
+#: ../src/extension.js:927
+msgid "heavy shower rain and drizzle"
+msgstr ""
+
+#: ../src/extension.js:929
+#, fuzzy
+msgid "shower drizzle"
+msgstr "Fagyos szitáló eső"
+
+#: ../src/extension.js:931
+#, fuzzy
+msgid "light rain"
+msgstr "Tiszta levegő"
+
+#: ../src/extension.js:933
+#, fuzzy
+msgid "moderate rain"
+msgstr "Mérsékelt viharos szél"
+
+#: ../src/extension.js:935
+msgid "heavy intensity rain"
+msgstr ""
+
+#: ../src/extension.js:937
+msgid "very heavy rain"
+msgstr ""
+
+#: ../src/extension.js:939
+#, fuzzy
+msgid "extreme rain"
+msgstr "Fagyos eső"
+
+#: ../src/extension.js:941
+#, fuzzy
+msgid "freezing rain"
+msgstr "Fagyos eső"
+
+#: ../src/extension.js:943
+msgid "light intensity shower rain"
+msgstr ""
 
 #: ../src/extension.js:945
-msgid "Scattered showers"
-msgstr "Szórványos zápor"
+msgid "shower rain"
+msgstr ""
 
-#: ../src/extension.js:948 ../src/extension.js:954
-msgid "Heavy snow"
-msgstr "Erős hóesés"
+#: ../src/extension.js:947
+msgid "heavy intensity shower rain"
+msgstr ""
+
+#: ../src/extension.js:949
+msgid "ragged shower rain"
+msgstr ""
 
 #: ../src/extension.js:951
-msgid "Scattered snow showers"
-msgstr "Szórványos hózápor"
+#, fuzzy
+msgid "light snow"
+msgstr "Hóátfúvás"
 
-#: ../src/extension.js:960
-msgid "Thundershowers"
-msgstr "Felhőszakadás"
+#: ../src/extension.js:953
+msgid "snow"
+msgstr ""
+
+#: ../src/extension.js:955
+#, fuzzy
+msgid "heavy snow"
+msgstr "Erős hóesés"
+
+#: ../src/extension.js:957
+#, fuzzy
+msgid "sleet"
+msgstr "Ónos eső"
+
+#: ../src/extension.js:959
+#, fuzzy
+msgid "shower sleet"
+msgstr "Zápor"
+
+#: ../src/extension.js:961
+#, fuzzy
+msgid "light rain and snow"
+msgstr "Havas eső"
 
 #: ../src/extension.js:963
-msgid "Snow showers"
-msgstr "Hózápor"
+#, fuzzy
+msgid "rain and snow"
+msgstr "Havas eső"
 
-#: ../src/extension.js:966
-msgid "Isolated thundershowers"
-msgstr "Elszigetelt felhőszakadás"
+#: ../src/extension.js:965
+#, fuzzy
+msgid "light shower snow"
+msgstr "Könnyű havas zápor"
 
-#: ../src/extension.js:970
+#: ../src/extension.js:967
+#, fuzzy
+msgid "shower snow"
+msgstr "Zápor"
+
+#: ../src/extension.js:969
+#, fuzzy
+msgid "heavy shower snow"
+msgstr "Erős hóesés"
+
+#: ../src/extension.js:971
+msgid "mist"
+msgstr ""
+
+#: ../src/extension.js:973
+msgid "smoke"
+msgstr ""
+
+#: ../src/extension.js:975
+msgid "haze"
+msgstr ""
+
+#: ../src/extension.js:977
+msgid "Sand/Dust Whirls"
+msgstr ""
+
+#: ../src/extension.js:979
+#, fuzzy
+msgid "Fog"
+msgstr "Ködös"
+
+#: ../src/extension.js:981
+msgid "sand"
+msgstr ""
+
+#: ../src/extension.js:983
+msgid "dust"
+msgstr ""
+
+#: ../src/extension.js:985
+msgid "VOLCANIC ASH"
+msgstr ""
+
+#: ../src/extension.js:987
+msgid "SQUALLS"
+msgstr ""
+
+#: ../src/extension.js:989
+msgid "TORNADO"
+msgstr ""
+
+#: ../src/extension.js:991
+msgid "sky is clear"
+msgstr ""
+
+#: ../src/extension.js:993
+msgid "few clouds"
+msgstr ""
+
+#: ../src/extension.js:995
+#, fuzzy
+msgid "scattered clouds"
+msgstr "Szórványos zápor"
+
+#: ../src/extension.js:997
+msgid "broken clouds"
+msgstr ""
+
+#: ../src/extension.js:999
+#, fuzzy
+msgid "overcast clouds"
+msgstr "Jobbára felhős"
+
+#: ../src/extension.js:1001
 msgid "Not available"
 msgstr "Nem elérhető"
 
-#: ../src/extension.js:1008
+#: ../src/extension.js:1039
 msgid "Calm"
 msgstr "Szélcsend"
 
-#: ../src/extension.js:1011
+#: ../src/extension.js:1042
 msgid "Light air"
 msgstr "Tiszta levegő"
 
-#: ../src/extension.js:1014
+#: ../src/extension.js:1045
 msgid "Light breeze"
 msgstr "Könnyű szellő"
 
-#: ../src/extension.js:1017
+#: ../src/extension.js:1048
 msgid "Gentle breeze"
 msgstr "Gyenge fuvallat"
 
-#: ../src/extension.js:1020
+#: ../src/extension.js:1051
 msgid "Moderate breeze"
 msgstr "Mérsékelt szellő"
 
-#: ../src/extension.js:1023
+#: ../src/extension.js:1054
 msgid "Fresh breeze"
 msgstr "Frissítő szellő"
 
-#: ../src/extension.js:1026
+#: ../src/extension.js:1057
 msgid "Strong breeze"
 msgstr "Erős szél"
 
-#: ../src/extension.js:1029
+#: ../src/extension.js:1060
 msgid "Moderate gale"
 msgstr "Mérsékelt viharos szél"
 
-#: ../src/extension.js:1032
+#: ../src/extension.js:1063
 msgid "Fresh gale"
 msgstr "Frissítő viharos szél"
 
-#: ../src/extension.js:1035
+#: ../src/extension.js:1066
 msgid "Strong gale"
 msgstr "Erős viharos szél"
 
-#: ../src/extension.js:1038
+#: ../src/extension.js:1069
 msgid "Storm"
 msgstr "Vihar"
 
-#: ../src/extension.js:1041
+#: ../src/extension.js:1072
 msgid "Violent storm"
 msgstr "Heves vihar"
 
-#: ../src/extension.js:1048
+#: ../src/extension.js:1075
+msgid "Hurricane"
+msgstr "Hurrikán"
+
+#: ../src/extension.js:1079
 msgid "Sunday"
 msgstr "Vasárnap"
 
-#: ../src/extension.js:1048
+#: ../src/extension.js:1079
 msgid "Monday"
 msgstr "Hétfő"
 
-#: ../src/extension.js:1048
+#: ../src/extension.js:1079
 msgid "Tuesday"
 msgstr "Kedd"
 
-#: ../src/extension.js:1048
+#: ../src/extension.js:1079
 msgid "Wednesday"
 msgstr "Szerda"
 
-#: ../src/extension.js:1048
+#: ../src/extension.js:1079
 msgid "Thursday"
 msgstr "Csütörtök"
 
-#: ../src/extension.js:1048
+#: ../src/extension.js:1079
 msgid "Friday"
 msgstr "Péntek"
 
-#: ../src/extension.js:1048
+#: ../src/extension.js:1079
 msgid "Saturday"
 msgstr "Szombat"
 
-#: ../src/extension.js:1054
+#: ../src/extension.js:1085
 msgid "N"
 msgstr "É"
 
-#: ../src/extension.js:1054
+#: ../src/extension.js:1085
 msgid "NE"
 msgstr "ÉK"
 
-#: ../src/extension.js:1054
+#: ../src/extension.js:1085
 msgid "E"
 msgstr "K"
 
-#: ../src/extension.js:1054
+#: ../src/extension.js:1085
 msgid "SE"
 msgstr "DK"
 
-#: ../src/extension.js:1054
+#: ../src/extension.js:1085
 msgid "S"
 msgstr "D"
 
-#: ../src/extension.js:1054
+#: ../src/extension.js:1085
 msgid "SW"
 msgstr "DNY"
 
-#: ../src/extension.js:1054
+#: ../src/extension.js:1085
 msgid "W"
 msgstr "NY"
 
-#: ../src/extension.js:1054
+#: ../src/extension.js:1085
 msgid "NW"
 msgstr "ÉNY"
 
-#: ../src/extension.js:1316 ../src/extension.js:1443
+#: ../src/extension.js:1299 ../src/extension.js:1479
 msgid "Yesterday"
 msgstr "Tegnap"
 
-#: ../src/extension.js:1318 ../src/extension.js:1445
+#: ../src/extension.js:1301 ../src/extension.js:1481
 #, python-format
 msgid "%s days ago"
 msgstr "%s nappal ezelőtt"
 
-#: ../src/extension.js:1437
+#: ../src/extension.js:1473
 msgid "Today"
 msgstr "Ma"
 
-#: ../src/extension.js:1439
+#: ../src/extension.js:1475
 msgid "Tomorrow"
 msgstr "Holnap"
 
-#: ../src/extension.js:1441
+#: ../src/extension.js:1477
 #, python-format
 msgid "In %s days"
 msgstr "%s napban"
 
-#: ../src/extension.js:1478
+#: ../src/extension.js:1541
 msgid "Loading current weather ..."
 msgstr "Aktuális időjárás betöltése"
 
-#: ../src/extension.js:1481
+#: ../src/extension.js:1544
 msgid "Loading future weather ..."
 msgstr "Időjárás előrejelzés betöltése ..."
 
-#: ../src/extension.js:1515
+#: ../src/extension.js:1578
 msgid "Loading ..."
 msgstr "Betöltés ..."
 
-#: ../src/extension.js:1519
+#: ../src/extension.js:1582
 msgid "Please wait"
 msgstr "Kérem várjon"
 
-#: ../src/extension.js:1580
-#, fuzzy
-msgid "Feels like:"
-msgstr "Hőérzet:"
+#: ../src/extension.js:1643
+msgid "Cloudiness:"
+msgstr ""
 
-#: ../src/extension.js:1584
+#: ../src/extension.js:1647
 msgid "Humidity:"
 msgstr "Páratartalom:"
 
-#: ../src/extension.js:1588
+#: ../src/extension.js:1651
 msgid "Pressure:"
 msgstr "Légnyomás:"
 
-#: ../src/extension.js:1592
+#: ../src/extension.js:1655
 msgid "Wind:"
 msgstr "Szél:"
 
-#: ../src/prefs.js:118
+#: ../src/prefs.js:127
 msgid "Temperature Unit"
 msgstr "Hőmérsékleti egység"
 
-#: ../src/prefs.js:120
+#: ../src/prefs.js:129
 msgid "Wind Speed Unit"
 msgstr "Szélerősség egység"
 
-#: ../src/prefs.js:122
+#: ../src/prefs.js:131
 msgid "Pressure Unit"
 msgstr "Nyomás egysége"
 
-#: ../src/prefs.js:124
+#: ../src/prefs.js:133
 msgid "Position in Panel"
 msgstr "Helyzete a panelen"
 
-#: ../src/prefs.js:125
+#: ../src/prefs.js:134
 msgid "Center"
 msgstr "Középen"
 
-#: ../src/prefs.js:125
+#: ../src/prefs.js:134
 msgid "Right"
 msgstr "Jobb"
 
-#: ../src/prefs.js:125
+#: ../src/prefs.js:134
 msgid "Left"
 msgstr "Bal"
 
-#: ../src/prefs.js:126
+#: ../src/prefs.js:135
 msgid "Wind Direction by Arrows"
 msgstr "Szélirány nyilakkal"
 
-#: ../src/prefs.js:128
+#: ../src/prefs.js:137
 msgid "Translate Conditions"
 msgstr "Fordítási feltételek"
 
-#: ../src/prefs.js:130
+#: ../src/prefs.js:139
 msgid "Symbolic Icons"
 msgstr "Jelképes Ikonok"
 
-#: ../src/prefs.js:132
+#: ../src/prefs.js:141
 msgid "Temperature in Panel"
 msgstr "Hőmérséklet a panelen"
 
-#: ../src/prefs.js:134
+#: ../src/prefs.js:143
 msgid "Conditions in Panel"
 msgstr "Körülmények a panelen"
 
-#: ../src/prefs.js:136
+#: ../src/prefs.js:145
+msgid "Center forecast"
+msgstr ""
+
+#: ../src/prefs.js:147
 msgid "Number of days in forecast"
 msgstr ""
 
-#: ../src/prefs.js:265
+#: ../src/prefs.js:149
+msgid "Personal Api key from openweather.org"
+msgstr ""
+
+#: ../src/prefs.js:302
 msgid "Name of the city"
 msgstr "Város neve"
 
-#: ../src/prefs.js:432
+#: ../src/prefs.js:490
 #, python-format
 msgid "Remove %s ?"
 msgstr "%s eltávolítása?"
+
+#~ msgid "Tornado"
+#~ msgstr "Tornádó"
+
+#~ msgid "Tropical storm"
+#~ msgstr "Trópusi vihar"
+
+#~ msgid "Mixed rain and sleet"
+#~ msgstr "Ónos eső"
+
+#~ msgid "Mixed snow and sleet"
+#~ msgstr "Ónos eső és dara"
+
+#~ msgid "Snow flurries"
+#~ msgstr "Hózápor"
+
+#~ msgid "Snow"
+#~ msgstr "Havazás"
+
+#~ msgid "Hail"
+#~ msgstr "Zápor"
+
+#~ msgid "Dust"
+#~ msgstr "Por"
+
+#~ msgid "Haze"
+#~ msgstr "Pára"
+
+#~ msgid "Smoky"
+#~ msgstr "Ködös"
+
+#~ msgid "Blustery"
+#~ msgstr "Enyhén szeles"
+
+#~ msgid "Windy"
+#~ msgstr "Szeles"
+
+#~ msgid "Cold"
+#~ msgstr "Fagy"
+
+#~ msgid "Cloudy"
+#~ msgstr "Felhős"
+
+#~ msgid "Partly cloudy"
+#~ msgstr "Részben felhős"
+
+#~ msgid "Clear"
+#~ msgstr "Tiszta"
+
+#~ msgid "Sunny"
+#~ msgstr "Napos"
+
+#~ msgid "Fair"
+#~ msgstr "Derült"
+
+#~ msgid "Hot"
+#~ msgstr "Forró"
+
+#~ msgid "Scattered thunderstorms"
+#~ msgstr "Szórványos viharok"
+
+#, fuzzy
+#~ msgid "Isolated showers"
+#~ msgstr "Elszigetelt felhőszakadás"
+
+#~ msgid "Scattered snow showers"
+#~ msgstr "Szórványos hózápor"
+
+#~ msgid "Thundershowers"
+#~ msgstr "Felhőszakadás"
+
+#~ msgid "Snow showers"
+#~ msgstr "Hózápor"
+
+#~ msgid "Isolated thundershowers"
+#~ msgstr "Elszigetelt felhőszakadás"
+
+#, fuzzy
+#~ msgid "Feels like:"
+#~ msgstr "Hőérzet:"

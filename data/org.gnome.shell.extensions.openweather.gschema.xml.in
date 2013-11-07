@@ -1,5 +1,5 @@
-<schemalist gettext-domain="gnome-shell-extension-weather">
-  <enum id="org.gnome.shell.extensions.weather.unit">
+<schemalist gettext-domain="gnome-shell-extension-openweather">
+  <enum id="org.gnome.shell.extensions.openweather.unit">
     <value nick="celsius" value="0" />
     <value nick="fahrenheit" value="1" />
     <value nick="kelvin" value="2" />
@@ -9,7 +9,7 @@
     <value nick="delisle" value="6" />
     <value nick="newton" value="7" />
   </enum>
-  <enum id="org.gnome.shell.extensions.weather.pressure-unit">
+  <enum id="org.gnome.shell.extensions.openweather.pressure-unit">
     <value nick="hPa" value="0" />
     <value nick="inHg" value="1" />
     <value nick="bar" value="2" />
@@ -20,7 +20,7 @@
     <value nick="Torr" value="7" />
     <value nick="psi" value="8" />
   </enum>
-  <enum id="org.gnome.shell.extensions.weather.wind-speed-unit">
+  <enum id="org.gnome.shell.extensions.openweather.wind-speed-unit">
     <value nick="kph" value="0" />
     <value nick="mph" value="1" />
     <value nick="m/s" value="2" />
@@ -28,25 +28,25 @@
     <value nick="ft/s" value="4" />
     <value nick="Beaufort" value="5" />
   </enum>
-  <enum id="org.gnome.shell.extensions.weather.wind-dir-indicators">
+  <enum id="org.gnome.shell.extensions.openweather.wind-dir-indicators">
     <value nick="arrows" value="0" />
     <value nick="letters" value="1" />
   </enum>
-  <enum id="org.gnome.shell.extensions.weather.position">
+  <enum id="org.gnome.shell.extensions.openweather.position">
     <value nick="center" value="0" />
     <value nick="right" value="1" />
     <value nick="left" value="2"  />
   </enum>
-  <schema id="org.gnome.shell.extensions.weather" path="/org/gnome/shell/extensions/weather/">
-    <key name="unit" enum="org.gnome.shell.extensions.weather.unit">
+  <schema id="org.gnome.shell.extensions.openweather" path="/org/gnome/shell/extensions/openweather/">
+    <key name="unit" enum="org.gnome.shell.extensions.openweather.unit">
       <default>'fahrenheit'</default>
       <_summary>Temperature Unit</_summary>
     </key>
-    <key name="pressure-unit" enum="org.gnome.shell.extensions.weather.pressure-unit">
+    <key name="pressure-unit" enum="org.gnome.shell.extensions.openweather.pressure-unit">
       <default>'inHg'</default>
       <_summary>Pressure Unit</_summary>
     </key>
-    <key name="wind-speed-unit" enum="org.gnome.shell.extensions.weather.wind-speed-unit">
+    <key name="wind-speed-unit" enum="org.gnome.shell.extensions.openweather.wind-speed-unit">
       <default>'mph'</default>
       <_summary>Wind Speed Units</_summary>
       <_description>Choose the units used for wind speed. Allowed values are 'kph', 'mph', 'm/s', 'knots', 'ft/s' or 'Beaufort'.</_description>
@@ -57,7 +57,7 @@
       <_description>Choose whether to display wind direction through arrows or letters.</_description>
     </key>
     <key name="city" type="s">
-      <default>'12478500>Ibiza, Balearic Islands (ES)'</default>
+      <default>'2516479>Ibiza (ES)'</default>
       <_summary>City to be displayed</_summary>
     </key>
     <key name="actual-city" type="i">
@@ -80,13 +80,17 @@
       <default>false</default>
       <_summary>Conditions in Panel</_summary>
     </key>
-    <key name="position-in-panel" enum="org.gnome.shell.extensions.weather.position">
+    <key name="position-in-panel" enum="org.gnome.shell.extensions.openweather.position">
       <default>'center'</default>
       <_summary>Position in Panel</_summary>
     </key>
-    <key name="refresh-interval" type="i">
-      <default>300</default>
-      <_summary>Refresh interval</_summary>
+    <key name="refresh-interval-current" type="i">
+      <default>600</default>
+      <_summary>Refresh interval (actual weather)</_summary>
+    </key>
+    <key name="refresh-interval-forecast" type="i">
+      <default>3600</default>
+      <_summary>Refresh interval (forecast)</_summary>
     </key>
     <key name="center-forecast" type="b">
       <default>false</default>
@@ -95,6 +99,10 @@
     <key name="days-forecast" type="i">
       <default>2</default>
       <_summary>Number of days in forecast</_summary>
+    </key>
+    <key name="appid" type="s">
+      <default>''</default>
+      <_summary>Your personal API key from openweathermap.org</_summary>
     </key>
   </schema>
 </schemalist>
