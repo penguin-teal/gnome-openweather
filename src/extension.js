@@ -16,20 +16,20 @@
  *     Jens Lody <jens@jenslody.de>
  *
  *
- * This file is part of gnome-shell-extension-weather.
+ * This file is part of gnome-shell-extension-openweather.
  *
- * gnome-shell-extension-weather is free software: you can redistribute it and/or modify
+ * gnome-shell-extension-openweather is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * gnome-shell-extension-weather is distributed in the hope that it will be useful,
+ * gnome-shell-extension-openweather is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with gnome-shell-extension-weather.  If not, see <http://www.gnu.org/licenses/>.
+ * along with gnome-shell-extension-openweather.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
 
@@ -39,7 +39,7 @@ const Config = imports.misc.config;
 const Convenience = Me.imports.convenience;
 const Cairo = imports.cairo;
 const Clutter = imports.gi.Clutter;
-const Gettext = imports.gettext.domain('gnome-shell-extension-weather');
+const Gettext = imports.gettext.domain('gnome-shell-extension-openweather');
 const Gio = imports.gi.Gio;
 const Gtk = imports.gi.Gtk;
 const Lang = imports.lang;
@@ -55,7 +55,7 @@ const PanelMenu = imports.ui.panelMenu;
 const PopupMenu = imports.ui.popupMenu;
 
 // Settings
-const WEATHER_SETTINGS_SCHEMA = 'org.gnome.shell.extensions.weather';
+const WEATHER_SETTINGS_SCHEMA = 'org.gnome.shell.extensions.openweather';
 const WEATHER_UNIT_KEY = 'unit';
 const WEATHER_WIND_SPEED_UNIT_KEY = 'wind-speed-unit';
 const WEATHER_WIND_DIRECTION_KEY = 'wind-direction';
@@ -727,7 +727,7 @@ const WeatherMenuButton = new Lang.Class({
     },
 
     _onPreferencesActivate: function() {
-        Util.spawn(["gnome-shell-extension-prefs", "weather-extension@jenslody.de"]);
+        Util.spawn(["gnome-shell-extension-prefs", "openweather-extension@jenslody.de"]);
         return 0;
     },
 
@@ -1729,7 +1729,7 @@ weather-storm.png = weather-storm-symbolic.svg
 let weatherMenu;
 
 function init() {
-    Convenience.initTranslations('gnome-shell-extension-weather');
+    Convenience.initTranslations('gnome-shell-extension-openweather');
 }
 
 function enable() {

@@ -2,7 +2,7 @@ ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
 
 SUBDIRS = src data po
 
-uuid = "weather-extension@jenslody.de"
+uuid = "openweather-extension@jenslody.de"
 
 localprefix = $(HOME)/.local/share/gnome-shell/extensions
 
@@ -13,19 +13,19 @@ zip-file: all
 	$(MKDIR_P) $(builddir)/zip-file; \
 	$(MAKE) install DESTDIR="$(abs_builddir)/_build"; \
 	cp -r "$(builddir)/_build$(datadir)/gnome-shell/extensions/$(uuid)" "$(builddir)/_build"; \
-	if [ -f "$(builddir)/_build$(datadir)/glib-2.0/schemas/org.gnome.shell.extensions.weather.gschema.xml" ]; then \
+	if [ -f "$(builddir)/_build$(datadir)/glib-2.0/schemas/org.gnome.shell.extensions.openweather.gschema.xml" ]; then \
 		$(MKDIR_P) "$(builddir)/_build/$(uuid)/schemas"; \
-		mv "$(builddir)/_build$(datadir)/glib-2.0/schemas/org.gnome.shell.extensions.weather.gschema.xml" "$(builddir)/_build/$(uuid)/schemas"; \
+		mv "$(builddir)/_build$(datadir)/glib-2.0/schemas/org.gnome.shell.extensions.openweather.gschema.xml" "$(builddir)/_build/$(uuid)/schemas"; \
 		glib-compile-schemas "$(builddir)/_build/$(uuid)/schemas"; \
 	fi; \
 	cp -r "$(builddir)/_build$(datadir)/locale" "$(builddir)/_build/$(uuid)"; \
 	(cd "$(builddir)/_build/$(uuid)/"; \
-	 zip -qr "$(abs_builddir)/zip-file/weather.shell-extension.zip" .; \
+	 zip -qr "$(abs_builddir)/zip-file/openweather.shell-extension.zip" .; \
 	); \
 	rm -fR $(builddir)/_build
 
 local-install: zip-file
-	zip_file="$(abs_builddir)/zip-file/weather.shell-extension.zip"; \
+	zip_file="$(abs_builddir)/zip-file/openweather.shell-extension.zip"; \
 	if [ -d "$(localprefix)/$(uuid)" ]; then \
 	rm -fR "$(localprefix)/$(uuid)"; \
 	fi; \

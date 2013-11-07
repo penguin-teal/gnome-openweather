@@ -1,9 +1,9 @@
-extensionurl = https://github.com/jenslody/gnome-shell-extension-weather
+extensionurl = https://github.com/jenslody/gnome-shell-extension-openweather
 
 # Change these to modify how installation is performed
 topextensiondir = $(datadir)/gnome-shell/extensions
 
-uuid = weather-extension@jenslody.de
+uuid = openweather-extension@jenslody.de
 
 extensiondir = $(topextensiondir)/$(uuid)
 
@@ -20,7 +20,7 @@ metadata.json: metadata.json.in $(top_builddir)/config.status
 
 CLEANFILES = metadata.json
 
-gschemas_in = org.gnome.shell.extensions.weather.gschema.xml.in
+gschemas_in = org.gnome.shell.extensions.openweather.gschema.xml.in
 
 @INTLTOOL_XML_NOMERGE_RULE@
 
