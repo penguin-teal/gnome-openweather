@@ -248,7 +248,16 @@ const WeatherMenuButton = new Lang.Class({
             if (this._appid)
                 url += "?APPID=" + this._appid;
 
-            Util.spawn(["gnome-open", url]);
+            try {
+                Util.trySpawn(["gnome-open", url]);
+            } catch (err) {
+                try {
+                    Util.trySpawn(["xdg-open", url]);
+                } catch (err) {
+                    let title = _("Execution of 'gnome-open' and 'xdg-open' failed.\nCan not open %s").format(url);
+                    Main.notifyError(title, err.message);
+                }
+            }
         }));
 
         this.menu.addMenuItem(item);
