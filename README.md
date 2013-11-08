@@ -44,14 +44,6 @@ Run the following commands:
 	cd ~/gnome-shell-extension-weather
 	./autogen.sh && make local-install
 
-If you want to use openweathermap.org without deprecated Soup.SessionAsync (less TCP Retransmission), please use the openweathermap branch instead.
-You need to have at least gnome-shell version 3.8 .
-
-	cd ~ && git clone git://github.com/jenslody/gnome-shell-extension-weather.git
-	cd ~/gnome-shell-extension-weather
-	git checkout openweathermap
-	./autogen.sh && make local-install
-
 ----
 
 # Configuration
