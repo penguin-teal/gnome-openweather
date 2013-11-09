@@ -38,6 +38,7 @@ const Soup = imports.gi.Soup;
 const Lang = imports.lang;
 const ExtensionUtils = imports.misc.extensionUtils;
 const Me = ExtensionUtils.getCurrentExtension();
+const Config = imports.misc.config;
 const Convenience = Me.imports.convenience;
 
 const EXTENSIONDIR = Me.dir.get_path();
