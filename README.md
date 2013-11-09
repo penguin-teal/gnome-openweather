@@ -12,6 +12,8 @@ After the installation, restart GNOME Shell (`Alt`+`F2`, `r`, `Enter`) and enabl
 
 ## Through a package manager
 
+#### Note: you need the root password for all these installation modes, if you do not have root-access, and the needed build-dependencies are installed, use the generic install.
+
 ### [Debian](http://packages.debian.org/source/unstable/gnome-shell-extension-weather)
 
 Debian uses the (former master now ) yahoo-branch !
@@ -21,6 +23,22 @@ My fork of the extension is currently only available for unstable/sid.
 Install the package through APT (or use your favourite package-manager, e.g. synaptic):
 
 	sudo apt-get install gnome-shell-extension-weather
+
+
+### [Fedora](https://fedoraproject.org/)
+
+You can install the extension from [my repo](http://rpm.jenslody.de/).
+I have packages for Fedora 18, 19 and 20.
+
+To install my repo download and install [this rpm](http://rpm.jenslody.de/fedora-jenslody.de-0.1-2.fc17.noarch.rpm).
+
+If it is not installed automatically, just run:
+
+    sudo yum localinstall --nogpgcheck http://rpm.jenslody.de/fedora-jenslody.de-0.1-2.fc17.noarch.rpm
+
+Now you can install the extension, either via your favourite package-manager or on a console:
+
+    sudo yum install gnome-shell-extension-openweather
 
 
 ## Generic (Local installation)
