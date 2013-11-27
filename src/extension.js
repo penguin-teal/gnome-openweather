@@ -847,9 +847,9 @@ weather-storm.png = weather-storm-symbolic.svg
             case 701: //mist
             case 711: //smoke
             case 721: //haze
+            case 741: //Fog
                 return ['weather-fog'];
             case 731: //Sand/Dust Whirls
-            case 741: //Fog
             case 751: //sand
             case 761: //dust
             case 762: //VOLCANIC ASH
