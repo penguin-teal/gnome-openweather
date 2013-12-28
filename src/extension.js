@@ -1675,6 +1675,12 @@ weather-storm.png = weather-storm-symbolic.svg
         this._currentWeather.set_child(box);
     },
 
+    scrollForecastBy: function(delta) {
+        if (this._forecastScrollBox == undefined)
+            return;
+        this._forecastScrollBox.hscroll.adjustment.value += delta;
+    },
+
     rebuildFutureWeatherUi: function() {
         this.destroyFutureWeather();
 
@@ -1687,11 +1693,28 @@ weather-storm.png = weather-storm-symbolic.svg
         this._forecastScrollBox = new St.ScrollView({
             style_class: 'weather-forecasts'
         });
+
+        let pan = new Clutter.PanAction({
+            interpolate: true
+        });
+        pan.connect('pan', Lang.bind(this, function(action) {
+
+            let[dist, dx, dy] = action.get_motion_delta(0);
+
+            this.scrollForecastBy(-1 * (dx / this._forecastScrollBox.width) * this._forecastScrollBox.hscroll.adjustment.page_size);
+            return false;
+        }));
+        this._forecastScrollBox.add_action(pan);
+
+        this._forecastScrollBox.connect('scroll-event', Lang.bind(this, this._onScroll));
+        this._forecastScrollBox.hscroll.connect('scroll-event', Lang.bind(this, this._onScroll));
+
         this._forecastScrollBox.hscroll.margin_right = 25;
         this._forecastScrollBox.hscroll.margin_left = 25;
         this._forecastScrollBox.hscroll.hide();
         this._forecastScrollBox.vscrollbar_policy = Gtk.PolicyType.NEVER;
         this._forecastScrollBox.hscrollbar_policy = Gtk.PolicyType.AUTOMATIC;
+        this._forecastScrollBox.enable_mouse_scrolling = true;
         this._forecastScrollBox.hide();
 
         this._futureWeather.set_child(this._forecastScrollBox);
@@ -1732,6 +1755,25 @@ weather-storm.png = weather-storm-symbolic.svg
             this._forecastBox.add_actor(bb);
         }
         this._forecastScrollBox.add_actor(this._forecastBox);
+    },
+
+    _onScroll: function(actor, event) {
+        let dx = 0;
+        let dy = 0;
+        switch (event.get_scroll_direction()) {
+            case Clutter.ScrollDirection.UP:
+                dy = -1;
+                break;
+            case Clutter.ScrollDirection.DOWN:
+                dy = 1;
+                break;
+                // horizontal scrolling will be handled by the control itself
+            default:
+                return true;
+        }
+
+        this.scrollForecastBy(dy * this._forecastScrollBox.hscroll.adjustment.stepIncrement);
+        return false;
     }
 });
 
