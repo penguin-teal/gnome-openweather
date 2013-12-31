@@ -74,7 +74,9 @@ const WEATHER_DAYS_FORECAST = 'days-forecast';
 const WEATHER_OWM_API_KEY = 'appid';
 
 //URL
-const WEATHER_URL_BASE = 'http://api.openweathermap.org/data/2.5/';
+const WEATHER_URL_HOST = 'api.openweathermap.org';
+const WEATHER_URL_PORT = 80;
+const WEATHER_URL_BASE = 'http://' + WEATHER_URL_HOST + '/data/2.5/';
 const WEATHER_URL_CURRENT = WEATHER_URL_BASE + 'weather';
 const WEATHER_URL_FORECAST = WEATHER_URL_BASE + 'forecast/daily';
 
@@ -130,6 +132,8 @@ const WeatherMenuButton = new Lang.Class({
     Extends: PanelMenu.Button,
 
     _init: function() {
+        this.currentWeatherCache = undefined;
+        this.forecastWeatherCache = undefined;
         // Load settings
         this.loadConfig();
 
@@ -271,8 +275,9 @@ const WeatherMenuButton = new Lang.Class({
 
         let item = new PopupMenu.PopupMenuItem(_("Reload Weather Information"));
         item.connect('activate', Lang.bind(this, function() {
-            this.refreshWeatherCurrent(false);
-            this.refreshWeatherForecast(false);
+            this.currentWeatherCache = undefined;
+            this.forecastWeatherCache = undefined;
+            this.parseWeatherCurrent();
         }));
         this.menu.addMenuItem(item);
 
@@ -280,15 +285,21 @@ const WeatherMenuButton = new Lang.Class({
         item.connect('activate', Lang.bind(this, this._onPreferencesActivate));
         this.menu.addMenuItem(item);
 
-        // Items
-        this.showLoadingUi();
-
         this.rebuildCurrentWeatherUi();
         this.rebuildFutureWeatherUi();
 
-        // Show weather
-        this.refreshWeatherCurrent(true);
-        this.refreshWeatherForecast(true);
+        let params = {
+            hostname: WEATHER_URL_HOST,
+            port: WEATHER_URL_PORT
+        };
+
+        this._weather_socket_connectable = new Gio.NetworkAddress(params);
+
+        this._network_monitor = Gio.network_monitor_get_default();
+
+        this._connected = false;
+        this._network_monitor.connect('network-changed', Lang.bind(this, this._onNetworkStateChanged));
+        this._checkConnectionState();
 
         this.menu.connect('open-state-changed', Lang.bind(this, this._onOpenStateChanged));
     },
@@ -297,17 +308,21 @@ const WeatherMenuButton = new Lang.Class({
         if (this._timeoutCurrent)
             Mainloop.source_remove(this._timeoutCurrent);
 
+        this._timeoutCurrent = undefined;
+
         if (this._timeoutForecast)
             Mainloop.source_remove(this._timeoutForecast);
 
+        this._timeoutForecast = undefined;
+
         if (this._settingsC) {
             this._settings.disconnect(this._settingsC);
-            this._settingsC = 0;
+            this._settingsC = undefined;
         }
 
         if (this._settingsInterfaceC) {
             this._settingsInterface.disconnect(this._settingsInterfaceC);
-            this._settingsInterfaceC = 0;
+            this._settingsInterfaceC = undefined;
         }
     },
 
@@ -321,7 +336,6 @@ const WeatherMenuButton = new Lang.Class({
                 that.forecastWeatherCache = undefined;
             }
             that.parseWeatherCurrent();
-            that.parseWeatherForecast();
         });
     },
 
@@ -337,10 +351,28 @@ const WeatherMenuButton = new Lang.Class({
             if (that.locationChanged()) {
                 that.currentWeatherCache = undefined;
                 that.forecastWeatherCache = undefined;
+                that.rebuildCurrentWeatherUi();
+                that.rebuildFutureWeatherUi();
             }
             that.parseWeatherCurrent();
-            that.parseWeatherForecast();
         });
+
+    _onNetworkStateChanged: function() {
+        this._checkConnectionState();
+    },
+
+    _checkConnectionState: function() {
+        if (this._network_monitor.network_available) {
+            this._network_monitor.can_reach_async(this._weather_socket_connectable, null, Lang.bind(this, function(object, result) {
+                let connected = object.can_reach_finish(result);
+                // only reparse once (we can get multiple connect events)
+                if (connected && !this._connected)
+                    this.parseWeatherCurrent();
+                this._connected = connected;
+            }));
+        } else {
+            this._connected = false;
+        }
     },
 
     locationChanged: function() {
@@ -722,8 +754,6 @@ const WeatherMenuButton = new Lang.Class({
             } else
                 continue;
         }
-        this.refreshWeatherCurrent(false);
-        this.refreshWeatherForecast(false);
     },
 
     _onPreferencesActivate: function() {
@@ -1368,9 +1398,10 @@ weather-storm.png = weather-storm-symbolic.svg
         else // i.e. wind > 0 && wind_direction
             this._currentWeatherWind.text = wind_direction + ' ' + parseFloat(wind).toLocaleString() + ' ' + wind_unit;
 
+        this.parseWeatherForecast();
     },
 
-    refreshWeatherCurrent: function(recurse) {
+    refreshWeatherCurrent: function() {
         if (!this.extractId(this._city)) {
             this.updateCities();
             return;
@@ -1385,28 +1416,32 @@ weather-storm.png = weather-storm-symbolic.svg
             params['APPID'] = this._appid;
 
         this.load_json_async(WEATHER_URL_CURRENT, params, function(json) {
-            if (!json)
-                return;
+            if (json && (Number(json.cod) == 200)) {
 
-            if (Number(json.cod) != 200)
-                return;
+                if (this.currentWeatherCache != json)
+                    this.currentWeatherCache = json;
 
-            if (this.currentWeatherCache != json)
-                this.currentWeatherCache = json;
+                this.rebuildSelectCityItem();
 
-            this.rebuildSelectCityItem();
-
-            this.parseWeatherCurrent();
-            this.parseWeatherForecast();
-
+                this.parseWeatherCurrent();
+            } else
+                this.reloadWeatherCurrent(600);
         });
+        this.reloadWeatherCurrent(this._refresh_interval_current);
+    },
 
-        //         Repeatedly refresh weather if recurse is set
-        if (recurse) {
-            this._timeoutCurrent = Mainloop.timeout_add_seconds(this._refresh_interval_current, Lang.bind(this, function() {
-                this.refreshWeatherCurrent(true);
-            }));
+    reloadWeatherCurrent: function(interval) {
+        if (this._timeoutCurrent) {
+            Mainloop.source_remove(this._timeoutCurrent);
         }
+        this._timeoutCurrent = Mainloop.timeout_add_seconds(interval, Lang.bind(this, function() {
+            this.currentWeatherCache = undefined;
+            if (this._connected)
+                this.parseWeatherCurrent();
+            else
+                this.rebuildCurrentWeatherUi()
+            return true;
+        }));
     },
 
     parseWeatherForecast: function() {
@@ -1494,7 +1529,8 @@ weather-storm.png = weather-storm-symbolic.svg
         }
     },
 
-    refreshWeatherForecast: function(recurse) {
+    refreshWeatherForecast: function() {
+
         if (!this.extractId(this._city)) {
             this.updateCities();
             return;
@@ -1511,24 +1547,29 @@ weather-storm.png = weather-storm-symbolic.svg
             params['APPID'] = this._appid;
 
         this.load_json_async(WEATHER_URL_FORECAST, params, function(json) {
-            if (!json)
-                return;
+            if (json && (Number(json.cod) == 200)) {
+                if (this.forecastWeatherCache != json.list)
+                    this.forecastWeatherCache = json.list;
 
-            if (Number(json.cod) != 200)
-                return;
-
-            if (this.forecastWeatherCache != json.list)
-                this.forecastWeatherCache = json.list;
-
-            this.parseWeatherForecast();
+                this.parseWeatherForecast();
+            } else
+                this.reloadWeatherForecast(600);
         });
+        this.reloadWeatherForecast(this._refresh_interval_forecast);
+    },
 
-        //         Repeatedly refresh weather if recurse is set
-        if (recurse) {
-            this._timeoutForecast = Mainloop.timeout_add_seconds(this._refresh_interval_forecast, Lang.bind(this, function() {
-                this.refreshWeatherForecast(true);
-            }));
+    reloadWeatherForecast: function(interval) {
+        if (this._timeoutForecast) {
+            Mainloop.source_remove(this._timeoutForecast);
         }
+        this._timeoutForecast = Mainloop.timeout_add_seconds(interval, Lang.bind(this, function() {
+            this.forecastWeatherCache = undefined;
+            if (this._connected)
+                this.parseWeatherForecast();
+            else
+                this.rebuildForecastWeatherUi()
+            return true;
+        }));
     },
 
     destroyCurrentWeather: function() {
@@ -1541,18 +1582,10 @@ weather-storm.png = weather-storm-symbolic.svg
             this._futureWeather.get_child().destroy();
     },
 
-    showLoadingUi: function() {
-        this.destroyCurrentWeather();
-        this.destroyFutureWeather();
-        this._currentWeather.set_child(new St.Label({
-            text: _('Loading current weather ...')
-        }));
-        this._futureWeather.set_child(new St.Label({
-            text: _('Loading future weather ...')
-        }));
-    },
-
     rebuildCurrentWeatherUi: function() {
+        this._weatherInfo.text = _('Loading current weather ...');
+        this._weatherIcon.icon_name = 'view-refresh' + this.icon_type();
+
         this.destroyCurrentWeather();
 
         // This will hold the icon for the current weather
