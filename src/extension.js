@@ -327,35 +327,37 @@ const WeatherMenuButton = new Lang.Class({
     },
 
     loadConfig: function() {
-        let that = this;
         this._settings = Convenience.getSettings(WEATHER_SETTINGS_SCHEMA);
-        this._settingsC = this._settings.connect("changed", function() {
-            that.rebuildFutureWeatherUi();
-            if (that.locationChanged()) {
-                that.currentWeatherCache = undefined;
-                that.forecastWeatherCache = undefined;
+        this._settingsC = this._settings.connect("changed", Lang.bind(this, function() {
+            this.rebuildCurrentWeatherUi();
+            this.rebuildFutureWeatherUi();
+            if (this.locationChanged()) {
+                this.currentWeatherCache = undefined;
+                this.forecastWeatherCache = undefined;
             }
-            that.parseWeatherCurrent();
-        });
+            this.parseWeatherCurrent();
+        }));
     },
 
     loadConfigInterface: function() {
-        let that = this;
         let schemaInterface = "org.gnome.desktop.interface";
         if (Gio.Settings.list_schemas().indexOf(schemaInterface) == -1)
             throw _("Schema \"%s\" not found.").replace("%s", schemaInterface);
         this._settingsInterface = new Gio.Settings({
             schema: schemaInterface
         });
-        this._settingsInterfaceC = this._settingsInterface.connect("changed", function() {
-            if (that.locationChanged()) {
-                that.currentWeatherCache = undefined;
-                that.forecastWeatherCache = undefined;
-                that.rebuildCurrentWeatherUi();
-                that.rebuildFutureWeatherUi();
+        this._settingsInterfaceC = this._settingsInterface.connect("changed", Lang.bind(this, function() {
+            this.rebuildCurrentWeatherUi();
+            this.rebuildFutureWeatherUi();
+            if (this.locationChanged()) {
+                this.currentWeatherCache = undefined;
+                this.forecastWeatherCache = undefined;
+                this.rebuildCurrentWeatherUi();
+                this.rebuildFutureWeatherUi();
             }
-            that.parseWeatherCurrent();
-        });
+            this.parseWeatherCurrent();
+        }));
+    },
 
     _onNetworkStateChanged: function() {
         this._checkConnectionState();
@@ -644,7 +646,6 @@ const WeatherMenuButton = new Lang.Class({
     },
 
     rebuildSelectCityItem: function() {
-        let that = this;
         this._selectCity.menu.removeAll();
         let item = null;
 
@@ -666,9 +667,9 @@ const WeatherMenuButton = new Lang.Class({
             }
 
             this._selectCity.menu.addMenuItem(item);
-            item.connect('activate', function(actor, event) {
-                that._actual_city = actor.location;
-            });
+            item.connect('activate', Lang.bind(this, function(actor, event) {
+                this._actual_city = actor.location;
+            }));
         }
 
         if (cities.length == 1)
@@ -706,7 +707,6 @@ const WeatherMenuButton = new Lang.Class({
     },
 
     updateCities: function() {
-        let that = this;
         let cities = this._cities;
 
         cities = cities.split(" && ");
@@ -731,7 +731,7 @@ const WeatherMenuButton = new Lang.Class({
                 if (this._appid)
                     params['APPID'] = this._appid;
 
-                this.load_json_async(WEATHER_URL_CURRENT, params, function() {
+                this.load_json_async(WEATHER_URL_CURRENT, params, Lang.bind(this, function() {
                     let city = arguments[0];
 
                     if (Number(city.cod) != 200)
@@ -747,9 +747,9 @@ const WeatherMenuButton = new Lang.Class({
                     cities = cities.join(" && ");
                     if (typeof cities != "string")
                         cities = cities[0];
-                    that._cities = cities;
-                    that.updateCities();
-                });
+                    this._cities = cities;
+                    this.updateCities();
+                }));
                 return;
             } else
                 continue;
@@ -1144,24 +1144,22 @@ weather-storm.png = weather-storm-symbolic.svg
                 _httpSession = new Soup.Session();
         }
 
-        let here = this;
-
         let message = Soup.form_request_new_from_hash('GET', url, params);
 
-        _httpSession.queue_message(message, function(_httpSession, message) {
+        _httpSession.queue_message(message, Lang.bind(this, function(_httpSession, message) {
             if (!message.response_body.data) {
-                fun.call(here, 0);
+                fun.call(this, 0);
                 return;
             }
 
             try {
                 let jp = JSON.parse(message.response_body.data);
-                fun.call(here, jp);
+                fun.call(this, jp);
             } catch (e) {
-                fun.call(here, 0);
+                fun.call(this, 0);
                 return;
             }
-        });
+        }));
         return;
     },
 
