@@ -753,26 +753,26 @@ const WeatherPrefsWidget = new GObject.Class({
         if (!this.Settings)
             this.loadConfig();
         let v = this.Settings.get_int(WEATHER_REFRESH_INTERVAL_CURRENT);
-        return ((v >= 60) ? v : 60);
+        return ((v >= 600) ? v : 600);
     },
 
     set refresh_interval_current(v) {
         if (!this.Settings)
             this.loadConfig();
-        this.Settings.set_int(WEATHER_REFRESH_INTERVAL_CURRENT, ((v >= 60) ? v : 60));
+        this.Settings.set_int(WEATHER_REFRESH_INTERVAL_CURRENT, ((v >= 600) ? v : 600));
     },
 
     get refresh_interval_forecast() {
         if (!this.Settings)
             this.loadConfig();
         let v = this.Settings.get_int(WEATHER_REFRESH_INTERVAL_FORECAST);
-        return ((v >= 60) ? v : 60);
+        return ((v >= 600) ? v : 600);
     },
 
     set refresh_interval_forecast(v) {
         if (!this.Settings)
             this.loadConfig();
-        this.Settings.set_int(WEATHER_REFRESH_INTERVAL_FORECAST, ((v >= 60) ? v : 60));
+        this.Settings.set_int(WEATHER_REFRESH_INTERVAL_FORECAST, ((v >= 600) ? v : 600));
     },
 
     get center_forecast() {
