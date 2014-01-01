@@ -364,6 +364,8 @@ const WeatherMenuButton = new Lang.Class({
     },
 
     _checkConnectionState: function() {
+        // set to disconnect unless the monitor says we are connected
+        this._connected = false;
         if (this._network_monitor.network_available) {
             this._network_monitor.can_reach_async(this._weather_socket_connectable, null, Lang.bind(this, function(object, result) {
                 let connected = object.can_reach_finish(result);
@@ -372,8 +374,6 @@ const WeatherMenuButton = new Lang.Class({
                     this.parseWeatherCurrent();
                 this._connected = connected;
             }));
-        } else {
-            this._connected = false;
         }
     },
 
