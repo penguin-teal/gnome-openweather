@@ -1565,7 +1565,7 @@ weather-storm.png = weather-storm-symbolic.svg
             if (this._connected)
                 this.parseWeatherForecast();
             else
-                this.rebuildForecastWeatherUi()
+                this.rebuildFutureWeatherUi()
             return true;
         }));
     },
