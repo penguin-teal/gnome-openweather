@@ -288,13 +288,6 @@ const WeatherMenuButton = new Lang.Class({
         this.rebuildCurrentWeatherUi();
         this.rebuildFutureWeatherUi();
 
-        let params = {
-            hostname: WEATHER_URL_HOST,
-            port: WEATHER_URL_PORT
-        };
-
-        this._weather_socket_connectable = new Gio.NetworkAddress(params);
-
         this._network_monitor = Gio.network_monitor_get_default();
 
         this._connected = false;
@@ -364,17 +357,11 @@ const WeatherMenuButton = new Lang.Class({
     },
 
     _checkConnectionState: function() {
-        // set to disconnect unless the monitor says we are connected
-        this._connected = false;
-        if (this._network_monitor.network_available) {
-            this._network_monitor.can_reach_async(this._weather_socket_connectable, null, Lang.bind(this, function(object, result) {
-                let connected = object.can_reach_finish(result);
-                // only reparse once (we can get multiple connect events)
-                if (connected && !this._connected)
-                    this.parseWeatherCurrent();
-                this._connected = connected;
-            }));
-        }
+        let connected = this._network_monitor.network_available;
+        // only reparse once (we can get multiple connect events)
+        if (connected && !this._connected)
+            this.parseWeatherCurrent();
+        this._connected = connected;
     },
 
     locationChanged: function() {
