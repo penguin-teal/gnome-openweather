@@ -291,7 +291,7 @@ const WeatherMenuButton = new Lang.Class({
         this._network_monitor = Gio.network_monitor_get_default();
 
         this._connected = false;
-        this._network_monitor.connect('network-changed', Lang.bind(this, this._onNetworkStateChanged));
+        this._network_monitor_connection = this._network_monitor.connect('network-changed', Lang.bind(this, this._onNetworkStateChanged));
         this._checkConnectionState();
 
         this.menu.connect('open-state-changed', Lang.bind(this, this._onOpenStateChanged));
@@ -307,6 +307,11 @@ const WeatherMenuButton = new Lang.Class({
             Mainloop.source_remove(this._timeoutForecast);
 
         this._timeoutForecast = undefined;
+
+        if (this._network_monitor_connection) {
+            this._network_monitor.disconnect(this._network_monitor_connection);
+            this._network_monitor_connection = undefined;
+        }
 
         if (this._settingsC) {
             this._settings.disconnect(this._settingsC);
