@@ -350,8 +350,6 @@ const WeatherMenuButton = new Lang.Class({
             if (this.locationChanged()) {
                 this.currentWeatherCache = undefined;
                 this.forecastWeatherCache = undefined;
-                this.rebuildCurrentWeatherUi();
-                this.rebuildFutureWeatherUi();
             }
             this.parseWeatherCurrent();
         }));
@@ -1139,12 +1137,12 @@ weather-storm.png = weather-storm-symbolic.svg
         let message = Soup.form_request_new_from_hash('GET', url, params);
 
         _httpSession.queue_message(message, Lang.bind(this, function(_httpSession, message) {
-            if (!message.response_body.data) {
-                fun.call(this, 0);
-                return;
-            }
 
             try {
+                if (!message.response_body.data) {
+                    fun.call(this, 0);
+                    return;
+                }
                 let jp = JSON.parse(message.response_body.data);
                 fun.call(this, jp);
             } catch (e) {
@@ -1414,8 +1412,13 @@ weather-storm.png = weather-storm-symbolic.svg
                 this.rebuildSelectCityItem();
 
                 this.parseWeatherCurrent();
-            } else
+            } else {
+                // we are connected, but get no (or no correct) data, so invalidate
+                // the shown data and reload after 10 minutes (recommendded by openweathermap.org)
+                //                this.currentWeatherCache = undefined;
+                this.rebuildCurrentWeatherUi();
                 this.reloadWeatherCurrent(600);
+            }
         });
         this.reloadWeatherCurrent(this._refresh_interval_current);
     },
@@ -1542,8 +1545,13 @@ weather-storm.png = weather-storm-symbolic.svg
                     this.forecastWeatherCache = json.list;
 
                 this.parseWeatherForecast();
-            } else
+            } else {
+                // we are connected, but get no (or no correct) data, so invalidate
+                // the shown data and reload after 10 minutes (recommendded by openweathermap.org)
+                //                this.forecastWeatherCache = undefined;
+                this.rebuildFutureWeatherUi();
                 this.reloadWeatherForecast(600);
+            }
         });
         this.reloadWeatherForecast(this._refresh_interval_forecast);
     },
