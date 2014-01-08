@@ -360,11 +360,9 @@ const WeatherMenuButton = new Lang.Class({
     },
 
     _checkConnectionState: function() {
-        let connected = this._network_monitor.network_available;
-        // only reparse once (we can get multiple connect events)
-        if (connected && !this._connected)
+        this._connected = this._network_monitor.network_available;
+        if (this._connected)
             this.parseWeatherCurrent();
-        this._connected = connected;
     },
 
     locationChanged: function() {
@@ -1415,7 +1413,6 @@ weather-storm.png = weather-storm-symbolic.svg
             } else {
                 // we are connected, but get no (or no correct) data, so invalidate
                 // the shown data and reload after 10 minutes (recommendded by openweathermap.org)
-                //                this.currentWeatherCache = undefined;
                 this.rebuildCurrentWeatherUi();
                 this.reloadWeatherCurrent(600);
             }
@@ -1548,7 +1545,6 @@ weather-storm.png = weather-storm-symbolic.svg
             } else {
                 // we are connected, but get no (or no correct) data, so invalidate
                 // the shown data and reload after 10 minutes (recommendded by openweathermap.org)
-                //                this.forecastWeatherCache = undefined;
                 this.rebuildFutureWeatherUi();
                 this.reloadWeatherForecast(600);
             }
