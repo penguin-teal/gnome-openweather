@@ -298,6 +298,11 @@ const WeatherMenuButton = new Lang.Class({
     },
 
     stop: function() {
+        if (_httpSession != undefined)
+            !httpSession.abort();
+
+        _httpSession = undefined;
+
         if (this._timeoutCurrent)
             Mainloop.source_remove(this._timeoutCurrent);
 
