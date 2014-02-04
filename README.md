@@ -10,6 +10,10 @@ Currently, the weather data, including forecasts for up to ten days, is fetched 
 
 After the installation, restart GNOME Shell (`Alt`+`F2`, `r`, `Enter`) and enable the extension through *gnome-tweak-tool*.
 
+## Through extensions.gnome.org (Local installation)
+
+Go on the [OpenWeather](https://extensions.gnome.org/extension/750/openweather/) extension page on extensions.gnome.org, click on the switch ("OFF" => "ON"), click on the install button. That's it !
+
 ## Through a package manager
 
 #### Note: you need the root password for all these installation modes, if you do not have root-access, and the needed build-dependencies are installed, use the generic install.
