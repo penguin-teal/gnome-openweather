@@ -299,7 +299,7 @@ const WeatherMenuButton = new Lang.Class({
 
     stop: function() {
         if (_httpSession != undefined)
-            !httpSession.abort();
+            !_httpSession.abort();
 
         _httpSession = undefined;
 
