@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="gnome-shell-extension-weather" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="extension">
+				<Option output="bin/Debug/gnome-shell-extension-weather" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="AUTHORS" />
+		<Unit filename="COPYING" />
+		<Unit filename="ChangeLog" />
+		<Unit filename="Makefile" />
+		<Unit filename="Makefile.am" />
+		<Unit filename="Makefile.in" />
+		<Unit filename="NEWS" />
+		<Unit filename="README.md" />
+		<Unit filename="aclocal.m4" />
+		<Unit filename="autogen.sh" />
+		<Unit filename="autom4te.cache/output.0" />
+		<Unit filename="autom4te.cache/output.1" />
+		<Unit filename="autom4te.cache/output.2" />
+		<Unit filename="autom4te.cache/requests" />
+		<Unit filename="autom4te.cache/traces.0" />
+		<Unit filename="autom4te.cache/traces.1" />
+		<Unit filename="autom4te.cache/traces.2" />
+		<Unit filename="config.log" />
+		<Unit filename="config.status" />
+		<Unit filename="config/install-sh" />
+		<Unit filename="config/missing" />
+		<Unit filename="configure" />
+		<Unit filename="configure.ac" />
+		<Unit filename="data/Makefile" />
+		<Unit filename="data/Makefile.am" />
+		<Unit filename="data/Makefile.in" />
+		<Unit filename="data/Screenshot.jpg" />
+		<Unit filename="data/metadata.json" />
+		<Unit filename="data/metadata.json.in" />
+		<Unit filename="data/org.gnome.shell.extensions.openweather.gschema.valid" />
+		<Unit filename="data/org.gnome.shell.extensions.openweather.gschema.xml" />
+		<Unit filename="data/org.gnome.shell.extensions.openweather.gschema.xml.in" />
+		<Unit filename="data/stylesheet.css" />
+		<Unit filename="data/weather-settings.gif" />
+		<Unit filename="data/weather-settings.ui" />
+		<Unit filename="gnome-shell-extension-weather.bmarks" />
+		<Unit filename="gnome-shell-extension-weather.layout" />
+		<Unit filename="m4/intltool.m4" />
+		<Unit filename="po/LINGUAS" />
+		<Unit filename="po/Makefile" />
+		<Unit filename="po/Makefile.in" />
+		<Unit filename="po/Makefile.in.in" />
+		<Unit filename="po/POTFILES" />
+		<Unit filename="po/POTFILES.in" />
+		<Unit filename="po/ca.gmo" />
+		<Unit filename="po/ca.po" />
+		<Unit filename="po/cs.gmo" />
+		<Unit filename="po/cs.po" />
+		<Unit filename="po/da.gmo" />
+		<Unit filename="po/da.po" />
+		<Unit filename="po/de.gmo" />
+		<Unit filename="po/de.po" />
+		<Unit filename="po/el.gmo" />
+		<Unit filename="po/el.po" />
+		<Unit filename="po/es.gmo" />
+		<Unit filename="po/es.po" />
+		<Unit filename="po/fi.gmo" />
+		<Unit filename="po/fi.po" />
+		<Unit filename="po/fr.gmo" />
+		<Unit filename="po/fr.po" />
+		<Unit filename="po/gnome-shell-extension-weather.pot" />
+		<Unit filename="po/he.gmo" />
+		<Unit filename="po/he.po" />
+		<Unit filename="po/hu.gmo" />
+		<Unit filename="po/hu.po" />
+		<Unit filename="po/it.gmo" />
+		<Unit filename="po/it.po" />
+		<Unit filename="po/ja.gmo" />
+		<Unit filename="po/ja.po" />
+		<Unit filename="po/lt.gmo" />
+		<Unit filename="po/lt.po" />
+		<Unit filename="po/nb.gmo" />
+		<Unit filename="po/nb.po" />
+		<Unit filename="po/nl.gmo" />
+		<Unit filename="po/nl.po" />
+		<Unit filename="po/pl.gmo" />
+		<Unit filename="po/pl.po" />
+		<Unit filename="po/pt.gmo" />
+		<Unit filename="po/pt.po" />
+		<Unit filename="po/ro.gmo" />
+		<Unit filename="po/ro.po" />
+		<Unit filename="po/ru.gmo" />
+		<Unit filename="po/ru.po" />
+		<Unit filename="po/sk.gmo" />
+		<Unit filename="po/sk.po" />
+		<Unit filename="po/stamp-it" />
+		<Unit filename="po/sv.gmo" />
+		<Unit filename="po/sv.po" />
+		<Unit filename="po/uk.gmo" />
+		<Unit filename="po/uk.po" />
+		<Unit filename="po/update.js" />
+		<Unit filename="po/vi.gmo" />
+		<Unit filename="po/vi.po" />
+		<Unit filename="po/zh_CN.gmo" />
+		<Unit filename="po/zh_CN.po" />
+		<Unit filename="po/zh_TW.gmo" />
+		<Unit filename="po/zh_TW.po" />
+		<Unit filename="src/Makefile" />
+		<Unit filename="src/Makefile.am" />
+		<Unit filename="src/Makefile.in" />
+		<Unit filename="src/convenience.js" />
+		<Unit filename="src/extension.js" />
+		<Unit filename="src/prefs.js" />
+		<Unit filename="temp.txt" />
+		<Unit filename="zip-file/weather.shell-extension.zip" />
+		<Extensions>
+			<envvars />
+			<code_completion />
+			<lib_finder disable_auto="1" />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
