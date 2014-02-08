@@ -1,4 +1,4 @@
-![Screenshot](https://github.com/jenslody/gnome-shell-extension-weather/raw/master/data/Screenshot.jpg)
+![Screenshot](https://github.com/jenslody/gnome-shell-extension-openweather/raw/master/data/Screenshot.jpg)
 
 *gnome-shell-extension-openweather* is a simple extension for displaying weather conditions and forecasts in GNOME Shell, featuring support for multiple locations, no need for WOEID, a symmetrical layout and a settings panel through *gnome-shell-extension-prefs*.
 
@@ -62,7 +62,7 @@ Make sure you have the following dependencies installed:
 
 Run the following commands:
 
-	cd ~ && git clone git://github.com/jenslody/gnome-shell-extension-weather.git
+	cd ~ && git clone git://github.com/jenslody/gnome-shell-extension-openweather.git
 	cd ~/gnome-shell-extension-weather
 	./autogen.sh && make local-install
 
@@ -72,7 +72,7 @@ Run the following commands:
 
 Launch *gnome-shell-extension-prefs* (reachable also through the *OpenWeather Settings* button on the extension popup) and select *OpenWeather* from the drop-down menu to edit the configuration.
 
-![Screenshot](https://github.com/jenslody/gnome-shell-extension-weather/raw/master/data/weather-settings.gif)
+![Screenshot](https://github.com/jenslody/gnome-shell-extension-openweather/raw/master/data/weather-settings.gif)
 
 You can also use *dconf-editor* or *gsettings* to configure the extension through the command line.
 
