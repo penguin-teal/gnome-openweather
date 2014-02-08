@@ -59,6 +59,7 @@ const WEATHER_REFRESH_INTERVAL_CURRENT = 'refresh-interval-current';
 const WEATHER_REFRESH_INTERVAL_FORECAST = 'refresh-interval-forecast';
 const WEATHER_CENTER_FORECAST_KEY = 'center-forecast';
 const WEATHER_DAYS_FORECAST = 'days-forecast';
+const WEATHER_DECIMAL_PLACES = 'decimal-places';
 const WEATHER_OWM_API_KEY = 'appid';
 
 //URL
@@ -144,6 +145,8 @@ const WeatherPrefsWidget = new GObject.Class({
         this.addSwitch("center_forecast");
         this.addLabel(_("Number of days in forecast"));
         this.addComboBox(["2", "3", "4", "5", "6", "7", "8", "9", "10"], "days_forecast");
+        this.addLabel(_("Maximal number of digits after the decimal point"));
+        this.addComboBox(["0", "1", "2", "3"], "decimal_places");
         this.addLabel(_("Personal Api key from openweather.org"));
         this.addAppidEntry(("appid"));
     },
@@ -797,6 +800,18 @@ const WeatherPrefsWidget = new GObject.Class({
         if (!this.Settings)
             this.loadConfig();
         this.Settings.set_int(WEATHER_DAYS_FORECAST, v + 2);
+    },
+
+    get decimal_places() {
+        if (!this.Settings)
+            this.loadConfig();
+        return this.Settings.get_int(WEATHER_DECIMAL_PLACES);
+    },
+
+    set decimal_places(v) {
+        if (!this.Settings)
+            this.loadConfig();
+        this.Settings.set_int(WEATHER_DECIMAL_PLACES, v);
     },
 
     get appid() {

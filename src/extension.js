@@ -71,6 +71,7 @@ const WEATHER_REFRESH_INTERVAL_CURRENT = 'refresh-interval-current';
 const WEATHER_REFRESH_INTERVAL_FORECAST = 'refresh-interval-forecast';
 const WEATHER_CENTER_FORECAST_KEY = 'center-forecast';
 const WEATHER_DAYS_FORECAST = 'days-forecast';
+const WEATHER_DECIMAL_PLACES = 'decimal-places';
 const WEATHER_OWM_API_KEY = 'appid';
 
 //URL
@@ -621,6 +622,18 @@ const WeatherMenuButton = new Lang.Class({
         this._settings.set_int(WEATHER_DAYS_FORECAST, v);
     },
 
+    get _decimal_places() {
+        if (!this._settings)
+            this.loadConfig();
+        return this._settings.get_int(WEATHER_DECIMAL_PLACES);
+    },
+
+    set _decimal_places(v) {
+        if (!this._settings)
+            this.loadConfig();
+        this._settings.set_int(WEATHER_DECIMAL_PLACES, v);
+    },
+
     get _appid() {
         if (!this._settings)
             this.loadConfig();
@@ -1020,35 +1033,35 @@ weather-storm.png = weather-storm-symbolic.svg
     },
 
     toFahrenheit: function(t) {
-        return String(Math.round(((Number(t) * 1.8) + 32) * 10) / 10);
+        return ((Number(t) * 1.8) + 32).toFixed(this._decimal_places);
     },
 
     toKelvin: function(t) {
-        return String(Math.round((Number(t) + 273.15) * 10) / 10);
+        return (Number(t) + 273.15).toFixed(this._decimal_places);
     },
 
     toRankine: function(t) {
-        return String(Math.round(((Number(t) * 1.8) + 491.67) * 10) / 10);
+        return ((Number(t) * 1.8) + 491.67).toFixed(this._decimal_places);
     },
 
     toReaumur: function(t) {
-        return String(Math.round((Number(t) * 0.8) * 10) / 10);
+        return (Number(t) * 0.8).toFixed(this._decimal_places);
     },
 
     toRoemer: function(t) {
-        return String(Math.round(((Number(t) * 21 / 40) + 7.5) * 10) / 10);
+        return ((Number(t) * 21 / 40) + 7.5).toFixed(this._decimal_places);
     },
 
     toDelisle: function(t) {
-        return String(Math.round(((100 - Number(t)) * 1.5) * 10) / 10);
+        return ((100 - Number(t)) * 1.5).toFixed(this._decimal_places);
     },
 
     toNewton: function(t) {
-        return String(Math.round((Number(t) - 0.33) * 10) / 10);
+        return (Number(t) - 0.33).toFixed(this._decimal_places);
     },
 
     toInHg: function(p /*, t*/ ) {
-        return Math.round((p / 33.86530749) * 10) / 10;
+        return (p / 33.86530749).toFixed(this._decimal_places);
     },
 
     toBeaufort: function(w, t) {
@@ -1231,42 +1244,42 @@ weather-storm.png = weather-storm-symbolic.svg
                 break;
 
             case WeatherPressureUnits.hPa:
-                pressure = Math.round(pressure * 10) / 10;
+                pressure = pressure.toFixed(this._decimal_places);;
                 pressure_unit = "hPa";
                 break;
 
             case WeatherPressureUnits.bar:
-                pressure = Math.round((pressure / 1000) * 10) / 10;
+                pressure = (pressure / 1000).toFixed(this._decimal_places);
                 pressure_unit = "bar";
                 break;
 
             case WeatherPressureUnits.Pa:
-                pressure = Math.round((pressure * 100) * 10) / 10;
+                pressure = (pressure * 100).toFixed(this._decimal_places);
                 pressure_unit = "Pa";
                 break;
 
             case WeatherPressureUnits.kPa:
-                pressure = Math.round((pressure / 10) * 10) / 10;
+                pressure = (pressure / 10).toFixed(this._decimal_places);
                 pressure_unit = "kPa";
                 break;
 
             case WeatherPressureUnits.atm:
-                pressure = Math.round((pressure * 0.000986923267) * 10) / 10;
+                pressure = (pressure * 0.000986923267).toFixed(this._decimal_places);
                 pressure_unit = "atm";
                 break;
 
             case WeatherPressureUnits.at:
-                pressure = Math.round((pressure * 0.00101971621298) * 10) / 10;
+                pressure = (pressure * 0.00101971621298).toFixed(this._decimal_places);
                 pressure_unit = "at";
                 break;
 
             case WeatherPressureUnits.Torr:
-                pressure = Math.round((pressure * 0.750061683) * 10) / 10;
+                pressure = (pressure * 0.750061683).toFixed(this._decimal_places);
                 pressure_unit = "Torr";
                 break;
 
             case WeatherPressureUnits.psi:
-                pressure = Math.round((pressure * 0.0145037738) * 10) / 10;
+                pressure = (pressure * 0.0145037738).toFixed(this._decimal_places);
                 pressure_unit = "psi";
                 break;
         }
@@ -1277,7 +1290,7 @@ weather-storm.png = weather-storm-symbolic.svg
                 break;
 
             case WeatherUnits.CELSIUS:
-                temperature = Math.round(temperature * 10) / 10;
+                temperature = temperature.toFixed(this._decimal_places);
                 break;
 
             case WeatherUnits.KELVIN:
@@ -1350,26 +1363,26 @@ weather-storm.png = weather-storm-symbolic.svg
         // Override wind units with our preference
         switch (this._wind_speed_units) {
             case WeatherWindSpeedUnits.MPH:
-                wind = Math.round((wind * WEATHER_CONV_MPS_IN_MPH) * 10) / 10;
+                wind = (wind * WEATHER_CONV_MPS_IN_MPH).toFixed(this._decimal_places);
                 wind_unit = 'mph';
                 break;
 
             case WeatherWindSpeedUnits.KPH:
-                wind = Math.round((wind * WEATHER_CONV_MPS_IN_KPH) * 10) / 10;
+                wind = (wind * WEATHER_CONV_MPS_IN_KPH).toFixed(this._decimal_places);
                 wind_unit = 'km/h';
                 break;
 
             case WeatherWindSpeedUnits.MPS:
-                wind = Math.round(wind * 10) / 10;
+                wind = wind.toFixed(this._decimal_places);
                 break;
 
             case WeatherWindSpeedUnits.KNOTS:
-                wind = Math.round((wind * WEATHER_CONV_MPS_IN_KNOTS) * 10) / 10;
+                wind = (wind * WEATHER_CONV_MPS_IN_KNOTS).toFixed(this._decimal_places);
                 wind_unit = 'kn';
                 break;
 
             case WeatherWindSpeedUnits.FPS:
-                wind = Math.round((wind * WEATHER_CONV_MPS_IN_FPS) * 10) / 10;
+                wind = (wind * WEATHER_CONV_MPS_IN_FPS).toFixed(this._decimal_places);
                 wind_unit = 'ft/s';
                 break;
 
@@ -1461,8 +1474,8 @@ weather-storm.png = weather-storm-symbolic.svg
                     break;
 
                 case WeatherUnits.CELSIUS:
-                    t_low = Math.round(t_low * 10) / 10;
-                    t_high = Math.round(t_high * 10) / 10;
+                    t_low = t_low.toFixed(this._decimal_places);
+                    t_high = t_high.toFixed(this._decimal_places);
                     break;
 
                 case WeatherUnits.KELVIN:
