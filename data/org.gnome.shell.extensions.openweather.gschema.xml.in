@@ -57,7 +57,7 @@
       <_description>Choose whether to display wind direction through arrows or letters.</_description>
     </key>
     <key name="city" type="s">
-      <default>'2516479>Ibiza (ES)'</default>
+      <default>'2516479>Eivissa (CA)'</default>
       <_summary>City to be displayed</_summary>
     </key>
     <key name="actual-city" type="i">

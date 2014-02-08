@@ -705,7 +705,7 @@ const WeatherMenuButton = new Lang.Class({
             cities = [];
 
         if (cities.length == 0) {
-            this._cities = "2516479>Ibiza (ES)";
+            this._cities = "2516479>Eivissa (CA)";
             this.updateCities();
             return;
         }
