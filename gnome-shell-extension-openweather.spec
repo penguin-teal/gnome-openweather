@@ -1,6 +1,6 @@
 %global git 2701627
 %global uuid openweather-extension@jenslody.de
-%global github jenslody-gnome-shell-extension-weather
+%global github jenslody-gnome-shell-extension-openweather
 %global checkout git%{git}
 
 Name:           gnome-shell-extension-openweather
@@ -10,8 +10,8 @@ Summary:        An extension for displaying weather notifications from http://op
 
 Group:          User Interface/Desktops
 License:        GPLv3+
-URL:            https://github.com/jenslody/gnome-shell-extension-weather
-Source0:        https://github.com/jenslody/gnome-shell-extension-weather/tarball/master/%{github}-%{git}.tar.gz
+URL:            https://github.com/jenslody/gnome-shell-extension-openweather
+Source0:        https://github.com/jenslody/gnome-shell-extension-openweather/tarball/master/%{github}-%{git}.tar.gz
 BuildArch:      noarch
 
 BuildRequires:  autoconf >= 2.53, automake >= 1.9, glib2-devel, gnome-common >= 3.6.0, intltool >= 0.25

@@ -1,7 +1,7 @@
 #!/bin/sh
 
-GITHUB="jenslody-gnome-shell-extension-weather"
-BASE_URL="https://github.com/jenslody/gnome-shell-extension-weather/tarball/master/"
+GITHUB="jenslody-gnome-shell-extension-openweather"
+BASE_URL="https://github.com/jenslody/gnome-shell-extension-openweather/tarball/master/"
 TARBALL_PATH="/home/jens/rpmbuild/SOURCES/"
 SPEC_PATH="/home/jens/rpmbuild/SPECS/"
 SPEC_FILE="gnome-shell-extension-openweather.spec"
