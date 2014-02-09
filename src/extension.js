@@ -220,7 +220,6 @@ const WeatherMenuButton = new Lang.Class({
             reactive: false
         });
 
-        log("gnome-shell-version: "+Config.PACKAGE_VERSION);
         if (ExtensionUtils.versionCheck(['3.6', '3.8'], Config.PACKAGE_VERSION)) {
             _itemCurrent.addActor(this._currentWeather);
             _itemFuture.addActor(this._futureWeather);
