@@ -2,7 +2,7 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="gnome-shell-extension-weather" />
+		<Option title="gnome-shell-extension-openweather" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
@@ -22,41 +22,19 @@
 		<Unit filename="AUTHORS" />
 		<Unit filename="COPYING" />
 		<Unit filename="ChangeLog" />
-		<Unit filename="Makefile" />
 		<Unit filename="Makefile.am" />
-		<Unit filename="Makefile.in" />
 		<Unit filename="NEWS" />
 		<Unit filename="README.md" />
 		<Unit filename="aclocal.m4" />
 		<Unit filename="autogen.sh" />
-		<Unit filename="autom4te.cache/output.0" />
-		<Unit filename="autom4te.cache/output.1" />
-		<Unit filename="autom4te.cache/output.2" />
-		<Unit filename="autom4te.cache/requests" />
-		<Unit filename="autom4te.cache/traces.0" />
-		<Unit filename="autom4te.cache/traces.1" />
-		<Unit filename="autom4te.cache/traces.2" />
-		<Unit filename="config.log" />
-		<Unit filename="config.status" />
-		<Unit filename="config/install-sh" />
-		<Unit filename="config/missing" />
-		<Unit filename="configure" />
 		<Unit filename="configure.ac" />
-		<Unit filename="data/Makefile" />
 		<Unit filename="data/Makefile.am" />
-		<Unit filename="data/Makefile.in" />
 		<Unit filename="data/Screenshot.jpg" />
-		<Unit filename="data/metadata.json" />
 		<Unit filename="data/metadata.json.in" />
-		<Unit filename="data/org.gnome.shell.extensions.openweather.gschema.valid" />
-		<Unit filename="data/org.gnome.shell.extensions.openweather.gschema.xml" />
 		<Unit filename="data/org.gnome.shell.extensions.openweather.gschema.xml.in" />
 		<Unit filename="data/stylesheet.css" />
 		<Unit filename="data/weather-settings.gif" />
 		<Unit filename="data/weather-settings.ui" />
-		<Unit filename="gnome-shell-extension-weather.bmarks" />
-		<Unit filename="gnome-shell-extension-weather.layout" />
-		<Unit filename="m4/intltool.m4" />
 		<Unit filename="po/LINGUAS" />
 		<Unit filename="po/Makefile" />
 		<Unit filename="po/Makefile.in" />
@@ -116,14 +94,10 @@
 		<Unit filename="po/zh_CN.po" />
 		<Unit filename="po/zh_TW.gmo" />
 		<Unit filename="po/zh_TW.po" />
-		<Unit filename="src/Makefile" />
 		<Unit filename="src/Makefile.am" />
-		<Unit filename="src/Makefile.in" />
 		<Unit filename="src/convenience.js" />
 		<Unit filename="src/extension.js" />
 		<Unit filename="src/prefs.js" />
-		<Unit filename="temp.txt" />
-		<Unit filename="zip-file/weather.shell-extension.zip" />
 		<Extensions>
 			<envvars />
 			<code_completion />
