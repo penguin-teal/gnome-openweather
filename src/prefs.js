@@ -541,7 +541,7 @@ const WeatherPrefsWidget = new GObject.Class({
 
     loadJsonAsync: function(url, params, fun, id) {
         if (_httpSession == undefined) {
-            if (ExtensionUtils.versionCheck(['3.6', '3.7'], Config.PACKAGE_VERSION)) {
+            if (ExtensionUtils.versionCheck(['3.6'], Config.PACKAGE_VERSION)) {
                 // Soup session (see https://bugzilla.gnome.org/show_bug.cgi?id=661323#c64) (Simon Legner)
                 _httpSession = new Soup.SessionAsync();
                 Soup.Session.prototype.add_feature.call(_httpSession, new Soup.ProxyResolverDefault());

@@ -220,12 +220,13 @@ const WeatherMenuButton = new Lang.Class({
             reactive: false
         });
 
-        if (ExtensionUtils.versionCheck(['3.9', '3.10'], Config.PACKAGE_VERSION)) {
-            _itemCurrent.actor.add_actor(this._currentWeather);
-            _itemFuture.actor.add_actor(this._futureWeather);
-        } else {
+        log("gnome-shell-version: "+Config.PACKAGE_VERSION);
+        if (ExtensionUtils.versionCheck(['3.6', '3.8'], Config.PACKAGE_VERSION)) {
             _itemCurrent.addActor(this._currentWeather);
             _itemFuture.addActor(this._futureWeather);
+        } else {
+            _itemCurrent.actor.add_actor(this._currentWeather);
+            _itemFuture.actor.add_actor(this._futureWeather);
         }
 
         this.menu.addMenuItem(_itemCurrent);
@@ -662,10 +663,10 @@ const WeatherMenuButton = new Lang.Class({
             item = new PopupMenu.PopupMenuItem(this.extractLocation(cities[i]));
             item.location = i;
             if (i == this._actual_city) {
-                if (ExtensionUtils.versionCheck(['3.9', '3.10'], Config.PACKAGE_VERSION))
-                    item.setOrnament(PopupMenu.Ornament.DOT);
-                else
+                if (ExtensionUtils.versionCheck(['3.6', '3.8'], Config.PACKAGE_VERSION))
                     item.setShowDot(true);
+                else
+                    item.setOrnament(PopupMenu.Ornament.DOT);
             }
 
             this._selectCity.menu.addMenuItem(item);
@@ -1138,7 +1139,7 @@ weather-storm.png = weather-storm-symbolic.svg
 
     load_json_async: function(url, params, fun) {
         if (_httpSession == undefined) {
-            if (ExtensionUtils.versionCheck(['3.6', '3.7'], Config.PACKAGE_VERSION)) {
+            if (ExtensionUtils.versionCheck(['3.6'], Config.PACKAGE_VERSION)) {
                 // Soup session (see https://bugzilla.gnome.org/show_bug.cgi?id=661323#c64) (Simon Legner)
                 _httpSession = new Soup.SessionAsync();
                 Soup.Session.prototype.add_feature.call(_httpSession, new Soup.ProxyResolverDefault());
