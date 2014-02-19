@@ -375,8 +375,8 @@ const WeatherPrefsWidget = new GObject.Class({
                 units: 'metric',
                 q: location
             };
-            if (this._appid)
-                params['APPID'] = this._appid;
+            if (this.appid)
+                params['APPID'] = this.appid;
             if (testLocation(location) == 0)
                 this.loadJsonAsync(WEATHER_URL_FIND, params, function() {
                     if (!arguments[0])
@@ -433,16 +433,16 @@ const WeatherPrefsWidget = new GObject.Class({
                 if (entry.get_text().search(/\[/) == -1 || entry.get_text().search(/\]/) == -1)
                     return 0;
 
-                let name = entry.get_text().split(/,/)[0];
-                if (!name)
+                let id = entry.get_text().split(/\[/)[1].split(/\]/)[0];
+                if (!id)
                     return 0;
 
                 let params = {
-                    q: name,
+                    id: id,
                     type: 'accurate'
                 };
-                if (this._appid)
-                    params['APPID'] = this._appid;
+                if (this.appid)
+                    params['APPID'] = this.appid;
                 this.loadJsonAsync(WEATHER_URL_CURRENT, params, Lang.bind(this, function() {
                     if (!arguments[0])
                         return 0;
@@ -451,14 +451,13 @@ const WeatherPrefsWidget = new GObject.Class({
                     if (Number(city.cod) != 200)
                         return 0;
 
-                    let id = entry.get_text().split(/\[/)[1].split(/\]/)[0];
                     if (!id)
                         return 0;
 
                     if (id != city.id)
                         return 0;
 
-                    let cityText = city.name;
+                    let cityText = entry.get_text().split(/,/)[0];
 
                     if (city.sys)
                         cityText += " (" + city.sys.country + ")";

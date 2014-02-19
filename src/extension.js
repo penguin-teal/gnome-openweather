@@ -368,7 +368,7 @@ const WeatherMenuButton = new Lang.Class({
     },
 
     locationChanged: function() {
-        let location = this.extractCity(this._city);
+        let location = this.extractId(this._city);
         if (this.oldLocation != location) {
             return true;
         }
@@ -724,7 +724,6 @@ const WeatherMenuButton = new Lang.Class({
         }
 
         for (let a in cities) {
-
             if (!this.extractCity(cities[a])) {
                 let params = {
                     q: cities[a],
@@ -1406,10 +1405,10 @@ weather-storm.png = weather-storm-symbolic.svg
             this.updateCities();
             return;
         }
-        this.oldLocation = this.extractCity(this._city);
+        this.oldLocation = this.extractId(this._city);
 
         let params = {
-            q: this.oldLocation,
+            id: this.oldLocation,
             units: 'metric'
         };
         if (this._appid)
@@ -1540,10 +1539,10 @@ weather-storm.png = weather-storm-symbolic.svg
             return;
         }
 
-        this.oldLocation = this.extractCity(this._city);
+        this.oldLocation = this.extractId(this._city);
 
         let params = {
-            q: this.oldLocation,
+            id: this.oldLocation,
             units: 'metric',
             cnt: '13'
         };
