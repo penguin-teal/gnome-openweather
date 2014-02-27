@@ -35,6 +35,7 @@
 		<Unit filename="data/stylesheet.css" />
 		<Unit filename="data/weather-settings.gif" />
 		<Unit filename="data/weather-settings.ui" />
+		<Unit filename="gnome-shell-extension-openweather.spec" />
 		<Unit filename="po/LINGUAS" />
 		<Unit filename="po/Makefile" />
 		<Unit filename="po/Makefile.in" />
