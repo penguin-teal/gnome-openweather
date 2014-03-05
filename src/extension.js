@@ -784,21 +784,21 @@ const WeatherMenuButton = new Lang.Class({
 
     unit_to_unicode: function() {
         if (this._units == WeatherUnits.FAHRENHEIT)
-            return '\u00B0\F';
+            return '\u00B0F';
         else if (this._units == WeatherUnits.KELVIN)
             return 'K';
         else if (this._units == WeatherUnits.RANKINE)
-            return '\u00B0\Ra';
+            return '\u00B0Ra';
         else if (this._units == WeatherUnits.REAUMUR)
-            return '\u00B0\R\u00E9';
+            return '\u00B0R\u00E9';
         else if (this._units == WeatherUnits.ROEMER)
-            return '\u00B0\R\u00F8';
+            return '\u00B0R\u00F8';
         else if (this._units == WeatherUnits.DELISLE)
-            return '\u00B0\De';
+            return '\u00B0De';
         else if (this._units == WeatherUnits.NEWTON)
-            return '\u00B0\N';
+            return '\u00B0N';
         else
-            return '\u00B0\C';
+            return '\u00B0C';
     },
 
     get_weather_icon: function(code) {
