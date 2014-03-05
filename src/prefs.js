@@ -395,9 +395,8 @@ const WeatherPrefsWidget = new GObject.Class({
 
                     let current = this.liststore.get_iter_first();
 
+                    var m = {};
                     for (var i in city) {
-                        if (m == undefined)
-                            var m = {};
 
                         current = completionModel.append();
 
