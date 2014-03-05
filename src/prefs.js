@@ -1,3 +1,4 @@
+/* jshint esnext:true */
 /*
  *
  *  Weather extension for GNOME Shell preferences
@@ -160,7 +161,7 @@ const WeatherPrefsWidget = new GObject.Class({
         this.Window.get_object("tree-toolbutton-remove").sensitive = Boolean(this.city.length);
 
         if (mCities != this.city) {
-            if (this.liststore != undefined)
+            if (this.liststore !== undefined)
                 this.liststore.clear();
 
             if (this.city.length > 0) {
@@ -290,7 +291,7 @@ const WeatherPrefsWidget = new GObject.Class({
     selectionChanged: function(select) {
         let a = select.get_selected_rows(this.liststore)[0][0];
 
-        if (a != undefined)
+        if (a !== undefined)
             if (this.actual_city != parseInt(a.to_string()))
                 this.actual_city = parseInt(a.to_string());
     },
@@ -349,7 +350,7 @@ const WeatherPrefsWidget = new GObject.Class({
                 id: id
             }, function() {
                 d.sensitive = 0;
-                if (arguments[0] == undefined)
+                if (arguments[0] === undefined)
                     return 0;
 
                 let city = arguments[0];
@@ -357,7 +358,7 @@ const WeatherPrefsWidget = new GObject.Class({
                 if (Number(city.cod) != 200)
                     return 0;
 
-                if (Number(city.count) == 0)
+                if (Number(city.count) === 0)
                     return 0;
 
                 d.sensitive = 1;
@@ -376,8 +377,8 @@ const WeatherPrefsWidget = new GObject.Class({
                 q: location
             };
             if (this.appid)
-                params['APPID'] = this.appid;
-            if (testLocation(location) == 0)
+                params.APPID = this.appid;
+            if (testLocation(location) === 0)
                 this.loadJsonAsync(WEATHER_URL_FIND, params, function() {
                     if (!arguments[0])
                         return 0;
@@ -441,7 +442,7 @@ const WeatherPrefsWidget = new GObject.Class({
                     type: 'accurate'
                 };
                 if (this.appid)
-                    params['APPID'] = this.appid;
+                    params.APPID = this.appid;
                 this.loadJsonAsync(WEATHER_URL_CURRENT, params, Lang.bind(this, function() {
                     if (!arguments[0])
                         return 0;
@@ -505,7 +506,7 @@ const WeatherPrefsWidget = new GObject.Class({
         dialog_area.pack_start(label, 0, 0, 0);
         dialog.connect("response", Lang.bind(this, function(w, response_id) {
             if (response_id) {
-                if (city.length == 0)
+                if (city.length === 0)
                     city = [];
 
                 if (city.length > 0 && typeof city != "object")
@@ -538,7 +539,7 @@ const WeatherPrefsWidget = new GObject.Class({
     },
 
     loadJsonAsync: function(url, params, fun, id) {
-        if (_httpSession == undefined) {
+        if (_httpSession === undefined) {
             if (ExtensionUtils.versionCheck(['3.6'], Config.PACKAGE_VERSION)) {
                 // Soup session (see https://bugzilla.gnome.org/show_bug.cgi?id=661323#c64) (Simon Legner)
                 _httpSession = new Soup.SessionAsync();
@@ -551,10 +552,10 @@ const WeatherPrefsWidget = new GObject.Class({
 
         let message = Soup.form_request_new_from_hash('GET', url, params);
 
-        if (this.asyncSession == undefined)
+        if (this.asyncSession === undefined)
             this.asyncSession = {};
 
-        if (this.asyncSession[id] != undefined && this.asyncSession[id]) {
+        if (this.asyncSession[id] !== undefined && this.asyncSession[id]) {
             _httpSession.abort();
             this.asyncSession[id] = 0;
         }

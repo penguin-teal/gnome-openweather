@@ -1,3 +1,4 @@
+/* jshint esnext:true */
 /*
  *
  *  Weather extension for GNOME Shell
@@ -144,7 +145,7 @@ const WeatherMenuButton = new Lang.Class({
             text: _('...')
         });
 
-        if (St.TextDirection == undefined) {
+        if (St.TextDirection === undefined) {
             // Panel icon
             this._weatherIcon = new St.Icon({
                 icon_name: 'view-refresh' + this.icon_type(),
@@ -196,7 +197,7 @@ const WeatherMenuButton = new Lang.Class({
                 Main.panel._rightBox.insert_child_at_index(this.actor, 0);
                 break;
         }
-        if (Main.panel._menus == undefined)
+        if (Main.panel._menus === undefined)
             Main.panel.menuManager.addMenu(this.menu);
         else
             Main.panel._menus.addMenu(this.menu);
@@ -295,8 +296,8 @@ const WeatherMenuButton = new Lang.Class({
     },
 
     stop: function() {
-        if (_httpSession != undefined)
-            !_httpSession.abort();
+        if (_httpSession !== undefined)
+            _httpSession.abort();
 
         _httpSession = undefined;
 
@@ -721,7 +722,7 @@ const WeatherMenuButton = new Lang.Class({
         if (!cities[0])
             cities = [];
 
-        if (cities.length == 0) {
+        if (cities.length === 0) {
             this._cities = "2516479>Eivissa (CA)";
             this.updateCities();
             return;
@@ -734,7 +735,7 @@ const WeatherMenuButton = new Lang.Class({
                     type: 'like'
                 };
                 if (this._appid)
-                    params['APPID'] = this._appid;
+                    params.APPID = this._appid;
 
                 this.load_json_async(WEATHER_URL_CURRENT, params, Lang.bind(this, this._updateCitiesCallback));
                 return;
@@ -769,7 +770,7 @@ const WeatherMenuButton = new Lang.Class({
     },
 
     _onOpenStateChanged: function(menu, open) {
-        if (open && this._forecastScrollBox != undefined && this._forecastBox != undefined && this._currentWeather != undefined) {
+        if (open && this._forecastScrollBox !== undefined && this._forecastBox !== undefined && this._currentWeather !== undefined) {
             this._forecastScrollBox.set_width(this._currentWeather.get_width());
             this._forecastScrollBox.show();
             if (this._forecastBox.get_width() > this._currentWeather.get_width()) {
@@ -1142,7 +1143,7 @@ weather-storm.png = weather-storm-symbolic.svg
     },
 
     load_json_async: function(url, params, fun) {
-        if (_httpSession == undefined) {
+        if (_httpSession === undefined) {
             if (ExtensionUtils.versionCheck(['3.6'], Config.PACKAGE_VERSION)) {
                 // Soup session (see https://bugzilla.gnome.org/show_bug.cgi?id=661323#c64) (Simon Legner)
                 _httpSession = new Soup.SessionAsync();
@@ -1171,7 +1172,7 @@ weather-storm.png = weather-storm-symbolic.svg
     },
 
     parseWeatherCurrent: function() {
-        if (this.currentWeatherCache == undefined) {
+        if (this.currentWeatherCache === undefined) {
             this.refreshWeatherCurrent();
             return;
         }
@@ -1231,10 +1232,10 @@ weather-storm.png = weather-storm-symbolic.svg
 
         let iconname = this.get_weather_icon_safely(json.weather[0].id, now < sunrise || now > sunset);
 
-        if (this.lastBuildId == undefined)
+        if (this.lastBuildId === undefined)
             this.lastBuildId = 0;
 
-        if (this.lastBuildDate == undefined)
+        if (this.lastBuildDate === undefined)
             this.lastBuildDate = 0;
 
         if (this.lastBuildId != json.dt || !this.lastBuildDate) {
@@ -1398,7 +1399,7 @@ weather-storm.png = weather-storm-symbolic.svg
 
         if (!wind)
             this._currentWeatherWind.text = '\u2013';
-        else if (wind == 0 || !wind_direction)
+        else if (wind === 0 || !wind_direction)
             this._currentWeatherWind.text = parseFloat(wind).toLocaleString() + ' ' + wind_unit;
         else // i.e. wind > 0 && wind_direction
             this._currentWeatherWind.text = wind_direction + ' ' + parseFloat(wind).toLocaleString() + ' ' + wind_unit;
@@ -1418,7 +1419,7 @@ weather-storm.png = weather-storm-symbolic.svg
             units: 'metric'
         };
         if (this._appid)
-            params['APPID'] = this._appid;
+            params.APPID = this._appid;
 
         this.load_json_async(WEATHER_URL_CURRENT, params, function(json) {
             if (json && (Number(json.cod) == 200)) {
@@ -1454,7 +1455,7 @@ weather-storm.png = weather-storm-symbolic.svg
     },
 
     parseWeatherForecast: function() {
-        if (this.forecastWeatherCache == undefined) {
+        if (this.forecastWeatherCache === undefined) {
             this.refreshWeatherForecast();
             return;
         }
@@ -1466,7 +1467,7 @@ weather-storm.png = weather-storm-symbolic.svg
         for (let i = 0; i < this._days_forecast; i++) {
             let forecastUi = this._forecast[i];
             let forecastData = forecast[i];
-            if (forecastData == undefined)
+            if (forecastData === undefined)
                 continue;
 
             let t_low = forecastData.temp.min;
@@ -1553,7 +1554,7 @@ weather-storm.png = weather-storm-symbolic.svg
             cnt: '13'
         };
         if (this._appid)
-            params['APPID'] = this._appid;
+            params.APPID = this._appid;
 
         this.load_json_async(WEATHER_URL_FORECAST, params, function(json) {
             if (json && (Number(json.cod) == 200)) {
@@ -1586,12 +1587,12 @@ weather-storm.png = weather-storm-symbolic.svg
     },
 
     destroyCurrentWeather: function() {
-        if (this._currentWeather.get_child() != null)
+        if (this._currentWeather.get_child() !== null)
             this._currentWeather.get_child().destroy();
     },
 
     destroyFutureWeather: function() {
-        if (this._futureWeather.get_child() != null)
+        if (this._futureWeather.get_child() !== null)
             this._futureWeather.get_child().destroy();
     },
 
@@ -1722,7 +1723,7 @@ weather-storm.png = weather-storm-symbolic.svg
     },
 
     scrollForecastBy: function(delta) {
-        if (this._forecastScrollBox == undefined)
+        if (this._forecastScrollBox === undefined)
             return;
         this._forecastScrollBox.hscroll.adjustment.value += delta;
     },

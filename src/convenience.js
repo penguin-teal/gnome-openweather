@@ -1,3 +1,4 @@
+/* jshint esnext:true */
 /* -*- mode: js -*- */
 /*
   Copyright (c) 2011-2012, Giovanni Campagna <scampa.giovanni@gmail.com>
