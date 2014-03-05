@@ -112,7 +112,7 @@ const WeatherPrefsWidget = new GObject.Class({
 
         this.treeview.set_model(this.liststore);
 
-        let column = new Gtk.TreeViewColumn()
+        let column = new Gtk.TreeViewColumn();
         this.treeview.append_column(column);
 
         let renderer = new Gtk.CellRendererText();
@@ -304,7 +304,7 @@ const WeatherPrefsWidget = new GObject.Class({
         let entry = new Gtk.Entry();
         let completion = new Gtk.EntryCompletion();
         entry.set_completion(completion);
-        let completionModel = new Gtk.ListStore;
+        let completionModel = new Gtk.ListStore();
         completionModel.set_column_types([GObject.TYPE_STRING]);
         completion.set_model(completionModel);
         completion.set_text_column(0);

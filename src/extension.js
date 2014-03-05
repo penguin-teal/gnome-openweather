@@ -1249,7 +1249,7 @@ weather-storm.png = weather-storm-symbolic.svg
                 break;
 
             case WeatherPressureUnits.hPa:
-                pressure = pressure.toFixed(this._decimal_places);;
+                pressure = pressure.toFixed(this._decimal_places);
                 pressure_unit = "hPa";
                 break;
 
@@ -1448,7 +1448,7 @@ weather-storm.png = weather-storm-symbolic.svg
             if (this._connected)
                 this.parseWeatherCurrent();
             else
-                this.rebuildCurrentWeatherUi()
+                this.rebuildCurrentWeatherUi();
             return true;
         }));
     },
@@ -1580,7 +1580,7 @@ weather-storm.png = weather-storm-symbolic.svg
             if (this._connected)
                 this.parseWeatherForecast();
             else
-                this.rebuildFutureWeatherUi()
+                this.rebuildFutureWeatherUi();
             return true;
         }));
     },
