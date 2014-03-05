@@ -669,9 +669,7 @@ const WeatherMenuButton = new Lang.Class({
             }
 
             this._selectCity.menu.addMenuItem(item);
-            item.connect('activate', Lang.bind(this, function(actor, event) {
-                this._actual_city = actor.location;
-            }));
+            item.connect('activate', Lang.bind(this, this._onLocationActivated));
         }
 
         if (cities.length == 1)
@@ -679,6 +677,12 @@ const WeatherMenuButton = new Lang.Class({
         else
             this._selectCity.actor.show();
 
+    },
+
+    _onLocationActivated: function(actor, event) {
+        log('in _onLocationActivated, this._actual_city vorher:' + this._actual_city);
+        this._actual_city = actor.location;
+        log('in _onLocationActivated, this._actual_city nachher:' + this._actual_city);
     },
 
     extractLocation: function() {
@@ -732,29 +736,31 @@ const WeatherMenuButton = new Lang.Class({
                 if (this._appid)
                     params['APPID'] = this._appid;
 
-                this.load_json_async(WEATHER_URL_CURRENT, params, Lang.bind(this, function() {
-                    let city = arguments[0];
-
-                    if (Number(city.cod) != 200)
-                        return;
-
-                    let cityText = city.id + ">" + city.name;
-
-                    if (city.sys)
-                        cityText += " (" + city.sys.country + ")";
-
-                    cities.splice(a, 1, cityText);
-
-                    cities = cities.join(" && ");
-                    if (typeof cities != "string")
-                        cities = cities[0];
-                    this._cities = cities;
-                    this.updateCities();
-                }));
+                this.load_json_async(WEATHER_URL_CURRENT, params, Lang.bind(this, this._updateCitiesCallback));
                 return;
             } else
                 continue;
         }
+    },
+
+    _updateCitiesCallback: function() {
+        let city = arguments[0];
+
+        if (Number(city.cod) != 200)
+            return;
+
+        let cityText = city.id + ">" + city.name;
+
+        if (city.sys)
+            cityText += " (" + city.sys.country + ")";
+
+        cities.splice(a, 1, cityText);
+
+        cities = cities.join(" && ");
+        if (typeof cities != "string")
+            cities = cities[0];
+        this._cities = cities;
+        this.updateCities();
     },
 
     _onPreferencesActivate: function() {
