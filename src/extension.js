@@ -38,7 +38,6 @@ const ExtensionUtils = imports.misc.extensionUtils;
 const Me = ExtensionUtils.getCurrentExtension();
 const Config = imports.misc.config;
 const Convenience = Me.imports.convenience;
-const Cairo = imports.cairo;
 const Clutter = imports.gi.Clutter;
 const Gettext = imports.gettext.domain('gnome-shell-extension-openweather');
 const Gio = imports.gi.Gio;
@@ -46,7 +45,6 @@ const Gtk = imports.gi.Gtk;
 const Lang = imports.lang;
 const Mainloop = imports.mainloop;
 const Soup = imports.gi.Soup;
-const Shell = imports.gi.Shell;
 const St = imports.gi.St;
 const Util = imports.misc.util;
 const _ = Gettext.gettext;
@@ -681,9 +679,7 @@ const WeatherMenuButton = new Lang.Class({
     },
 
     _onLocationActivated: function(actor, event) {
-        log('in _onLocationActivated, this._actual_city vorher:' + this._actual_city);
         this._actual_city = actor.location;
-        log('in _onLocationActivated, this._actual_city nachher:' + this._actual_city);
     },
 
     extractLocation: function() {
