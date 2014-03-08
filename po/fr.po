@@ -26,12 +26,12 @@ msgstr "..."
 
 #: ../src/extension.js:241
 msgid "Weather data provided by:   "
-msgstr ""
+msgstr "Données météo fournies par :   "
 
 #: ../src/extension.js:259
 #, python-format
 msgid "Can not open %s"
-msgstr ""
+msgstr "Impossible d'ouvrir %s"
 
 #: ../src/extension.js:269
 msgid "Locations"
@@ -56,7 +56,7 @@ msgstr "Ville invalide"
 
 #: ../src/extension.js:923
 msgid "thunderstorm with light rain"
-msgstr ""
+msgstr "Orage avec pluie légère"
 
 #: ../src/extension.js:925
 #, fuzzy
@@ -65,7 +65,7 @@ msgstr "Orage"
 
 #: ../src/extension.js:927
 msgid "thunderstorm with heavy rain"
-msgstr ""
+msgstr "Orage avec de fortes pluies"
 
 #: ../src/extension.js:929
 #, fuzzy
@@ -89,19 +89,19 @@ msgstr "Orages isolés"
 
 #: ../src/extension.js:937
 msgid "thunderstorm with light drizzle"
-msgstr ""
+msgstr "Orage avec bruine légère"
 
 #: ../src/extension.js:939
 msgid "thunderstorm with drizzle"
-msgstr ""
+msgstr "Orage avec bruine"
 
 #: ../src/extension.js:941
 msgid "thunderstorm with heavy drizzle"
-msgstr ""
+msgstr "Orage avec forte bruine"
 
 #: ../src/extension.js:943
 msgid "light intensity drizzle"
-msgstr ""
+msgstr "Bruine légère"
 
 #: ../src/extension.js:945
 #, fuzzy
@@ -110,11 +110,11 @@ msgstr "Bruine"
 
 #: ../src/extension.js:947
 msgid "heavy intensity drizzle"
-msgstr ""
+msgstr "Bruine forte"
 
 #: ../src/extension.js:949
 msgid "light intensity drizzle rain"
-msgstr ""
+msgstr "Pluie légère"
 
 #: ../src/extension.js:951
 #, fuzzy
@@ -123,16 +123,16 @@ msgstr "Bruine"
 
 #: ../src/extension.js:953
 msgid "heavy intensity drizzle rain"
-msgstr ""
+msgstr "Pluie forte"
 
 #: ../src/extension.js:955
 #, fuzzy
 msgid "shower rain and drizzle"
-msgstr "Pluie et grêle"
+msgstr "Averses de pluie et grêle"
 
 #: ../src/extension.js:957
 msgid "heavy shower rain and drizzle"
-msgstr ""
+msgstr "Fortes averses"
 
 #: ../src/extension.js:959
 #, fuzzy
@@ -151,11 +151,11 @@ msgstr "Coup de vent"
 
 #: ../src/extension.js:965
 msgid "heavy intensity rain"
-msgstr ""
+msgstr "Pluie forte"
 
 #: ../src/extension.js:967
 msgid "very heavy rain"
-msgstr ""
+msgstr "Pluie très forte"
 
 #: ../src/extension.js:969
 #, fuzzy
@@ -169,28 +169,28 @@ msgstr "Pluie verglaçante"
 
 #: ../src/extension.js:973
 msgid "light intensity shower rain"
-msgstr ""
+msgstr "Averses légères"
 
 #: ../src/extension.js:975
 msgid "shower rain"
-msgstr ""
+msgstr "Averses"
 
 #: ../src/extension.js:977
 msgid "heavy intensity shower rain"
-msgstr ""
+msgstr "Fortes averses"
 
 #: ../src/extension.js:979
 msgid "ragged shower rain"
-msgstr ""
+msgstr "Averses"
 
 #: ../src/extension.js:981
 #, fuzzy
 msgid "light snow"
-msgstr "Blizzard"
+msgstr "Faibles chutes de neige"
 
 #: ../src/extension.js:983
 msgid "snow"
-msgstr ""
+msgstr "Neige"
 
 #: ../src/extension.js:985
 #, fuzzy
@@ -234,19 +234,19 @@ msgstr "Fortes chutes de neige"
 
 #: ../src/extension.js:1001
 msgid "mist"
-msgstr ""
+msgstr "Brouillard"
 
 #: ../src/extension.js:1003
 msgid "smoke"
-msgstr ""
+msgstr "Brume"
 
 #: ../src/extension.js:1005
 msgid "haze"
-msgstr ""
+msgstr "Brume"
 
 #: ../src/extension.js:1007
 msgid "Sand/Dust Whirls"
-msgstr ""
+msgstr "Tourbillons de sable/poussière"
 
 #: ../src/extension.js:1009
 #, fuzzy
@@ -255,31 +255,31 @@ msgstr "Brouillard"
 
 #: ../src/extension.js:1011
 msgid "sand"
-msgstr ""
+msgstr "sable"
 
 #: ../src/extension.js:1013
 msgid "dust"
-msgstr ""
+msgstr "poussière"
 
 #: ../src/extension.js:1015
 msgid "VOLCANIC ASH"
-msgstr ""
+msgstr "CENDRES VOLCANIQUES"
 
 #: ../src/extension.js:1017
 msgid "SQUALLS"
-msgstr ""
+msgstr "ORAGES"
 
 #: ../src/extension.js:1019
 msgid "TORNADO"
-msgstr ""
+msgstr "TORNADE"
 
 #: ../src/extension.js:1021
 msgid "sky is clear"
-msgstr ""
+msgstr "Ciel dégagé"
 
 #: ../src/extension.js:1023
 msgid "few clouds"
-msgstr ""
+msgstr "Quelques nuages"
 
 #: ../src/extension.js:1025
 #, fuzzy
@@ -288,7 +288,7 @@ msgstr "Averses éparses"
 
 #: ../src/extension.js:1027
 msgid "broken clouds"
-msgstr ""
+msgstr "Nuages épars"
 
 #: ../src/extension.js:1029
 #, fuzzy
@@ -447,7 +447,7 @@ msgstr "Patientez s'il vous plaît"
 
 #: ../src/extension.js:1691
 msgid "Cloudiness:"
-msgstr ""
+msgstr "Nébulosité :"
 
 #: ../src/extension.js:1695
 msgid "Humidity:"
@@ -519,11 +519,11 @@ msgstr "Nombre de jours dans la prévision"
 
 #: ../src/prefs.js:148
 msgid "Maximal number of digits after the decimal point"
-msgstr ""
+msgstr "Nombre maximal de chiffres après la virgule"
 
 #: ../src/prefs.js:150
 msgid "Personal Api key from openweather.org"
-msgstr ""
+msgstr "Clé API personnelle de openweather.org"
 
 #: ../src/prefs.js:299
 msgid "Name of the city"
