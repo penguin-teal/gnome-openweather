@@ -45,7 +45,7 @@ msgstr "Configuración del Clima"
 #: ../src/extension.js:345
 #, python-format
 msgid "Schema \"%s\" not found."
-msgstr ""
+msgstr "Schema \"%s\" no encontrada."
 
 #: ../src/extension.js:689 ../src/extension.js:698 ../src/prefs.js:831
 msgid "Invalid city"
@@ -86,15 +86,15 @@ msgstr "tormentas dispersas"
 
 #: ../src/extension.js:937
 msgid "thunderstorm with light drizzle"
-msgstr "lloviznas leves"
+msgstr "tormentas y lloviznas leves"
 
 #: ../src/extension.js:939
 msgid "thunderstorm with drizzle"
-msgstr "lloviznas"
+msgstr "tormentas y lloviznas"
 
 #: ../src/extension.js:941
 msgid "thunderstorm with heavy drizzle"
-msgstr "lloviznas severas"
+msgstr "tormentas y lloviznas severas"
 
 #: ../src/extension.js:943
 msgid "light intensity drizzle"
@@ -107,7 +107,7 @@ msgstr "llovizna"
 
 #: ../src/extension.js:947
 msgid "heavy intensity drizzle"
-msgstr "lloviznas fuertes"
+msgstr "lloviznas intensas"
 
 #: ../src/extension.js:949
 msgid "light intensity drizzle rain"
@@ -120,7 +120,7 @@ msgstr "lloviznas"
 
 #: ../src/extension.js:953
 msgid "heavy intensity drizzle rain"
-msgstr "lloviznas fuertes"
+msgstr "lloviznas intensas"
 
 #: ../src/extension.js:955
 #, fuzzy
@@ -169,7 +169,7 @@ msgstr "aguaceros leves"
 
 #: ../src/extension.js:975
 msgid "shower rain"
-msgstr "aguacero"
+msgstr "aguaceros"
 
 #: ../src/extension.js:977
 msgid "heavy intensity shower rain"
@@ -206,7 +206,7 @@ msgstr "lluvia y aguanieve"
 #: ../src/extension.js:991
 #, fuzzy
 msgid "light rain and snow"
-msgstr "Lluvia y nieve"
+msgstr "lluvias leves y nevadas"
 
 #: ../src/extension.js:993
 #, fuzzy
@@ -216,17 +216,17 @@ msgstr "lluvias y nevadas"
 #: ../src/extension.js:995
 #, fuzzy
 msgid "light shower snow"
-msgstr "lluvias y nevadas leves"
+msgstr "nevadas leves"
 
 #: ../src/extension.js:997
 #, fuzzy
 msgid "shower snow"
-msgstr "lluvias y nevadas"
+msgstr "nevadas"
 
 #: ../src/extension.js:999
 #, fuzzy
 msgid "heavy shower snow"
-msgstr "Fuerte nevada"
+msgstr "fuertes nevadas"
 
 #: ../src/extension.js:1001
 msgid "mist"
@@ -280,11 +280,11 @@ msgstr "algunas nubes"
 #: ../src/extension.js:1025
 #, fuzzy
 msgid "scattered clouds"
-msgstr "nubes dispersas"
+msgstr "nubes aisladas"
 
 #: ../src/extension.js:1027
 msgid "broken clouds"
-msgstr ""
+msgstr "nubes dispersas"
 
 #: ../src/extension.js:1029
 #, fuzzy
@@ -301,7 +301,7 @@ msgstr "calmo"
 
 #: ../src/extension.js:1072
 msgid "Light air"
-msgstr ""
+msgstr "viento ligero"
 
 #: ../src/extension.js:1075
 msgid "Light breeze"
@@ -317,7 +317,7 @@ msgstr "brisa moderada"
 
 #: ../src/extension.js:1084
 msgid "Fresh breeze"
-msgstr ""
+msgstr "brisa fresca"
 
 #: ../src/extension.js:1087
 msgid "Strong breeze"
@@ -508,11 +508,11 @@ msgstr "Condiciones en el Panel"
 
 #: ../src/prefs.js:144
 msgid "Center forecast"
-msgstr ""
+msgstr "Pronóstico Central"
 
 #: ../src/prefs.js:146
 msgid "Number of days in forecast"
-msgstr ""
+msgstr "Número de días del pronóstico"
 
 #: ../src/prefs.js:148
 msgid "Maximal number of digits after the decimal point"
