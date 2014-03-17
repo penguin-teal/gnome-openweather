@@ -32,15 +32,15 @@ msgstr "No se puede abrir %s"
 
 #: ../src/extension.js:269
 msgid "Locations"
-msgstr ""
+msgstr "Localidad"
 
 #: ../src/extension.js:273
 msgid "Reload Weather Information"
-msgstr ""
+msgstr "Recargar información del Clima"
 
 #: ../src/extension.js:281
 msgid "Weather Settings"
-msgstr ""
+msgstr "Configuración del Clima"
 
 #: ../src/extension.js:345
 #, python-format
@@ -49,149 +49,149 @@ msgstr ""
 
 #: ../src/extension.js:689 ../src/extension.js:698 ../src/prefs.js:831
 msgid "Invalid city"
-msgstr ""
+msgstr "Ciudad inválida"
 
 #: ../src/extension.js:923
 msgid "thunderstorm with light rain"
-msgstr ""
+msgstr "tormentas leves"
 
 #: ../src/extension.js:925
 #, fuzzy
 msgid "thunderstorm with rain"
-msgstr "Tormentas"
+msgstr "tormentas"
 
 #: ../src/extension.js:927
 msgid "thunderstorm with heavy rain"
-msgstr ""
+msgstr "tormentas fuertes"
 
 #: ../src/extension.js:929
 #, fuzzy
 msgid "light thunderstorm"
-msgstr "Tormentas locales"
+msgstr "tormentas leves"
 
 #: ../src/extension.js:931
 #, fuzzy
 msgid "thunderstorm"
-msgstr "Tormentas"
+msgstr "tormentas"
 
 #: ../src/extension.js:933
 #, fuzzy
 msgid "heavy thunderstorm"
-msgstr "Tormentas severas"
+msgstr "tormentas severas"
 
 #: ../src/extension.js:935
 #, fuzzy
 msgid "ragged thunderstorm"
-msgstr "Tormentas locales"
+msgstr "tormentas dispersas"
 
 #: ../src/extension.js:937
 msgid "thunderstorm with light drizzle"
-msgstr ""
+msgstr "lloviznas leves"
 
 #: ../src/extension.js:939
 msgid "thunderstorm with drizzle"
-msgstr ""
+msgstr "lloviznas"
 
 #: ../src/extension.js:941
 msgid "thunderstorm with heavy drizzle"
-msgstr ""
+msgstr "lloviznas severas"
 
 #: ../src/extension.js:943
 msgid "light intensity drizzle"
-msgstr ""
+msgstr "lloviznas leves"
 
 #: ../src/extension.js:945
 #, fuzzy
 msgid "drizzle"
-msgstr "Llovizna"
+msgstr "llovizna"
 
 #: ../src/extension.js:947
 msgid "heavy intensity drizzle"
-msgstr ""
+msgstr "lloviznas fuertes"
 
 #: ../src/extension.js:949
 msgid "light intensity drizzle rain"
-msgstr ""
+msgstr "lloviznas leves"
 
 #: ../src/extension.js:951
 #, fuzzy
 msgid "drizzle rain"
-msgstr "Llovizna"
+msgstr "lloviznas"
 
 #: ../src/extension.js:953
 msgid "heavy intensity drizzle rain"
-msgstr ""
+msgstr "lloviznas fuertes"
 
 #: ../src/extension.js:955
 #, fuzzy
 msgid "shower rain and drizzle"
-msgstr "Lluvia y granizo"
+msgstr "aguaceros y lloviznas"
 
 #: ../src/extension.js:957
 msgid "heavy shower rain and drizzle"
-msgstr ""
+msgstr "aguaceros fuertes y lloviznas"
 
 #: ../src/extension.js:959
 #, fuzzy
 msgid "shower drizzle"
-msgstr "Lluvia con heladas"
+msgstr "lluvia con heladas"
 
 #: ../src/extension.js:961
 #, fuzzy
 msgid "light rain"
-msgstr "Lluvia con heladas"
+msgstr "lluvia leve"
 
 #: ../src/extension.js:963
 msgid "moderate rain"
-msgstr ""
+msgstr "lluvia moderada"
 
 #: ../src/extension.js:965
 msgid "heavy intensity rain"
-msgstr ""
+msgstr "lluvia intensa"
 
 #: ../src/extension.js:967
 msgid "very heavy rain"
-msgstr ""
+msgstr "lluvia severa"
 
 #: ../src/extension.js:969
 #, fuzzy
 msgid "extreme rain"
-msgstr "Lluvia con heladas"
+msgstr "lluvia extrema"
 
 #: ../src/extension.js:971
 #, fuzzy
 msgid "freezing rain"
-msgstr "Lluvia con heladas"
+msgstr "lluvia con heladas"
 
 #: ../src/extension.js:973
 msgid "light intensity shower rain"
-msgstr ""
+msgstr "aguaceros leves"
 
 #: ../src/extension.js:975
 msgid "shower rain"
-msgstr ""
+msgstr "aguacero"
 
 #: ../src/extension.js:977
 msgid "heavy intensity shower rain"
-msgstr ""
+msgstr "aguaceros intensos"
 
 #: ../src/extension.js:979
 msgid "ragged shower rain"
-msgstr ""
+msgstr "aguaceros dispersos"
 
 #: ../src/extension.js:981
 #, fuzzy
 msgid "light snow"
-msgstr "Nieve"
+msgstr "nevadas leves"
 
 #: ../src/extension.js:983
 msgid "snow"
-msgstr ""
+msgstr "nevadas"
 
 #: ../src/extension.js:985
 #, fuzzy
 msgid "heavy snow"
-msgstr "Fuerte nevada"
+msgstr "nevadas fuertes"
 
 #: ../src/extension.js:987
 #, fuzzy
