@@ -23,12 +23,12 @@ msgstr "..."
 
 #: ../src/extension.js:241
 msgid "Weather data provided by:   "
-msgstr ""
+msgstr "Información provista por:"
 
 #: ../src/extension.js:259
 #, python-format
 msgid "Can not open %s"
-msgstr ""
+msgstr "No se puede abrir %s"
 
 #: ../src/extension.js:269
 msgid "Locations"
