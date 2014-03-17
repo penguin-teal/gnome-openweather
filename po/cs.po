@@ -1,8 +1,9 @@
 # Czech translation for gnome-shell-extension-openweather
-# Copyright (C) 2011-2012
+# Copyright (C) 2011-2014
 # This file is distributed under the same license as the gnome-shell-extension-openweather package.
 # David Štancl <dstancl@dstancl.cz>, 2011.
 # Lukáš Maňas <lukas.manas@gmail.com>, 2012.
+# František Zatloukal <zatloukal.frantisek@gmail.com>, 2014.
 #
 msgid ""
 msgstr ""
@@ -23,16 +24,16 @@ msgstr "…"
 
 #: ../src/extension.js:241
 msgid "Weather data provided by:   "
-msgstr ""
+msgstr "Data o počasí poskytuje:   "
 
 #: ../src/extension.js:259
 #, python-format
 msgid "Can not open %s"
-msgstr ""
+msgstr "Nemohu otevřít %s"
 
 #: ../src/extension.js:269
 msgid "Locations"
-msgstr ""
+msgstr "Místa"
 
 #: ../src/extension.js:273
 msgid "Reload Weather Information"
@@ -53,21 +54,21 @@ msgstr "Neplatné město"
 
 #: ../src/extension.js:923
 msgid "thunderstorm with light rain"
-msgstr ""
+msgstr "bouřky a mírný déšť"
 
 #: ../src/extension.js:925
 #, fuzzy
 msgid "thunderstorm with rain"
-msgstr "Bouřky"
+msgstr "bouřky"
 
 #: ../src/extension.js:927
 msgid "thunderstorm with heavy rain"
-msgstr ""
+msgstr "bouřky a intenzivní déšť"
 
 #: ../src/extension.js:929
 #, fuzzy
 msgid "light thunderstorm"
-msgstr "Ojedinělé bouřky"
+msgstr "ojedinělé bouřky"
 
 #: ../src/extension.js:931
 #, fuzzy
@@ -77,12 +78,12 @@ msgstr "Bouřky"
 #: ../src/extension.js:933
 #, fuzzy
 msgid "heavy thunderstorm"
-msgstr "Četné bouřky"
+msgstr "četné bouřky"
 
 #: ../src/extension.js:935
 #, fuzzy
 msgid "ragged thunderstorm"
-msgstr "Ojedinělé bouřky"
+msgstr "ojedinělé bouřky"
 
 #: ../src/extension.js:937
 msgid "thunderstorm with light drizzle"
@@ -103,115 +104,115 @@ msgstr ""
 #: ../src/extension.js:945
 #, fuzzy
 msgid "drizzle"
-msgstr "Mrholení"
+msgstr "mrholení"
 
 #: ../src/extension.js:947
 msgid "heavy intensity drizzle"
-msgstr ""
+msgstr "silné mrholení"
 
 #: ../src/extension.js:949
 msgid "light intensity drizzle rain"
-msgstr ""
+msgstr "slabé mrholení"
 
 #: ../src/extension.js:951
 #, fuzzy
 msgid "drizzle rain"
-msgstr "Mrholení"
+msgstr "mrholení"
 
 #: ../src/extension.js:953
 msgid "heavy intensity drizzle rain"
-msgstr ""
+msgstr "silné mrholení"
 
 #: ../src/extension.js:955
 #, fuzzy
 msgid "shower rain and drizzle"
-msgstr "Déšť s kroupami"
+msgstr "mrholení"
 
 #: ../src/extension.js:957
 msgid "heavy shower rain and drizzle"
-msgstr ""
+msgstr "silné mrholení"
 
 #: ../src/extension.js:959
 #, fuzzy
 msgid "shower drizzle"
-msgstr "Namrzající mrholení"
+msgstr "mrholení"
 
 #: ../src/extension.js:961
 #, fuzzy
 msgid "light rain"
-msgstr "Namrzající déšť"
+msgstr "mírný déšť"
 
 #: ../src/extension.js:963
 msgid "moderate rain"
-msgstr ""
+msgstr "střední déšť"
 
 #: ../src/extension.js:965
 msgid "heavy intensity rain"
-msgstr ""
+msgstr "silný déšť"
 
 #: ../src/extension.js:967
 msgid "very heavy rain"
-msgstr ""
+msgstr "velmi silný déšť"
 
 #: ../src/extension.js:969
 #, fuzzy
 msgid "extreme rain"
-msgstr "Namrzající déšť"
+msgstr "intenzivní déšť"
 
 #: ../src/extension.js:971
 #, fuzzy
 msgid "freezing rain"
-msgstr "Namrzající déšť"
+msgstr "namrzající déšť"
 
 #: ../src/extension.js:973
 msgid "light intensity shower rain"
-msgstr ""
+msgstr "mírný déšť"
 
 #: ../src/extension.js:975
 msgid "shower rain"
-msgstr ""
+msgstr "déšť"
 
 #: ../src/extension.js:977
 msgid "heavy intensity shower rain"
-msgstr ""
+msgstr "silný déšť"
 
 #: ../src/extension.js:979
 msgid "ragged shower rain"
-msgstr ""
+msgstr "velmi silný déšť"
 
 #: ../src/extension.js:981
 #, fuzzy
 msgid "light snow"
-msgstr "Husté sněžení"
+msgstr "mírné sněžení"
 
 #: ../src/extension.js:983
 msgid "snow"
-msgstr ""
+msgstr "sníh"
 
 #: ../src/extension.js:985
 #, fuzzy
 msgid "heavy snow"
-msgstr "Husté sněžení"
+msgstr "husté sněžení"
 
 #: ../src/extension.js:987
 #, fuzzy
 msgid "sleet"
-msgstr "Plískanice"
+msgstr "plískanice"
 
 #: ../src/extension.js:989
 #, fuzzy
 msgid "shower sleet"
-msgstr "Přeháňky"
+msgstr "plískanice"
 
 #: ../src/extension.js:991
 #, fuzzy
 msgid "light rain and snow"
-msgstr "Déšť se sněhem"
+msgstr "mírný déšť se sněhem"
 
 #: ../src/extension.js:993
 #, fuzzy
 msgid "rain and snow"
-msgstr "Déšť se sněhem"
+msgstr "déšť se sněhem"
 
 #: ../src/extension.js:995
 #, fuzzy
@@ -221,61 +222,61 @@ msgstr "Mírné sněžení"
 #: ../src/extension.js:997
 #, fuzzy
 msgid "shower snow"
-msgstr "Přeháňky"
+msgstr "sněhové přeháňky"
 
 #: ../src/extension.js:999
 #, fuzzy
 msgid "heavy shower snow"
-msgstr "Husté sněžení"
+msgstr "husté sněžení"
 
 #: ../src/extension.js:1001
 msgid "mist"
-msgstr ""
+msgstr "mlha"
 
 #: ../src/extension.js:1003
 msgid "smoke"
-msgstr ""
+msgstr "smog"
 
 #: ../src/extension.js:1005
 msgid "haze"
-msgstr ""
+msgstr "opar"
 
 #: ../src/extension.js:1007
 msgid "Sand/Dust Whirls"
-msgstr ""
+msgstr "Písečné/prachové víry"
 
 #: ../src/extension.js:1009
 #, fuzzy
 msgid "Fog"
-msgstr "Mlha"
+msgstr "mlha"
 
 #: ../src/extension.js:1011
 msgid "sand"
-msgstr ""
+msgstr "písek"
 
 #: ../src/extension.js:1013
 msgid "dust"
-msgstr ""
+msgstr "prach"
 
 #: ../src/extension.js:1015
 msgid "VOLCANIC ASH"
-msgstr ""
+msgstr "SOPEČNÝ POPEL"
 
 #: ../src/extension.js:1017
 msgid "SQUALLS"
-msgstr ""
+msgstr "NÁPORY VĚTRU"
 
 #: ../src/extension.js:1019
 msgid "TORNADO"
-msgstr ""
+msgstr "TORNÁDO"
 
 #: ../src/extension.js:1021
 msgid "sky is clear"
-msgstr ""
+msgstr "jasno"
 
 #: ../src/extension.js:1023
 msgid "few clouds"
-msgstr ""
+msgstr "polojasno"
 
 #: ../src/extension.js:1025
 #, fuzzy
@@ -284,7 +285,7 @@ msgstr "Občasné přeháňky"
 
 #: ../src/extension.js:1027
 msgid "broken clouds"
-msgstr ""
+msgstr "Polojasno"
 
 #: ../src/extension.js:1029
 #, fuzzy
@@ -297,7 +298,7 @@ msgstr "Není k dispozici"
 
 #: ../src/extension.js:1069
 msgid "Calm"
-msgstr ""
+msgstr "Klid"
 
 #: ../src/extension.js:1072
 msgid "Light air"
@@ -305,43 +306,43 @@ msgstr ""
 
 #: ../src/extension.js:1075
 msgid "Light breeze"
-msgstr ""
+msgstr "Vánek"
 
 #: ../src/extension.js:1078
 msgid "Gentle breeze"
-msgstr ""
+msgstr "Mírný vítr"
 
 #: ../src/extension.js:1081
 msgid "Moderate breeze"
-msgstr ""
+msgstr "Střední vítr"
 
 #: ../src/extension.js:1084
 msgid "Fresh breeze"
-msgstr ""
+msgstr "Čerstvý vítr"
 
 #: ../src/extension.js:1087
 msgid "Strong breeze"
-msgstr ""
+msgstr "Silný vítr"
 
 #: ../src/extension.js:1090
 msgid "Moderate gale"
-msgstr ""
+msgstr "Vichřice"
 
 #: ../src/extension.js:1093
 msgid "Fresh gale"
-msgstr ""
+msgstr "Vichřice"
 
 #: ../src/extension.js:1096
 msgid "Strong gale"
-msgstr ""
+msgstr "Silná vichřice"
 
 #: ../src/extension.js:1099
 msgid "Storm"
-msgstr ""
+msgstr "Bouřka"
 
 #: ../src/extension.js:1102
 msgid "Violent storm"
-msgstr ""
+msgstr "Silná bouřka"
 
 #: ../src/extension.js:1105
 msgid "Hurricane"
@@ -377,35 +378,35 @@ msgstr "Sobota"
 
 #: ../src/extension.js:1115
 msgid "N"
-msgstr ""
+msgstr "S"
 
 #: ../src/extension.js:1115
 msgid "NE"
-msgstr ""
+msgstr "SV"
 
 #: ../src/extension.js:1115
 msgid "E"
-msgstr ""
+msgstr "V"
 
 #: ../src/extension.js:1115
 msgid "SE"
-msgstr ""
+msgstr "JV"
 
 #: ../src/extension.js:1115
 msgid "S"
-msgstr ""
+msgstr "J"
 
 #: ../src/extension.js:1115
 msgid "SW"
-msgstr ""
+msgstr "JZ"
 
 #: ../src/extension.js:1115
 msgid "W"
-msgstr ""
+msgstr "Z"
 
 #: ../src/extension.js:1115
 msgid "NW"
-msgstr ""
+msgstr "SZ"
 
 #: ../src/extension.js:1336 ../src/extension.js:1525
 msgid "Yesterday"
@@ -443,7 +444,7 @@ msgstr "Čekejte"
 
 #: ../src/extension.js:1691
 msgid "Cloudiness:"
-msgstr ""
+msgstr "Oblačnost:"
 
 #: ../src/extension.js:1695
 msgid "Humidity:"
@@ -468,7 +469,7 @@ msgstr "Jednotka rychlosti větru"
 #: ../src/prefs.js:130
 #, fuzzy
 msgid "Pressure Unit"
-msgstr "Tlak:"
+msgstr "Jednotka tlaku:"
 
 #: ../src/prefs.js:132
 msgid "Position in Panel"
@@ -488,7 +489,7 @@ msgstr "vlevo"
 
 #: ../src/prefs.js:134
 msgid "Wind Direction by Arrows"
-msgstr ""
+msgstr "Směr větru podle šipek"
 
 #: ../src/prefs.js:136
 msgid "Translate Conditions"
@@ -512,15 +513,15 @@ msgstr ""
 
 #: ../src/prefs.js:146
 msgid "Number of days in forecast"
-msgstr ""
+msgstr "Počet dní k předpovědi"
 
 #: ../src/prefs.js:148
 msgid "Maximal number of digits after the decimal point"
-msgstr ""
+msgstr "Maximální množství čísel za desetinnou čárkou"
 
 #: ../src/prefs.js:150
 msgid "Personal Api key from openweather.org"
-msgstr ""
+msgstr "Osobní Api klíč z openweather.org"
 
 #: ../src/prefs.js:299
 msgid "Name of the city"
