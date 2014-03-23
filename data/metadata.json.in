@@ -2,7 +2,7 @@
 "uuid": "@uuid@",
 "name": "OpenWeather",
 "description": "Weather extension to display weather information from http://openweathermap.org/ for many cities in GNOME Shell",
-"shell-version": [ "3.6", "3.8", "3.10", "3.11.5", "3.11.90",, "3.11.91", "3.12" ],
+"shell-version": [ "3.6", "3.8", "3.10", "3.11.5", "3.11.90", "3.11.91", "3.12" ],
 "localedir": "@LOCALEDIR@",
 "url": "@url@"
 }
