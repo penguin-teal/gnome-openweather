@@ -1,0 +1,533 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Svetlin Zarev <svetlin.zarev@mail.ru>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-03-28 18:54+0200\n"
+"PO-Revision-Date: 2014-03-28 18:57+0200\n"
+"Last-Translator: Svetlin Zarev <svetlin.zarev@mail.ru>\n"
+"Language-Team: Български <>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Gtranslator 2.91.6\n"
+
+#: ../src/extension.js:143
+msgid "..."
+msgstr "..."
+
+#: ../src/extension.js:240
+msgid "Weather data provided by:   "
+msgstr "Информацията е предоставена от:"
+
+#: ../src/extension.js:258
+#, python-format
+msgid "Can not open %s"
+msgstr "%s не може да бъде отворен"
+
+#: ../src/extension.js:268
+msgid "Locations"
+msgstr "Местоположения"
+
+#: ../src/extension.js:272
+msgid "Reload Weather Information"
+msgstr "Опресни информацията"
+
+#: ../src/extension.js:280
+msgid "Weather Settings"
+msgstr "Настройки"
+
+#: ../src/extension.js:344
+#, python-format
+msgid "Schema \"%s\" not found."
+msgstr "Схемата \"%s\" не е намерена"
+
+#: ../src/extension.js:690 ../src/extension.js:699 ../src/prefs.js:830
+msgid "Invalid city"
+msgstr "Грешен град"
+
+#: ../src/extension.js:925
+msgid "thunderstorm with light rain"
+msgstr "лек дъжд с гръмотевици"
+
+#: ../src/extension.js:927
+msgid "thunderstorm with rain"
+msgstr "дъжд с гръмотевици"
+
+#: ../src/extension.js:929
+msgid "thunderstorm with heavy rain"
+msgstr "проливен дъжд с гръмотевици"
+
+#: ../src/extension.js:931
+msgid "light thunderstorm"
+msgstr "слаба гръмотевична буря"
+
+#: ../src/extension.js:933
+msgid "thunderstorm"
+msgstr "гръмотевична буря"
+
+#: ../src/extension.js:935
+msgid "heavy thunderstorm"
+msgstr "силна гръмотевична буря"
+
+#: ../src/extension.js:937
+#, fuzzy
+msgid "ragged thunderstorm"
+msgstr "гръмотевична буря"
+
+#: ../src/extension.js:939
+msgid "thunderstorm with light drizzle"
+msgstr "гръмотевична буря с лек дъждец"
+
+#: ../src/extension.js:941
+msgid "thunderstorm with drizzle"
+msgstr "гръмотевична буря със ситен дъжд"
+
+#: ../src/extension.js:943
+#, fuzzy
+msgid "thunderstorm with heavy drizzle"
+msgstr "гръмотевична буря със ситен дъжд"
+
+#: ../src/extension.js:945
+msgid "light intensity drizzle"
+msgstr "лек ситен дъжд"
+
+#: ../src/extension.js:947
+msgid "drizzle"
+msgstr "ситен дъжд"
+
+#: ../src/extension.js:949
+#, fuzzy
+msgid "heavy intensity drizzle"
+msgstr "силен ръмеж"
+
+#: ../src/extension.js:951
+#, fuzzy
+msgid "light intensity drizzle rain"
+msgstr "лек ръмеж"
+
+#: ../src/extension.js:953
+#, fuzzy
+msgid "drizzle rain"
+msgstr "ситен дъжд"
+
+#: ../src/extension.js:955
+#, fuzzy
+msgid "heavy intensity drizzle rain"
+msgstr "силен ръмеж"
+
+#: ../src/extension.js:957
+#, fuzzy
+msgid "shower rain and drizzle"
+msgstr "дъжд"
+
+#: ../src/extension.js:959
+#, fuzzy
+msgid "heavy shower rain and drizzle"
+msgstr "силен дъжд"
+
+#: ../src/extension.js:961
+#, fuzzy
+msgid "shower drizzle"
+msgstr "силен ръмеж"
+
+#: ../src/extension.js:963
+msgid "light rain"
+msgstr "лек дъжд"
+
+#: ../src/extension.js:965
+msgid "moderate rain"
+msgstr "умерен валеж"
+
+#: ../src/extension.js:967
+msgid "heavy intensity rain"
+msgstr "силен дъжд"
+
+#: ../src/extension.js:969
+msgid "very heavy rain"
+msgstr "много силен дъжд"
+
+#: ../src/extension.js:971
+msgid "extreme rain"
+msgstr "много силен дъжд"
+
+#: ../src/extension.js:973
+#, fuzzy
+msgid "freezing rain"
+msgstr "леден дъжд"
+
+#: ../src/extension.js:975
+#, fuzzy
+msgid "light intensity shower rain"
+msgstr "слаб дъжд"
+
+#: ../src/extension.js:977
+#, fuzzy
+msgid "shower rain"
+msgstr "дъжд"
+
+#: ../src/extension.js:979
+#, fuzzy
+msgid "heavy intensity shower rain"
+msgstr "силен дъжд"
+
+#: ../src/extension.js:981
+#, fuzzy
+msgid "ragged shower rain"
+msgstr "дъжд"
+
+#: ../src/extension.js:983
+msgid "light snow"
+msgstr "лек снеговалеж"
+
+#: ../src/extension.js:985
+msgid "snow"
+msgstr "снеговалеж"
+
+#: ../src/extension.js:987
+msgid "heavy snow"
+msgstr "силен снеговалеж"
+
+#: ../src/extension.js:989
+msgid "sleet"
+msgstr "суграшица"
+
+#: ../src/extension.js:991
+#, fuzzy
+msgid "shower sleet"
+msgstr "суграшица"
+
+#: ../src/extension.js:993
+msgid "light rain and snow"
+msgstr "слаба  суграшица"
+
+#: ../src/extension.js:995
+msgid "rain and snow"
+msgstr "суграшица"
+
+#: ../src/extension.js:997
+#, fuzzy
+msgid "light shower snow"
+msgstr "лек снеговалеж"
+
+#: ../src/extension.js:999
+#, fuzzy
+msgid "shower snow"
+msgstr "снеговалеж"
+
+#: ../src/extension.js:1001
+#, fuzzy
+msgid "heavy shower snow"
+msgstr "силен снеговалеж"
+
+#: ../src/extension.js:1003
+msgid "mist"
+msgstr "мъгла"
+
+#: ../src/extension.js:1005
+msgid "smoke"
+msgstr "дим"
+
+#: ../src/extension.js:1007
+msgid "haze"
+msgstr "мараня"
+
+#: ../src/extension.js:1009
+msgid "Sand/Dust Whirls"
+msgstr "пясъчни завихряния"
+
+#: ../src/extension.js:1011
+msgid "Fog"
+msgstr "мъгла"
+
+#: ../src/extension.js:1013
+msgid "sand"
+msgstr "пясък"
+
+#: ../src/extension.js:1015
+msgid "dust"
+msgstr "прах"
+
+#: ../src/extension.js:1017
+msgid "VOLCANIC ASH"
+msgstr "вулканична пепел"
+
+#: ../src/extension.js:1019
+msgid "SQUALLS"
+msgstr "вихрушки"
+
+#: ../src/extension.js:1021
+msgid "TORNADO"
+msgstr "торнадо"
+
+#: ../src/extension.js:1023
+msgid "sky is clear"
+msgstr "безоблачно"
+
+#: ../src/extension.js:1025
+msgid "few clouds"
+msgstr "слаба облачност"
+
+#: ../src/extension.js:1027
+msgid "scattered clouds"
+msgstr "разкъсана облачност"
+
+#: ../src/extension.js:1029
+msgid "broken clouds"
+msgstr "разкъсана облачност"
+
+#: ../src/extension.js:1031
+msgid "overcast clouds"
+msgstr "заоблачено"
+
+#: ../src/extension.js:1033
+msgid "Not available"
+msgstr "Не е налично"
+
+#: ../src/extension.js:1071
+msgid "Calm"
+msgstr "спокойно"
+
+#: ../src/extension.js:1074
+msgid "Light air"
+msgstr "Лек полъх"
+
+#: ../src/extension.js:1077
+msgid "Light breeze"
+msgstr "Лек бриз"
+
+#: ../src/extension.js:1080
+msgid "Gentle breeze"
+msgstr "Light breeze"
+
+#: ../src/extension.js:1083
+msgid "Moderate breeze"
+msgstr "Умерен бриз"
+
+#: ../src/extension.js:1086
+#, fuzzy
+msgid "Fresh breeze"
+msgstr "Бриз"
+
+#: ../src/extension.js:1089
+msgid "Strong breeze"
+msgstr "Силен бриз"
+
+#: ../src/extension.js:1092
+msgid "Moderate gale"
+msgstr "Умерен вихър"
+
+#: ../src/extension.js:1095
+#, fuzzy
+msgid "Fresh gale"
+msgstr "Вихър"
+
+#: ../src/extension.js:1098
+msgid "Strong gale"
+msgstr "Силен вихър"
+
+#: ../src/extension.js:1101
+msgid "Storm"
+msgstr "Буря"
+
+#: ../src/extension.js:1104
+msgid "Violent storm"
+msgstr "Силна буря"
+
+#: ../src/extension.js:1107
+msgid "Hurricane"
+msgstr "Ураган"
+
+#: ../src/extension.js:1111
+msgid "Sunday"
+msgstr "Неделя"
+
+#: ../src/extension.js:1111
+msgid "Monday"
+msgstr "Понеделник"
+
+#: ../src/extension.js:1111
+msgid "Tuesday"
+msgstr "Вторник\t\t"
+
+#: ../src/extension.js:1111
+msgid "Wednesday"
+msgstr "Сряда"
+
+#: ../src/extension.js:1111
+msgid "Thursday"
+msgstr "Четвъртък"
+
+#: ../src/extension.js:1111
+msgid "Friday"
+msgstr "Петък"
+
+#: ../src/extension.js:1111
+msgid "Saturday"
+msgstr "Събота"
+
+#: ../src/extension.js:1117
+msgid "N"
+msgstr "С"
+
+#: ../src/extension.js:1117
+msgid "NE"
+msgstr "СИ"
+
+#: ../src/extension.js:1117
+msgid "E"
+msgstr "И"
+
+#: ../src/extension.js:1117
+msgid "SE"
+msgstr "ЮИ"
+
+#: ../src/extension.js:1117
+msgid "S"
+msgstr "Ю"
+
+#: ../src/extension.js:1117
+msgid "SW"
+msgstr "ЮЗ"
+
+#: ../src/extension.js:1117
+msgid "W"
+msgstr "З"
+
+#: ../src/extension.js:1117
+msgid "NW"
+msgstr "СЗ"
+
+#: ../src/extension.js:1338 ../src/extension.js:1527
+msgid "Yesterday"
+msgstr "Вчера"
+
+#: ../src/extension.js:1340 ../src/extension.js:1529
+#, python-format
+msgid "%s days ago"
+msgstr "Преди %s дни"
+
+#: ../src/extension.js:1521
+msgid "Today"
+msgstr "Днес"
+
+#: ../src/extension.js:1523
+msgid "Tomorrow"
+msgstr "Утре"
+
+#: ../src/extension.js:1525
+#, python-format
+msgid "In %s days"
+msgstr "До %s дни"
+
+#: ../src/extension.js:1596
+msgid "Loading current weather ..."
+msgstr "Зареждане на моментната информация"
+
+#: ../src/extension.js:1628
+msgid "Loading ..."
+msgstr "Зареждане..."
+
+#: ../src/extension.js:1632
+msgid "Please wait"
+msgstr "Моля изчакайте"
+
+#: ../src/extension.js:1693
+msgid "Cloudiness:"
+msgstr "Облачност:"
+
+#: ../src/extension.js:1697
+msgid "Humidity:"
+msgstr "Влажност"
+
+#: ../src/extension.js:1701
+msgid "Pressure:"
+msgstr "Налягане"
+
+#: ../src/extension.js:1705
+msgid "Wind:"
+msgstr "Вятър"
+
+#: ../src/prefs.js:127
+msgid "Temperature Unit"
+msgstr "Мерна единица за температура"
+
+#: ../src/prefs.js:129
+msgid "Wind Speed Unit"
+msgstr "Мерна единица за скорост на вятъра"
+
+#: ../src/prefs.js:131
+msgid "Pressure Unit"
+msgstr "Мерна единица за налягане"
+
+#: ../src/prefs.js:133
+msgid "Position in Panel"
+msgstr "Позиция в панела"
+
+#: ../src/prefs.js:134
+msgid "Center"
+msgstr "Центрирано"
+
+#: ../src/prefs.js:134
+msgid "Right"
+msgstr "В дясно"
+
+#: ../src/prefs.js:134
+msgid "Left"
+msgstr "В ляво"
+
+#: ../src/prefs.js:135
+msgid "Wind Direction by Arrows"
+msgstr "Посока на вятъра със стрелки"
+
+#: ../src/prefs.js:137
+msgid "Translate Conditions"
+msgstr "Превеждай информацията за времето"
+
+#: ../src/prefs.js:139
+msgid "Symbolic Icons"
+msgstr "Символни икони"
+
+#: ../src/prefs.js:141
+msgid "Temperature in Panel"
+msgstr "Показвай температурата в панела"
+
+#: ../src/prefs.js:143
+msgid "Conditions in Panel"
+msgstr "Информация за времето в панела"
+
+#: ../src/prefs.js:145
+msgid "Center forecast"
+msgstr "Прогнозата да се показва в центъра"
+
+#: ../src/prefs.js:147
+#, fuzzy
+msgid "Number of days in forecast"
+msgstr "Дни в прогнозата"
+
+#: ../src/prefs.js:149
+msgid "Maximal number of digits after the decimal point"
+msgstr "Брой знаци след десетичната точка"
+
+#: ../src/prefs.js:151
+msgid "Personal Api key from openweather.org"
+msgstr "Личен API код от openweather.org"
+
+#: ../src/prefs.js:300
+msgid "Name of the city"
+msgstr "Населено място"
+
+#: ../src/prefs.js:485
+#, python-format
+msgid "Remove %s ?"
+msgstr "Да се премахне ли %s ?"
+
+#~ msgid "Loading future weather ..."
+#~ msgstr "Зареждане на прогнозната информация"
