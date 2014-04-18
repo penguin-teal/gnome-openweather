@@ -148,7 +148,7 @@ const WeatherPrefsWidget = new GObject.Class({
         this.addComboBox(["2", "3", "4", "5", "6", "7", "8", "9", "10"], "days_forecast");
         this.addLabel(_("Maximal number of digits after the decimal point"));
         this.addComboBox(["0", "1", "2", "3"], "decimal_places");
-        this.addLabel(_("Personal Api key from openweather.org"));
+        this.addLabel(_("Personal Api key from openweathermap.org"));
         this.addAppidEntry(("appid"));
     },
 

@@ -489,7 +489,7 @@ msgid "Number of days in forecast"
 msgstr ""
 
 #: ../src/prefs.js:147
-msgid "Personal Api key from openweather.org"
+msgid "Personal Api key from openweathermap.org"
 msgstr ""
 
 #: ../src/prefs.js:300
