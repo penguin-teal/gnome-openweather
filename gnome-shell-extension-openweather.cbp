@@ -38,6 +38,7 @@
 		<Unit filename="gnome-shell-extension-openweather.spec" />
 		<Unit filename="po/LINGUAS" />
 		<Unit filename="po/POTFILES.in" />
+		<Unit filename="po/bg.po" />
 		<Unit filename="po/ca.po" />
 		<Unit filename="po/cs.po" />
 		<Unit filename="po/da.po" />
