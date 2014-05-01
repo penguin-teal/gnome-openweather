@@ -57,7 +57,6 @@ msgid "thunderstorm with light rain"
 msgstr "bouřky a mírný déšť"
 
 #: ../src/extension.js:927
-#, fuzzy
 msgid "thunderstorm with rain"
 msgstr "bouřky"
 
@@ -66,22 +65,18 @@ msgid "thunderstorm with heavy rain"
 msgstr "bouřky a intenzivní déšť"
 
 #: ../src/extension.js:931
-#, fuzzy
 msgid "light thunderstorm"
 msgstr "ojedinělé bouřky"
 
 #: ../src/extension.js:933
-#, fuzzy
 msgid "thunderstorm"
 msgstr "Bouřky"
 
 #: ../src/extension.js:935
-#, fuzzy
 msgid "heavy thunderstorm"
 msgstr "četné bouřky"
 
 #: ../src/extension.js:937
-#, fuzzy
 msgid "ragged thunderstorm"
 msgstr "ojedinělé bouřky"
 
@@ -102,7 +97,6 @@ msgid "light intensity drizzle"
 msgstr ""
 
 #: ../src/extension.js:947
-#, fuzzy
 msgid "drizzle"
 msgstr "mrholení"
 
@@ -115,7 +109,6 @@ msgid "light intensity drizzle rain"
 msgstr "slabé mrholení"
 
 #: ../src/extension.js:953
-#, fuzzy
 msgid "drizzle rain"
 msgstr "mrholení"
 
@@ -124,7 +117,6 @@ msgid "heavy intensity drizzle rain"
 msgstr "silné mrholení"
 
 #: ../src/extension.js:957
-#, fuzzy
 msgid "shower rain and drizzle"
 msgstr "mrholení"
 
@@ -133,12 +125,10 @@ msgid "heavy shower rain and drizzle"
 msgstr "silné mrholení"
 
 #: ../src/extension.js:961
-#, fuzzy
 msgid "shower drizzle"
 msgstr "mrholení"
 
 #: ../src/extension.js:963
-#, fuzzy
 msgid "light rain"
 msgstr "mírný déšť"
 
@@ -155,12 +145,10 @@ msgid "very heavy rain"
 msgstr "velmi silný déšť"
 
 #: ../src/extension.js:971
-#, fuzzy
 msgid "extreme rain"
 msgstr "intenzivní déšť"
 
 #: ../src/extension.js:973
-#, fuzzy
 msgid "freezing rain"
 msgstr "namrzající déšť"
 
@@ -181,7 +169,6 @@ msgid "ragged shower rain"
 msgstr "velmi silný déšť"
 
 #: ../src/extension.js:983
-#, fuzzy
 msgid "light snow"
 msgstr "mírné sněžení"
 
@@ -190,42 +177,34 @@ msgid "snow"
 msgstr "sníh"
 
 #: ../src/extension.js:987
-#, fuzzy
 msgid "heavy snow"
 msgstr "husté sněžení"
 
 #: ../src/extension.js:989
-#, fuzzy
 msgid "sleet"
 msgstr "plískanice"
 
 #: ../src/extension.js:991
-#, fuzzy
 msgid "shower sleet"
 msgstr "plískanice"
 
 #: ../src/extension.js:993
-#, fuzzy
 msgid "light rain and snow"
 msgstr "mírný déšť se sněhem"
 
 #: ../src/extension.js:995
-#, fuzzy
 msgid "rain and snow"
 msgstr "déšť se sněhem"
 
 #: ../src/extension.js:997
-#, fuzzy
 msgid "light shower snow"
 msgstr "Mírné sněžení"
 
 #: ../src/extension.js:999
-#, fuzzy
 msgid "shower snow"
 msgstr "sněhové přeháňky"
 
 #: ../src/extension.js:1001
-#, fuzzy
 msgid "heavy shower snow"
 msgstr "husté sněžení"
 
@@ -246,7 +225,6 @@ msgid "Sand/Dust Whirls"
 msgstr "Písečné/prachové víry"
 
 #: ../src/extension.js:1011
-#, fuzzy
 msgid "Fog"
 msgstr "mlha"
 
@@ -279,7 +257,6 @@ msgid "few clouds"
 msgstr "polojasno"
 
 #: ../src/extension.js:1027
-#, fuzzy
 msgid "scattered clouds"
 msgstr "Občasné přeháňky"
 
@@ -288,7 +265,6 @@ msgid "broken clouds"
 msgstr "Polojasno"
 
 #: ../src/extension.js:1031
-#, fuzzy
 msgid "overcast clouds"
 msgstr "Převážně zataženo"
 
@@ -467,7 +443,6 @@ msgid "Wind Speed Unit"
 msgstr "Jednotka rychlosti větru"
 
 #: ../src/prefs.js:131
-#, fuzzy
 msgid "Pressure Unit"
 msgstr "Jednotka tlaku:"
 
@@ -520,7 +495,6 @@ msgid "Maximal number of digits after the decimal point"
 msgstr "Maximální množství čísel za desetinnou čárkou"
 
 #: ../src/prefs.js:151
-#, fuzzy
 msgid "Personal Api key from openweathermap.org"
 msgstr "Osobní Api klíč z openweathermap.org"
 
@@ -532,86 +506,3 @@ msgstr "Název města"
 #, python-format
 msgid "Remove %s ?"
 msgstr "Odstranit %s?"
-
-#~ msgid "Loading future weather ..."
-#~ msgstr "Načítání předpovědi…"
-
-#~ msgid "Tornado"
-#~ msgstr "Tornádo"
-
-#~ msgid "Tropical storm"
-#~ msgstr "Tropická bouře"
-
-#~ msgid "Mixed rain and sleet"
-#~ msgstr "Déšť s plískanicí"
-
-#~ msgid "Mixed snow and sleet"
-#~ msgstr "Sníh s plískanicí"
-
-#~ msgid "Snow flurries"
-#~ msgstr "Sněhové přeháňky"
-
-#~ msgid "Snow"
-#~ msgstr "Sněžení"
-
-#~ msgid "Hail"
-#~ msgstr "Kroupy"
-
-#~ msgid "Dust"
-#~ msgstr "Prašno"
-
-#~ msgid "Haze"
-#~ msgstr "Opar"
-
-#~ msgid "Smoky"
-#~ msgstr "Kouřmo"
-
-#~ msgid "Blustery"
-#~ msgstr "Bouřlivo"
-
-#~ msgid "Windy"
-#~ msgstr "Větrno"
-
-#~ msgid "Cold"
-#~ msgstr "Chladno"
-
-#~ msgid "Cloudy"
-#~ msgstr "Zataženo"
-
-#~ msgid "Partly cloudy"
-#~ msgstr "Polojasno"
-
-#~ msgid "Clear"
-#~ msgstr "Jasno"
-
-#~ msgid "Sunny"
-#~ msgstr "Slunečno"
-
-#~ msgid "Fair"
-#~ msgstr "Pěkně"
-
-#~ msgid "Hot"
-#~ msgstr "Horko"
-
-#~ msgid "Scattered thunderstorms"
-#~ msgstr "Občasné bouřky"
-
-#, fuzzy
-#~ msgid "Isolated showers"
-#~ msgstr "Ojedinělé bouřky"
-
-#~ msgid "Scattered snow showers"
-#~ msgstr "Občasné sněžení"
-
-#~ msgid "Thundershowers"
-#~ msgstr "Bouřky"
-
-#~ msgid "Snow showers"
-#~ msgstr "Sněhové přeháňky"
-
-#~ msgid "Isolated thundershowers"
-#~ msgstr "Ojedinělé bouřky"
-
-#, fuzzy
-#~ msgid "Feels like:"
-#~ msgstr "Pocitově:"

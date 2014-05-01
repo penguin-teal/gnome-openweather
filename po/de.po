@@ -494,7 +494,6 @@ msgid "Maximal number of digits after the decimal point"
 msgstr "Größtmögliche Anzahl von Nachkommastellen"
 
 #: ../src/prefs.js:151
-#, fuzzy
 msgid "Personal Api key from openweathermap.org"
 msgstr "Persönlicher Api Schlüssel von openweathermap.org"
 
