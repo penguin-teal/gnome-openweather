@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: 3.0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-04-18 18:36+0200\n"
-"PO-Revision-Date: 2013-02-14 03:48+0100\n"
+"PO-Revision-Date: 2014-05-09 21:57+0200\n"
 "Last-Translator: Christian METZLER (Neroth) <neroth@xeked.com>\n"
 "Language-Team: Français <ecyrbe@gmail.com>\n"
 "Language: fr\n"
@@ -60,7 +60,7 @@ msgstr "Orage avec pluie légère"
 
 #: ../src/extension.js:927
 msgid "thunderstorm with rain"
-msgstr "Orage"
+msgstr "Orage avec pluie"
 
 #: ../src/extension.js:929
 msgid "thunderstorm with heavy rain"
@@ -108,7 +108,7 @@ msgstr "Bruine forte"
 
 #: ../src/extension.js:951
 msgid "light intensity drizzle rain"
-msgstr "Pluie légère"
+msgstr "Bruine légère"
 
 #: ../src/extension.js:953
 msgid "drizzle rain"
@@ -120,7 +120,7 @@ msgstr "Pluie forte"
 
 #: ../src/extension.js:957
 msgid "shower rain and drizzle"
-msgstr "Averses de pluie et grêle"
+msgstr "Averses"
 
 #: ../src/extension.js:959
 msgid "heavy shower rain and drizzle"
@@ -128,15 +128,15 @@ msgstr "Fortes averses"
 
 #: ../src/extension.js:961
 msgid "shower drizzle"
-msgstr "Bruine verglaçante"
+msgstr "Bruine"
 
 #: ../src/extension.js:963
 msgid "light rain"
-msgstr "Très légère brise"
+msgstr "Légère pluie"
 
 #: ../src/extension.js:965
 msgid "moderate rain"
-msgstr "Coup de vent"
+msgstr "Pluie modérée"
 
 #: ../src/extension.js:967
 msgid "heavy intensity rain"
@@ -148,7 +148,7 @@ msgstr "Pluie très forte"
 
 #: ../src/extension.js:971
 msgid "extreme rain"
-msgstr "Pluie verglaçante"
+msgstr "Pluie extrêmement forte"
 
 #: ../src/extension.js:973
 msgid "freezing rain"
@@ -168,7 +168,7 @@ msgstr "Fortes averses"
 
 #: ../src/extension.js:981
 msgid "ragged shower rain"
-msgstr "Averses"
+msgstr "Averses isolées"
 
 #: ../src/extension.js:983
 msgid "light snow"
@@ -188,7 +188,7 @@ msgstr "Grésil"
 
 #: ../src/extension.js:991
 msgid "shower sleet"
-msgstr "Averses"
+msgstr "Grésil"
 
 #: ../src/extension.js:993
 msgid "light rain and snow"
@@ -260,7 +260,7 @@ msgstr "Quelques nuages"
 
 #: ../src/extension.js:1027
 msgid "scattered clouds"
-msgstr "Averses éparses"
+msgstr "Nuages épars"
 
 #: ../src/extension.js:1029
 msgid "broken clouds"
@@ -268,7 +268,7 @@ msgstr "Nuages épars"
 
 #: ../src/extension.js:1031
 msgid "overcast clouds"
-msgstr "Rares éclaircies"
+msgstr "Couvert"
 
 #: ../src/extension.js:1033
 msgid "Not available"
