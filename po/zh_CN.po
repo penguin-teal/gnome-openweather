@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: gnome-shell-extension-openweather\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-04-18 18:36+0200\n"
-"PO-Revision-Date: 2014-06-07 14:11+0800\n"
+"PO-Revision-Date: 2014-06-07 22:36+0800\n"
 "Last-Translator: 绿色圣光 <lishaohui.qd@163.com>\n"
 "Language-Team: Chinese (simplified) <>\n"
 "Language: zh_CN\n"
@@ -393,7 +393,7 @@ msgstr "昨天"
 #: ../src/extension.js:1340 ../src/extension.js:1529
 #, python-format
 msgid "%s days ago"
-msgstr "%s天之前"
+msgstr "%s 天之前"
 
 #: ../src/extension.js:1521
 msgid "Today"
@@ -406,7 +406,7 @@ msgstr "明天"
 #: ../src/extension.js:1525
 #, python-format
 msgid "In %s days"
-msgstr "未来%s天"
+msgstr "未来 %s 天"
 
 #: ../src/extension.js:1596
 msgid "Loading current weather ..."
@@ -450,19 +450,19 @@ msgstr "气压单位"
 
 #: ../src/prefs.js:133
 msgid "Position in Panel"
-msgstr "面板中的位置"
+msgstr "在面板上的位置"
 
 #: ../src/prefs.js:134
 msgid "Center"
-msgstr "中部"
+msgstr "中央"
 
 #: ../src/prefs.js:134
 msgid "Right"
-msgstr "右部"
+msgstr "右侧"
 
 #: ../src/prefs.js:134
 msgid "Left"
-msgstr "左部"
+msgstr "左侧"
 
 #: ../src/prefs.js:135
 msgid "Wind Direction by Arrows"
@@ -474,7 +474,7 @@ msgstr "翻译天气状态"
 
 #: ../src/prefs.js:139
 msgid "Symbolic Icons"
-msgstr "象征性图标"
+msgstr "显示象征性图标"
 
 #: ../src/prefs.js:141
 msgid "Temperature in Panel"
@@ -486,7 +486,7 @@ msgstr "在面板上显示天气状态"
 
 #: ../src/prefs.js:145
 msgid "Center forecast"
-msgstr "中心预报"
+msgstr "预报信息居中显示"
 
 #: ../src/prefs.js:147
 msgid "Number of days in forecast"
