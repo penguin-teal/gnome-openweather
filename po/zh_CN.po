@@ -1,21 +1,24 @@
 # Chinese translation for gnome-shell-extension-openweather
-# simon 软件包的简体中文翻译.
+# gnome-shell-extension-openweather 软件包的简体中文翻译.
 # Copyright (C) 2011
 # This file is distributed under the same license as the gnome-shell-extension-openweather package.
 # bill <bill_zt@sina.com>, 2011.
+# 绿色圣光 <lishaohui.qd@163.com>, 2014.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: simon 04-gnome-shell-extension-weather-452bcfe\n"
+"Project-Id-Version: gnome-shell-extension-openweather\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-04-18 18:36+0200\n"
-"PO-Revision-Date: 2013-01-18 10:25+0800\n"
-"Last-Translator: Meng Zhuo <mengzhuo1203@gmail.com>\n"
-"Language-Team: Chinese (simplified)\n"
+"PO-Revision-Date: 2014-06-07 22:36+0800\n"
+"Last-Translator: 绿色圣光 <lishaohui.qd@163.com>\n"
+"Language-Team: Chinese (simplified) <>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Gtranslator 2.91.6\n"
 
 #: ../src/extension.js:143
 msgid "..."
@@ -23,12 +26,12 @@ msgstr "..."
 
 #: ../src/extension.js:240
 msgid "Weather data provided by:   "
-msgstr ""
+msgstr "天气数据源自："
 
 #: ../src/extension.js:258
 #, python-format
 msgid "Can not open %s"
-msgstr ""
+msgstr "无法打开 %s"
 
 #: ../src/extension.js:268
 msgid "Locations"
@@ -40,12 +43,12 @@ msgstr "重载天气信息"
 
 #: ../src/extension.js:280
 msgid "Weather Settings"
-msgstr "天气设定"
+msgstr "天气设置"
 
 #: ../src/extension.js:344
 #, python-format
 msgid "Schema \"%s\" not found."
-msgstr "没有找到设定（Schema） \"%s\" "
+msgstr "未找到 Schema \"%s\"。"
 
 #: ../src/extension.js:690 ../src/extension.js:699 ../src/prefs.js:830
 msgid "Invalid city"
@@ -53,244 +56,219 @@ msgstr "无效的城市"
 
 #: ../src/extension.js:925
 msgid "thunderstorm with light rain"
-msgstr ""
+msgstr "小雨伴有雷暴"
 
 #: ../src/extension.js:927
-#, fuzzy
 msgid "thunderstorm with rain"
-msgstr "雷阵雨"
+msgstr "中雨伴有雷暴"
 
 #: ../src/extension.js:929
 msgid "thunderstorm with heavy rain"
-msgstr ""
+msgstr "大雨伴有雷暴"
 
 #: ../src/extension.js:931
-#, fuzzy
 msgid "light thunderstorm"
-msgstr "局地雷阵雨"
+msgstr "小雷暴"
 
 #: ../src/extension.js:933
-#, fuzzy
 msgid "thunderstorm"
-msgstr "雷阵雨"
-
-#: ../src/extension.js:935
-#, fuzzy
-msgid "heavy thunderstorm"
 msgstr "雷暴"
 
+#: ../src/extension.js:935
+msgid "heavy thunderstorm"
+msgstr "强雷暴"
+
 #: ../src/extension.js:937
-#, fuzzy
 msgid "ragged thunderstorm"
-msgstr "局地雷阵雨"
+msgstr "局部雷暴"
 
 #: ../src/extension.js:939
 msgid "thunderstorm with light drizzle"
-msgstr ""
+msgstr "小毛毛雨伴有雷暴"
 
 #: ../src/extension.js:941
 msgid "thunderstorm with drizzle"
-msgstr ""
+msgstr "毛毛雨伴有雷暴"
 
 #: ../src/extension.js:943
 msgid "thunderstorm with heavy drizzle"
-msgstr ""
+msgstr "强毛毛雨伴有雷暴"
 
 #: ../src/extension.js:945
 msgid "light intensity drizzle"
-msgstr ""
+msgstr "小毛毛雨"
 
 #: ../src/extension.js:947
-#, fuzzy
 msgid "drizzle"
-msgstr "小雨"
+msgstr "毛毛雨"
 
 #: ../src/extension.js:949
 msgid "heavy intensity drizzle"
-msgstr ""
+msgstr "强毛毛雨"
 
 #: ../src/extension.js:951
 msgid "light intensity drizzle rain"
-msgstr ""
+msgstr "小毛毛雨转雨"
 
 #: ../src/extension.js:953
-#, fuzzy
 msgid "drizzle rain"
-msgstr "小雨"
+msgstr "毛毛雨转雨"
 
 #: ../src/extension.js:955
 msgid "heavy intensity drizzle rain"
-msgstr ""
+msgstr "强毛毛雨转雨"
 
 #: ../src/extension.js:957
-#, fuzzy
 msgid "shower rain and drizzle"
-msgstr "冰雹"
+msgstr "阵雨及毛毛雨"
 
 #: ../src/extension.js:959
 msgid "heavy shower rain and drizzle"
-msgstr ""
+msgstr "强阵雨及毛毛雨"
 
 #: ../src/extension.js:961
-#, fuzzy
 msgid "shower drizzle"
-msgstr "冻雨"
+msgstr "阵毛毛雨"
 
 #: ../src/extension.js:963
-#, fuzzy
 msgid "light rain"
-msgstr "轻微气流"
+msgstr "小雨"
 
 #: ../src/extension.js:965
-#, fuzzy
 msgid "moderate rain"
-msgstr "中度风"
+msgstr "中雨"
 
 #: ../src/extension.js:967
 msgid "heavy intensity rain"
-msgstr ""
+msgstr "大雨"
 
 #: ../src/extension.js:969
 msgid "very heavy rain"
-msgstr ""
+msgstr "暴雨"
 
 #: ../src/extension.js:971
-#, fuzzy
 msgid "extreme rain"
-msgstr "冻雨"
+msgstr "大暴雨"
 
 #: ../src/extension.js:973
-#, fuzzy
 msgid "freezing rain"
 msgstr "冻雨"
 
 #: ../src/extension.js:975
 msgid "light intensity shower rain"
-msgstr ""
+msgstr "小阵雨"
 
 #: ../src/extension.js:977
 msgid "shower rain"
-msgstr ""
+msgstr "阵雨"
 
 #: ../src/extension.js:979
 msgid "heavy intensity shower rain"
-msgstr ""
+msgstr "强阵雨"
 
 #: ../src/extension.js:981
 msgid "ragged shower rain"
-msgstr ""
+msgstr "局部阵雨"
 
 #: ../src/extension.js:983
-#, fuzzy
 msgid "light snow"
-msgstr "暴雪"
+msgstr "小雪"
 
 #: ../src/extension.js:985
 msgid "snow"
-msgstr ""
+msgstr "雪"
 
 #: ../src/extension.js:987
-#, fuzzy
 msgid "heavy snow"
 msgstr "大雪"
 
 #: ../src/extension.js:989
-#, fuzzy
 msgid "sleet"
-msgstr "雨夹雪"
+msgstr "冰雹"
 
 #: ../src/extension.js:991
-#, fuzzy
 msgid "shower sleet"
-msgstr "阵雨"
+msgstr "阵冰雹"
 
 #: ../src/extension.js:993
-#, fuzzy
 msgid "light rain and snow"
-msgstr "雨夹雪"
+msgstr "小雨夹雪"
 
 #: ../src/extension.js:995
-#, fuzzy
 msgid "rain and snow"
 msgstr "雨夹雪"
 
 #: ../src/extension.js:997
-#, fuzzy
 msgid "light shower snow"
-msgstr "小雪"
+msgstr "小阵雪"
 
 #: ../src/extension.js:999
-#, fuzzy
 msgid "shower snow"
-msgstr "阵雨"
+msgstr "阵雪"
 
 #: ../src/extension.js:1001
-#, fuzzy
 msgid "heavy shower snow"
-msgstr "大雪"
+msgstr "强阵雪"
 
 #: ../src/extension.js:1003
 msgid "mist"
-msgstr ""
+msgstr "薄雾"
 
 #: ../src/extension.js:1005
 msgid "smoke"
-msgstr ""
+msgstr "烟"
 
 #: ../src/extension.js:1007
 msgid "haze"
-msgstr ""
+msgstr "霾"
 
 #: ../src/extension.js:1009
 msgid "Sand/Dust Whirls"
-msgstr ""
+msgstr "沙尘暴"
 
 #: ../src/extension.js:1011
-#, fuzzy
 msgid "Fog"
 msgstr "雾"
 
 #: ../src/extension.js:1013
 msgid "sand"
-msgstr ""
+msgstr "扬沙"
 
 #: ../src/extension.js:1015
 msgid "dust"
-msgstr ""
+msgstr "浮尘"
 
 #: ../src/extension.js:1017
 msgid "VOLCANIC ASH"
-msgstr ""
+msgstr "火山灰"
 
 #: ../src/extension.js:1019
 msgid "SQUALLS"
-msgstr ""
+msgstr "飑"
 
 #: ../src/extension.js:1021
 msgid "TORNADO"
-msgstr ""
+msgstr "龙卷风"
 
 #: ../src/extension.js:1023
 msgid "sky is clear"
-msgstr ""
+msgstr "晴朗"
 
 #: ../src/extension.js:1025
 msgid "few clouds"
-msgstr ""
+msgstr "少云"
 
 #: ../src/extension.js:1027
-#, fuzzy
 msgid "scattered clouds"
-msgstr "零星小雪"
+msgstr "疏云"
 
 #: ../src/extension.js:1029
 msgid "broken clouds"
-msgstr ""
+msgstr "碎云"
 
 #: ../src/extension.js:1031
-#, fuzzy
 msgid "overcast clouds"
-msgstr "多云"
+msgstr "阴天"
 
 #: ../src/extension.js:1033
 msgid "Not available"
@@ -298,51 +276,51 @@ msgstr "不可用"
 
 #: ../src/extension.js:1071
 msgid "Calm"
-msgstr "风平浪静"
+msgstr "无风"
 
 #: ../src/extension.js:1074
 msgid "Light air"
-msgstr "轻微气流"
+msgstr "软风"
 
 #: ../src/extension.js:1077
 msgid "Light breeze"
-msgstr "轻微风"
+msgstr "轻风"
 
 #: ../src/extension.js:1080
 msgid "Gentle breeze"
-msgstr "温和微风"
+msgstr "微风"
 
 #: ../src/extension.js:1083
 msgid "Moderate breeze"
-msgstr "中微风"
+msgstr "和风"
 
 #: ../src/extension.js:1086
 msgid "Fresh breeze"
-msgstr "清新微风"
+msgstr "清风"
 
 #: ../src/extension.js:1089
 msgid "Strong breeze"
-msgstr "强微风"
+msgstr "强风"
 
 #: ../src/extension.js:1092
 msgid "Moderate gale"
-msgstr "中度风"
+msgstr "疾风"
 
 #: ../src/extension.js:1095
 msgid "Fresh gale"
-msgstr "清风"
+msgstr "大风"
 
 #: ../src/extension.js:1098
 msgid "Strong gale"
-msgstr "强风"
+msgstr "烈风"
 
 #: ../src/extension.js:1101
 msgid "Storm"
-msgstr "风暴"
+msgstr "狂风"
 
 #: ../src/extension.js:1104
 msgid "Violent storm"
-msgstr "强风暴"
+msgstr "暴风"
 
 #: ../src/extension.js:1107
 msgid "Hurricane"
@@ -415,7 +393,7 @@ msgstr "昨天"
 #: ../src/extension.js:1340 ../src/extension.js:1529
 #, python-format
 msgid "%s days ago"
-msgstr "%s天之前"
+msgstr "%s 天之前"
 
 #: ../src/extension.js:1521
 msgid "Today"
@@ -428,7 +406,7 @@ msgstr "明天"
 #: ../src/extension.js:1525
 #, python-format
 msgid "In %s days"
-msgstr "未来%s天"
+msgstr "未来 %s 天"
 
 #: ../src/extension.js:1596
 msgid "Loading current weather ..."
@@ -440,11 +418,11 @@ msgstr "正在加载 ..."
 
 #: ../src/extension.js:1632
 msgid "Please wait"
-msgstr "请等待"
+msgstr "请稍候"
 
 #: ../src/extension.js:1693
 msgid "Cloudiness:"
-msgstr ""
+msgstr "云量："
 
 #: ../src/extension.js:1697
 msgid "Humidity:"
@@ -456,11 +434,11 @@ msgstr "气压："
 
 #: ../src/extension.js:1705
 msgid "Wind:"
-msgstr "风力："
+msgstr "风："
 
 #: ../src/prefs.js:127
 msgid "Temperature Unit"
-msgstr "温度："
+msgstr "温度单位"
 
 #: ../src/prefs.js:129
 msgid "Wind Speed Unit"
@@ -468,59 +446,59 @@ msgstr "风速单位"
 
 #: ../src/prefs.js:131
 msgid "Pressure Unit"
-msgstr "气压"
+msgstr "气压单位"
 
 #: ../src/prefs.js:133
 msgid "Position in Panel"
-msgstr "面板中的位置"
+msgstr "在面板上的位置"
 
 #: ../src/prefs.js:134
 msgid "Center"
-msgstr "中部"
+msgstr "中央"
 
 #: ../src/prefs.js:134
 msgid "Right"
-msgstr "右部"
+msgstr "右侧"
 
 #: ../src/prefs.js:134
 msgid "Left"
-msgstr "左部"
+msgstr "左侧"
 
 #: ../src/prefs.js:135
 msgid "Wind Direction by Arrows"
-msgstr "使用箭头作为风向标志"
+msgstr "使用箭头指示风向"
 
 #: ../src/prefs.js:137
 msgid "Translate Conditions"
-msgstr "翻译"
+msgstr "翻译天气状态"
 
 #: ../src/prefs.js:139
 msgid "Symbolic Icons"
-msgstr "象征性图标"
+msgstr "显示象征性图标"
 
 #: ../src/prefs.js:141
 msgid "Temperature in Panel"
-msgstr "温度："
+msgstr "在面板上显示气温"
 
 #: ../src/prefs.js:143
 msgid "Conditions in Panel"
-msgstr "在面板中显示天气条件"
+msgstr "在面板上显示天气状态"
 
 #: ../src/prefs.js:145
 msgid "Center forecast"
-msgstr ""
+msgstr "预报信息居中显示"
 
 #: ../src/prefs.js:147
 msgid "Number of days in forecast"
-msgstr ""
+msgstr "预报的天数"
 
 #: ../src/prefs.js:149
 msgid "Maximal number of digits after the decimal point"
-msgstr ""
+msgstr "小数点后最大位数"
 
 #: ../src/prefs.js:151
 msgid "Personal Api key from openweathermap.org"
-msgstr ""
+msgstr "openweathermap.org 的个人 API 密钥"
 
 #: ../src/prefs.js:300
 msgid "Name of the city"
@@ -529,86 +507,4 @@ msgstr "城市名"
 #: ../src/prefs.js:485
 #, python-format
 msgid "Remove %s ?"
-msgstr "删除 %s 吗？"
-
-#~ msgid "Loading future weather ..."
-#~ msgstr "正在加载预报天气 ..."
-
-#~ msgid "Tornado"
-#~ msgstr "龙卷风"
-
-#~ msgid "Tropical storm"
-#~ msgstr "热带风暴"
-
-#~ msgid "Mixed rain and sleet"
-#~ msgstr "雨夹雪"
-
-#~ msgid "Mixed snow and sleet"
-#~ msgstr "雨夹雪"
-
-#~ msgid "Snow flurries"
-#~ msgstr "阵雪"
-
-#~ msgid "Snow"
-#~ msgstr "雪"
-
-#~ msgid "Hail"
-#~ msgstr "冰雹"
-
-#~ msgid "Dust"
-#~ msgstr "扬沙"
-
-#~ msgid "Haze"
-#~ msgstr "霾"
-
-#~ msgid "Smoky"
-#~ msgstr "烟雾"
-
-#~ msgid "Blustery"
-#~ msgstr "大风"
-
-#~ msgid "Windy"
-#~ msgstr "刮风"
-
-#~ msgid "Cold"
-#~ msgstr "冷"
-
-#~ msgid "Cloudy"
-#~ msgstr "多云"
-
-#~ msgid "Partly cloudy"
-#~ msgstr "晴转多云 "
-
-#~ msgid "Clear"
-#~ msgstr "晴"
-
-#~ msgid "Sunny"
-#~ msgstr "晴"
-
-#~ msgid "Fair"
-#~ msgstr "晴"
-
-#~ msgid "Hot"
-#~ msgstr "炎热"
-
-#~ msgid "Scattered thunderstorms"
-#~ msgstr "零星雷阵雨"
-
-#, fuzzy
-#~ msgid "Isolated showers"
-#~ msgstr "局地雷阵雨"
-
-#~ msgid "Scattered snow showers"
-#~ msgstr "零星阵雪"
-
-#~ msgid "Thundershowers"
-#~ msgstr "雷阵雨"
-
-#~ msgid "Snow showers"
-#~ msgstr "阵雪"
-
-#~ msgid "Isolated thundershowers"
-#~ msgstr "局地雷阵雨"
-
-#~ msgid "Feels like:"
-#~ msgstr "体感："
+msgstr "移除 %s 吗？"
