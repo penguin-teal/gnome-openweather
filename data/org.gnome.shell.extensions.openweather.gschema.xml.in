@@ -73,7 +73,7 @@
       <_summary>Symbolic Icons</_summary>
     </key>
     <key name="use-text-on-buttons" type="b">
-      <default>true</default>
+      <default>false</default>
       <_summary>Use text on buttons in menu</_summary>
     </key>
     <key name="show-text-in-panel" type="b">
