@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-18 18:36+0200\n"
+"POT-Creation-Date: 2014-07-16 00:38+0200\n"
 "PO-Revision-Date: 2013-02-14 03:49+0100\n"
 "Last-Translator: Christian METZLER (Neroth) <neroth@xeked.com>\n"
 "Language-Team: \n"
@@ -17,491 +17,495 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#: ../src/extension.js:143
+#: ../src/extension.js:144
 msgid "..."
 msgstr "..."
 
-#: ../src/extension.js:240
+#: ../src/extension.js:241
 msgid "Weather data provided by:   "
 msgstr "Wetterdaten zur Verfügung gestellt von:   "
 
-#: ../src/extension.js:258
+#: ../src/extension.js:259
 #, python-format
 msgid "Can not open %s"
 msgstr "Kann %s nocht öffnen"
 
-#: ../src/extension.js:268
-msgid "Locations"
-msgstr "Standorte"
-
-#: ../src/extension.js:272
-msgid "Reload Weather Information"
-msgstr "Aktualisiere Wetterdaten"
-
-#: ../src/extension.js:280
-msgid "Weather Settings"
-msgstr "Einstellungen für Wetter"
-
-#: ../src/extension.js:344
+#: ../src/extension.js:347
 #, python-format
 msgid "Schema \"%s\" not found."
 msgstr "Schema \"%s\" nicht gefunden."
 
-#: ../src/extension.js:690 ../src/extension.js:699 ../src/prefs.js:830
+#: ../src/extension.js:679
+msgid "Locations"
+msgstr "Standorte"
+
+#: ../src/extension.js:689
+msgid "Reload Weather Information"
+msgstr "Aktualisiere Wetterdaten"
+
+#: ../src/extension.js:699
+msgid "Weather Settings"
+msgstr "Einstellungen für Wetter"
+
+#: ../src/extension.js:755 ../src/extension.js:764 ../src/prefs.js:845
 msgid "Invalid city"
 msgstr "Ungültige Ortschaft"
 
-#: ../src/extension.js:925
+#: ../src/extension.js:995
 msgid "thunderstorm with light rain"
 msgstr "Gewitter mit leichtem Regen"
 
-#: ../src/extension.js:927
+#: ../src/extension.js:997
 msgid "thunderstorm with rain"
 msgstr "Gewitter mit Regen"
 
-#: ../src/extension.js:929
+#: ../src/extension.js:999
 msgid "thunderstorm with heavy rain"
 msgstr "Gewitter mit starkem Regen"
 
-#: ../src/extension.js:931
+#: ../src/extension.js:1001
 msgid "light thunderstorm"
 msgstr "leichte Gewitter"
 
-#: ../src/extension.js:933
+#: ../src/extension.js:1003
 msgid "thunderstorm"
 msgstr "Gewitter"
 
-#: ../src/extension.js:935
+#: ../src/extension.js:1005
 msgid "heavy thunderstorm"
 msgstr "schwere Gewitter"
 
-#: ../src/extension.js:937
+#: ../src/extension.js:1007
 msgid "ragged thunderstorm"
 msgstr "einige Gewitter"
 
-#: ../src/extension.js:939
+#: ../src/extension.js:1009
 msgid "thunderstorm with light drizzle"
 msgstr "Gewitter mit leichtem Nieselregen"
 
-#: ../src/extension.js:941
+#: ../src/extension.js:1011
 msgid "thunderstorm with drizzle"
 msgstr "Gewitter mit Nieselregen"
 
-#: ../src/extension.js:943
+#: ../src/extension.js:1013
 msgid "thunderstorm with heavy drizzle"
 msgstr "Gewitter mit starkem Nieselregen"
 
-#: ../src/extension.js:945
+#: ../src/extension.js:1015
 msgid "light intensity drizzle"
 msgstr "leichtes Nieseln"
 
-#: ../src/extension.js:947
+#: ../src/extension.js:1017
 msgid "drizzle"
 msgstr "Nieseln"
 
-#: ../src/extension.js:949
+#: ../src/extension.js:1019
 msgid "heavy intensity drizzle"
 msgstr "starkes Nieseln"
 
-#: ../src/extension.js:951
+#: ../src/extension.js:1021
 msgid "light intensity drizzle rain"
 msgstr "leichter Nieselregen"
 
-#: ../src/extension.js:953
+#: ../src/extension.js:1023
 msgid "drizzle rain"
 msgstr "Nieselregen"
 
-#: ../src/extension.js:955
+#: ../src/extension.js:1025
 msgid "heavy intensity drizzle rain"
 msgstr "starker Nieselregen"
 
-#: ../src/extension.js:957
+#: ../src/extension.js:1027
 msgid "shower rain and drizzle"
 msgstr "Regenschauer und Nieseln"
 
-#: ../src/extension.js:959
+#: ../src/extension.js:1029
 msgid "heavy shower rain and drizzle"
 msgstr "starke Regenschauer und Nieseln"
 
-#: ../src/extension.js:961
+#: ../src/extension.js:1031
 msgid "shower drizzle"
 msgstr "Nieselschauer"
 
-#: ../src/extension.js:963
+#: ../src/extension.js:1033
 msgid "light rain"
 msgstr "leichter Regen"
 
-#: ../src/extension.js:965
+#: ../src/extension.js:1035
 msgid "moderate rain"
 msgstr "mäßiger Regen"
 
-#: ../src/extension.js:967
+#: ../src/extension.js:1037
 msgid "heavy intensity rain"
 msgstr "sehr starker Regen"
 
-#: ../src/extension.js:969
+#: ../src/extension.js:1039
 msgid "very heavy rain"
 msgstr "sehr starker Regen"
 
-#: ../src/extension.js:971
+#: ../src/extension.js:1041
 msgid "extreme rain"
 msgstr "Starkregen"
 
-#: ../src/extension.js:973
+#: ../src/extension.js:1043
 msgid "freezing rain"
 msgstr "Eisregen"
 
-#: ../src/extension.js:975
+#: ../src/extension.js:1045
 msgid "light intensity shower rain"
 msgstr "leichte Regenschauer"
 
-#: ../src/extension.js:977
+#: ../src/extension.js:1047
 msgid "shower rain"
 msgstr "Regenschauer"
 
-#: ../src/extension.js:979
+#: ../src/extension.js:1049
 msgid "heavy intensity shower rain"
 msgstr "heftige Regenschauer"
 
-#: ../src/extension.js:981
+#: ../src/extension.js:1051
 msgid "ragged shower rain"
 msgstr "einige Regenschauer"
 
-#: ../src/extension.js:983
+#: ../src/extension.js:1053
 msgid "light snow"
 msgstr "mäßiger Schnee"
 
-#: ../src/extension.js:985
+#: ../src/extension.js:1055
 msgid "snow"
 msgstr "Schnee"
 
-#: ../src/extension.js:987
+#: ../src/extension.js:1057
 msgid "heavy snow"
 msgstr "heftiger Schneefall"
 
-#: ../src/extension.js:989
+#: ../src/extension.js:1059
 msgid "sleet"
 msgstr "Graupel"
 
-#: ../src/extension.js:991
+#: ../src/extension.js:1061
 msgid "shower sleet"
 msgstr "Graupelschauer"
 
-#: ../src/extension.js:993
+#: ../src/extension.js:1063
 msgid "light rain and snow"
 msgstr "leichter Regen und Schnee"
 
-#: ../src/extension.js:995
+#: ../src/extension.js:1065
 msgid "rain and snow"
 msgstr "Regen und Schnee"
 
-#: ../src/extension.js:997
+#: ../src/extension.js:1067
 msgid "light shower snow"
 msgstr "leichter Schneeschauer"
 
-#: ../src/extension.js:999
+#: ../src/extension.js:1069
 msgid "shower snow"
 msgstr "Schneeschauer"
 
-#: ../src/extension.js:1001
+#: ../src/extension.js:1071
 msgid "heavy shower snow"
 msgstr "heftiger Schneeschauer"
 
-#: ../src/extension.js:1003
+#: ../src/extension.js:1073
 msgid "mist"
 msgstr "trüb"
 
-#: ../src/extension.js:1005
+#: ../src/extension.js:1075
 msgid "smoke"
 msgstr "Rauch"
 
-#: ../src/extension.js:1007
+#: ../src/extension.js:1077
 msgid "haze"
 msgstr "Dunst"
 
-#: ../src/extension.js:1009
+#: ../src/extension.js:1079
 msgid "Sand/Dust Whirls"
 msgstr "Sand / Staubsturm"
 
-#: ../src/extension.js:1011
+#: ../src/extension.js:1081
 msgid "Fog"
 msgstr "Nebel"
 
-#: ../src/extension.js:1013
+#: ../src/extension.js:1083
 msgid "sand"
 msgstr "Sand"
 
-#: ../src/extension.js:1015
+#: ../src/extension.js:1085
 msgid "dust"
 msgstr "Staub"
 
-#: ../src/extension.js:1017
+#: ../src/extension.js:1087
 msgid "VOLCANIC ASH"
 msgstr "Vulkanasche"
 
-#: ../src/extension.js:1019
+#: ../src/extension.js:1089
 msgid "SQUALLS"
 msgstr "Sturmböen"
 
-#: ../src/extension.js:1021
+#: ../src/extension.js:1091
 msgid "TORNADO"
 msgstr "Tornado"
 
-#: ../src/extension.js:1023
+#: ../src/extension.js:1093
 msgid "sky is clear"
 msgstr "klarer Himmel"
 
-#: ../src/extension.js:1025
+#: ../src/extension.js:1095
 msgid "few clouds"
 msgstr "ein paar Wolken"
 
-#: ../src/extension.js:1027
+#: ../src/extension.js:1097
 msgid "scattered clouds"
 msgstr "überwiegend bewölkt"
 
-#: ../src/extension.js:1029
+#: ../src/extension.js:1099
 msgid "broken clouds"
 msgstr "überwiegend bewölkt"
 
-#: ../src/extension.js:1031
+#: ../src/extension.js:1101
 msgid "overcast clouds"
 msgstr "wolkenbedeckt"
 
-#: ../src/extension.js:1033
+#: ../src/extension.js:1103
 msgid "Not available"
 msgstr "Nicht verfügbar"
 
-#: ../src/extension.js:1071
+#: ../src/extension.js:1141
 msgid "Calm"
 msgstr "Still"
 
-#: ../src/extension.js:1074
+#: ../src/extension.js:1144
 msgid "Light air"
 msgstr "Leichter Windzug"
 
-#: ../src/extension.js:1077
+#: ../src/extension.js:1147
 msgid "Light breeze"
 msgstr "Leichte Brise"
 
-#: ../src/extension.js:1080
+#: ../src/extension.js:1150
 msgid "Gentle breeze"
 msgstr "Schwache Brise"
 
-#: ../src/extension.js:1083
+#: ../src/extension.js:1153
 msgid "Moderate breeze"
 msgstr "Mäßige Brise"
 
-#: ../src/extension.js:1086
+#: ../src/extension.js:1156
 msgid "Fresh breeze"
 msgstr "Frische Brise"
 
-#: ../src/extension.js:1089
+#: ../src/extension.js:1159
 msgid "Strong breeze"
 msgstr "Starker Wind"
 
-#: ../src/extension.js:1092
+#: ../src/extension.js:1162
 msgid "Moderate gale"
 msgstr "Steifer Wind"
 
-#: ../src/extension.js:1095
+#: ../src/extension.js:1165
 msgid "Fresh gale"
 msgstr "Stürmischer Wind"
 
-#: ../src/extension.js:1098
+#: ../src/extension.js:1168
 msgid "Strong gale"
 msgstr "Sturm"
 
-#: ../src/extension.js:1101
+#: ../src/extension.js:1171
 msgid "Storm"
 msgstr "Schwerer Sturm"
 
-#: ../src/extension.js:1104
+#: ../src/extension.js:1174
 msgid "Violent storm"
 msgstr "Orkanartiger Sturm"
 
-#: ../src/extension.js:1107
+#: ../src/extension.js:1177
 msgid "Hurricane"
 msgstr "Orkan"
 
-#: ../src/extension.js:1111
+#: ../src/extension.js:1181
 msgid "Sunday"
 msgstr "Sonntag"
 
-#: ../src/extension.js:1111
+#: ../src/extension.js:1181
 msgid "Monday"
 msgstr "Montag"
 
-#: ../src/extension.js:1111
+#: ../src/extension.js:1181
 msgid "Tuesday"
 msgstr "Dienstag"
 
-#: ../src/extension.js:1111
+#: ../src/extension.js:1181
 msgid "Wednesday"
 msgstr "Mittwoch"
 
-#: ../src/extension.js:1111
+#: ../src/extension.js:1181
 msgid "Thursday"
 msgstr "Donnerstag"
 
-#: ../src/extension.js:1111
+#: ../src/extension.js:1181
 msgid "Friday"
 msgstr "Freitag"
 
-#: ../src/extension.js:1111
+#: ../src/extension.js:1181
 msgid "Saturday"
 msgstr "Samstag"
 
-#: ../src/extension.js:1117
+#: ../src/extension.js:1187
 msgid "N"
 msgstr "N"
 
-#: ../src/extension.js:1117
+#: ../src/extension.js:1187
 msgid "NE"
 msgstr "NO"
 
-#: ../src/extension.js:1117
+#: ../src/extension.js:1187
 msgid "E"
 msgstr "O"
 
-#: ../src/extension.js:1117
+#: ../src/extension.js:1187
 msgid "SE"
 msgstr "SO"
 
-#: ../src/extension.js:1117
+#: ../src/extension.js:1187
 msgid "S"
 msgstr "S"
 
-#: ../src/extension.js:1117
+#: ../src/extension.js:1187
 msgid "SW"
 msgstr "SW"
 
-#: ../src/extension.js:1117
+#: ../src/extension.js:1187
 msgid "W"
 msgstr "W"
 
-#: ../src/extension.js:1117
+#: ../src/extension.js:1187
 msgid "NW"
 msgstr "NW"
 
-#: ../src/extension.js:1338 ../src/extension.js:1527
+#: ../src/extension.js:1408 ../src/extension.js:1597
 msgid "Yesterday"
 msgstr "Gestern"
 
-#: ../src/extension.js:1340 ../src/extension.js:1529
+#: ../src/extension.js:1410 ../src/extension.js:1599
 #, python-format
 msgid "%s days ago"
 msgstr "Vor %s Tag(en)"
 
-#: ../src/extension.js:1521
+#: ../src/extension.js:1591
 msgid "Today"
 msgstr "Heute"
 
-#: ../src/extension.js:1523
+#: ../src/extension.js:1593
 msgid "Tomorrow"
 msgstr "Morgen"
 
-#: ../src/extension.js:1525
+#: ../src/extension.js:1595
 #, python-format
 msgid "In %s days"
 msgstr "In %s Tagen"
 
-#: ../src/extension.js:1596
+#: ../src/extension.js:1666
 msgid "Loading current weather ..."
 msgstr "Lade aktuelles Wetter ..."
 
-#: ../src/extension.js:1628
+#: ../src/extension.js:1698
 msgid "Loading ..."
 msgstr "Lade ..."
 
-#: ../src/extension.js:1632
+#: ../src/extension.js:1702
 msgid "Please wait"
 msgstr "Bitte warten"
 
-#: ../src/extension.js:1693
+#: ../src/extension.js:1763
 msgid "Cloudiness:"
 msgstr "Bewölkung"
 
-#: ../src/extension.js:1697
+#: ../src/extension.js:1767
 msgid "Humidity:"
 msgstr "Luftfeuchtigkeit:"
 
-#: ../src/extension.js:1701
+#: ../src/extension.js:1771
 msgid "Pressure:"
 msgstr "Luftdruck:"
 
-#: ../src/extension.js:1705
+#: ../src/extension.js:1775
 msgid "Wind:"
 msgstr "Windgeschwindigkeit:"
 
-#: ../src/prefs.js:127
+#: ../src/prefs.js:128
 msgid "Temperature Unit"
 msgstr "Temperatureinheit"
 
-#: ../src/prefs.js:129
+#: ../src/prefs.js:130
 msgid "Wind Speed Unit"
 msgstr "Windgeschwindigkeit"
 
-#: ../src/prefs.js:131
+#: ../src/prefs.js:132
 msgid "Pressure Unit"
 msgstr "Druckeinheit:"
 
-#: ../src/prefs.js:133
+#: ../src/prefs.js:134
 msgid "Position in Panel"
 msgstr "Position im Panel"
 
-#: ../src/prefs.js:134
+#: ../src/prefs.js:135
 msgid "Center"
 msgstr "Mitte"
 
-#: ../src/prefs.js:134
+#: ../src/prefs.js:135
 msgid "Right"
 msgstr "Rechts"
 
-#: ../src/prefs.js:134
+#: ../src/prefs.js:135
 msgid "Left"
 msgstr "Links"
 
-#: ../src/prefs.js:135
+#: ../src/prefs.js:136
 msgid "Wind Direction by Arrows"
 msgstr "Windrichtung durch Pfeile angeben"
 
-#: ../src/prefs.js:137
+#: ../src/prefs.js:138
 msgid "Translate Conditions"
 msgstr "Wetterdaten übersetzen"
 
-#: ../src/prefs.js:139
+#: ../src/prefs.js:140
 msgid "Symbolic Icons"
 msgstr "Eigene Wettersymbole"
 
-#: ../src/prefs.js:141
+#: ../src/prefs.js:142
+msgid "Text on buttons"
+msgstr "Text auf Buttons"
+
+#: ../src/prefs.js:144
 msgid "Temperature in Panel"
 msgstr "Temperaturanzeige"
 
-#: ../src/prefs.js:143
+#: ../src/prefs.js:146
 msgid "Conditions in Panel"
 msgstr "Textanzeige im Panel"
 
-#: ../src/prefs.js:145
+#: ../src/prefs.js:148
 msgid "Center forecast"
 msgstr "Vorhersage zentrieren"
 
-#: ../src/prefs.js:147
+#: ../src/prefs.js:150
 msgid "Number of days in forecast"
 msgstr "Anzahl Tage in der Vorhersage"
 
-#: ../src/prefs.js:149
+#: ../src/prefs.js:152
 msgid "Maximal number of digits after the decimal point"
 msgstr "Größtmögliche Anzahl von Nachkommastellen"
 
-#: ../src/prefs.js:151
+#: ../src/prefs.js:154
 msgid "Personal Api key from openweathermap.org"
 msgstr "Persönlicher Api Schlüssel von openweathermap.org"
 
-#: ../src/prefs.js:300
+#: ../src/prefs.js:303
 msgid "Name of the city"
 msgstr "Name der Ortschaft"
 
-#: ../src/prefs.js:485
+#: ../src/prefs.js:488
 #, python-format
 msgid "Remove %s ?"
 msgstr "Enferne %s ?"
