@@ -53,6 +53,7 @@ const WEATHER_CITY_KEY = 'city';
 const WEATHER_ACTUAL_CITY_KEY = 'actual-city';
 const WEATHER_TRANSLATE_CONDITION_KEY = 'translate-condition';
 const WEATHER_USE_SYMBOLIC_ICONS_KEY = 'use-symbolic-icons';
+const WEATHER_USE_TEXT_ON_BUTTONS_KEY = 'use-text-on-buttons';
 const WEATHER_SHOW_TEXT_IN_PANEL_KEY = 'show-text-in-panel';
 const WEATHER_POSITION_IN_PANEL_KEY = 'position-in-panel';
 const WEATHER_SHOW_COMMENT_IN_PANEL_KEY = 'show-comment-in-panel';
@@ -138,6 +139,8 @@ const WeatherPrefsWidget = new GObject.Class({
         this.addSwitch("translate_condition");
         this.addLabel(_("Symbolic Icons"));
         this.addSwitch("icon_type");
+        this.addLabel(_("Text on buttons"));
+        this.addSwitch("use_text_on_buttons");
         this.addLabel(_("Temperature in Panel"));
         this.addSwitch("text_in_panel");
         this.addLabel(_("Conditions in Panel"));
@@ -713,6 +716,18 @@ const WeatherPrefsWidget = new GObject.Class({
         if (!this.Settings)
             this.loadConfig();
         this.Settings.set_boolean(WEATHER_USE_SYMBOLIC_ICONS_KEY, v);
+    },
+
+    get use_text_on_buttons() {
+        if (!this.Settings)
+            this.loadConfig();
+        return this.Settings.get_boolean(WEATHER_USE_TEXT_ON_BUTTONS_KEY);
+    },
+
+    set use_text_on_buttons(v) {
+        if (!this.Settings)
+            this.loadConfig();
+        this.Settings.set_boolean(WEATHER_USE_TEXT_ON_BUTTONS_KEY, v);
     },
 
     get text_in_panel() {
