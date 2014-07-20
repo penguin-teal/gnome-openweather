@@ -268,6 +268,7 @@ const WeatherMenuButton = new Lang.Class({
 
         this._selectCity = new PopupMenu.PopupSubMenuMenuItem("");
         this._selectCity.actor.set_height(0);
+        this._selectCity._triangle.set_height(0);
 
         this._buttonMenu = new PopupMenu.PopupBaseMenuItem({
             reactive: false,
