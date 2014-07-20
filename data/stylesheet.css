@@ -1,5 +1,7 @@
 .weather-provider {
-font-size: 110%;
+border-width: 0px;
+border-radius:5px;
+padding:5px;
 }
 
 .weather-current-summarybox {

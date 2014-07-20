@@ -238,34 +238,6 @@ const WeatherMenuButton = new Lang.Class({
         item = new PopupMenu.PopupSeparatorMenuItem();
         this.menu.addMenuItem(item);
 
-        item = new PopupMenu.PopupMenuItem(_("Weather data provided by:   ") + ("http://openweathermap.org/"), {
-            style_class: 'weather-provider'
-        });
-        item.connect('activate', Lang.bind(this, function() {
-            let cityId = this.extractId(this._city);
-            if (!cityId) {
-                this.updateCities();
-                cityId = this.extractId(this._city);
-            }
-            let url = "http://openweathermap.org";
-            if (cityId)
-                url += "/city/" + cityId;
-            if (this._appid)
-                url += "?APPID=" + this._appid;
-
-            try {
-                Gtk.show_uri(null, url, global.get_current_time());
-            } catch (err) {
-                let title = _("Can not open %s").format(url);
-                Main.notifyError(title, err.message);
-            }
-        }));
-
-        this.menu.addMenuItem(item);
-
-        item = new PopupMenu.PopupSeparatorMenuItem();
-        this.menu.addMenuItem(item);
-
         this._selectCity = new PopupMenu.PopupSubMenuMenuItem("");
         this._selectCity.actor.set_height(0);
         this._selectCity._triangle.set_height(0);
@@ -697,11 +669,40 @@ const WeatherMenuButton = new Lang.Class({
         }));
         this._buttonBox1.add_actor(button);
 
+
+        this._buttonBox2 = new St.BoxLayout({style_class: 'popup-menu-item'});
+
+        let item = new St.Button({label :_("Weather data provided by:")+(this._use_text_on_buttons?"\n":"  ")+"http://openweathermap.org/",
+                                 style_class: 'system-menu-action weather-provider'
+                                });
+        item.connect('clicked', Lang.bind(this, function() {
+            this.menu.actor.hide();
+            let cityId = this.extractId(this._city);
+            if (!cityId) {
+                this.updateCities();
+                cityId = this.extractId(this._city);
+            }
+            let url = "http://openweathermap.org";
+            if (cityId)
+                url += "/city/" + cityId;
+            if (this._appid)
+                url += "?APPID=" + this._appid;
+
+            try {
+                Gtk.show_uri(null, url, global.get_current_time());
+            } catch (err) {
+                let title = _("Can not open %s").format(url);
+                Main.notifyError(title, err.message);
+            }
+        }));
+
+        this._buttonBox2.add_actor(item);
+
+
         button = systemMenu._createActionButton('preferences-system-symbolic', _("Weather Settings"));
         if (this._use_text_on_buttons)
             button.set_label(button.get_accessible_name());
         button.connect('clicked', Lang.bind(this, this._onPreferencesActivate));
-        this._buttonBox2 = new St.BoxLayout({style_class: 'popup-menu-item'});
         this._buttonBox2.add_actor(button);
 
         if (ExtensionUtils.versionCheck(['3.6', '3.8'], Config.PACKAGE_VERSION)) {
