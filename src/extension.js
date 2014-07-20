@@ -668,7 +668,6 @@ const WeatherMenuButton = new Lang.Class({
             this.parseWeatherCurrent();
         }));
         this._buttonBox1.add_actor(button);
-        this._buttonBox1MinWidth = this._buttonBox1.get_width();
 
 
         this._buttonBox2 = new St.BoxLayout({style_class: 'popup-menu-item'});
@@ -713,6 +712,7 @@ const WeatherMenuButton = new Lang.Class({
             this._buttonMenu.actor.add_actor(this._buttonBox1);
             this._buttonMenu.actor.add_actor(this._buttonBox2);
         }
+        this._buttonBox1MinWidth = undefined;
     },
     rebuildSelectCityItem: function() {
         this._selectCity.menu.removeAll();
@@ -837,6 +837,8 @@ const WeatherMenuButton = new Lang.Class({
     _onOpenStateChanged: function(menu, open) {
         if (open)
         {
+            if(this._buttonBox1MinWidth === undefined)
+                this._buttonBox1MinWidth = this._buttonBox1.get_width();
             this._buttonBox1.set_width(Math.max(this._buttonBox1MinWidth,this._currentWeather.get_width() - this._buttonBox2.get_width()));
             if (this._forecastScrollBox !== undefined && this._forecastBox !== undefined && this._currentWeather !== undefined) {
                 this._forecastScrollBox.set_width(this._currentWeather.get_width());
