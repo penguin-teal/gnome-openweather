@@ -659,7 +659,7 @@ const WeatherMenuButton = new Lang.Class({
         this._buttonBox1 = new St.BoxLayout({style_class: 'popup-menu-item'});
         this._buttonBox1.add_actor(button);
 
-        button = systemMenu._createActionButton('media-playlist-repeat-symbolic', _("Reload Weather Information"));
+        button = systemMenu._createActionButton('view-refresh-symbolic', _("Reload Weather Information"));
         if (this._use_text_on_buttons)
             button.set_label(button.get_accessible_name());
         button.connect('clicked', Lang.bind(this, function() {
