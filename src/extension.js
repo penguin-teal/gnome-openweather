@@ -265,7 +265,7 @@ const WeatherMenuButton = new Lang.Class({
         this._network_monitor_connection = this._network_monitor.connect('network-changed', Lang.bind(this, this._onNetworkStateChanged));
         this._checkConnectionState();
 
-        this.menu.connect('open-state-changed', Lang.bind(this, this._onOpenStateChanged));
+        this.menu.connect('open-state-changed', Lang.bind(this, this.recalcLayout));
     },
 
     stop: function() {
@@ -666,6 +666,7 @@ const WeatherMenuButton = new Lang.Class({
             this.currentWeatherCache = undefined;
             this.forecastWeatherCache = undefined;
             this.parseWeatherCurrent();
+            this.recalcLayout();
         }));
         this._buttonBox1.add_actor(button);
 
@@ -736,7 +737,8 @@ const WeatherMenuButton = new Lang.Class({
             }
 
             this._selectCity.menu.addMenuItem(item);
-            item.connect('activate', Lang.bind(this, this._onLocationActivated));
+            // override the items default onActivate-handler, to keep the ui open while chosing the location
+            item.activate=function(){weatherMenu._actual_city = this.location;}
         }
 
         if (cities.length == 1)
@@ -744,10 +746,6 @@ const WeatherMenuButton = new Lang.Class({
         else
             this._selectCity.actor.show();
 
-    },
-
-    _onLocationActivated: function(actor, event) {
-        this._actual_city = actor.location;
     },
 
     extractLocation: function() {
@@ -834,22 +832,21 @@ const WeatherMenuButton = new Lang.Class({
         return 0;
     },
 
-    _onOpenStateChanged: function(menu, open) {
-        if (open)
-        {
-            if(this._buttonBox1MinWidth === undefined)
-                this._buttonBox1MinWidth = this._buttonBox1.get_width();
-            this._buttonBox1.set_width(Math.max(this._buttonBox1MinWidth,this._currentWeather.get_width() - this._buttonBox2.get_width()));
-            if (this._forecastScrollBox !== undefined && this._forecastBox !== undefined && this._currentWeather !== undefined) {
-                this._forecastScrollBox.set_width(this._currentWeather.get_width());
-                this._forecastScrollBox.show();
-                if (this._forecastBox.get_width() > this._currentWeather.get_width()) {
-                    this._forecastScrollBox.hscroll.margin_top = 10;
-                    this._forecastScrollBox.hscroll.show();
-                } else {
-                    this._forecastScrollBox.hscroll.margin_top = 0;
-                    this._forecastScrollBox.hscroll.hide();
-                }
+    recalcLayout: function() {
+        if (!this.menu.isOpen)
+            return;
+        if(this._buttonBox1MinWidth === undefined)
+            this._buttonBox1MinWidth = this._buttonBox1.get_width();
+        this._buttonBox1.set_width(Math.max(this._buttonBox1MinWidth,this._currentWeather.get_width() - this._buttonBox2.get_width()));
+        if (this._forecastScrollBox !== undefined && this._forecastBox !== undefined && this._currentWeather !== undefined) {
+            this._forecastScrollBox.set_width(this._currentWeather.get_width());
+            this._forecastScrollBox.show();
+            if (this._forecastBox.get_preferred_width(this._forecastBox.get_height())[0] > this._currentWeather.get_width()) {
+                this._forecastScrollBox.hscroll.margin_top = 10;
+                this._forecastScrollBox.hscroll.show();
+            } else {
+                this._forecastScrollBox.hscroll.margin_top = 0;
+                this._forecastScrollBox.hscroll.hide();
             }
         }
     },
@@ -1476,6 +1473,7 @@ weather-storm.png = weather-storm-symbolic.svg
             this._currentWeatherWind.text = wind_direction + ' ' + parseFloat(wind).toLocaleString() + ' ' + wind_unit;
 
         this.parseWeatherForecast();
+        this.recalcLayout();
     },
 
     refreshWeatherCurrent: function() {
