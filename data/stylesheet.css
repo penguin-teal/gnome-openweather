@@ -31,81 +31,79 @@ padding-left: 24px;
 .openweather-button-box-38:rtl{
 padding-right: 24px;
 }
-.weather-provider {
+.openweather-provider {
 border-width: 0px;
 border-radius:5px;
 padding:5px;
 }
 
-.current {
-}
-.weather-current-summarybox {
+.openweather-current-summarybox {
 padding-top:5px;
 }
 
-.weather-current-summary {
+.openweather-current-summary {
 font-size: 31px;
 }
 
-.weather-current-databox {
+.openweather-current-databox {
 padding: 5px 15px 0px;
 }
 
-.weather-current-icon {
+.openweather-current-icon {
 padding-right: 30px;
 }
 
-.weather-current-iconbox {
+.openweather-current-iconbox {
 padding-right: 20px;
 }
 
-.weather-icon:ltr {
+.openweather-icon:ltr {
 padding-right: 5px;
 }
 
-.weather-icon:rtl {
+.openweather-icon:rtl {
 padding-left: 5px;
 }
 
-.weather-current-databox-captions {
+.openweather-current-databox-captions {
 text-align: right;
 padding-right: 5px;
 color: #999999;
 }
 
-.weather-forecast-icon {
+.openweather-forecast-icon {
 padding-right: 15px;
 }
 
-.weather-forecasts {
+.openweather-forecasts {
 -st-hfade-offset: 60px;
 }
 
-.weather-forecast-box {
+.openweather-forecast-box {
 }
 
-.weather-forecast-databox {
+.openweather-forecast-databox {
 min-width: 140px;
 }
 
-.weather-forecast-day {
+.openweather-forecast-day {
 color: #999999;
 font-size: 90%;
 }
 
-.weather-forecast-iconbox {
+.openweather-forecast-iconbox {
 }
 
-.weather-sunrise-icon {
+.openweather-sunrise-icon {
 padding-right: 5px;
 }
 
-.weather-sunset-icon {
+.openweather-sunset-icon {
 padding-left: 15px;
 padding-right: 5px;
 }
 
-.weather-build-icon {
+.openweather-build-icon {
 padding-left: 15px;
 padding-right: 5px;
 }
