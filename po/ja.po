@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-shell-extension-weather 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-16 00:38+0200\n"
+"POT-Creation-Date: 2014-08-09 23:12+0200\n"
 "PO-Revision-Date: 2012-06-11 12:26+0900\n"
 "Last-Translator: Takeshi AIHANA <takeshi.aihana@gmail.com>\n"
 "Language-Team: Japanese <takeshi.aihana@gmail.com>\n"
@@ -20,415 +20,415 @@ msgstr ""
 msgid "..."
 msgstr ""
 
-#: ../src/extension.js:241
-msgid "Weather data provided by:   "
-msgstr ""
-
-#: ../src/extension.js:259
-#, python-format
-msgid "Can not open %s"
-msgstr ""
-
-#: ../src/extension.js:347
+#: ../src/extension.js:312
 #, python-format
 msgid "Schema \"%s\" not found."
 msgstr "次のスキーマが見つかりませんでした: \"%s\""
 
-#: ../src/extension.js:679
+#: ../src/extension.js:714
 msgid "Locations"
 msgstr ""
 
-#: ../src/extension.js:689
+#: ../src/extension.js:729
 msgid "Reload Weather Information"
 msgstr "天気予報を更新する"
 
-#: ../src/extension.js:699
+#: ../src/extension.js:746
+msgid "Weather data provided by:"
+msgstr ""
+
+#: ../src/extension.js:768
+#, python-format
+msgid "Can not open %s"
+msgstr ""
+
+#: ../src/extension.js:776
 msgid "Weather Settings"
 msgstr "設定"
 
-#: ../src/extension.js:755 ../src/extension.js:764 ../src/prefs.js:845
+#: ../src/extension.js:839 ../src/extension.js:848 ../src/prefs.js:845
 msgid "Invalid city"
 msgstr "都市の名前が間違っています"
 
-#: ../src/extension.js:995
+#: ../src/extension.js:1081
 msgid "thunderstorm with light rain"
 msgstr ""
 
-#: ../src/extension.js:997
+#: ../src/extension.js:1083
 msgid "thunderstorm with rain"
 msgstr ""
 
-#: ../src/extension.js:999
+#: ../src/extension.js:1085
 msgid "thunderstorm with heavy rain"
 msgstr ""
 
-#: ../src/extension.js:1001
+#: ../src/extension.js:1087
 msgid "light thunderstorm"
 msgstr ""
 
-#: ../src/extension.js:1003
+#: ../src/extension.js:1089
 msgid "thunderstorm"
 msgstr ""
 
-#: ../src/extension.js:1005
+#: ../src/extension.js:1091
 msgid "heavy thunderstorm"
 msgstr ""
 
-#: ../src/extension.js:1007
+#: ../src/extension.js:1093
 msgid "ragged thunderstorm"
 msgstr ""
 
-#: ../src/extension.js:1009
+#: ../src/extension.js:1095
 msgid "thunderstorm with light drizzle"
 msgstr ""
 
-#: ../src/extension.js:1011
+#: ../src/extension.js:1097
 msgid "thunderstorm with drizzle"
 msgstr ""
 
-#: ../src/extension.js:1013
+#: ../src/extension.js:1099
 msgid "thunderstorm with heavy drizzle"
 msgstr ""
 
-#: ../src/extension.js:1015
+#: ../src/extension.js:1101
 msgid "light intensity drizzle"
 msgstr ""
 
-#: ../src/extension.js:1017
+#: ../src/extension.js:1103
 msgid "drizzle"
 msgstr ""
 
-#: ../src/extension.js:1019
+#: ../src/extension.js:1105
 msgid "heavy intensity drizzle"
 msgstr ""
 
-#: ../src/extension.js:1021
+#: ../src/extension.js:1107
 msgid "light intensity drizzle rain"
 msgstr ""
 
-#: ../src/extension.js:1023
+#: ../src/extension.js:1109
 msgid "drizzle rain"
 msgstr ""
 
-#: ../src/extension.js:1025
+#: ../src/extension.js:1111
 msgid "heavy intensity drizzle rain"
 msgstr ""
 
-#: ../src/extension.js:1027
+#: ../src/extension.js:1113
 msgid "shower rain and drizzle"
 msgstr ""
 
-#: ../src/extension.js:1029
+#: ../src/extension.js:1115
 msgid "heavy shower rain and drizzle"
 msgstr ""
 
-#: ../src/extension.js:1031
+#: ../src/extension.js:1117
 msgid "shower drizzle"
 msgstr ""
 
-#: ../src/extension.js:1033
+#: ../src/extension.js:1119
 msgid "light rain"
 msgstr ""
 
-#: ../src/extension.js:1035
+#: ../src/extension.js:1121
 msgid "moderate rain"
 msgstr ""
 
-#: ../src/extension.js:1037
+#: ../src/extension.js:1123
 msgid "heavy intensity rain"
 msgstr ""
 
-#: ../src/extension.js:1039
+#: ../src/extension.js:1125
 msgid "very heavy rain"
 msgstr ""
 
-#: ../src/extension.js:1041
+#: ../src/extension.js:1127
 msgid "extreme rain"
 msgstr ""
 
-#: ../src/extension.js:1043
+#: ../src/extension.js:1129
 msgid "freezing rain"
 msgstr ""
 
-#: ../src/extension.js:1045
+#: ../src/extension.js:1131
 msgid "light intensity shower rain"
 msgstr ""
 
-#: ../src/extension.js:1047
+#: ../src/extension.js:1133
 msgid "shower rain"
 msgstr ""
 
-#: ../src/extension.js:1049
+#: ../src/extension.js:1135
 msgid "heavy intensity shower rain"
 msgstr ""
 
-#: ../src/extension.js:1051
+#: ../src/extension.js:1137
 msgid "ragged shower rain"
 msgstr ""
 
-#: ../src/extension.js:1053
+#: ../src/extension.js:1139
 msgid "light snow"
 msgstr ""
 
-#: ../src/extension.js:1055
+#: ../src/extension.js:1141
 msgid "snow"
 msgstr ""
 
-#: ../src/extension.js:1057
+#: ../src/extension.js:1143
 msgid "heavy snow"
 msgstr ""
 
-#: ../src/extension.js:1059
+#: ../src/extension.js:1145
 msgid "sleet"
 msgstr ""
 
-#: ../src/extension.js:1061
+#: ../src/extension.js:1147
 msgid "shower sleet"
 msgstr ""
 
-#: ../src/extension.js:1063
+#: ../src/extension.js:1149
 msgid "light rain and snow"
 msgstr ""
 
-#: ../src/extension.js:1065
+#: ../src/extension.js:1151
 msgid "rain and snow"
 msgstr ""
 
-#: ../src/extension.js:1067
+#: ../src/extension.js:1153
 msgid "light shower snow"
 msgstr ""
 
-#: ../src/extension.js:1069
+#: ../src/extension.js:1155
 msgid "shower snow"
 msgstr ""
 
-#: ../src/extension.js:1071
+#: ../src/extension.js:1157
 msgid "heavy shower snow"
 msgstr ""
 
-#: ../src/extension.js:1073
+#: ../src/extension.js:1159
 msgid "mist"
 msgstr ""
 
-#: ../src/extension.js:1075
+#: ../src/extension.js:1161
 msgid "smoke"
 msgstr ""
 
-#: ../src/extension.js:1077
+#: ../src/extension.js:1163
 msgid "haze"
 msgstr ""
 
-#: ../src/extension.js:1079
+#: ../src/extension.js:1165
 msgid "Sand/Dust Whirls"
 msgstr ""
 
-#: ../src/extension.js:1081
+#: ../src/extension.js:1167
 msgid "Fog"
 msgstr ""
 
-#: ../src/extension.js:1083
+#: ../src/extension.js:1169
 msgid "sand"
 msgstr ""
 
-#: ../src/extension.js:1085
+#: ../src/extension.js:1171
 msgid "dust"
 msgstr ""
 
-#: ../src/extension.js:1087
+#: ../src/extension.js:1173
 msgid "VOLCANIC ASH"
 msgstr ""
 
-#: ../src/extension.js:1089
+#: ../src/extension.js:1175
 msgid "SQUALLS"
 msgstr ""
 
-#: ../src/extension.js:1091
+#: ../src/extension.js:1177
 msgid "TORNADO"
 msgstr ""
 
-#: ../src/extension.js:1093
+#: ../src/extension.js:1179
 msgid "sky is clear"
 msgstr ""
 
-#: ../src/extension.js:1095
+#: ../src/extension.js:1181
 msgid "few clouds"
 msgstr ""
 
-#: ../src/extension.js:1097
+#: ../src/extension.js:1183
 msgid "scattered clouds"
 msgstr ""
 
-#: ../src/extension.js:1099
+#: ../src/extension.js:1185
 msgid "broken clouds"
 msgstr ""
 
-#: ../src/extension.js:1101
+#: ../src/extension.js:1187
 msgid "overcast clouds"
 msgstr ""
 
-#: ../src/extension.js:1103
+#: ../src/extension.js:1189
 msgid "Not available"
 msgstr ""
 
-#: ../src/extension.js:1141
+#: ../src/extension.js:1227
 msgid "Calm"
 msgstr ""
 
-#: ../src/extension.js:1144
+#: ../src/extension.js:1230
 msgid "Light air"
 msgstr ""
 
-#: ../src/extension.js:1147
+#: ../src/extension.js:1233
 msgid "Light breeze"
 msgstr ""
 
-#: ../src/extension.js:1150
+#: ../src/extension.js:1236
 msgid "Gentle breeze"
 msgstr ""
 
-#: ../src/extension.js:1153
+#: ../src/extension.js:1239
 msgid "Moderate breeze"
 msgstr ""
 
-#: ../src/extension.js:1156
+#: ../src/extension.js:1242
 msgid "Fresh breeze"
 msgstr ""
 
-#: ../src/extension.js:1159
+#: ../src/extension.js:1245
 msgid "Strong breeze"
 msgstr ""
 
-#: ../src/extension.js:1162
+#: ../src/extension.js:1248
 msgid "Moderate gale"
 msgstr ""
 
-#: ../src/extension.js:1165
+#: ../src/extension.js:1251
 msgid "Fresh gale"
 msgstr ""
 
-#: ../src/extension.js:1168
+#: ../src/extension.js:1254
 msgid "Strong gale"
 msgstr ""
 
-#: ../src/extension.js:1171
+#: ../src/extension.js:1257
 msgid "Storm"
 msgstr ""
 
-#: ../src/extension.js:1174
+#: ../src/extension.js:1260
 msgid "Violent storm"
 msgstr ""
 
-#: ../src/extension.js:1177
+#: ../src/extension.js:1263
 msgid "Hurricane"
 msgstr ""
 
-#: ../src/extension.js:1181
+#: ../src/extension.js:1267
 msgid "Sunday"
 msgstr ""
 
-#: ../src/extension.js:1181
+#: ../src/extension.js:1267
 msgid "Monday"
 msgstr ""
 
-#: ../src/extension.js:1181
+#: ../src/extension.js:1267
 msgid "Tuesday"
 msgstr ""
 
-#: ../src/extension.js:1181
+#: ../src/extension.js:1267
 msgid "Wednesday"
 msgstr ""
 
-#: ../src/extension.js:1181
+#: ../src/extension.js:1267
 msgid "Thursday"
 msgstr ""
 
-#: ../src/extension.js:1181
+#: ../src/extension.js:1267
 msgid "Friday"
 msgstr ""
 
-#: ../src/extension.js:1181
+#: ../src/extension.js:1267
 msgid "Saturday"
 msgstr ""
 
-#: ../src/extension.js:1187
+#: ../src/extension.js:1273
 msgid "N"
 msgstr ""
 
-#: ../src/extension.js:1187
+#: ../src/extension.js:1273
 msgid "NE"
 msgstr ""
 
-#: ../src/extension.js:1187
+#: ../src/extension.js:1273
 msgid "E"
 msgstr ""
 
-#: ../src/extension.js:1187
+#: ../src/extension.js:1273
 msgid "SE"
 msgstr ""
 
-#: ../src/extension.js:1187
+#: ../src/extension.js:1273
 msgid "S"
 msgstr ""
 
-#: ../src/extension.js:1187
+#: ../src/extension.js:1273
 msgid "SW"
 msgstr ""
 
-#: ../src/extension.js:1187
+#: ../src/extension.js:1273
 msgid "W"
 msgstr ""
 
-#: ../src/extension.js:1187
+#: ../src/extension.js:1273
 msgid "NW"
 msgstr ""
 
-#: ../src/extension.js:1408 ../src/extension.js:1597
+#: ../src/extension.js:1494 ../src/extension.js:1684
 msgid "Yesterday"
 msgstr "昨日"
 
-#: ../src/extension.js:1410 ../src/extension.js:1599
+#: ../src/extension.js:1496 ../src/extension.js:1686
 #, python-format
 msgid "%s days ago"
 msgstr "%s日前"
 
-#: ../src/extension.js:1591
+#: ../src/extension.js:1678
 msgid "Today"
 msgstr ""
 
-#: ../src/extension.js:1593
+#: ../src/extension.js:1680
 msgid "Tomorrow"
 msgstr ""
 
-#: ../src/extension.js:1595
+#: ../src/extension.js:1682
 #, fuzzy, python-format
 msgid "In %s days"
 msgstr "%s日前"
 
-#: ../src/extension.js:1666
+#: ../src/extension.js:1753
 msgid "Loading current weather ..."
 msgstr ""
 
-#: ../src/extension.js:1698
+#: ../src/extension.js:1785
 msgid "Loading ..."
 msgstr ""
 
-#: ../src/extension.js:1702
+#: ../src/extension.js:1789
 msgid "Please wait"
 msgstr ""
 
-#: ../src/extension.js:1763
+#: ../src/extension.js:1850
 msgid "Cloudiness:"
 msgstr ""
 
-#: ../src/extension.js:1767
+#: ../src/extension.js:1854
 msgid "Humidity:"
 msgstr ""
 
-#: ../src/extension.js:1771
+#: ../src/extension.js:1858
 msgid "Pressure:"
 msgstr ""
 
-#: ../src/extension.js:1775
+#: ../src/extension.js:1862
 msgid "Wind:"
 msgstr ""
 

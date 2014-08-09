@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-07-16 00:38+0200\n"
+"POT-Creation-Date: 2014-08-09 23:12+0200\n"
 "PO-Revision-Date: 2012-05-13 22:40+0100\n"
 "Last-Translator: Christian METZLER <neroth@xeked.com>\n"
 "Language-Team: \n"
@@ -20,439 +20,439 @@ msgstr ""
 msgid "..."
 msgstr "..."
 
-#: ../src/extension.js:241
-msgid "Weather data provided by:   "
-msgstr ""
-
-#: ../src/extension.js:259
-#, python-format
-msgid "Can not open %s"
-msgstr ""
-
-#: ../src/extension.js:347
+#: ../src/extension.js:312
 #, python-format
 msgid "Schema \"%s\" not found."
 msgstr ""
 
-#: ../src/extension.js:679
+#: ../src/extension.js:714
 msgid "Locations"
 msgstr ""
 
-#: ../src/extension.js:689
+#: ../src/extension.js:729
 msgid "Reload Weather Information"
 msgstr ""
 
-#: ../src/extension.js:699
+#: ../src/extension.js:746
+msgid "Weather data provided by:"
+msgstr ""
+
+#: ../src/extension.js:768
+#, python-format
+msgid "Can not open %s"
+msgstr ""
+
+#: ../src/extension.js:776
 msgid "Weather Settings"
 msgstr ""
 
-#: ../src/extension.js:755 ../src/extension.js:764 ../src/prefs.js:845
+#: ../src/extension.js:839 ../src/extension.js:848 ../src/prefs.js:845
 msgid "Invalid city"
 msgstr ""
 
-#: ../src/extension.js:995
+#: ../src/extension.js:1081
 msgid "thunderstorm with light rain"
 msgstr ""
 
-#: ../src/extension.js:997
+#: ../src/extension.js:1083
 #, fuzzy
 msgid "thunderstorm with rain"
 msgstr "Búrky"
 
-#: ../src/extension.js:999
+#: ../src/extension.js:1085
 msgid "thunderstorm with heavy rain"
 msgstr ""
 
-#: ../src/extension.js:1001
+#: ../src/extension.js:1087
 #, fuzzy
 msgid "light thunderstorm"
 msgstr "Ojedinelé búrky"
 
-#: ../src/extension.js:1003
+#: ../src/extension.js:1089
 #, fuzzy
 msgid "thunderstorm"
 msgstr "Búrky"
 
-#: ../src/extension.js:1005
+#: ../src/extension.js:1091
 #, fuzzy
 msgid "heavy thunderstorm"
 msgstr "Výrazné búrky"
 
-#: ../src/extension.js:1007
+#: ../src/extension.js:1093
 #, fuzzy
 msgid "ragged thunderstorm"
 msgstr "Ojedinelé búrky"
 
-#: ../src/extension.js:1009
+#: ../src/extension.js:1095
 msgid "thunderstorm with light drizzle"
 msgstr ""
 
-#: ../src/extension.js:1011
+#: ../src/extension.js:1097
 msgid "thunderstorm with drizzle"
 msgstr ""
 
-#: ../src/extension.js:1013
+#: ../src/extension.js:1099
 msgid "thunderstorm with heavy drizzle"
 msgstr ""
 
-#: ../src/extension.js:1015
+#: ../src/extension.js:1101
 msgid "light intensity drizzle"
 msgstr ""
 
-#: ../src/extension.js:1017
+#: ../src/extension.js:1103
 #, fuzzy
 msgid "drizzle"
 msgstr "Mrholenie"
 
-#: ../src/extension.js:1019
+#: ../src/extension.js:1105
 msgid "heavy intensity drizzle"
 msgstr ""
 
-#: ../src/extension.js:1021
+#: ../src/extension.js:1107
 msgid "light intensity drizzle rain"
 msgstr ""
 
-#: ../src/extension.js:1023
+#: ../src/extension.js:1109
 #, fuzzy
 msgid "drizzle rain"
 msgstr "Mrholenie"
 
-#: ../src/extension.js:1025
+#: ../src/extension.js:1111
 msgid "heavy intensity drizzle rain"
 msgstr ""
 
-#: ../src/extension.js:1027
+#: ../src/extension.js:1113
 #, fuzzy
 msgid "shower rain and drizzle"
 msgstr "Dážď s krúpami"
 
-#: ../src/extension.js:1029
+#: ../src/extension.js:1115
 msgid "heavy shower rain and drizzle"
 msgstr ""
 
-#: ../src/extension.js:1031
+#: ../src/extension.js:1117
 #, fuzzy
 msgid "shower drizzle"
 msgstr "Mráz a mrholenie"
 
-#: ../src/extension.js:1033
+#: ../src/extension.js:1119
 #, fuzzy
 msgid "light rain"
 msgstr "Mrznúci dážď"
 
-#: ../src/extension.js:1035
+#: ../src/extension.js:1121
 msgid "moderate rain"
 msgstr ""
 
-#: ../src/extension.js:1037
+#: ../src/extension.js:1123
 msgid "heavy intensity rain"
 msgstr ""
 
-#: ../src/extension.js:1039
+#: ../src/extension.js:1125
 msgid "very heavy rain"
 msgstr ""
 
-#: ../src/extension.js:1041
+#: ../src/extension.js:1127
 #, fuzzy
 msgid "extreme rain"
 msgstr "Mrznúci dážď"
 
-#: ../src/extension.js:1043
+#: ../src/extension.js:1129
 #, fuzzy
 msgid "freezing rain"
 msgstr "Mrznúci dážď"
 
-#: ../src/extension.js:1045
+#: ../src/extension.js:1131
 msgid "light intensity shower rain"
 msgstr ""
 
-#: ../src/extension.js:1047
+#: ../src/extension.js:1133
 msgid "shower rain"
 msgstr ""
 
-#: ../src/extension.js:1049
+#: ../src/extension.js:1135
 msgid "heavy intensity shower rain"
 msgstr ""
 
-#: ../src/extension.js:1051
+#: ../src/extension.js:1137
 msgid "ragged shower rain"
 msgstr ""
 
-#: ../src/extension.js:1053
+#: ../src/extension.js:1139
 #, fuzzy
 msgid "light snow"
 msgstr "Husté sneženie"
 
-#: ../src/extension.js:1055
+#: ../src/extension.js:1141
 msgid "snow"
 msgstr ""
 
-#: ../src/extension.js:1057
+#: ../src/extension.js:1143
 #, fuzzy
 msgid "heavy snow"
 msgstr "Husté sneženie"
 
-#: ../src/extension.js:1059
+#: ../src/extension.js:1145
 #, fuzzy
 msgid "sleet"
 msgstr "Poľadovica"
 
-#: ../src/extension.js:1061
+#: ../src/extension.js:1147
 #, fuzzy
 msgid "shower sleet"
 msgstr "Prehánky"
 
-#: ../src/extension.js:1063
+#: ../src/extension.js:1149
 #, fuzzy
 msgid "light rain and snow"
 msgstr "Dážď so snehom"
 
-#: ../src/extension.js:1065
+#: ../src/extension.js:1151
 #, fuzzy
 msgid "rain and snow"
 msgstr "Dážď so snehom"
 
-#: ../src/extension.js:1067
+#: ../src/extension.js:1153
 #, fuzzy
 msgid "light shower snow"
 msgstr "Mierne snehové prehánky"
 
-#: ../src/extension.js:1069
+#: ../src/extension.js:1155
 #, fuzzy
 msgid "shower snow"
 msgstr "Prehánky"
 
-#: ../src/extension.js:1071
+#: ../src/extension.js:1157
 #, fuzzy
 msgid "heavy shower snow"
 msgstr "Husté sneženie"
 
-#: ../src/extension.js:1073
+#: ../src/extension.js:1159
 msgid "mist"
 msgstr ""
 
-#: ../src/extension.js:1075
+#: ../src/extension.js:1161
 msgid "smoke"
 msgstr ""
 
-#: ../src/extension.js:1077
+#: ../src/extension.js:1163
 msgid "haze"
 msgstr ""
 
-#: ../src/extension.js:1079
+#: ../src/extension.js:1165
 msgid "Sand/Dust Whirls"
 msgstr ""
 
-#: ../src/extension.js:1081
+#: ../src/extension.js:1167
 #, fuzzy
 msgid "Fog"
 msgstr "Hmlisto"
 
-#: ../src/extension.js:1083
+#: ../src/extension.js:1169
 msgid "sand"
 msgstr ""
 
-#: ../src/extension.js:1085
+#: ../src/extension.js:1171
 msgid "dust"
 msgstr ""
 
-#: ../src/extension.js:1087
+#: ../src/extension.js:1173
 msgid "VOLCANIC ASH"
 msgstr ""
 
-#: ../src/extension.js:1089
+#: ../src/extension.js:1175
 msgid "SQUALLS"
 msgstr ""
 
-#: ../src/extension.js:1091
+#: ../src/extension.js:1177
 msgid "TORNADO"
 msgstr ""
 
-#: ../src/extension.js:1093
+#: ../src/extension.js:1179
 msgid "sky is clear"
 msgstr ""
 
-#: ../src/extension.js:1095
+#: ../src/extension.js:1181
 msgid "few clouds"
 msgstr ""
 
-#: ../src/extension.js:1097
+#: ../src/extension.js:1183
 #, fuzzy
 msgid "scattered clouds"
 msgstr "Občasné prehánky"
 
-#: ../src/extension.js:1099
+#: ../src/extension.js:1185
 msgid "broken clouds"
 msgstr ""
 
-#: ../src/extension.js:1101
+#: ../src/extension.js:1187
 #, fuzzy
 msgid "overcast clouds"
 msgstr "Zamračené"
 
-#: ../src/extension.js:1103
+#: ../src/extension.js:1189
 msgid "Not available"
 msgstr "Nedostupný"
 
-#: ../src/extension.js:1141
+#: ../src/extension.js:1227
 msgid "Calm"
 msgstr ""
 
-#: ../src/extension.js:1144
+#: ../src/extension.js:1230
 msgid "Light air"
 msgstr ""
 
-#: ../src/extension.js:1147
+#: ../src/extension.js:1233
 msgid "Light breeze"
 msgstr ""
 
-#: ../src/extension.js:1150
+#: ../src/extension.js:1236
 msgid "Gentle breeze"
 msgstr ""
 
-#: ../src/extension.js:1153
+#: ../src/extension.js:1239
 msgid "Moderate breeze"
 msgstr ""
 
-#: ../src/extension.js:1156
+#: ../src/extension.js:1242
 msgid "Fresh breeze"
 msgstr ""
 
-#: ../src/extension.js:1159
+#: ../src/extension.js:1245
 msgid "Strong breeze"
 msgstr ""
 
-#: ../src/extension.js:1162
+#: ../src/extension.js:1248
 msgid "Moderate gale"
 msgstr ""
 
-#: ../src/extension.js:1165
+#: ../src/extension.js:1251
 msgid "Fresh gale"
 msgstr ""
 
-#: ../src/extension.js:1168
+#: ../src/extension.js:1254
 msgid "Strong gale"
 msgstr ""
 
-#: ../src/extension.js:1171
+#: ../src/extension.js:1257
 msgid "Storm"
 msgstr ""
 
-#: ../src/extension.js:1174
+#: ../src/extension.js:1260
 msgid "Violent storm"
 msgstr ""
 
-#: ../src/extension.js:1177
+#: ../src/extension.js:1263
 msgid "Hurricane"
 msgstr "Hurikán"
 
-#: ../src/extension.js:1181
+#: ../src/extension.js:1267
 msgid "Sunday"
 msgstr "Nedeľa"
 
-#: ../src/extension.js:1181
+#: ../src/extension.js:1267
 msgid "Monday"
 msgstr "Pondelok"
 
-#: ../src/extension.js:1181
+#: ../src/extension.js:1267
 msgid "Tuesday"
 msgstr "Utorok"
 
-#: ../src/extension.js:1181
+#: ../src/extension.js:1267
 msgid "Wednesday"
 msgstr "Streda"
 
-#: ../src/extension.js:1181
+#: ../src/extension.js:1267
 msgid "Thursday"
 msgstr "Štvrtok"
 
-#: ../src/extension.js:1181
+#: ../src/extension.js:1267
 msgid "Friday"
 msgstr "Piatok"
 
-#: ../src/extension.js:1181
+#: ../src/extension.js:1267
 msgid "Saturday"
 msgstr "Sobota"
 
-#: ../src/extension.js:1187
+#: ../src/extension.js:1273
 msgid "N"
 msgstr ""
 
-#: ../src/extension.js:1187
+#: ../src/extension.js:1273
 msgid "NE"
 msgstr ""
 
-#: ../src/extension.js:1187
+#: ../src/extension.js:1273
 msgid "E"
 msgstr ""
 
-#: ../src/extension.js:1187
+#: ../src/extension.js:1273
 msgid "SE"
 msgstr ""
 
-#: ../src/extension.js:1187
+#: ../src/extension.js:1273
 msgid "S"
 msgstr ""
 
-#: ../src/extension.js:1187
+#: ../src/extension.js:1273
 msgid "SW"
 msgstr ""
 
-#: ../src/extension.js:1187
+#: ../src/extension.js:1273
 msgid "W"
 msgstr ""
 
-#: ../src/extension.js:1187
+#: ../src/extension.js:1273
 msgid "NW"
 msgstr ""
 
-#: ../src/extension.js:1408 ../src/extension.js:1597
+#: ../src/extension.js:1494 ../src/extension.js:1684
 msgid "Yesterday"
 msgstr ""
 
-#: ../src/extension.js:1410 ../src/extension.js:1599
+#: ../src/extension.js:1496 ../src/extension.js:1686
 #, python-format
 msgid "%s days ago"
 msgstr ""
 
-#: ../src/extension.js:1591
+#: ../src/extension.js:1678
 msgid "Today"
 msgstr "Dnes"
 
-#: ../src/extension.js:1593
+#: ../src/extension.js:1680
 msgid "Tomorrow"
 msgstr "Zajtra"
 
-#: ../src/extension.js:1595
+#: ../src/extension.js:1682
 #, python-format
 msgid "In %s days"
 msgstr ""
 
-#: ../src/extension.js:1666
+#: ../src/extension.js:1753
 msgid "Loading current weather ..."
 msgstr "Načítava sa aktuálne počasie ..."
 
-#: ../src/extension.js:1698
+#: ../src/extension.js:1785
 msgid "Loading ..."
 msgstr "Načítava sa ..."
 
-#: ../src/extension.js:1702
+#: ../src/extension.js:1789
 msgid "Please wait"
 msgstr "Prosím, čakajte"
 
-#: ../src/extension.js:1763
+#: ../src/extension.js:1850
 msgid "Cloudiness:"
 msgstr ""
 
-#: ../src/extension.js:1767
+#: ../src/extension.js:1854
 msgid "Humidity:"
 msgstr "Vlhkosť:"
 
-#: ../src/extension.js:1771
+#: ../src/extension.js:1858
 msgid "Pressure:"
 msgstr "Tlak:"
 
-#: ../src/extension.js:1775
+#: ../src/extension.js:1862
 msgid "Wind:"
 msgstr "Vietor:"
 
