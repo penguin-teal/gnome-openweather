@@ -5,7 +5,7 @@
  *  - Displays a small weather information on the top panel.
  *  - On click, gives a popup with details about the weather.
  *
- * Copyright (C) 2011 - 2013
+ * Copyright (C) 2011 - 2014
  *     ecyrbe <ecyrbe+spam@gmail.com>,
  *     Timur Kristof <venemo@msn.com>,
  *     Elad Alfassa <elad@fedoraproject.org>,

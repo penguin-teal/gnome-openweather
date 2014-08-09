@@ -4,8 +4,9 @@
  *
  *  PO Updater for GNOME Shell Extension Weather
  *
- * Copyright (C) 2012
+ * Copyright (C) 2012 -2014
  *     Christian METZLER <neroth@xeked.com>
+ *     Jens Lody <jens@jenslody.de>,
  *
  *
  * This file is part of gnome-shell-extension-openweather.
