@@ -144,31 +144,16 @@ const WeatherMenuButton = new Lang.Class({
             text: _('...')
         });
 
-        if (St.TextDirection === undefined) {
-            // Panel icon
-            this._weatherIcon = new St.Icon({
-                icon_name: 'view-refresh' + this.icon_type(),
-                style_class: 'system-status-icon weather-icon' + (Main.panel.actor.get_text_direction() == Clutter.TextDirection.RTL ? '-rtl' : '')
-            });
+        this._weatherIcon = new St.Icon({
+            icon_name: 'view-refresh' + this.icon_type(),
+            style_class: 'system-status-icon weather-icon'
+        });
 
-            // Panel menu item - the current class
-            let menuAlignment = 0.25;
-            if (Clutter.get_default_text_direction() == Clutter.TextDirection.RTL)
-                menuAlignment = 1.0 - menuAlignment;
-            this.parent(menuAlignment);
-        } else {
-            // Panel icon
-            this._weatherIcon = new St.Icon({
-                icon_name: 'view-refresh' + this.icon_type(),
-                style_class: 'system-status-icon weather-icon' + (Main.panel.actor.get_direction() == St.TextDirection.RTL ? '-rtl' : '')
-            });
-
-            // Panel menu item - the current class
-            let menuAlignment = 0.25;
-            if (St.Widget.get_default_direction() == St.TextDirection.RTL)
-                menuAlignment = 1.0 - menuAlignment;
-            PanelMenu.Button.prototype._init.call(this, menuAlignment);
-        }
+        // Panel menu item - the current class
+        let menuAlignment = 0.25;
+        if (Clutter.get_default_text_direction() == Clutter.TextDirection.RTL)
+            menuAlignment = 1.0 - menuAlignment;
+        this.parent(menuAlignment);
 
         // Putting the panel item together
         let topBox = new St.BoxLayout();
