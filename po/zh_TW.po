@@ -3,7 +3,6 @@
 # Copyright (C) 2011
 # This file is distributed under the same license as the gnome-shell-extension-openweather package.
 # bill <bill_zt@sina.com>, 2011.
-# 绿色圣光 <lishaohui.qd@163.com>, 2014.
 # shlinux <lishaohui.qd@163.com>, 2014.
 #
 msgid ""
@@ -11,14 +10,14 @@ msgstr ""
 "Project-Id-Version: gnome-shell-extension-openweather\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-08-09 23:12+0200\n"
-"PO-Revision-Date: 2014-06-07 22:26+0800\n"
+"PO-Revision-Date: 2014-08-17 16:40+0800\n"
 "Last-Translator: shlinux <lishaohui.qd@163.com>\n"
 "Language-Team: Chinese (Traditional) <>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Gtranslator 2.91.6\n"
 
 #: ../src/extension.js:144
@@ -479,7 +478,7 @@ msgstr "顯示象徵性符號"
 
 #: ../src/prefs.js:142
 msgid "Text on buttons"
-msgstr ""
+msgstr "圖示顯示文本"
 
 #: ../src/prefs.js:144
 msgid "Temperature in Panel"

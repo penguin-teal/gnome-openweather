@@ -10,14 +10,14 @@ msgstr ""
 "Project-Id-Version: gnome-shell-extension-openweather\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-08-09 23:12+0200\n"
-"PO-Revision-Date: 2014-06-07 22:36+0800\n"
+"PO-Revision-Date: 2014-08-17 16:34+0800\n"
 "Last-Translator: 绿色圣光 <lishaohui.qd@163.com>\n"
 "Language-Team: Chinese (simplified) <>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Gtranslator 2.91.6\n"
 
 #: ../src/extension.js:144
@@ -478,7 +478,7 @@ msgstr "显示象征性图标"
 
 #: ../src/prefs.js:142
 msgid "Text on buttons"
-msgstr ""
+msgstr "图标显示文本"
 
 #: ../src/prefs.js:144
 msgid "Temperature in Panel"
