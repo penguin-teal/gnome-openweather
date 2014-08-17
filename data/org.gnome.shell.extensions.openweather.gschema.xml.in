@@ -72,6 +72,10 @@
       <default>true</default>
       <_summary>Symbolic Icons</_summary>
     </key>
+    <key name="use-text-on-buttons" type="b">
+      <default>false</default>
+      <_summary>Use text on buttons in menu</_summary>
+    </key>
     <key name="show-text-in-panel" type="b">
       <default>true</default>
       <_summary>Temperature in Panel</_summary>

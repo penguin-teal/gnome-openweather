@@ -88,7 +88,7 @@ The [OpenWeatherMap](http://openweathermap.org/) maintainers recommend to use an
 
 # Licence
 
-Copyright (C) 2011 - 2013
+Copyright (C) 2011 - 2014
 
 * Elad Alfassa <elad@fedoraproject.org>,
 * Mark Benjamin <weather.gnome.Markie1@dfgh.net>,

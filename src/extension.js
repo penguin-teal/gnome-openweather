@@ -5,7 +5,7 @@
  *  - Displays a small weather information on the top panel.
  *  - On click, gives a popup with details about the weather.
  *
- * Copyright (C) 2011 - 2013
+ * Copyright (C) 2011 - 2014
  *     ecyrbe <ecyrbe+spam@gmail.com>,
  *     Timur Kristof <venemo@msn.com>,
  *     Elad Alfassa <elad@fedoraproject.org>,
@@ -63,6 +63,7 @@ const WEATHER_CITY_KEY = 'city';
 const WEATHER_ACTUAL_CITY_KEY = 'actual-city';
 const WEATHER_TRANSLATE_CONDITION_KEY = 'translate-condition';
 const WEATHER_USE_SYMBOLIC_ICONS_KEY = 'use-symbolic-icons';
+const WEATHER_USE_TEXT_ON_BUTTONS_KEY = 'use-text-on-buttons';
 const WEATHER_SHOW_TEXT_IN_PANEL_KEY = 'show-text-in-panel';
 const WEATHER_POSITION_IN_PANEL_KEY = 'position-in-panel';
 const WEATHER_SHOW_COMMENT_IN_PANEL_KEY = 'show-comment-in-panel';
@@ -126,8 +127,8 @@ const WEATHER_CONV_MPS_IN_FPS = 3.2808399;
 
 let _httpSession;
 
-const WeatherMenuButton = new Lang.Class({
-    Name: 'WeatherMenuButton',
+const OpenweatherMenuButton = new Lang.Class({
+    Name: 'OpenweatherMenuButton',
 
     Extends: PanelMenu.Button,
 
@@ -143,31 +144,16 @@ const WeatherMenuButton = new Lang.Class({
             text: _('...')
         });
 
-        if (St.TextDirection === undefined) {
-            // Panel icon
-            this._weatherIcon = new St.Icon({
-                icon_name: 'view-refresh' + this.icon_type(),
-                style_class: 'system-status-icon weather-icon' + (Main.panel.actor.get_text_direction() == Clutter.TextDirection.RTL ? '-rtl' : '')
-            });
+        this._weatherIcon = new St.Icon({
+            icon_name: 'view-refresh' + this.icon_type(),
+            style_class: 'system-status-icon openweather-icon'
+        });
 
-            // Panel menu item - the current class
-            let menuAlignment = 0.25;
-            if (Clutter.get_default_text_direction() == Clutter.TextDirection.RTL)
-                menuAlignment = 1.0 - menuAlignment;
-            this.parent(menuAlignment);
-        } else {
-            // Panel icon
-            this._weatherIcon = new St.Icon({
-                icon_name: 'view-refresh' + this.icon_type(),
-                style_class: 'system-status-icon weather-icon' + (Main.panel.actor.get_direction() == St.TextDirection.RTL ? '-rtl' : '')
-            });
-
-            // Panel menu item - the current class
-            let menuAlignment = 0.25;
-            if (St.Widget.get_default_direction() == St.TextDirection.RTL)
-                menuAlignment = 1.0 - menuAlignment;
-            PanelMenu.Button.prototype._init.call(this, menuAlignment);
-        }
+        // Panel menu item - the current class
+        let menuAlignment = 0.25;
+        if (Clutter.get_default_text_direction() == Clutter.TextDirection.RTL)
+            menuAlignment = 1.0 - menuAlignment;
+        this.parent(menuAlignment);
 
         // Putting the panel item together
         let topBox = new St.BoxLayout();
@@ -203,13 +189,9 @@ const WeatherMenuButton = new Lang.Class({
         this._old_position_in_panel = this._position_in_panel;
 
         // Current weather
-        this._currentWeather = new St.Bin({
-            style_class: 'current'
-        });
+        this._currentWeather = new St.Bin();
         // Future weather
-        this._futureWeather = new St.Bin({
-            style_class: 'forecast'
-        });
+        this._futureWeather = new St.Bin();
 
         // Putting the popup item together
         let _itemCurrent = new PopupMenu.PopupBaseMenuItem({
@@ -229,57 +211,31 @@ const WeatherMenuButton = new Lang.Class({
 
         this.menu.addMenuItem(_itemCurrent);
 
-        let item = new PopupMenu.PopupSeparatorMenuItem();
-        this.menu.addMenuItem(item);
+        this._separatorItem = new PopupMenu.PopupSeparatorMenuItem();
+        this.menu.addMenuItem(this._separatorItem);
 
         this.menu.addMenuItem(_itemFuture);
 
         let item = new PopupMenu.PopupSeparatorMenuItem();
         this.menu.addMenuItem(item);
 
-        let item = new PopupMenu.PopupMenuItem(_("Weather data provided by:   ") + ("http://openweathermap.org/"), {
-            style_class: 'weather-provider'
+        this._selectCity = new PopupMenu.PopupSubMenuMenuItem("");
+        this._selectCity.actor.set_height(0);
+        this._selectCity._triangle.set_height(0);
+
+        this._buttonMenu = new PopupMenu.PopupBaseMenuItem({
+            reactive: false,
+            style_class: 'openweather-menu-button-container'
         });
-        item.connect('activate', Lang.bind(this, function() {
-            let cityId = this.extractId(this._city);
-            if (!cityId) {
-                this.updateCities();
-                cityId = this.extractId(this._city);
-            }
-            let url = "http://openweathermap.org";
-            if (cityId)
-                url += "/city/" + cityId;
-            if (this._appid)
-                url += "?APPID=" + this._appid;
 
-            try {
-                Gtk.show_uri(null, url, global.get_current_time());
-            } catch (err) {
-                let title = _("Can not open %s").format(url);
-                Main.notifyError(title, err.message);
-            }
-        }));
+        this.rebuildButtonMenu();
 
-        this.menu.addMenuItem(item);
-
-        let item = new PopupMenu.PopupSeparatorMenuItem();
-        this.menu.addMenuItem(item);
-
-        this._selectCity = new PopupMenu.PopupSubMenuMenuItem(_("Locations"));
+        this.menu.addMenuItem(this._buttonMenu);
         this.menu.addMenuItem(this._selectCity);
         this.rebuildSelectCityItem();
-
-        let item = new PopupMenu.PopupMenuItem(_("Reload Weather Information"));
-        item.connect('activate', Lang.bind(this, function() {
-            this.currentWeatherCache = undefined;
-            this.forecastWeatherCache = undefined;
-            this.parseWeatherCurrent();
+        this._selectCity.menu.connect('open-state-changed', Lang.bind(this, function() {
+            this._selectCity.actor.remove_style_pseudo_class('open');
         }));
-        this.menu.addMenuItem(item);
-
-        let item = new PopupMenu.PopupMenuItem(_("Weather Settings"));
-        item.connect('activate', Lang.bind(this, this._onPreferencesActivate));
-        this.menu.addMenuItem(item);
 
         this.rebuildCurrentWeatherUi();
         this.rebuildFutureWeatherUi();
@@ -290,7 +246,12 @@ const WeatherMenuButton = new Lang.Class({
         this._network_monitor_connection = this._network_monitor.connect('network-changed', Lang.bind(this, this._onNetworkStateChanged));
         this._checkConnectionState();
 
-        this.menu.connect('open-state-changed', Lang.bind(this, this._onOpenStateChanged));
+        this.menu.connect('open-state-changed', Lang.bind(this, this.recalcLayout));
+        if (ExtensionUtils.versionCheck(['3.6', '3.8'], Config.PACKAGE_VERSION)) {
+            this._needsColorUpdate = true;
+            let context = St.ThemeContext.get_for_stage(global.stage);
+            this._globalThemeChangedId = context.connect('changed', Lang.bind(this, function(){this._needsColorUpdate = true;}));
+        }
     },
 
     stop: function() {
@@ -323,6 +284,12 @@ const WeatherMenuButton = new Lang.Class({
             this._settingsInterface.disconnect(this._settingsInterfaceC);
             this._settingsInterfaceC = undefined;
         }
+
+        if (this._globalThemeChangedId) {
+            let context = St.ThemeContext.get_for_stage(global.stage);
+            context.disconnect(this._globalThemeChangedId);
+            this._globalThemeChangedId = undefined;
+        }
     },
 
     loadConfig: function() {
@@ -330,6 +297,7 @@ const WeatherMenuButton = new Lang.Class({
         this._settingsC = this._settings.connect("changed", Lang.bind(this, function() {
             this.rebuildCurrentWeatherUi();
             this.rebuildFutureWeatherUi();
+            this.rebuildButtonMenu();
             if (this.locationChanged()) {
                 this.currentWeatherCache = undefined;
                 this.forecastWeatherCache = undefined;
@@ -535,6 +503,18 @@ const WeatherMenuButton = new Lang.Class({
         this._settings.set_boolean(WEATHER_USE_SYMBOLIC_ICONS_KEY, v);
     },
 
+    get _use_text_on_buttons() {
+        if (!this._settings)
+            this.loadConfig();
+        return this._settings.get_boolean(WEATHER_USE_TEXT_ON_BUTTONS_KEY) ? 1 : 0;
+    },
+
+    set _use_text_on_buttons(v) {
+        if (!this._settings)
+            this.loadConfig();
+        this._settings.set_boolean(WEATHER_USE_TEXT_ON_BUTTONS_KEY, v);
+    },
+
     get _text_in_panel() {
         if (!this._settings)
             this.loadConfig();
@@ -646,6 +626,174 @@ const WeatherMenuButton = new Lang.Class({
         this._settings.set_string(WEATHER_OWM_API_KEY, v);
     },
 
+    createButton: function(iconName, accessibleName) {
+        let button;
+
+        if (ExtensionUtils.versionCheck(['3.6', '3.8'], Config.PACKAGE_VERSION)) {
+            button = new St.Button({
+                reactive: true,
+                can_focus: true,
+                track_hover: true,
+                accessible_name: accessibleName,
+                style_class: 'popup-menu-item openweather-button'
+            });
+            button.child = new St.Icon({
+                icon_name: iconName
+            });
+            button.connect('notify::hover', Lang.bind(this, this._onButtonHoverChanged));
+        } else
+            button = Main.panel.statusArea.aggregateMenu._system._createActionButton(iconName, accessibleName);
+
+        return button;
+    },
+
+    _onButtonHoverChanged: function(actor, event) {
+        if (actor.hover) {
+            actor.add_style_pseudo_class('hover');
+            actor.set_style(this._button_background_style);
+        } else {
+            actor.remove_style_pseudo_class('hover');
+            actor.set_style('background-color:;');
+            if (actor != this._urlButton)
+                actor.set_style(this._button_border_style);
+            }
+    },
+
+    _updateButtonColors: function() {
+        if (!this._needsColorUpdate)
+            return;
+            this._needsColorUpdate = false;
+        let color;
+        if (ExtensionUtils.versionCheck(['3.6'], Config.PACKAGE_VERSION))
+            color = this._separatorItem._drawingArea.get_theme_node().get_color('-gradient-end');
+        else
+            color = this._separatorItem._separator.actor.get_theme_node().get_color('-gradient-end');
+
+            let alpha = (Math.round(color.alpha / 2.55) / 100);
+
+            if (color.red > 0 && color.green > 0 && color.blue > 0)
+                this._button_border_style = 'border:1px solid rgb(' + Math.round(alpha * color.red) + ',' + Math.round(alpha * color.green) + ',' + Math.round(alpha * color.blue) + ');';
+            else
+                this._button_border_style = 'border:1px solid rgba(' + color.red + ',' + color.green + ',' + color.blue + ',' + alpha + ');';
+
+            this._locationButton.set_style(this._button_border_style);
+            this._reloadButton.set_style(this._button_border_style);
+            this._prefsButton.set_style(this._button_border_style);
+
+            this._buttonMenu.actor.add_style_pseudo_class('active');
+            color = this._buttonMenu.actor.get_theme_node().get_background_color();
+            this._button_background_style = 'background-color:rgba(' + color.red + ',' + color.green + ',' + color.blue + ',' + (Math.round(color.alpha / 2.55) / 100) + ');';
+            this._buttonMenu.actor.remove_style_pseudo_class('active');
+    },
+
+    rebuildButtonMenu: function() {
+        if (this._buttonBox) {
+        if (this._buttonBox1) {
+            this._buttonBox1.destroy();
+            this._buttonBox1 = undefined;
+
+        }
+        if (this._buttonBox2) {
+            this._buttonBox2.destroy();
+            this._buttonBox2 = undefined;
+            }
+            this._buttonMenu.removeActor(this._buttonBox);
+            this._buttonBox.destroy();
+            this._buttonBox = undefined;
+        }
+
+        if (this._buttonBox1) {
+            this._buttonBox1.destroy();
+            this._buttonBox1 = undefined;
+        }
+        if (this._buttonBox2) {
+            this._buttonBox2.destroy();
+            this._buttonBox2 = undefined;
+        }
+
+        this._locationButton = this.createButton('find-location-symbolic', _("Locations"));
+        if (this._use_text_on_buttons)
+            this._locationButton.set_label(this._locationButton.get_accessible_name());
+
+        this._locationButton.connect('clicked', Lang.bind(this, function() {
+            if (ExtensionUtils.versionCheck(['3.6', '3.8'], Config.PACKAGE_VERSION))
+                this._selectCity.menu.toggle();
+            else
+               this._selectCity._setOpenState(!this._selectCity._getOpenState());
+        }));
+        this._buttonBox1 = new St.BoxLayout({
+            style_class: 'openweather-button-box'
+        });
+        this._buttonBox1.add_actor(this._locationButton);
+
+        this._reloadButton = this.createButton('view-refresh-symbolic', _("Reload Weather Information"));
+        if (this._use_text_on_buttons)
+            this._reloadButton.set_label(this._reloadButton.get_accessible_name());
+        this._reloadButton.connect('clicked', Lang.bind(this, function() {
+            this.currentWeatherCache = undefined;
+            this.forecastWeatherCache = undefined;
+            this.parseWeatherCurrent();
+            this.recalcLayout();
+        }));
+        this._buttonBox1.add_actor(this._reloadButton);
+
+
+        this._buttonBox2 = new St.BoxLayout({
+            style_class: 'openweather-button-box'
+        });
+
+        this._urlButton = new St.Button({
+            label: _("Weather data provided by:") + (this._use_text_on_buttons ? "\n" : "  ") + "http://openweathermap.org/",
+            style_class: 'system-menu-action openweather-provider'
+        });
+        if (ExtensionUtils.versionCheck(['3.6', '3.8'], Config.PACKAGE_VERSION)) {
+            this._urlButton.connect('notify::hover', Lang.bind(this, this._onButtonHoverChanged));
+        }
+        this._urlButton.connect('clicked', Lang.bind(this, function() {
+            this.menu.actor.hide();
+            let cityId = this.extractId(this._city);
+            if (!cityId) {
+                this.updateCities();
+                cityId = this.extractId(this._city);
+            }
+            let url = "http://openweathermap.org";
+            if (cityId)
+                url += "/city/" + cityId;
+            if (this._appid)
+                url += "?APPID=" + this._appid;
+
+            try {
+                Gtk.show_uri(null, url, global.get_current_time());
+            } catch (err) {
+                let title = _("Can not open %s").format(url);
+                Main.notifyError(title, err.message);
+            }
+        }));
+
+        this._buttonBox2.add_actor(this._urlButton);
+
+
+        this._prefsButton = this.createButton('preferences-system-symbolic', _("Weather Settings"));
+        if (this._use_text_on_buttons)
+            this._prefsButton.set_label(this._prefsButton.get_accessible_name());
+        this._prefsButton.connect('clicked', Lang.bind(this, this._onPreferencesActivate));
+        this._buttonBox2.add_actor(this._prefsButton);
+
+        if (ExtensionUtils.versionCheck(['3.6', '3.8'], Config.PACKAGE_VERSION)) {
+            this._buttonBox = new St.BoxLayout();
+            this._buttonBox1.add_style_class_name('openweather-button-box-38');
+            this._buttonBox2.add_style_class_name('openweather-button-box-38');
+            this._buttonBox.add_actor(this._buttonBox1);
+            this._buttonBox.add_actor(this._buttonBox2);
+
+            this._buttonMenu.addActor(this._buttonBox);
+            this._needsColorUpdate = true;
+        } else {
+            this._buttonMenu.actor.add_actor(this._buttonBox1);
+            this._buttonMenu.actor.add_actor(this._buttonBox2);
+        }
+        this._buttonBox1MinWidth = undefined;
+    },
     rebuildSelectCityItem: function() {
         this._selectCity.menu.removeAll();
         let item = null;
@@ -668,7 +816,8 @@ const WeatherMenuButton = new Lang.Class({
             }
 
             this._selectCity.menu.addMenuItem(item);
-            item.connect('activate', Lang.bind(this, this._onLocationActivated));
+            // override the items default onActivate-handler, to keep the ui open while chosing the location
+            item.activate = this._onActivate;
         }
 
         if (cities.length == 1)
@@ -678,8 +827,8 @@ const WeatherMenuButton = new Lang.Class({
 
     },
 
-    _onLocationActivated: function(actor, event) {
-        this._actual_city = actor.location;
+    _onActivate: function() {
+        openweatherMenu._actual_city = this.location;
     },
 
     extractLocation: function() {
@@ -761,15 +910,22 @@ const WeatherMenuButton = new Lang.Class({
     },
 
     _onPreferencesActivate: function() {
+        this.menu.actor.hide();
         Util.spawn(["gnome-shell-extension-prefs", "openweather-extension@jenslody.de"]);
         return 0;
     },
 
-    _onOpenStateChanged: function(menu, open) {
-        if (open && this._forecastScrollBox !== undefined && this._forecastBox !== undefined && this._currentWeather !== undefined) {
-            this._forecastScrollBox.set_width(this._currentWeather.get_width());
+    recalcLayout: function() {
+        if (!this.menu.isOpen)
+            return;
+        this._updateButtonColors();
+        if(this._buttonBox1MinWidth === undefined)
+            this._buttonBox1MinWidth = this._buttonBox1.get_width();
+        this._buttonBox1.set_width(Math.max(this._buttonBox1MinWidth, this._currentWeather.get_width() - this._buttonBox2.get_width()));
+        if (this._forecastScrollBox !== undefined && this._forecastBox !== undefined && this._currentWeather !== undefined) {
+            this._forecastScrollBox.set_width(Math.max(this._currentWeather.get_width(), (this._buttonBox1.get_width() + this._buttonBox2.get_width())));
             this._forecastScrollBox.show();
-            if (this._forecastBox.get_width() > this._currentWeather.get_width()) {
+            if (this._forecastBox.get_preferred_width(this._forecastBox.get_height())[0] > this._currentWeather.get_width()) {
                 this._forecastScrollBox.hscroll.margin_top = 10;
                 this._forecastScrollBox.hscroll.show();
             } else {
@@ -1401,6 +1557,7 @@ weather-storm.png = weather-storm-symbolic.svg
             this._currentWeatherWind.text = wind_direction + ' ' + parseFloat(wind).toLocaleString() + ' ' + wind_unit;
 
         this.parseWeatherForecast();
+        this.recalcLayout();
     },
 
     refreshWeatherCurrent: function() {
@@ -1602,31 +1759,31 @@ weather-storm.png = weather-storm-symbolic.svg
         this._currentWeatherIcon = new St.Icon({
             icon_size: 72,
             icon_name: 'view-refresh' + this.icon_type(),
-            style_class: 'weather-current-icon'
+            style_class: 'openweather-current-icon'
         });
 
         this._sunriseIcon = new St.Icon({
             icon_size: 15,
             icon_name: 'weather-clear' + this.icon_type(),
-            style_class: 'weather-sunrise-icon'
+            style_class: 'openweather-sunrise-icon'
         });
 
         this._sunsetIcon = new St.Icon({
             icon_size: 15,
             icon_name: 'weather-clear-night' + this.icon_type(),
-            style_class: 'weather-sunset-icon'
+            style_class: 'openweather-sunset-icon'
         });
 
         this._buildIcon = new St.Icon({
             icon_size: 15,
             icon_name: 'view-refresh' + this.icon_type(),
-            style_class: 'weather-build-icon'
+            style_class: 'openweather-build-icon'
         });
 
         // The summary of the current weather
         this._currentWeatherSummary = new St.Label({
             text: _('Loading ...'),
-            style_class: 'weather-current-summary'
+            style_class: 'openweather-current-summary'
         });
         this._currentWeatherLocation = new St.Label({
             text: _('Please wait')
@@ -1634,7 +1791,7 @@ weather-storm.png = weather-storm-symbolic.svg
 
         let bb = new St.BoxLayout({
             vertical: true,
-            style_class: 'weather-current-summarybox'
+            style_class: 'openweather-current-summarybox'
         });
         bb.add_actor(this._currentWeatherLocation);
         bb.add_actor(this._currentWeatherSummary);
@@ -1650,7 +1807,7 @@ weather-storm.png = weather-storm-symbolic.svg
         });
 
         let ab = new St.BoxLayout({
-            style_class: 'weather-current-infobox'
+            style_class: 'openweather-current-infobox'
         });
 
         ab.add_actor(this._sunriseIcon);
@@ -1676,15 +1833,15 @@ weather-storm.png = weather-storm-symbolic.svg
         });
 
         let rb = new St.BoxLayout({
-            style_class: 'weather-current-databox'
+            style_class: 'openweather-current-databox'
         });
         let rb_captions = new St.BoxLayout({
             vertical: true,
-            style_class: 'weather-current-databox-captions'
+            style_class: 'openweather-current-databox-captions'
         });
         let rb_values = new St.BoxLayout({
             vertical: true,
-            style_class: 'weather-current-databox-values'
+            style_class: 'openweather-current-databox-values'
         });
         rb.add_actor(rb_captions);
         rb.add_actor(rb_values);
@@ -1711,7 +1868,7 @@ weather-storm.png = weather-storm-symbolic.svg
         xb.add_actor(rb);
 
         let box = new St.BoxLayout({
-            style_class: 'weather-current-iconbox'
+            style_class: 'openweather-current-iconbox'
         });
         box.add_actor(this._currentWeatherIcon);
         box.add_actor(xb);
@@ -1730,11 +1887,11 @@ weather-storm.png = weather-storm-symbolic.svg
         this._forecast = [];
         this._forecastBox = new St.BoxLayout({
             x_align: this._center_forecast ? St.Align.END : St.Align.START,
-            style_class: 'weather-forecast-box'
+            style_class: 'openweather-forecast-box'
         });
 
         this._forecastScrollBox = new St.ScrollView({
-            style_class: 'weather-forecasts'
+            style_class: 'openweather-forecasts'
         });
 
         let pan = new Clutter.PanAction({
@@ -1768,28 +1925,28 @@ weather-storm.png = weather-storm-symbolic.svg
             forecastWeather.Icon = new St.Icon({
                 icon_size: 48,
                 icon_name: 'view-refresh' + this.icon_type(),
-                style_class: 'weather-forecast-icon'
+                style_class: 'openweather-forecast-icon'
             });
             forecastWeather.Day = new St.Label({
-                style_class: 'weather-forecast-day'
+                style_class: 'openweather-forecast-day'
             });
             forecastWeather.Summary = new St.Label({
-                style_class: 'weather-forecast-summary'
+                style_class: 'openweather-forecast-summary'
             });
             forecastWeather.Temperature = new St.Label({
-                style_class: 'weather-forecast-temperature'
+                style_class: 'openweather-forecast-temperature'
             });
 
             let by = new St.BoxLayout({
                 vertical: true,
-                style_class: 'weather-forecast-databox'
+                style_class: 'openweather-forecast-databox'
             });
             by.add_actor(forecastWeather.Day);
             by.add_actor(forecastWeather.Summary);
             by.add_actor(forecastWeather.Temperature);
 
             let bb = new St.BoxLayout({
-                style_class: 'weather-forecast-iconbox'
+                style_class: 'openweather-forecast-iconbox'
             });
             bb.add_actor(forecastWeather.Icon);
             bb.add_actor(by);
@@ -1820,18 +1977,18 @@ weather-storm.png = weather-storm-symbolic.svg
     }
 });
 
-let weatherMenu;
+let openweatherMenu;
 
 function init() {
     Convenience.initTranslations('gnome-shell-extension-openweather');
 }
 
 function enable() {
-    weatherMenu = new WeatherMenuButton();
-    Main.panel.addToStatusArea('weatherMenu', weatherMenu);
+    openweatherMenu = new OpenweatherMenuButton();
+    Main.panel.addToStatusArea('openweatherMenu', openweatherMenu);
 }
 
 function disable() {
-    weatherMenu.stop();
-    weatherMenu.destroy();
+    openweatherMenu.stop();
+    openweatherMenu.destroy();
 }

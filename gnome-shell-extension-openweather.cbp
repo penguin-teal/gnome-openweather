@@ -57,6 +57,7 @@
 		<Unit filename="po/nl.po" />
 		<Unit filename="po/pl.po" />
 		<Unit filename="po/pt.po" />
+		<Unit filename="po/pt_BR.po" />
 		<Unit filename="po/ro.po" />
 		<Unit filename="po/ru.po" />
 		<Unit filename="po/sk.po" />
