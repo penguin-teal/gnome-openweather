@@ -318,7 +318,7 @@ msgstr "Furtună puternică"
 
 #: ../src/extension.js:1257
 msgid "Storm"
-msgstr "Furtunp"
+msgstr "Furtună"
 
 #: ../src/extension.js:1260
 msgid "Violent storm"
