@@ -25,45 +25,45 @@ msgstr "..."
 #: ../src/extension.js:312
 #, python-format
 msgid "Schema \"%s\" not found."
-msgstr ""
+msgstr "No s'ha pogut trobar l'esquema \"%s\". "
 
 #: ../src/extension.js:714
 msgid "Locations"
-msgstr ""
+msgstr "Ubicacions"
 
 #: ../src/extension.js:729
 msgid "Reload Weather Information"
-msgstr ""
+msgstr "Actualitza la informació del temps"
 
 #: ../src/extension.js:746
 msgid "Weather data provided by:"
-msgstr ""
+msgstr "Informació del temps proporcionada per:"
 
 #: ../src/extension.js:768
 #, python-format
 msgid "Can not open %s"
-msgstr ""
+msgstr "No es pot obrir %s"
 
 #: ../src/extension.js:776
 msgid "Weather Settings"
-msgstr ""
+msgstr "Preferències"
 
 #: ../src/extension.js:839 ../src/extension.js:848 ../src/prefs.js:845
 msgid "Invalid city"
-msgstr ""
+msgstr "Ciutat no vàlida"
 
 #: ../src/extension.js:1081
 msgid "thunderstorm with light rain"
-msgstr ""
+msgstr "Tempestes amb pluges dèbils"
 
 #: ../src/extension.js:1083
 #, fuzzy
 msgid "thunderstorm with rain"
-msgstr "Tempestes"
+msgstr "Tempestes amb pluges"
 
 #: ../src/extension.js:1085
 msgid "thunderstorm with heavy rain"
-msgstr ""
+msgstr "Tempestes amb fortes pluges"
 
 #: ../src/extension.js:1087
 #, fuzzy
@@ -87,19 +87,19 @@ msgstr "Tempestes aïllades"
 
 #: ../src/extension.js:1095
 msgid "thunderstorm with light drizzle"
-msgstr ""
+msgstr "Tempesta amb plugim dèbil"
 
 #: ../src/extension.js:1097
 msgid "thunderstorm with drizzle"
-msgstr ""
+msgstr "Tempestes amb plugim"
 
 #: ../src/extension.js:1099
 msgid "thunderstorm with heavy drizzle"
-msgstr ""
+msgstr "Tempestes amb plugim persistent"
 
 #: ../src/extension.js:1101
 msgid "light intensity drizzle"
-msgstr ""
+msgstr "Plugim dèbil"
 
 #: ../src/extension.js:1103
 #, fuzzy
@@ -108,11 +108,11 @@ msgstr "Plugim"
 
 #: ../src/extension.js:1105
 msgid "heavy intensity drizzle"
-msgstr ""
+msgstr "Plugim intens"
 
 #: ../src/extension.js:1107
 msgid "light intensity drizzle rain"
-msgstr ""
+msgstr "Plugim dèbil"
 
 #: ../src/extension.js:1109
 #, fuzzy
@@ -121,7 +121,7 @@ msgstr "Plugim"
 
 #: ../src/extension.js:1111
 msgid "heavy intensity drizzle rain"
-msgstr ""
+msgstr "Plugim persistent"
 
 #: ../src/extension.js:1113
 #, fuzzy
@@ -130,7 +130,7 @@ msgstr "Barreja de pluja i calamarsa"
 
 #: ../src/extension.js:1115
 msgid "heavy shower rain and drizzle"
-msgstr ""
+msgstr "Barreja de xàfecs i plugim"
 
 #: ../src/extension.js:1117
 #, fuzzy
@@ -144,15 +144,15 @@ msgstr "Pluja glaçada"
 
 #: ../src/extension.js:1121
 msgid "moderate rain"
-msgstr ""
+msgstr "Pluja moderada"
 
 #: ../src/extension.js:1123
 msgid "heavy intensity rain"
-msgstr ""
+msgstr "Pluja intensa"
 
 #: ../src/extension.js:1125
 msgid "very heavy rain"
-msgstr ""
+msgstr "Pluja molt intensa"
 
 #: ../src/extension.js:1127
 #, fuzzy
@@ -166,19 +166,19 @@ msgstr "Pluja glaçada"
 
 #: ../src/extension.js:1131
 msgid "light intensity shower rain"
-msgstr ""
+msgstr "Xàfecs de baixa intensitat"
 
 #: ../src/extension.js:1133
 msgid "shower rain"
-msgstr ""
+msgstr "Xàfecs"
 
 #: ../src/extension.js:1135
 msgid "heavy intensity shower rain"
-msgstr ""
+msgstr "Xàfects de gran intessitat"
 
 #: ../src/extension.js:1137
 msgid "ragged shower rain"
-msgstr ""
+msgstr "Xàfecs aïllats"
 
 #: ../src/extension.js:1139
 #, fuzzy
@@ -187,7 +187,7 @@ msgstr "Neu aixecada pel vent"
 
 #: ../src/extension.js:1141
 msgid "snow"
-msgstr ""
+msgstr "Neu"
 
 #: ../src/extension.js:1143
 #, fuzzy
@@ -231,19 +231,19 @@ msgstr "Nevada forta"
 
 #: ../src/extension.js:1159
 msgid "mist"
-msgstr ""
+msgstr "Boirina"
 
 #: ../src/extension.js:1161
 msgid "smoke"
-msgstr ""
+msgstr "Boira"
 
 #: ../src/extension.js:1163
 msgid "haze"
-msgstr ""
+msgstr "Calitja"
 
 #: ../src/extension.js:1165
 msgid "Sand/Dust Whirls"
-msgstr ""
+msgstr "Remolins d'arena"
 
 #: ../src/extension.js:1167
 #, fuzzy
@@ -252,31 +252,31 @@ msgstr "Boirós"
 
 #: ../src/extension.js:1169
 msgid "sand"
-msgstr ""
+msgstr "Arena"
 
 #: ../src/extension.js:1171
 msgid "dust"
-msgstr ""
+msgstr "Pols"
 
 #: ../src/extension.js:1173
 msgid "VOLCANIC ASH"
-msgstr ""
+msgstr "CENDRA VOLCÀNICA"
 
 #: ../src/extension.js:1175
 msgid "SQUALLS"
-msgstr ""
+msgstr "BORRASCA"
 
 #: ../src/extension.js:1177
 msgid "TORNADO"
-msgstr ""
+msgstr "TORNADO"
 
 #: ../src/extension.js:1179
 msgid "sky is clear"
-msgstr ""
+msgstr "Cel clar"
 
 #: ../src/extension.js:1181
 msgid "few clouds"
-msgstr ""
+msgstr "Alguns núvols"
 
 #: ../src/extension.js:1183
 #, fuzzy
@@ -285,7 +285,7 @@ msgstr "Pluges aïllades"
 
 #: ../src/extension.js:1185
 msgid "broken clouds"
-msgstr ""
+msgstr "Núvols trencats"
 
 #: ../src/extension.js:1187
 #, fuzzy
@@ -298,51 +298,51 @@ msgstr "No disponible"
 
 #: ../src/extension.js:1227
 msgid "Calm"
-msgstr ""
+msgstr "Calma"
 
 #: ../src/extension.js:1230
 msgid "Light air"
-msgstr ""
+msgstr "Ventolina"
 
 #: ../src/extension.js:1233
 msgid "Light breeze"
-msgstr ""
+msgstr "Vent fluixet"
 
 #: ../src/extension.js:1236
 msgid "Gentle breeze"
-msgstr ""
+msgstr "Vent fluix"
 
 #: ../src/extension.js:1239
 msgid "Moderate breeze"
-msgstr ""
+msgstr "Vent moderat"
 
 #: ../src/extension.js:1242
 msgid "Fresh breeze"
-msgstr ""
+msgstr "Vent fresquet"
 
 #: ../src/extension.js:1245
 msgid "Strong breeze"
-msgstr ""
+msgstr "Vent fresc"
 
 #: ../src/extension.js:1248
 msgid "Moderate gale"
-msgstr ""
+msgstr "Vent fort"
 
 #: ../src/extension.js:1251
 msgid "Fresh gale"
-msgstr ""
+msgstr "Temporal"
 
 #: ../src/extension.js:1254
 msgid "Strong gale"
-msgstr ""
+msgstr "Temporal fort"
 
 #: ../src/extension.js:1257
 msgid "Storm"
-msgstr ""
+msgstr "Tempesta"
 
 #: ../src/extension.js:1260
 msgid "Violent storm"
-msgstr ""
+msgstr "Tempesta intensa"
 
 #: ../src/extension.js:1263
 msgid "Hurricane"
@@ -398,24 +398,24 @@ msgstr ""
 
 #: ../src/extension.js:1273
 msgid "SW"
-msgstr ""
+msgstr "SO"
 
 #: ../src/extension.js:1273
 msgid "W"
-msgstr ""
+msgstr "O"
 
 #: ../src/extension.js:1273
 msgid "NW"
-msgstr ""
+msgstr "NO"
 
 #: ../src/extension.js:1494 ../src/extension.js:1684
 msgid "Yesterday"
-msgstr ""
+msgstr "Ahir"
 
 #: ../src/extension.js:1496 ../src/extension.js:1686
 #, python-format
 msgid "%s days ago"
-msgstr ""
+msgstr "Fa %s dies"
 
 #: ../src/extension.js:1678
 msgid "Today"
@@ -428,7 +428,7 @@ msgstr "Demà"
 #: ../src/extension.js:1682
 #, python-format
 msgid "In %s days"
-msgstr ""
+msgstr "En %s dies"
 
 #: ../src/extension.js:1753
 msgid "Loading current weather ..."
@@ -444,7 +444,7 @@ msgstr "Espereu"
 
 #: ../src/extension.js:1850
 msgid "Cloudiness:"
-msgstr ""
+msgstr "Nuvolós"
 
 #: ../src/extension.js:1854
 msgid "Humidity:"
@@ -464,7 +464,7 @@ msgstr "Temperatura:"
 
 #: ../src/prefs.js:130
 msgid "Wind Speed Unit"
-msgstr ""
+msgstr "Unitat de velocitat:"
 
 #: ../src/prefs.js:132
 #, fuzzy
@@ -473,35 +473,35 @@ msgstr "Pressió:"
 
 #: ../src/prefs.js:134
 msgid "Position in Panel"
-msgstr ""
+msgstr "Posició:"
 
 #: ../src/prefs.js:135
 msgid "Center"
-msgstr ""
+msgstr "Centre"
 
 #: ../src/prefs.js:135
 msgid "Right"
-msgstr ""
+msgstr "Dreta"
 
 #: ../src/prefs.js:135
 msgid "Left"
-msgstr ""
+msgstr "Esquerra"
 
 #: ../src/prefs.js:136
 msgid "Wind Direction by Arrows"
-msgstr ""
+msgstr "Direcció del vent amb fletxes"
 
 #: ../src/prefs.js:138
 msgid "Translate Conditions"
-msgstr ""
+msgstr "Condicions climàtiques traduïdes"
 
 #: ../src/prefs.js:140
 msgid "Symbolic Icons"
-msgstr ""
+msgstr "Icones simbòliques"
 
 #: ../src/prefs.js:142
 msgid "Text on buttons"
-msgstr ""
+msgstr "Text sobre els botons"
 
 #: ../src/prefs.js:144
 msgid "Temperature in Panel"
@@ -509,15 +509,15 @@ msgstr "Temperatura:"
 
 #: ../src/prefs.js:146
 msgid "Conditions in Panel"
-msgstr ""
+msgstr "Condicions climàtiques:"
 
 #: ../src/prefs.js:148
 msgid "Center forecast"
-msgstr ""
+msgstr "Centrar les prediccions"
 
 #: ../src/prefs.js:150
 msgid "Number of days in forecast"
-msgstr ""
+msgstr "Nombre de dies de les prediccions"
 
 #: ../src/prefs.js:152
 msgid "Maximal number of digits after the decimal point"
@@ -525,16 +525,16 @@ msgstr ""
 
 #: ../src/prefs.js:154
 msgid "Personal Api key from openweathermap.org"
-msgstr ""
+msgstr "Clau Api personal de openweathermap.org"
 
 #: ../src/prefs.js:303
 msgid "Name of the city"
-msgstr ""
+msgstr "Nom de la ciutat"
 
 #: ../src/prefs.js:488
 #, python-format
 msgid "Remove %s ?"
-msgstr ""
+msgstr "Voleu esborrar %s ?"
 
 #~ msgid "Loading future weather ..."
 #~ msgstr "S'està carregant el temps futur..."
