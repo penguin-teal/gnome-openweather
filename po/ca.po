@@ -444,7 +444,7 @@ msgstr "Espereu"
 
 #: ../src/extension.js:1850
 msgid "Cloudiness:"
-msgstr "Nuvolós"
+msgstr "Nuvolositat:"
 
 #: ../src/extension.js:1854
 msgid "Humidity:"
