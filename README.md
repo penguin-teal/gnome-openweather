@@ -63,7 +63,7 @@ Make sure you have the following dependencies installed:
 Run the following commands:
 
 	cd ~ && git clone git://github.com/jenslody/gnome-shell-extension-openweather.git
-	cd ~/gnome-shell-extension-weather
+	cd ~/gnome-shell-extension-openweather
 	./autogen.sh && make local-install
 
 ----
