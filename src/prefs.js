@@ -37,6 +37,7 @@ const _ = Gettext.gettext;
 const Soup = imports.gi.Soup;
 
 const Lang = imports.lang;
+const Mainloop = imports.mainloop;
 const ExtensionUtils = imports.misc.extensionUtils;
 const Me = ExtensionUtils.getCurrentExtension();
 const Config = imports.misc.config;
@@ -65,9 +66,9 @@ const WEATHER_DECIMAL_PLACES = 'decimal-places';
 const WEATHER_OWM_API_KEY = 'appid';
 
 //URL
-const WEATHER_URL_BASE = 'http://api.openweathermap.org/data/2.5/';
-const WEATHER_URL_CURRENT = WEATHER_URL_BASE + 'weather';
-const WEATHER_URL_FIND = WEATHER_URL_BASE + 'find';
+const WEATHER_URL_BASE = 'https://open.mapquestapi.com/nominatim/v1/';
+const WEATHER_URL_FIND = WEATHER_URL_BASE + 'search.php';
+const WEATHER_URL_REVERSE = WEATHER_URL_BASE + 'reverse.php';
 
 let _httpSession;
 
@@ -342,15 +343,18 @@ const WeatherPrefsWidget = new GObject.Class({
         entry.activates_default = true;
 
         let testLocation = Lang.bind(this, function(location) {
+            log(new Error().lineNumber + ' : location = ' + location);
             if (location.search(/\[/) == -1 || location.search(/\]/) == -1)
                 return 0;
 
-            let id = location.split(/\[/)[1].split(/\]/)[0];
-            if (!id)
+            let coord = location.split(/\[/)[1].split(/\]/)[0];
+            if (!coord)
                 return 0;
+            log(new Error().lineNumber + ' : coord = ' + coord);
 
-            this.loadJsonAsync(WEATHER_URL_CURRENT, {
-                id: id
+            this.loadJsonAsync(WEATHER_URL_REVERSE, {
+                lat: coord.split(/,/)[0],
+                lon: coord.split(/,/)[1]
             }, function() {
                 d.sensitive = 0;
                 if (arguments[0] === undefined)
@@ -358,10 +362,7 @@ const WeatherPrefsWidget = new GObject.Class({
 
                 let city = arguments[0];
 
-                if (Number(city.cod) != 200)
-                    return 0;
-
-                if (Number(city.count) === 0)
+                if (Number(city.length) < 1)
                     return 0;
 
                 d.sensitive = 1;
@@ -370,60 +371,59 @@ const WeatherPrefsWidget = new GObject.Class({
             return 0;
         });
 
+        this.changeTimeout = undefined;
+
         let searchLocation = Lang.bind(this, function() {
-            let location = entry.get_text();
-            let params = {
-                cnt: '30',
-                sort: 'population',
-                type: 'like',
-                units: 'metric',
-                q: location
-            };
-            if (this.appid)
-                params.APPID = this.appid;
-            if (testLocation(location) === 0)
-                this.loadJsonAsync(WEATHER_URL_FIND, params, function() {
-                    if (!arguments[0])
+            if (this.changeTimeout !== undefined)
+                Mainloop.source_remove(this.changeTimeout);
+
+            this.changeTimeout = Mainloop.timeout_add(2000,
+                Lang.bind(
+                    this,
+                    function() {
+
+                        let location = entry.get_text();
+                        let params = {
+                            format: 'json',
+                            addressdetails: '1',
+                            q: location
+                        };
+
+                        if (testLocation(location) === 0) {
+                            this.loadJsonAsync(WEATHER_URL_FIND, params, function() {
+                                if (!arguments[0])
+                                    return 0;
+                                let city = arguments[0];
+
+                                if (Number(city.length) < 1)
+                                    return 0;
+
+                                completionModel.clear();
+
+                                let current = this.liststore.get_iter_first();
+
+                                var m = {};
+                                for (var i in city) {
+
+                                    current = completionModel.append();
+
+                                    let cityText = city[i].display_name;
+                                    let cityCoord = "[" + city[i].lat + "," + city[i].lon + "]";
+
+                                    if (m[cityCoord])
+                                        continue;
+                                    else
+                                        m[cityCoord] = 1;
+
+                                    completionModel.set_value(current, 0, cityText + " " + cityCoord);
+                                }
+
+                                completion.complete();
+                                return 0;
+                            }, "getInfo");
+                        }
                         return 0;
-                    let city = arguments[0];
-
-                    if (Number(city.cod) != 200)
-                        return 0;
-
-                    if (Number(city.count) > 0)
-                        city = city.list;
-                    else
-                        return 0;
-
-                    completionModel.clear();
-
-                    let current = this.liststore.get_iter_first();
-
-                    var m = {};
-                    for (var i in city) {
-
-                        current = completionModel.append();
-
-                        let cityText = city[i].name;
-
-                        if (city[i].sys)
-                            cityText += ", " + city[i].sys.country;
-
-                        if (city[i].id)
-                            cityText += " [" + city[i].id + "]";
-
-                        if (m[cityText])
-                            continue;
-                        else
-                            m[cityText] = 1;
-
-                        completionModel.set_value(current, 0, cityText);
-                    }
-
-                    completion.complete();
-                    return 0;
-                }, "getInfo");
-            return 0;
+                    }));
         });
 
         entry.connect("changed", searchLocation);
@@ -436,39 +436,31 @@ const WeatherPrefsWidget = new GObject.Class({
                 if (entry.get_text().search(/\[/) == -1 || entry.get_text().search(/\]/) == -1)
                     return 0;
 
-                let id = entry.get_text().split(/\[/)[1].split(/\]/)[0];
-                if (!id)
+                let coord = entry.get_text().split(/\[/)[1].split(/\]/)[0];
+                if (!coord)
                     return 0;
 
                 let params = {
-                    id: id,
-                    type: 'accurate'
+                    format: 'json',
+                    lat: coord.split(/,/)[0],
+                    lon: coord.split(/,/)[1]
                 };
-                if (this.appid)
-                    params.APPID = this.appid;
-                this.loadJsonAsync(WEATHER_URL_CURRENT, params, Lang.bind(this, function() {
+                this.loadJsonAsync(WEATHER_URL_REVERSE, params, Lang.bind(this, function() {
                     if (!arguments[0])
                         return 0;
                     let city = arguments[0];
 
-                    if (Number(city.cod) != 200)
+                    if (Number(city.length) < 1)
                         return 0;
 
-                    if (!id)
-                        return 0;
+                    let cityText = entry.get_text().split(/\[/)[0];
 
-                    if (id != city.id)
-                        return 0;
 
-                    let cityText = entry.get_text().split(/,/)[0];
-
-                    if (city.sys)
-                        cityText += " (" + city.sys.country + ")";
 
                     if (this.city)
-                        this.city = this.city + " && " + city.id + ">" + cityText;
+                        this.city = this.city + " && " + coord + ">" + cityText;
                     else
-                        this.city = city.id + ">" + cityText;
+                        this.city = coord + ">" + cityText;
 
                     return 0;
                 }), "lastTest");
@@ -485,7 +477,7 @@ const WeatherPrefsWidget = new GObject.Class({
         if (!city.length)
             return 0;
         let ac = this.actual_city;
-        let textDialog = _("Remove %s ?").replace("%s", this.extractLocation(city[ac]));
+        let textDialog = _("Remove %s ?").format(this.extractLocation(city[ac]));
         let dialog = new Gtk.Dialog({
             title: ""
         });
