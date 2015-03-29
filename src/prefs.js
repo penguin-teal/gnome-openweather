@@ -46,6 +46,7 @@ const Convenience = Me.imports.convenience;
 const EXTENSIONDIR = Me.dir.get_path();
 
 const WEATHER_SETTINGS_SCHEMA = 'org.gnome.shell.extensions.openweather';
+const WEATHER_PROVIDER_KEY = 'weather-provider';
 const WEATHER_UNIT_KEY = 'unit';
 const WEATHER_PRESSURE_UNIT_KEY = 'pressure-unit';
 const WEATHER_WIND_SPEED_UNIT_KEY = 'wind-speed-unit';
@@ -58,12 +59,14 @@ const WEATHER_USE_TEXT_ON_BUTTONS_KEY = 'use-text-on-buttons';
 const WEATHER_SHOW_TEXT_IN_PANEL_KEY = 'show-text-in-panel';
 const WEATHER_POSITION_IN_PANEL_KEY = 'position-in-panel';
 const WEATHER_SHOW_COMMENT_IN_PANEL_KEY = 'show-comment-in-panel';
+const WEATHER_SHOW_COMMENT_IN_FORECAST_KEY = 'show-comment-in-forecast';
 const WEATHER_REFRESH_INTERVAL_CURRENT = 'refresh-interval-current';
 const WEATHER_REFRESH_INTERVAL_FORECAST = 'refresh-interval-forecast';
 const WEATHER_CENTER_FORECAST_KEY = 'center-forecast';
 const WEATHER_DAYS_FORECAST = 'days-forecast';
 const WEATHER_DECIMAL_PLACES = 'decimal-places';
 const WEATHER_OWM_API_KEY = 'appid';
+const WEATHER_FC_API_KEY = 'appid-fc';
 
 //URL
 const WEATHER_URL_BASE = 'https://open.mapquestapi.com/nominatim/v1/';
@@ -126,6 +129,8 @@ const WeatherPrefsWidget = new GObject.Class({
         });
 
         this.initConfigWidget();
+        this.addLabel(_("Choose weather provider"));
+        this.addComboBox(["http://openweathermap.org", "http://forecast.io"], "weather_provider");
         this.addLabel(_("Temperature Unit"));
         this.addComboBox(["\u00b0C", "\u00b0F", "K", "\u00b0Ra", "\u00b0R\u00E9", "\u00b0R\u00F8", "\u00b0De", "\u00b0N"], "units");
         this.addLabel(_("Wind Speed Unit"));
@@ -146,6 +151,8 @@ const WeatherPrefsWidget = new GObject.Class({
         this.addSwitch("text_in_panel");
         this.addLabel(_("Conditions in Panel"));
         this.addSwitch("comment_in_panel");
+        this.addLabel(_("Conditions in Forecast"));
+        this.addSwitch("comment_in_forecast");
         this.addLabel(_("Center forecast"));
         this.addSwitch("center_forecast");
         this.addLabel(_("Number of days in forecast"));
@@ -154,6 +161,8 @@ const WeatherPrefsWidget = new GObject.Class({
         this.addComboBox(["0", "1", "2", "3"], "decimal_places");
         this.addLabel(_("Personal Api key from openweathermap.org"));
         this.addAppidEntry(("appid"));
+        this.addLabel(_("Personal Api key from forecast.io"));
+        this.addAppidEntry(("appid_fc"));
     },
 
     refreshUI: function() {
@@ -581,6 +590,18 @@ const WeatherPrefsWidget = new GObject.Class({
         }));
     },
 
+    get weather_provider() {
+        if (!this.Settings)
+            this.loadConfig();
+        return this.Settings.get_enum(WEATHER_PROVIDER_KEY);
+    },
+
+    set weather_provider(v) {
+        if (!this.Settings)
+            this.loadConfig();
+        this.Settings.set_enum(WEATHER_PROVIDER_KEY, v);
+    },
+
     get units() {
         if (!this.Settings)
             this.loadConfig();
@@ -758,6 +779,18 @@ const WeatherPrefsWidget = new GObject.Class({
         this.Settings.set_boolean(WEATHER_SHOW_COMMENT_IN_PANEL_KEY, v);
     },
 
+    get comment_in_forecast() {
+        if (!this.Settings)
+            this.loadConfig();
+        return this.Settings.get_boolean(WEATHER_SHOW_COMMENT_IN_FORECAST_KEY);
+    },
+
+    set comment_in_forecast(v) {
+        if (!this.Settings)
+            this.loadConfig();
+        this.Settings.set_boolean(WEATHER_SHOW_COMMENT_IN_FORECAST_KEY, v);
+    },
+
     get refresh_interval_current() {
         if (!this.Settings)
             this.loadConfig();
@@ -830,6 +863,18 @@ const WeatherPrefsWidget = new GObject.Class({
         if (!this.Settings)
             this.loadConfig();
         this.Settings.set_string(WEATHER_OWM_API_KEY, v);
+    },
+
+    get appid_fc() {
+        if (!this.Settings)
+            this.loadConfig();
+        return this.Settings.get_string(WEATHER_FC_API_KEY);
+    },
+
+    set appid_fc(v) {
+        if (!this.Settings)
+            this.loadConfig();
+        this.Settings.set_string(WEATHER_FC_API_KEY, v);
     },
 
     extractLocation: function(a) {

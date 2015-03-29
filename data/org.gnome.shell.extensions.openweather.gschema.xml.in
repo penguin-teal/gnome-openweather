@@ -1,4 +1,8 @@
 <schemalist gettext-domain="gnome-shell-extension-openweather">
+  <enum id="org.gnome.shell.extensions.openweather.weather-provider">
+    <value nick="openweathermap" value="0" />
+    <value nick="forecast.io" value="1" />
+  </enum>
   <enum id="org.gnome.shell.extensions.openweather.unit">
     <value nick="celsius" value="0" />
     <value nick="fahrenheit" value="1" />
@@ -38,6 +42,10 @@
     <value nick="left" value="2"  />
   </enum>
   <schema id="org.gnome.shell.extensions.openweather" path="/org/gnome/shell/extensions/openweather/">
+    <key name="weather-provider" enum="org.gnome.shell.extensions.openweather.weather-provider">
+      <default>'openweathermap'</default>
+      <_summary>Weather Provider</_summary>
+    </key>
     <key name="unit" enum="org.gnome.shell.extensions.openweather.unit">
       <default>'fahrenheit'</default>
       <_summary>Temperature Unit</_summary>
@@ -84,6 +92,10 @@
       <default>false</default>
       <_summary>Conditions in Panel</_summary>
     </key>
+    <key name="show-comment-in-forecast" type="b">
+      <default>true</default>
+      <_summary>Conditions in Forecast</_summary>
+    </key>
     <key name="position-in-panel" enum="org.gnome.shell.extensions.openweather.position">
       <default>'center'</default>
       <_summary>Position in Panel</_summary>
@@ -111,6 +123,10 @@
     <key name="appid" type="s">
       <default>''</default>
       <_summary>Your personal API key from openweathermap.org</_summary>
+    </key>
+    <key name="appid-fc" type="s">
+      <default>''</default>
+      <_summary>Your personal API key from forecast.io</_summary>
     </key>
   </schema>
 </schemalist>
