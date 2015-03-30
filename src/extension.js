@@ -1140,7 +1140,7 @@ weather-storm.png = weather-storm-symbolic.svg
             case 'wind':
                 return ['weather-storm'];
             case 'rain':
-                return ['weather-showers'];
+                return ['weather-showers-scattered', 'weather-showers'];
             case 'sleet':
             case 'snow':
                 return ['weather-snow'];
