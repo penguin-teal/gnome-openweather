@@ -312,19 +312,10 @@ const OpenweatherMenuButton = new Lang.Class({
     },
 
     switchProvider: function() {
-
-        switch (this._weather_provider) {
-            case WeatherProvider.FORECAST_IO:
-                this.useForecastIo();
-                break;
-            case WeatherProvider.OPENWEATHERMAP:
-                this.useOpenweathermap();
-                break;
-            default:
-                this.useOpenweathermap();
-                break;
-        }
-
+        if (this._weather_provider == WeatherProvider.FORECAST_IO)
+            this.useForecastIo();
+        else
+            this.useOpenweathermap();
     },
 
     useOpenweathermap: function() {
@@ -334,6 +325,7 @@ const OpenweatherMenuButton = new Lang.Class({
         this.get_weather_icon_safely = this.owmGet_weather_icon_safely;
         this.refreshWeatherCurrent = this.owmRefreshWeatherCurrent;
         this.refreshWeatherForecast = this.owmRefreshWeatherForecast;
+        this.weatherProvider = "https://openweathermap.org/";
     },
 
     useForecastIo: function() {
@@ -343,6 +335,7 @@ const OpenweatherMenuButton = new Lang.Class({
         this.get_weather_icon_safely = this.fcGet_weather_icon_safely;
         this.refreshWeatherCurrent = this.fcRefreshWeatherCurrent;
         this.refreshWeatherForecast = function() {};
+        this.weatherProvider = "https://forecast.io/";
 
         this.fc_locale = 'en';
         let fc_locales = ['bs','de','en','es','fr','it','nl','pl','pt','ru','tet','x-pig-latin'];
@@ -355,12 +348,28 @@ const OpenweatherMenuButton = new Lang.Class({
             this.fc_locale = locale;
     },
 
+    getWeatherProviderURL: function() {
+        let url="";
+        if (this._weather_provider == WeatherProvider.FORECAST_IO)
+        {
+            url = "https://forecast.io/#/f/";
+            url += this.extractCoord(this._city);
+        }
+        else
+        {
+            url = "https://openweathermap.org";
+            url += "/city/" + this.owmCityId;
+            if (this._appid)
+                url += "?APPID=" + this._appid;
+        }
+        return url;
+    },
+
     loadConfig: function() {
         this._settings = Convenience.getSettings(WEATHER_SETTINGS_SCHEMA);
         this._settingsC = this._settings.connect("changed", Lang.bind(this, function() {
             this.rebuildCurrentWeatherUi();
             this.rebuildFutureWeatherUi();
-            this.rebuildButtonMenu();
             if (this.providerChanged()) {
                 this.switchProvider();
                 this.currentWeatherCache = undefined;
@@ -370,6 +379,7 @@ const OpenweatherMenuButton = new Lang.Class({
                 this.currentWeatherCache = undefined;
                 this.forecastWeatherCache = undefined;
             }
+            this.rebuildButtonMenu();
             this.parseWeatherCurrent();
         }));
     },
@@ -862,7 +872,7 @@ const OpenweatherMenuButton = new Lang.Class({
         });
 
         this._urlButton = new St.Button({
-            label: _("Weather data provided by:") + (this._use_text_on_buttons ? "\n" : "  ") + "http://openweathermap.org/",
+            label: _("Weather data provided by:") + (this._use_text_on_buttons ? "\n" : "  ") + this.weatherProvider,
             style_class: 'system-menu-action openweather-provider'
         });
         if (ExtensionUtils.versionCheck(['3.6', '3.8'], Config.PACKAGE_VERSION)) {
@@ -870,11 +880,7 @@ const OpenweatherMenuButton = new Lang.Class({
         }
         this._urlButton.connect('clicked', Lang.bind(this, function() {
             this.menu.actor.hide();
-            let url = "http://openweathermap.org";
-            if (this.owmCityId)
-                url += "/city/" + this.owmCityId;
-            if (this._appid)
-                url += "?APPID=" + this._appid;
+            let url = this.getWeatherProviderURL();
 
             try {
                 Gtk.show_uri(null, url, global.get_current_time());
