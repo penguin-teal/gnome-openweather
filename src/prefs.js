@@ -140,35 +140,45 @@ const WeatherPrefsWidget = new GObject.Class({
         for (let i in theObjects) {
             let name = theObjects[i].get_name ? theObjects[i].get_name() : 'dummy';
             if (this[name] !== undefined) {
-                let theObject = theObjects[i];
-                if (theObject.class_path()[1].indexOf('GtkEntry') != -1) {
-                    theObject.text = this[name];
-                    if (this[name].length != 32)
-                        theObject.set_icon_from_icon_name(Gtk.PositionType.LEFT, 'dialog-warning');
-
-                    theObject.connect("notify::text", Lang.bind(this, function() {
-                        let key = arguments[0].text;
-                        this[name] = key;
-                        if (key.length == 32)
-                            theObject.set_icon_from_icon_name(Gtk.PositionType.LEFT, '');
-                        else
-                            theObject.set_icon_from_icon_name(Gtk.PositionType.LEFT, 'dialog-warning');
-                    }));
-                }
-                if (theObject.class_path()[1].indexOf('GtkComboBoxText') != -1) {
-                    theObject.connect("changed", Lang.bind(this, function() {
-                        this[name] = arguments[0].active;
-                    }));
-                }
-                if (theObject.class_path()[1].indexOf('GtkSwitch') != -1) {
-                    theObject.connect("notify::active", Lang.bind(this, function() {
-                        this[name] = arguments[0].active;
-                    }));
-                }
-
+                if (theObjects[i].class_path()[1].indexOf('GtkEntry') != -1)
+                    this.initEntry(theObjects[i]);
+                else if (theObjects[i].class_path()[1].indexOf('GtkComboBoxText') != -1)
+                    this.initComboBox(theObjects[i]);
+                else if (theObjects[i].class_path()[1].indexOf('GtkSwitch') != -1)
+                    this.initSwitch(theObjects[i]);
                 this.configWidgets.push([theObjects[i], name]);
             }
         }
+    },
+
+    initEntry: function(theEntry) {
+        let name = theEntry.get_name();
+        theEntry.text = this[name];
+        if (this[name].length != 32)
+            theEntry.set_icon_from_icon_name(Gtk.PositionType.LEFT, 'dialog-warning');
+
+        theEntry.connect("notify::text", Lang.bind(this, function() {
+            let key = arguments[0].text;
+            this[name] = key;
+            if (key.length == 32)
+                theEntry.set_icon_from_icon_name(Gtk.PositionType.LEFT, '');
+            else
+                theEntry.set_icon_from_icon_name(Gtk.PositionType.LEFT, 'dialog-warning');
+        }));
+    },
+
+    initComboBox: function(theComboBox) {
+        let name = theComboBox.get_name();
+        theComboBox.connect("changed", Lang.bind(this, function() {
+            this[name] = arguments[0].active;
+        }));
+    },
+
+    initSwitch: function(theSwitch) {
+        let name = theSwitch.get_name();
+        theSwitch.connect("notify::active", Lang.bind(this, function() {
+            this[name] = arguments[0].active;
+        }));
     },
 
     refreshUI: function() {
