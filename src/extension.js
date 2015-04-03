@@ -218,13 +218,8 @@ const OpenweatherMenuButton = new Lang.Class({
             reactive: false
         });
 
-        if (ExtensionUtils.versionCheck(['3.6', '3.8'], Config.PACKAGE_VERSION)) {
-            _itemCurrent.addActor(this._currentWeather);
-            _itemFuture.addActor(this._futureWeather);
-        } else {
-            _itemCurrent.actor.add_actor(this._currentWeather);
-            _itemFuture.actor.add_actor(this._futureWeather);
-        }
+        _itemCurrent.actor.add_actor(this._currentWeather);
+        _itemFuture.actor.add_actor(this._futureWeather);
 
         this.menu.addMenuItem(_itemCurrent);
 
@@ -264,13 +259,6 @@ const OpenweatherMenuButton = new Lang.Class({
         this._checkConnectionState();
 
         this.menu.connect('open-state-changed', Lang.bind(this, this.recalcLayout));
-        if (ExtensionUtils.versionCheck(['3.6', '3.8'], Config.PACKAGE_VERSION)) {
-            this._needsColorUpdate = true;
-            let context = St.ThemeContext.get_for_stage(global.stage);
-            this._globalThemeChangedId = context.connect('changed', Lang.bind(this, function() {
-                this._needsColorUpdate = true;
-            }));
-        }
     },
 
     stop: function() {
@@ -755,27 +743,6 @@ const OpenweatherMenuButton = new Lang.Class({
         this._settings.set_string(WEATHER_FC_API_KEY, v);
     },
 
-    createButton: function(iconName, accessibleName) {
-        let button;
-
-        if (ExtensionUtils.versionCheck(['3.6', '3.8'], Config.PACKAGE_VERSION)) {
-            button = new St.Button({
-                reactive: true,
-                can_focus: true,
-                track_hover: true,
-                accessible_name: accessibleName,
-                style_class: 'popup-menu-item openweather-button'
-            });
-            button.child = new St.Icon({
-                icon_name: iconName
-            });
-            button.connect('notify::hover', Lang.bind(this, this._onButtonHoverChanged));
-        } else
-            button = Main.panel.statusArea.aggregateMenu._system._createActionButton(iconName, accessibleName);
-
-        return button;
-    },
-
     _onButtonHoverChanged: function(actor, event) {
         if (actor.hover) {
             actor.add_style_pseudo_class('hover');
@@ -840,22 +807,19 @@ const OpenweatherMenuButton = new Lang.Class({
             this._buttonBox2 = undefined;
         }
 
-        this._locationButton = this.createButton('find-location-symbolic', _("Locations"));
+        this._locationButton = Main.panel.statusArea.aggregateMenu._system._createActionButton('find-location-symbolic', _("Locations"));
         if (this._use_text_on_buttons)
             this._locationButton.set_label(this._locationButton.get_accessible_name());
 
         this._locationButton.connect('clicked', Lang.bind(this, function() {
-            if (ExtensionUtils.versionCheck(['3.6', '3.8'], Config.PACKAGE_VERSION))
-                this._selectCity.menu.toggle();
-            else
-                this._selectCity._setOpenState(!this._selectCity._getOpenState());
+            this._selectCity._setOpenState(!this._selectCity._getOpenState());
         }));
         this._buttonBox1 = new St.BoxLayout({
             style_class: 'openweather-button-box'
         });
         this._buttonBox1.add_actor(this._locationButton);
 
-        this._reloadButton = this.createButton('view-refresh-symbolic', _("Reload Weather Information"));
+        this._reloadButton = Main.panel.statusArea.aggregateMenu._system._createActionButton('view-refresh-symbolic', _("Reload Weather Information"));
         if (this._use_text_on_buttons)
             this._reloadButton.set_label(this._reloadButton.get_accessible_name());
         this._reloadButton.connect('clicked', Lang.bind(this, function() {
@@ -875,9 +839,7 @@ const OpenweatherMenuButton = new Lang.Class({
             label: _("Weather data provided by:") + (this._use_text_on_buttons ? "\n" : "  ") + this.weatherProvider,
             style_class: 'system-menu-action openweather-provider'
         });
-        if (ExtensionUtils.versionCheck(['3.6', '3.8'], Config.PACKAGE_VERSION)) {
-            this._urlButton.connect('notify::hover', Lang.bind(this, this._onButtonHoverChanged));
-        }
+
         this._urlButton.connect('clicked', Lang.bind(this, function() {
             this.menu.actor.hide();
             let url = this.getWeatherProviderURL();
@@ -893,27 +855,18 @@ const OpenweatherMenuButton = new Lang.Class({
         this._buttonBox2.add_actor(this._urlButton);
 
 
-        this._prefsButton = this.createButton('preferences-system-symbolic', _("Weather Settings"));
+        this._prefsButton = Main.panel.statusArea.aggregateMenu._system._createActionButton('preferences-system-symbolic', _("Weather Settings"));
         if (this._use_text_on_buttons)
             this._prefsButton.set_label(this._prefsButton.get_accessible_name());
         this._prefsButton.connect('clicked', Lang.bind(this, this._onPreferencesActivate));
         this._buttonBox2.add_actor(this._prefsButton);
 
-        if (ExtensionUtils.versionCheck(['3.6', '3.8'], Config.PACKAGE_VERSION)) {
-            this._buttonBox = new St.BoxLayout();
-            this._buttonBox1.add_style_class_name('openweather-button-box-38');
-            this._buttonBox2.add_style_class_name('openweather-button-box-38');
-            this._buttonBox.add_actor(this._buttonBox1);
-            this._buttonBox.add_actor(this._buttonBox2);
+        this._buttonMenu.actor.add_actor(this._buttonBox1);
+        this._buttonMenu.actor.add_actor(this._buttonBox2);
 
-            this._buttonMenu.addActor(this._buttonBox);
-            this._needsColorUpdate = true;
-        } else {
-            this._buttonMenu.actor.add_actor(this._buttonBox1);
-            this._buttonMenu.actor.add_actor(this._buttonBox2);
-        }
         this._buttonBox1MinWidth = undefined;
     },
+
     rebuildSelectCityItem: function() {
         this._selectCity.menu.removeAll();
         let item = null;
@@ -929,10 +882,7 @@ const OpenweatherMenuButton = new Lang.Class({
             item = new PopupMenu.PopupMenuItem(this.extractLocation(cities[i]));
             item.location = i;
             if (i == this._actual_city) {
-                if (ExtensionUtils.versionCheck(['3.6', '3.8'], Config.PACKAGE_VERSION))
-                    item.setShowDot(true);
-                else
-                    item.setOrnament(PopupMenu.Ornament.DOT);
+                item.setOrnament(PopupMenu.Ornament.DOT);
             }
 
             this._selectCity.menu.addMenuItem(item);
