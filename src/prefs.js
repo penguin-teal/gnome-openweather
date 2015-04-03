@@ -101,9 +101,7 @@ const WeatherPrefsWidget = new GObject.Class({
 
         this.MainWidget = this.Window.get_object("main-widget");
         this.treeview = this.Window.get_object("tree-treeview");
-        //        this.liststore = this.Window.get_object("treestore");
         this.liststore = this.Window.get_object("tree-liststore");
-        this.Iter = this.liststore.get_iter_first();
 
         this.Window.get_object("tree-toolbutton-add").connect("clicked", Lang.bind(this, function() {
             this.addCity();
@@ -120,10 +118,6 @@ const WeatherPrefsWidget = new GObject.Class({
         this.Window.get_object("treeview-selection").connect("changed", Lang.bind(this, function(selection) {
             this.selectionChanged(selection);
         }));
-
-
-
-        //        this.treeview.set_model(this.liststore);
 
         let column = new Gtk.TreeViewColumn();
         this.treeview.append_column(column);
@@ -182,7 +176,12 @@ const WeatherPrefsWidget = new GObject.Class({
     },
 
     refreshUI: function() {
+        this.MainWidget = this.Window.get_object("main-widget");
+        this.treeview = this.Window.get_object("tree-treeview");
+        this.liststore = this.Window.get_object("tree-liststore");
+
         this.Window.get_object("tree-toolbutton-remove").sensitive = Boolean(this.city.length);
+        this.Window.get_object("tree-toolbutton-edit").sensitive = Boolean(this.city.length);
 
         if (mCities != this.city) {
             if (this.liststore !== undefined)
