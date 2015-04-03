@@ -31,12 +31,12 @@
 		<Unit filename="data/Makefile.am" />
 		<Unit filename="data/Screenshot.jpg" />
 		<Unit filename="data/metadata.json.in" />
+		<Unit filename="data/openweather-search.ui" />
 		<Unit filename="data/org.gnome.shell.extensions.openweather.gschema.xml.in" />
 		<Unit filename="data/stylesheet.css" />
 		<Unit filename="data/weather-settings.gif" />
 		<Unit filename="data/weather-settings.ui" />
 		<Unit filename="gnome-shell-extension-openweather.spec" />
-		<Unit filename="openweather-search.ui" />
 		<Unit filename="po/LINGUAS" />
 		<Unit filename="po/POTFILES.in" />
 		<Unit filename="po/bg.po" />
