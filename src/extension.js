@@ -355,7 +355,13 @@ const OpenweatherMenuButton = new Lang.Class({
 
     loadConfig: function() {
         this._settings = Convenience.getSettings(WEATHER_SETTINGS_SCHEMA);
+
+        if (this._cities.length === 0)
+            this._cities = "-8.5211767,179.1976747>Vaiaku, Tuvalu";
+
         this._settingsC = this._settings.connect("changed", Lang.bind(this, function() {
+            if (this._cities.length === 0)
+                this._cities = "-8.5211767,179.1976747>Vaiaku, Tuvalu";
             this.rebuildCurrentWeatherUi();
             this.rebuildFutureWeatherUi();
             if (this.providerChanged()) {
