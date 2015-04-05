@@ -102,6 +102,10 @@ const WeatherPrefsWidget = new GObject.Class({
         this.MainWidget = this.Window.get_object("main-widget");
         this.treeview = this.Window.get_object("tree-treeview");
         this.liststore = this.Window.get_object("tree-liststore");
+        this.editWidget = this.Window.get_object("edit-widget");
+        this.editName = this.Window.get_object("edit-name");
+        this.editCoord = this.Window.get_object("edit-coord");
+
 
         this.Window.get_object("tree-toolbutton-add").connect("clicked", Lang.bind(this, function() {
             this.addCity();
@@ -117,6 +121,14 @@ const WeatherPrefsWidget = new GObject.Class({
 
         this.Window.get_object("treeview-selection").connect("changed", Lang.bind(this, function(selection) {
             this.selectionChanged(selection);
+        }));
+
+        this.Window.get_object("button-edit-cancel").connect("clicked", Lang.bind(this, function() {
+            this.editCancel();
+        }));
+
+        this.Window.get_object("button-edit-save").connect("clicked", Lang.bind(this, function() {
+            this.editSave();
         }));
 
         let column = new Gtk.TreeViewColumn();
@@ -420,52 +432,41 @@ const WeatherPrefsWidget = new GObject.Class({
         if (!city.length)
             return 0;
         let ac = this.actual_city;
-        let textDialog = _("Remove %s ?").format(this.extractLocation(city[ac]));
-        let dialog = new Gtk.Dialog({
-            title: ""
-        });
-        let label = new Gtk.Label({
-            label: textDialog
-        });
-        label.margin_bottom = 12;
-
-        dialog.set_border_width(12);
-        dialog.set_modal(1);
-        dialog.set_resizable(0);
-        //dialog.set_transient_for(***** Need parent Window *****);
-
-        dialog.add_button(Gtk.STOCK_NO, 0);
-        let d = dialog.add_button(Gtk.STOCK_YES, 1);
-
-        d.set_can_default(true);
-        dialog.set_default(d);
-
-        let dialog_area = dialog.get_content_area();
-        dialog_area.pack_start(label, 0, 0, 0);
-        dialog.connect("response", Lang.bind(this, function(w, response_id) {
-            if (response_id) {
-                if (city.length === 0)
-                    city = [];
-
-                if (city.length > 0 && typeof city != "object")
-                    city = [city];
-
-                if (city.length > 0)
-                    city.splice(ac, 1);
-
-                if (city.length > 1)
-                    this.city = city.join(" && ");
-                else if (city[0])
-                    this.city = city[0];
-                else
-                    this.city = "";
-            }
-            dialog.hide();
-            return 0;
-        }));
-
-        dialog.show_all();
+        this.editName.set_text(this.extractLocation(city[ac]));
+        this.editCoord.set_text(this.extractCoord(city[ac]));
+        this.editWidget.show_all();
         return 0;
+    },
+
+    editSave: function() {
+        let theCity = this.city.split(" && ");
+
+        if (theCity.length === 0)
+            return 0;
+        if (theCity.length > 0 && typeof theCity != "object")
+            theCity = [theCity];
+
+        let ac = this.actual_city;
+        let location = this.editName.get_text();
+        let coord = this.editCoord.get_text();
+        theCity[ac] = coord + ">" + location;
+
+        if (theCity.length > 1)
+            this.city = theCity.join(" && ");
+        else if (theCity[0])
+            this.city = theCity[0];
+
+        this.editWidget.hide();
+
+        this.actual_city = ac;
+
+        return 0;
+    },
+
+    editCancel: function() {
+        this.editName.set_text("");
+        this.editCoord.set_text("");
+        this.editWidget.hide();
     },
 
     changeSelection: function() {
@@ -817,7 +818,7 @@ const WeatherPrefsWidget = new GObject.Class({
         return a.split(">")[1];
     },
 
-    extractId: function(a) {
+    extractCoord: function(a) {
         if (a.search(">") == -1)
             return 0;
         return a.split(">")[0];

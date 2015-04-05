@@ -2,105 +2,29 @@
 <!-- Generated with glade 3.18.3 -->
 <interface>
   <requires lib="gtk+" version="3.10"/>
-  <object class="GtkBox" id="search-widget">
-    <property name="visible">True</property>
+  <object class="GtkWindow" id="edit-widget">
     <property name="can_focus">False</property>
-    <property name="margin_top">10</property>
-    <property name="margin_bottom">10</property>
-    <property name="orientation">vertical</property>
+    <property name="modal">True</property>
+    <property name="window_position">center-on-parent</property>
+    <property name="destroy_with_parent">True</property>
+    <property name="hide_titlebar_when_maximized">True</property>
+    <property name="type_hint">dialog</property>
     <child>
-      <object class="GtkLabel" id="label1">
+      <object class="GtkBox" id="edit-box">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="halign">start</property>
-        <property name="hexpand">True</property>
-        <property name="label" translatable="yes">Search by (or edit) name</property>
-      </object>
-      <packing>
-        <property name="expand">False</property>
-        <property name="fill">False</property>
-        <property name="position">0</property>
-      </packing>
-    </child>
-    <child>
-      <object class="GtkEntry" id="search-name">
-        <property name="width_request">350</property>
-        <property name="visible">True</property>
-        <property name="can_focus">True</property>
-        <property name="hexpand">True</property>
-        <property name="primary_icon_name">edit-find-symbolic</property>
-        <property name="secondary_icon_name">edit-clear-symbolic</property>
-        <property name="primary_icon_tooltip_text" translatable="yes">Click here to search the coordinates for the entered location on https://open.mapquestapi.com/nominatim/</property>
-        <property name="secondary_icon_tooltip_text" translatable="yes">Click here to search the locatopn for the entered coordinates on https://open.mapquestapi.com/nominatim/</property>
-        <property name="primary_icon_tooltip_markup" translatable="yes">Click here to search the coordinates for the entered location on https://open.mapquestapi.com/nominatim/</property>
-        <property name="secondary_icon_tooltip_markup" translatable="yes">Click here to search the locatopn for the entered coordinates on https://open.mapquestapi.com/nominatim/</property>
-        <property name="placeholder_text" translatable="yes">e.g. Te Auala o Tuvalu, Funafuti, Tuvalu</property>
-      </object>
-      <packing>
-        <property name="expand">False</property>
-        <property name="fill">True</property>
-        <property name="position">1</property>
-      </packing>
-    </child>
-    <child>
-      <object class="GtkLabel" id="label2">
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="halign">start</property>
-        <property name="hexpand">True</property>
-        <property name="label" translatable="yes">Search by (or edit) coordinates</property>
-      </object>
-      <packing>
-        <property name="expand">False</property>
-        <property name="fill">True</property>
-        <property name="position">2</property>
-      </packing>
-    </child>
-    <child>
-      <object class="GtkEntry" id="search-coordinate">
-        <property name="visible">True</property>
-        <property name="can_focus">True</property>
-        <property name="hexpand">True</property>
-        <property name="primary_icon_name">edit-find-symbolic</property>
-        <property name="secondary_icon_name">edit-clear-symbolic</property>
-        <property name="primary_icon_activatable">False</property>
-        <property name="primary_icon_sensitive">False</property>
-        <property name="placeholder_text" translatable="yes">e.g. -8.5202006,179.1976286</property>
-      </object>
-      <packing>
-        <property name="expand">False</property>
-        <property name="fill">True</property>
-        <property name="position">3</property>
-      </packing>
-    </child>
-    <child>
-      <object class="GtkSeparator" id="separator1">
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
+        <property name="margin_left">10</property>
+        <property name="margin_right">10</property>
         <property name="margin_top">10</property>
         <property name="margin_bottom">10</property>
-      </object>
-      <packing>
-        <property name="expand">False</property>
-        <property name="fill">False</property>
-        <property name="position">4</property>
-      </packing>
-    </child>
-    <child>
-      <object class="GtkBox" id="box1">
-        <property name="visible">True</property>
-        <property name="can_focus">False</property>
-        <property name="valign">baseline</property>
-        <property name="vexpand">False</property>
+        <property name="orientation">vertical</property>
         <child>
-          <object class="GtkButton" id="button-cancel">
-            <property name="label">gtk-cancel</property>
+          <object class="GtkLabel" id="label3">
             <property name="visible">True</property>
-            <property name="can_focus">True</property>
-            <property name="receives_default">True</property>
+            <property name="can_focus">False</property>
             <property name="halign">start</property>
-            <property name="use_stock">True</property>
-            <property name="xalign">0.46000000834465027</property>
+            <property name="hexpand">True</property>
+            <property name="label" translatable="yes">Edit name</property>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -109,30 +33,253 @@
           </packing>
         </child>
         <child>
-          <placeholder/>
-        </child>
-        <child>
-          <object class="GtkButton" id="button-save">
-            <property name="label">gtk-save</property>
+          <object class="GtkEntry" id="edit-name">
+            <property name="width_request">350</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
-            <property name="receives_default">True</property>
-            <property name="use_stock">True</property>
+            <property name="hexpand">True</property>
+            <property name="secondary_icon_name">edit-clear-symbolic</property>
+            <property name="primary_icon_activatable">False</property>
+            <property name="primary_icon_sensitive">False</property>
+            <property name="primary_icon_tooltip_text" translatable="yes">Click here to search the coordinates for the entered location on https://open.mapquestapi.com/nominatim/</property>
+            <property name="secondary_icon_tooltip_text" translatable="yes">Click here to search the locatopn for the entered coordinates on https://open.mapquestapi.com/nominatim/</property>
+            <property name="secondary_icon_tooltip_markup" translatable="yes">Clear the entry</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="label4">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="halign">start</property>
+            <property name="hexpand">True</property>
+            <property name="label" translatable="yes">Edit coordinates</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkEntry" id="edit-coord">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="hexpand">True</property>
+            <property name="secondary_icon_name">edit-clear-symbolic</property>
+            <property name="primary_icon_activatable">False</property>
+            <property name="primary_icon_sensitive">False</property>
+            <property name="secondary_icon_tooltip_text" translatable="yes">Clear entry</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">3</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkSeparator" id="separator2">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="margin_top">10</property>
+            <property name="margin_bottom">10</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">4</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkBox" id="box2">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="valign">baseline</property>
+            <property name="vexpand">False</property>
+            <child>
+              <object class="GtkButton" id="button-edit-cancel">
+                <property name="label">gtk-cancel</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="halign">start</property>
+                <property name="use_stock">True</property>
+                <property name="xalign">0.46000000834465027</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <object class="GtkButton" id="button-edit-save">
+                <property name="label">gtk-save</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="use_stock">True</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="pack_type">end</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
           </object>
           <packing>
             <property name="expand">False</property>
             <property name="fill">True</property>
             <property name="pack_type">end</property>
-            <property name="position">2</property>
+            <property name="position">6</property>
           </packing>
         </child>
       </object>
-      <packing>
-        <property name="expand">False</property>
-        <property name="fill">True</property>
-        <property name="pack_type">end</property>
-        <property name="position">6</property>
-      </packing>
+    </child>
+  </object>
+  <object class="GtkWindow" id="search-widget">
+    <property name="can_focus">False</property>
+    <property name="window_position">center-on-parent</property>
+    <property name="destroy_with_parent">True</property>
+    <property name="hide_titlebar_when_maximized">True</property>
+    <property name="type_hint">dialog</property>
+    <child>
+      <object class="GtkBox" id="search-box">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="margin_top">10</property>
+        <property name="margin_bottom">10</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkLabel" id="label1">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="halign">start</property>
+            <property name="hexpand">True</property>
+            <property name="label" translatable="yes">Search by location or coordinates</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkBox" id="box3">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="spacing">5</property>
+            <child>
+              <object class="GtkEntry" id="search-name">
+                <property name="width_request">350</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="hexpand">True</property>
+                <property name="primary_icon_name">edit-find-symbolic</property>
+                <property name="secondary_icon_name">edit-clear-symbolic</property>
+                <property name="primary_icon_tooltip_text" translatable="yes">Click here to search the coordinates for the entered location on https://open.mapquestapi.com/nominatim/</property>
+                <property name="secondary_icon_tooltip_text" translatable="yes">Click here to search the locatopn for the entered coordinates on https://open.mapquestapi.com/nominatim/</property>
+                <property name="primary_icon_tooltip_markup" translatable="yes">Click here to search the coordinates for the entered location on https://open.mapquestapi.com/nominatim/</property>
+                <property name="secondary_icon_tooltip_markup" translatable="yes">Click here to search the locatopn for the entered coordinates on https://open.mapquestapi.com/nominatim/</property>
+                <property name="placeholder_text" translatable="yes">e.g. Vaiaku, Tuvalu or -8.5211767,179.1976747</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="button-search-find">
+                <property name="label">gtk-find</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="use_stock">True</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkSeparator" id="separator1">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="margin_top">10</property>
+            <property name="margin_bottom">10</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">5</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkBox" id="box1">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="valign">baseline</property>
+            <property name="vexpand">False</property>
+            <child>
+              <object class="GtkButton" id="button-cancel">
+                <property name="label">gtk-cancel</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="halign">start</property>
+                <property name="use_stock">True</property>
+                <property name="xalign">0.46000000834465027</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <object class="GtkButton" id="button-save">
+                <property name="label">gtk-save</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="use_stock">True</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="pack_type">end</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="pack_type">end</property>
+            <property name="position">6</property>
+          </packing>
+        </child>
+      </object>
     </child>
   </object>
   <object class="GtkListStore" id="tree-liststore">

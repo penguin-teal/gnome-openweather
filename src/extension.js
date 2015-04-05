@@ -326,7 +326,7 @@ const OpenweatherMenuButton = new Lang.Class({
         this.weatherProvider = "https://forecast.io/";
 
         this.fc_locale = 'en';
-        let fc_locales = ['bs','de','en','es','fr','it','nl','pl','pt','ru','tet','x-pig-latin'];
+        let fc_locales = ['bs', 'de', 'en', 'es', 'fr', 'it', 'nl', 'pl', 'pt', 'ru', 'tet', 'x-pig-latin'];
         let locale = GLib.get_language_names()[0];
 
         if (locale.indexOf('_') != -1)
@@ -337,14 +337,11 @@ const OpenweatherMenuButton = new Lang.Class({
     },
 
     getWeatherProviderURL: function() {
-        let url="";
-        if (this._weather_provider == WeatherProvider.FORECAST_IO)
-        {
+        let url = "";
+        if (this._weather_provider == WeatherProvider.FORECAST_IO) {
             url = "https://forecast.io/#/f/";
             url += this.extractCoord(this._city);
-        }
-        else
-        {
+        } else {
             url = "https://openweathermap.org";
             url += "/city/" + this.owmCityId;
             if (this._appid)
@@ -1087,16 +1084,16 @@ weather-storm.png = weather-storm-symbolic.svg
     },
 
     fcGet_weather_icon: function(icon) {
-//    clear-day             weather-clear-day
-//    clear-night           weather-clear-night
-//    rain                  weather-showers
-//    snow                  weather-snow
-//    sleet                 weather-snow
-//    wind                  weather-storm
-//    fog                   weather-fog
-//    cloudy                weather-overcast
-//    partly-cloudy-day     weather-few-clouds
-//    partly-cloudy-night   weather-few-clouds-night
+        //    clear-day             weather-clear-day
+        //    clear-night           weather-clear-night
+        //    rain                  weather-showers
+        //    snow                  weather-snow
+        //    sleet                 weather-snow
+        //    wind                  weather-storm
+        //    fog                   weather-fog
+        //    cloudy                weather-overcast
+        //    partly-cloudy-day     weather-few-clouds
+        //    partly-cloudy-night   weather-few-clouds-night
 
         switch (icon) {
             case 'wind':
