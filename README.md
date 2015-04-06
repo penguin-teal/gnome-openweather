@@ -2,7 +2,7 @@
 
 *gnome-shell-extension-openweather* is a simple extension for displaying weather conditions and forecasts in GNOME Shell, featuring support for multiple locations, no need for WOEID, a symmetrical layout and a settings panel through *gnome-shell-extension-prefs*.
 
-Currently, the weather data, including forecasts for up to ten days, is fetched from [OpenWeatherMap](http://openweathermap.org/).
+The weather data is fetched from [OpenWeatherMap](https://openweathermap.org/) (including forecasts for up to ten days) or [forecast.io](https://forecast.io) (including forecasts for up to eight days).
 
 ----
 
@@ -32,18 +32,27 @@ Install the package through APT (or use your favourite package-manager, e.g. syn
 ### [Fedora](https://fedoraproject.org/)
 
 You can install the extension from [my repo](http://rpm.jenslody.de/).
-I have packages for Fedora 18, 19 and 20.
+I have packages for Fedora 20, 21, 22, rawhideand RedHat/CentOS 7.
 
-To install my repo download and install [this rpm](http://rpm.jenslody.de/fedora-jenslody.de-0.1-2.fc17.noarch.rpm).
+To install my repo download and install [this rpm for all non-rawhide versions](https://rpm.jenslody.de/fedora-jenslody.de-0.3-1.fc19.noarch.rpm), [this rpm for rawhide](https://rpm.jenslody.de/fedora-rawhide-jenslody.de-0.3-1.fc22.noarch.rpm) and [this rpm for RedHat/CentOS 7](https://rpm.jenslody.de/centos-jenslody.de-0.2-2.el5.centos.noarch.rpm).
 
-If it is not installed automatically, just run:
+If it is not installed automatically, just run (for non-rawhide):
 
-    sudo yum localinstall --nogpgcheck http://rpm.jenslody.de/fedora-jenslody.de-0.1-2.fc17.noarch.rpm
+    sudo yum localinstall --nogpgcheck https://rpm.jenslody.de/fedora-jenslody.de-0.3-1.fc19.noarch.rpm
+
+for rawhide:
+
+    sudo yum localinstall --nogpgcheck https://rpm.jenslody.de/fedora-rawhide-jenslody.de-0.3-1.fc22.noarch.rpm
+
+for RedHat/CentOs 7:
+
+    sudo yum localinstall --nogpgcheck https://rpm.jenslody.de/centos-jenslody.de-0.2-2.el5.centos.noarch.rpm
 
 Now you can install the extension, either via your favourite package-manager or on a console:
 
     sudo yum install gnome-shell-extension-openweather
 
+Or go to my [site on fedoras copr-project](https://copr.fedoraproject.org/coprs/jenslody/gnome-shell-extensions/), the files are build and hosted there.
 
 ## Generic (Local installation)
 
@@ -76,19 +85,14 @@ Launch *gnome-shell-extension-prefs* (reachable also through the *OpenWeather Se
 
 You can also use *dconf-editor* or *gsettings* to configure the extension through the command line.
 
-If you switch from old openweathermap to the new master ( or openweathermap), you can load the settings with
-
-    dconf dump /org/gnome/shell/extensions/weather/ | dconf load /org/gnome/shell/extensions/openweather/
-
-This can also work for most locations, if you switch from old yahoo-based master-branch (now yahoo) to the new master-branch (openweathermap-based).
-
-The [OpenWeatherMap](http://openweathermap.org/) maintainers recommend to use an [API key](http://openweathermap.org/appid). This key can be added in the preferences dialog.
+The [OpenWeatherMap](https://openweathermap.org/) maintainers recommend to use an [API key](http://openweathermap.org/appid). This key can be added in the preferences dialog.
+To use [Forecast.io](https://forecast.io) you need an to [register](https://developer.forecast.io/register) and get an API key. With this key you can make 1000 requests per day for free. This should be enough for this extension in any normal use case.
 
 ----
 
 # Licence
 
-Copyright (C) 2011 - 2014
+Copyright (C) 2011 - 2015
 
 * Elad Alfassa <elad@fedoraproject.org>,
 * Mark Benjamin <weather.gnome.Markie1@dfgh.net>,
