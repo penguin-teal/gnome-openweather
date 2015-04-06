@@ -1,4 +1,39 @@
 /* jshint esnext:true */
+/*
+ *
+ *  Weather extension for GNOME Shell
+ *  - Displays a small weather information on the top panel.
+ *  - On click, gives a popup with details about the weather.
+ *
+ * Copyright (C) 2011 - 2015
+ *     ecyrbe <ecyrbe+spam@gmail.com>,
+ *     Timur Kristof <venemo@msn.com>,
+ *     Elad Alfassa <elad@fedoraproject.org>,
+ *     Simon Legner <Simon.Legner@gmail.com>,
+ *     Christian METZLER <neroth@xeked.com>,
+ *     Mark Benjamin weather.gnome.Markie1@dfgh.net,
+ *     Mattia Meneguzzo odysseus@fedoraproject.org,
+ *     Meng Zhuo <mengzhuo1203+spam@gmail.com>,
+ *     Jens Lody <jens@jenslody.de>
+ *
+ *
+ * This file is part of gnome-shell-extension-openweather.
+ *
+ * gnome-shell-extension-openweather is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * gnome-shell-extension-openweather is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with gnome-shell-extension-openweather.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ */
+
 
 const ExtensionUtils = imports.misc.extensionUtils;
 const Me = ExtensionUtils.getCurrentExtension();

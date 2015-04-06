@@ -5,7 +5,7 @@
  *  - Displays a small weather information on the top panel.
  *  - On click, gives a popup with details about the weather.
  *
- * Copyright (C) 2011 - 2014
+ * Copyright (C) 2011 - 2015
  *     ecyrbe <ecyrbe+spam@gmail.com>,
  *     Timur Kristof <venemo@msn.com>,
  *     Elad Alfassa <elad@fedoraproject.org>,
@@ -1293,104 +1293,6 @@ const OpenweatherMenuButton = new Lang.Class({
             return true;
         }));
     },
-
-    //    fcParseWeatherForecast: function() {
-    //        if (this.forecastWeatherCache === undefined) {
-    //            this.refreshWeatherCurrent();
-    //            return;
-    //        }
-    //
-    //        let forecast = this.forecastWeatherCache;
-    //        let beginOfDay = new Date(new Date().setHours(0, 0, 0, 0));
-    //        let cnt = Math.min(this._days_forecast, forecast.length);
-    //        if (cnt != this._days_forecast)
-    //            this.rebuildFutureWeatherUi(cnt);
-    //
-    //        // Refresh forecast
-    //        for (let i = 0; i < cnt; i++) {
-    //            let forecastUi = this._forecast[i];
-    //            let forecastData = forecast[i];
-    //            if (forecastData === undefined)
-    //                continue;
-    //
-    //            let t_low = forecastData.temperatureMin;
-    //            let t_high = forecastData.temperatureMax;
-    //
-    //            switch (this._units) {
-    //                case WeatherUnits.FAHRENHEIT:
-    //                    t_low = this.toFahrenheit(t_low);
-    //                    t_high = this.toFahrenheit(t_high);
-    //                    break;
-    //
-    //                case WeatherUnits.CELSIUS:
-    //                    t_low = t_low.toFixed(this._decimal_places);
-    //                    t_high = t_high.toFixed(this._decimal_places);
-    //                    break;
-    //
-    //                case WeatherUnits.KELVIN:
-    //                    t_low = this.toKelvin(t_low);
-    //                    t_high = this.toKelvin(t_high);
-    //                    break;
-    //
-    //                case WeatherUnits.RANKINE:
-    //                    t_low = this.toRankine(t_low);
-    //                    t_high = this.toRankine(t_high);
-    //                    break;
-    //
-    //                case WeatherUnits.REAUMUR:
-    //                    t_low = this.toReaumur(t_low);
-    //                    t_high = this.toReaumur(t_high);
-    //                    break;
-    //
-    //                case WeatherUnits.ROEMER:
-    //                    t_low = this.toRoemer(t_low);
-    //                    t_high = this.toRoemer(t_high);
-    //                    break;
-    //
-    //                case WeatherUnits.DELISLE:
-    //                    t_low = this.toDelisle(t_low);
-    //                    t_high = this.toDelisle(t_high);
-    //                    break;
-    //
-    //                case WeatherUnits.NEWTON:
-    //                    t_low = this.toNewton(t_low);
-    //                    t_high = this.toNewton(t_high);
-    //                    break;
-    //            }
-    //            let comment = forecastData.summary;
-    //            let forecastDate = new Date(forecastData.time * 1000);
-    //            let dayLeft = Math.floor((forecastDate.getTime() - beginOfDay.getTime()) / 86400000);
-    //
-    //            let date_string = _("Today");
-    //
-    //            let sunrise = new Date(forecastData.sunriseTime * 1000);
-    //            let sunset = new Date(forecastData.sunsetTime * 1000);
-    //
-    //            if (dayLeft === 0) {
-    //                if (this._clockFormat == "24h") {
-    //                    sunrise = sunrise.toLocaleFormat("%R");
-    //                    sunset = sunset.toLocaleFormat("%R");
-    //                } else {
-    //                    sunrise = sunrise.toLocaleFormat("%I:%M %p");
-    //                    sunset = sunset.toLocaleFormat("%I:%M %p");
-    //                }
-    //                this._currentWeatherSunrise.text = sunrise;
-    //                this._currentWeatherSunset.text = sunset;
-    //            } else if (dayLeft == 1)
-    //                date_string = _("Tomorrow");
-    //            else if (dayLeft > 1)
-    //                date_string = _("In %d days").format(dayLeft);
-    //            else if (dayLeft == -1)
-    //                date_string = _("Yesterday");
-    //            else if (dayLeft < -1)
-    //                date_string = _("%d days ago").format(-1 * dayLeft);
-    //
-    //            forecastUi.Day.text = date_string + ' (' + this.getLocaleDay(forecastDate.getDay()) + ')\n' + forecastDate.toLocaleDateString();
-    //            forecastUi.Temperature.text = '\u2193 ' + parseFloat(t_low).toLocaleString() + ' ' + this.unit_to_unicode() + '    \u2191 ' + parseFloat(t_high).toLocaleString() + ' ' + this.unit_to_unicode();
-    //            forecastUi.Summary.text = comment;
-    //            forecastUi.Icon.icon_name = this.getWeatherIcon(forecastData.icon);
-    //        }
-    //    },
 
     reloadWeatherForecast: function(interval) {
         if (this._timeoutForecast) {

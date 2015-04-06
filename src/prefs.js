@@ -4,7 +4,7 @@
  *  Weather extension for GNOME Shell preferences
  *  - Creates a widget to set the preferences of the weather extension
  *
- * Copyright (C) 2012 - 2014
+ * Copyright (C) 2012 - 2015
  *     Canek Peláez <canek@ciencias.unam.mx>,
  *     Christian METZLER <neroth@xeked.com>,
  *     Jens Lody <jens@jenslody.de>,
