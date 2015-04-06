@@ -114,7 +114,6 @@ const WeatherPrefsWidget = new GObject.Class({
         this.editCoord.connect("icon-release", Lang.bind(this, this.clearEntry));
 
         this.Window.get_object("tree-toolbutton-add").connect("clicked", Lang.bind(this, function() {
-            log(new Error().fileName + ':' + new Error().lineNumber + ' => this.searchWidget.get_parent() = ' + this.searchWidget.get_parent());
             this.searchWidget.show_all();
         }));
 
@@ -170,7 +169,9 @@ const WeatherPrefsWidget = new GObject.Class({
                 }
                 this.searchMenu.show_all();
                 this.searchMenu.popup(null, null, Lang.bind(this, this.placeSearchMenu), 0, this.searchName);
+                return 0;
             }));
+            return 0;
         }));
 
         let column = new Gtk.TreeViewColumn();
@@ -216,7 +217,6 @@ const WeatherPrefsWidget = new GObject.Class({
     clearSearchMenu: function() {
         let children = this.searchMenu.get_children();
         for (let i in children) {
-            log(new Error().fileName + ':' + new Error().lineNumber + ' => children[' + i + '] = ' + children[i]);
             this.searchMenu.remove(children[i]);
         }
     },
@@ -297,161 +297,6 @@ const WeatherPrefsWidget = new GObject.Class({
         if (a !== undefined)
             if (this.actual_city != parseInt(a.to_string()))
                 this.actual_city = parseInt(a.to_string());
-    },
-
-    addCity: function() {
-        let textDialog = _("Name of the city");
-
-        let dialog = new Gtk.Dialog({
-            title: ""
-        });
-        let entry = new Gtk.Entry();
-        let completion = new Gtk.EntryCompletion();
-        entry.set_completion(completion);
-        let completionModel = new Gtk.ListStore();
-        completionModel.set_column_types([GObject.TYPE_STRING]);
-        completion.set_model(completionModel);
-        completion.set_text_column(0);
-        completion.set_popup_single_match(true);
-        completion.set_minimum_key_length(1);
-        completion.set_match_func(function(completion, key, iter) {
-            if (iter) {
-                if (completionModel.get_value(iter, 0))
-                    return true;
-            }
-            return false;
-        });
-        entry.margin_top = 12;
-        entry.margin_bottom = 12;
-        let label = new Gtk.Label({
-            label: textDialog
-        });
-
-        dialog.set_border_width(12);
-        dialog.set_modal(1);
-        dialog.set_resizable(0);
-        //dialog.set_transient_for(***** Need parent Window *****);
-
-        dialog.add_button(Gtk.STOCK_CANCEL, 0);
-        let d = dialog.add_button(Gtk.STOCK_OK, 1);
-
-        d.set_can_default(true);
-        d.sensitive = 0;
-
-        dialog.set_default(d);
-        entry.activates_default = true;
-
-        let testLocation = Lang.bind(this, function(location) {
-            if (location.search(/\[/) == -1 || location.search(/\]/) == -1)
-                return 0;
-
-            let coord = location.split(/\[/)[1].split(/\]/)[0];
-            if (!coord)
-                return 0;
-            d.sensitive = 1;
-            return 0;
-        });
-
-        this.changeTimeout = undefined;
-
-        let searchLocation = Lang.bind(this, function() {
-            if (this.changeTimeout !== undefined)
-                Mainloop.source_remove(this.changeTimeout);
-
-            this.changeTimeout = Mainloop.timeout_add(2000,
-                Lang.bind(
-                    this,
-                    function() {
-                        let location = entry.get_text();
-                        let params = {
-                            format: 'json',
-                            addressdetails: '1',
-                            q: location
-                        };
-
-                        if (testLocation(location) === 0) {
-                            this.loadJsonAsync(WEATHER_URL_FIND, params, function() {
-                                if (!arguments[0])
-                                    return 0;
-                                let newCity = arguments[0];
-
-                                if (Number(newCity.length) < 1)
-                                    return 0;
-
-                                completionModel.clear();
-
-                                let current = this.liststore.get_iter_first();
-
-                                var m = {};
-                                for (var i in newCity) {
-                                    current = completionModel.append();
-
-                                    let cityText = newCity[i].display_name;
-                                    let cityCoord = "[" + newCity[i].lat + "," + newCity[i].lon + "]";
-
-                                    if (m[cityCoord])
-                                        continue;
-                                    else
-                                        m[cityCoord] = 1;
-
-                                    completionModel.set_value(current, 0, cityText + " " + cityCoord);
-                                }
-                                log(new Error().fileName + ':' + new Error().lineNumber);
-                                let ev = Gdk.EventKey();
-                                log(new Error().fileName + ':' + new Error().lineNumber + ' => Gdk.EventKey = ' + Gdk.EventKey);
-                                //                                log(new Error().fileName+':'+new Error().lineNumber+' => ev = '+ev);
-                                //                              new_event.key.type = GDK_KEY_PRESS;
-                                //                              new_event.key.window = gtk_widget_get_parent_window(entry);
-                                //                              new_event.key.send_event = TRUE;
-                                //                              new_event.key.time = GDK_CURRENT_TIME;
-                                //                              new_event.key.keyval = 0x053; // capital S
-                                //                              new_event.key.state = GDK_KEY_PRESS_MASK;
-                                //                              new_event.key.length = 0;
-                                //                              new_event.key.string = 0;
-                                //                              new_event.key.hardware_keycode = 0;
-                                //                              new_event.key.group = 0;
-                                //
-                                //                              gdk_event_put((gpointer)&new_event);
-                                completion.complete();
-                                return 0;
-                            }, "getInfo");
-                        }
-                        return 0;
-                    }));
-        });
-
-        entry.connect("changed", searchLocation);
-
-        let dialog_area = dialog.get_content_area();
-        dialog_area.pack_start(label, 0, 0, 0);
-        dialog_area.pack_start(entry, 0, 0, 0);
-        dialog.connect("response", Lang.bind(this, function(w, response_id) {
-            if (response_id) {
-                if (entry.get_text().search(/\[/) == -1 || entry.get_text().search(/\]/) == -1)
-                    return 0;
-
-                let coord = entry.get_text().split(/\[/)[1].split(/\]/)[0];
-                if (!coord)
-                    return 0;
-
-                let params = {
-                    format: 'json',
-                    lat: coord.split(/,/)[0],
-                    lon: coord.split(/,/)[1]
-                };
-
-                let cityText = entry.get_text().split(/\[/)[0];
-
-                if (this.city)
-                    this.city = this.city + " && " + coord + ">" + cityText;
-                else
-                    this.city = coord + ">" + cityText;
-            }
-            dialog.hide();
-            return 0;
-        }));
-
-        dialog.show_all();
     },
 
     removeCity: function() {

@@ -212,6 +212,7 @@
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
                 <property name="use_stock">True</property>
+                <accelerator key="Return" signal="clicked"/>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -688,7 +689,7 @@
           </packing>
         </child>
         <child>
-          <object class="GtkSwitch" id="translate_conditions">
+          <object class="GtkSwitch" id="translate_condition">
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="halign">center</property>

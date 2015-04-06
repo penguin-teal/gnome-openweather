@@ -38,6 +38,8 @@ const ExtensionUtils = imports.misc.extensionUtils;
 const Me = ExtensionUtils.getCurrentExtension();
 const Config = imports.misc.config;
 const Convenience = Me.imports.convenience;
+const ForecastIo = Me.imports.forecast_io;
+const OpenweathermapOrg = Me.imports.openweathermap_org;
 const Clutter = imports.gi.Clutter;
 const Gettext = imports.gettext.domain('gnome-shell-extension-openweather');
 const Gio = imports.gi.Gio;
@@ -77,16 +79,6 @@ const WEATHER_DAYS_FORECAST = 'days-forecast';
 const WEATHER_DECIMAL_PLACES = 'decimal-places';
 const WEATHER_OWM_API_KEY = 'appid';
 const WEATHER_FC_API_KEY = 'appid-fc';
-
-//URL
-const WEATHER_URL_HOST_OWM = 'api.openweathermap.org';
-const WEATHER_URL_BASE_OWM = 'http://' + WEATHER_URL_HOST_OWM + '/data/2.5/';
-const WEATHER_URL_CURRENT_OWM = WEATHER_URL_BASE_OWM + 'weather';
-const WEATHER_URL_FORECAST_OWM = WEATHER_URL_BASE_OWM + 'forecast/daily';
-
-const WEATHER_URL_HOST_FC = 'api.forecast.io';
-const WEATHER_URL_BASE_FC = 'http://' + WEATHER_URL_HOST_FC + '/forecast/';
-
 
 // Keep enums in sync with GSettings schemas
 const WeatherProvider = {
@@ -148,6 +140,7 @@ const OpenweatherMenuButton = new Lang.Class({
         this.owmCityId = 0;
 
         this.oldProvider = this._weather_provider;
+        this.oldTranslateCondition = this._translate_condition;
         this.switchProvider();
 
         this.currentWeatherCache = undefined;
@@ -162,7 +155,7 @@ const OpenweatherMenuButton = new Lang.Class({
         });
 
         this._weatherIcon = new St.Icon({
-            icon_name: 'view-refresh' + this.icon_type(),
+            icon_name: 'view-refresh' + this.getIconType(),
             style_class: 'system-status-icon openweather-icon'
         });
 
@@ -303,37 +296,41 @@ const OpenweatherMenuButton = new Lang.Class({
         if (this._weather_provider == WeatherProvider.FORECAST_IO)
             this.useForecastIo();
         else
-            this.useOpenweathermap();
+            this.useOpenweathermapOrg();
     },
 
-    useOpenweathermap: function() {
-        this.parseWeatherForecast = this.owmParseWeatherForecast;
-        this.parseWeatherCurrent = this.owmParseWeatherCurrent;
-        this.get_weather_icon = this.owmGet_weather_icon;
-        this.get_weather_icon_safely = this.owmGet_weather_icon_safely;
-        this.refreshWeatherCurrent = this.owmRefreshWeatherCurrent;
-        this.refreshWeatherForecast = this.owmRefreshWeatherForecast;
+    useOpenweathermapOrg: function() {
+        this.parseWeatherForecast = OpenweathermapOrg.parseWeatherForecast;
+        this.parseWeatherCurrent = OpenweathermapOrg.parseWeatherCurrent;
+        this.getWeatherIcon = OpenweathermapOrg.getWeatherIcon;
+        this.refreshWeatherCurrent = OpenweathermapOrg.refreshWeatherCurrent;
+        this.refreshWeatherForecast = OpenweathermapOrg.refreshWeatherForecast;
+
         this.weatherProvider = "https://openweathermap.org/";
     },
 
     useForecastIo: function() {
-        this.parseWeatherCurrent = this.fcParseWeatherCurrent;
-        this.parseWeatherForecast = this.fcParseWeatherForecast;
-        this.get_weather_icon = this.fcGet_weather_icon;
-        this.get_weather_icon_safely = this.fcGet_weather_icon_safely;
-        this.refreshWeatherCurrent = this.fcRefreshWeatherCurrent;
+        this.parseWeatherCurrent = ForecastIo.parseWeatherCurrent;
+        this.parseWeatherForecast = ForecastIo.parseWeatherForecast;
+        this.getWeatherIcon = ForecastIo.getWeatherIcon;
+        this.refreshWeatherCurrent = ForecastIo.refreshWeatherCurrent;
         this.refreshWeatherForecast = function() {};
+
         this.weatherProvider = "https://forecast.io/";
 
         this.fc_locale = 'en';
-        let fc_locales = ['bs', 'de', 'en', 'es', 'fr', 'it', 'nl', 'pl', 'pt', 'ru', 'tet', 'x-pig-latin'];
-        let locale = GLib.get_language_names()[0];
 
-        if (locale.indexOf('_') != -1)
-            locale = locale.split("_")[0];
+        if (this._translate_condition)
+        {
+            let fc_locales = ['bs', 'de', 'en', 'es', 'fr', 'it', 'nl', 'pl', 'pt', 'ru', 'tet', 'x-pig-latin'];
+            let locale = GLib.get_language_names()[0];
 
-        if (fc_locales.indexOf(locale) != -1)
-            this.fc_locale = locale;
+            if (locale.indexOf('_') != -1)
+                locale = locale.split("_")[0];
+
+            if (fc_locales.indexOf(locale) != -1)
+                this.fc_locale = locale;
+        }
     },
 
     getWeatherProviderURL: function() {
@@ -421,6 +418,14 @@ const OpenweatherMenuButton = new Lang.Class({
         if (this.oldProvider != provider) {
             this.oldProvider = provider;
             return true;
+        }
+        if (provider == WeatherProvider.FORECAST_IO)
+        {
+            let translateCondition = this._translate_condition;
+            if (this.oldTranslateCondition != translateCondition) {
+                this.oldTranslateCondition = translateCondition;
+                return true;
+            }
         }
         return false;
     },
@@ -586,13 +591,13 @@ const OpenweatherMenuButton = new Lang.Class({
         this._settings.set_boolean(WEATHER_TRANSLATE_CONDITION_KEY, v);
     },
 
-    get _icon_type() {
+    get _getIconType() {
         if (!this._settings)
             this.loadConfig();
         return this._settings.get_boolean(WEATHER_USE_SYMBOLIC_ICONS_KEY) ? 1 : 0;
     },
 
-    set _icon_type(v) {
+    set _getIconType(v) {
         if (!this._settings)
             this.loadConfig();
         this._settings.set_boolean(WEATHER_USE_SYMBOLIC_ICONS_KEY, v);
@@ -833,7 +838,6 @@ const OpenweatherMenuButton = new Lang.Class({
         }));
         this._buttonBox1.add_actor(this._reloadButton);
 
-
         this._buttonBox2 = new St.BoxLayout({
             style_class: 'openweather-button-box'
         });
@@ -856,7 +860,6 @@ const OpenweatherMenuButton = new Lang.Class({
         }));
 
         this._buttonBox2.add_actor(this._urlButton);
-
 
         this._prefsButton = Main.panel.statusArea.aggregateMenu._system._createActionButton('preferences-system-symbolic', _("Weather Settings"));
         if (this._use_text_on_buttons)
@@ -931,7 +934,6 @@ const OpenweatherMenuButton = new Lang.Class({
         return arguments[0].split(">")[0];
     },
 
-
     _onPreferencesActivate: function() {
         this.menu.actor.hide();
         Util.spawn(["gnome-shell-extension-prefs", "openweather-extension@jenslody.de"]);
@@ -977,286 +979,8 @@ const OpenweatherMenuButton = new Lang.Class({
             return '\u00B0C';
     },
 
-    owmGet_weather_icon: function(code) {
-        // see http://bugs.openweathermap.org/projects/api/wiki/Weather_Condition_Codes
-        // fallback icons are: weather-clear-night weather-clear weather-few-clouds-night weather-few-clouds weather-fog weather-overcast weather-severe-alert weather-showers weather-showers-scattered weather-snow weather-storm
-        /*
-weather-clouds-night.png
-weather-freezing-rain.png
-weather-hail.png
-weather-many-clouds.png
-weather-showers-day.png
-weather-showers-night.png
-weather-showers-scattered-day.png
-weather-showers-scattered-night.png
-weather-snow-rain.png
-weather-snow-scattered-day.png
-weather-snow-scattered-night.png
-weather-snow-scattered.png
-weather-storm-day.png
-weather-storm-night.png
-
-weather-severe-alert-symbolic.svg
-
-
-weather-clear-night.png = weather-clear-night-symbolic.svg
-weather-clear.png = weather-clear-symbolic.svg
-weather-clouds.png = weather-overcast-symbolic.svg
-weather-few-clouds-night.png = weather-few-clouds-night-symbolic.svg
-weather-few-clouds.png = weather-few-clouds-symbolic.svg
-weather-mist.png = weather-fog-symbolic.svg
-weather-showers-scattered.png = weather-showers-scattered-symbolic.svg
-weather-showers.png = weather-showers-symbolic.svg
-weather-snow.png = weather-snow-symbolic.svg
-weather-storm.png = weather-storm-symbolic.svg
-
-*/
-        switch (parseInt(code, 10)) {
-            case 200: //thunderstorm with light rain
-            case 201: //thunderstorm with rain
-            case 202: //thunderstorm with heavy rain
-            case 210: //light thunderstorm
-            case 211: //thunderstorm
-            case 212: //heavy thunderstorm
-            case 221: //ragged thunderstorm
-            case 230: //thunderstorm with light drizzle
-            case 231: //thunderstorm with drizzle
-            case 232: //thunderstorm with heavy drizzle
-                return ['weather-storm'];
-            case 300: //light intensity drizzle
-            case 301: //drizzle
-            case 302: //heavy intensity drizzle
-            case 310: //light intensity drizzle rain
-            case 311: //drizzle rain
-            case 312: //heavy intensity drizzle rain
-            case 313: //shower rain and drizzle
-            case 314: //heavy shower rain and drizzle
-            case 321: //shower drizzle
-                return ['weather-showers'];
-            case 500: //light rain
-            case 501: //moderate rain
-            case 502: //heavy intensity rain
-            case 503: //very heavy rain
-            case 504: //extreme rain
-                return ['weather-showers-scattered', 'weather-showers'];
-            case 511: //freezing rain
-                return ['weather-freezing-rain', 'weather-showers'];
-            case 520: //light intensity shower rain
-            case 521: //shower rain
-            case 522: //heavy intensity shower rain
-            case 531: //ragged shower rain
-                return ['weather-showers'];
-            case 600: //light snow
-            case 601: //snow
-            case 602: //heavy snow
-            case 611: //sleet
-            case 612: //shower sleet
-            case 615: //light rain and snow
-            case 616: //rain and snow
-            case 620: //light shower snow
-            case 621: //shower snow
-            case 622: //heavy shower snow
-                return ['weather-snow'];
-            case 701: //mist
-            case 711: //smoke
-            case 721: //haze
-            case 741: //Fog
-                return ['weather-fog'];
-            case 731: //Sand/Dust Whirls
-            case 751: //sand
-            case 761: //dust
-            case 762: //VOLCANIC ASH
-            case 771: //SQUALLS
-            case 781: //TORNADO
-                return ['weather-severe-alert'];
-            case 800: //sky is clear
-                return ['weather-clear'];
-            case 801: //few clouds
-            case 802: //scattered clouds
-                return ['weather-few-clouds'];
-            case 803: //broken clouds
-                return ['weather-many-clouds', 'weather-overcast'];
-            case 804: //overcast clouds
-                return ['weather-overcast'];
-            default:
-                return ['weather-severe-alert'];
-        }
-    },
-
-    fcGet_weather_icon: function(icon) {
-        //    clear-day             weather-clear-day
-        //    clear-night           weather-clear-night
-        //    rain                  weather-showers
-        //    snow                  weather-snow
-        //    sleet                 weather-snow
-        //    wind                  weather-storm
-        //    fog                   weather-fog
-        //    cloudy                weather-overcast
-        //    partly-cloudy-day     weather-few-clouds
-        //    partly-cloudy-night   weather-few-clouds-night
-
-        switch (icon) {
-            case 'wind':
-                return ['weather-storm'];
-            case 'rain':
-                return ['weather-showers-scattered', 'weather-showers'];
-            case 'sleet':
-            case 'snow':
-                return ['weather-snow'];
-            case 'fog':
-                return ['weather-fog'];
-            case 'clear-day': //sky is clear
-                return ['weather-clear'];
-            case 'clear-night': //sky is clear
-                return ['weather-clear-night'];
-            case 'partly-cloudy-day':
-                return ['weather-few-clouds'];
-            case 'partly-cloudy-night':
-                return ['weather-few-clouds-night'];
-            case 'cloudy':
-                return ['weather-overcast'];
-            default:
-                return ['weather-severe-alert'];
-        }
-    },
-
-    owmGet_weather_icon_safely: function(code, night) {
-        let iconname = this.get_weather_icon(code);
-        for (let i = 0; i < iconname.length; i++) {
-            if (night && this.has_icon(iconname[i] + '-night'))
-                return iconname[i] + '-night' + this.icon_type();
-            if (this.has_icon(iconname[i]))
-                return iconname[i] + this.icon_type();
-        }
-        return 'weather-severe-alert' + this.icon_type();
-    },
-
-    fcGet_weather_icon_safely: function(icon) {
-        let iconname = this.get_weather_icon(icon);
-        for (let i = 0; i < iconname.length; i++) {
-            if (this.has_icon(iconname[i]))
-                return iconname[i] + this.icon_type();
-        }
-        return 'weather-severe-alert' + this.icon_type();
-    },
-
-    has_icon: function(icon) {
-        return Gtk.IconTheme.get_default().has_icon(icon + this.icon_type());
-    },
-
-    get_weather_condition: function(code) {
-        switch (parseInt(code, 10)) {
-            case 200: //thunderstorm with light rain
-                return _('thunderstorm with light rain');
-            case 201: //thunderstorm with rain
-                return _('thunderstorm with rain');
-            case 202: //thunderstorm with heavy rain
-                return _('thunderstorm with heavy rain');
-            case 210: //light thunderstorm
-                return _('light thunderstorm');
-            case 211: //thunderstorm
-                return _('thunderstorm');
-            case 212: //heavy thunderstorm
-                return _('heavy thunderstorm');
-            case 221: //ragged thunderstorm
-                return _('ragged thunderstorm');
-            case 230: //thunderstorm with light drizzle
-                return _('thunderstorm with light drizzle');
-            case 231: //thunderstorm with drizzle
-                return _('thunderstorm with drizzle');
-            case 232: //thunderstorm with heavy drizzle
-                return _('thunderstorm with heavy drizzle');
-            case 300: //light intensity drizzle
-                return _('light intensity drizzle');
-            case 301: //drizzle
-                return _('drizzle');
-            case 302: //heavy intensity drizzle
-                return _('heavy intensity drizzle');
-            case 310: //light intensity drizzle rain
-                return _('light intensity drizzle rain');
-            case 311: //drizzle rain
-                return _('drizzle rain');
-            case 312: //heavy intensity drizzle rain
-                return _('heavy intensity drizzle rain');
-            case 313: //shower rain and drizzle
-                return _('shower rain and drizzle');
-            case 314: //heavy shower rain and drizzle
-                return _('heavy shower rain and drizzle');
-            case 321: //shower drizzle
-                return _('shower drizzle');
-            case 500: //light rain
-                return _('light rain');
-            case 501: //moderate rain
-                return _('moderate rain');
-            case 502: //heavy intensity rain
-                return _('heavy intensity rain');
-            case 503: //very heavy rain
-                return _('very heavy rain');
-            case 504: //extreme rain
-                return _('extreme rain');
-            case 511: //freezing rain
-                return _('freezing rain');
-            case 520: //light intensity shower rain
-                return _('light intensity shower rain');
-            case 521: //shower rain
-                return _('shower rain');
-            case 522: //heavy intensity shower rain
-                return _('heavy intensity shower rain');
-            case 531: //ragged shower rain
-                return _('ragged shower rain');
-            case 600: //light snow
-                return _('light snow');
-            case 601: //snow
-                return _('snow');
-            case 602: //heavy snow
-                return _('heavy snow');
-            case 611: //sleet
-                return _('sleet');
-            case 612: //shower sleet
-                return _('shower sleet');
-            case 615: //light rain and snow
-                return _('light rain and snow');
-            case 616: //rain and snow
-                return _('rain and snow');
-            case 620: //light shower snow
-                return _('light shower snow');
-            case 621: //shower snow
-                return _('shower snow');
-            case 622: //heavy shower snow
-                return _('heavy shower snow');
-            case 701: //mist
-                return _('mist');
-            case 711: //smoke
-                return _('smoke');
-            case 721: //haze
-                return _('haze');
-            case 731: //Sand/Dust Whirls
-                return _('Sand/Dust Whirls');
-            case 741: //Fog
-                return _('Fog');
-            case 751: //sand
-                return _('sand');
-            case 761: //dust
-                return _('dust');
-            case 762: //VOLCANIC ASH
-                return _('VOLCANIC ASH');
-            case 771: //SQUALLS
-                return _('SQUALLS');
-            case 781: //TORNADO
-                return _('TORNADO');
-            case 800: //sky is clear
-                return _('sky is clear');
-            case 801: //few clouds
-                return _('few clouds');
-            case 802: //scattered clouds
-                return _('scattered clouds');
-            case 803: //broken clouds
-                return _('broken clouds');
-            case 804: //overcast clouds
-                return _('overcast clouds');
-            default:
-                return _('Not available');
-        }
+    hasIcon: function(icon) {
+        return Gtk.IconTheme.get_default().has_icon(icon + this.getIconType());
     },
 
     toFahrenheit: function(t) {
@@ -1332,26 +1056,26 @@ weather-storm.png = weather-storm-symbolic.svg
             return (!t) ? "12" : "(" + _("Hurricane") + ")";
     },
 
-    get_locale_day: function(abr) {
+    getLocaleDay: function(abr) {
         let days = [_('Sunday'), _('Monday'), _('Tuesday'), _('Wednesday'), _('Thursday'), _('Friday'), _('Saturday')];
         return days[abr];
     },
 
-    get_wind_direction: function(deg) {
+    getWindDirection: function(deg) {
         let arrows = ["\u2193", "\u2199", "\u2190", "\u2196", "\u2191", "\u2197", "\u2192", "\u2198"];
         let letters = [_('N'), _('NE'), _('E'), _('SE'), _('S'), _('SW'), _('W'), _('NW')];
         let idx = Math.round(deg / 45) % arrows.length;
         return (this._wind_direction) ? arrows[idx] : letters[idx];
     },
 
-    icon_type: function(icon_name) {
+    getIconType: function(icon_name) {
         if (!icon_name)
-            if (this._icon_type)
+            if (this._getIconType)
                 return "-symbolic";
             else
                 return "";
 
-        if (this._icon_type)
+        if (this._getIconType)
             if (String(icon_name).search("-symbolic") != -1)
                 return icon_name;
             else
@@ -1392,12 +1116,7 @@ weather-storm.png = weather-storm-symbolic.svg
         return;
     },
 
-    fcParseWeatherCurrent: function() {
-        if (this.currentWeatherCache === undefined) {
-            this.refreshWeatherCurrent();
-            return;
-        }
-
+    checkPositionInPanel: function() {
         if (this._old_position_in_panel != this._position_in_panel) {
             switch (this._old_position_in_panel) {
                 case WeatherPosition.LEFT:
@@ -1429,39 +1148,10 @@ weather-storm.png = weather-storm-symbolic.svg
             this._old_position_in_panel = this._position_in_panel;
         }
 
-        let json = this.currentWeatherCache;
+    },
 
-        this.owmCityId = 0;
-        // Refresh current weather
-        let location = this.extractLocation(this._city);
-
-        let comment = json.summary;
-
-        let temperature = json.temperature;
-        let cloudiness = parseInt(json.cloudCover * 100);
-        let humidity = parseInt(json.humidity * 100) + ' %';
-        let pressure = json.pressure;
+    formatPressure: function(pressure) {
         let pressure_unit = 'hPa';
-
-        let wind_direction = this.get_wind_direction(json.windBearing);
-        let wind = json.windSpeed;
-        let wind_unit = 'm/s';
-
-        let now = new Date();
-
-        let iconname = this.get_weather_icon_safely(json.icon);
-
-        if (this.lastBuildId === undefined)
-            this.lastBuildId = 0;
-
-        if (this.lastBuildDate === undefined)
-            this.lastBuildDate = 0;
-
-        if (this.lastBuildId != json.time || !this.lastBuildDate) {
-            this.lastBuildId = json.time;
-            this.lastBuildDate = new Date(this.lastBuildId * 1000);
-        }
-
         switch (this._pressure_units) {
             case WeatherPressureUnits.inHg:
                 pressure = this.toInHg(pressure);
@@ -1508,7 +1198,10 @@ weather-storm.png = weather-storm-symbolic.svg
                 pressure_unit = "psi";
                 break;
         }
+        return parseFloat(pressure).toLocaleString() + ' ' + pressure_unit;
+    },
 
+    formatTemperature: function(temperature) {
         switch (this._units) {
             case WeatherUnits.FAHRENHEIT:
                 temperature = this.toFahrenheit(temperature);
@@ -1542,381 +1235,49 @@ weather-storm.png = weather-storm-symbolic.svg
                 temperature = this.toNewton(temperature);
                 break;
         }
+        return parseFloat(temperature).toLocaleString() + ' ' + this.unit_to_unicode();
+    },
 
-        let lastBuild = '-';
-
-        if (this._clockFormat == "24h")
-            lastBuild = this.lastBuildDate.toLocaleFormat("%R");
-        else
-            lastBuild = this.lastBuildDate.toLocaleFormat("%I:%M %p");
-
-        let beginOfDay = new Date(new Date().setHours(0, 0, 0, 0));
-        let d = Math.floor((this.lastBuildDate.getTime() - beginOfDay.getTime()) / 86400000);
-        if (d < 0) {
-            lastBuild = _("Yesterday");
-            if (d < -1)
-                lastBuild = _("%d days ago").format(-1 * d);
-        }
-
-        this._currentWeatherIcon.icon_name = this._weatherIcon.icon_name = iconname;
-
-        let weatherInfoC = "";
-        let weatherInfoT = "";
-
-        if (this._comment_in_panel)
-            weatherInfoC = comment;
-
-        if (this._text_in_panel)
-            weatherInfoT = parseFloat(temperature).toLocaleString() + ' ' + this.unit_to_unicode();
-
-        this._weatherInfo.text = weatherInfoC + ((weatherInfoC && weatherInfoT) ? ", " : "") + weatherInfoT;
-
-        this._currentWeatherSummary.text = comment + ", " + parseFloat(temperature).toLocaleString() + ' ' + this.unit_to_unicode();
-        this._currentWeatherLocation.text = location;
-        this._currentWeatherTemperature.text = cloudiness + ' %';
-        this._currentWeatherHumidity.text = parseFloat(humidity).toLocaleString() + ' %';
-        this._currentWeatherPressure.text = parseFloat(pressure).toLocaleString() + ' ' + pressure_unit;
-        this._currentWeatherBuild.text = lastBuild;
-
-        // Override wind units with our preference
+    formatWind: function(speed, direction) {
+        let unit = 'm/s';
         switch (this._wind_speed_units) {
             case WeatherWindSpeedUnits.MPH:
-                wind = (wind * WEATHER_CONV_MPS_IN_MPH).toFixed(this._decimal_places);
-                wind_unit = 'mph';
+                speed = (speed * WEATHER_CONV_MPS_IN_MPH).toFixed(this._decimal_places);
+                unit = 'mph';
                 break;
 
             case WeatherWindSpeedUnits.KPH:
-                wind = (wind * WEATHER_CONV_MPS_IN_KPH).toFixed(this._decimal_places);
-                wind_unit = 'km/h';
+                speed = (speed * WEATHER_CONV_MPS_IN_KPH).toFixed(this._decimal_places);
+                unit = 'km/h';
                 break;
 
             case WeatherWindSpeedUnits.MPS:
-                wind = wind.toFixed(this._decimal_places);
+                speed = speed.toFixed(this._decimal_places);
                 break;
 
             case WeatherWindSpeedUnits.KNOTS:
-                wind = (wind * WEATHER_CONV_MPS_IN_KNOTS).toFixed(this._decimal_places);
-                wind_unit = 'kn';
+                speed = (speed * WEATHER_CONV_MPS_IN_KNOTS).toFixed(this._decimal_places);
+                unit = 'kn';
                 break;
 
             case WeatherWindSpeedUnits.FPS:
-                wind = (wind * WEATHER_CONV_MPS_IN_FPS).toFixed(this._decimal_places);
-                wind_unit = 'ft/s';
+                speed = (speed * WEATHER_CONV_MPS_IN_FPS).toFixed(this._decimal_places);
+                unit = 'ft/s';
                 break;
 
             case WeatherWindSpeedUnits.BEAUFORT:
-                wind_unit = this.toBeaufort(wind, true);
-                wind = this.toBeaufort(wind);
+                speed = this.toBeaufort(speed);
+                unit = this.toBeaufort(speed, true);
+                break;
+
         }
 
-        if (!wind)
-            this._currentWeatherWind.text = '\u2013';
-        else if (wind === 0 || !wind_direction)
-            this._currentWeatherWind.text = parseFloat(wind).toLocaleString() + ' ' + wind_unit;
-        else // i.e. wind > 0 && wind_direction
-            this._currentWeatherWind.text = wind_direction + ' ' + parseFloat(wind).toLocaleString() + ' ' + wind_unit;
-
-        this.parseWeatherForecast();
-        this.recalcLayout();
-    },
-
-    fcRefreshWeatherCurrent: function() {
-        this.oldLocation = this.extractCoord(this._city);
-
-        let params = {
-            exclude: 'minutely,hourly,alerts,flags',
-            lang: this.fc_locale,
-            units: 'si'
-        };
-        let url = WEATHER_URL_BASE_FC + this._appid_fc + '/' + this.oldLocation;
-        this.load_json_async(url, params, function(json) {
-            if (json && json.currently) {
-
-                if (this.currentWeatherCache != json.currently)
-                    this.currentWeatherCache = json.currently;
-
-                if (json.daily && json.daily.data) {
-                    if (this.forecastWeatherCache != json.daily.data)
-                        this.forecastWeatherCache = json.daily.data;
-                }
-
-                this.rebuildSelectCityItem();
-
-                this.parseWeatherCurrent();
-            } else {
-                this.reloadWeatherCurrent(600);
-            }
-        });
-        this.reloadWeatherCurrent(this._refresh_interval_current);
-    },
-
-    owmParseWeatherCurrent: function() {
-        if (this.currentWeatherCache === undefined) {
-            this.refreshWeatherCurrent();
-            return;
-        }
-
-        if (this._old_position_in_panel != this._position_in_panel) {
-            switch (this._old_position_in_panel) {
-                case WeatherPosition.LEFT:
-                    Main.panel._leftBox.remove_actor(this.actor);
-                    break;
-                case WeatherPosition.CENTER:
-                    Main.panel._centerBox.remove_actor(this.actor);
-                    break;
-                case WeatherPosition.RIGHT:
-                    Main.panel._rightBox.remove_actor(this.actor);
-                    break;
-            }
-
-            let children = null;
-            switch (this._position_in_panel) {
-                case WeatherPosition.LEFT:
-                    children = Main.panel._leftBox.get_children();
-                    Main.panel._leftBox.insert_child_at_index(this.actor, children.length);
-                    break;
-                case WeatherPosition.CENTER:
-                    children = Main.panel._centerBox.get_children();
-                    Main.panel._centerBox.insert_child_at_index(this.actor, children.length);
-                    break;
-                case WeatherPosition.RIGHT:
-                    children = Main.panel._rightBox.get_children();
-                    Main.panel._rightBox.insert_child_at_index(this.actor, 0);
-                    break;
-            }
-            this._old_position_in_panel = this._position_in_panel;
-        }
-
-        let json = this.currentWeatherCache;
-
-        this.owmCityId = json.id;
-        // Refresh current weather
-        let location = this.extractLocation(this._city);
-
-        let comment = json.weather[0].description;
-        if (this._translate_condition)
-            comment = this.get_weather_condition(json.weather[0].id);
-
-        let temperature = json.main.temp;
-        let cloudiness = json.clouds.all;
-        let humidity = json.main.humidity + ' %';
-        let pressure = json.main.pressure;
-        let pressure_unit = 'hPa';
-
-        let wind_direction = this.get_wind_direction(json.wind.deg);
-        let wind = json.wind.speed;
-        let wind_unit = 'm/s';
-
-        let sunrise = new Date(json.sys.sunrise * 1000);
-        let sunset = new Date(json.sys.sunset * 1000);
-        let now = new Date();
-
-        let iconname = this.get_weather_icon_safely(json.weather[0].id, now < sunrise || now > sunset);
-
-        if (this.lastBuildId === undefined)
-            this.lastBuildId = 0;
-
-        if (this.lastBuildDate === undefined)
-            this.lastBuildDate = 0;
-
-        if (this.lastBuildId != json.dt || !this.lastBuildDate) {
-            this.lastBuildId = json.dt;
-            this.lastBuildDate = new Date(this.lastBuildId * 1000);
-        }
-
-        switch (this._pressure_units) {
-            case WeatherPressureUnits.inHg:
-                pressure = this.toInHg(pressure);
-                pressure_unit = "inHg";
-                break;
-
-            case WeatherPressureUnits.hPa:
-                pressure = pressure.toFixed(this._decimal_places);
-                pressure_unit = "hPa";
-                break;
-
-            case WeatherPressureUnits.bar:
-                pressure = (pressure / 1000).toFixed(this._decimal_places);
-                pressure_unit = "bar";
-                break;
-
-            case WeatherPressureUnits.Pa:
-                pressure = (pressure * 100).toFixed(this._decimal_places);
-                pressure_unit = "Pa";
-                break;
-
-            case WeatherPressureUnits.kPa:
-                pressure = (pressure / 10).toFixed(this._decimal_places);
-                pressure_unit = "kPa";
-                break;
-
-            case WeatherPressureUnits.atm:
-                pressure = (pressure * 0.000986923267).toFixed(this._decimal_places);
-                pressure_unit = "atm";
-                break;
-
-            case WeatherPressureUnits.at:
-                pressure = (pressure * 0.00101971621298).toFixed(this._decimal_places);
-                pressure_unit = "at";
-                break;
-
-            case WeatherPressureUnits.Torr:
-                pressure = (pressure * 0.750061683).toFixed(this._decimal_places);
-                pressure_unit = "Torr";
-                break;
-
-            case WeatherPressureUnits.psi:
-                pressure = (pressure * 0.0145037738).toFixed(this._decimal_places);
-                pressure_unit = "psi";
-                break;
-        }
-
-        switch (this._units) {
-            case WeatherUnits.FAHRENHEIT:
-                temperature = this.toFahrenheit(temperature);
-                break;
-
-            case WeatherUnits.CELSIUS:
-                temperature = temperature.toFixed(this._decimal_places);
-                break;
-
-            case WeatherUnits.KELVIN:
-                temperature = this.toKelvin(temperature);
-                break;
-
-            case WeatherUnits.RANKINE:
-                temperature = this.toRankine(temperature);
-                break;
-
-            case WeatherUnits.REAUMUR:
-                temperature = this.toReaumur(temperature);
-                break;
-
-            case WeatherUnits.ROEMER:
-                temperature = this.toRoemer(temperature);
-                break;
-
-            case WeatherUnits.DELISLE:
-                temperature = this.toDelisle(temperature);
-                break;
-
-            case WeatherUnits.NEWTON:
-                temperature = this.toNewton(temperature);
-                break;
-        }
-
-        let lastBuild = '-';
-
-        if (this._clockFormat == "24h") {
-            sunrise = sunrise.toLocaleFormat("%R");
-            sunset = sunset.toLocaleFormat("%R");
-            lastBuild = this.lastBuildDate.toLocaleFormat("%R");
-        } else {
-            sunrise = sunrise.toLocaleFormat("%I:%M %p");
-            sunset = sunset.toLocaleFormat("%I:%M %p");
-            lastBuild = this.lastBuildDate.toLocaleFormat("%I:%M %p");
-        }
-
-        let beginOfDay = new Date(new Date().setHours(0, 0, 0, 0));
-        let d = Math.floor((this.lastBuildDate.getTime() - beginOfDay.getTime()) / 86400000);
-        if (d < 0) {
-            lastBuild = _("Yesterday");
-            if (d < -1)
-                lastBuild = _("%d days ago").format(-1 * d);
-        }
-
-        this._currentWeatherIcon.icon_name = this._weatherIcon.icon_name = iconname;
-
-        let weatherInfoC = "";
-        let weatherInfoT = "";
-
-        if (this._comment_in_panel)
-            weatherInfoC = comment;
-
-        if (this._text_in_panel)
-            weatherInfoT = parseFloat(temperature).toLocaleString() + ' ' + this.unit_to_unicode();
-
-        this._weatherInfo.text = weatherInfoC + ((weatherInfoC && weatherInfoT) ? ", " : "") + weatherInfoT;
-
-        this._currentWeatherSummary.text = comment + ", " + parseFloat(temperature).toLocaleString() + ' ' + this.unit_to_unicode();
-        this._currentWeatherLocation.text = location;
-        this._currentWeatherTemperature.text = cloudiness + ' %';
-        this._currentWeatherHumidity.text = parseFloat(humidity).toLocaleString() + ' %';
-        this._currentWeatherPressure.text = parseFloat(pressure).toLocaleString() + ' ' + pressure_unit;
-        this._currentWeatherSunrise.text = sunrise;
-        this._currentWeatherSunset.text = sunset;
-        this._currentWeatherBuild.text = lastBuild;
-
-        // Override wind units with our preference
-        switch (this._wind_speed_units) {
-            case WeatherWindSpeedUnits.MPH:
-                wind = (wind * WEATHER_CONV_MPS_IN_MPH).toFixed(this._decimal_places);
-                wind_unit = 'mph';
-                break;
-
-            case WeatherWindSpeedUnits.KPH:
-                wind = (wind * WEATHER_CONV_MPS_IN_KPH).toFixed(this._decimal_places);
-                wind_unit = 'km/h';
-                break;
-
-            case WeatherWindSpeedUnits.MPS:
-                wind = wind.toFixed(this._decimal_places);
-                break;
-
-            case WeatherWindSpeedUnits.KNOTS:
-                wind = (wind * WEATHER_CONV_MPS_IN_KNOTS).toFixed(this._decimal_places);
-                wind_unit = 'kn';
-                break;
-
-            case WeatherWindSpeedUnits.FPS:
-                wind = (wind * WEATHER_CONV_MPS_IN_FPS).toFixed(this._decimal_places);
-                wind_unit = 'ft/s';
-                break;
-
-            case WeatherWindSpeedUnits.BEAUFORT:
-                wind_unit = this.toBeaufort(wind, true);
-                wind = this.toBeaufort(wind);
-        }
-
-        if (!wind)
-            this._currentWeatherWind.text = '\u2013';
-        else if (wind === 0 || !wind_direction)
-            this._currentWeatherWind.text = parseFloat(wind).toLocaleString() + ' ' + wind_unit;
-        else // i.e. wind > 0 && wind_direction
-            this._currentWeatherWind.text = wind_direction + ' ' + parseFloat(wind).toLocaleString() + ' ' + wind_unit;
-
-        this.parseWeatherForecast();
-        this.recalcLayout();
-    },
-
-    owmRefreshWeatherCurrent: function() {
-        this.oldLocation = this.extractCoord(this._city);
-
-        let params = {
-            lat: this.oldLocation.split(",")[0],
-            lon: this.oldLocation.split(",")[1],
-            units: 'metric'
-        };
-        if (this._appid)
-            params.APPID = this._appid;
-
-        this.load_json_async(WEATHER_URL_CURRENT_OWM, params, function(json) {
-            if (json && (Number(json.cod) == 200)) {
-
-                if (this.currentWeatherCache != json)
-                    this.currentWeatherCache = json;
-
-                this.rebuildSelectCityItem();
-
-                this.parseWeatherCurrent();
-            } else {
-                // we are connected, but get no (or no correct) data, so invalidate
-                // the shown data and reload after 10 minutes (recommendded by openweathermap.org)
-                this.rebuildCurrentWeatherUi();
-                this.reloadWeatherCurrent(600);
-            }
-        });
-        this.reloadWeatherCurrent(this._refresh_interval_current);
+        if (!speed)
+            return '\u2013';
+        else if (speed === 0 || !direction)
+            return parseFloat(speed).toLocaleString() + ' ' + unit;
+        else // i.e. speed > 0 && direction
+            return direction + ' ' + parseFloat(speed).toLocaleString() + ' ' + unit;
     },
 
     reloadWeatherCurrent: function(interval) {
@@ -1933,220 +1294,103 @@ weather-storm.png = weather-storm-symbolic.svg
         }));
     },
 
-    fcParseWeatherForecast: function() {
-        if (this.forecastWeatherCache === undefined) {
-            this.refreshWeatherCurrent();
-            return;
-        }
-
-        let forecast = this.forecastWeatherCache;
-        let beginOfDay = new Date(new Date().setHours(0, 0, 0, 0));
-        let cnt = Math.min(this._days_forecast, forecast.length);
-        if (cnt != this._days_forecast)
-            this.rebuildFutureWeatherUi(cnt);
-
-        // Refresh forecast
-        for (let i = 0; i < cnt; i++) {
-            let forecastUi = this._forecast[i];
-            let forecastData = forecast[i];
-            if (forecastData === undefined)
-                continue;
-
-            let t_low = forecastData.temperatureMin;
-            let t_high = forecastData.temperatureMax;
-
-            switch (this._units) {
-                case WeatherUnits.FAHRENHEIT:
-                    t_low = this.toFahrenheit(t_low);
-                    t_high = this.toFahrenheit(t_high);
-                    break;
-
-                case WeatherUnits.CELSIUS:
-                    t_low = t_low.toFixed(this._decimal_places);
-                    t_high = t_high.toFixed(this._decimal_places);
-                    break;
-
-                case WeatherUnits.KELVIN:
-                    t_low = this.toKelvin(t_low);
-                    t_high = this.toKelvin(t_high);
-                    break;
-
-                case WeatherUnits.RANKINE:
-                    t_low = this.toRankine(t_low);
-                    t_high = this.toRankine(t_high);
-                    break;
-
-                case WeatherUnits.REAUMUR:
-                    t_low = this.toReaumur(t_low);
-                    t_high = this.toReaumur(t_high);
-                    break;
-
-                case WeatherUnits.ROEMER:
-                    t_low = this.toRoemer(t_low);
-                    t_high = this.toRoemer(t_high);
-                    break;
-
-                case WeatherUnits.DELISLE:
-                    t_low = this.toDelisle(t_low);
-                    t_high = this.toDelisle(t_high);
-                    break;
-
-                case WeatherUnits.NEWTON:
-                    t_low = this.toNewton(t_low);
-                    t_high = this.toNewton(t_high);
-                    break;
-            }
-            let comment = forecastData.summary;
-            let forecastDate = new Date(forecastData.time * 1000);
-            let dayLeft = Math.floor((forecastDate.getTime() - beginOfDay.getTime()) / 86400000);
-
-            let date_string = _("Today");
-
-            let sunrise = new Date(forecastData.sunriseTime * 1000);
-            let sunset = new Date(forecastData.sunsetTime * 1000);
-
-            if (dayLeft === 0) {
-                if (this._clockFormat == "24h") {
-                    sunrise = sunrise.toLocaleFormat("%R");
-                    sunset = sunset.toLocaleFormat("%R");
-                } else {
-                    sunrise = sunrise.toLocaleFormat("%I:%M %p");
-                    sunset = sunset.toLocaleFormat("%I:%M %p");
-                }
-                this._currentWeatherSunrise.text = sunrise;
-                this._currentWeatherSunset.text = sunset;
-            } else if (dayLeft == 1)
-                date_string = _("Tomorrow");
-            else if (dayLeft > 1)
-                date_string = _("In %d days").format(dayLeft);
-            else if (dayLeft == -1)
-                date_string = _("Yesterday");
-            else if (dayLeft < -1)
-                date_string = _("%d days ago").format(-1 * dayLeft);
-
-            forecastUi.Day.text = date_string + ' (' + this.get_locale_day(forecastDate.getDay()) + ')\n' + forecastDate.toLocaleDateString();
-            forecastUi.Temperature.text = '\u2193 ' + parseFloat(t_low).toLocaleString() + ' ' + this.unit_to_unicode() + '    \u2191 ' + parseFloat(t_high).toLocaleString() + ' ' + this.unit_to_unicode();
-            forecastUi.Summary.text = comment;
-            forecastUi.Icon.icon_name = this.get_weather_icon_safely(forecastData.icon);
-        }
-    },
-
-    owmParseWeatherForecast: function() {
-        if (this.forecastWeatherCache === undefined) {
-            this.refreshWeatherForecast();
-            return;
-        }
-
-        let forecast = this.forecastWeatherCache;
-        let beginOfDay = new Date(new Date().setHours(0, 0, 0, 0));
-
-        // Refresh forecast
-        for (let i = 0; i < this._days_forecast; i++) {
-            let forecastUi = this._forecast[i];
-            let forecastData = forecast[i];
-            if (forecastData === undefined)
-                continue;
-
-            let t_low = forecastData.temp.min;
-            let t_high = forecastData.temp.max;
-
-            switch (this._units) {
-                case WeatherUnits.FAHRENHEIT:
-                    t_low = this.toFahrenheit(t_low);
-                    t_high = this.toFahrenheit(t_high);
-                    break;
-
-                case WeatherUnits.CELSIUS:
-                    t_low = t_low.toFixed(this._decimal_places);
-                    t_high = t_high.toFixed(this._decimal_places);
-                    break;
-
-                case WeatherUnits.KELVIN:
-                    t_low = this.toKelvin(t_low);
-                    t_high = this.toKelvin(t_high);
-                    break;
-
-                case WeatherUnits.RANKINE:
-                    t_low = this.toRankine(t_low);
-                    t_high = this.toRankine(t_high);
-                    break;
-
-                case WeatherUnits.REAUMUR:
-                    t_low = this.toReaumur(t_low);
-                    t_high = this.toReaumur(t_high);
-                    break;
-
-                case WeatherUnits.ROEMER:
-                    t_low = this.toRoemer(t_low);
-                    t_high = this.toRoemer(t_high);
-                    break;
-
-                case WeatherUnits.DELISLE:
-                    t_low = this.toDelisle(t_low);
-                    t_high = this.toDelisle(t_high);
-                    break;
-
-                case WeatherUnits.NEWTON:
-                    t_low = this.toNewton(t_low);
-                    t_high = this.toNewton(t_high);
-                    break;
-            }
-
-            let comment = forecastData.weather[0].description;
-            if (this._translate_condition)
-                comment = this.get_weather_condition(forecastData.weather[0].id);
-
-            let forecastDate = new Date(forecastData.dt * 1000);
-            let dayLeft = Math.floor((forecastDate.getTime() - beginOfDay.getTime()) / 86400000);
-
-            let date_string = _("Today");
-            if (dayLeft == 1)
-                date_string = _("Tomorrow");
-            else if (dayLeft > 1)
-                date_string = _("In %d days").format(dayLeft);
-            else if (dayLeft == -1)
-                date_string = _("Yesterday");
-            else if (dayLeft < -1)
-                date_string = _("%d days ago").format(-1 * dayLeft);
-
-            forecastUi.Day.text = date_string + ' (' + this.get_locale_day(forecastDate.getDay()) + ')\n' + forecastDate.toLocaleDateString();
-            forecastUi.Temperature.text = '\u2193 ' + parseFloat(t_low).toLocaleString() + ' ' + this.unit_to_unicode() + '    \u2191 ' + parseFloat(t_high).toLocaleString() + ' ' + this.unit_to_unicode();
-            forecastUi.Summary.text = comment;
-            forecastUi.Icon.icon_name = this.get_weather_icon_safely(forecastData.weather[0].id);
-        }
-    },
-
-    owmRefreshWeatherForecast: function() {
-
-
-        this.oldLocation = this.extractCoord(this._city);
-
-        let params = {
-            lat: this.oldLocation.split(",")[0],
-            lon: this.oldLocation.split(",")[1],
-            units: 'metric',
-            cnt: '13'
-        };
-        if (this._appid)
-            params.APPID = this._appid;
-
-        this.load_json_async(WEATHER_URL_FORECAST_OWM, params, function(json) {
-            if (json && (Number(json.cod) == 200)) {
-                if (this.forecastWeatherCache != json.list) {
-                    this.owmCityId = json.city.id;
-                    this.forecastWeatherCache = json.list;
-                }
-
-                this.parseWeatherForecast();
-            } else {
-                // we are connected, but get no (or no correct) data, so invalidate
-                // the shown data and reload after 10 minutes (recommendded by openweathermap.org)
-                this.rebuildFutureWeatherUi();
-                this.reloadWeatherForecast(600);
-            }
-        });
-        this.reloadWeatherForecast(this._refresh_interval_forecast);
-    },
+    //    fcParseWeatherForecast: function() {
+    //        if (this.forecastWeatherCache === undefined) {
+    //            this.refreshWeatherCurrent();
+    //            return;
+    //        }
+    //
+    //        let forecast = this.forecastWeatherCache;
+    //        let beginOfDay = new Date(new Date().setHours(0, 0, 0, 0));
+    //        let cnt = Math.min(this._days_forecast, forecast.length);
+    //        if (cnt != this._days_forecast)
+    //            this.rebuildFutureWeatherUi(cnt);
+    //
+    //        // Refresh forecast
+    //        for (let i = 0; i < cnt; i++) {
+    //            let forecastUi = this._forecast[i];
+    //            let forecastData = forecast[i];
+    //            if (forecastData === undefined)
+    //                continue;
+    //
+    //            let t_low = forecastData.temperatureMin;
+    //            let t_high = forecastData.temperatureMax;
+    //
+    //            switch (this._units) {
+    //                case WeatherUnits.FAHRENHEIT:
+    //                    t_low = this.toFahrenheit(t_low);
+    //                    t_high = this.toFahrenheit(t_high);
+    //                    break;
+    //
+    //                case WeatherUnits.CELSIUS:
+    //                    t_low = t_low.toFixed(this._decimal_places);
+    //                    t_high = t_high.toFixed(this._decimal_places);
+    //                    break;
+    //
+    //                case WeatherUnits.KELVIN:
+    //                    t_low = this.toKelvin(t_low);
+    //                    t_high = this.toKelvin(t_high);
+    //                    break;
+    //
+    //                case WeatherUnits.RANKINE:
+    //                    t_low = this.toRankine(t_low);
+    //                    t_high = this.toRankine(t_high);
+    //                    break;
+    //
+    //                case WeatherUnits.REAUMUR:
+    //                    t_low = this.toReaumur(t_low);
+    //                    t_high = this.toReaumur(t_high);
+    //                    break;
+    //
+    //                case WeatherUnits.ROEMER:
+    //                    t_low = this.toRoemer(t_low);
+    //                    t_high = this.toRoemer(t_high);
+    //                    break;
+    //
+    //                case WeatherUnits.DELISLE:
+    //                    t_low = this.toDelisle(t_low);
+    //                    t_high = this.toDelisle(t_high);
+    //                    break;
+    //
+    //                case WeatherUnits.NEWTON:
+    //                    t_low = this.toNewton(t_low);
+    //                    t_high = this.toNewton(t_high);
+    //                    break;
+    //            }
+    //            let comment = forecastData.summary;
+    //            let forecastDate = new Date(forecastData.time * 1000);
+    //            let dayLeft = Math.floor((forecastDate.getTime() - beginOfDay.getTime()) / 86400000);
+    //
+    //            let date_string = _("Today");
+    //
+    //            let sunrise = new Date(forecastData.sunriseTime * 1000);
+    //            let sunset = new Date(forecastData.sunsetTime * 1000);
+    //
+    //            if (dayLeft === 0) {
+    //                if (this._clockFormat == "24h") {
+    //                    sunrise = sunrise.toLocaleFormat("%R");
+    //                    sunset = sunset.toLocaleFormat("%R");
+    //                } else {
+    //                    sunrise = sunrise.toLocaleFormat("%I:%M %p");
+    //                    sunset = sunset.toLocaleFormat("%I:%M %p");
+    //                }
+    //                this._currentWeatherSunrise.text = sunrise;
+    //                this._currentWeatherSunset.text = sunset;
+    //            } else if (dayLeft == 1)
+    //                date_string = _("Tomorrow");
+    //            else if (dayLeft > 1)
+    //                date_string = _("In %d days").format(dayLeft);
+    //            else if (dayLeft == -1)
+    //                date_string = _("Yesterday");
+    //            else if (dayLeft < -1)
+    //                date_string = _("%d days ago").format(-1 * dayLeft);
+    //
+    //            forecastUi.Day.text = date_string + ' (' + this.getLocaleDay(forecastDate.getDay()) + ')\n' + forecastDate.toLocaleDateString();
+    //            forecastUi.Temperature.text = '\u2193 ' + parseFloat(t_low).toLocaleString() + ' ' + this.unit_to_unicode() + '    \u2191 ' + parseFloat(t_high).toLocaleString() + ' ' + this.unit_to_unicode();
+    //            forecastUi.Summary.text = comment;
+    //            forecastUi.Icon.icon_name = this.getWeatherIcon(forecastData.icon);
+    //        }
+    //    },
 
     reloadWeatherForecast: function(interval) {
         if (this._timeoutForecast) {
@@ -2174,32 +1418,32 @@ weather-storm.png = weather-storm-symbolic.svg
 
     rebuildCurrentWeatherUi: function() {
         this._weatherInfo.text = _('Loading current weather ...');
-        this._weatherIcon.icon_name = 'view-refresh' + this.icon_type();
+        this._weatherIcon.icon_name = 'view-refresh' + this.getIconType();
 
         this.destroyCurrentWeather();
 
         // This will hold the icon for the current weather
         this._currentWeatherIcon = new St.Icon({
             icon_size: 72,
-            icon_name: 'view-refresh' + this.icon_type(),
+            icon_name: 'view-refresh' + this.getIconType(),
             style_class: 'openweather-current-icon'
         });
 
         this._sunriseIcon = new St.Icon({
             icon_size: 15,
-            icon_name: 'weather-clear' + this.icon_type(),
+            icon_name: 'weather-clear' + this.getIconType(),
             style_class: 'openweather-sunrise-icon'
         });
 
         this._sunsetIcon = new St.Icon({
             icon_size: 15,
-            icon_name: 'weather-clear-night' + this.icon_type(),
+            icon_name: 'weather-clear-night' + this.getIconType(),
             style_class: 'openweather-sunset-icon'
         });
 
         this._buildIcon = new St.Icon({
             icon_size: 15,
-            icon_name: 'view-refresh' + this.icon_type(),
+            icon_name: 'view-refresh' + this.getIconType(),
             style_class: 'openweather-build-icon'
         });
 
@@ -2242,7 +1486,7 @@ weather-storm.png = weather-storm-symbolic.svg
         bb.add_actor(ab);
 
         // Other labels
-        this._currentWeatherTemperature = new St.Label({
+        this._currentWeatherCloudiness = new St.Label({
             text: '...'
         });
         this._currentWeatherHumidity = new St.Label({
@@ -2272,7 +1516,7 @@ weather-storm.png = weather-storm-symbolic.svg
         rb_captions.add_actor(new St.Label({
             text: _('Cloudiness:')
         }));
-        rb_values.add_actor(this._currentWeatherTemperature);
+        rb_values.add_actor(this._currentWeatherCloudiness);
         rb_captions.add_actor(new St.Label({
             text: _('Humidity:')
         }));
@@ -2349,7 +1593,7 @@ weather-storm.png = weather-storm-symbolic.svg
 
             forecastWeather.Icon = new St.Icon({
                 icon_size: 48,
-                icon_name: 'view-refresh' + this.icon_type(),
+                icon_name: 'view-refresh' + this.getIconType(),
                 style_class: 'openweather-forecast-icon'
             });
             forecastWeather.Day = new St.Label({
