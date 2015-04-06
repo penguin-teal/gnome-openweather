@@ -145,8 +145,13 @@
       </object>
     </child>
   </object>
+  <object class="GtkMenu" id="search-menu">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+  </object>
   <object class="GtkWindow" id="search-widget">
     <property name="can_focus">False</property>
+    <property name="modal">True</property>
     <property name="window_position">center-on-parent</property>
     <property name="destroy_with_parent">True</property>
     <property name="hide_titlebar_when_maximized">True</property>
@@ -155,6 +160,8 @@
       <object class="GtkBox" id="search-box">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
+        <property name="margin_left">10</property>
+        <property name="margin_right">10</property>
         <property name="margin_top">10</property>
         <property name="margin_bottom">10</property>
         <property name="orientation">vertical</property>
@@ -183,8 +190,9 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="hexpand">True</property>
-                <property name="primary_icon_name">edit-find-symbolic</property>
                 <property name="secondary_icon_name">edit-clear-symbolic</property>
+                <property name="primary_icon_activatable">False</property>
+                <property name="primary_icon_sensitive">False</property>
                 <property name="primary_icon_tooltip_text" translatable="yes">Click here to search the coordinates for the entered location on https://open.mapquestapi.com/nominatim/</property>
                 <property name="secondary_icon_tooltip_text" translatable="yes">Click here to search the locatopn for the entered coordinates on https://open.mapquestapi.com/nominatim/</property>
                 <property name="primary_icon_tooltip_markup" translatable="yes">Click here to search the coordinates for the entered location on https://open.mapquestapi.com/nominatim/</property>
@@ -238,7 +246,7 @@
             <property name="valign">baseline</property>
             <property name="vexpand">False</property>
             <child>
-              <object class="GtkButton" id="button-cancel">
+              <object class="GtkButton" id="button-search-cancel">
                 <property name="label">gtk-cancel</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
@@ -257,7 +265,7 @@
               <placeholder/>
             </child>
             <child>
-              <object class="GtkButton" id="button-save">
+              <object class="GtkButton" id="button-search-save">
                 <property name="label">gtk-save</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>

@@ -105,30 +105,72 @@ const WeatherPrefsWidget = new GObject.Class({
         this.editWidget = this.Window.get_object("edit-widget");
         this.editName = this.Window.get_object("edit-name");
         this.editCoord = this.Window.get_object("edit-coord");
+        this.searchWidget = this.Window.get_object("search-widget");
+        this.searchMenu = this.Window.get_object("search-menu");
+        this.searchName = this.Window.get_object("search-name");
 
+        this.searchName.connect("icon-release", Lang.bind(this, this.clearEntry));
+        this.editName.connect("icon-release", Lang.bind(this, this.clearEntry));
+        this.editCoord.connect("icon-release", Lang.bind(this, this.clearEntry));
 
         this.Window.get_object("tree-toolbutton-add").connect("clicked", Lang.bind(this, function() {
-            this.addCity();
+            log(new Error().fileName + ':' + new Error().lineNumber + ' => this.searchWidget.get_parent() = ' + this.searchWidget.get_parent());
+            this.searchWidget.show_all();
         }));
 
-        this.Window.get_object("tree-toolbutton-remove").connect("clicked", Lang.bind(this, function() {
-            this.removeCity();
-        }));
+        this.Window.get_object("tree-toolbutton-remove").connect("clicked", Lang.bind(this, this.removeCity));
 
-        this.Window.get_object("tree-toolbutton-edit").connect("clicked", Lang.bind(this, function() {
-            this.editCity();
-        }));
+        this.Window.get_object("tree-toolbutton-edit").connect("clicked", Lang.bind(this, this.editCity));
 
         this.Window.get_object("treeview-selection").connect("changed", Lang.bind(this, function(selection) {
             this.selectionChanged(selection);
         }));
 
-        this.Window.get_object("button-edit-cancel").connect("clicked", Lang.bind(this, function() {
-            this.editCancel();
+        this.Window.get_object("button-edit-cancel").connect("clicked", Lang.bind(this, this.editCancel));
+
+        this.Window.get_object("button-edit-save").connect("clicked", Lang.bind(this, this.editSave));
+
+        this.Window.get_object("button-search-cancel").connect("clicked", Lang.bind(this, function() {
+            this.searchWidget.hide();
         }));
 
-        this.Window.get_object("button-edit-save").connect("clicked", Lang.bind(this, function() {
-            this.editSave();
+        this.Window.get_object("button-search-save").connect("clicked", Lang.bind(this, this.searchSave));
+
+        this.Window.get_object("button-search-find").connect("clicked", Lang.bind(this, function() {
+
+            let location = this.searchName.get_text().trim();
+            if (location === "")
+                return 0;
+            let params = {
+                format: 'json',
+                addressdetails: '1',
+                q: location
+            };
+            this.loadJsonAsync(WEATHER_URL_FIND, params, Lang.bind(this, function() {
+                if (!arguments[0])
+                    return 0;
+                let newCity = arguments[0];
+
+                if (Number(newCity.length) < 1)
+                    return 0;
+
+                this.clearSearchMenu();
+
+                var m = {};
+                for (var i in newCity) {
+
+                    let cityText = newCity[i].display_name;
+                    let cityCoord = "[" + newCity[i].lat + "," + newCity[i].lon + "]";
+
+                    let item = new Gtk.MenuItem({
+                        label: cityText + " " + cityCoord
+                    });
+                    item.connect("activate", Lang.bind(this, this.onActivateItem));
+                    this.searchMenu.append(item);
+                }
+                this.searchMenu.show_all();
+                this.searchMenu.popup(null, null, Lang.bind(this, this.placeSearchMenu), 0, this.searchName);
+            }));
         }));
 
         let column = new Gtk.TreeViewColumn();
@@ -154,6 +196,28 @@ const WeatherPrefsWidget = new GObject.Class({
                     this.initSwitch(theObjects[i]);
                 this.configWidgets.push([theObjects[i], name]);
             }
+        }
+    },
+
+    clearEntry: function() {
+        arguments[0].set_text("");
+    },
+
+    onActivateItem: function() {
+        this.searchName.set_text(arguments[0].get_label());
+    },
+
+    placeSearchMenu: function() {
+        let[gx, gy, gw, gh] = this.searchName.get_window().get_geometry();
+        let[px, py] = this.searchName.get_window().get_position();
+        return [gx + px, gy + py + this.searchName.get_allocated_height()];
+    },
+
+    clearSearchMenu: function() {
+        let children = this.searchMenu.get_children();
+        for (let i in children) {
+            log(new Error().fileName + ':' + new Error().lineNumber + ' => children[' + i + '] = ' + children[i]);
+            this.searchMenu.remove(children[i]);
         }
     },
 
@@ -332,6 +396,22 @@ const WeatherPrefsWidget = new GObject.Class({
 
                                     completionModel.set_value(current, 0, cityText + " " + cityCoord);
                                 }
+                                log(new Error().fileName + ':' + new Error().lineNumber);
+                                let ev = Gdk.EventKey();
+                                log(new Error().fileName + ':' + new Error().lineNumber + ' => Gdk.EventKey = ' + Gdk.EventKey);
+                                //                                log(new Error().fileName+':'+new Error().lineNumber+' => ev = '+ev);
+                                //                              new_event.key.type = GDK_KEY_PRESS;
+                                //                              new_event.key.window = gtk_widget_get_parent_window(entry);
+                                //                              new_event.key.send_event = TRUE;
+                                //                              new_event.key.time = GDK_CURRENT_TIME;
+                                //                              new_event.key.keyval = 0x053; // capital S
+                                //                              new_event.key.state = GDK_KEY_PRESS_MASK;
+                                //                              new_event.key.length = 0;
+                                //                              new_event.key.string = 0;
+                                //                              new_event.key.hardware_keycode = 0;
+                                //                              new_event.key.group = 0;
+                                //
+                                //                              gdk_event_put((gpointer)&new_event);
                                 completion.complete();
                                 return 0;
                             }, "getInfo");
@@ -435,6 +515,19 @@ const WeatherPrefsWidget = new GObject.Class({
         this.editName.set_text(this.extractLocation(city[ac]));
         this.editCoord.set_text(this.extractCoord(city[ac]));
         this.editWidget.show_all();
+        return 0;
+    },
+
+    searchSave: function() {
+        let cityText = this.searchName.get_text().split(/\[/)[0];
+        let coord = this.searchName.get_text().split(/\[/)[1].split(/\]/)[0];
+
+        if (this.city)
+            this.city = this.city + " && " + coord + ">" + cityText;
+        else
+            this.city = coord + ">" + cityText;
+
+        this.searchWidget.hide();
         return 0;
     },
 
