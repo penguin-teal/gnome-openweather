@@ -47,7 +47,7 @@
 		<Unit filename="po/es.po" />
 		<Unit filename="po/fi.po" />
 		<Unit filename="po/fr.po" />
-		<Unit filename="po/gnome-shell-extension-weather.pot" />
+		<Unit filename="po/gnome-shell-extension-openweather.pot" />
 		<Unit filename="po/he.po" />
 		<Unit filename="po/hu.po" />
 		<Unit filename="po/it.po" />

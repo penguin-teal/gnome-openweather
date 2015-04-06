@@ -34,6 +34,12 @@
  *
  */
 
+//const ExtensionUtils = imports.misc.extensionUtils;
+//const Me = ExtensionUtils.getCurrentExtension();
+//const Convenience = Me.imports.convenience;
+const Gettext = imports.gettext.domain('gnome-shell-extension-openweather');
+const _ = Gettext.gettext;
+
 
 const WEATHER_URL_HOST = 'api.forecast.io';
 const WEATHER_URL_BASE = 'http://' + WEATHER_URL_HOST + '/forecast/';

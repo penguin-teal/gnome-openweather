@@ -1,24 +1,25 @@
-# Ukrainian translation for gnome-shell-extension-openweather
-# Copyright (C) 2011
-# This file is distributed under the same license as the gnome-shell-extension-openweather package.
-# Kyrylo Mikos <kiril.mik.os@gmail.com>, 2011.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: 0.4\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-07 00:51+0200\n"
-"PO-Revision-Date: 2012-05-13 22:41+0100\n"
-"Last-Translator: Christian METZLER <neroth@xeked.com>\n"
-"Language-Team: \n"
-"Language: uk\n"
+"POT-Creation-Date: 2015-04-07 00:54+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../src/extension.js:154
 msgid "..."
-msgstr "..."
+msgstr ""
 
 #: ../src/extension.js:378
 #, javascript-format
@@ -100,35 +101,35 @@ msgstr ""
 
 #: ../src/extension.js:1056
 msgid "Hurricane"
-msgstr "Ураган"
+msgstr ""
 
 #: ../src/extension.js:1060
 msgid "Sunday"
-msgstr "Неділя"
+msgstr ""
 
 #: ../src/extension.js:1060
 msgid "Monday"
-msgstr "Понеділок"
+msgstr ""
 
 #: ../src/extension.js:1060
 msgid "Tuesday"
-msgstr "Вівторок"
+msgstr ""
 
 #: ../src/extension.js:1060
 msgid "Wednesday"
-msgstr "Середа"
+msgstr ""
 
 #: ../src/extension.js:1060
 msgid "Thursday"
-msgstr "Четвер"
+msgstr ""
 
 #: ../src/extension.js:1060
 msgid "Friday"
-msgstr "П’ятниця"
+msgstr ""
 
 #: ../src/extension.js:1060
 msgid "Saturday"
-msgstr "Субота"
+msgstr ""
 
 #: ../src/extension.js:1066
 msgid "N"
@@ -164,15 +165,15 @@ msgstr ""
 
 #: ../src/extension.js:1322
 msgid "Loading current weather ..."
-msgstr "Завантаження поточної погоди ..."
+msgstr ""
 
 #: ../src/extension.js:1354
 msgid "Loading ..."
-msgstr "Завантаження ..."
+msgstr ""
 
 #: ../src/extension.js:1358
 msgid "Please wait"
-msgstr "Зачекайте"
+msgstr ""
 
 #: ../src/extension.js:1419
 msgid "Cloudiness:"
@@ -180,15 +181,15 @@ msgstr ""
 
 #: ../src/extension.js:1423
 msgid "Humidity:"
-msgstr "Вологість:"
+msgstr ""
 
 #: ../src/extension.js:1427
 msgid "Pressure:"
-msgstr "Тиск:"
+msgstr ""
 
 #: ../src/extension.js:1431
 msgid "Wind:"
-msgstr "Вітер:"
+msgstr ""
 
 #: ../src/forecast_io.js:139 ../src/forecast_io.js:247
 #: ../src/openweathermap_org.js:339 ../src/openweathermap_org.js:433
@@ -203,11 +204,11 @@ msgstr ""
 
 #: ../src/forecast_io.js:227 ../src/openweathermap_org.js:427
 msgid "Today"
-msgstr "Сьогодні"
+msgstr ""
 
 #: ../src/forecast_io.js:243 ../src/openweathermap_org.js:429
 msgid "Tomorrow"
-msgstr "Завтра"
+msgstr ""
 
 #: ../src/forecast_io.js:245 ../src/openweathermap_org.js:431
 #, javascript-format
@@ -215,108 +216,88 @@ msgid "In %d days"
 msgstr ""
 
 #: ../src/openweathermap_org.js:176
-#, fuzzy
 msgid "thunderstorm with light rain"
-msgstr "Грози"
+msgstr ""
 
 #: ../src/openweathermap_org.js:178
-#, fuzzy
 msgid "thunderstorm with rain"
-msgstr "Грози"
+msgstr ""
 
 #: ../src/openweathermap_org.js:180
-#, fuzzy
 msgid "thunderstorm with heavy rain"
-msgstr "Грози"
+msgstr ""
 
 #: ../src/openweathermap_org.js:182
-#, fuzzy
 msgid "light thunderstorm"
-msgstr "Поодинокі грози"
+msgstr ""
 
 #: ../src/openweathermap_org.js:184
-#, fuzzy
 msgid "thunderstorm"
-msgstr "Грози"
+msgstr ""
 
 #: ../src/openweathermap_org.js:186
-#, fuzzy
 msgid "heavy thunderstorm"
-msgstr "Сильні грози"
+msgstr ""
 
 #: ../src/openweathermap_org.js:188
-#, fuzzy
 msgid "ragged thunderstorm"
-msgstr "Поодинокі грози"
+msgstr ""
 
 #: ../src/openweathermap_org.js:190
-#, fuzzy
 msgid "thunderstorm with light drizzle"
-msgstr "Грози"
+msgstr ""
 
 #: ../src/openweathermap_org.js:192
-#, fuzzy
 msgid "thunderstorm with drizzle"
-msgstr "Грози"
+msgstr ""
 
 #: ../src/openweathermap_org.js:194
-#, fuzzy
 msgid "thunderstorm with heavy drizzle"
-msgstr "Грози"
+msgstr ""
 
 #: ../src/openweathermap_org.js:196
 msgid "light intensity drizzle"
 msgstr ""
 
 #: ../src/openweathermap_org.js:198
-#, fuzzy
 msgid "drizzle"
-msgstr "Мжичка"
+msgstr ""
 
 #: ../src/openweathermap_org.js:200
-#, fuzzy
 msgid "heavy intensity drizzle"
-msgstr "Дощ і град"
+msgstr ""
 
 #: ../src/openweathermap_org.js:202
-#, fuzzy
 msgid "light intensity drizzle rain"
-msgstr "Мжичка"
+msgstr ""
 
 #: ../src/openweathermap_org.js:204
-#, fuzzy
 msgid "drizzle rain"
-msgstr "Мжичка"
+msgstr ""
 
 #: ../src/openweathermap_org.js:206
-#, fuzzy
 msgid "heavy intensity drizzle rain"
-msgstr "Мжичка"
+msgstr ""
 
 #: ../src/openweathermap_org.js:208
-#, fuzzy
 msgid "shower rain and drizzle"
-msgstr "Дощ і град"
+msgstr ""
 
 #: ../src/openweathermap_org.js:210
-#, fuzzy
 msgid "heavy shower rain and drizzle"
-msgstr "Дощ і град"
+msgstr ""
 
 #: ../src/openweathermap_org.js:212
-#, fuzzy
 msgid "shower drizzle"
-msgstr "Паморозь"
+msgstr ""
 
 #: ../src/openweathermap_org.js:214
-#, fuzzy
 msgid "light rain"
-msgstr "Льодяний дощ"
+msgstr ""
 
 #: ../src/openweathermap_org.js:216
-#, fuzzy
 msgid "moderate rain"
-msgstr "Мжичка"
+msgstr ""
 
 #: ../src/openweathermap_org.js:218
 msgid "heavy intensity rain"
@@ -327,82 +308,68 @@ msgid "very heavy rain"
 msgstr ""
 
 #: ../src/openweathermap_org.js:222
-#, fuzzy
 msgid "extreme rain"
-msgstr "Льодяний дощ"
+msgstr ""
 
 #: ../src/openweathermap_org.js:224
-#, fuzzy
 msgid "freezing rain"
-msgstr "Льодяний дощ"
+msgstr ""
 
 #: ../src/openweathermap_org.js:226
-#, fuzzy
 msgid "light intensity shower rain"
-msgstr "Невеликий снігопад"
+msgstr ""
 
 #: ../src/openweathermap_org.js:228
-#, fuzzy
 msgid "shower rain"
-msgstr "Зливи"
+msgstr ""
 
 #: ../src/openweathermap_org.js:230
-#, fuzzy
 msgid "heavy intensity shower rain"
-msgstr "Сильний снігопад"
+msgstr ""
 
 #: ../src/openweathermap_org.js:232
 msgid "ragged shower rain"
 msgstr ""
 
 #: ../src/openweathermap_org.js:234
-#, fuzzy
 msgid "light snow"
-msgstr "Низова завірюха"
+msgstr ""
 
 #: ../src/openweathermap_org.js:236
 msgid "snow"
 msgstr ""
 
 #: ../src/openweathermap_org.js:238
-#, fuzzy
 msgid "heavy snow"
-msgstr "Сильний снігопад"
+msgstr ""
 
 #: ../src/openweathermap_org.js:240
-#, fuzzy
 msgid "sleet"
-msgstr "Мокрий сніг"
+msgstr ""
 
 #: ../src/openweathermap_org.js:242
-#, fuzzy
 msgid "shower sleet"
-msgstr "Зливи"
+msgstr ""
 
 #: ../src/openweathermap_org.js:244
-#, fuzzy
 msgid "light rain and snow"
-msgstr "Дощ та сніг"
+msgstr ""
 
 #: ../src/openweathermap_org.js:246
-#, fuzzy
 msgid "rain and snow"
-msgstr "Дощ та сніг"
+msgstr ""
 
 #: ../src/openweathermap_org.js:248
-#, fuzzy
 msgid "light shower snow"
-msgstr "Невеликий снігопад"
+msgstr ""
 
 #: ../src/openweathermap_org.js:250
-#, fuzzy
 msgid "shower snow"
-msgstr "Зливи"
+msgstr ""
 
 #: ../src/openweathermap_org.js:252
-#, fuzzy
 msgid "heavy shower snow"
-msgstr "Сильний снігопад"
+msgstr ""
 
 #: ../src/openweathermap_org.js:254
 msgid "mist"
@@ -421,9 +388,8 @@ msgid "Sand/Dust Whirls"
 msgstr ""
 
 #: ../src/openweathermap_org.js:262
-#, fuzzy
 msgid "Fog"
-msgstr "Туман"
+msgstr ""
 
 #: ../src/openweathermap_org.js:264
 msgid "sand"
@@ -450,28 +416,24 @@ msgid "sky is clear"
 msgstr ""
 
 #: ../src/openweathermap_org.js:276
-#, fuzzy
 msgid "few clouds"
-msgstr "Переважно хмарно"
+msgstr ""
 
 #: ../src/openweathermap_org.js:278
-#, fuzzy
 msgid "scattered clouds"
-msgstr "Місцями зливи"
+msgstr ""
 
 #: ../src/openweathermap_org.js:280
-#, fuzzy
 msgid "broken clouds"
-msgstr "Переважно хмарно"
+msgstr ""
 
 #: ../src/openweathermap_org.js:282
-#, fuzzy
 msgid "overcast clouds"
-msgstr "Переважно хмарно"
+msgstr ""
 
 #: ../src/openweathermap_org.js:284
 msgid "Not available"
-msgstr "Недоступно"
+msgstr ""
 
 #: ../src/prefs.js:307
 #, javascript-format
@@ -484,9 +446,8 @@ msgstr ""
 
 #: ../data/weather-settings.ui:44 ../data/weather-settings.ui:74
 #: ../data/weather-settings.ui:194
-#, fuzzy
 msgid "Clear entry"
-msgstr "Безхмарно"
+msgstr ""
 
 #: ../data/weather-settings.ui:58
 msgid "Edit coordinates"
@@ -506,16 +467,15 @@ msgstr ""
 
 #: ../data/weather-settings.ui:415
 msgid "Temperature Unit"
-msgstr "Температура:"
+msgstr ""
 
 #: ../data/weather-settings.ui:426
 msgid "Wind Speed Unit"
 msgstr ""
 
 #: ../data/weather-settings.ui:437
-#, fuzzy
 msgid "Pressure Unit"
-msgstr "Тиск:"
+msgstr ""
 
 #: ../data/weather-settings.ui:448
 msgid "Position in Panel"
@@ -539,7 +499,7 @@ msgstr ""
 
 #: ../data/weather-settings.ui:503
 msgid "Temperature in Panel"
-msgstr "Температура:"
+msgstr ""
 
 #: ../data/weather-settings.ui:514
 msgid "Conditions in Panel"
@@ -580,79 +540,3 @@ msgstr ""
 #: ../data/weather-settings.ui:667
 msgid "Left"
 msgstr ""
-
-#~ msgid "Loading future weather ..."
-#~ msgstr "Завантаження прогнозу погоди ..."
-
-#~ msgid "Tornado"
-#~ msgstr "Торнадо"
-
-#~ msgid "Tropical storm"
-#~ msgstr "Тропічний шторм"
-
-#~ msgid "Mixed rain and sleet"
-#~ msgstr "Дощ та мокрий сніг"
-
-#~ msgid "Mixed snow and sleet"
-#~ msgstr "Мокрий сніг"
-
-#~ msgid "Snow flurries"
-#~ msgstr "Шквалистий сніг"
-
-#~ msgid "Snow"
-#~ msgstr "Сніг"
-
-#~ msgid "Hail"
-#~ msgstr "Град"
-
-#~ msgid "Dust"
-#~ msgstr "Пилюка"
-
-#~ msgid "Haze"
-#~ msgstr "Легкий туман"
-
-#~ msgid "Smoky"
-#~ msgstr "Димка"
-
-#~ msgid "Blustery"
-#~ msgstr "Пориви вітру"
-
-#~ msgid "Windy"
-#~ msgstr "Вітряно"
-
-#~ msgid "Cold"
-#~ msgstr "Холодно"
-
-#~ msgid "Cloudy"
-#~ msgstr "Хмарно"
-
-#~ msgid "Partly cloudy"
-#~ msgstr "Невелика хмарність"
-
-#~ msgid "Sunny"
-#~ msgstr "Сонячно"
-
-#~ msgid "Fair"
-#~ msgstr "Ясно"
-
-#~ msgid "Hot"
-#~ msgstr "Жарко"
-
-#~ msgid "Scattered thunderstorms"
-#~ msgstr "Місцями грози"
-
-#, fuzzy
-#~ msgid "Isolated showers"
-#~ msgstr "Поодинокі грозові зливи"
-
-#~ msgid "Scattered snow showers"
-#~ msgstr "Местами снегопад"
-
-#~ msgid "Thundershowers"
-#~ msgstr "Грозові зливи"
-
-#~ msgid "Snow showers"
-#~ msgstr "Снігопад"
-
-#~ msgid "Isolated thundershowers"
-#~ msgstr "Поодинокі грозові зливи"

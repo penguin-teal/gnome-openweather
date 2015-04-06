@@ -38,6 +38,8 @@
 const ExtensionUtils = imports.misc.extensionUtils;
 const Me = ExtensionUtils.getCurrentExtension();
 const OpenweathermapOrg = Me.imports.openweathermap_org;
+const Gettext = imports.gettext.domain('gnome-shell-extension-openweather');
+const _ = Gettext.gettext;
 
 const WEATHER_URL_HOST = 'api.openweathermap.org';
 const WEATHER_URL_BASE = 'http://' + WEATHER_URL_HOST + '/data/2.5/';

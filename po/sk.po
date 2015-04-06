@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-11-07 07:54+0100\n"
+"POT-Creation-Date: 2015-04-07 00:51+0200\n"
 "PO-Revision-Date: 2015-01-31 09:15+0100\n"
 "Last-Translator: Dušan Kazik <prescott66@gmail.com>\n"
 "Language-Team: \n"
@@ -17,486 +17,535 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.7.3\n"
 
-#: ../src/extension.js:139
+#: ../src/extension.js:154
 msgid "..."
 msgstr "..."
 
-#: ../src/extension.js:236
-msgid "Weather data provided by:   "
-msgstr "Údaje o počasí získané z: "
-
-#: ../src/extension.js:256
-msgid "Locations"
-msgstr "Umiestnenia"
-
-#: ../src/extension.js:260
-msgid "Reload Weather Information"
-msgstr "Znovu načítať informácie o počasí"
-
-#: ../src/extension.js:267
-msgid "Weather Settings"
-msgstr "Nastavenia počasia"
-
-#: ../src/extension.js:320
-#, python-format
+#: ../src/extension.js:378
+#, javascript-format
 msgid "Schema \"%s\" not found."
 msgstr "Schéma „%s“ sa nenašla."
 
-#: ../src/extension.js:642 ../src/extension.js:651 ../src/prefs.js:813
+#: ../src/extension.js:818
+msgid "Locations"
+msgstr "Umiestnenia"
+
+#: ../src/extension.js:830
+msgid "Reload Weather Information"
+msgstr "Znovu načítať informácie o počasí"
+
+#: ../src/extension.js:846
+#, fuzzy
+msgid "Weather data provided by:"
+msgstr "Údaje o počasí získané z: "
+
+#: ../src/extension.js:857
+#, javascript-format
+msgid "Can not open %s"
+msgstr ""
+
+#: ../src/extension.js:864
+msgid "Weather Settings"
+msgstr "Nastavenia počasia"
+
+#: ../src/extension.js:915 ../src/extension.js:924 ../src/prefs.js:755
 msgid "Invalid city"
 msgstr "Neplatné mesto"
 
-#: ../src/extension.js:879
-msgid "thunderstorm with light rain"
-msgstr "búrka so slabým dažďom"
-
-#: ../src/extension.js:881
-msgid "thunderstorm with rain"
-msgstr "búrka s dažďom"
-
-#: ../src/extension.js:883
-msgid "thunderstorm with heavy rain"
-msgstr "búrka so silným dažďom"
-
-#: ../src/extension.js:885
-msgid "light thunderstorm"
-msgstr "slabá búrka"
-
-#: ../src/extension.js:887
-msgid "thunderstorm"
-msgstr "búrka"
-
-#: ../src/extension.js:889
-msgid "heavy thunderstorm"
-msgstr "silná búrka"
-
-#: ../src/extension.js:891
-msgid "ragged thunderstorm"
-msgstr "ojedinelé búrky"
-
-#: ../src/extension.js:893
-msgid "thunderstorm with light drizzle"
-msgstr "búrka so slabým mrholením"
-
-#: ../src/extension.js:895
-msgid "thunderstorm with drizzle"
-msgstr "búrka s mrholením"
-
-#: ../src/extension.js:897
-msgid "thunderstorm with heavy drizzle"
-msgstr "búrka so silným mrholením"
-
-#: ../src/extension.js:899
-msgid "light intensity drizzle"
-msgstr "slabé mrholenie"
-
-#: ../src/extension.js:901
-msgid "drizzle"
-msgstr "mrholenie"
-
-#: ../src/extension.js:903
-msgid "heavy intensity drizzle"
-msgstr "silné mrholenie"
-
-#: ../src/extension.js:905
-msgid "light intensity drizzle rain"
-msgstr "dážď so slabým mrholením"
-
-#: ../src/extension.js:907
-msgid "drizzle rain"
-msgstr "dážď s mrholením"
-
-#: ../src/extension.js:909
-msgid "heavy intensity drizzle rain"
-msgstr "dážď so silným mrholením"
-
-#: ../src/extension.js:911
-msgid "shower rain and drizzle"
-msgstr "prehánky s mrholením"
-
-#: ../src/extension.js:913
-msgid "heavy shower rain and drizzle"
-msgstr "silné prehánky a mrholenie"
-
-#: ../src/extension.js:915
-msgid "shower drizzle"
-msgstr "prehánky s mrholením"
-
-#: ../src/extension.js:917
-msgid "light rain"
-msgstr "slabý dážď"
-
-#: ../src/extension.js:919
-msgid "moderate rain"
-msgstr "mierny dážď"
-
-#: ../src/extension.js:921
-msgid "heavy intensity rain"
-msgstr "silný dážď"
-
-#: ../src/extension.js:923
-msgid "very heavy rain"
-msgstr "veľmi silný dážď"
-
-#: ../src/extension.js:925
-msgid "extreme rain"
-msgstr "extrémny dážď"
-
-#: ../src/extension.js:927
-msgid "freezing rain"
-msgstr "mrznúci dážď"
-
-#: ../src/extension.js:929
-msgid "light intensity shower rain"
-msgstr "slabé prehánky"
-
-#: ../src/extension.js:931
-msgid "shower rain"
-msgstr "prehánky"
-
-#: ../src/extension.js:933
-msgid "heavy intensity shower rain"
-msgstr "silné prehánky"
-
-#: ../src/extension.js:935
-msgid "ragged shower rain"
-msgstr "ojedinelé prehánky"
-
-#: ../src/extension.js:937
-msgid "light snow"
-msgstr "slabé sneženie"
-
-#: ../src/extension.js:939
-msgid "snow"
-msgstr "sneženie"
-
-#: ../src/extension.js:941
-msgid "heavy snow"
-msgstr "silné sneženie"
-
-#: ../src/extension.js:943
-msgid "sleet"
-msgstr "poľadovica"
-
-#: ../src/extension.js:945
-msgid "shower sleet"
-msgstr "snehové prehánky s dažďom"
-
-#: ../src/extension.js:947
-msgid "light rain and snow"
-msgstr "slabý dážď so snehom"
-
-#: ../src/extension.js:949
-msgid "rain and snow"
-msgstr "dážď so snehom"
-
-#: ../src/extension.js:951
-msgid "light shower snow"
-msgstr "slabé snehové prehánky"
-
-#: ../src/extension.js:953
-msgid "shower snow"
-msgstr "snehové prehánky"
-
-#: ../src/extension.js:955
-msgid "heavy shower snow"
-msgstr "silné snehové prehánky"
-
-#: ../src/extension.js:957
-msgid "mist"
-msgstr "hmla"
-
-#: ../src/extension.js:959
-msgid "smoke"
-msgstr "dym"
-
-#: ../src/extension.js:961
-msgid "haze"
-msgstr "opar"
-
-#: ../src/extension.js:963
-msgid "Sand/Dust Whirls"
-msgstr "Piesočné/prašné víry"
-
-#: ../src/extension.js:965
-msgid "Fog"
-msgstr "Hmla"
-
-#: ../src/extension.js:967
-msgid "sand"
-msgstr "piesok"
-
-#: ../src/extension.js:969
-msgid "dust"
-msgstr "prach"
-
-#: ../src/extension.js:971
-msgid "VOLCANIC ASH"
-msgstr "SOPEČNÝ POPOL"
-
-#: ../src/extension.js:973
-msgid "SQUALLS"
-msgstr "VÍCHRICE"
-
-#: ../src/extension.js:975
-msgid "TORNADO"
-msgstr "TORNÁDO"
-
-#: ../src/extension.js:977
-msgid "sky is clear"
-msgstr "jasná obloha"
-
-#: ../src/extension.js:979
-msgid "few clouds"
-msgstr "zopár oblakov"
-
-#: ../src/extension.js:981
-msgid "scattered clouds"
-msgstr "ojedinelá oblačnosť"
-
-#: ../src/extension.js:983
-msgid "broken clouds"
-msgstr "roztrhaná oblačnosť"
-
-#: ../src/extension.js:985
-msgid "overcast clouds"
-msgstr "zamračené"
-
-#: ../src/extension.js:987
-msgid "Not available"
-msgstr "Nedostupný"
-
-#: ../src/extension.js:1025
+#: ../src/extension.js:1020
 msgid "Calm"
 msgstr "Bezvetrie"
 
-#: ../src/extension.js:1028
+#: ../src/extension.js:1023
 msgid "Light air"
 msgstr "Slabý vánok"
 
-#: ../src/extension.js:1031
+#: ../src/extension.js:1026
 msgid "Light breeze"
 msgstr "Slabý vietor"
 
-#: ../src/extension.js:1034
+#: ../src/extension.js:1029
 msgid "Gentle breeze"
 msgstr "Jemný vánok"
 
-#: ../src/extension.js:1037
+#: ../src/extension.js:1032
 msgid "Moderate breeze"
 msgstr "Mierny vietor"
 
-#: ../src/extension.js:1040
+#: ../src/extension.js:1035
 msgid "Fresh breeze"
 msgstr "Čerstvý vietor"
 
-#: ../src/extension.js:1043
+#: ../src/extension.js:1038
 msgid "Strong breeze"
 msgstr "Silný vietor"
 
-#: ../src/extension.js:1046
+#: ../src/extension.js:1041
 msgid "Moderate gale"
 msgstr "Mierna víchrica"
 
-#: ../src/extension.js:1049
+#: ../src/extension.js:1044
 msgid "Fresh gale"
 msgstr "Čerstvá víchrica"
 
-#: ../src/extension.js:1052
+#: ../src/extension.js:1047
 msgid "Strong gale"
 msgstr "Silná víchrica"
 
-#: ../src/extension.js:1055
+#: ../src/extension.js:1050
 msgid "Storm"
 msgstr "Búrka"
 
-#: ../src/extension.js:1058
+#: ../src/extension.js:1053
 msgid "Violent storm"
 msgstr "Silná búrka"
 
-#: ../src/extension.js:1061
+#: ../src/extension.js:1056
 msgid "Hurricane"
 msgstr "Hurikán"
 
-#: ../src/extension.js:1065
+#: ../src/extension.js:1060
 msgid "Sunday"
 msgstr "Nedeľa"
 
-#: ../src/extension.js:1065
+#: ../src/extension.js:1060
 msgid "Monday"
 msgstr "Pondelok"
 
-#: ../src/extension.js:1065
+#: ../src/extension.js:1060
 msgid "Tuesday"
 msgstr "Utorok"
 
-#: ../src/extension.js:1065
+#: ../src/extension.js:1060
 msgid "Wednesday"
 msgstr "Streda"
 
-#: ../src/extension.js:1065
+#: ../src/extension.js:1060
 msgid "Thursday"
 msgstr "Štvrtok"
 
-#: ../src/extension.js:1065
+#: ../src/extension.js:1060
 msgid "Friday"
 msgstr "Piatok"
 
-#: ../src/extension.js:1065
+#: ../src/extension.js:1060
 msgid "Saturday"
 msgstr "Sobota"
 
-#: ../src/extension.js:1071
+#: ../src/extension.js:1066
 msgid "N"
 msgstr "S"
 
-#: ../src/extension.js:1071
+#: ../src/extension.js:1066
 msgid "NE"
 msgstr "SV"
 
-#: ../src/extension.js:1071
+#: ../src/extension.js:1066
 msgid "E"
 msgstr "Z"
 
-#: ../src/extension.js:1071
+#: ../src/extension.js:1066
 msgid "SE"
 msgstr "JV"
 
-#: ../src/extension.js:1071
+#: ../src/extension.js:1066
 msgid "S"
 msgstr "J"
 
-#: ../src/extension.js:1071
+#: ../src/extension.js:1066
 msgid "SW"
 msgstr "JZ"
 
-#: ../src/extension.js:1071
+#: ../src/extension.js:1066
 msgid "W"
 msgstr "Z"
 
-#: ../src/extension.js:1071
+#: ../src/extension.js:1066
 msgid "NW"
 msgstr "SZ"
 
-#: ../src/extension.js:1285 ../src/extension.js:1465
-msgid "Yesterday"
-msgstr "Včera"
-
-#: ../src/extension.js:1287 ../src/extension.js:1467
-#, python-format
-msgid "%s days ago"
-msgstr "Pred %s dňami"
-
-#: ../src/extension.js:1459
-msgid "Today"
-msgstr "Dnes"
-
-#: ../src/extension.js:1461
-msgid "Tomorrow"
-msgstr "Zajtra"
-
-#: ../src/extension.js:1463
-#, python-format
-msgid "In %s days"
-msgstr "O %s dni"
-
-#: ../src/extension.js:1527
+#: ../src/extension.js:1322
 msgid "Loading current weather ..."
 msgstr "Načítava sa aktuálne počasie ..."
 
-#: ../src/extension.js:1530
-msgid "Loading future weather ..."
-msgstr "Načítava sa predpoveď počasia ..."
-
-#: ../src/extension.js:1564
+#: ../src/extension.js:1354
 msgid "Loading ..."
 msgstr "Načítava sa ..."
 
-#: ../src/extension.js:1568
+#: ../src/extension.js:1358
 msgid "Please wait"
 msgstr "Prosím, čakajte"
 
-#: ../src/extension.js:1629
+#: ../src/extension.js:1419
 msgid "Cloudiness:"
 msgstr "Oblačnosť:"
 
-#: ../src/extension.js:1633
+#: ../src/extension.js:1423
 msgid "Humidity:"
 msgstr "Vlhkosť:"
 
-#: ../src/extension.js:1637
+#: ../src/extension.js:1427
 msgid "Pressure:"
 msgstr "Tlak:"
 
-#: ../src/extension.js:1641
+#: ../src/extension.js:1431
 msgid "Wind:"
 msgstr "Vietor:"
 
-#: ../src/prefs.js:125
+#: ../src/forecast_io.js:139 ../src/forecast_io.js:247
+#: ../src/openweathermap_org.js:339 ../src/openweathermap_org.js:433
+msgid "Yesterday"
+msgstr "Včera"
+
+#: ../src/forecast_io.js:141 ../src/forecast_io.js:249
+#: ../src/openweathermap_org.js:341 ../src/openweathermap_org.js:435
+#, fuzzy, javascript-format
+msgid "%d days ago"
+msgstr "Pred %s dňami"
+
+#: ../src/forecast_io.js:227 ../src/openweathermap_org.js:427
+msgid "Today"
+msgstr "Dnes"
+
+#: ../src/forecast_io.js:243 ../src/openweathermap_org.js:429
+msgid "Tomorrow"
+msgstr "Zajtra"
+
+#: ../src/forecast_io.js:245 ../src/openweathermap_org.js:431
+#, fuzzy, javascript-format
+msgid "In %d days"
+msgstr "O %s dni"
+
+#: ../src/openweathermap_org.js:176
+msgid "thunderstorm with light rain"
+msgstr "búrka so slabým dažďom"
+
+#: ../src/openweathermap_org.js:178
+msgid "thunderstorm with rain"
+msgstr "búrka s dažďom"
+
+#: ../src/openweathermap_org.js:180
+msgid "thunderstorm with heavy rain"
+msgstr "búrka so silným dažďom"
+
+#: ../src/openweathermap_org.js:182
+msgid "light thunderstorm"
+msgstr "slabá búrka"
+
+#: ../src/openweathermap_org.js:184
+msgid "thunderstorm"
+msgstr "búrka"
+
+#: ../src/openweathermap_org.js:186
+msgid "heavy thunderstorm"
+msgstr "silná búrka"
+
+#: ../src/openweathermap_org.js:188
+msgid "ragged thunderstorm"
+msgstr "ojedinelé búrky"
+
+#: ../src/openweathermap_org.js:190
+msgid "thunderstorm with light drizzle"
+msgstr "búrka so slabým mrholením"
+
+#: ../src/openweathermap_org.js:192
+msgid "thunderstorm with drizzle"
+msgstr "búrka s mrholením"
+
+#: ../src/openweathermap_org.js:194
+msgid "thunderstorm with heavy drizzle"
+msgstr "búrka so silným mrholením"
+
+#: ../src/openweathermap_org.js:196
+msgid "light intensity drizzle"
+msgstr "slabé mrholenie"
+
+#: ../src/openweathermap_org.js:198
+msgid "drizzle"
+msgstr "mrholenie"
+
+#: ../src/openweathermap_org.js:200
+msgid "heavy intensity drizzle"
+msgstr "silné mrholenie"
+
+#: ../src/openweathermap_org.js:202
+msgid "light intensity drizzle rain"
+msgstr "dážď so slabým mrholením"
+
+#: ../src/openweathermap_org.js:204
+msgid "drizzle rain"
+msgstr "dážď s mrholením"
+
+#: ../src/openweathermap_org.js:206
+msgid "heavy intensity drizzle rain"
+msgstr "dážď so silným mrholením"
+
+#: ../src/openweathermap_org.js:208
+msgid "shower rain and drizzle"
+msgstr "prehánky s mrholením"
+
+#: ../src/openweathermap_org.js:210
+msgid "heavy shower rain and drizzle"
+msgstr "silné prehánky a mrholenie"
+
+#: ../src/openweathermap_org.js:212
+msgid "shower drizzle"
+msgstr "prehánky s mrholením"
+
+#: ../src/openweathermap_org.js:214
+msgid "light rain"
+msgstr "slabý dážď"
+
+#: ../src/openweathermap_org.js:216
+msgid "moderate rain"
+msgstr "mierny dážď"
+
+#: ../src/openweathermap_org.js:218
+msgid "heavy intensity rain"
+msgstr "silný dážď"
+
+#: ../src/openweathermap_org.js:220
+msgid "very heavy rain"
+msgstr "veľmi silný dážď"
+
+#: ../src/openweathermap_org.js:222
+msgid "extreme rain"
+msgstr "extrémny dážď"
+
+#: ../src/openweathermap_org.js:224
+msgid "freezing rain"
+msgstr "mrznúci dážď"
+
+#: ../src/openweathermap_org.js:226
+msgid "light intensity shower rain"
+msgstr "slabé prehánky"
+
+#: ../src/openweathermap_org.js:228
+msgid "shower rain"
+msgstr "prehánky"
+
+#: ../src/openweathermap_org.js:230
+msgid "heavy intensity shower rain"
+msgstr "silné prehánky"
+
+#: ../src/openweathermap_org.js:232
+msgid "ragged shower rain"
+msgstr "ojedinelé prehánky"
+
+#: ../src/openweathermap_org.js:234
+msgid "light snow"
+msgstr "slabé sneženie"
+
+#: ../src/openweathermap_org.js:236
+msgid "snow"
+msgstr "sneženie"
+
+#: ../src/openweathermap_org.js:238
+msgid "heavy snow"
+msgstr "silné sneženie"
+
+#: ../src/openweathermap_org.js:240
+msgid "sleet"
+msgstr "poľadovica"
+
+#: ../src/openweathermap_org.js:242
+msgid "shower sleet"
+msgstr "snehové prehánky s dažďom"
+
+#: ../src/openweathermap_org.js:244
+msgid "light rain and snow"
+msgstr "slabý dážď so snehom"
+
+#: ../src/openweathermap_org.js:246
+msgid "rain and snow"
+msgstr "dážď so snehom"
+
+#: ../src/openweathermap_org.js:248
+msgid "light shower snow"
+msgstr "slabé snehové prehánky"
+
+#: ../src/openweathermap_org.js:250
+msgid "shower snow"
+msgstr "snehové prehánky"
+
+#: ../src/openweathermap_org.js:252
+msgid "heavy shower snow"
+msgstr "silné snehové prehánky"
+
+#: ../src/openweathermap_org.js:254
+msgid "mist"
+msgstr "hmla"
+
+#: ../src/openweathermap_org.js:256
+msgid "smoke"
+msgstr "dym"
+
+#: ../src/openweathermap_org.js:258
+msgid "haze"
+msgstr "opar"
+
+#: ../src/openweathermap_org.js:260
+msgid "Sand/Dust Whirls"
+msgstr "Piesočné/prašné víry"
+
+#: ../src/openweathermap_org.js:262
+msgid "Fog"
+msgstr "Hmla"
+
+#: ../src/openweathermap_org.js:264
+msgid "sand"
+msgstr "piesok"
+
+#: ../src/openweathermap_org.js:266
+msgid "dust"
+msgstr "prach"
+
+#: ../src/openweathermap_org.js:268
+msgid "VOLCANIC ASH"
+msgstr "SOPEČNÝ POPOL"
+
+#: ../src/openweathermap_org.js:270
+msgid "SQUALLS"
+msgstr "VÍCHRICE"
+
+#: ../src/openweathermap_org.js:272
+msgid "TORNADO"
+msgstr "TORNÁDO"
+
+#: ../src/openweathermap_org.js:274
+msgid "sky is clear"
+msgstr "jasná obloha"
+
+#: ../src/openweathermap_org.js:276
+msgid "few clouds"
+msgstr "zopár oblakov"
+
+#: ../src/openweathermap_org.js:278
+msgid "scattered clouds"
+msgstr "ojedinelá oblačnosť"
+
+#: ../src/openweathermap_org.js:280
+msgid "broken clouds"
+msgstr "roztrhaná oblačnosť"
+
+#: ../src/openweathermap_org.js:282
+msgid "overcast clouds"
+msgstr "zamračené"
+
+#: ../src/openweathermap_org.js:284
+msgid "Not available"
+msgstr "Nedostupný"
+
+#: ../src/prefs.js:307
+#, javascript-format
+msgid "Remove %s ?"
+msgstr "Odstrániť %s ?"
+
+#: ../data/weather-settings.ui:27
+msgid "Edit name"
+msgstr ""
+
+#: ../data/weather-settings.ui:44 ../data/weather-settings.ui:74
+#: ../data/weather-settings.ui:194
+msgid "Clear entry"
+msgstr ""
+
+#: ../data/weather-settings.ui:58
+msgid "Edit coordinates"
+msgstr ""
+
+#: ../data/weather-settings.ui:172
+msgid "Search by location or coordinates"
+msgstr ""
+
+#: ../data/weather-settings.ui:195
+msgid "e.g. Vaiaku, Tuvalu or -8.5211767,179.1976747"
+msgstr ""
+
+#: ../data/weather-settings.ui:404
+msgid "Choose weather provider"
+msgstr ""
+
+#: ../data/weather-settings.ui:415
 msgid "Temperature Unit"
 msgstr "Teplota:"
 
-#: ../src/prefs.js:127
+#: ../data/weather-settings.ui:426
 msgid "Wind Speed Unit"
 msgstr "Jednotka rýchlosti vetra"
 
-#: ../src/prefs.js:129
+#: ../data/weather-settings.ui:437
 msgid "Pressure Unit"
 msgstr "Jednotka tlaku"
 
-#: ../src/prefs.js:131
+#: ../data/weather-settings.ui:448
 msgid "Position in Panel"
 msgstr "Pozícia na paneli"
 
-#: ../src/prefs.js:132
-msgid "Center"
-msgstr "V strede"
-
-#: ../src/prefs.js:132
-msgid "Right"
-msgstr "Vpravo"
-
-#: ../src/prefs.js:132
-msgid "Left"
-msgstr "Vľavo"
-
-#: ../src/prefs.js:133
+#: ../data/weather-settings.ui:459
 msgid "Wind Direction by Arrows"
 msgstr "Smer vetra indikovať šípkami"
 
-#: ../src/prefs.js:135
+#: ../data/weather-settings.ui:470
 msgid "Translate Conditions"
 msgstr "Preložiť podmienky"
 
-#: ../src/prefs.js:137
+#: ../data/weather-settings.ui:481
 msgid "Symbolic Icons"
 msgstr "Symbolické ikony"
 
-#: ../src/prefs.js:139
+#: ../data/weather-settings.ui:492
+msgid "Text on buttons"
+msgstr ""
+
+#: ../data/weather-settings.ui:503
 msgid "Temperature in Panel"
 msgstr "Teplota:"
 
-#: ../src/prefs.js:141
+#: ../data/weather-settings.ui:514
 msgid "Conditions in Panel"
 msgstr "Podmienky v lište"
 
-#: ../src/prefs.js:143
+#: ../data/weather-settings.ui:525
+#, fuzzy
+msgid "Conditions in Forecast"
+msgstr "Podmienky v lište"
+
+#: ../data/weather-settings.ui:536
 msgid "Center forecast"
 msgstr "Predpoveď počasia v strede"
 
-#: ../src/prefs.js:145
+#: ../data/weather-settings.ui:547
 msgid "Number of days in forecast"
 msgstr "Počet dní v predpovedi počasia"
 
-#: ../src/prefs.js:147
+#: ../data/weather-settings.ui:558
+msgid "Maximal number of digits after the decimal point"
+msgstr ""
+
+#: ../data/weather-settings.ui:569
 msgid "Personal Api key from openweathermap.org"
 msgstr "Osobný kľúč Api z openweathermap.org"
 
-#: ../src/prefs.js:300
-msgid "Name of the city"
-msgstr "Názov mesta"
+#: ../data/weather-settings.ui:580
+#, fuzzy
+msgid "Personal Api key from forecast.io"
+msgstr "Osobný kľúč Api z openweathermap.org"
 
-#: ../src/prefs.js:488
-#, python-format
-msgid "Remove %s ?"
-msgstr "Odstrániť %s ?"
+#: ../data/weather-settings.ui:665
+msgid "Center"
+msgstr "V strede"
+
+#: ../data/weather-settings.ui:666
+msgid "Right"
+msgstr "Vpravo"
+
+#: ../data/weather-settings.ui:667
+msgid "Left"
+msgstr "Vľavo"
+
+#~ msgid "Loading future weather ..."
+#~ msgstr "Načítava sa predpoveď počasia ..."
+
+#~ msgid "Name of the city"
+#~ msgstr "Názov mesta"

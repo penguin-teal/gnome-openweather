@@ -4,7 +4,7 @@
  *
  *  PO Updater for GNOME Shell Extension Weather
  *
- * Copyright (C) 2012 -2014
+ * Copyright (C) 2012 -2015
  *     Christian METZLER <neroth@xeked.com>
  *     Jens Lody <jens@jenslody.de>,
  *
@@ -29,7 +29,7 @@
 Gio = imports.gi.Gio;
 
 print("Generate gnome-shell-extension-openweather.pot");
-var xgettext = Seed.spawn("xgettext -o gnome-shell-extension-openweather.pot -L python --from-code=utf-8 --keyword=_ -f POTFILES.in");
+var xgettext = Seed.spawn("xgettext -o gnome-shell-extension-openweather.pot --from-code=utf-8 --keyword=_ -f POTFILES.in");
 
 if (xgettext.stderr)
     print(xgettext.stderr);
