@@ -373,6 +373,9 @@ function parseWeatherCurrent() {
 function refreshWeatherCurrent() {
     this.oldLocation = this.extractCoord(this._city);
 
+    if (this.oldLocation.search(",") == -1)
+        return;
+
     let params = {
         lat: this.oldLocation.split(",")[0],
         lon: this.oldLocation.split(",")[1],
@@ -447,6 +450,9 @@ function refreshWeatherForecast() {
 
 
     this.oldLocation = this.extractCoord(this._city);
+
+    if (this.oldLocation.search(",") == -1)
+        return;
 
     let params = {
         lat: this.oldLocation.split(",")[0],
