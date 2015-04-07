@@ -293,7 +293,7 @@
     </columns>
     <data>
       <row>
-        <col id="0"/>
+        <col id="0">dummy</col>
       </row>
     </data>
   </object>
