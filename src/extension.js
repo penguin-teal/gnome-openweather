@@ -58,6 +58,7 @@ const PopupMenu = imports.ui.popupMenu;
 
 // Settings
 const OPENWEATHER_SETTINGS_SCHEMA = 'org.gnome.shell.extensions.openweather';
+const OPENWEATHER_DESKTOP_INTERFACE = 'org.gnome.desktop.interface';
 const OPENWEATHER_PROVIDER_KEY = 'weather-provider';
 const OPENWEATHER_UNIT_KEY = 'unit';
 const OPENWEATHER_WIND_SPEED_UNIT_KEY = 'wind-speed-unit';
@@ -373,12 +374,7 @@ const OpenweatherMenuButton = new Lang.Class({
     },
 
     loadConfigInterface: function() {
-        let schemaInterface = "org.gnome.desktop.interface";
-        if (Gio.Settings.list_schemas().indexOf(schemaInterface) == -1)
-            throw _("Schema \"%s\" not found.").format(schemaInterface);
-        this._settingsInterface = new Gio.Settings({
-            schema: schemaInterface
-        });
+        this._settingsInterface = Convenience.getSettings(OPENWEATHER_DESKTOP_INTERFACE);
         this._settingsInterfaceC = this._settingsInterface.connect("changed", Lang.bind(this, function() {
             this.rebuildCurrentWeatherUi();
             this.rebuildFutureWeatherUi();
