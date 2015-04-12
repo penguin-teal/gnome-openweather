@@ -57,28 +57,28 @@ const PanelMenu = imports.ui.panelMenu;
 const PopupMenu = imports.ui.popupMenu;
 
 // Settings
-const WEATHER_SETTINGS_SCHEMA = 'org.gnome.shell.extensions.openweather';
-const WEATHER_PROVIDER_KEY = 'weather-provider';
-const WEATHER_UNIT_KEY = 'unit';
-const WEATHER_WIND_SPEED_UNIT_KEY = 'wind-speed-unit';
-const WEATHER_WIND_DIRECTION_KEY = 'wind-direction';
-const WEATHER_PRESSURE_UNIT_KEY = 'pressure-unit';
-const WEATHER_CITY_KEY = 'city';
-const WEATHER_ACTUAL_CITY_KEY = 'actual-city';
-const WEATHER_TRANSLATE_CONDITION_KEY = 'translate-condition';
-const WEATHER_USE_SYMBOLIC_ICONS_KEY = 'use-symbolic-icons';
-const WEATHER_USE_TEXT_ON_BUTTONS_KEY = 'use-text-on-buttons';
-const WEATHER_SHOW_TEXT_IN_PANEL_KEY = 'show-text-in-panel';
-const WEATHER_POSITION_IN_PANEL_KEY = 'position-in-panel';
-const WEATHER_SHOW_COMMENT_IN_PANEL_KEY = 'show-comment-in-panel';
-const WEATHER_SHOW_COMMENT_IN_FORECAST_KEY = 'show-comment-in-forecast';
-const WEATHER_REFRESH_INTERVAL_CURRENT = 'refresh-interval-current';
-const WEATHER_REFRESH_INTERVAL_FORECAST = 'refresh-interval-forecast';
-const WEATHER_CENTER_FORECAST_KEY = 'center-forecast';
-const WEATHER_DAYS_FORECAST = 'days-forecast';
-const WEATHER_DECIMAL_PLACES = 'decimal-places';
-const WEATHER_OWM_API_KEY = 'appid';
-const WEATHER_FC_API_KEY = 'appid-fc';
+const OPENWEATHER_SETTINGS_SCHEMA = 'org.gnome.shell.extensions.openweather';
+const OPENWEATHER_PROVIDER_KEY = 'weather-provider';
+const OPENWEATHER_UNIT_KEY = 'unit';
+const OPENWEATHER_WIND_SPEED_UNIT_KEY = 'wind-speed-unit';
+const OPENWEATHER_WIND_DIRECTION_KEY = 'wind-direction';
+const OPENWEATHER_PRESSURE_UNIT_KEY = 'pressure-unit';
+const OPENWEATHER_CITY_KEY = 'city';
+const OPENWEATHER_ACTUAL_CITY_KEY = 'actual-city';
+const OPENWEATHER_TRANSLATE_CONDITION_KEY = 'translate-condition';
+const OPENWEATHER_USE_SYMBOLIC_ICONS_KEY = 'use-symbolic-icons';
+const OPENWEATHER_USE_TEXT_ON_BUTTONS_KEY = 'use-text-on-buttons';
+const OPENWEATHER_SHOW_TEXT_IN_PANEL_KEY = 'show-text-in-panel';
+const OPENWEATHER_POSITION_IN_PANEL_KEY = 'position-in-panel';
+const OPENWEATHER_SHOW_COMMENT_IN_PANEL_KEY = 'show-comment-in-panel';
+const OPENWEATHER_SHOW_COMMENT_IN_FORECAST_KEY = 'show-comment-in-forecast';
+const OPENWEATHER_REFRESH_INTERVAL_CURRENT = 'refresh-interval-current';
+const OPENWEATHER_REFRESH_INTERVAL_FORECAST = 'refresh-interval-forecast';
+const OPENWEATHER_CENTER_FORECAST_KEY = 'center-forecast';
+const OPENWEATHER_DAYS_FORECAST = 'days-forecast';
+const OPENWEATHER_DECIMAL_PLACES = 'decimal-places';
+const OPENWEATHER_OWM_API_KEY = 'appid';
+const OPENWEATHER_FC_API_KEY = 'appid-fc';
 
 // Keep enums in sync with GSettings schemas
 const WeatherProvider = {
@@ -124,10 +124,10 @@ const WeatherPosition = {
     LEFT: 2
 };
 
-const WEATHER_CONV_MPS_IN_MPH = 2.23693629;
-const WEATHER_CONV_MPS_IN_KPH = 3.6;
-const WEATHER_CONV_MPS_IN_KNOTS = 1.94384449;
-const WEATHER_CONV_MPS_IN_FPS = 3.2808399;
+const OPENWEATHER_CONV_MPS_IN_MPH = 2.23693629;
+const OPENWEATHER_CONV_MPS_IN_KPH = 3.6;
+const OPENWEATHER_CONV_MPS_IN_KNOTS = 1.94384449;
+const OPENWEATHER_CONV_MPS_IN_FPS = 3.2808399;
 
 let _httpSession;
 
@@ -348,7 +348,7 @@ const OpenweatherMenuButton = new Lang.Class({
     },
 
     loadConfig: function() {
-        this._settings = Convenience.getSettings(WEATHER_SETTINGS_SCHEMA);
+        this._settings = Convenience.getSettings(OPENWEATHER_SETTINGS_SCHEMA);
 
         if (this._cities.length === 0)
             this._cities = "-8.5211767,179.1976747>Vaiaku, Tuvalu";
@@ -439,79 +439,79 @@ const OpenweatherMenuButton = new Lang.Class({
     get _weather_provider() {
         if (!this._settings)
             this.loadConfig();
-        return this._settings.get_enum(WEATHER_PROVIDER_KEY);
+        return this._settings.get_enum(OPENWEATHER_PROVIDER_KEY);
     },
 
     set _weather_provider(v) {
         if (!this._settings)
             this.loadConfig();
-        this._settings.set_enum(WEATHER_PROVIDER_KEY, v);
+        this._settings.set_enum(OPENWEATHER_PROVIDER_KEY, v);
     },
 
     get _units() {
         if (!this._settings)
             this.loadConfig();
-        return this._settings.get_enum(WEATHER_UNIT_KEY);
+        return this._settings.get_enum(OPENWEATHER_UNIT_KEY);
     },
 
     set _units(v) {
         if (!this._settings)
             this.loadConfig();
-        this._settings.set_enum(WEATHER_UNIT_KEY, v);
+        this._settings.set_enum(OPENWEATHER_UNIT_KEY, v);
     },
 
     get _wind_speed_units() {
         if (!this._settings)
             this.loadConfig();
-        return this._settings.get_enum(WEATHER_WIND_SPEED_UNIT_KEY);
+        return this._settings.get_enum(OPENWEATHER_WIND_SPEED_UNIT_KEY);
     },
 
     set _wind_speed_units(v) {
         if (!this._settings)
             this.loadConfig();
-        this._settings.set_enum(WEATHER_WIND_SPEED_UNIT_KEY, v);
+        this._settings.set_enum(OPENWEATHER_WIND_SPEED_UNIT_KEY, v);
     },
 
     get _wind_direction() {
         if (!this._settings)
             this.loadConfig();
-        return this._settings.get_boolean(WEATHER_WIND_DIRECTION_KEY);
+        return this._settings.get_boolean(OPENWEATHER_WIND_DIRECTION_KEY);
     },
 
     set _wind_direction(v) {
         if (!this._settings)
             this.loadConfig();
-        return this._settings.set_boolean(WEATHER_WIND_DIRECTION_KEY, v);
+        return this._settings.set_boolean(OPENWEATHER_WIND_DIRECTION_KEY, v);
     },
 
     get _pressure_units() {
         if (!this._settings)
             this.loadConfig();
-        return this._settings.get_enum(WEATHER_PRESSURE_UNIT_KEY);
+        return this._settings.get_enum(OPENWEATHER_PRESSURE_UNIT_KEY);
     },
 
     set _pressure_units(v) {
         if (!this._settings)
             this.loadConfig();
-        this._settings.set_enum(WEATHER_PRESSURE_UNIT_KEY, v);
+        this._settings.set_enum(OPENWEATHER_PRESSURE_UNIT_KEY, v);
     },
 
     get _cities() {
         if (!this._settings)
             this.loadConfig();
-        return this._settings.get_string(WEATHER_CITY_KEY);
+        return this._settings.get_string(OPENWEATHER_CITY_KEY);
     },
 
     set _cities(v) {
         if (!this._settings)
             this.loadConfig();
-        this._settings.set_string(WEATHER_CITY_KEY, v);
+        this._settings.set_string(OPENWEATHER_CITY_KEY, v);
     },
 
     get _actual_city() {
         if (!this._settings)
             this.loadConfig();
-        var a = this._settings.get_int(WEATHER_ACTUAL_CITY_KEY);
+        var a = this._settings.get_int(OPENWEATHER_ACTUAL_CITY_KEY);
         var b = a;
         var cities = this._cities.split(" && ");
 
@@ -551,7 +551,7 @@ const OpenweatherMenuButton = new Lang.Class({
         if (a > l)
             a = l;
 
-        this._settings.set_int(WEATHER_ACTUAL_CITY_KEY, a);
+        this._settings.set_int(OPENWEATHER_ACTUAL_CITY_KEY, a);
     },
 
     get _city() {
@@ -582,173 +582,173 @@ const OpenweatherMenuButton = new Lang.Class({
     get _translate_condition() {
         if (!this._settings)
             this.loadConfig();
-        return this._settings.get_boolean(WEATHER_TRANSLATE_CONDITION_KEY);
+        return this._settings.get_boolean(OPENWEATHER_TRANSLATE_CONDITION_KEY);
     },
 
     set _translate_condition(v) {
         if (!this._settings)
             this.loadConfig();
-        this._settings.set_boolean(WEATHER_TRANSLATE_CONDITION_KEY, v);
+        this._settings.set_boolean(OPENWEATHER_TRANSLATE_CONDITION_KEY, v);
     },
 
     get _getIconType() {
         if (!this._settings)
             this.loadConfig();
-        return this._settings.get_boolean(WEATHER_USE_SYMBOLIC_ICONS_KEY) ? 1 : 0;
+        return this._settings.get_boolean(OPENWEATHER_USE_SYMBOLIC_ICONS_KEY) ? 1 : 0;
     },
 
     set _getIconType(v) {
         if (!this._settings)
             this.loadConfig();
-        this._settings.set_boolean(WEATHER_USE_SYMBOLIC_ICONS_KEY, v);
+        this._settings.set_boolean(OPENWEATHER_USE_SYMBOLIC_ICONS_KEY, v);
     },
 
     get _use_text_on_buttons() {
         if (!this._settings)
             this.loadConfig();
-        return this._settings.get_boolean(WEATHER_USE_TEXT_ON_BUTTONS_KEY) ? 1 : 0;
+        return this._settings.get_boolean(OPENWEATHER_USE_TEXT_ON_BUTTONS_KEY) ? 1 : 0;
     },
 
     set _use_text_on_buttons(v) {
         if (!this._settings)
             this.loadConfig();
-        this._settings.set_boolean(WEATHER_USE_TEXT_ON_BUTTONS_KEY, v);
+        this._settings.set_boolean(OPENWEATHER_USE_TEXT_ON_BUTTONS_KEY, v);
     },
 
     get _text_in_panel() {
         if (!this._settings)
             this.loadConfig();
-        return this._settings.get_boolean(WEATHER_SHOW_TEXT_IN_PANEL_KEY);
+        return this._settings.get_boolean(OPENWEATHER_SHOW_TEXT_IN_PANEL_KEY);
     },
 
     set _text_in_panel(v) {
         if (!this._settings)
             this.loadConfig();
-        this._settings.set_boolean(WEATHER_SHOW_TEXT_IN_PANEL_KEY, v);
+        this._settings.set_boolean(OPENWEATHER_SHOW_TEXT_IN_PANEL_KEY, v);
     },
 
     get _position_in_panel() {
         if (!this._settings)
             this.loadConfig();
-        return this._settings.get_enum(WEATHER_POSITION_IN_PANEL_KEY);
+        return this._settings.get_enum(OPENWEATHER_POSITION_IN_PANEL_KEY);
     },
 
     set _position_in_panel(v) {
         if (!this._settings)
             this.loadConfig();
-        this._settings.set_enum(WEATHER_POSITION_IN_PANEL_KEY, v);
+        this._settings.set_enum(OPENWEATHER_POSITION_IN_PANEL_KEY, v);
     },
 
     get _comment_in_panel() {
         if (!this._settings)
             this.loadConfig();
-        return this._settings.get_boolean(WEATHER_SHOW_COMMENT_IN_PANEL_KEY);
+        return this._settings.get_boolean(OPENWEATHER_SHOW_COMMENT_IN_PANEL_KEY);
     },
 
     set _comment_in_panel(v) {
         if (!this._settings)
             this.loadConfig();
-        this._settings.set_boolean(WEATHER_SHOW_COMMENT_IN_PANEL_KEY, v);
+        this._settings.set_boolean(OPENWEATHER_SHOW_COMMENT_IN_PANEL_KEY, v);
     },
 
     get _comment_in_forecast() {
         if (!this._settings)
             this.loadConfig();
-        return this._settings.get_boolean(WEATHER_SHOW_COMMENT_IN_FORECAST_KEY);
+        return this._settings.get_boolean(OPENWEATHER_SHOW_COMMENT_IN_FORECAST_KEY);
     },
 
     set _comment_in_forecast(v) {
         if (!this._settings)
             this.loadConfig();
-        this._settings.set_boolean(WEATHER_SHOW_COMMENT_IN_FORECAST_KEY, v);
+        this._settings.set_boolean(OPENWEATHER_SHOW_COMMENT_IN_FORECAST_KEY, v);
     },
 
     get _refresh_interval_current() {
         if (!this._settings)
             this.loadConfig();
-        let v = this._settings.get_int(WEATHER_REFRESH_INTERVAL_CURRENT);
+        let v = this._settings.get_int(OPENWEATHER_REFRESH_INTERVAL_CURRENT);
         return ((v >= 600) ? v : 600);
     },
 
     set _refresh_interval_current(v) {
         if (!this._settings)
             this.loadConfig();
-        this._settings.set_int(WEATHER_REFRESH_INTERVAL_CURRENT, ((v >= 600) ? v : 600));
+        this._settings.set_int(OPENWEATHER_REFRESH_INTERVAL_CURRENT, ((v >= 600) ? v : 600));
     },
 
     get _refresh_interval_forecast() {
         if (!this._settings)
             this.loadConfig();
-        let v = this._settings.get_int(WEATHER_REFRESH_INTERVAL_FORECAST);
+        let v = this._settings.get_int(OPENWEATHER_REFRESH_INTERVAL_FORECAST);
         return ((v >= 600) ? v : 600);
     },
 
     set _refresh_interval_forecast(v) {
         if (!this._settings)
             this.loadConfig();
-        this._settings.set_int(WEATHER_REFRESH_INTERVAL_FORECAST, ((v >= 600) ? v : 600));
+        this._settings.set_int(OPENWEATHER_REFRESH_INTERVAL_FORECAST, ((v >= 600) ? v : 600));
     },
 
     get _center_forecast() {
         if (!this._settings)
             this.loadConfig();
-        return this._settings.get_boolean(WEATHER_CENTER_FORECAST_KEY);
+        return this._settings.get_boolean(OPENWEATHER_CENTER_FORECAST_KEY);
     },
 
     set _center_forecast(v) {
         if (!this._settings)
             this.loadConfig();
-        this._settings.set_boolean(WEATHER_CENTER_FORECAST_KEY, v);
+        this._settings.set_boolean(OPENWEATHER_CENTER_FORECAST_KEY, v);
     },
 
     get _days_forecast() {
         if (!this._settings)
             this.loadConfig();
-        return this._settings.get_int(WEATHER_DAYS_FORECAST);
+        return this._settings.get_int(OPENWEATHER_DAYS_FORECAST);
     },
 
     set _days_forecast(v) {
         if (!this._settings)
             this.loadConfig();
-        this._settings.set_int(WEATHER_DAYS_FORECAST, v);
+        this._settings.set_int(OPENWEATHER_DAYS_FORECAST, v);
     },
 
     get _decimal_places() {
         if (!this._settings)
             this.loadConfig();
-        return this._settings.get_int(WEATHER_DECIMAL_PLACES);
+        return this._settings.get_int(OPENWEATHER_DECIMAL_PLACES);
     },
 
     set _decimal_places(v) {
         if (!this._settings)
             this.loadConfig();
-        this._settings.set_int(WEATHER_DECIMAL_PLACES, v);
+        this._settings.set_int(OPENWEATHER_DECIMAL_PLACES, v);
     },
 
     get _appid() {
         if (!this._settings)
             this.loadConfig();
-        let key = this._settings.get_string(WEATHER_OWM_API_KEY);
+        let key = this._settings.get_string(OPENWEATHER_OWM_API_KEY);
         return (key.length == 32) ? key : '';
     },
 
     set _appid(v) {
         if (!this._settings)
             this.loadConfig();
-        this._settings.set_string(WEATHER_OWM_API_KEY, v);
+        this._settings.set_string(OPENWEATHER_OWM_API_KEY, v);
     },
 
     get _appid_fc() {
         if (!this._settings)
             this.loadConfig();
-        let key = this._settings.get_string(WEATHER_FC_API_KEY);
+        let key = this._settings.get_string(OPENWEATHER_FC_API_KEY);
         return (key.length == 32) ? key : '';
     },
 
     set _appid_fc(v) {
         if (!this._settings)
             this.loadConfig();
-        this._settings.set_string(WEATHER_FC_API_KEY, v);
+        this._settings.set_string(OPENWEATHER_FC_API_KEY, v);
     },
 
     _onButtonHoverChanged: function(actor, event) {
@@ -1242,12 +1242,12 @@ const OpenweatherMenuButton = new Lang.Class({
         let unit = 'm/s';
         switch (this._wind_speed_units) {
             case WeatherWindSpeedUnits.MPH:
-                speed = (speed * WEATHER_CONV_MPS_IN_MPH).toFixed(this._decimal_places);
+                speed = (speed * OPENWEATHER_CONV_MPS_IN_MPH).toFixed(this._decimal_places);
                 unit = 'mph';
                 break;
 
             case WeatherWindSpeedUnits.KPH:
-                speed = (speed * WEATHER_CONV_MPS_IN_KPH).toFixed(this._decimal_places);
+                speed = (speed * OPENWEATHER_CONV_MPS_IN_KPH).toFixed(this._decimal_places);
                 unit = 'km/h';
                 break;
 
@@ -1256,12 +1256,12 @@ const OpenweatherMenuButton = new Lang.Class({
                 break;
 
             case WeatherWindSpeedUnits.KNOTS:
-                speed = (speed * WEATHER_CONV_MPS_IN_KNOTS).toFixed(this._decimal_places);
+                speed = (speed * OPENWEATHER_CONV_MPS_IN_KNOTS).toFixed(this._decimal_places);
                 unit = 'kn';
                 break;
 
             case WeatherWindSpeedUnits.FPS:
-                speed = (speed * WEATHER_CONV_MPS_IN_FPS).toFixed(this._decimal_places);
+                speed = (speed * OPENWEATHER_CONV_MPS_IN_FPS).toFixed(this._decimal_places);
                 unit = 'ft/s';
                 break;
 

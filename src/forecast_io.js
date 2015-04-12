@@ -41,8 +41,8 @@ const Gettext = imports.gettext.domain('gnome-shell-extension-openweather');
 const _ = Gettext.gettext;
 
 
-const WEATHER_URL_HOST = 'api.forecast.io';
-const WEATHER_URL_BASE = 'http://' + WEATHER_URL_HOST + '/forecast/';
+const OPENWEATHER_URL_HOST = 'api.forecast.io';
+const OPENWEATHER_URL_BASE = 'http://' + OPENWEATHER_URL_HOST + '/forecast/';
 
 function getWeatherIcon(icon) {
     //    clear-day             weather-clear-day
@@ -175,7 +175,7 @@ function refreshWeatherCurrent() {
         lang: this.fc_locale,
         units: 'si'
     };
-    let url = WEATHER_URL_BASE + this._appid_fc + '/' + this.oldLocation;
+    let url = OPENWEATHER_URL_BASE + this._appid_fc + '/' + this.oldLocation;
     this.load_json_async(url, params, function(json) {
         if (json && json.currently) {
 

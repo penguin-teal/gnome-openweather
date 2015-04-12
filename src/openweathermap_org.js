@@ -41,10 +41,10 @@ const OpenweathermapOrg = Me.imports.openweathermap_org;
 const Gettext = imports.gettext.domain('gnome-shell-extension-openweather');
 const _ = Gettext.gettext;
 
-const WEATHER_URL_HOST = 'api.openweathermap.org';
-const WEATHER_URL_BASE = 'http://' + WEATHER_URL_HOST + '/data/2.5/';
-const WEATHER_URL_CURRENT = WEATHER_URL_BASE + 'weather';
-const WEATHER_URL_FORECAST = WEATHER_URL_BASE + 'forecast/daily';
+const OPENWEATHER_URL_HOST = 'api.openweathermap.org';
+const OPENWEATHER_URL_BASE = 'http://' + OPENWEATHER_URL_HOST + '/data/2.5/';
+const OPENWEATHER_URL_CURRENT = OPENWEATHER_URL_BASE + 'weather';
+const OPENWEATHER_URL_FORECAST = OPENWEATHER_URL_BASE + 'forecast/daily';
 
 function getWeatherIcon(code, night) {
 
@@ -384,7 +384,7 @@ function refreshWeatherCurrent() {
     if (this._appid)
         params.APPID = this._appid;
 
-    this.load_json_async(WEATHER_URL_CURRENT, params, function(json) {
+    this.load_json_async(OPENWEATHER_URL_CURRENT, params, function(json) {
         if (json && (Number(json.cod) == 200)) {
 
             if (this.currentWeatherCache != json)
@@ -463,7 +463,7 @@ function refreshWeatherForecast() {
     if (this._appid)
         params.APPID = this._appid;
 
-    this.load_json_async(WEATHER_URL_FORECAST, params, function(json) {
+    this.load_json_async(OPENWEATHER_URL_FORECAST, params, function(json) {
         if (json && (Number(json.cod) == 200)) {
             if (this.forecastWeatherCache != json.list) {
                 this.owmCityId = json.city.id;
