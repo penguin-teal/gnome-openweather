@@ -344,7 +344,7 @@
                 <property name="use_action_appearance">False</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="icon_name">gtk-add</property>
+                <property name="icon_name">list-add</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -356,7 +356,7 @@
                 <property name="use_action_appearance">False</property>
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="icon_name">gtk-remove</property>
+                <property name="icon_name">list-remove</property>
               </object>
               <packing>
                 <property name="expand">False</property>
