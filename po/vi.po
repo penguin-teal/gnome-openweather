@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-07 00:51+0200\n"
+"POT-Creation-Date: 2015-04-13 08:40+0200\n"
 "PO-Revision-Date: 2012-06-17 17:04+0700\n"
 "Last-Translator: Ngô Trung <ndtrung4419@gmail.com>\n"
 "Language-Team: \n"
@@ -17,460 +17,457 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../src/extension.js:154
+#: ../src/extension.js:155
 msgid "..."
 msgstr "..."
 
-#: ../src/extension.js:378
-#, javascript-format
-msgid "Schema \"%s\" not found."
-msgstr "Không tìm thấy schema \"%s\"."
-
-#: ../src/extension.js:818
+#: ../src/extension.js:814
 msgid "Locations"
 msgstr ""
 
-#: ../src/extension.js:830
+#: ../src/extension.js:826
 msgid "Reload Weather Information"
 msgstr "Tải lại dữ liệu thời tiết"
 
-#: ../src/extension.js:846
+#: ../src/extension.js:842
 msgid "Weather data provided by:"
 msgstr ""
 
-#: ../src/extension.js:857
+#: ../src/extension.js:853
 #, javascript-format
 msgid "Can not open %s"
 msgstr ""
 
-#: ../src/extension.js:864
+#: ../src/extension.js:860
 msgid "Weather Settings"
 msgstr "Thiết lập thời tiết"
 
-#: ../src/extension.js:915 ../src/extension.js:924 ../src/prefs.js:755
+#: ../src/extension.js:911 ../src/extension.js:920 ../src/prefs.js:755
 msgid "Invalid city"
 msgstr "Không có thành phố này"
 
-#: ../src/extension.js:1020
+#: ../src/extension.js:1016
 msgid "Calm"
 msgstr ""
 
-#: ../src/extension.js:1023
+#: ../src/extension.js:1019
 msgid "Light air"
 msgstr ""
 
-#: ../src/extension.js:1026
+#: ../src/extension.js:1022
 msgid "Light breeze"
 msgstr ""
 
-#: ../src/extension.js:1029
+#: ../src/extension.js:1025
 msgid "Gentle breeze"
 msgstr ""
 
-#: ../src/extension.js:1032
+#: ../src/extension.js:1028
 msgid "Moderate breeze"
 msgstr ""
 
-#: ../src/extension.js:1035
+#: ../src/extension.js:1031
 msgid "Fresh breeze"
 msgstr ""
 
-#: ../src/extension.js:1038
+#: ../src/extension.js:1034
 msgid "Strong breeze"
 msgstr ""
 
-#: ../src/extension.js:1041
+#: ../src/extension.js:1037
 msgid "Moderate gale"
 msgstr ""
 
-#: ../src/extension.js:1044
+#: ../src/extension.js:1040
 msgid "Fresh gale"
 msgstr ""
 
-#: ../src/extension.js:1047
+#: ../src/extension.js:1043
 msgid "Strong gale"
 msgstr ""
 
-#: ../src/extension.js:1050
+#: ../src/extension.js:1046
 msgid "Storm"
 msgstr ""
 
-#: ../src/extension.js:1053
+#: ../src/extension.js:1049
 msgid "Violent storm"
 msgstr ""
 
-#: ../src/extension.js:1056
+#: ../src/extension.js:1052
 msgid "Hurricane"
 msgstr "Cuồng phong"
 
-#: ../src/extension.js:1060
+#: ../src/extension.js:1056
 msgid "Sunday"
 msgstr "Chủ Nhật"
 
-#: ../src/extension.js:1060
+#: ../src/extension.js:1056
 msgid "Monday"
 msgstr "Thứ hai"
 
-#: ../src/extension.js:1060
+#: ../src/extension.js:1056
 msgid "Tuesday"
 msgstr "Thứ ba"
 
-#: ../src/extension.js:1060
+#: ../src/extension.js:1056
 msgid "Wednesday"
 msgstr "Thứ tư"
 
-#: ../src/extension.js:1060
+#: ../src/extension.js:1056
 msgid "Thursday"
 msgstr "Thứ năm"
 
-#: ../src/extension.js:1060
+#: ../src/extension.js:1056
 msgid "Friday"
 msgstr "Thứ sáu"
 
-#: ../src/extension.js:1060
+#: ../src/extension.js:1056
 msgid "Saturday"
 msgstr "Thứ bảy"
 
-#: ../src/extension.js:1066
+#: ../src/extension.js:1062
 msgid "N"
 msgstr "B"
 
-#: ../src/extension.js:1066
+#: ../src/extension.js:1062
 msgid "NE"
 msgstr "ĐB"
 
-#: ../src/extension.js:1066
+#: ../src/extension.js:1062
 msgid "E"
 msgstr "Đ"
 
-#: ../src/extension.js:1066
+#: ../src/extension.js:1062
 msgid "SE"
 msgstr "ĐN"
 
-#: ../src/extension.js:1066
+#: ../src/extension.js:1062
 msgid "S"
 msgstr "N"
 
-#: ../src/extension.js:1066
+#: ../src/extension.js:1062
 msgid "SW"
 msgstr "TN"
 
-#: ../src/extension.js:1066
+#: ../src/extension.js:1062
 msgid "W"
 msgstr "T"
 
-#: ../src/extension.js:1066
+#: ../src/extension.js:1062
 msgid "NW"
 msgstr "TB"
 
-#: ../src/extension.js:1322
+#: ../src/extension.js:1318
 msgid "Loading current weather ..."
 msgstr "Đang tải dữ liệu thời tiết hiện tại..."
 
-#: ../src/extension.js:1354
+#: ../src/extension.js:1350
 msgid "Loading ..."
 msgstr "Đang tải..."
 
-#: ../src/extension.js:1358
+#: ../src/extension.js:1354
 msgid "Please wait"
 msgstr "Xin đợi một lát"
 
-#: ../src/extension.js:1419
+#: ../src/extension.js:1415
 msgid "Cloudiness:"
 msgstr ""
 
-#: ../src/extension.js:1423
+#: ../src/extension.js:1419
 msgid "Humidity:"
 msgstr "Độ ẩm:"
 
-#: ../src/extension.js:1427
+#: ../src/extension.js:1423
 msgid "Pressure:"
 msgstr "Áp suất:"
 
-#: ../src/extension.js:1431
+#: ../src/extension.js:1427
 msgid "Wind:"
 msgstr "Gió:"
 
 #: ../src/forecast_io.js:139 ../src/forecast_io.js:247
-#: ../src/openweathermap_org.js:339 ../src/openweathermap_org.js:433
+#: ../src/openweathermap_org.js:341 ../src/openweathermap_org.js:438
 msgid "Yesterday"
 msgstr "Hôm qua"
 
 #: ../src/forecast_io.js:141 ../src/forecast_io.js:249
-#: ../src/openweathermap_org.js:341 ../src/openweathermap_org.js:435
+#: ../src/openweathermap_org.js:343 ../src/openweathermap_org.js:440
 #, fuzzy, javascript-format
-msgid "%d days ago"
-msgstr "%s ngày trước"
+msgid "%d day ago"
+msgid_plural "%d days ago"
+msgstr[0] "%s ngày trước"
 
-#: ../src/forecast_io.js:227 ../src/openweathermap_org.js:427
+#: ../src/forecast_io.js:227 ../src/openweathermap_org.js:432
 msgid "Today"
 msgstr "Hôm nay"
 
-#: ../src/forecast_io.js:243 ../src/openweathermap_org.js:429
+#: ../src/forecast_io.js:243 ../src/openweathermap_org.js:434
 msgid "Tomorrow"
 msgstr "Ngày mai"
 
-#: ../src/forecast_io.js:245 ../src/openweathermap_org.js:431
+#: ../src/forecast_io.js:245 ../src/openweathermap_org.js:436
 #, fuzzy, javascript-format
-msgid "In %d days"
-msgstr "%s ngày trước"
+msgid "In %d day"
+msgid_plural "In %d days"
+msgstr[0] "%s ngày trước"
 
-#: ../src/openweathermap_org.js:176
+#: ../src/openweathermap_org.js:178
 #, fuzzy
 msgid "thunderstorm with light rain"
 msgstr "Giông"
 
-#: ../src/openweathermap_org.js:178
+#: ../src/openweathermap_org.js:180
 #, fuzzy
 msgid "thunderstorm with rain"
 msgstr "Giông"
 
-#: ../src/openweathermap_org.js:180
+#: ../src/openweathermap_org.js:182
 #, fuzzy
 msgid "thunderstorm with heavy rain"
 msgstr "Giông"
 
-#: ../src/openweathermap_org.js:182
+#: ../src/openweathermap_org.js:184
 #, fuzzy
 msgid "light thunderstorm"
 msgstr "Giông diện hẹp"
 
-#: ../src/openweathermap_org.js:184
+#: ../src/openweathermap_org.js:186
 #, fuzzy
 msgid "thunderstorm"
 msgstr "Giông"
 
-#: ../src/openweathermap_org.js:186
+#: ../src/openweathermap_org.js:188
 #, fuzzy
 msgid "heavy thunderstorm"
 msgstr "Giông nguy hiểm"
 
-#: ../src/openweathermap_org.js:188
+#: ../src/openweathermap_org.js:190
 #, fuzzy
 msgid "ragged thunderstorm"
 msgstr "Giông diện hẹp"
 
-#: ../src/openweathermap_org.js:190
+#: ../src/openweathermap_org.js:192
 #, fuzzy
 msgid "thunderstorm with light drizzle"
 msgstr "Giông"
 
-#: ../src/openweathermap_org.js:192
+#: ../src/openweathermap_org.js:194
 #, fuzzy
 msgid "thunderstorm with drizzle"
 msgstr "Giông"
 
-#: ../src/openweathermap_org.js:194
+#: ../src/openweathermap_org.js:196
 #, fuzzy
 msgid "thunderstorm with heavy drizzle"
 msgstr "Giông"
 
-#: ../src/openweathermap_org.js:196
+#: ../src/openweathermap_org.js:198
 msgid "light intensity drizzle"
 msgstr ""
 
-#: ../src/openweathermap_org.js:198
+#: ../src/openweathermap_org.js:200
 #, fuzzy
 msgid "drizzle"
 msgstr "Mưa phùn"
 
-#: ../src/openweathermap_org.js:200
+#: ../src/openweathermap_org.js:202
 #, fuzzy
 msgid "heavy intensity drizzle"
 msgstr "Mưa và mưa đá"
 
-#: ../src/openweathermap_org.js:202
+#: ../src/openweathermap_org.js:204
 #, fuzzy
 msgid "light intensity drizzle rain"
 msgstr "Mưa phùn"
 
-#: ../src/openweathermap_org.js:204
+#: ../src/openweathermap_org.js:206
 #, fuzzy
 msgid "drizzle rain"
 msgstr "Mưa phùn"
 
-#: ../src/openweathermap_org.js:206
+#: ../src/openweathermap_org.js:208
 #, fuzzy
 msgid "heavy intensity drizzle rain"
 msgstr "Mưa phùn"
 
-#: ../src/openweathermap_org.js:208
+#: ../src/openweathermap_org.js:210
 #, fuzzy
 msgid "shower rain and drizzle"
 msgstr "Mưa và mưa đá"
 
-#: ../src/openweathermap_org.js:210
+#: ../src/openweathermap_org.js:212
 #, fuzzy
 msgid "heavy shower rain and drizzle"
 msgstr "Mưa và mưa đá"
 
-#: ../src/openweathermap_org.js:212
+#: ../src/openweathermap_org.js:214
 #, fuzzy
 msgid "shower drizzle"
 msgstr "Mưa phùn rét"
 
-#: ../src/openweathermap_org.js:214
+#: ../src/openweathermap_org.js:216
 #, fuzzy
 msgid "light rain"
 msgstr "Mưa rét"
 
-#: ../src/openweathermap_org.js:216
+#: ../src/openweathermap_org.js:218
 #, fuzzy
 msgid "moderate rain"
 msgstr "Mưa phùn"
 
-#: ../src/openweathermap_org.js:218
+#: ../src/openweathermap_org.js:220
 msgid "heavy intensity rain"
 msgstr ""
 
-#: ../src/openweathermap_org.js:220
+#: ../src/openweathermap_org.js:222
 msgid "very heavy rain"
 msgstr ""
 
-#: ../src/openweathermap_org.js:222
+#: ../src/openweathermap_org.js:224
 #, fuzzy
 msgid "extreme rain"
 msgstr "Mưa rét"
 
-#: ../src/openweathermap_org.js:224
+#: ../src/openweathermap_org.js:226
 #, fuzzy
 msgid "freezing rain"
 msgstr "Mưa rét"
 
-#: ../src/openweathermap_org.js:226
+#: ../src/openweathermap_org.js:228
 #, fuzzy
 msgid "light intensity shower rain"
 msgstr "Tuyết rào nhẹ"
 
-#: ../src/openweathermap_org.js:228
+#: ../src/openweathermap_org.js:230
 #, fuzzy
 msgid "shower rain"
 msgstr "Mưa rào"
 
-#: ../src/openweathermap_org.js:230
+#: ../src/openweathermap_org.js:232
 #, fuzzy
 msgid "heavy intensity shower rain"
 msgstr "Tuyết mạnh"
 
-#: ../src/openweathermap_org.js:232
+#: ../src/openweathermap_org.js:234
 msgid "ragged shower rain"
 msgstr ""
 
-#: ../src/openweathermap_org.js:234
+#: ../src/openweathermap_org.js:236
 #, fuzzy
 msgid "light snow"
 msgstr "Gió tuyết"
 
-#: ../src/openweathermap_org.js:236
+#: ../src/openweathermap_org.js:238
 msgid "snow"
 msgstr ""
 
-#: ../src/openweathermap_org.js:238
+#: ../src/openweathermap_org.js:240
 #, fuzzy
 msgid "heavy snow"
 msgstr "Tuyết mạnh"
 
-#: ../src/openweathermap_org.js:240
+#: ../src/openweathermap_org.js:242
 #, fuzzy
 msgid "sleet"
 msgstr "Mưa tuyết"
 
-#: ../src/openweathermap_org.js:242
+#: ../src/openweathermap_org.js:244
 #, fuzzy
 msgid "shower sleet"
 msgstr "Mưa rào"
 
-#: ../src/openweathermap_org.js:244
+#: ../src/openweathermap_org.js:246
 #, fuzzy
 msgid "light rain and snow"
 msgstr "Mưa và tuyết"
 
-#: ../src/openweathermap_org.js:246
+#: ../src/openweathermap_org.js:248
 #, fuzzy
 msgid "rain and snow"
 msgstr "Mưa và tuyết"
 
-#: ../src/openweathermap_org.js:248
+#: ../src/openweathermap_org.js:250
 #, fuzzy
 msgid "light shower snow"
 msgstr "Tuyết rào nhẹ"
 
-#: ../src/openweathermap_org.js:250
+#: ../src/openweathermap_org.js:252
 #, fuzzy
 msgid "shower snow"
 msgstr "Mưa rào"
 
-#: ../src/openweathermap_org.js:252
+#: ../src/openweathermap_org.js:254
 #, fuzzy
 msgid "heavy shower snow"
 msgstr "Tuyết mạnh"
 
-#: ../src/openweathermap_org.js:254
+#: ../src/openweathermap_org.js:256
 msgid "mist"
 msgstr ""
 
-#: ../src/openweathermap_org.js:256
+#: ../src/openweathermap_org.js:258
 msgid "smoke"
 msgstr ""
 
-#: ../src/openweathermap_org.js:258
+#: ../src/openweathermap_org.js:260
 msgid "haze"
 msgstr ""
 
-#: ../src/openweathermap_org.js:260
+#: ../src/openweathermap_org.js:262
 msgid "Sand/Dust Whirls"
 msgstr ""
 
-#: ../src/openweathermap_org.js:262
+#: ../src/openweathermap_org.js:264
 #, fuzzy
 msgid "Fog"
 msgstr "Sương mù"
 
-#: ../src/openweathermap_org.js:264
+#: ../src/openweathermap_org.js:266
 msgid "sand"
 msgstr ""
 
-#: ../src/openweathermap_org.js:266
+#: ../src/openweathermap_org.js:268
 msgid "dust"
 msgstr ""
 
-#: ../src/openweathermap_org.js:268
+#: ../src/openweathermap_org.js:270
 msgid "VOLCANIC ASH"
 msgstr ""
 
-#: ../src/openweathermap_org.js:270
+#: ../src/openweathermap_org.js:272
 msgid "SQUALLS"
 msgstr ""
 
-#: ../src/openweathermap_org.js:272
+#: ../src/openweathermap_org.js:274
 msgid "TORNADO"
 msgstr ""
 
-#: ../src/openweathermap_org.js:274
+#: ../src/openweathermap_org.js:276
 msgid "sky is clear"
 msgstr ""
 
-#: ../src/openweathermap_org.js:276
+#: ../src/openweathermap_org.js:278
 #, fuzzy
 msgid "few clouds"
 msgstr "Nhiều mây"
 
-#: ../src/openweathermap_org.js:278
+#: ../src/openweathermap_org.js:280
 #, fuzzy
 msgid "scattered clouds"
 msgstr "Mưa rào rải rác"
 
-#: ../src/openweathermap_org.js:280
+#: ../src/openweathermap_org.js:282
 #, fuzzy
 msgid "broken clouds"
 msgstr "Nhiều mây"
 
-#: ../src/openweathermap_org.js:282
+#: ../src/openweathermap_org.js:284
 #, fuzzy
 msgid "overcast clouds"
 msgstr "Nhiều mây"
 
-#: ../src/openweathermap_org.js:284
+#: ../src/openweathermap_org.js:286
 msgid "Not available"
 msgstr "Không có dữ liệu"
 
@@ -483,105 +480,112 @@ msgstr "Bạn có muốn xóa %s?"
 msgid "Edit name"
 msgstr ""
 
-#: ../data/weather-settings.ui:44 ../data/weather-settings.ui:74
-#: ../data/weather-settings.ui:194
+#: ../data/weather-settings.ui:45 ../data/weather-settings.ui:75
+#: ../data/weather-settings.ui:196
 #, fuzzy
 msgid "Clear entry"
 msgstr "Trời trong"
 
-#: ../data/weather-settings.ui:58
+#: ../data/weather-settings.ui:59
 msgid "Edit coordinates"
 msgstr ""
 
-#: ../data/weather-settings.ui:172
+#: ../data/weather-settings.ui:173
 msgid "Search by location or coordinates"
 msgstr ""
 
-#: ../data/weather-settings.ui:195
+#: ../data/weather-settings.ui:197
 msgid "e.g. Vaiaku, Tuvalu or -8.5211767,179.1976747"
 msgstr ""
 
-#: ../data/weather-settings.ui:404
-msgid "Choose weather provider"
+#: ../data/weather-settings.ui:406
+msgid "Chose weather provider"
 msgstr ""
 
-#: ../data/weather-settings.ui:415
+#: ../data/weather-settings.ui:417
 msgid "Temperature Unit"
 msgstr "Đơn vị đo nhiệt độ"
 
-#: ../data/weather-settings.ui:426
+#: ../data/weather-settings.ui:428
 msgid "Wind Speed Unit"
 msgstr "Đơn vị tốc độ gió"
 
-#: ../data/weather-settings.ui:437
+#: ../data/weather-settings.ui:439
 #, fuzzy
 msgid "Pressure Unit"
 msgstr "Áp suất:"
 
-#: ../data/weather-settings.ui:448
+#: ../data/weather-settings.ui:450
 msgid "Position in Panel"
 msgstr "Vị trí trên thanh pa-nen"
 
-#: ../data/weather-settings.ui:459
+#: ../data/weather-settings.ui:461
 msgid "Wind Direction by Arrows"
 msgstr ""
 
-#: ../data/weather-settings.ui:470
+#: ../data/weather-settings.ui:472
 msgid "Translate Conditions"
 msgstr "Dịch tình hình thời tiết"
 
-#: ../data/weather-settings.ui:481
+#: ../data/weather-settings.ui:483
 msgid "Symbolic Icons"
 msgstr "Biểu tượng đơn giản"
 
-#: ../data/weather-settings.ui:492
+#: ../data/weather-settings.ui:494
 msgid "Text on buttons"
 msgstr ""
 
-#: ../data/weather-settings.ui:503
+#: ../data/weather-settings.ui:505
 msgid "Temperature in Panel"
 msgstr "Hiện nhiệt độ trên pa-nen"
 
-#: ../data/weather-settings.ui:514
+#: ../data/weather-settings.ui:516
 msgid "Conditions in Panel"
 msgstr "Hiện thời tiết trên pa-nen"
 
-#: ../data/weather-settings.ui:525
+#: ../data/weather-settings.ui:527
 #, fuzzy
 msgid "Conditions in Forecast"
 msgstr "Hiện thời tiết trên pa-nen"
 
-#: ../data/weather-settings.ui:536
+#: ../data/weather-settings.ui:538
 msgid "Center forecast"
 msgstr ""
 
-#: ../data/weather-settings.ui:547
+#: ../data/weather-settings.ui:549
 msgid "Number of days in forecast"
 msgstr ""
 
-#: ../data/weather-settings.ui:558
+#: ../data/weather-settings.ui:560
 msgid "Maximal number of digits after the decimal point"
 msgstr ""
 
-#: ../data/weather-settings.ui:569
+#: ../data/weather-settings.ui:571
 msgid "Personal Api key from openweathermap.org"
 msgstr ""
 
-#: ../data/weather-settings.ui:580
+#: ../data/weather-settings.ui:582
 msgid "Personal Api key from forecast.io"
 msgstr ""
 
-#: ../data/weather-settings.ui:665
+#: ../data/weather-settings.ui:667
 msgid "Center"
 msgstr "Ở giữa"
 
-#: ../data/weather-settings.ui:666
+#: ../data/weather-settings.ui:668
 msgid "Right"
 msgstr "Bên phải"
 
-#: ../data/weather-settings.ui:667
+#: ../data/weather-settings.ui:669
 msgid "Left"
 msgstr "Bên trái"
+
+#, fuzzy
+#~ msgid "In %d days"
+#~ msgstr "%s ngày trước"
+
+#~ msgid "Schema \"%s\" not found."
+#~ msgstr "Không tìm thấy schema \"%s\"."
 
 #~ msgid "Name of the city"
 #~ msgstr "Tên thành phố"

@@ -29,7 +29,7 @@
 Gio = imports.gi.Gio;
 
 print("Generate gnome-shell-extension-openweather.pot");
-var xgettext = Seed.spawn("xgettext -o gnome-shell-extension-openweather.pot --from-code=utf-8 --keyword=_ -f POTFILES.in");
+var xgettext = Seed.spawn("xgettext -o gnome-shell-extension-openweather.pot --from-code=utf-8 --keyword=_ --keyword=translatable -f POTFILES.in");
 
 if (xgettext.stderr)
     print(xgettext.stderr);
