@@ -196,8 +196,8 @@ msgstr "Gestern"
 #, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
-msgstr[0] "Vor %s Tag"
-msgstr[1] "Vor %s Tag(en)"
+msgstr[0] "Vor %d Tag"
+msgstr[1] "Vor %d Tagen"
 
 #: ../src/forecast_io.js:227 ../src/openweathermap_org.js:432
 msgid "Today"
@@ -211,8 +211,8 @@ msgstr "Morgen"
 #, javascript-format
 msgid "In %d day"
 msgid_plural "In %d days"
-msgstr[0] "In %s Tag"
-msgstr[1] "In %s Tagen"
+msgstr[0] "In %d Tag"
+msgstr[1] "In %d Tagen"
 
 #: ../src/openweathermap_org.js:178
 msgid "thunderstorm with light rain"
