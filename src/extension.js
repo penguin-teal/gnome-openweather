@@ -747,45 +747,6 @@ const OpenweatherMenuButton = new Lang.Class({
         this._settings.set_string(OPENWEATHER_FC_API_KEY, v);
     },
 
-    _onButtonHoverChanged: function(actor, event) {
-        if (actor.hover) {
-            actor.add_style_pseudo_class('hover');
-            actor.set_style(this._button_background_style);
-        } else {
-            actor.remove_style_pseudo_class('hover');
-            actor.set_style('background-color:;');
-            if (actor != this._urlButton)
-                actor.set_style(this._button_border_style);
-        }
-    },
-
-    _updateButtonColors: function() {
-        if (!this._needsColorUpdate)
-            return;
-        this._needsColorUpdate = false;
-        let color;
-        if (ExtensionUtils.versionCheck(['3.6'], Config.PACKAGE_VERSION))
-            color = this._separatorItem._drawingArea.get_theme_node().get_color('-gradient-end');
-        else
-            color = this._separatorItem._separator.actor.get_theme_node().get_color('-gradient-end');
-
-        let alpha = (Math.round(color.alpha / 2.55) / 100);
-
-        if (color.red > 0 && color.green > 0 && color.blue > 0)
-            this._button_border_style = 'border:1px solid rgb(' + Math.round(alpha * color.red) + ',' + Math.round(alpha * color.green) + ',' + Math.round(alpha * color.blue) + ');';
-        else
-            this._button_border_style = 'border:1px solid rgba(' + color.red + ',' + color.green + ',' + color.blue + ',' + alpha + ');';
-
-        this._locationButton.set_style(this._button_border_style);
-        this._reloadButton.set_style(this._button_border_style);
-        this._prefsButton.set_style(this._button_border_style);
-
-        this._buttonMenu.actor.add_style_pseudo_class('active');
-        color = this._buttonMenu.actor.get_theme_node().get_background_color();
-        this._button_background_style = 'background-color:rgba(' + color.red + ',' + color.green + ',' + color.blue + ',' + (Math.round(color.alpha / 2.55) / 100) + ');';
-        this._buttonMenu.actor.remove_style_pseudo_class('active');
-    },
-
     rebuildButtonMenu: function() {
         if (this._buttonBox) {
             if (this._buttonBox1) {
@@ -838,10 +799,9 @@ const OpenweatherMenuButton = new Lang.Class({
             style_class: 'openweather-button-box'
         });
 
-        this._urlButton = new St.Button({
-            label: _("Weather data provided by:") + (this._use_text_on_buttons ? "\n" : "  ") + this.weatherProvider,
-            style_class: 'system-menu-action openweather-provider'
-        });
+        this._urlButton = Main.panel.statusArea.aggregateMenu._system._createActionButton('', ("Weather data provided by:") + (this._use_text_on_buttons ? "\n" : "  ") + this.weatherProvider);
+        this._urlButton.set_label(this._urlButton.get_accessible_name());
+        this._urlButton.style_class += ' openweather-provider';
 
         this._urlButton.connect('clicked', Lang.bind(this, function() {
             this.menu.actor.hide();
@@ -939,7 +899,6 @@ const OpenweatherMenuButton = new Lang.Class({
     recalcLayout: function() {
         if (!this.menu.isOpen)
             return;
-        this._updateButtonColors();
         if (this._buttonBox1MinWidth === undefined)
             this._buttonBox1MinWidth = this._buttonBox1.get_width();
         this._buttonBox1.set_width(Math.max(this._buttonBox1MinWidth, this._currentWeather.get_width() - this._buttonBox2.get_width()));
@@ -1085,12 +1044,7 @@ const OpenweatherMenuButton = new Lang.Class({
 
     load_json_async: function(url, params, fun) {
         if (_httpSession === undefined) {
-            if (ExtensionUtils.versionCheck(['3.6'], Config.PACKAGE_VERSION)) {
-                // Soup session (see https://bugzilla.gnome.org/show_bug.cgi?id=661323#c64) (Simon Legner)
-                _httpSession = new Soup.SessionAsync();
-                Soup.Session.prototype.add_feature.call(_httpSession, new Soup.ProxyResolverDefault());
-            } else
-                _httpSession = new Soup.Session();
+            _httpSession = new Soup.Session();
         }
 
         let message = Soup.form_request_new_from_hash('GET', url, params);
