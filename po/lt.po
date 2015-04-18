@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-shell-extension-weather\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-14 23:30+0200\n"
+"POT-Creation-Date: 2015-04-18 13:52+0200\n"
 "PO-Revision-Date: 2012-12-21 12:43+0000\n"
 "Last-Translator: Mantas Kriaučiūnas <mantas@akl.lt>\n"
 "Language-Team: Lithuanian <lt@li.org>\n"
@@ -22,168 +22,168 @@ msgstr ""
 msgid "..."
 msgstr ""
 
-#: ../src/extension.js:814
+#: ../src/extension.js:773
 msgid "Locations"
 msgstr "Vietovės"
 
-#: ../src/extension.js:826
+#: ../src/extension.js:785
 msgid "Reload Weather Information"
 msgstr "Atnaujinti orų informaciją"
 
-#: ../src/extension.js:842
+#: ../src/extension.js:800
 msgid "Weather data provided by:"
 msgstr ""
 
-#: ../src/extension.js:853
+#: ../src/extension.js:811
 #, javascript-format
 msgid "Can not open %s"
 msgstr ""
 
-#: ../src/extension.js:860
+#: ../src/extension.js:818
 msgid "Weather Settings"
 msgstr "Nustatymai (vietovė ir kt.)"
 
-#: ../src/extension.js:911 ../src/extension.js:920 ../src/prefs.js:755
+#: ../src/extension.js:869 ../src/extension.js:878 ../src/prefs.js:755
 msgid "Invalid city"
 msgstr "Netinkama vietovė"
 
-#: ../src/extension.js:1016
+#: ../src/extension.js:973
 msgid "Calm"
 msgstr "Ramu"
 
-#: ../src/extension.js:1019
+#: ../src/extension.js:976
 msgid "Light air"
 msgstr ""
 
-#: ../src/extension.js:1022
+#: ../src/extension.js:979
 msgid "Light breeze"
 msgstr "Lengvas vėjelis"
 
-#: ../src/extension.js:1025
+#: ../src/extension.js:982
 msgid "Gentle breeze"
 msgstr "Švelnus vėjelis"
 
-#: ../src/extension.js:1028
+#: ../src/extension.js:985
 msgid "Moderate breeze"
 msgstr "Vidutinis vėjelis"
 
-#: ../src/extension.js:1031
+#: ../src/extension.js:988
 msgid "Fresh breeze"
 msgstr "Stiprėjantis vėjelis"
 
-#: ../src/extension.js:1034
+#: ../src/extension.js:991
 msgid "Strong breeze"
 msgstr ""
 
-#: ../src/extension.js:1037
+#: ../src/extension.js:994
 msgid "Moderate gale"
 msgstr "Vidutinis štormas"
 
-#: ../src/extension.js:1040
+#: ../src/extension.js:997
 msgid "Fresh gale"
 msgstr "Stiprėjantis štormas"
 
-#: ../src/extension.js:1043
+#: ../src/extension.js:1000
 msgid "Strong gale"
 msgstr "Smarkus štormas"
 
-#: ../src/extension.js:1046
+#: ../src/extension.js:1003
 msgid "Storm"
 msgstr "Audra"
 
-#: ../src/extension.js:1049
+#: ../src/extension.js:1006
 msgid "Violent storm"
 msgstr "Smarki audra"
 
-#: ../src/extension.js:1052
+#: ../src/extension.js:1009
 msgid "Hurricane"
 msgstr "Uraganas"
 
-#: ../src/extension.js:1056
+#: ../src/extension.js:1013
 msgid "Sunday"
 msgstr "Sekmadienis"
 
-#: ../src/extension.js:1056
+#: ../src/extension.js:1013
 msgid "Monday"
 msgstr "Pirmadienis"
 
-#: ../src/extension.js:1056
+#: ../src/extension.js:1013
 msgid "Tuesday"
 msgstr "Antradienis"
 
-#: ../src/extension.js:1056
+#: ../src/extension.js:1013
 msgid "Wednesday"
 msgstr "Trečiadienis"
 
-#: ../src/extension.js:1056
+#: ../src/extension.js:1013
 msgid "Thursday"
 msgstr "Ketvirtadienis"
 
-#: ../src/extension.js:1056
+#: ../src/extension.js:1013
 msgid "Friday"
 msgstr "Penktadienis"
 
-#: ../src/extension.js:1056
+#: ../src/extension.js:1013
 msgid "Saturday"
 msgstr "Šeštadienis"
 
-#: ../src/extension.js:1062
+#: ../src/extension.js:1019
 msgid "N"
 msgstr "Š"
 
-#: ../src/extension.js:1062
+#: ../src/extension.js:1019
 msgid "NE"
 msgstr "ŠR"
 
-#: ../src/extension.js:1062
+#: ../src/extension.js:1019
 msgid "E"
 msgstr "R"
 
-#: ../src/extension.js:1062
+#: ../src/extension.js:1019
 msgid "SE"
 msgstr "PR"
 
-#: ../src/extension.js:1062
+#: ../src/extension.js:1019
 msgid "S"
 msgstr "P"
 
-#: ../src/extension.js:1062
+#: ../src/extension.js:1019
 msgid "SW"
 msgstr "PV"
 
-#: ../src/extension.js:1062
+#: ../src/extension.js:1019
 msgid "W"
 msgstr "V"
 
-#: ../src/extension.js:1062
+#: ../src/extension.js:1019
 msgid "NW"
 msgstr "ŠV"
 
-#: ../src/extension.js:1318
+#: ../src/extension.js:1270
 msgid "Loading current weather ..."
 msgstr "Įkeliami dabartiniai orai..."
 
-#: ../src/extension.js:1350
+#: ../src/extension.js:1302
 msgid "Loading ..."
 msgstr "Įkeliama..."
 
-#: ../src/extension.js:1354
+#: ../src/extension.js:1306
 msgid "Please wait"
 msgstr "Palaukite"
 
-#: ../src/extension.js:1415
+#: ../src/extension.js:1367
 msgid "Cloudiness:"
 msgstr ""
 
-#: ../src/extension.js:1419
+#: ../src/extension.js:1371
 msgid "Humidity:"
 msgstr "Drėgnumas:"
 
-#: ../src/extension.js:1423
+#: ../src/extension.js:1375
 msgid "Pressure:"
 msgstr "Slėgis:"
 
-#: ../src/extension.js:1427
+#: ../src/extension.js:1379
 msgid "Wind:"
 msgstr "Vėjas:"
 

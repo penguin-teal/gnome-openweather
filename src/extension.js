@@ -797,7 +797,7 @@ const OpenweatherMenuButton = new Lang.Class({
             style_class: 'openweather-button-box'
         });
 
-        this._urlButton = Main.panel.statusArea.aggregateMenu._system._createActionButton('', ("Weather data provided by:") + (this._use_text_on_buttons ? "\n" : "  ") + this.weatherProvider);
+        this._urlButton = Main.panel.statusArea.aggregateMenu._system._createActionButton('', _("Weather data provided by:") + (this._use_text_on_buttons ? "\n" : "  ") + this.weatherProvider);
         this._urlButton.set_label(this._urlButton.get_accessible_name());
         this._urlButton.style_class += ' openweather-provider';
 

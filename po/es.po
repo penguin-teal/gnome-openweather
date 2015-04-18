@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 3.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-14 23:30+0200\n"
+"POT-Creation-Date: 2015-04-18 13:52+0200\n"
 "PO-Revision-Date: 2012-05-13 22:38+0100\n"
 "Last-Translator: Christian METZLER <neroth@xeked.com>\n"
 "Language-Team: Español; Castellano <zodiac_es@yahoo.es>\n"
@@ -21,168 +21,168 @@ msgstr ""
 msgid "..."
 msgstr "..."
 
-#: ../src/extension.js:814
+#: ../src/extension.js:773
 msgid "Locations"
 msgstr "Localidad"
 
-#: ../src/extension.js:826
+#: ../src/extension.js:785
 msgid "Reload Weather Information"
 msgstr "Recargar información del Clima"
 
-#: ../src/extension.js:842
+#: ../src/extension.js:800
 msgid "Weather data provided by:"
 msgstr "Información provista por:"
 
-#: ../src/extension.js:853
+#: ../src/extension.js:811
 #, javascript-format
 msgid "Can not open %s"
 msgstr "No se puede abrir %s"
 
-#: ../src/extension.js:860
+#: ../src/extension.js:818
 msgid "Weather Settings"
 msgstr "Configuración del Clima"
 
-#: ../src/extension.js:911 ../src/extension.js:920 ../src/prefs.js:755
+#: ../src/extension.js:869 ../src/extension.js:878 ../src/prefs.js:755
 msgid "Invalid city"
 msgstr "Ciudad inválida"
 
-#: ../src/extension.js:1016
+#: ../src/extension.js:973
 msgid "Calm"
 msgstr "calmo"
 
-#: ../src/extension.js:1019
+#: ../src/extension.js:976
 msgid "Light air"
 msgstr "viento ligero"
 
-#: ../src/extension.js:1022
+#: ../src/extension.js:979
 msgid "Light breeze"
 msgstr "brisa suave"
 
-#: ../src/extension.js:1025
+#: ../src/extension.js:982
 msgid "Gentle breeze"
 msgstr ""
 
-#: ../src/extension.js:1028
+#: ../src/extension.js:985
 msgid "Moderate breeze"
 msgstr "brisa moderada"
 
-#: ../src/extension.js:1031
+#: ../src/extension.js:988
 msgid "Fresh breeze"
 msgstr "brisa fresca"
 
-#: ../src/extension.js:1034
+#: ../src/extension.js:991
 msgid "Strong breeze"
 msgstr "brisa fuerte"
 
-#: ../src/extension.js:1037
+#: ../src/extension.js:994
 msgid "Moderate gale"
 msgstr "vendaval moderado"
 
-#: ../src/extension.js:1040
+#: ../src/extension.js:997
 msgid "Fresh gale"
 msgstr "vendaval"
 
-#: ../src/extension.js:1043
+#: ../src/extension.js:1000
 msgid "Strong gale"
 msgstr "vendaval fuerte"
 
-#: ../src/extension.js:1046
+#: ../src/extension.js:1003
 msgid "Storm"
 msgstr "tormenta"
 
-#: ../src/extension.js:1049
+#: ../src/extension.js:1006
 msgid "Violent storm"
 msgstr ""
 
-#: ../src/extension.js:1052
+#: ../src/extension.js:1009
 msgid "Hurricane"
 msgstr "huracán"
 
-#: ../src/extension.js:1056
+#: ../src/extension.js:1013
 msgid "Sunday"
 msgstr "Domingo"
 
-#: ../src/extension.js:1056
+#: ../src/extension.js:1013
 msgid "Monday"
 msgstr "Lunes"
 
-#: ../src/extension.js:1056
+#: ../src/extension.js:1013
 msgid "Tuesday"
 msgstr "Martes"
 
-#: ../src/extension.js:1056
+#: ../src/extension.js:1013
 msgid "Wednesday"
 msgstr "Miércoles"
 
-#: ../src/extension.js:1056
+#: ../src/extension.js:1013
 msgid "Thursday"
 msgstr "Jueves"
 
-#: ../src/extension.js:1056
+#: ../src/extension.js:1013
 msgid "Friday"
 msgstr "Viernes"
 
-#: ../src/extension.js:1056
+#: ../src/extension.js:1013
 msgid "Saturday"
 msgstr "Sábado"
 
-#: ../src/extension.js:1062
+#: ../src/extension.js:1019
 msgid "N"
 msgstr "N"
 
-#: ../src/extension.js:1062
+#: ../src/extension.js:1019
 msgid "NE"
 msgstr "NE"
 
-#: ../src/extension.js:1062
+#: ../src/extension.js:1019
 msgid "E"
 msgstr "E"
 
-#: ../src/extension.js:1062
+#: ../src/extension.js:1019
 msgid "SE"
 msgstr "SE"
 
-#: ../src/extension.js:1062
+#: ../src/extension.js:1019
 msgid "S"
 msgstr "S"
 
-#: ../src/extension.js:1062
+#: ../src/extension.js:1019
 msgid "SW"
 msgstr "SO"
 
-#: ../src/extension.js:1062
+#: ../src/extension.js:1019
 msgid "W"
 msgstr "O"
 
-#: ../src/extension.js:1062
+#: ../src/extension.js:1019
 msgid "NW"
 msgstr "NO"
 
-#: ../src/extension.js:1318
+#: ../src/extension.js:1270
 msgid "Loading current weather ..."
 msgstr "Cargando la meteorología actual..."
 
-#: ../src/extension.js:1350
+#: ../src/extension.js:1302
 msgid "Loading ..."
 msgstr "Cargando..."
 
-#: ../src/extension.js:1354
+#: ../src/extension.js:1306
 msgid "Please wait"
 msgstr "Espere un momento"
 
-#: ../src/extension.js:1415
+#: ../src/extension.js:1367
 msgid "Cloudiness:"
 msgstr "Nubosidad:"
 
-#: ../src/extension.js:1419
+#: ../src/extension.js:1371
 msgid "Humidity:"
 msgstr "Humedad:"
 
-#: ../src/extension.js:1423
+#: ../src/extension.js:1375
 msgid "Pressure:"
 msgstr "Presión:"
 
-#: ../src/extension.js:1427
+#: ../src/extension.js:1379
 msgid "Wind:"
 msgstr "Viento:"
 
