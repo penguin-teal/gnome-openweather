@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-shell-extension-openweather\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-13 08:40+0200\n"
+"POT-Creation-Date: 2015-04-14 23:30+0200\n"
 "PO-Revision-Date: 2014-12-27 08:48+0100\n"
 "Last-Translator: Zoltán Riba <riba.zoltan@gmail.com>\n"
 "Language-Team: \n"
@@ -186,12 +186,12 @@ msgstr "Légnyomás:"
 msgid "Wind:"
 msgstr "Szélerősség:"
 
-#: ../src/forecast_io.js:139 ../src/forecast_io.js:247
+#: ../src/forecast_io.js:139 ../src/forecast_io.js:250
 #: ../src/openweathermap_org.js:341 ../src/openweathermap_org.js:438
 msgid "Yesterday"
 msgstr "Tegnap"
 
-#: ../src/forecast_io.js:141 ../src/forecast_io.js:249
+#: ../src/forecast_io.js:143 ../src/forecast_io.js:254
 #: ../src/openweathermap_org.js:343 ../src/openweathermap_org.js:440
 #, fuzzy, javascript-format
 msgid "%d day ago"
@@ -199,15 +199,15 @@ msgid_plural "%d days ago"
 msgstr[0] "%s nappal ezelőtt"
 msgstr[1] "%s nappal ezelőtt"
 
-#: ../src/forecast_io.js:227 ../src/openweathermap_org.js:432
+#: ../src/forecast_io.js:230 ../src/openweathermap_org.js:432
 msgid "Today"
 msgstr "ma"
 
-#: ../src/forecast_io.js:243 ../src/openweathermap_org.js:434
+#: ../src/forecast_io.js:246 ../src/openweathermap_org.js:434
 msgid "Tomorrow"
 msgstr "holnap"
 
-#: ../src/forecast_io.js:245 ../src/openweathermap_org.js:436
+#: ../src/forecast_io.js:248 ../src/openweathermap_org.js:436
 #, fuzzy, javascript-format
 msgid "In %d day"
 msgid_plural "In %d days"
@@ -545,6 +545,24 @@ msgstr "balra"
 #, fuzzy
 #~ msgid "In %d days"
 #~ msgstr "%s nap múlva"
+
+#, fuzzy
+#~ msgid "One %ds ago"
+#~ msgid_plural "%d days ago"
+#~ msgstr[0] "%s nappal ezelőtt"
+#~ msgstr[1] "%s nappal ezelőtt"
+
+#, fuzzy
+#~ msgid "One %d ago"
+#~ msgid_plural "%d days ago"
+#~ msgstr[0] "%s nappal ezelőtt"
+#~ msgstr[1] "%s nappal ezelőtt"
+
+#, fuzzy
+#~ msgid "In one day"
+#~ msgid_plural "In %d days"
+#~ msgstr[0] "%s nap múlva"
+#~ msgstr[1] "%s nap múlva"
 
 #~ msgid "Schema \"%s\" not found."
 #~ msgstr "\"%s\" séma nem található."

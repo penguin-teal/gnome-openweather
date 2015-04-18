@@ -138,7 +138,10 @@ function parseWeatherCurrent() {
     if (d < 0) {
         lastBuild = _("Yesterday");
         if (d < -1)
-            lastBuild = ngettext("%d day ago","%d days ago",-1 * d).format(-1 * d);
+        {
+            d *= -1;
+            lastBuild = ngettext("%d day ago","%d days ago", d).format(d);
+        }
     }
 
     this._currentWeatherIcon.icon_name = this._weatherIcon.icon_name = iconname;
@@ -246,7 +249,10 @@ function parseWeatherForecast() {
         else if (dayLeft == -1)
             date_string = _("Yesterday");
         else if (dayLeft < -1)
-            date_string = ngettext("%d day ago","%d days ago",-1 * dayLeft).format(-1 * dayLeft);
+        {
+            dayLeft *= -1;
+            date_string = ngettext("%d day ago","%d days ago",dayLeft).format(dayLeft);
+        }
 
         forecastUi.Day.text = date_string + ' (' + this.getLocaleDay(forecastDate.getDay()) + ')\n' + forecastDate.toLocaleDateString();
         forecastUi.Temperature.text = '\u2193 ' + t_low + '    \u2191 ' + t_high;

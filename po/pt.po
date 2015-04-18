@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 3.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-13 08:40+0200\n"
+"POT-Creation-Date: 2015-04-14 23:30+0200\n"
 "PO-Revision-Date: 2012-05-13 22:40+0100\n"
 "Last-Translator: Christian METZLER <neroth@xeked.com>\n"
 "Language-Team: Português ; Daniel Miranda <dmiranda@gmail.com>,\n"
@@ -186,12 +186,12 @@ msgstr "Pressão:"
 msgid "Wind:"
 msgstr "Vento:"
 
-#: ../src/forecast_io.js:139 ../src/forecast_io.js:247
+#: ../src/forecast_io.js:139 ../src/forecast_io.js:250
 #: ../src/openweathermap_org.js:341 ../src/openweathermap_org.js:438
 msgid "Yesterday"
 msgstr "Ontem"
 
-#: ../src/forecast_io.js:141 ../src/forecast_io.js:249
+#: ../src/forecast_io.js:143 ../src/forecast_io.js:254
 #: ../src/openweathermap_org.js:343 ../src/openweathermap_org.js:440
 #, fuzzy, javascript-format
 msgid "%d day ago"
@@ -199,15 +199,15 @@ msgid_plural "%d days ago"
 msgstr[0] "%s dias atrás"
 msgstr[1] "%s dias atrás"
 
-#: ../src/forecast_io.js:227 ../src/openweathermap_org.js:432
+#: ../src/forecast_io.js:230 ../src/openweathermap_org.js:432
 msgid "Today"
 msgstr "Hoje"
 
-#: ../src/forecast_io.js:243 ../src/openweathermap_org.js:434
+#: ../src/forecast_io.js:246 ../src/openweathermap_org.js:434
 msgid "Tomorrow"
 msgstr "Amanhã"
 
-#: ../src/forecast_io.js:245 ../src/openweathermap_org.js:436
+#: ../src/forecast_io.js:248 ../src/openweathermap_org.js:436
 #, fuzzy, javascript-format
 msgid "In %d day"
 msgid_plural "In %d days"
@@ -585,6 +585,24 @@ msgstr "Esquerda"
 #, fuzzy
 #~ msgid "In %d days"
 #~ msgstr "Em %s dias"
+
+#, fuzzy
+#~ msgid "One %ds ago"
+#~ msgid_plural "%d days ago"
+#~ msgstr[0] "%s dias atrás"
+#~ msgstr[1] "%s dias atrás"
+
+#, fuzzy
+#~ msgid "One %d ago"
+#~ msgid_plural "%d days ago"
+#~ msgstr[0] "%s dias atrás"
+#~ msgstr[1] "%s dias atrás"
+
+#, fuzzy
+#~ msgid "In one day"
+#~ msgid_plural "In %d days"
+#~ msgstr[0] "Em %s dias"
+#~ msgstr[1] "Em %s dias"
 
 #~ msgid "Schema \"%s\" not found."
 #~ msgstr "Schema \"%s\" não encontrado."

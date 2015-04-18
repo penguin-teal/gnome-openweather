@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-shell-extension-weather\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-13 08:40+0200\n"
+"POT-Creation-Date: 2015-04-14 23:30+0200\n"
 "PO-Revision-Date: 2012-12-21 12:43+0000\n"
 "Last-Translator: Mantas Kriaučiūnas <mantas@akl.lt>\n"
 "Language-Team: Lithuanian <lt@li.org>\n"
@@ -187,12 +187,12 @@ msgstr "Slėgis:"
 msgid "Wind:"
 msgstr "Vėjas:"
 
-#: ../src/forecast_io.js:139 ../src/forecast_io.js:247
+#: ../src/forecast_io.js:139 ../src/forecast_io.js:250
 #: ../src/openweathermap_org.js:341 ../src/openweathermap_org.js:438
 msgid "Yesterday"
 msgstr "Vakar"
 
-#: ../src/forecast_io.js:141 ../src/forecast_io.js:249
+#: ../src/forecast_io.js:143 ../src/forecast_io.js:254
 #: ../src/openweathermap_org.js:343 ../src/openweathermap_org.js:440
 #, fuzzy, javascript-format
 msgid "%d day ago"
@@ -200,15 +200,15 @@ msgid_plural "%d days ago"
 msgstr[0] "Prieš %s dienas"
 msgstr[1] "Prieš %s dienas"
 
-#: ../src/forecast_io.js:227 ../src/openweathermap_org.js:432
+#: ../src/forecast_io.js:230 ../src/openweathermap_org.js:432
 msgid "Today"
 msgstr "Šiandien"
 
-#: ../src/forecast_io.js:243 ../src/openweathermap_org.js:434
+#: ../src/forecast_io.js:246 ../src/openweathermap_org.js:434
 msgid "Tomorrow"
 msgstr "Rytoj"
 
-#: ../src/forecast_io.js:245 ../src/openweathermap_org.js:436
+#: ../src/forecast_io.js:248 ../src/openweathermap_org.js:436
 #, fuzzy, javascript-format
 msgid "In %d day"
 msgid_plural "In %d days"
@@ -581,6 +581,28 @@ msgstr "Dešinėje"
 #: ../data/weather-settings.ui:669
 msgid "Left"
 msgstr "Kairėje"
+
+#, fuzzy
+#~ msgid "In %d days"
+#~ msgstr "Prieš %s dienas"
+
+#, fuzzy
+#~ msgid "One %ds ago"
+#~ msgid_plural "%d days ago"
+#~ msgstr[0] "Prieš %s dienas"
+#~ msgstr[1] "Prieš %s dienas"
+
+#, fuzzy
+#~ msgid "One %d ago"
+#~ msgid_plural "%d days ago"
+#~ msgstr[0] "Prieš %s dienas"
+#~ msgstr[1] "Prieš %s dienas"
+
+#, fuzzy
+#~ msgid "In one day"
+#~ msgid_plural "In %d days"
+#~ msgstr[0] "Prieš %s dienas"
+#~ msgstr[1] "Prieš %s dienas"
 
 #~ msgid "Name of the city"
 #~ msgstr "Vietovės pavadinimas"

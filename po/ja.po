@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-shell-extension-weather 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-13 08:40+0200\n"
+"POT-Creation-Date: 2015-04-14 23:30+0200\n"
 "PO-Revision-Date: 2012-06-11 12:26+0900\n"
 "Last-Translator: Takeshi AIHANA <takeshi.aihana@gmail.com>\n"
 "Language-Team: Japanese <takeshi.aihana@gmail.com>\n"
@@ -185,12 +185,12 @@ msgstr ""
 msgid "Wind:"
 msgstr ""
 
-#: ../src/forecast_io.js:139 ../src/forecast_io.js:247
+#: ../src/forecast_io.js:139 ../src/forecast_io.js:250
 #: ../src/openweathermap_org.js:341 ../src/openweathermap_org.js:438
 msgid "Yesterday"
 msgstr "昨日"
 
-#: ../src/forecast_io.js:141 ../src/forecast_io.js:249
+#: ../src/forecast_io.js:143 ../src/forecast_io.js:254
 #: ../src/openweathermap_org.js:343 ../src/openweathermap_org.js:440
 #, fuzzy, javascript-format
 msgid "%d day ago"
@@ -198,15 +198,15 @@ msgid_plural "%d days ago"
 msgstr[0] "%s日前"
 msgstr[1] "%s日前"
 
-#: ../src/forecast_io.js:227 ../src/openweathermap_org.js:432
+#: ../src/forecast_io.js:230 ../src/openweathermap_org.js:432
 msgid "Today"
 msgstr ""
 
-#: ../src/forecast_io.js:243 ../src/openweathermap_org.js:434
+#: ../src/forecast_io.js:246 ../src/openweathermap_org.js:434
 msgid "Tomorrow"
 msgstr ""
 
-#: ../src/forecast_io.js:245 ../src/openweathermap_org.js:436
+#: ../src/forecast_io.js:248 ../src/openweathermap_org.js:436
 #, fuzzy, javascript-format
 msgid "In %d day"
 msgid_plural "In %d days"
@@ -544,6 +544,24 @@ msgstr "左側"
 #, fuzzy
 #~ msgid "In %d days"
 #~ msgstr "%s日前"
+
+#, fuzzy
+#~ msgid "One %ds ago"
+#~ msgid_plural "%d days ago"
+#~ msgstr[0] "%s日前"
+#~ msgstr[1] "%s日前"
+
+#, fuzzy
+#~ msgid "One %d ago"
+#~ msgid_plural "%d days ago"
+#~ msgstr[0] "%s日前"
+#~ msgstr[1] "%s日前"
+
+#, fuzzy
+#~ msgid "In one day"
+#~ msgid_plural "In %d days"
+#~ msgstr[0] "%s日前"
+#~ msgstr[1] "%s日前"
 
 #~ msgid "Schema \"%s\" not found."
 #~ msgstr "次のスキーマが見つかりませんでした: \"%s\""

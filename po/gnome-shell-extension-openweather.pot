@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-13 08:40+0200\n"
+"POT-Creation-Date: 2015-04-16 23:09+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -187,12 +187,12 @@ msgstr ""
 msgid "Wind:"
 msgstr ""
 
-#: ../src/forecast_io.js:139 ../src/forecast_io.js:247
+#: ../src/forecast_io.js:139 ../src/forecast_io.js:250
 #: ../src/openweathermap_org.js:341 ../src/openweathermap_org.js:438
 msgid "Yesterday"
 msgstr ""
 
-#: ../src/forecast_io.js:141 ../src/forecast_io.js:249
+#: ../src/forecast_io.js:143 ../src/forecast_io.js:254
 #: ../src/openweathermap_org.js:343 ../src/openweathermap_org.js:440
 #, javascript-format
 msgid "%d day ago"
@@ -200,15 +200,15 @@ msgid_plural "%d days ago"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/forecast_io.js:227 ../src/openweathermap_org.js:432
+#: ../src/forecast_io.js:230 ../src/openweathermap_org.js:432
 msgid "Today"
 msgstr ""
 
-#: ../src/forecast_io.js:243 ../src/openweathermap_org.js:434
+#: ../src/forecast_io.js:246 ../src/openweathermap_org.js:434
 msgid "Tomorrow"
 msgstr ""
 
-#: ../src/forecast_io.js:245 ../src/openweathermap_org.js:436
+#: ../src/forecast_io.js:248 ../src/openweathermap_org.js:436
 #, javascript-format
 msgid "In %d day"
 msgid_plural "In %d days"

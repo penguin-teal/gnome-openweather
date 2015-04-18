@@ -1,21 +1,22 @@
 # German translation for gnome-shell-extension-openweather
-# Copyright (C) 2011
+# Copyright (C) 2011-2015 Jens Lody
 # This file is distributed under the same license as the gnome-shell-extension-openweather package.
-# Evilandi666 <Evilandi.AUR@googlemail.com>, 2011.
+# Jens Lody <jens@jenslody.de>, 2015.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 3.0\n"
+"Project-Id-Version: gnome-shell-extension-openweather\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-13 08:40+0200\n"
-"PO-Revision-Date: 2013-02-14 03:49+0100\n"
-"Last-Translator: Christian METZLER (Neroth) <neroth@xeked.com>\n"
-"Language-Team: \n"
+"POT-Creation-Date: 2015-04-14 23:30+0200\n"
+"PO-Revision-Date: 2015-04-14 22:19+0200\n"
+"Last-Translator: Jens Lody <jens@jenslody.de>\n"
+"Language-Team: Deutsch <jens@jenslody.de>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Gtranslator 2.91.6\n"
 
 #: ../src/extension.js:155
 msgid "..."
@@ -36,7 +37,7 @@ msgstr "Wetterdaten zur Verfügung gestellt von:"
 #: ../src/extension.js:853
 #, javascript-format
 msgid "Can not open %s"
-msgstr "Kann %s nocht öffnen"
+msgstr "Kann %s nicht öffnen"
 
 #: ../src/extension.js:860
 msgid "Weather Settings"
@@ -186,12 +187,12 @@ msgstr "Luftdruck:"
 msgid "Wind:"
 msgstr "Windgeschwindigkeit:"
 
-#: ../src/forecast_io.js:139 ../src/forecast_io.js:247
+#: ../src/forecast_io.js:139 ../src/forecast_io.js:250
 #: ../src/openweathermap_org.js:341 ../src/openweathermap_org.js:438
 msgid "Yesterday"
 msgstr "Gestern"
 
-#: ../src/forecast_io.js:141 ../src/forecast_io.js:249
+#: ../src/forecast_io.js:143 ../src/forecast_io.js:254
 #: ../src/openweathermap_org.js:343 ../src/openweathermap_org.js:440
 #, javascript-format
 msgid "%d day ago"
@@ -199,15 +200,15 @@ msgid_plural "%d days ago"
 msgstr[0] "Vor %d Tag"
 msgstr[1] "Vor %d Tagen"
 
-#: ../src/forecast_io.js:227 ../src/openweathermap_org.js:432
+#: ../src/forecast_io.js:230 ../src/openweathermap_org.js:432
 msgid "Today"
 msgstr "Heute"
 
-#: ../src/forecast_io.js:243 ../src/openweathermap_org.js:434
+#: ../src/forecast_io.js:246 ../src/openweathermap_org.js:434
 msgid "Tomorrow"
 msgstr "Morgen"
 
-#: ../src/forecast_io.js:245 ../src/openweathermap_org.js:436
+#: ../src/forecast_io.js:248 ../src/openweathermap_org.js:436
 #, javascript-format
 msgid "In %d day"
 msgid_plural "In %d days"
@@ -460,7 +461,6 @@ msgstr "Nach Orten oder Koordinaten suchen"
 msgid "e.g. Vaiaku, Tuvalu or -8.5211767,179.1976747"
 msgstr "z.B. Vaiaku, Tuvalu oder -8.5211767,179.1976747"
 
-#
 #: ../data/weather-settings.ui:406
 msgid "Chose weather provider"
 msgstr "Wetterdienst wählen"
