@@ -321,8 +321,7 @@ const OpenweatherMenuButton = new Lang.Class({
 
         this.fc_locale = 'en';
 
-        if (this._translate_condition)
-        {
+        if (this._translate_condition) {
             let fc_locales = ['bs', 'de', 'en', 'es', 'fr', 'it', 'nl', 'pl', 'pt', 'ru', 'tet', 'x-pig-latin'];
             let locale = GLib.get_language_names()[0];
 
@@ -415,8 +414,7 @@ const OpenweatherMenuButton = new Lang.Class({
             this.oldProvider = provider;
             return true;
         }
-        if (provider == WeatherProvider.FORECAST_IO)
-        {
+        if (provider == WeatherProvider.FORECAST_IO) {
             let translateCondition = this._translate_condition;
             if (this.oldTranslateCondition != translateCondition) {
                 this.oldTranslateCondition = translateCondition;
@@ -1278,7 +1276,7 @@ const OpenweatherMenuButton = new Lang.Class({
         this._currentWeatherIcon = new St.Icon({
             icon_size: 72,
             icon_name: 'view-refresh' + this.getIconType(),
-            style_class: 'openweather-current-icon'
+            style_class: 'system-menu-action openweather-current-icon'
         });
 
         this._sunriseIcon = new St.Icon({
@@ -1310,7 +1308,7 @@ const OpenweatherMenuButton = new Lang.Class({
 
         let bb = new St.BoxLayout({
             vertical: true,
-            style_class: 'openweather-current-summarybox'
+            style_class: 'system-menu-action openweather-current-summarybox'
         });
         bb.add_actor(this._currentWeatherLocation);
         bb.add_actor(this._currentWeatherSummary);
@@ -1360,7 +1358,7 @@ const OpenweatherMenuButton = new Lang.Class({
         });
         let rb_values = new St.BoxLayout({
             vertical: true,
-            style_class: 'openweather-current-databox-values'
+            style_class: 'system-menu-action openweather-current-databox-values'
         });
         rb.add_actor(rb_captions);
         rb.add_actor(rb_values);
@@ -1446,17 +1444,17 @@ const OpenweatherMenuButton = new Lang.Class({
             forecastWeather.Icon = new St.Icon({
                 icon_size: 48,
                 icon_name: 'view-refresh' + this.getIconType(),
-                style_class: 'openweather-forecast-icon'
+                style_class: 'system-menu-action openweather-forecast-icon'
             });
             forecastWeather.Day = new St.Label({
                 style_class: 'popup-status-menu-item openweather-forecast-day'
             });
             forecastWeather.Summary = new St.Label({
-                style_class: 'openweather-forecast-summary'
+                style_class: 'system-menu-action  openweather-forecast-summary'
             });
             forecastWeather.Summary.clutter_text.line_wrap = true;
             forecastWeather.Temperature = new St.Label({
-                style_class: 'openweather-forecast-temperature'
+                style_class: 'system-menu-action  openweather-forecast-temperature'
             });
 
             let by = new St.BoxLayout({
