@@ -4,6 +4,9 @@
 
 The weather data is fetched from [OpenWeatherMap](https://openweathermap.org/) (including forecasts for up to ten days) or [forecast.io](https://forecast.io) (including forecasts for up to eight days).
 
+#### Note: since version 29 this extensions uses coordinates to store the locations and makes the names editable to support multiple weather-providers!
+#### If you update from versions prior to 29 to 29 or greater (with forecast.io - support) you have to recreate your locations.
+
 ----
 
 # Installation
