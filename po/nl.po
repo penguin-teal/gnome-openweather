@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-18 13:52+0200\n"
+"POT-Creation-Date: 2015-04-20 09:25+0200\n"
 "PO-Revision-Date: 2012-05-13 22:39+0100\n"
 "Last-Translator: Christian METZLER <neroth@xeked.com>\n"
 "Language-Team: \n"
@@ -41,7 +41,7 @@ msgstr ""
 msgid "Weather Settings"
 msgstr ""
 
-#: ../src/extension.js:869 ../src/extension.js:878 ../src/prefs.js:755
+#: ../src/extension.js:869 ../src/extension.js:878 ../src/prefs.js:746
 msgid "Invalid city"
 msgstr ""
 
@@ -185,294 +185,294 @@ msgstr "Luchtdruk:"
 msgid "Wind:"
 msgstr "Wind:"
 
-#: ../src/forecast_io.js:139 ../src/forecast_io.js:250
-#: ../src/openweathermap_org.js:341 ../src/openweathermap_org.js:438
+#: ../src/forecast_io.js:137 ../src/forecast_io.js:247
+#: ../src/openweathermap_org.js:339 ../src/openweathermap_org.js:436
 msgid "Yesterday"
 msgstr ""
 
-#: ../src/forecast_io.js:143 ../src/forecast_io.js:254
-#: ../src/openweathermap_org.js:343 ../src/openweathermap_org.js:440
+#: ../src/forecast_io.js:140 ../src/forecast_io.js:250
+#: ../src/openweathermap_org.js:341 ../src/openweathermap_org.js:438
 #, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/forecast_io.js:230 ../src/openweathermap_org.js:432
+#: ../src/forecast_io.js:227 ../src/openweathermap_org.js:430
 msgid "Today"
 msgstr "Vandaag"
 
-#: ../src/forecast_io.js:246 ../src/openweathermap_org.js:434
+#: ../src/forecast_io.js:243 ../src/openweathermap_org.js:432
 msgid "Tomorrow"
 msgstr "Morgen"
 
-#: ../src/forecast_io.js:248 ../src/openweathermap_org.js:436
+#: ../src/forecast_io.js:245 ../src/openweathermap_org.js:434
 #, javascript-format
 msgid "In %d day"
 msgid_plural "In %d days"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/openweathermap_org.js:178
+#: ../src/openweathermap_org.js:176
 #, fuzzy
 msgid "thunderstorm with light rain"
 msgstr "Onweer"
 
-#: ../src/openweathermap_org.js:180
+#: ../src/openweathermap_org.js:178
 #, fuzzy
 msgid "thunderstorm with rain"
 msgstr "Onweer"
 
-#: ../src/openweathermap_org.js:182
+#: ../src/openweathermap_org.js:180
 #, fuzzy
 msgid "thunderstorm with heavy rain"
 msgstr "Onweer"
 
-#: ../src/openweathermap_org.js:184
+#: ../src/openweathermap_org.js:182
 #, fuzzy
 msgid "light thunderstorm"
 msgstr "Geïsoleerde onweer"
 
-#: ../src/openweathermap_org.js:186
+#: ../src/openweathermap_org.js:184
 #, fuzzy
 msgid "thunderstorm"
 msgstr "Onweer"
 
-#: ../src/openweathermap_org.js:188
+#: ../src/openweathermap_org.js:186
 #, fuzzy
 msgid "heavy thunderstorm"
 msgstr "Zware onweer"
 
-#: ../src/openweathermap_org.js:190
+#: ../src/openweathermap_org.js:188
 #, fuzzy
 msgid "ragged thunderstorm"
 msgstr "Geïsoleerde onweer"
 
-#: ../src/openweathermap_org.js:192
+#: ../src/openweathermap_org.js:190
 #, fuzzy
 msgid "thunderstorm with light drizzle"
 msgstr "Onweer"
 
-#: ../src/openweathermap_org.js:194
+#: ../src/openweathermap_org.js:192
 #, fuzzy
 msgid "thunderstorm with drizzle"
 msgstr "Onweer"
 
-#: ../src/openweathermap_org.js:196
+#: ../src/openweathermap_org.js:194
 #, fuzzy
 msgid "thunderstorm with heavy drizzle"
 msgstr "Onweer"
 
-#: ../src/openweathermap_org.js:198
+#: ../src/openweathermap_org.js:196
 msgid "light intensity drizzle"
 msgstr ""
 
-#: ../src/openweathermap_org.js:200
+#: ../src/openweathermap_org.js:198
 #, fuzzy
 msgid "drizzle"
 msgstr "Motregen"
 
-#: ../src/openweathermap_org.js:202
+#: ../src/openweathermap_org.js:200
 #, fuzzy
 msgid "heavy intensity drizzle"
 msgstr "Regen en hagel"
 
-#: ../src/openweathermap_org.js:204
+#: ../src/openweathermap_org.js:202
 #, fuzzy
 msgid "light intensity drizzle rain"
 msgstr "Motregen"
 
-#: ../src/openweathermap_org.js:206
+#: ../src/openweathermap_org.js:204
 #, fuzzy
 msgid "drizzle rain"
 msgstr "Motregen"
 
-#: ../src/openweathermap_org.js:208
+#: ../src/openweathermap_org.js:206
 #, fuzzy
 msgid "heavy intensity drizzle rain"
 msgstr "Motregen"
 
-#: ../src/openweathermap_org.js:210
+#: ../src/openweathermap_org.js:208
 #, fuzzy
 msgid "shower rain and drizzle"
 msgstr "Regen en hagel"
 
-#: ../src/openweathermap_org.js:212
+#: ../src/openweathermap_org.js:210
 #, fuzzy
 msgid "heavy shower rain and drizzle"
 msgstr "Regen en hagel"
 
-#: ../src/openweathermap_org.js:214
+#: ../src/openweathermap_org.js:212
 #, fuzzy
 msgid "shower drizzle"
 msgstr "Motijzel"
 
-#: ../src/openweathermap_org.js:216
+#: ../src/openweathermap_org.js:214
 #, fuzzy
 msgid "light rain"
 msgstr "IJzel"
 
-#: ../src/openweathermap_org.js:218
+#: ../src/openweathermap_org.js:216
 #, fuzzy
 msgid "moderate rain"
 msgstr "Motregen"
 
-#: ../src/openweathermap_org.js:220
+#: ../src/openweathermap_org.js:218
 msgid "heavy intensity rain"
 msgstr ""
 
-#: ../src/openweathermap_org.js:222
+#: ../src/openweathermap_org.js:220
 msgid "very heavy rain"
 msgstr ""
 
-#: ../src/openweathermap_org.js:224
+#: ../src/openweathermap_org.js:222
 #, fuzzy
 msgid "extreme rain"
 msgstr "IJzel"
 
-#: ../src/openweathermap_org.js:226
+#: ../src/openweathermap_org.js:224
 #, fuzzy
 msgid "freezing rain"
 msgstr "IJzel"
 
-#: ../src/openweathermap_org.js:228
+#: ../src/openweathermap_org.js:226
 #, fuzzy
 msgid "light intensity shower rain"
 msgstr "Lichte sneeuwbuien"
 
-#: ../src/openweathermap_org.js:230
+#: ../src/openweathermap_org.js:228
 #, fuzzy
 msgid "shower rain"
 msgstr "Regenbuien"
 
-#: ../src/openweathermap_org.js:232
+#: ../src/openweathermap_org.js:230
 #, fuzzy
 msgid "heavy intensity shower rain"
 msgstr "Zware sneeuwval"
 
-#: ../src/openweathermap_org.js:234
+#: ../src/openweathermap_org.js:232
 msgid "ragged shower rain"
 msgstr ""
 
-#: ../src/openweathermap_org.js:236
+#: ../src/openweathermap_org.js:234
 #, fuzzy
 msgid "light snow"
 msgstr "Sneeuwstorm"
 
-#: ../src/openweathermap_org.js:238
+#: ../src/openweathermap_org.js:236
 msgid "snow"
 msgstr ""
 
-#: ../src/openweathermap_org.js:240
+#: ../src/openweathermap_org.js:238
 #, fuzzy
 msgid "heavy snow"
 msgstr "Zware sneeuwval"
 
-#: ../src/openweathermap_org.js:242
+#: ../src/openweathermap_org.js:240
 #, fuzzy
 msgid "sleet"
 msgstr "Stofhagel"
 
-#: ../src/openweathermap_org.js:244
+#: ../src/openweathermap_org.js:242
 #, fuzzy
 msgid "shower sleet"
 msgstr "Regenbuien"
 
-#: ../src/openweathermap_org.js:246
+#: ../src/openweathermap_org.js:244
 #, fuzzy
 msgid "light rain and snow"
 msgstr "Regen en sneeuw"
 
-#: ../src/openweathermap_org.js:248
+#: ../src/openweathermap_org.js:246
 #, fuzzy
 msgid "rain and snow"
 msgstr "Regen en sneeuw"
 
-#: ../src/openweathermap_org.js:250
+#: ../src/openweathermap_org.js:248
 #, fuzzy
 msgid "light shower snow"
 msgstr "Lichte sneeuwbuien"
 
-#: ../src/openweathermap_org.js:252
+#: ../src/openweathermap_org.js:250
 #, fuzzy
 msgid "shower snow"
 msgstr "Regenbuien"
 
-#: ../src/openweathermap_org.js:254
+#: ../src/openweathermap_org.js:252
 #, fuzzy
 msgid "heavy shower snow"
 msgstr "Zware sneeuwval"
 
-#: ../src/openweathermap_org.js:256
+#: ../src/openweathermap_org.js:254
 msgid "mist"
 msgstr ""
 
-#: ../src/openweathermap_org.js:258
+#: ../src/openweathermap_org.js:256
 msgid "smoke"
 msgstr ""
 
-#: ../src/openweathermap_org.js:260
+#: ../src/openweathermap_org.js:258
 msgid "haze"
 msgstr ""
 
-#: ../src/openweathermap_org.js:262
+#: ../src/openweathermap_org.js:260
 msgid "Sand/Dust Whirls"
 msgstr ""
 
-#: ../src/openweathermap_org.js:264
+#: ../src/openweathermap_org.js:262
 #, fuzzy
 msgid "Fog"
 msgstr "Nevelig"
 
-#: ../src/openweathermap_org.js:266
+#: ../src/openweathermap_org.js:264
 msgid "sand"
 msgstr ""
 
-#: ../src/openweathermap_org.js:268
+#: ../src/openweathermap_org.js:266
 msgid "dust"
 msgstr ""
 
-#: ../src/openweathermap_org.js:270
+#: ../src/openweathermap_org.js:268
 msgid "VOLCANIC ASH"
 msgstr ""
 
-#: ../src/openweathermap_org.js:272
+#: ../src/openweathermap_org.js:270
 msgid "SQUALLS"
 msgstr ""
 
-#: ../src/openweathermap_org.js:274
+#: ../src/openweathermap_org.js:272
 msgid "TORNADO"
 msgstr ""
 
-#: ../src/openweathermap_org.js:276
+#: ../src/openweathermap_org.js:274
 msgid "sky is clear"
 msgstr ""
 
-#: ../src/openweathermap_org.js:278
+#: ../src/openweathermap_org.js:276
 #, fuzzy
 msgid "few clouds"
 msgstr "Zwaar bewolkt"
 
-#: ../src/openweathermap_org.js:280
+#: ../src/openweathermap_org.js:278
 #, fuzzy
 msgid "scattered clouds"
 msgstr "Verspreide buien"
 
-#: ../src/openweathermap_org.js:282
+#: ../src/openweathermap_org.js:280
 #, fuzzy
 msgid "broken clouds"
 msgstr "Zwaar bewolkt"
 
-#: ../src/openweathermap_org.js:284
+#: ../src/openweathermap_org.js:282
 #, fuzzy
 msgid "overcast clouds"
 msgstr "Zwaar bewolkt"
 
-#: ../src/openweathermap_org.js:286
+#: ../src/openweathermap_org.js:284
 msgid "Not available"
 msgstr "Niet beschikbaar"
 
-#: ../src/prefs.js:307
+#: ../src/prefs.js:303
 #, javascript-format
 msgid "Remove %s ?"
 msgstr ""

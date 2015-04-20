@@ -35,9 +35,6 @@
  */
 
 
-const ExtensionUtils = imports.misc.extensionUtils;
-const Me = ExtensionUtils.getCurrentExtension();
-const OpenweathermapOrg = Me.imports.openweathermap_org;
 const Gettext = imports.gettext.domain('gnome-shell-extension-openweather');
 const _ = Gettext.gettext;
 const ngettext = Gettext.ngettext;
@@ -341,7 +338,7 @@ function parseWeatherCurrent() {
     if (d < 0) {
         lastBuild = _("Yesterday");
         if (d < -1)
-            lastBuild = ngettext("%d day ago","%d days ago",-1 * d).format(-1 * d);
+            lastBuild = ngettext("%d day ago", "%d days ago", -1 * d).format(-1 * d);
     }
 
     this._currentWeatherIcon.icon_name = this._weatherIcon.icon_name = iconname;
@@ -434,11 +431,11 @@ function parseWeatherForecast() {
         if (dayLeft == 1)
             date_string = _("Tomorrow");
         else if (dayLeft > 1)
-            date_string = ngettext("In %d day","In %d days",dayLeft).format(dayLeft);
+            date_string = ngettext("In %d day", "In %d days", dayLeft).format(dayLeft);
         else if (dayLeft == -1)
             date_string = _("Yesterday");
         else if (dayLeft < -1)
-            date_string = ngettext("%d day ago","%d days ago",-1 * dayLeft).format(-1 * dayLeft);
+            date_string = ngettext("%d day ago", "%d days ago", -1 * dayLeft).format(-1 * dayLeft);
 
         forecastUi.Day.text = date_string + ' (' + this.getLocaleDay(forecastDate.getDay()) + ')\n' + forecastDate.toLocaleDateString();
         forecastUi.Temperature.text = '\u2193 ' + t_low + '    \u2191 ' + t_high;

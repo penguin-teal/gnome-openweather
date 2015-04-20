@@ -34,9 +34,6 @@
  *
  */
 
-//const ExtensionUtils = imports.misc.extensionUtils;
-//const Me = ExtensionUtils.getCurrentExtension();
-//const Convenience = Me.imports.convenience;
 const Gettext = imports.gettext.domain('gnome-shell-extension-openweather');
 const _ = Gettext.gettext;
 const ngettext = Gettext.ngettext;
@@ -88,7 +85,7 @@ function getWeatherIcon(icon) {
             break;
     }
     for (let i = 0; i < iconname.length; i++) {
-            if (this.hasIcon(iconname[i]))
+        if (this.hasIcon(iconname[i]))
             return iconname[i] + this.getIconType();
     }
     return 'weather-severe-alert' + this.getIconType();
@@ -96,7 +93,7 @@ function getWeatherIcon(icon) {
 
 function parseWeatherCurrent() {
     if (this.currentWeatherCache === undefined) {
-            this.refreshWeatherCurrent();
+        this.refreshWeatherCurrent();
         return;
     }
 
@@ -138,10 +135,9 @@ function parseWeatherCurrent() {
     let d = Math.floor((this.lastBuildDate.getTime() - beginOfDay.getTime()) / 86400000);
     if (d < 0) {
         lastBuild = _("Yesterday");
-        if (d < -1)
-        {
+        if (d < -1) {
             d *= -1;
-            lastBuild = ngettext("%d day ago","%d days ago", d).format(d);
+            lastBuild = ngettext("%d day ago", "%d days ago", d).format(d);
         }
     }
 
@@ -246,18 +242,17 @@ function parseWeatherForecast() {
         } else if (dayLeft == 1)
             date_string = _("Tomorrow");
         else if (dayLeft > 1)
-            date_string = ngettext("In %d day","In %d days",dayLeft).format(dayLeft);
+            date_string = ngettext("In %d day", "In %d days", dayLeft).format(dayLeft);
         else if (dayLeft == -1)
             date_string = _("Yesterday");
-        else if (dayLeft < -1)
-        {
+        else if (dayLeft < -1) {
             dayLeft *= -1;
-            date_string = ngettext("%d day ago","%d days ago",dayLeft).format(dayLeft);
+            date_string = ngettext("%d day ago", "%d days ago", dayLeft).format(dayLeft);
         }
 
         forecastUi.Day.text = date_string + ' (' + this.getLocaleDay(forecastDate.getDay()) + ')\n' + forecastDate.toLocaleDateString();
         forecastUi.Temperature.text = '\u2193 ' + t_low + '    \u2191 ' + t_high;
         forecastUi.Summary.text = comment;
-            forecastUi.Icon.icon_name = this.getWeatherIcon(forecastData.icon);
-        }
+        forecastUi.Icon.icon_name = this.getWeatherIcon(forecastData.icon);
+    }
 }

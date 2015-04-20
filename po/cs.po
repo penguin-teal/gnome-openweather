@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-18 13:52+0200\n"
+"POT-Creation-Date: 2015-04-20 09:25+0200\n"
 "PO-Revision-Date: 2012-06-03 23:07+0100\n"
 "Last-Translator: Christian METZLER <neroth@xeked.com>\n"
 "Language-Team: cs_CZ <czech@li.org>\n"
@@ -43,7 +43,7 @@ msgstr "Nemohu otevřít %s"
 msgid "Weather Settings"
 msgstr "Nastavení"
 
-#: ../src/extension.js:869 ../src/extension.js:878 ../src/prefs.js:755
+#: ../src/extension.js:869 ../src/extension.js:878 ../src/prefs.js:746
 msgid "Invalid city"
 msgstr "Neplatné město"
 
@@ -187,259 +187,259 @@ msgstr "Tlak:"
 msgid "Wind:"
 msgstr "Vítr:"
 
-#: ../src/forecast_io.js:139 ../src/forecast_io.js:250
-#: ../src/openweathermap_org.js:341 ../src/openweathermap_org.js:438
+#: ../src/forecast_io.js:137 ../src/forecast_io.js:247
+#: ../src/openweathermap_org.js:339 ../src/openweathermap_org.js:436
 msgid "Yesterday"
 msgstr "Včera"
 
-#: ../src/forecast_io.js:143 ../src/forecast_io.js:254
-#: ../src/openweathermap_org.js:343 ../src/openweathermap_org.js:440
+#: ../src/forecast_io.js:140 ../src/forecast_io.js:250
+#: ../src/openweathermap_org.js:341 ../src/openweathermap_org.js:438
 #, fuzzy, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
 msgstr[0] "%s dní zpátky"
 msgstr[1] "%s dní zpátky"
 
-#: ../src/forecast_io.js:230 ../src/openweathermap_org.js:432
+#: ../src/forecast_io.js:227 ../src/openweathermap_org.js:430
 msgid "Today"
 msgstr "Dnes"
 
-#: ../src/forecast_io.js:246 ../src/openweathermap_org.js:434
+#: ../src/forecast_io.js:243 ../src/openweathermap_org.js:432
 msgid "Tomorrow"
 msgstr "Zítra"
 
-#: ../src/forecast_io.js:248 ../src/openweathermap_org.js:436
+#: ../src/forecast_io.js:245 ../src/openweathermap_org.js:434
 #, fuzzy, javascript-format
 msgid "In %d day"
 msgid_plural "In %d days"
 msgstr[0] "%s dní zpátky"
 msgstr[1] "%s dní zpátky"
 
-#: ../src/openweathermap_org.js:178
+#: ../src/openweathermap_org.js:176
 msgid "thunderstorm with light rain"
 msgstr "bouřky a mírný déšť"
 
-#: ../src/openweathermap_org.js:180
+#: ../src/openweathermap_org.js:178
 msgid "thunderstorm with rain"
 msgstr "bouřky"
 
-#: ../src/openweathermap_org.js:182
+#: ../src/openweathermap_org.js:180
 msgid "thunderstorm with heavy rain"
 msgstr "bouřky a intenzivní déšť"
 
-#: ../src/openweathermap_org.js:184
+#: ../src/openweathermap_org.js:182
 msgid "light thunderstorm"
 msgstr "ojedinělé bouřky"
 
-#: ../src/openweathermap_org.js:186
+#: ../src/openweathermap_org.js:184
 msgid "thunderstorm"
 msgstr "Bouřky"
 
-#: ../src/openweathermap_org.js:188
+#: ../src/openweathermap_org.js:186
 msgid "heavy thunderstorm"
 msgstr "četné bouřky"
 
-#: ../src/openweathermap_org.js:190
+#: ../src/openweathermap_org.js:188
 msgid "ragged thunderstorm"
 msgstr "ojedinělé bouřky"
 
-#: ../src/openweathermap_org.js:192
+#: ../src/openweathermap_org.js:190
 #, fuzzy
 msgid "thunderstorm with light drizzle"
 msgstr "bouřky a mírný déšť"
 
-#: ../src/openweathermap_org.js:194
+#: ../src/openweathermap_org.js:192
 #, fuzzy
 msgid "thunderstorm with drizzle"
 msgstr "bouřky"
 
-#: ../src/openweathermap_org.js:196
+#: ../src/openweathermap_org.js:194
 #, fuzzy
 msgid "thunderstorm with heavy drizzle"
 msgstr "bouřky a intenzivní déšť"
 
-#: ../src/openweathermap_org.js:198
+#: ../src/openweathermap_org.js:196
 #, fuzzy
 msgid "light intensity drizzle"
 msgstr "slabé mrholení"
 
-#: ../src/openweathermap_org.js:200
+#: ../src/openweathermap_org.js:198
 msgid "drizzle"
 msgstr "mrholení"
 
-#: ../src/openweathermap_org.js:202
+#: ../src/openweathermap_org.js:200
 msgid "heavy intensity drizzle"
 msgstr "silné mrholení"
 
-#: ../src/openweathermap_org.js:204
+#: ../src/openweathermap_org.js:202
 msgid "light intensity drizzle rain"
 msgstr "slabé mrholení"
 
-#: ../src/openweathermap_org.js:206
+#: ../src/openweathermap_org.js:204
 msgid "drizzle rain"
 msgstr "mrholení"
 
-#: ../src/openweathermap_org.js:208
+#: ../src/openweathermap_org.js:206
 msgid "heavy intensity drizzle rain"
 msgstr "silné mrholení"
 
-#: ../src/openweathermap_org.js:210
+#: ../src/openweathermap_org.js:208
 msgid "shower rain and drizzle"
 msgstr "mrholení"
 
-#: ../src/openweathermap_org.js:212
+#: ../src/openweathermap_org.js:210
 msgid "heavy shower rain and drizzle"
 msgstr "silné mrholení"
 
-#: ../src/openweathermap_org.js:214
+#: ../src/openweathermap_org.js:212
 msgid "shower drizzle"
 msgstr "mrholení"
 
-#: ../src/openweathermap_org.js:216
+#: ../src/openweathermap_org.js:214
 msgid "light rain"
 msgstr "mírný déšť"
 
-#: ../src/openweathermap_org.js:218
+#: ../src/openweathermap_org.js:216
 msgid "moderate rain"
 msgstr "střední déšť"
 
-#: ../src/openweathermap_org.js:220
+#: ../src/openweathermap_org.js:218
 msgid "heavy intensity rain"
 msgstr "silný déšť"
 
-#: ../src/openweathermap_org.js:222
+#: ../src/openweathermap_org.js:220
 msgid "very heavy rain"
 msgstr "velmi silný déšť"
 
-#: ../src/openweathermap_org.js:224
+#: ../src/openweathermap_org.js:222
 msgid "extreme rain"
 msgstr "intenzivní déšť"
 
-#: ../src/openweathermap_org.js:226
+#: ../src/openweathermap_org.js:224
 msgid "freezing rain"
 msgstr "namrzající déšť"
 
-#: ../src/openweathermap_org.js:228
+#: ../src/openweathermap_org.js:226
 msgid "light intensity shower rain"
 msgstr "mírný déšť"
 
-#: ../src/openweathermap_org.js:230
+#: ../src/openweathermap_org.js:228
 msgid "shower rain"
 msgstr "déšť"
 
-#: ../src/openweathermap_org.js:232
+#: ../src/openweathermap_org.js:230
 msgid "heavy intensity shower rain"
 msgstr "silný déšť"
 
-#: ../src/openweathermap_org.js:234
+#: ../src/openweathermap_org.js:232
 msgid "ragged shower rain"
 msgstr "velmi silný déšť"
 
-#: ../src/openweathermap_org.js:236
+#: ../src/openweathermap_org.js:234
 msgid "light snow"
 msgstr "mírné sněžení"
 
-#: ../src/openweathermap_org.js:238
+#: ../src/openweathermap_org.js:236
 msgid "snow"
 msgstr "sníh"
 
-#: ../src/openweathermap_org.js:240
+#: ../src/openweathermap_org.js:238
 msgid "heavy snow"
 msgstr "husté sněžení"
 
-#: ../src/openweathermap_org.js:242
+#: ../src/openweathermap_org.js:240
 msgid "sleet"
 msgstr "plískanice"
 
-#: ../src/openweathermap_org.js:244
+#: ../src/openweathermap_org.js:242
 msgid "shower sleet"
 msgstr "plískanice"
 
-#: ../src/openweathermap_org.js:246
+#: ../src/openweathermap_org.js:244
 msgid "light rain and snow"
 msgstr "mírný déšť se sněhem"
 
-#: ../src/openweathermap_org.js:248
+#: ../src/openweathermap_org.js:246
 msgid "rain and snow"
 msgstr "déšť se sněhem"
 
-#: ../src/openweathermap_org.js:250
+#: ../src/openweathermap_org.js:248
 msgid "light shower snow"
 msgstr "Mírné sněžení"
 
-#: ../src/openweathermap_org.js:252
+#: ../src/openweathermap_org.js:250
 msgid "shower snow"
 msgstr "sněhové přeháňky"
 
-#: ../src/openweathermap_org.js:254
+#: ../src/openweathermap_org.js:252
 msgid "heavy shower snow"
 msgstr "husté sněžení"
 
-#: ../src/openweathermap_org.js:256
+#: ../src/openweathermap_org.js:254
 msgid "mist"
 msgstr "mlha"
 
-#: ../src/openweathermap_org.js:258
+#: ../src/openweathermap_org.js:256
 msgid "smoke"
 msgstr "smog"
 
-#: ../src/openweathermap_org.js:260
+#: ../src/openweathermap_org.js:258
 msgid "haze"
 msgstr "opar"
 
-#: ../src/openweathermap_org.js:262
+#: ../src/openweathermap_org.js:260
 msgid "Sand/Dust Whirls"
 msgstr "Písečné/prachové víry"
 
-#: ../src/openweathermap_org.js:264
+#: ../src/openweathermap_org.js:262
 msgid "Fog"
 msgstr "mlha"
 
-#: ../src/openweathermap_org.js:266
+#: ../src/openweathermap_org.js:264
 msgid "sand"
 msgstr "písek"
 
-#: ../src/openweathermap_org.js:268
+#: ../src/openweathermap_org.js:266
 msgid "dust"
 msgstr "prach"
 
-#: ../src/openweathermap_org.js:270
+#: ../src/openweathermap_org.js:268
 msgid "VOLCANIC ASH"
 msgstr "SOPEČNÝ POPEL"
 
-#: ../src/openweathermap_org.js:272
+#: ../src/openweathermap_org.js:270
 msgid "SQUALLS"
 msgstr "NÁPORY VĚTRU"
 
-#: ../src/openweathermap_org.js:274
+#: ../src/openweathermap_org.js:272
 msgid "TORNADO"
 msgstr "TORNÁDO"
 
-#: ../src/openweathermap_org.js:276
+#: ../src/openweathermap_org.js:274
 msgid "sky is clear"
 msgstr "jasno"
 
-#: ../src/openweathermap_org.js:278
+#: ../src/openweathermap_org.js:276
 msgid "few clouds"
 msgstr "polojasno"
 
-#: ../src/openweathermap_org.js:280
+#: ../src/openweathermap_org.js:278
 msgid "scattered clouds"
 msgstr "Občasné přeháňky"
 
-#: ../src/openweathermap_org.js:282
+#: ../src/openweathermap_org.js:280
 msgid "broken clouds"
 msgstr "Polojasno"
 
-#: ../src/openweathermap_org.js:284
+#: ../src/openweathermap_org.js:282
 msgid "overcast clouds"
 msgstr "Převážně zataženo"
 
-#: ../src/openweathermap_org.js:286
+#: ../src/openweathermap_org.js:284
 msgid "Not available"
 msgstr "Není k dispozici"
 
-#: ../src/prefs.js:307
+#: ../src/prefs.js:303
 #, javascript-format
 msgid "Remove %s ?"
 msgstr "Odstranit %s?"
