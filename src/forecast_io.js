@@ -39,6 +39,7 @@
 //const Convenience = Me.imports.convenience;
 const Gettext = imports.gettext.domain('gnome-shell-extension-openweather');
 const _ = Gettext.gettext;
+const ngettext = Gettext.ngettext;
 
 
 const OPENWEATHER_URL_HOST = 'api.forecast.io';
