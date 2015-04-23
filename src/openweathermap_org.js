@@ -35,6 +35,9 @@
  */
 
 
+const ExtensionUtils = imports.misc.extensionUtils;
+const Me = ExtensionUtils.getCurrentExtension();
+const OpenweathermapOrg = Me.imports.openweathermap_org;
 const Gettext = imports.gettext.domain('gnome-shell-extension-openweather');
 const _ = Gettext.gettext;
 const ngettext = Gettext.ngettext;
