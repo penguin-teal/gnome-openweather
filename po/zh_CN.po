@@ -2,15 +2,16 @@
 # gnome-shell-extension-openweather 软件包的简体中文翻译.
 # Copyright (C) 2011
 # This file is distributed under the same license as the gnome-shell-extension-openweather package.
+#
 # bill <bill_zt@sina.com>, 2011.
-# 绿色圣光 <lishaohui.qd@163.com>, 2014.
+# 绿色圣光 <lishaohui.qd@163.com>, 2014, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-shell-extension-openweather\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-04-20 09:25+0200\n"
-"PO-Revision-Date: 2014-08-17 16:34+0800\n"
+"PO-Revision-Date: 2015-05-11 22:19+0800\n"
 "Last-Translator: 绿色圣光 <lishaohui.qd@163.com>\n"
 "Language-Team: Chinese (simplified) <>\n"
 "Language: zh_CN\n"
@@ -196,10 +197,10 @@ msgstr "昨天"
 
 #: ../src/forecast_io.js:140 ../src/forecast_io.js:250
 #: ../src/openweathermap_org.js:341 ../src/openweathermap_org.js:438
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
-msgstr[0] "%s 天之前"
+msgstr[0] "%d 天之前"
 
 #: ../src/forecast_io.js:227 ../src/openweathermap_org.js:430
 msgid "Today"
@@ -210,10 +211,10 @@ msgid "Tomorrow"
 msgstr "明天"
 
 #: ../src/forecast_io.js:245 ../src/openweathermap_org.js:434
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "In %d day"
 msgid_plural "In %d days"
-msgstr[0] "未来 %s 天"
+msgstr[0] "未来 %d 天"
 
 #: ../src/openweathermap_org.js:176
 msgid "thunderstorm with light rain"
@@ -442,28 +443,28 @@ msgstr "移除 %s 吗？"
 
 #: ../data/weather-settings.ui:27
 msgid "Edit name"
-msgstr ""
+msgstr "编辑名称"
 
 #: ../data/weather-settings.ui:45 ../data/weather-settings.ui:75
 #: ../data/weather-settings.ui:196
 msgid "Clear entry"
-msgstr ""
+msgstr "清除条目"
 
 #: ../data/weather-settings.ui:59
 msgid "Edit coordinates"
-msgstr ""
+msgstr "编辑坐标"
 
 #: ../data/weather-settings.ui:173
 msgid "Search by location or coordinates"
-msgstr ""
+msgstr "通过地点或坐标搜索"
 
 #: ../data/weather-settings.ui:197
 msgid "e.g. Vaiaku, Tuvalu or -8.5211767,179.1976747"
-msgstr ""
+msgstr "例如，“北京”或者“39.9059093,116.3913489”"
 
 #: ../data/weather-settings.ui:406
 msgid "Chose weather provider"
-msgstr ""
+msgstr "选择天气提供源"
 
 #: ../data/weather-settings.ui:417
 msgid "Temperature Unit"
@@ -506,9 +507,8 @@ msgid "Conditions in Panel"
 msgstr "在面板上显示天气状态"
 
 #: ../data/weather-settings.ui:527
-#, fuzzy
 msgid "Conditions in Forecast"
-msgstr "在面板上显示天气状态"
+msgstr "显示预报天气状态"
 
 #: ../data/weather-settings.ui:538
 msgid "Center forecast"
@@ -527,9 +527,8 @@ msgid "Personal Api key from openweathermap.org"
 msgstr "openweathermap.org 的个人 API 密钥"
 
 #: ../data/weather-settings.ui:582
-#, fuzzy
 msgid "Personal Api key from forecast.io"
-msgstr "openweathermap.org 的个人 API 密钥"
+msgstr "forecast.io 的个人 API 密钥"
 
 #: ../data/weather-settings.ui:667
 msgid "Center"

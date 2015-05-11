@@ -3,14 +3,14 @@
 # Copyright (C) 2011
 # This file is distributed under the same license as the gnome-shell-extension-openweather package.
 # bill <bill_zt@sina.com>, 2011.
-# shlinux <lishaohui.qd@163.com>, 2014.
+# shlinux <lishaohui.qd@163.com>, 2014, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-shell-extension-openweather\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-04-20 09:25+0200\n"
-"PO-Revision-Date: 2014-08-17 16:40+0800\n"
+"PO-Revision-Date: 2015-05-11 22:19+0800\n"
 "Last-Translator: shlinux <lishaohui.qd@163.com>\n"
 "Language-Team: Chinese (Traditional) <>\n"
 "Language: zh_TW\n"
@@ -30,11 +30,11 @@ msgstr "地點"
 
 #: ../src/extension.js:785
 msgid "Reload Weather Information"
-msgstr "重新載入氣象資訊"
+msgstr "重新載入天氣訊息"
 
 #: ../src/extension.js:800
 msgid "Weather data provided by:"
-msgstr "氣象數據來源於："
+msgstr "天氣數據來源於："
 
 #: ../src/extension.js:811
 #, javascript-format
@@ -43,7 +43,7 @@ msgstr "無法打開 %s"
 
 #: ../src/extension.js:818
 msgid "Weather Settings"
-msgstr "氣象設定"
+msgstr "天氣設定"
 
 #: ../src/extension.js:869 ../src/extension.js:878 ../src/prefs.js:746
 msgid "Invalid city"
@@ -196,10 +196,10 @@ msgstr "昨天"
 
 #: ../src/forecast_io.js:140 ../src/forecast_io.js:250
 #: ../src/openweathermap_org.js:341 ../src/openweathermap_org.js:438
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
-msgstr[0] "%s 天以前"
+msgstr[0] "%d 天以前"
 
 #: ../src/forecast_io.js:227 ../src/openweathermap_org.js:430
 msgid "Today"
@@ -210,10 +210,10 @@ msgid "Tomorrow"
 msgstr "明天"
 
 #: ../src/forecast_io.js:245 ../src/openweathermap_org.js:434
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "In %d day"
 msgid_plural "In %d days"
-msgstr[0] "未來 %s 天"
+msgstr[0] "未來 %d 天"
 
 #: ../src/openweathermap_org.js:176
 msgid "thunderstorm with light rain"
@@ -442,28 +442,28 @@ msgstr "移除 %s ？"
 
 #: ../data/weather-settings.ui:27
 msgid "Edit name"
-msgstr ""
+msgstr "編輯名稱"
 
 #: ../data/weather-settings.ui:45 ../data/weather-settings.ui:75
 #: ../data/weather-settings.ui:196
 msgid "Clear entry"
-msgstr ""
+msgstr "清除條目"
 
 #: ../data/weather-settings.ui:59
 msgid "Edit coordinates"
-msgstr ""
+msgstr "編輯座標"
 
 #: ../data/weather-settings.ui:173
 msgid "Search by location or coordinates"
-msgstr ""
+msgstr "通過地點或座標搜索"
 
 #: ../data/weather-settings.ui:197
 msgid "e.g. Vaiaku, Tuvalu or -8.5211767,179.1976747"
-msgstr ""
+msgstr "例如，「臺北」或者「25.08571815,121.5643773」"
 
 #: ../data/weather-settings.ui:406
 msgid "Chose weather provider"
-msgstr ""
+msgstr "選擇天氣提供源"
 
 #: ../data/weather-settings.ui:417
 msgid "Temperature Unit"
@@ -506,13 +506,12 @@ msgid "Conditions in Panel"
 msgstr "面板上顯示天氣狀態"
 
 #: ../data/weather-settings.ui:527
-#, fuzzy
 msgid "Conditions in Forecast"
-msgstr "面板上顯示天氣狀態"
+msgstr "顯示預報天氣狀態"
 
 #: ../data/weather-settings.ui:538
 msgid "Center forecast"
-msgstr "預報資訊居中顯示"
+msgstr "預報訊息居中顯示"
 
 #: ../data/weather-settings.ui:549
 msgid "Number of days in forecast"
@@ -527,9 +526,8 @@ msgid "Personal Api key from openweathermap.org"
 msgstr "openweathermap.org 的個人 API 密鑰"
 
 #: ../data/weather-settings.ui:582
-#, fuzzy
 msgid "Personal Api key from forecast.io"
-msgstr "openweathermap.org 的個人 API 密鑰"
+msgstr "forecast.io 的個人 API 密鑰"
 
 #: ../data/weather-settings.ui:667
 msgid "Center"
