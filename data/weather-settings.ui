@@ -13,10 +13,7 @@
       <object class="GtkBox" id="edit-box">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_left">10</property>
-        <property name="margin_right">10</property>
-        <property name="margin_top">10</property>
-        <property name="margin_bottom">10</property>
+        <property name="border_width">5</property>
         <property name="orientation">vertical</property>
         <child>
           <object class="GtkLabel" id="label3">
@@ -84,8 +81,8 @@
           <object class="GtkSeparator" id="separator2">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="margin_top">10</property>
-            <property name="margin_bottom">10</property>
+            <property name="margin_top">5</property>
+            <property name="margin_bottom">5</property>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -101,13 +98,12 @@
             <property name="vexpand">False</property>
             <child>
               <object class="GtkButton" id="button-edit-cancel">
-                <property name="label">gtk-cancel</property>
+                <property name="label" translatable="yes">Cancel</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
                 <property name="halign">start</property>
-                <property name="use_stock">True</property>
-                <property name="xalign">0.46000000834465027</property>
+                <accelerator key="Escape" signal="clicked"/>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -120,11 +116,10 @@
             </child>
             <child>
               <object class="GtkButton" id="button-edit-save">
-                <property name="label">gtk-save</property>
+                <property name="label" translatable="yes">Save</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <property name="use_stock">True</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -159,10 +154,7 @@
       <object class="GtkBox" id="search-box">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="margin_left">10</property>
-        <property name="margin_right">10</property>
-        <property name="margin_top">10</property>
-        <property name="margin_bottom">10</property>
+        <property name="border_width">5</property>
         <property name="orientation">vertical</property>
         <child>
           <object class="GtkLabel" id="label1">
@@ -204,11 +196,10 @@
             </child>
             <child>
               <object class="GtkButton" id="button-search-find">
-                <property name="label">gtk-find</property>
+                <property name="label" translatable="yes">Find</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <property name="use_stock">True</property>
                 <accelerator key="Return" signal="clicked"/>
               </object>
               <packing>
@@ -228,8 +219,8 @@
           <object class="GtkSeparator" id="separator1">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="margin_top">10</property>
-            <property name="margin_bottom">10</property>
+            <property name="margin_top">5</property>
+            <property name="margin_bottom">5</property>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -245,13 +236,12 @@
             <property name="vexpand">False</property>
             <child>
               <object class="GtkButton" id="button-search-cancel">
-                <property name="label">gtk-cancel</property>
+                <property name="label" translatable="yes">Cancel</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
                 <property name="halign">start</property>
-                <property name="use_stock">True</property>
-                <property name="xalign">0.46000000834465027</property>
+                <accelerator key="Escape" signal="clicked"/>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -264,11 +254,10 @@
             </child>
             <child>
               <object class="GtkButton" id="button-search-save">
-                <property name="label">gtk-save</property>
+                <property name="label" translatable="yes">Save</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <property name="use_stock">True</property>
               </object>
               <packing>
                 <property name="expand">False</property>
