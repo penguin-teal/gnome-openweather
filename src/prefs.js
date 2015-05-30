@@ -73,6 +73,10 @@ let _httpSession;
 
 let mCities = null;
 
+let inRealize = false;
+
+let defaultSize = [-1,-1];
+
 const WeatherPrefsWidget = new GObject.Class({
     Name: 'OpenWeatherExtension.Prefs.Widget',
     GTypeName: 'OpenWeatherExtensionPrefsWidget',
@@ -83,9 +87,27 @@ const WeatherPrefsWidget = new GObject.Class({
 
         this.initWindow();
 
+        defaultSize = this.MainWidget.get_size_request();
+        var borderWidth = this.MainWidget.get_border_width();
+
+        defaultSize[0] += 2 * borderWidth;
+        defaultSize[1] += 2 * borderWidth;
+
+        this.MainWidget.set_size_request(-1, -1);
+        this.MainWidget.set_border_width(0);
+
         this.refreshUI();
 
         this.add(this.MainWidget);
+        this.MainWidget.connect('realize', Lang.bind(this, function() {
+            if ( inRealize )
+                return;
+            inRealize = true;
+
+            this.MainWidget.get_toplevel().set_default_size(defaultSize[0], defaultSize[1]);
+            this.MainWidget.get_toplevel().reshow_with_initial_size();
+            inRealize = false;
+        }));
     },
 
     Window: new Gtk.Builder(),
