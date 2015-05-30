@@ -277,6 +277,13 @@
       </object>
     </child>
   </object>
+  <object class="GtkSpinner" id="spinner">
+    <property name="width_request">48</property>
+    <property name="height_request">48</property>
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="active">True</property>
+  </object>
   <object class="GtkListStore" id="tree-liststore">
     <columns>
       <!-- column-name text -->

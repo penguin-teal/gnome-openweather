@@ -104,6 +104,7 @@ const WeatherPrefsWidget = new GObject.Class({
         this.searchWidget = this.Window.get_object("search-widget");
         this.searchMenu = this.Window.get_object("search-menu");
         this.searchName = this.Window.get_object("search-name");
+        this.spinner = this.Window.get_object("spinner");
 
         this.searchName.connect("icon-release", Lang.bind(this, this.clearEntry));
         this.editName.connect("icon-release", Lang.bind(this, this.clearEntry));
@@ -133,6 +134,7 @@ const WeatherPrefsWidget = new GObject.Class({
 
         this.Window.get_object("button-search-find").connect("clicked", Lang.bind(this, function() {
 
+            this.clearSearchMenu();
             let location = this.searchName.get_text().trim();
             if (location === "")
                 return 0;
@@ -141,27 +143,44 @@ const WeatherPrefsWidget = new GObject.Class({
                 addressdetails: '1',
                 q: location
             };
+
+            let item = new Gtk.MenuItem();
+            if (this.spinner.get_parent())
+                this.spinner.reparent(item);
+            item.add(this.spinner);
+            this.searchMenu.append(item);
+            this.searchMenu.show_all();
+            this.searchMenu.popup(null, null, Lang.bind(this, this.placeSearchMenu), 0, this.searchName);
+
             this.loadJsonAsync(OPENWEATHER_URL_FIND, params, Lang.bind(this, function() {
                 if (!arguments[0])
-                    return 0;
-                let newCity = arguments[0];
-
-                if (Number(newCity.length) < 1)
                     return 0;
 
                 this.clearSearchMenu();
 
-                var m = {};
-                for (var i in newCity) {
+                let newCity = arguments[0];
 
-                    let cityText = newCity[i].display_name;
-                    let cityCoord = "[" + newCity[i].lat + "," + newCity[i].lon + "]";
-
+                if (Number(newCity.length) < 1)
+                {
                     let item = new Gtk.MenuItem({
-                        label: cityText + " " + cityCoord
+                        label: _("\"%s\" not found").format(location)
                     });
-                    item.connect("activate", Lang.bind(this, this.onActivateItem));
                     this.searchMenu.append(item);
+                }
+                else
+                {
+                    var m = {};
+                    for (var i in newCity) {
+
+                        let cityText = newCity[i].display_name;
+                        let cityCoord = "[" + newCity[i].lat + "," + newCity[i].lon + "]";
+
+                        let item = new Gtk.MenuItem({
+                            label: cityText + " " + cityCoord
+                        });
+                        item.connect("activate", Lang.bind(this, this.onActivateItem));
+                        this.searchMenu.append(item);
+                    }
                 }
                 this.searchMenu.show_all();
                 this.searchMenu.popup(null, null, Lang.bind(this, this.placeSearchMenu), 0, this.searchName);
