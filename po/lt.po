@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-shell-extension-weather\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-20 09:25+0200\n"
+"POT-Creation-Date: 2015-05-30 18:24+0200\n"
 "PO-Revision-Date: 2012-12-21 12:43+0000\n"
 "Last-Translator: Mantas Kriaučiūnas <mantas@akl.lt>\n"
 "Language-Team: Lithuanian <lt@li.org>\n"
@@ -43,7 +43,7 @@ msgstr ""
 msgid "Weather Settings"
 msgstr "Nustatymai (vietovė ir kt.)"
 
-#: ../src/extension.js:869 ../src/extension.js:878 ../src/prefs.js:746
+#: ../src/extension.js:869 ../src/extension.js:878 ../src/prefs.js:787
 msgid "Invalid city"
 msgstr "Netinkama vietovė"
 
@@ -188,397 +188,414 @@ msgid "Wind:"
 msgstr "Vėjas:"
 
 #: ../src/forecast_io.js:137 ../src/forecast_io.js:247
-#: ../src/openweathermap_org.js:339 ../src/openweathermap_org.js:436
+#: ../src/openweathermap_org.js:342 ../src/openweathermap_org.js:439
 msgid "Yesterday"
 msgstr "Vakar"
 
 #: ../src/forecast_io.js:140 ../src/forecast_io.js:250
-#: ../src/openweathermap_org.js:341 ../src/openweathermap_org.js:438
+#: ../src/openweathermap_org.js:344 ../src/openweathermap_org.js:441
 #, fuzzy, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
 msgstr[0] "Prieš %s dienas"
 msgstr[1] "Prieš %s dienas"
 
-#: ../src/forecast_io.js:227 ../src/openweathermap_org.js:430
+#: ../src/forecast_io.js:227 ../src/openweathermap_org.js:433
 msgid "Today"
 msgstr "Šiandien"
 
-#: ../src/forecast_io.js:243 ../src/openweathermap_org.js:432
+#: ../src/forecast_io.js:243 ../src/openweathermap_org.js:435
 msgid "Tomorrow"
 msgstr "Rytoj"
 
-#: ../src/forecast_io.js:245 ../src/openweathermap_org.js:434
+#: ../src/forecast_io.js:245 ../src/openweathermap_org.js:437
 #, fuzzy, javascript-format
 msgid "In %d day"
 msgid_plural "In %d days"
 msgstr[0] "Prieš %s dienas"
 msgstr[1] "Prieš %s dienas"
 
-#: ../src/openweathermap_org.js:176
+#: ../src/openweathermap_org.js:179
 #, fuzzy
 msgid "thunderstorm with light rain"
 msgstr "Perkūnija (audringa)"
 
-#: ../src/openweathermap_org.js:178
+#: ../src/openweathermap_org.js:181
 #, fuzzy
 msgid "thunderstorm with rain"
 msgstr "Perkūnija (audringa)"
 
-#: ../src/openweathermap_org.js:180
+#: ../src/openweathermap_org.js:183
 #, fuzzy
 msgid "thunderstorm with heavy rain"
 msgstr "Perkūnija (audringa)"
 
-#: ../src/openweathermap_org.js:182
+#: ../src/openweathermap_org.js:185
 #, fuzzy
 msgid "light thunderstorm"
 msgstr "Vietomis perkūnija"
 
-#: ../src/openweathermap_org.js:184
+#: ../src/openweathermap_org.js:187
 #, fuzzy
 msgid "thunderstorm"
 msgstr "Perkūnija (audringa)"
 
-#: ../src/openweathermap_org.js:186
+#: ../src/openweathermap_org.js:189
 #, fuzzy
 msgid "heavy thunderstorm"
 msgstr "Smarki audra su perkūnija"
 
-#: ../src/openweathermap_org.js:188
+#: ../src/openweathermap_org.js:191
 #, fuzzy
 msgid "ragged thunderstorm"
 msgstr "Vietomis perkūnija"
 
-#: ../src/openweathermap_org.js:190
+#: ../src/openweathermap_org.js:193
 #, fuzzy
 msgid "thunderstorm with light drizzle"
 msgstr "Perkūnija (audringa)"
 
-#: ../src/openweathermap_org.js:192
+#: ../src/openweathermap_org.js:195
 #, fuzzy
 msgid "thunderstorm with drizzle"
 msgstr "Perkūnija (audringa)"
 
-#: ../src/openweathermap_org.js:194
+#: ../src/openweathermap_org.js:197
 #, fuzzy
 msgid "thunderstorm with heavy drizzle"
 msgstr "Perkūnija (audringa)"
 
-#: ../src/openweathermap_org.js:196
+#: ../src/openweathermap_org.js:199
 msgid "light intensity drizzle"
 msgstr ""
 
-#: ../src/openweathermap_org.js:198
+#: ../src/openweathermap_org.js:201
 #, fuzzy
 msgid "drizzle"
 msgstr "Dulksna"
 
-#: ../src/openweathermap_org.js:200
+#: ../src/openweathermap_org.js:203
 #, fuzzy
 msgid "heavy intensity drizzle"
 msgstr "Lietus su kruša"
 
-#: ../src/openweathermap_org.js:202
+#: ../src/openweathermap_org.js:205
 #, fuzzy
 msgid "light intensity drizzle rain"
 msgstr "Dulksna"
 
-#: ../src/openweathermap_org.js:204
+#: ../src/openweathermap_org.js:207
 #, fuzzy
 msgid "drizzle rain"
 msgstr "Dulksna"
 
-#: ../src/openweathermap_org.js:206
+#: ../src/openweathermap_org.js:209
 #, fuzzy
 msgid "heavy intensity drizzle rain"
 msgstr "Dulksna"
 
-#: ../src/openweathermap_org.js:208
+#: ../src/openweathermap_org.js:211
 #, fuzzy
 msgid "shower rain and drizzle"
 msgstr "Lietus su kruša"
 
-#: ../src/openweathermap_org.js:210
+#: ../src/openweathermap_org.js:213
 #, fuzzy
 msgid "heavy shower rain and drizzle"
 msgstr "Lietus su kruša"
 
-#: ../src/openweathermap_org.js:212
+#: ../src/openweathermap_org.js:215
 #, fuzzy
 msgid "shower drizzle"
 msgstr "Šąlanti dulksna"
 
-#: ../src/openweathermap_org.js:214
+#: ../src/openweathermap_org.js:217
 #, fuzzy
 msgid "light rain"
 msgstr "Lijundra"
 
-#: ../src/openweathermap_org.js:216
+#: ../src/openweathermap_org.js:219
 #, fuzzy
 msgid "moderate rain"
 msgstr "Vidutinis štormas"
 
-#: ../src/openweathermap_org.js:218
+#: ../src/openweathermap_org.js:221
 msgid "heavy intensity rain"
 msgstr ""
 
-#: ../src/openweathermap_org.js:220
+#: ../src/openweathermap_org.js:223
 msgid "very heavy rain"
 msgstr ""
 
-#: ../src/openweathermap_org.js:222
+#: ../src/openweathermap_org.js:225
 #, fuzzy
 msgid "extreme rain"
 msgstr "Lijundra"
 
-#: ../src/openweathermap_org.js:224
+#: ../src/openweathermap_org.js:227
 #, fuzzy
 msgid "freezing rain"
 msgstr "Lijundra"
 
-#: ../src/openweathermap_org.js:226
+#: ../src/openweathermap_org.js:229
 #, fuzzy
 msgid "light intensity shower rain"
 msgstr "Protarpiais pasnigs"
 
-#: ../src/openweathermap_org.js:228
+#: ../src/openweathermap_org.js:231
 #, fuzzy
 msgid "shower rain"
 msgstr "Trumpi lietūs"
 
-#: ../src/openweathermap_org.js:230
+#: ../src/openweathermap_org.js:233
 #, fuzzy
 msgid "heavy intensity shower rain"
 msgstr "Stipriai sninga"
 
-#: ../src/openweathermap_org.js:232
+#: ../src/openweathermap_org.js:235
 msgid "ragged shower rain"
 msgstr ""
 
-#: ../src/openweathermap_org.js:234
+#: ../src/openweathermap_org.js:237
 #, fuzzy
 msgid "light snow"
 msgstr "Pustomas sniegas"
 
-#: ../src/openweathermap_org.js:236
+#: ../src/openweathermap_org.js:239
 msgid "snow"
 msgstr ""
 
-#: ../src/openweathermap_org.js:238
+#: ../src/openweathermap_org.js:241
 #, fuzzy
 msgid "heavy snow"
 msgstr "Stipriai sninga"
 
-#: ../src/openweathermap_org.js:240
+#: ../src/openweathermap_org.js:243
 #, fuzzy
 msgid "sleet"
 msgstr "Šlapdriba"
 
-#: ../src/openweathermap_org.js:242
+#: ../src/openweathermap_org.js:245
 #, fuzzy
 msgid "shower sleet"
 msgstr "Trumpi lietūs"
 
-#: ../src/openweathermap_org.js:244
+#: ../src/openweathermap_org.js:247
 #, fuzzy
 msgid "light rain and snow"
 msgstr "Šlapdriba (lietus ir sniegas)"
 
-#: ../src/openweathermap_org.js:246
+#: ../src/openweathermap_org.js:249
 #, fuzzy
 msgid "rain and snow"
 msgstr "Šlapdriba (lietus ir sniegas)"
 
-#: ../src/openweathermap_org.js:248
+#: ../src/openweathermap_org.js:251
 #, fuzzy
 msgid "light shower snow"
 msgstr "Protarpiais pasnigs"
 
-#: ../src/openweathermap_org.js:250
+#: ../src/openweathermap_org.js:253
 #, fuzzy
 msgid "shower snow"
 msgstr "Trumpi lietūs"
 
-#: ../src/openweathermap_org.js:252
+#: ../src/openweathermap_org.js:255
 #, fuzzy
 msgid "heavy shower snow"
 msgstr "Stipriai sninga"
 
-#: ../src/openweathermap_org.js:254
+#: ../src/openweathermap_org.js:257
 msgid "mist"
 msgstr ""
 
-#: ../src/openweathermap_org.js:256
+#: ../src/openweathermap_org.js:259
 msgid "smoke"
 msgstr ""
 
-#: ../src/openweathermap_org.js:258
+#: ../src/openweathermap_org.js:261
 msgid "haze"
 msgstr ""
 
-#: ../src/openweathermap_org.js:260
+#: ../src/openweathermap_org.js:263
 msgid "Sand/Dust Whirls"
 msgstr ""
 
-#: ../src/openweathermap_org.js:262
+#: ../src/openweathermap_org.js:265
 #, fuzzy
 msgid "Fog"
 msgstr "Ūkanota"
 
-#: ../src/openweathermap_org.js:264
+#: ../src/openweathermap_org.js:267
 msgid "sand"
 msgstr ""
 
-#: ../src/openweathermap_org.js:266
+#: ../src/openweathermap_org.js:269
 msgid "dust"
 msgstr ""
 
-#: ../src/openweathermap_org.js:268
+#: ../src/openweathermap_org.js:271
 msgid "VOLCANIC ASH"
 msgstr ""
 
-#: ../src/openweathermap_org.js:270
+#: ../src/openweathermap_org.js:273
 msgid "SQUALLS"
 msgstr ""
 
-#: ../src/openweathermap_org.js:272
+#: ../src/openweathermap_org.js:275
 msgid "TORNADO"
 msgstr ""
 
-#: ../src/openweathermap_org.js:274
+#: ../src/openweathermap_org.js:277
 msgid "sky is clear"
 msgstr ""
 
-#: ../src/openweathermap_org.js:276
+#: ../src/openweathermap_org.js:279
 #, fuzzy
 msgid "few clouds"
 msgstr "Daugiau debesuota"
 
-#: ../src/openweathermap_org.js:278
+#: ../src/openweathermap_org.js:281
 #, fuzzy
 msgid "scattered clouds"
 msgstr "Vietomis trumpi lietūs"
 
-#: ../src/openweathermap_org.js:280
+#: ../src/openweathermap_org.js:283
 #, fuzzy
 msgid "broken clouds"
 msgstr "Daugiau debesuota"
 
-#: ../src/openweathermap_org.js:282
+#: ../src/openweathermap_org.js:285
 #, fuzzy
 msgid "overcast clouds"
 msgstr "Daugiau debesuota"
 
-#: ../src/openweathermap_org.js:284
+#: ../src/openweathermap_org.js:287
 msgid "Not available"
 msgstr "Neprieinama"
 
-#: ../src/prefs.js:303
+#: ../src/prefs.js:188
+#, javascript-format
+msgid "\"%s\" not found"
+msgstr ""
+
+#: ../src/prefs.js:344
 #, javascript-format
 msgid "Remove %s ?"
 msgstr "Pašalinti %s ?"
 
-#: ../data/weather-settings.ui:27
+#: ../data/weather-settings.ui:24
 msgid "Edit name"
 msgstr ""
 
-#: ../data/weather-settings.ui:45 ../data/weather-settings.ui:75
-#: ../data/weather-settings.ui:196
+#: ../data/weather-settings.ui:42 ../data/weather-settings.ui:72
+#: ../data/weather-settings.ui:188
 #, fuzzy
 msgid "Clear entry"
 msgstr "Giedra"
 
-#: ../data/weather-settings.ui:59
+#: ../data/weather-settings.ui:56
 msgid "Edit coordinates"
 msgstr ""
 
-#: ../data/weather-settings.ui:173
+#: ../data/weather-settings.ui:101 ../data/weather-settings.ui:239
+msgid "Cancel"
+msgstr ""
+
+#: ../data/weather-settings.ui:119 ../data/weather-settings.ui:257
+msgid "Save"
+msgstr ""
+
+#: ../data/weather-settings.ui:165
 msgid "Search by location or coordinates"
 msgstr ""
 
-#: ../data/weather-settings.ui:197
+#: ../data/weather-settings.ui:189
 msgid "e.g. Vaiaku, Tuvalu or -8.5211767,179.1976747"
 msgstr ""
 
-#: ../data/weather-settings.ui:406
+#: ../data/weather-settings.ui:199
+msgid "Find"
+msgstr ""
+
+#: ../data/weather-settings.ui:419
 msgid "Chose weather provider"
 msgstr ""
 
-#: ../data/weather-settings.ui:417
+#: ../data/weather-settings.ui:430
 msgid "Temperature Unit"
 msgstr "Temperatūros vienetai"
 
-#: ../data/weather-settings.ui:428
+#: ../data/weather-settings.ui:441
 msgid "Wind Speed Unit"
 msgstr "Vėjo greičio vienetai"
 
-#: ../data/weather-settings.ui:439
+#: ../data/weather-settings.ui:452
 msgid "Pressure Unit"
 msgstr "Slėgio vienetai"
 
-#: ../data/weather-settings.ui:450
+#: ../data/weather-settings.ui:463
 msgid "Position in Panel"
 msgstr "Padėtis skydelyje"
 
-#: ../data/weather-settings.ui:461
+#: ../data/weather-settings.ui:474
 msgid "Wind Direction by Arrows"
 msgstr "Vėjo krypčiai naudoti rodykles"
 
-#: ../data/weather-settings.ui:472
+#: ../data/weather-settings.ui:485
 msgid "Translate Conditions"
 msgstr "Versti oro sąlygas"
 
-#: ../data/weather-settings.ui:483
+#: ../data/weather-settings.ui:496
 msgid "Symbolic Icons"
 msgstr ""
 
-#: ../data/weather-settings.ui:494
+#: ../data/weather-settings.ui:507
 msgid "Text on buttons"
 msgstr ""
 
-#: ../data/weather-settings.ui:505
+#: ../data/weather-settings.ui:518
 msgid "Temperature in Panel"
 msgstr "Rodyti temperatūrą skydelyje"
 
-#: ../data/weather-settings.ui:516
+#: ../data/weather-settings.ui:529
 msgid "Conditions in Panel"
 msgstr "Rodyti oro sąlygas skydelyje"
 
-#: ../data/weather-settings.ui:527
+#: ../data/weather-settings.ui:540
 #, fuzzy
 msgid "Conditions in Forecast"
 msgstr "Rodyti oro sąlygas skydelyje"
 
-#: ../data/weather-settings.ui:538
+#: ../data/weather-settings.ui:551
 msgid "Center forecast"
 msgstr ""
 
-#: ../data/weather-settings.ui:549
+#: ../data/weather-settings.ui:562
 msgid "Number of days in forecast"
 msgstr ""
 
-#: ../data/weather-settings.ui:560
+#: ../data/weather-settings.ui:573
 msgid "Maximal number of digits after the decimal point"
 msgstr ""
 
-#: ../data/weather-settings.ui:571
+#: ../data/weather-settings.ui:584
 msgid "Personal Api key from openweathermap.org"
 msgstr ""
 
-#: ../data/weather-settings.ui:582
+#: ../data/weather-settings.ui:595
 msgid "Personal Api key from forecast.io"
 msgstr ""
 
-#: ../data/weather-settings.ui:667
+#: ../data/weather-settings.ui:680
 msgid "Center"
 msgstr "Centre"
 
-#: ../data/weather-settings.ui:668
+#: ../data/weather-settings.ui:681
 msgid "Right"
 msgstr "Dešinėje"
 
-#: ../data/weather-settings.ui:669
+#: ../data/weather-settings.ui:682
 msgid "Left"
 msgstr "Kairėje"
 
