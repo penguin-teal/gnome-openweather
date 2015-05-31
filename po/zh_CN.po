@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: gnome-shell-extension-openweather\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-05-30 18:24+0200\n"
-"PO-Revision-Date: 2015-05-11 22:19+0800\n"
+"PO-Revision-Date: 2015-05-31 20:37+0800\n"
 "Last-Translator: 绿色圣光 <lishaohui.qd@163.com>\n"
 "Language-Team: Chinese (simplified) <>\n"
 "Language: zh_CN\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Gtranslator 2.91.6\n"
+"X-Generator: Gtranslator 2.91.7\n"
 
 #: ../src/extension.js:155
 msgid "..."
@@ -437,9 +437,9 @@ msgid "Not available"
 msgstr "不可用"
 
 #: ../src/prefs.js:188
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "\"%s\" not found"
-msgstr "未找到 Schema \"%s\"。"
+msgstr "未找到 \"%s\"。"
 
 #: ../src/prefs.js:344
 #, javascript-format
@@ -461,11 +461,11 @@ msgstr "编辑坐标"
 
 #: ../data/weather-settings.ui:101 ../data/weather-settings.ui:239
 msgid "Cancel"
-msgstr ""
+msgstr "取消"
 
 #: ../data/weather-settings.ui:119 ../data/weather-settings.ui:257
 msgid "Save"
-msgstr ""
+msgstr "保存"
 
 #: ../data/weather-settings.ui:165
 msgid "Search by location or coordinates"
@@ -477,7 +477,7 @@ msgstr "例如，“北京”或者“39.9059093,116.3913489”"
 
 #: ../data/weather-settings.ui:199
 msgid "Find"
-msgstr ""
+msgstr "查找"
 
 #: ../data/weather-settings.ui:419
 msgid "Chose weather provider"
