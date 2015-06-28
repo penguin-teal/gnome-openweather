@@ -83,6 +83,7 @@ const OPENWEATHER_FC_API_KEY = 'appid-fc';
 
 // Keep enums in sync with GSettings schemas
 const WeatherProvider = {
+    DEFAULT: -1,
     OPENWEATHERMAP: 0,
     FORECAST_IO: 1
 };
@@ -351,11 +352,11 @@ const OpenweatherMenuButton = new Lang.Class({
         this._settings = Convenience.getSettings(OPENWEATHER_SETTINGS_SCHEMA);
 
         if (this._cities.length === 0)
-            this._cities = "-8.5211767,179.1976747>Vaiaku, Tuvalu";
+            this._cities = "-8.5211767,179.1976747>Vaiaku, Tuvalu>-1";
 
         this._settingsC = this._settings.connect("changed", Lang.bind(this, function() {
             if (this._cities.length === 0)
-                this._cities = "-8.5211767,179.1976747>Vaiaku, Tuvalu";
+                this._cities = "-8.5211767,179.1976747>Vaiaku, Tuvalu>-1";
             this.rebuildCurrentWeatherUi();
             this.rebuildFutureWeatherUi();
             if (this.providerChanged()) {
@@ -433,13 +434,13 @@ const OpenweatherMenuButton = new Lang.Class({
     get _weather_provider() {
         if (!this._settings)
             this.loadConfig();
-        return this._settings.get_enum(OPENWEATHER_PROVIDER_KEY);
-    },
 
-    set _weather_provider(v) {
-        if (!this._settings)
-            this.loadConfig();
-        this._settings.set_enum(OPENWEATHER_PROVIDER_KEY, v);
+        let provider = this.extractProvider(this._city);
+
+        if (provider == WeatherProvider.DEFAULT)
+            provider = this._settings.get_enum(OPENWEATHER_PROVIDER_KEY);
+
+        return provider;
     },
 
     get _units() {
@@ -448,22 +449,10 @@ const OpenweatherMenuButton = new Lang.Class({
         return this._settings.get_enum(OPENWEATHER_UNIT_KEY);
     },
 
-    set _units(v) {
-        if (!this._settings)
-            this.loadConfig();
-        this._settings.set_enum(OPENWEATHER_UNIT_KEY, v);
-    },
-
     get _wind_speed_units() {
         if (!this._settings)
             this.loadConfig();
         return this._settings.get_enum(OPENWEATHER_WIND_SPEED_UNIT_KEY);
-    },
-
-    set _wind_speed_units(v) {
-        if (!this._settings)
-            this.loadConfig();
-        this._settings.set_enum(OPENWEATHER_WIND_SPEED_UNIT_KEY, v);
     },
 
     get _wind_direction() {
@@ -472,34 +461,16 @@ const OpenweatherMenuButton = new Lang.Class({
         return this._settings.get_boolean(OPENWEATHER_WIND_DIRECTION_KEY);
     },
 
-    set _wind_direction(v) {
-        if (!this._settings)
-            this.loadConfig();
-        return this._settings.set_boolean(OPENWEATHER_WIND_DIRECTION_KEY, v);
-    },
-
     get _pressure_units() {
         if (!this._settings)
             this.loadConfig();
         return this._settings.get_enum(OPENWEATHER_PRESSURE_UNIT_KEY);
     },
 
-    set _pressure_units(v) {
-        if (!this._settings)
-            this.loadConfig();
-        this._settings.set_enum(OPENWEATHER_PRESSURE_UNIT_KEY, v);
-    },
-
     get _cities() {
         if (!this._settings)
             this.loadConfig();
         return this._settings.get_string(OPENWEATHER_CITY_KEY);
-    },
-
-    set _cities(v) {
-        if (!this._settings)
-            this.loadConfig();
-        this._settings.set_string(OPENWEATHER_CITY_KEY, v);
     },
 
     get _actual_city() {
@@ -559,30 +530,10 @@ const OpenweatherMenuButton = new Lang.Class({
         return cities;
     },
 
-    set _city(v) {
-        let cities = this._cities;
-        cities = cities.split(" && ");
-        if (cities && typeof cities == "string")
-            cities = [cities];
-        if (!cities[0])
-            cities = [];
-        cities.splice(this.actual_city, 1, v);
-        cities = cities.join(" && ");
-        if (typeof cities != "string")
-            cities = cities[0];
-        this._cities = cities;
-    },
-
     get _translate_condition() {
         if (!this._settings)
             this.loadConfig();
         return this._settings.get_boolean(OPENWEATHER_TRANSLATE_CONDITION_KEY);
-    },
-
-    set _translate_condition(v) {
-        if (!this._settings)
-            this.loadConfig();
-        this._settings.set_boolean(OPENWEATHER_TRANSLATE_CONDITION_KEY, v);
     },
 
     get _getIconType() {
@@ -591,22 +542,10 @@ const OpenweatherMenuButton = new Lang.Class({
         return this._settings.get_boolean(OPENWEATHER_USE_SYMBOLIC_ICONS_KEY) ? 1 : 0;
     },
 
-    set _getIconType(v) {
-        if (!this._settings)
-            this.loadConfig();
-        this._settings.set_boolean(OPENWEATHER_USE_SYMBOLIC_ICONS_KEY, v);
-    },
-
     get _use_text_on_buttons() {
         if (!this._settings)
             this.loadConfig();
         return this._settings.get_boolean(OPENWEATHER_USE_TEXT_ON_BUTTONS_KEY) ? 1 : 0;
-    },
-
-    set _use_text_on_buttons(v) {
-        if (!this._settings)
-            this.loadConfig();
-        this._settings.set_boolean(OPENWEATHER_USE_TEXT_ON_BUTTONS_KEY, v);
     },
 
     get _text_in_panel() {
@@ -615,22 +554,10 @@ const OpenweatherMenuButton = new Lang.Class({
         return this._settings.get_boolean(OPENWEATHER_SHOW_TEXT_IN_PANEL_KEY);
     },
 
-    set _text_in_panel(v) {
-        if (!this._settings)
-            this.loadConfig();
-        this._settings.set_boolean(OPENWEATHER_SHOW_TEXT_IN_PANEL_KEY, v);
-    },
-
     get _position_in_panel() {
         if (!this._settings)
             this.loadConfig();
         return this._settings.get_enum(OPENWEATHER_POSITION_IN_PANEL_KEY);
-    },
-
-    set _position_in_panel(v) {
-        if (!this._settings)
-            this.loadConfig();
-        this._settings.set_enum(OPENWEATHER_POSITION_IN_PANEL_KEY, v);
     },
 
     get _comment_in_panel() {
@@ -639,22 +566,10 @@ const OpenweatherMenuButton = new Lang.Class({
         return this._settings.get_boolean(OPENWEATHER_SHOW_COMMENT_IN_PANEL_KEY);
     },
 
-    set _comment_in_panel(v) {
-        if (!this._settings)
-            this.loadConfig();
-        this._settings.set_boolean(OPENWEATHER_SHOW_COMMENT_IN_PANEL_KEY, v);
-    },
-
     get _comment_in_forecast() {
         if (!this._settings)
             this.loadConfig();
         return this._settings.get_boolean(OPENWEATHER_SHOW_COMMENT_IN_FORECAST_KEY);
-    },
-
-    set _comment_in_forecast(v) {
-        if (!this._settings)
-            this.loadConfig();
-        this._settings.set_boolean(OPENWEATHER_SHOW_COMMENT_IN_FORECAST_KEY, v);
     },
 
     get _refresh_interval_current() {
@@ -664,23 +579,11 @@ const OpenweatherMenuButton = new Lang.Class({
         return ((v >= 600) ? v : 600);
     },
 
-    set _refresh_interval_current(v) {
-        if (!this._settings)
-            this.loadConfig();
-        this._settings.set_int(OPENWEATHER_REFRESH_INTERVAL_CURRENT, ((v >= 600) ? v : 600));
-    },
-
     get _refresh_interval_forecast() {
         if (!this._settings)
             this.loadConfig();
         let v = this._settings.get_int(OPENWEATHER_REFRESH_INTERVAL_FORECAST);
         return ((v >= 600) ? v : 600);
-    },
-
-    set _refresh_interval_forecast(v) {
-        if (!this._settings)
-            this.loadConfig();
-        this._settings.set_int(OPENWEATHER_REFRESH_INTERVAL_FORECAST, ((v >= 600) ? v : 600));
     },
 
     get _center_forecast() {
@@ -689,34 +592,16 @@ const OpenweatherMenuButton = new Lang.Class({
         return this._settings.get_boolean(OPENWEATHER_CENTER_FORECAST_KEY);
     },
 
-    set _center_forecast(v) {
-        if (!this._settings)
-            this.loadConfig();
-        this._settings.set_boolean(OPENWEATHER_CENTER_FORECAST_KEY, v);
-    },
-
     get _days_forecast() {
         if (!this._settings)
             this.loadConfig();
         return this._settings.get_int(OPENWEATHER_DAYS_FORECAST);
     },
 
-    set _days_forecast(v) {
-        if (!this._settings)
-            this.loadConfig();
-        this._settings.set_int(OPENWEATHER_DAYS_FORECAST, v);
-    },
-
     get _decimal_places() {
         if (!this._settings)
             this.loadConfig();
         return this._settings.get_int(OPENWEATHER_DECIMAL_PLACES);
-    },
-
-    set _decimal_places(v) {
-        if (!this._settings)
-            this.loadConfig();
-        this._settings.set_int(OPENWEATHER_DECIMAL_PLACES, v);
     },
 
     get _appid() {
@@ -726,23 +611,11 @@ const OpenweatherMenuButton = new Lang.Class({
         return (key.length == 32) ? key : '';
     },
 
-    set _appid(v) {
-        if (!this._settings)
-            this.loadConfig();
-        this._settings.set_string(OPENWEATHER_OWM_API_KEY, v);
-    },
-
     get _appid_fc() {
         if (!this._settings)
             this.loadConfig();
         let key = this._settings.get_string(OPENWEATHER_FC_API_KEY);
         return (key.length == 32) ? key : '';
-    },
-
-    set _appid_fc(v) {
-        if (!this._settings)
-            this.loadConfig();
-        this._settings.set_string(OPENWEATHER_FC_API_KEY, v);
     },
 
     rebuildButtonMenu: function() {
@@ -870,15 +743,6 @@ const OpenweatherMenuButton = new Lang.Class({
         return arguments[0].split(">")[1];
     },
 
-    extractCity: function() {
-        if (!arguments[0])
-            return "";
-        let city = this.extractLocation(arguments[0]);
-        if (city.indexOf("(") == -1)
-            return _("Invalid city");
-        return city.split("(")[0].trim();
-    },
-
     extractCoord: function() {
         let coords = 0;
 
@@ -891,6 +755,16 @@ const OpenweatherMenuButton = new Lang.Class({
         }
 
         return coords;
+    },
+
+    extractProvider: function() {
+        if (!arguments[0])
+            return -1;
+        if (arguments[0].split(">")[2] === undefined)
+            return -1;
+        if (isNaN(parseInt(arguments[0].split(">")[2])))
+            return -1;
+        return parseInt(arguments[0].split(">")[2]);
     },
 
     _onPreferencesActivate: function() {

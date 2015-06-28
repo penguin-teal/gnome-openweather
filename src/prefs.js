@@ -69,13 +69,19 @@ const OPENWEATHER_URL_BASE = 'https://open.mapquestapi.com/nominatim/v1/';
 const OPENWEATHER_URL_FIND = OPENWEATHER_URL_BASE + 'search.php';
 const OPENWEATHER_URL_REVERSE = OPENWEATHER_URL_BASE + 'reverse.php';
 
+const WeatherProvider = {
+    DEFAULT: -1,
+    OPENWEATHERMAP: 0,
+    FORECAST_IO: 1
+};
+
 let _httpSession;
 
 let mCities = null;
 
 let inRealize = false;
 
-let defaultSize = [-1,-1];
+let defaultSize = [-1, -1];
 
 const WeatherPrefsWidget = new GObject.Class({
     Name: 'OpenWeatherExtension.Prefs.Widget',
@@ -100,7 +106,7 @@ const WeatherPrefsWidget = new GObject.Class({
 
         this.add(this.MainWidget);
         this.MainWidget.connect('realize', Lang.bind(this, function() {
-            if ( inRealize )
+            if (inRealize)
                 return;
             inRealize = true;
 
@@ -123,9 +129,11 @@ const WeatherPrefsWidget = new GObject.Class({
         this.editWidget = this.Window.get_object("edit-widget");
         this.editName = this.Window.get_object("edit-name");
         this.editCoord = this.Window.get_object("edit-coord");
+        this.editCombo = this.Window.get_object("edit-combo");
         this.searchWidget = this.Window.get_object("search-widget");
         this.searchMenu = this.Window.get_object("search-menu");
         this.searchName = this.Window.get_object("search-name");
+        this.searchCombo = this.Window.get_object("search-combo");
         this.spinner = this.Window.get_object("spinner");
 
         this.searchName.connect("icon-release", Lang.bind(this, this.clearEntry));
@@ -182,15 +190,12 @@ const WeatherPrefsWidget = new GObject.Class({
 
                 let newCity = arguments[0];
 
-                if (Number(newCity.length) < 1)
-                {
+                if (Number(newCity.length) < 1) {
                     let item = new Gtk.MenuItem({
                         label: _("\"%s\" not found").format(location)
                     });
                     this.searchMenu.append(item);
-                }
-                else
-                {
+                } else {
                     var m = {};
                     for (var i in newCity) {
 
@@ -212,6 +217,7 @@ const WeatherPrefsWidget = new GObject.Class({
         }));
 
         let column = new Gtk.TreeViewColumn();
+        column.set_title(_("Location"));
         this.treeview.append_column(column);
 
         let renderer = new Gtk.CellRendererText();
@@ -219,6 +225,15 @@ const WeatherPrefsWidget = new GObject.Class({
 
         column.set_cell_data_func(renderer, function() {
             arguments[1].markup = arguments[2].get_value(arguments[3], 0);
+        });
+        column = new Gtk.TreeViewColumn();
+        column.set_title(_("Provider"));
+        this.treeview.append_column(column);
+
+        column.pack_start(renderer, null);
+
+        column.set_cell_data_func(renderer, function() {
+            arguments[1].markup = arguments[2].get_value(arguments[3], 1);
         });
 
 
@@ -311,6 +326,7 @@ const WeatherPrefsWidget = new GObject.Class({
                 for (let i in city) {
                     current = this.liststore.append();
                     this.liststore.set_value(current, 0, this.extractLocation(city[i]));
+                    this.liststore.set_value(current, 1, this.getProviderShort(this.extractProvider(city[i])));
                 }
             }
 
@@ -396,18 +412,20 @@ const WeatherPrefsWidget = new GObject.Class({
         let ac = this.actual_city;
         this.editName.set_text(this.extractLocation(city[ac]));
         this.editCoord.set_text(this.extractCoord(city[ac]));
+        this.editCombo.set_active(this.extractProvider(city[ac]) + 1);
         this.editWidget.show_all();
         return 0;
     },
 
     searchSave: function() {
-        let cityText = this.searchName.get_text().split(/\[/)[0];
+        let location = this.searchName.get_text().split(/\[/)[0];
         let coord = this.searchName.get_text().split(/\[/)[1].split(/\]/)[0];
+        let provider = this.searchCombo.get_active() - 1;
 
         if (this.city)
-            this.city = this.city + " && " + coord + ">" + cityText;
+            this.city = this.city + " && " + coord + ">" + location + ">" + provider;
         else
-            this.city = coord + ">" + cityText;
+            this.city = coord + ">" + location + ">" + provider;
 
         this.searchWidget.hide();
         return 0;
@@ -424,7 +442,8 @@ const WeatherPrefsWidget = new GObject.Class({
         let ac = this.actual_city;
         let location = this.editName.get_text();
         let coord = this.editCoord.get_text();
-        theCity[ac] = coord + ">" + location;
+        let provider = this.editCombo.get_active() - 1;
+        theCity[ac] = coord + ">" + location + ">" + provider;
 
         if (theCity.length > 1)
             this.city = theCity.join(" && ");
@@ -782,16 +801,48 @@ const WeatherPrefsWidget = new GObject.Class({
         this.Settings.set_string(OPENWEATHER_FC_API_KEY, v);
     },
 
-    extractLocation: function(a) {
-        if (a.search(">") == -1)
+    extractLocation: function() {
+        if (!arguments[0])
+            return "";
+
+        if (arguments[0].search(">") == -1)
             return _("Invalid city");
-        return a.split(">")[1];
+        return arguments[0].split(">")[1];
     },
 
-    extractCoord: function(a) {
-        if (a.search(">") == -1)
+    extractCoord: function() {
+        if (!arguments[0])
             return 0;
-        return a.split(">")[0];
+
+        if (arguments[0].search(">") == -1)
+            return 0;
+        return arguments[0].split(">")[0];
+    },
+
+    extractProvider: function() {
+        if (!arguments[0])
+            return -1;
+        if (arguments[0].split(">")[2] === undefined)
+            return -1;
+        if (isNaN(parseInt(arguments[0].split(">")[2])))
+            return -1;
+        return parseInt(arguments[0].split(">")[2]);
+    },
+
+    getProviderShort: function() {
+        let provider = arguments[0];
+        if ( provider === undefined)
+            provider = this.extractProvider(this.city[this.actual_city]);
+
+        switch (provider) {
+            case WeatherProvider.OPENWEATHERMAP:
+                return "openweathermap.org";
+            case WeatherProvider.FORECAST_IO:
+                return "forecast.io";
+            default:
+            case WeatherProvider.DEFAULT:
+                return _("default");
+        }
     }
 });
 
