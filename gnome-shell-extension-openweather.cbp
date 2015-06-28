@@ -29,6 +29,7 @@
 		<Unit filename="autogen.sh" />
 		<Unit filename="configure.ac" />
 		<Unit filename="data/Makefile.am" />
+		<Unit filename="data/OpenWeather.png" />
 		<Unit filename="data/Screenshot.jpg" />
 		<Unit filename="data/metadata.json.in" />
 		<Unit filename="data/org.gnome.shell.extensions.openweather.gschema.xml.in" />

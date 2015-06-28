@@ -948,6 +948,184 @@
                 <property name="tab_fill">False</property>
               </packing>
             </child>
+            <child>
+              <object class="GtkBox" id="about">
+                <property name="can_focus">False</property>
+                <property name="margin_top">24</property>
+                <property name="margin_bottom">24</property>
+                <property name="hexpand">True</property>
+                <property name="vexpand">True</property>
+                <property name="orientation">vertical</property>
+                <property name="spacing">5</property>
+                <child>
+                  <object class="GtkImage" id="logo-image">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="pixbuf">OpenWeather.png</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="padding">10</property>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="extension-label">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label">&lt;b&gt;OPenweather&lt;/b&gt;</property>
+                    <property name="use_markup">True</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkBox" id="box4">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="halign">center</property>
+                    <child>
+                      <object class="GtkLabel" id="version-label">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="halign">end</property>
+                        <property name="label" translatable="yes">version: </property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="version">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="halign">start</property>
+                        <property name="label">unknown (self-build ?)</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">2</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="description-label">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label" translatable="yes">&lt;span&gt;Weather extension to display weather information from &lt;a href="https://openweathermap.org/"&gt;Openweathermap&lt;/a&gt; or &lt;a href="https://forecast.io"&gt;forecast.io&lt;/a&gt; for almost all locations in the world.&lt;/span&gt;</property>
+                    <property name="use_markup">True</property>
+                    <property name="justify">center</property>
+                    <property name="wrap">True</property>
+                    <property name="wrap_mode">word-char</property>
+                    <property name="max_width_chars">1</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">3</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkBox" id="box10">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="halign">center</property>
+                    <property name="spacing">5</property>
+                    <child>
+                      <object class="GtkLabel" id="label15">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Maintained by</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="label16">
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="label">Jens Lody (&lt;a href="mailto:openweather@jenslody.de"&gt;openweather@jenslody.de&lt;/a&gt;)</property>
+                        <property name="use_markup">True</property>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">4</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLinkButton" id="github-link">
+                    <property name="label">Webpage</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="events"/>
+                    <property name="halign">center</property>
+                    <property name="relief">none</property>
+                    <property name="uri">https://github.com/jenslody/gnome-shell-extension-openweather</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">5</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="label2">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="valign">end</property>
+                    <property name="label" translatable="yes">&lt;span size="small"&gt;This program comes with ABSOLUTELY NO WARRANTY.
+See the &lt;a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"&gt;GNU General Public License, version 2 or later&lt;/a&gt; for details.&lt;/span&gt;</property>
+                    <property name="use_markup">True</property>
+                    <property name="justify">center</property>
+                    <property name="wrap">True</property>
+                  </object>
+                  <packing>
+                    <property name="expand">True</property>
+                    <property name="fill">True</property>
+                    <property name="position">6</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="position">4</property>
+              </packing>
+            </child>
+            <child type="tab">
+              <object class="GtkLabel" id="about-label">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">About</property>
+              </object>
+              <packing>
+                <property name="position">4</property>
+                <property name="tab_fill">False</property>
+              </packing>
+            </child>
           </object>
         </child>
       </object>

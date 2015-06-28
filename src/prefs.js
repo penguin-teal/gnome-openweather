@@ -250,6 +250,8 @@ const WeatherPrefsWidget = new GObject.Class({
                 this.configWidgets.push([theObjects[i], name]);
             }
         }
+        if (Me.metadata.version !== undefined)
+            this.Window.get_object('version').set_label(Me.metadata.version.toString());
     },
 
     clearEntry: function() {
@@ -831,7 +833,7 @@ const WeatherPrefsWidget = new GObject.Class({
 
     getProviderShort: function() {
         let provider = arguments[0];
-        if ( provider === undefined)
+        if (provider === undefined)
             provider = this.extractProvider(this.city[this.actual_city]);
 
         switch (provider) {
