@@ -993,7 +993,8 @@
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="halign">end</property>
-                        <property name="label" translatable="yes">version: </property>
+                        <property name="label" translatable="yes">Version: </property>
+                        <property name="track_visited_links">False</property>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -1006,7 +1007,8 @@
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <property name="halign">start</property>
-                        <property name="label">unknown (self-build ?)</property>
+                        <property name="label" translatable="yes">unknown (self-build ?)</property>
+                        <property name="ellipsize">end</property>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -1078,11 +1080,12 @@
                 </child>
                 <child>
                   <object class="GtkLinkButton" id="github-link">
-                    <property name="label">Webpage</property>
+                    <property name="label" translatable="yes">Webpage</property>
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
                     <property name="events"/>
+                    <property name="opacity">0.99999999977648257</property>
                     <property name="halign">center</property>
                     <property name="relief">none</property>
                     <property name="uri">https://github.com/jenslody/gnome-shell-extension-openweather</property>
