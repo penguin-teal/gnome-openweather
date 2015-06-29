@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-30 18:24+0200\n"
+"POT-Creation-Date: 2015-06-29 06:29+0200\n"
 "PO-Revision-Date: 2012-06-17 17:04+0700\n"
 "Last-Translator: Ngô Trung <ndtrung4419@gmail.com>\n"
 "Language-Team: \n"
@@ -17,172 +17,176 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../src/extension.js:155
+#: ../src/extension.js:156
 msgid "..."
 msgstr "..."
 
-#: ../src/extension.js:773
+#: ../src/extension.js:646 ../data/weather-settings.ui:446
 msgid "Locations"
 msgstr ""
 
-#: ../src/extension.js:785
+#: ../src/extension.js:658
 msgid "Reload Weather Information"
 msgstr "Tải lại dữ liệu thời tiết"
 
-#: ../src/extension.js:800
+#: ../src/extension.js:673
 msgid "Weather data provided by:"
 msgstr ""
 
-#: ../src/extension.js:811
+#: ../src/extension.js:684
 #, javascript-format
 msgid "Can not open %s"
 msgstr ""
 
-#: ../src/extension.js:818
+#: ../src/extension.js:691
 msgid "Weather Settings"
 msgstr "Thiết lập thời tiết"
 
-#: ../src/extension.js:869 ../src/extension.js:878 ../src/prefs.js:787
+#: ../src/extension.js:742 ../src/prefs.js:811
 msgid "Invalid city"
 msgstr "Không có thành phố này"
 
-#: ../src/extension.js:973
+#: ../src/extension.js:753
+msgid "Invalid location! Please try to recreate it."
+msgstr ""
+
+#: ../src/extension.js:852
 msgid "Calm"
 msgstr ""
 
-#: ../src/extension.js:976
+#: ../src/extension.js:855
 msgid "Light air"
 msgstr ""
 
-#: ../src/extension.js:979
+#: ../src/extension.js:858
 msgid "Light breeze"
 msgstr ""
 
-#: ../src/extension.js:982
+#: ../src/extension.js:861
 msgid "Gentle breeze"
 msgstr ""
 
-#: ../src/extension.js:985
+#: ../src/extension.js:864
 msgid "Moderate breeze"
 msgstr ""
 
-#: ../src/extension.js:988
+#: ../src/extension.js:867
 msgid "Fresh breeze"
 msgstr ""
 
-#: ../src/extension.js:991
+#: ../src/extension.js:870
 msgid "Strong breeze"
 msgstr ""
 
-#: ../src/extension.js:994
+#: ../src/extension.js:873
 msgid "Moderate gale"
 msgstr ""
 
-#: ../src/extension.js:997
+#: ../src/extension.js:876
 msgid "Fresh gale"
 msgstr ""
 
-#: ../src/extension.js:1000
+#: ../src/extension.js:879
 msgid "Strong gale"
 msgstr ""
 
-#: ../src/extension.js:1003
+#: ../src/extension.js:882
 msgid "Storm"
 msgstr ""
 
-#: ../src/extension.js:1006
+#: ../src/extension.js:885
 msgid "Violent storm"
 msgstr ""
 
-#: ../src/extension.js:1009
+#: ../src/extension.js:888
 msgid "Hurricane"
 msgstr "Cuồng phong"
 
-#: ../src/extension.js:1013
+#: ../src/extension.js:892
 msgid "Sunday"
 msgstr "Chủ Nhật"
 
-#: ../src/extension.js:1013
+#: ../src/extension.js:892
 msgid "Monday"
 msgstr "Thứ hai"
 
-#: ../src/extension.js:1013
+#: ../src/extension.js:892
 msgid "Tuesday"
 msgstr "Thứ ba"
 
-#: ../src/extension.js:1013
+#: ../src/extension.js:892
 msgid "Wednesday"
 msgstr "Thứ tư"
 
-#: ../src/extension.js:1013
+#: ../src/extension.js:892
 msgid "Thursday"
 msgstr "Thứ năm"
 
-#: ../src/extension.js:1013
+#: ../src/extension.js:892
 msgid "Friday"
 msgstr "Thứ sáu"
 
-#: ../src/extension.js:1013
+#: ../src/extension.js:892
 msgid "Saturday"
 msgstr "Thứ bảy"
 
-#: ../src/extension.js:1019
+#: ../src/extension.js:898
 msgid "N"
 msgstr "B"
 
-#: ../src/extension.js:1019
+#: ../src/extension.js:898
 msgid "NE"
 msgstr "ĐB"
 
-#: ../src/extension.js:1019
+#: ../src/extension.js:898
 msgid "E"
 msgstr "Đ"
 
-#: ../src/extension.js:1019
+#: ../src/extension.js:898
 msgid "SE"
 msgstr "ĐN"
 
-#: ../src/extension.js:1019
+#: ../src/extension.js:898
 msgid "S"
 msgstr "N"
 
-#: ../src/extension.js:1019
+#: ../src/extension.js:898
 msgid "SW"
 msgstr "TN"
 
-#: ../src/extension.js:1019
+#: ../src/extension.js:898
 msgid "W"
 msgstr "T"
 
-#: ../src/extension.js:1019
+#: ../src/extension.js:898
 msgid "NW"
 msgstr "TB"
 
-#: ../src/extension.js:1270
+#: ../src/extension.js:1149
 msgid "Loading current weather ..."
 msgstr "Đang tải dữ liệu thời tiết hiện tại..."
 
-#: ../src/extension.js:1302
+#: ../src/extension.js:1181
 msgid "Loading ..."
 msgstr "Đang tải..."
 
-#: ../src/extension.js:1306
+#: ../src/extension.js:1185
 msgid "Please wait"
 msgstr "Xin đợi một lát"
 
-#: ../src/extension.js:1367
+#: ../src/extension.js:1246
 msgid "Cloudiness:"
 msgstr ""
 
-#: ../src/extension.js:1371
+#: ../src/extension.js:1250
 msgid "Humidity:"
 msgstr "Độ ẩm:"
 
-#: ../src/extension.js:1375
+#: ../src/extension.js:1254
 msgid "Pressure:"
 msgstr "Áp suất:"
 
-#: ../src/extension.js:1379
+#: ../src/extension.js:1258
 msgid "Wind:"
 msgstr "Gió:"
 
@@ -471,22 +475,34 @@ msgstr "Nhiều mây"
 msgid "Not available"
 msgstr "Không có dữ liệu"
 
-#: ../src/prefs.js:188
+#: ../src/prefs.js:195
 #, fuzzy, javascript-format
 msgid "\"%s\" not found"
 msgstr "Không tìm thấy schema \"%s\"."
 
-#: ../src/prefs.js:344
+#: ../src/prefs.js:220
+msgid "Location"
+msgstr ""
+
+#: ../src/prefs.js:230
+msgid "Provider"
+msgstr ""
+
+#: ../src/prefs.js:362
 #, javascript-format
 msgid "Remove %s ?"
 msgstr "Bạn có muốn xóa %s?"
+
+#: ../src/prefs.js:846
+msgid "default"
+msgstr ""
 
 #: ../data/weather-settings.ui:24
 msgid "Edit name"
 msgstr ""
 
 #: ../data/weather-settings.ui:42 ../data/weather-settings.ui:72
-#: ../data/weather-settings.ui:188
+#: ../data/weather-settings.ui:205
 #, fuzzy
 msgid "Clear entry"
 msgstr "Trời trong"
@@ -495,107 +511,157 @@ msgstr "Trời trong"
 msgid "Edit coordinates"
 msgstr ""
 
-#: ../data/weather-settings.ui:101 ../data/weather-settings.ui:239
+#: ../data/weather-settings.ui:86 ../data/weather-settings.ui:242
+msgid "Extensions default weather provider"
+msgstr ""
+
+#: ../data/weather-settings.ui:118 ../data/weather-settings.ui:274
 msgid "Cancel"
 msgstr ""
 
-#: ../data/weather-settings.ui:119 ../data/weather-settings.ui:257
+#: ../data/weather-settings.ui:136 ../data/weather-settings.ui:292
 msgid "Save"
 msgstr ""
 
-#: ../data/weather-settings.ui:165
+#: ../data/weather-settings.ui:182
 msgid "Search by location or coordinates"
 msgstr ""
 
-#: ../data/weather-settings.ui:189
+#: ../data/weather-settings.ui:206
 msgid "e.g. Vaiaku, Tuvalu or -8.5211767,179.1976747"
 msgstr ""
 
-#: ../data/weather-settings.ui:199
+#: ../data/weather-settings.ui:216
 msgid "Find"
 msgstr ""
 
-#: ../data/weather-settings.ui:419
-msgid "Chose weather provider"
+#: ../data/weather-settings.ui:465
+msgid "Chose default weather provider"
 msgstr ""
 
-#: ../data/weather-settings.ui:430
+#: ../data/weather-settings.ui:476
+msgid "Personal Api key from openweathermap.org"
+msgstr ""
+
+#: ../data/weather-settings.ui:525
+msgid "Personal Api key from forecast.io"
+msgstr ""
+
+#: ../data/weather-settings.ui:541
+msgid "Weather provider"
+msgstr ""
+
+#: ../data/weather-settings.ui:561
 msgid "Temperature Unit"
 msgstr "Đơn vị đo nhiệt độ"
 
-#: ../data/weather-settings.ui:441
+#: ../data/weather-settings.ui:572
 msgid "Wind Speed Unit"
 msgstr "Đơn vị tốc độ gió"
 
-#: ../data/weather-settings.ui:452
+#: ../data/weather-settings.ui:583
 #, fuzzy
 msgid "Pressure Unit"
 msgstr "Áp suất:"
 
-#: ../data/weather-settings.ui:463
+#: ../data/weather-settings.ui:658
+msgid "Units"
+msgstr ""
+
+#: ../data/weather-settings.ui:678
 msgid "Position in Panel"
 msgstr "Vị trí trên thanh pa-nen"
 
-#: ../data/weather-settings.ui:474
+#: ../data/weather-settings.ui:689
 msgid "Wind Direction by Arrows"
 msgstr ""
 
-#: ../data/weather-settings.ui:485
+#: ../data/weather-settings.ui:700
 msgid "Translate Conditions"
 msgstr "Dịch tình hình thời tiết"
 
-#: ../data/weather-settings.ui:496
+#: ../data/weather-settings.ui:711
 msgid "Symbolic Icons"
 msgstr "Biểu tượng đơn giản"
 
-#: ../data/weather-settings.ui:507
+#: ../data/weather-settings.ui:722
 msgid "Text on buttons"
 msgstr ""
 
-#: ../data/weather-settings.ui:518
+#: ../data/weather-settings.ui:733
 msgid "Temperature in Panel"
 msgstr "Hiện nhiệt độ trên pa-nen"
 
-#: ../data/weather-settings.ui:529
+#: ../data/weather-settings.ui:744
 msgid "Conditions in Panel"
 msgstr "Hiện thời tiết trên pa-nen"
 
-#: ../data/weather-settings.ui:540
+#: ../data/weather-settings.ui:755
 #, fuzzy
 msgid "Conditions in Forecast"
 msgstr "Hiện thời tiết trên pa-nen"
 
-#: ../data/weather-settings.ui:551
+#: ../data/weather-settings.ui:766
 msgid "Center forecast"
 msgstr ""
 
-#: ../data/weather-settings.ui:562
+#: ../data/weather-settings.ui:777
 msgid "Number of days in forecast"
 msgstr ""
 
-#: ../data/weather-settings.ui:573
+#: ../data/weather-settings.ui:788
 msgid "Maximal number of digits after the decimal point"
 msgstr ""
 
-#: ../data/weather-settings.ui:584
-msgid "Personal Api key from openweathermap.org"
-msgstr ""
-
-#: ../data/weather-settings.ui:595
-msgid "Personal Api key from forecast.io"
-msgstr ""
-
-#: ../data/weather-settings.ui:680
+#: ../data/weather-settings.ui:800
 msgid "Center"
 msgstr "Ở giữa"
 
-#: ../data/weather-settings.ui:681
+#: ../data/weather-settings.ui:801
 msgid "Right"
 msgstr "Bên phải"
 
-#: ../data/weather-settings.ui:682
+#: ../data/weather-settings.ui:802
 msgid "Left"
 msgstr "Bên trái"
+
+#: ../data/weather-settings.ui:944
+msgid "Layout"
+msgstr ""
+
+#: ../data/weather-settings.ui:996
+msgid "Version: "
+msgstr ""
+
+#: ../data/weather-settings.ui:1010
+msgid "unknown (self-build ?)"
+msgstr ""
+
+#: ../data/weather-settings.ui:1030
+msgid ""
+"<span>Weather extension to display weather information from <a href="
+"\"https://openweathermap.org/\">Openweathermap</a> or <a href=\"https://"
+"forecast.io\">forecast.io</a> for almost all locations in the world.</span>"
+msgstr ""
+
+#: ../data/weather-settings.ui:1053
+msgid "Maintained by"
+msgstr ""
+
+#: ../data/weather-settings.ui:1083
+msgid "Webpage"
+msgstr ""
+
+#: ../data/weather-settings.ui:1104
+msgid ""
+"<span size=\"small\">This program comes with ABSOLUTELY NO WARRANTY.\n"
+"See the <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
+"\">GNU General Public License, version 2 or later</a> for details.</span>"
+msgstr ""
+
+#: ../data/weather-settings.ui:1125
+msgid "About"
+msgstr ""
 
 #, fuzzy
 #~ msgid "In %d days"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-shell-extension-openweather\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-30 18:24+0200\n"
+"POT-Creation-Date: 2015-06-29 06:29+0200\n"
 "PO-Revision-Date: 2015-05-31 20:37+0800\n"
 "Last-Translator: 绿色圣光 <lishaohui.qd@163.com>\n"
 "Language-Team: Chinese (simplified) <>\n"
@@ -21,172 +21,176 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Gtranslator 2.91.7\n"
 
-#: ../src/extension.js:155
+#: ../src/extension.js:156
 msgid "..."
 msgstr "..."
 
-#: ../src/extension.js:773
+#: ../src/extension.js:646 ../data/weather-settings.ui:446
 msgid "Locations"
 msgstr "地点"
 
-#: ../src/extension.js:785
+#: ../src/extension.js:658
 msgid "Reload Weather Information"
 msgstr "重载天气信息"
 
-#: ../src/extension.js:800
+#: ../src/extension.js:673
 msgid "Weather data provided by:"
 msgstr "天气数据源自："
 
-#: ../src/extension.js:811
+#: ../src/extension.js:684
 #, javascript-format
 msgid "Can not open %s"
 msgstr "无法打开 %s"
 
-#: ../src/extension.js:818
+#: ../src/extension.js:691
 msgid "Weather Settings"
 msgstr "天气设置"
 
-#: ../src/extension.js:869 ../src/extension.js:878 ../src/prefs.js:787
+#: ../src/extension.js:742 ../src/prefs.js:811
 msgid "Invalid city"
 msgstr "无效的城市"
 
-#: ../src/extension.js:973
+#: ../src/extension.js:753
+msgid "Invalid location! Please try to recreate it."
+msgstr ""
+
+#: ../src/extension.js:852
 msgid "Calm"
 msgstr "无风"
 
-#: ../src/extension.js:976
+#: ../src/extension.js:855
 msgid "Light air"
 msgstr "软风"
 
-#: ../src/extension.js:979
+#: ../src/extension.js:858
 msgid "Light breeze"
 msgstr "轻风"
 
-#: ../src/extension.js:982
+#: ../src/extension.js:861
 msgid "Gentle breeze"
 msgstr "微风"
 
-#: ../src/extension.js:985
+#: ../src/extension.js:864
 msgid "Moderate breeze"
 msgstr "和风"
 
-#: ../src/extension.js:988
+#: ../src/extension.js:867
 msgid "Fresh breeze"
 msgstr "清风"
 
-#: ../src/extension.js:991
+#: ../src/extension.js:870
 msgid "Strong breeze"
 msgstr "强风"
 
-#: ../src/extension.js:994
+#: ../src/extension.js:873
 msgid "Moderate gale"
 msgstr "疾风"
 
-#: ../src/extension.js:997
+#: ../src/extension.js:876
 msgid "Fresh gale"
 msgstr "大风"
 
-#: ../src/extension.js:1000
+#: ../src/extension.js:879
 msgid "Strong gale"
 msgstr "烈风"
 
-#: ../src/extension.js:1003
+#: ../src/extension.js:882
 msgid "Storm"
 msgstr "狂风"
 
-#: ../src/extension.js:1006
+#: ../src/extension.js:885
 msgid "Violent storm"
 msgstr "暴风"
 
-#: ../src/extension.js:1009
+#: ../src/extension.js:888
 msgid "Hurricane"
 msgstr "飓风"
 
-#: ../src/extension.js:1013
+#: ../src/extension.js:892
 msgid "Sunday"
 msgstr "星期日"
 
-#: ../src/extension.js:1013
+#: ../src/extension.js:892
 msgid "Monday"
 msgstr "星期一"
 
-#: ../src/extension.js:1013
+#: ../src/extension.js:892
 msgid "Tuesday"
 msgstr "星期二"
 
-#: ../src/extension.js:1013
+#: ../src/extension.js:892
 msgid "Wednesday"
 msgstr "星期三"
 
-#: ../src/extension.js:1013
+#: ../src/extension.js:892
 msgid "Thursday"
 msgstr "星期四"
 
-#: ../src/extension.js:1013
+#: ../src/extension.js:892
 msgid "Friday"
 msgstr "星期五"
 
-#: ../src/extension.js:1013
+#: ../src/extension.js:892
 msgid "Saturday"
 msgstr "星期六"
 
-#: ../src/extension.js:1019
+#: ../src/extension.js:898
 msgid "N"
 msgstr "北"
 
-#: ../src/extension.js:1019
+#: ../src/extension.js:898
 msgid "NE"
 msgstr "东北"
 
-#: ../src/extension.js:1019
+#: ../src/extension.js:898
 msgid "E"
 msgstr "东"
 
-#: ../src/extension.js:1019
+#: ../src/extension.js:898
 msgid "SE"
 msgstr "东南"
 
-#: ../src/extension.js:1019
+#: ../src/extension.js:898
 msgid "S"
 msgstr "南"
 
-#: ../src/extension.js:1019
+#: ../src/extension.js:898
 msgid "SW"
 msgstr "西南"
 
-#: ../src/extension.js:1019
+#: ../src/extension.js:898
 msgid "W"
 msgstr "西"
 
-#: ../src/extension.js:1019
+#: ../src/extension.js:898
 msgid "NW"
 msgstr "西北"
 
-#: ../src/extension.js:1270
+#: ../src/extension.js:1149
 msgid "Loading current weather ..."
 msgstr "正在加载当前天气 ..."
 
-#: ../src/extension.js:1302
+#: ../src/extension.js:1181
 msgid "Loading ..."
 msgstr "正在加载 ..."
 
-#: ../src/extension.js:1306
+#: ../src/extension.js:1185
 msgid "Please wait"
 msgstr "请稍候"
 
-#: ../src/extension.js:1367
+#: ../src/extension.js:1246
 msgid "Cloudiness:"
 msgstr "云量："
 
-#: ../src/extension.js:1371
+#: ../src/extension.js:1250
 msgid "Humidity:"
 msgstr "湿度："
 
-#: ../src/extension.js:1375
+#: ../src/extension.js:1254
 msgid "Pressure:"
 msgstr "气压："
 
-#: ../src/extension.js:1379
+#: ../src/extension.js:1258
 msgid "Wind:"
 msgstr "风："
 
@@ -436,22 +440,35 @@ msgstr "阴天"
 msgid "Not available"
 msgstr "不可用"
 
-#: ../src/prefs.js:188
+#: ../src/prefs.js:195
 #, javascript-format
 msgid "\"%s\" not found"
 msgstr "未找到 \"%s\"。"
 
-#: ../src/prefs.js:344
+#: ../src/prefs.js:220
+#, fuzzy
+msgid "Location"
+msgstr "地点"
+
+#: ../src/prefs.js:230
+msgid "Provider"
+msgstr ""
+
+#: ../src/prefs.js:362
 #, javascript-format
 msgid "Remove %s ?"
 msgstr "移除 %s 吗？"
+
+#: ../src/prefs.js:846
+msgid "default"
+msgstr ""
 
 #: ../data/weather-settings.ui:24
 msgid "Edit name"
 msgstr "编辑名称"
 
 #: ../data/weather-settings.ui:42 ../data/weather-settings.ui:72
-#: ../data/weather-settings.ui:188
+#: ../data/weather-settings.ui:205
 msgid "Clear entry"
 msgstr "清除条目"
 
@@ -459,105 +476,158 @@ msgstr "清除条目"
 msgid "Edit coordinates"
 msgstr "编辑坐标"
 
-#: ../data/weather-settings.ui:101 ../data/weather-settings.ui:239
+#: ../data/weather-settings.ui:86 ../data/weather-settings.ui:242
+#, fuzzy
+msgid "Extensions default weather provider"
+msgstr "选择天气提供源"
+
+#: ../data/weather-settings.ui:118 ../data/weather-settings.ui:274
 msgid "Cancel"
 msgstr "取消"
 
-#: ../data/weather-settings.ui:119 ../data/weather-settings.ui:257
+#: ../data/weather-settings.ui:136 ../data/weather-settings.ui:292
 msgid "Save"
 msgstr "保存"
 
-#: ../data/weather-settings.ui:165
+#: ../data/weather-settings.ui:182
 msgid "Search by location or coordinates"
 msgstr "通过地点或坐标搜索"
 
-#: ../data/weather-settings.ui:189
+#: ../data/weather-settings.ui:206
 msgid "e.g. Vaiaku, Tuvalu or -8.5211767,179.1976747"
 msgstr "例如，“北京”或者“39.9059093,116.3913489”"
 
-#: ../data/weather-settings.ui:199
+#: ../data/weather-settings.ui:216
 msgid "Find"
 msgstr "查找"
 
-#: ../data/weather-settings.ui:419
-msgid "Chose weather provider"
+#: ../data/weather-settings.ui:465
+#, fuzzy
+msgid "Chose default weather provider"
 msgstr "选择天气提供源"
 
-#: ../data/weather-settings.ui:430
-msgid "Temperature Unit"
-msgstr "温度单位"
-
-#: ../data/weather-settings.ui:441
-msgid "Wind Speed Unit"
-msgstr "风速单位"
-
-#: ../data/weather-settings.ui:452
-msgid "Pressure Unit"
-msgstr "气压单位"
-
-#: ../data/weather-settings.ui:463
-msgid "Position in Panel"
-msgstr "在面板上的位置"
-
-#: ../data/weather-settings.ui:474
-msgid "Wind Direction by Arrows"
-msgstr "使用箭头指示风向"
-
-#: ../data/weather-settings.ui:485
-msgid "Translate Conditions"
-msgstr "翻译天气状态"
-
-#: ../data/weather-settings.ui:496
-msgid "Symbolic Icons"
-msgstr "显示象征性图标"
-
-#: ../data/weather-settings.ui:507
-msgid "Text on buttons"
-msgstr "图标显示文本"
-
-#: ../data/weather-settings.ui:518
-msgid "Temperature in Panel"
-msgstr "在面板上显示气温"
-
-#: ../data/weather-settings.ui:529
-msgid "Conditions in Panel"
-msgstr "在面板上显示天气状态"
-
-#: ../data/weather-settings.ui:540
-msgid "Conditions in Forecast"
-msgstr "显示预报天气状态"
-
-#: ../data/weather-settings.ui:551
-msgid "Center forecast"
-msgstr "预报信息居中显示"
-
-#: ../data/weather-settings.ui:562
-msgid "Number of days in forecast"
-msgstr "预报的天数"
-
-#: ../data/weather-settings.ui:573
-msgid "Maximal number of digits after the decimal point"
-msgstr "小数点后最大位数"
-
-#: ../data/weather-settings.ui:584
+#: ../data/weather-settings.ui:476
 msgid "Personal Api key from openweathermap.org"
 msgstr "openweathermap.org 的个人 API 密钥"
 
-#: ../data/weather-settings.ui:595
+#: ../data/weather-settings.ui:525
 msgid "Personal Api key from forecast.io"
 msgstr "forecast.io 的个人 API 密钥"
 
-#: ../data/weather-settings.ui:680
+#: ../data/weather-settings.ui:541
+#, fuzzy
+msgid "Weather provider"
+msgstr "选择天气提供源"
+
+#: ../data/weather-settings.ui:561
+msgid "Temperature Unit"
+msgstr "温度单位"
+
+#: ../data/weather-settings.ui:572
+msgid "Wind Speed Unit"
+msgstr "风速单位"
+
+#: ../data/weather-settings.ui:583
+msgid "Pressure Unit"
+msgstr "气压单位"
+
+#: ../data/weather-settings.ui:658
+msgid "Units"
+msgstr ""
+
+#: ../data/weather-settings.ui:678
+msgid "Position in Panel"
+msgstr "在面板上的位置"
+
+#: ../data/weather-settings.ui:689
+msgid "Wind Direction by Arrows"
+msgstr "使用箭头指示风向"
+
+#: ../data/weather-settings.ui:700
+msgid "Translate Conditions"
+msgstr "翻译天气状态"
+
+#: ../data/weather-settings.ui:711
+msgid "Symbolic Icons"
+msgstr "显示象征性图标"
+
+#: ../data/weather-settings.ui:722
+msgid "Text on buttons"
+msgstr "图标显示文本"
+
+#: ../data/weather-settings.ui:733
+msgid "Temperature in Panel"
+msgstr "在面板上显示气温"
+
+#: ../data/weather-settings.ui:744
+msgid "Conditions in Panel"
+msgstr "在面板上显示天气状态"
+
+#: ../data/weather-settings.ui:755
+msgid "Conditions in Forecast"
+msgstr "显示预报天气状态"
+
+#: ../data/weather-settings.ui:766
+msgid "Center forecast"
+msgstr "预报信息居中显示"
+
+#: ../data/weather-settings.ui:777
+msgid "Number of days in forecast"
+msgstr "预报的天数"
+
+#: ../data/weather-settings.ui:788
+msgid "Maximal number of digits after the decimal point"
+msgstr "小数点后最大位数"
+
+#: ../data/weather-settings.ui:800
 msgid "Center"
 msgstr "中央"
 
-#: ../data/weather-settings.ui:681
+#: ../data/weather-settings.ui:801
 msgid "Right"
 msgstr "右侧"
 
-#: ../data/weather-settings.ui:682
+#: ../data/weather-settings.ui:802
 msgid "Left"
 msgstr "左侧"
+
+#: ../data/weather-settings.ui:944
+msgid "Layout"
+msgstr ""
+
+#: ../data/weather-settings.ui:996
+msgid "Version: "
+msgstr ""
+
+#: ../data/weather-settings.ui:1010
+msgid "unknown (self-build ?)"
+msgstr ""
+
+#: ../data/weather-settings.ui:1030
+msgid ""
+"<span>Weather extension to display weather information from <a href="
+"\"https://openweathermap.org/\">Openweathermap</a> or <a href=\"https://"
+"forecast.io\">forecast.io</a> for almost all locations in the world.</span>"
+msgstr ""
+
+#: ../data/weather-settings.ui:1053
+msgid "Maintained by"
+msgstr ""
+
+#: ../data/weather-settings.ui:1083
+msgid "Webpage"
+msgstr ""
+
+#: ../data/weather-settings.ui:1104
+msgid ""
+"<span size=\"small\">This program comes with ABSOLUTELY NO WARRANTY.\n"
+"See the <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
+"\">GNU General Public License, version 2 or later</a> for details.</span>"
+msgstr ""
+
+#: ../data/weather-settings.ui:1125
+msgid "About"
+msgstr ""
 
 #, fuzzy
 #~ msgid "In %d days"
