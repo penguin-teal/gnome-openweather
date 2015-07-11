@@ -4,7 +4,7 @@
 # Gankov Andrey <gav@qsolution.ru>, 2011.
 # Stas Solovey <whats_up@tut.by>, 2012.
 # Timon <timosha@gmail.com>, 2013.
-# vantu5z <vantu5z@mail.ru>, 2015.
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2015.
 # Karbovnichiy Vasiliy <menstenebris@gmail.com>, 2015.
 #
 msgid ""
@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: 0.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-06-29 06:29+0200\n"
-"PO-Revision-Date: 2015-06-17 10:27+0300\n"
+"PO-Revision-Date: 2015-06-29 16:23+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -53,7 +53,7 @@ msgstr "Неправильный город"
 
 #: ../src/extension.js:753
 msgid "Invalid location! Please try to recreate it."
-msgstr ""
+msgstr "Неверное местоположение! Попробуйте создать его заново."
 
 #: ../src/extension.js:852
 msgid "Calm"
@@ -451,13 +451,12 @@ msgid "\"%s\" not found"
 msgstr "\"%s\" не найден"
 
 #: ../src/prefs.js:220
-#, fuzzy
 msgid "Location"
-msgstr "Города"
+msgstr "Город"
 
 #: ../src/prefs.js:230
 msgid "Provider"
-msgstr ""
+msgstr "Источник"
 
 #: ../src/prefs.js:362
 #, javascript-format
@@ -466,7 +465,7 @@ msgstr "Удалить %s ?"
 
 #: ../src/prefs.js:846
 msgid "default"
-msgstr ""
+msgstr "по умолчанию"
 
 #: ../data/weather-settings.ui:24
 msgid "Edit name"
@@ -482,9 +481,8 @@ msgid "Edit coordinates"
 msgstr "Редактировать координаты"
 
 #: ../data/weather-settings.ui:86 ../data/weather-settings.ui:242
-#, fuzzy
 msgid "Extensions default weather provider"
-msgstr "Выбор источника данных о погоде"
+msgstr "Источник данных о погоде по умолчанию"
 
 #: ../data/weather-settings.ui:118 ../data/weather-settings.ui:274
 msgid "Cancel"
@@ -507,9 +505,8 @@ msgid "Find"
 msgstr "Найти"
 
 #: ../data/weather-settings.ui:465
-#, fuzzy
 msgid "Chose default weather provider"
-msgstr "Выбор источника данных о погоде"
+msgstr "Выбор источника данных о погоде по умолчанию"
 
 #: ../data/weather-settings.ui:476
 msgid "Personal Api key from openweathermap.org"
@@ -520,9 +517,8 @@ msgid "Personal Api key from forecast.io"
 msgstr "Персональный API ключ от forecast.io"
 
 #: ../data/weather-settings.ui:541
-#, fuzzy
 msgid "Weather provider"
-msgstr "Выбор источника данных о погоде"
+msgstr "Источник данных о погоде"
 
 #: ../data/weather-settings.ui:561
 msgid "Temperature Unit"
@@ -538,7 +534,7 @@ msgstr "Единицы измерения давления"
 
 #: ../data/weather-settings.ui:658
 msgid "Units"
-msgstr ""
+msgstr "Единицы измерения"
 
 #: ../data/weather-settings.ui:678
 msgid "Position in Panel"
@@ -598,15 +594,15 @@ msgstr "Слева"
 
 #: ../data/weather-settings.ui:944
 msgid "Layout"
-msgstr ""
+msgstr "Отображение"
 
 #: ../data/weather-settings.ui:996
 msgid "Version: "
-msgstr ""
+msgstr "Версия: "
 
 #: ../data/weather-settings.ui:1010
 msgid "unknown (self-build ?)"
-msgstr ""
+msgstr "неизвестно (собственная сборка ?)"
 
 #: ../data/weather-settings.ui:1030
 msgid ""
@@ -614,14 +610,17 @@ msgid ""
 "\"https://openweathermap.org/\">Openweathermap</a> or <a href=\"https://"
 "forecast.io\">forecast.io</a> for almost all locations in the world.</span>"
 msgstr ""
+"<span>Дополнение для отображения сведений о погоде от <a href=\"https://"
+"openweathermap.org/\">Openweathermap</a> или <a href=\"https://forecast.io"
+"\">forecast.io</a> для почти всех мест в мире.</span>"
 
 #: ../data/weather-settings.ui:1053
 msgid "Maintained by"
-msgstr ""
+msgstr "Автор"
 
 #: ../data/weather-settings.ui:1083
 msgid "Webpage"
-msgstr ""
+msgstr "Домашняя страница"
 
 #: ../data/weather-settings.ui:1104
 msgid ""
@@ -629,10 +628,15 @@ msgid ""
 "See the <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
 "\">GNU General Public License, version 2 or later</a> for details.</span>"
 msgstr ""
+"<span size=\"small\">Эта программа распространяется БЕЗ КАКИХ ЛИБО "
+"ГАРАНТИЙ.\n"
+"Смотри <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
+"\">GNU General Public License, версии 2 или позднее</a> для информации.</"
+"span>"
 
 #: ../data/weather-settings.ui:1125
 msgid "About"
-msgstr ""
+msgstr "О себе"
 
 #, fuzzy
 #~ msgid "In %d days"
