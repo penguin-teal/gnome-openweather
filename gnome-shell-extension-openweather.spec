@@ -19,7 +19,8 @@ Requires:       gnome-shell >= 3.12.0
 
 %description
 gnome-shell-extension-openweather is an extension to display weather information
-from http://openweathermap.org/ for many cities in GNOME Shell
+from http://openweathermap.org/ or http://forecast.io for (almost) all locations
+of the world in GNOME Shell.
 
 %prep
 %setup -q -n %{github}-%{git}
@@ -48,5 +49,6 @@ fi
 
 %changelog
 * Fri Nov 08 2013 Jens Lody <jens@jenslody.de> - 0-0.1.git0d20641
-- Initial package for Fedora of the weather-extension fork using http://openweathermap.org
+- Initial package for Fedora of the weather-extension fork using
+  http://openweathermap.org or http://forecast.io.
 
