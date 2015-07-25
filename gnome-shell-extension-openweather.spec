@@ -6,8 +6,7 @@
 Name:           gnome-shell-extension-openweather
 Version:        1
 Release:        0.0.%(date +%Y%m%d).%{checkout}%{?dist}
-Summary:        An extension for displaying weather notifications from
-http://openweathermap.org and http://forecast.io in GNOME Shell
+Summary:        An extension to display weather information from many locations in the world
 
 Group:          User Interface/Desktops
 License:        GPLv3+
