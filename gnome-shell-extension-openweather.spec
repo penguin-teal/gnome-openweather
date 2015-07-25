@@ -4,8 +4,8 @@
 %global checkout git%{git}
 
 Name:           gnome-shell-extension-openweather
-Version:        0
-Release:        0.2.%(date +%Y%m%d).%{checkout}%{?dist}
+Version:        1
+Release:        0.0.%(date +%Y%m%d).%{checkout}%{?dist}
 Summary:        An extension for displaying weather notifications from http://openweathermap.org in GNOME Shell
 
 Group:          User Interface/Desktops
@@ -14,8 +14,8 @@ URL:            https://github.com/jenslody/gnome-shell-extension-openweather
 Source0:        https://github.com/jenslody/gnome-shell-extension-openweather/tarball/master/%{github}-%{git}.tar.gz
 BuildArch:      noarch
 
-BuildRequires:  autoconf >= 2.53, automake >= 1.9, glib2-devel, gnome-common >= 3.6.0, intltool >= 0.25
-Requires:       gnome-shell >= 3.6.0
+BuildRequires:  autoconf >= 2.53, automake >= 1.9, glib2-devel, gnome-common >= 3.12.0, intltool >= 0.25
+Requires:       gnome-shell >= 3.12.0
 
 %description
 gnome-shell-extension-openweather is an extension to display weather information

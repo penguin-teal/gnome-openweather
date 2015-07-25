@@ -41,6 +41,9 @@ echo "Found revision: '${COMMIT}'"
 mv ${SPEC_FILE} ${SPEC_FILE}.tmp
 sed "1 s/%global git .*/%global git $COMMIT/" < ${SPEC_FILE}.tmp > ${SPEC_FILE}
 rm -f ${SPEC_FILE}.tmp
+
+rpmdev-bumpspec --comment="new git checkout" --userstring="Jens Lody <fedora@jenslody.de>" ${SPEC_FILE}
+
 cp ${SPEC_FILE} ${SPEC_PATH}${SPEC_FILE}
 
 rm -f ${TARBALL_PATH}${GITHUB}-*.tar.gz
