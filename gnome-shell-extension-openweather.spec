@@ -34,7 +34,7 @@ make %{?_smp_mflags}
 
 %install
 make install DESTDIR=%{buildroot}
-%find_lang %{uuid}
+%find_lang %{name}
 
 %postun
 if [ $1 -eq 0 ] ; then
@@ -44,7 +44,7 @@ fi
 %posttrans
 %{_bindir}/glib-compile-schemas %{_datadir}/glib-2.0/schemas &> /dev/null || :
 
-%files -f %{uuid}.lang
+%files -f %{name}.lang
 %license COPYING
 %doc AUTHORS README.md
 %{_datadir}/glib-2.0/schemas/org.gnome.shell.extensions.openweather.gschema.xml
