@@ -9,7 +9,9 @@ Release:        0.0.%(date +%Y%m%d).%{checkout}%{?dist}
 Summary:        An extension to display weather information from many locations in the world
 
 Group:          User Interface/Desktops
-License:        GPLv3+
+
+# The entire source code is GPLv3+ except convenience.js, which is BSD
+License:        GPLv3+ and BSD
 URL:            https://github.com/jenslody/gnome-shell-extension-openweather
 Source0:        https://github.com/jenslody/gnome-shell-extension-openweather/tarball/master/%{github}-%{git}.tar.gz
 BuildArch:      noarch
@@ -22,8 +24,6 @@ gnome-shell-extension-openweather is an extension to display weather information
 from http://openweathermap.org/ or http://forecast.io for (almost) all locations
 of the world in GNOME Shell.
 
-%license COPYING
-
 %prep
 %setup -q -n %{github}-%{git}
 
@@ -34,7 +34,7 @@ make %{?_smp_mflags}
 
 %install
 make install DESTDIR=%{buildroot}
-%find_lang %{name}
+%find_lang %{uuid}
 
 %postun
 if [ $1 -eq 0 ] ; then
@@ -44,7 +44,8 @@ fi
 %posttrans
 %{_bindir}/glib-compile-schemas %{_datadir}/glib-2.0/schemas &> /dev/null || :
 
-%files -f %{name}.lang
+%files -f %{uuid}.lang
+%license COPYING
 %doc AUTHORS README.md
 %{_datadir}/glib-2.0/schemas/org.gnome.shell.extensions.openweather.gschema.xml
 %{_datadir}/gnome-shell/extensions/%{uuid}/
