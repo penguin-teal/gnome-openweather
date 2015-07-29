@@ -1,0 +1,634 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-29 01:17+0200\n"
+"PO-Revision-Date: 2015-07-29 02:08+0200\n"
+"Last-Translator: Slobodan Terzić <Xabre@archlinux.info>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 1.8.2\n"
+"Language: sr@latin\n"
+
+#: ../src/extension.js:156
+msgid "..."
+msgstr "..."
+
+#: ../src/extension.js:646 ../data/weather-settings.ui:446
+msgid "Locations"
+msgstr "Lokacije"
+
+#: ../src/extension.js:658
+msgid "Reload Weather Information"
+msgstr "Ponovo učitaj podatke o vremenu"
+
+#: ../src/extension.js:673
+msgid "Weather data provided by:"
+msgstr "Podatke o vremenu dostavlja:"
+
+#: ../src/extension.js:684
+#, javascript-format
+msgid "Can not open %s"
+msgstr "Ne mogu da otvorim %s"
+
+#: ../src/extension.js:691
+msgid "Weather Settings"
+msgstr "Postavke vremena"
+
+#: ../src/extension.js:742 ../src/prefs.js:811
+msgid "Invalid city"
+msgstr "neispravan grad"
+
+#: ../src/extension.js:753
+msgid "Invalid location! Please try to recreate it."
+msgstr "neispravna lokacija! Pokušajte da je ponovo napravite."
+
+#: ../src/extension.js:852
+msgid "Calm"
+msgstr "vedro"
+
+#: ../src/extension.js:855
+msgid "Light air"
+msgstr "lagan vazduh"
+
+#: ../src/extension.js:858
+msgid "Light breeze"
+msgstr "lagan povetarac"
+
+#: ../src/extension.js:861
+msgid "Gentle breeze"
+msgstr "nežan povetarac"
+
+#: ../src/extension.js:864
+msgid "Moderate breeze"
+msgstr "umeren povetarac"
+
+#: ../src/extension.js:867
+msgid "Fresh breeze"
+msgstr "svež povetarac"
+
+#: ../src/extension.js:870
+msgid "Strong breeze"
+msgstr "jak povetarac"
+
+#: ../src/extension.js:873
+msgid "Moderate gale"
+msgstr "umerena bura"
+
+#: ../src/extension.js:876
+msgid "Fresh gale"
+msgstr "sveža bura"
+
+#: ../src/extension.js:879
+msgid "Strong gale"
+msgstr "jaka bura"
+
+#: ../src/extension.js:882
+msgid "Storm"
+msgstr "oluja"
+
+#: ../src/extension.js:885
+msgid "Violent storm"
+msgstr "razorna oluja"
+
+#: ../src/extension.js:888
+msgid "Hurricane"
+msgstr "uragan"
+
+#: ../src/extension.js:892
+msgid "Sunday"
+msgstr "nedelja"
+
+#: ../src/extension.js:892
+msgid "Monday"
+msgstr "ponedeljak"
+
+#: ../src/extension.js:892
+msgid "Tuesday"
+msgstr "utorak"
+
+#: ../src/extension.js:892
+msgid "Wednesday"
+msgstr "sreda"
+
+#: ../src/extension.js:892
+msgid "Thursday"
+msgstr "četvrtak"
+
+#: ../src/extension.js:892
+msgid "Friday"
+msgstr "petak"
+
+#: ../src/extension.js:892
+msgid "Saturday"
+msgstr "subota"
+
+#: ../src/extension.js:898
+msgid "N"
+msgstr "S"
+
+#: ../src/extension.js:898
+msgid "NE"
+msgstr "SI"
+
+#: ../src/extension.js:898
+msgid "E"
+msgstr "I"
+
+#: ../src/extension.js:898
+msgid "SE"
+msgstr "JI"
+
+#: ../src/extension.js:898
+msgid "S"
+msgstr "J"
+
+#: ../src/extension.js:898
+msgid "SW"
+msgstr "JZ"
+
+#: ../src/extension.js:898
+msgid "W"
+msgstr "Z"
+
+#: ../src/extension.js:898
+msgid "NW"
+msgstr "SZ"
+
+#: ../src/extension.js:1149
+msgid "Loading current weather ..."
+msgstr "Učitavanje trenutnog vremena..."
+
+#: ../src/extension.js:1181
+msgid "Loading ..."
+msgstr "Učitavanje..."
+
+#: ../src/extension.js:1185
+msgid "Please wait"
+msgstr "Sačekajte"
+
+#: ../src/extension.js:1246
+msgid "Cloudiness:"
+msgstr "Oblačnost:"
+
+#: ../src/extension.js:1250
+msgid "Humidity:"
+msgstr "Vlažnost vazduha:"
+
+#: ../src/extension.js:1254
+msgid "Pressure:"
+msgstr "Pritisak:"
+
+#: ../src/extension.js:1258
+msgid "Wind:"
+msgstr "Vetar:"
+
+#: ../src/forecast_io.js:137 ../src/forecast_io.js:247
+#: ../src/openweathermap_org.js:342 ../src/openweathermap_org.js:439
+msgid "Yesterday"
+msgstr "juče"
+
+#: ../src/forecast_io.js:140 ../src/forecast_io.js:250
+#: ../src/openweathermap_org.js:344 ../src/openweathermap_org.js:441
+#, javascript-format
+msgid "%d day ago"
+msgid_plural "%d days ago"
+msgstr[0] "pre %d dan"
+msgstr[1] "pre %d dana"
+msgstr[2] "pre %d dana"
+
+#: ../src/forecast_io.js:227 ../src/openweathermap_org.js:433
+msgid "Today"
+msgstr "danas"
+
+#: ../src/forecast_io.js:243 ../src/openweathermap_org.js:435
+msgid "Tomorrow"
+msgstr "sutra"
+
+#: ../src/forecast_io.js:245 ../src/openweathermap_org.js:437
+#, javascript-format
+msgid "In %d day"
+msgid_plural "In %d days"
+msgstr[0] "za %d dan"
+msgstr[1] "za %d dana"
+msgstr[2] "za %d dana"
+
+#: ../src/openweathermap_org.js:179
+msgid "thunderstorm with light rain"
+msgstr "grmljavina sa lakom kišom"
+
+#: ../src/openweathermap_org.js:181
+msgid "thunderstorm with rain"
+msgstr "grmljavina sa kišom"
+
+#: ../src/openweathermap_org.js:183
+msgid "thunderstorm with heavy rain"
+msgstr "grmljavina sa jakom kišom"
+
+#: ../src/openweathermap_org.js:185
+msgid "light thunderstorm"
+msgstr "laka grmljavina"
+
+#: ../src/openweathermap_org.js:187
+msgid "thunderstorm"
+msgstr "grmljavina"
+
+#: ../src/openweathermap_org.js:189
+msgid "heavy thunderstorm"
+msgstr "jaka grmljavina"
+
+#: ../src/openweathermap_org.js:191
+msgid "ragged thunderstorm"
+msgstr "mestimična grmljavina"
+
+#: ../src/openweathermap_org.js:193
+msgid "thunderstorm with light drizzle"
+msgstr "grmljavina sa lakim rominjanjem"
+
+#: ../src/openweathermap_org.js:195
+msgid "thunderstorm with drizzle"
+msgstr "grmljavina sa rominjanjem"
+
+#: ../src/openweathermap_org.js:197
+msgid "thunderstorm with heavy drizzle"
+msgstr "grmljavina sa jakim rominjanjem"
+
+#: ../src/openweathermap_org.js:199
+msgid "light intensity drizzle"
+msgstr "rominjanje lakog inteziteta"
+
+#: ../src/openweathermap_org.js:201
+msgid "drizzle"
+msgstr "rominjanje"
+
+#: ../src/openweathermap_org.js:203
+msgid "heavy intensity drizzle"
+msgstr "rominjanje jakog inteziteta"
+
+#: ../src/openweathermap_org.js:205
+msgid "light intensity drizzle rain"
+msgstr "rominjava kiša lakog inteziteta"
+
+#: ../src/openweathermap_org.js:207
+msgid "drizzle rain"
+msgstr "rominjava kiša"
+
+#: ../src/openweathermap_org.js:209
+msgid "heavy intensity drizzle rain"
+msgstr "rominjava kiša jaog inteziteta"
+
+#: ../src/openweathermap_org.js:211
+msgid "shower rain and drizzle"
+msgstr "pljusak i rominjanje"
+
+#: ../src/openweathermap_org.js:213
+msgid "heavy shower rain and drizzle"
+msgstr "jak pljusak i rominjanje"
+
+#: ../src/openweathermap_org.js:215
+msgid "shower drizzle"
+msgstr "rominjav pljusak"
+
+#: ../src/openweathermap_org.js:217
+msgid "light rain"
+msgstr "lagana kiša"
+
+#: ../src/openweathermap_org.js:219
+msgid "moderate rain"
+msgstr "umerena kiša"
+
+#: ../src/openweathermap_org.js:221
+msgid "heavy intensity rain"
+msgstr "kiša jakog inteziteta"
+
+#: ../src/openweathermap_org.js:223
+msgid "very heavy rain"
+msgstr "vrlo jaka kiša"
+
+#: ../src/openweathermap_org.js:225
+msgid "extreme rain"
+msgstr "ekstremna kiša"
+
+#: ../src/openweathermap_org.js:227
+msgid "freezing rain"
+msgstr "ledena kiša"
+
+#: ../src/openweathermap_org.js:229
+msgid "light intensity shower rain"
+msgstr "pljusak lakog inteziteta"
+
+#: ../src/openweathermap_org.js:231
+msgid "shower rain"
+msgstr "pljusak"
+
+#: ../src/openweathermap_org.js:233
+msgid "heavy intensity shower rain"
+msgstr "pljusak jakog inteziteta"
+
+#: ../src/openweathermap_org.js:235
+msgid "ragged shower rain"
+msgstr "mestimični pljuskovi"
+
+#: ../src/openweathermap_org.js:237
+msgid "light snow"
+msgstr "lagan sneg"
+
+#: ../src/openweathermap_org.js:239
+msgid "snow"
+msgstr "sneg"
+
+#: ../src/openweathermap_org.js:241
+msgid "heavy snow"
+msgstr "jak sneg"
+
+#: ../src/openweathermap_org.js:243
+msgid "sleet"
+msgstr "susnežica"
+
+#: ../src/openweathermap_org.js:245
+msgid "shower sleet"
+msgstr "pljušteća susnežica"
+
+#: ../src/openweathermap_org.js:247
+msgid "light rain and snow"
+msgstr "lagana kiša i sneg"
+
+#: ../src/openweathermap_org.js:249
+msgid "rain and snow"
+msgstr "kiša i sneg"
+
+#: ../src/openweathermap_org.js:251
+msgid "light shower snow"
+msgstr "lagan pljušteći sneg"
+
+#: ../src/openweathermap_org.js:253
+msgid "shower snow"
+msgstr "pljušteći sneg"
+
+#: ../src/openweathermap_org.js:255
+msgid "heavy shower snow"
+msgstr "jak pljušteći sneg"
+
+#: ../src/openweathermap_org.js:257
+msgid "mist"
+msgstr "magla"
+
+#: ../src/openweathermap_org.js:259
+msgid "smoke"
+msgstr "dim"
+
+#: ../src/openweathermap_org.js:261
+msgid "haze"
+msgstr "izmaglica"
+
+#: ../src/openweathermap_org.js:263
+msgid "Sand/Dust Whirls"
+msgstr "Vihori peska/prašine"
+
+#: ../src/openweathermap_org.js:265
+msgid "Fog"
+msgstr "magla"
+
+#: ../src/openweathermap_org.js:267
+msgid "sand"
+msgstr "pesak"
+
+#: ../src/openweathermap_org.js:269
+msgid "dust"
+msgstr "prašina"
+
+#: ../src/openweathermap_org.js:271
+msgid "VOLCANIC ASH"
+msgstr "VULKANSKI PEPEO"
+
+#: ../src/openweathermap_org.js:273
+msgid "SQUALLS"
+msgstr "NALETI VETRA"
+
+#: ../src/openweathermap_org.js:275
+msgid "TORNADO"
+msgstr "TORNADO"
+
+#: ../src/openweathermap_org.js:277
+msgid "sky is clear"
+msgstr "vedro nebo"
+
+#: ../src/openweathermap_org.js:279
+msgid "few clouds"
+msgstr "par oblaka"
+
+#: ../src/openweathermap_org.js:281
+msgid "scattered clouds"
+msgstr "raštrkani oblaci"
+
+#: ../src/openweathermap_org.js:283
+msgid "broken clouds"
+msgstr "mestimični oblaci"
+
+#: ../src/openweathermap_org.js:285
+msgid "overcast clouds"
+msgstr "tmurni oblaci"
+
+#: ../src/openweathermap_org.js:287
+msgid "Not available"
+msgstr "nije dostupno"
+
+#: ../src/prefs.js:195
+#, javascript-format
+msgid "\"%s\" not found"
+msgstr "„%s“ nije nađeno"
+
+#: ../src/prefs.js:220
+msgid "Location"
+msgstr "Lokacija"
+
+#: ../src/prefs.js:230
+msgid "Provider"
+msgstr "Dostavljač"
+
+#: ../src/prefs.js:362
+#, javascript-format
+msgid "Remove %s ?"
+msgstr "Ukloniti %s ?"
+
+#: ../src/prefs.js:846
+msgid "default"
+msgstr "podrazumevano"
+
+#: ../data/weather-settings.ui:24
+msgid "Edit name"
+msgstr "Uređivanje imena"
+
+#: ../data/weather-settings.ui:42 ../data/weather-settings.ui:72
+#: ../data/weather-settings.ui:205
+msgid "Clear entry"
+msgstr "očisti unos"
+
+#: ../data/weather-settings.ui:56
+msgid "Edit coordinates"
+msgstr "Uređivanje koordinata"
+
+#: ../data/weather-settings.ui:86 ../data/weather-settings.ui:242
+msgid "Extensions default weather provider"
+msgstr "Podrazumevani dostavljač podataka o vremenu za proširenje"
+
+#: ../data/weather-settings.ui:118 ../data/weather-settings.ui:274
+msgid "Cancel"
+msgstr "Otkaži"
+
+#: ../data/weather-settings.ui:136 ../data/weather-settings.ui:292
+msgid "Save"
+msgstr "Sačuvaj"
+
+#: ../data/weather-settings.ui:182
+msgid "Search by location or coordinates"
+msgstr "Pretraga po lokaciji ili koordinatama"
+
+#: ../data/weather-settings.ui:206
+msgid "e.g. Vaiaku, Tuvalu or -8.5211767,179.1976747"
+msgstr "npr. Beograd, Srbija ili 44.816667,20.466667"
+
+#: ../data/weather-settings.ui:216
+msgid "Find"
+msgstr "Nađi"
+
+#: ../data/weather-settings.ui:465
+msgid "Chose default weather provider"
+msgstr "Izaberite podrazumevanog dostavljača"
+
+#: ../data/weather-settings.ui:476
+msgid "Personal Api key from openweathermap.org"
+msgstr "Lični api ključ sa openweathermap.org"
+
+#: ../data/weather-settings.ui:525
+msgid "Personal Api key from forecast.io"
+msgstr "Lični api ključ sa forecast.io"
+
+#: ../data/weather-settings.ui:541
+msgid "Weather provider"
+msgstr "Dostavljač podataka o vremenu"
+
+#: ../data/weather-settings.ui:561
+msgid "Temperature Unit"
+msgstr "Mera temperature"
+
+#: ../data/weather-settings.ui:572
+msgid "Wind Speed Unit"
+msgstr "Mera brzine vetra"
+
+#: ../data/weather-settings.ui:583
+msgid "Pressure Unit"
+msgstr "Mera pritiska"
+
+#: ../data/weather-settings.ui:658
+msgid "Units"
+msgstr "Mere"
+
+#: ../data/weather-settings.ui:678
+msgid "Position in Panel"
+msgstr "Pozicija na panelu"
+
+#: ../data/weather-settings.ui:689
+msgid "Wind Direction by Arrows"
+msgstr "Smer vetra pomoću strelica"
+
+#: ../data/weather-settings.ui:700
+msgid "Translate Conditions"
+msgstr "Prevod uslova"
+
+#: ../data/weather-settings.ui:711
+msgid "Symbolic Icons"
+msgstr "Simbolične ikone"
+
+#: ../data/weather-settings.ui:722
+msgid "Text on buttons"
+msgstr "Tekst na dugmadima"
+
+#: ../data/weather-settings.ui:733
+msgid "Temperature in Panel"
+msgstr "Temperatura na panelu"
+
+#: ../data/weather-settings.ui:744
+msgid "Conditions in Panel"
+msgstr "Uslovi na panelu"
+
+#: ../data/weather-settings.ui:755
+msgid "Conditions in Forecast"
+msgstr "Uslovi u prognozi"
+
+#: ../data/weather-settings.ui:766
+msgid "Center forecast"
+msgstr "Centriranje prognoze"
+
+#: ../data/weather-settings.ui:777
+msgid "Number of days in forecast"
+msgstr "Broj dana u prognozi"
+
+#: ../data/weather-settings.ui:788
+msgid "Maximal number of digits after the decimal point"
+msgstr "Maksimalan br. cifara nakon decimalnog zareza"
+
+#: ../data/weather-settings.ui:800
+msgid "Center"
+msgstr "sredina"
+
+#: ../data/weather-settings.ui:801
+msgid "Right"
+msgstr "desno"
+
+#: ../data/weather-settings.ui:802
+msgid "Left"
+msgstr "levo"
+
+#: ../data/weather-settings.ui:944
+msgid "Layout"
+msgstr "Raspored"
+
+#: ../data/weather-settings.ui:996
+msgid "Version: "
+msgstr "Verzija:"
+
+#: ../data/weather-settings.ui:1010
+msgid "unknown (self-build ?)"
+msgstr "nepoznata (samogradnja?)"
+
+#: ../data/weather-settings.ui:1030
+msgid ""
+"<span>Weather extension to display weather information from <a href="
+"\"https://openweathermap.org/\">Openweathermap</a> or <a href=\"https://"
+"forecast.io\">forecast.io</a> for almost all locations in the world.</span>"
+msgstr ""
+"<span>Proširenje za prikaz podataka o vremenu sa <a href=\"https://"
+"openweathermap.org/\">Openweathermap</a> ili <a href=\"https://forecast.io"
+"\">forecast.io</a> za skoro sve lokacije u svetu.</span>"
+
+#: ../data/weather-settings.ui:1053
+msgid "Maintained by"
+msgstr "Održava"
+
+#: ../data/weather-settings.ui:1083
+msgid "Webpage"
+msgstr "Web stranica"
+
+#: ../data/weather-settings.ui:1104
+msgid ""
+"<span size=\"small\">This program comes with ABSOLUTELY NO WARRANTY.\n"
+"See the <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
+"\">GNU General Public License, version 2 or later</a> for details.</span>"
+msgstr ""
+"<span size=\"small\">Ovaj program se dostavlja BEZ IKAKVIH GARANCIJA.\n"
+"Pogledajte <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
+"\">GNUovu Opštu Javnu licencu, verzija 2 ili kasnija</a>, za detalje.</span>"
+
+#: ../data/weather-settings.ui:1125
+msgid "About"
+msgstr "O programu"
