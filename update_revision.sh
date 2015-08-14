@@ -30,8 +30,8 @@
 
 GITHUB="jenslody-gnome-shell-extension-openweather"
 BASE_URL="https://github.com/jenslody/gnome-shell-extension-openweather/tarball/master/"
-TARBALL_PATH="~/rpmbuild/SOURCES/"
-SPEC_PATH="~/rpmbuild/SPECS/"
+TARBALL_PATH="${HOME}/rpmbuild/SOURCES/"
+SPEC_PATH="${HOME}/rpmbuild/SPECS/"
 SPEC_FILE="gnome-shell-extension-openweather.spec"
 
 SCRIPT_DIR=`dirname "$0"`
