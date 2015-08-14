@@ -74,6 +74,7 @@
 		<Unit filename="src/forecast_io.js" />
 		<Unit filename="src/openweathermap_org.js" />
 		<Unit filename="src/prefs.js" />
+		<Unit filename="update_revision.sh" />
 		<Extensions>
 			<envvars />
 			<code_completion />
