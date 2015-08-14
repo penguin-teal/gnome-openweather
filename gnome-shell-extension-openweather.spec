@@ -1,7 +1,9 @@
-%global git 2701627
+%global git e56e4ae
 %global uuid openweather-extension@jenslody.de
 %global github jenslody-gnome-shell-extension-openweather
 %global checkout git%{git}
+%global gs_version %(dnf info gnome-shell | grep Version | cut -d \":\" -f 2 | cut -d \" \" -f 2)
+%global gs_major_version %(echo %{gs_version} | cut -d \".\" -f 1-2)
 
 Name:           gnome-shell-extension-openweather
 Version:        1
@@ -16,8 +18,8 @@ URL:            https://github.com/jenslody/gnome-shell-extension-openweather
 Source0:        https://github.com/jenslody/gnome-shell-extension-openweather/tarball/master/%{github}-%{git}.tar.gz
 BuildArch:      noarch
 
-BuildRequires:  autoconf >= 2.53, automake >= 1.9, glib2-devel, gnome-common >= 3.12.0, intltool >= 0.25
-Requires:       gnome-shell >= 3.12.0
+BuildRequires:  autoconf >= 2.53, automake >= 1.9, glib2-devel, gnome-common >= 3.12.0, intltool >= 0.25, dnf
+Requires:       gnome-shell-extension-common >= 3.12.0
 
 %description
 gnome-shell-extension-openweather is an extension to display weather information
@@ -28,6 +30,7 @@ of the world in GNOME Shell.
 %setup -q -n %{github}-%{git}
 
 %build
+sed -i "s/^\"shell-version\":.*/\"shell-version\": [ \"%{gs_version}\", \"%{gs_major_version}\" ],/g" data/metadata.json.in
 NOCONFIGURE=1 ./autogen.sh
 %configure --prefix=%{_prefix}
 make %{?_smp_mflags}
@@ -51,6 +54,10 @@ fi
 %{_datadir}/gnome-shell/extensions/%{uuid}/
 
 %changelog
+* Fri Aug 14 2015 Jens Lody <fedora@jenslody.de> - 1-0.2.20150814.gite56e4ae
+- Automatically set gnome-shell major- and minor-version to metadata.json, so
+  the extension can be used in rawhide after repackaging, without the need
+  of manual fixes.
 * Sat Jul 25 2015 Jens Lody <fedora@jenslody.de> - 1-0.1.20150725.git377244c
 - Initial package for Fedora of the weather-extension fork using
   http://openweathermap.org or http://forecast.io.
