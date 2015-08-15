@@ -8,14 +8,15 @@ msgstr ""
 "Project-Id-Version: gnome-shell-extension-openweather\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-06-29 06:29+0200\n"
-"PO-Revision-Date: 2014-12-27 08:48+0100\n"
-"Last-Translator: Zoltán Riba <riba.zoltan@gmail.com>\n"
+"PO-Revision-Date: 2015-08-15 16:39+0200\n"
+"Last-Translator: Zoltan Riba <riba.zoltan@gmail.com>\n"
 "Language-Team: \n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.8.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: ../src/extension.js:156
 msgid "..."
@@ -36,7 +37,7 @@ msgstr "Meteorológiai adatok szolgáltatója:"
 #: ../src/extension.js:684
 #, javascript-format
 msgid "Can not open %s"
-msgstr ""
+msgstr "Nem lehet megnyitni %s"
 
 #: ../src/extension.js:691
 msgid "Weather Settings"
@@ -48,7 +49,7 @@ msgstr "Érvénytelen város"
 
 #: ../src/extension.js:753
 msgid "Invalid location! Please try to recreate it."
-msgstr ""
+msgstr "Érvénytelen helyszín! Próbálja újra létrehozni."
 
 #: ../src/extension.js:852
 msgid "Calm"
@@ -197,7 +198,7 @@ msgstr "Tegnap"
 
 #: ../src/forecast_io.js:140 ../src/forecast_io.js:250
 #: ../src/openweathermap_org.js:344 ../src/openweathermap_org.js:441
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
 msgstr[0] "%s nappal ezelőtt"
@@ -212,11 +213,11 @@ msgid "Tomorrow"
 msgstr "holnap"
 
 #: ../src/forecast_io.js:245 ../src/openweathermap_org.js:437
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "In %d day"
 msgid_plural "In %d days"
-msgstr[0] "%s nap múlva"
-msgstr[1] "%s nap múlva"
+msgstr[0] "%s napban"
+msgstr[1] "%s napban"
 
 #: ../src/openweathermap_org.js:179
 msgid "thunderstorm with light rain"
@@ -439,18 +440,17 @@ msgid "Not available"
 msgstr "Nem érhető el"
 
 #: ../src/prefs.js:195
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "\"%s\" not found"
-msgstr "\"%s\" séma nem található."
+msgstr "\"%s\" nem található"
 
 #: ../src/prefs.js:220
-#, fuzzy
 msgid "Location"
-msgstr "Helyszínek"
+msgstr "Helyszín"
 
 #: ../src/prefs.js:230
 msgid "Provider"
-msgstr ""
+msgstr "Szolgáltató"
 
 #: ../src/prefs.js:362
 #, javascript-format
@@ -459,62 +459,60 @@ msgstr "%s eltávolítása?"
 
 #: ../src/prefs.js:846
 msgid "default"
-msgstr ""
+msgstr "alapértelmezett"
 
 #: ../data/weather-settings.ui:24
 msgid "Edit name"
-msgstr ""
+msgstr "Név szerkesztése"
 
 #: ../data/weather-settings.ui:42 ../data/weather-settings.ui:72
 #: ../data/weather-settings.ui:205
 msgid "Clear entry"
-msgstr ""
+msgstr "Bejegyzés törlése"
 
 #: ../data/weather-settings.ui:56
 msgid "Edit coordinates"
-msgstr ""
+msgstr "Koordináták szerkesztése"
 
 #: ../data/weather-settings.ui:86 ../data/weather-settings.ui:242
 msgid "Extensions default weather provider"
-msgstr ""
+msgstr "A kiterjesztés alapértelmezett meteorológiai szolgáltatója"
 
 #: ../data/weather-settings.ui:118 ../data/weather-settings.ui:274
 msgid "Cancel"
-msgstr ""
+msgstr "Mégsem"
 
 #: ../data/weather-settings.ui:136 ../data/weather-settings.ui:292
 msgid "Save"
-msgstr ""
+msgstr "Mentés"
 
 #: ../data/weather-settings.ui:182
 msgid "Search by location or coordinates"
-msgstr ""
+msgstr "Keresés helyszínek vagy koordináták szerint"
 
 #: ../data/weather-settings.ui:206
 msgid "e.g. Vaiaku, Tuvalu or -8.5211767,179.1976747"
-msgstr ""
+msgstr "pl.: Vaiaku, Tuvalu or -8.5211767,179.1976747"
 
 #: ../data/weather-settings.ui:216
 msgid "Find"
-msgstr ""
+msgstr "Keresés"
 
 #: ../data/weather-settings.ui:465
 msgid "Chose default weather provider"
-msgstr ""
+msgstr "Alapértelmezett meteorológiai szolgáltató választás"
 
 #: ../data/weather-settings.ui:476
 msgid "Personal Api key from openweathermap.org"
-msgstr "API kulcs az openweathermap.org weboldalhoz"
+msgstr "Személyes API kulcs az openweathermap.org weboldaltól"
 
 #: ../data/weather-settings.ui:525
-#, fuzzy
 msgid "Personal Api key from forecast.io"
-msgstr "API kulcs az openweathermap.org weboldalhoz"
+msgstr "Személyes API kulcs a forecast.io weboldaltól"
 
 #: ../data/weather-settings.ui:541
-#, fuzzy
 msgid "Weather provider"
-msgstr "Meteorológiai adatok szolgáltatója:"
+msgstr "Meteorológiai adat szolgáltató"
 
 #: ../data/weather-settings.ui:561
 msgid "Temperature Unit"
@@ -530,7 +528,7 @@ msgstr "Nyomás egysége"
 
 #: ../data/weather-settings.ui:658
 msgid "Units"
-msgstr ""
+msgstr "Mértékegységek"
 
 #: ../data/weather-settings.ui:678
 msgid "Position in Panel"
@@ -561,9 +559,8 @@ msgid "Conditions in Panel"
 msgstr "Körülmények a panelen"
 
 #: ../data/weather-settings.ui:755
-#, fuzzy
 msgid "Conditions in Forecast"
-msgstr "Körülmények a panelen"
+msgstr "Körülmények az előrejelzésben"
 
 #: ../data/weather-settings.ui:766
 msgid "Center forecast"
@@ -591,15 +588,15 @@ msgstr "balra"
 
 #: ../data/weather-settings.ui:944
 msgid "Layout"
-msgstr ""
+msgstr "Elrendezés"
 
 #: ../data/weather-settings.ui:996
 msgid "Version: "
-msgstr ""
+msgstr "Verzió:"
 
 #: ../data/weather-settings.ui:1010
 msgid "unknown (self-build ?)"
-msgstr ""
+msgstr "ismeretlen (saját építés ?)"
 
 #: ../data/weather-settings.ui:1030
 msgid ""
@@ -607,14 +604,18 @@ msgid ""
 "\"https://openweathermap.org/\">Openweathermap</a> or <a href=\"https://"
 "forecast.io\">forecast.io</a> for almost all locations in the world.</span>"
 msgstr ""
+"<span>A meteorológiai kiterjesztés időjárási információkat jelenít meg az "
+"<a href=\"https://openweathermap.org/\">Openweathermap</a> vagy a <a href="
+"\"https://forecast.io\">forecast.io</a> szolgáltatóktól a világ csaknem "
+"összes helyszínére.</span>"
 
 #: ../data/weather-settings.ui:1053
 msgid "Maintained by"
-msgstr ""
+msgstr "Karbantartja"
 
 #: ../data/weather-settings.ui:1083
 msgid "Webpage"
-msgstr ""
+msgstr "Honlap"
 
 #: ../data/weather-settings.ui:1104
 msgid ""
@@ -622,10 +623,14 @@ msgid ""
 "See the <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
 "\">GNU General Public License, version 2 or later</a> for details.</span>"
 msgstr ""
+"<span size=\"small\">Ez a program SEMMILYEN GARANCIÁVAL NEM RENDELKEZIK.\n"
+"Tekintse meg <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0."
+"html\">GNU General Public License, 2. vagy későbbi változatát</a> a "
+"részletekért.</span>"
 
 #: ../data/weather-settings.ui:1125
 msgid "About"
-msgstr ""
+msgstr "A programról"
 
 #, fuzzy
 #~ msgid "In %d days"
