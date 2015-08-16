@@ -17,7 +17,7 @@ Source0:        https://github.com/jenslody/gnome-shell-extension-openweather/ta
 BuildArch:      noarch
 
 BuildRequires:  autoconf, automake, glib2-devel, gnome-common >= 3.12.0, intltool
-Requires:       gnome-shell-extension-common >= 3.12.0
+Requires:       gnome-shell-extension-common >= 3.12.0, glib2
 
 %description
 gnome-shell-extension-openweather is an extension to display weather information
