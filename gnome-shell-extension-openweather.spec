@@ -51,10 +51,6 @@ fi
 %{_datadir}/gnome-shell/extensions/%{uuid}/
 
 %changelog
-* Fri Aug 14 2015 Jens Lody <fedora@jenslody.de> - 1-0.2.20150814.gite56e4ae
-- Automatically set gnome-shell major- and minor-version to metadata.json, so
-  the extension can be used in rawhide after repackaging, without the need
-  of manual fixes.
 * Sat Jul 25 2015 Jens Lody <fedora@jenslody.de> - 1-0.1.20150725.git377244c
 - Initial package for Fedora of the weather-extension fork using
   http://openweathermap.org or http://forecast.io.
