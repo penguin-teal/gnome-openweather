@@ -2,8 +2,6 @@
 %global uuid openweather-extension@jenslody.de
 %global github jenslody-gnome-shell-extension-openweather
 %global checkout git%{git}
-%global gs_version %(dnf info gnome-shell | grep Version | cut -d \":\" -f 2 | cut -d \" \" -f 2)
-%global gs_major_version %(echo %{gs_version} | cut -d \".\" -f 1-2)
 
 Name:           gnome-shell-extension-openweather
 Version:        1
@@ -18,7 +16,7 @@ URL:            https://github.com/jenslody/gnome-shell-extension-openweather
 Source0:        https://github.com/jenslody/gnome-shell-extension-openweather/tarball/master/%{github}-%{git}.tar.gz
 BuildArch:      noarch
 
-BuildRequires:  autoconf >= 2.53, automake >= 1.9, glib2-devel, gnome-common >= 3.12.0, intltool >= 0.25, dnf
+BuildRequires:  autoconf, automake, glib2-devel, gnome-common >= 3.12.0, intltool
 Requires:       gnome-shell-extension-common >= 3.12.0
 
 %description
@@ -30,7 +28,6 @@ of the world in GNOME Shell.
 %setup -q -n %{github}-%{git}
 
 %build
-sed -i "s/^\"shell-version\":.*/\"shell-version\": [ \"%{gs_version}\", \"%{gs_major_version}\" ],/g" data/metadata.json.in
 NOCONFIGURE=1 ./autogen.sh
 %configure --prefix=%{_prefix}
 make %{?_smp_mflags}
