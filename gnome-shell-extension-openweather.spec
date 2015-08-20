@@ -6,8 +6,8 @@
 
 Name:           gnome-shell-extension-openweather
 Version:        1
-Release:        0.1.%(date +%Y%m%d)%{checkout}%{?dist}
-Summary:        An extension to display weather information from many locations in the world
+Release:        0.0.%(date +%Y%m%d)%{checkout}%{?dist}
+Summary:        Display weather information from many locations in the world
 
 Group:          User Interface/Desktops
 
