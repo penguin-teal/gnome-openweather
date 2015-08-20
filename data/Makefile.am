@@ -16,7 +16,8 @@ EXTRA_DIST = metadata.json.in
 metadata.json: metadata.json.in $(top_builddir)/config.status
 	$(AM_V_GEN) sed -e "s|[@]LOCALEDIR@|$(datadir)/locale|" \
 	    -e "s|[@]uuid@|$(uuid)|" \
-	    -e "s|[@]url@|$(extensionurl)|" $< > $@
+	    -e "s|[@]url@|$(extensionurl)|" \
+	    -e "s|[@]version@|$(GIT_VERSION)|" $< > $@
 
 CLEANFILES = metadata.json
 
