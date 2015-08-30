@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: gnome-shell-extension-openweather\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-06-29 06:29+0200\n"
-"PO-Revision-Date: 2015-05-31 20:46+0800\n"
+"PO-Revision-Date: 2015-08-30 23:20+0800\n"
 "Last-Translator: shlinux <lishaohui.qd@163.com>\n"
 "Language-Team: Chinese (Traditional) <>\n"
 "Language: zh_TW\n"
@@ -51,7 +51,7 @@ msgstr "無效的城市代碼"
 
 #: ../src/extension.js:753
 msgid "Invalid location! Please try to recreate it."
-msgstr ""
+msgstr "無效地點！請嘗試重建一個。"
 
 #: ../src/extension.js:852
 msgid "Calm"
@@ -445,13 +445,12 @@ msgid "\"%s\" not found"
 msgstr "未找到 \"%s\"。"
 
 #: ../src/prefs.js:220
-#, fuzzy
 msgid "Location"
 msgstr "地點"
 
 #: ../src/prefs.js:230
 msgid "Provider"
-msgstr ""
+msgstr "提供源"
 
 #: ../src/prefs.js:362
 #, javascript-format
@@ -460,7 +459,7 @@ msgstr "移除 %s ？"
 
 #: ../src/prefs.js:846
 msgid "default"
-msgstr ""
+msgstr "默認"
 
 #: ../data/weather-settings.ui:24
 msgid "Edit name"
@@ -476,9 +475,8 @@ msgid "Edit coordinates"
 msgstr "編輯座標"
 
 #: ../data/weather-settings.ui:86 ../data/weather-settings.ui:242
-#, fuzzy
 msgid "Extensions default weather provider"
-msgstr "選擇天氣提供源"
+msgstr "擴展的默認天氣提供源"
 
 #: ../data/weather-settings.ui:118 ../data/weather-settings.ui:274
 msgid "Cancel"
@@ -501,9 +499,8 @@ msgid "Find"
 msgstr "尋找"
 
 #: ../data/weather-settings.ui:465
-#, fuzzy
 msgid "Chose default weather provider"
-msgstr "選擇天氣提供源"
+msgstr "選擇默認天氣提供源"
 
 #: ../data/weather-settings.ui:476
 msgid "Personal Api key from openweathermap.org"
@@ -514,9 +511,8 @@ msgid "Personal Api key from forecast.io"
 msgstr "forecast.io 的個人 API 密鑰"
 
 #: ../data/weather-settings.ui:541
-#, fuzzy
 msgid "Weather provider"
-msgstr "選擇天氣提供源"
+msgstr "天氣提供源"
 
 #: ../data/weather-settings.ui:561
 msgid "Temperature Unit"
@@ -532,7 +528,7 @@ msgstr "氣壓單位"
 
 #: ../data/weather-settings.ui:658
 msgid "Units"
-msgstr ""
+msgstr "單位"
 
 #: ../data/weather-settings.ui:678
 msgid "Position in Panel"
@@ -592,15 +588,15 @@ msgstr "左邊"
 
 #: ../data/weather-settings.ui:944
 msgid "Layout"
-msgstr ""
+msgstr "佈局"
 
 #: ../data/weather-settings.ui:996
 msgid "Version: "
-msgstr ""
+msgstr "版本："
 
 #: ../data/weather-settings.ui:1010
 msgid "unknown (self-build ?)"
-msgstr ""
+msgstr "未知（自建？）"
 
 #: ../data/weather-settings.ui:1030
 msgid ""
@@ -608,14 +604,17 @@ msgid ""
 "\"https://openweathermap.org/\">Openweathermap</a> or <a href=\"https://"
 "forecast.io\">forecast.io</a> for almost all locations in the world.</span>"
 msgstr ""
+"<span>爲全世界幾乎所有地點顯示來自 <a href=\"https://openweathermap.org/"
+"\">Openweathermap</a> 或 <a href=\"https://forecast.io\">forecast.io</a> 的天"
+"氣信息的擴展。</span>"
 
 #: ../data/weather-settings.ui:1053
 msgid "Maintained by"
-msgstr ""
+msgstr "維護者："
 
 #: ../data/weather-settings.ui:1083
 msgid "Webpage"
-msgstr ""
+msgstr "網站主頁"
 
 #: ../data/weather-settings.ui:1104
 msgid ""
@@ -623,10 +622,13 @@ msgid ""
 "See the <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
 "\">GNU General Public License, version 2 or later</a> for details.</span>"
 msgstr ""
+"<span size=\"small\">本程式不提供任何擔保。\n"
+"參閱 <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html\">GNU "
+"通用公共授權條款，第二版或更高版本</a>以了解詳細信息。</span>"
 
 #: ../data/weather-settings.ui:1125
 msgid "About"
-msgstr ""
+msgstr "關於"
 
 #, fuzzy
 #~ msgid "In %d days"
