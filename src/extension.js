@@ -109,15 +109,16 @@ const WeatherWindSpeedUnits = {
 };
 
 const WeatherPressureUnits = {
-    hPa: 0,
-    inHg: 1,
-    bar: 2,
-    Pa: 3,
-    kPa: 4,
-    atm: 5,
-    at: 6,
-    Torr: 7,
-    psi: 8
+    HPA: 0,
+    INHG: 1,
+    BAR: 2,
+    PA: 3,
+    KPA: 4,
+    ATM: 5,
+    AT: 6,
+    TORR: 7,
+    PSI: 8,
+    MMHG: 9
 };
 
 const WeatherPosition = {
@@ -980,49 +981,54 @@ const OpenweatherMenuButton = new Lang.Class({
     formatPressure: function(pressure) {
         let pressure_unit = 'hPa';
         switch (this._pressure_units) {
-            case WeatherPressureUnits.inHg:
+            case WeatherPressureUnits.INHG:
                 pressure = this.toInHg(pressure);
                 pressure_unit = "inHg";
                 break;
 
-            case WeatherPressureUnits.hPa:
+            case WeatherPressureUnits.HPA:
                 pressure = pressure.toFixed(this._decimal_places);
                 pressure_unit = "hPa";
                 break;
 
-            case WeatherPressureUnits.bar:
+            case WeatherPressureUnits.BAR:
                 pressure = (pressure / 1000).toFixed(this._decimal_places);
                 pressure_unit = "bar";
                 break;
 
-            case WeatherPressureUnits.Pa:
+            case WeatherPressureUnits.PA:
                 pressure = (pressure * 100).toFixed(this._decimal_places);
                 pressure_unit = "Pa";
                 break;
 
-            case WeatherPressureUnits.kPa:
+            case WeatherPressureUnits.KPA:
                 pressure = (pressure / 10).toFixed(this._decimal_places);
                 pressure_unit = "kPa";
                 break;
 
-            case WeatherPressureUnits.atm:
+            case WeatherPressureUnits.ATM:
                 pressure = (pressure * 0.000986923267).toFixed(this._decimal_places);
                 pressure_unit = "atm";
                 break;
 
-            case WeatherPressureUnits.at:
+            case WeatherPressureUnits.AT:
                 pressure = (pressure * 0.00101971621298).toFixed(this._decimal_places);
                 pressure_unit = "at";
                 break;
 
-            case WeatherPressureUnits.Torr:
+            case WeatherPressureUnits.TORR:
                 pressure = (pressure * 0.750061683).toFixed(this._decimal_places);
                 pressure_unit = "Torr";
                 break;
 
-            case WeatherPressureUnits.psi:
+            case WeatherPressureUnits.PSI:
                 pressure = (pressure * 0.0145037738).toFixed(this._decimal_places);
                 pressure_unit = "psi";
+                break;
+
+            case WeatherPressureUnits.MMHG:
+                pressure = (pressure * 0.750061683).toFixed(this._decimal_places);
+                pressure_unit = "mmHg";
                 break;
         }
         return parseFloat(pressure).toLocaleString() + ' ' + pressure_unit;
