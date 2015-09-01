@@ -2,7 +2,7 @@
 "uuid": "@uuid@",
 "name": "OpenWeather",
 "description": "Weather extension to display weather information from https://openweathermap.org/ or https://forecast.io for almost all locations in the world.\nTo use the weather-data of forecast.io, you have to register on their site (https://developer.forecast.io/register) and get a personal API-key.\n\nSince version 29 this extensions uses coordinates to store the locations and makes the names editable to support multiple weather-providers!\nIf you update from versions prior to 29 to 29 or greater (with forecast.io - support) you have to recreate your locations.",
-"shell-version": [ "3.12", "3.14", "3.16", "3.17.4", "3.17.90" ],
+"shell-version": [ "3.12", "3.14", "3.16", "3.17.4", "3.17.90", "3.17.91" ],
 "localedir": "@LOCALEDIR@",
 "url": "@url@",
 "version": "@version@"
