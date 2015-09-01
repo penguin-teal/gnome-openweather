@@ -110,8 +110,7 @@ const WeatherPrefsWidget = new GObject.Class({
                 return;
             inRealize = true;
 
-            this.MainWidget.get_toplevel().set_default_size(defaultSize[0], defaultSize[1]);
-            this.MainWidget.get_toplevel().reshow_with_initial_size();
+            this.MainWidget.get_toplevel().resize(defaultSize[0], defaultSize[1]);
             inRealize = false;
         }));
     },
