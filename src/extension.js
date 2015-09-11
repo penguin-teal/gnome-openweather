@@ -49,6 +49,7 @@ const Lang = imports.lang;
 const Mainloop = imports.mainloop;
 const Soup = imports.gi.Soup;
 const St = imports.gi.St;
+const GnomeSession = imports.misc.gnomeSession;
 const Util = imports.misc.util;
 const _ = Gettext.gettext;
 
@@ -199,6 +200,8 @@ const OpenweatherMenuButton = new Lang.Class({
         else
             Main.panel._menus.addMenu(this.menu);
 
+        this._session = new GnomeSession.SessionManager();
+
         this._old_position_in_panel = this._position_in_panel;
 
         // Current weather
@@ -250,11 +253,27 @@ const OpenweatherMenuButton = new Lang.Class({
 
         this._network_monitor = Gio.network_monitor_get_default();
 
+        this._presence = new GnomeSession.Presence(Lang.bind(this, function(proxy, error) {
+            this._onStatusChanged(proxy.status);
+        }));
+        this._presence_connection = this._presence.connectSignal('StatusChanged', Lang.bind(this, function(proxy, senderName, [status]) {
+            this._onStatusChanged(status);
+        }));
+
+        this._idle = false;
         this._connected = false;
         this._network_monitor_connection = this._network_monitor.connect('network-changed', Lang.bind(this, this._onNetworkStateChanged));
         this._checkConnectionState();
 
         this.menu.connect('open-state-changed', Lang.bind(this, this.recalcLayout));
+    },
+
+    _onStatusChanged: function(status) {
+        this._idle = false;
+
+        if (status == GnomeSession.PresenceStatus.IDLE) {
+            this._idle = true;
+        }
     },
 
     stop: function() {
@@ -272,6 +291,11 @@ const OpenweatherMenuButton = new Lang.Class({
             Mainloop.source_remove(this._timeoutForecast);
 
         this._timeoutForecast = undefined;
+
+        if (this._presence_connection) {
+            this._presence.disconnect(this._presence_connection);
+            this._presence_connection = undefined;
+        }
 
         if (this._network_monitor_connection) {
             this._network_monitor.disconnect(this._network_monitor_connection);
@@ -937,6 +961,7 @@ const OpenweatherMenuButton = new Lang.Class({
     },
 
     load_json_async: function(url, params, fun) {
+        // log(new Error().fileName+':'+new Error().lineNumber+' => url = '+url);
         if (_httpSession === undefined) {
             _httpSession = new Soup.Session();
         }
@@ -1132,13 +1157,13 @@ const OpenweatherMenuButton = new Lang.Class({
     reloadWeatherCurrent: function(interval) {
         if (this._timeoutCurrent) {
             Mainloop.source_remove(this._timeoutCurrent);
+            this._timeoutCurrent = undefined;
         }
         this._timeoutCurrent = Mainloop.timeout_add_seconds(interval, Lang.bind(this, function() {
-            this.currentWeatherCache = undefined;
-            if (this._connected)
-                this.parseWeatherCurrent();
-            else
-                this.rebuildCurrentWeatherUi();
+            // only invalidate cached data, if we can connect the weather-providers server
+            if (this._connected && !this._idle)
+                this.currentWeatherCache = undefined;
+            this.parseWeatherCurrent();
             return true;
         }));
     },
@@ -1146,13 +1171,13 @@ const OpenweatherMenuButton = new Lang.Class({
     reloadWeatherForecast: function(interval) {
         if (this._timeoutForecast) {
             Mainloop.source_remove(this._timeoutForecast);
+            this._timeoutForecast = undefined;
         }
         this._timeoutForecast = Mainloop.timeout_add_seconds(interval, Lang.bind(this, function() {
-            this.forecastWeatherCache = undefined;
-            if (this._connected)
-                this.parseWeatherForecast();
-            else
-                this.rebuildFutureWeatherUi();
+            // only invalidate cached data, if we can connect the weather-providers server
+            if (this._connected && !this._idle)
+                this.forecastWeatherCache = undefined;
+            this.parseWeatherForecast();
             return true;
         }));
     },
