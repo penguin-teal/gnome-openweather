@@ -93,9 +93,20 @@ function getWeatherIcon(icon) {
 
 function parseWeatherCurrent() {
     if (this.currentWeatherCache === undefined) {
+        // this is a reentrency guard, in this times set for both caches,
+        // because they get updated with one call to forecast.io
+        this.currentWeatherCache = "in refresh";
+        // but do it only if the cache has been cleared, otherwise we would
+        // overwrite possibly valid data, that can be kept if the update fails
+        // for some reason
+        if (this.forecastWeatherCache === undefined)
+            this.forecastWeatherCache = "in refresh";
         this.refreshWeatherCurrent();
         return;
     }
+
+    if (this.currentWeatherCache == "in refresh")
+        return;
 
     this.checkPositionInPanel();
 
@@ -199,9 +210,20 @@ function refreshWeatherCurrent() {
 
 function parseWeatherForecast() {
     if (this.forecastWeatherCache === undefined) {
+        // this is a reentrency guard, in this times set for both caches,
+        // because they get updated with one call to forecast.io
+        this.forecastWeatherCache = "in refresh";
+        // but do it only if the cache has been cleared, otherwise we would
+        // overwrite possibly valid data, that can be kept if the update fails
+        // for some reason
+        if (this.currentWeatherCache === undefined)
+            this.currentWeatherCache = "in refresh";
         this.refreshWeatherCurrent();
         return;
     }
+
+    if (this.forecastWeatherCache == "in refresh")
+        return;
 
     let forecast = this.forecastWeatherCache;
     let beginOfDay = new Date(new Date().setHours(0, 0, 0, 0));

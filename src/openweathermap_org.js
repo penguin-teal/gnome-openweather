@@ -290,9 +290,14 @@ function getWeatherCondition(code) {
 
 function parseWeatherCurrent() {
     if (this.currentWeatherCache === undefined) {
+        // this is a reentrency guard
+        this.currentWeatherCache = "in refresh";
         this.refreshWeatherCurrent();
         return;
     }
+
+    if (this.currentWeatherCache == "in refresh")
+        return;
 
     this.checkPositionInPanel();
 
@@ -406,9 +411,14 @@ function refreshWeatherCurrent() {
 
 function parseWeatherForecast() {
     if (this.forecastWeatherCache === undefined) {
+        // this is a reentrency guard
+        this.forecastWeatherCache = "in refresh";
         this.refreshWeatherForecast();
         return;
     }
+
+    if (this.forecastWeatherCache == "in refresh")
+        return;
 
     let forecast = this.forecastWeatherCache;
     let beginOfDay = new Date(new Date().setHours(0, 0, 0, 0));
