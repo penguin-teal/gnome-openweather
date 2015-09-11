@@ -408,8 +408,14 @@ const OpenweatherMenuButton = new Lang.Class({
             //                Main.notifyError(title, err.message);
             log(title + '\n' + err.message);
         }
-        if (this._connected)
+
+        if (this._connected) {
+            if (!this._timeoutForecast)
+                this.forecastWeatherCache = undefined;
+            if (!this._timeoutCurrent)
+                this.currentWeatherCache = undefined;
             this.parseWeatherCurrent();
+        }
     },
 
     locationChanged: function() {
