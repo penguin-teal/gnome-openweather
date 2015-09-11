@@ -397,7 +397,17 @@ const OpenweatherMenuButton = new Lang.Class({
     },
 
     _checkConnectionState: function() {
-        this._connected = this._network_monitor.network_available;
+        let url = this.getWeatherProviderURL();
+        let address = Gio.NetworkAddress.parse_uri(url, 80);
+        let cancellable = Gio.Cancellable.new();
+        this._connected = false;
+        try {
+            this._connected = this._network_monitor.can_reach(address, cancellable);
+        } catch (err) {
+            let title = _("Can not not connect to %s").format(url);
+            //                Main.notifyError(title, err.message);
+            log(title + '\n' + err.message);
+        }
         if (this._connected)
             this.parseWeatherCurrent();
     },
