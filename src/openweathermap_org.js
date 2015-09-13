@@ -5,7 +5,7 @@
  *  - Displays a small weather information on the top panel.
  *  - On click, gives a popup with details about the weather.
  *
- * Copyright (C) 2011 - 2015
+ * Copyright (C) 2011 - 2013
  *     ecyrbe <ecyrbe+spam@gmail.com>,
  *     Timur Kristof <venemo@msn.com>,
  *     Elad Alfassa <elad@fedoraproject.org>,
@@ -15,6 +15,8 @@
  *     Mattia Meneguzzo odysseus@fedoraproject.org,
  *     Meng Zhuo <mengzhuo1203+spam@gmail.com>,
  *     Jens Lody <jens@jenslody.de>
+ * Copyright (C) 2014 -2015
+ *     Jens Lody <jens@jenslody.de>,
  *
  *
  * This file is part of gnome-shell-extension-openweather.

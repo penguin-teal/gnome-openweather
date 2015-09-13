@@ -4,8 +4,10 @@
  *
  *  PO Updater for GNOME Shell Extension Weather
  *
- * Copyright (C) 2012 -2015
+ * Copyright (C) 2012 -2013
  *     Christian METZLER <neroth@xeked.com>
+ *     Jens Lody <jens@jenslody.de>,
+ * Copyright (C) 2014 -2015
  *     Jens Lody <jens@jenslody.de>,
  *
  *
