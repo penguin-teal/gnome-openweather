@@ -105,7 +105,8 @@ function parseWeatherCurrent() {
         return;
     }
 
-    if (this.currentWeatherCache == "in refresh")
+    if ((this.forecastWeatherCache == "in refresh") ||
+        (this.currentWeatherCache == "in refresh"))
         return;
 
     this.checkPositionInPanel();
@@ -209,6 +210,10 @@ function refreshWeatherCurrent() {
 }
 
 function parseWeatherForecast() {
+    if ((this.forecastWeatherCache == "in refresh") ||
+        (this.currentWeatherCache == "in refresh"))
+        return;
+
     if (this.forecastWeatherCache === undefined) {
         // this is a reentrency guard, in this times set for both caches,
         // because they get updated with one call to forecast.io
@@ -221,9 +226,6 @@ function parseWeatherForecast() {
         this.refreshWeatherCurrent();
         return;
     }
-
-    if (this.forecastWeatherCache == "in refresh")
-        return;
 
     let forecast = this.forecastWeatherCache;
     let beginOfDay = new Date(new Date().setHours(0, 0, 0, 0));
