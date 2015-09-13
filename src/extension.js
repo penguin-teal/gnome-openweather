@@ -134,6 +134,8 @@ const OPENWEATHER_CONV_MPS_IN_KNOTS = 1.94384449;
 const OPENWEATHER_CONV_MPS_IN_FPS = 3.2808399;
 
 let _httpSession;
+let _currentWeatherCache,_forecastWeatherCache;
+let _timeCacheCurrentWeather,_timeCacheForecastWeather;
 
 const OpenweatherMenuButton = new Lang.Class({
     Name: 'OpenweatherMenuButton',
@@ -147,8 +149,6 @@ const OpenweatherMenuButton = new Lang.Class({
         this.oldTranslateCondition = this._translate_condition;
         this.switchProvider();
 
-        this.currentWeatherCache = undefined;
-        this.forecastWeatherCache = undefined;
         // Load settings
         this.loadConfig();
 
@@ -251,6 +251,9 @@ const OpenweatherMenuButton = new Lang.Class({
         this.rebuildCurrentWeatherUi();
         this.rebuildFutureWeatherUi();
 
+        this._idle = false;
+        this._connected = false;
+
         this._network_monitor = Gio.network_monitor_get_default();
 
         this._presence = new GnomeSession.Presence(Lang.bind(this, function(proxy, error) {
@@ -260,9 +263,22 @@ const OpenweatherMenuButton = new Lang.Class({
             this._onStatusChanged(status);
         }));
 
-        this._idle = false;
-        this._connected = false;
+        this.currentWeatherCache = _currentWeatherCache;
+        this.forecastWeatherCache = _forecastWeatherCache;
+        if (_timeCacheForecastWeather !== undefined)
+        {
+            let diff = Math.floor(new Date(new Date() - _timeCacheForecastWeather).getTime() / 1000);
+            if (diff < this._refresh_interval_forecast)
+                this.reloadWeatherForecast(this._refresh_interval_forecast - diff);
+        }
+        if (_timeCacheCurrentWeather !== undefined)
+        {
+            let diff = Math.floor(new Date(new Date() - _timeCacheCurrentWeather).getTime() / 1000);
+            if (diff < this._refresh_interval_current)
+                this.reloadWeatherCurrent(this._refresh_interval_current - diff);
+        }
         this._network_monitor_connection = this._network_monitor.connect('network-changed', Lang.bind(this, this._onNetworkStateChanged));
+
         this._checkConnectionState();
 
         this.menu.connect('open-state-changed', Lang.bind(this, this.recalcLayout));
@@ -277,6 +293,9 @@ const OpenweatherMenuButton = new Lang.Class({
     },
 
     stop: function() {
+        _forecastWeatherCache = this.forecastWeatherCache;
+        _currentWeatherCache = this.currentWeatherCache;
+
         if (_httpSession !== undefined)
             _httpSession.abort();
 
@@ -961,6 +980,7 @@ const OpenweatherMenuButton = new Lang.Class({
     },
 
     load_json_async: function(url, params, fun) {
+        // log(new Error().fileName+':'+new Error().lineNumber+new Error().stack);
         // log(new Error().fileName+':'+new Error().lineNumber+' => url = '+url);
         if (_httpSession === undefined) {
             _httpSession = new Soup.Session();
@@ -1159,6 +1179,7 @@ const OpenweatherMenuButton = new Lang.Class({
             Mainloop.source_remove(this._timeoutCurrent);
             this._timeoutCurrent = undefined;
         }
+        _timeCacheCurrentWeather = new Date();
         this._timeoutCurrent = Mainloop.timeout_add_seconds(interval, Lang.bind(this, function() {
             // only invalidate cached data, if we can connect the weather-providers server
             if (this._connected && !this._idle)
@@ -1173,6 +1194,7 @@ const OpenweatherMenuButton = new Lang.Class({
             Mainloop.source_remove(this._timeoutForecast);
             this._timeoutForecast = undefined;
         }
+        _timeCacheForecastWeather = new Date();
         this._timeoutForecast = Mainloop.timeout_add_seconds(interval, Lang.bind(this, function() {
             // only invalidate cached data, if we can connect the weather-providers server
             if (this._connected && !this._idle)
