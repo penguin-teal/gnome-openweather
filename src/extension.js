@@ -443,6 +443,7 @@ const OpenweatherMenuButton = new Lang.Class({
         let url = this.getWeatherProviderURL();
         let address = Gio.NetworkAddress.parse_uri(url, 80);
         let cancellable = Gio.Cancellable.new();
+        this._oldConnected = this._connected;
         this._connected = false;
         try {
             this._connected = this._network_monitor.can_reach(address, cancellable);
@@ -452,11 +453,14 @@ const OpenweatherMenuButton = new Lang.Class({
             log(title + '\n' + err.message);
         }
 
-        if (this._connected) {
-            if (!this._timeoutForecast)
-                this.forecastWeatherCache = undefined;
-            if (!this._timeoutCurrent)
+        if (!this._oldConnected && this._connected) {
+            let now = new Date()
+            if (_timeCacheCurrentWeather &&
+                 (Math.floor(new Date(now - _timeCacheCurrentWeather).getTime() / 1000) > this._refresh_interval_current ))
                 this.currentWeatherCache = undefined;
+            if (_timeCacheForecastWeather &&
+                 (Math.floor(new Date(now - _timeCacheForecastWeather).getTime() / 1000) > this._refresh_interval_forecast ))
+                this.forecastWeatherCache = undefined;
             this.parseWeatherCurrent();
         }
     },
