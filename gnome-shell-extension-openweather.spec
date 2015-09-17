@@ -2,11 +2,12 @@
 %global uuid openweather-extension@jenslody.de
 %global github jenslody-gnome-shell-extension-openweather
 %global checkout git%{git}
+%global checkout_date 20150917
 
 
 Name:           gnome-shell-extension-openweather
 Version:        1
-Release:        0.0.%(date +%Y%m%d)%{checkout}%{?dist}
+Release:        0.0.%{checkout_date}%{checkout}%{?dist}
 Summary:        Display weather information from many locations in the world
 
 Group:          User Interface/Desktops

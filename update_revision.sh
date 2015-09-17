@@ -66,8 +66,13 @@ COMMIT=`git log -1 --pretty=format:"%h"`
 
 echo "Found revision: '${COMMIT}'"
 
-mv ${SPEC_FILE} ${SPEC_FILE}.tmp
-sed "1 s/%global git .*/%global git $COMMIT/" < ${SPEC_FILE}.tmp > ${SPEC_FILE}
+DATE=`date +%Y%m%d`
+
+echo "Use checkout-date: '${DATE}'"
+
+cp ${SPEC_FILE} ${SPEC_FILE}.tmp
+sed -i "s/%global git .*/%global git $COMMIT/"  ${SPEC_FILE}
+sed -i "s/%global checkout_date .*/%global checkout_date $DATE/" ${SPEC_FILE}
 
 rpmdev-bumpspec --comment="Fresh git checkout." --userstring="Jens Lody <fedora@jenslody.de>" ${SPEC_FILE}
 
