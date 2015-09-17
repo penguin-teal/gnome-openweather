@@ -1220,7 +1220,7 @@ const OpenweatherMenuButton = new Lang.Class({
     },
 
     rebuildCurrentWeatherUi: function() {
-        this._weatherInfo.text = _(' ');
+        this._weatherInfo.text = (' ');
         this._weatherIcon.icon_name = 'view-refresh' + this.getIconType();
 
         this.destroyCurrentWeather();
