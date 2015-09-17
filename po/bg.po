@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-06-29 06:29+0200\n"
+"POT-Creation-Date: 2015-09-18 00:52+0200\n"
 "PO-Revision-Date: 2014-03-28 18:57+0200\n"
 "Last-Translator: Svetlin Zarev <svetlin.zarev@mail.ru>\n"
 "Language-Team: Български <>\n"
@@ -19,467 +19,473 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Gtranslator 2.91.6\n"
 
-#: ../src/extension.js:156
+#: ../src/extension.js:160
 msgid "..."
 msgstr "..."
 
-#: ../src/extension.js:646 ../data/weather-settings.ui:446
+#: ../src/extension.js:453
+#, fuzzy, javascript-format
+msgid "Can not connect to %s"
+msgstr "%s не може да бъде отворен"
+
+#: ../src/extension.js:711 ../data/weather-settings.ui:446
 msgid "Locations"
 msgstr "Местоположения"
 
-#: ../src/extension.js:658
+#: ../src/extension.js:723
 msgid "Reload Weather Information"
 msgstr "Опресни информацията"
 
-#: ../src/extension.js:673
+#: ../src/extension.js:738
 msgid "Weather data provided by:"
 msgstr "Информацията е предоставена от:"
 
-#: ../src/extension.js:684
+#: ../src/extension.js:749
 #, javascript-format
 msgid "Can not open %s"
 msgstr "%s не може да бъде отворен"
 
-#: ../src/extension.js:691
+#: ../src/extension.js:756
 msgid "Weather Settings"
 msgstr "Настройки"
 
-#: ../src/extension.js:742 ../src/prefs.js:811
+#: ../src/extension.js:807 ../src/prefs.js:923
 msgid "Invalid city"
 msgstr "Грешен град"
 
-#: ../src/extension.js:753
+#: ../src/extension.js:818
 msgid "Invalid location! Please try to recreate it."
 msgstr ""
 
-#: ../src/extension.js:852
+#: ../src/extension.js:917
 msgid "Calm"
 msgstr "спокойно"
 
-#: ../src/extension.js:855
+#: ../src/extension.js:920
 msgid "Light air"
 msgstr "Лек полъх"
 
-#: ../src/extension.js:858
+#: ../src/extension.js:923
 msgid "Light breeze"
 msgstr "Лек бриз"
 
-#: ../src/extension.js:861
+#: ../src/extension.js:926
 msgid "Gentle breeze"
 msgstr "Light breeze"
 
-#: ../src/extension.js:864
+#: ../src/extension.js:929
 msgid "Moderate breeze"
 msgstr "Умерен бриз"
 
-#: ../src/extension.js:867
+#: ../src/extension.js:932
 #, fuzzy
 msgid "Fresh breeze"
 msgstr "Бриз"
 
-#: ../src/extension.js:870
+#: ../src/extension.js:935
 msgid "Strong breeze"
 msgstr "Силен бриз"
 
-#: ../src/extension.js:873
+#: ../src/extension.js:938
 msgid "Moderate gale"
 msgstr "Умерен вихър"
 
-#: ../src/extension.js:876
+#: ../src/extension.js:941
 #, fuzzy
 msgid "Fresh gale"
 msgstr "Вихър"
 
-#: ../src/extension.js:879
+#: ../src/extension.js:944
 msgid "Strong gale"
 msgstr "Силен вихър"
 
-#: ../src/extension.js:882
+#: ../src/extension.js:947
 msgid "Storm"
 msgstr "Буря"
 
-#: ../src/extension.js:885
+#: ../src/extension.js:950
 msgid "Violent storm"
 msgstr "Силна буря"
 
-#: ../src/extension.js:888
+#: ../src/extension.js:953
 msgid "Hurricane"
 msgstr "Ураган"
 
-#: ../src/extension.js:892
+#: ../src/extension.js:957
 msgid "Sunday"
 msgstr "Неделя"
 
-#: ../src/extension.js:892
+#: ../src/extension.js:957
 msgid "Monday"
 msgstr "Понеделник"
 
-#: ../src/extension.js:892
+#: ../src/extension.js:957
 msgid "Tuesday"
 msgstr "Вторник\t\t"
 
-#: ../src/extension.js:892
+#: ../src/extension.js:957
 msgid "Wednesday"
 msgstr "Сряда"
 
-#: ../src/extension.js:892
+#: ../src/extension.js:957
 msgid "Thursday"
 msgstr "Четвъртък"
 
-#: ../src/extension.js:892
+#: ../src/extension.js:957
 msgid "Friday"
 msgstr "Петък"
 
-#: ../src/extension.js:892
+#: ../src/extension.js:957
 msgid "Saturday"
 msgstr "Събота"
 
-#: ../src/extension.js:898
+#: ../src/extension.js:963
 msgid "N"
 msgstr "С"
 
-#: ../src/extension.js:898
+#: ../src/extension.js:963
 msgid "NE"
 msgstr "СИ"
 
-#: ../src/extension.js:898
+#: ../src/extension.js:963
 msgid "E"
 msgstr "И"
 
-#: ../src/extension.js:898
+#: ../src/extension.js:963
 msgid "SE"
 msgstr "ЮИ"
 
-#: ../src/extension.js:898
+#: ../src/extension.js:963
 msgid "S"
 msgstr "Ю"
 
-#: ../src/extension.js:898
+#: ../src/extension.js:963
 msgid "SW"
 msgstr "ЮЗ"
 
-#: ../src/extension.js:898
+#: ../src/extension.js:963
 msgid "W"
 msgstr "З"
 
-#: ../src/extension.js:898
+#: ../src/extension.js:963
 msgid "NW"
 msgstr "СЗ"
 
-#: ../src/extension.js:1149
-msgid "Loading current weather ..."
-msgstr "Зареждане на моментната информация"
-
-#: ../src/extension.js:1181
+#: ../src/extension.js:1255
 msgid "Loading ..."
 msgstr "Зареждане..."
 
-#: ../src/extension.js:1185
+#: ../src/extension.js:1259
 msgid "Please wait"
 msgstr "Моля изчакайте"
 
-#: ../src/extension.js:1246
+#: ../src/extension.js:1320
 msgid "Cloudiness:"
 msgstr "Облачност:"
 
-#: ../src/extension.js:1250
+#: ../src/extension.js:1324
 msgid "Humidity:"
 msgstr "Влажност"
 
-#: ../src/extension.js:1254
+#: ../src/extension.js:1328
 msgid "Pressure:"
 msgstr "Налягане"
 
-#: ../src/extension.js:1258
+#: ../src/extension.js:1332
 msgid "Wind:"
 msgstr "Вятър"
 
-#: ../src/forecast_io.js:137 ../src/forecast_io.js:247
-#: ../src/openweathermap_org.js:342 ../src/openweathermap_org.js:439
+#: ../src/forecast_io.js:151 ../src/forecast_io.js:273
+#: ../src/openweathermap_org.js:349 ../src/openweathermap_org.js:451
 msgid "Yesterday"
 msgstr "Вчера"
 
-#: ../src/forecast_io.js:140 ../src/forecast_io.js:250
-#: ../src/openweathermap_org.js:344 ../src/openweathermap_org.js:441
+#: ../src/forecast_io.js:154 ../src/forecast_io.js:276
+#: ../src/openweathermap_org.js:351 ../src/openweathermap_org.js:453
 #, fuzzy, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
 msgstr[0] "Преди %s дни"
 msgstr[1] "Преди %s дни"
 
-#: ../src/forecast_io.js:227 ../src/openweathermap_org.js:433
+#: ../src/forecast_io.js:253 ../src/openweathermap_org.js:445
 msgid "Today"
 msgstr "Днес"
 
-#: ../src/forecast_io.js:243 ../src/openweathermap_org.js:435
+#: ../src/forecast_io.js:269 ../src/openweathermap_org.js:447
 msgid "Tomorrow"
 msgstr "Утре"
 
-#: ../src/forecast_io.js:245 ../src/openweathermap_org.js:437
+#: ../src/forecast_io.js:271 ../src/openweathermap_org.js:449
 #, fuzzy, javascript-format
 msgid "In %d day"
 msgid_plural "In %d days"
 msgstr[0] "До %s дни"
 msgstr[1] "До %s дни"
 
-#: ../src/openweathermap_org.js:179
+#: ../src/openweathermap_org.js:181
 msgid "thunderstorm with light rain"
 msgstr "лек дъжд с гръмотевици"
 
-#: ../src/openweathermap_org.js:181
+#: ../src/openweathermap_org.js:183
 msgid "thunderstorm with rain"
 msgstr "дъжд с гръмотевици"
 
-#: ../src/openweathermap_org.js:183
+#: ../src/openweathermap_org.js:185
 msgid "thunderstorm with heavy rain"
 msgstr "проливен дъжд с гръмотевици"
 
-#: ../src/openweathermap_org.js:185
+#: ../src/openweathermap_org.js:187
 msgid "light thunderstorm"
 msgstr "слаба гръмотевична буря"
 
-#: ../src/openweathermap_org.js:187
+#: ../src/openweathermap_org.js:189
 msgid "thunderstorm"
 msgstr "гръмотевична буря"
 
-#: ../src/openweathermap_org.js:189
+#: ../src/openweathermap_org.js:191
 msgid "heavy thunderstorm"
 msgstr "силна гръмотевична буря"
 
-#: ../src/openweathermap_org.js:191
+#: ../src/openweathermap_org.js:193
 #, fuzzy
 msgid "ragged thunderstorm"
 msgstr "гръмотевична буря"
 
-#: ../src/openweathermap_org.js:193
+#: ../src/openweathermap_org.js:195
 msgid "thunderstorm with light drizzle"
 msgstr "гръмотевична буря с лек дъждец"
 
-#: ../src/openweathermap_org.js:195
+#: ../src/openweathermap_org.js:197
 msgid "thunderstorm with drizzle"
 msgstr "гръмотевична буря със ситен дъжд"
 
-#: ../src/openweathermap_org.js:197
+#: ../src/openweathermap_org.js:199
 #, fuzzy
 msgid "thunderstorm with heavy drizzle"
 msgstr "гръмотевична буря със ситен дъжд"
 
-#: ../src/openweathermap_org.js:199
+#: ../src/openweathermap_org.js:201
 msgid "light intensity drizzle"
 msgstr "лек ситен дъжд"
 
-#: ../src/openweathermap_org.js:201
+#: ../src/openweathermap_org.js:203
 msgid "drizzle"
 msgstr "ситен дъжд"
 
-#: ../src/openweathermap_org.js:203
+#: ../src/openweathermap_org.js:205
 #, fuzzy
 msgid "heavy intensity drizzle"
 msgstr "силен ръмеж"
 
-#: ../src/openweathermap_org.js:205
+#: ../src/openweathermap_org.js:207
 #, fuzzy
 msgid "light intensity drizzle rain"
 msgstr "лек ръмеж"
 
-#: ../src/openweathermap_org.js:207
+#: ../src/openweathermap_org.js:209
 #, fuzzy
 msgid "drizzle rain"
 msgstr "ситен дъжд"
 
-#: ../src/openweathermap_org.js:209
+#: ../src/openweathermap_org.js:211
 #, fuzzy
 msgid "heavy intensity drizzle rain"
 msgstr "силен ръмеж"
 
-#: ../src/openweathermap_org.js:211
+#: ../src/openweathermap_org.js:213
 #, fuzzy
 msgid "shower rain and drizzle"
 msgstr "дъжд"
 
-#: ../src/openweathermap_org.js:213
+#: ../src/openweathermap_org.js:215
 #, fuzzy
 msgid "heavy shower rain and drizzle"
 msgstr "силен дъжд"
 
-#: ../src/openweathermap_org.js:215
+#: ../src/openweathermap_org.js:217
 #, fuzzy
 msgid "shower drizzle"
 msgstr "силен ръмеж"
 
-#: ../src/openweathermap_org.js:217
+#: ../src/openweathermap_org.js:219
 msgid "light rain"
 msgstr "лек дъжд"
 
-#: ../src/openweathermap_org.js:219
+#: ../src/openweathermap_org.js:221
 msgid "moderate rain"
 msgstr "умерен валеж"
 
-#: ../src/openweathermap_org.js:221
+#: ../src/openweathermap_org.js:223
 msgid "heavy intensity rain"
 msgstr "силен дъжд"
 
-#: ../src/openweathermap_org.js:223
+#: ../src/openweathermap_org.js:225
 msgid "very heavy rain"
 msgstr "много силен дъжд"
 
-#: ../src/openweathermap_org.js:225
+#: ../src/openweathermap_org.js:227
 msgid "extreme rain"
 msgstr "много силен дъжд"
 
-#: ../src/openweathermap_org.js:227
+#: ../src/openweathermap_org.js:229
 #, fuzzy
 msgid "freezing rain"
 msgstr "леден дъжд"
 
-#: ../src/openweathermap_org.js:229
+#: ../src/openweathermap_org.js:231
 #, fuzzy
 msgid "light intensity shower rain"
 msgstr "слаб дъжд"
 
-#: ../src/openweathermap_org.js:231
+#: ../src/openweathermap_org.js:233
 #, fuzzy
 msgid "shower rain"
 msgstr "дъжд"
 
-#: ../src/openweathermap_org.js:233
+#: ../src/openweathermap_org.js:235
 #, fuzzy
 msgid "heavy intensity shower rain"
 msgstr "силен дъжд"
 
-#: ../src/openweathermap_org.js:235
+#: ../src/openweathermap_org.js:237
 #, fuzzy
 msgid "ragged shower rain"
 msgstr "дъжд"
 
-#: ../src/openweathermap_org.js:237
+#: ../src/openweathermap_org.js:239
 msgid "light snow"
 msgstr "лек снеговалеж"
 
-#: ../src/openweathermap_org.js:239
+#: ../src/openweathermap_org.js:241
 msgid "snow"
 msgstr "снеговалеж"
 
-#: ../src/openweathermap_org.js:241
+#: ../src/openweathermap_org.js:243
 msgid "heavy snow"
 msgstr "силен снеговалеж"
 
-#: ../src/openweathermap_org.js:243
+#: ../src/openweathermap_org.js:245
 msgid "sleet"
 msgstr "суграшица"
 
-#: ../src/openweathermap_org.js:245
+#: ../src/openweathermap_org.js:247
 #, fuzzy
 msgid "shower sleet"
 msgstr "суграшица"
 
-#: ../src/openweathermap_org.js:247
+#: ../src/openweathermap_org.js:249
 msgid "light rain and snow"
 msgstr "слаба  суграшица"
 
-#: ../src/openweathermap_org.js:249
+#: ../src/openweathermap_org.js:251
 msgid "rain and snow"
 msgstr "суграшица"
 
-#: ../src/openweathermap_org.js:251
+#: ../src/openweathermap_org.js:253
 #, fuzzy
 msgid "light shower snow"
 msgstr "лек снеговалеж"
 
-#: ../src/openweathermap_org.js:253
+#: ../src/openweathermap_org.js:255
 #, fuzzy
 msgid "shower snow"
 msgstr "снеговалеж"
 
-#: ../src/openweathermap_org.js:255
+#: ../src/openweathermap_org.js:257
 #, fuzzy
 msgid "heavy shower snow"
 msgstr "силен снеговалеж"
 
-#: ../src/openweathermap_org.js:257
+#: ../src/openweathermap_org.js:259
 msgid "mist"
 msgstr "мъгла"
 
-#: ../src/openweathermap_org.js:259
+#: ../src/openweathermap_org.js:261
 msgid "smoke"
 msgstr "дим"
 
-#: ../src/openweathermap_org.js:261
+#: ../src/openweathermap_org.js:263
 msgid "haze"
 msgstr "мараня"
 
-#: ../src/openweathermap_org.js:263
+#: ../src/openweathermap_org.js:265
 msgid "Sand/Dust Whirls"
 msgstr "пясъчни завихряния"
 
-#: ../src/openweathermap_org.js:265
+#: ../src/openweathermap_org.js:267
 msgid "Fog"
 msgstr "мъгла"
 
-#: ../src/openweathermap_org.js:267
+#: ../src/openweathermap_org.js:269
 msgid "sand"
 msgstr "пясък"
 
-#: ../src/openweathermap_org.js:269
+#: ../src/openweathermap_org.js:271
 msgid "dust"
 msgstr "прах"
 
-#: ../src/openweathermap_org.js:271
+#: ../src/openweathermap_org.js:273
 msgid "VOLCANIC ASH"
 msgstr "вулканична пепел"
 
-#: ../src/openweathermap_org.js:273
+#: ../src/openweathermap_org.js:275
 msgid "SQUALLS"
 msgstr "вихрушки"
 
-#: ../src/openweathermap_org.js:275
+#: ../src/openweathermap_org.js:277
 msgid "TORNADO"
 msgstr "торнадо"
 
-#: ../src/openweathermap_org.js:277
+#: ../src/openweathermap_org.js:279
 msgid "sky is clear"
 msgstr "безоблачно"
 
-#: ../src/openweathermap_org.js:279
+#: ../src/openweathermap_org.js:281
 msgid "few clouds"
 msgstr "слаба облачност"
 
-#: ../src/openweathermap_org.js:281
+#: ../src/openweathermap_org.js:283
 msgid "scattered clouds"
 msgstr "разкъсана облачност"
 
-#: ../src/openweathermap_org.js:283
+#: ../src/openweathermap_org.js:285
 msgid "broken clouds"
 msgstr "разкъсана облачност"
 
-#: ../src/openweathermap_org.js:285
+#: ../src/openweathermap_org.js:287
 msgid "overcast clouds"
 msgstr "заоблачено"
 
-#: ../src/openweathermap_org.js:287
+#: ../src/openweathermap_org.js:289
 msgid "Not available"
 msgstr "Не е налично"
 
-#: ../src/prefs.js:195
+#: ../src/prefs.js:216 ../src/prefs.js:264 ../src/prefs.js:271
+#, javascript-format
+msgid "Invalid data when searching for \"%s\""
+msgstr ""
+
+#: ../src/prefs.js:232 ../src/prefs.js:277
 #, fuzzy, javascript-format
 msgid "\"%s\" not found"
 msgstr "Схемата \"%s\" не е намерена"
 
-#: ../src/prefs.js:220
+#: ../src/prefs.js:308
 #, fuzzy
 msgid "Location"
 msgstr "Местоположения"
 
-#: ../src/prefs.js:230
+#: ../src/prefs.js:318
 msgid "Provider"
 msgstr ""
 
-#: ../src/prefs.js:362
+#: ../src/prefs.js:450
 #, javascript-format
 msgid "Remove %s ?"
 msgstr "Да се премахне ли %s ?"
 
-#: ../src/prefs.js:846
+#: ../src/prefs.js:958
 msgid "default"
 msgstr ""
 
@@ -529,127 +535,144 @@ msgstr ""
 msgid "Personal Api key from openweathermap.org"
 msgstr "Личен API код от openweather.org"
 
-#: ../data/weather-settings.ui:525
+#: ../data/weather-settings.ui:526
 #, fuzzy
 msgid "Personal Api key from forecast.io"
 msgstr "Личен API код от openweather.org"
 
-#: ../data/weather-settings.ui:541
+#: ../data/weather-settings.ui:542
 #, fuzzy
 msgid "Weather provider"
 msgstr "Информацията е предоставена от:"
 
-#: ../data/weather-settings.ui:561
+#: ../data/weather-settings.ui:562
+msgid "Chose geolocation provider"
+msgstr ""
+
+#: ../data/weather-settings.ui:587
+#, fuzzy
+msgid "Personal AppKey from developer.mapquest.com"
+msgstr "Личен API код от openweather.org"
+
+#: ../data/weather-settings.ui:616
+#, fuzzy
+msgid "Geolocation provider"
+msgstr "Информацията е предоставена от:"
+
+#: ../data/weather-settings.ui:636
 msgid "Temperature Unit"
 msgstr "Мерна единица за температура"
 
-#: ../data/weather-settings.ui:572
+#: ../data/weather-settings.ui:647
 msgid "Wind Speed Unit"
 msgstr "Мерна единица за скорост на вятъра"
 
-#: ../data/weather-settings.ui:583
+#: ../data/weather-settings.ui:658
 msgid "Pressure Unit"
 msgstr "Мерна единица за налягане"
 
-#: ../data/weather-settings.ui:658
+#: ../data/weather-settings.ui:734
 msgid "Units"
 msgstr ""
 
-#: ../data/weather-settings.ui:678
+#: ../data/weather-settings.ui:754
 msgid "Position in Panel"
 msgstr "Позиция в панела"
 
-#: ../data/weather-settings.ui:689
+#: ../data/weather-settings.ui:765
 msgid "Wind Direction by Arrows"
 msgstr "Посока на вятъра със стрелки"
 
-#: ../data/weather-settings.ui:700
+#: ../data/weather-settings.ui:776
 msgid "Translate Conditions"
 msgstr "Превеждай информацията за времето"
 
-#: ../data/weather-settings.ui:711
+#: ../data/weather-settings.ui:787
 msgid "Symbolic Icons"
 msgstr "Символни икони"
 
-#: ../data/weather-settings.ui:722
+#: ../data/weather-settings.ui:798
 msgid "Text on buttons"
 msgstr ""
 
-#: ../data/weather-settings.ui:733
+#: ../data/weather-settings.ui:809
 msgid "Temperature in Panel"
 msgstr "Показвай температурата в панела"
 
-#: ../data/weather-settings.ui:744
+#: ../data/weather-settings.ui:820
 msgid "Conditions in Panel"
 msgstr "Информация за времето в панела"
 
-#: ../data/weather-settings.ui:755
+#: ../data/weather-settings.ui:831
 #, fuzzy
 msgid "Conditions in Forecast"
 msgstr "Информация за времето в панела"
 
-#: ../data/weather-settings.ui:766
+#: ../data/weather-settings.ui:842
 msgid "Center forecast"
 msgstr "Прогнозата да се показва в центъра"
 
-#: ../data/weather-settings.ui:777
+#: ../data/weather-settings.ui:853
 #, fuzzy
 msgid "Number of days in forecast"
 msgstr "Дни в прогнозата"
 
-#: ../data/weather-settings.ui:788
+#: ../data/weather-settings.ui:864
 msgid "Maximal number of digits after the decimal point"
 msgstr "Брой знаци след десетичната точка"
 
-#: ../data/weather-settings.ui:800
+#: ../data/weather-settings.ui:876
 msgid "Center"
 msgstr "Центрирано"
 
-#: ../data/weather-settings.ui:801
+#: ../data/weather-settings.ui:877
 msgid "Right"
 msgstr "В дясно"
 
-#: ../data/weather-settings.ui:802
+#: ../data/weather-settings.ui:878
 msgid "Left"
 msgstr "В ляво"
 
-#: ../data/weather-settings.ui:944
+#: ../data/weather-settings.ui:1020
 msgid "Layout"
 msgstr ""
 
-#: ../data/weather-settings.ui:996
+#: ../data/weather-settings.ui:1072
 msgid "Version: "
 msgstr ""
 
-#: ../data/weather-settings.ui:1010
+#: ../data/weather-settings.ui:1086
 msgid "unknown (self-build ?)"
 msgstr ""
 
-#: ../data/weather-settings.ui:1030
+#: ../data/weather-settings.ui:1106
 msgid ""
 "<span>Weather extension to display weather information from <a href="
 "\"https://openweathermap.org/\">Openweathermap</a> or <a href=\"https://"
 "forecast.io\">forecast.io</a> for almost all locations in the world.</span>"
 msgstr ""
 
-#: ../data/weather-settings.ui:1053
+#: ../data/weather-settings.ui:1129
 msgid "Maintained by"
 msgstr ""
 
-#: ../data/weather-settings.ui:1083
+#: ../data/weather-settings.ui:1159
 msgid "Webpage"
 msgstr ""
 
-#: ../data/weather-settings.ui:1104
+#: ../data/weather-settings.ui:1180
 msgid ""
 "<span size=\"small\">This program comes with ABSOLUTELY NO WARRANTY.\n"
 "See the <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
 "\">GNU General Public License, version 2 or later</a> for details.</span>"
 msgstr ""
 
-#: ../data/weather-settings.ui:1125
+#: ../data/weather-settings.ui:1201
 msgid "About"
 msgstr ""
+
+#~ msgid "Loading current weather ..."
+#~ msgstr "Зареждане на моментната информация"
 
 #, fuzzy
 #~ msgid "In %d days"
