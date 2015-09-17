@@ -213,7 +213,7 @@ const WeatherPrefsWidget = new GObject.Class({
                     this.clearSearchMenu();
                     if (!arguments[0]) {
                         let item = new Gtk.MenuItem({
-                            label: _("Invalid data when searching for\"%s\"").format(location)
+                            label: _("Invalid data when searching for \"%s\"").format(location)
                         });
                         this.searchMenu.append(item);
                         item = new Gtk.MenuItem({
@@ -261,14 +261,14 @@ const WeatherPrefsWidget = new GObject.Class({
 
                     if (!arguments[0]) {
                         let item = new Gtk.MenuItem({
-                            label: _("Invalid data when searching for\"%s\"").format(location)
+                            label: _("Invalid data when searching for \"%s\"").format(location)
                         });
                         this.searchMenu.append(item);
                     } else {
                         let newCity = arguments[0].geocoding_results;
                         if (Number(newCity.length) < 1) {
                             let item = new Gtk.MenuItem({
-                                label: _("Invalid data when searching for\"%s\"").format(location)
+                                label: _("Invalid data when searching for \"%s\"").format(location)
                             });
                             this.searchMenu.append(item);
                         } else {
