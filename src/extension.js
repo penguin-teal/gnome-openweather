@@ -450,8 +450,7 @@ const OpenweatherMenuButton = new Lang.Class({
         try {
             this._connected = this._network_monitor.can_reach(address, cancellable);
         } catch (err) {
-            let title = _("Can not not connect to %s").format(url);
-            //                Main.notifyError(title, err.message);
+            let title = _("Can not connect to %s").format(url);
             log(title + '\n' + err.message);
         }
 
