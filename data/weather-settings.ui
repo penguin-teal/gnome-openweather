@@ -511,6 +511,7 @@
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="has_tooltip">True</property>
+                    <property name="max_length">32</property>
                     <property name="width_chars">32</property>
                   </object>
                   <packing>
@@ -542,6 +543,80 @@
               </object>
               <packing>
                 <property name="position">1</property>
+                <property name="tab_fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkGrid" id="geolocation-grid">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="hexpand">True</property>
+                <property name="vexpand">True</property>
+                <property name="border_width">10</property>
+                <property name="row_spacing">5</property>
+                <property name="column_spacing">5</property>
+                <child>
+                  <object class="GtkLabel" id="label-geolocation-provider">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label" translatable="yes">Chose geolocation provider</property>
+                  </object>
+                  <packing>
+                    <property name="left_attach">0</property>
+                    <property name="top_attach">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkComboBoxText" id="geolocation_provider">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <items>
+                      <item>https://geocode.farm/</item>
+                      <item>https://open.mapquestapi.com/nominatim/</item>
+                    </items>
+                  </object>
+                  <packing>
+                    <property name="left_attach">1</property>
+                    <property name="top_attach">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="label-geolocation-appid-mapquest">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="label" translatable="yes">Personal AppKey from developer.mapquest.com</property>
+                  </object>
+                  <packing>
+                    <property name="left_attach">0</property>
+                    <property name="top_attach">1</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkEntry" id="geolocation_appid_mapquest">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="has_tooltip">True</property>
+                    <property name="max_length">32</property>
+                    <property name="width_chars">32</property>
+                  </object>
+                  <packing>
+                    <property name="left_attach">1</property>
+                    <property name="top_attach">1</property>
+                  </packing>
+                </child>
+              </object>
+              <packing>
+                <property name="position">2</property>
+              </packing>
+            </child>
+            <child type="tab">
+              <object class="GtkLabel" id="geolocation-provider-label">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <property name="label" translatable="yes">Geolocation provider</property>
+              </object>
+              <packing>
+                <property name="position">2</property>
                 <property name="tab_fill">False</property>
               </packing>
             </child>
@@ -649,7 +724,7 @@
                 </child>
               </object>
               <packing>
-                <property name="position">2</property>
+                <property name="position">3</property>
               </packing>
             </child>
             <child type="tab">
@@ -659,7 +734,7 @@
                 <property name="label" translatable="yes">Units</property>
               </object>
               <packing>
-                <property name="position">2</property>
+                <property name="position">3</property>
                 <property name="tab_fill">False</property>
               </packing>
             </child>
@@ -935,7 +1010,7 @@
                 </child>
               </object>
               <packing>
-                <property name="position">3</property>
+                <property name="position">4</property>
               </packing>
             </child>
             <child type="tab">
@@ -945,7 +1020,7 @@
                 <property name="label" translatable="yes">Layout</property>
               </object>
               <packing>
-                <property name="position">3</property>
+                <property name="position">4</property>
                 <property name="tab_fill">False</property>
               </packing>
             </child>
@@ -1116,7 +1191,7 @@ See the &lt;a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"&gt;G
                 </child>
               </object>
               <packing>
-                <property name="position">4</property>
+                <property name="position">5</property>
               </packing>
             </child>
             <child type="tab">
@@ -1126,7 +1201,7 @@ See the &lt;a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"&gt;G
                 <property name="label" translatable="yes">About</property>
               </object>
               <packing>
-                <property name="position">4</property>
+                <property name="position">5</property>
                 <property name="tab_fill">False</property>
               </packing>
             </child>
