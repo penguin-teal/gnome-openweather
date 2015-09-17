@@ -1,13 +1,13 @@
-%global git e56e4ae
+%global git 0f6ae2f
 %global uuid openweather-extension@jenslody.de
 %global github jenslody-gnome-shell-extension-openweather
 %global checkout git%{git}
-%global checkout_date 20150917
+%global checkout_date 20150918
 
 
 Name:           gnome-shell-extension-openweather
 Version:        1
-Release:        0.0.%{checkout_date}%{checkout}%{?dist}
+Release:        0.1.%{checkout_date}%{checkout}%{?dist}
 Summary:        Display weather information from many locations in the world
 
 Group:          User Interface/Desktops
@@ -64,6 +64,9 @@ fi
 %{_datadir}/gnome-shell/extensions/%{uuid}
 
 %changelog
+* Thu Sep 17 2015 Jens Lody <fedora@jenslody.de> - 1-0.1.20150918git0f6ae2f
+- Use checkout-date instead of build-date in package-version.
+
 * Thu Aug 20 2015 Jens Lody <fedora@jenslody.de> - 1-0.1.20150821gitcb1f6f6
 - Remove dot before git in Release-tag.
 - Use (conditional) file-triggers for schema compiling, introduced in fc24.
