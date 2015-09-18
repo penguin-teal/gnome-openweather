@@ -105,6 +105,16 @@ const WeatherPrefsWidget = new GObject.Class({
     _init: function(params) {
         this.parent(params);
 
+        // Create user-agent string from uuid and (if present) the version
+        this.user_agent = Me.metadata.uuid;
+        if (Me.metadata.version !== undefined && Me.metadata.version.trim() !== '')
+        {
+            this.user_agent += '/';
+            this.user_agent += Me.metadata.version.toString();
+        }
+        // add trailing space, so libsoup adds its own user-agent
+        this.user_agent += ' ';
+
         this.initWindow();
 
         defaultSize = this.MainWidget.get_size_request();
@@ -608,6 +618,7 @@ const WeatherPrefsWidget = new GObject.Class({
     loadJsonAsync: function(url, params, fun, id) {
         if (_httpSession === undefined) {
             _httpSession = new Soup.Session();
+            _httpSession.user_agent = this.user_agent;
         }
 
         let here = this;

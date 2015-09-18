@@ -147,6 +147,16 @@ const OpenweatherMenuButton = new Lang.Class({
     _init: function() {
         this.owmCityId = 0;
 
+        // Create user-agent string from uuid and (if present) the version
+        this.user_agent = Me.metadata.uuid;
+        if (Me.metadata.version !== undefined && Me.metadata.version.trim() !== '')
+        {
+            this.user_agent += '/';
+            this.user_agent += Me.metadata.version.toString();
+        }
+        // add trailing space, so libsoup adds its own user-agent
+        this.user_agent += ' ';
+
         this.oldProvider = this._weather_provider;
         this.oldTranslateCondition = this._translate_condition;
         this.switchProvider();
@@ -989,6 +999,7 @@ const OpenweatherMenuButton = new Lang.Class({
         // log(new Error().fileName+':'+new Error().lineNumber+' => url = '+url);
         if (_httpSession === undefined) {
             _httpSession = new Soup.Session();
+            _httpSession.user_agent = this.user_agent;
         }
 
         let message = Soup.form_request_new_from_hash('GET', url, params);
