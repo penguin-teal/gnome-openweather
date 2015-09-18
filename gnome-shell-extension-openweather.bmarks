@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<BrowseTracker_layout_file>
+	<ActiveTarget name="extension" />
+	<File name="src/extension.js" open="0" top="0" tabpos="1">
+		<Cursor position="41840" topLine="1203" />
+		<BrowseMarks positions="" />
+		<Book_Marks positions="" />
+	</File>
+	<File name="src/openweathermap_org.js" open="0" top="0" tabpos="3">
+		<Cursor position="223" topLine="456" />
+		<BrowseMarks positions="" />
+		<Book_Marks positions="" />
+	</File>
+	<File name="po/LINGUAS" open="0" top="0" tabpos="1">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="configure.ac" open="0" top="0" tabpos="3">
+		<Cursor position="787" topLine="0" />
+	</File>
+	<File name="data/weather-settings.ui" open="0" top="0" tabpos="0">
+		<Cursor position="27481" topLine="563" />
+		<BrowseMarks positions="" />
+		<Book_Marks positions="" />
+	</File>
+	<File name="update_revision.sh" open="1" top="1" tabpos="11">
+		<Cursor position="0" topLine="0" />
+		<BrowseMarks positions="" />
+		<Book_Marks positions="" />
+	</File>
+	<File name="src/convenience.js" open="0" top="0" tabpos="9">
+		<Cursor position="2838" topLine="0" />
+		<BrowseMarks positions="1972" />
+	</File>
+	<File name="data/metadata.json.in" open="0" top="0" tabpos="2">
+		<Cursor position="690" topLine="0" />
+		<BrowseMarks positions="618" />
+		<Book_Marks positions="" />
+	</File>
+	<File name="src/prefs.js" open="1" top="0" tabpos="5">
+		<Cursor position="17255" topLine="166" />
+		<BrowseMarks positions="" />
+		<Book_Marks positions="" />
+	</File>
+	<File name="autogen.sh" open="0" top="0" tabpos="4">
+		<Cursor position="197" topLine="0" />
+	</File>
+	<File name="data/org.gnome.shell.extensions.openweather.gschema.xml.in" open="0" top="0" tabpos="6">
+		<Cursor position="5663" topLine="105" />
+		<BrowseMarks positions="" />
+		<Book_Marks positions="" />
+	</File>
+	<File name="src/forecast_io.js" open="0" top="0" tabpos="4">
+		<Cursor position="6597" topLine="172" />
+		<BrowseMarks positions="" />
+		<Book_Marks positions="" />
+	</File>
+	<File name="aclocal.m4" open="0" top="0" tabpos="7">
+		<Cursor position="4238" topLine="60" />
+	</File>
+	<File name="po/update.js" open="0" top="0" tabpos="3">
+		<Cursor position="253" topLine="0" />
+	</File>
+	<File name="COPYING" open="0" top="0" tabpos="10">
+		<Cursor position="81" topLine="0" />
+	</File>
+	<File name="Makefile.am" open="0" top="0" tabpos="2">
+		<Cursor position="61" topLine="0" />
+	</File>
+	<File name="data/Makefile.am" open="0" top="0" tabpos="2">
+		<Cursor position="674" topLine="0" />
+	</File>
+	<File name="src/Makefile.am" open="0" top="0" tabpos="7">
+		<Cursor position="55" topLine="0" />
+	</File>
+	<File name="gnome-shell-extension-openweather.spec" open="1" top="0" tabpos="4">
+		<Cursor position="255" topLine="0" />
+		<BrowseMarks positions="" />
+		<Book_Marks positions="" />
+	</File>
+</BrowseTracker_layout_file>

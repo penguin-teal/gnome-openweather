@@ -1,0 +1,104 @@
+https://open.mapquestapi.com/nominatim/v1/search.php?format=json&q=Sommerweg+2,+Neu-Eichenberg&addressdetails=1
+
+[
+    {
+        "place_id":"57218283",
+        "licence":"Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http:\/\/www.openstreetmap.org\/copyright",
+        "osm_type":"way",
+        "osm_id":"26124984",
+        "boundingbox":
+        [
+            "51.3747137",
+            "51.3755891",
+            "9.9164565",
+            "9.9192863"
+        ],
+        "lat":"51.3750768",
+        "lon":"9.9175961",
+        "display_name":"Sommerweg, Neu-Eichenberg, Werra-Mei\u00dfner-Kreis, Regierungsbezirk Kassel, Hessen, 37249, Deutschland, Europa",
+        "class":"highway",
+        "type":"residential",
+        "importance":0.51,
+        "address":
+        {
+            "road":"Sommerweg",
+            "village":"Neu-Eichenberg",
+            "county":"Werra-Mei\u00dfner-Kreis",
+            "state_district":"Regierungsbezirk Kassel",
+            "state":"Hessen",
+            "postcode":"37249",
+            "country":"Deutschland",
+            "country_code":"de",
+            "continent":"Europa"
+        }
+    }
+]
+
+
+[
+    {
+        "place_id":"151244439",
+        "licence":"Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http:\/\/www.openstreetmap.org\/copyright",
+        "osm_type":"relation",
+        "osm_id":"549411",
+        "boundingbox":
+        [
+            "51.3462395",
+            "51.4210337",
+            "9.8500839",
+            "9.9327238"
+        ],
+        "lat":"51.3835891",
+        "lon":"9.8833684",
+        "display_name":"Neu-Eichenberg, Werra-Mei\u00dfner-Kreis, Regierungsbezirk Kassel, Hessen, Deutschland, Europa",
+        "class":"boundary",
+        "type":"administrative",
+        "importance":0.57579531509901,
+        "icon":"http:\/\/open.mapquestapi.com\/nominatim\/v1\/images\/mapicons\/poi_boundary_administrative.p.20.png",
+        "address":
+        {
+            "city":"Neu-Eichenberg",
+            "county":"Werra-Mei\u00dfner-Kreis",
+            "state_district":"Regierungsbezirk Kassel",
+            "state":"Hessen",
+            "country":"Deutschland",
+            "country_code":"de",
+            "continent":"Europa"
+        }
+    }
+]
+
+http://open.mapquestapi.com/nominatim/v1/reverse.php?format=json&lat=51.3750768&lon=+9.9175961
+
+[
+    {
+        "place_id":"151244439",
+		"licence":"Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http:\/\/www.openstreetmap.org\/copyright",
+		"osm_type":"relation",
+		"osm_id":"549411",
+		"boundingbox":
+		[
+            "51.3462395",
+            "51.4210337",
+            "9.8500839",
+            "9.9327238"
+		],
+		"lat":"51.3835891",
+		"lon":"9.8833684",
+		"display_name":"Neu-Eichenberg, Werra-Mei\u00dfner-Kreis, Regierungsbezirk Kassel, Hessen, Deutschland, Europa",
+		"class":"boundary",
+		"type":"administrative",
+		"importance":0.57579531509901,
+		"icon":"http:\/\/open.mapquestapi.com\/nominatim\/v1\/images\/mapicons\/poi_boundary_administrative.p.20.png",
+		"address":
+		{
+            "city":"Neu-Eichenberg",
+            "county":"Werra-Mei\u00dfner-Kreis",
+            "state_district":"Regierungsbezirk Kassel",
+            "state":"Hessen",
+            "country":"Deutschland",
+            "country_code":"de",
+            "continent":"Europa"
+		}
+    }
+]
