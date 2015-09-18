@@ -4,15 +4,15 @@
 # Gankov Andrey <gav@qsolution.ru>, 2011.
 # Stas Solovey <whats_up@tut.by>, 2012.
 # Timon <timosha@gmail.com>, 2013.
-# Ivan Komaritsyn <vantu5z@mail.ru>, 2015.
 # Karbovnichiy Vasiliy <menstenebris@gmail.com>, 2015.
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-09-18 00:52+0200\n"
-"PO-Revision-Date: 2015-06-29 16:23+0300\n"
+"PO-Revision-Date: 2015-09-18 14:54+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -27,9 +27,9 @@ msgid "..."
 msgstr "..."
 
 #: ../src/extension.js:453
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "Can not connect to %s"
-msgstr "Невозможно открыть %s"
+msgstr "Не удалось подключиться к %s"
 
 #: ../src/extension.js:711 ../data/weather-settings.ui:446
 msgid "Locations"
@@ -449,7 +449,7 @@ msgstr "Недоступно"
 #: ../src/prefs.js:216 ../src/prefs.js:264 ../src/prefs.js:271
 #, javascript-format
 msgid "Invalid data when searching for \"%s\""
-msgstr ""
+msgstr "Неверные данные для поиска \"%s\""
 
 #: ../src/prefs.js:232 ../src/prefs.js:277
 #, javascript-format
@@ -527,19 +527,16 @@ msgid "Weather provider"
 msgstr "Источник данных о погоде"
 
 #: ../data/weather-settings.ui:562
-#, fuzzy
 msgid "Chose geolocation provider"
-msgstr "Выбор источника данных о погоде по умолчанию"
+msgstr "Выбор источника геоданных"
 
 #: ../data/weather-settings.ui:587
-#, fuzzy
 msgid "Personal AppKey from developer.mapquest.com"
-msgstr "Персональный API ключ от forecast.io"
+msgstr "Персональный AppKey от developer.mapquest.com"
 
 #: ../data/weather-settings.ui:616
-#, fuzzy
 msgid "Geolocation provider"
-msgstr "Источник данных о погоде"
+msgstr "Источник геоданных"
 
 #: ../data/weather-settings.ui:636
 msgid "Temperature Unit"
