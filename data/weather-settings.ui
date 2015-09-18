@@ -571,6 +571,7 @@
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <items>
+                      <item>https://nominatim.openstreetmap.org/</item>
                       <item>https://geocode.farm/</item>
                       <item>https://open.mapquestapi.com/nominatim/</item>
                     </items>

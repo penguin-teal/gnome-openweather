@@ -4,8 +4,9 @@
     <value nick="forecast.io" value="1" />
   </enum>
   <enum id="org.gnome.shell.extensions.openweather.geolocation-provider">
-    <value nick="geocode" value="0" />
-    <value nick="mapquest" value="1" />
+    <value nick="openstreetmaps" value="0" />
+    <value nick="geocode" value="1" />
+    <value nick="mapquest" value="2" />
   </enum>
   <enum id="org.gnome.shell.extensions.openweather.unit">
     <value nick="celsius" value="0" />
@@ -52,7 +53,7 @@
       <_summary>Weather Provider</_summary>
     </key>
     <key name="geolocation-provider" enum="org.gnome.shell.extensions.openweather.geolocation-provider">
-      <default>'geocode'</default>
+      <default>'openstreetmaps'</default>
       <_summary>Geolocation Provider</_summary>
     </key>
     <key name="unit" enum="org.gnome.shell.extensions.openweather.unit">

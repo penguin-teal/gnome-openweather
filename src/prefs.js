@@ -73,6 +73,8 @@ const OPENWEATHER_URL_MAPQUEST_BASE = 'https://open.mapquestapi.com/nominatim/v1
 const OPENWEATHER_URL_MAPQUEST_FIND = OPENWEATHER_URL_MAPQUEST_BASE + 'search.php';
 const OPENWEATHER_URL_GEOCODE_BASE = 'https://www.geocode.farm/v3/';
 const OPENWEATHER_URL_GEOCODE_FIND = OPENWEATHER_URL_GEOCODE_BASE + 'json/forward';
+const OPENWEATHER_URL_OSM_BASE = 'https://nominatim.openstreetmap.org/';
+const OPENWEATHER_URL_OSM_FIND = OPENWEATHER_URL_OSM_BASE + 'search';
 
 // Keep enums in sync with GSettings schemas
 const WeatherProvider = {
@@ -82,8 +84,9 @@ const WeatherProvider = {
 };
 
 const GeolocationProvider = {
-    GEOCODE: 0,
-    MAPQUEST: 1
+    OPENSTREETMAP: 0,
+    GEOCODE: 1,
+    MAPQUEST: 2
 };
 
 let _httpSession;
@@ -187,7 +190,48 @@ const WeatherPrefsWidget = new GObject.Class({
             this.searchMenu.show_all();
             this.searchMenu.popup(null, null, Lang.bind(this, this.placeSearchMenu), 0, this.searchName);
 
-            if (this.geolocation_provider == GeolocationProvider.MAPQUEST) {
+            if (this.geolocation_provider == GeolocationProvider.OPENSTREETMAPS) {
+                let params = {
+                    format: 'json',
+                    addressdetails: '1',
+                    q: location
+                };
+
+                this.loadJsonAsync(OPENWEATHER_URL_OSM_FIND, params, Lang.bind(this, function() {
+                    this.clearSearchMenu();
+                    if (!arguments[0]) {
+                        let item = new Gtk.MenuItem({
+                            label: _("Invalid data when searching for \"%s\"").format(location)
+                        });
+                        this.searchMenu.append(item);
+                    } else {
+                        let newCity = arguments[0];
+
+                        if (Number(newCity.length) < 1) {
+                            let item = new Gtk.MenuItem({
+                                label: _("\"%s\" not found").format(location)
+                            });
+                            this.searchMenu.append(item);
+                        } else {
+                            var m = {};
+                            for (var i in newCity) {
+
+                                let cityText = newCity[i].display_name;
+                                let cityCoord = "[" + newCity[i].lat + "," + newCity[i].lon + "]";
+
+                                let item = new Gtk.MenuItem({
+                                    label: cityText + " " + cityCoord
+                                });
+                                item.connect("activate", Lang.bind(this, this.onActivateItem));
+                                this.searchMenu.append(item);
+                            }
+                        }
+                    }
+                    this.searchMenu.show_all();
+                    this.searchMenu.popup(null, null, Lang.bind(this, this.placeSearchMenu), 0, this.searchName);
+                    return 0;
+                }));
+            } else if (this.geolocation_provider == GeolocationProvider.MAPQUEST) {
                 if (this.geolocation_appid_mapquest === '') {
                     this.clearSearchMenu();
                     let item = new Gtk.MenuItem({
