@@ -84,7 +84,7 @@ const WeatherProvider = {
 };
 
 const GeolocationProvider = {
-    OPENSTREETMAP: 0,
+    OPENSTREETMAPS: 0,
     GEOCODE: 1,
     MAPQUEST: 2
 };
