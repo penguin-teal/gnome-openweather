@@ -37,7 +37,7 @@ of the world in GNOME Shell.
 
 %build
 NOCONFIGURE=1 ./autogen.sh
-%configure --prefix=%{_prefix} GIT_VERSION=${checkout}
+%configure --prefix=%{_prefix} GIT_VERSION=%{checkout}
 make %{?_smp_mflags}
 
 %install
