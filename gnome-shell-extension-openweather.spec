@@ -1,13 +1,13 @@
-%global git 0f6ae2f
+%global git e55253e
 %global uuid openweather-extension@jenslody.de
 %global github jenslody-gnome-shell-extension-openweather
 %global checkout git%{git}
-%global checkout_date 20150918
+%global checkout_date 20150924
 
 
 Name:           gnome-shell-extension-openweather
 Version:        1
-Release:        0.1.%{checkout_date}%{checkout}%{?dist}
+Release:        0.2.%{checkout_date}%{checkout}%{?dist}
 Summary:        Display weather information from many locations in the world
 
 Group:          User Interface/Desktops
@@ -21,10 +21,8 @@ BuildArch:      noarch
 BuildRequires:  autoconf, automake, glib2-devel, gnome-common >= 3.12.0, intltool
 # In Fedora  >= 24 %%{_datadir}/gnome-shell/extensions/ is owned by gnome-shell,
 # before it was owned by gnome-shell-extension-common
-%if 0%{?fedora} >= 24
+%if 0%{?fedora} >= 23
 Requires:       gnome-shell >= 3.12.0
-%else
-Requires:       gnome-shell-extension-common >= 3.12.0
 %endif
 
 %description
@@ -64,7 +62,7 @@ fi
 %{_datadir}/gnome-shell/extensions/%{uuid}
 
 %changelog
-* Thu Sep 17 2015 Jens Lody <fedora@jenslody.de> - 1-0.1.20150918git0f6ae2f
+* Thu Sep 24 2015 Jens Lody <fedora@jenslody.de> - 1-0.2.20150924gite55253e
 - Use checkout-date instead of build-date in package-version.
 
 * Thu Aug 20 2015 Jens Lody <fedora@jenslody.de> - 1-0.1.20150821gitcb1f6f6
