@@ -7,7 +7,7 @@
 
 Name:           gnome-shell-extension-openweather
 Version:        1
-Release:        0.2.%{checkout_date}%{checkout}%{?dist}
+Release:        0.4.%{checkout_date}%{checkout}%{?dist}
 Summary:        Display weather information from many locations in the world
 
 Group:          User Interface/Desktops
@@ -19,11 +19,7 @@ Source0:        https://github.com/jenslody/gnome-shell-extension-openweather/ta
 BuildArch:      noarch
 
 BuildRequires:  autoconf, automake, glib2-devel, gnome-common >= 3.12.0, intltool
-# In Fedora  >= 24 %%{_datadir}/gnome-shell/extensions/ is owned by gnome-shell,
-# before it was owned by gnome-shell-extension-common
-%if 0%{?fedora} >= 23
 Requires:       gnome-shell >= 3.12.0
-%endif
 
 %description
 gnome-shell-extension-openweather is an extension to display weather information
@@ -59,9 +55,21 @@ fi
 %license COPYING
 %doc AUTHORS README.md
 %{_datadir}/glib-2.0/schemas/org.gnome.shell.extensions.openweather.gschema.xml
+%if 0%{?fedora} < 23
+%dir %{_datadir}/gnome-shell/extensions
+%endif
 %{_datadir}/gnome-shell/extensions/%{uuid}
 
 %changelog
+* Thu Sep 24 2015 Jens Lody <fedora@jenslody.de> - 1-0.4.20150924gite55253e
+- Always depend on gnome-shell (it's needed anyway).
+- On Fedora < 23 own the extensions dir explicitely to avoid unowned
+  directories.
+
+* Thu Sep 24 2015 Jens Lody <fedora@jenslody.de> - 1-0.3.20150924gite55253e
+- Do not require gnome-shell-extensions-common.
+- Require gnome-shell instead on Fedora >= 23.
+
 * Thu Sep 24 2015 Jens Lody <fedora@jenslody.de> - 1-0.2.20150924gite55253e
 - Use checkout-date instead of build-date in package-version.
 
