@@ -548,6 +548,12 @@ const OpenweatherMenuButton = new Lang.Class({
         return this._settings.get_string(OPENWEATHER_CITY_KEY);
     },
 
+    set _cities(v) {
+        if (!this._settings)
+            this.loadConfig();
+        return this._settings.set_string(OPENWEATHER_CITY_KEY, v);
+    },
+
     get _actual_city() {
         if (!this._settings)
             this.loadConfig();
