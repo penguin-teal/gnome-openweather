@@ -598,7 +598,6 @@
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="tooltip_text" translatable="yes">Note: the forecast-timout is not used for forecast.io, because they do not provide seperate downloads for current weather and forecasts.</property>
-                    <property name="text" translatable="yes">10</property>
                     <property name="input_purpose">number</property>
                     <property name="adjustment">forecast-refresh-adjustment</property>
                     <property name="climb_rate">5</property>
