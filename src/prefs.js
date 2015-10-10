@@ -108,8 +108,7 @@ const WeatherPrefsWidget = new GObject.Class({
 
         // Create user-agent string from uuid and (if present) the version
         this.user_agent = Me.metadata.uuid;
-        if (Me.metadata.version !== undefined && Me.metadata.version.toString().trim() !== '')
-        {
+        if (Me.metadata.version !== undefined && Me.metadata.version.toString().trim() !== '') {
             this.user_agent += '/';
             this.user_agent += Me.metadata.version.toString();
         }

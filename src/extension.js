@@ -136,8 +136,8 @@ const OPENWEATHER_CONV_MPS_IN_KNOTS = 1.94384449;
 const OPENWEATHER_CONV_MPS_IN_FPS = 3.2808399;
 
 let _httpSession;
-let _currentWeatherCache,_forecastWeatherCache;
-let _timeCacheCurrentWeather,_timeCacheForecastWeather;
+let _currentWeatherCache, _forecastWeatherCache;
+let _timeCacheCurrentWeather, _timeCacheForecastWeather;
 
 const OpenweatherMenuButton = new Lang.Class({
     Name: 'OpenweatherMenuButton',
@@ -149,8 +149,7 @@ const OpenweatherMenuButton = new Lang.Class({
 
         // Create user-agent string from uuid and (if present) the version
         this.user_agent = Me.metadata.uuid;
-        if (Me.metadata.version !== undefined && Me.metadata.version.toString().trim() !== '')
-        {
+        if (Me.metadata.version !== undefined && Me.metadata.version.toString().trim() !== '') {
             this.user_agent += '/';
             this.user_agent += Me.metadata.version.toString();
         }
@@ -277,14 +276,12 @@ const OpenweatherMenuButton = new Lang.Class({
 
         this.currentWeatherCache = _currentWeatherCache;
         this.forecastWeatherCache = _forecastWeatherCache;
-        if (_timeCacheForecastWeather !== undefined)
-        {
+        if (_timeCacheForecastWeather !== undefined) {
             let diff = Math.floor(new Date(new Date() - _timeCacheForecastWeather).getTime() / 1000);
             if (diff < this._refresh_interval_forecast)
                 this.reloadWeatherForecast(this._refresh_interval_forecast - diff);
         }
-        if (_timeCacheCurrentWeather !== undefined)
-        {
+        if (_timeCacheCurrentWeather !== undefined) {
             let diff = Math.floor(new Date(new Date() - _timeCacheCurrentWeather).getTime() / 1000);
             if (diff < this._refresh_interval_current)
                 this.reloadWeatherCurrent(this._refresh_interval_current - diff);
@@ -487,12 +484,12 @@ const OpenweatherMenuButton = new Lang.Class({
         }
 
         if (!this._oldConnected && this._connected) {
-            let now = new Date()
+            let now = new Date();
             if (_timeCacheCurrentWeather &&
-                 (Math.floor(new Date(now - _timeCacheCurrentWeather).getTime() / 1000) > this._refresh_interval_current ))
+                (Math.floor(new Date(now - _timeCacheCurrentWeather).getTime() / 1000) > this._refresh_interval_current))
                 this.currentWeatherCache = undefined;
             if (_timeCacheForecastWeather &&
-                 (Math.floor(new Date(now - _timeCacheForecastWeather).getTime() / 1000) > this._refresh_interval_forecast ))
+                (Math.floor(new Date(now - _timeCacheForecastWeather).getTime() / 1000) > this._refresh_interval_forecast))
                 this.forecastWeatherCache = undefined;
             this.parseWeatherCurrent();
         }
