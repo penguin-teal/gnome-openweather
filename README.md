@@ -88,9 +88,8 @@ Launch *gnome-shell-extension-prefs* (reachable also through the *OpenWeather Se
 
 You can also use *dconf-editor* or *gsettings* to configure the extension through the command line.
 
-The [OpenWeatherMap](https://openweathermap.org/) maintainers recommend to use an [API key](http://openweathermap.org/appid). This key can be added in the preferences dialog.
-To use [Forecast.io](https://forecast.io) you need an to [register](https://developer.forecast.io/register) and get an API key. With this key you can make 1000 requests per day for free. This should be enough for this extension in any normal use case.
-
+On [OpenWeatherMap](https://openweathermap.org/) you have to register to get an [API key](http://openweathermap.org/appid). This key has to be added in the preferences dialog.
+To use [Forecast.io](https://forecast.io) you also need to [register](https://developer.forecast.io/register) and get an API key. With this key you can make 1000 requests per day for free. This should be enough for this extension in any normal use case. Do not add billing information, otherwise you might have to pay for the weather-data if something went wrong !
 ----
 
 # Licence
