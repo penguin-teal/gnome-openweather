@@ -379,7 +379,29 @@ const OpenweatherMenuButton = new Lang.Class({
         this.fc_locale = 'en';
 
         if (this._translate_condition) {
-            let fc_locales = ['bs', 'de', 'en', 'es', 'fr', 'it', 'nl', 'pl', 'pt', 'ru', 'tet', 'x-pig-latin'];
+            let fc_locales = [
+                'ar',
+                'bs',
+                'de',
+                'el',
+                'en',
+                'es',
+                'fr',
+                'hr',
+                'it',
+                'nl',
+                'pl',
+                'pt',
+                'ru',
+                'sk',
+                'sv',
+                'tet',
+                'tr',
+                'uk',
+                'x-pig-latin',
+                'zh',
+                'zh-tw'
+            ];
             let locale = GLib.get_language_names()[0];
 
             if (locale.indexOf('_') != -1)
