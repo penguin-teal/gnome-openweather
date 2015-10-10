@@ -36,6 +36,7 @@ const _ = Gettext.gettext;
 const Soup = imports.gi.Soup;
 
 const Lang = imports.lang;
+const Mainloop = imports.mainloop;
 const ExtensionUtils = imports.misc.extensionUtils;
 const Me = ExtensionUtils.getCurrentExtension();
 const Config = imports.misc.config;
@@ -356,6 +357,36 @@ const WeatherPrefsWidget = new GObject.Class({
                 }));
             }
             return 0;
+        }));
+
+        this.current_spin = this.Window.get_object("spin-current-refresh");
+        this.current_spin.set_value(this.refresh_interval_current / 60);
+        // prevent from continously updating the value
+        this.currentSpinTimeout = undefined;
+        this.current_spin.connect("value-changed", Lang.bind(this, function(button) {
+
+            if (this.currentSpinTimeout !== undefined)
+                Mainloop.source_remove(this.currentSpinTimeout);
+            this.currentSpinTimeout = Mainloop.timeout_add(250, Lang.bind(this, function() {
+                this.refresh_interval_current = 60 * button.get_value();
+                return false;
+            }));
+
+        }));
+
+        this.forecast_spin = this.Window.get_object("spin-forecast-refresh");
+        this.forecast_spin.set_value(this.refresh_interval_forecast / 60);
+        // prevent from continously updating the value
+        this.forecastSpinTimeout = undefined;
+        this.forecast_spin.connect("value-changed", Lang.bind(this, function(button) {
+
+            if (this.forecastSpinTimeout !== undefined)
+                Mainloop.source_remove(this.forecastSpinTimeout);
+            this.forecastSpinTimeout = Mainloop.timeout_add(250, Lang.bind(this, function() {
+                this.refresh_interval_forecast = 60 * button.get_value();
+                return false;
+            }));
+
         }));
 
         let column = new Gtk.TreeViewColumn();

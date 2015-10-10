@@ -2,6 +2,13 @@
 <!-- Generated with glade 3.18.3 -->
 <interface domain="gnome-shell-extension-openweather">
   <requires lib="gtk+" version="3.12"/>
+  <object class="GtkAdjustment" id="current-refresh-adjustment">
+    <property name="lower">10</property>
+    <property name="upper">1440</property>
+    <property name="value">10</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">10</property>
+  </object>
   <object class="GtkWindow" id="edit-widget">
     <property name="can_focus">False</property>
     <property name="modal">True</property>
@@ -155,6 +162,13 @@
         </child>
       </object>
     </child>
+  </object>
+  <object class="GtkAdjustment" id="forecast-refresh-adjustment">
+    <property name="lower">10</property>
+    <property name="upper">1440</property>
+    <property name="value">10</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">10</property>
   </object>
   <object class="GtkMenu" id="search-menu">
     <property name="visible">True</property>
@@ -462,6 +476,8 @@
                   <object class="GtkLabel" id="label-weather-provider">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
+                    <property name="halign">start</property>
+                    <property name="hexpand">True</property>
                     <property name="label" translatable="yes">Chose default weather provider</property>
                   </object>
                   <packing>
@@ -473,6 +489,8 @@
                   <object class="GtkLabel" id="label-appid">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
+                    <property name="halign">start</property>
+                    <property name="hexpand">True</property>
                     <property name="label" translatable="yes">Personal Api key from openweathermap.org</property>
                   </object>
                   <packing>
@@ -510,7 +528,6 @@
                   <object class="GtkEntry" id="appid_fc">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <property name="has_tooltip">True</property>
                     <property name="max_length">32</property>
                     <property name="width_chars">32</property>
                   </object>
@@ -523,11 +540,85 @@
                   <object class="GtkLabel" id="label-appid-fc">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
+                    <property name="halign">start</property>
+                    <property name="hexpand">True</property>
                     <property name="label" translatable="yes">Personal Api key from forecast.io</property>
                   </object>
                   <packing>
                     <property name="left_attach">0</property>
                     <property name="top_attach">2</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="label-current-refresh">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="halign">start</property>
+                    <property name="hexpand">True</property>
+                    <property name="label" translatable="yes">Refresh timeout for current weather [min]</property>
+                    <property name="ellipsize">end</property>
+                  </object>
+                  <packing>
+                    <property name="left_attach">0</property>
+                    <property name="top_attach">4</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="label-forecast-refresh">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="halign">start</property>
+                    <property name="hexpand">True</property>
+                    <property name="label" translatable="yes">Refresh timeout for weather forecast [min]</property>
+                    <property name="ellipsize">end</property>
+                  </object>
+                  <packing>
+                    <property name="left_attach">0</property>
+                    <property name="top_attach">5</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkSpinButton" id="spin-current-refresh">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="input_purpose">number</property>
+                    <property name="adjustment">current-refresh-adjustment</property>
+                    <property name="climb_rate">5</property>
+                    <property name="numeric">True</property>
+                    <property name="update_policy">if-valid</property>
+                    <property name="value">10</property>
+                  </object>
+                  <packing>
+                    <property name="left_attach">1</property>
+                    <property name="top_attach">4</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkSpinButton" id="spin-forecast-refresh">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="tooltip_text" translatable="yes">Note: the forecast-timout is not used for forecast.io, because they do not provide seperate downloads for current weather and forecasts.</property>
+                    <property name="text" translatable="yes">10</property>
+                    <property name="input_purpose">number</property>
+                    <property name="adjustment">forecast-refresh-adjustment</property>
+                    <property name="climb_rate">5</property>
+                    <property name="numeric">True</property>
+                    <property name="value">10</property>
+                  </object>
+                  <packing>
+                    <property name="left_attach">1</property>
+                    <property name="top_attach">5</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkSeparator" id="separator3">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                  </object>
+                  <packing>
+                    <property name="left_attach">0</property>
+                    <property name="top_attach">3</property>
+                    <property name="width">2</property>
                   </packing>
                 </child>
               </object>
