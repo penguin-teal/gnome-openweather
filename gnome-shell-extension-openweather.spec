@@ -1,13 +1,13 @@
-%global git e55253e
+%global git fe00513
 %global uuid openweather-extension@jenslody.de
 %global github jenslody-gnome-shell-extension-openweather
 %global checkout git%{git}
-%global checkout_date 20150924
+%global checkout_date 20151010
 
 
 Name:           gnome-shell-extension-openweather
 Version:        1
-Release:        0.4.%{checkout_date}%{checkout}%{?dist}
+Release:        0.5.%{checkout_date}%{checkout}%{?dist}
 Summary:        Display weather information from many locations in the world
 
 Group:          User Interface/Desktops
@@ -61,6 +61,12 @@ fi
 %{_datadir}/gnome-shell/extensions/%{uuid}
 
 %changelog
+* Sat Oct 10 2015 Jens Lody <fedora@jenslody.de> - 1-0.5.20151010gitfe00513
+- New upstream:
+  make refresh-intervall configurable,
+  fix minor issue, when last location is removed,
+  add new languages for forecast.io.
+
 * Thu Sep 24 2015 Jens Lody <fedora@jenslody.de> - 1-0.4.20150924gite55253e
 - Always depend on gnome-shell (it's needed anyway).
 - On Fedora < 23 own the extensions dir explicitely to avoid unowned
