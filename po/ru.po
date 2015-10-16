@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: 0.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-10-10 10:19+0200\n"
-"PO-Revision-Date: 2015-09-18 14:54+0300\n"
+"PO-Revision-Date: 2015-10-14 09:45+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -525,17 +525,20 @@ msgstr "Персональный API ключ от forecast.io"
 
 #: ../data/weather-settings.ui:558
 msgid "Refresh timeout for current weather [min]"
-msgstr ""
+msgstr "Периодичность обновления текущей погоды [мин.]"
 
 #: ../data/weather-settings.ui:572
 msgid "Refresh timeout for weather forecast [min]"
-msgstr ""
+msgstr "Периодичность обновления прогноза погоды [мин.]"
 
 #: ../data/weather-settings.ui:600
 msgid ""
 "Note: the forecast-timout is not used for forecast.io, because they do not "
 "provide seperate downloads for current weather and forecasts."
 msgstr ""
+"Примечание: периодичность обновления прогноза погоды не используется для "
+"forecast.io, потому что он не поддерживает раздельную загрузку для текущей "
+"погоды и прогноза."
 
 #: ../data/weather-settings.ui:632
 msgid "Weather provider"
