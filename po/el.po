@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 3.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-10 10:19+0200\n"
+"POT-Creation-Date: 2015-10-16 23:06+0200\n"
 "PO-Revision-Date: 2014-05-06 20:14+0200\n"
 "Last-Translator: poseidaon <poseidaon@users.noreply.github.com>\n"
 "Language-Team: \n"
@@ -21,173 +21,187 @@ msgstr ""
 msgid "..."
 msgstr "..."
 
-#: ../src/extension.js:482
+#: ../src/extension.js:367
+msgid ""
+"Openweathermap.org does not work without an api-key.\n"
+"Please register at http://openweathermap.org/appid and paste your personal "
+"key into the preferences dialog."
+msgstr ""
+
+#: ../src/extension.js:416
+msgid ""
+"Forecast.io does not work without an api-key.\n"
+"Please register at https://developer.forecast.io/register and paste your "
+"personal key into the preferences dialog."
+msgstr ""
+
+#: ../src/extension.js:489
 #, fuzzy, javascript-format
 msgid "Can not connect to %s"
 msgstr "Αδύνατο το άνοιγμα %s"
 
-#: ../src/extension.js:746 ../data/weather-settings.ui:460
+#: ../src/extension.js:753 ../data/weather-settings.ui:460
 msgid "Locations"
 msgstr "Τοποθεσίες"
 
-#: ../src/extension.js:758
+#: ../src/extension.js:765
 msgid "Reload Weather Information"
 msgstr "Επαναφόρτωση Πληροφοριών Καιρού"
 
-#: ../src/extension.js:773
+#: ../src/extension.js:780
 msgid "Weather data provided by:"
 msgstr "Πάροχος πληροφοριών καιρού:"
 
-#: ../src/extension.js:784
+#: ../src/extension.js:791
 #, javascript-format
 msgid "Can not open %s"
 msgstr "Αδύνατο το άνοιγμα %s"
 
-#: ../src/extension.js:791
+#: ../src/extension.js:798
 msgid "Weather Settings"
 msgstr "Ρυθμίσεις Καιρού"
 
-#: ../src/extension.js:842 ../src/prefs.js:1008
+#: ../src/extension.js:849 ../src/prefs.js:1008
 msgid "Invalid city"
 msgstr "Μη έγκυρη πόλη"
 
-#: ../src/extension.js:853
+#: ../src/extension.js:860
 msgid "Invalid location! Please try to recreate it."
 msgstr ""
 
-#: ../src/extension.js:952
+#: ../src/extension.js:959
 msgid "Calm"
 msgstr "Ήρεμος"
 
-#: ../src/extension.js:955
+#: ../src/extension.js:962
 msgid "Light air"
 msgstr "Ελαφριά αύρα"
 
-#: ../src/extension.js:958
+#: ../src/extension.js:965
 msgid "Light breeze"
 msgstr "Ελαφρύ αεράκι"
 
-#: ../src/extension.js:961
+#: ../src/extension.js:968
 msgid "Gentle breeze"
 msgstr "Ήρεμο αεράκι"
 
-#: ../src/extension.js:964
+#: ../src/extension.js:971
 msgid "Moderate breeze"
 msgstr "Μέτριο αεράκι"
 
-#: ../src/extension.js:967
+#: ../src/extension.js:974
 msgid "Fresh breeze"
 msgstr "Δροσερό αεράκι"
 
-#: ../src/extension.js:970
+#: ../src/extension.js:977
 msgid "Strong breeze"
 msgstr "Δυνατό αεράκι"
 
-#: ../src/extension.js:973
+#: ../src/extension.js:980
 msgid "Moderate gale"
 msgstr "Μέτρια ανεμοθύελλα"
 
-#: ../src/extension.js:976
+#: ../src/extension.js:983
 msgid "Fresh gale"
 msgstr "Δροσερή ανεμοθύελλα"
 
-#: ../src/extension.js:979
+#: ../src/extension.js:986
 msgid "Strong gale"
 msgstr "Δυνατή ανεμοθύελα"
 
-#: ../src/extension.js:982
+#: ../src/extension.js:989
 msgid "Storm"
 msgstr "Θύελλα"
 
-#: ../src/extension.js:985
+#: ../src/extension.js:992
 msgid "Violent storm"
 msgstr "Βίαιη θύελλα"
 
-#: ../src/extension.js:988
+#: ../src/extension.js:995
 msgid "Hurricane"
 msgstr "Τυφώνας"
 
-#: ../src/extension.js:992
+#: ../src/extension.js:999
 msgid "Sunday"
 msgstr "Κυριακή"
 
-#: ../src/extension.js:992
+#: ../src/extension.js:999
 msgid "Monday"
 msgstr "Δευτέρα"
 
-#: ../src/extension.js:992
+#: ../src/extension.js:999
 msgid "Tuesday"
 msgstr "Τρίτη"
 
-#: ../src/extension.js:992
+#: ../src/extension.js:999
 msgid "Wednesday"
 msgstr "Τετάρτη"
 
-#: ../src/extension.js:992
+#: ../src/extension.js:999
 msgid "Thursday"
 msgstr "Πέμπτη"
 
-#: ../src/extension.js:992
+#: ../src/extension.js:999
 msgid "Friday"
 msgstr "Παρασκευή"
 
-#: ../src/extension.js:992
+#: ../src/extension.js:999
 msgid "Saturday"
 msgstr "Σάββατο"
 
-#: ../src/extension.js:998
+#: ../src/extension.js:1005
 msgid "N"
 msgstr "Β"
 
-#: ../src/extension.js:998
+#: ../src/extension.js:1005
 msgid "NE"
 msgstr "ΒΑ"
 
-#: ../src/extension.js:998
+#: ../src/extension.js:1005
 msgid "E"
 msgstr "Α"
 
-#: ../src/extension.js:998
+#: ../src/extension.js:1005
 msgid "SE"
 msgstr "ΝΑ"
 
-#: ../src/extension.js:998
+#: ../src/extension.js:1005
 msgid "S"
 msgstr "Ν"
 
-#: ../src/extension.js:998
+#: ../src/extension.js:1005
 msgid "SW"
 msgstr "ΝΔ"
 
-#: ../src/extension.js:998
+#: ../src/extension.js:1005
 msgid "W"
 msgstr "Δ"
 
-#: ../src/extension.js:998
+#: ../src/extension.js:1005
 msgid "NW"
 msgstr "ΒΔ"
 
-#: ../src/extension.js:1291
+#: ../src/extension.js:1298
 msgid "Loading ..."
 msgstr "Φόρτωση..."
 
-#: ../src/extension.js:1295
+#: ../src/extension.js:1302
 msgid "Please wait"
 msgstr "Παρακαλώ περιμένετε"
 
-#: ../src/extension.js:1356
+#: ../src/extension.js:1363
 msgid "Cloudiness:"
 msgstr "Συννεφιά:"
 
-#: ../src/extension.js:1360
+#: ../src/extension.js:1367
 msgid "Humidity:"
 msgstr "Υγρασία:"
 
-#: ../src/extension.js:1364
+#: ../src/extension.js:1371
 msgid "Pressure:"
 msgstr "Πίεση:"
 
-#: ../src/extension.js:1368
+#: ../src/extension.js:1375
 msgid "Wind:"
 msgstr "Άνεμος:"
 

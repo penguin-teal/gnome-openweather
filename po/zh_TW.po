@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-shell-extension-openweather\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-10 10:19+0200\n"
+"POT-Creation-Date: 2015-10-16 23:06+0200\n"
 "PO-Revision-Date: 2015-08-30 23:20+0800\n"
 "Last-Translator: shlinux <lishaohui.qd@163.com>\n"
 "Language-Team: Chinese (Traditional) <>\n"
@@ -24,173 +24,187 @@ msgstr ""
 msgid "..."
 msgstr "..."
 
-#: ../src/extension.js:482
+#: ../src/extension.js:367
+msgid ""
+"Openweathermap.org does not work without an api-key.\n"
+"Please register at http://openweathermap.org/appid and paste your personal "
+"key into the preferences dialog."
+msgstr ""
+
+#: ../src/extension.js:416
+msgid ""
+"Forecast.io does not work without an api-key.\n"
+"Please register at https://developer.forecast.io/register and paste your "
+"personal key into the preferences dialog."
+msgstr ""
+
+#: ../src/extension.js:489
 #, fuzzy, javascript-format
 msgid "Can not connect to %s"
 msgstr "無法打開 %s"
 
-#: ../src/extension.js:746 ../data/weather-settings.ui:460
+#: ../src/extension.js:753 ../data/weather-settings.ui:460
 msgid "Locations"
 msgstr "地點"
 
-#: ../src/extension.js:758
+#: ../src/extension.js:765
 msgid "Reload Weather Information"
 msgstr "重新載入天氣訊息"
 
-#: ../src/extension.js:773
+#: ../src/extension.js:780
 msgid "Weather data provided by:"
 msgstr "天氣數據來源於："
 
-#: ../src/extension.js:784
+#: ../src/extension.js:791
 #, javascript-format
 msgid "Can not open %s"
 msgstr "無法打開 %s"
 
-#: ../src/extension.js:791
+#: ../src/extension.js:798
 msgid "Weather Settings"
 msgstr "天氣設定"
 
-#: ../src/extension.js:842 ../src/prefs.js:1008
+#: ../src/extension.js:849 ../src/prefs.js:1008
 msgid "Invalid city"
 msgstr "無效的城市代碼"
 
-#: ../src/extension.js:853
+#: ../src/extension.js:860
 msgid "Invalid location! Please try to recreate it."
 msgstr "無效地點！請嘗試重建一個。"
 
-#: ../src/extension.js:952
+#: ../src/extension.js:959
 msgid "Calm"
 msgstr "無風"
 
-#: ../src/extension.js:955
+#: ../src/extension.js:962
 msgid "Light air"
 msgstr "軟風"
 
-#: ../src/extension.js:958
+#: ../src/extension.js:965
 msgid "Light breeze"
 msgstr "輕風"
 
-#: ../src/extension.js:961
+#: ../src/extension.js:968
 msgid "Gentle breeze"
 msgstr "微風"
 
-#: ../src/extension.js:964
+#: ../src/extension.js:971
 msgid "Moderate breeze"
 msgstr "和風"
 
-#: ../src/extension.js:967
+#: ../src/extension.js:974
 msgid "Fresh breeze"
 msgstr "清風"
 
-#: ../src/extension.js:970
+#: ../src/extension.js:977
 msgid "Strong breeze"
 msgstr "強風"
 
-#: ../src/extension.js:973
+#: ../src/extension.js:980
 msgid "Moderate gale"
 msgstr "疾風"
 
-#: ../src/extension.js:976
+#: ../src/extension.js:983
 msgid "Fresh gale"
 msgstr "大風"
 
-#: ../src/extension.js:979
+#: ../src/extension.js:986
 msgid "Strong gale"
 msgstr "烈風"
 
-#: ../src/extension.js:982
+#: ../src/extension.js:989
 msgid "Storm"
 msgstr "狂風"
 
-#: ../src/extension.js:985
+#: ../src/extension.js:992
 msgid "Violent storm"
 msgstr "暴風"
 
-#: ../src/extension.js:988
+#: ../src/extension.js:995
 msgid "Hurricane"
 msgstr "颶風"
 
-#: ../src/extension.js:992
+#: ../src/extension.js:999
 msgid "Sunday"
 msgstr "星期日"
 
-#: ../src/extension.js:992
+#: ../src/extension.js:999
 msgid "Monday"
 msgstr "星期一"
 
-#: ../src/extension.js:992
+#: ../src/extension.js:999
 msgid "Tuesday"
 msgstr "星期二"
 
-#: ../src/extension.js:992
+#: ../src/extension.js:999
 msgid "Wednesday"
 msgstr "星期三"
 
-#: ../src/extension.js:992
+#: ../src/extension.js:999
 msgid "Thursday"
 msgstr "星期四"
 
-#: ../src/extension.js:992
+#: ../src/extension.js:999
 msgid "Friday"
 msgstr "星期五"
 
-#: ../src/extension.js:992
+#: ../src/extension.js:999
 msgid "Saturday"
 msgstr "星期六"
 
-#: ../src/extension.js:998
+#: ../src/extension.js:1005
 msgid "N"
 msgstr "北"
 
-#: ../src/extension.js:998
+#: ../src/extension.js:1005
 msgid "NE"
 msgstr "東北"
 
-#: ../src/extension.js:998
+#: ../src/extension.js:1005
 msgid "E"
 msgstr "東"
 
-#: ../src/extension.js:998
+#: ../src/extension.js:1005
 msgid "SE"
 msgstr "東南"
 
-#: ../src/extension.js:998
+#: ../src/extension.js:1005
 msgid "S"
 msgstr "南"
 
-#: ../src/extension.js:998
+#: ../src/extension.js:1005
 msgid "SW"
 msgstr "西南"
 
-#: ../src/extension.js:998
+#: ../src/extension.js:1005
 msgid "W"
 msgstr "西"
 
-#: ../src/extension.js:998
+#: ../src/extension.js:1005
 msgid "NW"
 msgstr "西北"
 
-#: ../src/extension.js:1291
+#: ../src/extension.js:1298
 msgid "Loading ..."
 msgstr "載入中 ..."
 
-#: ../src/extension.js:1295
+#: ../src/extension.js:1302
 msgid "Please wait"
 msgstr "請稍候"
 
-#: ../src/extension.js:1356
+#: ../src/extension.js:1363
 msgid "Cloudiness:"
 msgstr "雲量："
 
-#: ../src/extension.js:1360
+#: ../src/extension.js:1367
 msgid "Humidity:"
 msgstr "濕度："
 
-#: ../src/extension.js:1364
+#: ../src/extension.js:1371
 msgid "Pressure:"
 msgstr "氣壓："
 
-#: ../src/extension.js:1368
+#: ../src/extension.js:1375
 msgid "Wind:"
 msgstr "風："
 

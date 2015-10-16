@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: simon04-gnome-shell-extension-weather\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-10 10:19+0200\n"
+"POT-Creation-Date: 2015-10-16 23:06+0200\n"
 "PO-Revision-Date: 2012-05-13 22:40+0100\n"
 "Last-Translator: Christian METZLER <neroth@xeked.com>\n"
 "Language-Team: \n"
@@ -26,173 +26,187 @@ msgstr ""
 msgid "..."
 msgstr "..."
 
-#: ../src/extension.js:482
+#: ../src/extension.js:367
+msgid ""
+"Openweathermap.org does not work without an api-key.\n"
+"Please register at http://openweathermap.org/appid and paste your personal "
+"key into the preferences dialog."
+msgstr ""
+
+#: ../src/extension.js:416
+msgid ""
+"Forecast.io does not work without an api-key.\n"
+"Please register at https://developer.forecast.io/register and paste your "
+"personal key into the preferences dialog."
+msgstr ""
+
+#: ../src/extension.js:489
 #, fuzzy, javascript-format
 msgid "Can not connect to %s"
 msgstr "Nu se poate deschide %s"
 
-#: ../src/extension.js:746 ../data/weather-settings.ui:460
+#: ../src/extension.js:753 ../data/weather-settings.ui:460
 msgid "Locations"
 msgstr "Locații"
 
-#: ../src/extension.js:758
+#: ../src/extension.js:765
 msgid "Reload Weather Information"
 msgstr "Actualizează prognoza"
 
-#: ../src/extension.js:773
+#: ../src/extension.js:780
 msgid "Weather data provided by:"
 msgstr "Prognoză oferită de:"
 
-#: ../src/extension.js:784
+#: ../src/extension.js:791
 #, javascript-format
 msgid "Can not open %s"
 msgstr "Nu se poate deschide %s"
 
-#: ../src/extension.js:791
+#: ../src/extension.js:798
 msgid "Weather Settings"
 msgstr "Setări"
 
-#: ../src/extension.js:842 ../src/prefs.js:1008
+#: ../src/extension.js:849 ../src/prefs.js:1008
 msgid "Invalid city"
 msgstr "Oraș invalid"
 
-#: ../src/extension.js:853
+#: ../src/extension.js:860
 msgid "Invalid location! Please try to recreate it."
 msgstr ""
 
-#: ../src/extension.js:952
+#: ../src/extension.js:959
 msgid "Calm"
 msgstr "Calm"
 
-#: ../src/extension.js:955
+#: ../src/extension.js:962
 msgid "Light air"
 msgstr ""
 
-#: ../src/extension.js:958
+#: ../src/extension.js:965
 msgid "Light breeze"
 msgstr "Briză ușoară"
 
-#: ../src/extension.js:961
+#: ../src/extension.js:968
 msgid "Gentle breeze"
 msgstr "Briză ușoară"
 
-#: ../src/extension.js:964
+#: ../src/extension.js:971
 msgid "Moderate breeze"
 msgstr "Briză moderată"
 
-#: ../src/extension.js:967
+#: ../src/extension.js:974
 msgid "Fresh breeze"
 msgstr "Briză moderată"
 
-#: ../src/extension.js:970
+#: ../src/extension.js:977
 msgid "Strong breeze"
 msgstr "Briză puternică"
 
-#: ../src/extension.js:973
+#: ../src/extension.js:980
 msgid "Moderate gale"
 msgstr "Furtună moderată"
 
-#: ../src/extension.js:976
+#: ../src/extension.js:983
 msgid "Fresh gale"
 msgstr "Furtună moderată"
 
-#: ../src/extension.js:979
+#: ../src/extension.js:986
 msgid "Strong gale"
 msgstr "Furtună puternică"
 
-#: ../src/extension.js:982
+#: ../src/extension.js:989
 msgid "Storm"
 msgstr "Furtună"
 
-#: ../src/extension.js:985
+#: ../src/extension.js:992
 msgid "Violent storm"
 msgstr "Furtună puternică"
 
-#: ../src/extension.js:988
+#: ../src/extension.js:995
 msgid "Hurricane"
 msgstr "Uragan"
 
-#: ../src/extension.js:992
+#: ../src/extension.js:999
 msgid "Sunday"
 msgstr "Duminică"
 
-#: ../src/extension.js:992
+#: ../src/extension.js:999
 msgid "Monday"
 msgstr "Luni"
 
-#: ../src/extension.js:992
+#: ../src/extension.js:999
 msgid "Tuesday"
 msgstr "Marți"
 
-#: ../src/extension.js:992
+#: ../src/extension.js:999
 msgid "Wednesday"
 msgstr "Miercuri"
 
-#: ../src/extension.js:992
+#: ../src/extension.js:999
 msgid "Thursday"
 msgstr "Joi"
 
-#: ../src/extension.js:992
+#: ../src/extension.js:999
 msgid "Friday"
 msgstr "Vineri"
 
-#: ../src/extension.js:992
+#: ../src/extension.js:999
 msgid "Saturday"
 msgstr "Sâmbătă"
 
-#: ../src/extension.js:998
+#: ../src/extension.js:1005
 msgid "N"
 msgstr ""
 
-#: ../src/extension.js:998
+#: ../src/extension.js:1005
 msgid "NE"
 msgstr ""
 
-#: ../src/extension.js:998
+#: ../src/extension.js:1005
 msgid "E"
 msgstr ""
 
-#: ../src/extension.js:998
+#: ../src/extension.js:1005
 msgid "SE"
 msgstr ""
 
-#: ../src/extension.js:998
+#: ../src/extension.js:1005
 msgid "S"
 msgstr ""
 
-#: ../src/extension.js:998
+#: ../src/extension.js:1005
 msgid "SW"
 msgstr ""
 
-#: ../src/extension.js:998
+#: ../src/extension.js:1005
 msgid "W"
 msgstr ""
 
-#: ../src/extension.js:998
+#: ../src/extension.js:1005
 msgid "NW"
 msgstr ""
 
-#: ../src/extension.js:1291
+#: ../src/extension.js:1298
 msgid "Loading ..."
 msgstr "Se încarcă ..."
 
-#: ../src/extension.js:1295
+#: ../src/extension.js:1302
 msgid "Please wait"
 msgstr "Așteptați"
 
-#: ../src/extension.js:1356
+#: ../src/extension.js:1363
 msgid "Cloudiness:"
 msgstr "Nebulozitate:"
 
-#: ../src/extension.js:1360
+#: ../src/extension.js:1367
 msgid "Humidity:"
 msgstr "Umiditate:"
 
-#: ../src/extension.js:1364
+#: ../src/extension.js:1371
 msgid "Pressure:"
 msgstr "Presiune:"
 
-#: ../src/extension.js:1368
+#: ../src/extension.js:1375
 msgid "Wind:"
 msgstr "Vânt:"
 

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-10-10 10:19+0200\n"
+"POT-Creation-Date: 2015-10-16 23:06+0200\n"
 "PO-Revision-Date: 2012-06-03 23:07+0100\n"
 "Last-Translator: Christian METZLER <neroth@xeked.com>\n"
 "Language-Team: cs_CZ <czech@li.org>\n"
@@ -22,173 +22,187 @@ msgstr ""
 msgid "..."
 msgstr "…"
 
-#: ../src/extension.js:482
+#: ../src/extension.js:367
+msgid ""
+"Openweathermap.org does not work without an api-key.\n"
+"Please register at http://openweathermap.org/appid and paste your personal "
+"key into the preferences dialog."
+msgstr ""
+
+#: ../src/extension.js:416
+msgid ""
+"Forecast.io does not work without an api-key.\n"
+"Please register at https://developer.forecast.io/register and paste your "
+"personal key into the preferences dialog."
+msgstr ""
+
+#: ../src/extension.js:489
 #, fuzzy, javascript-format
 msgid "Can not connect to %s"
 msgstr "Nemohu otevřít %s"
 
-#: ../src/extension.js:746 ../data/weather-settings.ui:460
+#: ../src/extension.js:753 ../data/weather-settings.ui:460
 msgid "Locations"
 msgstr "Místa"
 
-#: ../src/extension.js:758
+#: ../src/extension.js:765
 msgid "Reload Weather Information"
 msgstr "Obnovit informace o počasí"
 
-#: ../src/extension.js:773
+#: ../src/extension.js:780
 msgid "Weather data provided by:"
 msgstr "Data o počasí poskytuje:"
 
-#: ../src/extension.js:784
+#: ../src/extension.js:791
 #, javascript-format
 msgid "Can not open %s"
 msgstr "Nemohu otevřít %s"
 
-#: ../src/extension.js:791
+#: ../src/extension.js:798
 msgid "Weather Settings"
 msgstr "Nastavení"
 
-#: ../src/extension.js:842 ../src/prefs.js:1008
+#: ../src/extension.js:849 ../src/prefs.js:1008
 msgid "Invalid city"
 msgstr "Neplatné město"
 
-#: ../src/extension.js:853
+#: ../src/extension.js:860
 msgid "Invalid location! Please try to recreate it."
 msgstr ""
 
-#: ../src/extension.js:952
+#: ../src/extension.js:959
 msgid "Calm"
 msgstr "Klid"
 
-#: ../src/extension.js:955
+#: ../src/extension.js:962
 msgid "Light air"
 msgstr ""
 
-#: ../src/extension.js:958
+#: ../src/extension.js:965
 msgid "Light breeze"
 msgstr "Vánek"
 
-#: ../src/extension.js:961
+#: ../src/extension.js:968
 msgid "Gentle breeze"
 msgstr "Mírný vítr"
 
-#: ../src/extension.js:964
+#: ../src/extension.js:971
 msgid "Moderate breeze"
 msgstr "Střední vítr"
 
-#: ../src/extension.js:967
+#: ../src/extension.js:974
 msgid "Fresh breeze"
 msgstr "Čerstvý vítr"
 
-#: ../src/extension.js:970
+#: ../src/extension.js:977
 msgid "Strong breeze"
 msgstr "Silný vítr"
 
-#: ../src/extension.js:973
+#: ../src/extension.js:980
 msgid "Moderate gale"
 msgstr "Vichřice"
 
-#: ../src/extension.js:976
+#: ../src/extension.js:983
 msgid "Fresh gale"
 msgstr "Vichřice"
 
-#: ../src/extension.js:979
+#: ../src/extension.js:986
 msgid "Strong gale"
 msgstr "Silná vichřice"
 
-#: ../src/extension.js:982
+#: ../src/extension.js:989
 msgid "Storm"
 msgstr "Bouřka"
 
-#: ../src/extension.js:985
+#: ../src/extension.js:992
 msgid "Violent storm"
 msgstr "Silná bouřka"
 
-#: ../src/extension.js:988
+#: ../src/extension.js:995
 msgid "Hurricane"
 msgstr "Hurikán"
 
-#: ../src/extension.js:992
+#: ../src/extension.js:999
 msgid "Sunday"
 msgstr "Neděle"
 
-#: ../src/extension.js:992
+#: ../src/extension.js:999
 msgid "Monday"
 msgstr "Pondělí"
 
-#: ../src/extension.js:992
+#: ../src/extension.js:999
 msgid "Tuesday"
 msgstr "Úterý"
 
-#: ../src/extension.js:992
+#: ../src/extension.js:999
 msgid "Wednesday"
 msgstr "Středa"
 
-#: ../src/extension.js:992
+#: ../src/extension.js:999
 msgid "Thursday"
 msgstr "Čtvrtek"
 
-#: ../src/extension.js:992
+#: ../src/extension.js:999
 msgid "Friday"
 msgstr "Pátek"
 
-#: ../src/extension.js:992
+#: ../src/extension.js:999
 msgid "Saturday"
 msgstr "Sobota"
 
-#: ../src/extension.js:998
+#: ../src/extension.js:1005
 msgid "N"
 msgstr "S"
 
-#: ../src/extension.js:998
+#: ../src/extension.js:1005
 msgid "NE"
 msgstr "SV"
 
-#: ../src/extension.js:998
+#: ../src/extension.js:1005
 msgid "E"
 msgstr "V"
 
-#: ../src/extension.js:998
+#: ../src/extension.js:1005
 msgid "SE"
 msgstr "JV"
 
-#: ../src/extension.js:998
+#: ../src/extension.js:1005
 msgid "S"
 msgstr "J"
 
-#: ../src/extension.js:998
+#: ../src/extension.js:1005
 msgid "SW"
 msgstr "JZ"
 
-#: ../src/extension.js:998
+#: ../src/extension.js:1005
 msgid "W"
 msgstr "Z"
 
-#: ../src/extension.js:998
+#: ../src/extension.js:1005
 msgid "NW"
 msgstr "SZ"
 
-#: ../src/extension.js:1291
+#: ../src/extension.js:1298
 msgid "Loading ..."
 msgstr "Načítání…"
 
-#: ../src/extension.js:1295
+#: ../src/extension.js:1302
 msgid "Please wait"
 msgstr "Čekejte"
 
-#: ../src/extension.js:1356
+#: ../src/extension.js:1363
 msgid "Cloudiness:"
 msgstr "Oblačnost:"
 
-#: ../src/extension.js:1360
+#: ../src/extension.js:1367
 msgid "Humidity:"
 msgstr "Vlhkost:"
 
-#: ../src/extension.js:1364
+#: ../src/extension.js:1371
 msgid "Pressure:"
 msgstr "Tlak:"
 
-#: ../src/extension.js:1368
+#: ../src/extension.js:1375
 msgid "Wind:"
 msgstr "Vítr:"
 
