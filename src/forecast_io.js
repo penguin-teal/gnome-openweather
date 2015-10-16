@@ -42,7 +42,7 @@ const ngettext = Gettext.ngettext;
 
 
 const OPENWEATHER_URL_HOST = 'api.forecast.io';
-const OPENWEATHER_URL_BASE = 'http://' + OPENWEATHER_URL_HOST + '/forecast/';
+const OPENWEATHER_URL_BASE = 'https://' + OPENWEATHER_URL_HOST + '/forecast/';
 
 function getWeatherIcon(icon) {
     //    clear-day             weather-clear-day
