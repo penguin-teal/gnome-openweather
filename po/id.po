@@ -1,0 +1,667 @@
+# Indonesian translation for gnome-shell-extension-openweather
+# Copyright (C) 2011-2015
+# This file is distributed under the same license as the gnome-shell-extension-openweather package.
+# Andria Arisal <andria.arisal@gmail.com>, 2015.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-10 10:19+0200\n"
+"PO-Revision-Date: 2015-10-14 12:10+0200\n"
+"Last-Translator: Andria Arisal <andria.arisal@gmail.com>\n"
+"Language-Team: Indonesian <>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Gtranslator 2.91.7\n"
+
+#: ../src/extension.js:169
+msgid "..."
+msgstr "..."
+
+#: ../src/extension.js:482
+#, javascript-format
+msgid "Can not connect to %s"
+msgstr "Tidak dapat terhubung dengan %s"
+
+#: ../src/extension.js:746 ../data/weather-settings.ui:460
+msgid "Locations"
+msgstr "Lokasi"
+
+#: ../src/extension.js:758
+msgid "Reload Weather Information"
+msgstr "Perbarui informasi cuaca"
+
+#: ../src/extension.js:773
+msgid "Weather data provided by:"
+msgstr "Data cuaca disediakan oleh:"
+
+#: ../src/extension.js:784
+#, javascript-format
+msgid "Can not open %s"
+msgstr "Tidak dapat membuka %s"
+
+#: ../src/extension.js:791
+msgid "Weather Settings"
+msgstr "Pengaturan cuaca"
+
+#: ../src/extension.js:842 ../src/prefs.js:1008
+msgid "Invalid city"
+msgstr "Kota tidak tersedia"
+
+#: ../src/extension.js:853
+msgid "Invalid location! Please try to recreate it."
+msgstr "Lokasi tidak tersedia! Mohon coba untuk membuatnya lagi."
+
+#: ../src/extension.js:952
+msgid "Calm"
+msgstr "Tenang"
+
+#: ../src/extension.js:955
+msgid "Light air"
+msgstr "Udara segar"
+
+#: ../src/extension.js:958
+msgid "Light breeze"
+msgstr "Angin sepoi-sepoi"
+
+#: ../src/extension.js:961
+msgid "Gentle breeze"
+msgstr "Angin lebut"
+
+#: ../src/extension.js:964
+msgid "Moderate breeze"
+msgstr "Sedikit berangin"
+
+#: ../src/extension.js:967
+msgid "Fresh breeze"
+msgstr "Angin segar"
+
+#: ../src/extension.js:970
+msgid "Strong breeze"
+msgstr "Angin kuat"
+
+#: ../src/extension.js:973
+msgid "Moderate gale"
+msgstr "Angin kencang"
+
+#: ../src/extension.js:976
+msgid "Fresh gale"
+msgstr "Angin segar kencang"
+
+#: ../src/extension.js:979
+msgid "Strong gale"
+msgstr "Angin kencang dan kuat"
+
+#: ../src/extension.js:982
+msgid "Storm"
+msgstr "Badai"
+
+#: ../src/extension.js:985
+msgid "Violent storm"
+msgstr "Badai berbahaya"
+
+#: ../src/extension.js:988
+msgid "Hurricane"
+msgstr "Angin Topan"
+
+#: ../src/extension.js:992
+msgid "Sunday"
+msgstr "Minggu"
+
+#: ../src/extension.js:992
+msgid "Monday"
+msgstr "Senin"
+
+#: ../src/extension.js:992
+msgid "Tuesday"
+msgstr "Selasa"
+
+#: ../src/extension.js:992
+msgid "Wednesday"
+msgstr "Rabu"
+
+#: ../src/extension.js:992
+msgid "Thursday"
+msgstr "Kamis"
+
+#: ../src/extension.js:992
+msgid "Friday"
+msgstr "Jumat"
+
+#: ../src/extension.js:992
+msgid "Saturday"
+msgstr "Sabtu"
+
+#: ../src/extension.js:998
+msgid "N"
+msgstr "U"
+
+#: ../src/extension.js:998
+msgid "NE"
+msgstr "TL"
+
+#: ../src/extension.js:998
+msgid "E"
+msgstr "T"
+
+#: ../src/extension.js:998
+msgid "SE"
+msgstr "Tg"
+
+#: ../src/extension.js:998
+msgid "S"
+msgstr "S"
+
+#: ../src/extension.js:998
+msgid "SW"
+msgstr "BD"
+
+#: ../src/extension.js:998
+msgid "W"
+msgstr "B"
+
+#: ../src/extension.js:998
+msgid "NW"
+msgstr "BL"
+
+#: ../src/extension.js:1291
+msgid "Loading ..."
+msgstr "Memuat..."
+
+#: ../src/extension.js:1295
+msgid "Please wait"
+msgstr "Mohon menunggu"
+
+#: ../src/extension.js:1356
+msgid "Cloudiness:"
+msgstr "Kemendungan:"
+
+#: ../src/extension.js:1360
+msgid "Humidity:"
+msgstr "Kelembaban:"
+
+#: ../src/extension.js:1364
+msgid "Pressure:"
+msgstr "Tekanan:"
+
+#: ../src/extension.js:1368
+msgid "Wind:"
+msgstr "Angin:"
+
+#: ../src/forecast_io.js:151 ../src/forecast_io.js:273
+#: ../src/openweathermap_org.js:349 ../src/openweathermap_org.js:451
+msgid "Yesterday"
+msgstr "Kemaren"
+
+#: ../src/forecast_io.js:154 ../src/forecast_io.js:276
+#: ../src/openweathermap_org.js:351 ../src/openweathermap_org.js:453
+#, javascript-format
+msgid "%d day ago"
+msgid_plural "%d days ago"
+msgstr[0] "%d hari yang lalu"
+msgstr[1] "%d hari yang lalu"
+
+#: ../src/forecast_io.js:253 ../src/openweathermap_org.js:445
+msgid "Today"
+msgstr "Hari ini"
+
+#: ../src/forecast_io.js:269 ../src/openweathermap_org.js:447
+msgid "Tomorrow"
+msgstr "Besok"
+
+#: ../src/forecast_io.js:271 ../src/openweathermap_org.js:449
+#, javascript-format
+msgid "In %d day"
+msgid_plural "In %d days"
+msgstr[0] "Dalam %d hari"
+msgstr[1] "Dalam %d hari"
+
+#: ../src/openweathermap_org.js:181
+msgid "thunderstorm with light rain"
+msgstr "badai yang disertai sedikit hujan"
+
+#: ../src/openweathermap_org.js:183
+msgid "thunderstorm with rain"
+msgstr "badai yang disertai hujan"
+
+#: ../src/openweathermap_org.js:185
+msgid "thunderstorm with heavy rain"
+msgstr "badai yang disertai hujan lebat"
+
+#: ../src/openweathermap_org.js:187
+msgid "light thunderstorm"
+msgstr "badai kecil"
+
+#: ../src/openweathermap_org.js:189
+msgid "thunderstorm"
+msgstr "badai"
+
+#: ../src/openweathermap_org.js:191
+msgid "heavy thunderstorm"
+msgstr "badai besar"
+
+#: ../src/openweathermap_org.js:193
+msgid "ragged thunderstorm"
+msgstr "badai tersebar"
+
+#: ../src/openweathermap_org.js:195
+msgid "thunderstorm with light drizzle"
+msgstr "badai yang disertai sedikit gerimis"
+
+#: ../src/openweathermap_org.js:197
+msgid "thunderstorm with drizzle"
+msgstr "badai yang disertai gerimis"
+
+#: ../src/openweathermap_org.js:199
+msgid "thunderstorm with heavy drizzle"
+msgstr "badai yang disertai banyak gerimis"
+
+#: ../src/openweathermap_org.js:201
+msgid "light intensity drizzle"
+msgstr "sedikit gerimis"
+
+#: ../src/openweathermap_org.js:203
+msgid "drizzle"
+msgstr "gerimis"
+
+#: ../src/openweathermap_org.js:205
+msgid "heavy intensity drizzle"
+msgstr "gerimis yang rapat"
+
+#: ../src/openweathermap_org.js:207
+msgid "light intensity drizzle rain"
+msgstr "gerimis ringan"
+
+#: ../src/openweathermap_org.js:209
+msgid "drizzle rain"
+msgstr "hujan rintik-rintik"
+
+#: ../src/openweathermap_org.js:211
+msgid "heavy intensity drizzle rain"
+msgstr "hujan rinrik-rintik yang rapat"
+
+#: ../src/openweathermap_org.js:213
+msgid "shower rain and drizzle"
+msgstr "hujan deras dan gerimis"
+
+#: ../src/openweathermap_org.js:215
+msgid "heavy shower rain and drizzle"
+msgstr "hujan sangat deras dan gerimis"
+
+#: ../src/openweathermap_org.js:217
+msgid "shower drizzle"
+msgstr "gerimis deras"
+
+#: ../src/openweathermap_org.js:219
+msgid "light rain"
+msgstr "hujan ringan"
+
+#: ../src/openweathermap_org.js:221
+msgid "moderate rain"
+msgstr "hujan"
+
+#: ../src/openweathermap_org.js:223
+msgid "heavy intensity rain"
+msgstr "hujan deras"
+
+#: ../src/openweathermap_org.js:225
+msgid "very heavy rain"
+msgstr "hujan sangat deras"
+
+#: ../src/openweathermap_org.js:227
+msgid "extreme rain"
+msgstr "hujan sangat lebat"
+
+#: ../src/openweathermap_org.js:229
+msgid "freezing rain"
+msgstr "hujan membekukan"
+
+#: ../src/openweathermap_org.js:231
+msgid "light intensity shower rain"
+msgstr "hujan deras ringan"
+
+#: ../src/openweathermap_org.js:233
+msgid "shower rain"
+msgstr "hujan"
+
+#: ../src/openweathermap_org.js:235
+msgid "heavy intensity shower rain"
+msgstr "hujan lebat"
+
+#: ../src/openweathermap_org.js:237
+msgid "ragged shower rain"
+msgstr "hujan tersebar"
+
+#: ../src/openweathermap_org.js:239
+msgid "light snow"
+msgstr "salju ringan"
+
+#: ../src/openweathermap_org.js:241
+msgid "snow"
+msgstr "salju"
+
+#: ../src/openweathermap_org.js:243
+msgid "heavy snow"
+msgstr "salju hebat"
+
+#: ../src/openweathermap_org.js:245
+msgid "sleet"
+msgstr "hujan bercampur salju"
+
+#: ../src/openweathermap_org.js:247
+msgid "shower sleet"
+msgstr "hujan bercampur salju"
+
+#: ../src/openweathermap_org.js:249
+msgid "light rain and snow"
+msgstr "hujan ringan dan salju"
+
+#: ../src/openweathermap_org.js:251
+msgid "rain and snow"
+msgstr "hujan dan salju"
+
+#: ../src/openweathermap_org.js:253
+msgid "light shower snow"
+msgstr "salju ringan"
+
+#: ../src/openweathermap_org.js:255
+msgid "shower snow"
+msgstr "salju turun"
+
+#: ../src/openweathermap_org.js:257
+msgid "heavy shower snow"
+msgstr "salju lebat"
+
+#: ../src/openweathermap_org.js:259
+msgid "mist"
+msgstr "berkabut"
+
+#: ../src/openweathermap_org.js:261
+msgid "smoke"
+msgstr "berasap"
+
+#: ../src/openweathermap_org.js:263
+msgid "haze"
+msgstr "berembun"
+
+#: ../src/openweathermap_org.js:265
+msgid "Sand/Dust Whirls"
+msgstr "Badai pasir"
+
+#: ../src/openweathermap_org.js:267
+msgid "Fog"
+msgstr "Kabut"
+
+#: ../src/openweathermap_org.js:269
+msgid "sand"
+msgstr "pasir"
+
+#: ../src/openweathermap_org.js:271
+msgid "dust"
+msgstr "debu"
+
+#: ../src/openweathermap_org.js:273
+msgid "VOLCANIC ASH"
+msgstr "ABU VULKANIK"
+
+#: ../src/openweathermap_org.js:275
+msgid "SQUALLS"
+msgstr "KERIBUTAN"
+
+#: ../src/openweathermap_org.js:277
+msgid "TORNADO"
+msgstr "ANGIN TOPAN"
+
+#: ../src/openweathermap_org.js:279
+msgid "sky is clear"
+msgstr "langit bersih"
+
+#: ../src/openweathermap_org.js:281
+msgid "few clouds"
+msgstr "desikit berawan"
+
+#: ../src/openweathermap_org.js:283
+msgid "scattered clouds"
+msgstr "awan tersebar"
+
+#: ../src/openweathermap_org.js:285
+msgid "broken clouds"
+msgstr "awan terbelah"
+
+#: ../src/openweathermap_org.js:287
+msgid "overcast clouds"
+msgstr "awan menutupi"
+
+#: ../src/openweathermap_org.js:289
+msgid "Not available"
+msgstr "Tidak tersedia"
+
+#: ../src/prefs.js:214 ../src/prefs.js:270 ../src/prefs.js:318
+#: ../src/prefs.js:325
+#, javascript-format
+msgid "Invalid data when searching for \"%s\""
+msgstr "Data salah ketika mencari \"%s\""
+
+#: ../src/prefs.js:222 ../src/prefs.js:286 ../src/prefs.js:331
+#, javascript-format
+msgid "\"%s\" not found"
+msgstr "\"%s\" tidak ditemukan"
+
+#: ../src/prefs.js:392
+msgid "Location"
+msgstr "Lokasi"
+
+#: ../src/prefs.js:402
+msgid "Provider"
+msgstr "Penyedia"
+
+#: ../src/prefs.js:534
+#, javascript-format
+msgid "Remove %s ?"
+msgstr "Buang %s ?"
+
+#: ../src/prefs.js:1043
+msgid "default"
+msgstr "baku"
+
+#: ../data/weather-settings.ui:31
+msgid "Edit name"
+msgstr "Ubah nama"
+
+#: ../data/weather-settings.ui:49 ../data/weather-settings.ui:79
+#: ../data/weather-settings.ui:219
+msgid "Clear entry"
+msgstr "Hapus masukan"
+
+#: ../data/weather-settings.ui:63
+msgid "Edit coordinates"
+msgstr "Ubah koordinat"
+
+#: ../data/weather-settings.ui:93 ../data/weather-settings.ui:256
+msgid "Extensions default weather provider"
+msgstr "Tambahan penyedia cuaca baku"
+
+#: ../data/weather-settings.ui:125 ../data/weather-settings.ui:288
+msgid "Cancel"
+msgstr "Batal"
+
+#: ../data/weather-settings.ui:143 ../data/weather-settings.ui:306
+msgid "Save"
+msgstr "Simpan"
+
+#: ../data/weather-settings.ui:196
+msgid "Search by location or coordinates"
+msgstr "Cari berdasarkan lokasi atau koordinat"
+
+#: ../data/weather-settings.ui:220
+msgid "e.g. Vaiaku, Tuvalu or -8.5211767,179.1976747"
+msgstr "con. Vaiaku, Tuvalu or -8.5211767,179.1976747"
+
+#: ../data/weather-settings.ui:230
+msgid "Find"
+msgstr "Temukan"
+
+#: ../data/weather-settings.ui:481
+msgid "Chose default weather provider"
+msgstr "Pilih penyedia cuaca baku"
+
+#: ../data/weather-settings.ui:494
+msgid "Personal Api key from openweathermap.org"
+msgstr "Kunci API pribadi dari openweathermap.org"
+
+#: ../data/weather-settings.ui:545
+msgid "Personal Api key from forecast.io"
+msgstr "Kunci API pribadi dari forecast.io"
+
+#: ../data/weather-settings.ui:558
+msgid "Refresh timeout for current weather [min]"
+msgstr "Perbarui batas waktu untuk cuaca sekarang [min]"
+
+#: ../data/weather-settings.ui:572
+msgid "Refresh timeout for weather forecast [min]"
+msgstr "Perbarui batas waktu untuk perkiraan cuaca [min]"
+
+#: ../data/weather-settings.ui:600
+msgid ""
+"Note: the forecast-timout is not used for forecast.io, because they do not "
+"provide seperate downloads for current weather and forecasts."
+msgstr ""
+"Catatan: batas waktu prakiraan tidak dapat digunakan untuk forecast.io, "
+"karena mereka tidak menyediakan unduhan terpusah untuk cuaca sekarang dan "
+"prakiraannya."
+
+#: ../data/weather-settings.ui:632
+msgid "Weather provider"
+msgstr "Penyedia cuaca"
+
+#: ../data/weather-settings.ui:652
+msgid "Chose geolocation provider"
+msgstr "Pilih penyedia geolokasi"
+
+#: ../data/weather-settings.ui:678
+msgid "Personal AppKey from developer.mapquest.com"
+msgstr "Kunci aplikasi pribadi dari developer.mapquest.com"
+
+#: ../data/weather-settings.ui:707
+msgid "Geolocation provider"
+msgstr "Penyedia geolokasi"
+
+#: ../data/weather-settings.ui:727
+msgid "Temperature Unit"
+msgstr "Satuan suhu"
+
+#: ../data/weather-settings.ui:738
+msgid "Wind Speed Unit"
+msgstr "Satuan kecepatan angin"
+
+#: ../data/weather-settings.ui:749
+msgid "Pressure Unit"
+msgstr "Satuan tekanan"
+
+#: ../data/weather-settings.ui:825
+msgid "Units"
+msgstr "Satuan"
+
+#: ../data/weather-settings.ui:845
+msgid "Position in Panel"
+msgstr "Posisi di panel"
+
+#: ../data/weather-settings.ui:856
+msgid "Wind Direction by Arrows"
+msgstr "Arah angin dengan tanda panah"
+
+#: ../data/weather-settings.ui:867
+msgid "Translate Conditions"
+msgstr "Terjemahkan kondisi"
+
+#: ../data/weather-settings.ui:878
+msgid "Symbolic Icons"
+msgstr "Ikon simbolis"
+
+#: ../data/weather-settings.ui:889
+msgid "Text on buttons"
+msgstr "Teks pada tombol"
+
+#: ../data/weather-settings.ui:900
+msgid "Temperature in Panel"
+msgstr "Suhu di panel"
+
+#: ../data/weather-settings.ui:911
+msgid "Conditions in Panel"
+msgstr "Kondisi di panel"
+
+#: ../data/weather-settings.ui:922
+msgid "Conditions in Forecast"
+msgstr "KOndisi di prakiraan"
+
+#: ../data/weather-settings.ui:933
+msgid "Center forecast"
+msgstr "Prakiraan tengah"
+
+#: ../data/weather-settings.ui:944
+msgid "Number of days in forecast"
+msgstr "Jumlah hari dalam prakiraan"
+
+#: ../data/weather-settings.ui:955
+msgid "Maximal number of digits after the decimal point"
+msgstr "Angka maksimal dari dijit sesudah titik desimal"
+
+#: ../data/weather-settings.ui:967
+msgid "Center"
+msgstr "Tengah"
+
+#: ../data/weather-settings.ui:968
+msgid "Right"
+msgstr "Kanan"
+
+#: ../data/weather-settings.ui:969
+msgid "Left"
+msgstr "Kiri"
+
+#: ../data/weather-settings.ui:1111
+msgid "Layout"
+msgstr "Susunan"
+
+#: ../data/weather-settings.ui:1163
+msgid "Version: "
+msgstr "Versi"
+
+#: ../data/weather-settings.ui:1177
+msgid "unknown (self-build ?)"
+msgstr "tidak dikenal (dibangun sendiri ?)"
+
+#: ../data/weather-settings.ui:1197
+msgid ""
+"<span>Weather extension to display weather information from <a href="
+"\"https://openweathermap.org/\">Openweathermap</a> or <a href=\"https://"
+"forecast.io\">forecast.io</a> for almost all locations in the world.</span>"
+msgstr ""
+"<span>Tambahan cuaca untuk menampilkan informasi cuaca dari <a href="
+"\"https://openweathermap.org/\">Openweathermap</a> or <a href=\"https://"
+"forecast.io\">forecast.io</a> untuk hampir semua lokasi di dunia.</span>"
+
+#: ../data/weather-settings.ui:1220
+msgid "Maintained by"
+msgstr "Dipelihara oleh"
+
+#: ../data/weather-settings.ui:1250
+msgid "Webpage"
+msgstr "Halaman web"
+
+#: ../data/weather-settings.ui:1271
+msgid ""
+"<span size=\"small\">This program comes with ABSOLUTELY NO WARRANTY.\n"
+"See the <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
+"\">GNU General Public License, version 2 or later</a> for details.</span>"
+msgstr ""
+"<span size=\"small\">Progran ini TIDAK disertai GARANSI.\n"
+"Lihat <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
+"\">GNU General Public License, version 2 or later</a> untuk informasi detilnya.</span>"
+
+#: ../data/weather-settings.ui:1292
+msgid "About"
+msgstr "Perihal"
