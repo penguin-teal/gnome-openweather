@@ -412,7 +412,7 @@ const OpenweatherMenuButton = new Lang.Class({
                 this.fc_locale = locale;
         }
 
-        if (this._appid_fc.toString().trim() !== '')
+        if (this._appid_fc.toString().trim() == '')
             Main.notify("Openweather", _("Forecast.io does not work without an api-key.\nPlease register at https://developer.forecast.io/register and paste your personal key into the preferences dialog."));
     },
 
