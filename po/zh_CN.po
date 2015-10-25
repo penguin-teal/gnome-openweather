@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: gnome-shell-extension-openweather\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-10-16 23:06+0200\n"
-"PO-Revision-Date: 2015-08-30 23:16+0800\n"
+"PO-Revision-Date: 2015-10-26 00:44+0800\n"
 "Last-Translator: 绿色圣光 <lishaohui.qd@163.com>\n"
 "Language-Team: Chinese (Simplified) <>\n"
 "Language: zh_CN\n"
@@ -31,6 +31,9 @@ msgid ""
 "Please register at http://openweathermap.org/appid and paste your personal "
 "key into the preferences dialog."
 msgstr ""
+"Openweathermap.org 在没有 API 密钥的情况下无法工作。\n"
+"请到 http://openweathermap.org/appid 注册，并将您的个人密钥粘贴到选项对话框"
+"中。"
 
 #: ../src/extension.js:416
 msgid ""
@@ -38,11 +41,14 @@ msgid ""
 "Please register at https://developer.forecast.io/register and paste your "
 "personal key into the preferences dialog."
 msgstr ""
+"Forecast.io 在没有 API 密钥的情况下无法工作。\n"
+"请到 https://developer.forecast.io/register 注册，并将您的个人密钥粘贴到选项"
+"对话框中。"
 
 #: ../src/extension.js:489
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "Can not connect to %s"
-msgstr "无法打开 %s"
+msgstr "无法连接到 %s"
 
 #: ../src/extension.js:753 ../data/weather-settings.ui:460
 msgid "Locations"
@@ -459,12 +465,12 @@ msgstr "不可用"
 #: ../src/prefs.js:325
 #, javascript-format
 msgid "Invalid data when searching for \"%s\""
-msgstr ""
+msgstr "搜索“%s”时遇到无效数据"
 
 #: ../src/prefs.js:222 ../src/prefs.js:286 ../src/prefs.js:331
 #, javascript-format
 msgid "\"%s\" not found"
-msgstr "未找到 \"%s\"。"
+msgstr "未找到“%s”"
 
 #: ../src/prefs.js:392
 msgid "Location"
@@ -534,36 +540,34 @@ msgstr "forecast.io 的个人 API 密钥"
 
 #: ../data/weather-settings.ui:558
 msgid "Refresh timeout for current weather [min]"
-msgstr ""
+msgstr "刷新当前天气的超时时间 [分钟]"
 
 #: ../data/weather-settings.ui:572
 msgid "Refresh timeout for weather forecast [min]"
-msgstr ""
+msgstr "刷新天气预报的超时时间 [分钟]"
 
 #: ../data/weather-settings.ui:600
 msgid ""
 "Note: the forecast-timout is not used for forecast.io, because they do not "
 "provide seperate downloads for current weather and forecasts."
 msgstr ""
+"注意：预报超时不适用于 forecast.io，因为他们不提供当前天气和预报的分别下载。"
 
 #: ../data/weather-settings.ui:632
 msgid "Weather provider"
 msgstr "天气提供源"
 
 #: ../data/weather-settings.ui:652
-#, fuzzy
 msgid "Chose geolocation provider"
-msgstr "选择默认天气提供源"
+msgstr "选择地理位置提供源"
 
 #: ../data/weather-settings.ui:678
-#, fuzzy
 msgid "Personal AppKey from developer.mapquest.com"
-msgstr "forecast.io 的个人 API 密钥"
+msgstr "developer.mapquest.com 的个人应用密钥"
 
 #: ../data/weather-settings.ui:707
-#, fuzzy
 msgid "Geolocation provider"
-msgstr "天气提供源"
+msgstr "地理位置提供源"
 
 #: ../data/weather-settings.ui:727
 msgid "Temperature Unit"
