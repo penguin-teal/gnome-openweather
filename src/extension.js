@@ -1030,12 +1030,14 @@ const OpenweatherMenuButton = new Lang.Class({
         if (_httpSession === undefined) {
             _httpSession = new Soup.Session();
             _httpSession.user_agent = this.user_agent;
+        } else {
+            // abort previous requests.
+            _httpSession.abort();
         }
 
         let message = Soup.form_request_new_from_hash('GET', url, params);
 
         _httpSession.queue_message(message, Lang.bind(this, function(_httpSession, message) {
-
             try {
                 if (!message.response_body.data) {
                     fun.call(this, 0);
