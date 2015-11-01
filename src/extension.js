@@ -363,7 +363,7 @@ const OpenweatherMenuButton = new Lang.Class({
 
         this.weatherProvider = "https://openweathermap.org/";
 
-        if (this._appid.toString().trim() == '')
+        if (this._appid.toString().trim() === '')
             Main.notify("Openweather", _("Openweathermap.org does not work without an api-key.\nPlease register at http://openweathermap.org/appid and paste your personal key into the preferences dialog."));
 
     },
@@ -412,7 +412,7 @@ const OpenweatherMenuButton = new Lang.Class({
                 this.fc_locale = locale;
         }
 
-        if (this._appid_fc.toString().trim() == '')
+        if (this._appid_fc.toString().trim() === '')
             Main.notify("Openweather", _("Forecast.io does not work without an api-key.\nPlease register at https://developer.forecast.io/register and paste your personal key into the preferences dialog."));
     },
 
