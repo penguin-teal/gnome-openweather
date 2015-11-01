@@ -484,12 +484,15 @@ const OpenweatherMenuButton = new Lang.Class({
         this._oldConnected = this._connected;
         this._connected = false;
         try {
-            this._connected = this._network_monitor.can_reach(address, cancellable);
+            this._network_monitor.can_reach_async(address, cancellable, Lang.bind(this, this._asyncReadyCallback));
         } catch (err) {
             let title = _("Can not connect to %s").format(url);
             log(title + '\n' + err.message);
         }
+    },
 
+    _asyncReadyCallback: function(nm, res) {
+        this._connected = this._network_monitor.can_reach_finish(res);
         if (!this._oldConnected && this._connected) {
             let now = new Date();
             if (_timeCacheCurrentWeather &&
