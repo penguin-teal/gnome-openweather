@@ -28,6 +28,9 @@ msgid ""
 "Please register at http://openweathermap.org/appid and paste your personal "
 "key into the preferences dialog."
 msgstr ""
+"Openweathermap.org nie działa bez klucza api.\n"
+"Proszę zarejestrować się na stronie http://openweathermap.org/appid "
+"i wkleić uzyskany klucz api w ustawieniach."
 
 #: ../src/extension.js:416
 msgid ""
@@ -35,11 +38,14 @@ msgid ""
 "Please register at https://developer.forecast.io/register and paste your "
 "personal key into the preferences dialog."
 msgstr ""
+"Forecast.io nie działa bez klucza api.\n"
+"Proszę zarejestrować się na stronie https://developer.forecast.io/register "
+"i wkleić uzyskany klucz api w ustawieniach."
 
 #: ../src/extension.js:489
 #, javascript-format
 msgid "Can not connect to %s"
-msgstr ""
+msgstr "Nie można nawiązać połączenia z %s"
 
 #: ../src/extension.js:753 ../data/weather-settings.ui:460
 msgid "Locations"
@@ -51,12 +57,12 @@ msgstr "Wczytaj ponownie komunikat pogodowy"
 
 #: ../src/extension.js:780
 msgid "Weather data provided by:"
-msgstr ""
+msgstr "Dane pogody dostarcza:"
 
 #: ../src/extension.js:791
 #, javascript-format
 msgid "Can not open %s"
-msgstr ""
+msgstr "Nie można otworzyć %s"
 
 #: ../src/extension.js:798
 msgid "Weather Settings"
@@ -68,7 +74,7 @@ msgstr "Nieprawidłowa nazwa miasta"
 
 #: ../src/extension.js:860
 msgid "Invalid location! Please try to recreate it."
-msgstr ""
+msgstr "Nieprawidłowa lokalizacja! Proszę spróbować wpisać jeszcze raz."
 
 #: ../src/extension.js:959
 #, fuzzy
@@ -193,7 +199,7 @@ msgstr "Proszę czekać"
 
 #: ../src/extension.js:1363
 msgid "Cloudiness:"
-msgstr ""
+msgstr "Zachmurzenie"
 
 #: ../src/extension.js:1367
 msgid "Humidity:"
@@ -468,7 +474,7 @@ msgstr ""
 
 #: ../src/openweathermap_org.js:279
 msgid "sky is clear"
-msgstr ""
+msgstr "Bezchmurnie"
 
 #: ../src/openweathermap_org.js:281
 #, fuzzy
@@ -512,7 +518,7 @@ msgstr "Lokalizacje"
 
 #: ../src/prefs.js:402
 msgid "Provider"
-msgstr ""
+msgstr "Dostawca"
 
 #: ../src/prefs.js:534
 #, javascript-format
@@ -521,11 +527,11 @@ msgstr "Usunąć %s?"
 
 #: ../src/prefs.js:1043
 msgid "default"
-msgstr ""
+msgstr "domyślnie"
 
 #: ../data/weather-settings.ui:31
 msgid "Edit name"
-msgstr ""
+msgstr "Edytuj nazwę"
 
 #: ../data/weather-settings.ui:49 ../data/weather-settings.ui:79
 #: ../data/weather-settings.ui:219
@@ -535,43 +541,43 @@ msgstr "Pogodnie"
 
 #: ../data/weather-settings.ui:63
 msgid "Edit coordinates"
-msgstr ""
+msgstr "Edytuj współrzędne"
 
 #: ../data/weather-settings.ui:93 ../data/weather-settings.ui:256
 msgid "Extensions default weather provider"
-msgstr ""
+msgstr "Domyślny dostawca informacji pogodowych"
 
 #: ../data/weather-settings.ui:125 ../data/weather-settings.ui:288
 msgid "Cancel"
-msgstr ""
+msgstr "Anuluj"
 
 #: ../data/weather-settings.ui:143 ../data/weather-settings.ui:306
 msgid "Save"
-msgstr ""
+msgstr "Zapisz"
 
 #: ../data/weather-settings.ui:196
 msgid "Search by location or coordinates"
-msgstr ""
+msgstr "Szukaj po lokalizacji lub współrzędnych"
 
 #: ../data/weather-settings.ui:220
 msgid "e.g. Vaiaku, Tuvalu or -8.5211767,179.1976747"
-msgstr ""
+msgstr "np. Warszawa, mazowieckie, Polska 52.2319237,21.0067265"
 
 #: ../data/weather-settings.ui:230
 msgid "Find"
-msgstr ""
+msgstr "Szukaj"
 
 #: ../data/weather-settings.ui:481
 msgid "Chose default weather provider"
-msgstr ""
+msgstr "Wybierz domyślnego dostawcę informacji pogodowych"
 
 #: ../data/weather-settings.ui:494
 msgid "Personal Api key from openweathermap.org"
-msgstr ""
+msgstr "Osobisty klucz Api od openweathermap.org"
 
 #: ../data/weather-settings.ui:545
 msgid "Personal Api key from forecast.io"
-msgstr ""
+msgstr "Osobisty klucz Api od forecast.io"
 
 #: ../data/weather-settings.ui:558
 msgid "Refresh timeout for current weather [min]"
@@ -589,19 +595,19 @@ msgstr ""
 
 #: ../data/weather-settings.ui:632
 msgid "Weather provider"
-msgstr ""
+msgstr "Dostawca informacji pogodowej"
 
 #: ../data/weather-settings.ui:652
 msgid "Chose geolocation provider"
-msgstr ""
+msgstr "Wybierz dostawcę geolokalizacji"
 
 #: ../data/weather-settings.ui:678
 msgid "Personal AppKey from developer.mapquest.com"
-msgstr ""
+msgstr "Osobisty klucz Api od developer.mapquest.com"
 
 #: ../data/weather-settings.ui:707
 msgid "Geolocation provider"
-msgstr ""
+msgstr "Dostawca geolokalizacji"
 
 #: ../data/weather-settings.ui:727
 msgid "Temperature Unit"
@@ -617,7 +623,7 @@ msgstr "Jednostka ciśnienia"
 
 #: ../data/weather-settings.ui:825
 msgid "Units"
-msgstr ""
+msgstr "Jednostki"
 
 #: ../data/weather-settings.ui:845
 msgid "Position in Panel"
@@ -637,7 +643,7 @@ msgstr "Ikony symboliczne"
 
 #: ../data/weather-settings.ui:889
 msgid "Text on buttons"
-msgstr ""
+msgstr "Tekst na przyciskach"
 
 #: ../data/weather-settings.ui:900
 msgid "Temperature in Panel"
@@ -654,15 +660,15 @@ msgstr "Warunki pogodowe na panelu"
 
 #: ../data/weather-settings.ui:933
 msgid "Center forecast"
-msgstr ""
+msgstr "Wyśrodkuj prognozę"
 
 #: ../data/weather-settings.ui:944
 msgid "Number of days in forecast"
-msgstr ""
+msgstr "Liczba dni prognozy"
 
 #: ../data/weather-settings.ui:955
 msgid "Maximal number of digits after the decimal point"
-msgstr ""
+msgstr "Maksymalna liczba cyfr po przecinku"
 
 #: ../data/weather-settings.ui:967
 msgid "Center"
@@ -678,22 +684,24 @@ msgstr "Po lewej"
 
 #: ../data/weather-settings.ui:1111
 msgid "Layout"
-msgstr ""
+msgstr "Wygląd"
 
 #: ../data/weather-settings.ui:1163
 msgid "Version: "
-msgstr ""
+msgstr "Wersja:"
 
 #: ../data/weather-settings.ui:1177
 msgid "unknown (self-build ?)"
-msgstr ""
+msgstr "nieznana"
 
 #: ../data/weather-settings.ui:1197
 msgid ""
 "<span>Weather extension to display weather information from <a href="
 "\"https://openweathermap.org/\">Openweathermap</a> or <a href=\"https://"
 "forecast.io\">forecast.io</a> for almost all locations in the world.</span>"
-msgstr ""
+msgstr "<span>Rozszerzenie pogody pobiera informację z <a href="
+"\"https://openweathermap.org/\">Openweathermap</a> lub <a href=\"https://"
+"forecast.io\">forecast.io</a> dla niemal wszystkich lokalizacji na świecie.</span>"
 
 #: ../data/weather-settings.ui:1220
 msgid "Maintained by"
@@ -701,7 +709,7 @@ msgstr ""
 
 #: ../data/weather-settings.ui:1250
 msgid "Webpage"
-msgstr ""
+msgstr "Strona www"
 
 #: ../data/weather-settings.ui:1271
 msgid ""
@@ -712,7 +720,7 @@ msgstr ""
 
 #: ../data/weather-settings.ui:1292
 msgid "About"
-msgstr ""
+msgstr "O"
 
 #~ msgid "Loading current weather ..."
 #~ msgstr "Wczytywanie bieżącej pogody..."
