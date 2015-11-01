@@ -1027,8 +1027,6 @@ const OpenweatherMenuButton = new Lang.Class({
     },
 
     load_json_async: function(url, params, fun) {
-        // log(new Error().fileName+':'+new Error().lineNumber+new Error().stack);
-        // log(new Error().fileName+':'+new Error().lineNumber+' => url = '+url);
         if (_httpSession === undefined) {
             _httpSession = new Soup.Session();
             _httpSession.user_agent = this.user_agent;
