@@ -592,8 +592,9 @@ msgstr "Aktualizacja informacji prognozy pogody [min]"
 msgid ""
 "Note: the forecast-timout is not used for forecast.io, because they do not "
 "provide seperate downloads for current weather and forecasts."
-msgstr "Uwaga: Ustawienia aktualizacji nie działają z serwisem forecast.io, ponieważ "
-nie ma możliwości pobrania informacji osobno dla aktualnej pogody i prognozy."
+msgstr ""
+"Uwaga: Ustawienia aktualizacji nie działają z serwisem forecast.io, ponieważ "
+"nie ma możliwości pobrania informacji osobno dla aktualnej pogody i prognozy."
 
 #: ../data/weather-settings.ui:632
 msgid "Weather provider"
