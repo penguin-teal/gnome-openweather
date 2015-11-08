@@ -81,7 +81,9 @@ const OPENWEATHER_REFRESH_INTERVAL_FORECAST = 'refresh-interval-forecast';
 const OPENWEATHER_CENTER_FORECAST_KEY = 'center-forecast';
 const OPENWEATHER_DAYS_FORECAST = 'days-forecast';
 const OPENWEATHER_DECIMAL_PLACES = 'decimal-places';
+const OPENWEATHER_USE_DEFAULT_OWM_API_KEY = 'use-default-owm-key';
 const OPENWEATHER_OWM_API_KEY = 'appid';
+const OPENWEATHER_OWM_DEFAULT_API_KEY = 'c93b4a667c8c9d1d1eb941621f899bb8';
 const OPENWEATHER_FC_API_KEY = 'appid-fc';
 
 // Keep enums in sync with GSettings schemas
@@ -157,6 +159,7 @@ const OpenweatherMenuButton = new Lang.Class({
         this.user_agent += ' ';
 
         this.oldProvider = this._weather_provider;
+        this.oldUseDefaultOwmKey = this._use_default_owm_key;
         this.oldTranslateCondition = this._translate_condition;
         this.switchProvider();
 
@@ -364,7 +367,7 @@ const OpenweatherMenuButton = new Lang.Class({
         this.weatherProvider = "https://openweathermap.org/";
 
         if (this._appid.toString().trim() === '')
-            Main.notify("Openweather", _("Openweathermap.org does not work without an api-key.\nPlease register at http://openweathermap.org/appid and paste your personal key into the preferences dialog."));
+            Main.notify("Openweather", _("Openweathermap.org does not work without an api-key.\nEither set the swith to use the extensions default key in the preferences dialog to on or register at http://openweathermap.org/appid and paste your personal key into the preferences dialog."));
 
     },
 
@@ -518,6 +521,13 @@ const OpenweatherMenuButton = new Lang.Class({
         if (this.oldProvider != provider) {
             this.oldProvider = provider;
             return true;
+        }
+        if (provider == WeatherProvider.OPENWEATHERMAP) {
+            let useDefaultOwmKey = this._use_default_owm_key;
+            if (this.oldUseDefaultOwmKey != useDefaultOwmKey) {
+                this.oldUseDefaultOwmKey = useDefaultOwmKey;
+                return true;
+            }
         }
         if (provider == WeatherProvider.FORECAST_IO) {
             let translateCondition = this._translate_condition;
@@ -717,8 +727,18 @@ const OpenweatherMenuButton = new Lang.Class({
     get _appid() {
         if (!this._settings)
             this.loadConfig();
-        let key = this._settings.get_string(OPENWEATHER_OWM_API_KEY);
+        let key = '';
+        if (this._use_default_owm_key)
+            key = OPENWEATHER_OWM_DEFAULT_API_KEY;
+        else
+            key = this._settings.get_string(OPENWEATHER_OWM_API_KEY);
         return (key.length == 32) ? key : '';
+    },
+
+    get _use_default_owm_key() {
+        if (!this._settings)
+            this.loadConfig();
+        return this._settings.get_boolean(OPENWEATHER_USE_DEFAULT_OWM_API_KEY);
     },
 
     get _appid_fc() {

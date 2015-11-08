@@ -65,6 +65,7 @@ const OPENWEATHER_REFRESH_INTERVAL_FORECAST = 'refresh-interval-forecast';
 const OPENWEATHER_CENTER_FORECAST_KEY = 'center-forecast';
 const OPENWEATHER_DAYS_FORECAST = 'days-forecast';
 const OPENWEATHER_DECIMAL_PLACES = 'decimal-places';
+const OPENWEATHER_USE_DEFAULT_OWM_API_KEY = 'use-default-owm-key';
 const OPENWEATHER_OWM_API_KEY = 'appid';
 const OPENWEATHER_FC_API_KEY = 'appid-fc';
 const OPENWEATHER_GC_APP_KEY = 'geolocation-appid-mapquest';
@@ -974,6 +975,18 @@ const WeatherPrefsWidget = new GObject.Class({
         if (!this.Settings)
             this.loadConfig();
         this.Settings.set_string(OPENWEATHER_OWM_API_KEY, v);
+    },
+
+    get use_default_owm_key() {
+        if (!this.Settings)
+            this.loadConfig();
+        return this.Settings.get_boolean(OPENWEATHER_USE_DEFAULT_OWM_API_KEY);
+    },
+
+    set use_default_owm_key(v) {
+        if (!this.Settings)
+            this.loadConfig();
+        this.Settings.set_boolean(OPENWEATHER_USE_DEFAULT_OWM_API_KEY, v);
     },
 
     get appid_fc() {

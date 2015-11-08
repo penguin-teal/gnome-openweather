@@ -134,6 +134,10 @@
       <default>''</default>
       <_summary>Your personal API key from openweathermap.org</_summary>
     </key>
+    <key name="use-default-owm-key" type="b">
+      <default>true</default>
+      <_summary>Use the extensions default API key from openweathermap.org</_summary>
+    </key>
     <key name="appid-fc" type="s">
       <default>''</default>
       <_summary>Your personal API key from forecast.io</_summary>
