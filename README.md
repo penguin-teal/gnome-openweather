@@ -34,28 +34,7 @@ Install the package through APT (or use your favourite package-manager, e.g. syn
 
 ### [Fedora](https://fedoraproject.org/)
 
-You can install the extension from [my repo](http://rpm.jenslody.de/).
-I have packages for Fedora 20, 21, 22, rawhideand RedHat/CentOS 7.
-
-To install my repo download and install [this rpm for all non-rawhide versions](https://rpm.jenslody.de/fedora-jenslody.de-0.3-1.fc19.noarch.rpm), [this rpm for rawhide](https://rpm.jenslody.de/fedora-rawhide-jenslody.de-0.3-1.fc22.noarch.rpm) and [this rpm for RedHat/CentOS 7](https://rpm.jenslody.de/centos-jenslody.de-0.2-2.el5.centos.noarch.rpm).
-
-If it is not installed automatically, just run (for non-rawhide):
-
-    sudo yum localinstall --nogpgcheck https://rpm.jenslody.de/fedora-jenslody.de-0.3-1.fc19.noarch.rpm
-
-for rawhide:
-
-    sudo yum localinstall --nogpgcheck https://rpm.jenslody.de/fedora-rawhide-jenslody.de-0.3-1.fc22.noarch.rpm
-
-for RedHat/CentOs 7:
-
-    sudo yum localinstall --nogpgcheck https://rpm.jenslody.de/centos-jenslody.de-0.2-2.el5.centos.noarch.rpm
-
-Now you can install the extension, either via your favourite package-manager or on a console:
-
-    sudo yum install gnome-shell-extension-openweather
-
-Or go to my [site on fedoras copr-project](https://copr.fedoraproject.org/coprs/jenslody/gnome-shell-extensions/), the files are build and hosted there.
+You can install the extension from the official Fedora repos.
 
 ## Generic (Local installation)
 
@@ -88,7 +67,7 @@ Launch *gnome-shell-extension-prefs* (reachable also through the *OpenWeather Se
 
 You can also use *dconf-editor* or *gsettings* to configure the extension through the command line.
 
-On [OpenWeatherMap](https://openweathermap.org/) you have to register to get an [API key](http://openweathermap.org/appid). This key has to be added in the preferences dialog.
+On [OpenWeatherMap](https://openweathermap.org/) you can either use the extensions default-key or register to get a [personal API key](http://openweathermap.org/appid). This key has to be added in the preferences dialog. Don't forget to switch the a appropriate switch in the dialog to "off" in this case.
 
 To use [Forecast.io](https://forecast.io) you also need to [register](https://developer.forecast.io/register) and get an API key. With this key you can make 1000 requests per day for free. This should be enough for this extension in any normal use case. Do not add billing information, otherwise you might have to pay for the weather-data if something went wrong !
 
