@@ -1,13 +1,13 @@
-%global git 34aa242
+%global git ae12283
 %global uuid openweather-extension@jenslody.de
 %global github jenslody-gnome-shell-extension-openweather
 %global checkout git%{git}
-%global checkout_date 20151017
+%global checkout_date 20151107
 
 
 Name:           gnome-shell-extension-openweather
 Version:        1
-Release:        0.7.%{checkout_date}%{checkout}%{?dist}
+Release:        0.8.%{checkout_date}%{checkout}%{?dist}
 Summary:        Display weather information from many locations in the world
 
 Group:          User Interface/Desktops
@@ -61,6 +61,10 @@ fi
 %{_datadir}/gnome-shell/extensions/%{uuid}
 
 %changelog
+* Sat Nov 07 2015 Jens Lody <fedora@jenslody.de> - 1-0.8.20151107gitae12283
+- Fixes #1278686, can block gnome-shell temporarily in some cases .
+  See also: https://github.com/jenslody/gnome-shell-extension-openweather/issues/82 .
+
 * Sat Oct 17 2015 Jens Lody <fedora@jenslody.de> - 1-0.7.20151017git34aa242
 - Bug fix: warn message for empty forecast.io api-key was shown if the key
   exists, not the if the key was empty, sorry.
