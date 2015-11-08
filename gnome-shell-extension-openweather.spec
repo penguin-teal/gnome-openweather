@@ -1,4 +1,4 @@
-%global git e4dbfee
+%global git 6368d32
 %global uuid openweather-extension@jenslody.de
 %global github jenslody-gnome-shell-extension-openweather
 %global checkout git%{git}
@@ -7,7 +7,7 @@
 
 Name:           gnome-shell-extension-openweather
 Version:        1
-Release:        0.9.%{checkout_date}%{checkout}%{?dist}
+Release:        0.10.%{checkout_date}%{checkout}%{?dist}
 Summary:        Display weather information from many locations in the world
 
 Group:          User Interface/Desktops
@@ -61,6 +61,9 @@ fi
 %{_datadir}/gnome-shell/extensions/%{uuid}
 
 %changelog
+* Sun Nov 08 2015 Jens Lody <fedora@jenslody.de> - 1-0.10.20151108git6368d32
+- Fix typo in metadata.json .
+
 * Sun Nov 08 2015 Jens Lody <fedora@jenslody.de> - 1-0.9.20151108gite4dbfee
 - Add default API-key for openweathermap.org. The key is in their FOSS-whitelist
   now. Thanks to openweathermap.org .
