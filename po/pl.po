@@ -16,6 +16,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "X-Launchpad-Export-Date: 2012-10-30 09:44+0000\n"
 "X-Generator: Launchpad (build 16206)\n"
 
@@ -78,7 +79,6 @@ msgid "Invalid location! Please try to recreate it."
 msgstr "Nieprawidłowa lokalizacja! Proszę spróbować wpisać jeszcze raz."
 
 #: ../src/extension.js:959
-#, fuzzy
 msgid "Calm"
 msgstr "cisza"
 
@@ -88,7 +88,7 @@ msgstr "słaby wiatr"
 
 #: ../src/extension.js:965
 msgid "Light breeze"
-msgstr "Słaba bryza"
+msgstr "słaba bryza"
 
 #: ../src/extension.js:968
 msgid "Gentle breeze"
@@ -112,7 +112,7 @@ msgstr "umiarkowany wicher"
 
 #: ../src/extension.js:983
 msgid "Fresh gale"
-msgstr "rześki Wicher"
+msgstr "rześki wicher"
 
 #: ../src/extension.js:986
 msgid "Strong gale"
@@ -221,10 +221,9 @@ msgstr "Wczoraj"
 
 #: ../src/forecast_io.js:154 ../src/forecast_io.js:276
 #: ../src/openweathermap_org.js:351 ../src/openweathermap_org.js:453
-#, fuzzy, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
-msgstr[0] "%s dni temu"
+msgstr[0] "%s dzień temu"
 msgstr[1] "%s dni temu"
 
 #: ../src/forecast_io.js:253 ../src/openweathermap_org.js:445
@@ -236,59 +235,48 @@ msgid "Tomorrow"
 msgstr "Jutro"
 
 #: ../src/forecast_io.js:271 ../src/openweathermap_org.js:449
-#, fuzzy, javascript-format
 msgid "In %d day"
 msgid_plural "In %d days"
-msgstr[0] "W ciągu %s dni"
+msgstr[0] "W ciągu %s dnia"
 msgstr[1] "W ciągu %s dni"
 
 #: ../src/openweathermap_org.js:181
-#, fuzzy
 msgid "thunderstorm with light rain"
 msgstr "burza z piorunami z lekkimi opadami deszczu"
 
 #: ../src/openweathermap_org.js:183
-#, fuzzy
 msgid "thunderstorm with rain"
 msgstr "burza z piorunami z opadami deszczu"
 
 #: ../src/openweathermap_org.js:185
-#, fuzzy
 msgid "thunderstorm with heavy rain"
 msgstr "burza z piorunami z silnymi opadami deszczu"
 
 #: ../src/openweathermap_org.js:187
-#, fuzzy
 msgid "light thunderstorm"
 msgstr "mała burza z piorunami"
 
 #: ../src/openweathermap_org.js:189
-#, fuzzy
 msgid "thunderstorm"
 msgstr "burza z piorunami"
 
 #: ../src/openweathermap_org.js:191
-#, fuzzy
 msgid "heavy thunderstorm"
 msgstr "silna burza z piorunami"
 
 #: ../src/openweathermap_org.js:193
-#, fuzzy
 msgid "ragged thunderstorm"
-msgstr "budze z piorunami"
+msgstr "burza z piorunami"
 
 #: ../src/openweathermap_org.js:195
-#, fuzzy
 msgid "thunderstorm with light drizzle"
-msgstr "burze z piorunami z słabą mżawką"
+msgstr "burza z piorunami i słabą mżawką"
 
 #: ../src/openweathermap_org.js:197
-#, fuzzy
 msgid "thunderstorm with drizzle"
-msgstr "burze z piorunami z mżawką"
+msgstr "burza z piorunami i mżawką"
 
 #: ../src/openweathermap_org.js:199
-#, fuzzy
 msgid "thunderstorm with heavy drizzle"
 msgstr "burze z piorunami z silną mżawką"
 
@@ -297,52 +285,42 @@ msgid "light intensity drizzle"
 msgstr "słaba mżawka"
 
 #: ../src/openweathermap_org.js:203
-#, fuzzy
 msgid "drizzle"
 msgstr "mżawka"
 
 #: ../src/openweathermap_org.js:205
-#, fuzzy
 msgid "heavy intensity drizzle"
 msgstr "silna mżawka"
 
 #: ../src/openweathermap_org.js:207
-#, fuzzy
 msgid "light intensity drizzle rain"
 msgstr "słabe opady deszczu mżawka"
 
 #: ../src/openweathermap_org.js:209
-#, fuzzy
 msgid "drizzle rain"
 msgstr "mżawka"
 
 #: ../src/openweathermap_org.js:211
-#, fuzzy
 msgid "heavy intensity drizzle rain"
 msgstr "silne opady deszczu mżawka"
 
 #: ../src/openweathermap_org.js:213
-#, fuzzy
 msgid "shower rain and drizzle"
 msgstr "opady deszczu i mżawka"
 
 #: ../src/openweathermap_org.js:215
-#, fuzzy
 msgid "heavy shower rain and drizzle"
 msgstr "silne opady deszczu i mżawka"
 
 #: ../src/openweathermap_org.js:217
-#, fuzzy
 msgid "shower drizzle"
 msgstr "mżawka"
 
 #: ../src/openweathermap_org.js:219
-#, fuzzy
 msgid "light rain"
 msgstr "słabe opady deszczu"
 
 #: ../src/openweathermap_org.js:221
-#, fuzzy
 msgid "moderate rain"
 msgstr "umiarkowane opady deszczu"
 
@@ -355,27 +333,22 @@ msgid "very heavy rain"
 msgstr "silne opady deszczu"
 
 #: ../src/openweathermap_org.js:227
-#, fuzzy
 msgid "extreme rain"
 msgstr "ulewa"
 
 #: ../src/openweathermap_org.js:229
-#, fuzzy
 msgid "freezing rain"
 msgstr "marznący deszcz"
 
 #: ../src/openweathermap_org.js:231
-#, fuzzy
 msgid "light intensity shower rain"
 msgstr "słabe, przelotne opady deszczu"
 
 #: ../src/openweathermap_org.js:233
-#, fuzzy
 msgid "shower rain"
 msgstr "przelotne opady deszczu"
 
 #: ../src/openweathermap_org.js:235
-#, fuzzy
 msgid "heavy intensity shower rain"
 msgstr "silne opady śniegu"
 
@@ -384,7 +357,6 @@ msgid "ragged shower rain"
 msgstr "opady deszczu"
 
 #: ../src/openweathermap_org.js:239
-#, fuzzy
 msgid "light snow"
 msgstr "słabe opady śniegu"
 
@@ -393,42 +365,34 @@ msgid "snow"
 msgstr "śnieg"
 
 #: ../src/openweathermap_org.js:243
-#, fuzzy
 msgid "heavy snow"
 msgstr "silne opady śniegu"
 
 #: ../src/openweathermap_org.js:245
-#, fuzzy
 msgid "sleet"
 msgstr "deszcz ze śniegiem"
 
 #: ../src/openweathermap_org.js:247
-#, fuzzy
 msgid "shower sleet"
 msgstr "przelotne opady deszczu ze śniegiem"
 
 #: ../src/openweathermap_org.js:249
-#, fuzzy
 msgid "light rain and snow"
 msgstr "słabe, przelotne opady deszczu ze śniegiem"
 
 #: ../src/openweathermap_org.js:251
-#, fuzzy
 msgid "rain and snow"
 msgstr "deszcz ze śniegiem"
 
 #: ../src/openweathermap_org.js:253
-#, fuzzy
 msgid "light shower snow"
 msgstr "słabe, przelotne opady śniegu"
 
 #: ../src/openweathermap_org.js:255
-#, fuzzy
 msgid "shower snow"
 msgstr "przelotne opady śniegu"
 
 #: ../src/openweathermap_org.js:257
-#, fuzzy
 msgid "heavy shower snow"
 msgstr "silne opady śniegu"
 
@@ -449,7 +413,6 @@ msgid "Sand/Dust Whirls"
 msgstr "wiry piasku/pyłu"
 
 #: ../src/openweathermap_org.js:267
-#, fuzzy
 msgid "Fog"
 msgstr "mgła"
 
@@ -478,22 +441,18 @@ msgid "sky is clear"
 msgstr "bezchmurnie"
 
 #: ../src/openweathermap_org.js:281
-#, fuzzy
 msgid "few clouds"
 msgstr "kilka chmur"
 
 #: ../src/openweathermap_org.js:283
-#, fuzzy
 msgid "scattered clouds"
 msgstr "mało chmur"
 
 #: ../src/openweathermap_org.js:285
-#, fuzzy
 msgid "broken clouds"
 msgstr "dużo chmur"
 
 #: ../src/openweathermap_org.js:287
-#, fuzzy
 msgid "overcast clouds"
 msgstr "całkowite zachmurzenie"
 
@@ -508,12 +467,11 @@ msgid "Invalid data when searching for \"%s\""
 msgstr "Błędne dane podczas wyszukiwania \"%s\""
 
 #: ../src/prefs.js:222 ../src/prefs.js:286 ../src/prefs.js:331
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "\"%s\" not found"
 msgstr "Nie odnaleziono \"%s\""
 
 #: ../src/prefs.js:392
-#, fuzzy
 msgid "Location"
 msgstr "Lokalizacja"
 
@@ -536,7 +494,6 @@ msgstr "Edytuj nazwę"
 
 #: ../data/weather-settings.ui:49 ../data/weather-settings.ui:79
 #: ../data/weather-settings.ui:219
-#, fuzzy
 msgid "Clear entry"
 msgstr "Usuń wpis"
 
@@ -657,7 +614,6 @@ msgid "Conditions in Panel"
 msgstr "Warunki pogodowe na panelu"
 
 #: ../data/weather-settings.ui:922
-#, fuzzy
 msgid "Conditions in Forecast"
 msgstr "Warunki pogodowe w prognozie" 
 
@@ -735,19 +691,19 @@ msgstr "O programie"
 #, fuzzy
 #~ msgid "One %ds ago"
 #~ msgid_plural "%d days ago"
-#~ msgstr[0] "%s dni temu"
+#~ msgstr[0] "%s dzień temu"
 #~ msgstr[1] "%s dni temu"
 
 #, fuzzy
 #~ msgid "One %d ago"
 #~ msgid_plural "%d days ago"
-#~ msgstr[0] "%s dni temu"
+#~ msgstr[0] "%s dzień temu"
 #~ msgstr[1] "%s dni temu"
 
 #, fuzzy
 #~ msgid "In one day"
 #~ msgid_plural "In %d days"
-#~ msgstr[0] "W ciągu %s dni"
+#~ msgstr[0] "W ciągu jednego dnia"
 #~ msgstr[1] "W ciągu %s dni"
 
 #~ msgid "Name of the city"
