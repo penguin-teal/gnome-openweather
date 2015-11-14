@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: gnome-shell-extension-openweather\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-08 11:59+0100\n"
-"PO-Revision-Date: 2015-11-08 12:04+0100\n"
+"PO-Revision-Date: 2015-11-14 11:07+0100\n"
 "Last-Translator: Jens Lody <openweather@jenslody.de>\n"
 "Language-Team: Deutsch <openweather@jenslody.de>\n"
 "Language: de\n"
@@ -200,7 +200,7 @@ msgstr "Bitte warten"
 
 #: ../src/extension.js:1386
 msgid "Cloudiness:"
-msgstr "Bewölkung"
+msgstr "Bewölkung:"
 
 #: ../src/extension.js:1390
 msgid "Humidity:"
