@@ -437,7 +437,7 @@ msgstr "céu limpo"
 
 #: ../src/openweathermap_org.js:281
 msgid "few clouds"
-msgstr "poucas núvens"
+msgstr "poucas nuvens"
 
 #: ../src/openweathermap_org.js:283
 msgid "scattered clouds"
