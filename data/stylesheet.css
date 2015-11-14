@@ -63,6 +63,7 @@ padding-left: 5px;
 .openweather-current-databox-captions {
 text-align: right;
 padding-right: 5px;
+spacing: 0;
 }
 
 .openweather-forecast-icon {
@@ -79,6 +80,7 @@ min-width: 140px;
 
 .openweather-forecast-day {
 font-size: 90%;
+spacing: 0;
 }
 
 .openweather-forecast-iconbox {

@@ -1373,7 +1373,7 @@ const OpenweatherMenuButton = new Lang.Class({
         });
         let rb_captions = new St.BoxLayout({
             vertical: true,
-            style_class: 'popup-status-menu-item openweather-current-databox-captions'
+            style_class: 'popup-menu-item popup-status-menu-item openweather-current-databox-captions'
         });
         let rb_values = new St.BoxLayout({
             vertical: true,
@@ -1466,7 +1466,7 @@ const OpenweatherMenuButton = new Lang.Class({
                 style_class: 'system-menu-action openweather-forecast-icon'
             });
             forecastWeather.Day = new St.Label({
-                style_class: 'popup-status-menu-item openweather-forecast-day'
+                style_class: 'popup-menu-item popup-status-menu-item openweather-forecast-day'
             });
             forecastWeather.Summary = new St.Label({
                 style_class: 'system-menu-action  openweather-forecast-summary'
