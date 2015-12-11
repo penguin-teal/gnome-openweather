@@ -1,13 +1,13 @@
-%global git ccaa1eb
+%global git 4e0e4d8
 %global uuid openweather-extension@jenslody.de
 %global github jenslody-gnome-shell-extension-openweather
 %global checkout git%{git}
-%global checkout_date 20151125
+%global checkout_date 20151211
 
 
 Name:           gnome-shell-extension-openweather
 Version:        1
-Release:        0.12.%{checkout_date}%{checkout}%{?dist}
+Release:        0.13.%{checkout_date}%{checkout}%{?dist}
 Summary:        Display weather information from many locations in the world
 
 Group:          User Interface/Desktops
@@ -28,7 +28,7 @@ of the world in GNOME Shell.
 Be aware, that system-wide installed gnome-shell-extensions are disabled by default
 and have to be enable by the user(s), if they get installed the first time.
 You can use gnome-tweak-tool (additional package) or run:
-"gnome-shell-extension-tool -e openweather-extension@jenslody.de" (without the
+"gnome-shell-extension-tool -e %uuid" (without the
 quotes) on a console.
 
 %prep
@@ -66,6 +66,10 @@ fi
 %{_datadir}/gnome-shell/extensions/%{uuid}
 
 %changelog
+* Fri Dec 11 2015 Jens Lody <fedora@jenslody.de> - 1-0.13.20151211git4e0e4d8
+- Update polish translation.
+- Add hint about enabling system-wide installed shell-extensions.
+
 * Wed Nov 25 2015 Jens Lody <fedora@jenslody.de> - 1-0.12.20151125gitccaa1eb
 - Add support for new development version of gnome-shell (3.19.2).
 
