@@ -25,7 +25,6 @@ msgid "..."
 msgstr "..."
 
 #: ../src/extension.js:370
-#, fuzzy
 msgid ""
 "Openweathermap.org does not work without an api-key.\n"
 "Either set the switch to use the extensions default key in the preferences "
@@ -223,7 +222,7 @@ msgstr "Wczoraj"
 
 #: ../src/forecast_io.js:154 ../src/forecast_io.js:276
 #: ../src/openweathermap_org.js:351 ../src/openweathermap_org.js:453
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
 msgstr[0] "%s dzień temu"
@@ -558,15 +557,15 @@ msgstr ""
 "nie ma możliwości pobrania informacji osobno dla aktualnej pogody i prognozy."
 
 #: ../data/weather-settings.ui:628
-#, fuzzy
 msgid "Use extensions api-key for openweathermap.org"
-msgstr "Osobisty klucz Api od openweathermap.org"
+msgstr "Użyj klucza Api aplikacji dla openweathermap.org"
 
 #: ../data/weather-settings.ui:639
 msgid ""
 "Switch off, if you have your own api-key for openweathermap.org and put it "
 "into the text-box below."
-msgstr ""
+msgstr "Wyłącz, jeżeli posiadasz własny klucz Api dla openweathermap.org "
+"i wpisz go w pole poniżej."
 
 #: ../data/weather-settings.ui:656
 msgid "Weather provider"
@@ -700,9 +699,8 @@ msgstr "O programie"
 #~ msgid "Loading current weather ..."
 #~ msgstr "Wczytywanie bieżącej pogody..."
 
-#, fuzzy
 #~ msgid "In %d days"
-#~ msgstr "W ciągu %s dni"
+#~ msgstr "Za %s dni"
 
 #, fuzzy
 #~ msgid "One %ds ago"
