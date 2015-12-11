@@ -25,6 +25,11 @@ Requires:       gnome-shell >= 3.12.0
 gnome-shell-extension-openweather is an extension to display weather information
 from http://openweathermap.org/ or http://forecast.io for (almost) all locations
 of the world in GNOME Shell.
+Be aware, that system-wide installed gnome-shell-extensions are disabled by default
+and have to be enable by the user(s), if they get installed the first time.
+You can use gnome-tweak-tool (additional package) or run:
+"gnome-shell-extension-tool -e openweather-extension@jenslody.de" (without the
+quotes) on a console.
 
 %prep
 %setup -q -n %{github}-%{git}
