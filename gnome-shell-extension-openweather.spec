@@ -1,13 +1,13 @@
-%global git 6368d32
+%global git ccaa1eb
 %global uuid openweather-extension@jenslody.de
 %global github jenslody-gnome-shell-extension-openweather
 %global checkout git%{git}
-%global checkout_date 20151108
+%global checkout_date 20151125
 
 
 Name:           gnome-shell-extension-openweather
 Version:        1
-Release:        0.10.%{checkout_date}%{checkout}%{?dist}
+Release:        0.12.%{checkout_date}%{checkout}%{?dist}
 Summary:        Display weather information from many locations in the world
 
 Group:          User Interface/Desktops
@@ -61,6 +61,12 @@ fi
 %{_datadir}/gnome-shell/extensions/%{uuid}
 
 %changelog
+* Wed Nov 25 2015 Jens Lody <fedora@jenslody.de> - 1-0.12.20151125gitccaa1eb
+- Add support for new development version of gnome-shell (3.19.2).
+
+* Sun Nov 08 2015 Jens Lody <fedora@jenslody.de> - 1-0.11.20151108git23a83b3
+- Add support for new development version of gnome-shell.
+
 * Sun Nov 08 2015 Jens Lody <fedora@jenslody.de> - 1-0.10.20151108git6368d32
 - Fix typo in metadata.json .
 
