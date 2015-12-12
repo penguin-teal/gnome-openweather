@@ -1,8 +1,8 @@
-%global git 4e0e4d8
+%global git fff5a03
 %global uuid openweather-extension@jenslody.de
 %global github jenslody-gnome-shell-extension-openweather
 %global checkout git%{git}
-%global checkout_date 20151211
+%global checkout_date 20151212
 
 
 Name:           gnome-shell-extension-openweather
@@ -18,8 +18,8 @@ URL:            https://github.com/jenslody/gnome-shell-extension-openweather
 Source0:        https://github.com/jenslody/gnome-shell-extension-openweather/tarball/master/%{github}-%{git}.tar.gz
 BuildArch:      noarch
 
-BuildRequires:  autoconf, automake, glib2-devel, gnome-common >= 3.12.0, intltool
-Requires:       gnome-shell >= 3.12.0
+BuildRequires:  autoconf, automake, glib2-devel, gnome-common >= 3.8.0, intltool
+Requires:       gnome-shell >= 3.8.0
 
 %description
 gnome-shell-extension-openweather is an extension to display weather information
@@ -66,9 +66,10 @@ fi
 %{_datadir}/gnome-shell/extensions/%{uuid}
 
 %changelog
-* Fri Dec 11 2015 Jens Lody <fedora@jenslody.de> - 1-0.13.20151211git4e0e4d8
+* Sat Dec 12 2015 Jens Lody <fedora@jenslody.de> - 1-0.13.20151212gitfff5a03
 - Update polish translation.
 - Add hint about enabling system-wide installed shell-extensions.
+- Re-add gnome-shell 3.8 and 3.10 compatibilty (epel7).
 
 * Wed Nov 25 2015 Jens Lody <fedora@jenslody.de> - 1-0.12.20151125gitccaa1eb
 - Add support for new development version of gnome-shell (3.19.2).
