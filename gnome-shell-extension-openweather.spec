@@ -1,4 +1,4 @@
-%global git fff5a03
+%global git a80c8a3
 %global uuid openweather-extension@jenslody.de
 %global github jenslody-gnome-shell-extension-openweather
 %global checkout git%{git}
@@ -7,7 +7,7 @@
 
 Name:           gnome-shell-extension-openweather
 Version:        1
-Release:        0.13.%{checkout_date}%{checkout}%{?dist}
+Release:        0.14.%{checkout_date}%{checkout}%{?dist}
 Summary:        Display weather information from many locations in the world
 
 Group:          User Interface/Desktops
@@ -18,15 +18,17 @@ URL:            https://github.com/jenslody/gnome-shell-extension-openweather
 Source0:        https://github.com/jenslody/gnome-shell-extension-openweather/tarball/master/%{github}-%{git}.tar.gz
 BuildArch:      noarch
 
-BuildRequires:  autoconf, automake, glib2-devel, gnome-common >= 3.8.0, intltool
+# The version of gnome-common in CentOS7 is only 3.7.4
+BuildRequires:  autoconf, automake, glib2-devel, gnome-common >= 3.7.4, intltool
 Requires:       gnome-shell >= 3.8.0
 
 %description
 gnome-shell-extension-openweather is an extension to display weather information
 from http://openweathermap.org/ or http://forecast.io for (almost) all locations
 of the world in GNOME Shell.
-Be aware, that system-wide installed gnome-shell-extensions are disabled by default
-and have to be enable by the user(s), if they get installed the first time.
+Be aware, that system-wide installed gnome-shell-extensions are disabled by
+default and have to be enable by the user(s), if they get installed the first
+time.
 You can use gnome-tweak-tool (additional package) or run:
 "gnome-shell-extension-tool -e %uuid" (without the
 quotes) on a console.
@@ -66,7 +68,10 @@ fi
 %{_datadir}/gnome-shell/extensions/%{uuid}
 
 %changelog
-* Sat Dec 12 2015 Jens Lody <fedora@jenslody.de> - 1-0.13.20151212gitfff5a03
+* Sat Dec 12 2015 Jens Lody <fedora@jenslody.de> - 1-0.14.20151212gita80c8a3
+- Bump release to be higher than the last copr-(test-)build.
+
+* Sat Dec 12 2015 Jens Lody <fedora@jenslody.de> - 1-0.13.20151212gita80c8a3
 - Update polish translation.
 - Add hint about enabling system-wide installed shell-extensions.
 - Re-add gnome-shell 3.8 and 3.10 compatibilty (epel7).
