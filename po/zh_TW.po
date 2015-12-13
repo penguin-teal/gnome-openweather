@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-shell-extension-openweather\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-08 11:59+0100\n"
-"PO-Revision-Date: 2015-10-26 00:44+0800\n"
+"POT-Creation-Date: 2015-12-13 21:44+0800\n"
+"PO-Revision-Date: 2015-12-13 22:13+0800\n"
 "Last-Translator: shlinux <lishaohui.qd@163.com>\n"
 "Language-Team: Chinese (Traditional) <>\n"
 "Language: zh_TW\n"
@@ -24,8 +24,7 @@ msgstr ""
 msgid "..."
 msgstr "..."
 
-#: ../src/extension.js:370
-#, fuzzy
+#: ../src/extension.js:382
 msgid ""
 "Openweathermap.org does not work without an api-key.\n"
 "Either set the switch to use the extensions default key in the preferences "
@@ -33,10 +32,10 @@ msgid ""
 "personal key into the preferences dialog."
 msgstr ""
 "Openweathermap.org 在沒有 API 密鑰的情況下無法工作。\n"
-"請到 http://openweathermap.org/appid 註冊，並將您的個人密鑰粘貼到選項對話框"
-"中。"
+"請開啓使用擴展的默認密鑰，或者到 http://openweathermap.org/appid 註冊，並將您"
+"的個人密鑰粘貼到選項對話框中。"
 
-#: ../src/extension.js:419
+#: ../src/extension.js:431
 msgid ""
 "Forecast.io does not work without an api-key.\n"
 "Please register at https://developer.forecast.io/register and paste your "
@@ -46,173 +45,173 @@ msgstr ""
 "請到 https://developer.forecast.io/register 註冊，並將您的個人密鑰粘貼到選項"
 "對話框中。"
 
-#: ../src/extension.js:492
+#: ../src/extension.js:504
 #, javascript-format
 msgid "Can not connect to %s"
 msgstr "無法連接到 %s"
 
-#: ../src/extension.js:776 ../data/weather-settings.ui:460
+#: ../src/extension.js:845 ../data/weather-settings.ui:460
 msgid "Locations"
 msgstr "地點"
 
-#: ../src/extension.js:788
+#: ../src/extension.js:860
 msgid "Reload Weather Information"
 msgstr "重新載入天氣訊息"
 
-#: ../src/extension.js:803
+#: ../src/extension.js:875
 msgid "Weather data provided by:"
 msgstr "天氣數據來源於："
 
-#: ../src/extension.js:814
+#: ../src/extension.js:891
 #, javascript-format
 msgid "Can not open %s"
 msgstr "無法打開 %s"
 
-#: ../src/extension.js:821
+#: ../src/extension.js:898
 msgid "Weather Settings"
 msgstr "天氣設定"
 
-#: ../src/extension.js:872 ../src/prefs.js:1021
+#: ../src/extension.js:962 ../src/prefs.js:1021
 msgid "Invalid city"
 msgstr "無效的城市代碼"
 
-#: ../src/extension.js:883
+#: ../src/extension.js:973
 msgid "Invalid location! Please try to recreate it."
 msgstr "無效地點！請嘗試重建一個。"
 
-#: ../src/extension.js:982
+#: ../src/extension.js:1075
 msgid "Calm"
 msgstr "無風"
 
-#: ../src/extension.js:985
+#: ../src/extension.js:1078
 msgid "Light air"
 msgstr "軟風"
 
-#: ../src/extension.js:988
+#: ../src/extension.js:1081
 msgid "Light breeze"
 msgstr "輕風"
 
-#: ../src/extension.js:991
+#: ../src/extension.js:1084
 msgid "Gentle breeze"
 msgstr "微風"
 
-#: ../src/extension.js:994
+#: ../src/extension.js:1087
 msgid "Moderate breeze"
 msgstr "和風"
 
-#: ../src/extension.js:997
+#: ../src/extension.js:1090
 msgid "Fresh breeze"
 msgstr "清風"
 
-#: ../src/extension.js:1000
+#: ../src/extension.js:1093
 msgid "Strong breeze"
 msgstr "強風"
 
-#: ../src/extension.js:1003
+#: ../src/extension.js:1096
 msgid "Moderate gale"
 msgstr "疾風"
 
-#: ../src/extension.js:1006
+#: ../src/extension.js:1099
 msgid "Fresh gale"
 msgstr "大風"
 
-#: ../src/extension.js:1009
+#: ../src/extension.js:1102
 msgid "Strong gale"
 msgstr "烈風"
 
-#: ../src/extension.js:1012
+#: ../src/extension.js:1105
 msgid "Storm"
 msgstr "狂風"
 
-#: ../src/extension.js:1015
+#: ../src/extension.js:1108
 msgid "Violent storm"
 msgstr "暴風"
 
-#: ../src/extension.js:1018
+#: ../src/extension.js:1111
 msgid "Hurricane"
 msgstr "颶風"
 
-#: ../src/extension.js:1022
+#: ../src/extension.js:1115
 msgid "Sunday"
 msgstr "星期日"
 
-#: ../src/extension.js:1022
+#: ../src/extension.js:1115
 msgid "Monday"
 msgstr "星期一"
 
-#: ../src/extension.js:1022
+#: ../src/extension.js:1115
 msgid "Tuesday"
 msgstr "星期二"
 
-#: ../src/extension.js:1022
+#: ../src/extension.js:1115
 msgid "Wednesday"
 msgstr "星期三"
 
-#: ../src/extension.js:1022
+#: ../src/extension.js:1115
 msgid "Thursday"
 msgstr "星期四"
 
-#: ../src/extension.js:1022
+#: ../src/extension.js:1115
 msgid "Friday"
 msgstr "星期五"
 
-#: ../src/extension.js:1022
+#: ../src/extension.js:1115
 msgid "Saturday"
 msgstr "星期六"
 
-#: ../src/extension.js:1028
+#: ../src/extension.js:1121
 msgid "N"
 msgstr "北"
 
-#: ../src/extension.js:1028
+#: ../src/extension.js:1121
 msgid "NE"
 msgstr "東北"
 
-#: ../src/extension.js:1028
+#: ../src/extension.js:1121
 msgid "E"
 msgstr "東"
 
-#: ../src/extension.js:1028
+#: ../src/extension.js:1121
 msgid "SE"
 msgstr "東南"
 
-#: ../src/extension.js:1028
+#: ../src/extension.js:1121
 msgid "S"
 msgstr "南"
 
-#: ../src/extension.js:1028
+#: ../src/extension.js:1121
 msgid "SW"
 msgstr "西南"
 
-#: ../src/extension.js:1028
+#: ../src/extension.js:1121
 msgid "W"
 msgstr "西"
 
-#: ../src/extension.js:1028
+#: ../src/extension.js:1121
 msgid "NW"
 msgstr "西北"
 
-#: ../src/extension.js:1321
+#: ../src/extension.js:1414
 msgid "Loading ..."
 msgstr "載入中 ..."
 
-#: ../src/extension.js:1325
+#: ../src/extension.js:1418
 msgid "Please wait"
 msgstr "請稍候"
 
-#: ../src/extension.js:1386
+#: ../src/extension.js:1479
 msgid "Cloudiness:"
 msgstr "雲量："
 
-#: ../src/extension.js:1390
+#: ../src/extension.js:1483
 msgid "Humidity:"
 msgstr "濕度："
 
-#: ../src/extension.js:1394
+#: ../src/extension.js:1487
 msgid "Pressure:"
 msgstr "氣壓："
 
-#: ../src/extension.js:1398
+#: ../src/extension.js:1491
 msgid "Wind:"
 msgstr "風："
 
@@ -555,15 +554,16 @@ msgstr ""
 "注意：預報超時不適用於 forecast.io，因爲他們不提供當前天氣和預報的分別下載。"
 
 #: ../data/weather-settings.ui:628
-#, fuzzy
 msgid "Use extensions api-key for openweathermap.org"
-msgstr "openweathermap.org 的個人 API 密鑰"
+msgstr "使用本擴展的 openweathermap.org API 密鑰"
 
 #: ../data/weather-settings.ui:639
 msgid ""
 "Switch off, if you have your own api-key for openweathermap.org and put it "
 "into the text-box below."
 msgstr ""
+"如果您自己擁有 openweathermap.org 的 API 密鑰，請將其輸入到下面的文本框中，並"
+"關閉本選項。"
 
 #: ../data/weather-settings.ui:656
 msgid "Weather provider"
