@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: 0.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-08 11:59+0100\n"
-"PO-Revision-Date: 2015-10-14 09:45+0300\n"
+"PO-Revision-Date: 2015-12-17 11:50+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -33,6 +33,10 @@ msgid ""
 "dialog to on or register at http://openweathermap.org/appid and paste your "
 "personal key into the preferences dialog."
 msgstr ""
+"Openweathermap.org не работает без API ключа.\n"
+"В диалоге настроек либо включите использование ключа дополнения, "
+"либо зарегистрируйтесь на http://openweathermap.org/appid "
+"и вставьте персональный ключ в диалоге настроек."
 
 #: ../src/extension.js:419
 msgid ""
@@ -40,6 +44,9 @@ msgid ""
 "Please register at https://developer.forecast.io/register and paste your "
 "personal key into the preferences dialog."
 msgstr ""
+"Forecast.io не работает без API ключа.\n"
+"Зарегистрируйтесь на https://developer.forecast.io/register "
+"и вставьте персональный ключ в диалоге настроек."
 
 #: ../src/extension.js:492
 #, javascript-format
@@ -558,13 +565,15 @@ msgstr ""
 #: ../data/weather-settings.ui:628
 #, fuzzy
 msgid "Use extensions api-key for openweathermap.org"
-msgstr "Персональный API ключ от openweathermap.org"
+msgstr "Использовать API ключ дополнения от openweathermap.org"
 
 #: ../data/weather-settings.ui:639
 msgid ""
 "Switch off, if you have your own api-key for openweathermap.org and put it "
 "into the text-box below."
 msgstr ""
+"Отключите, если у Вас есть собственный API ключ от openweathermap.org "
+"и введите его в поле ниже."
 
 #: ../data/weather-settings.ui:656
 msgid "Weather provider"
