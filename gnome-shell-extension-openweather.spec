@@ -18,8 +18,7 @@ URL:            https://github.com/jenslody/gnome-shell-extension-openweather
 Source0:        https://github.com/jenslody/gnome-shell-extension-openweather/tarball/master/%{github}-%{git}.tar.gz
 BuildArch:      noarch
 
-# The version of gnome-common in CentOS7 is only 3.7.4
-BuildRequires:  autoconf, automake, glib2-devel, gnome-common >= 3.7.4, intltool
+BuildRequires:  autoconf, automake, glib2-devel, gnome-common >= 3.8.0, intltool
 Requires:       gnome-shell >= 3.8.0
 
 %description
