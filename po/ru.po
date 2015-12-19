@@ -563,7 +563,6 @@ msgstr ""
 "погоды и прогноза."
 
 #: ../data/weather-settings.ui:628
-#, fuzzy
 msgid "Use extensions api-key for openweathermap.org"
 msgstr "Использовать API ключ дополнения от openweathermap.org"
 
