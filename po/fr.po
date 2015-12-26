@@ -466,7 +466,7 @@ msgstr "Schéma \"%s\" manquant."
 
 #: ../src/prefs.js:393
 msgid "Location"
-msgstr "Emplacements"
+msgstr "Emplacement"
 
 #: ../src/prefs.js:403
 msgid "Provider"
@@ -528,7 +528,7 @@ msgstr "Clé API personnelle de openweathermap.org"
 
 #: ../data/weather-settings.ui:545
 msgid "Personal Api key from forecast.io"
-msgstr "Clé API personnelle de openweathermap.org"
+msgstr "Clé API personnelle de forecast.io"
 
 #: ../data/weather-settings.ui:558
 msgid "Refresh timeout for current weather [min]"
@@ -543,6 +543,8 @@ msgid ""
 "Note: the forecast-timout is not used for forecast.io, because they do not "
 "provide seperate downloads for current weather and forecasts."
 msgstr ""
+"Note: le rafraichissemnt n'est pas utilisé pour forecast.io, parce qu'il ne "
+"fourni pas des flux séparés pour la météo actuelle et les prévisions"
 
 #: ../data/weather-settings.ui:628
 msgid "Use extensions api-key for openweathermap.org"
@@ -564,7 +566,7 @@ msgstr "Choisir fournisseur géolocalisation"
 
 #: ../data/weather-settings.ui:702
 msgid "Personal AppKey from developer.mapquest.com"
-msgstr "Clé API personnelle de openweathermap.org"
+msgstr "AppKey personnelle de developer.mapquest.com"
 
 #: ../data/weather-settings.ui:731
 msgid "Geolocation provider"
@@ -676,7 +678,7 @@ msgid ""
 "<span size=\"small\">This program comes with ABSOLUTELY NO WARRANTY.\n"
 "See the <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
 "\">GNU General Public License, version 2 or later</a> for details.</span>"
-msgstr "<span size=\"small\">Ce programme est fourni avec ABSOLUMENT AUCUNE GARANTIE.\n"
+msgstr "<span size=\"small\">Ce programme est fourni SANS AUCUNE GARANTIE.\n"
 "Voir la <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
 "\">GNU General Public License, version 2</a> pour plus de détails.</span>"
 
