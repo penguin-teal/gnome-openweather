@@ -40,7 +40,6 @@ msgid ""
 msgstr ""
 
 #: ../src/extension.js:492
-#, fuzzy, javascript-format
 msgid "Can not connect to %s"
 msgstr "Impossible d'ouvrir %s"
 
@@ -71,7 +70,7 @@ msgstr "Ville invalide"
 
 #: ../src/extension.js:883
 msgid "Invalid location! Please try to recreate it."
-msgstr ""
+msgstr "Localisation invalide! Essayez de la recréer."
 
 #: ../src/extension.js:982
 msgid "Calm"
@@ -216,7 +215,6 @@ msgstr "Hier"
 
 #: ../src/forecast_io.js:154 ../src/forecast_io.js:276
 #: ../src/openweathermap_org.js:351 ../src/openweathermap_org.js:453
-#, fuzzy, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
 msgstr[0] "Il y a %s jours"
@@ -231,7 +229,6 @@ msgid "Tomorrow"
 msgstr "Demain"
 
 #: ../src/forecast_io.js:271 ../src/openweathermap_org.js:449
-#, fuzzy, javascript-format
 msgid "In %d day"
 msgid_plural "In %d days"
 msgstr[0] "Dans %s jours"
@@ -461,21 +458,19 @@ msgstr "Non disponible"
 #: ../src/prefs.js:326
 #, javascript-format
 msgid "Invalid data when searching for \"%s\""
-msgstr ""
+msgstr "Données invalides pour \"%s\""
 
 #: ../src/prefs.js:223 ../src/prefs.js:287 ../src/prefs.js:332
-#, fuzzy, javascript-format
 msgid "\"%s\" not found"
 msgstr "Schéma \"%s\" manquant."
 
 #: ../src/prefs.js:393
-#, fuzzy
 msgid "Location"
 msgstr "Emplacements"
 
 #: ../src/prefs.js:403
 msgid "Provider"
-msgstr ""
+msgstr "Fournisseur"
 
 #: ../src/prefs.js:535
 #, javascript-format
@@ -484,37 +479,36 @@ msgstr "Supprimer %s ?"
 
 #: ../src/prefs.js:1056
 msgid "default"
-msgstr ""
+msgstr "défaut"
 
 #: ../data/weather-settings.ui:31
 msgid "Edit name"
-msgstr ""
+msgstr "Éditer nom"
 
 #: ../data/weather-settings.ui:49 ../data/weather-settings.ui:79
 #: ../data/weather-settings.ui:219
-#, fuzzy
 msgid "Clear entry"
 msgstr "Dégagé"
 
 #: ../data/weather-settings.ui:63
 msgid "Edit coordinates"
-msgstr ""
+msgstr "Éditer les coordonnées"
 
 #: ../data/weather-settings.ui:93 ../data/weather-settings.ui:256
 msgid "Extensions default weather provider"
-msgstr ""
+msgstr "Fournisseur météo par défaut"
 
 #: ../data/weather-settings.ui:125 ../data/weather-settings.ui:288
 msgid "Cancel"
-msgstr ""
+msgstr "Annuler"
 
 #: ../data/weather-settings.ui:143 ../data/weather-settings.ui:306
 msgid "Save"
-msgstr ""
+msgstr "Sauvegarder"
 
 #: ../data/weather-settings.ui:196
 msgid "Search by location or coordinates"
-msgstr ""
+msgstr "Chercher par lieu ou coordonnées"
 
 #: ../data/weather-settings.ui:220
 msgid "e.g. Vaiaku, Tuvalu or -8.5211767,179.1976747"
@@ -522,28 +516,27 @@ msgstr ""
 
 #: ../data/weather-settings.ui:230
 msgid "Find"
-msgstr ""
+msgstr "Trouver"
 
 #: ../data/weather-settings.ui:481
 msgid "Chose default weather provider"
-msgstr ""
+msgstr "Choisir le fournisseur météo par défaut"
 
 #: ../data/weather-settings.ui:494
 msgid "Personal Api key from openweathermap.org"
 msgstr "Clé API personnelle de openweathermap.org"
 
 #: ../data/weather-settings.ui:545
-#, fuzzy
 msgid "Personal Api key from forecast.io"
 msgstr "Clé API personnelle de openweathermap.org"
 
 #: ../data/weather-settings.ui:558
 msgid "Refresh timeout for current weather [min]"
-msgstr ""
+msgstr "Rafraichissement météo actuelle toutes les [min]"
 
 #: ../data/weather-settings.ui:572
 msgid "Refresh timeout for weather forecast [min]"
-msgstr ""
+msgstr "Rafraichissement prévisions météos toutes les [min]"
 
 #: ../data/weather-settings.ui:600
 msgid ""
@@ -552,7 +545,6 @@ msgid ""
 msgstr ""
 
 #: ../data/weather-settings.ui:628
-#, fuzzy
 msgid "Use extensions api-key for openweathermap.org"
 msgstr "Clé API personnelle de openweathermap.org"
 
@@ -563,23 +555,20 @@ msgid ""
 msgstr ""
 
 #: ../data/weather-settings.ui:656
-#, fuzzy
 msgid "Weather provider"
-msgstr "Données météo fournies par :"
+msgstr "Fournisseur météo"
 
 #: ../data/weather-settings.ui:676
 msgid "Chose geolocation provider"
-msgstr ""
+msgstr "Choisir fournisseur géolocalisation"
 
 #: ../data/weather-settings.ui:702
-#, fuzzy
 msgid "Personal AppKey from developer.mapquest.com"
 msgstr "Clé API personnelle de openweathermap.org"
 
 #: ../data/weather-settings.ui:731
-#, fuzzy
 msgid "Geolocation provider"
-msgstr "Données météo fournies par :"
+msgstr "Fournisseur géolocalisation"
 
 #: ../data/weather-settings.ui:751
 msgid "Temperature Unit"
@@ -595,7 +584,7 @@ msgstr "Unité de pression"
 
 #: ../data/weather-settings.ui:849
 msgid "Units"
-msgstr ""
+msgstr "Unités de mesure"
 
 #: ../data/weather-settings.ui:869
 msgid "Position in Panel"
@@ -615,7 +604,7 @@ msgstr "Icones symboliques"
 
 #: ../data/weather-settings.ui:913
 msgid "Text on buttons"
-msgstr ""
+msgstr "Texte sur boutons"
 
 #: ../data/weather-settings.ui:924
 msgid "Temperature in Panel"
@@ -626,9 +615,8 @@ msgid "Conditions in Panel"
 msgstr "Conditions sur le tableau de bord"
 
 #: ../data/weather-settings.ui:946
-#, fuzzy
 msgid "Conditions in Forecast"
-msgstr "Conditions sur le tableau de bord"
+msgstr "Conditions météos dans les prévisions"
 
 #: ../data/weather-settings.ui:957
 msgid "Center forecast"
@@ -656,11 +644,11 @@ msgstr "Gauche"
 
 #: ../data/weather-settings.ui:1135
 msgid "Layout"
-msgstr ""
+msgstr "Disposition Affichage"
 
 #: ../data/weather-settings.ui:1187
 msgid "Version: "
-msgstr ""
+msgstr "Version: "
 
 #: ../data/weather-settings.ui:1201
 msgid "unknown (self-build ?)"
@@ -671,26 +659,30 @@ msgid ""
 "<span>Weather extension to display weather information from <a href="
 "\"https://openweathermap.org/\">Openweathermap</a> or <a href=\"https://"
 "forecast.io\">forecast.io</a> for almost all locations in the world.</span>"
-msgstr ""
+msgstr "<span>Extension météo pour afficher les informations météos de <a href="
+"\"https://openweathermap.org/\">Openweathermap</a> ou <a href=\"https://"
+"forecast.io\">forecast.io</a>\n pour la plupart des localisations dans le monde.</span>"
 
 #: ../data/weather-settings.ui:1244
 msgid "Maintained by"
-msgstr ""
+msgstr "Maintenu par"
 
 #: ../data/weather-settings.ui:1274
 msgid "Webpage"
-msgstr ""
+msgstr "Page web"
 
 #: ../data/weather-settings.ui:1295
 msgid ""
 "<span size=\"small\">This program comes with ABSOLUTELY NO WARRANTY.\n"
 "See the <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
 "\">GNU General Public License, version 2 or later</a> for details.</span>"
-msgstr ""
+msgstr "<span size=\"small\">Ce programme est fourni avec ABSOLUMENT AUCUNE GARANTIE.\n"
+"Voir la <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
+"\">GNU General Public License, version 2</a> pour plus de détails.</span>"
 
 #: ../data/weather-settings.ui:1316
 msgid "About"
-msgstr ""
+msgstr "À propos"
 
 #~ msgid "Loading current weather ..."
 #~ msgstr "Chargement de la météo ..."
@@ -710,12 +702,6 @@ msgstr ""
 #~ msgid_plural "%d days ago"
 #~ msgstr[0] "Il y a %s jours"
 #~ msgstr[1] "Il y a %s jours"
-
-#, fuzzy
-#~ msgid "In one day"
-#~ msgid_plural "In %d days"
-#~ msgstr[0] "Dans %s jours"
-#~ msgstr[1] "Dans %s jours"
 
 #~ msgid "Name of the city"
 #~ msgstr "Nom de la ville"
