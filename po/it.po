@@ -46,9 +46,9 @@ msgstr ""
 "la tua chiave personale nella finestra delle preferenze."
 
 #: ../src/extension.js:492
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "Can not connect to %s"
-msgstr "Impossibile aprire %s"
+msgstr "Impossibile connettersi a %s"
 
 #: ../src/extension.js:776 ../data/weather-settings.ui:460
 msgid "Locations"
@@ -222,7 +222,7 @@ msgstr "Ieri"
 
 #: ../src/forecast_io.js:154 ../src/forecast_io.js:276
 #: ../src/openweathermap_org.js:351 ../src/openweathermap_org.js:453
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
 msgstr[0] "%s giorno fa"
@@ -237,7 +237,7 @@ msgid "Tomorrow"
 msgstr "Domani"
 
 #: ../src/forecast_io.js:271 ../src/openweathermap_org.js:449
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "In %d day"
 msgid_plural "In %d days"
 msgstr[0] "Tra %s giorno"
@@ -470,12 +470,11 @@ msgid "Invalid data when searching for \"%s\""
 msgstr "Dati non validi in risposta a \"%s\""
 
 #: ../src/prefs.js:223 ../src/prefs.js:287 ../src/prefs.js:332
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "\"%s\" not found"
 msgstr "Schema \"%s\" non trovato."
 
 #: ../src/prefs.js:393
-#, fuzzy
 msgid "Location"
 msgstr "Località"
 
@@ -486,7 +485,7 @@ msgstr "Provider"
 #: ../src/prefs.js:535
 #, javascript-format
 msgid "Remove %s ?"
-msgstr "Rimuovere %s ?"
+msgstr "Rimuovere %s?"
 
 #: ../src/prefs.js:1056
 msgid "default"
@@ -538,7 +537,6 @@ msgid "Personal Api key from openweathermap.org"
 msgstr "Chiave API personale per openweathermap.org"
 
 #: ../data/weather-settings.ui:545
-#, fuzzy
 msgid "Personal Api key from forecast.io"
 msgstr "Chiave API personale per forecast.io"
 
@@ -559,7 +557,6 @@ msgstr ""
 "non fornisce il download separato delle condizioni meteo dalle previsioni."
 
 #: ../data/weather-settings.ui:628
-#, fuzzy
 msgid "Use extensions api-key for openweathermap.org"
 msgstr "Usa la chiave API di default per openweathermap.org"
 
@@ -572,7 +569,6 @@ msgstr ""
 "inseriscila nel riquadro sottostante"
 
 #: ../data/weather-settings.ui:656
-#, fuzzy
 msgid "Weather provider"
 msgstr "Provider meteo"
 
@@ -581,12 +577,10 @@ msgid "Chose geolocation provider"
 msgstr "Provider di geolocalizzazione scelto"
 
 #: ../data/weather-settings.ui:702
-#, fuzzy
 msgid "Personal AppKey from developer.mapquest.com"
 msgstr "Chiave API personale per openweathermap.org"
 
 #: ../data/weather-settings.ui:731
-#, fuzzy
 msgid "Geolocation provider"
 msgstr "Provider di geolocalizzazione"
 
@@ -635,7 +629,6 @@ msgid "Conditions in Panel"
 msgstr "Mostra le condizioni meteo sul pannello"
 
 #: ../data/weather-settings.ui:946
-#, fuzzy
 msgid "Conditions in Forecast"
 msgstr "Mostra le previsioni meteo sul pannello"
 
@@ -706,31 +699,3 @@ msgstr ""
 #: ../data/weather-settings.ui:1316
 msgid "About"
 msgstr "Informazioni"
-
-#~ msgid "Loading current weather ..."
-#~ msgstr "Caricamento dati meteo ..."
-
-#, fuzzy
-#~ msgid "In %d days"
-#~ msgstr "Tra %s giorni"
-
-#, fuzzy
-#~ msgid "One %ds ago"
-#~ msgid_plural "%d days ago"
-#~ msgstr[0] "%s giorno fa"
-#~ msgstr[1] "%s giorni fa"
-
-#, fuzzy
-#~ msgid "One %d ago"
-#~ msgid_plural "%d days ago"
-#~ msgstr[0] "%s giorno fa"
-#~ msgstr[1] "%s giorni fa"
-
-#, fuzzy
-#~ msgid "In one day"
-#~ msgid_plural "In %d days"
-#~ msgstr[0] "Tra %s giorno"
-#~ msgstr[1] "Tra %s giorni"
-
-#~ msgid "Name of the city"
-#~ msgstr "Nome della città"
