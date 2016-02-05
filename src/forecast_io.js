@@ -170,9 +170,9 @@ function parseWeatherCurrent() {
     if (this._text_in_panel)
         weatherInfoT = temperature;
 
-    this._weatherInfo.text = weatherInfoC + ((weatherInfoC && weatherInfoT) ? ", " : "") + weatherInfoT;
+    this._weatherInfo.text = weatherInfoC + ((weatherInfoC && weatherInfoT) ? _(", ") : "") + weatherInfoT;
 
-    this._currentWeatherSummary.text = comment + ", " + temperature;
+    this._currentWeatherSummary.text = comment + _(", ") + temperature;
     this._currentWeatherLocation.text = location;
     this._currentWeatherCloudiness.text = parseInt(json.cloudCover * 100) + ' %';
     this._currentWeatherHumidity.text = parseInt(json.humidity * 100) + ' %';
