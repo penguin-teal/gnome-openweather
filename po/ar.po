@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-05 13:28+0400\n"
+"POT-Creation-Date: 2016-02-05 13:45+0400\n"
 "PO-Revision-Date: 2016-02-05 13:34+0400\n"
 "Last-Translator: Khaled Hosny <khaledhosny@eglug.org>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
@@ -323,6 +323,11 @@ msgstr[2] "منذ يومين"
 msgstr[3] "منذ %d أيام"
 msgstr[4] "منذ %d يومًا"
 msgstr[5] "منذ %d يوم"
+
+#: ../src/forecast_io.js:173 ../src/forecast_io.js:175
+#: ../src/openweathermap_org.js:365 ../src/openweathermap_org.js:367
+msgid ", "
+msgstr "، "
 
 #: ../src/forecast_io.js:267 ../src/openweathermap_org.js:445
 msgid "Today"
@@ -809,9 +814,6 @@ msgstr "عنْ"
 
 #~ msgid "Weather extension ready"
 #~ msgstr "امتداد الطقس جاهز"
-
-#~ msgid ", "
-#~ msgstr "، "
 
 #~ msgid "No weather information"
 #~ msgstr "لا معلومات عن الطقس"
