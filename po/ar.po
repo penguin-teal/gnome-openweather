@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-05 12:25+0400\n"
-"PO-Revision-Date: 2016-02-05 13:10+0400\n"
+"POT-Creation-Date: 2016-02-05 13:28+0400\n"
+"PO-Revision-Date: 2016-02-05 13:34+0400\n"
 "Last-Translator: Khaled Hosny <khaledhosny@eglug.org>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
 "Language: ar\n"
@@ -77,6 +77,38 @@ msgstr "مدينة غير صحيحة"
 #: ../src/extension.js:973
 msgid "Invalid location! Please try to recreate it."
 msgstr "مكان غير صحيح. رجاء حاول إعادة ضبطة."
+
+#: ../src/extension.js:1020 ../data/weather-settings.ui:786
+msgid "°F"
+msgstr "°ف"
+
+#: ../src/extension.js:1022 ../data/weather-settings.ui:787
+msgid "K"
+msgstr "ك"
+
+#: ../src/extension.js:1024 ../data/weather-settings.ui:788
+msgid "°Ra"
+msgstr ""
+
+#: ../src/extension.js:1026 ../data/weather-settings.ui:789
+msgid "°Ré"
+msgstr ""
+
+#: ../src/extension.js:1028 ../data/weather-settings.ui:790
+msgid "°Rø"
+msgstr ""
+
+#: ../src/extension.js:1030 ../data/weather-settings.ui:791
+msgid "°De"
+msgstr ""
+
+#: ../src/extension.js:1032 ../data/weather-settings.ui:792
+msgid "°N"
+msgstr ""
+
+#: ../src/extension.js:1034 ../data/weather-settings.ui:785
+msgid "°C"
+msgstr "°م"
 
 #: ../src/extension.js:1075
 msgid "Calm"
@@ -189,6 +221,67 @@ msgstr "غرب"
 #: ../src/extension.js:1121
 msgid "NW"
 msgstr "شمال غربي"
+
+#: ../src/extension.js:1207 ../src/extension.js:1216
+#: ../data/weather-settings.ui:823
+msgid "hPa"
+msgstr "ه‍.باسكال"
+
+#: ../src/extension.js:1211 ../data/weather-settings.ui:824
+msgid "inHg"
+msgstr "بوصة زئبق"
+
+#: ../src/extension.js:1221 ../data/weather-settings.ui:825
+msgid "bar"
+msgstr ""
+
+#: ../src/extension.js:1226 ../data/weather-settings.ui:826
+msgid "Pa"
+msgstr ""
+
+#: ../src/extension.js:1231 ../data/weather-settings.ui:827
+msgid "kPa"
+msgstr "ك.باسكال"
+
+#: ../src/extension.js:1236 ../data/weather-settings.ui:828
+msgid "atm"
+msgstr ""
+
+#: ../src/extension.js:1241 ../data/weather-settings.ui:829
+msgid "at"
+msgstr ""
+
+#: ../src/extension.js:1246 ../data/weather-settings.ui:830
+msgid "Torr"
+msgstr ""
+
+#: ../src/extension.js:1251 ../data/weather-settings.ui:831
+msgid "psi"
+msgstr ""
+
+#: ../src/extension.js:1256 ../data/weather-settings.ui:832
+msgid "mmHg"
+msgstr "مم زئبق"
+
+#: ../src/extension.js:1300 ../data/weather-settings.ui:807
+msgid "m/s"
+msgstr "م/ث"
+
+#: ../src/extension.js:1304 ../data/weather-settings.ui:806
+msgid "mph"
+msgstr "ميل/س"
+
+#: ../src/extension.js:1309 ../data/weather-settings.ui:805
+msgid "km/h"
+msgstr "كم/س"
+
+#: ../src/extension.js:1318 ../data/weather-settings.ui:808
+msgid "kn"
+msgstr ""
+
+#: ../src/extension.js:1323 ../data/weather-settings.ui:809
+msgid "ft/s"
+msgstr "قدم\\ث"
 
 #: ../src/extension.js:1414
 msgid "Loading ..."
@@ -603,6 +696,10 @@ msgstr "وحدة سرعة الرياح"
 msgid "Pressure Unit"
 msgstr "وحدة الضغط"
 
+#: ../data/weather-settings.ui:810
+msgid "Beaufort"
+msgstr "بوفورت"
+
 #: ../data/weather-settings.ui:849
 msgid "Units"
 msgstr "الوحدات"
@@ -731,12 +828,6 @@ msgstr "عنْ"
 #~ msgid "No forecast information"
 #~ msgstr "لا نشرة جوية"
 
-#~ msgid "%s °F"
-#~ msgstr "%s °ف"
-
-#~ msgid "%s °C"
-#~ msgstr "%s °م"
-
 #~ msgid "%s K"
 #~ msgstr "%s ك"
 
@@ -776,14 +867,8 @@ msgstr "عنْ"
 #~ msgid "$d$s mph"
 #~ msgstr "$d$s ميل\\س"
 
-#~ msgid "$d$s km/h"
-#~ msgstr "$d$s كم\\س"
-
 #~ msgid "$d$s m/s"
 #~ msgstr "$d$s م\\س"
-
-#~ msgid "$dBeaufort $s"
-#~ msgstr "$d بوفورت $s"
 
 #~ msgid "Distance Unit"
 #~ msgstr "وحدة المسافة"
