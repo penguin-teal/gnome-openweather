@@ -782,14 +782,14 @@
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <items>
-                      <item>°C</item>
-                      <item>°F</item>
-                      <item>K</item>
-                      <item>°Ra</item>
-                      <item>°Ré</item>
-                      <item>°Rø</item>
-                      <item>°De</item>
-                      <item>°N</item>
+                      <item translatable="yes">°C</item>
+                      <item translatable="yes">°F</item>
+                      <item translatable="yes">K</item>
+                      <item translatable="yes">°Ra</item>
+                      <item translatable="yes">°Ré</item>
+                      <item translatable="yes">°Rø</item>
+                      <item translatable="yes">°De</item>
+                      <item translatable="yes">°N</item>
                     </items>
                   </object>
                   <packing>
@@ -802,12 +802,12 @@
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <items>
-                      <item>km/h</item>
-                      <item>mph</item>
-                      <item>m/s</item>
-                      <item>kn</item>
-                      <item>ft/s</item>
-                      <item>Beaufort</item>
+                      <item translatable="yes">km/h</item>
+                      <item translatable="yes">mph</item>
+                      <item translatable="yes">m/s</item>
+                      <item translatable="yes">kn</item>
+                      <item translatable="yes">ft/s</item>
+                      <item translatable="yes">Beaufort</item>
                     </items>
                   </object>
                   <packing>
@@ -820,16 +820,16 @@
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <items>
-                      <item>hPa</item>
-                      <item>inHg</item>
-                      <item>bar</item>
-                      <item>Pa</item>
-                      <item>kPa</item>
-                      <item>atm</item>
-                      <item>at</item>
-                      <item>Torr</item>
-                      <item>psi</item>
-                      <item>mmHg</item>
+                      <item translatable="yes">hPa</item>
+                      <item translatable="yes">inHg</item>
+                      <item translatable="yes">bar</item>
+                      <item translatable="yes">Pa</item>
+                      <item translatable="yes">kPa</item>
+                      <item translatable="yes">atm</item>
+                      <item translatable="yes">at</item>
+                      <item translatable="yes">Torr</item>
+                      <item translatable="yes">psi</item>
+                      <item translatable="yes">mmHg</item>
                     </items>
                   </object>
                   <packing>
