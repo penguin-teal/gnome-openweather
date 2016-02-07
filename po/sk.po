@@ -1,21 +1,21 @@
 # Slovakian translation for gnome-shell-extension-openweather
 # Copyright (C) 2011
 # This file is distributed under the same license as the gnome-shell-extension-openweather package.
-# Dušan Kazik <prescott66@gmail.com>, 2011.
+# Dušan Kazik <prescott66@gmail.com>, 2011,2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: 3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-08 11:59+0100\n"
-"PO-Revision-Date: 2015-04-24 15:02+0100\n"
+"POT-Creation-Date: 2016-02-07 13:55+0100\n"
+"PO-Revision-Date: 2016-02-07 14:09+0100\n"
 "Last-Translator: Dušan Kazik <prescott66@gmail.com>\n"
 "Language-Team: \n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.5\n"
+"X-Generator: Poedit 1.8.6\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: ../src/extension.js:172
@@ -29,6 +29,10 @@ msgid ""
 "dialog to on or register at http://openweathermap.org/appid and paste your "
 "personal key into the preferences dialog."
 msgstr ""
+"Služba openweathermap.org nefunguje bez kľúča api-key.\n"
+"Buď zapnite prepínač v nastaveniach na použitie predvoleného kľúča "
+"rozšírenia, alebo sa zaregistrujte na adrese http://openweathermap.org/"
+"appid a vložte váš súkromný kľúč do dialógového okna nastavení."
 
 #: ../src/extension.js:419
 msgid ""
@@ -36,11 +40,14 @@ msgid ""
 "Please register at https://developer.forecast.io/register and paste your "
 "personal key into the preferences dialog."
 msgstr ""
+"Služba forecast.io nefunguje bez kľúča api-key.\n"
+"Zaregistrujte sa, prosím, na adrese https://developer.forecast.io/register "
+"a vložte váš súkromný kľúč do dialógového okna nastavení."
 
 #: ../src/extension.js:492
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "Can not connect to %s"
-msgstr "Nedá sa otvoriť %s"
+msgstr "Nedá sa pripojiť k %s"
 
 #: ../src/extension.js:776 ../data/weather-settings.ui:460
 msgid "Locations"
@@ -69,7 +76,7 @@ msgstr "Neplatné mesto"
 
 #: ../src/extension.js:883
 msgid "Invalid location! Please try to recreate it."
-msgstr ""
+msgstr "Neplatné umiestnenie! Prosím, skúste ho vytvoriť znovu."
 
 #: ../src/extension.js:982
 msgid "Calm"
@@ -461,21 +468,20 @@ msgstr "Nedostupný"
 #: ../src/prefs.js:326
 #, javascript-format
 msgid "Invalid data when searching for \"%s\""
-msgstr ""
+msgstr "Neplatné údaje pri hľadaní „%s“"
 
 #: ../src/prefs.js:223 ../src/prefs.js:287 ../src/prefs.js:332
 #, javascript-format
 msgid "\"%s\" not found"
-msgstr ""
+msgstr "„%s“ sa nenašlo"
 
 #: ../src/prefs.js:393
-#, fuzzy
 msgid "Location"
-msgstr "Umiestnenia"
+msgstr "Umiestnenie"
 
 #: ../src/prefs.js:403
 msgid "Provider"
-msgstr ""
+msgstr "Poskytovateľ"
 
 #: ../src/prefs.js:535
 #, javascript-format
@@ -484,7 +490,7 @@ msgstr "Odstrániť %s ?"
 
 #: ../src/prefs.js:1056
 msgid "default"
-msgstr ""
+msgstr "predvolené"
 
 #: ../data/weather-settings.ui:31
 msgid "Edit name"
@@ -500,17 +506,16 @@ msgid "Edit coordinates"
 msgstr "Upraviť súradnice"
 
 #: ../data/weather-settings.ui:93 ../data/weather-settings.ui:256
-#, fuzzy
 msgid "Extensions default weather provider"
-msgstr "Zvoľte poskytovateľa počasia"
+msgstr "Predvolený poskytovateľ počasia pre rozšírenie"
 
 #: ../data/weather-settings.ui:125 ../data/weather-settings.ui:288
 msgid "Cancel"
-msgstr ""
+msgstr "Zrušiť"
 
 #: ../data/weather-settings.ui:143 ../data/weather-settings.ui:306
 msgid "Save"
-msgstr ""
+msgstr "Uložiť"
 
 #: ../data/weather-settings.ui:196
 msgid "Search by location or coordinates"
@@ -522,12 +527,11 @@ msgstr "napr. Vaiaku, Tuvalu alebo -8.5211767,179.1976747"
 
 #: ../data/weather-settings.ui:230
 msgid "Find"
-msgstr ""
+msgstr "Nájsť"
 
 #: ../data/weather-settings.ui:481
-#, fuzzy
 msgid "Chose default weather provider"
-msgstr "Zvoľte poskytovateľa počasia"
+msgstr "Zvoľte predvoleného poskytovateľa počasia"
 
 #: ../data/weather-settings.ui:494
 msgid "Personal Api key from openweathermap.org"
@@ -539,48 +543,47 @@ msgstr "Osobný kľúč Api z forecast.io"
 
 #: ../data/weather-settings.ui:558
 msgid "Refresh timeout for current weather [min]"
-msgstr ""
+msgstr "Časový limit obnovy pre aktuálne počasie [min]"
 
 #: ../data/weather-settings.ui:572
 msgid "Refresh timeout for weather forecast [min]"
-msgstr ""
+msgstr "Časový limit obnovy pre predpoveď počasia [min]"
 
 #: ../data/weather-settings.ui:600
 msgid ""
 "Note: the forecast-timout is not used for forecast.io, because they do not "
 "provide seperate downloads for current weather and forecasts."
 msgstr ""
+"Poznámka: časový limit predpovede nie je použitý pre službu forecast.io, "
+"pretože neposkytuje oddelené preberanie pre aktuálne počasie a predpovede."
 
 #: ../data/weather-settings.ui:628
-#, fuzzy
 msgid "Use extensions api-key for openweathermap.org"
-msgstr "Osobný kľúč Api z openweathermap.org"
+msgstr "Použiť kľúč api-key rozšírenia pre openweathermap.org"
 
 #: ../data/weather-settings.ui:639
 msgid ""
 "Switch off, if you have your own api-key for openweathermap.org and put it "
 "into the text-box below."
 msgstr ""
+"Vypnite, ak máte svoj vlastný kľúč api-key pre službu openweathermap.org a "
+"vložte ho do textového poľa nižšie."
 
 #: ../data/weather-settings.ui:656
-#, fuzzy
 msgid "Weather provider"
-msgstr "Zvoľte poskytovateľa počasia"
+msgstr "Poskytovateľ počasia"
 
 #: ../data/weather-settings.ui:676
-#, fuzzy
 msgid "Chose geolocation provider"
-msgstr "Zvoľte poskytovateľa počasia"
+msgstr "Zvoľte poskytovateľa geolokácie"
 
 #: ../data/weather-settings.ui:702
-#, fuzzy
 msgid "Personal AppKey from developer.mapquest.com"
-msgstr "Osobný kľúč Api z forecast.io"
+msgstr "Osobný kľúč AppKey zo služby developer.mapquest.com"
 
 #: ../data/weather-settings.ui:731
-#, fuzzy
 msgid "Geolocation provider"
-msgstr "Zvoľte poskytovateľa počasia"
+msgstr "Poskytovateľ geolokácie"
 
 #: ../data/weather-settings.ui:751
 msgid "Temperature Unit"
@@ -596,7 +599,7 @@ msgstr "Jednotka tlaku"
 
 #: ../data/weather-settings.ui:849
 msgid "Units"
-msgstr ""
+msgstr "Jednotky"
 
 #: ../data/weather-settings.ui:869
 msgid "Position in Panel"
@@ -656,15 +659,15 @@ msgstr "Vľavo"
 
 #: ../data/weather-settings.ui:1135
 msgid "Layout"
-msgstr ""
+msgstr "Rozloženie"
 
 #: ../data/weather-settings.ui:1187
 msgid "Version: "
-msgstr ""
+msgstr "Verzia:"
 
 #: ../data/weather-settings.ui:1201
 msgid "unknown (self-build ?)"
-msgstr ""
+msgstr "neznáma (zostavené vlastnoručne?)"
 
 #: ../data/weather-settings.ui:1221
 msgid ""
@@ -672,14 +675,17 @@ msgid ""
 "\"https://openweathermap.org/\">Openweathermap</a> or <a href=\"https://"
 "forecast.io\">forecast.io</a> for almost all locations in the world.</span>"
 msgstr ""
+"<span>Či má rozšírenie zobraziť informácie o počasí zo služby <a href="
+"\"https://openweathermap.org/\">Openweathermap</a> alebo <a href=\"https://"
+"forecast.io\">forecast.io</a> pre takmer všetky miesta na svete.</span>"
 
 #: ../data/weather-settings.ui:1244
 msgid "Maintained by"
-msgstr ""
+msgstr "Spravuje"
 
 #: ../data/weather-settings.ui:1274
 msgid "Webpage"
-msgstr ""
+msgstr "Webová stránka"
 
 #: ../data/weather-settings.ui:1295
 msgid ""
@@ -687,10 +693,11 @@ msgid ""
 "See the <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
 "\">GNU General Public License, version 2 or later</a> for details.</span>"
 msgstr ""
+"<span size=\"small\">Tento program je vytvorený ABSOLÚTNE BEZ ZÁRUKY.\n"
+"Pre viac podrobností si prezrite licenciu <a href=\"https://www.gnu.org/"
+"licenses/old-licenses/gpl-2.0.html\">GNU General Public License, vo verzii "
+"2 alebo novšej</a>.</span>"
 
 #: ../data/weather-settings.ui:1316
 msgid "About"
-msgstr ""
-
-#~ msgid "Loading current weather ..."
-#~ msgstr "Načítava sa aktuálne počasie ..."
+msgstr "O rozšírení"
