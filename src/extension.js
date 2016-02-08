@@ -1017,21 +1017,21 @@ const OpenweatherMenuButton = new Lang.Class({
 
     unit_to_unicode: function() {
         if (this._units == WeatherUnits.FAHRENHEIT)
-            return '\u00B0F';
+            return _('\u00B0F');
         else if (this._units == WeatherUnits.KELVIN)
-            return 'K';
+            return _('K');
         else if (this._units == WeatherUnits.RANKINE)
-            return '\u00B0Ra';
+            return _('\u00B0Ra');
         else if (this._units == WeatherUnits.REAUMUR)
-            return '\u00B0R\u00E9';
+            return _('\u00B0R\u00E9');
         else if (this._units == WeatherUnits.ROEMER)
-            return '\u00B0R\u00F8';
+            return _('\u00B0R\u00F8');
         else if (this._units == WeatherUnits.DELISLE)
-            return '\u00B0De';
+            return _('\u00B0De');
         else if (this._units == WeatherUnits.NEWTON)
-            return '\u00B0N';
+            return _('\u00B0N');
         else
-            return '\u00B0C';
+            return _('\u00B0C');
     },
 
     hasIcon: function(icon) {
@@ -1204,56 +1204,56 @@ const OpenweatherMenuButton = new Lang.Class({
     },
 
     formatPressure: function(pressure) {
-        let pressure_unit = 'hPa';
+        let pressure_unit = _('hPa');
         switch (this._pressure_units) {
             case WeatherPressureUnits.INHG:
                 pressure = this.toInHg(pressure);
-                pressure_unit = "inHg";
+                pressure_unit = _("inHg");
                 break;
 
             case WeatherPressureUnits.HPA:
                 pressure = pressure.toFixed(this._decimal_places);
-                pressure_unit = "hPa";
+                pressure_unit = _("hPa");
                 break;
 
             case WeatherPressureUnits.BAR:
                 pressure = (pressure / 1000).toFixed(this._decimal_places);
-                pressure_unit = "bar";
+                pressure_unit = _("bar");
                 break;
 
             case WeatherPressureUnits.PA:
                 pressure = (pressure * 100).toFixed(this._decimal_places);
-                pressure_unit = "Pa";
+                pressure_unit = _("Pa");
                 break;
 
             case WeatherPressureUnits.KPA:
                 pressure = (pressure / 10).toFixed(this._decimal_places);
-                pressure_unit = "kPa";
+                pressure_unit = _("kPa");
                 break;
 
             case WeatherPressureUnits.ATM:
                 pressure = (pressure * 0.000986923267).toFixed(this._decimal_places);
-                pressure_unit = "atm";
+                pressure_unit = _("atm");
                 break;
 
             case WeatherPressureUnits.AT:
                 pressure = (pressure * 0.00101971621298).toFixed(this._decimal_places);
-                pressure_unit = "at";
+                pressure_unit = _("at");
                 break;
 
             case WeatherPressureUnits.TORR:
                 pressure = (pressure * 0.750061683).toFixed(this._decimal_places);
-                pressure_unit = "Torr";
+                pressure_unit = _("Torr");
                 break;
 
             case WeatherPressureUnits.PSI:
                 pressure = (pressure * 0.0145037738).toFixed(this._decimal_places);
-                pressure_unit = "psi";
+                pressure_unit = _("psi");
                 break;
 
             case WeatherPressureUnits.MMHG:
                 pressure = (pressure * 0.750061683).toFixed(this._decimal_places);
-                pressure_unit = "mmHg";
+                pressure_unit = _("mmHg");
                 break;
         }
         return parseFloat(pressure).toLocaleString() + ' ' + pressure_unit;
@@ -1297,16 +1297,16 @@ const OpenweatherMenuButton = new Lang.Class({
     },
 
     formatWind: function(speed, direction) {
-        let unit = 'm/s';
+        let unit = _('m/s');
         switch (this._wind_speed_units) {
             case WeatherWindSpeedUnits.MPH:
                 speed = (speed * OPENWEATHER_CONV_MPS_IN_MPH).toFixed(this._decimal_places);
-                unit = 'mph';
+                unit = _('mph');
                 break;
 
             case WeatherWindSpeedUnits.KPH:
                 speed = (speed * OPENWEATHER_CONV_MPS_IN_KPH).toFixed(this._decimal_places);
-                unit = 'km/h';
+                unit = _('km/h');
                 break;
 
             case WeatherWindSpeedUnits.MPS:
@@ -1315,12 +1315,12 @@ const OpenweatherMenuButton = new Lang.Class({
 
             case WeatherWindSpeedUnits.KNOTS:
                 speed = (speed * OPENWEATHER_CONV_MPS_IN_KNOTS).toFixed(this._decimal_places);
-                unit = 'kn';
+                unit = _('kn');
                 break;
 
             case WeatherWindSpeedUnits.FPS:
                 speed = (speed * OPENWEATHER_CONV_MPS_IN_FPS).toFixed(this._decimal_places);
-                unit = 'ft/s';
+                unit = _('ft/s');
                 break;
 
             case WeatherWindSpeedUnits.BEAUFORT:
