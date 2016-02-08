@@ -1,13 +1,13 @@
-%global git 27c779c
+%global git 35e912a
 %global uuid openweather-extension@jenslody.de
 %global github jenslody-gnome-shell-extension-openweather
 %global checkout git%{git}
-%global checkout_date 20151217
+%global checkout_date 20160123
 
 
 Name:           gnome-shell-extension-openweather
 Version:        1
-Release:        0.15.%{checkout_date}%{checkout}%{?dist}
+Release:        0.17.%{checkout_date}%{checkout}%{?dist}
 Summary:        Display weather information from many locations in the world
 
 Group:          User Interface/Desktops
@@ -68,6 +68,13 @@ fi
 %{_datadir}/gnome-shell/extensions/%{uuid}
 
 %changelog
+* Wed Feb 03 2016 Fedora Release Engineering <releng@fedoraproject.org> - 1-0.17.20160123git35e912a
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_24_Mass_Rebuild
+
+* Sat Jan 23 2016 Jens Lody <fedora@jenslody.de> - 1-0.16.20160123git35e912a
+- Add support for new development version of gnome-shell (3.19.4).
+- Updated russian, spanish french and italian translation files.
+
 * Thu Dec 17 2015 Jens Lody <fedora@jenslody.de> - 1-0.15.20151217git27c779c
 - Add support for new development version of gnome-shell (3.19.3).
 
