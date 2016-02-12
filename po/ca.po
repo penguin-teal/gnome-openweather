@@ -84,31 +84,31 @@ msgstr "Calma"
 
 #: ../src/extension.js:985
 msgid "Light air"
-msgstr "Ventolina"
+msgstr "Vent dèbil"
 
 #: ../src/extension.js:988
 msgid "Light breeze"
-msgstr "Vent fluixet"
+msgstr "Brisa dèbil"
 
 #: ../src/extension.js:991
 msgid "Gentle breeze"
-msgstr "Vent fluix"
+msgstr "Brisa suau"
 
 #: ../src/extension.js:994
 msgid "Moderate breeze"
-msgstr "Vent moderat"
+msgstr "Brisa moderada"
 
 #: ../src/extension.js:997
 msgid "Fresh breeze"
-msgstr "Vent fresquet"
+msgstr "Brisa fresca"
 
 #: ../src/extension.js:1000
 msgid "Strong breeze"
-msgstr "Vent fresc"
+msgstr "Brisa forta"
 
 #: ../src/extension.js:1003
 msgid "Moderate gale"
-msgstr "Vent fort"
+msgstr "Temporal moderat"
 
 #: ../src/extension.js:1006
 msgid "Fresh gale"
@@ -244,7 +244,7 @@ msgstr[1] "En %s dies"
 
 #: ../src/openweathermap_org.js:181
 msgid "thunderstorm with light rain"
-msgstr "Tempestes amb pluges dèbils"
+msgstr "Tempesta amb pluja dèbil"
 
 #: ../src/openweathermap_org.js:183
 #, fuzzy
@@ -253,7 +253,7 @@ msgstr "Tempestes amb pluges"
 
 #: ../src/openweathermap_org.js:185
 msgid "thunderstorm with heavy rain"
-msgstr "Tempestes amb fortes pluges"
+msgstr "Tempestes amb pluges fortes"
 
 #: ../src/openweathermap_org.js:187
 #, fuzzy
@@ -268,7 +268,7 @@ msgstr "Tempestes"
 #: ../src/openweathermap_org.js:191
 #, fuzzy
 msgid "heavy thunderstorm"
-msgstr "Tempestes elèctriques severes"
+msgstr "Tempestes elèctriques fortes"
 
 #: ../src/openweathermap_org.js:193
 #, fuzzy
@@ -277,7 +277,7 @@ msgstr "Tempestes aïllades"
 
 #: ../src/openweathermap_org.js:195
 msgid "thunderstorm with light drizzle"
-msgstr "Tempesta amb plugim dèbil"
+msgstr "Tempestes amb plugim dèbil"
 
 #: ../src/openweathermap_org.js:197
 msgid "thunderstorm with drizzle"
@@ -320,12 +320,12 @@ msgstr "Barreja de pluja i calamarsa"
 
 #: ../src/openweathermap_org.js:215
 msgid "heavy shower rain and drizzle"
-msgstr "Barreja de xàfecs i plugim"
+msgstr "Xàfecs forts i plugim"
 
 #: ../src/openweathermap_org.js:217
 #, fuzzy
 msgid "shower drizzle"
-msgstr "Plugims gelats"
+msgstr "Plugim gelat"
 
 #: ../src/openweathermap_org.js:219
 #, fuzzy
@@ -347,7 +347,7 @@ msgstr "Pluja molt intensa"
 #: ../src/openweathermap_org.js:227
 #, fuzzy
 msgid "extreme rain"
-msgstr "Pluja glaçada"
+msgstr "Pluja abundant"
 
 #: ../src/openweathermap_org.js:229
 #, fuzzy
@@ -397,12 +397,12 @@ msgstr "Ruixats"
 #: ../src/openweathermap_org.js:249
 #, fuzzy
 msgid "light rain and snow"
-msgstr "Barreja de pluja i neu"
+msgstr "pluja lleugera i neu"
 
 #: ../src/openweathermap_org.js:251
 #, fuzzy
 msgid "rain and snow"
-msgstr "Barreja de pluja i neu"
+msgstr "pluja i neu"
 
 #: ../src/openweathermap_org.js:253
 #, fuzzy
@@ -412,7 +412,7 @@ msgstr "Precipitacions lleugeres de neu"
 #: ../src/openweathermap_org.js:255
 #, fuzzy
 msgid "shower snow"
-msgstr "Ruixats"
+msgstr "Nevades"
 
 #: ../src/openweathermap_org.js:257
 #, fuzzy
@@ -421,15 +421,15 @@ msgstr "Nevada forta"
 
 #: ../src/openweathermap_org.js:259
 msgid "mist"
-msgstr "Boirina"
+msgstr "boirina"
 
 #: ../src/openweathermap_org.js:261
 msgid "smoke"
-msgstr "Boira"
+msgstr "boira"
 
 #: ../src/openweathermap_org.js:263
 msgid "haze"
-msgstr "Calitja"
+msgstr "calitja"
 
 #: ../src/openweathermap_org.js:265
 msgid "Sand/Dust Whirls"
@@ -442,11 +442,11 @@ msgstr "Boirós"
 
 #: ../src/openweathermap_org.js:269
 msgid "sand"
-msgstr "Arena"
+msgstr "arena"
 
 #: ../src/openweathermap_org.js:271
 msgid "dust"
-msgstr "Pols"
+msgstr "pols"
 
 #: ../src/openweathermap_org.js:273
 msgid "VOLCANIC ASH"
@@ -466,12 +466,12 @@ msgstr "Cel clar"
 
 #: ../src/openweathermap_org.js:281
 msgid "few clouds"
-msgstr "Alguns núvols"
+msgstr "alguns núvols"
 
 #: ../src/openweathermap_org.js:283
 #, fuzzy
 msgid "scattered clouds"
-msgstr "Pluges aïllades"
+msgstr "núvols dispersos"
 
 #: ../src/openweathermap_org.js:285
 msgid "broken clouds"
@@ -495,7 +495,7 @@ msgstr "Dades no vàlides en buscar \"%s\""
 #: ../src/prefs.js:223 ../src/prefs.js:287 ../src/prefs.js:332
 #, fuzzy, javascript-format
 msgid "\"%s\" not found"
-msgstr "No s'ha pogut trobar l'esquema \"%s\". "
+msgstr "No s'ha trobat \"%s\". "
 
 #: ../src/prefs.js:393
 #, fuzzy
@@ -535,7 +535,7 @@ msgstr "Proveïdor del temps per defecte de l'extensió"
 
 #: ../data/weather-settings.ui:125 ../data/weather-settings.ui:288
 msgid "Cancel"
-msgstr ""
+msgstr "Cancel·la"
 
 #: ../data/weather-settings.ui:143 ../data/weather-settings.ui:306
 msgid "Save"
@@ -543,7 +543,7 @@ msgstr "Desa"
 
 #: ../data/weather-settings.ui:196
 msgid "Search by location or coordinates"
-msgstr "Busca per ubicació o coordenades"
+msgstr "Cerca per ubicació o coordenades"
 
 #: ../data/weather-settings.ui:220
 msgid "e.g. Vaiaku, Tuvalu or -8.5211767,179.1976747"
