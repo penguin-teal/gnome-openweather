@@ -28,7 +28,10 @@ msgid ""
 "Either set the switch to use the extensions default key in the preferences "
 "dialog to on or register at http://openweathermap.org/appid and paste your "
 "personal key into the preferences dialog."
-msgstr ""
+msgstr "Openweathermap.org no funciona senseuna clau API.\n"
+"Utilitza la clau per defecte de l'extensió al diàleg de preferències o "
+"registra't a http://openweahermap.org/appid i enganxa la teva clau personal "
+"al diàleg de preferències."
 
 #: ../src/extension.js:419
 msgid ""
