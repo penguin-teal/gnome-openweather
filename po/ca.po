@@ -29,6 +29,10 @@ msgid ""
 "dialog to on or register at http://openweathermap.org/appid and paste your "
 "personal key into the preferences dialog."
 msgstr ""
+"Openweathermap.org no funciona sense una clau API.\n"
+"Utilitza la clau per defecte de l'extensió al diàleg de preferències "
+"o registra't a http://openweahermap.org/appid i enganxa la teva clau "
+"personal al diàleg de preferències."
 
 #: ../src/extension.js:419
 msgid ""
@@ -36,6 +40,9 @@ msgid ""
 "Please register at https://developer.forecast.io/register and paste your "
 "personal key into the preferences dialog."
 msgstr ""
+"Forecast.io no funciona sense una clau API.\n"
+"Registra't a https://developer.forecast.io/register i enganxa la teva "
+"clau personal al diàleg de preferències."
 
 #: ../src/extension.js:492
 #, fuzzy, javascript-format
@@ -69,7 +76,7 @@ msgstr "Ciutat no vàlida"
 
 #: ../src/extension.js:883
 msgid "Invalid location! Please try to recreate it."
-msgstr ""
+msgstr "Ubicació no vàlida! Prova de recrear-la"
 
 #: ../src/extension.js:982
 msgid "Calm"
@@ -77,31 +84,31 @@ msgstr "Calma"
 
 #: ../src/extension.js:985
 msgid "Light air"
-msgstr "Ventolina"
+msgstr "Vent dèbil"
 
 #: ../src/extension.js:988
 msgid "Light breeze"
-msgstr "Vent fluixet"
+msgstr "Brisa dèbil"
 
 #: ../src/extension.js:991
 msgid "Gentle breeze"
-msgstr "Vent fluix"
+msgstr "Brisa suau"
 
 #: ../src/extension.js:994
 msgid "Moderate breeze"
-msgstr "Vent moderat"
+msgstr "Brisa moderada"
 
 #: ../src/extension.js:997
 msgid "Fresh breeze"
-msgstr "Vent fresquet"
+msgstr "Brisa fresca"
 
 #: ../src/extension.js:1000
 msgid "Strong breeze"
-msgstr "Vent fresc"
+msgstr "Brisa forta"
 
 #: ../src/extension.js:1003
 msgid "Moderate gale"
-msgstr "Vent fort"
+msgstr "Temporal moderat"
 
 #: ../src/extension.js:1006
 msgid "Fresh gale"
@@ -237,7 +244,7 @@ msgstr[1] "En %s dies"
 
 #: ../src/openweathermap_org.js:181
 msgid "thunderstorm with light rain"
-msgstr "Tempestes amb pluges dèbils"
+msgstr "Tempesta amb pluja dèbil"
 
 #: ../src/openweathermap_org.js:183
 #, fuzzy
@@ -246,7 +253,7 @@ msgstr "Tempestes amb pluges"
 
 #: ../src/openweathermap_org.js:185
 msgid "thunderstorm with heavy rain"
-msgstr "Tempestes amb fortes pluges"
+msgstr "Tempestes amb pluges fortes"
 
 #: ../src/openweathermap_org.js:187
 #, fuzzy
@@ -261,7 +268,7 @@ msgstr "Tempestes"
 #: ../src/openweathermap_org.js:191
 #, fuzzy
 msgid "heavy thunderstorm"
-msgstr "Tempestes elèctriques severes"
+msgstr "Tempestes elèctriques fortes"
 
 #: ../src/openweathermap_org.js:193
 #, fuzzy
@@ -270,7 +277,7 @@ msgstr "Tempestes aïllades"
 
 #: ../src/openweathermap_org.js:195
 msgid "thunderstorm with light drizzle"
-msgstr "Tempesta amb plugim dèbil"
+msgstr "Tempestes amb plugim dèbil"
 
 #: ../src/openweathermap_org.js:197
 msgid "thunderstorm with drizzle"
@@ -313,17 +320,17 @@ msgstr "Barreja de pluja i calamarsa"
 
 #: ../src/openweathermap_org.js:215
 msgid "heavy shower rain and drizzle"
-msgstr "Barreja de xàfecs i plugim"
+msgstr "Xàfecs forts i plugim"
 
 #: ../src/openweathermap_org.js:217
 #, fuzzy
 msgid "shower drizzle"
-msgstr "Plugims gelats"
+msgstr "Plugim gelat"
 
 #: ../src/openweathermap_org.js:219
 #, fuzzy
 msgid "light rain"
-msgstr "Pluja glaçada"
+msgstr "pluja suau"
 
 #: ../src/openweathermap_org.js:221
 msgid "moderate rain"
@@ -340,7 +347,7 @@ msgstr "Pluja molt intensa"
 #: ../src/openweathermap_org.js:227
 #, fuzzy
 msgid "extreme rain"
-msgstr "Pluja glaçada"
+msgstr "Pluja abundant"
 
 #: ../src/openweathermap_org.js:229
 #, fuzzy
@@ -390,12 +397,12 @@ msgstr "Ruixats"
 #: ../src/openweathermap_org.js:249
 #, fuzzy
 msgid "light rain and snow"
-msgstr "Barreja de pluja i neu"
+msgstr "pluja lleugera i neu"
 
 #: ../src/openweathermap_org.js:251
 #, fuzzy
 msgid "rain and snow"
-msgstr "Barreja de pluja i neu"
+msgstr "pluja i neu"
 
 #: ../src/openweathermap_org.js:253
 #, fuzzy
@@ -405,7 +412,7 @@ msgstr "Precipitacions lleugeres de neu"
 #: ../src/openweathermap_org.js:255
 #, fuzzy
 msgid "shower snow"
-msgstr "Ruixats"
+msgstr "Nevades"
 
 #: ../src/openweathermap_org.js:257
 #, fuzzy
@@ -414,15 +421,15 @@ msgstr "Nevada forta"
 
 #: ../src/openweathermap_org.js:259
 msgid "mist"
-msgstr "Boirina"
+msgstr "boirina"
 
 #: ../src/openweathermap_org.js:261
 msgid "smoke"
-msgstr "Boira"
+msgstr "boira"
 
 #: ../src/openweathermap_org.js:263
 msgid "haze"
-msgstr "Calitja"
+msgstr "calitja"
 
 #: ../src/openweathermap_org.js:265
 msgid "Sand/Dust Whirls"
@@ -435,11 +442,11 @@ msgstr "Boirós"
 
 #: ../src/openweathermap_org.js:269
 msgid "sand"
-msgstr "Arena"
+msgstr "arena"
 
 #: ../src/openweathermap_org.js:271
 msgid "dust"
-msgstr "Pols"
+msgstr "pols"
 
 #: ../src/openweathermap_org.js:273
 msgid "VOLCANIC ASH"
@@ -459,12 +466,12 @@ msgstr "Cel clar"
 
 #: ../src/openweathermap_org.js:281
 msgid "few clouds"
-msgstr "Alguns núvols"
+msgstr "alguns núvols"
 
 #: ../src/openweathermap_org.js:283
 #, fuzzy
 msgid "scattered clouds"
-msgstr "Pluges aïllades"
+msgstr "núvols dispersos"
 
 #: ../src/openweathermap_org.js:285
 msgid "broken clouds"
@@ -483,12 +490,12 @@ msgstr "No disponible"
 #: ../src/prefs.js:326
 #, javascript-format
 msgid "Invalid data when searching for \"%s\""
-msgstr ""
+msgstr "Dades no vàlides en buscar \"%s\""
 
 #: ../src/prefs.js:223 ../src/prefs.js:287 ../src/prefs.js:332
 #, fuzzy, javascript-format
 msgid "\"%s\" not found"
-msgstr "No s'ha pogut trobar l'esquema \"%s\". "
+msgstr "No s'ha trobat \"%s\". "
 
 #: ../src/prefs.js:393
 #, fuzzy
@@ -497,7 +504,7 @@ msgstr "Ubicacions"
 
 #: ../src/prefs.js:403
 msgid "Provider"
-msgstr ""
+msgstr "Proveïdor"
 
 #: ../src/prefs.js:535
 #, javascript-format
@@ -506,49 +513,49 @@ msgstr "Voleu esborrar %s ?"
 
 #: ../src/prefs.js:1056
 msgid "default"
-msgstr ""
+msgstr "per defecte"
 
 #: ../data/weather-settings.ui:31
 msgid "Edit name"
-msgstr ""
+msgstr "Edita el nom"
 
 #: ../data/weather-settings.ui:49 ../data/weather-settings.ui:79
 #: ../data/weather-settings.ui:219
 #, fuzzy
 msgid "Clear entry"
-msgstr "Clar"
+msgstr "Neteja l'entrada"
 
 #: ../data/weather-settings.ui:63
 msgid "Edit coordinates"
-msgstr ""
+msgstr "Edita les coordenades"
 
 #: ../data/weather-settings.ui:93 ../data/weather-settings.ui:256
 msgid "Extensions default weather provider"
-msgstr ""
+msgstr "Proveïdor del temps per defecte de l'extensió"
 
 #: ../data/weather-settings.ui:125 ../data/weather-settings.ui:288
 msgid "Cancel"
-msgstr ""
+msgstr "Cancel·la"
 
 #: ../data/weather-settings.ui:143 ../data/weather-settings.ui:306
 msgid "Save"
-msgstr ""
+msgstr "Desa"
 
 #: ../data/weather-settings.ui:196
 msgid "Search by location or coordinates"
-msgstr ""
+msgstr "Cerca per ubicació o coordenades"
 
 #: ../data/weather-settings.ui:220
 msgid "e.g. Vaiaku, Tuvalu or -8.5211767,179.1976747"
-msgstr ""
+msgstr "ex. Vaiaku, Tuvalu o -8.5211767,179.1976747"
 
 #: ../data/weather-settings.ui:230
 msgid "Find"
-msgstr ""
+msgstr "Busca"
 
 #: ../data/weather-settings.ui:481
 msgid "Chose default weather provider"
-msgstr ""
+msgstr "Tria el proveïdor per defecte"
 
 #: ../data/weather-settings.ui:494
 msgid "Personal Api key from openweathermap.org"
@@ -561,17 +568,19 @@ msgstr "Clau Api personal de openweathermap.org"
 
 #: ../data/weather-settings.ui:558
 msgid "Refresh timeout for current weather [min]"
-msgstr ""
+msgstr "Temps restant per actualitzar el temps actual [min]"
 
 #: ../data/weather-settings.ui:572
 msgid "Refresh timeout for weather forecast [min]"
-msgstr ""
+msgstr "Temps restant per actualitzar la previsió del temps [min]"
 
 #: ../data/weather-settings.ui:600
 msgid ""
 "Note: the forecast-timout is not used for forecast.io, because they do not "
-"provide seperate downloads for current weather and forecasts."
+"provide separate downloads for current weather and forecasts."
 msgstr ""
+"Nota: el forecast-timout no s'utilitza per a forecast.io, perque no "
+"proveeixen descàrregues separades pel temps actual i les previsions."
 
 #: ../data/weather-settings.ui:628
 #, fuzzy
@@ -583,6 +592,8 @@ msgid ""
 "Switch off, if you have your own api-key for openweathermap.org and put it "
 "into the text-box below."
 msgstr ""
+"Desmarca, si tens la teva clau API per a openweathermap.org i posa-la "
+"dins el quadre de text de sota."
 
 #: ../data/weather-settings.ui:656
 #, fuzzy
@@ -591,7 +602,7 @@ msgstr "Informació del temps proporcionada per:"
 
 #: ../data/weather-settings.ui:676
 msgid "Chose geolocation provider"
-msgstr ""
+msgstr "Tria proveïdor de geolocalització"
 
 #: ../data/weather-settings.ui:702
 #, fuzzy
@@ -609,7 +620,7 @@ msgstr "Temperatura:"
 
 #: ../data/weather-settings.ui:762
 msgid "Wind Speed Unit"
-msgstr "Unitat de velocitat:"
+msgstr "Velocitat del vent:"
 
 #: ../data/weather-settings.ui:773
 #, fuzzy
@@ -618,7 +629,7 @@ msgstr "Pressió:"
 
 #: ../data/weather-settings.ui:849
 msgid "Units"
-msgstr ""
+msgstr "Unitats"
 
 #: ../data/weather-settings.ui:869
 msgid "Position in Panel"
@@ -651,19 +662,19 @@ msgstr "Condicions climàtiques:"
 #: ../data/weather-settings.ui:946
 #, fuzzy
 msgid "Conditions in Forecast"
-msgstr "Condicions climàtiques:"
+msgstr "Previsió meteorològica:"
 
 #: ../data/weather-settings.ui:957
 msgid "Center forecast"
-msgstr "Centrar les prediccions"
+msgstr "Centrar les previsions"
 
 #: ../data/weather-settings.ui:968
 msgid "Number of days in forecast"
-msgstr "Nombre de dies de les prediccions"
+msgstr "Nombre de dies de les previsions"
 
 #: ../data/weather-settings.ui:979
 msgid "Maximal number of digits after the decimal point"
-msgstr ""
+msgstr "Nombre màxim de posicions decimals"
 
 #: ../data/weather-settings.ui:991
 msgid "Center"
@@ -679,15 +690,15 @@ msgstr "Esquerra"
 
 #: ../data/weather-settings.ui:1135
 msgid "Layout"
-msgstr ""
+msgstr "Plantilla"
 
 #: ../data/weather-settings.ui:1187
 msgid "Version: "
-msgstr ""
+msgstr "Versió: "
 
 #: ../data/weather-settings.ui:1201
 msgid "unknown (self-build ?)"
-msgstr ""
+msgstr "desconeguda (auto-build ?)"
 
 #: ../data/weather-settings.ui:1221
 msgid ""
@@ -695,14 +706,17 @@ msgid ""
 "\"https://openweathermap.org/\">Openweathermap</a> or <a href=\"https://"
 "forecast.io\">forecast.io</a> for almost all locations in the world.</span>"
 msgstr ""
+"<span>Extensió climatològica per mostrar informació del temps des de <a href="
+"\"https://openweathermap.org/\">Openweathermap</a> o <a href=\"https://"
+"forecast.io\">forecast.io</a> per gairebé qualsevol lloc del món.</span>"
 
 #: ../data/weather-settings.ui:1244
 msgid "Maintained by"
-msgstr ""
+msgstr "Mantinguda per"
 
 #: ../data/weather-settings.ui:1274
 msgid "Webpage"
-msgstr ""
+msgstr "Pàgina web"
 
 #: ../data/weather-settings.ui:1295
 msgid ""
@@ -710,10 +724,13 @@ msgid ""
 "See the <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
 "\">GNU General Public License, version 2 or later</a> for details.</span>"
 msgstr ""
+"<span size=\"small\">Aquest programa NO TÉ CAP GARANTIA.\n"
+"Mireu la <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
+"\">GNU General Public License, version 2 or later</a> per a més detall.</span>"
 
 #: ../data/weather-settings.ui:1316
 msgid "About"
-msgstr ""
+msgstr "Quant a"
 
 #~ msgid "Loading current weather ..."
 #~ msgstr "S'està carregant el temps actual..."
@@ -744,7 +761,7 @@ msgstr ""
 #~ msgstr "Nom de la ciutat"
 
 #~ msgid "Loading future weather ..."
-#~ msgstr "S'està carregant el temps futur..."
+#~ msgstr "Carregant la previsió del temps..."
 
 #~ msgid "Tornado"
 #~ msgstr "Tornado"
