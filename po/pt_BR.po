@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 3.0.1\n"
+"Project-Id-Version: 3.0.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-08 11:59+0100\n"
-"PO-Revision-Date: 2014-07-24 09:49-0300\n"
+"PO-Revision-Date: 2016-02-17 16:05-0300\n"
 "Last-Translator: Diego Neves <diego@diegoneves.eti.br>\n"
 "Language-Team: Portugês Brasil ; Diego Neves <diego@diegoneves.eti.br>,\n"
 "Language: pt_BR\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.6.10\n"
 
 #: ../src/extension.js:172
 msgid "..."
@@ -38,9 +38,9 @@ msgid ""
 msgstr ""
 
 #: ../src/extension.js:492
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "Can not connect to %s"
-msgstr "Impossível abrir %s"
+msgstr "Impossível conectar a %s"
 
 #: ../src/extension.js:776 ../data/weather-settings.ui:460
 msgid "Locations"
@@ -69,7 +69,7 @@ msgstr "Cidade inválida"
 
 #: ../src/extension.js:883
 msgid "Invalid location! Please try to recreate it."
-msgstr ""
+msgstr "Localização inválida! Por favor, tente recriá-lo."
 
 #: ../src/extension.js:982
 msgid "Calm"
@@ -214,10 +214,10 @@ msgstr "Ontem"
 
 #: ../src/forecast_io.js:154 ../src/forecast_io.js:276
 #: ../src/openweathermap_org.js:351 ../src/openweathermap_org.js:453
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
-msgstr[0] "%s dias atrás"
+msgstr[0] "%s dia atrás"
 msgstr[1] "%s dias atrás"
 
 #: ../src/forecast_io.js:253 ../src/openweathermap_org.js:445
@@ -229,10 +229,10 @@ msgid "Tomorrow"
 msgstr "Amanhã"
 
 #: ../src/forecast_io.js:271 ../src/openweathermap_org.js:449
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "In %d day"
 msgid_plural "In %d days"
-msgstr[0] "Em %s dias"
+msgstr[0] "Em %s dia"
 msgstr[1] "Em %s dias"
 
 #: ../src/openweathermap_org.js:181
@@ -459,21 +459,20 @@ msgstr "Não disponível"
 #: ../src/prefs.js:326
 #, javascript-format
 msgid "Invalid data when searching for \"%s\""
-msgstr ""
+msgstr "Dados de busca inválidos para  \"%s\""
 
 #: ../src/prefs.js:223 ../src/prefs.js:287 ../src/prefs.js:332
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "\"%s\" not found"
 msgstr "Schema \"%s\" não encontrado."
 
 #: ../src/prefs.js:393
-#, fuzzy
 msgid "Location"
-msgstr "Locais"
+msgstr "Local"
 
 #: ../src/prefs.js:403
 msgid "Provider"
-msgstr ""
+msgstr "Fornecedor"
 
 #: ../src/prefs.js:535
 #, javascript-format
@@ -482,75 +481,74 @@ msgstr "Remover %s ?"
 
 #: ../src/prefs.js:1056
 msgid "default"
-msgstr ""
+msgstr "Padrão"
 
 #: ../data/weather-settings.ui:31
 msgid "Edit name"
-msgstr ""
+msgstr "Editar Nome"
 
 #: ../data/weather-settings.ui:49 ../data/weather-settings.ui:79
 #: ../data/weather-settings.ui:219
-#, fuzzy
 msgid "Clear entry"
 msgstr "Limpo"
 
 #: ../data/weather-settings.ui:63
 msgid "Edit coordinates"
-msgstr ""
+msgstr "Editar Coordenadas"
 
 #: ../data/weather-settings.ui:93 ../data/weather-settings.ui:256
 msgid "Extensions default weather provider"
-msgstr ""
+msgstr "Fornecedor padrão de previsão do tempo"
 
 #: ../data/weather-settings.ui:125 ../data/weather-settings.ui:288
 msgid "Cancel"
-msgstr ""
+msgstr "Cancelar"
 
 #: ../data/weather-settings.ui:143 ../data/weather-settings.ui:306
 msgid "Save"
-msgstr ""
+msgstr "Salvar"
 
 #: ../data/weather-settings.ui:196
 msgid "Search by location or coordinates"
-msgstr ""
+msgstr "Procurar por localização ou coordenadas"
 
 #: ../data/weather-settings.ui:220
 msgid "e.g. Vaiaku, Tuvalu or -8.5211767,179.1976747"
-msgstr ""
+msgstr "ex: Vaiaku, Tuvalu or -8.5211767,179.1976747"
 
 #: ../data/weather-settings.ui:230
 msgid "Find"
-msgstr ""
+msgstr "Buscar"
 
 #: ../data/weather-settings.ui:481
 msgid "Chose default weather provider"
-msgstr ""
+msgstr "Alterar fornecedor padrão de previsão do tempo"
 
 #: ../data/weather-settings.ui:494
 msgid "Personal Api key from openweathermap.org"
 msgstr "Api key pessoal do openweathermap.org"
 
 #: ../data/weather-settings.ui:545
-#, fuzzy
 msgid "Personal Api key from forecast.io"
-msgstr "Api key pessoal do openweathermap.org"
+msgstr "Api key pessoal do forecast.io"
 
 #: ../data/weather-settings.ui:558
 msgid "Refresh timeout for current weather [min]"
-msgstr ""
+msgstr "Tempo limite de atualização do clima [min]"
 
 #: ../data/weather-settings.ui:572
 msgid "Refresh timeout for weather forecast [min]"
-msgstr ""
+msgstr "Tempo limite da atualização da previsão [min]"
 
 #: ../data/weather-settings.ui:600
 msgid ""
 "Note: the forecast-timout is not used for forecast.io, because they do not "
 "provide seperate downloads for current weather and forecasts."
 msgstr ""
+"Nota: a previsão de tempo pode ser usada pelo forecast.io, porqueeles não "
+"fornecem downloads separados de tempo atual e previsões"
 
 #: ../data/weather-settings.ui:628
-#, fuzzy
 msgid "Use extensions api-key for openweathermap.org"
 msgstr "Api key pessoal do openweathermap.org"
 
@@ -559,23 +557,22 @@ msgid ""
 "Switch off, if you have your own api-key for openweathermap.org and put it "
 "into the text-box below."
 msgstr ""
+"Desative se você tiver a sua api-key do openweathermap.org e coloqueNa caixa "
+"de texto a seguir."
 
 #: ../data/weather-settings.ui:656
-#, fuzzy
 msgid "Weather provider"
 msgstr "Meteorologia fornecida por:"
 
 #: ../data/weather-settings.ui:676
 msgid "Chose geolocation provider"
-msgstr ""
+msgstr "Escolha o fornecedor de geolocalização"
 
 #: ../data/weather-settings.ui:702
-#, fuzzy
 msgid "Personal AppKey from developer.mapquest.com"
 msgstr "Api key pessoal do openweathermap.org"
 
 #: ../data/weather-settings.ui:731
-#, fuzzy
 msgid "Geolocation provider"
 msgstr "Meteorologia fornecida por:"
 
@@ -593,7 +590,7 @@ msgstr "Unidade de pressão"
 
 #: ../data/weather-settings.ui:849
 msgid "Units"
-msgstr ""
+msgstr "Unidades"
 
 #: ../data/weather-settings.ui:869
 msgid "Position in Panel"
@@ -624,9 +621,8 @@ msgid "Conditions in Panel"
 msgstr "Condições no painel"
 
 #: ../data/weather-settings.ui:946
-#, fuzzy
 msgid "Conditions in Forecast"
-msgstr "Condições no painel"
+msgstr "Condições no Forecast"
 
 #: ../data/weather-settings.ui:957
 msgid "Center forecast"
@@ -654,15 +650,15 @@ msgstr "Esquerda"
 
 #: ../data/weather-settings.ui:1135
 msgid "Layout"
-msgstr ""
+msgstr "Layout"
 
 #: ../data/weather-settings.ui:1187
 msgid "Version: "
-msgstr ""
+msgstr "Versão"
 
 #: ../data/weather-settings.ui:1201
 msgid "unknown (self-build ?)"
-msgstr ""
+msgstr "Desconhecido (self-build ?)"
 
 #: ../data/weather-settings.ui:1221
 msgid ""
@@ -670,14 +666,18 @@ msgid ""
 "\"https://openweathermap.org/\">Openweathermap</a> or <a href=\"https://"
 "forecast.io\">forecast.io</a> for almost all locations in the world.</span>"
 msgstr ""
+"<span>Weather extension para mostrar informações climaticas fornecidas por "
+"<a href=\"https://openweathermap.org/\">Openweathermap</a> ou <a href="
+"\"https://forecast.io\">forecast.io</a> Para quase todos os locais do mundo."
+"</span>"
 
 #: ../data/weather-settings.ui:1244
 msgid "Maintained by"
-msgstr ""
+msgstr "Mantido por"
 
 #: ../data/weather-settings.ui:1274
 msgid "Webpage"
-msgstr ""
+msgstr "Web Site"
 
 #: ../data/weather-settings.ui:1295
 msgid ""
@@ -685,10 +685,14 @@ msgid ""
 "See the <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
 "\">GNU General Public License, version 2 or later</a> for details.</span>"
 msgstr ""
+"<span size=\"small\">Este programa não possui NENHUMA GARANTIA.\n"
+"Veja a <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
+"\">GNU General Public License, versão 2 ou mais nova</a> para detalhes.</"
+"span>"
 
 #: ../data/weather-settings.ui:1316
 msgid "About"
-msgstr ""
+msgstr "Sobre"
 
 #~ msgid "Loading current weather ..."
 #~ msgstr "Carregando as condições meteorológicas ..."
