@@ -8,13 +8,15 @@ msgstr ""
 "Project-Id-Version: 3.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-08 11:59+0100\n"
-"PO-Revision-Date: 2012-05-13 22:39+0100\n"
+"PO-Revision-Date: 2016-03-06 23:50+0100\n"
 "Last-Translator: Christian METZLER <neroth@xeked.com>\n"
 "Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.8.7\n"
 
 #: ../src/extension.js:172
 msgid "..."
@@ -27,6 +29,10 @@ msgid ""
 "dialog to on or register at http://openweathermap.org/appid and paste your "
 "personal key into the preferences dialog."
 msgstr ""
+"Openweathermap.org werkt niet zonder een api-key.\n"
+"Stel de standaard api-key in in de voorkeuren of registreer op http://"
+"openweathermap.org/appid en voeg de persoonlijke api-key toe in de "
+"voorkeuren."
 
 #: ../src/extension.js:419
 msgid ""
@@ -34,88 +40,92 @@ msgid ""
 "Please register at https://developer.forecast.io/register and paste your "
 "personal key into the preferences dialog."
 msgstr ""
+"Forecast.io werkt niet zonder een api-key.\n"
+"Registreer a.u.b. bij https://developer.forecast.io/register en plak de "
+"persoonlijke api-key in de voorkeuren."
 
 #: ../src/extension.js:492
 #, javascript-format
 msgid "Can not connect to %s"
-msgstr ""
+msgstr "Kon niet verbinden met %s"
 
 #: ../src/extension.js:776 ../data/weather-settings.ui:460
 msgid "Locations"
-msgstr ""
+msgstr "Locaties"
 
 #: ../src/extension.js:788
 msgid "Reload Weather Information"
-msgstr ""
+msgstr "Herlaad Weer Informatie"
 
 #: ../src/extension.js:803
 msgid "Weather data provided by:"
-msgstr ""
+msgstr "Weer data voorzien door: "
 
 #: ../src/extension.js:814
 #, javascript-format
 msgid "Can not open %s"
-msgstr ""
+msgstr "Kon %s niet openen"
 
 #: ../src/extension.js:821
 msgid "Weather Settings"
-msgstr ""
+msgstr "Weer Instellingen"
 
 #: ../src/extension.js:872 ../src/prefs.js:1021
 msgid "Invalid city"
-msgstr ""
+msgstr "Ongeldige stad"
 
 #: ../src/extension.js:883
 msgid "Invalid location! Please try to recreate it."
-msgstr ""
+msgstr "Ongeldige locatie! Probeer a.u.b. om deze opnieuw toe te voegen."
 
 #: ../src/extension.js:982
 msgid "Calm"
-msgstr ""
+msgstr "Kalm"
 
 #: ../src/extension.js:985
 msgid "Light air"
-msgstr ""
+msgstr "Matige wind"
 
 #: ../src/extension.js:988
 msgid "Light breeze"
-msgstr ""
+msgstr "Zacht briesje"
 
 #: ../src/extension.js:991
 msgid "Gentle breeze"
-msgstr ""
+msgstr "Zacht briesje"
 
 #: ../src/extension.js:994
 msgid "Moderate breeze"
-msgstr ""
+msgstr "Matige wind"
 
 #: ../src/extension.js:997
 msgid "Fresh breeze"
-msgstr ""
+msgstr "Fris briesje"
 
 #: ../src/extension.js:1000
 msgid "Strong breeze"
-msgstr ""
+msgstr "Harde wind"
 
 #: ../src/extension.js:1003
 msgid "Moderate gale"
-msgstr ""
+msgstr "Matige storm"
 
 #: ../src/extension.js:1006
+#, fuzzy
 msgid "Fresh gale"
-msgstr ""
+msgstr "Frisse storm"
 
 #: ../src/extension.js:1009
 msgid "Strong gale"
-msgstr ""
+msgstr "Harde storm"
 
 #: ../src/extension.js:1012
 msgid "Storm"
-msgstr ""
+msgstr "Storm"
 
 #: ../src/extension.js:1015
 msgid "Violent storm"
-msgstr ""
+msgstr "Hevige storm"
 
 #: ../src/extension.js:1018
 msgid "Hurricane"
@@ -151,35 +161,35 @@ msgstr "Zaterdag"
 
 #: ../src/extension.js:1028
 msgid "N"
-msgstr ""
+msgstr "N"
 
 #: ../src/extension.js:1028
 msgid "NE"
-msgstr ""
+msgstr "NO"
 
 #: ../src/extension.js:1028
 msgid "E"
-msgstr ""
+msgstr "O"
 
 #: ../src/extension.js:1028
 msgid "SE"
-msgstr ""
+msgstr "SO"
 
 #: ../src/extension.js:1028
 msgid "S"
-msgstr ""
+msgstr "Z"
 
 #: ../src/extension.js:1028
 msgid "SW"
-msgstr ""
+msgstr "ZW"
 
 #: ../src/extension.js:1028
 msgid "W"
-msgstr ""
+msgstr "W"
 
 #: ../src/extension.js:1028
 msgid "NW"
-msgstr ""
+msgstr "NW"
 
 #: ../src/extension.js:1321
 msgid "Loading ..."
@@ -187,11 +197,11 @@ msgstr "Laden ..."
 
 #: ../src/extension.js:1325
 msgid "Please wait"
-msgstr "Wachten alstublieft"
+msgstr "Een ogenblik geduld alstublieft"
 
 #: ../src/extension.js:1386
 msgid "Cloudiness:"
-msgstr ""
+msgstr "Bewolking:"
 
 #: ../src/extension.js:1390
 msgid "Humidity:"
@@ -208,15 +218,15 @@ msgstr "Wind:"
 #: ../src/forecast_io.js:151 ../src/forecast_io.js:273
 #: ../src/openweathermap_org.js:349 ../src/openweathermap_org.js:451
 msgid "Yesterday"
-msgstr ""
+msgstr "Gisteren"
 
 #: ../src/forecast_io.js:154 ../src/forecast_io.js:276
 #: ../src/openweathermap_org.js:351 ../src/openweathermap_org.js:453
 #, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d dag geleden"
+msgstr[1] "%d dagen geleden"
 
 #: ../src/forecast_io.js:253 ../src/openweathermap_org.js:445
 msgid "Today"
@@ -230,8 +240,8 @@ msgstr "Morgen"
 #, javascript-format
 msgid "In %d day"
 msgid_plural "In %d days"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Over %d dag"
+msgstr[1] "Over %d dagen"
 
 #: ../src/openweathermap_org.js:181
 #, fuzzy
@@ -284,8 +294,9 @@ msgid "thunderstorm with heavy drizzle"
 msgstr "Onweer"
 
 #: ../src/openweathermap_org.js:201
+#, fuzzy
 msgid "light intensity drizzle"
-msgstr ""
+msgstr "Motregen"
 
 #: ../src/openweathermap_org.js:203
 #, fuzzy
@@ -338,12 +349,14 @@ msgid "moderate rain"
 msgstr "Motregen"
 
 #: ../src/openweathermap_org.js:223
+#, fuzzy
 msgid "heavy intensity rain"
-msgstr ""
+msgstr "Hevige regen"
 
 #: ../src/openweathermap_org.js:225
+#, fuzzy
 msgid "very heavy rain"
-msgstr ""
+msgstr "Erg hevige regen"
 
 #: ../src/openweathermap_org.js:227
 #, fuzzy
@@ -371,8 +384,9 @@ msgid "heavy intensity shower rain"
 msgstr "Zware sneeuwval"
 
 #: ../src/openweathermap_org.js:237
+#, fuzzy
 msgid "ragged shower rain"
-msgstr ""
+msgstr "Hevige regen"
 
 #: ../src/openweathermap_org.js:239
 #, fuzzy
@@ -381,7 +395,7 @@ msgstr "Sneeuwstorm"
 
 #: ../src/openweathermap_org.js:241
 msgid "snow"
-msgstr ""
+msgstr "sneeuw"
 
 #: ../src/openweathermap_org.js:243
 #, fuzzy
@@ -425,15 +439,15 @@ msgstr "Zware sneeuwval"
 
 #: ../src/openweathermap_org.js:259
 msgid "mist"
-msgstr ""
+msgstr "mist"
 
 #: ../src/openweathermap_org.js:261
 msgid "smoke"
-msgstr ""
+msgstr "rook"
 
 #: ../src/openweathermap_org.js:263
 msgid "haze"
-msgstr ""
+msgstr "nevel"
 
 #: ../src/openweathermap_org.js:265
 msgid "Sand/Dust Whirls"
@@ -446,32 +460,31 @@ msgstr "Nevelig"
 
 #: ../src/openweathermap_org.js:269
 msgid "sand"
-msgstr ""
+msgstr "zand"
 
 #: ../src/openweathermap_org.js:271
 msgid "dust"
-msgstr ""
+msgstr "zand"
 
 #: ../src/openweathermap_org.js:273
 msgid "VOLCANIC ASH"
-msgstr ""
+msgstr "VULKAANAS"
 
 #: ../src/openweathermap_org.js:275
 msgid "SQUALLS"
-msgstr ""
+msgstr "RUKWINDEN"
 
 #: ../src/openweathermap_org.js:277
 msgid "TORNADO"
-msgstr ""
+msgstr "TORNADO"
 
 #: ../src/openweathermap_org.js:279
 msgid "sky is clear"
-msgstr ""
+msgstr "de lucht is helder"
 
 #: ../src/openweathermap_org.js:281
-#, fuzzy
 msgid "few clouds"
-msgstr "Zwaar bewolkt"
+msgstr "weinig bewolking"
 
 #: ../src/openweathermap_org.js:283
 #, fuzzy
@@ -496,33 +509,33 @@ msgstr "Niet beschikbaar"
 #: ../src/prefs.js:326
 #, javascript-format
 msgid "Invalid data when searching for \"%s\""
-msgstr ""
+msgstr "Ongeldige data bij de zoekopdracht voor \"%s\""
 
 #: ../src/prefs.js:223 ../src/prefs.js:287 ../src/prefs.js:332
 #, javascript-format
 msgid "\"%s\" not found"
-msgstr ""
+msgstr "\"%s\" niet gevonden"
 
 #: ../src/prefs.js:393
 msgid "Location"
-msgstr ""
+msgstr "Locatie"
 
 #: ../src/prefs.js:403
 msgid "Provider"
-msgstr ""
+msgstr "Provider"
 
 #: ../src/prefs.js:535
 #, javascript-format
 msgid "Remove %s ?"
-msgstr ""
+msgstr "%s verwijderen?"
 
 #: ../src/prefs.js:1056
 msgid "default"
-msgstr ""
+msgstr "standaard"
 
 #: ../data/weather-settings.ui:31
 msgid "Edit name"
-msgstr ""
+msgstr "Naam bewerken"
 
 #: ../data/weather-settings.ui:49 ../data/weather-settings.ui:79
 #: ../data/weather-settings.ui:219
@@ -532,83 +545,87 @@ msgstr "Helder"
 
 #: ../data/weather-settings.ui:63
 msgid "Edit coordinates"
-msgstr ""
+msgstr "Coördinaten bewerken"
 
 #: ../data/weather-settings.ui:93 ../data/weather-settings.ui:256
 msgid "Extensions default weather provider"
-msgstr ""
+msgstr "Standaard weerprovider voor deze extensie"
 
 #: ../data/weather-settings.ui:125 ../data/weather-settings.ui:288
 msgid "Cancel"
-msgstr ""
+msgstr "Annuleren"
 
 #: ../data/weather-settings.ui:143 ../data/weather-settings.ui:306
 msgid "Save"
-msgstr ""
+msgstr "Opslaan"
 
 #: ../data/weather-settings.ui:196
 msgid "Search by location or coordinates"
-msgstr ""
+msgstr "Zoek op locatie of coördinaten"
 
 #: ../data/weather-settings.ui:220
 msgid "e.g. Vaiaku, Tuvalu or -8.5211767,179.1976747"
-msgstr ""
+msgstr "v.b. Vaiaku, Tuvalu of -8.5211767,179.1976747"
 
 #: ../data/weather-settings.ui:230
 msgid "Find"
-msgstr ""
+msgstr "Zoek"
 
 #: ../data/weather-settings.ui:481
 msgid "Chose default weather provider"
-msgstr ""
+msgstr "Kies standaard weerprovider"
 
 #: ../data/weather-settings.ui:494
 msgid "Personal Api key from openweathermap.org"
-msgstr ""
+msgstr "Persoonlijke API-key van openweathermap.org"
 
 #: ../data/weather-settings.ui:545
 msgid "Personal Api key from forecast.io"
-msgstr ""
+msgstr "Persoonlijke API-key van forecast.io"
 
 #: ../data/weather-settings.ui:558
 msgid "Refresh timeout for current weather [min]"
-msgstr ""
+msgstr "Ververs-timeout voor huidig weer [min]"
 
 #: ../data/weather-settings.ui:572
 msgid "Refresh timeout for weather forecast [min]"
-msgstr ""
+msgstr "Ververs-timeout voor vooruitzicht [min]"
 
 #: ../data/weather-settings.ui:600
 msgid ""
 "Note: the forecast-timout is not used for forecast.io, because they do not "
 "provide seperate downloads for current weather and forecasts."
 msgstr ""
+"Nb: de vooruitzicht-timeout word niet gebruikt voor forecast.io, omdat zij "
+"het huidige weer en het vooruitzicht niet afsplitsen in aparte downloads."
 
 #: ../data/weather-settings.ui:628
 msgid "Use extensions api-key for openweathermap.org"
-msgstr ""
+msgstr "Gebruik de API-key van de extensie voor openweathermap.org"
 
 #: ../data/weather-settings.ui:639
 msgid ""
 "Switch off, if you have your own api-key for openweathermap.org and put it "
 "into the text-box below."
 msgstr ""
+"Zet uit, als u een eigen api-key voor openweathermap.org heeft, en voer "
+"deze zo nodig in in het vak hier onder."
 
 #: ../data/weather-settings.ui:656
 msgid "Weather provider"
-msgstr ""
+msgstr "Weerprovider"
 
 #: ../data/weather-settings.ui:676
 msgid "Chose geolocation provider"
-msgstr ""
+msgstr "Kies geolocatie provider"
 
 #: ../data/weather-settings.ui:702
 msgid "Personal AppKey from developer.mapquest.com"
-msgstr ""
+msgstr "Persoonlijke AppKey van developer.mapquest.com"
 
 #: ../data/weather-settings.ui:731
 msgid "Geolocation provider"
-msgstr ""
+msgstr "Geolocatie provider"
 
 #: ../data/weather-settings.ui:751
 msgid "Temperature Unit"
@@ -616,7 +633,7 @@ msgstr "Temperatuur:"
 
 #: ../data/weather-settings.ui:762
 msgid "Wind Speed Unit"
-msgstr ""
+msgstr "Windsnelheid:"
 
 #: ../data/weather-settings.ui:773
 #, fuzzy
@@ -625,27 +642,28 @@ msgstr "Luchtdruk:"
 
 #: ../data/weather-settings.ui:849
 msgid "Units"
-msgstr ""
+msgstr "Eenheden"
 
 #: ../data/weather-settings.ui:869
 msgid "Position in Panel"
-msgstr ""
+msgstr "Positie in paneel"
 
 #: ../data/weather-settings.ui:880
 msgid "Wind Direction by Arrows"
-msgstr ""
+msgstr "Windrichting met pijlen"
 
 #: ../data/weather-settings.ui:891
+#, fuzzy
 msgid "Translate Conditions"
-msgstr ""
+msgstr "Vertaalcondities"
 
 #: ../data/weather-settings.ui:902
 msgid "Symbolic Icons"
-msgstr ""
+msgstr "Symbolische Iconen"
 
 #: ../data/weather-settings.ui:913
 msgid "Text on buttons"
-msgstr ""
+msgstr "Tekst op knoppen"
 
 #: ../data/weather-settings.ui:924
 msgid "Temperature in Panel"
@@ -653,47 +671,47 @@ msgstr "Temperatuur:"
 
 #: ../data/weather-settings.ui:935
 msgid "Conditions in Panel"
-msgstr ""
+msgstr "Toon conditie in paneel"
 
 #: ../data/weather-settings.ui:946
 msgid "Conditions in Forecast"
-msgstr ""
+msgstr "Toon conditie bij vooruitzicht"
 
 #: ../data/weather-settings.ui:957
 msgid "Center forecast"
-msgstr ""
+msgstr "Lijn vooruitzicht in het midden uit"
 
 #: ../data/weather-settings.ui:968
 msgid "Number of days in forecast"
-msgstr ""
+msgstr "Aantal dagen in het vooruitzicht"
 
 #: ../data/weather-settings.ui:979
 msgid "Maximal number of digits after the decimal point"
-msgstr ""
+msgstr "Maximaal aantal nummers na de komma"
 
 #: ../data/weather-settings.ui:991
 msgid "Center"
-msgstr ""
+msgstr "Midden"
 
 #: ../data/weather-settings.ui:992
 msgid "Right"
-msgstr ""
+msgstr "Rechts"
 
 #: ../data/weather-settings.ui:993
 msgid "Left"
-msgstr ""
+msgstr "Links"
 
 #: ../data/weather-settings.ui:1135
 msgid "Layout"
-msgstr ""
+msgstr "Layout"
 
 #: ../data/weather-settings.ui:1187
 msgid "Version: "
-msgstr ""
+msgstr "Versie:"
 
 #: ../data/weather-settings.ui:1201
 msgid "unknown (self-build ?)"
-msgstr ""
+msgstr "onbekend (zelfbouw?)"
 
 #: ../data/weather-settings.ui:1221
 msgid ""
@@ -701,14 +719,17 @@ msgid ""
 "\"https://openweathermap.org/\">Openweathermap</a> or <a href=\"https://"
 "forecast.io\">forecast.io</a> for almost all locations in the world.</span>"
 msgstr ""
+"<span>Weer extensie om informatie te tonen van <a href=\"https://"
+"openweathermap.org/\">Openweathermap</a> of <a href=\"https://forecast.io"
+"\">forecast.io</a> voor bijna alle locaties in de wereld.</span>"
 
 #: ../data/weather-settings.ui:1244
 msgid "Maintained by"
-msgstr ""
+msgstr "Onderhouden door"
 
 #: ../data/weather-settings.ui:1274
 msgid "Webpage"
-msgstr ""
+msgstr "Webpagina"
 
 #: ../data/weather-settings.ui:1295
 msgid ""
@@ -716,10 +737,13 @@ msgid ""
 "See the <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
 "\">GNU General Public License, version 2 or later</a> for details.</span>"
 msgstr ""
+"<span size=\"small\">Dit programma komt met ABSOLUUT GEEN GARANTIE.\n"
+"Zie ook de <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
+"\">GNU General Public License, versie 2 of later</a> voor details.</span>"
 
 #: ../data/weather-settings.ui:1316
 msgid "About"
-msgstr ""
+msgstr "Over"
 
 #~ msgid "Loading current weather ..."
 #~ msgstr "Laden aktueel weer ..."
