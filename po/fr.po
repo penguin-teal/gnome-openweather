@@ -548,7 +548,7 @@ msgstr ""
 
 #: ../data/weather-settings.ui:628
 msgid "Use extensions api-key for openweathermap.org"
-msgstr "Clé API personnelle de openweathermap.org"
+msgstr "Utiliser la clé API de l'extention pour openweathermap.org"
 
 #: ../data/weather-settings.ui:639
 msgid ""

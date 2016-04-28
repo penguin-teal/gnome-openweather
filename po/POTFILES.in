@@ -1,5 +1,5 @@
-../src/extension.js
-../src/forecast_io.js
-../src/openweathermap_org.js
-../src/prefs.js
-../data/weather-settings.ui
+src/extension.js
+src/forecast_io.js
+src/openweathermap_org.js
+src/prefs.js
+[type: gettext/glade]data/weather-settings.ui
