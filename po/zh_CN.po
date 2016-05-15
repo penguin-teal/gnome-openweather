@@ -4,14 +4,14 @@
 # This file is distributed under the same license as the gnome-shell-extension-openweather package.
 #
 # bill <bill_zt@sina.com>, 2011.
-# 绿色圣光 <lishaohui.qd@163.com>, 2014, 2015.
+# 绿色圣光 <lishaohui.qd@163.com>, 2014, 2015, 2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-shell-extension-openweather\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-13 21:44+0800\n"
-"PO-Revision-Date: 2015-12-13 22:10+0800\n"
+"POT-Creation-Date: 2016-04-18 01:43+0200\n"
+"PO-Revision-Date: 2016-05-15 20:59+0800\n"
 "Last-Translator: 绿色圣光 <lishaohui.qd@163.com>\n"
 "Language-Team: Chinese (Simplified) <>\n"
 "Language: zh_CN\n"
@@ -51,7 +51,7 @@ msgstr ""
 msgid "Can not connect to %s"
 msgstr "无法连接到 %s"
 
-#: ../src/extension.js:845 ../data/weather-settings.ui:460
+#: ../src/extension.js:845 ../data/weather-settings.ui.h:10
 msgid "Locations"
 msgstr "地点"
 
@@ -79,6 +79,38 @@ msgstr "无效的城市"
 #: ../src/extension.js:973
 msgid "Invalid location! Please try to recreate it."
 msgstr "无效地点！请尝试重建一个。"
+
+#: ../src/extension.js:1020 ../data/weather-settings.ui.h:27
+msgid "°F"
+msgstr "℉"
+
+#: ../src/extension.js:1022 ../data/weather-settings.ui.h:28
+msgid "K"
+msgstr "K"
+
+#: ../src/extension.js:1024 ../data/weather-settings.ui.h:29
+msgid "°Ra"
+msgstr "°Ra"
+
+#: ../src/extension.js:1026 ../data/weather-settings.ui.h:30
+msgid "°Ré"
+msgstr "°Ré"
+
+#: ../src/extension.js:1028 ../data/weather-settings.ui.h:31
+msgid "°Rø"
+msgstr "°Rø"
+
+#: ../src/extension.js:1030 ../data/weather-settings.ui.h:32
+msgid "°De"
+msgstr "°De"
+
+#: ../src/extension.js:1032 ../data/weather-settings.ui.h:33
+msgid "°N"
+msgstr "°N"
+
+#: ../src/extension.js:1034 ../data/weather-settings.ui.h:26
+msgid "°C"
+msgstr "℃"
 
 #: ../src/extension.js:1075
 msgid "Calm"
@@ -192,6 +224,67 @@ msgstr "西"
 msgid "NW"
 msgstr "西北"
 
+#: ../src/extension.js:1207 ../src/extension.js:1216
+#: ../data/weather-settings.ui.h:40
+msgid "hPa"
+msgstr "hPa"
+
+#: ../src/extension.js:1211 ../data/weather-settings.ui.h:41
+msgid "inHg"
+msgstr "inHg"
+
+#: ../src/extension.js:1221 ../data/weather-settings.ui.h:42
+msgid "bar"
+msgstr "bar"
+
+#: ../src/extension.js:1226 ../data/weather-settings.ui.h:43
+msgid "Pa"
+msgstr "Pa"
+
+#: ../src/extension.js:1231 ../data/weather-settings.ui.h:44
+msgid "kPa"
+msgstr "kPa"
+
+#: ../src/extension.js:1236 ../data/weather-settings.ui.h:45
+msgid "atm"
+msgstr "atm"
+
+#: ../src/extension.js:1241 ../data/weather-settings.ui.h:46
+msgid "at"
+msgstr "at"
+
+#: ../src/extension.js:1246 ../data/weather-settings.ui.h:47
+msgid "Torr"
+msgstr "Torr"
+
+#: ../src/extension.js:1251 ../data/weather-settings.ui.h:48
+msgid "psi"
+msgstr "PSI"
+
+#: ../src/extension.js:1256 ../data/weather-settings.ui.h:49
+msgid "mmHg"
+msgstr "mmHg"
+
+#: ../src/extension.js:1300 ../data/weather-settings.ui.h:36
+msgid "m/s"
+msgstr "m/s"
+
+#: ../src/extension.js:1304 ../data/weather-settings.ui.h:35
+msgid "mph"
+msgstr "mph"
+
+#: ../src/extension.js:1309 ../data/weather-settings.ui.h:34
+msgid "km/h"
+msgstr "km/h"
+
+#: ../src/extension.js:1318 ../data/weather-settings.ui.h:37
+msgid "kn"
+msgstr "kn"
+
+#: ../src/extension.js:1323 ../data/weather-settings.ui.h:38
+msgid "ft/s"
+msgstr "ft/s"
+
 #: ../src/extension.js:1414
 msgid "Loading ..."
 msgstr "正在加载 ..."
@@ -216,244 +309,303 @@ msgstr "气压："
 msgid "Wind:"
 msgstr "风："
 
-#: ../src/forecast_io.js:151 ../src/forecast_io.js:273
+#: ../src/forecast_io.js:158 ../src/forecast_io.js:287
 #: ../src/openweathermap_org.js:349 ../src/openweathermap_org.js:451
 msgid "Yesterday"
 msgstr "昨天"
 
-#: ../src/forecast_io.js:154 ../src/forecast_io.js:276
+#: ../src/forecast_io.js:161 ../src/forecast_io.js:290
 #: ../src/openweathermap_org.js:351 ../src/openweathermap_org.js:453
 #, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
 msgstr[0] "%d 天之前"
 
-#: ../src/forecast_io.js:253 ../src/openweathermap_org.js:445
+#: ../src/forecast_io.js:173 ../src/forecast_io.js:175
+#: ../src/openweathermap_org.js:365 ../src/openweathermap_org.js:367
+msgid ", "
+msgstr "，"
+
+#: ../src/forecast_io.js:267 ../src/openweathermap_org.js:445
 msgid "Today"
 msgstr "今天"
 
-#: ../src/forecast_io.js:269 ../src/openweathermap_org.js:447
+#: ../src/forecast_io.js:283 ../src/openweathermap_org.js:447
 msgid "Tomorrow"
 msgstr "明天"
 
-#: ../src/forecast_io.js:271 ../src/openweathermap_org.js:449
+#: ../src/forecast_io.js:285 ../src/openweathermap_org.js:449
 #, javascript-format
 msgid "In %d day"
 msgid_plural "In %d days"
 msgstr[0] "未来 %d 天"
 
+#. thunderstorm with light rain
 #: ../src/openweathermap_org.js:181
 msgid "thunderstorm with light rain"
 msgstr "小雨伴有雷暴"
 
+#. thunderstorm with rain
 #: ../src/openweathermap_org.js:183
 msgid "thunderstorm with rain"
 msgstr "中雨伴有雷暴"
 
+#. thunderstorm with heavy rain
 #: ../src/openweathermap_org.js:185
 msgid "thunderstorm with heavy rain"
 msgstr "大雨伴有雷暴"
 
+#. light thunderstorm
 #: ../src/openweathermap_org.js:187
 msgid "light thunderstorm"
 msgstr "小雷暴"
 
+#. thunderstorm
 #: ../src/openweathermap_org.js:189
 msgid "thunderstorm"
 msgstr "雷暴"
 
+#. heavy thunderstorm
 #: ../src/openweathermap_org.js:191
 msgid "heavy thunderstorm"
 msgstr "强雷暴"
 
+#. ragged thunderstorm
 #: ../src/openweathermap_org.js:193
 msgid "ragged thunderstorm"
 msgstr "局部雷暴"
 
+#. thunderstorm with light drizzle
 #: ../src/openweathermap_org.js:195
 msgid "thunderstorm with light drizzle"
 msgstr "小毛毛雨伴有雷暴"
 
+#. thunderstorm with drizzle
 #: ../src/openweathermap_org.js:197
 msgid "thunderstorm with drizzle"
 msgstr "毛毛雨伴有雷暴"
 
+#. thunderstorm with heavy drizzle
 #: ../src/openweathermap_org.js:199
 msgid "thunderstorm with heavy drizzle"
 msgstr "强毛毛雨伴有雷暴"
 
+#. light intensity drizzle
 #: ../src/openweathermap_org.js:201
 msgid "light intensity drizzle"
 msgstr "小毛毛雨"
 
+#. drizzle
 #: ../src/openweathermap_org.js:203
 msgid "drizzle"
 msgstr "毛毛雨"
 
+#. heavy intensity drizzle
 #: ../src/openweathermap_org.js:205
 msgid "heavy intensity drizzle"
 msgstr "强毛毛雨"
 
+#. light intensity drizzle rain
 #: ../src/openweathermap_org.js:207
 msgid "light intensity drizzle rain"
 msgstr "小毛毛雨转雨"
 
+#. drizzle rain
 #: ../src/openweathermap_org.js:209
 msgid "drizzle rain"
 msgstr "毛毛雨转雨"
 
+#. heavy intensity drizzle rain
 #: ../src/openweathermap_org.js:211
 msgid "heavy intensity drizzle rain"
 msgstr "强毛毛雨转雨"
 
+#. shower rain and drizzle
 #: ../src/openweathermap_org.js:213
 msgid "shower rain and drizzle"
 msgstr "阵雨及毛毛雨"
 
+#. heavy shower rain and drizzle
 #: ../src/openweathermap_org.js:215
 msgid "heavy shower rain and drizzle"
 msgstr "强阵雨及毛毛雨"
 
+#. shower drizzle
 #: ../src/openweathermap_org.js:217
 msgid "shower drizzle"
 msgstr "阵毛毛雨"
 
+#. light rain
 #: ../src/openweathermap_org.js:219
 msgid "light rain"
 msgstr "小雨"
 
+#. moderate rain
 #: ../src/openweathermap_org.js:221
 msgid "moderate rain"
 msgstr "中雨"
 
+#. heavy intensity rain
 #: ../src/openweathermap_org.js:223
 msgid "heavy intensity rain"
 msgstr "大雨"
 
+#. very heavy rain
 #: ../src/openweathermap_org.js:225
 msgid "very heavy rain"
 msgstr "暴雨"
 
+#. extreme rain
 #: ../src/openweathermap_org.js:227
 msgid "extreme rain"
 msgstr "大暴雨"
 
+#. freezing rain
 #: ../src/openweathermap_org.js:229
 msgid "freezing rain"
 msgstr "冻雨"
 
+#. light intensity shower rain
 #: ../src/openweathermap_org.js:231
 msgid "light intensity shower rain"
 msgstr "小阵雨"
 
+#. shower rain
 #: ../src/openweathermap_org.js:233
 msgid "shower rain"
 msgstr "阵雨"
 
+#. heavy intensity shower rain
 #: ../src/openweathermap_org.js:235
 msgid "heavy intensity shower rain"
 msgstr "强阵雨"
 
+#. ragged shower rain
 #: ../src/openweathermap_org.js:237
 msgid "ragged shower rain"
 msgstr "局部阵雨"
 
+#. light snow
 #: ../src/openweathermap_org.js:239
 msgid "light snow"
 msgstr "小雪"
 
+#. snow
 #: ../src/openweathermap_org.js:241
 msgid "snow"
 msgstr "雪"
 
+#. heavy snow
 #: ../src/openweathermap_org.js:243
 msgid "heavy snow"
 msgstr "大雪"
 
+#. sleet
 #: ../src/openweathermap_org.js:245
 msgid "sleet"
 msgstr "冰雹"
 
+#. shower sleet
 #: ../src/openweathermap_org.js:247
 msgid "shower sleet"
 msgstr "阵冰雹"
 
+#. light rain and snow
 #: ../src/openweathermap_org.js:249
 msgid "light rain and snow"
 msgstr "小雨夹雪"
 
+#. rain and snow
 #: ../src/openweathermap_org.js:251
 msgid "rain and snow"
 msgstr "雨夹雪"
 
+#. light shower snow
 #: ../src/openweathermap_org.js:253
 msgid "light shower snow"
 msgstr "小阵雪"
 
+#. shower snow
 #: ../src/openweathermap_org.js:255
 msgid "shower snow"
 msgstr "阵雪"
 
+#. heavy shower snow
 #: ../src/openweathermap_org.js:257
 msgid "heavy shower snow"
 msgstr "强阵雪"
 
+#. mist
 #: ../src/openweathermap_org.js:259
 msgid "mist"
 msgstr "薄雾"
 
+#. smoke
 #: ../src/openweathermap_org.js:261
 msgid "smoke"
 msgstr "烟"
 
+#. haze
 #: ../src/openweathermap_org.js:263
 msgid "haze"
 msgstr "霾"
 
+#. Sand/Dust Whirls
 #: ../src/openweathermap_org.js:265
 msgid "Sand/Dust Whirls"
 msgstr "沙尘暴"
 
+#. Fog
 #: ../src/openweathermap_org.js:267
 msgid "Fog"
 msgstr "雾"
 
+#. sand
 #: ../src/openweathermap_org.js:269
 msgid "sand"
 msgstr "扬沙"
 
+#. dust
 #: ../src/openweathermap_org.js:271
 msgid "dust"
 msgstr "浮尘"
 
+#. VOLCANIC ASH
 #: ../src/openweathermap_org.js:273
 msgid "VOLCANIC ASH"
 msgstr "火山灰"
 
+#. SQUALLS
 #: ../src/openweathermap_org.js:275
 msgid "SQUALLS"
 msgstr "飑"
 
+#. TORNADO
 #: ../src/openweathermap_org.js:277
 msgid "TORNADO"
 msgstr "龙卷风"
 
+#. sky is clear
 #: ../src/openweathermap_org.js:279
 msgid "sky is clear"
 msgstr "晴朗"
 
+#. few clouds
 #: ../src/openweathermap_org.js:281
 msgid "few clouds"
 msgstr "少云"
 
+#. scattered clouds
 #: ../src/openweathermap_org.js:283
 msgid "scattered clouds"
 msgstr "疏云"
 
+#. broken clouds
 #: ../src/openweathermap_org.js:285
 msgid "broken clouds"
 msgstr "碎云"
 
+#. overcast clouds
 #: ../src/openweathermap_org.js:287
 msgid "overcast clouds"
 msgstr "阴天"
@@ -490,75 +642,74 @@ msgstr "移除 %s 吗？"
 msgid "default"
 msgstr "默认"
 
-#: ../data/weather-settings.ui:31
+#: ../data/weather-settings.ui.h:1
 msgid "Edit name"
 msgstr "编辑名称"
 
-#: ../data/weather-settings.ui:49 ../data/weather-settings.ui:79
-#: ../data/weather-settings.ui:219
+#: ../data/weather-settings.ui.h:2
 msgid "Clear entry"
 msgstr "清除条目"
 
-#: ../data/weather-settings.ui:63
+#: ../data/weather-settings.ui.h:3
 msgid "Edit coordinates"
 msgstr "编辑坐标"
 
-#: ../data/weather-settings.ui:93 ../data/weather-settings.ui:256
+#: ../data/weather-settings.ui.h:4
 msgid "Extensions default weather provider"
 msgstr "扩展的默认天气提供源"
 
-#: ../data/weather-settings.ui:125 ../data/weather-settings.ui:288
+#: ../data/weather-settings.ui.h:5
 msgid "Cancel"
 msgstr "取消"
 
-#: ../data/weather-settings.ui:143 ../data/weather-settings.ui:306
+#: ../data/weather-settings.ui.h:6
 msgid "Save"
 msgstr "保存"
 
-#: ../data/weather-settings.ui:196
+#: ../data/weather-settings.ui.h:7
 msgid "Search by location or coordinates"
 msgstr "通过地点或坐标搜索"
 
-#: ../data/weather-settings.ui:220
+#: ../data/weather-settings.ui.h:8
 msgid "e.g. Vaiaku, Tuvalu or -8.5211767,179.1976747"
 msgstr "例如，“北京”或者“39.9059093,116.3913489”"
 
-#: ../data/weather-settings.ui:230
+#: ../data/weather-settings.ui.h:9
 msgid "Find"
 msgstr "查找"
 
-#: ../data/weather-settings.ui:481
+#: ../data/weather-settings.ui.h:11
 msgid "Chose default weather provider"
 msgstr "选择默认天气提供源"
 
-#: ../data/weather-settings.ui:494
+#: ../data/weather-settings.ui.h:12
 msgid "Personal Api key from openweathermap.org"
 msgstr "openweathermap.org 的个人 API 密钥"
 
-#: ../data/weather-settings.ui:545
+#: ../data/weather-settings.ui.h:13
 msgid "Personal Api key from forecast.io"
 msgstr "forecast.io 的个人 API 密钥"
 
-#: ../data/weather-settings.ui:558
+#: ../data/weather-settings.ui.h:14
 msgid "Refresh timeout for current weather [min]"
 msgstr "刷新当前天气的超时时间 [分钟]"
 
-#: ../data/weather-settings.ui:572
+#: ../data/weather-settings.ui.h:15
 msgid "Refresh timeout for weather forecast [min]"
 msgstr "刷新天气预报的超时时间 [分钟]"
 
-#: ../data/weather-settings.ui:600
+#: ../data/weather-settings.ui.h:16
 msgid ""
 "Note: the forecast-timout is not used for forecast.io, because they do not "
 "provide seperate downloads for current weather and forecasts."
 msgstr ""
 "注意：预报超时不适用于 forecast.io，因为他们不提供当前天气和预报的分别下载。"
 
-#: ../data/weather-settings.ui:628
+#: ../data/weather-settings.ui.h:17
 msgid "Use extensions api-key for openweathermap.org"
 msgstr "使用本扩展的 openweathermap.org API 密钥"
 
-#: ../data/weather-settings.ui:639
+#: ../data/weather-settings.ui.h:18
 msgid ""
 "Switch off, if you have your own api-key for openweathermap.org and put it "
 "into the text-box below."
@@ -566,107 +717,111 @@ msgstr ""
 "如果您自己拥有 openweathermap.org 的 API 密钥，请将其输入到下面的文本框中，并"
 "关闭本选项。"
 
-#: ../data/weather-settings.ui:656
+#: ../data/weather-settings.ui.h:19
 msgid "Weather provider"
 msgstr "天气提供源"
 
-#: ../data/weather-settings.ui:676
+#: ../data/weather-settings.ui.h:20
 msgid "Chose geolocation provider"
 msgstr "选择地理位置提供源"
 
-#: ../data/weather-settings.ui:702
+#: ../data/weather-settings.ui.h:21
 msgid "Personal AppKey from developer.mapquest.com"
 msgstr "developer.mapquest.com 的个人应用密钥"
 
-#: ../data/weather-settings.ui:731
+#: ../data/weather-settings.ui.h:22
 msgid "Geolocation provider"
 msgstr "地理位置提供源"
 
-#: ../data/weather-settings.ui:751
+#: ../data/weather-settings.ui.h:23
 msgid "Temperature Unit"
 msgstr "温度单位"
 
-#: ../data/weather-settings.ui:762
+#: ../data/weather-settings.ui.h:24
 msgid "Wind Speed Unit"
 msgstr "风速单位"
 
-#: ../data/weather-settings.ui:773
+#: ../data/weather-settings.ui.h:25
 msgid "Pressure Unit"
 msgstr "气压单位"
 
-#: ../data/weather-settings.ui:849
+#: ../data/weather-settings.ui.h:39
+msgid "Beaufort"
+msgstr "蒲福风级"
+
+#: ../data/weather-settings.ui.h:50
 msgid "Units"
 msgstr "单位"
 
-#: ../data/weather-settings.ui:869
+#: ../data/weather-settings.ui.h:51
 msgid "Position in Panel"
 msgstr "在面板上的位置"
 
-#: ../data/weather-settings.ui:880
+#: ../data/weather-settings.ui.h:52
 msgid "Wind Direction by Arrows"
 msgstr "使用箭头指示风向"
 
-#: ../data/weather-settings.ui:891
+#: ../data/weather-settings.ui.h:53
 msgid "Translate Conditions"
 msgstr "翻译天气状态"
 
-#: ../data/weather-settings.ui:902
+#: ../data/weather-settings.ui.h:54
 msgid "Symbolic Icons"
 msgstr "显示象征性图标"
 
-#: ../data/weather-settings.ui:913
+#: ../data/weather-settings.ui.h:55
 msgid "Text on buttons"
 msgstr "图标显示文本"
 
-#: ../data/weather-settings.ui:924
+#: ../data/weather-settings.ui.h:56
 msgid "Temperature in Panel"
 msgstr "在面板上显示气温"
 
-#: ../data/weather-settings.ui:935
+#: ../data/weather-settings.ui.h:57
 msgid "Conditions in Panel"
 msgstr "在面板上显示天气状态"
 
-#: ../data/weather-settings.ui:946
+#: ../data/weather-settings.ui.h:58
 msgid "Conditions in Forecast"
 msgstr "显示预报天气状态"
 
-#: ../data/weather-settings.ui:957
+#: ../data/weather-settings.ui.h:59
 msgid "Center forecast"
 msgstr "预报信息居中显示"
 
-#: ../data/weather-settings.ui:968
+#: ../data/weather-settings.ui.h:60
 msgid "Number of days in forecast"
 msgstr "预报的天数"
 
-#: ../data/weather-settings.ui:979
+#: ../data/weather-settings.ui.h:61
 msgid "Maximal number of digits after the decimal point"
 msgstr "小数点后最大位数"
 
-#: ../data/weather-settings.ui:991
+#: ../data/weather-settings.ui.h:62
 msgid "Center"
 msgstr "中央"
 
-#: ../data/weather-settings.ui:992
+#: ../data/weather-settings.ui.h:63
 msgid "Right"
 msgstr "右侧"
 
-#: ../data/weather-settings.ui:993
+#: ../data/weather-settings.ui.h:64
 msgid "Left"
 msgstr "左侧"
 
-#: ../data/weather-settings.ui:1135
+#: ../data/weather-settings.ui.h:65
 msgid "Layout"
 msgstr "布局"
 
-#: ../data/weather-settings.ui:1187
+#: ../data/weather-settings.ui.h:66
 msgid "Version: "
 msgstr "版本："
 
-#: ../data/weather-settings.ui:1201
+#: ../data/weather-settings.ui.h:67
 msgid "unknown (self-build ?)"
 msgstr "未知（自己构建的？）"
 
-#: ../data/weather-settings.ui:1221
+#: ../data/weather-settings.ui.h:68
 msgid ""
 "<span>Weather extension to display weather information from <a href="
 "\"https://openweathermap.org/\">Openweathermap</a> or <a href=\"https://"
@@ -676,15 +831,15 @@ msgstr ""
 "\">Openweathermap</a> 或 <a href=\"https://forecast.io\">forecast.io</a> 的天"
 "气信息的扩展。</span>"
 
-#: ../data/weather-settings.ui:1244
+#: ../data/weather-settings.ui.h:69
 msgid "Maintained by"
 msgstr "维护者："
 
-#: ../data/weather-settings.ui:1274
+#: ../data/weather-settings.ui.h:70
 msgid "Webpage"
 msgstr "网站主页"
 
-#: ../data/weather-settings.ui:1295
+#: ../data/weather-settings.ui.h:71
 msgid ""
 "<span size=\"small\">This program comes with ABSOLUTELY NO WARRANTY.\n"
 "See the <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
@@ -694,7 +849,7 @@ msgstr ""
 "参见 <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html\">GNU "
 "通用公共许可证，第二版或更高版本</a>以了解更多细节。</span>"
 
-#: ../data/weather-settings.ui:1316
+#: ../data/weather-settings.ui.h:73
 msgid "About"
 msgstr "关于"
 
