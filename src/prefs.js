@@ -5,7 +5,7 @@
  *  - Creates a widget to set the preferences of the weather extension
  *
  * Copyright (C) 2012 - 2013
- *     Canek Peláez <canek@ciencias.unam.mx>,
+ *     Canek Pelaez <canek@ciencias.unam.mx>,
  *     Christian METZLER <neroth@xeked.com>,
  *     Jens Lody <jens@jenslody.de>,
  * Copyright (C) 2014 -2015

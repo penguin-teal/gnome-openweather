@@ -16,5 +16,4 @@ staging/
 *~
 *.gmo
 metadata.json
-*.gschema.xml
 *.gschema.valid

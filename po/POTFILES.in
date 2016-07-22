@@ -2,4 +2,5 @@ src/extension.js
 src/forecast_io.js
 src/openweathermap_org.js
 src/prefs.js
-[type: gettext/glade]data/weather-settings.ui
+data/weather-settings.ui
+data/org.gnome.shell.extensions.openweather.gschema.xml

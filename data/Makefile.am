@@ -21,11 +21,8 @@ metadata.json: metadata.json.in $(top_builddir)/config.status
 
 CLEANFILES = metadata.json
 
-gschemas_in = org.gnome.shell.extensions.openweather.gschema.xml.in
+gsettings_SCHEMAS = org.gnome.shell.extensions.openweather.gschema.xml
 
-@INTLTOOL_XML_NOMERGE_RULE@
+@GSETTINGS_RULES@
 
-gsettings_SCHEMAS = $(gschemas_in:.xml.in=.xml) @GSETTINGS_RULES@
-
-EXTRA_DIST += $(gschemas_in)
-CLEANFILES += $(gschemas_in:.xml.in=.valid) $(gsettings_SCHEMAS)
+EXTRA_DIST += $(gsettings_SCHEMAS)
