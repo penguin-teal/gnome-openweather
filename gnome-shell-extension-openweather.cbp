@@ -32,13 +32,15 @@
 		<Unit filename="data/OpenWeather.png" />
 		<Unit filename="data/Screenshot.jpg" />
 		<Unit filename="data/metadata.json.in" />
-		<Unit filename="data/org.gnome.shell.extensions.openweather.gschema.xml.in" />
+		<Unit filename="data/org.gnome.shell.extensions.openweather.gschema.xml" />
 		<Unit filename="data/stylesheet.css" />
 		<Unit filename="data/weather-settings.gif" />
 		<Unit filename="data/weather-settings.ui" />
 		<Unit filename="gnome-shell-extension-openweather.spec" />
 		<Unit filename="po/LINGUAS" />
+		<Unit filename="po/Makevars" />
 		<Unit filename="po/POTFILES.in" />
+		<Unit filename="po/ar.po" />
 		<Unit filename="po/bg.po" />
 		<Unit filename="po/ca.po" />
 		<Unit filename="po/cs.po" />
@@ -64,7 +66,6 @@
 		<Unit filename="po/sk.po" />
 		<Unit filename="po/sv.po" />
 		<Unit filename="po/uk.po" />
-		<Unit filename="po/update.js" />
 		<Unit filename="po/vi.po" />
 		<Unit filename="po/zh_CN.po" />
 		<Unit filename="po/zh_TW.po" />
