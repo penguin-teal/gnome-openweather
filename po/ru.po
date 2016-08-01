@@ -13,7 +13,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://github.com/jenslody/gnome-shell-extension-"
 "openweather/issues\n"
 "POT-Creation-Date: 2016-07-22 13:53+0200\n"
-"PO-Revision-Date: 2015-12-17 11:50+0300\n"
+"PO-Revision-Date: 2016-08-01 10:20+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -229,63 +229,63 @@ msgstr "СЗ"
 
 #: src/extension.js:1207 src/extension.js:1216 data/weather-settings.ui:823
 msgid "hPa"
-msgstr ""
+msgstr "гПа"
 
 #: src/extension.js:1211 data/weather-settings.ui:824
 msgid "inHg"
-msgstr ""
+msgstr "дюйм рт.ст."
 
 #: src/extension.js:1221 data/weather-settings.ui:825
 msgid "bar"
-msgstr ""
+msgstr "бар"
 
 #: src/extension.js:1226 data/weather-settings.ui:826
 msgid "Pa"
-msgstr ""
+msgstr "Па"
 
 #: src/extension.js:1231 data/weather-settings.ui:827
 msgid "kPa"
-msgstr ""
+msgstr "кПа"
 
 #: src/extension.js:1236 data/weather-settings.ui:828
 msgid "atm"
-msgstr ""
+msgstr "атм"
 
 #: src/extension.js:1241 data/weather-settings.ui:829
 msgid "at"
-msgstr ""
+msgstr "ат"
 
 #: src/extension.js:1246 data/weather-settings.ui:830
 msgid "Torr"
-msgstr ""
+msgstr "торр"
 
 #: src/extension.js:1251 data/weather-settings.ui:831
 msgid "psi"
-msgstr ""
+msgstr "psi"
 
 #: src/extension.js:1256 data/weather-settings.ui:832
 msgid "mmHg"
-msgstr ""
+msgstr "мм рт.ст."
 
 #: src/extension.js:1300 data/weather-settings.ui:807
 msgid "m/s"
-msgstr ""
+msgstr "м/с"
 
 #: src/extension.js:1304 data/weather-settings.ui:806
 msgid "mph"
-msgstr ""
+msgstr "mph"
 
 #: src/extension.js:1309 data/weather-settings.ui:805
 msgid "km/h"
-msgstr ""
+msgstr "км/ч"
 
 #: src/extension.js:1318 data/weather-settings.ui:808
 msgid "kn"
-msgstr ""
+msgstr "уз"
 
 #: src/extension.js:1323 data/weather-settings.ui:809
 msgid "ft/s"
-msgstr ""
+msgstr "фут/с"
 
 #: src/extension.js:1414
 msgid "Loading ..."
@@ -703,7 +703,7 @@ msgstr "Единицы измерения давления"
 
 #: data/weather-settings.ui:810
 msgid "Beaufort"
-msgstr ""
+msgstr "по шкале Бофорта"
 
 #: data/weather-settings.ui:849
 msgid "Units"
@@ -843,34 +843,34 @@ msgid ""
 "Choose the units used for wind speed. Allowed values are 'kph', 'mph', 'm/"
 "s', 'knots', 'ft/s' or 'Beaufort'."
 msgstr ""
+"Выберите единицу изменения скорости ветра. Допустимые значения: "
+"км/ч, мили в час, м/с, узлы, фут/с или по шкале Бофорта."
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:76
 msgid "Choose whether to display wind direction through arrows or letters."
-msgstr ""
+msgstr "Выберите как отображать направления ветра - стрелками или буквами."
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:80
 msgid "City to be displayed"
-msgstr ""
+msgstr "Город для отображения"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:84
 msgid "Actual City"
-msgstr ""
+msgstr "Текущий город"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:96
-#, fuzzy
 #| msgid "Text on buttons"
 msgid "Use text on buttons in menu"
-msgstr "Текст на кнопках"
+msgstr "Отображать текст на кнопках в меню"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:116
 msgid "Refresh interval (actual weather)"
-msgstr ""
+msgstr "Интервал обновления (текущая погода)"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:120
-#, fuzzy
 #| msgid "Center forecast"
 msgid "Refresh interval (forecast)"
-msgstr "Центрировать прогноз"
+msgstr "Интервал обновления (прогноз)"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:124
 #, fuzzy
