@@ -336,7 +336,7 @@ const OpenweatherMenuButton = new Lang.Class({
         this._timeoutForecast = undefined;
 
         if (this._presence_connection) {
-            this._presence.disconnect(this._presence_connection);
+            this._presence.disconnectSignal(this._presence_connection);
             this._presence_connection = undefined;
         }
 
