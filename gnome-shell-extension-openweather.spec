@@ -1,13 +1,13 @@
-%global git 4c98fe3
+%global git a44cb9e
 %global uuid openweather-extension@jenslody.de
 %global github jenslody-gnome-shell-extension-openweather
 %global checkout git%{git}
-%global checkout_date 20160722
+%global checkout_date 20160821
 
 
 Name:           gnome-shell-extension-openweather
 Version:        1
-Release:        0.20.%{checkout_date}%{checkout}%{?dist}
+Release:        0.21.%{checkout_date}%{checkout}%{?dist}
 Summary:        Display weather information from many locations in the world
 
 Group:          User Interface/Desktops
@@ -68,6 +68,11 @@ fi
 %{_datadir}/gnome-shell/extensions/%{uuid}
 
 %changelog
+* Sun Aug 21 2016 Jens Lody <fedora@jenslody.de> - 1-0.21.20160821gita44cb9e
+- Fix glibc error-message, when disabling the extension.
+- Fix minor issues in preferences-dialog.
+- Add/update translations.
+
 * Fri Jul 22 2016 Jens Lody <fedora@jenslody.de> - 1-0.20.20160722git4c98fe3
 - Update po-files via Makefile with gettext instead of using update.js .
 - Get rid of (mostly unmaintained) intltools.
