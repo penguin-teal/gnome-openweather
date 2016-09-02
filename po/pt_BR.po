@@ -1,6 +1,7 @@
 # Brasilian Portuguese translation for gnome-shell-extension-openweather
 # Copyright (C) 2013
-# This file is distributed under the same license as the gnome-shell-extension-openweather package.
+# This file is distributed under the same license as the
+# gnome-shell-extension-openweather package.
 # Diego Neves <diego@diegoneves.eti.br>, 2014.
 #
 msgid ""
@@ -9,15 +10,16 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://github.com/jenslody/gnome-shell-extension-"
 "openweather/issues\n"
 "POT-Creation-Date: 2016-09-01 21:05+0200\n"
-"PO-Revision-Date: 2016-02-17 16:05-0300\n"
+"PO-Revision-Date: 2016-08-29 20:28-0300\n"
 "Last-Translator: Diego Neves <diego@diegoneves.eti.br>\n"
-"Language-Team: Portugês Brasil ; Diego Neves <diego@diegoneves.eti.br>,\n"
+"Language-Team: Brazilian Portuguese <debian-l10n-portuguese@lists.debian."
+"org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Poedit 1.6.10\n"
+"X-Generator: Poedit 1.8.8\n"
 
 #: src/extension.js:172
 msgid "..."
@@ -30,6 +32,10 @@ msgid ""
 "dialog to on or register at http://openweathermap.org/appid and paste your "
 "personal key into the preferences dialog."
 msgstr ""
+"Openweathermap.org não funciona sem uma api-key.\n"
+"Ou configure para usar a chave padrão da extensões nas preferências ou "
+"registar-se em http://openweathermap.org/appid e cole sua chave pessoal na "
+"tela de preferências."
 
 #: src/extension.js:440
 msgid ""
@@ -37,6 +43,9 @@ msgid ""
 "Please register at https://developer.forecast.io/register and paste your "
 "personal key into the preferences dialog."
 msgstr ""
+"Forecast.io não funciona sem uma api-key.\n"
+"Por favor, registre-se em https://developer.forecast.io/register e cole sua "
+"chave pessoal na tela de preferências."
 
 #: src/extension.js:513
 #, javascript-format
@@ -218,63 +227,63 @@ msgstr "NO"
 
 #: src/extension.js:1216 src/extension.js:1225 data/weather-settings.ui:822
 msgid "hPa"
-msgstr ""
+msgstr "hPa"
 
 #: src/extension.js:1220 data/weather-settings.ui:823
 msgid "inHg"
-msgstr ""
+msgstr "inHg"
 
 #: src/extension.js:1230 data/weather-settings.ui:824
 msgid "bar"
-msgstr ""
+msgstr "bar"
 
 #: src/extension.js:1235 data/weather-settings.ui:825
 msgid "Pa"
-msgstr ""
+msgstr "Pa"
 
 #: src/extension.js:1240 data/weather-settings.ui:826
 msgid "kPa"
-msgstr ""
+msgstr "kPa"
 
 #: src/extension.js:1245 data/weather-settings.ui:827
 msgid "atm"
-msgstr ""
+msgstr "atm"
 
 #: src/extension.js:1250 data/weather-settings.ui:828
 msgid "at"
-msgstr ""
+msgstr "at"
 
 #: src/extension.js:1255 data/weather-settings.ui:829
 msgid "Torr"
-msgstr ""
+msgstr "Torr"
 
 #: src/extension.js:1260 data/weather-settings.ui:830
 msgid "psi"
-msgstr ""
+msgstr "psi"
 
 #: src/extension.js:1265 data/weather-settings.ui:831
 msgid "mmHg"
-msgstr ""
+msgstr "mmHg"
 
 #: src/extension.js:1309 data/weather-settings.ui:806
 msgid "m/s"
-msgstr ""
+msgstr "m/s"
 
 #: src/extension.js:1313 data/weather-settings.ui:805
 msgid "mph"
-msgstr ""
+msgstr "mph"
 
 #: src/extension.js:1318 data/weather-settings.ui:804
 msgid "km/h"
-msgstr ""
+msgstr "km/h"
 
 #: src/extension.js:1327 data/weather-settings.ui:807
 msgid "kn"
-msgstr ""
+msgstr "kn"
 
 #: src/extension.js:1332 data/weather-settings.ui:808
 msgid "ft/s"
-msgstr ""
+msgstr "ft/s"
 
 #: src/extension.js:1423
 msgid "Loading ..."
@@ -316,7 +325,7 @@ msgstr[1] "%d dias atrás"
 #: src/forecast_io.js:173 src/forecast_io.js:175 src/openweathermap_org.js:365
 #: src/openweathermap_org.js:367
 msgid ", "
-msgstr ""
+msgstr ","
 
 #: src/forecast_io.js:267 src/openweathermap_org.js:445
 msgid "Today"
@@ -689,7 +698,7 @@ msgstr "Unidade de pressão"
 
 #: data/weather-settings.ui:809
 msgid "Beaufort"
-msgstr ""
+msgstr "Beaufort"
 
 #: data/weather-settings.ui:848
 msgid "Units"
@@ -807,17 +816,14 @@ msgid "About"
 msgstr "Sobre"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:54
-#, fuzzy
 msgid "Weather Provider"
 msgstr "Meteorologia fornecida por:"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:58
-#, fuzzy
 msgid "Geolocation Provider"
 msgstr "Meteorologia fornecida por:"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:70
-#, fuzzy
 msgid "Wind Speed Units"
 msgstr "Unidade de velocidade do vento"
 
@@ -826,57 +832,52 @@ msgid ""
 "Choose the units used for wind speed. Allowed values are 'kph', 'mph', 'm/"
 "s', 'knots', 'ft/s' or 'Beaufort'."
 msgstr ""
+"Escolha as unidades usadas para velocidade do vento. Os valores permitidos "
+"são \"kph\", \"mph\", \"m/s\", \"nós\", 'ft/s\" ou \"Beaufort\"."
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:76
 msgid "Choose whether to display wind direction through arrows or letters."
-msgstr ""
+msgstr "Escolha se quer exibir a direção do vento através de setas ou letras."
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:80
 msgid "City to be displayed"
-msgstr ""
+msgstr "Cidade que será mostrada"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:84
 msgid "Actual City"
-msgstr ""
+msgstr "Cidade Atual"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:96
-#, fuzzy
 msgid "Use text on buttons in menu"
-msgstr "Texto nos Botões"
+msgstr "Texto nos Botões de menu"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:116
 msgid "Refresh interval (actual weather)"
-msgstr ""
+msgstr "Intervalo de Atualização (cima atual)"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:120
-#, fuzzy
 msgid "Refresh interval (forecast)"
-msgstr "Previsão central"
+msgstr "Intervalo de Atualização (forecast)"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:124
-#, fuzzy
 msgid "Center forecastbox."
 msgstr "Previsão central"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:136
-#, fuzzy
 msgid "Your personal API key from openweathermap.org"
-msgstr "Api key pessoal do openweathermap.org"
+msgstr "API key pessoal do openweathermap.org"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:140
-#, fuzzy
 msgid "Use the extensions default API key from openweathermap.org"
-msgstr "Api key pessoal do openweathermap.org"
+msgstr "Use a API key padrão da extensão para openweathermap.org"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:144
-#, fuzzy
 msgid "Your personal API key from forecast.io"
-msgstr "Api key pessoal do forecast.io"
+msgstr "API key pessoal do forecast.io"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:148
-#, fuzzy
 msgid "Your personal AppKey from developer.geocode.farm"
-msgstr "Api key pessoal do openweathermap.org"
+msgstr "API key pessoal do developer.geocode.farm"
 
 #~ msgid "Loading current weather ..."
 #~ msgstr "Carregando as condições meteorológicas ..."
