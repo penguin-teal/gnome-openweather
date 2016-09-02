@@ -1,10 +1,10 @@
-# Polish translation for gnome-shell-extension-openweather
-# Copyright (C) 2012-2015 THE PACKAGE'S COPYRIGHT HOLDER
+# Polish translation for gnome-shell-extension-openweather.
+# Copyright © 2011-2016 the gnome-shell-extension-openweather authors.
 # This file is distributed under the same license as the gnome-shell-extension-openweather package.
 # Piotr Sokół <psokol@jabster.pl>, 2011, 2012.
 # Marcin Niechciał <bastard79@o2.pl>, 2015.
 # Piotr Drąg <piotrdrag@gmail.com>, 2015, 2016.
-# Aviary.pl <gnomepl@aviary.pl>, 2015, 2016.
+# Aviary.pl <community-poland@mozilla.org>, 2015, 2016.
 #
 msgid ""
 msgstr ""
@@ -12,17 +12,15 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://github.com/jenslody/gnome-shell-extension-"
 "openweather/issues\n"
 "POT-Creation-Date: 2016-09-01 21:05+0200\n"
-"PO-Revision-Date: 2016-04-30 21:28+0200\n"
+"PO-Revision-Date: 2016-09-02 14:25+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
-"Language-Team: Polish <gnomepl@aviary.pl>\n"
+"Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Poedit-Language: Polish\n"
-"X-Poedit-Country: Poland\n"
 
 #: src/extension.js:172
 msgid "..."
@@ -36,9 +34,9 @@ msgid ""
 "personal key into the preferences dialog."
 msgstr ""
 "Serwis openweathermap.org nie działa bez klucza API.\n"
-"Proszę włączyć używanie domyślnego klucza rozszerzenia w oknie preferencji "
-"lub zarejestrować się na stronie http://openweathermap.org/appid i wkleić "
-"osobisty klucz w oknie preferencji."
+"Proszę włączyć używanie domyślnego klucza rozszerzenia w oknie preferencji "
+"lub zarejestrować się na stronie http://openweathermap.org/appid i wkleić "
+"osobisty klucz w oknie preferencji."
 
 #: src/extension.js:440
 msgid ""
@@ -47,13 +45,13 @@ msgid ""
 "personal key into the preferences dialog."
 msgstr ""
 "Serwis forecast.io nie działa bez klucza API.\n"
-"Proszę zarejestrować się na stronie https://developer.forecast.io/register i "
-"wkleić osobisty klucz w oknie preferencji."
+"Proszę zarejestrować się na stronie https://developer.forecast.io/register "
+"i wkleić osobisty klucz w oknie preferencji."
 
 #: src/extension.js:513
 #, javascript-format
 msgid "Can not connect to %s"
-msgstr "Nie można nawiązać połączenia z %s"
+msgstr "Nie można połączyć z %s"
 
 #: src/extension.js:854 data/weather-settings.ui:459
 msgid "Locations"
@@ -65,7 +63,7 @@ msgstr "Ponownie wczytaj komunikat pogodowy"
 
 #: src/extension.js:884
 msgid "Weather data provided by:"
-msgstr "Dane o pogodzie dostarcza:"
+msgstr "Dane o pogodzie dostarcza:"
 
 #: src/extension.js:900
 #, javascript-format
@@ -343,49 +341,49 @@ msgstr "Jutro"
 #, javascript-format
 msgid "In %d day"
 msgid_plural "In %d days"
-msgstr[0] "W ciągu %d dnia"
-msgstr[1] "W ciągu %d dni"
-msgstr[2] "W ciągu %d dni"
+msgstr[0] "Za %d dzień"
+msgstr[1] "Za %d dni"
+msgstr[2] "Za %d dni"
 
 #: src/openweathermap_org.js:181
 msgid "thunderstorm with light rain"
-msgstr "burza z piorunami z lekkimi opadami deszczu"
+msgstr "burza z piorunami z lekkimi opadami deszczu"
 
 #: src/openweathermap_org.js:183
 msgid "thunderstorm with rain"
-msgstr "burza z piorunami z opadami deszczu"
+msgstr "burza z piorunami z opadami deszczu"
 
 #: src/openweathermap_org.js:185
 msgid "thunderstorm with heavy rain"
-msgstr "burza z piorunami z silnymi opadami deszczu"
+msgstr "burza z piorunami z silnymi opadami deszczu"
 
 #: src/openweathermap_org.js:187
 msgid "light thunderstorm"
-msgstr "mała burza z piorunami"
+msgstr "mała burza z piorunami"
 
 #: src/openweathermap_org.js:189
 msgid "thunderstorm"
-msgstr "burza z piorunami"
+msgstr "burza z piorunami"
 
 #: src/openweathermap_org.js:191
 msgid "heavy thunderstorm"
-msgstr "silna burza z piorunami"
+msgstr "silna burza z piorunami"
 
 #: src/openweathermap_org.js:193
 msgid "ragged thunderstorm"
-msgstr "burza z piorunami"
+msgstr "burza z piorunami"
 
 #: src/openweathermap_org.js:195
 msgid "thunderstorm with light drizzle"
-msgstr "burza z piorunami i słabą mżawką"
+msgstr "burza z piorunami i słabą mżawką"
 
 #: src/openweathermap_org.js:197
 msgid "thunderstorm with drizzle"
-msgstr "burza z piorunami i mżawką"
+msgstr "burza z piorunami i mżawką"
 
 #: src/openweathermap_org.js:199
 msgid "thunderstorm with heavy drizzle"
-msgstr "burze z piorunami z silną mżawką"
+msgstr "burze z piorunami z silną mżawką"
 
 #: src/openweathermap_org.js:201
 msgid "light intensity drizzle"
@@ -401,7 +399,7 @@ msgstr "silna mżawka"
 
 #: src/openweathermap_org.js:207
 msgid "light intensity drizzle rain"
-msgstr "słabe opady deszczu i mżawka"
+msgstr "słabe opady deszczu i mżawka"
 
 #: src/openweathermap_org.js:209
 msgid "drizzle rain"
@@ -409,15 +407,15 @@ msgstr "mżawka"
 
 #: src/openweathermap_org.js:211
 msgid "heavy intensity drizzle rain"
-msgstr "silne opady deszczu i mżawka"
+msgstr "silne opady deszczu i mżawka"
 
 #: src/openweathermap_org.js:213
 msgid "shower rain and drizzle"
-msgstr "przelotne opady deszczu i mżawka"
+msgstr "przelotne opady deszczu i mżawka"
 
 #: src/openweathermap_org.js:215
 msgid "heavy shower rain and drizzle"
-msgstr "silne, przelotne opady deszczu i mżawka"
+msgstr "silne, przelotne opady deszczu i mżawka"
 
 #: src/openweathermap_org.js:217
 msgid "shower drizzle"
@@ -609,7 +607,7 @@ msgstr "Współrzędne"
 
 #: data/weather-settings.ui:93 data/weather-settings.ui:256
 msgid "Extensions default weather provider"
-msgstr "Domyślny dostawca informacji o pogodzie"
+msgstr "Domyślny dostawca informacji o pogodzie"
 
 #: data/weather-settings.ui:125 data/weather-settings.ui:288
 msgid "Cancel"
@@ -633,31 +631,31 @@ msgstr "Znajdź"
 
 #: data/weather-settings.ui:480
 msgid "Chose default weather provider"
-msgstr "Domyślny dostawca informacji o pogodzie"
+msgstr "Domyślny dostawca informacji o pogodzie"
 
 #: data/weather-settings.ui:493
 msgid "Personal Api key from openweathermap.org"
-msgstr "Osobisty klucz API z serwisu openweathermap.org"
+msgstr "Osobisty klucz API z serwisu openweathermap.org"
 
 #: data/weather-settings.ui:544
 msgid "Personal Api key from forecast.io"
-msgstr "Osobisty klucz API z serwisu forecast.io"
+msgstr "Osobisty klucz API z serwisu forecast.io"
 
 #: data/weather-settings.ui:557
 msgid "Refresh timeout for current weather [min]"
-msgstr "Aktualizacja informacji o obecnej pogodzie (w minutach)"
+msgstr "Aktualizacja informacji o obecnej pogodzie (w minutach)"
 
 #: data/weather-settings.ui:571
 msgid "Refresh timeout for weather forecast [min]"
-msgstr "Aktualizacja informacji o prognozie pogody (w minutach)"
+msgstr "Aktualizacja informacji o prognozie pogody (w minutach)"
 
 #: data/weather-settings.ui:599
 msgid ""
 "Note: the forecast-timout is not used for forecast.io, because they do not "
 "provide seperate downloads for current weather and forecasts."
 msgstr ""
-"Uwaga: ustawienia aktualizacji nie działają z serwisem forecast.io, ponieważ "
-"nie ma możliwości pobrania informacji osobno dla obecnej pogody i prognozy."
+"Uwaga: ustawienia aktualizacji nie działają z serwisem forecast.io, ponieważ "
+"nie ma możliwości pobrania informacji osobno dla obecnej pogody i prognozy."
 
 #: data/weather-settings.ui:627
 msgid "Use extensions api-key for openweathermap.org"
@@ -668,12 +666,12 @@ msgid ""
 "Switch off, if you have your own api-key for openweathermap.org and put it "
 "into the text-box below."
 msgstr ""
-"Należy wyłączyć, jeżeli w polu poniżej wklejono osobisty klucz dla serwisu "
+"Należy wyłączyć, jeżeli w polu poniżej wklejono osobisty klucz dla serwisu "
 "openweathermap.org."
 
 #: data/weather-settings.ui:655
 msgid "Weather provider"
-msgstr "Dostawca informacji o pogodzie"
+msgstr "Dostawca informacji o pogodzie"
 
 #: data/weather-settings.ui:675
 msgid "Chose geolocation provider"
@@ -681,7 +679,7 @@ msgstr "Dostawca geolokalizacji"
 
 #: data/weather-settings.ui:701
 msgid "Personal AppKey from developer.mapquest.com"
-msgstr "Osobisty klucz API z serwisu developer.mapquest.com"
+msgstr "Osobisty klucz aplikacji z serwisu developer.mapquest.com"
 
 #: data/weather-settings.ui:730
 msgid "Geolocation provider"
@@ -746,7 +744,7 @@ msgstr "Warunki pogodowe na panelu"
 #: data/weather-settings.ui:945
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:108
 msgid "Conditions in Forecast"
-msgstr "Warunki pogodowe w prognozie"
+msgstr "Warunki pogodowe w prognozie"
 
 #: data/weather-settings.ui:956
 msgid "Center forecast"
@@ -792,7 +790,7 @@ msgid ""
 "\"https://openweathermap.org/\">Openweathermap</a> or <a href=\"https://"
 "forecast.io\">forecast.io</a> for almost all locations in the world.</span>"
 msgstr ""
-"<span>Rozszerzenie pogody pobiera informacje z serwisu <a href=\"https://"
+"<span>Rozszerzenie pogody pobiera informacje z serwisu <a href=\"https://"
 "openweathermap.org/\">OpenWeatherMap</a> lub <a href=\"https://forecast.io"
 "\">forecast.io</a> dla niemal wszystkich miejsc na świecie.</span>"
 
@@ -818,20 +816,17 @@ msgstr ""
 
 #: data/weather-settings.ui:1315
 msgid "About"
-msgstr "O programie"
+msgstr "O programie"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:54
-#, fuzzy
 msgid "Weather Provider"
-msgstr "Dostawca informacji o pogodzie"
+msgstr "Dostawca informacji o pogodzie"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:58
-#, fuzzy
 msgid "Geolocation Provider"
 msgstr "Dostawca geolokalizacji"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:70
-#, fuzzy
 msgid "Wind Speed Units"
 msgstr "Jednostka prędkości wiatru"
 
@@ -840,54 +835,50 @@ msgid ""
 "Choose the units used for wind speed. Allowed values are 'kph', 'mph', 'm/"
 "s', 'knots', 'ft/s' or 'Beaufort'."
 msgstr ""
+"Jednostka używana dla prędkości wiatru. Dozwolone wartości: „kph”, „mph”, „m/"
+"s”, „knots”, „ft/s” lub „Beaufort”."
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:76
 msgid "Choose whether to display wind direction through arrows or letters."
-msgstr ""
+msgstr "Czy wyświetlać kierunek wiatru za pomocą strzałek lub liter."
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:80
 msgid "City to be displayed"
-msgstr ""
+msgstr "Wyświetlane miasto"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:84
 msgid "Actual City"
-msgstr ""
+msgstr "Obecne miasto"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:96
-#, fuzzy
 msgid "Use text on buttons in menu"
-msgstr "Tekst na przyciskach"
+msgstr "Tekst na przyciskach w menu"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:116
 msgid "Refresh interval (actual weather)"
-msgstr ""
+msgstr "Czas odświeżania (obecnej pogody)"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:120
-#, fuzzy
 msgid "Refresh interval (forecast)"
-msgstr "Wyśrodkowanie prognozy"
+msgstr "Czas odświeżania (prognozy)"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:124
-#, fuzzy
 msgid "Center forecastbox."
-msgstr "Wyśrodkowanie prognozy"
+msgstr "Wyśrodkowanie prognozy."
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:136
-#, fuzzy
 msgid "Your personal API key from openweathermap.org"
-msgstr "Osobisty klucz API z serwisu openweathermap.org"
+msgstr "Osobisty klucz API z serwisu openweathermap.org"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:140
-#, fuzzy
 msgid "Use the extensions default API key from openweathermap.org"
-msgstr "Klucz API rozszerzenia dla serwisu openweathermap.org"
+msgstr ""
+"Użycie domyślnego klucza API rozszerzenia z serwisu openweathermap.org"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:144
-#, fuzzy
 msgid "Your personal API key from forecast.io"
-msgstr "Osobisty klucz API z serwisu forecast.io"
+msgstr "Osobisty klucz API z serwisu forecast.io"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:148
-#, fuzzy
 msgid "Your personal AppKey from developer.geocode.farm"
-msgstr "Osobisty klucz API z serwisu developer.mapquest.com"
+msgstr "Osobisty klucz aplikacji z serwisu developer.geocode.farm"
