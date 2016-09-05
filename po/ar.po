@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://github.com/jenslody/gnome-shell-extension-"
 "openweather/issues\n"
-"POT-Creation-Date: 2016-09-01 21:05+0200\n"
+"POT-Creation-Date: 2016-09-05 22:52+0200\n"
 "PO-Revision-Date: 2016-02-05 13:34+0400\n"
 "Last-Translator: Khaled Hosny <khaledhosny@eglug.org>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
@@ -20,11 +20,11 @@ msgstr ""
 "X-Generator: Virtaal 1.0.0-beta1\n"
 "X-Project-Style: gnome\n"
 
-#: src/extension.js:172
+#: src/extension.js:173
 msgid "..."
 msgstr "..."
 
-#: src/extension.js:382
+#: src/extension.js:383
 msgid ""
 "Openweathermap.org does not work without an api-key.\n"
 "Either set the switch to use the extensions default key in the preferences "
@@ -35,7 +35,7 @@ msgstr ""
 "إما أن تختار استخدام مفتاح الامتداد المبدئي في نافذة التفضيلات أو تسجل في "
 "http://openweathermap.org/appid و تلصق المفتاح الشخصي في نافذة التفضيلات."
 
-#: src/extension.js:440
+#: src/extension.js:441
 msgid ""
 "Forecast.io does not work without an api-key.\n"
 "Please register at https://developer.forecast.io/register and paste your "
@@ -45,275 +45,275 @@ msgstr ""
 "رجاء سجل في https://developer.forecast.io/register و ألصق مفتاح الاستخدام "
 "الشخصي في نافذة التفضيلات."
 
-#: src/extension.js:513
+#: src/extension.js:514
 #, javascript-format
 msgid "Can not connect to %s"
 msgstr "تعذّر الاتّصال بـ %s"
 
-#: src/extension.js:854 data/weather-settings.ui:459
+#: src/extension.js:861 data/weather-settings.ui:464
 msgid "Locations"
 msgstr "الأماكن"
 
-#: src/extension.js:869
+#: src/extension.js:876
 msgid "Reload Weather Information"
 msgstr "أعِد تحميل معلومات الطقس"
 
-#: src/extension.js:884
+#: src/extension.js:891
 msgid "Weather data provided by:"
 msgstr "بيانات الطقس من:"
 
-#: src/extension.js:900
+#: src/extension.js:907
 #, javascript-format
 msgid "Can not open %s"
 msgstr "تعذّر فتح %s"
 
-#: src/extension.js:907
+#: src/extension.js:914
 msgid "Weather Settings"
 msgstr "إعدادات الطقس"
 
-#: src/extension.js:971 src/prefs.js:1021
+#: src/extension.js:978 src/prefs.js:1051
 msgid "Invalid city"
 msgstr "مدينة غير صحيحة"
 
-#: src/extension.js:982
+#: src/extension.js:989
 msgid "Invalid location! Please try to recreate it."
 msgstr "مكان غير صحيح. رجاء حاول إعادة ضبطة."
 
-#: src/extension.js:1029 data/weather-settings.ui:785
+#: src/extension.js:1036 data/weather-settings.ui:790
 msgid "°F"
 msgstr "°ف"
 
-#: src/extension.js:1031 data/weather-settings.ui:786
+#: src/extension.js:1038 data/weather-settings.ui:791
 msgid "K"
 msgstr "ك"
 
-#: src/extension.js:1033 data/weather-settings.ui:787
+#: src/extension.js:1040 data/weather-settings.ui:792
 msgid "°Ra"
 msgstr ""
 
-#: src/extension.js:1035 data/weather-settings.ui:788
+#: src/extension.js:1042 data/weather-settings.ui:793
 msgid "°Ré"
 msgstr ""
 
-#: src/extension.js:1037 data/weather-settings.ui:789
+#: src/extension.js:1044 data/weather-settings.ui:794
 msgid "°Rø"
 msgstr ""
 
-#: src/extension.js:1039 data/weather-settings.ui:790
+#: src/extension.js:1046 data/weather-settings.ui:795
 msgid "°De"
 msgstr ""
 
-#: src/extension.js:1041 data/weather-settings.ui:791
+#: src/extension.js:1048 data/weather-settings.ui:796
 msgid "°N"
 msgstr ""
 
-#: src/extension.js:1043 data/weather-settings.ui:784
+#: src/extension.js:1050 data/weather-settings.ui:789
 msgid "°C"
 msgstr "°م"
 
-#: src/extension.js:1084
+#: src/extension.js:1091
 msgid "Calm"
 msgstr "هادئ"
 
-#: src/extension.js:1087
+#: src/extension.js:1094
 msgid "Light air"
 msgstr "هواء خفيف"
 
-#: src/extension.js:1090
+#: src/extension.js:1097
 msgid "Light breeze"
 msgstr "نسيم خفيف"
 
-#: src/extension.js:1093
+#: src/extension.js:1100
 msgid "Gentle breeze"
 msgstr "نسيم علي"
 
-#: src/extension.js:1096
+#: src/extension.js:1103
 msgid "Moderate breeze"
 msgstr "نسيم متوسط"
 
-#: src/extension.js:1099
+#: src/extension.js:1106
 msgid "Fresh breeze"
 msgstr "نسيم منعش"
 
-#: src/extension.js:1102
+#: src/extension.js:1109
 msgid "Strong breeze"
 msgstr "نسيم قوي"
 
-#: src/extension.js:1105
+#: src/extension.js:1112
 msgid "Moderate gale"
 msgstr "نوبة متوسطة"
 
-#: src/extension.js:1108
+#: src/extension.js:1115
 msgid "Fresh gale"
 msgstr "نوبة جديدة"
 
-#: src/extension.js:1111
+#: src/extension.js:1118
 msgid "Strong gale"
 msgstr "نوبة قوية"
 
-#: src/extension.js:1114
+#: src/extension.js:1121
 msgid "Storm"
 msgstr "عاصفة"
 
-#: src/extension.js:1117
+#: src/extension.js:1124
 msgid "Violent storm"
 msgstr "عاصفة قوية"
 
-#: src/extension.js:1120
+#: src/extension.js:1127
 msgid "Hurricane"
 msgstr "إعصار"
 
-#: src/extension.js:1124
+#: src/extension.js:1131
 msgid "Sunday"
 msgstr "الأحد"
 
-#: src/extension.js:1124
+#: src/extension.js:1131
 msgid "Monday"
 msgstr "الإثنين"
 
-#: src/extension.js:1124
+#: src/extension.js:1131
 msgid "Tuesday"
 msgstr "الثّلاثاء"
 
-#: src/extension.js:1124
+#: src/extension.js:1131
 msgid "Wednesday"
 msgstr "الأربعاء"
 
-#: src/extension.js:1124
+#: src/extension.js:1131
 msgid "Thursday"
 msgstr "الخميس"
 
-#: src/extension.js:1124
+#: src/extension.js:1131
 msgid "Friday"
 msgstr "الجمعة"
 
-#: src/extension.js:1124
+#: src/extension.js:1131
 msgid "Saturday"
 msgstr "السّبت"
 
-#: src/extension.js:1130
+#: src/extension.js:1137
 msgid "N"
 msgstr "شمال"
 
-#: src/extension.js:1130
+#: src/extension.js:1137
 msgid "NE"
 msgstr "شمال شرقي"
 
-#: src/extension.js:1130
+#: src/extension.js:1137
 msgid "E"
 msgstr "شرق"
 
-#: src/extension.js:1130
+#: src/extension.js:1137
 msgid "SE"
 msgstr "جنوب شرقي"
 
-#: src/extension.js:1130
+#: src/extension.js:1137
 msgid "S"
 msgstr "جنوب"
 
-#: src/extension.js:1130
+#: src/extension.js:1137
 msgid "SW"
 msgstr "جنوب غربي"
 
-#: src/extension.js:1130
+#: src/extension.js:1137
 msgid "W"
 msgstr "غرب"
 
-#: src/extension.js:1130
+#: src/extension.js:1137
 msgid "NW"
 msgstr "شمال غربي"
 
-#: src/extension.js:1216 src/extension.js:1225 data/weather-settings.ui:822
+#: src/extension.js:1230 src/extension.js:1239 data/weather-settings.ui:827
 msgid "hPa"
 msgstr "ه‍.باسكال"
 
-#: src/extension.js:1220 data/weather-settings.ui:823
+#: src/extension.js:1234 data/weather-settings.ui:828
 msgid "inHg"
 msgstr "بوصة زئبق"
 
-#: src/extension.js:1230 data/weather-settings.ui:824
+#: src/extension.js:1244 data/weather-settings.ui:829
 msgid "bar"
 msgstr ""
 
-#: src/extension.js:1235 data/weather-settings.ui:825
+#: src/extension.js:1249 data/weather-settings.ui:830
 msgid "Pa"
 msgstr ""
 
-#: src/extension.js:1240 data/weather-settings.ui:826
+#: src/extension.js:1254 data/weather-settings.ui:831
 msgid "kPa"
 msgstr "ك.باسكال"
 
-#: src/extension.js:1245 data/weather-settings.ui:827
+#: src/extension.js:1259 data/weather-settings.ui:832
 msgid "atm"
 msgstr ""
 
-#: src/extension.js:1250 data/weather-settings.ui:828
+#: src/extension.js:1264 data/weather-settings.ui:833
 msgid "at"
 msgstr ""
 
-#: src/extension.js:1255 data/weather-settings.ui:829
+#: src/extension.js:1269 data/weather-settings.ui:834
 msgid "Torr"
 msgstr ""
 
-#: src/extension.js:1260 data/weather-settings.ui:830
+#: src/extension.js:1274 data/weather-settings.ui:835
 msgid "psi"
 msgstr ""
 
-#: src/extension.js:1265 data/weather-settings.ui:831
+#: src/extension.js:1279 data/weather-settings.ui:836
 msgid "mmHg"
 msgstr "مم زئبق"
 
-#: src/extension.js:1309 data/weather-settings.ui:806
+#: src/extension.js:1323 data/weather-settings.ui:811
 msgid "m/s"
 msgstr "م/ث"
 
-#: src/extension.js:1313 data/weather-settings.ui:805
+#: src/extension.js:1327 data/weather-settings.ui:810
 msgid "mph"
 msgstr "ميل/س"
 
-#: src/extension.js:1318 data/weather-settings.ui:804
+#: src/extension.js:1332 data/weather-settings.ui:809
 msgid "km/h"
 msgstr "كم/س"
 
-#: src/extension.js:1327 data/weather-settings.ui:807
+#: src/extension.js:1341 data/weather-settings.ui:812
 msgid "kn"
 msgstr ""
 
-#: src/extension.js:1332 data/weather-settings.ui:808
+#: src/extension.js:1346 data/weather-settings.ui:813
 msgid "ft/s"
 msgstr "قدم\\ث"
 
-#: src/extension.js:1423
+#: src/extension.js:1437
 msgid "Loading ..."
 msgstr "يُحمّل…"
 
-#: src/extension.js:1427
+#: src/extension.js:1441
 msgid "Please wait"
 msgstr "رجاء انتظر"
 
-#: src/extension.js:1488
+#: src/extension.js:1502
 msgid "Cloudiness:"
 msgstr "الضبابية:"
 
-#: src/extension.js:1492
+#: src/extension.js:1506
 msgid "Humidity:"
 msgstr "الرّطوبة:"
 
-#: src/extension.js:1496
+#: src/extension.js:1510
 msgid "Pressure:"
 msgstr "الضغط:"
 
-#: src/extension.js:1500
+#: src/extension.js:1514
 msgid "Wind:"
 msgstr "الرياح:"
 
-#: src/forecast_io.js:158 src/forecast_io.js:287 src/openweathermap_org.js:349
-#: src/openweathermap_org.js:451
+#: src/forecast_io.js:159 src/forecast_io.js:288 src/openweathermap_org.js:350
+#: src/openweathermap_org.js:452
 msgid "Yesterday"
 msgstr "أمس"
 
-#: src/forecast_io.js:161 src/forecast_io.js:290 src/openweathermap_org.js:351
-#: src/openweathermap_org.js:453
+#: src/forecast_io.js:162 src/forecast_io.js:291 src/openweathermap_org.js:352
+#: src/openweathermap_org.js:454
 #, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
@@ -324,20 +324,20 @@ msgstr[3] "منذ %d أيام"
 msgstr[4] "منذ %d يومًا"
 msgstr[5] "منذ %d يوم"
 
-#: src/forecast_io.js:173 src/forecast_io.js:175 src/openweathermap_org.js:365
-#: src/openweathermap_org.js:367
+#: src/forecast_io.js:174 src/forecast_io.js:176 src/openweathermap_org.js:366
+#: src/openweathermap_org.js:368
 msgid ", "
 msgstr "، "
 
-#: src/forecast_io.js:267 src/openweathermap_org.js:445
+#: src/forecast_io.js:268 src/openweathermap_org.js:446
 msgid "Today"
 msgstr "اليوم"
 
-#: src/forecast_io.js:283 src/openweathermap_org.js:447
+#: src/forecast_io.js:284 src/openweathermap_org.js:448
 msgid "Tomorrow"
 msgstr "غدًا"
 
-#: src/forecast_io.js:285 src/openweathermap_org.js:449
+#: src/forecast_io.js:286 src/openweathermap_org.js:450
 #, javascript-format
 msgid "In %d day"
 msgid_plural "In %d days"
@@ -568,30 +568,30 @@ msgstr "غيوم"
 msgid "Not available"
 msgstr "غير متاح"
 
-#: src/prefs.js:215 src/prefs.js:271 src/prefs.js:319 src/prefs.js:326
+#: src/prefs.js:216 src/prefs.js:272 src/prefs.js:320 src/prefs.js:327
 #, javascript-format
 msgid "Invalid data when searching for \"%s\""
 msgstr "بيانات غير صحيحة أثناء البحث عن \"%s\""
 
-#: src/prefs.js:223 src/prefs.js:287 src/prefs.js:332
+#: src/prefs.js:224 src/prefs.js:288 src/prefs.js:333
 #, javascript-format
 msgid "\"%s\" not found"
 msgstr "‏\"%s\" غير موجود"
 
-#: src/prefs.js:393
+#: src/prefs.js:394
 msgid "Location"
 msgstr "المكان"
 
-#: src/prefs.js:403
+#: src/prefs.js:404
 msgid "Provider"
 msgstr "المزود"
 
-#: src/prefs.js:535
+#: src/prefs.js:553
 #, javascript-format
 msgid "Remove %s ?"
 msgstr "أأزيل %s؟"
 
-#: src/prefs.js:1056
+#: src/prefs.js:1086
 msgid "default"
 msgstr "المبدئي"
 
@@ -600,7 +600,7 @@ msgid "Edit name"
 msgstr "حرر الاسم"
 
 #: data/weather-settings.ui:49 data/weather-settings.ui:79
-#: data/weather-settings.ui:219
+#: data/weather-settings.ui:224
 msgid "Clear entry"
 msgstr "امسح الخانة"
 
@@ -608,51 +608,51 @@ msgstr "امسح الخانة"
 msgid "Edit coordinates"
 msgstr "حرر الإحداثيات"
 
-#: data/weather-settings.ui:93 data/weather-settings.ui:256
+#: data/weather-settings.ui:93 data/weather-settings.ui:261
 msgid "Extensions default weather provider"
 msgstr "مقدم بيانات الطقس المبدئي للامتداد"
 
-#: data/weather-settings.ui:125 data/weather-settings.ui:288
+#: data/weather-settings.ui:125 data/weather-settings.ui:293
 msgid "Cancel"
 msgstr "ألغِ"
 
-#: data/weather-settings.ui:143 data/weather-settings.ui:306
+#: data/weather-settings.ui:143 data/weather-settings.ui:311
 msgid "Save"
 msgstr "احفظ"
 
-#: data/weather-settings.ui:196
+#: data/weather-settings.ui:201
 msgid "Search by location or coordinates"
 msgstr "ابحث بالمكان و الإحداثيات"
 
-#: data/weather-settings.ui:220
+#: data/weather-settings.ui:225
 msgid "e.g. Vaiaku, Tuvalu or -8.5211767,179.1976747"
 msgstr "مثلا: القاهرة، مصر، أو 30.05,31.233333"
 
-#: data/weather-settings.ui:230
+#: data/weather-settings.ui:235
 msgid "Find"
 msgstr "ابحث"
 
-#: data/weather-settings.ui:480
+#: data/weather-settings.ui:485
 msgid "Chose default weather provider"
 msgstr "اختر مقدم بيانات الطقس المبدئي"
 
-#: data/weather-settings.ui:493
+#: data/weather-settings.ui:498
 msgid "Personal Api key from openweathermap.org"
 msgstr "مفتاح شخصي لاستخدام الخدمة من openweathermap.org"
 
-#: data/weather-settings.ui:544
+#: data/weather-settings.ui:549
 msgid "Personal Api key from forecast.io"
 msgstr "مفتاح شخصي لاستخدام الخدمة من forecast.io"
 
-#: data/weather-settings.ui:557
+#: data/weather-settings.ui:562
 msgid "Refresh timeout for current weather [min]"
 msgstr "مهلة تحديث الطقس الحالي [بالدقائق]"
 
-#: data/weather-settings.ui:571
+#: data/weather-settings.ui:576
 msgid "Refresh timeout for weather forecast [min]"
 msgstr "مهلة تحديث تنبؤات الطقس [بالدقائق]"
 
-#: data/weather-settings.ui:599
+#: data/weather-settings.ui:604
 msgid ""
 "Note: the forecast-timout is not used for forecast.io, because they do not "
 "provide seperate downloads for current weather and forecasts."
@@ -660,11 +660,11 @@ msgstr ""
 "لاحظ أن مهلة تنبؤات الطقس غير مستخدمة مع forecast.io، لأنهم لا يوفرون تنزيلا "
 "مستقلا لحالة الطقس و التنبؤات."
 
-#: data/weather-settings.ui:627
+#: data/weather-settings.ui:632
 msgid "Use extensions api-key for openweathermap.org"
 msgstr "استخدم مفتاح استخدام الخدمة من الامتداد مع openweathermap.org"
 
-#: data/weather-settings.ui:638
+#: data/weather-settings.ui:643
 msgid ""
 "Switch off, if you have your own api-key for openweathermap.org and put it "
 "into the text-box below."
@@ -672,122 +672,126 @@ msgstr ""
 "ألغ التأشير هنا إذا كان لديك مفتاحك الشخصي لاستخدام الخدمة و ضعه في صندوق "
 "النص أدناه."
 
-#: data/weather-settings.ui:655
+#: data/weather-settings.ui:660
 msgid "Weather provider"
 msgstr "مقدم الطقس"
 
-#: data/weather-settings.ui:675
+#: data/weather-settings.ui:680
 msgid "Chose geolocation provider"
 msgstr "اختر مقدم بيانات التموضع الجغرافي"
 
-#: data/weather-settings.ui:701
+#: data/weather-settings.ui:706
 msgid "Personal AppKey from developer.mapquest.com"
 msgstr "مفتاح تطبيق شخصي من developer.mapquest.com"
 
-#: data/weather-settings.ui:730
+#: data/weather-settings.ui:735
 msgid "Geolocation provider"
 msgstr "مقدم التموضع"
 
-#: data/weather-settings.ui:750
+#: data/weather-settings.ui:755
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:62
 msgid "Temperature Unit"
 msgstr "وحدة درجة الحرارة"
 
-#: data/weather-settings.ui:761
+#: data/weather-settings.ui:766
 msgid "Wind Speed Unit"
 msgstr "وحدة سرعة الرياح"
 
-#: data/weather-settings.ui:772
+#: data/weather-settings.ui:777
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:66
 msgid "Pressure Unit"
 msgstr "وحدة الضغط"
 
-#: data/weather-settings.ui:809
+#: data/weather-settings.ui:814
 msgid "Beaufort"
 msgstr "بوفورت"
 
-#: data/weather-settings.ui:848
+#: data/weather-settings.ui:853
 msgid "Units"
 msgstr "الوحدات"
 
-#: data/weather-settings.ui:868
+#: data/weather-settings.ui:873
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:112
 msgid "Position in Panel"
 msgstr "الموضع في اللوحة"
 
-#: data/weather-settings.ui:879
+#: data/weather-settings.ui:884
+msgid "Position of menu-box [%] from 0 (left) to 100 (right)"
+msgstr ""
+
+#: data/weather-settings.ui:895
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:75
 msgid "Wind Direction by Arrows"
 msgstr "اتجاه الرياح بالأسهم"
 
-#: data/weather-settings.ui:890
+#: data/weather-settings.ui:906
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:88
 msgid "Translate Conditions"
 msgstr "ترجم حالة الطقس"
 
-#: data/weather-settings.ui:901
+#: data/weather-settings.ui:917
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:92
 msgid "Symbolic Icons"
 msgstr "أيقونات رمزية"
 
-#: data/weather-settings.ui:912
+#: data/weather-settings.ui:928
 msgid "Text on buttons"
 msgstr "نص على الأزرار"
 
-#: data/weather-settings.ui:923
+#: data/weather-settings.ui:939
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:100
 msgid "Temperature in Panel"
 msgstr "درجة الحرارة في اللوحة"
 
-#: data/weather-settings.ui:934
+#: data/weather-settings.ui:950
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:104
 msgid "Conditions in Panel"
 msgstr "الأحوال في اللوحة"
 
-#: data/weather-settings.ui:945
+#: data/weather-settings.ui:961
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:108
 msgid "Conditions in Forecast"
 msgstr "الأحوال في التنبؤات"
 
-#: data/weather-settings.ui:956
+#: data/weather-settings.ui:972
 msgid "Center forecast"
 msgstr "وسّط التنبؤات"
 
-#: data/weather-settings.ui:967
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:128
+#: data/weather-settings.ui:983
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:132
 msgid "Number of days in forecast"
 msgstr "عدد الأيام في التنبؤات"
 
-#: data/weather-settings.ui:978
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:132
+#: data/weather-settings.ui:994
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:136
 msgid "Maximal number of digits after the decimal point"
 msgstr "أقصي عدد من الأرقام بعد الفاصلة العشرية"
 
-#: data/weather-settings.ui:990
+#: data/weather-settings.ui:1006
 msgid "Center"
 msgstr "وسط"
 
-#: data/weather-settings.ui:991
+#: data/weather-settings.ui:1007
 msgid "Right"
 msgstr "يمين"
 
-#: data/weather-settings.ui:992
+#: data/weather-settings.ui:1008
 msgid "Left"
 msgstr "يسار"
 
-#: data/weather-settings.ui:1134
+#: data/weather-settings.ui:1167
 msgid "Layout"
 msgstr "الترتيب"
 
-#: data/weather-settings.ui:1186
+#: data/weather-settings.ui:1219
 msgid "Version: "
 msgstr "الإصدارة: "
 
-#: data/weather-settings.ui:1200
+#: data/weather-settings.ui:1233
 msgid "unknown (self-build ?)"
 msgstr "غير معرفة (بنيتها بنفسك؟)"
 
-#: data/weather-settings.ui:1220
+#: data/weather-settings.ui:1253
 msgid ""
 "<span>Weather extension to display weather information from <a href="
 "\"https://openweathermap.org/\">Openweathermap</a> or <a href=\"https://"
@@ -797,15 +801,15 @@ msgstr ""
 "\">Openweathermap</a> أو <a href=\"https://forecast.io\">forecast.io</a> "
 "لأغلب الأماكن في العالم.</span>"
 
-#: data/weather-settings.ui:1243
+#: data/weather-settings.ui:1276
 msgid "Maintained by"
 msgstr "مسئول عنها"
 
-#: data/weather-settings.ui:1273
+#: data/weather-settings.ui:1306
 msgid "Webpage"
 msgstr "صفحة الوب"
 
-#: data/weather-settings.ui:1294
+#: data/weather-settings.ui:1327
 msgid ""
 "<span size=\"small\">This program comes with ABSOLUTELY NO WARRANTY.\n"
 "See the <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
@@ -815,7 +819,7 @@ msgstr ""
 "راجع <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html\">رخصة "
 "جنو العمومية العامة، الإصدارة الثانية أو ما بعدها</a> للتفاصيل</span>"
 
-#: data/weather-settings.ui:1315
+#: data/weather-settings.ui:1348
 msgid "About"
 msgstr "عنْ"
 
@@ -858,36 +862,40 @@ msgid "Use text on buttons in menu"
 msgstr "نص على الأزرار"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:116
+msgid "Horizontal position of menu-box."
+msgstr ""
+
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:120
 #, fuzzy
 msgid "Refresh interval (actual weather)"
 msgstr "وسّط التنبؤات"
 
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:120
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:124
 #, fuzzy
 msgid "Refresh interval (forecast)"
 msgstr "وسّط التنبؤات"
 
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:124
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:128
 #, fuzzy
 msgid "Center forecastbox."
 msgstr "وسّط التنبؤات"
 
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:136
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:140
 #, fuzzy
 msgid "Your personal API key from openweathermap.org"
 msgstr "مفتاح شخصي لاستخدام الخدمة من openweathermap.org"
 
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:140
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:144
 #, fuzzy
 msgid "Use the extensions default API key from openweathermap.org"
 msgstr "استخدم مفتاح استخدام الخدمة من الامتداد مع openweathermap.org"
 
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:144
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:148
 #, fuzzy
 msgid "Your personal API key from forecast.io"
 msgstr "مفتاح شخصي لاستخدام الخدمة من forecast.io"
 
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:148
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:152
 #, fuzzy
 msgid "Your personal AppKey from developer.geocode.farm"
 msgstr "مفتاح تطبيق شخصي من developer.mapquest.com"
