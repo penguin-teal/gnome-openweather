@@ -111,6 +111,10 @@
       <default>'center'</default>
       <summary>Position in Panel</summary>
     </key>
+    <key name="menu-alignment" type="d">
+      <default>75.0</default>
+      <summary>Horizontal position of menu-box.</summary>
+    </key>
     <key type="i" name="refresh-interval-current">
       <default>600</default>
       <summary>Refresh interval (actual weather)</summary>

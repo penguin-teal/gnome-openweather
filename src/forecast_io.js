@@ -120,6 +120,7 @@ function parseWeatherCurrent() {
         (this.currentWeatherCache == "in refresh"))
         return;
 
+    this.checkAlignment();
     this.checkPositionInPanel();
 
     let json = this.currentWeatherCache;

@@ -74,6 +74,7 @@ const OPENWEATHER_USE_SYMBOLIC_ICONS_KEY = 'use-symbolic-icons';
 const OPENWEATHER_USE_TEXT_ON_BUTTONS_KEY = 'use-text-on-buttons';
 const OPENWEATHER_SHOW_TEXT_IN_PANEL_KEY = 'show-text-in-panel';
 const OPENWEATHER_POSITION_IN_PANEL_KEY = 'position-in-panel';
+const OPENWEATHER_MENU_ALIGNMENT_KEY = 'menu-alignment';
 const OPENWEATHER_SHOW_COMMENT_IN_PANEL_KEY = 'show-comment-in-panel';
 const OPENWEATHER_SHOW_COMMENT_IN_FORECAST_KEY = 'show-comment-in-forecast';
 const OPENWEATHER_REFRESH_INTERVAL_CURRENT = 'refresh-interval-current';
@@ -178,7 +179,7 @@ const OpenweatherMenuButton = new Lang.Class({
         });
 
         // Panel menu item - the current class
-        let menuAlignment = 0.25;
+        let menuAlignment = 1.0 - (this._menu_alignment / 100);
         if (Clutter.get_default_text_direction() == Clutter.TextDirection.RTL)
             menuAlignment = 1.0 - menuAlignment;
         this.parent(menuAlignment);
@@ -758,6 +759,12 @@ const OpenweatherMenuButton = new Lang.Class({
         return this._settings.get_enum(OPENWEATHER_POSITION_IN_PANEL_KEY);
     },
 
+    get _menu_alignment() {
+        if (!this._settings)
+            this.loadConfig();
+        return this._settings.get_double(OPENWEATHER_MENU_ALIGNMENT_KEY);
+    },
+
     get _comment_in_panel() {
         if (!this._settings)
             this.loadConfig();
@@ -1176,6 +1183,13 @@ const OpenweatherMenuButton = new Lang.Class({
             }
         }));
         return;
+    },
+
+    checkAlignment: function() {
+        let menuAlignment = 1.0 - (this._menu_alignment / 100);
+        if (Clutter.get_default_text_direction() == Clutter.TextDirection.RTL)
+            menuAlignment = 1.0 - menuAlignment;
+        this.menu._arrowAlignment=menuAlignment;
     },
 
     checkPositionInPanel: function() {
