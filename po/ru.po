@@ -13,7 +13,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://github.com/jenslody/gnome-shell-extension-"
 "openweather/issues\n"
 "POT-Creation-Date: 2016-09-05 22:52+0200\n"
-"PO-Revision-Date: 2016-08-01 10:20+0300\n"
+"PO-Revision-Date: 2016-09-12 17:20+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -716,7 +716,7 @@ msgstr "Положение на панели"
 
 #: data/weather-settings.ui:884
 msgid "Position of menu-box [%] from 0 (left) to 100 (right)"
-msgstr ""
+msgstr "Положение окна в [%] от 0 (слева) до 100 (справа)"
 
 #: data/weather-settings.ui:895
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:75
@@ -865,7 +865,7 @@ msgstr "Отображать текст на кнопках в меню"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:116
 msgid "Horizontal position of menu-box."
-msgstr ""
+msgstr "Положение окна по горизонтали."
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:120
 msgid "Refresh interval (actual weather)"
