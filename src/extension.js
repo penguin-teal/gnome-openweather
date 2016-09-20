@@ -444,7 +444,7 @@ const OpenweatherMenuButton = new Lang.Class({
     getWeatherProviderURL: function() {
         let url = "";
         if (this._weather_provider == WeatherProvider.DARKSKY) {
-            url = "https://darksky.net/#/f/";
+            url = "https://darksky.net/";
             url += this.extractCoord(this._city);
         } else {
             url = "https://openweathermap.org";
