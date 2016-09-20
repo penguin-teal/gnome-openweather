@@ -40,7 +40,7 @@ const ExtensionUtils = imports.misc.extensionUtils;
 const Me = ExtensionUtils.getCurrentExtension();
 const Config = imports.misc.config;
 const Convenience = Me.imports.convenience;
-const ForecastIo = Me.imports.forecast_io;
+const DarkskyNet = Me.imports.darksky_net;
 const OpenweathermapOrg = Me.imports.openweathermap_org;
 const Clutter = imports.gi.Clutter;
 const Gettext = imports.gettext.domain('gnome-shell-extension-openweather');
@@ -91,7 +91,7 @@ const OPENWEATHER_FC_API_KEY = 'appid-fc';
 const WeatherProvider = {
     DEFAULT: -1,
     OPENWEATHERMAP: 0,
-    FORECAST_IO: 1
+    DARKSKY: 1
 };
 
 const WeatherUnits = {
@@ -364,8 +364,8 @@ const OpenweatherMenuButton = new Lang.Class({
     },
 
     switchProvider: function() {
-        if (this._weather_provider == WeatherProvider.FORECAST_IO)
-            this.useForecastIo();
+        if (this._weather_provider == WeatherProvider.DARKSKY)
+            this.useDarkskyNet();
         else
             this.useOpenweathermapOrg();
     },
@@ -384,14 +384,14 @@ const OpenweatherMenuButton = new Lang.Class({
 
     },
 
-    useForecastIo: function() {
-        this.parseWeatherCurrent = ForecastIo.parseWeatherCurrent;
-        this.parseWeatherForecast = ForecastIo.parseWeatherForecast;
-        this.getWeatherIcon = ForecastIo.getWeatherIcon;
-        this.refreshWeatherCurrent = ForecastIo.refreshWeatherCurrent;
+    useDarkskyNet: function() {
+        this.parseWeatherCurrent = DarkskyNet.parseWeatherCurrent;
+        this.parseWeatherForecast = DarkskyNet.parseWeatherForecast;
+        this.getWeatherIcon = DarkskyNet.getWeatherIcon;
+        this.refreshWeatherCurrent = DarkskyNet.refreshWeatherCurrent;
         this.refreshWeatherForecast = function() {};
 
-        this.weatherProvider = "https://forecast.io/";
+        this.weatherProvider = "https://darksky.net/";
 
         this.fc_locale = 'en';
 
@@ -438,13 +438,13 @@ const OpenweatherMenuButton = new Lang.Class({
         }
 
         if (this._appid_fc.toString().trim() === '')
-            Main.notify("Openweather", _("Forecast.io does not work without an api-key.\nPlease register at https://developer.forecast.io/register and paste your personal key into the preferences dialog."));
+            Main.notify("Openweather", _("Dark Sky does not work without an api-key.\nPlease register at https://darksky.net/dev/register and paste your personal key into the preferences dialog."));
     },
 
     getWeatherProviderURL: function() {
         let url = "";
-        if (this._weather_provider == WeatherProvider.FORECAST_IO) {
-            url = "https://forecast.io/#/f/";
+        if (this._weather_provider == WeatherProvider.DARKSKY) {
+            url = "https://darksky.net/#/f/";
             url += this.extractCoord(this._city);
         } else {
             url = "https://openweathermap.org";
@@ -551,7 +551,7 @@ const OpenweatherMenuButton = new Lang.Class({
                 return true;
             }
         }
-        if (provider == WeatherProvider.FORECAST_IO) {
+        if (provider == WeatherProvider.DARKSKY) {
             let translateCondition = this._translate_condition;
             if (this.oldTranslateCondition != translateCondition) {
                 this.oldTranslateCondition = translateCondition;

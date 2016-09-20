@@ -1,5 +1,5 @@
 src/extension.js
-src/forecast_io.js
+src/darksky_net.js
 src/openweathermap_org.js
 src/prefs.js
 data/weather-settings.ui

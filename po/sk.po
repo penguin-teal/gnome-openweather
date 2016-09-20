@@ -37,12 +37,12 @@ msgstr ""
 
 #: src/extension.js:441
 msgid ""
-"Forecast.io does not work without an api-key.\n"
-"Please register at https://developer.forecast.io/register and paste your "
+"Dark Sky does not work without an api-key.\n"
+"Please register at https://darksky.net/dev/register and paste your "
 "personal key into the preferences dialog."
 msgstr ""
-"Služba forecast.io nefunguje bez kľúča api-key.\n"
-"Zaregistrujte sa, prosím, na adrese https://developer.forecast.io/register a "
+"Služba Dark Sky nefunguje bez kľúča api-key.\n"
+"Zaregistrujte sa, prosím, na adrese https://darksky.net/dev/register a "
 "vložte váš súkromný kľúč do dialógového okna nastavení."
 
 #: src/extension.js:514
@@ -307,12 +307,12 @@ msgstr "Tlak:"
 msgid "Wind:"
 msgstr "Vietor:"
 
-#: src/forecast_io.js:159 src/forecast_io.js:288 src/openweathermap_org.js:350
+#: src/darksky_net.js:159 src/darksky_net.js:288 src/openweathermap_org.js:350
 #: src/openweathermap_org.js:452
 msgid "Yesterday"
 msgstr "Včera"
 
-#: src/forecast_io.js:162 src/forecast_io.js:291 src/openweathermap_org.js:352
+#: src/darksky_net.js:162 src/darksky_net.js:291 src/openweathermap_org.js:352
 #: src/openweathermap_org.js:454
 #, javascript-format
 msgid "%d day ago"
@@ -321,20 +321,20 @@ msgstr[0] "Pred %d dňom"
 msgstr[1] "Pred %d dňami"
 msgstr[2] "Pred %d dňami"
 
-#: src/forecast_io.js:174 src/forecast_io.js:176 src/openweathermap_org.js:366
+#: src/darksky_net.js:174 src/darksky_net.js:176 src/openweathermap_org.js:366
 #: src/openweathermap_org.js:368
 msgid ", "
 msgstr ", "
 
-#: src/forecast_io.js:268 src/openweathermap_org.js:446
+#: src/darksky_net.js:268 src/openweathermap_org.js:446
 msgid "Today"
 msgstr "Dnes"
 
-#: src/forecast_io.js:284 src/openweathermap_org.js:448
+#: src/darksky_net.js:284 src/openweathermap_org.js:448
 msgid "Tomorrow"
 msgstr "Zajtra"
 
-#: src/forecast_io.js:286 src/openweathermap_org.js:450
+#: src/darksky_net.js:286 src/openweathermap_org.js:450
 #, javascript-format
 msgid "In %d day"
 msgid_plural "In %d days"
@@ -635,8 +635,8 @@ msgid "Personal Api key from openweathermap.org"
 msgstr "Osobný kľúč Api z openweathermap.org"
 
 #: data/weather-settings.ui:549
-msgid "Personal Api key from forecast.io"
-msgstr "Osobný kľúč Api z forecast.io"
+msgid "Personal Api key from Dark Sky"
+msgstr "Osobný kľúč Api z Dark Sky"
 
 #: data/weather-settings.ui:562
 msgid "Refresh timeout for current weather [min]"
@@ -648,10 +648,10 @@ msgstr "Časový limit obnovy pre predpoveď počasia [min]"
 
 #: data/weather-settings.ui:604
 msgid ""
-"Note: the forecast-timout is not used for forecast.io, because they do not "
+"Note: the forecast-timout is not used for Dark Sky, because they do not "
 "provide seperate downloads for current weather and forecasts."
 msgstr ""
-"Poznámka: časový limit predpovede nie je použitý pre službu forecast.io, "
+"Poznámka: časový limit predpovede nie je použitý pre službu Dark Sky, "
 "pretože neposkytuje oddelené preberanie pre aktuálne počasie a predpovede."
 
 #: data/weather-settings.ui:632
@@ -789,11 +789,11 @@ msgstr "neznáma (zostavené vlastnoručne?)"
 msgid ""
 "<span>Weather extension to display weather information from <a href="
 "\"https://openweathermap.org/\">Openweathermap</a> or <a href=\"https://"
-"forecast.io\">forecast.io</a> for almost all locations in the world.</span>"
+"darksky.net\">Dark Sky</a> for almost all locations in the world.</span>"
 msgstr ""
 "<span>Či má rozšírenie zobraziť informácie o počasí zo služby <a href="
 "\"https://openweathermap.org/\">Openweathermap</a> alebo <a href=\"https://"
-"forecast.io\">forecast.io</a> pre takmer všetky miesta na svete.</span>"
+"darksky.net\">Dark Sky</a> pre takmer všetky miesta na svete.</span>"
 
 #: data/weather-settings.ui:1276
 msgid "Maintained by"
@@ -886,8 +886,8 @@ msgstr "Použiť kľúč api-key rozšírenia pre openweathermap.org"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:148
 #, fuzzy
-msgid "Your personal API key from forecast.io"
-msgstr "Osobný kľúč Api z forecast.io"
+msgid "Your personal API key from Dark Sky"
+msgstr "Osobný kľúč Api z Dark Sky"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:152
 #, fuzzy
