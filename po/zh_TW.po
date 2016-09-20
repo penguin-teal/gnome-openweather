@@ -38,12 +38,12 @@ msgstr ""
 
 #: src/extension.js:441
 msgid ""
-"Forecast.io does not work without an api-key.\n"
-"Please register at https://developer.forecast.io/register and paste your "
+"Dark Sky does not work without an api-key.\n"
+"Please register at https://darksky.net/dev/register and paste your "
 "personal key into the preferences dialog."
 msgstr ""
-"Forecast.io 在沒有 API 密鑰的情況下無法工作。\n"
-"請到 https://developer.forecast.io/register 註冊，並將您的個人密鑰粘貼到選項"
+"Dark Sky 在沒有 API 密鑰的情況下無法工作。\n"
+"請到 https://darksky.net/dev/register 註冊，並將您的個人密鑰粘貼到選項"
 "對話框中。"
 
 #: src/extension.js:514
@@ -308,32 +308,32 @@ msgstr "氣壓："
 msgid "Wind:"
 msgstr "風："
 
-#: src/forecast_io.js:159 src/forecast_io.js:288 src/openweathermap_org.js:350
+#: src/darksky_net.js:159 src/darksky_net.js:288 src/openweathermap_org.js:350
 #: src/openweathermap_org.js:452
 msgid "Yesterday"
 msgstr "昨天"
 
-#: src/forecast_io.js:162 src/forecast_io.js:291 src/openweathermap_org.js:352
+#: src/darksky_net.js:162 src/darksky_net.js:291 src/openweathermap_org.js:352
 #: src/openweathermap_org.js:454
 #, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
 msgstr[0] "%d 天以前"
 
-#: src/forecast_io.js:174 src/forecast_io.js:176 src/openweathermap_org.js:366
+#: src/darksky_net.js:174 src/darksky_net.js:176 src/openweathermap_org.js:366
 #: src/openweathermap_org.js:368
 msgid ", "
 msgstr "，"
 
-#: src/forecast_io.js:268 src/openweathermap_org.js:446
+#: src/darksky_net.js:268 src/openweathermap_org.js:446
 msgid "Today"
 msgstr "今天"
 
-#: src/forecast_io.js:284 src/openweathermap_org.js:448
+#: src/darksky_net.js:284 src/openweathermap_org.js:448
 msgid "Tomorrow"
 msgstr "明天"
 
-#: src/forecast_io.js:286 src/openweathermap_org.js:450
+#: src/darksky_net.js:286 src/openweathermap_org.js:450
 #, javascript-format
 msgid "In %d day"
 msgid_plural "In %d days"
@@ -632,8 +632,8 @@ msgid "Personal Api key from openweathermap.org"
 msgstr "openweathermap.org 的個人 API 密鑰"
 
 #: data/weather-settings.ui:549
-msgid "Personal Api key from forecast.io"
-msgstr "forecast.io 的個人 API 密鑰"
+msgid "Personal Api key from Dark Sky"
+msgstr "Dark Sky 的個人 API 密鑰"
 
 #: data/weather-settings.ui:562
 msgid "Refresh timeout for current weather [min]"
@@ -645,10 +645,10 @@ msgstr "刷新天氣預報的超時時間 [分鐘]"
 
 #: data/weather-settings.ui:604
 msgid ""
-"Note: the forecast-timout is not used for forecast.io, because they do not "
+"Note: the forecast-timout is not used for Dark Sky, because they do not "
 "provide seperate downloads for current weather and forecasts."
 msgstr ""
-"注意：預報超時不適用於 forecast.io，因爲他們不提供當前天氣和預報的分別下載。"
+"注意：預報超時不適用於 Dark Sky，因爲他們不提供當前天氣和預報的分別下載。"
 
 #: data/weather-settings.ui:632
 msgid "Use extensions api-key for openweathermap.org"
@@ -785,10 +785,10 @@ msgstr "未知（自建？）"
 msgid ""
 "<span>Weather extension to display weather information from <a href="
 "\"https://openweathermap.org/\">Openweathermap</a> or <a href=\"https://"
-"forecast.io\">forecast.io</a> for almost all locations in the world.</span>"
+"darksky.net\">Dark Sky</a> for almost all locations in the world.</span>"
 msgstr ""
 "<span>爲全世界幾乎所有地點顯示來自 <a href=\"https://openweathermap.org/"
-"\">Openweathermap</a> 或 <a href=\"https://forecast.io\">forecast.io</a> 的天"
+"\">Openweathermap</a> 或 <a href=\"https://darksky.net\">Dark Sky</a> 的天"
 "氣信息的擴展。</span>"
 
 #: data/weather-settings.ui:1276
@@ -881,8 +881,8 @@ msgstr "使用本擴展的 openweathermap.org API 密鑰"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:148
 #, fuzzy
-msgid "Your personal API key from forecast.io"
-msgstr "forecast.io 的個人 API 密鑰"
+msgid "Your personal API key from Dark Sky"
+msgstr "Dark Sky 的個人 API 密鑰"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:152
 #, fuzzy

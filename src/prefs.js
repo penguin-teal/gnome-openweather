@@ -83,7 +83,7 @@ const OPENWEATHER_URL_OSM_FIND = OPENWEATHER_URL_OSM_BASE + 'search';
 const WeatherProvider = {
     DEFAULT: -1,
     OPENWEATHERMAP: 0,
-    FORECAST_IO: 1
+    DARKSKY: 1
 };
 
 const GeolocationProvider = {
@@ -1079,8 +1079,8 @@ const WeatherPrefsWidget = new GObject.Class({
         switch (provider) {
             case WeatherProvider.OPENWEATHERMAP:
                 return "openweathermap.org";
-            case WeatherProvider.FORECAST_IO:
-                return "forecast.io";
+            case WeatherProvider.DARKSKY:
+                return "darksky.net";
             default:
             case WeatherProvider.DEFAULT:
                 return _("default");

@@ -40,12 +40,12 @@ msgstr ""
 
 #: src/extension.js:441
 msgid ""
-"Forecast.io does not work without an api-key.\n"
-"Please register at https://developer.forecast.io/register and paste your "
+"Dark Sky does not work without an api-key.\n"
+"Please register at https://darksky.net/dev/register and paste your "
 "personal key into the preferences dialog."
 msgstr ""
-"Serwis forecast.io nie działa bez klucza API.\n"
-"Proszę zarejestrować się na stronie https://developer.forecast.io/register "
+"Serwis Dark Sky nie działa bez klucza API.\n"
+"Proszę zarejestrować się na stronie https://darksky.net/dev/register "
 "i wkleić osobisty klucz w oknie preferencji."
 
 #: src/extension.js:514
@@ -310,12 +310,12 @@ msgstr "Ciśnienie atmosferyczne:"
 msgid "Wind:"
 msgstr "Kierunek, prędkość wiatru:"
 
-#: src/forecast_io.js:159 src/forecast_io.js:288 src/openweathermap_org.js:350
+#: src/darksky_net.js:159 src/darksky_net.js:288 src/openweathermap_org.js:350
 #: src/openweathermap_org.js:452
 msgid "Yesterday"
 msgstr "Wczoraj"
 
-#: src/forecast_io.js:162 src/forecast_io.js:291 src/openweathermap_org.js:352
+#: src/darksky_net.js:162 src/darksky_net.js:291 src/openweathermap_org.js:352
 #: src/openweathermap_org.js:454
 #, javascript-format
 msgid "%d day ago"
@@ -324,20 +324,20 @@ msgstr[0] "%d dzień temu"
 msgstr[1] "%d dni temu"
 msgstr[2] "%d dni temu"
 
-#: src/forecast_io.js:174 src/forecast_io.js:176 src/openweathermap_org.js:366
+#: src/darksky_net.js:174 src/darksky_net.js:176 src/openweathermap_org.js:366
 #: src/openweathermap_org.js:368
 msgid ", "
 msgstr ", "
 
-#: src/forecast_io.js:268 src/openweathermap_org.js:446
+#: src/darksky_net.js:268 src/openweathermap_org.js:446
 msgid "Today"
 msgstr "Dzisiaj"
 
-#: src/forecast_io.js:284 src/openweathermap_org.js:448
+#: src/darksky_net.js:284 src/openweathermap_org.js:448
 msgid "Tomorrow"
 msgstr "Jutro"
 
-#: src/forecast_io.js:286 src/openweathermap_org.js:450
+#: src/darksky_net.js:286 src/openweathermap_org.js:450
 #, javascript-format
 msgid "In %d day"
 msgid_plural "In %d days"
@@ -638,8 +638,8 @@ msgid "Personal Api key from openweathermap.org"
 msgstr "Osobisty klucz API z serwisu openweathermap.org"
 
 #: data/weather-settings.ui:549
-msgid "Personal Api key from forecast.io"
-msgstr "Osobisty klucz API z serwisu forecast.io"
+msgid "Personal Api key from Dark Sky"
+msgstr "Osobisty klucz API z serwisu Dark Sky"
 
 #: data/weather-settings.ui:562
 msgid "Refresh timeout for current weather [min]"
@@ -651,10 +651,10 @@ msgstr "Aktualizacja informacji o prognozie pogody (w minutach)"
 
 #: data/weather-settings.ui:604
 msgid ""
-"Note: the forecast-timout is not used for forecast.io, because they do not "
+"Note: the forecast-timout is not used for Dark Sky, because they do not "
 "provide seperate downloads for current weather and forecasts."
 msgstr ""
-"Uwaga: ustawienia aktualizacji nie działają z serwisem forecast.io, ponieważ "
+"Uwaga: ustawienia aktualizacji nie działają z serwisem Dark Sky, ponieważ "
 "nie ma możliwości pobrania informacji osobno dla obecnej pogody i prognozy."
 
 #: data/weather-settings.ui:632
@@ -792,11 +792,11 @@ msgstr "nieznana"
 msgid ""
 "<span>Weather extension to display weather information from <a href="
 "\"https://openweathermap.org/\">Openweathermap</a> or <a href=\"https://"
-"forecast.io\">forecast.io</a> for almost all locations in the world.</span>"
+"darksky.net\">Dark Sky</a> for almost all locations in the world.</span>"
 msgstr ""
 "<span>Rozszerzenie pogody pobiera informacje z serwisu <a href=\"https://"
-"openweathermap.org/\">OpenWeatherMap</a> lub <a href=\"https://forecast.io"
-"\">forecast.io</a> dla niemal wszystkich miejsc na świecie.</span>"
+"openweathermap.org/\">OpenWeatherMap</a> lub <a href=\"https://darksky.net"
+"\">Dark Sky</a> dla niemal wszystkich miejsc na świecie.</span>"
 
 #: data/weather-settings.ui:1276
 msgid "Maintained by"
@@ -883,8 +883,8 @@ msgid "Use the extensions default API key from openweathermap.org"
 msgstr "Użycie domyślnego klucza API rozszerzenia z serwisu openweathermap.org"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:148
-msgid "Your personal API key from forecast.io"
-msgstr "Osobisty klucz API z serwisu forecast.io"
+msgid "Your personal API key from Dark Sky"
+msgstr "Osobisty klucz API z serwisu Dark Sky"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:152
 msgid "Your personal AppKey from developer.geocode.farm"

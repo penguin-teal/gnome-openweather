@@ -2,7 +2,7 @@
 <schemalist gettext-domain="gnome-shell-extension-openweather">
   <enum id="org.gnome.shell.extensions.openweather.weather-provider">
     <value value="0" nick="openweathermap"/>
-    <value value="1" nick="forecast.io"/>
+    <value value="1" nick="darksky.net"/>
   </enum>
   <enum id="org.gnome.shell.extensions.openweather.geolocation-provider">
     <value value="0" nick="openstreetmaps"/>
@@ -145,7 +145,7 @@
     </key>
     <key type="s" name="appid-fc">
       <default>''</default>
-      <summary>Your personal API key from forecast.io</summary>
+      <summary>Your personal API key from darksky.net</summary>
     </key>
     <key type="s" name="geolocation-appid-mapquest">
       <default>''</default>

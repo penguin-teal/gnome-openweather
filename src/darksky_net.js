@@ -41,7 +41,7 @@ const _ = Gettext.gettext;
 const ngettext = Gettext.ngettext;
 
 
-const OPENWEATHER_URL_HOST = 'api.forecast.io';
+const OPENWEATHER_URL_HOST = 'api.darksky.net';
 const OPENWEATHER_URL_BASE = 'https://' + OPENWEATHER_URL_HOST + '/forecast/';
 
 function getWeatherIcon(icon, windspeed, cloudcover, night) {
@@ -105,7 +105,7 @@ function getWeatherIcon(icon, windspeed, cloudcover, night) {
 function parseWeatherCurrent() {
     if (this.currentWeatherCache === undefined) {
         // this is a reentrency guard, in this times set for both caches,
-        // because they get updated with one call to forecast.io
+        // because they get updated with one call to Dark Sky
         this.currentWeatherCache = "in refresh";
         // but do it only if the cache has been cleared, otherwise we would
         // overwrite possibly valid data, that can be kept if the update fails
@@ -233,7 +233,7 @@ function parseWeatherForecast() {
 
     if (this.forecastWeatherCache === undefined) {
         // this is a reentrency guard, in this times set for both caches,
-        // because they get updated with one call to forecast.io
+        // because they get updated with one call to Dark Sky
         this.forecastWeatherCache = "in refresh";
         // but do it only if the cache has been cleared, otherwise we would
         // overwrite possibly valid data, that can be kept if the update fails
