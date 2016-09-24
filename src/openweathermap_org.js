@@ -403,9 +403,8 @@ function refreshWeatherCurrent() {
 
             this.parseWeatherCurrent();
         } else {
-            // we are connected, but get no (or no correct) data, so invalidate
-            // the shown data and reload after 10 minutes (recommendded by openweathermap.org)
-            this.rebuildCurrentWeatherUi();
+            // we are connected, but get no (or no correct) data, so try to reload
+            // after 10 minutes (recommendded by openweathermap.org)
             this.reloadWeatherCurrent(600);
         }
     });
@@ -486,9 +485,8 @@ function refreshWeatherForecast() {
 
             this.parseWeatherForecast();
         } else {
-            // we are connected, but get no (or no correct) data, so invalidate
-            // the shown data and reload after 10 minutes (recommendded by openweathermap.org)
-            this.rebuildFutureWeatherUi();
+            // we are connected, but get no (or no correct) data, so try to reload
+            // after 10 minutes (recommendded by openweathermap.org)
             this.reloadWeatherForecast(600);
         }
     });
