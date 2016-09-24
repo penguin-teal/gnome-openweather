@@ -1,13 +1,13 @@
-%global git a44cb9e
+%global git 39821fa
 %global uuid openweather-extension@jenslody.de
 %global github jenslody-gnome-shell-extension-openweather
 %global checkout git%{git}
-%global checkout_date 20160821
+%global checkout_date 20160920
 
 
 Name:           gnome-shell-extension-openweather
 Version:        1
-Release:        0.21.%{checkout_date}%{checkout}%{?dist}
+Release:        0.24.%{checkout_date}%{checkout}%{?dist}
 Summary:        Display weather information from many locations in the world
 
 Group:          User Interface/Desktops
@@ -68,6 +68,21 @@ fi
 %{_datadir}/gnome-shell/extensions/%{uuid}
 
 %changelog
+* Tue Sep 20 2016 Jens Lody <fedora@jenslody.de> - 1-0.24.20160920git39821fa
+- Switch name and url from forecast.io to Dark Sky, because they changed/unified
+  their name, url and api.
+
+* Wed Sep 14 2016 Jens Lody <fedora@jenslody.de> - 1-0.23.20160914git58dd4f4
+- Add option to configure the position of the menu-box relative to the
+  panel-text.
+- Update metadata.json to support newest development build of gnome-shell
+  on rawhide.
+- Added/updated language files.
+
+* Thu Aug 25 2016 Jens Lody <fedora@jenslody.de> - 1-0.22.20160825gitcefbfb0
+- Update metadata.json to support newest development build of gnome-shell
+  on rawhide.
+
 * Sun Aug 21 2016 Jens Lody <fedora@jenslody.de> - 1-0.21.20160821gita44cb9e
 - Fix glibc error-message, when disabling the extension.
 - Fix minor issues in preferences-dialog.
