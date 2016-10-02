@@ -639,7 +639,7 @@ msgstr ""
 
 #: data/weather-settings.ui:604
 msgid ""
-"Note: the forecast-timout is not used for Dark Sky, because they do not "
+"Note: the forecast-timout is not used for darksky.net, because they do not "
 "provide seperate downloads for current weather and forecasts."
 msgstr ""
 
@@ -857,7 +857,7 @@ msgid "Use the extensions default API key from openweathermap.org"
 msgstr ""
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:148
-msgid "Your personal API key from Dark Sky"
+msgid "Your personal API key from darksky.net"
 msgstr ""
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:152
