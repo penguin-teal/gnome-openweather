@@ -11,7 +11,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://github.com/jenslody/gnome-shell-extension-"
 "openweather/issues\n"
 "POT-Creation-Date: 2016-09-05 22:52+0200\n"
-"PO-Revision-Date: 2016-10-02 01:00+0200\n"
+"PO-Revision-Date: 2016-10-02 02:50+0200\n"
 "Last-Translator: Davy Defaud (DevDef) <davy.defaud@free.fr>\n"
 "Language-Team: Français <ecyrbe@gmail.com>\n"
 "Language: fr\n"
@@ -636,8 +636,8 @@ msgid "Personal Api key from openweathermap.org"
 msgstr "Clef d’API personnelle d’openweathermap.org"
 
 #: data/weather-settings.ui:549
-msgid "Personal Api key from Dark Sky"
-msgstr "Clef d’API personnelle de Dark Sky"
+msgid "Personal Api key from darksky.net"
+msgstr "Clef d’API personnelle de darksky.net"
 
 #: data/weather-settings.ui:562
 msgid "Refresh timeout for current weather [min]"
@@ -649,11 +649,11 @@ msgstr "Délai avant rafraîchissement des prévisions météo [min]"
 
 #: data/weather-settings.ui:604
 msgid ""
-"Note: the forecast-timout is not used for Dark Sky, because they do not "
+"Note: the forecast-timout is not used for darksky.net, because they do not "
 "provide seperate downloads for current weather and forecasts."
 msgstr ""
 "Note : le délai de rafraîchissement des prévisions n’est pas utilisé pour "
-"Dark Sky, parce que ce dernier ne fournit pas de flux séparés entre les "
+"darksky.net, parce que ce dernier ne fournit pas de flux séparés entre les "
 "observations et les prévisions."
 
 #: data/weather-settings.ui:632
@@ -791,11 +791,11 @@ msgstr "inconnu (auto‐compilation ?)"
 msgid ""
 "<span>Weather extension to display weather information from <a href="
 "\"https://openweathermap.org/\">Openweathermap</a> or <a href=\"https://"
-"darksky.net\">Dark Sky</a> for almost all locations in the world.</span>"
+"darksky.net\">darksky.net</a> for almost all locations in the world.</span>"
 msgstr ""
 "<span>Extension GNOME Shell permettant l’affichage des informations météo "
 "d’<a href=\"https://openweathermap.org/\">Openweathermap</a> ou "
-"<a href=\"https://darksky.net\">Dark Sky</a><br/>\n"
+"<a href=\"https://darksky.net\">darksky.net</a><br/>\n"
 " pour la plupart des localisations dans le monde.</span>"
 
 #: data/weather-settings.ui:1276
@@ -885,8 +885,8 @@ msgid "Use the extensions default API key from openweathermap.org"
 msgstr "Utiliser la clef d’API d’extension pour openweathermap.org"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:148
-msgid "Your personal API key from Dark Sky"
-msgstr "Clef d’API personnelle de Dark Sky"
+msgid "Your personal API key from darksky.net"
+msgstr "Clef d’API personnelle de darksky.net"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:152
 msgid "Your personal AppKey from developer.geocode.farm"
