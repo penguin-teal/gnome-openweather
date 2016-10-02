@@ -320,8 +320,8 @@ msgstr "Hier"
 #, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
-msgstr[0] "Il y a %s jour"
-msgstr[1] "Il y a %s jours"
+msgstr[0] "Il y a %d jour"
+msgstr[1] "Il y a %d jours"
 
 #: src/darksky_net.js:174 src/darksky_net.js:176 src/openweathermap_org.js:366
 #: src/openweathermap_org.js:368
@@ -340,8 +340,8 @@ msgstr "Demain"
 #, javascript-format
 msgid "In %d day"
 msgid_plural "In %d days"
-msgstr[0] "Dans %s jour"
-msgstr[1] "Dans %s jours"
+msgstr[0] "Dans %d jour"
+msgstr[1] "Dans %d jours"
 
 #: src/openweathermap_org.js:181
 msgid "thunderstorm with light rain"
