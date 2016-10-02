@@ -626,7 +626,7 @@ msgid "Personal Api key from openweathermap.org"
 msgstr ""
 
 #: data/weather-settings.ui:549
-msgid "Personal Api key from Dark Sky"
+msgid "Personal Api key from darksky.net"
 msgstr ""
 
 #: data/weather-settings.ui:562
@@ -776,7 +776,7 @@ msgstr ""
 msgid ""
 "<span>Weather extension to display weather information from <a href="
 "\"https://openweathermap.org/\">Openweathermap</a> or <a href=\"https://"
-"darksky.net\">Dark Sky</a> for almost all locations in the world.</span>"
+"darksky.net\">darksky.net</a> for almost all locations in the world.</span>"
 msgstr ""
 
 #: data/weather-settings.ui:1276
