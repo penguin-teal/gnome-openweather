@@ -795,7 +795,7 @@ msgid ""
 msgstr ""
 "<span>Extension GNOME Shell permettant l’affichage des informations météo "
 "d’<a href=\"https://openweathermap.org/\">Openweathermap</a> ou "
-"<a href=\"https://darksky.net\">darksky.net</a><br/>\n"
+"<a href=\"https://darksky.net\">darksky.net</a>\n"
 " pour la plupart des localisations dans le monde.</span>"
 
 #: data/weather-settings.ui:1276
