@@ -626,7 +626,7 @@ msgid "Personal Api key from openweathermap.org"
 msgstr ""
 
 #: data/weather-settings.ui:549
-msgid "Personal Api key from Dark Sky"
+msgid "Personal Api key from darksky.net"
 msgstr ""
 
 #: data/weather-settings.ui:562
@@ -639,7 +639,7 @@ msgstr ""
 
 #: data/weather-settings.ui:604
 msgid ""
-"Note: the forecast-timout is not used for Dark Sky, because they do not "
+"Note: the forecast-timout is not used for darksky.net, because they do not "
 "provide seperate downloads for current weather and forecasts."
 msgstr ""
 
@@ -776,7 +776,7 @@ msgstr ""
 msgid ""
 "<span>Weather extension to display weather information from <a href="
 "\"https://openweathermap.org/\">Openweathermap</a> or <a href=\"https://"
-"darksky.net\">Dark Sky</a> for almost all locations in the world.</span>"
+"darksky.net\">darksky.net</a> for almost all locations in the world.</span>"
 msgstr ""
 
 #: data/weather-settings.ui:1276
@@ -857,7 +857,7 @@ msgid "Use the extensions default API key from openweathermap.org"
 msgstr ""
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:148
-msgid "Your personal API key from Dark Sky"
+msgid "Your personal API key from darksky.net"
 msgstr ""
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:152
