@@ -2,13 +2,14 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Khaled Hosny <khaledhosny@eglug.org>, 2013, 2016.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: gnome-shell-extension-openweather\n"
 "Report-Msgid-Bugs-To: https://github.com/jenslody/gnome-shell-extension-"
 "openweather/issues\n"
-"POT-Creation-Date: 2016-09-05 22:52+0200\n"
-"PO-Revision-Date: 2016-02-05 13:34+0400\n"
+"POT-Creation-Date: 2016-10-04 00:34+0200\n"
+"PO-Revision-Date: 2016-10-04 00:38+0200\n"
 "Last-Translator: Khaled Hosny <khaledhosny@eglug.org>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
 "Language: ar\n"
@@ -17,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
-"X-Generator: Virtaal 1.0.0-beta1\n"
+"X-Generator: Gtranslator 2.91.7\n"
 "X-Project-Style: gnome\n"
 
 #: src/extension.js:173
@@ -38,12 +39,12 @@ msgstr ""
 #: src/extension.js:441
 msgid ""
 "Dark Sky does not work without an api-key.\n"
-"Please register at https://darksky.net/dev/register and paste your "
-"personal key into the preferences dialog."
+"Please register at https://darksky.net/dev/register and paste your personal "
+"key into the preferences dialog."
 msgstr ""
 "لا يعمل Dark Sky بدون مفتاح استخدام للخدمة.\n"
-"رجاء سجل في https://darksky.net/dev/register و ألصق مفتاح الاستخدام "
-"الشخصي في نافذة التفضيلات."
+"رجاء سجل في https://darksky.net/dev/register و ألصق مفتاح الاستخدام الشخصي "
+"في نافذة التفضيلات."
 
 #: src/extension.js:514
 #, javascript-format
@@ -308,12 +309,12 @@ msgid "Wind:"
 msgstr "الرياح:"
 
 #: src/darksky_net.js:159 src/darksky_net.js:288 src/openweathermap_org.js:350
-#: src/openweathermap_org.js:452
+#: src/openweathermap_org.js:451
 msgid "Yesterday"
 msgstr "أمس"
 
 #: src/darksky_net.js:162 src/darksky_net.js:291 src/openweathermap_org.js:352
-#: src/openweathermap_org.js:454
+#: src/openweathermap_org.js:453
 #, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
@@ -329,15 +330,15 @@ msgstr[5] "منذ %d يوم"
 msgid ", "
 msgstr "، "
 
-#: src/darksky_net.js:268 src/openweathermap_org.js:446
+#: src/darksky_net.js:268 src/openweathermap_org.js:445
 msgid "Today"
 msgstr "اليوم"
 
-#: src/darksky_net.js:284 src/openweathermap_org.js:448
+#: src/darksky_net.js:284 src/openweathermap_org.js:447
 msgid "Tomorrow"
 msgstr "غدًا"
 
-#: src/darksky_net.js:286 src/openweathermap_org.js:450
+#: src/darksky_net.js:286 src/openweathermap_org.js:449
 #, javascript-format
 msgid "In %d day"
 msgid_plural "In %d days"
@@ -641,6 +642,7 @@ msgid "Personal Api key from openweathermap.org"
 msgstr "مفتاح شخصي لاستخدام الخدمة من openweathermap.org"
 
 #: data/weather-settings.ui:549
+#, fuzzy
 msgid "Personal Api key from Dark Sky"
 msgstr "مفتاح شخصي لاستخدام الخدمة من Dark Sky"
 
@@ -653,6 +655,7 @@ msgid "Refresh timeout for weather forecast [min]"
 msgstr "مهلة تحديث تنبؤات الطقس [بالدقائق]"
 
 #: data/weather-settings.ui:604
+#, fuzzy
 msgid ""
 "Note: the forecast-timout is not used for Dark Sky, because they do not "
 "provide seperate downloads for current weather and forecasts."
@@ -779,37 +782,38 @@ msgstr "يمين"
 msgid "Left"
 msgstr "يسار"
 
-#: data/weather-settings.ui:1167
+#: data/weather-settings.ui:1166
 msgid "Layout"
 msgstr "الترتيب"
 
-#: data/weather-settings.ui:1219
+#: data/weather-settings.ui:1218
 msgid "Version: "
 msgstr "الإصدارة: "
 
-#: data/weather-settings.ui:1233
+#: data/weather-settings.ui:1232
 msgid "unknown (self-build ?)"
 msgstr "غير معرفة (بنيتها بنفسك؟)"
 
-#: data/weather-settings.ui:1253
+#: data/weather-settings.ui:1252
+#, fuzzy
 msgid ""
 "<span>Weather extension to display weather information from <a href="
 "\"https://openweathermap.org/\">Openweathermap</a> or <a href=\"https://"
 "darksky.net\">Dark Sky</a> for almost all locations in the world.</span>"
 msgstr ""
 "<span>امتداد لعرض معلومات الطقس من <a href=\"https://openweathermap.org/"
-"\">Openweathermap</a> أو <a href=\"https://darksky.net\">Dark Sky</a> "
-"لأغلب الأماكن في العالم.</span>"
+"\">Openweathermap</a> أو <a href=\"https://darksky.net\">Dark Sky</a> لأغلب "
+"الأماكن في العالم.</span>"
 
-#: data/weather-settings.ui:1276
+#: data/weather-settings.ui:1275
 msgid "Maintained by"
 msgstr "مسئول عنها"
 
-#: data/weather-settings.ui:1306
+#: data/weather-settings.ui:1305
 msgid "Webpage"
 msgstr "صفحة الوب"
 
-#: data/weather-settings.ui:1327
+#: data/weather-settings.ui:1326
 msgid ""
 "<span size=\"small\">This program comes with ABSOLUTELY NO WARRANTY.\n"
 "See the <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
@@ -819,7 +823,7 @@ msgstr ""
 "راجع <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html\">رخصة "
 "جنو العمومية العامة، الإصدارة الثانية أو ما بعدها</a> للتفاصيل</span>"
 
-#: data/weather-settings.ui:1348
+#: data/weather-settings.ui:1347
 msgid "About"
 msgstr "عنْ"
 

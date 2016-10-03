@@ -546,7 +546,7 @@
                     <property name="can_focus">False</property>
                     <property name="halign">start</property>
                     <property name="hexpand">True</property>
-                    <property name="label" translatable="yes">Personal Api key from darksky.net</property>
+                    <property name="label" translatable="yes">Personal Api key from Dark Sky</property>
                   </object>
                   <packing>
                     <property name="left_attach">0</property>
@@ -601,7 +601,7 @@
                   <object class="GtkSpinButton" id="spin-forecast-refresh">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <property name="tooltip_text" translatable="yes">Note: the forecast-timout is not used for darksky.net, because they do not provide seperate downloads for current weather and forecasts.</property>
+                    <property name="tooltip_text" translatable="yes">Note: the forecast-timout is not used for Dark Sky, because they do not provide seperate downloads for current weather and forecasts.</property>
                     <property name="input_purpose">number</property>
                     <property name="adjustment">forecast-refresh-adjustment</property>
                     <property name="climb_rate">5</property>
@@ -1249,7 +1249,7 @@
                   <object class="GtkLabel" id="description-label">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">&lt;span&gt;Weather extension to display weather information from &lt;a href="https://openweathermap.org/"&gt;Openweathermap&lt;/a&gt; or &lt;a href="https://darksky.net"&gt;darksky.net&lt;/a&gt; for almost all locations in the world.&lt;/span&gt;</property>
+                    <property name="label" translatable="yes">&lt;span&gt;Weather extension to display weather information from &lt;a href="https://openweathermap.org/"&gt;Openweathermap&lt;/a&gt; or &lt;a href="https://darksky.net"&gt;Dark Sky&lt;/a&gt; for almost all locations in the world.&lt;/span&gt;</property>
                     <property name="use_markup">True</property>
                     <property name="justify">center</property>
                     <property name="wrap">True</property>

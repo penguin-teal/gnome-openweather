@@ -1,15 +1,15 @@
 # Indonesian translation for gnome-shell-extension-openweather
 # Copyright (C) 2011-2015
 # This file is distributed under the same license as the gnome-shell-extension-openweather package.
-# Andria Arisal <andria.arisal@gmail.com>, 2015.
+# Andria Arisal <andria.arisal@gmail.com>, 2015, 2016.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: gnome-shell-extension-openweather\n"
 "Report-Msgid-Bugs-To: https://github.com/jenslody/gnome-shell-extension-"
 "openweather/issues\n"
-"POT-Creation-Date: 2016-09-05 22:52+0200\n"
-"PO-Revision-Date: 2015-10-14 12:10+0200\n"
+"POT-Creation-Date: 2016-10-04 00:34+0200\n"
+"PO-Revision-Date: 2016-10-04 00:46+0200\n"
 "Last-Translator: Andria Arisal <andria.arisal@gmail.com>\n"
 "Language-Team: Indonesian <>\n"
 "Language: id\n"
@@ -34,8 +34,8 @@ msgstr ""
 #: src/extension.js:441
 msgid ""
 "Dark Sky does not work without an api-key.\n"
-"Please register at https://darksky.net/dev/register and paste your "
-"personal key into the preferences dialog."
+"Please register at https://darksky.net/dev/register and paste your personal "
+"key into the preferences dialog."
 msgstr ""
 
 #: src/extension.js:514
@@ -301,12 +301,12 @@ msgid "Wind:"
 msgstr "Angin:"
 
 #: src/darksky_net.js:159 src/darksky_net.js:288 src/openweathermap_org.js:350
-#: src/openweathermap_org.js:452
+#: src/openweathermap_org.js:451
 msgid "Yesterday"
 msgstr "Kemaren"
 
 #: src/darksky_net.js:162 src/darksky_net.js:291 src/openweathermap_org.js:352
-#: src/openweathermap_org.js:454
+#: src/openweathermap_org.js:453
 #, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
@@ -318,15 +318,15 @@ msgstr[1] "%d hari yang lalu"
 msgid ", "
 msgstr ""
 
-#: src/darksky_net.js:268 src/openweathermap_org.js:446
+#: src/darksky_net.js:268 src/openweathermap_org.js:445
 msgid "Today"
 msgstr "Hari ini"
 
-#: src/darksky_net.js:284 src/openweathermap_org.js:448
+#: src/darksky_net.js:284 src/openweathermap_org.js:447
 msgid "Tomorrow"
 msgstr "Besok"
 
-#: src/darksky_net.js:286 src/openweathermap_org.js:450
+#: src/darksky_net.js:286 src/openweathermap_org.js:449
 #, javascript-format
 msgid "In %d day"
 msgid_plural "In %d days"
@@ -626,6 +626,7 @@ msgid "Personal Api key from openweathermap.org"
 msgstr "Kunci API pribadi dari openweathermap.org"
 
 #: data/weather-settings.ui:549
+#, fuzzy
 msgid "Personal Api key from Dark Sky"
 msgstr "Kunci API pribadi dari Dark Sky"
 
@@ -638,12 +639,13 @@ msgid "Refresh timeout for weather forecast [min]"
 msgstr "Perbarui batas waktu untuk perkiraan cuaca [min]"
 
 #: data/weather-settings.ui:604
+#, fuzzy
 msgid ""
 "Note: the forecast-timout is not used for Dark Sky, because they do not "
 "provide seperate downloads for current weather and forecasts."
 msgstr ""
-"Catatan: batas waktu prakiraan tidak dapat digunakan untuk Dark Sky, "
-"karena mereka tidak menyediakan unduhan terpusah untuk cuaca sekarang dan "
+"Catatan: batas waktu prakiraan tidak dapat digunakan untuk Dark Sky, karena "
+"mereka tidak menyediakan unduhan terpusah untuk cuaca sekarang dan "
 "prakiraannya."
 
 #: data/weather-settings.ui:632
@@ -764,19 +766,20 @@ msgstr "Kanan"
 msgid "Left"
 msgstr "Kiri"
 
-#: data/weather-settings.ui:1167
+#: data/weather-settings.ui:1166
 msgid "Layout"
 msgstr "Susunan"
 
-#: data/weather-settings.ui:1219
+#: data/weather-settings.ui:1218
 msgid "Version: "
 msgstr "Versi"
 
-#: data/weather-settings.ui:1233
+#: data/weather-settings.ui:1232
 msgid "unknown (self-build ?)"
 msgstr "tidak dikenal (dibangun sendiri ?)"
 
-#: data/weather-settings.ui:1253
+#: data/weather-settings.ui:1252
+#, fuzzy
 msgid ""
 "<span>Weather extension to display weather information from <a href="
 "\"https://openweathermap.org/\">Openweathermap</a> or <a href=\"https://"
@@ -786,15 +789,15 @@ msgstr ""
 "\"https://openweathermap.org/\">Openweathermap</a> or <a href=\"https://"
 "darksky.net\">Dark Sky</a> untuk hampir semua lokasi di dunia.</span>"
 
-#: data/weather-settings.ui:1276
+#: data/weather-settings.ui:1275
 msgid "Maintained by"
 msgstr "Dipelihara oleh"
 
-#: data/weather-settings.ui:1306
+#: data/weather-settings.ui:1305
 msgid "Webpage"
 msgstr "Halaman web"
 
-#: data/weather-settings.ui:1327
+#: data/weather-settings.ui:1326
 msgid ""
 "<span size=\"small\">This program comes with ABSOLUTELY NO WARRANTY.\n"
 "See the <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
@@ -805,7 +808,7 @@ msgstr ""
 "General Public License, version 2 or later</a> untuk informasi detilnya.</"
 "span>"
 
-#: data/weather-settings.ui:1348
+#: data/weather-settings.ui:1347
 msgid "About"
 msgstr "Perihal"
 

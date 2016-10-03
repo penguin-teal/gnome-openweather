@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://github.com/jenslody/gnome-shell-extension-"
 "openweather/issues\n"
-"POT-Creation-Date: 2016-09-05 22:52+0200\n"
+"POT-Creation-Date: 2016-10-04 00:34+0200\n"
 "PO-Revision-Date: 2015-07-29 02:04+0200\n"
 "Last-Translator: Слободан Терзић <Xabre@archlinux.info>\n"
 "Language-Team: \n"
@@ -35,8 +35,8 @@ msgstr ""
 #: src/extension.js:441
 msgid ""
 "Dark Sky does not work without an api-key.\n"
-"Please register at https://darksky.net/dev/register and paste your "
-"personal key into the preferences dialog."
+"Please register at https://darksky.net/dev/register and paste your personal "
+"key into the preferences dialog."
 msgstr ""
 
 #: src/extension.js:514
@@ -302,12 +302,12 @@ msgid "Wind:"
 msgstr "Ветар:"
 
 #: src/darksky_net.js:159 src/darksky_net.js:288 src/openweathermap_org.js:350
-#: src/openweathermap_org.js:452
+#: src/openweathermap_org.js:451
 msgid "Yesterday"
 msgstr "јуче"
 
 #: src/darksky_net.js:162 src/darksky_net.js:291 src/openweathermap_org.js:352
-#: src/openweathermap_org.js:454
+#: src/openweathermap_org.js:453
 #, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
@@ -320,15 +320,15 @@ msgstr[2] "пре %d дана"
 msgid ", "
 msgstr ""
 
-#: src/darksky_net.js:268 src/openweathermap_org.js:446
+#: src/darksky_net.js:268 src/openweathermap_org.js:445
 msgid "Today"
 msgstr "данас"
 
-#: src/darksky_net.js:284 src/openweathermap_org.js:448
+#: src/darksky_net.js:284 src/openweathermap_org.js:447
 msgid "Tomorrow"
 msgstr "сутра"
 
-#: src/darksky_net.js:286 src/openweathermap_org.js:450
+#: src/darksky_net.js:286 src/openweathermap_org.js:449
 #, javascript-format
 msgid "In %d day"
 msgid_plural "In %d days"
@@ -629,6 +629,7 @@ msgid "Personal Api key from openweathermap.org"
 msgstr "Лични апи кључ са openweathermap.org"
 
 #: data/weather-settings.ui:549
+#, fuzzy
 msgid "Personal Api key from Dark Sky"
 msgstr "Лични апи кључ са Dark Sky"
 
@@ -767,19 +768,20 @@ msgstr "десно"
 msgid "Left"
 msgstr "лево"
 
-#: data/weather-settings.ui:1167
+#: data/weather-settings.ui:1166
 msgid "Layout"
 msgstr "Распоред"
 
-#: data/weather-settings.ui:1219
+#: data/weather-settings.ui:1218
 msgid "Version: "
 msgstr "Верзија:"
 
-#: data/weather-settings.ui:1233
+#: data/weather-settings.ui:1232
 msgid "unknown (self-build ?)"
 msgstr "непозната (самоградња?)"
 
-#: data/weather-settings.ui:1253
+#: data/weather-settings.ui:1252
+#, fuzzy
 msgid ""
 "<span>Weather extension to display weather information from <a href="
 "\"https://openweathermap.org/\">Openweathermap</a> or <a href=\"https://"
@@ -789,15 +791,15 @@ msgstr ""
 "openweathermap.org/\">Openweathermap</a> или <a href=\"https://darksky.net"
 "\">Dark Sky</a> за скоро све локације у свету.</span>"
 
-#: data/weather-settings.ui:1276
+#: data/weather-settings.ui:1275
 msgid "Maintained by"
 msgstr "Одржава"
 
-#: data/weather-settings.ui:1306
+#: data/weather-settings.ui:1305
 msgid "Webpage"
 msgstr "Беб страница"
 
-#: data/weather-settings.ui:1327
+#: data/weather-settings.ui:1326
 msgid ""
 "<span size=\"small\">This program comes with ABSOLUTELY NO WARRANTY.\n"
 "See the <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
@@ -807,7 +809,7 @@ msgstr ""
 "Погледајте <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
 "\">ГНУову Општу Јавну лиценцу, верзија 2 или каснија</a>, за детаље.</span>"
 
-#: data/weather-settings.ui:1348
+#: data/weather-settings.ui:1347
 msgid "About"
 msgstr "О програму"
 

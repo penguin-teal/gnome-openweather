@@ -145,7 +145,7 @@
     </key>
     <key type="s" name="appid-fc">
       <default>''</default>
-      <summary>Your personal API key from darksky.net</summary>
+      <summary>Your personal API key from Dark Sky</summary>
     </key>
     <key type="s" name="geolocation-appid-mapquest">
       <default>''</default>

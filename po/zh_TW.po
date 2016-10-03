@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: gnome-shell-extension-openweather\n"
 "Report-Msgid-Bugs-To: https://github.com/jenslody/gnome-shell-extension-"
 "openweather/issues\n"
-"POT-Creation-Date: 2016-09-05 22:52+0200\n"
+"POT-Creation-Date: 2016-10-04 00:34+0200\n"
 "PO-Revision-Date: 2016-05-15 21:01+0800\n"
 "Last-Translator: shlinux <lishaohui.qd@163.com>\n"
 "Language-Team: Chinese (Traditional) <>\n"
@@ -39,12 +39,12 @@ msgstr ""
 #: src/extension.js:441
 msgid ""
 "Dark Sky does not work without an api-key.\n"
-"Please register at https://darksky.net/dev/register and paste your "
-"personal key into the preferences dialog."
+"Please register at https://darksky.net/dev/register and paste your personal "
+"key into the preferences dialog."
 msgstr ""
 "Dark Sky 在沒有 API 密鑰的情況下無法工作。\n"
-"請到 https://darksky.net/dev/register 註冊，並將您的個人密鑰粘貼到選項"
-"對話框中。"
+"請到 https://darksky.net/dev/register 註冊，並將您的個人密鑰粘貼到選項對話框"
+"中。"
 
 #: src/extension.js:514
 #, javascript-format
@@ -309,12 +309,12 @@ msgid "Wind:"
 msgstr "風："
 
 #: src/darksky_net.js:159 src/darksky_net.js:288 src/openweathermap_org.js:350
-#: src/openweathermap_org.js:452
+#: src/openweathermap_org.js:451
 msgid "Yesterday"
 msgstr "昨天"
 
 #: src/darksky_net.js:162 src/darksky_net.js:291 src/openweathermap_org.js:352
-#: src/openweathermap_org.js:454
+#: src/openweathermap_org.js:453
 #, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
@@ -325,15 +325,15 @@ msgstr[0] "%d 天以前"
 msgid ", "
 msgstr "，"
 
-#: src/darksky_net.js:268 src/openweathermap_org.js:446
+#: src/darksky_net.js:268 src/openweathermap_org.js:445
 msgid "Today"
 msgstr "今天"
 
-#: src/darksky_net.js:284 src/openweathermap_org.js:448
+#: src/darksky_net.js:284 src/openweathermap_org.js:447
 msgid "Tomorrow"
 msgstr "明天"
 
-#: src/darksky_net.js:286 src/openweathermap_org.js:450
+#: src/darksky_net.js:286 src/openweathermap_org.js:449
 #, javascript-format
 msgid "In %d day"
 msgid_plural "In %d days"
@@ -632,6 +632,7 @@ msgid "Personal Api key from openweathermap.org"
 msgstr "openweathermap.org 的個人 API 密鑰"
 
 #: data/weather-settings.ui:549
+#, fuzzy
 msgid "Personal Api key from Dark Sky"
 msgstr "Dark Sky 的個人 API 密鑰"
 
@@ -644,6 +645,7 @@ msgid "Refresh timeout for weather forecast [min]"
 msgstr "刷新天氣預報的超時時間 [分鐘]"
 
 #: data/weather-settings.ui:604
+#, fuzzy
 msgid ""
 "Note: the forecast-timout is not used for Dark Sky, because they do not "
 "provide seperate downloads for current weather and forecasts."
@@ -769,37 +771,38 @@ msgstr "右邊"
 msgid "Left"
 msgstr "左邊"
 
-#: data/weather-settings.ui:1167
+#: data/weather-settings.ui:1166
 msgid "Layout"
 msgstr "佈局"
 
-#: data/weather-settings.ui:1219
+#: data/weather-settings.ui:1218
 msgid "Version: "
 msgstr "版本："
 
-#: data/weather-settings.ui:1233
+#: data/weather-settings.ui:1232
 msgid "unknown (self-build ?)"
 msgstr "未知（自建？）"
 
-#: data/weather-settings.ui:1253
+#: data/weather-settings.ui:1252
+#, fuzzy
 msgid ""
 "<span>Weather extension to display weather information from <a href="
 "\"https://openweathermap.org/\">Openweathermap</a> or <a href=\"https://"
 "darksky.net\">Dark Sky</a> for almost all locations in the world.</span>"
 msgstr ""
 "<span>爲全世界幾乎所有地點顯示來自 <a href=\"https://openweathermap.org/"
-"\">Openweathermap</a> 或 <a href=\"https://darksky.net\">Dark Sky</a> 的天"
-"氣信息的擴展。</span>"
+"\">Openweathermap</a> 或 <a href=\"https://darksky.net\">Dark Sky</a> 的天氣"
+"信息的擴展。</span>"
 
-#: data/weather-settings.ui:1276
+#: data/weather-settings.ui:1275
 msgid "Maintained by"
 msgstr "維護者："
 
-#: data/weather-settings.ui:1306
+#: data/weather-settings.ui:1305
 msgid "Webpage"
 msgstr "網站主頁"
 
-#: data/weather-settings.ui:1327
+#: data/weather-settings.ui:1326
 msgid ""
 "<span size=\"small\">This program comes with ABSOLUTELY NO WARRANTY.\n"
 "See the <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
@@ -809,7 +812,7 @@ msgstr ""
 "參閱 <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html\">GNU "
 "通用公共授權條款，第二版或更高版本</a>以了解詳細信息。</span>"
 
-#: data/weather-settings.ui:1348
+#: data/weather-settings.ui:1347
 msgid "About"
 msgstr "關於"
 

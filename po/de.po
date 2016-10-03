@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: gnome-shell-extension-openweather\n"
 "Report-Msgid-Bugs-To: https://github.com/jenslody/gnome-shell-extension-"
 "openweather/issues\n"
-"POT-Creation-Date: 2016-09-05 22:52+0200\n"
-"PO-Revision-Date: 2016-09-05 22:54+0200\n"
+"POT-Creation-Date: 2016-10-04 00:34+0200\n"
+"PO-Revision-Date: 2016-10-04 00:35+0200\n"
 "Last-Translator: Jens Lody <openweather@jenslody.de>\n"
 "Language-Team: Deutsch <openweather@jenslody.de>\n"
 "Language: de\n"
@@ -38,12 +38,12 @@ msgstr ""
 #: src/extension.js:441
 msgid ""
 "Dark Sky does not work without an api-key.\n"
-"Please register at https://darksky.net/dev/register and paste your "
-"personal key into the preferences dialog."
+"Please register at https://darksky.net/dev/register and paste your personal "
+"key into the preferences dialog."
 msgstr ""
 "Dark Sky kann nicht ohne einen api-key genutzt werden.\n"
-"Bitte auf https://darksky.net/dev/register anmelden und den "
-"persönlichen Schlüssel in den Einstellungs-Dialog kopieren."
+"Bitte auf https://darksky.net/dev/register anmelden und den persönlichen "
+"Schlüssel in den Einstellungs-Dialog kopieren."
 
 #: src/extension.js:514
 #, javascript-format
@@ -308,12 +308,12 @@ msgid "Wind:"
 msgstr "Windgeschwindigkeit:"
 
 #: src/darksky_net.js:159 src/darksky_net.js:288 src/openweathermap_org.js:350
-#: src/openweathermap_org.js:452
+#: src/openweathermap_org.js:451
 msgid "Yesterday"
 msgstr "Gestern"
 
 #: src/darksky_net.js:162 src/darksky_net.js:291 src/openweathermap_org.js:352
-#: src/openweathermap_org.js:454
+#: src/openweathermap_org.js:453
 #, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
@@ -325,15 +325,15 @@ msgstr[1] "Vor %d Tagen"
 msgid ", "
 msgstr ", "
 
-#: src/darksky_net.js:268 src/openweathermap_org.js:446
+#: src/darksky_net.js:268 src/openweathermap_org.js:445
 msgid "Today"
 msgstr "Heute"
 
-#: src/darksky_net.js:284 src/openweathermap_org.js:448
+#: src/darksky_net.js:284 src/openweathermap_org.js:447
 msgid "Tomorrow"
 msgstr "Morgen"
 
-#: src/darksky_net.js:286 src/openweathermap_org.js:450
+#: src/darksky_net.js:286 src/openweathermap_org.js:449
 #, javascript-format
 msgid "In %d day"
 msgid_plural "In %d days"
@@ -649,9 +649,9 @@ msgid ""
 "Note: the forecast-timout is not used for Dark Sky, because they do not "
 "provide seperate downloads for current weather and forecasts."
 msgstr ""
-"Hinweis: das Auffrischintervall für die Vorhersagedaten wird nicht für "
-"Dark Sky benutzt, da keine getrennten Daten für Vorhersage und aktuelles "
-"Wetter angeboten werden."
+"Hinweis: das Auffrischintervall für die Vorhersagedaten wird nicht für Dark "
+"Sky benutzt, da keine getrennten Daten für Vorhersage und aktuelles Wetter "
+"angeboten werden."
 
 #: data/weather-settings.ui:632
 msgid "Use extensions api-key for openweathermap.org"
@@ -772,19 +772,19 @@ msgstr "Rechts"
 msgid "Left"
 msgstr "Links"
 
-#: data/weather-settings.ui:1167
+#: data/weather-settings.ui:1166
 msgid "Layout"
 msgstr "Oberfläche"
 
-#: data/weather-settings.ui:1219
+#: data/weather-settings.ui:1218
 msgid "Version: "
 msgstr "Version: "
 
-#: data/weather-settings.ui:1233
+#: data/weather-settings.ui:1232
 msgid "unknown (self-build ?)"
 msgstr "unbekannt (selbst erstellt ?)"
 
-#: data/weather-settings.ui:1253
+#: data/weather-settings.ui:1252
 msgid ""
 "<span>Weather extension to display weather information from <a href="
 "\"https://openweathermap.org/\">Openweathermap</a> or <a href=\"https://"
@@ -794,15 +794,15 @@ msgstr ""
 "\"https://openweathermap.org/\">Openweathermap</a> oder <a href=\"https://"
 "darksky.net\">Dark Sky</a> für (fast) alle Orte auf der Erde.</span>"
 
-#: data/weather-settings.ui:1276
+#: data/weather-settings.ui:1275
 msgid "Maintained by"
 msgstr "Verwaltet von"
 
-#: data/weather-settings.ui:1306
+#: data/weather-settings.ui:1305
 msgid "Webpage"
 msgstr "Internetseite"
 
-#: data/weather-settings.ui:1327
+#: data/weather-settings.ui:1326
 msgid ""
 "<span size=\"small\">This program comes with ABSOLUTELY NO WARRANTY.\n"
 "See the <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
@@ -813,7 +813,7 @@ msgstr ""
 "\">GNU General Public License, Version 2 oder neuer</a> für Einzelheiten.</"
 "span>"
 
-#: data/weather-settings.ui:1348
+#: data/weather-settings.ui:1347
 msgid "About"
 msgstr "Über"
 
