@@ -12,7 +12,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://github.com/jenslody/gnome-shell-extension-"
 "openweather/issues\n"
 "POT-Creation-Date: 2016-10-04 00:34+0200\n"
-"PO-Revision-Date: 2016-09-06 17:21+0200\n"
+"PO-Revision-Date: 2016-10-04 21:01+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
@@ -638,7 +638,6 @@ msgid "Personal Api key from openweathermap.org"
 msgstr "Osobisty klucz API z serwisu openweathermap.org"
 
 #: data/weather-settings.ui:549
-#, fuzzy
 msgid "Personal Api key from Dark Sky"
 msgstr "Osobisty klucz API z serwisu Dark Sky"
 
@@ -651,7 +650,6 @@ msgid "Refresh timeout for weather forecast [min]"
 msgstr "Aktualizacja informacji o prognozie pogody (w minutach)"
 
 #: data/weather-settings.ui:604
-#, fuzzy
 msgid ""
 "Note: the forecast-timout is not used for Dark Sky, because they do not "
 "provide seperate downloads for current weather and forecasts."
@@ -791,7 +789,6 @@ msgid "unknown (self-build ?)"
 msgstr "nieznana"
 
 #: data/weather-settings.ui:1252
-#, fuzzy
 msgid ""
 "<span>Weather extension to display weather information from <a href="
 "\"https://openweathermap.org/\">Openweathermap</a> or <a href=\"https://"
@@ -886,7 +883,6 @@ msgid "Use the extensions default API key from openweathermap.org"
 msgstr "Użycie domyślnego klucza API rozszerzenia z serwisu openweathermap.org"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:148
-#, fuzzy
 msgid "Your personal API key from Dark Sky"
 msgstr "Osobisty klucz API z serwisu Dark Sky"
 
