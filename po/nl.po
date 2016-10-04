@@ -937,7 +937,7 @@ msgstr "Persoonlijke API-key van Dark Sky"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:152
 #, fuzzy
-msgid "Your personal AppKey from developer.geocode.farm"
+msgid "Your personal AppKey from developer.mapquest.com"
 msgstr "Persoonlijke AppKey van developer.mapquest.com"
 
 #~ msgid "Loading current weather ..."

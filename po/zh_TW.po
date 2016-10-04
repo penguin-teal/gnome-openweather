@@ -889,7 +889,7 @@ msgstr "Dark Sky 的個人 API 密鑰"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:152
 #, fuzzy
-msgid "Your personal AppKey from developer.geocode.farm"
+msgid "Your personal AppKey from developer.mapquest.com"
 msgstr "developer.mapquest.com 的個人應用密鑰"
 
 #~ msgid "Loading current weather ..."

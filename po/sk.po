@@ -894,5 +894,5 @@ msgstr "Osobný kľúč Api z Dark Sky"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:152
 #, fuzzy
-msgid "Your personal AppKey from developer.geocode.farm"
+msgid "Your personal AppKey from developer.mapquest.com"
 msgstr "Osobný kľúč AppKey zo služby developer.mapquest.com"

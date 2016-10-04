@@ -888,5 +888,5 @@ msgid "Your personal API key from Dark Sky"
 msgstr "Clef d’API personnelle de Dark Sky"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:152
-msgid "Your personal AppKey from developer.geocode.farm"
+msgid "Your personal AppKey from developer.mapquest.com"
 msgstr "Clef d’API personnelle de geocode.farm"

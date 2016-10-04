@@ -895,7 +895,7 @@ msgstr "מפתח ממשק תכנות יישומים (API) אישי מopenweather
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:152
 #, fuzzy
-msgid "Your personal AppKey from developer.geocode.farm"
+msgid "Your personal AppKey from developer.mapquest.com"
 msgstr "מפתח ממשק תכנות יישומים (API) אישי מopenweathermap.org"
 
 #~ msgid "Loading current weather ..."

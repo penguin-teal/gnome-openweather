@@ -893,5 +893,5 @@ msgstr "Chiave API personale per Dark Sky"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:152
 #, fuzzy
-msgid "Your personal AppKey from developer.geocode.farm"
+msgid "Your personal AppKey from developer.mapquest.com"
 msgstr "Chiave API personale per openweathermap.org"

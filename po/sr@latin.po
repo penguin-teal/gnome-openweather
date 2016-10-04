@@ -886,8 +886,12 @@ msgstr "Lični api ključ sa Dark Sky"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:152
 #, fuzzy
-msgid "Your personal AppKey from developer.geocode.farm"
+msgid "Your personal AppKey from developer.mapquest.com"
 msgstr "Lični api ključ sa Dark Sky"
+
+#, fuzzy
+#~ msgid "Your personal AppKey from developer.geocode.farm"
+#~ msgstr "Lični api ključ sa Dark Sky"
 
 #~ msgid "Loading current weather ..."
 #~ msgstr "Učitavanje trenutnog vremena..."

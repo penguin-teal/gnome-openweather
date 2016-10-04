@@ -149,7 +149,7 @@
     </key>
     <key type="s" name="geolocation-appid-mapquest">
       <default>''</default>
-      <summary>Your personal AppKey from developer.geocode.farm</summary>
+      <summary>Your personal AppKey from developer.mapquest.com</summary>
     </key>
   </schema>
 </schemalist>
