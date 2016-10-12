@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://github.com/jenslody/gnome-shell-extension-"
 "openweather/issues\n"
 "POT-Creation-Date: 2016-10-04 00:34+0200\n"
-"PO-Revision-Date: 2016-08-29 20:28-0300\n"
+"PO-Revision-Date: 2016-10-12 10:06-0300\n"
 "Last-Translator: Diego Neves <diego@diegoneves.eti.br>\n"
 "Language-Team: Brazilian Portuguese <debian-l10n-portuguese@lists.debian."
 "org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 1.8.9\n"
 
 #: src/extension.js:173
 msgid "..."
@@ -635,7 +635,6 @@ msgid "Personal Api key from openweathermap.org"
 msgstr "Api key pessoal do openweathermap.org"
 
 #: data/weather-settings.ui:549
-#, fuzzy
 msgid "Personal Api key from Dark Sky"
 msgstr "Api key pessoal do Dark Sky"
 
@@ -648,12 +647,11 @@ msgid "Refresh timeout for weather forecast [min]"
 msgstr "Tempo limite da atualização da previsão [min]"
 
 #: data/weather-settings.ui:604
-#, fuzzy
 msgid ""
 "Note: the forecast-timout is not used for Dark Sky, because they do not "
 "provide seperate downloads for current weather and forecasts."
 msgstr ""
-"Nota: a previsão de tempo pode ser usada pelo Dark Sky, porqueeles não "
+"Nota: a previsão de tempo não é utilizada pelo Dark Sky, porque eles não "
 "fornecem downloads separados de tempo atual e previsões"
 
 #: data/weather-settings.ui:632
@@ -713,7 +711,7 @@ msgstr "Posição no painel"
 
 #: data/weather-settings.ui:884
 msgid "Position of menu-box [%] from 0 (left) to 100 (right)"
-msgstr ""
+msgstr "Posição da caixa de menu [%] 0 de (esquerda) para 100 (direita)"
 
 #: data/weather-settings.ui:895
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:75
@@ -788,16 +786,14 @@ msgid "unknown (self-build ?)"
 msgstr "Desconhecido (self-build ?)"
 
 #: data/weather-settings.ui:1252
-#, fuzzy
 msgid ""
 "<span>Weather extension to display weather information from <a href="
 "\"https://openweathermap.org/\">Openweathermap</a> or <a href=\"https://"
 "darksky.net\">Dark Sky</a> for almost all locations in the world.</span>"
 msgstr ""
-"<span>Weather extension para mostrar informações climaticas fornecidas por "
-"<a href=\"https://openweathermap.org/\">Openweathermap</a> ou <a href="
-"\"https://darksky.net\">Dark Sky</a> Para quase todos os locais do mundo.</"
-"span>"
+"<span>Extensão do tempo para exibir informações climáticas fornecidas por <a "
+"href=\"https://openweathermap.org/\">Openweathermap</a> ou <a href=\"https://"
+"darksky.net\">Dark Sky</a> para quase todos os locais do mundo.</span>"
 
 #: data/weather-settings.ui:1275
 msgid "Maintained by"
@@ -860,7 +856,7 @@ msgstr "Texto nos Botões de menu"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:116
 msgid "Horizontal position of menu-box."
-msgstr ""
+msgstr "Posição horizontal da caixa de menu"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:120
 msgid "Refresh interval (actual weather)"
@@ -883,7 +879,6 @@ msgid "Use the extensions default API key from openweathermap.org"
 msgstr "Use a API key padrão da extensão para openweathermap.org"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:148
-#, fuzzy
 msgid "Your personal API key from Dark Sky"
 msgstr "API key pessoal do Dark Sky"
 
