@@ -39,11 +39,11 @@ msgstr ""
 #: src/extension.js:514
 #, javascript-format
 msgid "Can not connect to %s"
-msgstr ""
+msgstr "%s に接続できません"
 
 #: src/extension.js:861 data/weather-settings.ui:464
 msgid "Locations"
-msgstr ""
+msgstr "地域"
 
 #: src/extension.js:876
 msgid "Reload Weather Information"
@@ -51,12 +51,12 @@ msgstr "天気予報を更新する"
 
 #: src/extension.js:891
 msgid "Weather data provided by:"
-msgstr ""
+msgstr "気象データーの提供元:"
 
 #: src/extension.js:907
 #, javascript-format
 msgid "Can not open %s"
-msgstr ""
+msgstr "%s を開けません"
 
 #: src/extension.js:914
 msgid "Weather Settings"
@@ -156,63 +156,63 @@ msgstr ""
 
 #: src/extension.js:1131
 msgid "Sunday"
-msgstr ""
+msgstr "日曜日"
 
 #: src/extension.js:1131
 msgid "Monday"
-msgstr ""
+msgstr "月曜日"
 
 #: src/extension.js:1131
 msgid "Tuesday"
-msgstr ""
+msgstr "火曜日"
 
 #: src/extension.js:1131
 msgid "Wednesday"
-msgstr ""
+msgstr "水曜日"
 
 #: src/extension.js:1131
 msgid "Thursday"
-msgstr ""
+msgstr "木曜日"
 
 #: src/extension.js:1131
 msgid "Friday"
-msgstr ""
+msgstr "金曜日"
 
 #: src/extension.js:1131
 msgid "Saturday"
-msgstr ""
+msgstr "土曜日"
 
 #: src/extension.js:1137
 msgid "N"
-msgstr ""
+msgstr "北"
 
 #: src/extension.js:1137
 msgid "NE"
-msgstr ""
+msgstr "北東"
 
 #: src/extension.js:1137
 msgid "E"
-msgstr ""
+msgstr "東"
 
 #: src/extension.js:1137
 msgid "SE"
-msgstr ""
+msgstr "南東"
 
 #: src/extension.js:1137
 msgid "S"
-msgstr ""
+msgstr "南"
 
 #: src/extension.js:1137
 msgid "SW"
-msgstr ""
+msgstr "南西"
 
 #: src/extension.js:1137
 msgid "W"
-msgstr ""
+msgstr "西"
 
 #: src/extension.js:1137
 msgid "NW"
-msgstr ""
+msgstr "北西"
 
 #: src/extension.js:1230 src/extension.js:1239 data/weather-settings.ui:827
 msgid "hPa"
@@ -280,23 +280,23 @@ msgstr ""
 
 #: src/extension.js:1441
 msgid "Please wait"
-msgstr ""
+msgstr "少々お待ちください"
 
 #: src/extension.js:1502
 msgid "Cloudiness:"
-msgstr ""
+msgstr "雲量"
 
 #: src/extension.js:1506
 msgid "Humidity:"
-msgstr ""
+msgstr "湿度"
 
 #: src/extension.js:1510
 msgid "Pressure:"
-msgstr ""
+msgstr "気圧"
 
 #: src/extension.js:1514
 msgid "Wind:"
-msgstr ""
+msgstr "風"
 
 #: src/darksky_net.js:159 src/darksky_net.js:288 src/openweathermap_org.js:350
 #: src/openweathermap_org.js:451
@@ -318,11 +318,11 @@ msgstr ""
 
 #: src/darksky_net.js:268 src/openweathermap_org.js:445
 msgid "Today"
-msgstr ""
+msgstr "今日"
 
 #: src/darksky_net.js:284 src/openweathermap_org.js:447
 msgid "Tomorrow"
-msgstr ""
+msgstr "明日"
 
 #: src/darksky_net.js:286 src/openweathermap_org.js:449
 #, fuzzy, javascript-format
@@ -549,12 +549,12 @@ msgstr ""
 
 #: src/openweathermap_org.js:289
 msgid "Not available"
-msgstr ""
+msgstr "データーなし"
 
 #: src/prefs.js:216 src/prefs.js:272 src/prefs.js:320 src/prefs.js:327
-#, javascript-format
+#, fuzzy, javascript-format
 msgid "Invalid data when searching for \"%s\""
-msgstr ""
+msgstr "\"%s\" の検索中に異常が発生しました"
 
 #: src/prefs.js:224 src/prefs.js:288 src/prefs.js:333
 #, fuzzy, javascript-format
@@ -563,11 +563,11 @@ msgstr "次のスキーマが見つかりませんでした: \"%s\""
 
 #: src/prefs.js:394
 msgid "Location"
-msgstr ""
+msgstr "地域"
 
 #: src/prefs.js:404
 msgid "Provider"
-msgstr ""
+msgstr "提供元"
 
 #: src/prefs.js:553
 #, javascript-format
@@ -576,20 +576,20 @@ msgstr "\"%s\" を削除しますか？"
 
 #: src/prefs.js:1086
 msgid "default"
-msgstr ""
+msgstr "デフォルト"
 
 #: data/weather-settings.ui:31
 msgid "Edit name"
-msgstr ""
+msgstr "名前の編集"
 
 #: data/weather-settings.ui:49 data/weather-settings.ui:79
 #: data/weather-settings.ui:224
 msgid "Clear entry"
-msgstr ""
+msgstr "エントリーのクリア"
 
 #: data/weather-settings.ui:63
 msgid "Edit coordinates"
-msgstr ""
+msgstr "座標を編集する"
 
 #: data/weather-settings.ui:93 data/weather-settings.ui:261
 msgid "Extensions default weather provider"
@@ -605,7 +605,7 @@ msgstr ""
 
 #: data/weather-settings.ui:201
 msgid "Search by location or coordinates"
-msgstr ""
+msgstr "地域または座標で検索する"
 
 #: data/weather-settings.ui:225
 msgid "e.g. Vaiaku, Tuvalu or -8.5211767,179.1976747"
@@ -617,7 +617,7 @@ msgstr ""
 
 #: data/weather-settings.ui:485
 msgid "Chose default weather provider"
-msgstr ""
+msgstr "デフォルトの気象データーの提供元を選んでください"
 
 #: data/weather-settings.ui:498
 msgid "Personal Api key from openweathermap.org"
@@ -653,11 +653,11 @@ msgstr ""
 
 #: data/weather-settings.ui:660
 msgid "Weather provider"
-msgstr ""
+msgstr "気象データーの提供元"
 
 #: data/weather-settings.ui:680
 msgid "Chose geolocation provider"
-msgstr ""
+msgstr "地理情報の提供元を選んでください"
 
 #: data/weather-settings.ui:706
 msgid "Personal AppKey from developer.mapquest.com"
@@ -665,7 +665,7 @@ msgstr ""
 
 #: data/weather-settings.ui:735
 msgid "Geolocation provider"
-msgstr ""
+msgstr "地理情報の提供元"
 
 #: data/weather-settings.ui:755
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:62
@@ -678,9 +678,8 @@ msgstr "風速の単位"
 
 #: data/weather-settings.ui:777
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:66
-#, fuzzy
 msgid "Pressure Unit"
-msgstr "気温の単位"
+msgstr "気圧の単位"
 
 #: data/weather-settings.ui:814
 msgid "Beaufort"
@@ -688,7 +687,7 @@ msgstr ""
 
 #: data/weather-settings.ui:853
 msgid "Units"
-msgstr ""
+msgstr "単位"
 
 #: data/weather-settings.ui:873
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:112
@@ -702,7 +701,7 @@ msgstr ""
 #: data/weather-settings.ui:895
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:75
 msgid "Wind Direction by Arrows"
-msgstr ""
+msgstr "矢印による方角表示"
 
 #: data/weather-settings.ui:906
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:88
@@ -716,23 +715,22 @@ msgstr "シンボリック・アイコンにする"
 
 #: data/weather-settings.ui:928
 msgid "Text on buttons"
-msgstr ""
+msgstr "ボタン内のテキスト"
 
 #: data/weather-settings.ui:939
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:100
 msgid "Temperature in Panel"
-msgstr "パネルに気温を表示する"
+msgstr "通知領域に気温を表示する"
 
 #: data/weather-settings.ui:950
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:104
 msgid "Conditions in Panel"
-msgstr "パネルに状態を表示する"
+msgstr "通知領域に天気を表示する"
 
 #: data/weather-settings.ui:961
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:108
-#, fuzzy
 msgid "Conditions in Forecast"
-msgstr "パネルに状態を表示する"
+msgstr "週間天気予報に天気を表示する"
 
 #: data/weather-settings.ui:972
 msgid "Center forecast"
@@ -741,12 +739,12 @@ msgstr ""
 #: data/weather-settings.ui:983
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:132
 msgid "Number of days in forecast"
-msgstr ""
+msgstr "週間天気予報に表示する日数"
 
 #: data/weather-settings.ui:994
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:136
 msgid "Maximal number of digits after the decimal point"
-msgstr ""
+msgstr "小数第何位まで表示するか"
 
 #: data/weather-settings.ui:1006
 msgid "Center"
@@ -762,15 +760,15 @@ msgstr "左側"
 
 #: data/weather-settings.ui:1166
 msgid "Layout"
-msgstr ""
+msgstr "表示設定"
 
 #: data/weather-settings.ui:1218
 msgid "Version: "
-msgstr ""
+msgstr "バージョン:"
 
 #: data/weather-settings.ui:1232
 msgid "unknown (self-build ?)"
-msgstr ""
+msgstr "不明(自作ビルドの可能性)"
 
 #: data/weather-settings.ui:1252
 msgid ""
@@ -785,7 +783,7 @@ msgstr ""
 
 #: data/weather-settings.ui:1305
 msgid "Webpage"
-msgstr ""
+msgstr "ウェブサイト"
 
 #: data/weather-settings.ui:1326
 msgid ""
@@ -800,14 +798,13 @@ msgstr ""
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:54
 msgid "Weather Provider"
-msgstr ""
+msgstr "気象データーの提供元"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:58
 msgid "Geolocation Provider"
-msgstr ""
+msgstr "地理情報の提供元"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:70
-#, fuzzy
 msgid "Wind Speed Units"
 msgstr "風速の単位"
 
