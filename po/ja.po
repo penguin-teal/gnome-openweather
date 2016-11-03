@@ -105,55 +105,55 @@ msgstr "°C"
 
 #: src/extension.js:1091
 msgid "Calm"
-msgstr "平穏(風力0)"
+msgstr "平穏"
 
 #: src/extension.js:1094
 msgid "Light air"
-msgstr "至軽風(風力1)"
+msgstr "至軽風"
 
 #: src/extension.js:1097
 msgid "Light breeze"
-msgstr "軽風(風力2)"
+msgstr "軽風"
 
 #: src/extension.js:1100
 msgid "Gentle breeze"
-msgstr "軟風(風力3)"
+msgstr "軟風"
 
 #: src/extension.js:1103
 msgid "Moderate breeze"
-msgstr "和風(風力4)"
+msgstr "和風"
 
 #: src/extension.js:1106
 msgid "Fresh breeze"
-msgstr "疾風(風力5)"
+msgstr "疾風"
 
 #: src/extension.js:1109
 msgid "Strong breeze"
-msgstr "強風(風力6)"
+msgstr "強風"
 
 #: src/extension.js:1112
 msgid "Moderate gale"
-msgstr "強風(風力7)"
+msgstr "強風"
 
 #: src/extension.js:1115
 msgid "Fresh gale"
-msgstr "疾強風(風力8)"
+msgstr "疾強風"
 
 #: src/extension.js:1118
 msgid "Strong gale"
-msgstr "大強風(風力9)"
+msgstr "大強風"
 
 #: src/extension.js:1121
 msgid "Storm"
-msgstr "暴風(風力10)"
+msgstr "暴風"
 
 #: src/extension.js:1124
 msgid "Violent storm"
-msgstr "破壊的な暴風(風力11)"
+msgstr "破壊的な暴風"
 
 #: src/extension.js:1127
 msgid "Hurricane"
-msgstr "台風クラスの風(風力12)"
+msgstr "台風クラスの風"
 
 #: src/extension.js:1131
 msgid "Sunday"
@@ -594,7 +594,7 @@ msgstr "座標を編集する"
 
 #: data/weather-settings.ui:93 data/weather-settings.ui:261
 msgid "Extensions default weather provider"
-msgstr ""
+msgstr "ソフトの推奨設定"
 
 #: data/weather-settings.ui:125 data/weather-settings.ui:293
 msgid "Cancel"
