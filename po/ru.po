@@ -5,7 +5,7 @@
 # Stas Solovey <whats_up@tut.by>, 2012.
 # Timon <timosha@gmail.com>, 2013.
 # Karbovnichiy Vasiliy <menstenebris@gmail.com>, 2015.
-# Ivan Komaritsyn <vantu5z@mail.ru>, 2015.
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2015, 2016.
 #
 msgid ""
 msgstr ""
@@ -13,7 +13,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://github.com/jenslody/gnome-shell-extension-"
 "openweather/issues\n"
 "POT-Creation-Date: 2016-10-04 00:34+0200\n"
-"PO-Revision-Date: 2016-09-12 17:20+0300\n"
+"PO-Revision-Date: 2016-11-08 09:20+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -321,9 +321,9 @@ msgstr "Вчера"
 #, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
-msgstr[0] "%d дней назад"
-msgstr[1] "%d день назад"
-msgstr[2] "%d дня назад"
+msgstr[0] "%d день назад"
+msgstr[1] "%d дня назад"
+msgstr[2] "%d дней назад"
 
 #: src/darksky_net.js:174 src/darksky_net.js:176 src/openweathermap_org.js:366
 #: src/openweathermap_org.js:368
@@ -348,7 +348,7 @@ msgstr[2] "На %d день"
 
 #: src/openweathermap_org.js:181
 msgid "thunderstorm with light rain"
-msgstr "Гроза с легким дождем"
+msgstr "Гроза с лёгким дождем"
 
 #: src/openweathermap_org.js:183
 msgid "thunderstorm with rain"
@@ -360,7 +360,7 @@ msgstr "Гроза с сильным дождем"
 
 #: src/openweathermap_org.js:187
 msgid "light thunderstorm"
-msgstr "Легкая гроза"
+msgstr "Лёгкая гроза"
 
 #: src/openweathermap_org.js:189
 msgid "thunderstorm"
@@ -376,7 +376,7 @@ msgstr "Возможна гроза"
 
 #: src/openweathermap_org.js:195
 msgid "thunderstorm with light drizzle"
-msgstr "Гроза с легкой моросью"
+msgstr "Гроза с лёгкой моросью"
 
 #: src/openweathermap_org.js:197
 msgid "thunderstorm with drizzle"
@@ -424,7 +424,7 @@ msgstr "Ливневый моросящий дождь"
 
 #: src/openweathermap_org.js:219
 msgid "light rain"
-msgstr "Легкий дождь"
+msgstr "Лёгкий дождь"
 
 #: src/openweathermap_org.js:221
 msgid "moderate rain"
@@ -464,7 +464,7 @@ msgstr "Локальный ливень"
 
 #: src/openweathermap_org.js:239
 msgid "light snow"
-msgstr "Легкий снег"
+msgstr "Лёгкий снег"
 
 #: src/openweathermap_org.js:241
 msgid "snow"
@@ -484,7 +484,7 @@ msgstr "Обильный мокрый снег"
 
 #: src/openweathermap_org.js:249
 msgid "light rain and snow"
-msgstr "Снег с легким дождём"
+msgstr "Снег с лёгким дождём"
 
 #: src/openweathermap_org.js:251
 msgid "rain and snow"
@@ -512,7 +512,7 @@ msgstr "Дымка"
 
 #: src/openweathermap_org.js:263
 msgid "haze"
-msgstr "Легкий туман"
+msgstr "Лёгкий туман"
 
 #: src/openweathermap_org.js:265
 msgid "Sand/Dust Whirls"
@@ -544,7 +544,7 @@ msgstr "ТОРНАДО"
 
 #: src/openweathermap_org.js:279
 msgid "sky is clear"
-msgstr "Чистое небо"
+msgstr "Безоблачно"
 
 #: src/openweathermap_org.js:281
 msgid "few clouds"
@@ -639,7 +639,6 @@ msgid "Personal Api key from openweathermap.org"
 msgstr "Персональный API ключ от openweathermap.org"
 
 #: data/weather-settings.ui:549
-#, fuzzy
 msgid "Personal Api key from Dark Sky"
 msgstr "Персональный API ключ от Dark Sky"
 
@@ -652,7 +651,6 @@ msgid "Refresh timeout for weather forecast [min]"
 msgstr "Периодичность обновления прогноза погоды [мин.]"
 
 #: data/weather-settings.ui:604
-#, fuzzy
 msgid ""
 "Note: the forecast-timout is not used for Dark Sky, because they do not "
 "provide seperate downloads for current weather and forecasts."
@@ -793,7 +791,6 @@ msgid "unknown (self-build ?)"
 msgstr "неизвестно (собственная сборка ?)"
 
 #: data/weather-settings.ui:1252
-#, fuzzy
 msgid ""
 "<span>Weather extension to display weather information from <a href="
 "\"https://openweathermap.org/\">Openweathermap</a> or <a href=\"https://"
@@ -828,17 +825,14 @@ msgid "About"
 msgstr "О себе"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:54
-#, fuzzy
 msgid "Weather Provider"
 msgstr "Источник данных о погоде"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:58
-#, fuzzy
 msgid "Geolocation Provider"
 msgstr "Источник геоданных"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:70
-#, fuzzy
 msgid "Wind Speed Units"
 msgstr "Единицы измерения скорости ветра"
 
@@ -879,57 +873,27 @@ msgid "Refresh interval (forecast)"
 msgstr "Интервал обновления (прогноз)"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:128
-#, fuzzy
 msgid "Center forecastbox."
-msgstr "Центрировать прогноз"
+msgstr "Центрировать прогноз."
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:140
-#, fuzzy
 msgid "Your personal API key from openweathermap.org"
 msgstr "Персональный API ключ от openweathermap.org"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:144
-#, fuzzy
 msgid "Use the extensions default API key from openweathermap.org"
 msgstr "Использовать API ключ дополнения от openweathermap.org"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:148
-#, fuzzy
 msgid "Your personal API key from Dark Sky"
 msgstr "Персональный API ключ от Dark Sky"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:152
-#, fuzzy
 msgid "Your personal AppKey from developer.mapquest.com"
 msgstr "Персональный AppKey от developer.mapquest.com"
 
 #~ msgid "Loading current weather ..."
 #~ msgstr "Загрузка текущей погоды ..."
-
-#, fuzzy
-#~ msgid "In %d days"
-#~ msgstr "В течение %s дней"
-
-#, fuzzy
-#~ msgid "One %ds ago"
-#~ msgid_plural "%d days ago"
-#~ msgstr[0] "%s дней назад"
-#~ msgstr[1] "%s дней назад"
-#~ msgstr[2] "%s дней назад"
-
-#, fuzzy
-#~ msgid "One %d ago"
-#~ msgid_plural "%d days ago"
-#~ msgstr[0] "%s дней назад"
-#~ msgstr[1] "%s дней назад"
-#~ msgstr[2] "%s дней назад"
-
-#, fuzzy
-#~ msgid "In one day"
-#~ msgid_plural "In %d days"
-#~ msgstr[0] "В течение %s дней"
-#~ msgstr[1] "В течение %s дней"
-#~ msgstr[2] "В течение %s дней"
 
 #~ msgid "Name of the city"
 #~ msgstr "Название города"
@@ -962,7 +926,7 @@ msgstr "Персональный AppKey от developer.mapquest.com"
 #~ msgstr "Пыль"
 
 #~ msgid "Haze"
-#~ msgstr "Легкий туман"
+#~ msgstr "Лёгкий туман"
 
 #~ msgid "Smoky"
 #~ msgstr "Дымка"
@@ -993,10 +957,6 @@ msgstr "Персональный AppKey от developer.mapquest.com"
 
 #~ msgid "Scattered thunderstorms"
 #~ msgstr "Местами грозы"
-
-#, fuzzy
-#~ msgid "Isolated showers"
-#~ msgstr "Единичные грозовые ливни"
 
 #~ msgid "Scattered snow showers"
 #~ msgstr "Местами снегопад"
