@@ -17,6 +17,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/extension.js:173
 msgid "..."
@@ -310,7 +311,6 @@ msgstr "昨日"
 msgid "%d day ago"
 msgid_plural "%d days ago"
 msgstr[0] "%d 日前"
-msgstr[1] "%d 日前"
 
 #: src/darksky_net.js:174 src/darksky_net.js:176 src/openweathermap_org.js:366
 #: src/openweathermap_org.js:368
@@ -330,7 +330,6 @@ msgstr "明日"
 msgid "In %d day"
 msgid_plural "In %d days"
 msgstr[0] "%d 日後"
-msgstr[1] "%d 日後"
 
 #: src/openweathermap_org.js:181
 msgid "thunderstorm with light rain"
@@ -868,28 +867,3 @@ msgstr ""
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:152
 msgid "Your personal AppKey from developer.mapquest.com"
 msgstr ""
-
-#, fuzzy
-#~ msgid "In %d days"
-#~ msgstr "%s日前"
-
-#, fuzzy
-#~ msgid "One %ds ago"
-#~ msgid_plural "%d days ago"
-#~ msgstr[0] "%s日前"
-#~ msgstr[1] "%s日前"
-
-#, fuzzy
-#~ msgid "One %d ago"
-#~ msgid_plural "%d days ago"
-#~ msgstr[0] "%s日前"
-#~ msgstr[1] "%s日前"
-
-#, fuzzy
-#~ msgid "In one day"
-#~ msgid_plural "In %d days"
-#~ msgstr[0] "%s日前"
-#~ msgstr[1] "%s日前"
-
-#~ msgid "Name of the city"
-#~ msgstr "都市の名前"
