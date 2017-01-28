@@ -467,7 +467,7 @@ msgstr "mírné sněžení"
 
 #: src/openweathermap_org.js:241
 msgid "snow"
-msgstr "sně"
+msgstr "sněžení"
 
 #: src/openweathermap_org.js:243
 msgid "heavy snow"
