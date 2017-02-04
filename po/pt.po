@@ -42,7 +42,7 @@ msgid ""
 msgstr ""
 "DarkSky não funciona sem uma chave de API.\n"
 "Por favor, registe-se em https://darksky.net/dev/register em copie a sua "
-"chave pessoal para as configurações.
+"chave pessoal para as configurações."
 
 #: src/extension.js:514
 #, javascript-format
