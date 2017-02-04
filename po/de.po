@@ -237,7 +237,7 @@ msgstr "bar"
 
 #: src/extension.js:1249 data/weather-settings.ui:830
 msgid "Pa"
-msgstr "bar"
+msgstr "Pa"
 
 #: src/extension.js:1254 data/weather-settings.ui:831
 msgid "kPa"
