@@ -30,6 +30,7 @@
     <value value="7" nick="Torr"/>
     <value value="8" nick="psi"/>
     <value value="9" nick="mmHg"/>
+    <value value="10" nick="mbar"/>
   </enum>
   <enum id="org.gnome.shell.extensions.openweather.wind-speed-unit">
     <value value="0" nick="kph"/>

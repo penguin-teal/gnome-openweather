@@ -1,15 +1,15 @@
 # German translation for gnome-shell-extension-openweather
 # Copyright (C) 2011-2015 Jens Lody
 # This file is distributed under the same license as the gnome-shell-extension-openweather package.
-# Jens Lody <openweather@jenslody.de>, 2015, 2016.
+# Jens Lody <openweather@jenslody.de>, 2015, 2016, 2017.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-shell-extension-openweather\n"
 "Report-Msgid-Bugs-To: https://github.com/jenslody/gnome-shell-extension-"
 "openweather/issues\n"
-"POT-Creation-Date: 2016-10-04 00:34+0200\n"
-"PO-Revision-Date: 2016-10-04 00:35+0200\n"
+"POT-Creation-Date: 2017-02-04 20:19+0100\n"
+"PO-Revision-Date: 2017-02-04 20:20+0100\n"
 "Last-Translator: Jens Lody <openweather@jenslody.de>\n"
 "Language-Team: Deutsch <openweather@jenslody.de>\n"
 "Language: de\n"
@@ -19,11 +19,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Gtranslator 2.91.7\n"
 
-#: src/extension.js:173
+#: src/extension.js:174
 msgid "..."
 msgstr "..."
 
-#: src/extension.js:383
+#: src/extension.js:384
 msgid ""
 "Openweathermap.org does not work without an api-key.\n"
 "Either set the switch to use the extensions default key in the preferences "
@@ -35,7 +35,7 @@ msgstr ""
 "Dialog auf an schalten oder auf http://openweathermap.org/appid anmelden und "
 "den persönlichen Schlüssel in den Dialog kopieren."
 
-#: src/extension.js:441
+#: src/extension.js:442
 msgid ""
 "Dark Sky does not work without an api-key.\n"
 "Please register at https://darksky.net/dev/register and paste your personal "
@@ -45,265 +45,269 @@ msgstr ""
 "Bitte auf https://darksky.net/dev/register anmelden und den persönlichen "
 "Schlüssel in den Einstellungs-Dialog kopieren."
 
-#: src/extension.js:514
+#: src/extension.js:515
 #, javascript-format
 msgid "Can not connect to %s"
 msgstr "Kann %s nicht erreichen"
 
-#: src/extension.js:861 data/weather-settings.ui:464
+#: src/extension.js:862 data/weather-settings.ui:461
 msgid "Locations"
 msgstr "Standorte"
 
-#: src/extension.js:876
+#: src/extension.js:877
 msgid "Reload Weather Information"
 msgstr "Aktualisiere Wetterdaten"
 
-#: src/extension.js:891
+#: src/extension.js:892
 msgid "Weather data provided by:"
 msgstr "Wetterdaten zur Verfügung gestellt von:"
 
-#: src/extension.js:907
+#: src/extension.js:908
 #, javascript-format
 msgid "Can not open %s"
 msgstr "Kann %s nicht öffnen"
 
-#: src/extension.js:914
+#: src/extension.js:915
 msgid "Weather Settings"
 msgstr "Einstellungen für Wetter"
 
-#: src/extension.js:978 src/prefs.js:1051
+#: src/extension.js:979 src/prefs.js:1051
 msgid "Invalid city"
 msgstr "Ungültige Ortschaft"
 
-#: src/extension.js:989
+#: src/extension.js:990
 msgid "Invalid location! Please try to recreate it."
 msgstr "Ungültiger Ort! Bitte versuchen Sie ihn neu anzulegen."
 
-#: src/extension.js:1036 data/weather-settings.ui:790
+#: src/extension.js:1037 data/weather-settings.ui:787
 msgid "°F"
 msgstr "°F"
 
-#: src/extension.js:1038 data/weather-settings.ui:791
+#: src/extension.js:1039 data/weather-settings.ui:788
 msgid "K"
 msgstr "K"
 
-#: src/extension.js:1040 data/weather-settings.ui:792
+#: src/extension.js:1041 data/weather-settings.ui:789
 msgid "°Ra"
 msgstr "°Ra"
 
-#: src/extension.js:1042 data/weather-settings.ui:793
+#: src/extension.js:1043 data/weather-settings.ui:790
 msgid "°Ré"
 msgstr "°Ré"
 
-#: src/extension.js:1044 data/weather-settings.ui:794
+#: src/extension.js:1045 data/weather-settings.ui:791
 msgid "°Rø"
 msgstr "°Rø"
 
-#: src/extension.js:1046 data/weather-settings.ui:795
+#: src/extension.js:1047 data/weather-settings.ui:792
 msgid "°De"
 msgstr "°De"
 
-#: src/extension.js:1048 data/weather-settings.ui:796
+#: src/extension.js:1049 data/weather-settings.ui:793
 msgid "°N"
 msgstr "°N"
 
-#: src/extension.js:1050 data/weather-settings.ui:789
+#: src/extension.js:1051 data/weather-settings.ui:786
 msgid "°C"
 msgstr "°C"
 
-#: src/extension.js:1091
+#: src/extension.js:1092
 msgid "Calm"
 msgstr "Still"
 
-#: src/extension.js:1094
+#: src/extension.js:1095
 msgid "Light air"
 msgstr "Leichter Windzug"
 
-#: src/extension.js:1097
+#: src/extension.js:1098
 msgid "Light breeze"
 msgstr "Leichte Brise"
 
-#: src/extension.js:1100
+#: src/extension.js:1101
 msgid "Gentle breeze"
 msgstr "Schwache Brise"
 
-#: src/extension.js:1103
+#: src/extension.js:1104
 msgid "Moderate breeze"
 msgstr "Mäßige Brise"
 
-#: src/extension.js:1106
+#: src/extension.js:1107
 msgid "Fresh breeze"
 msgstr "Frische Brise"
 
-#: src/extension.js:1109
+#: src/extension.js:1110
 msgid "Strong breeze"
 msgstr "Starker Wind"
 
-#: src/extension.js:1112
+#: src/extension.js:1113
 msgid "Moderate gale"
 msgstr "Steifer Wind"
 
-#: src/extension.js:1115
+#: src/extension.js:1116
 msgid "Fresh gale"
 msgstr "Stürmischer Wind"
 
-#: src/extension.js:1118
+#: src/extension.js:1119
 msgid "Strong gale"
 msgstr "Sturm"
 
-#: src/extension.js:1121
+#: src/extension.js:1122
 msgid "Storm"
 msgstr "Schwerer Sturm"
 
-#: src/extension.js:1124
+#: src/extension.js:1125
 msgid "Violent storm"
 msgstr "Orkanartiger Sturm"
 
-#: src/extension.js:1127
+#: src/extension.js:1128
 msgid "Hurricane"
 msgstr "Orkan"
 
-#: src/extension.js:1131
+#: src/extension.js:1132
 msgid "Sunday"
 msgstr "Sonntag"
 
-#: src/extension.js:1131
+#: src/extension.js:1132
 msgid "Monday"
 msgstr "Montag"
 
-#: src/extension.js:1131
+#: src/extension.js:1132
 msgid "Tuesday"
 msgstr "Dienstag"
 
-#: src/extension.js:1131
+#: src/extension.js:1132
 msgid "Wednesday"
 msgstr "Mittwoch"
 
-#: src/extension.js:1131
+#: src/extension.js:1132
 msgid "Thursday"
 msgstr "Donnerstag"
 
-#: src/extension.js:1131
+#: src/extension.js:1132
 msgid "Friday"
 msgstr "Freitag"
 
-#: src/extension.js:1131
+#: src/extension.js:1132
 msgid "Saturday"
 msgstr "Samstag"
 
-#: src/extension.js:1137
+#: src/extension.js:1138
 msgid "N"
 msgstr "N"
 
-#: src/extension.js:1137
+#: src/extension.js:1138
 msgid "NE"
 msgstr "NO"
 
-#: src/extension.js:1137
+#: src/extension.js:1138
 msgid "E"
 msgstr "O"
 
-#: src/extension.js:1137
+#: src/extension.js:1138
 msgid "SE"
 msgstr "SO"
 
-#: src/extension.js:1137
+#: src/extension.js:1138
 msgid "S"
 msgstr "S"
 
-#: src/extension.js:1137
+#: src/extension.js:1138
 msgid "SW"
 msgstr "SW"
 
-#: src/extension.js:1137
+#: src/extension.js:1138
 msgid "W"
 msgstr "W"
 
-#: src/extension.js:1137
+#: src/extension.js:1138
 msgid "NW"
 msgstr "NW"
 
-#: src/extension.js:1230 src/extension.js:1239 data/weather-settings.ui:827
+#: src/extension.js:1231 src/extension.js:1240 data/weather-settings.ui:824
 msgid "hPa"
 msgstr "hPa"
 
-#: src/extension.js:1234 data/weather-settings.ui:828
+#: src/extension.js:1235 data/weather-settings.ui:825
 msgid "inHg"
 msgstr "inHg"
 
-#: src/extension.js:1244 data/weather-settings.ui:829
+#: src/extension.js:1245 data/weather-settings.ui:826
 msgid "bar"
 msgstr "bar"
 
-#: src/extension.js:1249 data/weather-settings.ui:830
+#: src/extension.js:1250 data/weather-settings.ui:827
 msgid "Pa"
 msgstr "Pa"
 
-#: src/extension.js:1254 data/weather-settings.ui:831
+#: src/extension.js:1255 data/weather-settings.ui:828
 msgid "kPa"
 msgstr "kPa"
 
-#: src/extension.js:1259 data/weather-settings.ui:832
+#: src/extension.js:1260 data/weather-settings.ui:829
 msgid "atm"
 msgstr "atm"
 
-#: src/extension.js:1264 data/weather-settings.ui:833
+#: src/extension.js:1265 data/weather-settings.ui:830
 msgid "at"
 msgstr "at"
 
-#: src/extension.js:1269 data/weather-settings.ui:834
+#: src/extension.js:1270 data/weather-settings.ui:831
 msgid "Torr"
 msgstr "Torr"
 
-#: src/extension.js:1274 data/weather-settings.ui:835
+#: src/extension.js:1275 data/weather-settings.ui:832
 msgid "psi"
 msgstr "Torr"
 
-#: src/extension.js:1279 data/weather-settings.ui:836
+#: src/extension.js:1280 data/weather-settings.ui:833
 msgid "mmHg"
 msgstr "mmHg"
 
-#: src/extension.js:1323 data/weather-settings.ui:811
+#: src/extension.js:1285 data/weather-settings.ui:834
+msgid "mbar"
+msgstr "mbar"
+
+#: src/extension.js:1329 data/weather-settings.ui:808
 msgid "m/s"
 msgstr "m/s"
 
-#: src/extension.js:1327 data/weather-settings.ui:810
+#: src/extension.js:1333 data/weather-settings.ui:807
 msgid "mph"
 msgstr "mph"
 
-#: src/extension.js:1332 data/weather-settings.ui:809
+#: src/extension.js:1338 data/weather-settings.ui:806
 msgid "km/h"
 msgstr "km/h"
 
-#: src/extension.js:1341 data/weather-settings.ui:812
+#: src/extension.js:1347 data/weather-settings.ui:809
 msgid "kn"
 msgstr "kn"
 
-#: src/extension.js:1346 data/weather-settings.ui:813
+#: src/extension.js:1352 data/weather-settings.ui:810
 msgid "ft/s"
 msgstr "kn"
 
-#: src/extension.js:1437
+#: src/extension.js:1443
 msgid "Loading ..."
 msgstr "Lade ..."
 
-#: src/extension.js:1441
+#: src/extension.js:1447
 msgid "Please wait"
 msgstr "Bitte warten"
 
-#: src/extension.js:1502
+#: src/extension.js:1508
 msgid "Cloudiness:"
 msgstr "Bewölkung:"
 
-#: src/extension.js:1506
+#: src/extension.js:1512
 msgid "Humidity:"
 msgstr "Luftfeuchtigkeit:"
 
-#: src/extension.js:1510
+#: src/extension.js:1516
 msgid "Pressure:"
 msgstr "Luftdruck:"
 
-#: src/extension.js:1514
+#: src/extension.js:1520
 msgid "Wind:"
 msgstr "Windgeschwindigkeit:"
 
@@ -624,27 +628,27 @@ msgstr "z.B. Vaiaku, Tuvalu oder -8.5211767,179.1976747"
 msgid "Find"
 msgstr "Suchen"
 
-#: data/weather-settings.ui:485
+#: data/weather-settings.ui:482
 msgid "Chose default weather provider"
 msgstr "Standard Wetteranbieter wählen"
 
-#: data/weather-settings.ui:498
+#: data/weather-settings.ui:495
 msgid "Personal Api key from openweathermap.org"
 msgstr "Persönlicher Api Schlüssel von openweathermap.org"
 
-#: data/weather-settings.ui:549
+#: data/weather-settings.ui:546
 msgid "Personal Api key from Dark Sky"
 msgstr "Persönlicher Api Schlüssel von Dark Sky"
 
-#: data/weather-settings.ui:562
+#: data/weather-settings.ui:559
 msgid "Refresh timeout for current weather [min]"
 msgstr "Auffrischintervall für das aktelle Wetter [min]"
 
-#: data/weather-settings.ui:576
+#: data/weather-settings.ui:573
 msgid "Refresh timeout for weather forecast [min]"
 msgstr "Auffrischintervall für die Vorhersage [min]"
 
-#: data/weather-settings.ui:604
+#: data/weather-settings.ui:601
 msgid ""
 "Note: the forecast-timout is not used for Dark Sky, because they do not "
 "provide seperate downloads for current weather and forecasts."
@@ -653,11 +657,11 @@ msgstr ""
 "Sky benutzt, da keine getrennten Daten für Vorhersage und aktuelles Wetter "
 "angeboten werden."
 
-#: data/weather-settings.ui:632
+#: data/weather-settings.ui:629
 msgid "Use extensions api-key for openweathermap.org"
 msgstr "Den Api-Schlüssel der Erweiterung für openweathermap.org benutzen"
 
-#: data/weather-settings.ui:643
+#: data/weather-settings.ui:640
 msgid ""
 "Switch off, if you have your own api-key for openweathermap.org and put it "
 "into the text-box below."
@@ -665,126 +669,126 @@ msgstr ""
 "Ausschalten, falls sie einen persönlichen API-key für openweather.org "
 "benutzen wollen und diesen in das entsprechende Textfeld kopieren."
 
-#: data/weather-settings.ui:660
+#: data/weather-settings.ui:657
 msgid "Weather provider"
 msgstr "Wetteranbieter"
 
-#: data/weather-settings.ui:680
+#: data/weather-settings.ui:677
 msgid "Chose geolocation provider"
 msgstr "Geolocation-Anbieter wählen"
 
-#: data/weather-settings.ui:706
+#: data/weather-settings.ui:703
 msgid "Personal AppKey from developer.mapquest.com"
 msgstr "Persönlicher AppKey von developer.mapquest.com"
 
-#: data/weather-settings.ui:735
+#: data/weather-settings.ui:732
 msgid "Geolocation provider"
 msgstr "Geolocation Anbieter"
 
-#: data/weather-settings.ui:755
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:62
+#: data/weather-settings.ui:752
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:63
 msgid "Temperature Unit"
 msgstr "Temperatureinheit"
 
-#: data/weather-settings.ui:766
+#: data/weather-settings.ui:763
 msgid "Wind Speed Unit"
 msgstr "Windgeschwindigkeit"
 
-#: data/weather-settings.ui:777
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:66
+#: data/weather-settings.ui:774
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:67
 msgid "Pressure Unit"
 msgstr "Druckeinheit:"
 
-#: data/weather-settings.ui:814
+#: data/weather-settings.ui:811
 msgid "Beaufort"
 msgstr "Beaufort"
 
-#: data/weather-settings.ui:853
+#: data/weather-settings.ui:851
 msgid "Units"
 msgstr "Einheiten"
 
-#: data/weather-settings.ui:873
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:112
+#: data/weather-settings.ui:871
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:113
 msgid "Position in Panel"
 msgstr "Position im Panel"
 
-#: data/weather-settings.ui:884
+#: data/weather-settings.ui:882
 msgid "Position of menu-box [%] from 0 (left) to 100 (right)"
 msgstr "Position des Menüs [%] von 0 (links) bis 100 (rechts)"
 
-#: data/weather-settings.ui:895
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:75
+#: data/weather-settings.ui:893
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:76
 msgid "Wind Direction by Arrows"
 msgstr "Windrichtung durch Pfeile angeben"
 
-#: data/weather-settings.ui:906
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:88
+#: data/weather-settings.ui:904
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:89
 msgid "Translate Conditions"
 msgstr "Wetterdaten übersetzen"
 
-#: data/weather-settings.ui:917
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:92
+#: data/weather-settings.ui:915
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:93
 msgid "Symbolic Icons"
 msgstr "Eigene Wettersymbole"
 
-#: data/weather-settings.ui:928
+#: data/weather-settings.ui:926
 msgid "Text on buttons"
 msgstr "Text auf Buttons"
 
-#: data/weather-settings.ui:939
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:100
+#: data/weather-settings.ui:937
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:101
 msgid "Temperature in Panel"
 msgstr "Temperaturanzeige"
 
-#: data/weather-settings.ui:950
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:104
+#: data/weather-settings.ui:948
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:105
 msgid "Conditions in Panel"
 msgstr "Textanzeige im Panel"
 
-#: data/weather-settings.ui:961
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:108
+#: data/weather-settings.ui:959
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:109
 msgid "Conditions in Forecast"
 msgstr "Textanzeige in Vorhersage"
 
-#: data/weather-settings.ui:972
+#: data/weather-settings.ui:970
 msgid "Center forecast"
 msgstr "Vorhersage zentrieren"
 
-#: data/weather-settings.ui:983
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:132
+#: data/weather-settings.ui:981
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:133
 msgid "Number of days in forecast"
 msgstr "Anzahl Tage in der Vorhersage"
 
-#: data/weather-settings.ui:994
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:136
+#: data/weather-settings.ui:992
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:137
 msgid "Maximal number of digits after the decimal point"
 msgstr "Größtmögliche Anzahl von Nachkommastellen"
 
-#: data/weather-settings.ui:1006
+#: data/weather-settings.ui:1004
 msgid "Center"
 msgstr "Mitte"
 
-#: data/weather-settings.ui:1007
+#: data/weather-settings.ui:1005
 msgid "Right"
 msgstr "Rechts"
 
-#: data/weather-settings.ui:1008
+#: data/weather-settings.ui:1006
 msgid "Left"
 msgstr "Links"
 
-#: data/weather-settings.ui:1166
+#: data/weather-settings.ui:1164
 msgid "Layout"
 msgstr "Oberfläche"
 
-#: data/weather-settings.ui:1218
+#: data/weather-settings.ui:1216
 msgid "Version: "
 msgstr "Version: "
 
-#: data/weather-settings.ui:1232
+#: data/weather-settings.ui:1230
 msgid "unknown (self-build ?)"
 msgstr "unbekannt (selbst erstellt ?)"
 
-#: data/weather-settings.ui:1252
+#: data/weather-settings.ui:1250
 msgid ""
 "<span>Weather extension to display weather information from <a href="
 "\"https://openweathermap.org/\">Openweathermap</a> or <a href=\"https://"
@@ -794,15 +798,15 @@ msgstr ""
 "\"https://openweathermap.org/\">Openweathermap</a> oder <a href=\"https://"
 "darksky.net\">Dark Sky</a> für (fast) alle Orte auf der Erde.</span>"
 
-#: data/weather-settings.ui:1275
+#: data/weather-settings.ui:1273
 msgid "Maintained by"
 msgstr "Verwaltet von"
 
-#: data/weather-settings.ui:1305
+#: data/weather-settings.ui:1303
 msgid "Webpage"
 msgstr "Internetseite"
 
-#: data/weather-settings.ui:1326
+#: data/weather-settings.ui:1324
 msgid ""
 "<span size=\"small\">This program comes with ABSOLUTELY NO WARRANTY.\n"
 "See the <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
@@ -813,23 +817,23 @@ msgstr ""
 "\">GNU General Public License, Version 2 oder neuer</a> für Einzelheiten.</"
 "span>"
 
-#: data/weather-settings.ui:1347
+#: data/weather-settings.ui:1345
 msgid "About"
 msgstr "Über"
 
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:54
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:55
 msgid "Weather Provider"
 msgstr "Wetteranbieter"
 
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:58
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:59
 msgid "Geolocation Provider"
 msgstr "Geolocation Anbieter"
 
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:70
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:71
 msgid "Wind Speed Units"
 msgstr "Einheit für Windgeschwindigkeit"
 
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:71
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:72
 msgid ""
 "Choose the units used for wind speed. Allowed values are 'kph', 'mph', 'm/"
 "s', 'knots', 'ft/s' or 'Beaufort'."
@@ -837,53 +841,53 @@ msgstr ""
 "Wähle die Einheit für die Windgeschwindigkeit. Erlaubte Werte sind 'kph', "
 "'mph', 'm/s', 'knots', 'ft/s' oder 'Beaufort'."
 
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:76
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:77
 msgid "Choose whether to display wind direction through arrows or letters."
 msgstr ""
 "Wähle ob die Windrichtung durch Pfeile oder durch Buchstaben angegeben "
 "werden soll."
 
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:80
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:81
 msgid "City to be displayed"
 msgstr "Anzuzeigender Ort"
 
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:84
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:85
 msgid "Actual City"
 msgstr "Aktueller Ort"
 
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:96
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:97
 msgid "Use text on buttons in menu"
 msgstr "Text auf Knöpfen im Menü anzeigen"
 
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:116
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:117
 msgid "Horizontal position of menu-box."
 msgstr "Horizontale Position des Menüs."
 
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:120
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:121
 msgid "Refresh interval (actual weather)"
 msgstr "Auffrisch-Intervall (aktuelles Wetter)"
 
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:124
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:125
 msgid "Refresh interval (forecast)"
 msgstr "Auffrisch-Intervall (Vorhersage)"
 
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:128
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:129
 msgid "Center forecastbox."
 msgstr "Vorhersage zentrieren"
 
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:140
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:141
 msgid "Your personal API key from openweathermap.org"
 msgstr "Persönlicher Api Schlüssel von openweathermap.org"
 
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:144
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:145
 msgid "Use the extensions default API key from openweathermap.org"
 msgstr "Den Api-Schlüssel der Erweiterung für openweathermap.org benutzen"
 
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:148
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:149
 msgid "Your personal API key from Dark Sky"
 msgstr "Persönlicher Api Schlüssel von Dark Sky"
 
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:152
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:153
 msgid "Your personal AppKey from developer.mapquest.com"
 msgstr "Persönlicher AppKey von developer.mapquest.com"
 

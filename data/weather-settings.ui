@@ -831,6 +831,7 @@
                       <item translatable="yes">Torr</item>
                       <item translatable="yes">psi</item>
                       <item translatable="yes">mmHg</item>
+                      <item translatable="yes">mbar</item>
                     </items>
                   </object>
                   <packing>

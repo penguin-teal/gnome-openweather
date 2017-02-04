@@ -4,15 +4,15 @@
 # This file is distributed under the same license as the gnome-shell-extension-openweather package.
 #
 # bill <bill_zt@sina.com>, 2011.
-# 绿色圣光 <lishaohui.qd@163.com>, 2014, 2015, 2016.
+# 绿色圣光 <lishaohui.qd@163.com>, 2014, 2015, 2016, 2017.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-shell-extension-openweather\n"
 "Report-Msgid-Bugs-To: https://github.com/jenslody/gnome-shell-extension-"
 "openweather/issues\n"
-"POT-Creation-Date: 2016-10-04 00:34+0200\n"
-"PO-Revision-Date: 2016-05-15 20:59+0800\n"
+"POT-Creation-Date: 2017-02-04 20:19+0100\n"
+"PO-Revision-Date: 2017-02-04 20:31+0100\n"
 "Last-Translator: 绿色圣光 <lishaohui.qd@163.com>\n"
 "Language-Team: Chinese (Simplified) <>\n"
 "Language: zh_CN\n"
@@ -22,11 +22,11 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Gtranslator 2.91.7\n"
 
-#: src/extension.js:173
+#: src/extension.js:174
 msgid "..."
 msgstr "..."
 
-#: src/extension.js:383
+#: src/extension.js:384
 msgid ""
 "Openweathermap.org does not work without an api-key.\n"
 "Either set the switch to use the extensions default key in the preferences "
@@ -37,7 +37,7 @@ msgstr ""
 "请开启使用扩展的默认密钥，或者到 http://openweathermap.org/appid 注册，并将您"
 "的个人密钥粘贴到选项对话框中。"
 
-#: src/extension.js:441
+#: src/extension.js:442
 msgid ""
 "Dark Sky does not work without an api-key.\n"
 "Please register at https://darksky.net/dev/register and paste your personal "
@@ -47,265 +47,269 @@ msgstr ""
 "请到 https://darksky.net/dev/register 注册，并将您的个人密钥粘贴到选项对话框"
 "中。"
 
-#: src/extension.js:514
+#: src/extension.js:515
 #, javascript-format
 msgid "Can not connect to %s"
 msgstr "无法连接到 %s"
 
-#: src/extension.js:861 data/weather-settings.ui:464
+#: src/extension.js:862 data/weather-settings.ui:461
 msgid "Locations"
 msgstr "地点"
 
-#: src/extension.js:876
+#: src/extension.js:877
 msgid "Reload Weather Information"
 msgstr "重载天气信息"
 
-#: src/extension.js:891
+#: src/extension.js:892
 msgid "Weather data provided by:"
 msgstr "天气数据源自："
 
-#: src/extension.js:907
+#: src/extension.js:908
 #, javascript-format
 msgid "Can not open %s"
 msgstr "无法打开 %s"
 
-#: src/extension.js:914
+#: src/extension.js:915
 msgid "Weather Settings"
 msgstr "天气设置"
 
-#: src/extension.js:978 src/prefs.js:1051
+#: src/extension.js:979 src/prefs.js:1051
 msgid "Invalid city"
 msgstr "无效的城市"
 
-#: src/extension.js:989
+#: src/extension.js:990
 msgid "Invalid location! Please try to recreate it."
 msgstr "无效地点！请尝试重建一个。"
 
-#: src/extension.js:1036 data/weather-settings.ui:790
+#: src/extension.js:1037 data/weather-settings.ui:787
 msgid "°F"
 msgstr "℉"
 
-#: src/extension.js:1038 data/weather-settings.ui:791
+#: src/extension.js:1039 data/weather-settings.ui:788
 msgid "K"
 msgstr "K"
 
-#: src/extension.js:1040 data/weather-settings.ui:792
+#: src/extension.js:1041 data/weather-settings.ui:789
 msgid "°Ra"
 msgstr "°Ra"
 
-#: src/extension.js:1042 data/weather-settings.ui:793
+#: src/extension.js:1043 data/weather-settings.ui:790
 msgid "°Ré"
 msgstr "°Ré"
 
-#: src/extension.js:1044 data/weather-settings.ui:794
+#: src/extension.js:1045 data/weather-settings.ui:791
 msgid "°Rø"
 msgstr "°Rø"
 
-#: src/extension.js:1046 data/weather-settings.ui:795
+#: src/extension.js:1047 data/weather-settings.ui:792
 msgid "°De"
 msgstr "°De"
 
-#: src/extension.js:1048 data/weather-settings.ui:796
+#: src/extension.js:1049 data/weather-settings.ui:793
 msgid "°N"
 msgstr "°N"
 
-#: src/extension.js:1050 data/weather-settings.ui:789
+#: src/extension.js:1051 data/weather-settings.ui:786
 msgid "°C"
 msgstr "℃"
 
-#: src/extension.js:1091
+#: src/extension.js:1092
 msgid "Calm"
 msgstr "无风"
 
-#: src/extension.js:1094
+#: src/extension.js:1095
 msgid "Light air"
 msgstr "软风"
 
-#: src/extension.js:1097
+#: src/extension.js:1098
 msgid "Light breeze"
 msgstr "轻风"
 
-#: src/extension.js:1100
+#: src/extension.js:1101
 msgid "Gentle breeze"
 msgstr "微风"
 
-#: src/extension.js:1103
+#: src/extension.js:1104
 msgid "Moderate breeze"
 msgstr "和风"
 
-#: src/extension.js:1106
+#: src/extension.js:1107
 msgid "Fresh breeze"
 msgstr "清风"
 
-#: src/extension.js:1109
+#: src/extension.js:1110
 msgid "Strong breeze"
 msgstr "强风"
 
-#: src/extension.js:1112
+#: src/extension.js:1113
 msgid "Moderate gale"
 msgstr "疾风"
 
-#: src/extension.js:1115
+#: src/extension.js:1116
 msgid "Fresh gale"
 msgstr "大风"
 
-#: src/extension.js:1118
+#: src/extension.js:1119
 msgid "Strong gale"
 msgstr "烈风"
 
-#: src/extension.js:1121
+#: src/extension.js:1122
 msgid "Storm"
 msgstr "狂风"
 
-#: src/extension.js:1124
+#: src/extension.js:1125
 msgid "Violent storm"
 msgstr "暴风"
 
-#: src/extension.js:1127
+#: src/extension.js:1128
 msgid "Hurricane"
 msgstr "飓风"
 
-#: src/extension.js:1131
+#: src/extension.js:1132
 msgid "Sunday"
 msgstr "星期日"
 
-#: src/extension.js:1131
+#: src/extension.js:1132
 msgid "Monday"
 msgstr "星期一"
 
-#: src/extension.js:1131
+#: src/extension.js:1132
 msgid "Tuesday"
 msgstr "星期二"
 
-#: src/extension.js:1131
+#: src/extension.js:1132
 msgid "Wednesday"
 msgstr "星期三"
 
-#: src/extension.js:1131
+#: src/extension.js:1132
 msgid "Thursday"
 msgstr "星期四"
 
-#: src/extension.js:1131
+#: src/extension.js:1132
 msgid "Friday"
 msgstr "星期五"
 
-#: src/extension.js:1131
+#: src/extension.js:1132
 msgid "Saturday"
 msgstr "星期六"
 
-#: src/extension.js:1137
+#: src/extension.js:1138
 msgid "N"
 msgstr "北"
 
-#: src/extension.js:1137
+#: src/extension.js:1138
 msgid "NE"
 msgstr "东北"
 
-#: src/extension.js:1137
+#: src/extension.js:1138
 msgid "E"
 msgstr "东"
 
-#: src/extension.js:1137
+#: src/extension.js:1138
 msgid "SE"
 msgstr "东南"
 
-#: src/extension.js:1137
+#: src/extension.js:1138
 msgid "S"
 msgstr "南"
 
-#: src/extension.js:1137
+#: src/extension.js:1138
 msgid "SW"
 msgstr "西南"
 
-#: src/extension.js:1137
+#: src/extension.js:1138
 msgid "W"
 msgstr "西"
 
-#: src/extension.js:1137
+#: src/extension.js:1138
 msgid "NW"
 msgstr "西北"
 
-#: src/extension.js:1230 src/extension.js:1239 data/weather-settings.ui:827
+#: src/extension.js:1231 src/extension.js:1240 data/weather-settings.ui:824
 msgid "hPa"
 msgstr "hPa"
 
-#: src/extension.js:1234 data/weather-settings.ui:828
+#: src/extension.js:1235 data/weather-settings.ui:825
 msgid "inHg"
 msgstr "inHg"
 
-#: src/extension.js:1244 data/weather-settings.ui:829
+#: src/extension.js:1245 data/weather-settings.ui:826
 msgid "bar"
 msgstr "bar"
 
-#: src/extension.js:1249 data/weather-settings.ui:830
+#: src/extension.js:1250 data/weather-settings.ui:827
 msgid "Pa"
 msgstr "Pa"
 
-#: src/extension.js:1254 data/weather-settings.ui:831
+#: src/extension.js:1255 data/weather-settings.ui:828
 msgid "kPa"
 msgstr "kPa"
 
-#: src/extension.js:1259 data/weather-settings.ui:832
+#: src/extension.js:1260 data/weather-settings.ui:829
 msgid "atm"
 msgstr "atm"
 
-#: src/extension.js:1264 data/weather-settings.ui:833
+#: src/extension.js:1265 data/weather-settings.ui:830
 msgid "at"
 msgstr "at"
 
-#: src/extension.js:1269 data/weather-settings.ui:834
+#: src/extension.js:1270 data/weather-settings.ui:831
 msgid "Torr"
 msgstr "Torr"
 
-#: src/extension.js:1274 data/weather-settings.ui:835
+#: src/extension.js:1275 data/weather-settings.ui:832
 msgid "psi"
 msgstr "PSI"
 
-#: src/extension.js:1279 data/weather-settings.ui:836
+#: src/extension.js:1280 data/weather-settings.ui:833
 msgid "mmHg"
 msgstr "mmHg"
 
-#: src/extension.js:1323 data/weather-settings.ui:811
+#: src/extension.js:1285 data/weather-settings.ui:834
+msgid "mbar"
+msgstr "mbar"
+
+#: src/extension.js:1329 data/weather-settings.ui:808
 msgid "m/s"
 msgstr "m/s"
 
-#: src/extension.js:1327 data/weather-settings.ui:810
+#: src/extension.js:1333 data/weather-settings.ui:807
 msgid "mph"
 msgstr "mph"
 
-#: src/extension.js:1332 data/weather-settings.ui:809
+#: src/extension.js:1338 data/weather-settings.ui:806
 msgid "km/h"
 msgstr "km/h"
 
-#: src/extension.js:1341 data/weather-settings.ui:812
+#: src/extension.js:1347 data/weather-settings.ui:809
 msgid "kn"
 msgstr "kn"
 
-#: src/extension.js:1346 data/weather-settings.ui:813
+#: src/extension.js:1352 data/weather-settings.ui:810
 msgid "ft/s"
 msgstr "ft/s"
 
-#: src/extension.js:1437
+#: src/extension.js:1443
 msgid "Loading ..."
 msgstr "正在加载 ..."
 
-#: src/extension.js:1441
+#: src/extension.js:1447
 msgid "Please wait"
 msgstr "请稍候"
 
-#: src/extension.js:1502
+#: src/extension.js:1508
 msgid "Cloudiness:"
 msgstr "云量："
 
-#: src/extension.js:1506
+#: src/extension.js:1512
 msgid "Humidity:"
 msgstr "湿度："
 
-#: src/extension.js:1510
+#: src/extension.js:1516
 msgid "Pressure:"
 msgstr "气压："
 
-#: src/extension.js:1514
+#: src/extension.js:1520
 msgid "Wind:"
 msgstr "风："
 
@@ -624,28 +628,28 @@ msgstr "例如，“北京”或者“39.9059093,116.3913489”"
 msgid "Find"
 msgstr "查找"
 
-#: data/weather-settings.ui:485
+#: data/weather-settings.ui:482
 msgid "Chose default weather provider"
 msgstr "选择默认天气提供源"
 
-#: data/weather-settings.ui:498
+#: data/weather-settings.ui:495
 msgid "Personal Api key from openweathermap.org"
 msgstr "openweathermap.org 的个人 API 密钥"
 
-#: data/weather-settings.ui:549
+#: data/weather-settings.ui:546
 #, fuzzy
 msgid "Personal Api key from Dark Sky"
 msgstr "Dark Sky 的个人 API 密钥"
 
-#: data/weather-settings.ui:562
+#: data/weather-settings.ui:559
 msgid "Refresh timeout for current weather [min]"
 msgstr "刷新当前天气的超时时间 [分钟]"
 
-#: data/weather-settings.ui:576
+#: data/weather-settings.ui:573
 msgid "Refresh timeout for weather forecast [min]"
 msgstr "刷新天气预报的超时时间 [分钟]"
 
-#: data/weather-settings.ui:604
+#: data/weather-settings.ui:601
 #, fuzzy
 msgid ""
 "Note: the forecast-timout is not used for Dark Sky, because they do not "
@@ -653,11 +657,11 @@ msgid ""
 msgstr ""
 "注意：预报超时不适用于 Dark Sky，因为他们不提供当前天气和预报的分别下载。"
 
-#: data/weather-settings.ui:632
+#: data/weather-settings.ui:629
 msgid "Use extensions api-key for openweathermap.org"
 msgstr "使用本扩展的 openweathermap.org API 密钥"
 
-#: data/weather-settings.ui:643
+#: data/weather-settings.ui:640
 msgid ""
 "Switch off, if you have your own api-key for openweathermap.org and put it "
 "into the text-box below."
@@ -665,126 +669,126 @@ msgstr ""
 "如果您自己拥有 openweathermap.org 的 API 密钥，请将其输入到下面的文本框中，并"
 "关闭本选项。"
 
-#: data/weather-settings.ui:660
+#: data/weather-settings.ui:657
 msgid "Weather provider"
 msgstr "天气提供源"
 
-#: data/weather-settings.ui:680
+#: data/weather-settings.ui:677
 msgid "Chose geolocation provider"
 msgstr "选择地理位置提供源"
 
-#: data/weather-settings.ui:706
+#: data/weather-settings.ui:703
 msgid "Personal AppKey from developer.mapquest.com"
 msgstr "developer.mapquest.com 的个人应用密钥"
 
-#: data/weather-settings.ui:735
+#: data/weather-settings.ui:732
 msgid "Geolocation provider"
 msgstr "地理位置提供源"
 
-#: data/weather-settings.ui:755
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:62
+#: data/weather-settings.ui:752
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:63
 msgid "Temperature Unit"
 msgstr "温度单位"
 
-#: data/weather-settings.ui:766
+#: data/weather-settings.ui:763
 msgid "Wind Speed Unit"
 msgstr "风速单位"
 
-#: data/weather-settings.ui:777
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:66
+#: data/weather-settings.ui:774
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:67
 msgid "Pressure Unit"
 msgstr "气压单位"
 
-#: data/weather-settings.ui:814
+#: data/weather-settings.ui:811
 msgid "Beaufort"
 msgstr "蒲福风级"
 
-#: data/weather-settings.ui:853
+#: data/weather-settings.ui:851
 msgid "Units"
 msgstr "单位"
 
-#: data/weather-settings.ui:873
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:112
+#: data/weather-settings.ui:871
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:113
 msgid "Position in Panel"
 msgstr "在面板上的位置"
 
-#: data/weather-settings.ui:884
+#: data/weather-settings.ui:882
 msgid "Position of menu-box [%] from 0 (left) to 100 (right)"
 msgstr ""
 
-#: data/weather-settings.ui:895
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:75
+#: data/weather-settings.ui:893
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:76
 msgid "Wind Direction by Arrows"
 msgstr "使用箭头指示风向"
 
-#: data/weather-settings.ui:906
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:88
+#: data/weather-settings.ui:904
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:89
 msgid "Translate Conditions"
 msgstr "翻译天气状态"
 
-#: data/weather-settings.ui:917
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:92
+#: data/weather-settings.ui:915
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:93
 msgid "Symbolic Icons"
 msgstr "显示象征性图标"
 
-#: data/weather-settings.ui:928
+#: data/weather-settings.ui:926
 msgid "Text on buttons"
 msgstr "图标显示文本"
 
-#: data/weather-settings.ui:939
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:100
+#: data/weather-settings.ui:937
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:101
 msgid "Temperature in Panel"
 msgstr "在面板上显示气温"
 
-#: data/weather-settings.ui:950
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:104
+#: data/weather-settings.ui:948
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:105
 msgid "Conditions in Panel"
 msgstr "在面板上显示天气状态"
 
-#: data/weather-settings.ui:961
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:108
+#: data/weather-settings.ui:959
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:109
 msgid "Conditions in Forecast"
 msgstr "显示预报天气状态"
 
-#: data/weather-settings.ui:972
+#: data/weather-settings.ui:970
 msgid "Center forecast"
 msgstr "预报信息居中显示"
 
-#: data/weather-settings.ui:983
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:132
+#: data/weather-settings.ui:981
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:133
 msgid "Number of days in forecast"
 msgstr "预报的天数"
 
-#: data/weather-settings.ui:994
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:136
+#: data/weather-settings.ui:992
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:137
 msgid "Maximal number of digits after the decimal point"
 msgstr "小数点后最大位数"
 
-#: data/weather-settings.ui:1006
+#: data/weather-settings.ui:1004
 msgid "Center"
 msgstr "中央"
 
-#: data/weather-settings.ui:1007
+#: data/weather-settings.ui:1005
 msgid "Right"
 msgstr "右侧"
 
-#: data/weather-settings.ui:1008
+#: data/weather-settings.ui:1006
 msgid "Left"
 msgstr "左侧"
 
-#: data/weather-settings.ui:1166
+#: data/weather-settings.ui:1164
 msgid "Layout"
 msgstr "布局"
 
-#: data/weather-settings.ui:1218
+#: data/weather-settings.ui:1216
 msgid "Version: "
 msgstr "版本："
 
-#: data/weather-settings.ui:1232
+#: data/weather-settings.ui:1230
 msgid "unknown (self-build ?)"
 msgstr "未知（自己构建的？）"
 
-#: data/weather-settings.ui:1252
+#: data/weather-settings.ui:1250
 #, fuzzy
 msgid ""
 "<span>Weather extension to display weather information from <a href="
@@ -795,15 +799,15 @@ msgstr ""
 "\">Openweathermap</a> 或 <a href=\"https://darksky.net\">Dark Sky</a> 的天气"
 "信息的扩展。</span>"
 
-#: data/weather-settings.ui:1275
+#: data/weather-settings.ui:1273
 msgid "Maintained by"
 msgstr "维护者："
 
-#: data/weather-settings.ui:1305
+#: data/weather-settings.ui:1303
 msgid "Webpage"
 msgstr "网站主页"
 
-#: data/weather-settings.ui:1326
+#: data/weather-settings.ui:1324
 msgid ""
 "<span size=\"small\">This program comes with ABSOLUTELY NO WARRANTY.\n"
 "See the <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
@@ -813,82 +817,82 @@ msgstr ""
 "参见 <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html\">GNU "
 "通用公共许可证，第二版或更高版本</a>以了解更多细节。</span>"
 
-#: data/weather-settings.ui:1347
+#: data/weather-settings.ui:1345
 msgid "About"
 msgstr "关于"
 
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:54
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:55
 #, fuzzy
 msgid "Weather Provider"
 msgstr "天气提供源"
 
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:58
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:59
 #, fuzzy
 msgid "Geolocation Provider"
 msgstr "地理位置提供源"
 
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:70
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:71
 #, fuzzy
 msgid "Wind Speed Units"
 msgstr "风速单位"
 
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:71
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:72
 msgid ""
 "Choose the units used for wind speed. Allowed values are 'kph', 'mph', 'm/"
 "s', 'knots', 'ft/s' or 'Beaufort'."
 msgstr ""
 
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:76
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:77
 msgid "Choose whether to display wind direction through arrows or letters."
 msgstr ""
 
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:80
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:81
 msgid "City to be displayed"
 msgstr ""
 
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:84
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:85
 msgid "Actual City"
 msgstr ""
 
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:96
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:97
 #, fuzzy
 msgid "Use text on buttons in menu"
 msgstr "图标显示文本"
 
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:116
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:117
 msgid "Horizontal position of menu-box."
 msgstr ""
 
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:120
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:121
 msgid "Refresh interval (actual weather)"
 msgstr ""
 
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:124
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:125
 #, fuzzy
 msgid "Refresh interval (forecast)"
 msgstr "预报信息居中显示"
 
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:128
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:129
 #, fuzzy
 msgid "Center forecastbox."
 msgstr "预报信息居中显示"
 
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:140
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:141
 #, fuzzy
 msgid "Your personal API key from openweathermap.org"
 msgstr "openweathermap.org 的个人 API 密钥"
 
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:144
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:145
 #, fuzzy
 msgid "Use the extensions default API key from openweathermap.org"
 msgstr "使用本扩展的 openweathermap.org API 密钥"
 
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:148
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:149
 #, fuzzy
 msgid "Your personal API key from Dark Sky"
 msgstr "Dark Sky 的个人 API 密钥"
 
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:152
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:153
 #, fuzzy
 msgid "Your personal AppKey from developer.mapquest.com"
 msgstr "developer.mapquest.com 的个人应用密钥"
