@@ -313,7 +313,7 @@ msgstr "Ontem"
 
 #: src/darksky_net.js:162 src/darksky_net.js:291 src/openweathermap_org.js:352
 #: src/openweathermap_org.js:453
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
 msgstr[0] "%d dia atrás"
@@ -333,59 +333,49 @@ msgid "Tomorrow"
 msgstr "Amanhã"
 
 #: src/darksky_net.js:286 src/openweathermap_org.js:449
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "In %d day"
 msgid_plural "In %d days"
 msgstr[0] "Num dia"
 msgstr[1] "Em %s dias"
 
 #: src/openweathermap_org.js:181
-#, fuzzy
 msgid "thunderstorm with light rain"
 msgstr "trovoada com chuva fraca"
 
 #: src/openweathermap_org.js:183
-#, fuzzy
 msgid "thunderstorm with rain"
 msgstr "trovoada com chuva"
 
 #: src/openweathermap_org.js:185
-#, fuzzy
 msgid "thunderstorm with heavy rain"
 msgstr "trovoada com chuva forte"
 
 #: src/openweathermap_org.js:187
-#, fuzzy
 msgid "light thunderstorm"
 msgstr "trovoada leve"
 
 #: src/openweathermap_org.js:189
-#, fuzzy
 msgid "thunderstorm"
 msgstr "trovoada"
 
 #: src/openweathermap_org.js:191
-#, fuzzy
 msgid "heavy thunderstorm"
 msgstr "trovoada forte"
 
 #: src/openweathermap_org.js:193
-#, fuzzy
 msgid "ragged thunderstorm"
 msgstr "trovoadas irregulares"
 
 #: src/openweathermap_org.js:195
-#, fuzzy
 msgid "thunderstorm with light drizzle"
 msgstr "trovoada com chuviscos leves"
 
 #: src/openweathermap_org.js:197
-#, fuzzy
 msgid "thunderstorm with drizzle"
 msgstr "trovoada com chuviscos"
 
 #: src/openweathermap_org.js:199
-#, fuzzy
 msgid "thunderstorm with heavy drizzle"
 msgstr "tovoada com chuviscos fortes"
 
@@ -394,52 +384,42 @@ msgid "light intensity drizzle"
 msgstr "chuviscos leves"
 
 #: src/openweathermap_org.js:203
-#, fuzzy
 msgid "drizzle"
 msgstr "chuvisco"
 
 #: src/openweathermap_org.js:205
-#, fuzzy
 msgid "heavy intensity drizzle"
 msgstr "chuvisco intenso"
 
 #: src/openweathermap_org.js:207
-#, fuzzy
 msgid "light intensity drizzle rain"
 msgstr "chuviscos fracos"
 
 #: src/openweathermap_org.js:209
-#, fuzzy
 msgid "drizzle rain"
 msgstr "chuviscos"
 
 #: src/openweathermap_org.js:211
-#, fuzzy
 msgid "heavy intensity drizzle rain"
 msgstr "chuviscos intensos"
 
 #: src/openweathermap_org.js:213
-#, fuzzy
 msgid "shower rain and drizzle"
 msgstr "aguaceiros e chuvisco"
 
 #: src/openweathermap_org.js:215
-#, fuzzy
 msgid "heavy shower rain and drizzle"
 msgstr "aguaceiros fortes e chuvisco"
 
 #: src/openweathermap_org.js:217
-#, fuzzy
 msgid "shower drizzle"
 msgstr "aguaceiro de chuviscos"
 
 #: src/openweathermap_org.js:219
-#, fuzzy
 msgid "light rain"
 msgstr "chuva fraca"
 
 #: src/openweathermap_org.js:221
-#, fuzzy
 msgid "moderate rain"
 msgstr "chuva moderada"
 
@@ -452,27 +432,22 @@ msgid "very heavy rain"
 msgstr "chuva muito forte"
 
 #: src/openweathermap_org.js:227
-#, fuzzy
 msgid "extreme rain"
 msgstr "chuva extrema"
 
 #: src/openweathermap_org.js:229
-#, fuzzy
 msgid "freezing rain"
 msgstr "chuva fria"
 
 #: src/openweathermap_org.js:231
-#, fuzzy
 msgid "light intensity shower rain"
 msgstr "aguaceiros leves"
 
 #: src/openweathermap_org.js:233
-#, fuzzy
 msgid "shower rain"
 msgstr "aguaceiros"
 
 #: src/openweathermap_org.js:235
-#, fuzzy
 msgid "heavy intensity shower rain"
 msgstr "fortes aguaceiros"
 
@@ -481,7 +456,6 @@ msgid "ragged shower rain"
 msgstr "aguaceiros irregulares"
 
 #: src/openweathermap_org.js:239
-#, fuzzy
 msgid "light snow"
 msgstr "neve leve"
 
@@ -490,42 +464,34 @@ msgid "snow"
 msgstr "neve"
 
 #: src/openweathermap_org.js:243
-#, fuzzy
 msgid "heavy snow"
 msgstr "neve forte"
 
 #: src/openweathermap_org.js:245
-#, fuzzy
 msgid "sleet"
 msgstr "chuva e neve/granizo"
 
 #: src/openweathermap_org.js:247
-#, fuzzy
 msgid "shower sleet"
 msgstr "aguaceiro de chuva e neve/granizo"
 
 #: src/openweathermap_org.js:249
-#, fuzzy
 msgid "light rain and snow"
 msgstr "chuva fraca e neve"
 
 #: src/openweathermap_org.js:251
-#, fuzzy
 msgid "rain and snow"
 msgstr "chuva e neve"
 
 #: src/openweathermap_org.js:253
-#, fuzzy
 msgid "light shower snow"
 msgstr "aguaceiros leves de neve"
 
 #: src/openweathermap_org.js:255
-#, fuzzy
 msgid "shower snow"
 msgstr "aguaceiros de neve"
 
 #: src/openweathermap_org.js:257
-#, fuzzy
 msgid "heavy shower snow"
 msgstr "fortes aguaceiros de neve"
 
@@ -546,7 +512,6 @@ msgid "Sand/Dust Whirls"
 msgstr "Redemoinhos com Areia ou Poeira"
 
 #: src/openweathermap_org.js:267
-#, fuzzy
 msgid "Fog"
 msgstr "Nevoeiro"
 
@@ -575,22 +540,18 @@ msgid "sky is clear"
 msgstr "céu limpo"
 
 #: src/openweathermap_org.js:281
-#, fuzzy
 msgid "few clouds"
 msgstr "poucas nuvens"
 
 #: src/openweathermap_org.js:283
-#, fuzzy
 msgid "scattered clouds"
 msgstr "chuvas dispersas"
 
 #: src/openweathermap_org.js:285
-#, fuzzy
 msgid "broken clouds"
 msgstr "nuvens quebradas"
 
 #: src/openweathermap_org.js:287
-#, fuzzy
 msgid "overcast clouds"
 msgstr "muitas nuvens"
 
@@ -604,12 +565,11 @@ msgid "Invalid data when searching for \"%s\""
 msgstr "Dados inválidos ao procurar por \"%s\""
 
 #: src/prefs.js:224 src/prefs.js:288 src/prefs.js:333
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "\"%s\" not found"
 msgstr "\"%s\" não encontrado."
 
 #: src/prefs.js:394
-#, fuzzy
 msgid "Location"
 msgstr "Localização"
 
@@ -632,7 +592,6 @@ msgstr "Editar nome"
 
 #: data/weather-settings.ui:49 data/weather-settings.ui:79
 #: data/weather-settings.ui:224
-#, fuzzy
 msgid "Clear entry"
 msgstr "Limpar"
 
@@ -731,7 +690,6 @@ msgstr "Unidade de Velocidade do Vento"
 
 #: data/weather-settings.ui:777
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:66
-#, fuzzy
 msgid "Pressure Unit"
 msgstr "Unidade de Pressão"
 
@@ -783,7 +741,6 @@ msgstr "Condições no Painel"
 
 #: data/weather-settings.ui:961
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:108
-#, fuzzy
 msgid "Conditions in Forecast"
 msgstr "Condições na Previsão"
 
@@ -866,7 +823,6 @@ msgid "Geolocation Provider"
 msgstr "Provedor da Geolocalização"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:70
-#, fuzzy
 msgid "Wind Speed Units"
 msgstr "Unidade da Velocidade do Vento"
 
@@ -925,111 +881,3 @@ msgstr "Chave pessoal da API da Dark Sky"
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:152
 msgid "Your personal AppKey from developer.mapquest.com"
 msgstr "AppKey pessoal da developer.mapquest.com"
-
-#~ msgid "Loading current weather ..."
-#~ msgstr "Carregando as condições meteorológicas ..."
-
-#, fuzzy
-#~ msgid "In %d days"
-#~ msgstr "Em %d dias"
-
-#, fuzzy
-#~ msgid "One day ago"
-#~ msgid_plural "%d days ago"
-#~ msgstr[0] "Um dia atrás"
-#~ msgstr[1] "%d dias atrás"
-
-#, fuzzy
-#~ msgid "One day ago"
-#~ msgid_plural "%d days ago"
-#~ msgstr[0] "Um dia atrás"
-#~ msgstr[1] "%d dias atrás"
-
-#, fuzzy
-#~ msgid "In one day"
-#~ msgid_plural "In %d days"
-#~ msgstr[0] "Num dia"
-#~ msgstr[1] "Em %d dias"
-
-#~ msgid "Name of the city"
-#~ msgstr "Nome da cidade"
-
-#~ msgid "Loading future weather ..."
-#~ msgstr "Carregando a previsão do tempo ..."
-
-#~ msgid "Tornado"
-#~ msgstr "Tornado"
-
-#~ msgid "Tropical storm"
-#~ msgstr "Tempestade tropical"
-
-#~ msgid "Mixed rain and sleet"
-#~ msgstr "Granizo e chuva"
-
-#~ msgid "Mixed snow and sleet"
-#~ msgstr "Granizo e neve"
-
-#~ msgid "Snow flurries"
-#~ msgstr "Flocos de neve"
-
-#~ msgid "Snow"
-#~ msgstr "Neve"
-
-#~ msgid "Hail"
-#~ msgstr "Granizo"
-
-#~ msgid "Dust"
-#~ msgstr "Poeira"
-
-#~ msgid "Haze"
-#~ msgstr "Neblina"
-
-#~ msgid "Smoky"
-#~ msgstr "Enevoado"
-
-#~ msgid "Blustery"
-#~ msgstr "Rajadas de vento"
-
-#~ msgid "Windy"
-#~ msgstr "Ventoso"
-
-#~ msgid "Cold"
-#~ msgstr "Frio"
-
-#~ msgid "Cloudy"
-#~ msgstr "Nublado"
-
-#~ msgid "Partly cloudy"
-#~ msgstr "Parcialmente nublado"
-
-#~ msgid "Sunny"
-#~ msgstr "Ensolarado"
-
-#~ msgid "Fair"
-#~ msgstr "Limpo"
-
-#~ msgid "Hot"
-#~ msgstr "Quente"
-
-#~ msgid "Scattered thunderstorms"
-#~ msgstr "Tempestades dispersas"
-
-#, fuzzy
-#~ msgid "Isolated showers"
-#~ msgstr "Aguaceiros isolados"
-
-#~ msgid "Scattered snow showers"
-#~ msgstr "Nevadas isoladas"
-
-#~ msgid "Thundershowers"
-#~ msgstr "Trovoadas"
-
-#~ msgid "Snow showers"
-#~ msgstr "Nevadas"
-
-#~ msgid "Isolated thundershowers"
-#~ msgstr "Trovoadas isoladas"
-
-#, fuzzy
-#~ msgid "Feels like:"
-#~ msgstr "Sensação térmica:"
