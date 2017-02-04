@@ -337,7 +337,7 @@ msgstr "Amanhã"
 msgid "In %d day"
 msgid_plural "In %d days"
 msgstr[0] "Num dia"
-msgstr[1] "Em %s dias"
+msgstr[1] "Em %d dias"
 
 #: src/openweathermap_org.js:181
 msgid "thunderstorm with light rain"
