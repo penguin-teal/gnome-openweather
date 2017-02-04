@@ -12,7 +12,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://github.com/jenslody/gnome-shell-extension-"
 "openweather/issues\n"
 "POT-Creation-Date: 2016-10-04 00:34+0200\n"
-"PO-Revision-Date: 2016-08-19 16:29+0200\n"
+"PO-Revision-Date: 2017-01-28 20:15+0100\n"
 "Last-Translator: Petr Pulc <petrpulc@gmail.com>\n"
 "Language-Team: cs_CZ <czech@li.org>\n"
 "Language: cs\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 1.8.11\n"
 
 #: src/extension.js:173
 msgid "..."
@@ -84,35 +84,35 @@ msgstr "Neplatné umístění! Prosím, zkuste ho vytvořit znovu."
 
 #: src/extension.js:1036 data/weather-settings.ui:790
 msgid "°F"
-msgstr ""
+msgstr "°F"
 
 #: src/extension.js:1038 data/weather-settings.ui:791
 msgid "K"
-msgstr ""
+msgstr "K"
 
 #: src/extension.js:1040 data/weather-settings.ui:792
 msgid "°Ra"
-msgstr ""
+msgstr "°Ra"
 
 #: src/extension.js:1042 data/weather-settings.ui:793
 msgid "°Ré"
-msgstr ""
+msgstr "°Ré"
 
 #: src/extension.js:1044 data/weather-settings.ui:794
 msgid "°Rø"
-msgstr ""
+msgstr "°Rø"
 
 #: src/extension.js:1046 data/weather-settings.ui:795
 msgid "°De"
-msgstr ""
+msgstr "°De"
 
 #: src/extension.js:1048 data/weather-settings.ui:796
 msgid "°N"
-msgstr ""
+msgstr "°N"
 
 #: src/extension.js:1050 data/weather-settings.ui:789
 msgid "°C"
-msgstr ""
+msgstr "°C"
 
 #: src/extension.js:1091
 msgid "Calm"
@@ -228,63 +228,63 @@ msgstr "SZ"
 
 #: src/extension.js:1230 src/extension.js:1239 data/weather-settings.ui:827
 msgid "hPa"
-msgstr ""
+msgstr "hPa"
 
 #: src/extension.js:1234 data/weather-settings.ui:828
 msgid "inHg"
-msgstr ""
+msgstr "inHg"
 
 #: src/extension.js:1244 data/weather-settings.ui:829
 msgid "bar"
-msgstr ""
+msgstr "bar"
 
 #: src/extension.js:1249 data/weather-settings.ui:830
 msgid "Pa"
-msgstr ""
+msgstr "Pa"
 
 #: src/extension.js:1254 data/weather-settings.ui:831
 msgid "kPa"
-msgstr ""
+msgstr "kPa"
 
 #: src/extension.js:1259 data/weather-settings.ui:832
 msgid "atm"
-msgstr ""
+msgstr "atm"
 
 #: src/extension.js:1264 data/weather-settings.ui:833
 msgid "at"
-msgstr ""
+msgstr "at"
 
 #: src/extension.js:1269 data/weather-settings.ui:834
 msgid "Torr"
-msgstr ""
+msgstr "Torr"
 
 #: src/extension.js:1274 data/weather-settings.ui:835
 msgid "psi"
-msgstr ""
+msgstr "psi"
 
 #: src/extension.js:1279 data/weather-settings.ui:836
 msgid "mmHg"
-msgstr ""
+msgstr "mmHg"
 
 #: src/extension.js:1323 data/weather-settings.ui:811
 msgid "m/s"
-msgstr ""
+msgstr "m/s"
 
 #: src/extension.js:1327 data/weather-settings.ui:810
 msgid "mph"
-msgstr ""
+msgstr "mph"
 
 #: src/extension.js:1332 data/weather-settings.ui:809
 msgid "km/h"
-msgstr ""
+msgstr "km/h"
 
 #: src/extension.js:1341 data/weather-settings.ui:812
 msgid "kn"
-msgstr ""
+msgstr "kn"
 
 #: src/extension.js:1346 data/weather-settings.ui:813
 msgid "ft/s"
-msgstr ""
+msgstr "ft/s"
 
 #: src/extension.js:1437
 msgid "Loading ..."
@@ -327,7 +327,7 @@ msgstr[2] "Před %d dny"
 #: src/darksky_net.js:174 src/darksky_net.js:176 src/openweathermap_org.js:366
 #: src/openweathermap_org.js:368
 msgid ", "
-msgstr ""
+msgstr ", "
 
 #: src/darksky_net.js:268 src/openweathermap_org.js:445
 msgid "Today"
@@ -467,7 +467,7 @@ msgstr "mírné sněžení"
 
 #: src/openweathermap_org.js:241
 msgid "snow"
-msgstr "sně"
+msgstr "sněžení"
 
 #: src/openweathermap_org.js:243
 msgid "heavy snow"
@@ -638,7 +638,6 @@ msgid "Personal Api key from openweathermap.org"
 msgstr "Osobní API klíč pro openweathermap.org"
 
 #: data/weather-settings.ui:549
-#, fuzzy
 msgid "Personal Api key from Dark Sky"
 msgstr "Osobní API klíč pro Dark Sky"
 
@@ -651,7 +650,6 @@ msgid "Refresh timeout for weather forecast [min]"
 msgstr "Obnovit předpověď počasí po [min]"
 
 #: data/weather-settings.ui:604
-#, fuzzy
 msgid ""
 "Note: the forecast-timout is not used for Dark Sky, because they do not "
 "provide seperate downloads for current weather and forecasts."
@@ -703,7 +701,7 @@ msgstr "Jednotka tlaku"
 
 #: data/weather-settings.ui:814
 msgid "Beaufort"
-msgstr ""
+msgstr "Beaufort"
 
 #: data/weather-settings.ui:853
 msgid "Units"
@@ -716,7 +714,7 @@ msgstr "Umístění na panelu"
 
 #: data/weather-settings.ui:884
 msgid "Position of menu-box [%] from 0 (left) to 100 (right)"
-msgstr ""
+msgstr "Zarovnání nabídky [v %] od 0 (vlevo) do 100 (vpravo)"
 
 #: data/weather-settings.ui:895
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:75
@@ -791,7 +789,6 @@ msgid "unknown (self-build ?)"
 msgstr "neznámá (vlastní ?)"
 
 #: data/weather-settings.ui:1252
-#, fuzzy
 msgid ""
 "<span>Weather extension to display weather information from <a href="
 "\"https://openweathermap.org/\">Openweathermap</a> or <a href=\"https://"
@@ -861,7 +858,7 @@ msgstr "Zobrazit text na tlačítkách v nabídce"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:116
 msgid "Horizontal position of menu-box."
-msgstr ""
+msgstr "Vodorovná pozice nabídky."
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:120
 msgid "Refresh interval (actual weather)"
@@ -884,7 +881,6 @@ msgid "Use the extensions default API key from openweathermap.org"
 msgstr "Použít výchozí API klíč tohoto rozšíření pro openweathermap.org"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:148
-#, fuzzy
 msgid "Your personal API key from Dark Sky"
 msgstr "Váš osobní API klíč pro Dark Sky"
 
