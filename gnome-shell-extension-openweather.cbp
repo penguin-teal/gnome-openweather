@@ -48,6 +48,7 @@
 		<Unit filename="po/de.po" />
 		<Unit filename="po/el.po" />
 		<Unit filename="po/es.po" />
+		<Unit filename="po/eu.po" />
 		<Unit filename="po/fi.po" />
 		<Unit filename="po/fr.po" />
 		<Unit filename="po/gnome-shell-extension-openweather.pot" />
@@ -71,8 +72,8 @@
 		<Unit filename="po/zh_TW.po" />
 		<Unit filename="src/Makefile.am" />
 		<Unit filename="src/convenience.js" />
-		<Unit filename="src/extension.js" />
 		<Unit filename="src/darksky_net.js" />
+		<Unit filename="src/extension.js" />
 		<Unit filename="src/openweathermap_org.js" />
 		<Unit filename="src/prefs.js" />
 		<Unit filename="update_revision.sh" />
