@@ -119,26 +119,7 @@ const WeatherPrefsWidget = new GObject.Class({
 
         this.initWindow();
 
-        defaultSize = this.MainWidget.get_size_request();
-        var borderWidth = this.MainWidget.get_border_width();
-
-        defaultSize[0] += 2 * borderWidth;
-        defaultSize[1] += 2 * borderWidth;
-
-        this.MainWidget.set_size_request(-1, -1);
-        this.MainWidget.set_border_width(0);
-
         this.refreshUI();
-
-        this.add(this.MainWidget);
-        this.MainWidget.connect('realize', Lang.bind(this, function() {
-            if (inRealize)
-                return;
-            inRealize = true;
-
-            this.MainWidget.get_toplevel().resize(defaultSize[0], defaultSize[1]);
-            inRealize = false;
-        }));
     },
 
     Window: new Gtk.Builder(),
@@ -148,7 +129,7 @@ const WeatherPrefsWidget = new GObject.Class({
 
         this.Window.add_from_file(EXTENSIONDIR + "/weather-settings.ui");
 
-        this.MainWidget = this.Window.get_object("main-widget");
+        this.mainWidget = this.Window.get_object("prefs-notebook");
         this.treeview = this.Window.get_object("tree-treeview");
         this.liststore = this.Window.get_object("tree-liststore");
         this.editWidget = this.Window.get_object("edit-widget");
@@ -497,7 +478,7 @@ const WeatherPrefsWidget = new GObject.Class({
     },
 
     refreshUI: function() {
-        this.MainWidget = this.Window.get_object("main-widget");
+        this.mainWidget = this.Window.get_object("prefs-notebook");
         this.treeview = this.Window.get_object("tree-treeview");
         this.liststore = this.Window.get_object("tree-liststore");
 
@@ -1093,7 +1074,8 @@ function init() {
 }
 
 function buildPrefsWidget() {
-    let widget = new WeatherPrefsWidget();
+    let prefs = new WeatherPrefsWidget();
+    let widget = prefs.mainWidget;
     widget.show_all();
     return widget;
 }
