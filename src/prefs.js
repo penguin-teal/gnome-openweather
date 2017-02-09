@@ -175,10 +175,14 @@ const WeatherPrefsWidget = new GObject.Class({
             if (location === "")
                 return 0;
 
-            let item = new Gtk.MenuItem();
-            if (this.spinner.get_parent())
-                this.spinner.reparent(item);
-            item.add(this.spinner);
+            let item;
+            if (this.spinner.get_parent()) {
+                item = this.spinner.get_parent();
+            }else {
+                item = new Gtk.MenuItem()
+                item.add(this.spinner);
+            }
+
             this.searchMenu.append(item);
             this.searchMenu.show_all();
             this.searchMenu.popup(null, null, Lang.bind(this, this.placeSearchMenu), 0, this.searchName);
