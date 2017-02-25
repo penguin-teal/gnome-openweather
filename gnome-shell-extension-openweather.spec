@@ -1,13 +1,13 @@
-%global git 39821fa
+%global git 34d7e39
 %global uuid openweather-extension@jenslody.de
 %global github jenslody-gnome-shell-extension-openweather
 %global checkout git%{git}
-%global checkout_date 20160920
+%global checkout_date 20161004
 
 
 Name:           gnome-shell-extension-openweather
 Version:        1
-Release:        0.24.%{checkout_date}%{checkout}%{?dist}
+Release:        0.25.%{checkout_date}%{checkout}%{?dist}
 Summary:        Display weather information from many locations in the world
 
 Group:          User Interface/Desktops
@@ -20,7 +20,7 @@ BuildArch:      noarch
 
 # The version of gnome-common in CentOS7 is only 3.7.4
 BuildRequires:  autoconf, automake, glib2-devel, gnome-common >= 3.7.4, gettext-devel
-Requires:       gnome-shell >= 3.8.0
+Requires:       gnome-shell >= 3.14.0
 
 %description
 gnome-shell-extension-openweather is an extension to display weather information
@@ -68,6 +68,10 @@ fi
 %{_datadir}/gnome-shell/extensions/%{uuid}
 
 %changelog
+* Mon Oct 03 2016 Jens Lody <fedora@jenslody.de> - 1-0.25.20161004git34d7e39
+- Support gnome-shell 3.22.
+- Updated french translation.
+
 * Tue Sep 20 2016 Jens Lody <fedora@jenslody.de> - 1-0.24.20160920git39821fa
 - Switch name and url from forecast.io to Dark Sky, because they changed/unified
   their name, url and api.
