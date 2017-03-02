@@ -75,7 +75,7 @@ To use [Dark Sky](https://darksky.net) you also need to [register](https://darks
 
 # Licence
 
-Copyright (C) 2011 - 2015
+Copyright &copy; 2011 - 2013
 
 * Elad Alfassa <elad@fedoraproject.org>,
 * Mark Benjamin <weather.gnome.Markie1@dfgh.net>,
@@ -86,6 +86,10 @@ Copyright (C) 2011 - 2015
 * Mattia Meneguzzo <odysseus@fedoraproject.org>,
 * Christian Metzler <neroth@xeked.com>,
 * Jens Lody <jens@jenslody.de>.
+
+Copyright &copy; 2013 - 2017
+* Jens Lody <openweather@jenslody.de>.
+
 
 This file is part of *gnome-shell-extension-openweather*.
 
