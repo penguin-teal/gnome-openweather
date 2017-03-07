@@ -720,8 +720,7 @@ const OpenweatherMenuButton = new Lang.Class({
     },
 
     get _city() {
-        let cities = this._cities;
-        let cities = cities.split(" && ");
+        let cities = this._cities.split(" && ");
         if (cities && typeof cities == "string")
             cities = [cities];
         if (!cities[0])
