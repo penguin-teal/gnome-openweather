@@ -1,8 +1,8 @@
-%global git 59aa498
+%global git 48ee4af
 %global uuid openweather-extension@jenslody.de
 %global github jenslody-gnome-shell-extension-openweather
 %global checkout git%{git}
-%global checkout_date 20170225
+%global checkout_date 20170307
 
 
 Name:           gnome-shell-extension-openweather
@@ -68,7 +68,8 @@ fi
 %{_datadir}/gnome-shell/extensions/%{uuid}
 
 %changelog
-* Sun Feb 26 2017 Jens Lody <fedora@jenslody.de> - 1-0.28.20170225git59aa498
+* Tue Mar 07 2017 Jens Lody <fedora@jenslody.de> - 1-0.28.20170307git48ee4af
+- Fix rhbz#1429776 (double initialization of variable).
 - fix minor version of gnome-shell needed
 
 * Sat Feb 25 2017 Jens Lody <fedora@jenslody.de> - 1-0.27.20170225git59aa498
