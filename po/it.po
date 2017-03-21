@@ -403,7 +403,7 @@ msgstr "pioggerella leggera"
 
 #: src/openweathermap_org.js:209
 msgid "drizzle rain"
-msgstr "pioggierella"
+msgstr "pioggerella"
 
 #: src/openweathermap_org.js:211
 msgid "heavy intensity drizzle rain"
@@ -656,7 +656,7 @@ msgid ""
 "Note: the forecast-timout is not used for Dark Sky, because they do not "
 "provide seperate downloads for current weather and forecasts."
 msgstr ""
-"Avviso: il timer di aggiornamento non è utilizzato per Dark Sky, poichè non "
+"Avviso: il timer di aggiornamento non è utilizzato per Dark Sky, poiché non "
 "fornisce il download separato delle condizioni meteo dalle previsioni."
 
 #: data/weather-settings.ui:629
@@ -716,7 +716,7 @@ msgstr "Posizione sul pannello"
 
 #: data/weather-settings.ui:882
 msgid "Position of menu-box [%] from 0 (left) to 100 (right)"
-msgstr ""
+msgstr "Posizione del menu [%] da 0 (sinistra) a 100 (destra)"
 
 #: data/weather-settings.ui:893
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:76
@@ -843,37 +843,38 @@ msgstr "Unità di misura dell'intensità del vento"
 msgid ""
 "Choose the units used for wind speed. Allowed values are 'kph', 'mph', 'm/"
 "s', 'knots', 'ft/s' or 'Beaufort'."
-msgstr ""
+msgstr "Scegli le unità per l'intensità del vento. Valori ammessi 'kph', 'mph', 'm/"
+"s', 'knots', 'ft/s' oppure 'Beaufort'."
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:77
 msgid "Choose whether to display wind direction through arrows or letters."
-msgstr ""
+msgstr "Scegli se mostrare la direzione del vento con frecce o lettere"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:81
 msgid "City to be displayed"
-msgstr ""
+msgstr "Città da mostrare"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:85
 msgid "Actual City"
-msgstr ""
+msgstr "Città rilevata"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:97
 #, fuzzy
 msgid "Use text on buttons in menu"
-msgstr "Testo sui bottoni"
+msgstr "Testo sui bottoni del menu"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:117
 msgid "Horizontal position of menu-box."
-msgstr ""
+msgstr "Posizione orizzontale del menu"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:121
 msgid "Refresh interval (actual weather)"
-msgstr ""
+msgstr "Tempo di aggiornamento (meteo attuale)"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:125
 #, fuzzy
 msgid "Refresh interval (forecast)"
-msgstr "Centra previsione nel pannello"
+msgstr "Tempo di aggiornamento (previsioni)"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:129
 #, fuzzy
