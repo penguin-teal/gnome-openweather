@@ -4,694 +4,893 @@
 # David Štancl <dstancl@dstancl.cz>, 2011.
 # Lukáš Maňas <lukas.manas@gmail.com>, 2012.
 # František Zatloukal <zatloukal.frantisek@gmail.com>, 2014.
+# Petr Pulc <petrpulc@gmail.com>, 2016, 2017.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: 3.0\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-08 11:59+0100\n"
-"PO-Revision-Date: 2012-06-03 23:07+0100\n"
-"Last-Translator: Christian METZLER <neroth@xeked.com>\n"
+"Report-Msgid-Bugs-To: https://github.com/jenslody/gnome-shell-extension-"
+"openweather/issues\n"
+"POT-Creation-Date: 2017-02-04 20:19+0100\n"
+"PO-Revision-Date: 2017-02-04 20:22+0100\n"
+"Last-Translator: Petr Pulc <petrpulc@gmail.com>\n"
 "Language-Team: cs_CZ <czech@li.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Gtranslator 2.91.7\n"
 
-#: ../src/extension.js:172
+#: src/extension.js:174
 msgid "..."
 msgstr "…"
 
-#: ../src/extension.js:370
+#: src/extension.js:384
 msgid ""
 "Openweathermap.org does not work without an api-key.\n"
 "Either set the switch to use the extensions default key in the preferences "
 "dialog to on or register at http://openweathermap.org/appid and paste your "
 "personal key into the preferences dialog."
 msgstr ""
+"Zdroj Openweathermap.org nefunguje bez API klíče.\n"
+"Buď zapněte v nastavení přepínač pro výchozí klíč rozšíření, nebo se "
+"registrujte na http://openweathermap.org/appid a vložte váš osobní klíč do "
+"příslušného pole v dialogu nastavení."
 
-#: ../src/extension.js:419
+#: src/extension.js:442
 msgid ""
-"Forecast.io does not work without an api-key.\n"
-"Please register at https://developer.forecast.io/register and paste your "
-"personal key into the preferences dialog."
+"Dark Sky does not work without an api-key.\n"
+"Please register at https://darksky.net/dev/register and paste your personal "
+"key into the preferences dialog."
 msgstr ""
+"Zdroj Dark Sky nefunguje bez API klíče.\n"
+"Prosím, registrujte se na https://darksky.net/dev/register a vložte váš "
+"osobní klíč do příslušného pole v dialogu nastavení."
 
-#: ../src/extension.js:492
-#, fuzzy, javascript-format
+#: src/extension.js:515
+#, javascript-format
 msgid "Can not connect to %s"
-msgstr "Nemohu otevřít %s"
+msgstr "Nemohu se připojit k %s"
 
-#: ../src/extension.js:776 ../data/weather-settings.ui:460
+#: src/extension.js:862 data/weather-settings.ui:461
 msgid "Locations"
 msgstr "Místa"
 
-#: ../src/extension.js:788
+#: src/extension.js:877
 msgid "Reload Weather Information"
 msgstr "Obnovit informace o počasí"
 
-#: ../src/extension.js:803
+#: src/extension.js:892
 msgid "Weather data provided by:"
 msgstr "Data o počasí poskytuje:"
 
-#: ../src/extension.js:814
+#: src/extension.js:908
 #, javascript-format
 msgid "Can not open %s"
 msgstr "Nemohu otevřít %s"
 
-#: ../src/extension.js:821
+#: src/extension.js:915
 msgid "Weather Settings"
 msgstr "Nastavení"
 
-#: ../src/extension.js:872 ../src/prefs.js:1021
+#: src/extension.js:979 src/prefs.js:1051
 msgid "Invalid city"
 msgstr "Neplatné město"
 
-#: ../src/extension.js:883
+#: src/extension.js:990
 msgid "Invalid location! Please try to recreate it."
-msgstr ""
+msgstr "Neplatné umístění! Prosím, zkuste ho vytvořit znovu."
 
-#: ../src/extension.js:982
+#: src/extension.js:1037 data/weather-settings.ui:787
+msgid "°F"
+msgstr "°F"
+
+#: src/extension.js:1039 data/weather-settings.ui:788
+msgid "K"
+msgstr "K"
+
+#: src/extension.js:1041 data/weather-settings.ui:789
+msgid "°Ra"
+msgstr "°Ra"
+
+#: src/extension.js:1043 data/weather-settings.ui:790
+msgid "°Ré"
+msgstr "°Ré"
+
+#: src/extension.js:1045 data/weather-settings.ui:791
+msgid "°Rø"
+msgstr "°Rø"
+
+#: src/extension.js:1047 data/weather-settings.ui:792
+msgid "°De"
+msgstr "°De"
+
+#: src/extension.js:1049 data/weather-settings.ui:793
+msgid "°N"
+msgstr "°N"
+
+#: src/extension.js:1051 data/weather-settings.ui:786
+msgid "°C"
+msgstr "°C"
+
+#: src/extension.js:1092
 msgid "Calm"
-msgstr "Klid"
+msgstr "Bezvětří"
 
-#: ../src/extension.js:985
+#: src/extension.js:1095
 msgid "Light air"
-msgstr ""
-
-#: ../src/extension.js:988
-msgid "Light breeze"
 msgstr "Vánek"
 
-#: ../src/extension.js:991
+#: src/extension.js:1098
+msgid "Light breeze"
+msgstr "Větřík"
+
+#: src/extension.js:1101
 msgid "Gentle breeze"
+msgstr "Slabý vítr"
+
+#: src/extension.js:1104
+msgid "Moderate breeze"
 msgstr "Mírný vítr"
 
-#: ../src/extension.js:994
-msgid "Moderate breeze"
-msgstr "Střední vítr"
-
-#: ../src/extension.js:997
+#: src/extension.js:1107
 msgid "Fresh breeze"
 msgstr "Čerstvý vítr"
 
-#: ../src/extension.js:1000
+#: src/extension.js:1110
 msgid "Strong breeze"
 msgstr "Silný vítr"
 
-#: ../src/extension.js:1003
+#: src/extension.js:1113
 msgid "Moderate gale"
-msgstr "Vichřice"
+msgstr "Mírný vichr"
 
-#: ../src/extension.js:1006
+#: src/extension.js:1116
 msgid "Fresh gale"
+msgstr "Čerstvý vichr"
+
+#: src/extension.js:1119
+msgid "Strong gale"
+msgstr "Silný vichr"
+
+#: src/extension.js:1122
+msgid "Storm"
+msgstr "Plný vichr"
+
+#: src/extension.js:1125
+msgid "Violent storm"
 msgstr "Vichřice"
 
-#: ../src/extension.js:1009
-msgid "Strong gale"
-msgstr "Silná vichřice"
-
-#: ../src/extension.js:1012
-msgid "Storm"
-msgstr "Bouřka"
-
-#: ../src/extension.js:1015
-msgid "Violent storm"
-msgstr "Silná bouřka"
-
-#: ../src/extension.js:1018
+#: src/extension.js:1128
 msgid "Hurricane"
-msgstr "Hurikán"
+msgstr "Orkán"
 
-#: ../src/extension.js:1022
+#: src/extension.js:1132
 msgid "Sunday"
 msgstr "Neděle"
 
-#: ../src/extension.js:1022
+#: src/extension.js:1132
 msgid "Monday"
 msgstr "Pondělí"
 
-#: ../src/extension.js:1022
+#: src/extension.js:1132
 msgid "Tuesday"
 msgstr "Úterý"
 
-#: ../src/extension.js:1022
+#: src/extension.js:1132
 msgid "Wednesday"
 msgstr "Středa"
 
-#: ../src/extension.js:1022
+#: src/extension.js:1132
 msgid "Thursday"
 msgstr "Čtvrtek"
 
-#: ../src/extension.js:1022
+#: src/extension.js:1132
 msgid "Friday"
 msgstr "Pátek"
 
-#: ../src/extension.js:1022
+#: src/extension.js:1132
 msgid "Saturday"
 msgstr "Sobota"
 
-#: ../src/extension.js:1028
+#: src/extension.js:1138
 msgid "N"
 msgstr "S"
 
-#: ../src/extension.js:1028
+#: src/extension.js:1138
 msgid "NE"
 msgstr "SV"
 
-#: ../src/extension.js:1028
+#: src/extension.js:1138
 msgid "E"
 msgstr "V"
 
-#: ../src/extension.js:1028
+#: src/extension.js:1138
 msgid "SE"
 msgstr "JV"
 
-#: ../src/extension.js:1028
+#: src/extension.js:1138
 msgid "S"
 msgstr "J"
 
-#: ../src/extension.js:1028
+#: src/extension.js:1138
 msgid "SW"
 msgstr "JZ"
 
-#: ../src/extension.js:1028
+#: src/extension.js:1138
 msgid "W"
 msgstr "Z"
 
-#: ../src/extension.js:1028
+#: src/extension.js:1138
 msgid "NW"
 msgstr "SZ"
 
-#: ../src/extension.js:1321
+#: src/extension.js:1231 src/extension.js:1240 data/weather-settings.ui:824
+msgid "hPa"
+msgstr "hPa"
+
+#: src/extension.js:1235 data/weather-settings.ui:825
+msgid "inHg"
+msgstr "inHg"
+
+#: src/extension.js:1245 data/weather-settings.ui:826
+msgid "bar"
+msgstr "bar"
+
+#: src/extension.js:1250 data/weather-settings.ui:827
+msgid "Pa"
+msgstr "Pa"
+
+#: src/extension.js:1255 data/weather-settings.ui:828
+msgid "kPa"
+msgstr "kPa"
+
+#: src/extension.js:1260 data/weather-settings.ui:829
+msgid "atm"
+msgstr "atm"
+
+#: src/extension.js:1265 data/weather-settings.ui:830
+msgid "at"
+msgstr "at"
+
+#: src/extension.js:1270 data/weather-settings.ui:831
+msgid "Torr"
+msgstr "Torr"
+
+#: src/extension.js:1275 data/weather-settings.ui:832
+msgid "psi"
+msgstr "psi"
+
+#: src/extension.js:1280 data/weather-settings.ui:833
+msgid "mmHg"
+msgstr "mmHg"
+
+#: src/extension.js:1285 data/weather-settings.ui:834
+msgid "mbar"
+msgstr "mbar"
+
+#: src/extension.js:1329 data/weather-settings.ui:808
+msgid "m/s"
+msgstr "m/s"
+
+#: src/extension.js:1333 data/weather-settings.ui:807
+msgid "mph"
+msgstr "mph"
+
+#: src/extension.js:1338 data/weather-settings.ui:806
+msgid "km/h"
+msgstr "km/h"
+
+#: src/extension.js:1347 data/weather-settings.ui:809
+msgid "kn"
+msgstr "kn"
+
+#: src/extension.js:1352 data/weather-settings.ui:810
+msgid "ft/s"
+msgstr "ft/s"
+
+#: src/extension.js:1443
 msgid "Loading ..."
 msgstr "Načítání…"
 
-#: ../src/extension.js:1325
+#: src/extension.js:1447
 msgid "Please wait"
-msgstr "Čekejte"
+msgstr "Prosím, čekejte"
 
-#: ../src/extension.js:1386
+#: src/extension.js:1508
 msgid "Cloudiness:"
 msgstr "Oblačnost:"
 
-#: ../src/extension.js:1390
+#: src/extension.js:1512
 msgid "Humidity:"
 msgstr "Vlhkost:"
 
-#: ../src/extension.js:1394
+#: src/extension.js:1516
 msgid "Pressure:"
 msgstr "Tlak:"
 
-#: ../src/extension.js:1398
+#: src/extension.js:1520
 msgid "Wind:"
 msgstr "Vítr:"
 
-#: ../src/forecast_io.js:151 ../src/forecast_io.js:273
-#: ../src/openweathermap_org.js:349 ../src/openweathermap_org.js:451
+#: src/darksky_net.js:159 src/darksky_net.js:288 src/openweathermap_org.js:350
+#: src/openweathermap_org.js:451
 msgid "Yesterday"
 msgstr "Včera"
 
-#: ../src/forecast_io.js:154 ../src/forecast_io.js:276
-#: ../src/openweathermap_org.js:351 ../src/openweathermap_org.js:453
-#, fuzzy, javascript-format
+#: src/darksky_net.js:162 src/darksky_net.js:291 src/openweathermap_org.js:352
+#: src/openweathermap_org.js:453
+#, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
-msgstr[0] "%s dní zpátky"
-msgstr[1] "%s dní zpátky"
+msgstr[0] "Před %d dnem"
+msgstr[1] "Před %d dny"
+msgstr[2] "Před %d dny"
 
-#: ../src/forecast_io.js:253 ../src/openweathermap_org.js:445
+#: src/darksky_net.js:174 src/darksky_net.js:176 src/openweathermap_org.js:366
+#: src/openweathermap_org.js:368
+msgid ", "
+msgstr ", "
+
+#: src/darksky_net.js:268 src/openweathermap_org.js:445
 msgid "Today"
 msgstr "Dnes"
 
-#: ../src/forecast_io.js:269 ../src/openweathermap_org.js:447
+#: src/darksky_net.js:284 src/openweathermap_org.js:447
 msgid "Tomorrow"
 msgstr "Zítra"
 
-#: ../src/forecast_io.js:271 ../src/openweathermap_org.js:449
-#, fuzzy, javascript-format
+#: src/darksky_net.js:286 src/openweathermap_org.js:449
+#, javascript-format
 msgid "In %d day"
 msgid_plural "In %d days"
-msgstr[0] "%s dní zpátky"
-msgstr[1] "%s dní zpátky"
+msgstr[0] "Za %d den"
+msgstr[1] "Za %d dny"
+msgstr[2] "Za %d dní"
 
-#: ../src/openweathermap_org.js:181
+#: src/openweathermap_org.js:181
 msgid "thunderstorm with light rain"
 msgstr "bouřky a mírný déšť"
 
-#: ../src/openweathermap_org.js:183
+#: src/openweathermap_org.js:183
 msgid "thunderstorm with rain"
-msgstr "bouřky"
+msgstr "bouřky s deštěm"
 
-#: ../src/openweathermap_org.js:185
+#: src/openweathermap_org.js:185
 msgid "thunderstorm with heavy rain"
-msgstr "bouřky a intenzivní déšť"
+msgstr "bouřky a silný déšť"
 
-#: ../src/openweathermap_org.js:187
+#: src/openweathermap_org.js:187
 msgid "light thunderstorm"
 msgstr "ojedinělé bouřky"
 
-#: ../src/openweathermap_org.js:189
+#: src/openweathermap_org.js:189
 msgid "thunderstorm"
-msgstr "Bouřky"
+msgstr "bouřky"
 
-#: ../src/openweathermap_org.js:191
+#: src/openweathermap_org.js:191
 msgid "heavy thunderstorm"
 msgstr "četné bouřky"
 
-#: ../src/openweathermap_org.js:193
+#: src/openweathermap_org.js:193
 msgid "ragged thunderstorm"
 msgstr "ojedinělé bouřky"
 
-#: ../src/openweathermap_org.js:195
-#, fuzzy
+#: src/openweathermap_org.js:195
 msgid "thunderstorm with light drizzle"
-msgstr "bouřky a mírný déšť"
+msgstr "bouřky a mírné mrholení"
 
-#: ../src/openweathermap_org.js:197
-#, fuzzy
+#: src/openweathermap_org.js:197
 msgid "thunderstorm with drizzle"
-msgstr "bouřky"
+msgstr "bouřky a mrholení"
 
-#: ../src/openweathermap_org.js:199
-#, fuzzy
+#: src/openweathermap_org.js:199
 msgid "thunderstorm with heavy drizzle"
-msgstr "bouřky a intenzivní déšť"
+msgstr "bouřky a silné mrholení"
 
-#: ../src/openweathermap_org.js:201
-#, fuzzy
+#: src/openweathermap_org.js:201
 msgid "light intensity drizzle"
 msgstr "slabé mrholení"
 
-#: ../src/openweathermap_org.js:203
+#: src/openweathermap_org.js:203
 msgid "drizzle"
 msgstr "mrholení"
 
-#: ../src/openweathermap_org.js:205
+#: src/openweathermap_org.js:205
 msgid "heavy intensity drizzle"
 msgstr "silné mrholení"
 
-#: ../src/openweathermap_org.js:207
+#: src/openweathermap_org.js:207
 msgid "light intensity drizzle rain"
-msgstr "slabé mrholení"
+msgstr "slabé mrholení s deštěm"
 
-#: ../src/openweathermap_org.js:209
+#: src/openweathermap_org.js:209
 msgid "drizzle rain"
-msgstr "mrholení"
+msgstr "mrholení s deštěm"
 
-#: ../src/openweathermap_org.js:211
+#: src/openweathermap_org.js:211
 msgid "heavy intensity drizzle rain"
-msgstr "silné mrholení"
+msgstr "silné mrholení s dešťem"
 
-#: ../src/openweathermap_org.js:213
+#: src/openweathermap_org.js:213
 msgid "shower rain and drizzle"
-msgstr "mrholení"
+msgstr "přeháňky a mrholení"
 
-#: ../src/openweathermap_org.js:215
+#: src/openweathermap_org.js:215
 msgid "heavy shower rain and drizzle"
-msgstr "silné mrholení"
+msgstr "silné přeháňky a mrholení"
 
-#: ../src/openweathermap_org.js:217
+#: src/openweathermap_org.js:217
 msgid "shower drizzle"
 msgstr "mrholení"
 
-#: ../src/openweathermap_org.js:219
+#: src/openweathermap_org.js:219
 msgid "light rain"
 msgstr "mírný déšť"
 
-#: ../src/openweathermap_org.js:221
+#: src/openweathermap_org.js:221
 msgid "moderate rain"
 msgstr "střední déšť"
 
-#: ../src/openweathermap_org.js:223
+#: src/openweathermap_org.js:223
 msgid "heavy intensity rain"
 msgstr "silný déšť"
 
-#: ../src/openweathermap_org.js:225
+#: src/openweathermap_org.js:225
 msgid "very heavy rain"
 msgstr "velmi silný déšť"
 
-#: ../src/openweathermap_org.js:227
+#: src/openweathermap_org.js:227
 msgid "extreme rain"
 msgstr "intenzivní déšť"
 
-#: ../src/openweathermap_org.js:229
+#: src/openweathermap_org.js:229
 msgid "freezing rain"
 msgstr "namrzající déšť"
 
-#: ../src/openweathermap_org.js:231
+#: src/openweathermap_org.js:231
 msgid "light intensity shower rain"
-msgstr "mírný déšť"
+msgstr "mírné přeháňky"
 
-#: ../src/openweathermap_org.js:233
+#: src/openweathermap_org.js:233
 msgid "shower rain"
-msgstr "déšť"
+msgstr "přeháňky"
 
-#: ../src/openweathermap_org.js:235
+#: src/openweathermap_org.js:235
 msgid "heavy intensity shower rain"
-msgstr "silný déšť"
+msgstr "silné přeháňky"
 
-#: ../src/openweathermap_org.js:237
+#: src/openweathermap_org.js:237
 msgid "ragged shower rain"
-msgstr "velmi silný déšť"
+msgstr "ojedinělé přeháňky"
 
-#: ../src/openweathermap_org.js:239
+#: src/openweathermap_org.js:239
 msgid "light snow"
 msgstr "mírné sněžení"
 
-#: ../src/openweathermap_org.js:241
+#: src/openweathermap_org.js:241
 msgid "snow"
-msgstr "sníh"
+msgstr "sněžení"
 
-#: ../src/openweathermap_org.js:243
+#: src/openweathermap_org.js:243
 msgid "heavy snow"
 msgstr "husté sněžení"
 
-#: ../src/openweathermap_org.js:245
+#: src/openweathermap_org.js:245
 msgid "sleet"
 msgstr "plískanice"
 
-#: ../src/openweathermap_org.js:247
+#: src/openweathermap_org.js:247
 msgid "shower sleet"
-msgstr "plískanice"
+msgstr "přeháňky se sněhem"
 
-#: ../src/openweathermap_org.js:249
+#: src/openweathermap_org.js:249
 msgid "light rain and snow"
 msgstr "mírný déšť se sněhem"
 
-#: ../src/openweathermap_org.js:251
+#: src/openweathermap_org.js:251
 msgid "rain and snow"
 msgstr "déšť se sněhem"
 
-#: ../src/openweathermap_org.js:253
+#: src/openweathermap_org.js:253
 msgid "light shower snow"
-msgstr "Mírné sněžení"
+msgstr "mírné sněhové přeháňky"
 
-#: ../src/openweathermap_org.js:255
+#: src/openweathermap_org.js:255
 msgid "shower snow"
 msgstr "sněhové přeháňky"
 
-#: ../src/openweathermap_org.js:257
+#: src/openweathermap_org.js:257
 msgid "heavy shower snow"
-msgstr "husté sněžení"
+msgstr "husté sněhové přeháňky"
 
-#: ../src/openweathermap_org.js:259
+#: src/openweathermap_org.js:259
 msgid "mist"
 msgstr "mlha"
 
-#: ../src/openweathermap_org.js:261
+#: src/openweathermap_org.js:261
 msgid "smoke"
 msgstr "smog"
 
-#: ../src/openweathermap_org.js:263
+#: src/openweathermap_org.js:263
 msgid "haze"
 msgstr "opar"
 
-#: ../src/openweathermap_org.js:265
+#: src/openweathermap_org.js:265
 msgid "Sand/Dust Whirls"
-msgstr "Písečné/prachové víry"
+msgstr "písečné/prachové víry"
 
-#: ../src/openweathermap_org.js:267
+#: src/openweathermap_org.js:267
 msgid "Fog"
 msgstr "mlha"
 
-#: ../src/openweathermap_org.js:269
+#: src/openweathermap_org.js:269
 msgid "sand"
 msgstr "písek"
 
-#: ../src/openweathermap_org.js:271
+#: src/openweathermap_org.js:271
 msgid "dust"
 msgstr "prach"
 
-#: ../src/openweathermap_org.js:273
+#: src/openweathermap_org.js:273
 msgid "VOLCANIC ASH"
 msgstr "SOPEČNÝ POPEL"
 
-#: ../src/openweathermap_org.js:275
+#: src/openweathermap_org.js:275
 msgid "SQUALLS"
 msgstr "NÁPORY VĚTRU"
 
-#: ../src/openweathermap_org.js:277
+#: src/openweathermap_org.js:277
 msgid "TORNADO"
 msgstr "TORNÁDO"
 
-#: ../src/openweathermap_org.js:279
+#: src/openweathermap_org.js:279
 msgid "sky is clear"
 msgstr "jasno"
 
-#: ../src/openweathermap_org.js:281
+#: src/openweathermap_org.js:281
 msgid "few clouds"
+msgstr "skoro jasno"
+
+#: src/openweathermap_org.js:283
+msgid "scattered clouds"
 msgstr "polojasno"
 
-#: ../src/openweathermap_org.js:283
-msgid "scattered clouds"
-msgstr "Občasné přeháňky"
-
-#: ../src/openweathermap_org.js:285
+#: src/openweathermap_org.js:285
 msgid "broken clouds"
-msgstr "Polojasno"
+msgstr "oblačno"
 
-#: ../src/openweathermap_org.js:287
+#: src/openweathermap_org.js:287
 msgid "overcast clouds"
-msgstr "Převážně zataženo"
+msgstr "zataženo"
 
-#: ../src/openweathermap_org.js:289
+#: src/openweathermap_org.js:289
 msgid "Not available"
 msgstr "Není k dispozici"
 
-#: ../src/prefs.js:215 ../src/prefs.js:271 ../src/prefs.js:319
-#: ../src/prefs.js:326
+#: src/prefs.js:216 src/prefs.js:272 src/prefs.js:320 src/prefs.js:327
 #, javascript-format
 msgid "Invalid data when searching for \"%s\""
-msgstr ""
+msgstr "Neplatná data při hledání \"%s\""
 
-#: ../src/prefs.js:223 ../src/prefs.js:287 ../src/prefs.js:332
-#, fuzzy, javascript-format
+#: src/prefs.js:224 src/prefs.js:288 src/prefs.js:333
+#, javascript-format
 msgid "\"%s\" not found"
-msgstr "Schéma \"%s\" nenalezeno."
+msgstr "Místo \"%s\" nenalezeno."
 
-#: ../src/prefs.js:393
-#, fuzzy
+#: src/prefs.js:394
 msgid "Location"
-msgstr "Místa"
+msgstr "Místo"
 
-#: ../src/prefs.js:403
+#: src/prefs.js:404
 msgid "Provider"
-msgstr ""
+msgstr "Poskytovatel"
 
-#: ../src/prefs.js:535
+#: src/prefs.js:553
 #, javascript-format
 msgid "Remove %s ?"
 msgstr "Odstranit %s?"
 
-#: ../src/prefs.js:1056
+#: src/prefs.js:1086
 msgid "default"
-msgstr ""
+msgstr "výchozí"
 
-#: ../data/weather-settings.ui:31
+#: data/weather-settings.ui:31
 msgid "Edit name"
-msgstr ""
+msgstr "Upravit název"
 
-#: ../data/weather-settings.ui:49 ../data/weather-settings.ui:79
-#: ../data/weather-settings.ui:219
+#: data/weather-settings.ui:49 data/weather-settings.ui:79
+#: data/weather-settings.ui:224
 msgid "Clear entry"
-msgstr ""
+msgstr "Smazat položku"
 
-#: ../data/weather-settings.ui:63
+#: data/weather-settings.ui:63
 msgid "Edit coordinates"
-msgstr ""
+msgstr "Upravit souřadnice"
 
-#: ../data/weather-settings.ui:93 ../data/weather-settings.ui:256
+#: data/weather-settings.ui:93 data/weather-settings.ui:261
 msgid "Extensions default weather provider"
-msgstr ""
+msgstr "Výchozí poskytovatel předpovědi"
 
-#: ../data/weather-settings.ui:125 ../data/weather-settings.ui:288
+#: data/weather-settings.ui:125 data/weather-settings.ui:293
 msgid "Cancel"
-msgstr ""
+msgstr "Zrušit"
 
-#: ../data/weather-settings.ui:143 ../data/weather-settings.ui:306
+#: data/weather-settings.ui:143 data/weather-settings.ui:311
 msgid "Save"
-msgstr ""
+msgstr "Uložit"
 
-#: ../data/weather-settings.ui:196
+#: data/weather-settings.ui:201
 msgid "Search by location or coordinates"
-msgstr ""
+msgstr "Hledat podle umístění nebo souřadnic"
 
-#: ../data/weather-settings.ui:220
+#: data/weather-settings.ui:225
 msgid "e.g. Vaiaku, Tuvalu or -8.5211767,179.1976747"
-msgstr ""
+msgstr "např. Vaiaku, Tuvalu nebo -8.5211767,179.1976747"
 
-#: ../data/weather-settings.ui:230
+#: data/weather-settings.ui:235
 msgid "Find"
-msgstr ""
+msgstr "Hledat"
 
-#: ../data/weather-settings.ui:481
+#: data/weather-settings.ui:482
 msgid "Chose default weather provider"
-msgstr ""
+msgstr "Vyberte výchozího poskytovatele předpovědi"
 
-#: ../data/weather-settings.ui:494
+#: data/weather-settings.ui:495
 msgid "Personal Api key from openweathermap.org"
-msgstr "Osobní Api klíč z openweathermap.org"
+msgstr "Osobní API klíč pro openweathermap.org"
 
-#: ../data/weather-settings.ui:545
-#, fuzzy
-msgid "Personal Api key from forecast.io"
-msgstr "Osobní Api klíč z openweathermap.org"
+#: data/weather-settings.ui:546
+msgid "Personal Api key from Dark Sky"
+msgstr "Osobní API klíč pro Dark Sky"
 
-#: ../data/weather-settings.ui:558
+#: data/weather-settings.ui:559
 msgid "Refresh timeout for current weather [min]"
-msgstr ""
+msgstr "Obnovit aktuální stav počasí po [min]"
 
-#: ../data/weather-settings.ui:572
+#: data/weather-settings.ui:573
 msgid "Refresh timeout for weather forecast [min]"
-msgstr ""
+msgstr "Obnovit předpověď počasí po [min]"
 
-#: ../data/weather-settings.ui:600
+#: data/weather-settings.ui:601
 msgid ""
-"Note: the forecast-timout is not used for forecast.io, because they do not "
+"Note: the forecast-timout is not used for Dark Sky, because they do not "
 "provide seperate downloads for current weather and forecasts."
 msgstr ""
+"Poznámka: čas pro obnovu předpovědi není v případě služby Dark Sky použit, "
+"jelikož služba nenabízí informace o počasí a předpovědi odděleně."
 
-#: ../data/weather-settings.ui:628
-#, fuzzy
+#: data/weather-settings.ui:629
 msgid "Use extensions api-key for openweathermap.org"
-msgstr "Osobní Api klíč z openweathermap.org"
+msgstr "Použít API klíč rozšíření pro openweathermap.org"
 
-#: ../data/weather-settings.ui:639
+#: data/weather-settings.ui:640
 msgid ""
 "Switch off, if you have your own api-key for openweathermap.org and put it "
 "into the text-box below."
 msgstr ""
+"Vypněte, pokud máte svůj vlastní API klíč pro openweathermap.org, a vyplňte "
+"jej do pole níže."
 
-#: ../data/weather-settings.ui:656
-#, fuzzy
+#: data/weather-settings.ui:657
 msgid "Weather provider"
-msgstr "Data o počasí poskytuje:"
+msgstr "Poskytovatel počasí"
 
-#: ../data/weather-settings.ui:676
+#: data/weather-settings.ui:677
 msgid "Chose geolocation provider"
-msgstr ""
+msgstr "Vyberte poskytovatele geolokace"
 
-#: ../data/weather-settings.ui:702
-#, fuzzy
+#: data/weather-settings.ui:703
 msgid "Personal AppKey from developer.mapquest.com"
-msgstr "Osobní Api klíč z openweathermap.org"
+msgstr "Osobní App klíč pro developer.mapquest.com"
 
-#: ../data/weather-settings.ui:731
-#, fuzzy
+#: data/weather-settings.ui:732
 msgid "Geolocation provider"
-msgstr "Data o počasí poskytuje:"
+msgstr "Poskytovatel geolokace"
 
-#: ../data/weather-settings.ui:751
+#: data/weather-settings.ui:752
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:63
 msgid "Temperature Unit"
 msgstr "Jednotka teploty"
 
-#: ../data/weather-settings.ui:762
+#: data/weather-settings.ui:763
 msgid "Wind Speed Unit"
 msgstr "Jednotka rychlosti větru"
 
-#: ../data/weather-settings.ui:773
+#: data/weather-settings.ui:774
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:67
 msgid "Pressure Unit"
-msgstr "Jednotka tlaku:"
+msgstr "Jednotka tlaku"
 
-#: ../data/weather-settings.ui:849
+#: data/weather-settings.ui:811
+msgid "Beaufort"
+msgstr "Beaufort"
+
+#: data/weather-settings.ui:851
 msgid "Units"
-msgstr ""
+msgstr "Jednotky"
 
-#: ../data/weather-settings.ui:869
+#: data/weather-settings.ui:871
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:113
 msgid "Position in Panel"
-msgstr "Pozice na panelu"
+msgstr "Umístění na panelu"
 
-#: ../data/weather-settings.ui:880
+#: data/weather-settings.ui:882
+msgid "Position of menu-box [%] from 0 (left) to 100 (right)"
+msgstr "Zarovnání nabídky [v %] od 0 (vlevo) do 100 (vpravo)"
+
+#: data/weather-settings.ui:893
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:76
 msgid "Wind Direction by Arrows"
-msgstr "Směr větru podle šipek"
+msgstr "Směr větru jako šipku"
 
-#: ../data/weather-settings.ui:891
+#: data/weather-settings.ui:904
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:89
 msgid "Translate Conditions"
-msgstr "Překládat podmínky"
+msgstr "Překládat stav počasí"
 
-#: ../data/weather-settings.ui:902
+#: data/weather-settings.ui:915
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:93
 msgid "Symbolic Icons"
-msgstr "Použít symbolické ikony"
+msgstr "Symbolické ikony"
 
-#: ../data/weather-settings.ui:913
+#: data/weather-settings.ui:926
 msgid "Text on buttons"
-msgstr ""
+msgstr "Text v tlačítcích"
 
-#: ../data/weather-settings.ui:924
+#: data/weather-settings.ui:937
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:101
 msgid "Temperature in Panel"
-msgstr "Zobrazit na panelu teplotu"
+msgstr "Teplota v panelu"
 
-#: ../data/weather-settings.ui:935
+#: data/weather-settings.ui:948
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:105
 msgid "Conditions in Panel"
-msgstr "Zobrazit na panelu podmínky"
+msgstr "Stav počasí v panelu"
 
-#: ../data/weather-settings.ui:946
-#, fuzzy
+#: data/weather-settings.ui:959
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:109
 msgid "Conditions in Forecast"
-msgstr "Zobrazit na panelu podmínky"
+msgstr "Stav počasí v předpovědi"
 
-#: ../data/weather-settings.ui:957
+#: data/weather-settings.ui:970
 msgid "Center forecast"
-msgstr ""
+msgstr "Vystředit předpověď"
 
-#: ../data/weather-settings.ui:968
+#: data/weather-settings.ui:981
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:133
 msgid "Number of days in forecast"
-msgstr "Počet dní k předpovědi"
+msgstr "Počet dní předpovědi"
 
-#: ../data/weather-settings.ui:979
+#: data/weather-settings.ui:992
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:137
 msgid "Maximal number of digits after the decimal point"
-msgstr "Maximální množství čísel za desetinnou čárkou"
+msgstr "Maximální počet číslic za desetinnou čárkou"
 
-#: ../data/weather-settings.ui:991
+#: data/weather-settings.ui:1004
 msgid "Center"
-msgstr "uprostřed"
+msgstr "Vprostřed"
 
-#: ../data/weather-settings.ui:992
+#: data/weather-settings.ui:1005
 msgid "Right"
-msgstr "vpravo"
+msgstr "Vpravo"
 
-#: ../data/weather-settings.ui:993
+#: data/weather-settings.ui:1006
 msgid "Left"
-msgstr "vlevo"
+msgstr "Vlevo"
 
-#: ../data/weather-settings.ui:1135
+#: data/weather-settings.ui:1164
 msgid "Layout"
-msgstr ""
+msgstr "Rozložení"
 
-#: ../data/weather-settings.ui:1187
+#: data/weather-settings.ui:1216
 msgid "Version: "
-msgstr ""
+msgstr "Verze: "
 
-#: ../data/weather-settings.ui:1201
+#: data/weather-settings.ui:1230
 msgid "unknown (self-build ?)"
-msgstr ""
+msgstr "neznámá (vlastní ?)"
 
-#: ../data/weather-settings.ui:1221
+#: data/weather-settings.ui:1250
 msgid ""
 "<span>Weather extension to display weather information from <a href="
 "\"https://openweathermap.org/\">Openweathermap</a> or <a href=\"https://"
-"forecast.io\">forecast.io</a> for almost all locations in the world.</span>"
+"darksky.net\">Dark Sky</a> for almost all locations in the world.</span>"
 msgstr ""
+"<span>Rozšíření pro zobrazení informací o počasí z <a href=\"https://"
+"openweathermap.org/\">Openweathermap</a> nebo <a href=\"https://darksky.net"
+"\">Dark Sky</a> pro téměř všechny oblasti světa.</span>"
 
-#: ../data/weather-settings.ui:1244
+#: data/weather-settings.ui:1273
 msgid "Maintained by"
-msgstr ""
+msgstr "Spravuje"
 
-#: ../data/weather-settings.ui:1274
+#: data/weather-settings.ui:1303
 msgid "Webpage"
-msgstr ""
+msgstr "Webová stránka"
 
-#: ../data/weather-settings.ui:1295
+#: data/weather-settings.ui:1324
 msgid ""
 "<span size=\"small\">This program comes with ABSOLUTELY NO WARRANTY.\n"
 "See the <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
 "\">GNU General Public License, version 2 or later</a> for details.</span>"
 msgstr ""
+"<span size=\"small\">Tento program je ABSOLUTNĚ BEZ ZÁRUKY.\n"
+"Více informací získáte v <a href=\"https://www.gnu.org/licenses/old-licenses/"
+"gpl-2.0.html\">GNU General Public License, verze 2 nebo novější</a>.</span>"
 
-#: ../data/weather-settings.ui:1316
+#: data/weather-settings.ui:1345
 msgid "About"
+msgstr "O aplikaci"
+
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:55
+msgid "Weather Provider"
+msgstr "Poskytovatel počasí"
+
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:59
+msgid "Geolocation Provider"
+msgstr "Poskytovatel geolokace"
+
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:71
+msgid "Wind Speed Units"
+msgstr "Jednotky rychlosti větru"
+
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:72
+msgid ""
+"Choose the units used for wind speed. Allowed values are 'kph', 'mph', 'm/"
+"s', 'knots', 'ft/s' or 'Beaufort'."
 msgstr ""
+"Vyberte jednotky použité pro zobrazení rychlosti větru. Povolené hodnoty "
+"jsou 'kph', 'mph', 'm/s', 'knots', 'ft/s' nebo 'Beaufort'."
+
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:77
+msgid "Choose whether to display wind direction through arrows or letters."
+msgstr "Vyberte zda má být směr větru zobrazen pomocí šipky nebo písmene."
+
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:81
+msgid "City to be displayed"
+msgstr "Zobrazované město"
+
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:85
+msgid "Actual City"
+msgstr "Aktuální město"
+
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:97
+msgid "Use text on buttons in menu"
+msgstr "Zobrazit text na tlačítkách v nabídce"
+
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:117
+msgid "Horizontal position of menu-box."
+msgstr "Vodorovná pozice nabídky."
+
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:121
+msgid "Refresh interval (actual weather)"
+msgstr "Interval obnovy (aktuální počasí)"
+
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:125
+msgid "Refresh interval (forecast)"
+msgstr "Interval obnovy (předpověď)"
+
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:129
+msgid "Center forecastbox."
+msgstr "Vystředit předpověď."
+
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:141
+msgid "Your personal API key from openweathermap.org"
+msgstr "Váš osobní API klíč pro openweathermap.org"
+
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:145
+msgid "Use the extensions default API key from openweathermap.org"
+msgstr "Použít výchozí API klíč tohoto rozšíření pro openweathermap.org"
+
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:149
+msgid "Your personal API key from Dark Sky"
+msgstr "Váš osobní API klíč pro Dark Sky"
+
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:153
+msgid "Your personal AppKey from developer.mapquest.com"
+msgstr "Váš osobní App klíč pro developer.mapquest.com"
 
 #~ msgid "Loading current weather ..."
 #~ msgstr "Načítání aktuálního počasí…"

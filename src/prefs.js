@@ -5,7 +5,7 @@
  *  - Creates a widget to set the preferences of the weather extension
  *
  * Copyright (C) 2012 - 2013
- *     Canek Peláez <canek@ciencias.unam.mx>,
+ *     Canek Pelaez <canek@ciencias.unam.mx>,
  *     Christian METZLER <neroth@xeked.com>,
  *     Jens Lody <jens@jenslody.de>,
  * Copyright (C) 2014 -2015
@@ -58,6 +58,7 @@ const OPENWEATHER_USE_SYMBOLIC_ICONS_KEY = 'use-symbolic-icons';
 const OPENWEATHER_USE_TEXT_ON_BUTTONS_KEY = 'use-text-on-buttons';
 const OPENWEATHER_SHOW_TEXT_IN_PANEL_KEY = 'show-text-in-panel';
 const OPENWEATHER_POSITION_IN_PANEL_KEY = 'position-in-panel';
+const OPENWEATHER_MENU_ALIGNMENT_KEY = 'menu-alignment';
 const OPENWEATHER_SHOW_COMMENT_IN_PANEL_KEY = 'show-comment-in-panel';
 const OPENWEATHER_SHOW_COMMENT_IN_FORECAST_KEY = 'show-comment-in-forecast';
 const OPENWEATHER_REFRESH_INTERVAL_CURRENT = 'refresh-interval-current';
@@ -82,7 +83,7 @@ const OPENWEATHER_URL_OSM_FIND = OPENWEATHER_URL_OSM_BASE + 'search';
 const WeatherProvider = {
     DEFAULT: -1,
     OPENWEATHERMAP: 0,
-    FORECAST_IO: 1
+    DARKSKY: 1
 };
 
 const GeolocationProvider = {
@@ -118,26 +119,7 @@ const WeatherPrefsWidget = new GObject.Class({
 
         this.initWindow();
 
-        defaultSize = this.MainWidget.get_size_request();
-        var borderWidth = this.MainWidget.get_border_width();
-
-        defaultSize[0] += 2 * borderWidth;
-        defaultSize[1] += 2 * borderWidth;
-
-        this.MainWidget.set_size_request(-1, -1);
-        this.MainWidget.set_border_width(0);
-
         this.refreshUI();
-
-        this.add(this.MainWidget);
-        this.MainWidget.connect('realize', Lang.bind(this, function() {
-            if (inRealize)
-                return;
-            inRealize = true;
-
-            this.MainWidget.get_toplevel().resize(defaultSize[0], defaultSize[1]);
-            inRealize = false;
-        }));
     },
 
     Window: new Gtk.Builder(),
@@ -147,7 +129,7 @@ const WeatherPrefsWidget = new GObject.Class({
 
         this.Window.add_from_file(EXTENSIONDIR + "/weather-settings.ui");
 
-        this.MainWidget = this.Window.get_object("main-widget");
+        this.mainWidget = this.Window.get_object("prefs-notebook");
         this.treeview = this.Window.get_object("tree-treeview");
         this.liststore = this.Window.get_object("tree-liststore");
         this.editWidget = this.Window.get_object("edit-widget");
@@ -193,10 +175,14 @@ const WeatherPrefsWidget = new GObject.Class({
             if (location === "")
                 return 0;
 
-            let item = new Gtk.MenuItem();
-            if (this.spinner.get_parent())
-                this.spinner.reparent(item);
-            item.add(this.spinner);
+            let item;
+            if (this.spinner.get_parent()) {
+                item = this.spinner.get_parent();
+            }else {
+                item = new Gtk.MenuItem()
+                item.add(this.spinner);
+            }
+
             this.searchMenu.append(item);
             this.searchMenu.show_all();
             this.searchMenu.popup(null, null, Lang.bind(this, this.placeSearchMenu), 0, this.searchName);
@@ -420,6 +406,8 @@ const WeatherPrefsWidget = new GObject.Class({
                     this.initComboBox(theObjects[i]);
                 else if (theObjects[i].class_path()[1].indexOf('GtkSwitch') != -1)
                     this.initSwitch(theObjects[i]);
+                else if (theObjects[i].class_path()[1].indexOf('GtkScale') != -1)
+                    this.initScale(theObjects[i]);
                 this.configWidgets.push([theObjects[i], name]);
             }
         }
@@ -478,8 +466,23 @@ const WeatherPrefsWidget = new GObject.Class({
         }));
     },
 
+    initScale: function(theScale) {
+        let name = theScale.get_name();
+        theScale.set_value(this[name]);
+        this[name+'Timeout'] = undefined;
+        theScale.connect("value-changed", Lang.bind(this, function(slider) {
+            if (this[name+'Timeout'] !== undefined)
+                Mainloop.source_remove(this[name+'Timeout']);
+            this[name+'Timeout'] = Mainloop.timeout_add(250, Lang.bind(this, function() {
+                this[name] = slider.get_value();
+                return false;
+            }));
+        }));
+
+    },
+
     refreshUI: function() {
-        this.MainWidget = this.Window.get_object("main-widget");
+        this.mainWidget = this.Window.get_object("prefs-notebook");
         this.treeview = this.Window.get_object("tree-treeview");
         this.liststore = this.Window.get_object("tree-liststore");
 
@@ -879,6 +882,18 @@ const WeatherPrefsWidget = new GObject.Class({
         this.Settings.set_enum(OPENWEATHER_POSITION_IN_PANEL_KEY, v);
     },
 
+    get menu_alignment() {
+        if (!this.Settings)
+            this.loadConfig();
+        return this.Settings.get_double(OPENWEATHER_MENU_ALIGNMENT_KEY);
+    },
+
+    set menu_alignment(v) {
+        if (!this.Settings)
+            this.loadConfig();
+        return this.Settings.set_double(OPENWEATHER_MENU_ALIGNMENT_KEY, v);
+    },
+
     get comment_in_panel() {
         if (!this.Settings)
             this.loadConfig();
@@ -1049,8 +1064,8 @@ const WeatherPrefsWidget = new GObject.Class({
         switch (provider) {
             case WeatherProvider.OPENWEATHERMAP:
                 return "openweathermap.org";
-            case WeatherProvider.FORECAST_IO:
-                return "forecast.io";
+            case WeatherProvider.DARKSKY:
+                return "darksky.net";
             default:
             case WeatherProvider.DEFAULT:
                 return _("default");
@@ -1063,7 +1078,8 @@ function init() {
 }
 
 function buildPrefsWidget() {
-    let widget = new WeatherPrefsWidget();
+    let prefs = new WeatherPrefsWidget();
+    let widget = prefs.mainWidget;
     widget.show_all();
     return widget;
 }

@@ -40,7 +40,7 @@ const ExtensionUtils = imports.misc.extensionUtils;
 const Me = ExtensionUtils.getCurrentExtension();
 const Config = imports.misc.config;
 const Convenience = Me.imports.convenience;
-const ForecastIo = Me.imports.forecast_io;
+const DarkskyNet = Me.imports.darksky_net;
 const OpenweathermapOrg = Me.imports.openweathermap_org;
 const Clutter = imports.gi.Clutter;
 const Gettext = imports.gettext.domain('gnome-shell-extension-openweather');
@@ -74,6 +74,7 @@ const OPENWEATHER_USE_SYMBOLIC_ICONS_KEY = 'use-symbolic-icons';
 const OPENWEATHER_USE_TEXT_ON_BUTTONS_KEY = 'use-text-on-buttons';
 const OPENWEATHER_SHOW_TEXT_IN_PANEL_KEY = 'show-text-in-panel';
 const OPENWEATHER_POSITION_IN_PANEL_KEY = 'position-in-panel';
+const OPENWEATHER_MENU_ALIGNMENT_KEY = 'menu-alignment';
 const OPENWEATHER_SHOW_COMMENT_IN_PANEL_KEY = 'show-comment-in-panel';
 const OPENWEATHER_SHOW_COMMENT_IN_FORECAST_KEY = 'show-comment-in-forecast';
 const OPENWEATHER_REFRESH_INTERVAL_CURRENT = 'refresh-interval-current';
@@ -90,7 +91,7 @@ const OPENWEATHER_FC_API_KEY = 'appid-fc';
 const WeatherProvider = {
     DEFAULT: -1,
     OPENWEATHERMAP: 0,
-    FORECAST_IO: 1
+    DARKSKY: 1
 };
 
 const WeatherUnits = {
@@ -123,7 +124,8 @@ const WeatherPressureUnits = {
     AT: 6,
     TORR: 7,
     PSI: 8,
-    MMHG: 9
+    MMHG: 9,
+    MBAR: 10
 };
 
 const WeatherPosition = {
@@ -178,7 +180,7 @@ const OpenweatherMenuButton = new Lang.Class({
         });
 
         // Panel menu item - the current class
-        let menuAlignment = 0.25;
+        let menuAlignment = 1.0 - (this._menu_alignment / 100);
         if (Clutter.get_default_text_direction() == Clutter.TextDirection.RTL)
             menuAlignment = 1.0 - menuAlignment;
         this.parent(menuAlignment);
@@ -336,7 +338,7 @@ const OpenweatherMenuButton = new Lang.Class({
         this._timeoutForecast = undefined;
 
         if (this._presence_connection) {
-            this._presence.disconnect(this._presence_connection);
+            this._presence.disconnectSignal(this._presence_connection);
             this._presence_connection = undefined;
         }
 
@@ -363,8 +365,8 @@ const OpenweatherMenuButton = new Lang.Class({
     },
 
     switchProvider: function() {
-        if (this._weather_provider == WeatherProvider.FORECAST_IO)
-            this.useForecastIo();
+        if (this._weather_provider == WeatherProvider.DARKSKY)
+            this.useDarkskyNet();
         else
             this.useOpenweathermapOrg();
     },
@@ -376,40 +378,49 @@ const OpenweatherMenuButton = new Lang.Class({
         this.refreshWeatherCurrent = OpenweathermapOrg.refreshWeatherCurrent;
         this.refreshWeatherForecast = OpenweathermapOrg.refreshWeatherForecast;
 
-        this.weatherProvider = "https://openweathermap.org/";
+        this.weatherProvider = "OpenWeatherMap";
 
         if (this._appid.toString().trim() === '')
             Main.notify("Openweather", _("Openweathermap.org does not work without an api-key.\nEither set the switch to use the extensions default key in the preferences dialog to on or register at http://openweathermap.org/appid and paste your personal key into the preferences dialog."));
 
     },
 
-    useForecastIo: function() {
-        this.parseWeatherCurrent = ForecastIo.parseWeatherCurrent;
-        this.parseWeatherForecast = ForecastIo.parseWeatherForecast;
-        this.getWeatherIcon = ForecastIo.getWeatherIcon;
-        this.refreshWeatherCurrent = ForecastIo.refreshWeatherCurrent;
+    useDarkskyNet: function() {
+        this.parseWeatherCurrent = DarkskyNet.parseWeatherCurrent;
+        this.parseWeatherForecast = DarkskyNet.parseWeatherForecast;
+        this.getWeatherIcon = DarkskyNet.getWeatherIcon;
+        this.refreshWeatherCurrent = DarkskyNet.refreshWeatherCurrent;
         this.refreshWeatherForecast = function() {};
 
-        this.weatherProvider = "https://forecast.io/";
+        this.weatherProvider = "Dark Sky";
 
         this.fc_locale = 'en';
 
         if (this._translate_condition) {
             let fc_locales = [
                 'ar',
+                'az',
+                'be',
                 'bs',
+                'cz',
                 'de',
                 'el',
                 'en',
                 'es',
                 'fr',
                 'hr',
+                'hu',
+                'id',
                 'it',
+                'is',
+                'kw',
+                'nb',
                 'nl',
                 'pl',
                 'pt',
                 'ru',
                 'sk',
+                'sr',
                 'sv',
                 'tet',
                 'tr',
@@ -428,13 +439,13 @@ const OpenweatherMenuButton = new Lang.Class({
         }
 
         if (this._appid_fc.toString().trim() === '')
-            Main.notify("Openweather", _("Forecast.io does not work without an api-key.\nPlease register at https://developer.forecast.io/register and paste your personal key into the preferences dialog."));
+            Main.notify("Openweather", _("Dark Sky does not work without an api-key.\nPlease register at https://darksky.net/dev/register and paste your personal key into the preferences dialog."));
     },
 
     getWeatherProviderURL: function() {
         let url = "";
-        if (this._weather_provider == WeatherProvider.FORECAST_IO) {
-            url = "https://forecast.io/#/f/";
+        if (this._weather_provider == WeatherProvider.DARKSKY) {
+            url = "https://darksky.net/";
             url += this.extractCoord(this._city);
         } else {
             url = "https://openweathermap.org";
@@ -541,7 +552,7 @@ const OpenweatherMenuButton = new Lang.Class({
                 return true;
             }
         }
-        if (provider == WeatherProvider.FORECAST_IO) {
+        if (provider == WeatherProvider.DARKSKY) {
             let translateCondition = this._translate_condition;
             if (this.oldTranslateCondition != translateCondition) {
                 this.oldTranslateCondition = translateCondition;
@@ -709,8 +720,7 @@ const OpenweatherMenuButton = new Lang.Class({
     },
 
     get _city() {
-        let cities = this._cities;
-        let cities = cities.split(" && ");
+        let cities = this._cities.split(" && ");
         if (cities && typeof cities == "string")
             cities = [cities];
         if (!cities[0])
@@ -747,6 +757,12 @@ const OpenweatherMenuButton = new Lang.Class({
         if (!this._settings)
             this.loadConfig();
         return this._settings.get_enum(OPENWEATHER_POSITION_IN_PANEL_KEY);
+    },
+
+    get _menu_alignment() {
+        if (!this._settings)
+            this.loadConfig();
+        return this._settings.get_double(OPENWEATHER_MENU_ALIGNMENT_KEY);
     },
 
     get _comment_in_panel() {
@@ -1169,6 +1185,13 @@ const OpenweatherMenuButton = new Lang.Class({
         return;
     },
 
+    checkAlignment: function() {
+        let menuAlignment = 1.0 - (this._menu_alignment / 100);
+        if (Clutter.get_default_text_direction() == Clutter.TextDirection.RTL)
+            menuAlignment = 1.0 - menuAlignment;
+        this.menu._arrowAlignment=menuAlignment;
+    },
+
     checkPositionInPanel: function() {
         if (this._old_position_in_panel != this._position_in_panel) {
             switch (this._old_position_in_panel) {
@@ -1254,6 +1277,11 @@ const OpenweatherMenuButton = new Lang.Class({
             case WeatherPressureUnits.MMHG:
                 pressure = (pressure * 0.750061683).toFixed(this._decimal_places);
                 pressure_unit = _("mmHg");
+                break;
+
+            case WeatherPressureUnits.MBAR:
+                pressure = pressure.toFixed(this._decimal_places);
+                pressure_unit = _("mbar");
                 break;
         }
         return parseFloat(pressure).toLocaleString() + ' ' + pressure_unit;

@@ -2,10 +2,10 @@
 
 *gnome-shell-extension-openweather* is a simple extension for displaying weather conditions and forecasts in GNOME Shell, featuring support for multiple locations, no need for WOEID, a symmetrical layout and a settings panel through *gnome-shell-extension-prefs*.
 
-The weather data is fetched from [OpenWeatherMap](https://openweathermap.org/) (including forecasts for up to ten days) or [forecast.io](https://forecast.io) (including forecasts for up to eight days).
+The weather data is fetched from [OpenWeatherMap](https://openweathermap.org/) (including forecasts for up to ten days) or [Dark Sky](https://darksky.net) (including forecasts for up to eight days).
 
 #### Note: since version 29 this extensions uses coordinates to store the locations and makes the names editable to support multiple weather-providers!
-#### If you update from versions prior to 29 to 29 or greater (with forecast.io - support) you have to recreate your locations.
+#### If you update from versions prior to 29 to 29 or greater (with Dark Sky - support) you have to recreate your locations.
 
 ----
 
@@ -48,7 +48,7 @@ Make sure you have the following dependencies installed:
 * *gnome-common*,
 * *autoconf*,
 * *automake*,
-* *intltool*.
+* *gettext-devel*.
 * *gnome-tweak-tool*.
 
 Run the following commands:
@@ -69,13 +69,13 @@ You can also use *dconf-editor* or *gsettings* to configure the extension throug
 
 On [OpenWeatherMap](https://openweathermap.org/) you can either use the extensions default-key or register to get a [personal API key](http://openweathermap.org/appid). This key has to be added in the preferences dialog. Don't forget to switch the a appropriate switch in the dialog to "off" in this case.
 
-To use [Forecast.io](https://forecast.io) you also need to [register](https://developer.forecast.io/register) and get an API key. With this key you can make 1000 requests per day for free. This should be enough for this extension in any normal use case. Do not add billing information, otherwise you might have to pay for the weather-data if something went wrong !
+To use [Dark Sky](https://darksky.net) you also need to [register](https://darksky.net/dev/register) and get an API key. With this key you can make 1000 requests per day for free. This should be enough for this extension in any normal use case. Do not add billing information, otherwise you might have to pay for the weather-data if something went wrong !
 
 ----
 
 # Licence
 
-Copyright (C) 2011 - 2015
+Copyright &copy; 2011 - 2013
 
 * Elad Alfassa <elad@fedoraproject.org>,
 * Mark Benjamin <weather.gnome.Markie1@dfgh.net>,
@@ -86,6 +86,10 @@ Copyright (C) 2011 - 2015
 * Mattia Meneguzzo <odysseus@fedoraproject.org>,
 * Christian Metzler <neroth@xeked.com>,
 * Jens Lody <jens@jenslody.de>.
+
+Copyright &copy; 2013 - 2017
+* Jens Lody <openweather@jenslody.de>.
+
 
 This file is part of *gnome-shell-extension-openweather*.
 

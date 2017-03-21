@@ -1,13 +1,13 @@
-%global git 8dd1696
+%global git 48ee4af
 %global uuid openweather-extension@jenslody.de
 %global github jenslody-gnome-shell-extension-openweather
 %global checkout git%{git}
-%global checkout_date 20160325
+%global checkout_date 20170307
 
 
 Name:           gnome-shell-extension-openweather
 Version:        1
-Release:        0.18.%{checkout_date}%{checkout}%{?dist}
+Release:        0.28.%{checkout_date}%{checkout}%{?dist}
 Summary:        Display weather information from many locations in the world
 
 Group:          User Interface/Desktops
@@ -19,12 +19,12 @@ Source0:        https://github.com/jenslody/gnome-shell-extension-openweather/ta
 BuildArch:      noarch
 
 # The version of gnome-common in CentOS7 is only 3.7.4
-BuildRequires:  autoconf, automake, glib2-devel, gnome-common >= 3.7.4, intltool
-Requires:       gnome-shell >= 3.8.0
+BuildRequires:  autoconf, automake, glib2-devel, gnome-common >= 3.7.4, gettext-devel
+Requires:       gnome-shell >= 3.14.0
 
 %description
 gnome-shell-extension-openweather is an extension to display weather information
-from http://openweathermap.org/ or http://forecast.io for (almost) all locations
+from http://openweathermap.org/ or http://darksky.net for (almost) all locations
 of the world in GNOME Shell.
 Be aware, that system-wide installed gnome-shell-extensions are disabled by
 default and have to be enable by the user(s), if they get installed the first
@@ -68,6 +68,51 @@ fi
 %{_datadir}/gnome-shell/extensions/%{uuid}
 
 %changelog
+* Tue Mar 07 2017 Jens Lody <fedora@jenslody.de> - 1-0.28.20170307git48ee4af
+- Fix rhbz#1429776 (double initialization of variable).
+- fix minor version of gnome-shell needed
+
+* Sat Feb 25 2017 Jens Lody <fedora@jenslody.de> - 1-0.27.20170225git59aa498
+- Disable gnome-shell < 3.14 and support 3.24 .
+- Layout fixes (pref-dialog).
+- Updated localization.
+
+* Fri Feb 10 2017 Fedora Release Engineering <releng@fedoraproject.org> - 1-0.26.20161004git34d7e39
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_26_Mass_Rebuild
+
+* Mon Oct 03 2016 Jens Lody <fedora@jenslody.de> - 1-0.25.20161004git34d7e39
+- Support gnome-shell 3.22.
+- Updated french translation.
+
+* Tue Sep 20 2016 Jens Lody <fedora@jenslody.de> - 1-0.24.20160920git39821fa
+- Switch name and url from forecast.io to Dark Sky, because they changed/unified
+  their name, url and api.
+
+* Wed Sep 14 2016 Jens Lody <fedora@jenslody.de> - 1-0.23.20160914git58dd4f4
+- Add option to configure the position of the menu-box relative to the
+  panel-text.
+- Update metadata.json to support newest development build of gnome-shell
+  on rawhide.
+- Added/updated language files.
+
+* Thu Aug 25 2016 Jens Lody <fedora@jenslody.de> - 1-0.22.20160825gitcefbfb0
+- Update metadata.json to support newest development build of gnome-shell
+  on rawhide.
+
+* Sun Aug 21 2016 Jens Lody <fedora@jenslody.de> - 1-0.21.20160821gita44cb9e
+- Fix glibc error-message, when disabling the extension.
+- Fix minor issues in preferences-dialog.
+- Add/update translations.
+
+* Fri Jul 22 2016 Jens Lody <fedora@jenslody.de> - 1-0.20.20160722git4c98fe3
+- Update po-files via Makefile with gettext instead of using update.js .
+- Get rid of (mostly unmaintained) intltools.
+- Make gsettings schema translatable
+
+* Wed Jul 06 2016 Jens Lody <fedora@jenslody.de> - 1-0.19.20160706git2cc5cfe
+- Several language files updated.
+- Enabled on gnome-shell 3.21.3.
+
 * Fri Mar 25 2016 Jens Lody <fedora@jenslody.de> - 1-0.18.20160325git8dd1696
 - Updated dutch translation.
 - Add support for new version of gnome-shell (3.20).

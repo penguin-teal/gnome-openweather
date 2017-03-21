@@ -1,33 +1,33 @@
-# Polish translation for gnome-shell-extension-openweather
-# Copyright (C) 2012-2015 THE PACKAGE'S COPYRIGHT HOLDER
+# Polish translation for gnome-shell-extension-openweather.
+# Copyright © 2011-2016 the gnome-shell-extension-openweather authors.
 # This file is distributed under the same license as the gnome-shell-extension-openweather package.
 # Piotr Sokół <psokol@jabster.pl>, 2011, 2012.
 # Marcin Niechciał <bastard79@o2.pl>, 2015.
-# Piotr Drąg <piotrdrag@gmail.com>, 2015, 2016.
-# Aviary.pl <gnomepl@aviary.pl>, 2015, 2016.
+# Aviary.pl <community-poland@mozilla.org>, 2015, 2016.
+# Piotr Drąg <piotrdrag@gmail.com>, 2015, 2016, 2017.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-shell-extension-openweather\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-18 01:43+0200\n"
-"PO-Revision-Date: 2016-04-30 21:28+0200\n"
+"Report-Msgid-Bugs-To: https://github.com/jenslody/gnome-shell-extension-"
+"openweather/issues\n"
+"POT-Creation-Date: 2017-02-04 20:19+0100\n"
+"PO-Revision-Date: 2017-02-04 20:28+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
-"Language-Team: Polish <gnomepl@aviary.pl>\n"
+"Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Poedit-Language: Polish\n"
-"X-Poedit-Country: Poland\n"
+"X-Generator: Gtranslator 2.91.7\n"
 
-#: ../src/extension.js:172
+#: src/extension.js:174
 msgid "..."
 msgstr "…"
 
-#: ../src/extension.js:382
+#: src/extension.js:384
 msgid ""
 "Openweathermap.org does not work without an api-key.\n"
 "Either set the switch to use the extensions default key in the preferences "
@@ -35,290 +35,293 @@ msgid ""
 "personal key into the preferences dialog."
 msgstr ""
 "Serwis openweathermap.org nie działa bez klucza API.\n"
-"Proszę włączyć używanie domyślnego klucza rozszerzenia w oknie preferencji "
-"lub zarejestrować się na stronie http://openweathermap.org/appid i wkleić "
-"osobisty klucz w oknie preferencji."
+"Proszę włączyć używanie domyślnego klucza rozszerzenia w oknie preferencji "
+"lub zarejestrować się na stronie http://openweathermap.org/appid i wkleić "
+"osobisty klucz w oknie preferencji."
 
-#: ../src/extension.js:431
+#: src/extension.js:442
 msgid ""
-"Forecast.io does not work without an api-key.\n"
-"Please register at https://developer.forecast.io/register and paste your "
-"personal key into the preferences dialog."
+"Dark Sky does not work without an api-key.\n"
+"Please register at https://darksky.net/dev/register and paste your personal "
+"key into the preferences dialog."
 msgstr ""
-"Serwis forecast.io nie działa bez klucza API.\n"
-"Proszę zarejestrować się na stronie https://developer.forecast.io/register i "
-"wkleić osobisty klucz w oknie preferencji."
+"Serwis Dark Sky nie działa bez klucza API.\n"
+"Proszę zarejestrować się na stronie https://darksky.net/dev/register "
+"i wkleić osobisty klucz w oknie preferencji."
 
-#: ../src/extension.js:504
+#: src/extension.js:515
 #, javascript-format
 msgid "Can not connect to %s"
-msgstr "Nie można nawiązać połączenia z %s"
+msgstr "Nie można połączyć z %s"
 
-#: ../src/extension.js:845 ../data/weather-settings.ui.h:10
+#: src/extension.js:862 data/weather-settings.ui:461
 msgid "Locations"
 msgstr "Położenia"
 
-#: ../src/extension.js:860
+#: src/extension.js:877
 msgid "Reload Weather Information"
 msgstr "Ponownie wczytaj komunikat pogodowy"
 
-#: ../src/extension.js:875
+#: src/extension.js:892
 msgid "Weather data provided by:"
-msgstr "Dane o pogodzie dostarcza:"
+msgstr "Dane o pogodzie dostarcza:"
 
-#: ../src/extension.js:891
+#: src/extension.js:908
 #, javascript-format
 msgid "Can not open %s"
 msgstr "Nie można otworzyć %s"
 
-#: ../src/extension.js:898
+#: src/extension.js:915
 msgid "Weather Settings"
 msgstr "Ustawienia pogody"
 
-#: ../src/extension.js:962 ../src/prefs.js:1021
+#: src/extension.js:979 src/prefs.js:1051
 msgid "Invalid city"
 msgstr "Nieprawidłowa nazwa miasta"
 
-#: ../src/extension.js:973
+#: src/extension.js:990
 msgid "Invalid location! Please try to recreate it."
 msgstr "Nieprawidłowe położenie. Proszę spróbować jeszcze raz."
 
-#: ../src/extension.js:1020 ../data/weather-settings.ui.h:27
+#: src/extension.js:1037 data/weather-settings.ui:787
 msgid "°F"
 msgstr "°F"
 
-#: ../src/extension.js:1022 ../data/weather-settings.ui.h:28
+#: src/extension.js:1039 data/weather-settings.ui:788
 msgid "K"
 msgstr "K"
 
-#: ../src/extension.js:1024 ../data/weather-settings.ui.h:29
+#: src/extension.js:1041 data/weather-settings.ui:789
 msgid "°Ra"
 msgstr "°Ra"
 
-#: ../src/extension.js:1026 ../data/weather-settings.ui.h:30
+#: src/extension.js:1043 data/weather-settings.ui:790
 msgid "°Ré"
 msgstr "°Ré"
 
-#: ../src/extension.js:1028 ../data/weather-settings.ui.h:31
+#: src/extension.js:1045 data/weather-settings.ui:791
 msgid "°Rø"
 msgstr "°Rø"
 
-#: ../src/extension.js:1030 ../data/weather-settings.ui.h:32
+#: src/extension.js:1047 data/weather-settings.ui:792
 msgid "°De"
 msgstr "°De"
 
-#: ../src/extension.js:1032 ../data/weather-settings.ui.h:33
+#: src/extension.js:1049 data/weather-settings.ui:793
 msgid "°N"
 msgstr "°N"
 
-#: ../src/extension.js:1034 ../data/weather-settings.ui.h:26
+#: src/extension.js:1051 data/weather-settings.ui:786
 msgid "°C"
 msgstr "°C"
 
-#: ../src/extension.js:1075
+#: src/extension.js:1092
 msgid "Calm"
 msgstr "cisza"
 
-#: ../src/extension.js:1078
+#: src/extension.js:1095
 msgid "Light air"
 msgstr "słaby wiatr"
 
-#: ../src/extension.js:1081
+#: src/extension.js:1098
 msgid "Light breeze"
 msgstr "słaba bryza"
 
-#: ../src/extension.js:1084
+#: src/extension.js:1101
 msgid "Gentle breeze"
 msgstr "łagodna bryza"
 
-#: ../src/extension.js:1087
+#: src/extension.js:1104
 msgid "Moderate breeze"
 msgstr "umiarkowana bryza"
 
-#: ../src/extension.js:1090
+#: src/extension.js:1107
 msgid "Fresh breeze"
 msgstr "rześka bryza"
 
-#: ../src/extension.js:1093
+#: src/extension.js:1110
 msgid "Strong breeze"
 msgstr "silna bryza"
 
-#: ../src/extension.js:1096
+#: src/extension.js:1113
 msgid "Moderate gale"
 msgstr "umiarkowany wicher"
 
-#: ../src/extension.js:1099
+#: src/extension.js:1116
 msgid "Fresh gale"
 msgstr "rześki wicher"
 
-#: ../src/extension.js:1102
+#: src/extension.js:1119
 msgid "Strong gale"
 msgstr "silny wicher"
 
-#: ../src/extension.js:1105
+#: src/extension.js:1122
 msgid "Storm"
 msgstr "burza"
 
-#: ../src/extension.js:1108
+#: src/extension.js:1125
 msgid "Violent storm"
 msgstr "gwałtowna burza"
 
-#: ../src/extension.js:1111
+#: src/extension.js:1128
 msgid "Hurricane"
 msgstr "huragan"
 
-#: ../src/extension.js:1115
+#: src/extension.js:1132
 msgid "Sunday"
 msgstr "niedziela"
 
-#: ../src/extension.js:1115
+#: src/extension.js:1132
 msgid "Monday"
 msgstr "poniedziałek"
 
-#: ../src/extension.js:1115
+#: src/extension.js:1132
 msgid "Tuesday"
 msgstr "wtorek"
 
-#: ../src/extension.js:1115
+#: src/extension.js:1132
 msgid "Wednesday"
 msgstr "środa"
 
-#: ../src/extension.js:1115
+#: src/extension.js:1132
 msgid "Thursday"
 msgstr "czwartek"
 
-#: ../src/extension.js:1115
+#: src/extension.js:1132
 msgid "Friday"
 msgstr "piątek"
 
-#: ../src/extension.js:1115
+#: src/extension.js:1132
 msgid "Saturday"
 msgstr "sobota"
 
-#: ../src/extension.js:1121
+#: src/extension.js:1138
 msgid "N"
 msgstr "pn."
 
-#: ../src/extension.js:1121
+#: src/extension.js:1138
 msgid "NE"
 msgstr "pn.-wsch."
 
-#: ../src/extension.js:1121
+#: src/extension.js:1138
 msgid "E"
 msgstr "wsch."
 
-#: ../src/extension.js:1121
+#: src/extension.js:1138
 msgid "SE"
 msgstr "pd.-wsch."
 
-#: ../src/extension.js:1121
+#: src/extension.js:1138
 msgid "S"
 msgstr "pd."
 
-#: ../src/extension.js:1121
+#: src/extension.js:1138
 msgid "SW"
 msgstr "pd.-zach."
 
-#: ../src/extension.js:1121
+#: src/extension.js:1138
 msgid "W"
 msgstr "zach."
 
-#: ../src/extension.js:1121
+#: src/extension.js:1138
 msgid "NW"
 msgstr "pn.-zach."
 
-#: ../src/extension.js:1207 ../src/extension.js:1216
-#: ../data/weather-settings.ui.h:40
+#: src/extension.js:1231 src/extension.js:1240 data/weather-settings.ui:824
 msgid "hPa"
 msgstr "hPa"
 
-#: ../src/extension.js:1211 ../data/weather-settings.ui.h:41
+#: src/extension.js:1235 data/weather-settings.ui:825
 msgid "inHg"
 msgstr "inHg"
 
-#: ../src/extension.js:1221 ../data/weather-settings.ui.h:42
+#: src/extension.js:1245 data/weather-settings.ui:826
 msgid "bar"
 msgstr "bar"
 
-#: ../src/extension.js:1226 ../data/weather-settings.ui.h:43
+#: src/extension.js:1250 data/weather-settings.ui:827
 msgid "Pa"
 msgstr "Pa"
 
-#: ../src/extension.js:1231 ../data/weather-settings.ui.h:44
+#: src/extension.js:1255 data/weather-settings.ui:828
 msgid "kPa"
 msgstr "kPa"
 
-#: ../src/extension.js:1236 ../data/weather-settings.ui.h:45
+#: src/extension.js:1260 data/weather-settings.ui:829
 msgid "atm"
 msgstr "atm"
 
-#: ../src/extension.js:1241 ../data/weather-settings.ui.h:46
+#: src/extension.js:1265 data/weather-settings.ui:830
 msgid "at"
 msgstr "at"
 
-#: ../src/extension.js:1246 ../data/weather-settings.ui.h:47
+#: src/extension.js:1270 data/weather-settings.ui:831
 msgid "Torr"
 msgstr "Tr"
 
-#: ../src/extension.js:1251 ../data/weather-settings.ui.h:48
+#: src/extension.js:1275 data/weather-settings.ui:832
 msgid "psi"
 msgstr "psi"
 
-#: ../src/extension.js:1256 ../data/weather-settings.ui.h:49
+#: src/extension.js:1280 data/weather-settings.ui:833
 msgid "mmHg"
 msgstr "mmHg"
 
-#: ../src/extension.js:1300 ../data/weather-settings.ui.h:36
+#: src/extension.js:1285 data/weather-settings.ui:834
+msgid "mbar"
+msgstr "mbar"
+
+#: src/extension.js:1329 data/weather-settings.ui:808
 msgid "m/s"
 msgstr "m/s"
 
-#: ../src/extension.js:1304 ../data/weather-settings.ui.h:35
+#: src/extension.js:1333 data/weather-settings.ui:807
 msgid "mph"
 msgstr "mph"
 
-#: ../src/extension.js:1309 ../data/weather-settings.ui.h:34
+#: src/extension.js:1338 data/weather-settings.ui:806
 msgid "km/h"
 msgstr "km/h"
 
-#: ../src/extension.js:1318 ../data/weather-settings.ui.h:37
+#: src/extension.js:1347 data/weather-settings.ui:809
 msgid "kn"
 msgstr "w."
 
-#: ../src/extension.js:1323 ../data/weather-settings.ui.h:38
+#: src/extension.js:1352 data/weather-settings.ui:810
 msgid "ft/s"
 msgstr "ft/s"
 
-#: ../src/extension.js:1414
+#: src/extension.js:1443
 msgid "Loading ..."
 msgstr "Wczytywanie…"
 
-#: ../src/extension.js:1418
+#: src/extension.js:1447
 msgid "Please wait"
 msgstr "Proszę czekać"
 
-#: ../src/extension.js:1479
+#: src/extension.js:1508
 msgid "Cloudiness:"
 msgstr "Zachmurzenie:"
 
-#: ../src/extension.js:1483
+#: src/extension.js:1512
 msgid "Humidity:"
 msgstr "Wilgotność względna:"
 
-#: ../src/extension.js:1487
+#: src/extension.js:1516
 msgid "Pressure:"
 msgstr "Ciśnienie atmosferyczne:"
 
-#: ../src/extension.js:1491
+#: src/extension.js:1520
 msgid "Wind:"
 msgstr "Kierunek, prędkość wiatru:"
 
-#: ../src/forecast_io.js:158 ../src/forecast_io.js:287
-#: ../src/openweathermap_org.js:349 ../src/openweathermap_org.js:451
+#: src/darksky_net.js:159 src/darksky_net.js:288 src/openweathermap_org.js:350
+#: src/openweathermap_org.js:451
 msgid "Yesterday"
 msgstr "Wczoraj"
 
-#: ../src/forecast_io.js:161 ../src/forecast_io.js:290
-#: ../src/openweathermap_org.js:351 ../src/openweathermap_org.js:453
+#: src/darksky_net.js:162 src/darksky_net.js:291 src/openweathermap_org.js:352
+#: src/openweathermap_org.js:453
 #, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
@@ -326,528 +329,489 @@ msgstr[0] "%d dzień temu"
 msgstr[1] "%d dni temu"
 msgstr[2] "%d dni temu"
 
-#: ../src/forecast_io.js:173 ../src/forecast_io.js:175
-#: ../src/openweathermap_org.js:365 ../src/openweathermap_org.js:367
+#: src/darksky_net.js:174 src/darksky_net.js:176 src/openweathermap_org.js:366
+#: src/openweathermap_org.js:368
 msgid ", "
 msgstr ", "
 
-#: ../src/forecast_io.js:267 ../src/openweathermap_org.js:445
+#: src/darksky_net.js:268 src/openweathermap_org.js:445
 msgid "Today"
 msgstr "Dzisiaj"
 
-#: ../src/forecast_io.js:283 ../src/openweathermap_org.js:447
+#: src/darksky_net.js:284 src/openweathermap_org.js:447
 msgid "Tomorrow"
 msgstr "Jutro"
 
-#: ../src/forecast_io.js:285 ../src/openweathermap_org.js:449
+#: src/darksky_net.js:286 src/openweathermap_org.js:449
 #, javascript-format
 msgid "In %d day"
 msgid_plural "In %d days"
-msgstr[0] "W ciągu %d dnia"
-msgstr[1] "W ciągu %d dni"
-msgstr[2] "W ciągu %d dni"
+msgstr[0] "Za %d dzień"
+msgstr[1] "Za %d dni"
+msgstr[2] "Za %d dni"
 
-#. thunderstorm with light rain
-#: ../src/openweathermap_org.js:181
+#: src/openweathermap_org.js:181
 msgid "thunderstorm with light rain"
-msgstr "burza z piorunami z lekkimi opadami deszczu"
+msgstr "burza z piorunami z lekkimi opadami deszczu"
 
-#. thunderstorm with rain
-#: ../src/openweathermap_org.js:183
+#: src/openweathermap_org.js:183
 msgid "thunderstorm with rain"
-msgstr "burza z piorunami z opadami deszczu"
+msgstr "burza z piorunami z opadami deszczu"
 
-#. thunderstorm with heavy rain
-#: ../src/openweathermap_org.js:185
+#: src/openweathermap_org.js:185
 msgid "thunderstorm with heavy rain"
-msgstr "burza z piorunami z silnymi opadami deszczu"
+msgstr "burza z piorunami z silnymi opadami deszczu"
 
-#. light thunderstorm
-#: ../src/openweathermap_org.js:187
+#: src/openweathermap_org.js:187
 msgid "light thunderstorm"
-msgstr "mała burza z piorunami"
+msgstr "mała burza z piorunami"
 
-#. thunderstorm
-#: ../src/openweathermap_org.js:189
+#: src/openweathermap_org.js:189
 msgid "thunderstorm"
-msgstr "burza z piorunami"
+msgstr "burza z piorunami"
 
-#. heavy thunderstorm
-#: ../src/openweathermap_org.js:191
+#: src/openweathermap_org.js:191
 msgid "heavy thunderstorm"
-msgstr "silna burza z piorunami"
+msgstr "silna burza z piorunami"
 
-#. ragged thunderstorm
-#: ../src/openweathermap_org.js:193
+#: src/openweathermap_org.js:193
 msgid "ragged thunderstorm"
-msgstr "burza z piorunami"
+msgstr "burza z piorunami"
 
-#. thunderstorm with light drizzle
-#: ../src/openweathermap_org.js:195
+#: src/openweathermap_org.js:195
 msgid "thunderstorm with light drizzle"
-msgstr "burza z piorunami i słabą mżawką"
+msgstr "burza z piorunami i słabą mżawką"
 
-#. thunderstorm with drizzle
-#: ../src/openweathermap_org.js:197
+#: src/openweathermap_org.js:197
 msgid "thunderstorm with drizzle"
-msgstr "burza z piorunami i mżawką"
+msgstr "burza z piorunami i mżawką"
 
-#. thunderstorm with heavy drizzle
-#: ../src/openweathermap_org.js:199
+#: src/openweathermap_org.js:199
 msgid "thunderstorm with heavy drizzle"
-msgstr "burze z piorunami z silną mżawką"
+msgstr "burze z piorunami z silną mżawką"
 
-#. light intensity drizzle
-#: ../src/openweathermap_org.js:201
+#: src/openweathermap_org.js:201
 msgid "light intensity drizzle"
 msgstr "słaba mżawka"
 
-#. drizzle
-#: ../src/openweathermap_org.js:203
+#: src/openweathermap_org.js:203
 msgid "drizzle"
 msgstr "mżawka"
 
-#. heavy intensity drizzle
-#: ../src/openweathermap_org.js:205
+#: src/openweathermap_org.js:205
 msgid "heavy intensity drizzle"
 msgstr "silna mżawka"
 
-#. light intensity drizzle rain
-#: ../src/openweathermap_org.js:207
+#: src/openweathermap_org.js:207
 msgid "light intensity drizzle rain"
-msgstr "słabe opady deszczu i mżawka"
+msgstr "słabe opady deszczu i mżawka"
 
-#. drizzle rain
-#: ../src/openweathermap_org.js:209
+#: src/openweathermap_org.js:209
 msgid "drizzle rain"
 msgstr "mżawka"
 
-#. heavy intensity drizzle rain
-#: ../src/openweathermap_org.js:211
+#: src/openweathermap_org.js:211
 msgid "heavy intensity drizzle rain"
-msgstr "silne opady deszczu i mżawka"
+msgstr "silne opady deszczu i mżawka"
 
-#. shower rain and drizzle
-#: ../src/openweathermap_org.js:213
+#: src/openweathermap_org.js:213
 msgid "shower rain and drizzle"
-msgstr "przelotne opady deszczu i mżawka"
+msgstr "przelotne opady deszczu i mżawka"
 
-#. heavy shower rain and drizzle
-#: ../src/openweathermap_org.js:215
+#: src/openweathermap_org.js:215
 msgid "heavy shower rain and drizzle"
-msgstr "silne, przelotne opady deszczu i mżawka"
+msgstr "silne, przelotne opady deszczu i mżawka"
 
-#. shower drizzle
-#: ../src/openweathermap_org.js:217
+#: src/openweathermap_org.js:217
 msgid "shower drizzle"
 msgstr "przelotna mżawka"
 
-#. light rain
-#: ../src/openweathermap_org.js:219
+#: src/openweathermap_org.js:219
 msgid "light rain"
 msgstr "słabe opady deszczu"
 
-#. moderate rain
-#: ../src/openweathermap_org.js:221
+#: src/openweathermap_org.js:221
 msgid "moderate rain"
 msgstr "umiarkowane opady deszczu"
 
-#. heavy intensity rain
-#: ../src/openweathermap_org.js:223
+#: src/openweathermap_org.js:223
 msgid "heavy intensity rain"
 msgstr "silne opady deszczu"
 
-#. very heavy rain
-#: ../src/openweathermap_org.js:225
+#: src/openweathermap_org.js:225
 msgid "very heavy rain"
 msgstr "silne opady deszczu"
 
-#. extreme rain
-#: ../src/openweathermap_org.js:227
+#: src/openweathermap_org.js:227
 msgid "extreme rain"
 msgstr "ulewa"
 
-#. freezing rain
-#: ../src/openweathermap_org.js:229
+#: src/openweathermap_org.js:229
 msgid "freezing rain"
 msgstr "marznący deszcz"
 
-#. light intensity shower rain
-#: ../src/openweathermap_org.js:231
+#: src/openweathermap_org.js:231
 msgid "light intensity shower rain"
 msgstr "słabe, przelotne opady deszczu"
 
-#. shower rain
-#: ../src/openweathermap_org.js:233
+#: src/openweathermap_org.js:233
 msgid "shower rain"
 msgstr "przelotne opady deszczu"
 
-#. heavy intensity shower rain
-#: ../src/openweathermap_org.js:235
+#: src/openweathermap_org.js:235
 msgid "heavy intensity shower rain"
 msgstr "silne, przelotne opady śniegu"
 
-#. ragged shower rain
-#: ../src/openweathermap_org.js:237
+#: src/openweathermap_org.js:237
 msgid "ragged shower rain"
 msgstr "opady deszczu"
 
-#. light snow
-#: ../src/openweathermap_org.js:239
+#: src/openweathermap_org.js:239
 msgid "light snow"
 msgstr "słabe opady śniegu"
 
-#. snow
-#: ../src/openweathermap_org.js:241
+#: src/openweathermap_org.js:241
 msgid "snow"
 msgstr "śnieg"
 
-#. heavy snow
-#: ../src/openweathermap_org.js:243
+#: src/openweathermap_org.js:243
 msgid "heavy snow"
 msgstr "silne opady śniegu"
 
-#. sleet
-#: ../src/openweathermap_org.js:245
+#: src/openweathermap_org.js:245
 msgid "sleet"
 msgstr "deszcz ze śniegiem"
 
-#. shower sleet
-#: ../src/openweathermap_org.js:247
+#: src/openweathermap_org.js:247
 msgid "shower sleet"
 msgstr "przelotne opady deszczu ze śniegiem"
 
-#. light rain and snow
-#: ../src/openweathermap_org.js:249
+#: src/openweathermap_org.js:249
 msgid "light rain and snow"
 msgstr "słabe opady deszczu ze śniegiem"
 
-#. rain and snow
-#: ../src/openweathermap_org.js:251
+#: src/openweathermap_org.js:251
 msgid "rain and snow"
 msgstr "deszcz ze śniegiem"
 
-#. light shower snow
-#: ../src/openweathermap_org.js:253
+#: src/openweathermap_org.js:253
 msgid "light shower snow"
 msgstr "słabe, przelotne opady śniegu"
 
-#. shower snow
-#: ../src/openweathermap_org.js:255
+#: src/openweathermap_org.js:255
 msgid "shower snow"
 msgstr "przelotne opady śniegu"
 
-#. heavy shower snow
-#: ../src/openweathermap_org.js:257
+#: src/openweathermap_org.js:257
 msgid "heavy shower snow"
 msgstr "silne opady śniegu"
 
-#. mist
-#: ../src/openweathermap_org.js:259
+#: src/openweathermap_org.js:259
 msgid "mist"
 msgstr "mgła"
 
-#. smoke
-#: ../src/openweathermap_org.js:261
+#: src/openweathermap_org.js:261
 msgid "smoke"
 msgstr "dym"
 
-#. haze
-#: ../src/openweathermap_org.js:263
+#: src/openweathermap_org.js:263
 msgid "haze"
 msgstr "mgła"
 
-#. Sand/Dust Whirls
-#: ../src/openweathermap_org.js:265
+#: src/openweathermap_org.js:265
 msgid "Sand/Dust Whirls"
 msgstr "wiry piasku/pyłu"
 
-#. Fog
-#: ../src/openweathermap_org.js:267
+#: src/openweathermap_org.js:267
 msgid "Fog"
 msgstr "mgła"
 
-#. sand
-#: ../src/openweathermap_org.js:269
+#: src/openweathermap_org.js:269
 msgid "sand"
 msgstr "piasek"
 
-#. dust
-#: ../src/openweathermap_org.js:271
+#: src/openweathermap_org.js:271
 msgid "dust"
 msgstr "pył"
 
-#. VOLCANIC ASH
-#: ../src/openweathermap_org.js:273
+#: src/openweathermap_org.js:273
 msgid "VOLCANIC ASH"
 msgstr "pył wulkaniczny"
 
-#. SQUALLS
-#: ../src/openweathermap_org.js:275
+#: src/openweathermap_org.js:275
 msgid "SQUALLS"
 msgstr "szkwał"
 
-#. TORNADO
-#: ../src/openweathermap_org.js:277
+#: src/openweathermap_org.js:277
 msgid "TORNADO"
 msgstr "tornado"
 
-#. sky is clear
-#: ../src/openweathermap_org.js:279
+#: src/openweathermap_org.js:279
 msgid "sky is clear"
 msgstr "bezchmurnie"
 
-#. few clouds
-#: ../src/openweathermap_org.js:281
+#: src/openweathermap_org.js:281
 msgid "few clouds"
 msgstr "kilka chmur"
 
-#. scattered clouds
-#: ../src/openweathermap_org.js:283
+#: src/openweathermap_org.js:283
 msgid "scattered clouds"
 msgstr "mało chmur"
 
-#. broken clouds
-#: ../src/openweathermap_org.js:285
+#: src/openweathermap_org.js:285
 msgid "broken clouds"
 msgstr "dużo chmur"
 
-#. overcast clouds
-#: ../src/openweathermap_org.js:287
+#: src/openweathermap_org.js:287
 msgid "overcast clouds"
 msgstr "całkowite zachmurzenie"
 
-#: ../src/openweathermap_org.js:289
+#: src/openweathermap_org.js:289
 msgid "Not available"
 msgstr "Niedostępne"
 
-#: ../src/prefs.js:215 ../src/prefs.js:271 ../src/prefs.js:319
-#: ../src/prefs.js:326
+#: src/prefs.js:216 src/prefs.js:272 src/prefs.js:320 src/prefs.js:327
 #, javascript-format
 msgid "Invalid data when searching for \"%s\""
 msgstr "Nieprawidłowe dane podczas wyszukiwania „%s”"
 
-#: ../src/prefs.js:223 ../src/prefs.js:287 ../src/prefs.js:332
+#: src/prefs.js:224 src/prefs.js:288 src/prefs.js:333
 #, javascript-format
 msgid "\"%s\" not found"
 msgstr "Nie odnaleziono „%s”"
 
-#: ../src/prefs.js:393
+#: src/prefs.js:394
 msgid "Location"
 msgstr "Położenie"
 
-#: ../src/prefs.js:403
+#: src/prefs.js:404
 msgid "Provider"
 msgstr "Dostawca"
 
-#: ../src/prefs.js:535
+#: src/prefs.js:553
 #, javascript-format
 msgid "Remove %s ?"
 msgstr "Usunąć %s?"
 
-#: ../src/prefs.js:1056
+#: src/prefs.js:1086
 msgid "default"
 msgstr "domyślne"
 
-#: ../data/weather-settings.ui.h:1
+#: data/weather-settings.ui:31
 msgid "Edit name"
 msgstr "Nazwa"
 
-#: ../data/weather-settings.ui.h:2
+#: data/weather-settings.ui:49 data/weather-settings.ui:79
+#: data/weather-settings.ui:224
 msgid "Clear entry"
 msgstr "Usuń wpis"
 
-#: ../data/weather-settings.ui.h:3
+#: data/weather-settings.ui:63
 msgid "Edit coordinates"
 msgstr "Współrzędne"
 
-#: ../data/weather-settings.ui.h:4
+#: data/weather-settings.ui:93 data/weather-settings.ui:261
 msgid "Extensions default weather provider"
-msgstr "Domyślny dostawca informacji o pogodzie"
+msgstr "Domyślny dostawca informacji o pogodzie"
 
-#: ../data/weather-settings.ui.h:5
+#: data/weather-settings.ui:125 data/weather-settings.ui:293
 msgid "Cancel"
 msgstr "Anuluj"
 
-#: ../data/weather-settings.ui.h:6
+#: data/weather-settings.ui:143 data/weather-settings.ui:311
 msgid "Save"
 msgstr "Zapisz"
 
-#: ../data/weather-settings.ui.h:7
+#: data/weather-settings.ui:201
 msgid "Search by location or coordinates"
 msgstr "Położenie lub współrzędne"
 
-#: ../data/weather-settings.ui.h:8
+#: data/weather-settings.ui:225
 msgid "e.g. Vaiaku, Tuvalu or -8.5211767,179.1976747"
 msgstr "np. Warszawa, mazowieckie, Polska lub 52.2319237,21.0067265"
 
-#: ../data/weather-settings.ui.h:9
+#: data/weather-settings.ui:235
 msgid "Find"
 msgstr "Znajdź"
 
-#: ../data/weather-settings.ui.h:11
+#: data/weather-settings.ui:482
 msgid "Chose default weather provider"
-msgstr "Domyślny dostawca informacji o pogodzie"
+msgstr "Domyślny dostawca informacji o pogodzie"
 
-#: ../data/weather-settings.ui.h:12
+#: data/weather-settings.ui:495
 msgid "Personal Api key from openweathermap.org"
-msgstr "Osobisty klucz API z serwisu openweathermap.org"
+msgstr "Osobisty klucz API z serwisu openweathermap.org"
 
-#: ../data/weather-settings.ui.h:13
-msgid "Personal Api key from forecast.io"
-msgstr "Osobisty klucz API z serwisu forecast.io"
+#: data/weather-settings.ui:546
+msgid "Personal Api key from Dark Sky"
+msgstr "Osobisty klucz API z serwisu Dark Sky"
 
-#: ../data/weather-settings.ui.h:14
+#: data/weather-settings.ui:559
 msgid "Refresh timeout for current weather [min]"
-msgstr "Aktualizacja informacji o obecnej pogodzie (w minutach)"
+msgstr "Aktualizacja informacji o obecnej pogodzie (w minutach)"
 
-#: ../data/weather-settings.ui.h:15
+#: data/weather-settings.ui:573
 msgid "Refresh timeout for weather forecast [min]"
-msgstr "Aktualizacja informacji o prognozie pogody (w minutach)"
+msgstr "Aktualizacja informacji o prognozie pogody (w minutach)"
 
-#: ../data/weather-settings.ui.h:16
+#: data/weather-settings.ui:601
 msgid ""
-"Note: the forecast-timout is not used for forecast.io, because they do not "
+"Note: the forecast-timout is not used for Dark Sky, because they do not "
 "provide seperate downloads for current weather and forecasts."
 msgstr ""
-"Uwaga: ustawienia aktualizacji nie działają z serwisem forecast.io, ponieważ "
-"nie ma możliwości pobrania informacji osobno dla obecnej pogody i prognozy."
+"Uwaga: ustawienia aktualizacji nie działają z serwisem Dark Sky, ponieważ "
+"nie ma możliwości pobrania informacji osobno dla obecnej pogody i prognozy."
 
-#: ../data/weather-settings.ui.h:17
+#: data/weather-settings.ui:629
 msgid "Use extensions api-key for openweathermap.org"
 msgstr "Klucz API rozszerzenia dla serwisu openweathermap.org"
 
-#: ../data/weather-settings.ui.h:18
+#: data/weather-settings.ui:640
 msgid ""
 "Switch off, if you have your own api-key for openweathermap.org and put it "
 "into the text-box below."
 msgstr ""
-"Należy wyłączyć, jeżeli w polu poniżej wklejono osobisty klucz dla serwisu "
+"Należy wyłączyć, jeżeli w polu poniżej wklejono osobisty klucz dla serwisu "
 "openweathermap.org."
 
-#: ../data/weather-settings.ui.h:19
+#: data/weather-settings.ui:657
 msgid "Weather provider"
-msgstr "Dostawca informacji o pogodzie"
+msgstr "Dostawca informacji o pogodzie"
 
-#: ../data/weather-settings.ui.h:20
+#: data/weather-settings.ui:677
 msgid "Chose geolocation provider"
 msgstr "Dostawca geolokalizacji"
 
-#: ../data/weather-settings.ui.h:21
+#: data/weather-settings.ui:703
 msgid "Personal AppKey from developer.mapquest.com"
-msgstr "Osobisty klucz API z serwisu developer.mapquest.com"
+msgstr "Osobisty klucz aplikacji z serwisu developer.mapquest.com"
 
-#: ../data/weather-settings.ui.h:22
+#: data/weather-settings.ui:732
 msgid "Geolocation provider"
 msgstr "Dostawca geolokalizacji"
 
-#: ../data/weather-settings.ui.h:23
+#: data/weather-settings.ui:752
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:63
 msgid "Temperature Unit"
 msgstr "Jednostka temperatury"
 
-#: ../data/weather-settings.ui.h:24
+#: data/weather-settings.ui:763
 msgid "Wind Speed Unit"
 msgstr "Jednostka prędkości wiatru"
 
-#: ../data/weather-settings.ui.h:25
+#: data/weather-settings.ui:774
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:67
 msgid "Pressure Unit"
 msgstr "Jednostka ciśnienia"
 
-#: ../data/weather-settings.ui.h:39
+#: data/weather-settings.ui:811
 msgid "Beaufort"
 msgstr "B"
 
-#: ../data/weather-settings.ui.h:50
+#: data/weather-settings.ui:851
 msgid "Units"
 msgstr "Jednostki"
 
-#: ../data/weather-settings.ui.h:51
+#: data/weather-settings.ui:871
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:113
 msgid "Position in Panel"
 msgstr "Położenie na panelu"
 
-#: ../data/weather-settings.ui.h:52
+#: data/weather-settings.ui:882
+msgid "Position of menu-box [%] from 0 (left) to 100 (right)"
+msgstr "Położenie menu (w procentach) od 0 (po lewej) do 100 (po prawej)"
+
+#: data/weather-settings.ui:893
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:76
 msgid "Wind Direction by Arrows"
 msgstr "Strzałka kierunku wiatru"
 
-#: ../data/weather-settings.ui.h:53
+#: data/weather-settings.ui:904
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:89
 msgid "Translate Conditions"
 msgstr "Tłumaczenia warunków pogodowych"
 
-#: ../data/weather-settings.ui.h:54
+#: data/weather-settings.ui:915
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:93
 msgid "Symbolic Icons"
 msgstr "Ikony symboliczne"
 
-#: ../data/weather-settings.ui.h:55
+#: data/weather-settings.ui:926
 msgid "Text on buttons"
 msgstr "Tekst na przyciskach"
 
-#: ../data/weather-settings.ui.h:56
+#: data/weather-settings.ui:937
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:101
 msgid "Temperature in Panel"
 msgstr "Temperatura na panelu"
 
-#: ../data/weather-settings.ui.h:57
+#: data/weather-settings.ui:948
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:105
 msgid "Conditions in Panel"
 msgstr "Warunki pogodowe na panelu"
 
-#: ../data/weather-settings.ui.h:58
+#: data/weather-settings.ui:959
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:109
 msgid "Conditions in Forecast"
-msgstr "Warunki pogodowe w prognozie"
+msgstr "Warunki pogodowe w prognozie"
 
-#: ../data/weather-settings.ui.h:59
+#: data/weather-settings.ui:970
 msgid "Center forecast"
 msgstr "Wyśrodkowanie prognozy"
 
-#: ../data/weather-settings.ui.h:60
+#: data/weather-settings.ui:981
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:133
 msgid "Number of days in forecast"
 msgstr "Liczba dni prognozy"
 
-#: ../data/weather-settings.ui.h:61
+#: data/weather-settings.ui:992
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:137
 msgid "Maximal number of digits after the decimal point"
 msgstr "Maksymalna liczba cyfr po przecinku"
 
-#: ../data/weather-settings.ui.h:62
+#: data/weather-settings.ui:1004
 msgid "Center"
 msgstr "Na środku"
 
-#: ../data/weather-settings.ui.h:63
+#: data/weather-settings.ui:1005
 msgid "Right"
 msgstr "Po prawej"
 
-#: ../data/weather-settings.ui.h:64
+#: data/weather-settings.ui:1006
 msgid "Left"
 msgstr "Po lewej"
 
-#: ../data/weather-settings.ui.h:65
+#: data/weather-settings.ui:1164
 msgid "Layout"
 msgstr "Wygląd"
 
-#: ../data/weather-settings.ui.h:66
+#: data/weather-settings.ui:1216
 msgid "Version: "
 msgstr "Wersja: "
 
-#: ../data/weather-settings.ui.h:67
+#: data/weather-settings.ui:1230
 msgid "unknown (self-build ?)"
 msgstr "nieznana"
 
-#: ../data/weather-settings.ui.h:68
+#: data/weather-settings.ui:1250
 msgid ""
 "<span>Weather extension to display weather information from <a href="
 "\"https://openweathermap.org/\">Openweathermap</a> or <a href=\"https://"
-"forecast.io\">forecast.io</a> for almost all locations in the world.</span>"
+"darksky.net\">Dark Sky</a> for almost all locations in the world.</span>"
 msgstr ""
-"<span>Rozszerzenie pogody pobiera informacje z serwisu <a href=\"https://"
-"openweathermap.org/\">OpenWeatherMap</a> lub <a href=\"https://forecast.io"
-"\">forecast.io</a> dla niemal wszystkich miejsc na świecie.</span>"
+"<span>Rozszerzenie pogody pobiera informacje z serwisu <a href=\"https://"
+"openweathermap.org/\">OpenWeatherMap</a> lub <a href=\"https://darksky.net"
+"\">Dark Sky</a> dla niemal wszystkich miejsc na świecie.</span>"
 
-#: ../data/weather-settings.ui.h:69
+#: data/weather-settings.ui:1273
 msgid "Maintained by"
 msgstr "Autor:"
 
-#: ../data/weather-settings.ui.h:70
+#: data/weather-settings.ui:1303
 msgid "Webpage"
 msgstr "Strona WWW"
 
-#: ../data/weather-settings.ui.h:71
+#: data/weather-settings.ui:1324
 msgid ""
 "<span size=\"small\">This program comes with ABSOLUTELY NO WARRANTY.\n"
 "See the <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
@@ -859,6 +823,74 @@ msgstr ""
 "gpl-2.0.html\">Powszechna licencja publiczna GNU, wersja 2 lub późniejsza</"
 "a>.</span>"
 
-#: ../data/weather-settings.ui.h:73
+#: data/weather-settings.ui:1345
 msgid "About"
-msgstr "O programie"
+msgstr "O programie"
+
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:55
+msgid "Weather Provider"
+msgstr "Dostawca informacji o pogodzie"
+
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:59
+msgid "Geolocation Provider"
+msgstr "Dostawca geolokalizacji"
+
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:71
+msgid "Wind Speed Units"
+msgstr "Jednostka prędkości wiatru"
+
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:72
+msgid ""
+"Choose the units used for wind speed. Allowed values are 'kph', 'mph', 'm/"
+"s', 'knots', 'ft/s' or 'Beaufort'."
+msgstr ""
+"Jednostka używana dla prędkości wiatru. Dozwolone wartości: „kph”, „mph”, „m/"
+"s”, „knots”, „ft/s” lub „Beaufort”."
+
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:77
+msgid "Choose whether to display wind direction through arrows or letters."
+msgstr "Czy wyświetlać kierunek wiatru za pomocą strzałek lub liter."
+
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:81
+msgid "City to be displayed"
+msgstr "Wyświetlane miasto"
+
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:85
+msgid "Actual City"
+msgstr "Obecne miasto"
+
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:97
+msgid "Use text on buttons in menu"
+msgstr "Tekst na przyciskach w menu"
+
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:117
+msgid "Horizontal position of menu-box."
+msgstr "Położenie menu w poziomie."
+
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:121
+msgid "Refresh interval (actual weather)"
+msgstr "Czas odświeżania (obecnej pogody)"
+
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:125
+msgid "Refresh interval (forecast)"
+msgstr "Czas odświeżania (prognozy)"
+
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:129
+msgid "Center forecastbox."
+msgstr "Wyśrodkowanie prognozy."
+
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:141
+msgid "Your personal API key from openweathermap.org"
+msgstr "Osobisty klucz API z serwisu openweathermap.org"
+
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:145
+msgid "Use the extensions default API key from openweathermap.org"
+msgstr "Użycie domyślnego klucza API rozszerzenia z serwisu openweathermap.org"
+
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:149
+msgid "Your personal API key from Dark Sky"
+msgstr "Osobisty klucz API z serwisu Dark Sky"
+
+#: data/org.gnome.shell.extensions.openweather.gschema.xml:153
+msgid "Your personal AppKey from developer.mapquest.com"
+msgstr "Osobisty klucz aplikacji z serwisu developer.mapquest.com"
