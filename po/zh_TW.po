@@ -11,7 +11,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://github.com/jenslody/gnome-shell-extension-"
 "openweather/issues\n"
 "POT-Creation-Date: 2017-02-04 20:19+0100\n"
-"PO-Revision-Date: 2017-02-04 20:32+0100\n"
+"PO-Revision-Date: 2017-03-06 23:22+0800\n"
 "Last-Translator: shlinux <lishaohui.qd@163.com>\n"
 "Language-Team: Chinese (Traditional) <>\n"
 "Language: zh_TW\n"
@@ -636,7 +636,6 @@ msgid "Personal Api key from openweathermap.org"
 msgstr "openweathermap.org 的個人 API 密鑰"
 
 #: data/weather-settings.ui:546
-#, fuzzy
 msgid "Personal Api key from Dark Sky"
 msgstr "Dark Sky 的個人 API 密鑰"
 
@@ -649,7 +648,6 @@ msgid "Refresh timeout for weather forecast [min]"
 msgstr "刷新天氣預報的超時時間 [分鐘]"
 
 #: data/weather-settings.ui:601
-#, fuzzy
 msgid ""
 "Note: the forecast-timout is not used for Dark Sky, because they do not "
 "provide seperate downloads for current weather and forecasts."
@@ -713,7 +711,7 @@ msgstr "面板上的位置"
 
 #: data/weather-settings.ui:882
 msgid "Position of menu-box [%] from 0 (left) to 100 (right)"
-msgstr ""
+msgstr "菜單框的位置，從左至右，0到100"
 
 #: data/weather-settings.ui:893
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:76
@@ -788,7 +786,6 @@ msgid "unknown (self-build ?)"
 msgstr "未知（自建？）"
 
 #: data/weather-settings.ui:1250
-#, fuzzy
 msgid ""
 "<span>Weather extension to display weather information from <a href="
 "\"https://openweathermap.org/\">Openweathermap</a> or <a href=\"https://"
@@ -821,17 +818,14 @@ msgid "About"
 msgstr "關於"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:55
-#, fuzzy
 msgid "Weather Provider"
 msgstr "天氣提供源"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:59
-#, fuzzy
 msgid "Geolocation Provider"
 msgstr "地理位置提供源"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:71
-#, fuzzy
 msgid "Wind Speed Units"
 msgstr "風速單位"
 
@@ -839,60 +833,53 @@ msgstr "風速單位"
 msgid ""
 "Choose the units used for wind speed. Allowed values are 'kph', 'mph', 'm/"
 "s', 'knots', 'ft/s' or 'Beaufort'."
-msgstr ""
+msgstr "選擇風速單位。允許 kph，mph，m/s，knots，ft/s 或 Beaufort。"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:77
 msgid "Choose whether to display wind direction through arrows or letters."
-msgstr ""
+msgstr "選擇通過箭頭還是字母來顯示風向。"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:81
 msgid "City to be displayed"
-msgstr ""
+msgstr "要顯示的城市"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:85
 msgid "Actual City"
-msgstr ""
+msgstr "實際城市"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:97
-#, fuzzy
 msgid "Use text on buttons in menu"
-msgstr "圖示顯示文本"
+msgstr "在菜單的按鈕上使用文字"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:117
 msgid "Horizontal position of menu-box."
-msgstr ""
+msgstr "菜單框的水平位置。"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:121
 msgid "Refresh interval (actual weather)"
-msgstr ""
+msgstr "刷新間隔（實際天氣）"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:125
-#, fuzzy
 msgid "Refresh interval (forecast)"
-msgstr "預報訊息居中顯示"
+msgstr "刷新間隔（預報訊息）"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:129
-#, fuzzy
 msgid "Center forecastbox."
-msgstr "預報訊息居中顯示"
+msgstr "居中預報框。"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:141
-#, fuzzy
 msgid "Your personal API key from openweathermap.org"
 msgstr "openweathermap.org 的個人 API 密鑰"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:145
-#, fuzzy
 msgid "Use the extensions default API key from openweathermap.org"
 msgstr "使用本擴展的 openweathermap.org API 密鑰"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:149
-#, fuzzy
 msgid "Your personal API key from Dark Sky"
 msgstr "Dark Sky 的個人 API 密鑰"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:153
-#, fuzzy
 msgid "Your personal AppKey from developer.mapquest.com"
 msgstr "developer.mapquest.com 的個人應用密鑰"
 
