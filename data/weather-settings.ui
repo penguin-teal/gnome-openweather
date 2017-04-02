@@ -1291,7 +1291,6 @@
             <property name="can_focus">True</property>
             <property name="receives_default">True</property>
             <property name="events"/>
-            <property name="opacity">0.99999999977648257</property>
             <property name="halign">center</property>
             <property name="relief">none</property>
             <property name="uri">https://github.com/jenslody/gnome-shell-extension-openweather</property>
