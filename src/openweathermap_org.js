@@ -86,82 +86,82 @@ weather-storm.png = weather-storm-symbolic.svg
 
 */
     switch (parseInt(code, 10)) {
-        case 200: //thunderstorm with light rain
-        case 201: //thunderstorm with rain
-        case 202: //thunderstorm with heavy rain
-        case 210: //light thunderstorm
-        case 211: //thunderstorm
-        case 212: //heavy thunderstorm
-        case 221: //ragged thunderstorm
-        case 230: //thunderstorm with light drizzle
-        case 231: //thunderstorm with drizzle
-        case 232: //thunderstorm with heavy drizzle
+        case 200: //Thunderstorm with light rain
+        case 201: //Thunderstorm with rain
+        case 202: //Thunderstorm with heavy rain
+        case 210: //Light thunderstorm
+        case 211: //Thunderstorm
+        case 212: //Heavy thunderstorm
+        case 221: //Ragged thunderstorm
+        case 230: //Thunderstorm with light drizzle
+        case 231: //Thunderstorm with drizzle
+        case 232: //Thunderstorm with heavy drizzle
             iconname = ['weather-storm'];
             break;
-        case 300: //light intensity drizzle
+        case 300: //Light intensity drizzle
         case 301: //drizzle
-        case 302: //heavy intensity drizzle
-        case 310: //light intensity drizzle rain
+        case 302: //Heavy intensity drizzle
+        case 310: //Light intensity drizzle rain
         case 311: //drizzle rain
-        case 312: //heavy intensity drizzle rain
-        case 313: //shower rain and drizzle
-        case 314: //heavy shower rain and drizzle
-        case 321: //shower drizzle
+        case 312: //Heavy intensity drizzle rain
+        case 313: //Shower rain and drizzle
+        case 314: //Heavy shower rain and drizzle
+        case 321: //Shower drizzle
             iconname = ['weather-showers'];
             break;
-        case 500: //light rain
-        case 501: //moderate rain
-        case 502: //heavy intensity rain
-        case 503: //very heavy rain
-        case 504: //extreme rain
+        case 500: //Light rain
+        case 501: //Moderate rain
+        case 502: //Heavy intensity rain
+        case 503: //Very heavy rain
+        case 504: //Extreme rain
             iconname = ['weather-showers-scattered', 'weather-showers'];
             break;
-        case 511: //freezing rain
+        case 511: //Freezing rain
             iconname = ['weather-freezing-rain', 'weather-showers'];
             break;
-        case 520: //light intensity shower rain
-        case 521: //shower rain
-        case 522: //heavy intensity shower rain
-        case 531: //ragged shower rain
+        case 520: //Light intensity shower rain
+        case 521: //Shower rain
+        case 522: //Heavy intensity shower rain
+        case 531: //Ragged shower rain
             iconname = ['weather-showers'];
             break;
-        case 600: //light snow
-        case 601: //snow
-        case 602: //heavy snow
-        case 611: //sleet
-        case 612: //shower sleet
-        case 615: //light rain and snow
-        case 616: //rain and snow
-        case 620: //light shower snow
-        case 621: //shower snow
-        case 622: //heavy shower snow
+        case 600: //Light snow
+        case 601: //Snow
+        case 602: //Heavy snow
+        case 611: //Sleet
+        case 612: //Shower sleet
+        case 615: //Light rain and snow
+        case 616: //Rain and snow
+        case 620: //Light shower snow
+        case 621: //Shower snow
+        case 622: //Heavy shower snow
             iconname = ['weather-snow'];
             break;
-        case 701: //mist
-        case 711: //smoke
-        case 721: //haze
+        case 701: //Mist
+        case 711: //Smoke
+        case 721: //Haze
         case 741: //Fog
             iconname = ['weather-fog'];
             break;
         case 731: //Sand/Dust Whirls
-        case 751: //sand
-        case 761: //dust
+        case 751: //Sand
+        case 761: //Dust
         case 762: //VOLCANIC ASH
         case 771: //SQUALLS
         case 781: //TORNADO
             iconname = ['weather-severe-alert'];
             break;
-        case 800: //sky is clear
+        case 800: //Sky is clear
             iconname = ['weather-clear'];
             break;
-        case 801: //few clouds
-        case 802: //scattered clouds
+        case 801: //Few clouds
+        case 802: //Scattered clouds
             iconname = ['weather-few-clouds'];
             break;
-        case 803: //broken clouds
+        case 803: //Broken clouds
             iconname = ['weather-many-clouds', 'weather-overcast'];
             break;
-        case 804: //overcast clouds
+        case 804: //Overcast clouds
             iconname = ['weather-overcast'];
             break;
     }
@@ -177,114 +177,114 @@ weather-storm.png = weather-storm-symbolic.svg
 
 function getWeatherCondition(code) {
     switch (parseInt(code, 10)) {
-        case 200: //thunderstorm with light rain
-            return _('thunderstorm with light rain');
-        case 201: //thunderstorm with rain
-            return _('thunderstorm with rain');
-        case 202: //thunderstorm with heavy rain
-            return _('thunderstorm with heavy rain');
-        case 210: //light thunderstorm
-            return _('light thunderstorm');
-        case 211: //thunderstorm
-            return _('thunderstorm');
-        case 212: //heavy thunderstorm
-            return _('heavy thunderstorm');
-        case 221: //ragged thunderstorm
-            return _('ragged thunderstorm');
-        case 230: //thunderstorm with light drizzle
-            return _('thunderstorm with light drizzle');
-        case 231: //thunderstorm with drizzle
-            return _('thunderstorm with drizzle');
-        case 232: //thunderstorm with heavy drizzle
-            return _('thunderstorm with heavy drizzle');
-        case 300: //light intensity drizzle
-            return _('light intensity drizzle');
-        case 301: //drizzle
-            return _('drizzle');
-        case 302: //heavy intensity drizzle
-            return _('heavy intensity drizzle');
-        case 310: //light intensity drizzle rain
-            return _('light intensity drizzle rain');
-        case 311: //drizzle rain
-            return _('drizzle rain');
-        case 312: //heavy intensity drizzle rain
-            return _('heavy intensity drizzle rain');
-        case 313: //shower rain and drizzle
-            return _('shower rain and drizzle');
-        case 314: //heavy shower rain and drizzle
-            return _('heavy shower rain and drizzle');
-        case 321: //shower drizzle
-            return _('shower drizzle');
-        case 500: //light rain
-            return _('light rain');
-        case 501: //moderate rain
-            return _('moderate rain');
-        case 502: //heavy intensity rain
-            return _('heavy intensity rain');
-        case 503: //very heavy rain
-            return _('very heavy rain');
-        case 504: //extreme rain
-            return _('extreme rain');
-        case 511: //freezing rain
-            return _('freezing rain');
-        case 520: //light intensity shower rain
-            return _('light intensity shower rain');
-        case 521: //shower rain
-            return _('shower rain');
-        case 522: //heavy intensity shower rain
-            return _('heavy intensity shower rain');
-        case 531: //ragged shower rain
-            return _('ragged shower rain');
-        case 600: //light snow
-            return _('light snow');
-        case 601: //snow
-            return _('snow');
-        case 602: //heavy snow
-            return _('heavy snow');
-        case 611: //sleet
-            return _('sleet');
-        case 612: //shower sleet
-            return _('shower sleet');
-        case 615: //light rain and snow
-            return _('light rain and snow');
-        case 616: //rain and snow
-            return _('rain and snow');
-        case 620: //light shower snow
-            return _('light shower snow');
-        case 621: //shower snow
-            return _('shower snow');
-        case 622: //heavy shower snow
-            return _('heavy shower snow');
-        case 701: //mist
-            return _('mist');
-        case 711: //smoke
-            return _('smoke');
-        case 721: //haze
-            return _('haze');
+        case 200: //Thunderstorm with light rain
+            return _('Thunderstorm with light rain');
+        case 201: //Thunderstorm with rain
+            return _('Thunderstorm with rain');
+        case 202: //Thunderstorm with heavy rain
+            return _('Thunderstorm with heavy rain');
+        case 210: //Light thunderstorm
+            return _('Light thunderstorm');
+        case 211: //Thunderstorm
+            return _('Thunderstorm');
+        case 212: //Heavy thunderstorm
+            return _('Heavy thunderstorm');
+        case 221: //Ragged thunderstorm
+            return _('Ragged thunderstorm');
+        case 230: //Thunderstorm with light drizzle
+            return _('Thunderstorm with light drizzle');
+        case 231: //Thunderstorm with drizzle
+            return _('Thunderstorm with drizzle');
+        case 232: //Thunderstorm with heavy drizzle
+            return _('Thunderstorm with heavy drizzle');
+        case 300: //Light intensity drizzle
+            return _('Light intensity drizzle');
+        case 301: //Drizzle
+            return _('Drizzle');
+        case 302: //Heavy intensity drizzle
+            return _('Heavy intensity drizzle');
+        case 310: //Light intensity drizzle rain
+            return _('Light intensity drizzle rain');
+        case 311: //Drizzle rain
+            return _('Drizzle rain');
+        case 312: //Heavy intensity drizzle rain
+            return _('Heavy intensity drizzle rain');
+        case 313: //Shower rain and drizzle
+            return _('Shower rain and drizzle');
+        case 314: //Heavy shower rain and drizzle
+            return _('Heavy shower rain and drizzle');
+        case 321: //Shower drizzle
+            return _('Shower drizzle');
+        case 500: //Light rain
+            return _('Light rain');
+        case 501: //Moderate rain
+            return _('Moderate rain');
+        case 502: //Heavy intensity rain
+            return _('Heavy intensity rain');
+        case 503: //Very heavy rain
+            return _('Very heavy rain');
+        case 504: //Extreme rain
+            return _('Extreme rain');
+        case 511: //Freezing rain
+            return _('Freezing rain');
+        case 520: //Light intensity shower rain
+            return _('Light intensity shower rain');
+        case 521: //Shower rain
+            return _('Shower rain');
+        case 522: //Heavy intensity shower rain
+            return _('Heavy intensity shower rain');
+        case 531: //Ragged shower rain
+            return _('Ragged shower rain');
+        case 600: //Light snow
+            return _('Light snow');
+        case 601: //Snow
+            return _('Snow');
+        case 602: //Heavy snow
+            return _('Heavy snow');
+        case 611: //Sleet
+            return _('Sleet');
+        case 612: //Shower sleet
+            return _('Shower sleet');
+        case 615: //Light rain and snow
+            return _('Light rain and snow');
+        case 616: //Rain and snow
+            return _('Rain and snow');
+        case 620: //Light shower snow
+            return _('Light shower snow');
+        case 621: //Shower snow
+            return _('Shower snow');
+        case 622: //Heavy shower snow
+            return _('Heavy shower snow');
+        case 701: //Mist
+            return _('Mist');
+        case 711: //Smoke
+            return _('Smoke');
+        case 721: //Haze
+            return _('Haze');
         case 731: //Sand/Dust Whirls
             return _('Sand/Dust Whirls');
         case 741: //Fog
             return _('Fog');
-        case 751: //sand
-            return _('sand');
-        case 761: //dust
-            return _('dust');
+        case 751: //Sand
+            return _('Sand');
+        case 761: //Dust
+            return _('Dust');
         case 762: //VOLCANIC ASH
             return _('VOLCANIC ASH');
         case 771: //SQUALLS
             return _('SQUALLS');
         case 781: //TORNADO
             return _('TORNADO');
-        case 800: //sky is clear
-            return _('sky is clear');
-        case 801: //few clouds
-            return _('few clouds');
-        case 802: //scattered clouds
-            return _('scattered clouds');
-        case 803: //broken clouds
-            return _('broken clouds');
-        case 804: //overcast clouds
-            return _('overcast clouds');
+        case 800: //Sky is clear
+            return _('Sky is clear');
+        case 801: //Few clouds
+            return _('Few clouds');
+        case 802: //Scattered clouds
+            return _('Scattered clouds');
+        case 803: //Broken clouds
+            return _('Broken clouds');
+        case 804: //Overcast clouds
+            return _('Overcast clouds');
         default:
             return _('Not available');
     }
