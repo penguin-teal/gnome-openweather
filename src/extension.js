@@ -151,6 +151,12 @@ const OpenweatherMenuButton = new Lang.Class({
     _init: function() {
         this.owmCityId = 0;
 
+        // Get locale, needed for toLocaleString, workaround for gnome-shell 3.24
+        this.locale = GLib.get_language_names()[0];
+
+        if (this.locale.indexOf('_') != -1)
+            this.locale = this.locale.split("_")[0];
+
         // Create user-agent string from uuid and (if present) the version
         this.user_agent = Me.metadata.uuid;
         if (Me.metadata.version !== undefined && Me.metadata.version.toString().trim() !== '') {
@@ -429,13 +435,9 @@ const OpenweatherMenuButton = new Lang.Class({
                 'zh',
                 'zh-tw'
             ];
-            let locale = GLib.get_language_names()[0];
 
-            if (locale.indexOf('_') != -1)
-                locale = locale.split("_")[0];
-
-            if (fc_locales.indexOf(locale) != -1)
-                this.fc_locale = locale;
+            if (fc_locales.indexOf(this.locale) != -1)
+                this.fc_locale = this.locale;
         }
 
         if (this._appid_fc.toString().trim() === '')
@@ -1284,7 +1286,7 @@ const OpenweatherMenuButton = new Lang.Class({
                 pressure_unit = _("mbar");
                 break;
         }
-        return parseFloat(pressure).toLocaleString() + ' ' + pressure_unit;
+        return parseFloat(pressure).toLocaleString(this.locale) + ' ' + pressure_unit;
     },
 
     formatTemperature: function(temperature) {
@@ -1321,7 +1323,7 @@ const OpenweatherMenuButton = new Lang.Class({
                 temperature = this.toNewton(temperature);
                 break;
         }
-        return parseFloat(temperature).toLocaleString() + ' ' + this.unit_to_unicode();
+        return parseFloat(temperature).toLocaleString(this.locale) + ' ' + this.unit_to_unicode();
     },
 
     formatWind: function(speed, direction) {
@@ -1361,9 +1363,9 @@ const OpenweatherMenuButton = new Lang.Class({
         if (!speed)
             return '\u2013';
         else if (speed === 0 || !direction)
-            return parseFloat(speed).toLocaleString() + ' ' + unit;
+            return parseFloat(speed).toLocaleString(this.locale) + ' ' + unit;
         else // i.e. speed > 0 && direction
-            return direction + ' ' + parseFloat(speed).toLocaleString() + ' ' + unit;
+            return direction + ' ' + parseFloat(speed).toLocaleString(this.locale) + ' ' + unit;
     },
 
     reloadWeatherCurrent: function(interval) {
