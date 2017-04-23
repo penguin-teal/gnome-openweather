@@ -1,13 +1,13 @@
-%global git 48ee4af
+%global git 648d491
 %global uuid openweather-extension@jenslody.de
 %global github jenslody-gnome-shell-extension-openweather
 %global checkout git%{git}
-%global checkout_date 20170307
+%global checkout_date 20170423
 
 
 Name:           gnome-shell-extension-openweather
 Version:        1
-Release:        0.28.%{checkout_date}%{checkout}%{?dist}
+Release:        0.29.%{checkout_date}%{checkout}%{?dist}
 Summary:        Display weather information from many locations in the world
 
 Group:          User Interface/Desktops
@@ -68,6 +68,9 @@ fi
 %{_datadir}/gnome-shell/extensions/%{uuid}
 
 %changelog
+* Sun Apr 23 2017 Jens Lody <fedora@jenslody.de> - 1-0.29.20170423git648d491
+- Workaround for incorrect displayed localized decimals.
+
 * Tue Mar 07 2017 Jens Lody <fedora@jenslody.de> - 1-0.28.20170307git48ee4af
 - Fix rhbz#1429776 (double initialization of variable).
 - fix minor version of gnome-shell needed
