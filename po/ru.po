@@ -13,7 +13,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://github.com/jenslody/gnome-shell-extension-"
 "openweather/issues\n"
 "POT-Creation-Date: 2017-04-02 23:47+0200\n"
-"PO-Revision-Date: 2016-11-08 09:20+0300\n"
+"PO-Revision-Date: 2017-04-26 09:20+0300\n"
 "Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -85,35 +85,35 @@ msgstr "Неверное местоположение! Попробуйте со
 
 #: src/extension.js:1036 data/weather-settings.ui:773
 msgid "°F"
-msgstr ""
+msgstr "°F"
 
 #: src/extension.js:1038 data/weather-settings.ui:774
 msgid "K"
-msgstr ""
+msgstr "K"
 
 #: src/extension.js:1040 data/weather-settings.ui:775
 msgid "°Ra"
-msgstr ""
+msgstr "°Ra"
 
 #: src/extension.js:1042 data/weather-settings.ui:776
 msgid "°Ré"
-msgstr ""
+msgstr "°Ré"
 
 #: src/extension.js:1044 data/weather-settings.ui:777
 msgid "°Rø"
-msgstr ""
+msgstr "°Rø"
 
 #: src/extension.js:1046 data/weather-settings.ui:778
 msgid "°De"
-msgstr ""
+msgstr "°De"
 
 #: src/extension.js:1048 data/weather-settings.ui:779
 msgid "°N"
-msgstr ""
+msgstr "°N"
 
 #: src/extension.js:1050 data/weather-settings.ui:772
 msgid "°C"
-msgstr ""
+msgstr "°C"
 
 #: src/extension.js:1091
 msgid "Calm"
@@ -269,7 +269,7 @@ msgstr "мм рт.ст."
 
 #: src/extension.js:1284 data/weather-settings.ui:820
 msgid "mbar"
-msgstr ""
+msgstr "мбар"
 
 #: src/extension.js:1328 data/weather-settings.ui:794
 msgid "m/s"
@@ -332,7 +332,7 @@ msgstr[2] "%d дней назад"
 #: src/darksky_net.js:174 src/darksky_net.js:176 src/openweathermap_org.js:366
 #: src/openweathermap_org.js:368
 msgid ", "
-msgstr ""
+msgstr ", "
 
 #: src/darksky_net.js:268 src/openweathermap_org.js:445
 msgid "Today"
