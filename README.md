@@ -36,6 +36,11 @@ Install the package through APT (or use your favourite package-manager, e.g. syn
 
 You can install the extension from the official Fedora repos.
 
+Install the package through DNF 
+
+	sudo dnf install gnome-shell-extension-openweather
+	
+
 ### [Arch Linux (AUR)](https://aur.archlinux.org/packages/gnome-shell-extension-openweather-git/)
 
 	sudo yaourt -S gnome-shell-extension-openweather-git
