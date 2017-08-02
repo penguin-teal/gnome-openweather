@@ -21,11 +21,9 @@
 		</Compiler>
 		<Unit filename="AUTHORS" />
 		<Unit filename="COPYING" />
-		<Unit filename="ChangeLog" />
 		<Unit filename="Makefile.am" />
 		<Unit filename="NEWS" />
 		<Unit filename="README.md" />
-		<Unit filename="aclocal.m4" />
 		<Unit filename="autogen.sh" />
 		<Unit filename="configure.ac" />
 		<Unit filename="data/Makefile.am" />
@@ -54,6 +52,7 @@
 		<Unit filename="po/gnome-shell-extension-openweather.pot" />
 		<Unit filename="po/he.po" />
 		<Unit filename="po/hu.po" />
+		<Unit filename="po/id.po" />
 		<Unit filename="po/it.po" />
 		<Unit filename="po/ja.po" />
 		<Unit filename="po/lt.po" />
@@ -65,6 +64,8 @@
 		<Unit filename="po/ro.po" />
 		<Unit filename="po/ru.po" />
 		<Unit filename="po/sk.po" />
+		<Unit filename="po/sr.po" />
+		<Unit filename="po/sr@latin.po" />
 		<Unit filename="po/sv.po" />
 		<Unit filename="po/uk.po" />
 		<Unit filename="po/vi.po" />
