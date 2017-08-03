@@ -29,11 +29,11 @@ msgstr "..."
 msgid ""
 "Openweathermap.org does not work without an api-key.\n"
 "Either set the switch to use the extensions default key in the preferences "
-"dialog to on or register at http://openweathermap.org/appid and paste your "
+"dialog to on or register at https://openweathermap.org/appid and paste your "
 "personal key into the preferences dialog."
 msgstr ""
 "Openweathermap.org 在沒有 API 密鑰的情況下無法工作。\n"
-"請開啓使用擴展的默認密鑰，或者到 http://openweathermap.org/appid 註冊，並將您"
+"請開啓使用擴展的默認密鑰，或者到 https://openweathermap.org/appid 註冊，並將您"
 "的個人密鑰粘貼到選項對話框中。"
 
 #: src/extension.js:442

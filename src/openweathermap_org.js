@@ -45,7 +45,7 @@ const _ = Gettext.gettext;
 const ngettext = Gettext.ngettext;
 
 const OPENWEATHER_URL_HOST = 'api.openweathermap.org';
-const OPENWEATHER_URL_BASE = 'http://' + OPENWEATHER_URL_HOST + '/data/2.5/';
+const OPENWEATHER_URL_BASE = 'https://' + OPENWEATHER_URL_HOST + '/data/2.5/';
 const OPENWEATHER_URL_CURRENT = OPENWEATHER_URL_BASE + 'weather';
 const OPENWEATHER_URL_FORECAST = OPENWEATHER_URL_BASE + 'forecast/daily';
 
