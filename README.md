@@ -43,7 +43,7 @@ Install the package through DNF
 
 ### [Arch Linux (AUR)](https://aur.archlinux.org/packages/gnome-shell-extension-openweather-git/)
 
-	sudo yaourt -S gnome-shell-extension-openweather-git
+	yaourt -S gnome-shell-extension-openweather-git
 
 ## Generic (Local installation)
 
