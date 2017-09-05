@@ -303,7 +303,7 @@ msgstr "Nebulosidade:"
 
 #: src/extension.js:1511
 msgid "Humidity:"
-msgstr "Humidade:"
+msgstr "Umidade:"
 
 #: src/extension.js:1515
 msgid "Pressure:"
