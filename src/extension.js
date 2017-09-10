@@ -985,7 +985,7 @@ const OpenweatherMenuButton = new Lang.Class({
         let coords = 0;
 
         if (arguments[0] && (arguments[0].search(">") != -1))
-            coords = arguments[0].split(">")[0];
+            coords = arguments[0].split(">")[0].replace(' ', '');
 
         if ((coords.search(",") == -1) || isNaN(coords.split(",")[0]) || isNaN(coords.split(",")[1])) {
             Main.notify("Openweather", _("Invalid location! Please try to recreate it."));
