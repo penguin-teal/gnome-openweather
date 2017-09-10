@@ -353,6 +353,11 @@ const OpenweatherMenuButton = new Lang.Class({
             this._network_monitor_connection = undefined;
         }
 
+        if (this._timeoutCheckConnectionState)
+            Mainloop.source_remove(this._timeoutCheckConnectionState);
+
+        this._timeoutCheckConnectionState = undefined;
+
         if (this._settingsC) {
             this._settings.disconnect(this._settingsC);
             this._settingsC = undefined;
@@ -506,17 +511,27 @@ const OpenweatherMenuButton = new Lang.Class({
     },
 
     _checkConnectionState: function() {
-        let url = this.getWeatherProviderURL();
-        let address = Gio.NetworkAddress.parse_uri(url, 80);
-        let cancellable = Gio.Cancellable.new();
+        if (this._timeoutCheckConnectionState) {
+            Mainloop.source_remove(this._timeoutCheckConnectionState);
+            this._timeoutCheckConnectionState = undefined;
+        }
+
+        let interval = 1250;
         this._oldConnected = this._connected;
         this._connected = false;
-        try {
-            this._network_monitor.can_reach_async(address, cancellable, Lang.bind(this, this._asyncReadyCallback));
-        } catch (err) {
-            let title = _("Can not connect to %s").format(url);
-            log(title + '\n' + err.message);
-        }
+
+        this._timeoutCheckConnectionState = Mainloop.timeout_add(interval, Lang.bind(this, function() {
+            let url = this.getWeatherProviderURL();
+            let address = Gio.NetworkAddress.parse_uri(url, 80);
+            let cancellable = Gio.Cancellable.new();
+            try {
+                this._network_monitor.can_reach_async(address, cancellable, Lang.bind(this, this._asyncReadyCallback));
+            } catch (err) {
+                let title = _("Can not connect to %s").format(url);
+                log(title + '\n' + err.message);
+            }
+            return false;
+        }));
     },
 
     _asyncReadyCallback: function(nm, res) {
