@@ -387,7 +387,7 @@ const OpenweatherMenuButton = new Lang.Class({
         this.weatherProvider = "OpenWeatherMap";
 
         if (this._appid.toString().trim() === '')
-            Main.notify("Openweather", _("Openweathermap.org does not work without an api-key.\nEither set the switch to use the extensions default key in the preferences dialog to on or register at http://openweathermap.org/appid and paste your personal key into the preferences dialog."));
+            Main.notify("Openweather", _("Openweathermap.org does not work without an api-key.\nEither set the switch to use the extensions default key in the preferences dialog to on or register at https://openweathermap.org/appid and paste your personal key into the preferences dialog."));
 
     },
 

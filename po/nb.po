@@ -25,7 +25,7 @@ msgstr "…"
 msgid ""
 "Openweathermap.org does not work without an api-key.\n"
 "Either set the switch to use the extensions default key in the preferences "
-"dialog to on or register at http://openweathermap.org/appid and paste your "
+"dialog to on or register at https://openweathermap.org/appid and paste your "
 "personal key into the preferences dialog."
 msgstr ""
 

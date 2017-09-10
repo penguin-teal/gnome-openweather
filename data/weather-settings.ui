@@ -91,8 +91,8 @@
             <property name="margin_top">5</property>
             <items>
               <item translatable="yes">Extensions default weather provider</item>
-              <item>http://openweathermap.org</item>
-              <item>http://darksky.net</item>
+              <item>https://openweathermap.org</item>
+              <item>https://darksky.net</item>
             </items>
           </object>
           <packing>
@@ -259,8 +259,8 @@
             <property name="active">0</property>
             <items>
               <item translatable="yes">Extensions default weather provider</item>
-              <item>http://openweathermap.org</item>
-              <item>http://darksky.net</item>
+              <item>https://openweathermap.org</item>
+              <item>https://darksky.net</item>
             </items>
           </object>
           <packing>
@@ -490,8 +490,8 @@
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <items>
-              <item>http://openweathermap.org</item>
-              <item>http://darksky.net</item>
+              <item>https://openweathermap.org</item>
+              <item>https://darksky.net</item>
             </items>
           </object>
           <packing>
