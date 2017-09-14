@@ -432,7 +432,7 @@ msgstr "Plugim gelat"
 #: src/openweathermap_org.js:219
 #, fuzzy
 msgid "Light rain"
-msgstr "pluja suau"
+msgstr "Pluja suau"
 
 #: src/openweathermap_org.js:221
 msgid "Moderate rain"
@@ -499,12 +499,12 @@ msgstr "Ruixats"
 #: src/openweathermap_org.js:249
 #, fuzzy
 msgid "Light rain and snow"
-msgstr "pluja lleugera i neu"
+msgstr "Pluja lleugera i neu"
 
 #: src/openweathermap_org.js:251
 #, fuzzy
 msgid "Rain and snow"
-msgstr "pluja i neu"
+msgstr "Pluja i neu"
 
 #: src/openweathermap_org.js:253
 #, fuzzy
@@ -523,15 +523,15 @@ msgstr "Nevada forta"
 
 #: src/openweathermap_org.js:259
 msgid "Mist"
-msgstr "boirina"
+msgstr "Boirina"
 
 #: src/openweathermap_org.js:261
 msgid "Smoke"
-msgstr "boira"
+msgstr "Boira"
 
 #: src/openweathermap_org.js:263
 msgid "Haze"
-msgstr "calitja"
+msgstr "Calitja"
 
 #: src/openweathermap_org.js:265
 msgid "Sand/Dust Whirls"
@@ -544,11 +544,11 @@ msgstr "Boirós"
 
 #: src/openweathermap_org.js:269
 msgid "Sand"
-msgstr "arena"
+msgstr "Arena"
 
 #: src/openweathermap_org.js:271
 msgid "Dust"
-msgstr "pols"
+msgstr "Pols"
 
 #: src/openweathermap_org.js:273
 msgid "VOLCANIC ASH"
@@ -556,7 +556,7 @@ msgstr "CENDRA VOLCÀNICA"
 
 #: src/openweathermap_org.js:275
 msgid "SQUALLS"
-msgstr "BORRASCA"
+msgstr "TORBONADA"
 
 #: src/openweathermap_org.js:277
 msgid "TORNADO"
@@ -568,12 +568,12 @@ msgstr "Cel clar"
 
 #: src/openweathermap_org.js:281
 msgid "Few clouds"
-msgstr "alguns núvols"
+msgstr "Alguns núvols"
 
 #: src/openweathermap_org.js:283
 #, fuzzy
 msgid "Scattered clouds"
-msgstr "núvols dispersos"
+msgstr "Núvols dispersos"
 
 #: src/openweathermap_org.js:285
 msgid "Broken clouds"
