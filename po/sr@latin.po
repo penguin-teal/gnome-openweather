@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://github.com/jenslody/gnome-shell-extension-"
 "openweather/issues\n"
 "POT-Creation-Date: 2017-04-02 23:47+0200\n"
-"PO-Revision-Date: 2015-07-29 02:08+0200\n"
+"PO-Revision-Date: 2017-09-17 12:46+0200\n"
 "Last-Translator: Slobodan Terzić <Xabre@archlinux.info>\n"
 "Language-Team: \n"
 "Language: sr@latin\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 1.8.2\n"
+"X-Generator: Poedit 2.0.3\n"
 
 #: src/extension.js:174
 msgid "..."
@@ -31,6 +31,10 @@ msgid ""
 "dialog to on or register at https://openweathermap.org/appid and paste your "
 "personal key into the preferences dialog."
 msgstr ""
+"Openweathermap.org ne radi bez API ključa.\n"
+"Ili postavite prekidač na upotrebu podrazumevanog ključa dostavljenog kroz "
+"proširenje, ili se registrujte na https://openweathermap.org/appid i unesite "
+"vaš lični ključ u dijalog postavki."
 
 #: src/extension.js:442
 msgid ""
@@ -38,11 +42,14 @@ msgid ""
 "Please register at https://darksky.net/dev/register and paste your personal "
 "key into the preferences dialog."
 msgstr ""
+"Dark Sky ne radi bez API ključa.\n"
+"Registrujte se na https://darksky.net/dev/register i unesite vaš lični ključ "
+"u dijalogu postavki."
 
 #: src/extension.js:515
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "Can not connect to %s"
-msgstr "Ne mogu da otvorim %s"
+msgstr "Ne mogu da se povežem sa %s"
 
 #: src/extension.js:861 data/weather-settings.ui:447
 msgid "Locations"
@@ -75,35 +82,35 @@ msgstr "neispravna lokacija! Pokušajte da je ponovo napravite."
 
 #: src/extension.js:1036 data/weather-settings.ui:773
 msgid "°F"
-msgstr ""
+msgstr "°F"
 
 #: src/extension.js:1038 data/weather-settings.ui:774
 msgid "K"
-msgstr ""
+msgstr "K"
 
 #: src/extension.js:1040 data/weather-settings.ui:775
 msgid "°Ra"
-msgstr ""
+msgstr "°Ra"
 
 #: src/extension.js:1042 data/weather-settings.ui:776
 msgid "°Ré"
-msgstr ""
+msgstr "°Ré"
 
 #: src/extension.js:1044 data/weather-settings.ui:777
 msgid "°Rø"
-msgstr ""
+msgstr "°Rø"
 
 #: src/extension.js:1046 data/weather-settings.ui:778
 msgid "°De"
-msgstr ""
+msgstr "°De"
 
 #: src/extension.js:1048 data/weather-settings.ui:779
 msgid "°N"
-msgstr ""
+msgstr "°N"
 
 #: src/extension.js:1050 data/weather-settings.ui:772
 msgid "°C"
-msgstr ""
+msgstr "°C"
 
 #: src/extension.js:1091
 msgid "Calm"
@@ -219,67 +226,67 @@ msgstr "SZ"
 
 #: src/extension.js:1230 src/extension.js:1239 data/weather-settings.ui:810
 msgid "hPa"
-msgstr ""
+msgstr "hPa"
 
 #: src/extension.js:1234 data/weather-settings.ui:811
 msgid "inHg"
-msgstr ""
+msgstr "inHg"
 
 #: src/extension.js:1244 data/weather-settings.ui:812
 msgid "bar"
-msgstr ""
+msgstr "bar"
 
 #: src/extension.js:1249 data/weather-settings.ui:813
 msgid "Pa"
-msgstr ""
+msgstr "Pa"
 
 #: src/extension.js:1254 data/weather-settings.ui:814
 msgid "kPa"
-msgstr ""
+msgstr "kPa"
 
 #: src/extension.js:1259 data/weather-settings.ui:815
 msgid "atm"
-msgstr ""
+msgstr "atm"
 
 #: src/extension.js:1264 data/weather-settings.ui:816
 msgid "at"
-msgstr ""
+msgstr "u"
 
 #: src/extension.js:1269 data/weather-settings.ui:817
 msgid "Torr"
-msgstr ""
+msgstr "Torr"
 
 #: src/extension.js:1274 data/weather-settings.ui:818
 msgid "psi"
-msgstr ""
+msgstr "psi"
 
 #: src/extension.js:1279 data/weather-settings.ui:819
 msgid "mmHg"
-msgstr ""
+msgstr "mmHg"
 
 #: src/extension.js:1284 data/weather-settings.ui:820
 msgid "mbar"
-msgstr ""
+msgstr "mbar"
 
 #: src/extension.js:1328 data/weather-settings.ui:794
 msgid "m/s"
-msgstr ""
+msgstr "m/s"
 
 #: src/extension.js:1332 data/weather-settings.ui:793
 msgid "mph"
-msgstr ""
+msgstr "mph"
 
 #: src/extension.js:1337 data/weather-settings.ui:792
 msgid "km/h"
-msgstr ""
+msgstr "km/h"
 
 #: src/extension.js:1346 data/weather-settings.ui:795
 msgid "kn"
-msgstr ""
+msgstr "kn"
 
 #: src/extension.js:1351 data/weather-settings.ui:796
 msgid "ft/s"
-msgstr ""
+msgstr "ft/s"
 
 #: src/extension.js:1442
 msgid "Loading ..."
@@ -322,7 +329,7 @@ msgstr[2] "pre %d dana"
 #: src/darksky_net.js:174 src/darksky_net.js:176 src/openweathermap_org.js:366
 #: src/openweathermap_org.js:368
 msgid ", "
-msgstr ""
+msgstr ", "
 
 #: src/darksky_net.js:268 src/openweathermap_org.js:445
 msgid "Today"
@@ -341,211 +348,172 @@ msgstr[1] "za %d dana"
 msgstr[2] "za %d dana"
 
 #: src/openweathermap_org.js:181
-#, fuzzy
 msgid "Thunderstorm with light rain"
 msgstr "grmljavina sa lakom kišom"
 
 #: src/openweathermap_org.js:183
-#, fuzzy
 msgid "Thunderstorm with rain"
 msgstr "grmljavina sa kišom"
 
 #: src/openweathermap_org.js:185
-#, fuzzy
 msgid "Thunderstorm with heavy rain"
 msgstr "grmljavina sa jakom kišom"
 
 #: src/openweathermap_org.js:187
-#, fuzzy
 msgid "Light thunderstorm"
 msgstr "laka grmljavina"
 
 #: src/openweathermap_org.js:189
-#, fuzzy
 msgid "Thunderstorm"
 msgstr "grmljavina"
 
 #: src/openweathermap_org.js:191
-#, fuzzy
 msgid "Heavy thunderstorm"
 msgstr "jaka grmljavina"
 
 #: src/openweathermap_org.js:193
-#, fuzzy
 msgid "Ragged thunderstorm"
 msgstr "mestimična grmljavina"
 
 #: src/openweathermap_org.js:195
-#, fuzzy
 msgid "Thunderstorm with light drizzle"
 msgstr "grmljavina sa lakim rominjanjem"
 
 #: src/openweathermap_org.js:197
-#, fuzzy
 msgid "Thunderstorm with drizzle"
 msgstr "grmljavina sa rominjanjem"
 
 #: src/openweathermap_org.js:199
-#, fuzzy
 msgid "Thunderstorm with heavy drizzle"
 msgstr "grmljavina sa jakim rominjanjem"
 
 #: src/openweathermap_org.js:201
-#, fuzzy
 msgid "Light intensity drizzle"
 msgstr "rominjanje lakog inteziteta"
 
 #: src/openweathermap_org.js:203
-#, fuzzy
 msgid "Drizzle"
 msgstr "rominjanje"
 
 #: src/openweathermap_org.js:205
-#, fuzzy
 msgid "Heavy intensity drizzle"
 msgstr "rominjanje jakog inteziteta"
 
 #: src/openweathermap_org.js:207
-#, fuzzy
 msgid "Light intensity drizzle rain"
 msgstr "rominjava kiša lakog inteziteta"
 
 #: src/openweathermap_org.js:209
-#, fuzzy
 msgid "Drizzle rain"
 msgstr "rominjava kiša"
 
 #: src/openweathermap_org.js:211
-#, fuzzy
 msgid "Heavy intensity drizzle rain"
-msgstr "rominjava kiša jaog inteziteta"
+msgstr "rominjava kiša jakog inteziteta"
 
 #: src/openweathermap_org.js:213
-#, fuzzy
 msgid "Shower rain and drizzle"
 msgstr "pljusak i rominjanje"
 
 #: src/openweathermap_org.js:215
-#, fuzzy
 msgid "Heavy shower rain and drizzle"
 msgstr "jak pljusak i rominjanje"
 
 #: src/openweathermap_org.js:217
-#, fuzzy
 msgid "Shower drizzle"
 msgstr "rominjav pljusak"
 
 #: src/openweathermap_org.js:219
-#, fuzzy
 msgid "Light rain"
 msgstr "lagana kiša"
 
 #: src/openweathermap_org.js:221
-#, fuzzy
 msgid "Moderate rain"
 msgstr "umerena kiša"
 
 #: src/openweathermap_org.js:223
-#, fuzzy
 msgid "Heavy intensity rain"
 msgstr "kiša jakog inteziteta"
 
 #: src/openweathermap_org.js:225
-#, fuzzy
 msgid "Very heavy rain"
 msgstr "vrlo jaka kiša"
 
 #: src/openweathermap_org.js:227
-#, fuzzy
 msgid "Extreme rain"
 msgstr "ekstremna kiša"
 
 #: src/openweathermap_org.js:229
-#, fuzzy
 msgid "Freezing rain"
 msgstr "ledena kiša"
 
 #: src/openweathermap_org.js:231
-#, fuzzy
 msgid "Light intensity shower rain"
 msgstr "pljusak lakog inteziteta"
 
 #: src/openweathermap_org.js:233
-#, fuzzy
 msgid "Shower rain"
 msgstr "pljusak"
 
 #: src/openweathermap_org.js:235
-#, fuzzy
 msgid "Heavy intensity shower rain"
 msgstr "pljusak jakog inteziteta"
 
 #: src/openweathermap_org.js:237
-#, fuzzy
 msgid "Ragged shower rain"
 msgstr "mestimični pljuskovi"
 
 #: src/openweathermap_org.js:239
-#, fuzzy
 msgid "Light snow"
 msgstr "lagan sneg"
 
 #: src/openweathermap_org.js:241
 msgid "Snow"
-msgstr ""
+msgstr "Sneg"
 
 #: src/openweathermap_org.js:243
-#, fuzzy
 msgid "Heavy snow"
 msgstr "jak sneg"
 
 #: src/openweathermap_org.js:245
-#, fuzzy
 msgid "Sleet"
 msgstr "susnežica"
 
 #: src/openweathermap_org.js:247
-#, fuzzy
 msgid "Shower sleet"
 msgstr "pljušteća susnežica"
 
 #: src/openweathermap_org.js:249
-#, fuzzy
 msgid "Light rain and snow"
 msgstr "lagana kiša i sneg"
 
 #: src/openweathermap_org.js:251
-#, fuzzy
 msgid "Rain and snow"
 msgstr "kiša i sneg"
 
 #: src/openweathermap_org.js:253
-#, fuzzy
 msgid "Light shower snow"
 msgstr "lagan pljušteći sneg"
 
 #: src/openweathermap_org.js:255
-#, fuzzy
 msgid "Shower snow"
 msgstr "pljušteći sneg"
 
 #: src/openweathermap_org.js:257
-#, fuzzy
 msgid "Heavy shower snow"
 msgstr "jak pljušteći sneg"
 
 #: src/openweathermap_org.js:259
 msgid "Mist"
-msgstr ""
+msgstr "Magla"
 
 #: src/openweathermap_org.js:261
-#, fuzzy
 msgid "Smoke"
 msgstr "dim"
 
 #: src/openweathermap_org.js:263
 msgid "Haze"
-msgstr ""
+msgstr "Izmaglica"
 
 #: src/openweathermap_org.js:265
 msgid "Sand/Dust Whirls"
@@ -557,11 +525,11 @@ msgstr "magla"
 
 #: src/openweathermap_org.js:269
 msgid "Sand"
-msgstr ""
+msgstr "Pesak"
 
 #: src/openweathermap_org.js:271
 msgid "Dust"
-msgstr ""
+msgstr "Prašina"
 
 #: src/openweathermap_org.js:273
 msgid "VOLCANIC ASH"
@@ -576,27 +544,22 @@ msgid "TORNADO"
 msgstr "TORNADO"
 
 #: src/openweathermap_org.js:279
-#, fuzzy
 msgid "Sky is clear"
 msgstr "vedro nebo"
 
 #: src/openweathermap_org.js:281
-#, fuzzy
 msgid "Few clouds"
 msgstr "par oblaka"
 
 #: src/openweathermap_org.js:283
-#, fuzzy
 msgid "Scattered clouds"
 msgstr "raštrkani oblaci"
 
 #: src/openweathermap_org.js:285
-#, fuzzy
 msgid "Broken clouds"
 msgstr "mestimični oblaci"
 
 #: src/openweathermap_org.js:287
-#, fuzzy
 msgid "Overcast clouds"
 msgstr "tmurni oblaci"
 
@@ -607,7 +570,7 @@ msgstr "nije dostupno"
 #: src/prefs.js:201 src/prefs.js:257 src/prefs.js:305 src/prefs.js:312
 #, javascript-format
 msgid "Invalid data when searching for \"%s\""
-msgstr ""
+msgstr "Neistpravi podaci pri traženju „%s“"
 
 #: src/prefs.js:209 src/prefs.js:273 src/prefs.js:318
 #, javascript-format
@@ -677,53 +640,52 @@ msgid "Personal Api key from openweathermap.org"
 msgstr "Lični api ključ sa openweathermap.org"
 
 #: data/weather-settings.ui:532
-#, fuzzy
 msgid "Personal Api key from Dark Sky"
 msgstr "Lični api ključ sa Dark Sky"
 
 #: data/weather-settings.ui:545
 msgid "Refresh timeout for current weather [min]"
-msgstr ""
+msgstr "Prekovreme osvežavanja trenutnog vremena [min]"
 
 #: data/weather-settings.ui:559
 msgid "Refresh timeout for weather forecast [min]"
-msgstr ""
+msgstr "Prekovreme osvežavanja vremenske prognoze [min]"
 
 #: data/weather-settings.ui:587
 msgid ""
 "Note: the forecast-timout is not used for Dark Sky, because they do not "
 "provide seperate downloads for current weather and forecasts."
 msgstr ""
+"Napomena: prekovreme vremenske prognoze se ne koristi za Dark Skaj, jer oni "
+"ne dostavljaju preuzimanje zasebno trenutnog vremena i prognoze."
 
 #: data/weather-settings.ui:615
-#, fuzzy
 msgid "Use extensions api-key for openweathermap.org"
-msgstr "Lični api ključ sa openweathermap.org"
+msgstr "Koristi API ključ sa openweathermap.org dostavljen u proširenju"
 
 #: data/weather-settings.ui:626
 msgid ""
 "Switch off, if you have your own api-key for openweathermap.org and put it "
 "into the text-box below."
 msgstr ""
+"Isključite, ukoliko imate vaš ključ za openweathermap.org i unestite ga u "
+"polje ispod."
 
 #: data/weather-settings.ui:643
 msgid "Weather provider"
 msgstr "Dostavljač podataka o vremenu"
 
 #: data/weather-settings.ui:663
-#, fuzzy
 msgid "Chose geolocation provider"
-msgstr "Izaberite podrazumevanog dostavljača"
+msgstr "Izaberite dostavljača geolokacije"
 
 #: data/weather-settings.ui:689
-#, fuzzy
 msgid "Personal AppKey from developer.mapquest.com"
-msgstr "Lični api ključ sa Dark Sky"
+msgstr "Lični api ključ sa developer.mapquest.com"
 
 #: data/weather-settings.ui:718
-#, fuzzy
 msgid "Geolocation provider"
-msgstr "Dostavljač podataka o vremenu"
+msgstr "Dostavljač geolokacije"
 
 #: data/weather-settings.ui:738
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:63
@@ -741,7 +703,7 @@ msgstr "Mera pritiska"
 
 #: data/weather-settings.ui:797
 msgid "Beaufort"
-msgstr ""
+msgstr "Bofor"
 
 #: data/weather-settings.ui:837
 msgid "Units"
@@ -754,7 +716,7 @@ msgstr "Pozicija na panelu"
 
 #: data/weather-settings.ui:868
 msgid "Position of menu-box [%] from 0 (left) to 100 (right)"
-msgstr ""
+msgstr "Pozicija u meniju [%], od 0 (levo) do 100 (desno)"
 
 #: data/weather-settings.ui:879
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:76
@@ -829,7 +791,6 @@ msgid "unknown (self-build ?)"
 msgstr "nepoznata (samogradnja?)"
 
 #: data/weather-settings.ui:1236
-#, fuzzy
 msgid ""
 "<span>Weather extension to display weather information from <a href="
 "\"https://openweathermap.org/\">Openweathermap</a> or <a href=\"https://"
@@ -845,7 +806,7 @@ msgstr "Održava"
 
 #: data/weather-settings.ui:1289
 msgid "Webpage"
-msgstr "Web stranica"
+msgstr "Beb stranica"
 
 #: data/weather-settings.ui:1309
 msgid ""
@@ -862,80 +823,73 @@ msgid "About"
 msgstr "O programu"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:55
-#, fuzzy
 msgid "Weather Provider"
 msgstr "Dostavljač podataka o vremenu"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:59
-#, fuzzy
 msgid "Geolocation Provider"
-msgstr "Dostavljač podataka o vremenu"
+msgstr "Dostavljač geolokacije"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:71
-#, fuzzy
 msgid "Wind Speed Units"
-msgstr "Mera brzine vetra"
+msgstr "Mere brzine vetra"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:72
 msgid ""
 "Choose the units used for wind speed. Allowed values are 'kph', 'mph', 'm/"
 "s', 'knots', 'ft/s' or 'Beaufort'."
 msgstr ""
+"Izaberite jedinice za brzinu vetra. Dozvoljene vrednosti su 'kph', 'mph', 'm/"
+"s', 'čvorovi', 'ft/s' ili 'Bofor'."
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:77
 msgid "Choose whether to display wind direction through arrows or letters."
-msgstr ""
+msgstr "Izaberite da li prikazivati strelice ili slova za smer vetra."
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:81
 msgid "City to be displayed"
-msgstr ""
+msgstr "Grad koji se prikazuje"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:85
 msgid "Actual City"
-msgstr ""
+msgstr "Stvaran grad"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:97
-#, fuzzy
 msgid "Use text on buttons in menu"
-msgstr "Tekst na dugmadima"
+msgstr "Tekst na dugmadima u meniju"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:117
 msgid "Horizontal position of menu-box."
-msgstr ""
+msgstr "Horizontalna pozicija u meniju."
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:121
 msgid "Refresh interval (actual weather)"
-msgstr ""
+msgstr "Interval osvežavanja (trenutno vreme)"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:125
-#, fuzzy
 msgid "Refresh interval (forecast)"
-msgstr "Centriranje prognoze"
+msgstr "Interval osvežavanja (prognoza)"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:129
-#, fuzzy
 msgid "Center forecastbox."
-msgstr "Centriranje prognoze"
+msgstr "Centriranje prognoze."
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:141
-#, fuzzy
 msgid "Your personal API key from openweathermap.org"
 msgstr "Lični api ključ sa openweathermap.org"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:145
-#, fuzzy
 msgid "Use the extensions default API key from openweathermap.org"
-msgstr "Lični api ključ sa openweathermap.org"
+msgstr ""
+"Koristi podrazumevani API ključ sa openweathermap.org dostavljen u proširenju"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:149
-#, fuzzy
 msgid "Your personal API key from Dark Sky"
-msgstr "Lični api ključ sa Dark Sky"
+msgstr "Lični API ključ sa Dark Sky"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:153
-#, fuzzy
 msgid "Your personal AppKey from developer.mapquest.com"
-msgstr "Lični api ključ sa Dark Sky"
+msgstr "Lični API ključ sa openweathermap.org"
 
 #~ msgid "snow"
 #~ msgstr "sneg"
