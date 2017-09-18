@@ -521,6 +521,11 @@ const OpenweatherMenuButton = new Lang.Class({
         this._connected = false;
 
         this._timeoutCheckConnectionState = Mainloop.timeout_add(interval, Lang.bind(this, function() {
+            // Delete (undefine) the variable holding the timeout-id, otherwise we can get errors, if we try to delete
+            // it manually, the timeout will be destroyed automatically if we return false.
+            // We just fetch it for the rare case, where the connection chages or the extension will be stopped during
+            // the timeout.
+            this._timeoutCheckConnectionState = undefined;
             let url = this.getWeatherProviderURL();
             let address = Gio.NetworkAddress.parse_uri(url, 80);
             let cancellable = Gio.Cancellable.new();
