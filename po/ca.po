@@ -466,7 +466,7 @@ msgstr "Xàfecs"
 
 #: src/openweathermap_org.js:235
 msgid "Heavy intensity shower rain"
-msgstr "Xàfects de gran intessitat"
+msgstr "Xàfects de gran intensitat"
 
 #: src/openweathermap_org.js:237
 msgid "Ragged shower rain"
