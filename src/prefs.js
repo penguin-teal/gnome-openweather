@@ -524,7 +524,7 @@ const WeatherPrefsWidget = new GObject.Class({
     configWidgets: [],
 
     selectionChanged: function(select) {
-        let a = select.get_selected_rows(this.liststore)[0][0];
+        let a = select.get_selected_rows()[0][0];
 
         if (a !== undefined)
             if (this.actual_city != parseInt(a.to_string()))
