@@ -1645,12 +1645,13 @@ const OpenweatherMenuButton = new Lang.Class({
         let dy = 0;
         switch (event.get_scroll_direction()) {
             case Clutter.ScrollDirection.UP:
+            case Clutter.ScrollDirection.RIGHT:
                 dy = -1;
                 break;
             case Clutter.ScrollDirection.DOWN:
+            case Clutter.ScrollDirection.LEFT:
                 dy = 1;
                 break;
-                // horizontal scrolling will be handled by the control itself
             default:
                 return true;
         }
