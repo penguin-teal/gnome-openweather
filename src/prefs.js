@@ -515,7 +515,8 @@ const WeatherPrefsWidget = new GObject.Class({
 
         let config = this.configWidgets;
         for (let i in config) {
-            if (config[i][0].active != this[config[i][1]])
+            if ((config[i][0].active !== undefined) &&
+                (config[i][0].active != this[config[i][1]]))
                 config[i][0].active = this[config[i][1]];
         }
     },
