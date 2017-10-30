@@ -30,6 +30,7 @@
  *
  */
 const Gtk = imports.gi.Gtk;
+const Gdk = imports.gi.Gdk;
 const GObject = imports.gi.GObject;
 const Gettext = imports.gettext.domain('gnome-shell-extension-openweather');
 const _ = Gettext.gettext;
@@ -185,7 +186,7 @@ const WeatherPrefsWidget = new GObject.Class({
 
             this.searchMenu.append(item);
             this.searchMenu.show_all();
-            this.searchMenu.popup(null, null, Lang.bind(this, this.placeSearchMenu), 0, this.searchName);
+            this.searchMenu.popup_at_widget(this.searchName, Gdk.Gravity.SOUTH_WEST, Gdk.Gravity.NORTH_WEST, null);
 
             if (this.geolocation_provider == GeolocationProvider.OPENSTREETMAPS) {
                 let params = {
@@ -225,7 +226,7 @@ const WeatherPrefsWidget = new GObject.Class({
                         }
                     }
                     this.searchMenu.show_all();
-                    this.searchMenu.popup(null, null, Lang.bind(this, this.placeSearchMenu), 0, this.searchName);
+                    this.searchMenu.popup_at_widget(this.searchName, Gdk.Gravity.SOUTH_WEST, Gdk.Gravity.NORTH_WEST, null);
                     return 0;
                 }));
             } else if (this.geolocation_provider == GeolocationProvider.MAPQUEST) {
@@ -240,7 +241,7 @@ const WeatherPrefsWidget = new GObject.Class({
                     });
                     this.searchMenu.append(item);
                     this.searchMenu.show_all();
-                    this.searchMenu.popup(null, null, Lang.bind(this, this.placeSearchMenu), 0, this.searchName);
+                    this.searchMenu.popup_at_widget(this.searchName, Gdk.Gravity.SOUTH_WEST, Gdk.Gravity.NORTH_WEST, null);
                     return 0;
                 }
                 let params = {
@@ -289,7 +290,7 @@ const WeatherPrefsWidget = new GObject.Class({
                         }
                     }
                     this.searchMenu.show_all();
-                    this.searchMenu.popup(null, null, Lang.bind(this, this.placeSearchMenu), 0, this.searchName);
+                    this.searchMenu.popup_at_widget(this.searchName, Gdk.Gravity.SOUTH_WEST, Gdk.Gravity.NORTH_WEST, null);
                     return 0;
                 }));
             } else if (this.geolocation_provider == GeolocationProvider.GEOCODE) {
@@ -338,7 +339,7 @@ const WeatherPrefsWidget = new GObject.Class({
                     }
 
                     this.searchMenu.show_all();
-                    this.searchMenu.popup(null, null, Lang.bind(this, this.placeSearchMenu), 0, this.searchName);
+                    this.searchMenu.popup_at_widget(this.searchName, Gdk.Gravity.SOUTH_WEST, Gdk.Gravity.NORTH_WEST, null);
                     return 0;
                 }));
             }
@@ -421,12 +422,6 @@ const WeatherPrefsWidget = new GObject.Class({
 
     onActivateItem: function() {
         this.searchName.set_text(arguments[0].get_label());
-    },
-
-    placeSearchMenu: function() {
-        let[gx, gy, gw, gh] = this.searchName.get_window().get_geometry();
-        let[px, py] = this.searchName.get_window().get_position();
-        return [gx + px, gy + py + this.searchName.get_allocated_height()];
     },
 
     clearSearchMenu: function() {
