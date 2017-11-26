@@ -185,8 +185,7 @@ const WeatherPrefsWidget = new GObject.Class({
             }
 
             this.searchMenu.append(item);
-            this.searchMenu.show_all();
-            this.searchMenu.popup_at_widget(this.searchName, Gdk.Gravity.SOUTH_WEST, Gdk.Gravity.NORTH_WEST, null);
+            this.showSearchMenu();
 
             if (this.geolocation_provider == GeolocationProvider.OPENSTREETMAPS) {
                 let params = {
@@ -225,8 +224,7 @@ const WeatherPrefsWidget = new GObject.Class({
                             }
                         }
                     }
-                    this.searchMenu.show_all();
-                    this.searchMenu.popup_at_widget(this.searchName, Gdk.Gravity.SOUTH_WEST, Gdk.Gravity.NORTH_WEST, null);
+                    this.showSearchMenu();
                     return 0;
                 }));
             } else if (this.geolocation_provider == GeolocationProvider.MAPQUEST) {
@@ -240,8 +238,7 @@ const WeatherPrefsWidget = new GObject.Class({
                         label: "Please visit https://developer.mapquest.com/ ."
                     });
                     this.searchMenu.append(item);
-                    this.searchMenu.show_all();
-                    this.searchMenu.popup_at_widget(this.searchName, Gdk.Gravity.SOUTH_WEST, Gdk.Gravity.NORTH_WEST, null);
+                    this.showSearchMenu();
                     return 0;
                 }
                 let params = {
@@ -289,8 +286,7 @@ const WeatherPrefsWidget = new GObject.Class({
                             }
                         }
                     }
-                    this.searchMenu.show_all();
-                    this.searchMenu.popup_at_widget(this.searchName, Gdk.Gravity.SOUTH_WEST, Gdk.Gravity.NORTH_WEST, null);
+                    this.showSearchMenu();
                     return 0;
                 }));
             } else if (this.geolocation_provider == GeolocationProvider.GEOCODE) {
@@ -338,8 +334,7 @@ const WeatherPrefsWidget = new GObject.Class({
                         }
                     }
 
-                    this.searchMenu.show_all();
-                    this.searchMenu.popup_at_widget(this.searchName, Gdk.Gravity.SOUTH_WEST, Gdk.Gravity.NORTH_WEST, null);
+                    this.showSearchMenu();
                     return 0;
                 }));
             }
@@ -422,6 +417,23 @@ const WeatherPrefsWidget = new GObject.Class({
 
     onActivateItem: function() {
         this.searchName.set_text(arguments[0].get_label());
+    },
+
+    showSearchMenu: function() {
+        this.searchMenu.show_all();
+        if (versionAtLeast('3.22', Config.PACKAGE_VERSION)) {
+            this.searchMenu.popup_at_widget(this.searchName, Gdk.Gravity.SOUTH_WEST, Gdk.Gravity.NORTH_WEST, null);
+        }
+        else
+        {
+            this.searchMenu.popup(null, null, Lang.bind(this, this.placeSearchMenu), 0, this.searchName);
+        }
+    },
+
+    placeSearchMenu: function() {
+        let[gx, gy, gw, gh] = this.searchName.get_window().get_geometry();
+        let[px, py] = this.searchName.get_window().get_position();
+        return [gx + px, gy + py + this.searchName.get_allocated_height()];
     },
 
     clearSearchMenu: function() {
