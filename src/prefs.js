@@ -421,7 +421,7 @@ const WeatherPrefsWidget = new GObject.Class({
 
     showSearchMenu: function() {
         this.searchMenu.show_all();
-        if (versionAtLeast('3.22', Config.PACKAGE_VERSION)) {
+        if (typeof this.searchMenu.popup_at_widget === "function") {
             this.searchMenu.popup_at_widget(this.searchName, Gdk.Gravity.SOUTH_WEST, Gdk.Gravity.NORTH_WEST, null);
         }
         else
