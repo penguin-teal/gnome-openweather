@@ -1,13 +1,13 @@
-%global git 648d491
+%global git cac94f2
 %global uuid openweather-extension@jenslody.de
 %global github jenslody-gnome-shell-extension-openweather
 %global checkout git%{git}
-%global checkout_date 20170423
+%global checkout_date 20171126
 
 
 Name:           gnome-shell-extension-openweather
 Version:        1
-Release:        0.29.%{checkout_date}%{checkout}%{?dist}
+Release:        0.32.%{checkout_date}%{checkout}%{?dist}
 Summary:        Display weather information from many locations in the world
 
 Group:          User Interface/Desktops
@@ -68,6 +68,16 @@ fi
 %{_datadir}/gnome-shell/extensions/%{uuid}
 
 %changelog
+* Sun Nov 26 2017 Jens Lody <fedora@jenslody.de> - 1-0.32.20171126gitcac94f2
+- Fix search-results popup not shown in last revision.
+
+* Mon Oct 30 2017 Jens Lody <fedora@jenslody.de> - 1-0.31.20171030gita86b949
+- Fix warnings, because of deprecated functions and wrong function parameter-count.
+- Minor enhancements.
+
+* Wed Jul 26 2017 Fedora Release Engineering <releng@fedoraproject.org> - 1-0.30.20170423git648d491
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_27_Mass_Rebuild
+
 * Sun Apr 23 2017 Jens Lody <fedora@jenslody.de> - 1-0.29.20170423git648d491
 - Workaround for incorrect displayed localized decimals.
 
