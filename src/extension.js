@@ -86,6 +86,7 @@ const OPENWEATHER_USE_DEFAULT_OWM_API_KEY = 'use-default-owm-key';
 const OPENWEATHER_OWM_API_KEY = 'appid';
 const OPENWEATHER_OWM_DEFAULT_API_KEY = 'c93b4a667c8c9d1d1eb941621f899bb8';
 const OPENWEATHER_FC_API_KEY = 'appid-fc';
+const OPENWEATHER_LOC_TEXT_LEN = 'location-text-length'
 
 // Keep enums in sync with GSettings schemas
 const WeatherProvider = {
@@ -811,6 +812,13 @@ const OpenweatherMenuButton = new Lang.Class({
             this.loadConfig();
         let v = this._settings.get_int(OPENWEATHER_REFRESH_INTERVAL_FORECAST);
         return ((v >= 600) ? v : 600);
+    },
+
+    get _loc_len_current() {
+        if (!this._settings)
+            this.loadConfig();
+        let v = this._settings.get_int(OPENWEATHER_LOC_TEXT_LEN);
+        return ((v > 0) ? v : 0);
     },
 
     get _center_forecast() {

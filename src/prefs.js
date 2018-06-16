@@ -71,6 +71,7 @@ const OPENWEATHER_USE_DEFAULT_OWM_API_KEY = 'use-default-owm-key';
 const OPENWEATHER_OWM_API_KEY = 'appid';
 const OPENWEATHER_FC_API_KEY = 'appid-fc';
 const OPENWEATHER_GC_APP_KEY = 'geolocation-appid-mapquest';
+const OPENWEATHER_LOC_TEXT_LEN = 'location-text-length'
 
 //URL
 const OPENWEATHER_URL_MAPQUEST_BASE = 'https://open.mapquestapi.com/nominatim/v1/';
@@ -390,6 +391,21 @@ const WeatherPrefsWidget = new GObject.Class({
         column.set_cell_data_func(renderer, function() {
             arguments[1].markup = arguments[2].get_value(arguments[3], 1);
         });
+
+        this.location_length_spin = this.Window.get_object("max_loc_chars");
+        this.location_length_spin.set_value(this.loc_len_current);
+        // prevent from continously updating the value
+        this.locLenSpinTimeout = undefined;
+        this.location_length_spin.connect("value-changed", Lang.bind(this, function(button) {
+
+            if (this.locLenSpinTimeout !== undefined)
+                Mainloop.source_remove(this.locLenSpinTimeout);
+            this.locLenSpinTimeout = Mainloop.timeout_add(250, Lang.bind(this, function() {
+                this.loc_len_current = button.get_value();
+                return false;
+            }));
+
+        }));
 
 
         let theObjects = this.Window.get_objects();
@@ -937,6 +953,19 @@ const WeatherPrefsWidget = new GObject.Class({
         if (!this.Settings)
             this.loadConfig();
         this.Settings.set_int(OPENWEATHER_REFRESH_INTERVAL_CURRENT, ((v >= 600) ? v : 600));
+    },
+
+    get loc_len_current() {
+        if (!this.Settings)
+            this.loadConfig();
+        let v = this.Settings.get_int(OPENWEATHER_LOC_TEXT_LEN);
+		return ((v > 0) ? v : 0);
+    },
+
+    set loc_len_current(v) {
+        if (!this.Settings)
+            this.loadConfig();
+		this.Settings.set_int(OPENWEATHER_LOC_TEXT_LEN, ((v > 0) ? v : 0));
     },
 
     get refresh_interval_forecast() {

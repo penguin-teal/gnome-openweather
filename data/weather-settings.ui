@@ -175,6 +175,13 @@
     <property name="step_increment">0.10000000000000001</property>
     <property name="page_increment">2</property>
   </object>
+  <object class="GtkAdjustment" id="max-loc-chars-adj">
+    <property name="lower">0</property>
+    <property name="upper">500</property>
+    <property name="value">50</property>
+    <property name="step_increment">1</property>
+    <property name="page_increment">10</property>
+  </object>
   <object class="GtkMenu" id="search-menu">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
@@ -1136,6 +1143,34 @@
           <packing>
             <property name="left_attach">1</property>
             <property name="top_attach">11</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="max-characters-in-location">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <property name="halign">start</property>
+            <property name="hexpand">True</property>
+            <property name="label" translatable="yes">Maximal number of characters in location label</property>
+          </object>
+          <packing>
+            <property name="left_attach">0</property>
+            <property name="top_attach">12</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkSpinButton" id="max_loc_chars">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="input_purpose">number</property>
+            <property name="adjustment">max-loc-chars-adj</property>
+            <property name="climb_rate">5</property>
+            <property name="numeric">True</property>
+            <property name="value">0</property>
+          </object>
+          <packing>
+            <property name="left_attach">1</property>
+            <property name="top_attach">12</property>
           </packing>
         </child>
       </object>
