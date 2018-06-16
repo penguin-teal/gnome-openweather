@@ -16,6 +16,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: src/extension.js:174
 msgid "..."
@@ -319,8 +320,9 @@ msgstr "Вчора"
 #, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
-msgstr "%d день тому"
-msgstr_plural "%d днів тому"
+msgstr[0] "%d день тому"
+msgstr[1] "%d дні тому"
+msgstr[2] "%d днів тому"
 
 #: src/darksky_net.js:174 src/darksky_net.js:176 src/openweathermap_org.js:366
 #: src/openweathermap_org.js:368
@@ -340,7 +342,8 @@ msgstr "Завтра"
 msgid "In %d day"
 msgid_plural "In %d days"
 msgstr[0] "Через %d день"
-msgstr[1] "Через %d днів"
+msgstr[1] "Через %d дні"
+msgstr[2] "Через %d днів"
 
 #: src/openweathermap_org.js:181
 #, fuzzy
@@ -834,7 +837,7 @@ msgid ""
 msgstr ""
 "<span>Погодній додаток для відображення інформації про погоду з <a href="
 "\"https://openweathermap.org/\">Openweathermap</a> або <a href=\"https://"
-"darksky.net\">Dark Sky</a> для більшості міст на світі.</span>
+"darksky.net\">Dark Sky</a> для більшості міст на світі.</span>"
 
 #: data/weather-settings.ui:1259
 msgid "Maintained by"
@@ -874,9 +877,7 @@ msgstr "Одиниці швидкості вітру"
 msgid ""
 "Choose the units used for wind speed. Allowed values are 'kph', 'mph', 'm/"
 "s', 'knots', 'ft/s' or 'Beaufort'."
-msgstr ""
-msgid ""
-"Оберіть одиниці виміру для швидкості вітру. Дозволені значення 'км/год', 'миль/год', 'м/с"
+msgstr "Оберіть одиниці виміру для швидкості вітру. Дозволені значення 'км/год', 'миль/год', 'м/с"
 "с', 'вузли', 'ft/s' чи 'Шкала Бофорда'."
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:77
