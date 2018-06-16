@@ -1,4 +1,4 @@
-extensionurl = https://github.com/jenslody/gnome-shell-extension-openweather
+extensionurl = https://gitlab.com/jenslody/gnome-shell-extension-openweather
 
 # Change these to modify how installation is performed
 topextensiondir = $(datadir)/gnome-shell/extensions

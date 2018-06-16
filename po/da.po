@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.4.2\n"
-"Report-Msgid-Bugs-To: https://github.com/jenslody/gnome-shell-extension-"
+"Report-Msgid-Bugs-To: https://gitlab.com/jenslody/gnome-shell-extension-"
 "openweather/issues\n"
 "POT-Creation-Date: 2017-04-02 23:47+0200\n"
 "PO-Revision-Date: 2012-04-07 03:07+0200\n"

@@ -1320,7 +1320,7 @@
           </packing>
         </child>
         <child>
-          <object class="GtkLinkButton" id="github-link">
+          <object class="GtkLinkButton" id="gitlab-link">
             <property name="label" translatable="yes">Webpage</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
@@ -1328,7 +1328,7 @@
             <property name="events"/>
             <property name="halign">center</property>
             <property name="relief">none</property>
-            <property name="uri">https://github.com/jenslody/gnome-shell-extension-openweather</property>
+            <property name="uri">https://gitlab.com/jenslody/gnome-shell-extension-openweather</property>
           </object>
           <packing>
             <property name="expand">False</property>

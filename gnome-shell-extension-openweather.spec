@@ -1,8 +1,8 @@
-%global git cac94f2
+%global git 0e9e9ac
 %global uuid openweather-extension@jenslody.de
-%global github jenslody-gnome-shell-extension-openweather
+%global gitlab gnome-shell-extension-openweather
 %global checkout git%{git}
-%global checkout_date 20171126
+%global checkout_date 20180616
 
 
 Name:           gnome-shell-extension-openweather
@@ -14,8 +14,8 @@ Group:          User Interface/Desktops
 
 # The entire source code is GPLv3+ except convenience.js, which is BSD
 License:        GPLv3+ and BSD
-URL:            https://github.com/jenslody/gnome-shell-extension-openweather
-Source0:        https://github.com/jenslody/gnome-shell-extension-openweather/tarball/master/%{github}-%{git}.tar.gz
+URL:            https://gitlab.com/jenslody/gnome-shell-extension-openweather
+Source0:        https://gitlab.com/jenslody/gnome-shell-extension-openweather/-/archive/%{git}/%{gitlab}-%{git}.tar.gz
 BuildArch:      noarch
 
 # The version of gnome-common in CentOS7 is only 3.7.4
@@ -34,7 +34,7 @@ You can use gnome-tweak-tool (additional package) or run:
 quotes) on a console.
 
 %prep
-%setup -q -n %{github}-%{git}
+%setup -q -n %{gitlab}-%{git}
 
 %build
 NOCONFIGURE=1 ./autogen.sh
@@ -68,6 +68,9 @@ fi
 %{_datadir}/gnome-shell/extensions/%{uuid}
 
 %changelog
+* Wed Feb 07 2018 Fedora Release Engineering <releng@fedoraproject.org> - 1-0.32.20171030gita86b949
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_28_Mass_Rebuild
+
 * Sun Nov 26 2017 Jens Lody <fedora@jenslody.de> - 1-0.32.20171126gitcac94f2
 - Fix search-results popup not shown in last revision.
 

@@ -6,7 +6,7 @@
 #    into the appropriate directories
 #  - you need to check the paths and fix the maintainers name
 #
-# Copyright (C) 2012 - 2015
+# Copyright (C) 2012 - 2018
 #     Jens Lody <jens@jenslody.de>,
 #
 # This file is part of gnome-shell-extension-openweather.
@@ -28,8 +28,8 @@
 #
 
 
-GITHUB="jenslody-gnome-shell-extension-openweather"
-BASE_URL="https://github.com/jenslody/gnome-shell-extension-openweather/tarball/master/"
+GITLAB="gnome-shell-extension-openweather"
+BASE_URL="https://gitlab.com/jenslody/gnome-shell-extension-openweather/-/archive/"
 TARBALL_PATH="${HOME}/rpmbuild/SOURCES/"
 SPEC_PATH="${HOME}/rpmbuild/SPECS/"
 SPEC_FILE="gnome-shell-extension-openweather.spec"
@@ -82,11 +82,11 @@ cp ${SPEC_FILE} ${SPEC_PATH}${SPEC_FILE}
 rm -f ${SPEC_FILE}
 mv ${SPEC_FILE}.tmp ${SPEC_FILE}
 
-rm -f ${TARBALL_PATH}${GITHUB}-*.tar.gz
-wget -c ${BASE_URL}${GITHUB}-${COMMIT}.tar.gz -O ${TARBALL_PATH}${GITHUB}-${COMMIT}.tar.gz
+rm -f ${TARBALL_PATH}${GITLAB}-*.tar.gz
+wget -c ${BASE_URL}${COMMIT}/${GITLAB}-${COMMIT}.tar.gz -O ${TARBALL_PATH}${GITLAB}-${COMMIT}.tar.gz
 
 cd ${SPEC_PATH}
-rm -f ../SRPMS/${GITHUB}*.src.rpm
+rm -f ../SRPMS/${GITLAB}*.src.rpm
 rpmbuild -bs ${SPEC_FILE}
 
 echo "OLD_COMMIT=$COMMIT" > ./.last_commit
