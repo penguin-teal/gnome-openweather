@@ -12,7 +12,7 @@ msgstr ""
 "openweather/issues\n"
 "POT-Creation-Date: 2017-04-02 23:47+0200\n"
 "PO-Revision-Date: 2017-03-06 23:22+0800\n"
-"Last-Translator: shlinux <lishaohui.qd@163.com>\n"
+"Last-Translator: P.-H. Lin <Cypresslin@users.noreply.github.com>\n"
 "Language-Team: Chinese (Traditional) <>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
@@ -32,9 +32,9 @@ msgid ""
 "dialog to on or register at https://openweathermap.org/appid and paste your "
 "personal key into the preferences dialog."
 msgstr ""
-"Openweathermap.org 在沒有 API 密鑰的情況下無法工作。\n"
-"請開啓使用擴展的默認密鑰，或者到 https://openweathermap.org/appid 註冊，並將您"
-"的個人密鑰粘貼到選項對話框中。"
+"Openweathermap.org 在沒有 API 金鑰的情況下無法工作。\n"
+"請開啓使用擴充套件的預設金鑰，或者到 https://openweathermap.org/appid 註冊，並將您"
+"的個人金鑰貼到選項對話框中。"
 
 #: src/extension.js:442
 msgid ""
@@ -42,14 +42,14 @@ msgid ""
 "Please register at https://darksky.net/dev/register and paste your personal "
 "key into the preferences dialog."
 msgstr ""
-"Dark Sky 在沒有 API 密鑰的情況下無法工作。\n"
-"請到 https://darksky.net/dev/register 註冊，並將您的個人密鑰粘貼到選項對話框"
+"Dark Sky 在沒有 API 金鑰的情況下無法工作。\n"
+"請到 https://darksky.net/dev/register 註冊，並將您的個人金鑰貼到選項對話框"
 "中。"
 
 #: src/extension.js:515
 #, javascript-format
 msgid "Can not connect to %s"
-msgstr "無法連接到 %s"
+msgstr "無法連線至 %s"
 
 #: src/extension.js:861 data/weather-settings.ui:447
 msgid "Locations"
@@ -57,11 +57,11 @@ msgstr "地點"
 
 #: src/extension.js:876
 msgid "Reload Weather Information"
-msgstr "重新載入天氣訊息"
+msgstr "重新載入天氣資訊"
 
 #: src/extension.js:891
 msgid "Weather data provided by:"
-msgstr "天氣數據來源於："
+msgstr "天氣資料來源："
 
 #: src/extension.js:907
 #, javascript-format
@@ -409,7 +409,7 @@ msgstr "强毛雨至雨"
 
 #: src/openweathermap_org.js:213
 msgid "Shower rain and drizzle"
-msgstr "阵雨及毛雨"
+msgstr "陣雨及毛雨"
 
 #: src/openweathermap_org.js:215
 msgid "Heavy shower rain and drizzle"
@@ -537,7 +537,7 @@ msgstr "颮"
 
 #: src/openweathermap_org.js:277
 msgid "TORNADO"
-msgstr "龍卷風"
+msgstr "龍捲風"
 
 #: src/openweathermap_org.js:279
 msgid "Sky is clear"
@@ -566,7 +566,7 @@ msgstr "無法使用"
 #: src/prefs.js:201 src/prefs.js:257 src/prefs.js:305 src/prefs.js:312
 #, javascript-format
 msgid "Invalid data when searching for \"%s\""
-msgstr "搜索「%s」時遇到無效數據"
+msgstr "搜尋「%s」時遇到無效資料"
 
 #: src/prefs.js:209 src/prefs.js:273 src/prefs.js:318
 #, javascript-format
@@ -579,7 +579,7 @@ msgstr "地點"
 
 #: src/prefs.js:389
 msgid "Provider"
-msgstr "提供源"
+msgstr "資料來源"
 
 #: src/prefs.js:538
 #, javascript-format
@@ -588,7 +588,7 @@ msgstr "移除 %s ？"
 
 #: src/prefs.js:1071
 msgid "default"
-msgstr "默認"
+msgstr "預設"
 
 #: data/weather-settings.ui:31
 msgid "Edit name"
@@ -605,7 +605,7 @@ msgstr "編輯座標"
 
 #: data/weather-settings.ui:93 data/weather-settings.ui:261
 msgid "Extensions default weather provider"
-msgstr "擴展的默認天氣提供源"
+msgstr "擴充套件的預設天氣資料來源"
 
 #: data/weather-settings.ui:125 data/weather-settings.ui:293
 msgid "Cancel"
@@ -617,7 +617,7 @@ msgstr "儲存"
 
 #: data/weather-settings.ui:201
 msgid "Search by location or coordinates"
-msgstr "通過地點或座標搜索"
+msgstr "透過地點或座標搜尋"
 
 #: data/weather-settings.ui:225
 msgid "e.g. Vaiaku, Tuvalu or -8.5211767,179.1976747"
@@ -629,58 +629,58 @@ msgstr "尋找"
 
 #: data/weather-settings.ui:468
 msgid "Chose default weather provider"
-msgstr "選擇默認天氣提供源"
+msgstr "選擇預設天氣資料來源"
 
 #: data/weather-settings.ui:481
 msgid "Personal Api key from openweathermap.org"
-msgstr "openweathermap.org 的個人 API 密鑰"
+msgstr "openweathermap.org 的個人 API 金鑰"
 
 #: data/weather-settings.ui:532
 msgid "Personal Api key from Dark Sky"
-msgstr "Dark Sky 的個人 API 密鑰"
+msgstr "Dark Sky 的個人 API 金鑰"
 
 #: data/weather-settings.ui:545
 msgid "Refresh timeout for current weather [min]"
-msgstr "刷新當前天氣的超時時間 [分鐘]"
+msgstr "更新目前天氣的逾時設定 [分鐘]"
 
 #: data/weather-settings.ui:559
 msgid "Refresh timeout for weather forecast [min]"
-msgstr "刷新天氣預報的超時時間 [分鐘]"
+msgstr "更新天氣預報的逾時設定 [分鐘]"
 
 #: data/weather-settings.ui:587
 msgid ""
 "Note: the forecast-timout is not used for Dark Sky, because they do not "
 "provide seperate downloads for current weather and forecasts."
 msgstr ""
-"注意：預報超時不適用於 Dark Sky，因爲他們不提供當前天氣和預報的分別下載。"
+"注意：預報逾時設定不適用於 Dark Sky，因爲他們不提供目前天氣和預報的分別下載。"
 
 #: data/weather-settings.ui:615
 msgid "Use extensions api-key for openweathermap.org"
-msgstr "使用本擴展的 openweathermap.org API 密鑰"
+msgstr "使用本擴充套件的 openweathermap.org API 金鑰"
 
 #: data/weather-settings.ui:626
 msgid ""
 "Switch off, if you have your own api-key for openweathermap.org and put it "
 "into the text-box below."
 msgstr ""
-"如果您自己擁有 openweathermap.org 的 API 密鑰，請將其輸入到下面的文本框中，並"
+"如果您自己擁有 openweathermap.org 的 API 金鑰，請將其輸入到下面的文本框中，並"
 "關閉本選項。"
 
 #: data/weather-settings.ui:643
 msgid "Weather provider"
-msgstr "天氣提供源"
+msgstr "天氣資料來源"
 
 #: data/weather-settings.ui:663
 msgid "Chose geolocation provider"
-msgstr "選擇地理位置提供源"
+msgstr "選擇地理位置資料來源"
 
 #: data/weather-settings.ui:689
 msgid "Personal AppKey from developer.mapquest.com"
-msgstr "developer.mapquest.com 的個人應用密鑰"
+msgstr "developer.mapquest.com 的個人應用金鑰"
 
 #: data/weather-settings.ui:718
 msgid "Geolocation provider"
-msgstr "地理位置提供源"
+msgstr "地理位置資料來源"
 
 #: data/weather-settings.ui:738
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:63
@@ -711,12 +711,12 @@ msgstr "面板上的位置"
 
 #: data/weather-settings.ui:868
 msgid "Position of menu-box [%] from 0 (left) to 100 (right)"
-msgstr "菜單框的位置，從左至右，0到100"
+msgstr "選單框的位置，從左至右，0到100"
 
 #: data/weather-settings.ui:879
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:76
 msgid "Wind Direction by Arrows"
-msgstr "使用箭頭指示風向"
+msgstr "使用箭頭表示風向"
 
 #: data/weather-settings.ui:890
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:89
@@ -730,7 +730,7 @@ msgstr "顯示象徵性符號"
 
 #: data/weather-settings.ui:912
 msgid "Text on buttons"
-msgstr "圖示顯示文本"
+msgstr "按鈕上顯示文字"
 
 #: data/weather-settings.ui:923
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:101
@@ -749,7 +749,7 @@ msgstr "顯示預報天氣狀態"
 
 #: data/weather-settings.ui:956
 msgid "Center forecast"
-msgstr "預報訊息居中顯示"
+msgstr "預報資訊置中顯示"
 
 #: data/weather-settings.ui:967
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:133
@@ -763,19 +763,19 @@ msgstr "小數點後的最大位數"
 
 #: data/weather-settings.ui:990
 msgid "Center"
-msgstr "中央"
+msgstr "置中"
 
 #: data/weather-settings.ui:991
 msgid "Right"
-msgstr "右邊"
+msgstr "靠右"
 
 #: data/weather-settings.ui:992
 msgid "Left"
-msgstr "左邊"
+msgstr "靠左"
 
 #: data/weather-settings.ui:1150
 msgid "Layout"
-msgstr "佈局"
+msgstr "配置"
 
 #: data/weather-settings.ui:1202
 msgid "Version: "
@@ -793,7 +793,7 @@ msgid ""
 msgstr ""
 "<span>爲全世界幾乎所有地點顯示來自 <a href=\"https://openweathermap.org/"
 "\">Openweathermap</a> 或 <a href=\"https://darksky.net\">Dark Sky</a> 的天氣"
-"信息的擴展。</span>"
+"資訊的擴充套件。</span>"
 
 #: data/weather-settings.ui:1259
 msgid "Maintained by"
@@ -819,11 +819,11 @@ msgstr "關於"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:55
 msgid "Weather Provider"
-msgstr "天氣提供源"
+msgstr "天氣資料來源"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:59
 msgid "Geolocation Provider"
-msgstr "地理位置提供源"
+msgstr "地理位置資料來源"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:71
 msgid "Wind Speed Units"
@@ -837,7 +837,7 @@ msgstr "選擇風速單位。允許 kph，mph，m/s，knots，ft/s 或 Beaufort�
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:77
 msgid "Choose whether to display wind direction through arrows or letters."
-msgstr "選擇通過箭頭還是字母來顯示風向。"
+msgstr "選擇採用箭頭還是字母來顯示風向。"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:81
 msgid "City to be displayed"
@@ -849,36 +849,36 @@ msgstr "實際城市"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:97
 msgid "Use text on buttons in menu"
-msgstr "在菜單的按鈕上使用文字"
+msgstr "在選單的按鈕上使用文字"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:117
 msgid "Horizontal position of menu-box."
-msgstr "菜單框的水平位置。"
+msgstr "選單的水平位置。"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:121
 msgid "Refresh interval (actual weather)"
-msgstr "刷新間隔（實際天氣）"
+msgstr "更新間隔（實際天氣）"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:125
 msgid "Refresh interval (forecast)"
-msgstr "刷新間隔（預報訊息）"
+msgstr "更新間隔（預報資訊）"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:129
 msgid "Center forecastbox."
-msgstr "居中預報框。"
+msgstr "將預報框置中顯示。"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:141
 msgid "Your personal API key from openweathermap.org"
-msgstr "openweathermap.org 的個人 API 密鑰"
+msgstr "openweathermap.org 的個人 API 金鑰"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:145
 msgid "Use the extensions default API key from openweathermap.org"
-msgstr "使用本擴展的 openweathermap.org API 密鑰"
+msgstr "使用本擴充套件的 openweathermap.org API 金鑰"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:149
 msgid "Your personal API key from Dark Sky"
-msgstr "Dark Sky 的個人 API 密鑰"
+msgstr "Dark Sky 的個人 API 金鑰"
 
 #: data/org.gnome.shell.extensions.openweather.gschema.xml:153
 msgid "Your personal AppKey from developer.mapquest.com"
-msgstr "developer.mapquest.com 的個人應用密鑰"
+msgstr "developer.mapquest.com 的個人應用金鑰"
