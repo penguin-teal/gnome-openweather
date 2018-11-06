@@ -378,6 +378,7 @@ const WeatherPrefsWidget = new GObject.Class({
 
         let renderer = new Gtk.CellRendererText();
         column.pack_start(renderer, null);
+        column.add_attribute(renderer, "text", 0);
 
         column.set_cell_data_func(renderer, function() {
             arguments[1].markup = arguments[2].get_value(arguments[3], 0);
@@ -387,6 +388,7 @@ const WeatherPrefsWidget = new GObject.Class({
         this.treeview.append_column(column);
 
         column.pack_start(renderer, null);
+        column.add_attribute(renderer, "text", 1);
 
         column.set_cell_data_func(renderer, function() {
             arguments[1].markup = arguments[2].get_value(arguments[3], 1);
