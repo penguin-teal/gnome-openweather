@@ -1170,22 +1170,28 @@ const OpenweatherMenuButton = new Lang.Class({
     },
 
     getIconType: function(icon_name) {
-        if (!icon_name)
-            if (this._getIconType)
-                return "-symbolic";
-            else
-                return "";
+        if (!icon_name) {
+            if (this._getIconType) {
 
-        if (this._getIconType)
-            if (String(icon_name).search("-symbolic") != -1)
+                return "-symbolic";
+            } else {
+                return "";
+            }
+        }
+
+        if (this._getIconType) {
+            if (String(icon_name).search("-symbolic") != -1) {
                 return icon_name;
-            else
+            } else {
                 return icon_name + "-symbolic";
-            else
-        if (String(icon_name).search("-symbolic") != -1)
-            return String(icon_name).replace("-symbolic", "");
-        else
-            return icon_name;
+            }
+        } else {
+            if (String(icon_name).search("-symbolic") != -1) {
+                return String(icon_name).replace("-symbolic", "");
+            } else {
+                return icon_name;
+            }
+        }
     },
 
     load_json_async: function(url, params, fun) {
