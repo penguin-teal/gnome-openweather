@@ -99,6 +99,9 @@ Copyright &copy; 2011 - 2013
 Copyright &copy; 2013 - 2017
 * Jens Lody <openweather@jenslody.de>.
 
+Copyright &copy; 2018
+* Taylor Raack <taylor@raack.info>.
+
 
 This file is part of *gnome-shell-extension-openweather*.
 

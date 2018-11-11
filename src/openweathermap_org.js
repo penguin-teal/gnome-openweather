@@ -17,6 +17,8 @@
  *     Jens Lody <jens@jenslody.de>
  * Copyright (C) 2014 -2015
  *     Jens Lody <jens@jenslody.de>,
+ * Copyright (C) 2018
+ *     Taylor Raack <taylor@raack.info>
  *
  *
  * This file is part of gnome-shell-extension-openweather.
@@ -428,10 +430,29 @@ function parseWeatherForecast() {
     let forecast = this.forecastWeatherCache;
     let beginOfDay = new Date(new Date().setHours(0, 0, 0, 0));
 
+    // OpenWeatherMap sometimes returns the previous day's forecast, especially in the early morning hours
+    // of the lat / lng being queried. To prevent the first forecast element in the UI from being the previous
+    // day's forecast, check for the returned forecast elements being for a previous day and maintain a
+    // forecast index advance counter to skip previous day forecasts.
+    let dateAdvanceIndex = 0;
+    for (let i = 0; i < this._days_forecast; i++) {
+        let forecastData = forecast[i];
+        if (forecastData === undefined)
+            continue;
+        let forecastDate = new Date(forecastData.dt * 1000).setHours(0,0,0,0);
+        if (forecastDate >= beginOfDay) {
+        	// forecast is at least at the beginning of the current day; no need to look any further
+        	break;
+        }
+        // forecast is behind the current day, so advance the increment index
+    	dateAdvanceIndex++;
+    }
+
     // Refresh forecast
     for (let i = 0; i < this._days_forecast; i++) {
         let forecastUi = this._forecast[i];
-        let forecastData = forecast[i];
+        // make sure to use the dateAdvanceIndex to skip any previous day forecasts
+        let forecastData = forecast[i + dateAdvanceIndex];
         if (forecastData === undefined)
             continue;
 
