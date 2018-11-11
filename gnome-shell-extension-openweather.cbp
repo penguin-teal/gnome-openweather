@@ -67,6 +67,7 @@
 		<Unit filename="po/sr.po" />
 		<Unit filename="po/sr@latin.po" />
 		<Unit filename="po/sv.po" />
+		<Unit filename="po/tr.po" />
 		<Unit filename="po/uk.po" />
 		<Unit filename="po/vi.po" />
 		<Unit filename="po/zh_CN.po" />
