@@ -83,7 +83,7 @@ msgstr "无效地点！请尝试重建一个。"
 
 #: src/extension.js:1036 data/weather-settings.ui:773
 msgid "°F"
-msgstr "℉"
+msgstr "°F"
 
 #: src/extension.js:1038 data/weather-settings.ui:774
 msgid "K"
@@ -111,7 +111,7 @@ msgstr "°N"
 
 #: src/extension.js:1050 data/weather-settings.ui:772
 msgid "°C"
-msgstr "℃"
+msgstr "°C"
 
 #: src/extension.js:1091
 msgid "Calm"
