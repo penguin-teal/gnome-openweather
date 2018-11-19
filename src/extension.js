@@ -15,7 +15,7 @@
  *     Mattia Meneguzzo odysseus@fedoraproject.org,
  *     Meng Zhuo <mengzhuo1203+spam@gmail.com>,
  *     Jens Lody <jens@jenslody.de>
- * Copyright (C) 2014 -2015
+ * Copyright (C) 2014 -2018
  *     Jens Lody <jens@jenslody.de>,
  *
  *

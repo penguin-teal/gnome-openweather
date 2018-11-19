@@ -5,7 +5,7 @@
 #  Weather extension for GNOME Shell
 #  - generate Makefiles
 #
-# Copyright (C) 2012 - 2015
+# Copyright (C) 2012 - 2018
 #     Jens Lody <jens@jenslody.de>,
 #
 # This file is part of gnome-shell-extension-openweather.
