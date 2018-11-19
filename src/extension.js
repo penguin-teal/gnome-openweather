@@ -182,8 +182,8 @@ const OpenweatherMenuButton = new Lang.Class({
         });
 
         this._weatherIcon = new St.Icon({
-            icon_name: 'view-refresh' + this.getIconType(),
-            style_class: 'system-status-icon openweather-icon'
+            icon_name: 'view-refresh',
+            style_class: 'system-status-icon openweather-icon ' + this.getIconType()
         });
 
         // Panel menu item - the current class
@@ -1081,7 +1081,7 @@ const OpenweatherMenuButton = new Lang.Class({
     },
 
     hasIcon: function(icon) {
-        return Gtk.IconTheme.get_default().has_icon(icon + this.getIconType());
+        return Gtk.IconTheme.get_default().has_icon(icon);
     },
 
     toFahrenheit: function(t) {
@@ -1169,28 +1169,11 @@ const OpenweatherMenuButton = new Lang.Class({
         return (this._wind_direction) ? arrows[idx] : letters[idx];
     },
 
-    getIconType: function(icon_name) {
-        if (!icon_name) {
+    getIconType: function() {
             if (this._getIconType) {
-
-                return "-symbolic";
+            return "openweather-symbolic";
             } else {
-                return "";
-            }
-        }
-
-        if (this._getIconType) {
-            if (String(icon_name).search("-symbolic") != -1) {
-                return icon_name;
-            } else {
-                return icon_name + "-symbolic";
-            }
-        } else {
-            if (String(icon_name).search("-symbolic") != -1) {
-                return String(icon_name).replace("-symbolic", "");
-            } else {
-                return icon_name;
-            }
+            return "openweather-regular";
         }
     },
 
@@ -1444,33 +1427,36 @@ const OpenweatherMenuButton = new Lang.Class({
 
     rebuildCurrentWeatherUi: function() {
         this._weatherInfo.text = (' ');
-        this._weatherIcon.icon_name = 'view-refresh' + this.getIconType();
+        this._weatherIcon.icon_name = 'view-refresh';
+        this._weatherIcon.remove_style_class_name('openweather-regular');
+        this._weatherIcon.remove_style_class_name('openweather-symbolic');
+        this._weatherIcon.add_style_class_name(this.getIconType());
 
         this.destroyCurrentWeather();
 
         // This will hold the icon for the current weather
         this._currentWeatherIcon = new St.Icon({
             icon_size: 72,
-            icon_name: 'view-refresh' + this.getIconType(),
-            style_class: 'system-menu-action openweather-current-icon'
+            icon_name: 'view-refresh',
+            style_class: 'system-menu-action openweather-current-icon ' + this.getIconType()
         });
 
         this._sunriseIcon = new St.Icon({
             icon_size: 15,
-            icon_name: 'weather-clear' + this.getIconType(),
-            style_class: 'openweather-sunrise-icon'
+            icon_name: 'weather-clear',
+            style_class: 'openweather-sunrise-icon ' + this.getIconType()
         });
 
         this._sunsetIcon = new St.Icon({
             icon_size: 15,
-            icon_name: 'weather-clear-night' + this.getIconType(),
-            style_class: 'openweather-sunset-icon'
+            icon_name: 'weather-clear-night',
+            style_class: 'openweather-sunset-icon ' + this.getIconType()
         });
 
         this._buildIcon = new St.Icon({
             icon_size: 15,
-            icon_name: 'view-refresh' + this.getIconType(),
-            style_class: 'openweather-build-icon'
+            icon_name: 'view-refresh',
+            style_class: 'openweather-build-icon ' + this.getIconType()
         });
 
         // The summary of the current weather
@@ -1619,8 +1605,8 @@ const OpenweatherMenuButton = new Lang.Class({
 
             forecastWeather.Icon = new St.Icon({
                 icon_size: 48,
-                icon_name: 'view-refresh' + this.getIconType(),
-                style_class: 'system-menu-action openweather-forecast-icon'
+                icon_name: 'view-refresh',
+                style_class: 'system-menu-action openweather-forecast-icon ' + this.getIconType()
             });
             forecastWeather.Day = new St.Label({
                 style_class: 'popup-menu-item popup-status-menu-item openweather-forecast-day'

@@ -170,11 +170,11 @@ weather-storm.png = weather-storm-symbolic.svg
 
     for (let i = 0; i < iconname.length; i++) {
         if (night && this.hasIcon(iconname[i] + '-night'))
-            return iconname[i] + '-night' + this.getIconType();
+            return iconname[i] + '-night';
         if (this.hasIcon(iconname[i]))
-            return iconname[i] + this.getIconType();
+            return iconname[i];
     }
-    return 'weather-severe-alert' + this.getIconType();
+    return 'weather-severe-alert';
 }
 
 function getWeatherCondition(code) {

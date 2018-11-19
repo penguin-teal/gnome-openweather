@@ -96,10 +96,10 @@ function getWeatherIcon(icon, windspeed, cloudcover, night) {
             break;
     }
     for (let i = 0; i < iconname.length; i++) {
-        if (this.hasIcon(iconname[i]) + this.getIconType())
-            return iconname[i] + this.getIconType();
+        if (this.hasIcon(iconname[i]))
+            return iconname[i];
     }
-    return 'weather-severe-alert' + this.getIconType();
+    return 'weather-severe-alert';
 }
 
 function parseWeatherCurrent() {
