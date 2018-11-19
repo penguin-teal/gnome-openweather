@@ -39,6 +39,7 @@
 		<Unit filename="po/Makevars" />
 		<Unit filename="po/POTFILES.in" />
 		<Unit filename="po/ar.po" />
+		<Unit filename="po/be.po" />
 		<Unit filename="po/bg.po" />
 		<Unit filename="po/ca.po" />
 		<Unit filename="po/cs.po" />

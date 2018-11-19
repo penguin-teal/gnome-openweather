@@ -32,8 +32,8 @@ msgid ""
 msgstr ""
 "Openweathermap.org kann nicht ohne einen api-key genutzt werden.\n"
 "Entweder den Schalter zur Benutzung des Standard API-keys in Einstellungs-"
-"Dialog auf an schalten oder auf https://openweathermap.org/appid anmelden und "
-"den persönlichen Schlüssel in den Dialog kopieren."
+"Dialog auf an schalten oder auf https://openweathermap.org/appid anmelden "
+"und den persönlichen Schlüssel in den Dialog kopieren."
 
 #: src/extension.js:442
 msgid ""
