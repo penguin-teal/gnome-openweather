@@ -1368,7 +1368,7 @@ const OpenweatherMenuButton = new Lang.Class({
                 temperature = this.toNewton(temperature);
                 break;
         }
-        return parseFloat(temperature).toLocaleString(this.locale) + ' ' + this.unit_to_unicode();
+        return parseFloat(temperature).toLocaleString(this.locale).replace('-', '\u2212') + ' ' + this.unit_to_unicode();
     },
 
     formatWind: function(speed, direction) {
