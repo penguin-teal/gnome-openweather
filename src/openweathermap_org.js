@@ -378,7 +378,11 @@ function parseWeatherCurrent() {
     this._currentWeatherSunrise.text = sunrise;
     this._currentWeatherSunset.text = sunset;
     this._currentWeatherBuild.text = lastBuild;
-    this._currentWeatherWind.text = this.formatWind(json.wind.speed, this.getWindDirection(json.wind.deg));
+    if (json.wind != undefined && json.wind.deg != undefined) {
+        this._currentWeatherWind.text = this.formatWind(json.wind.speed, this.getWindDirection(json.wind.deg));
+    } else {
+        this._currentWeatherWind.text = _("?");
+    }
 
     this.parseWeatherForecast();
     this.recalcLayout();
