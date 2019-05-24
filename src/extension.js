@@ -512,14 +512,33 @@ const OpenweatherMenuButton = new Lang.Class({
     },
 
     _checkConnectionState: function() {
+        this._checkConnectionStateRetries = 3;
+        this._oldConnected = this._connected;
+        this._connected = false;
+
+        this._checkConnectionStateWithRetries(1250);
+    },
+
+    _checkConnectionStateRetry: function() {
+        if (this._checkConnectionStateRetries > 0) {
+            let timeout;
+            if (this._checkConnectionStateRetries == 3)
+                timeout = 10000;
+            else if (this._checkConnectionStateRetries == 2)
+                timeout = 30000;
+            else if (this._checkConnectionStateRetries == 1)
+                timeout = 60000;
+
+            this._checkConnectionStateRetries -= 1;
+            this._checkConnectionStateWithRetries(timeout);
+        }
+    },
+
+    _checkConnectionStateWithRetries: function(interval) {
         if (this._timeoutCheckConnectionState) {
             Mainloop.source_remove(this._timeoutCheckConnectionState);
             this._timeoutCheckConnectionState = undefined;
         }
-
-        let interval = 1250;
-        this._oldConnected = this._connected;
-        this._connected = false;
 
         this._timeoutCheckConnectionState = Mainloop.timeout_add(interval, Lang.bind(this, function() {
             // Delete (undefine) the variable holding the timeout-id, otherwise we can get errors, if we try to delete
@@ -535,13 +554,21 @@ const OpenweatherMenuButton = new Lang.Class({
             } catch (err) {
                 let title = _("Can not connect to %s").format(url);
                 log(title + '\n' + err.message);
+                this._checkConnectionStateRetry();
             }
             return false;
         }));
     },
 
     _asyncReadyCallback: function(nm, res) {
-        this._connected = this._network_monitor.can_reach_finish(res);
+        try {
+            this._connected = this._network_monitor.can_reach_finish(res);
+        } catch (err) {
+            let title = _("Can not connect to %s").format(this.getWeatherProviderURL());
+            log(title + '\n' + err.message);
+            this._checkConnectionStateRetry();
+            return;
+        }
         if (!this._oldConnected && this._connected) {
             let now = new Date();
             if (_timeCacheCurrentWeather &&
