@@ -196,26 +196,26 @@ const OpenweatherMenuButton = new Lang.Class({
         let topBox = new St.BoxLayout();
         topBox.add_actor(this._weatherIcon);
         topBox.add_actor(this._weatherInfo);
-        this.actor.add_actor(topBox);
+        this.add_actor(topBox);
 
         let dummyBox = new St.BoxLayout();
-        this.actor.reparent(dummyBox);
-        dummyBox.remove_actor(this.actor);
+        this.reparent(dummyBox);
+        dummyBox.remove_actor(this);
         dummyBox.destroy();
 
         let children = null;
         switch (this._position_in_panel) {
             case WeatherPosition.LEFT:
                 children = Main.panel._leftBox.get_children();
-                Main.panel._leftBox.insert_child_at_index(this.actor, children.length);
+                Main.panel._leftBox.insert_child_at_index(this, children.length);
                 break;
             case WeatherPosition.CENTER:
                 children = Main.panel._centerBox.get_children();
-                Main.panel._centerBox.insert_child_at_index(this.actor, children.length);
+                Main.panel._centerBox.insert_child_at_index(this, children.length);
                 break;
             case WeatherPosition.RIGHT:
                 children = Main.panel._rightBox.get_children();
-                Main.panel._rightBox.insert_child_at_index(this.actor, 0);
+                Main.panel._rightBox.insert_child_at_index(this, 0);
                 break;
         }
         if (Main.panel._menus === undefined)
@@ -244,8 +244,8 @@ const OpenweatherMenuButton = new Lang.Class({
             _itemCurrent.addActor(this._currentWeather);
             _itemFuture.addActor(this._futureWeather);
         } else {
-            _itemCurrent.actor.add_actor(this._currentWeather);
-            _itemFuture.actor.add_actor(this._futureWeather);
+            _itemCurrent.add_actor(this._currentWeather);
+            _itemFuture.add_actor(this._futureWeather);
         }
 
         this.menu.addMenuItem(_itemCurrent);
@@ -259,7 +259,7 @@ const OpenweatherMenuButton = new Lang.Class({
         this.menu.addMenuItem(item);
 
         this._selectCity = new PopupMenu.PopupSubMenuMenuItem("");
-        this._selectCity.actor.set_height(0);
+        this._selectCity.set_height(0);
         this._selectCity._triangle.set_height(0);
 
         this._buttonMenu = new PopupMenu.PopupBaseMenuItem({
@@ -273,7 +273,7 @@ const OpenweatherMenuButton = new Lang.Class({
         this.menu.addMenuItem(this._selectCity);
         this.rebuildSelectCityItem();
         this._selectCity.menu.connect('open-state-changed', Lang.bind(this, function() {
-            this._selectCity.actor.remove_style_pseudo_class('open');
+            this._selectCity.remove_style_pseudo_class('open');
         }));
 
         this.rebuildCurrentWeatherUi();
@@ -655,7 +655,7 @@ const OpenweatherMenuButton = new Lang.Class({
         if (!this._needsColorUpdate)
             return;
         this._needsColorUpdate = false;
-        let color = this._separatorItem._separator.actor.get_theme_node().get_color('-gradient-end');
+        let color = this._separatorItem._separator.get_theme_node().get_color('-gradient-end');
 
         let alpha = (Math.round(color.alpha / 2.55) / 100);
 
@@ -668,10 +668,10 @@ const OpenweatherMenuButton = new Lang.Class({
         this._reloadButton.set_style(this._button_border_style);
         this._prefsButton.set_style(this._button_border_style);
 
-        this._buttonMenu.actor.add_style_pseudo_class('active');
-        color = this._buttonMenu.actor.get_theme_node().get_background_color();
+        this._buttonMenu.add_style_pseudo_class('active');
+        color = this._buttonMenu.get_theme_node().get_background_color();
         this._button_background_style = 'background-color:rgba(' + color.red + ',' + color.green + ',' + color.blue + ',' + (Math.round(color.alpha / 2.55) / 100) + ');';
-        this._buttonMenu.actor.remove_style_pseudo_class('active');
+        this._buttonMenu.remove_style_pseudo_class('active');
     },
 
 
@@ -957,8 +957,8 @@ const OpenweatherMenuButton = new Lang.Class({
             this._buttonMenu.addActor(this._buttonBox);
             this._needsColorUpdate = true;
         } else {
-            this._buttonMenu.actor.add_actor(this._buttonBox1);
-            this._buttonMenu.actor.add_actor(this._buttonBox2);
+            this._buttonMenu.add_actor(this._buttonBox1);
+            this._buttonMenu.add_actor(this._buttonBox2);
         }
         this._buttonBox1MinWidth = undefined;
     },
@@ -990,9 +990,9 @@ const OpenweatherMenuButton = new Lang.Class({
         }
 
         if (cities.length == 1)
-            this._selectCity.actor.hide();
+            this._selectCity.hide();
         else
-            this._selectCity.actor.show();
+            this._selectCity.show();
 
     },
 
@@ -1215,13 +1215,13 @@ const OpenweatherMenuButton = new Lang.Class({
         if (this._old_position_in_panel != this._position_in_panel) {
             switch (this._old_position_in_panel) {
                 case WeatherPosition.LEFT:
-                    Main.panel._leftBox.remove_actor(this.actor);
+                    Main.panel._leftBox.remove_actor(this);
                     break;
                 case WeatherPosition.CENTER:
-                    Main.panel._centerBox.remove_actor(this.actor);
+                    Main.panel._centerBox.remove_actor(this);
                     break;
                 case WeatherPosition.RIGHT:
-                    Main.panel._rightBox.remove_actor(this.actor);
+                    Main.panel._rightBox.remove_actor(this);
                     break;
             }
 
@@ -1229,15 +1229,15 @@ const OpenweatherMenuButton = new Lang.Class({
             switch (this._position_in_panel) {
                 case WeatherPosition.LEFT:
                     children = Main.panel._leftBox.get_children();
-                    Main.panel._leftBox.insert_child_at_index(this.actor, children.length);
+                    Main.panel._leftBox.insert_child_at_index(this, children.length);
                     break;
                 case WeatherPosition.CENTER:
                     children = Main.panel._centerBox.get_children();
-                    Main.panel._centerBox.insert_child_at_index(this.actor, children.length);
+                    Main.panel._centerBox.insert_child_at_index(this, children.length);
                     break;
                 case WeatherPosition.RIGHT:
                     children = Main.panel._rightBox.get_children();
-                    Main.panel._rightBox.insert_child_at_index(this.actor, 0);
+                    Main.panel._rightBox.insert_child_at_index(this, 0);
                     break;
             }
             this._old_position_in_panel = this._position_in_panel;
