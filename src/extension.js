@@ -39,7 +39,6 @@
 const ExtensionUtils = imports.misc.extensionUtils;
 const Me = ExtensionUtils.getCurrentExtension();
 const Config = imports.misc.config;
-const Convenience = Me.imports.convenience;
 const DarkskyNet = Me.imports.darksky_net;
 const OpenweathermapOrg = Me.imports.openweathermap_org;
 const Clutter = imports.gi.Clutter;
@@ -467,7 +466,7 @@ const OpenweatherMenuButton = new Lang.Class({
     },
 
     loadConfig: function() {
-        this._settings = Convenience.getSettings(OPENWEATHER_SETTINGS_SCHEMA);
+        this._settings = ExtensionUtils.getSettings(OPENWEATHER_SETTINGS_SCHEMA);
 
         if (this._cities.length === 0)
             this._cities = "-8.5211767,179.1976747>Vaiaku, Tuvalu>-1";
@@ -492,7 +491,7 @@ const OpenweatherMenuButton = new Lang.Class({
     },
 
     loadConfigInterface: function() {
-        this._settingsInterface = Convenience.getSettings(OPENWEATHER_DESKTOP_INTERFACE);
+        this._settingsInterface = ExtensionUtils.getSettings(OPENWEATHER_DESKTOP_INTERFACE);
         this._settingsInterfaceC = this._settingsInterface.connect("changed", Lang.bind(this, function() {
             this.rebuildCurrentWeatherUi();
             this.rebuildFutureWeatherUi();
@@ -1693,7 +1692,7 @@ const OpenweatherMenuButton = new Lang.Class({
 let openweatherMenu;
 
 function init() {
-    Convenience.initTranslations('gnome-shell-extension-openweather');
+    ExtensionUtils.initTranslations('gnome-shell-extension-openweather');
 }
 
 function enable() {

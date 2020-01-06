@@ -41,7 +41,6 @@ const Mainloop = imports.mainloop;
 const ExtensionUtils = imports.misc.extensionUtils;
 const Me = ExtensionUtils.getCurrentExtension();
 const Config = imports.misc.config;
-const Convenience = Me.imports.convenience;
 
 const EXTENSIONDIR = Me.dir.get_path();
 
@@ -713,7 +712,7 @@ const WeatherPrefsWidget = new GObject.Class({
     },
 
     loadConfig: function() {
-        this.Settings = Convenience.getSettings(OPENWEATHER_SETTINGS_SCHEMA);
+        this.Settings = ExtensionUtils.getSettings(OPENWEATHER_SETTINGS_SCHEMA);
         this.Settings.connect("changed", Lang.bind(this, function() {
             this.refreshUI();
         }));
@@ -1113,7 +1112,7 @@ const WeatherPrefsWidget = new GObject.Class({
 });
 
 function init() {
-    Convenience.initTranslations('gnome-shell-extension-openweather');
+    ExtensionUtils.initTranslations('gnome-shell-extension-openweather');
 }
 
 function buildPrefsWidget() {

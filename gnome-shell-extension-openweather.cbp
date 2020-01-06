@@ -74,7 +74,6 @@
 		<Unit filename="po/zh_CN.po" />
 		<Unit filename="po/zh_TW.po" />
 		<Unit filename="src/Makefile.am" />
-		<Unit filename="src/convenience.js" />
 		<Unit filename="src/darksky_net.js" />
 		<Unit filename="src/extension.js" />
 		<Unit filename="src/openweathermap_org.js" />
