@@ -698,24 +698,25 @@ class OpenweatherMenuButton extends PanelMenu.Button {
         this._buttonMenu.remove_style_pseudo_class('active');
     }
 
-
     createButton(iconName, accessibleName) {
         let button;
 
+        button = new St.Button({
+            reactive: true,
+            can_focus: true,
+            track_hover: true,
+            accessible_name: accessibleName,
+            style_class: 'message-list-clear-button button openweather-button-action'
+        });
+
+        button.child = new St.Icon({
+            icon_name: iconName
+        });
+
         if (ExtensionUtils.versionCheck(['3.8'], Config.PACKAGE_VERSION)) {
-            button = new St.Button({
-                reactive: true,
-                can_focus: true,
-                track_hover: true,
-                accessible_name: accessibleName,
-                style_class: 'popup-menu-item openweather-button'
-            });
-            button.child = new St.Icon({
-                icon_name: iconName
-            });
+            button.style_class ='popup-menu-item openweather-button';
             button.connect('notify::hover', Lang.bind(this, this._onButtonHoverChanged));
-        } else
-            button = Main.panel.statusArea.aggregateMenu._system._createActionButton(iconName, accessibleName);
+        }
 
         return button;
     }

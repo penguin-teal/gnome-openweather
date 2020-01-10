@@ -126,3 +126,22 @@ padding-right: 5px;
 padding-left: 15px;
 padding-right: 5px;
 }
+
+.openweather-button-action {
+-st-icon-style: symbolic;
+border-radius: 32px;
+margin: 0px;
+min-height: 22px;
+min-width: 22px;
+padding: 10px;
+font-size: 100%;
+}
+.openweather-button-action:hover,
+.openweather-button-action:focus {
+border: none;
+padding: 11px;
+}
+
+.openweather-button-action > StIcon {
+icon-size: 16px;
+}
