@@ -41,15 +41,15 @@ const Me = ExtensionUtils.getCurrentExtension();
 const Config = imports.misc.config;
 const DarkskyNet = Me.imports.darksky_net;
 const OpenweathermapOrg = Me.imports.openweathermap_org;
-const Clutter = imports.gi.Clutter;
+
+const {
+    Clutter, Gio, Gtk, GLib, GObject, Soup, St
+} = imports.gi;
+
+
 const Gettext = imports.gettext.domain('gnome-shell-extension-openweather');
-const Gio = imports.gi.Gio;
-const Gtk = imports.gi.Gtk;
-const GLib = imports.gi.GLib;
 const Lang = imports.lang;
 const Mainloop = imports.mainloop;
-const Soup = imports.gi.Soup;
-const St = imports.gi.St;
 const GnomeSession = imports.misc.gnomeSession;
 const Util = imports.misc.util;
 const _ = Gettext.gettext;
@@ -143,13 +143,12 @@ let _httpSession;
 let _currentWeatherCache, _forecastWeatherCache;
 let _timeCacheCurrentWeather, _timeCacheForecastWeather;
 
-const OpenweatherMenuButton = new Lang.Class({
-    Name: 'OpenweatherMenuButton',
+let OpenweatherMenuButton = GObject.registerClass(
+class OpenweatherMenuButton extends PanelMenu.Button {
 
-    Extends: PanelMenu.Button,
-
-    _init: function() {
-        this.owmCityId = 0;
+    _init() {
+		super._init(0, 'OpenweatherMenuButton', false);
+		this.owmCityId = 0;
 
         // Get locale, needed for toLocaleString, workaround for gnome-shell 3.24
         this.locale = GLib.get_language_names()[0];
@@ -187,11 +186,7 @@ const OpenweatherMenuButton = new Lang.Class({
             style_class: 'system-status-icon openweather-icon ' + this.getIconType()
         });
 
-        // Panel menu item - the current class
-        let menuAlignment = 1.0 - (this._menu_alignment / 100);
-        if (Clutter.get_default_text_direction() == Clutter.TextDirection.RTL)
-            menuAlignment = 1.0 - menuAlignment;
-        this.parent(menuAlignment);
+        this.checkAlignment();
 
         // Putting the panel item together
         let topBox = new St.BoxLayout();
@@ -316,17 +311,18 @@ const OpenweatherMenuButton = new Lang.Class({
                 this._needsColorUpdate = true;
             }));
         }
-    },
 
-    _onStatusChanged: function(status) {
+    }
+
+    _onStatusChanged(status) {
         this._idle = false;
 
         if (status == GnomeSession.PresenceStatus.IDLE) {
             this._idle = true;
         }
-    },
+    }
 
-    stop: function() {
+    stop() {
         _forecastWeatherCache = this.forecastWeatherCache;
         _currentWeatherCache = this.currentWeatherCache;
 
@@ -375,16 +371,16 @@ const OpenweatherMenuButton = new Lang.Class({
             context.disconnect(this._globalThemeChangedId);
             this._globalThemeChangedId = undefined;
         }
-    },
+    }
 
-    switchProvider: function() {
+    switchProvider() {
         if (this._weather_provider == WeatherProvider.DARKSKY)
             this.useDarkskyNet();
         else
             this.useOpenweathermapOrg();
-    },
+    }
 
-    useOpenweathermapOrg: function() {
+    useOpenweathermapOrg() {
         this.parseWeatherForecast = OpenweathermapOrg.parseWeatherForecast;
         this.parseWeatherCurrent = OpenweathermapOrg.parseWeatherCurrent;
         this.getWeatherIcon = OpenweathermapOrg.getWeatherIcon;
@@ -396,9 +392,9 @@ const OpenweatherMenuButton = new Lang.Class({
         if (this._appid.toString().trim() === '')
             Main.notify("Openweather", _("Openweathermap.org does not work without an api-key.\nEither set the switch to use the extensions default key in the preferences dialog to on or register at https://openweathermap.org/appid and paste your personal key into the preferences dialog."));
 
-    },
+    }
 
-    useDarkskyNet: function() {
+    useDarkskyNet() {
         this.parseWeatherCurrent = DarkskyNet.parseWeatherCurrent;
         this.parseWeatherForecast = DarkskyNet.parseWeatherForecast;
         this.getWeatherIcon = DarkskyNet.getWeatherIcon;
@@ -449,9 +445,9 @@ const OpenweatherMenuButton = new Lang.Class({
 
         if (this._appid_fc.toString().trim() === '')
             Main.notify("Openweather", _("Dark Sky does not work without an api-key.\nPlease register at https://darksky.net/dev/register and paste your personal key into the preferences dialog."));
-    },
+    }
 
-    getWeatherProviderURL: function() {
+    getWeatherProviderURL() {
         let url = "";
         if (this._weather_provider == WeatherProvider.DARKSKY) {
             url = "https://darksky.net/";
@@ -463,9 +459,9 @@ const OpenweatherMenuButton = new Lang.Class({
                 url += "?APPID=" + this._appid;
         }
         return url;
-    },
+    }
 
-    loadConfig: function() {
+    loadConfig() {
         this._settings = ExtensionUtils.getSettings(OPENWEATHER_SETTINGS_SCHEMA);
 
         if (this._cities.length === 0)
@@ -488,9 +484,9 @@ const OpenweatherMenuButton = new Lang.Class({
             this.rebuildButtonMenu();
             this.parseWeatherCurrent();
         }));
-    },
+    }
 
-    loadConfigInterface: function() {
+    loadConfigInterface() {
         this._settingsInterface = ExtensionUtils.getSettings(OPENWEATHER_DESKTOP_INTERFACE);
         this._settingsInterfaceC = this._settingsInterface.connect("changed", Lang.bind(this, function() {
             this.rebuildCurrentWeatherUi();
@@ -506,21 +502,21 @@ const OpenweatherMenuButton = new Lang.Class({
             }
             this.parseWeatherCurrent();
         }));
-    },
+    }
 
-    _onNetworkStateChanged: function() {
+    _onNetworkStateChanged() {
         this._checkConnectionState();
-    },
+    }
 
-    _checkConnectionState: function() {
+    _checkConnectionState() {
         this._checkConnectionStateRetries = 3;
         this._oldConnected = this._connected;
         this._connected = false;
 
         this._checkConnectionStateWithRetries(1250);
-    },
+    }
 
-    _checkConnectionStateRetry: function() {
+    _checkConnectionStateRetry() {
         if (this._checkConnectionStateRetries > 0) {
             let timeout;
             if (this._checkConnectionStateRetries == 3)
@@ -533,9 +529,9 @@ const OpenweatherMenuButton = new Lang.Class({
             this._checkConnectionStateRetries -= 1;
             this._checkConnectionStateWithRetries(timeout);
         }
-    },
+    }
 
-    _checkConnectionStateWithRetries: function(interval) {
+    _checkConnectionStateWithRetries(interval) {
         if (this._timeoutCheckConnectionState) {
             Mainloop.source_remove(this._timeoutCheckConnectionState);
             this._timeoutCheckConnectionState = undefined;
@@ -559,9 +555,9 @@ const OpenweatherMenuButton = new Lang.Class({
             }
             return false;
         }));
-    },
+    }
 
-    _asyncReadyCallback: function(nm, res) {
+    _asyncReadyCallback(nm, res) {
         try {
             this._connected = this._network_monitor.can_reach_finish(res);
         } catch (err) {
@@ -580,17 +576,17 @@ const OpenweatherMenuButton = new Lang.Class({
                 this.forecastWeatherCache = undefined;
             this.parseWeatherCurrent();
         }
-    },
+    }
 
-    locationChanged: function() {
+    locationChanged() {
         let location = this.extractCoord(this._city);
         if (this.oldLocation != location) {
             return true;
         }
         return false;
-    },
+    }
 
-    providerChanged: function() {
+    providerChanged() {
         let provider = this._weather_provider;
         if (this.oldProvider != provider) {
             this.oldProvider = provider;
@@ -611,13 +607,13 @@ const OpenweatherMenuButton = new Lang.Class({
             }
         }
         return false;
-    },
+    }
 
     get _clockFormat() {
         if (!this._settingsInterface)
             this.loadConfigInterface();
         return this._settingsInterface.get_string("clock-format");
-    },
+    }
 
     get _weather_provider() {
         if (!this._settings)
@@ -629,45 +625,45 @@ const OpenweatherMenuButton = new Lang.Class({
             provider = this._settings.get_enum(OPENWEATHER_PROVIDER_KEY);
 
         return provider;
-    },
+    }
 
     get _units() {
         if (!this._settings)
             this.loadConfig();
         return this._settings.get_enum(OPENWEATHER_UNIT_KEY);
-    },
+    }
 
     get _wind_speed_units() {
         if (!this._settings)
             this.loadConfig();
         return this._settings.get_enum(OPENWEATHER_WIND_SPEED_UNIT_KEY);
-    },
+    }
 
     get _wind_direction() {
         if (!this._settings)
             this.loadConfig();
         return this._settings.get_boolean(OPENWEATHER_WIND_DIRECTION_KEY);
-    },
+    }
 
     get _pressure_units() {
         if (!this._settings)
             this.loadConfig();
         return this._settings.get_enum(OPENWEATHER_PRESSURE_UNIT_KEY);
-    },
+    }
 
     get _cities() {
         if (!this._settings)
             this.loadConfig();
         return this._settings.get_string(OPENWEATHER_CITY_KEY);
-    },
+    }
 
     set _cities(v) {
         if (!this._settings)
             this.loadConfig();
         return this._settings.set_string(OPENWEATHER_CITY_KEY, v);
-    },
+    }
 
-   _onButtonHoverChanged: function(actor, event) {
+   _onButtonHoverChanged(actor, event) {
         if (actor.hover) {
             actor.add_style_pseudo_class('hover');
             actor.set_style(this._button_background_style);
@@ -677,9 +673,9 @@ const OpenweatherMenuButton = new Lang.Class({
             if (actor != this._urlButton)
                 actor.set_style(this._button_border_style);
         }
-    },
+    }
 
-    _updateButtonColors: function() {
+    _updateButtonColors() {
         if (!this._needsColorUpdate)
             return;
         this._needsColorUpdate = false;
@@ -700,10 +696,10 @@ const OpenweatherMenuButton = new Lang.Class({
         color = this._buttonMenu.get_theme_node().get_background_color();
         this._button_background_style = 'background-color:rgba(' + color.red + ',' + color.green + ',' + color.blue + ',' + (Math.round(color.alpha / 2.55) / 100) + ');';
         this._buttonMenu.remove_style_pseudo_class('active');
-    },
+    }
 
 
-    createButton: function(iconName, accessibleName) {
+    createButton(iconName, accessibleName) {
         let button;
 
         if (ExtensionUtils.versionCheck(['3.8'], Config.PACKAGE_VERSION)) {
@@ -722,7 +718,7 @@ const OpenweatherMenuButton = new Lang.Class({
             button = Main.panel.statusArea.aggregateMenu._system._createActionButton(iconName, accessibleName);
 
         return button;
-    },
+    }
 
     get _actual_city() {
         if (!this._settings)
@@ -746,7 +742,7 @@ const OpenweatherMenuButton = new Lang.Class({
             a = l;
 
         return a;
-    },
+    }
 
     set _actual_city(a) {
         if (!this._settings)
@@ -768,7 +764,7 @@ const OpenweatherMenuButton = new Lang.Class({
             a = l;
 
         this._settings.set_int(OPENWEATHER_ACTUAL_CITY_KEY, a);
-    },
+    }
 
     get _city() {
         let cities = this._cities.split(" && ");
@@ -778,94 +774,94 @@ const OpenweatherMenuButton = new Lang.Class({
             return "";
         cities = cities[this._actual_city];
         return cities;
-    },
+    }
 
     get _translate_condition() {
         if (!this._settings)
             this.loadConfig();
         return this._settings.get_boolean(OPENWEATHER_TRANSLATE_CONDITION_KEY);
-    },
+    }
 
     get _getIconType() {
         if (!this._settings)
             this.loadConfig();
         return this._settings.get_boolean(OPENWEATHER_USE_SYMBOLIC_ICONS_KEY) ? 1 : 0;
-    },
+    }
 
     get _use_text_on_buttons() {
         if (!this._settings)
             this.loadConfig();
         return this._settings.get_boolean(OPENWEATHER_USE_TEXT_ON_BUTTONS_KEY) ? 1 : 0;
-    },
+    }
 
     get _text_in_panel() {
         if (!this._settings)
             this.loadConfig();
         return this._settings.get_boolean(OPENWEATHER_SHOW_TEXT_IN_PANEL_KEY);
-    },
+    }
 
     get _position_in_panel() {
         if (!this._settings)
             this.loadConfig();
         return this._settings.get_enum(OPENWEATHER_POSITION_IN_PANEL_KEY);
-    },
+    }
 
     get _menu_alignment() {
         if (!this._settings)
             this.loadConfig();
         return this._settings.get_double(OPENWEATHER_MENU_ALIGNMENT_KEY);
-    },
+    }
 
     get _comment_in_panel() {
         if (!this._settings)
             this.loadConfig();
         return this._settings.get_boolean(OPENWEATHER_SHOW_COMMENT_IN_PANEL_KEY);
-    },
+    }
 
     get _comment_in_forecast() {
         if (!this._settings)
             this.loadConfig();
         return this._settings.get_boolean(OPENWEATHER_SHOW_COMMENT_IN_FORECAST_KEY);
-    },
+    }
 
     get _refresh_interval_current() {
         if (!this._settings)
             this.loadConfig();
         let v = this._settings.get_int(OPENWEATHER_REFRESH_INTERVAL_CURRENT);
         return ((v >= 600) ? v : 600);
-    },
+    }
 
     get _refresh_interval_forecast() {
         if (!this._settings)
             this.loadConfig();
         let v = this._settings.get_int(OPENWEATHER_REFRESH_INTERVAL_FORECAST);
         return ((v >= 600) ? v : 600);
-    },
+    }
 
     get _loc_len_current() {
         if (!this._settings)
             this.loadConfig();
         let v = this._settings.get_int(OPENWEATHER_LOC_TEXT_LEN);
         return ((v > 0) ? v : 0);
-    },
+    }
 
     get _center_forecast() {
         if (!this._settings)
             this.loadConfig();
         return this._settings.get_boolean(OPENWEATHER_CENTER_FORECAST_KEY);
-    },
+    }
 
     get _days_forecast() {
         if (!this._settings)
             this.loadConfig();
         return this._settings.get_int(OPENWEATHER_DAYS_FORECAST);
-    },
+    }
 
     get _decimal_places() {
         if (!this._settings)
             this.loadConfig();
         return this._settings.get_int(OPENWEATHER_DECIMAL_PLACES);
-    },
+    }
 
     get _appid() {
         if (!this._settings)
@@ -876,22 +872,22 @@ const OpenweatherMenuButton = new Lang.Class({
         else
             key = this._settings.get_string(OPENWEATHER_OWM_API_KEY);
         return (key.length == 32) ? key : '';
-    },
+    }
 
     get _use_default_owm_key() {
         if (!this._settings)
             this.loadConfig();
         return this._settings.get_boolean(OPENWEATHER_USE_DEFAULT_OWM_API_KEY);
-    },
+    }
 
     get _appid_fc() {
         if (!this._settings)
             this.loadConfig();
         let key = this._settings.get_string(OPENWEATHER_FC_API_KEY);
         return (key.length == 32) ? key : '';
-    },
+    }
 
-    rebuildButtonMenu: function() {
+    rebuildButtonMenu() {
         if (this._buttonBox) {
             if (this._buttonBox1) {
                 this._buttonBox1.destroy();
@@ -989,9 +985,9 @@ const OpenweatherMenuButton = new Lang.Class({
             this._buttonMenu.add_actor(this._buttonBox2);
         }
         this._buttonBox1MinWidth = undefined;
-    },
+    }
 
-    rebuildSelectCityItem: function() {
+    rebuildSelectCityItem() {
         this._selectCity.menu.removeAll();
         let item = null;
 
@@ -1022,22 +1018,22 @@ const OpenweatherMenuButton = new Lang.Class({
         else
             this._selectCity.show();
 
-    },
+    }
 
-    _onActivate: function() {
+    _onActivate() {
         openweatherMenu._actual_city = this.location;
-    },
+    }
 
-    extractLocation: function() {
+    extractLocation() {
         if (!arguments[0])
             return "";
 
         if (arguments[0].search(">") == -1)
             return _("Invalid city");
         return arguments[0].split(">")[1];
-    },
+    }
 
-    extractCoord: function() {
+    extractCoord() {
         let coords = 0;
 
         if (arguments[0] && (arguments[0].search(">") != -1))
@@ -1049,9 +1045,9 @@ const OpenweatherMenuButton = new Lang.Class({
         }
 
         return coords;
-    },
+    }
 
-    extractProvider: function() {
+    extractProvider() {
         if (!arguments[0])
             return -1;
         if (arguments[0].split(">")[2] === undefined)
@@ -1059,15 +1055,15 @@ const OpenweatherMenuButton = new Lang.Class({
         if (isNaN(parseInt(arguments[0].split(">")[2])))
             return -1;
         return parseInt(arguments[0].split(">")[2]);
-    },
+    }
 
-    _onPreferencesActivate: function() {
+    _onPreferencesActivate() {
         this.menu.actor.hide();
         Util.spawn(["gnome-shell-extension-prefs", "openweather-extension@jenslody.de"]);
         return 0;
-    },
+    }
 
-    recalcLayout: function() {
+    recalcLayout() {
         if (!this.menu.isOpen)
             return;
         if (ExtensionUtils.versionCheck(['3.8'], Config.PACKAGE_VERSION)) {
@@ -1087,9 +1083,9 @@ const OpenweatherMenuButton = new Lang.Class({
                 this._forecastScrollBox.hscroll.hide();
             }
         }
-    },
+    }
 
-    unit_to_unicode: function() {
+    unit_to_unicode() {
         if (this._units == WeatherUnits.FAHRENHEIT)
             return _('\u00B0F');
         else if (this._units == WeatherUnits.KELVIN)
@@ -1106,45 +1102,45 @@ const OpenweatherMenuButton = new Lang.Class({
             return _('\u00B0N');
         else
             return _('\u00B0C');
-    },
+    }
 
-    hasIcon: function(icon) {
+    hasIcon(icon) {
         return Gtk.IconTheme.get_default().has_icon(icon);
-    },
+    }
 
-    toFahrenheit: function(t) {
+    toFahrenheit(t) {
         return ((Number(t) * 1.8) + 32).toFixed(this._decimal_places);
-    },
+    }
 
-    toKelvin: function(t) {
+    toKelvin(t) {
         return (Number(t) + 273.15).toFixed(this._decimal_places);
-    },
+    }
 
-    toRankine: function(t) {
+    toRankine(t) {
         return ((Number(t) * 1.8) + 491.67).toFixed(this._decimal_places);
-    },
+    }
 
-    toReaumur: function(t) {
+    toReaumur(t) {
         return (Number(t) * 0.8).toFixed(this._decimal_places);
-    },
+    }
 
-    toRoemer: function(t) {
+    toRoemer(t) {
         return ((Number(t) * 21 / 40) + 7.5).toFixed(this._decimal_places);
-    },
+    }
 
-    toDelisle: function(t) {
+    toDelisle(t) {
         return ((100 - Number(t)) * 1.5).toFixed(this._decimal_places);
-    },
+    }
 
-    toNewton: function(t) {
+    toNewton(t) {
         return (Number(t) - 0.33).toFixed(this._decimal_places);
-    },
+    }
 
-    toInHg: function(p /*, t*/ ) {
+    toInHg(p /*, t*/ ) {
         return (p / 33.86530749).toFixed(this._decimal_places);
-    },
+    }
 
-    toBeaufort: function(w, t) {
+    toBeaufort(w, t) {
         if (w < 0.3)
             return (!t) ? "0" : "(" + _("Calm") + ")";
 
@@ -1183,29 +1179,29 @@ const OpenweatherMenuButton = new Lang.Class({
 
         else
             return (!t) ? "12" : "(" + _("Hurricane") + ")";
-    },
+    }
 
-    getLocaleDay: function(abr) {
+    getLocaleDay(abr) {
         let days = [_('Sunday'), _('Monday'), _('Tuesday'), _('Wednesday'), _('Thursday'), _('Friday'), _('Saturday')];
         return days[abr];
-    },
+    }
 
-    getWindDirection: function(deg) {
+    getWindDirection(deg) {
         let arrows = ["\u2193", "\u2199", "\u2190", "\u2196", "\u2191", "\u2197", "\u2192", "\u2198"];
         let letters = [_('N'), _('NE'), _('E'), _('SE'), _('S'), _('SW'), _('W'), _('NW')];
         let idx = Math.round(deg / 45) % arrows.length;
         return (this._wind_direction) ? arrows[idx] : letters[idx];
-    },
+    }
 
-    getIconType: function() {
+    getIconType() {
             if (this._getIconType) {
             return "openweather-symbolic";
             } else {
             return "openweather-regular";
         }
-    },
+    }
 
-    load_json_async: function(url, params, fun) {
+    load_json_async(url, params, fun) {
         if (_httpSession === undefined) {
             _httpSession = new Soup.Session();
             _httpSession.user_agent = this.user_agent;
@@ -1230,16 +1226,16 @@ const OpenweatherMenuButton = new Lang.Class({
             }
         }));
         return;
-    },
+    }
 
-    checkAlignment: function() {
+    checkAlignment() {
         let menuAlignment = 1.0 - (this._menu_alignment / 100);
         if (Clutter.get_default_text_direction() == Clutter.TextDirection.RTL)
             menuAlignment = 1.0 - menuAlignment;
         this.menu._arrowAlignment=menuAlignment;
-    },
+    }
 
-    checkPositionInPanel: function() {
+    checkPositionInPanel() {
         if (this._old_position_in_panel != this._position_in_panel) {
             switch (this._old_position_in_panel) {
                 case WeatherPosition.LEFT:
@@ -1271,9 +1267,9 @@ const OpenweatherMenuButton = new Lang.Class({
             this._old_position_in_panel = this._position_in_panel;
         }
 
-    },
+    }
 
-    formatPressure: function(pressure) {
+    formatPressure(pressure) {
         let pressure_unit = _('hPa');
         switch (this._pressure_units) {
             case WeatherPressureUnits.INHG:
@@ -1332,9 +1328,9 @@ const OpenweatherMenuButton = new Lang.Class({
                 break;
         }
         return parseFloat(pressure).toLocaleString(this.locale) + ' ' + pressure_unit;
-    },
+    }
 
-    formatTemperature: function(temperature) {
+    formatTemperature(temperature) {
         switch (this._units) {
             case WeatherUnits.FAHRENHEIT:
                 temperature = this.toFahrenheit(temperature);
@@ -1369,9 +1365,9 @@ const OpenweatherMenuButton = new Lang.Class({
                 break;
         }
         return parseFloat(temperature).toLocaleString(this.locale).replace('-', '\u2212') + ' ' + this.unit_to_unicode();
-    },
+    }
 
-    formatWind: function(speed, direction) {
+    formatWind(speed, direction) {
         let unit = _('m/s');
         switch (this._wind_speed_units) {
             case WeatherWindSpeedUnits.MPH:
@@ -1411,9 +1407,9 @@ const OpenweatherMenuButton = new Lang.Class({
             return parseFloat(speed).toLocaleString(this.locale) + ' ' + unit;
         else // i.e. speed > 0 && direction
             return direction + ' ' + parseFloat(speed).toLocaleString(this.locale) + ' ' + unit;
-    },
+    }
 
-    reloadWeatherCurrent: function(interval) {
+    reloadWeatherCurrent(interval) {
         if (this._timeoutCurrent) {
             Mainloop.source_remove(this._timeoutCurrent);
             this._timeoutCurrent = undefined;
@@ -1426,9 +1422,9 @@ const OpenweatherMenuButton = new Lang.Class({
             this.parseWeatherCurrent();
             return true;
         }));
-    },
+    }
 
-    reloadWeatherForecast: function(interval) {
+    reloadWeatherForecast(interval) {
         if (this._timeoutForecast) {
             Mainloop.source_remove(this._timeoutForecast);
             this._timeoutForecast = undefined;
@@ -1441,19 +1437,19 @@ const OpenweatherMenuButton = new Lang.Class({
             this.parseWeatherForecast();
             return true;
         }));
-    },
+    }
 
-    destroyCurrentWeather: function() {
+    destroyCurrentWeather() {
         if (this._currentWeather.get_child() !== null)
             this._currentWeather.get_child().destroy();
-    },
+    }
 
-    destroyFutureWeather: function() {
+    destroyFutureWeather() {
         if (this._futureWeather.get_child() !== null)
             this._futureWeather.get_child().destroy();
-    },
+    }
 
-    rebuildCurrentWeatherUi: function() {
+    rebuildCurrentWeatherUi() {
         this._weatherInfo.text = (' ');
         this._weatherIcon.icon_name = 'view-refresh';
         this._weatherIcon.remove_style_class_name('openweather-regular');
@@ -1580,15 +1576,15 @@ const OpenweatherMenuButton = new Lang.Class({
         box.add_actor(this._currentWeatherIcon);
         box.add_actor(xb);
         this._currentWeather.set_child(box);
-    },
+    }
 
-    scrollForecastBy: function(delta) {
+    scrollForecastBy(delta) {
         if (this._forecastScrollBox === undefined)
             return;
         this._forecastScrollBox.hscroll.adjustment.value += delta;
-    },
+    }
 
-    rebuildFutureWeatherUi: function(cnt) {
+    rebuildFutureWeatherUi(cnt) {
         this.destroyFutureWeather();
 
         this._forecast = [];
@@ -1666,9 +1662,9 @@ const OpenweatherMenuButton = new Lang.Class({
             this._forecastBox.add_actor(bb);
         }
         this._forecastScrollBox.add_actor(this._forecastBox);
-    },
+    }
 
-    _onScroll: function(actor, event) {
+    _onScroll(actor, event) {
         let dx = 0;
         let dy = 0;
         switch (event.get_scroll_direction()) {
