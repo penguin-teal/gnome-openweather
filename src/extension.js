@@ -194,34 +194,14 @@ class OpenweatherMenuButton extends PanelMenu.Button {
         topBox.add_actor(this._weatherInfo);
         this.add_actor(topBox);
 
-        let dummyBox = new St.BoxLayout();
-        this.reparent(dummyBox);
-        dummyBox.remove_actor(this);
-        dummyBox.destroy();
+        this.checkPositionInPanel();
 
-        let children = null;
-        switch (this._position_in_panel) {
-            case WeatherPosition.LEFT:
-                children = Main.panel._leftBox.get_children();
-                Main.panel._leftBox.insert_child_at_index(this, children.length);
-                break;
-            case WeatherPosition.CENTER:
-                children = Main.panel._centerBox.get_children();
-                Main.panel._centerBox.insert_child_at_index(this, children.length);
-                break;
-            case WeatherPosition.RIGHT:
-                children = Main.panel._rightBox.get_children();
-                Main.panel._rightBox.insert_child_at_index(this, 0);
-                break;
-        }
         if (Main.panel._menus === undefined)
             Main.panel.menuManager.addMenu(this.menu);
         else
             Main.panel._menus.addMenu(this.menu);
 
         this._session = new GnomeSession.SessionManager();
-
-        this._old_position_in_panel = this._position_in_panel;
 
         // Current weather
         this._currentWeather = new St.Bin();
@@ -1237,18 +1217,9 @@ class OpenweatherMenuButton extends PanelMenu.Button {
     }
 
     checkPositionInPanel() {
-        if (this._old_position_in_panel != this._position_in_panel) {
-            switch (this._old_position_in_panel) {
-                case WeatherPosition.LEFT:
-                    Main.panel._leftBox.remove_actor(this);
-                    break;
-                case WeatherPosition.CENTER:
-                    Main.panel._centerBox.remove_actor(this);
-                    break;
-                case WeatherPosition.RIGHT:
-                    Main.panel._rightBox.remove_actor(this);
-                    break;
-            }
+        if (this._old_position_in_panel == undefined ||
+            this._old_position_in_panel != this._position_in_panel) {
+            this.get_parent().remove_actor(this);
 
             let children = null;
             switch (this._position_in_panel) {
