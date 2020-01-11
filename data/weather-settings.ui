@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.20.0 -->
+<!-- Generated with glade 3.22.1 -->
 <interface domain="gnome-shell-extension-openweather">
   <requires lib="gtk+" version="3.8"/>
   <object class="GtkAdjustment" id="current-refresh-adjustment">
@@ -16,6 +16,9 @@
     <property name="destroy_with_parent">True</property>
     <property name="hide_titlebar_when_maximized">True</property>
     <property name="type_hint">dialog</property>
+    <child>
+      <placeholder/>
+    </child>
     <child>
       <object class="GtkBox" id="edit-box">
         <property name="visible">True</property>
@@ -170,19 +173,20 @@
     <property name="step_increment">1</property>
     <property name="page_increment">10</property>
   </object>
-  <object class="GtkAdjustment" id="menu-alignment-adjustment">
-    <property name="upper">100</property>
-    <property name="step_increment">0.10000000000000001</property>
-    <property name="page_increment">2</property>
-  </object>
   <object class="GtkAdjustment" id="max-loc-chars-adj">
-    <property name="lower">0</property>
     <property name="upper">500</property>
     <property name="value">50</property>
     <property name="step_increment">1</property>
     <property name="page_increment">10</property>
   </object>
+  <object class="GtkAdjustment" id="menu-alignment-adjustment">
+    <property name="upper">100</property>
+    <property name="step_increment">0.10000000000000001</property>
+    <property name="page_increment">2</property>
+  </object>
   <object class="GtkMenu" id="search-menu">
+    <property name="width_request">500</property>
+    <property name="height_request">300</property>
     <property name="visible">True</property>
     <property name="can_focus">False</property>
   </object>
@@ -193,6 +197,9 @@
     <property name="destroy_with_parent">True</property>
     <property name="hide_titlebar_when_maximized">True</property>
     <property name="type_hint">dialog</property>
+    <child>
+      <placeholder/>
+    </child>
     <child>
       <object class="GtkBox" id="search-box">
         <property name="visible">True</property>
@@ -337,13 +344,6 @@
         </child>
       </object>
     </child>
-  </object>
-  <object class="GtkSpinner" id="spinner">
-    <property name="width_request">48</property>
-    <property name="height_request">48</property>
-    <property name="visible">True</property>
-    <property name="can_focus">False</property>
-    <property name="active">True</property>
   </object>
   <object class="GtkListStore" id="tree-liststore">
     <columns>
@@ -1166,7 +1166,6 @@
             <property name="adjustment">max-loc-chars-adj</property>
             <property name="climb_rate">5</property>
             <property name="numeric">True</property>
-            <property name="value">0</property>
           </object>
           <packing>
             <property name="left_attach">1</property>
