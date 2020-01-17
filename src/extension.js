@@ -216,13 +216,8 @@ class OpenweatherMenuButton extends PanelMenu.Button {
             reactive: false
         });
 
-        if (ExtensionUtils.versionCheck(['3.8'], Config.PACKAGE_VERSION)) {
-            _itemCurrent.addActor(this._currentWeather);
-            _itemFuture.addActor(this._futureWeather);
-        } else {
-            _itemCurrent.actor.add_actor(this._currentWeather);
-            _itemFuture.actor.add_actor(this._futureWeather);
-        }
+        _itemCurrent.actor.add_actor(this._currentWeather);
+        _itemFuture.actor.add_actor(this._futureWeather);
 
         this.menu.addMenuItem(_itemCurrent);
 
@@ -284,14 +279,6 @@ class OpenweatherMenuButton extends PanelMenu.Button {
         this._checkConnectionState();
 
         this.menu.connect('open-state-changed', Lang.bind(this, this.recalcLayout));
-        if (ExtensionUtils.versionCheck(['3.8'], Config.PACKAGE_VERSION)) {
-            this._needsColorUpdate = true;
-            let context = St.ThemeContext.get_for_stage(global.stage);
-            this._globalThemeChangedId = context.connect('changed', Lang.bind(this, function() {
-                this._needsColorUpdate = true;
-            }));
-        }
-
     }
 
     _onStatusChanged(status) {
@@ -643,41 +630,6 @@ class OpenweatherMenuButton extends PanelMenu.Button {
         return this._settings.set_string(OPENWEATHER_CITY_KEY, v);
     }
 
-   _onButtonHoverChanged(actor, event) {
-        if (actor.hover) {
-            actor.add_style_pseudo_class('hover');
-            actor.set_style(this._button_background_style);
-        } else {
-            actor.remove_style_pseudo_class('hover');
-            actor.set_style('background-color:;');
-            if (actor != this._urlButton)
-                actor.set_style(this._button_border_style);
-        }
-    }
-
-    _updateButtonColors() {
-        if (!this._needsColorUpdate)
-            return;
-        this._needsColorUpdate = false;
-        let color = this._separatorItem._separator.get_theme_node().get_color('-gradient-end');
-
-        let alpha = (Math.round(color.alpha / 2.55) / 100);
-
-        if (color.red > 0 && color.green > 0 && color.blue > 0)
-            this._button_border_style = 'border:1px solid rgb(' + Math.round(alpha * color.red) + ',' + Math.round(alpha * color.green) + ',' + Math.round(alpha * color.blue) + ');';
-        else
-            this._button_border_style = 'border:1px solid rgba(' + color.red + ',' + color.green + ',' + color.blue + ',' + alpha + ');';
-
-        this._locationButton.set_style(this._button_border_style);
-        this._reloadButton.set_style(this._button_border_style);
-        this._prefsButton.set_style(this._button_border_style);
-
-        this._buttonMenu.actor.add_style_pseudo_class('active');
-        color = this._buttonMenu.actor.get_theme_node().get_background_color();
-        this._button_background_style = 'background-color:rgba(' + color.red + ',' + color.green + ',' + color.blue + ',' + (Math.round(color.alpha / 2.55) / 100) + ');';
-        this._buttonMenu.actor.remove_style_pseudo_class('active');
-    }
-
     createButton(iconName, accessibleName) {
         let button;
 
@@ -692,11 +644,6 @@ class OpenweatherMenuButton extends PanelMenu.Button {
         button.child = new St.Icon({
             icon_name: iconName
         });
-
-        if (ExtensionUtils.versionCheck(['3.8'], Config.PACKAGE_VERSION)) {
-            button.style_class ='popup-menu-item openweather-button';
-            button.connect('notify::hover', Lang.bind(this, this._onButtonHoverChanged));
-        }
 
         return button;
     }
@@ -898,10 +845,7 @@ class OpenweatherMenuButton extends PanelMenu.Button {
             this._locationButton.set_label(this._locationButton.get_accessible_name());
 
         this._locationButton.connect('clicked', Lang.bind(this, function() {
-            if (ExtensionUtils.versionCheck(['3.8'], Config.PACKAGE_VERSION))
-                this._selectCity.menu.toggle();
-            else
-                this._selectCity._setOpenState(!this._selectCity._getOpenState());
+            this._selectCity._setOpenState(!this._selectCity._getOpenState());
         }));
         this._buttonBox1 = new St.BoxLayout({
             style_class: 'openweather-button-box'
@@ -926,11 +870,6 @@ class OpenweatherMenuButton extends PanelMenu.Button {
         this._urlButton = this.createButton('', _("Weather data provided by:") + (this._use_text_on_buttons ? "\n" : "  ") + this.weatherProvider);
         this._urlButton.set_label(this._urlButton.get_accessible_name());
 
-        if (ExtensionUtils.versionCheck(['3.8'], Config.PACKAGE_VERSION)) {
-            this._urlButton.connect('notify::hover', Lang.bind(this, this._onButtonHoverChanged));
-            this._urlButton.style_class = 'popup-menu-item';
-        }
-
         this._urlButton.connect('clicked', Lang.bind(this, function() {
             this.menu.actor.hide();
             let url = this.getWeatherProviderURL();
@@ -951,19 +890,9 @@ class OpenweatherMenuButton extends PanelMenu.Button {
         this._prefsButton.connect('clicked', Lang.bind(this, this._onPreferencesActivate));
         this._buttonBox2.add_actor(this._prefsButton);
 
-        if (ExtensionUtils.versionCheck(['3.8'], Config.PACKAGE_VERSION)) {
-            this._buttonBox = new St.BoxLayout();
-            this._buttonBox1.add_style_class_name('openweather-button-box-38');
-            this._buttonBox2.add_style_class_name('openweather-button-box-38');
-            this._buttonBox.add_actor(this._buttonBox1);
-            this._buttonBox.add_actor(this._buttonBox2);
+        this._buttonMenu.actor.add_actor(this._buttonBox1);
+        this._buttonMenu.actor.add_actor(this._buttonBox2);
 
-            this._buttonMenu.addActor(this._buttonBox);
-            this._needsColorUpdate = true;
-        } else {
-            this._buttonMenu.actor.add_actor(this._buttonBox1);
-            this._buttonMenu.actor.add_actor(this._buttonBox2);
-        }
         this._buttonBox1MinWidth = undefined;
     }
 
@@ -982,10 +911,7 @@ class OpenweatherMenuButton extends PanelMenu.Button {
             item = new PopupMenu.PopupMenuItem(this.extractLocation(cities[i]));
             item.location = i;
             if (i == this._actual_city) {
-                if (ExtensionUtils.versionCheck(['3.8'], Config.PACKAGE_VERSION))
-                    item.setShowDot(true);
-                else
-                    item.setOrnament(PopupMenu.Ornament.DOT);
+                item.setOrnament(PopupMenu.Ornament.DOT);
             }
 
             this._selectCity.menu.addMenuItem(item);
@@ -1046,9 +972,6 @@ class OpenweatherMenuButton extends PanelMenu.Button {
     recalcLayout() {
         if (!this.menu.isOpen)
             return;
-        if (ExtensionUtils.versionCheck(['3.8'], Config.PACKAGE_VERSION)) {
-            this._updateButtonColors();
-        }
         if (this._buttonBox1MinWidth === undefined)
             this._buttonBox1MinWidth = this._buttonBox1.get_width();
         this._buttonBox1.set_width(Math.max(this._buttonBox1MinWidth, this._currentWeather.get_width() - this._buttonBox2.get_width()));

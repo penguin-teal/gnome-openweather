@@ -32,13 +32,6 @@ padding: 0px;
 padding: 0px;
 spacing: 12px;
 }
-.openweather-button-box-38:ltr{
-padding-left: 24px;
-}
-
-.openweather-button-box-38:rtl{
-padding-right: 24px;
-}
 
 .openweather-current-summarybox,
 .openweather-forecast-icon,
