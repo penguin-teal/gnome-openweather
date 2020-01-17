@@ -220,8 +220,8 @@ class OpenweatherMenuButton extends PanelMenu.Button {
             _itemCurrent.addActor(this._currentWeather);
             _itemFuture.addActor(this._futureWeather);
         } else {
-            _itemCurrent.add_actor(this._currentWeather);
-            _itemFuture.add_actor(this._futureWeather);
+            _itemCurrent.actor.add_actor(this._currentWeather);
+            _itemFuture.actor.add_actor(this._futureWeather);
         }
 
         this.menu.addMenuItem(_itemCurrent);
@@ -672,10 +672,10 @@ class OpenweatherMenuButton extends PanelMenu.Button {
         this._reloadButton.set_style(this._button_border_style);
         this._prefsButton.set_style(this._button_border_style);
 
-        this._buttonMenu.add_style_pseudo_class('active');
-        color = this._buttonMenu.get_theme_node().get_background_color();
+        this._buttonMenu.actor.add_style_pseudo_class('active');
+        color = this._buttonMenu.actor.get_theme_node().get_background_color();
         this._button_background_style = 'background-color:rgba(' + color.red + ',' + color.green + ',' + color.blue + ',' + (Math.round(color.alpha / 2.55) / 100) + ');';
-        this._buttonMenu.remove_style_pseudo_class('active');
+        this._buttonMenu.actor.remove_style_pseudo_class('active');
     }
 
     createButton(iconName, accessibleName) {
@@ -962,8 +962,8 @@ class OpenweatherMenuButton extends PanelMenu.Button {
             this._buttonMenu.addActor(this._buttonBox);
             this._needsColorUpdate = true;
         } else {
-            this._buttonMenu.add_actor(this._buttonBox1);
-            this._buttonMenu.add_actor(this._buttonBox2);
+            this._buttonMenu.actor.add_actor(this._buttonBox1);
+            this._buttonMenu.actor.add_actor(this._buttonBox2);
         }
         this._buttonBox1MinWidth = undefined;
     }
