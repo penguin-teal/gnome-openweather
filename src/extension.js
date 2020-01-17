@@ -930,7 +930,6 @@ class OpenweatherMenuButton extends PanelMenu.Button {
             this._urlButton.connect('notify::hover', Lang.bind(this, this._onButtonHoverChanged));
             this._urlButton.style_class = 'popup-menu-item';
         }
-        this._urlButton.style_class += ' openweather-provider';
 
         this._urlButton.connect('clicked', Lang.bind(this, function() {
             this.menu.actor.hide();

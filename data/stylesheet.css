@@ -40,12 +40,6 @@ padding-left: 24px;
 padding-right: 24px;
 }
 
-.openweather-provider {
-border-width: 0px;
-border-radius:5px;
-padding:5px;
-}
-
 .openweather-current-summarybox,
 .openweather-forecast-icon,
 .openweather-current-databox-captions,
