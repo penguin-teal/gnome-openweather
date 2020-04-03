@@ -965,7 +965,14 @@ class OpenweatherMenuButton extends PanelMenu.Button {
 
     _onPreferencesActivate() {
         this.menu.actor.hide();
-        Util.spawn(["gnome-shell-extension-prefs", "openweather-extension@jenslody.de"]);
+        if (typeof ExtensionUtils.openPrefs === 'function') {
+            ExtensionUtils.openPrefs();
+        } else {
+            Util.spawn([
+                "gnome-shell-extension-prefs",
+                Me.uuid
+            ]);
+        }
         return 0;
     }
 
