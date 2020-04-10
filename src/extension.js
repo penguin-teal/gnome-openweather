@@ -230,7 +230,7 @@ class OpenweatherMenuButton extends PanelMenu.Button {
         this.menu.addMenuItem(item);
 
         this._selectCity = new PopupMenu.PopupSubMenuMenuItem("");
-        this._selectCity.set_height(0);
+        this._selectCity.actor.set_height(0);
         this._selectCity._triangle.set_height(0);
 
         this._buttonMenu = new PopupMenu.PopupBaseMenuItem({
@@ -920,9 +920,9 @@ class OpenweatherMenuButton extends PanelMenu.Button {
         }
 
         if (cities.length == 1)
-            this._selectCity.hide();
+            this._selectCity.actor.hide();
         else
-            this._selectCity.show();
+            this._selectCity.actor.show();
 
     }
 
