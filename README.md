@@ -1,3 +1,9 @@
+# Since May, 30 2020 openweathermap.org somehow messed up their certification chain.
+# You can not load data with the extension.
+# Please try the workaround in #272.
+
+
+
 ![Screenshot](https://gitlab.com/jenslody/gnome-shell-extension-openweather/raw/master/data/Screenshot.jpg)
 
 *gnome-shell-extension-openweather* is a simple extension for displaying weather conditions and forecasts in GNOME Shell, featuring support for multiple locations, no need for WOEID, a symmetrical layout and a settings panel through *gnome-shell-extension-prefs*.
@@ -96,7 +102,7 @@ Copyright &copy; 2011 - 2013
 * Christian Metzler <neroth@xeked.com>,
 * Jens Lody <jens@jenslody.de>.
 
-Copyright &copy; 2013 - 2017
+Copyright &copy; 2013 - 2020
 * Jens Lody <openweather@jenslody.de>.
 
 Copyright &copy; 2018
