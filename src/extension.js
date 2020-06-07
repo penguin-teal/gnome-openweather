@@ -1115,9 +1115,6 @@ class OpenweatherMenuButton extends PanelMenu.Button {
         if (_httpSession === undefined) {
             _httpSession = new Soup.Session();
             _httpSession.user_agent = this.user_agent;
-            if (this._weather_provider == WeatherProvider.OPENWEATHERMAP) {
-                _httpSession.ssl_strict = false;
-            }
         } else {
             // abort previous requests.
             _httpSession.abort();
