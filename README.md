@@ -1,9 +1,6 @@
 # Since May, 30 2020 openweathermap.org somehow messed up their certification chain.
 # You can not load data with the extension.
-# Wait for the hotfix to be reviewed by extensions.gnom.org or your distribution to fetch it.
-# Until then you can try the workaround in #272
-# or check commit https://gitlab.com/jenslody/gnome-shell-extension-openweather/-/commit/ee99918d72d6bdd387818be69adf5f8ff2236806
-# and apply it manually
+# Please try the workaround in #272.
 
 
 
