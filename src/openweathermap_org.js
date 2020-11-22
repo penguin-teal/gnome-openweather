@@ -169,7 +169,7 @@ weather-storm.png = weather-storm-symbolic.svg
     }
     
     if (night) {
-      iconname = iconname.flatMap(i => [i, i + '-night']);
+      iconname = iconname.flatMap(i => [i + '-night', i]);
     }
     
     iconname = iconname.flatMap(i => [i, i + '-symbolic']);
