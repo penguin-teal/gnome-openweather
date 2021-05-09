@@ -877,7 +877,7 @@
               <object class="GtkLabel" id="max-characters-in-location">
                 <property name="halign">start</property>
                 <property name="hexpand">1</property>
-                <property name="label" translatable="yes">Maximal number of characters in location label</property>
+                <property name="label" translatable="yes">Maximal length of the location text</property>
                 <layout>
                   <property name="column">0</property>
                   <property name="row">12</property>
