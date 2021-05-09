@@ -96,7 +96,7 @@ Copyright &copy; 2011 - 2013
 * Christian Metzler <neroth@xeked.com>,
 * Jens Lody <jens@jenslody.de>.
 
-Copyright &copy; 2013 - 2020
+Copyright &copy; 2013 - 2021
 * Jens Lody <openweather@jenslody.de>.
 
 Copyright &copy; 2018
