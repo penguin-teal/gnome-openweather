@@ -7,7 +7,7 @@ uuid = openweather-extension@jenslody.de
 
 extensiondir = $(topextensiondir)/$(uuid)
 
-dist_extension_DATA = OpenWeather.png stylesheet.css weather-settings.ui
+dist_extension_DATA = OpenWeather.png stylesheet.css prefs.css weather-settings.ui
 
 nodist_extension_DATA = metadata.json $(EXTRA_EXTENSION)
 

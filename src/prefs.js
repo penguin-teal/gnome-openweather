@@ -93,6 +93,15 @@ const GeolocationProvider = {
     MAPQUEST: 2
 };
 
+let provider = new Gtk.CssProvider();
+
+provider.load_from_path(Me.dir.get_path() + '/prefs.css');
+Gtk.StyleContext.add_provider_for_display(
+    Gdk.Display.get_default(),
+    provider,
+    Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
+
+
 let _httpSession;
 
 let mCities = null;
@@ -138,7 +147,10 @@ const WeatherPrefsWidget = new GObject.Class({
         this.editCoord = this.Window.get_object("edit-coord");
         this.editCombo = this.Window.get_object("edit-combo");
         this.searchWidget = this.Window.get_object("search-widget");
-        this.searchMenu = this.Window.get_object("search-menu");
+        this.searchMenuWidget = this.Window.get_object("search-menu-widget");
+        this.searchScrolledWindow = this.Window.get_object("search-scrolledwindow");
+        this.searchTreeview = this.Window.get_object("search-treeview");
+        this.searchListstore = this.Window.get_object("search-liststore");
         this.searchName = this.Window.get_object("search-name");
         this.searchCombo = this.Window.get_object("search-combo");
 
@@ -147,7 +159,9 @@ const WeatherPrefsWidget = new GObject.Class({
         this.editCoord.connect("icon-release", Lang.bind(this, this.clearEntry));
 
         this.Window.get_object("tree-toolbutton-add").connect("clicked", Lang.bind(this, function() {
-            this.searchWidget.show_all();
+            this.searchName.set_text("");
+            this.clearSearchMenu();
+            this.searchWidget.show();
         }));
 
         this.Window.get_object("tree-toolbutton-remove").connect("clicked", Lang.bind(this, this.removeCity));
@@ -156,6 +170,11 @@ const WeatherPrefsWidget = new GObject.Class({
 
         this.Window.get_object("treeview-selection").connect("changed", Lang.bind(this, function(selection) {
             this.selectionChanged(selection);
+        }));
+
+        this.searchSelection = this.Window.get_object("search-selection");
+        this.searchSelection.connect("changed", Lang.bind(this, function(selection) {
+            this.searchSelectionChanged(selection);
         }));
 
         this.Window.get_object("button-edit-cancel").connect("clicked", Lang.bind(this, this.editCancel));
@@ -175,13 +194,7 @@ const WeatherPrefsWidget = new GObject.Class({
             if (location === "")
                 return 0;
 
-            let item = new Gtk.MenuItem();
-            let spinner = new Gtk.Spinner();
-            spinner.start();
-            item.add(spinner);
-
-            this.searchMenu.append(item);
-            this.showSearchMenu();
+            this.appendToSearchList( _("Searching ..."));
 
             if (this.geolocation_provider == GeolocationProvider.OPENSTREETMAPS) {
                 let params = {
@@ -193,18 +206,12 @@ const WeatherPrefsWidget = new GObject.Class({
                 this.loadJsonAsync(OPENWEATHER_URL_OSM_FIND, params, Lang.bind(this, function() {
                     this.clearSearchMenu();
                     if (!arguments[0]) {
-                        let item = new Gtk.MenuItem({
-                            label: _("Invalid data when searching for \"%s\"").format(location)
-                        });
-                        this.searchMenu.append(item);
+                        this.appendToSearchList(_("Invalid data when searching for \"%s\"").format(location));
                     } else {
                         let newCity = arguments[0];
 
                         if (Number(newCity.length) < 1) {
-                            let item = new Gtk.MenuItem({
-                                label: _("\"%s\" not found").format(location)
-                            });
-                            this.searchMenu.append(item);
+                            this.appendToSearchList(_("\"%s\" not found").format(location));
                         } else {
                             var m = {};
                             for (var i in newCity) {
@@ -212,11 +219,7 @@ const WeatherPrefsWidget = new GObject.Class({
                                 let cityText = newCity[i].display_name;
                                 let cityCoord = "[" + newCity[i].lat + "," + newCity[i].lon + "]";
 
-                                let item = new Gtk.MenuItem({
-                                    label: cityText + " " + cityCoord
-                                });
-                                item.connect("activate", Lang.bind(this, this.onActivateItem));
-                                this.searchMenu.append(item);
+                                this.appendToSearchList(cityText + " " + cityCoord);
                             }
                         }
                     }
@@ -226,14 +229,8 @@ const WeatherPrefsWidget = new GObject.Class({
             } else if (this.geolocation_provider == GeolocationProvider.MAPQUEST) {
                 if (this.geolocation_appid_mapquest === '') {
                     this.clearSearchMenu();
-                    let item = new Gtk.MenuItem({
-                        label: "You need an AppKey to search on openmapquest."
-                    });
-                    this.searchMenu.append(item);
-                    item = new Gtk.MenuItem({
-                        label: "Please visit https://developer.mapquest.com/ ."
-                    });
-                    this.searchMenu.append(item);
+                    this.appendToSearchList(_("You need an AppKey to search on openmapquest."));
+                    this.appendToSearchList(_("Please visit https://developer.mapquest.com/ ."));
                     this.showSearchMenu();
                     return 0;
                 }
@@ -247,26 +244,14 @@ const WeatherPrefsWidget = new GObject.Class({
                 this.loadJsonAsync(OPENWEATHER_URL_MAPQUEST_FIND, params, Lang.bind(this, function() {
                     this.clearSearchMenu();
                     if (!arguments[0]) {
-                        let item = new Gtk.MenuItem({
-                            label: _("Invalid data when searching for \"%s\"").format(location)
-                        });
-                        this.searchMenu.append(item);
-                        item = new Gtk.MenuItem({
-                            label: "Do you use a valid AppKey to search on openmapquest ?"
-                        });
-                        this.searchMenu.append(item);
-                        item = new Gtk.MenuItem({
-                            label: "If not, please visit https://developer.mapquest.com/ ."
-                        });
-                        this.searchMenu.append(item);
+                        this.appendToSearchList(_("Invalid data when searching for \"%s\"").format(location));
+                        this.appendToSearchList(_("Do you use a valid AppKey to search on openmapquest ?"));
+                        this.appendToSearchList(_("If not, please visit https://developer.mapquest.com/ ."));
                     } else {
                         let newCity = arguments[0];
 
                         if (Number(newCity.length) < 1) {
-                            let item = new Gtk.MenuItem({
-                                label: _("\"%s\" not found").format(location)
-                            });
-                            this.searchMenu.append(item);
+                            this.appendToSearchList(_("\"%s\" not found").format(location));
                         } else {
                             var m = {};
                             for (var i in newCity) {
@@ -274,11 +259,7 @@ const WeatherPrefsWidget = new GObject.Class({
                                 let cityText = newCity[i].display_name;
                                 let cityCoord = "[" + newCity[i].lat + "," + newCity[i].lon + "]";
 
-                                let item = new Gtk.MenuItem({
-                                    label: cityText + " " + cityCoord
-                                });
-                                item.connect("activate", Lang.bind(this, this.onActivateItem));
-                                this.searchMenu.append(item);
+                                this.appendToSearchList(cityText + " " + cityCoord);
                             }
                         }
                     }
@@ -294,23 +275,14 @@ const WeatherPrefsWidget = new GObject.Class({
                     this.clearSearchMenu();
 
                     if (!arguments[0]) {
-                        let item = new Gtk.MenuItem({
-                            label: _("Invalid data when searching for \"%s\"").format(location)
-                        });
-                        this.searchMenu.append(item);
+                        this.appendToSearchList(_("Invalid data when searching for \"%s\"").format(location));
                     } else {
                         let newCity = arguments[0].geocoding_results;
                         if (Number(newCity.length) < 1) {
-                            let item = new Gtk.MenuItem({
-                                label: _("Invalid data when searching for \"%s\"").format(location)
-                            });
-                            this.searchMenu.append(item);
+                            this.appendToSearchList(_("Invalid data when searching for \"%s\"").format(location));
                         } else {
                             if (Number(newCity.STATUS.result_count) < 1) {
-                                let item = new Gtk.MenuItem({
-                                    label: _("\"%s\" not found").format(location)
-                                });
-                                this.searchMenu.append(item);
+                                this.appendToSearchList(_("\"%s\" not found").format(location));
                             } else {
                                 var m = {};
                                 newCity = newCity.RESULTS;
@@ -319,11 +291,7 @@ const WeatherPrefsWidget = new GObject.Class({
                                     let cityText = newCity[i].formatted_address;
                                     let cityCoord = "[" + newCity[i].COORDINATES.latitude + "," + newCity[i].COORDINATES.longitude + "]";
 
-                                    let item = new Gtk.MenuItem({
-                                        label: cityText + " " + cityCoord
-                                    });
-                                    item.connect("activate", Lang.bind(this, this.onActivateItem));
-                                    this.searchMenu.append(item);
+                                    this.appendToSearchList(cityText + " " + cityCoord);
                                 }
                             }
 
@@ -372,7 +340,7 @@ const WeatherPrefsWidget = new GObject.Class({
         this.treeview.append_column(column);
 
         let renderer = new Gtk.CellRendererText();
-        column.pack_start(renderer, null);
+        column.pack_start(renderer, false);
         column.add_attribute(renderer, "text", 0);
 
         column.set_cell_data_func(renderer, function() {
@@ -382,11 +350,21 @@ const WeatherPrefsWidget = new GObject.Class({
         column.set_title(_("Provider"));
         this.treeview.append_column(column);
 
-        column.pack_start(renderer, null);
+        column.pack_start(renderer, false);
         column.add_attribute(renderer, "text", 1);
 
         column.set_cell_data_func(renderer, function() {
             arguments[1].markup = arguments[2].get_value(arguments[3], 1);
+        });
+        column = new Gtk.TreeViewColumn();
+        column.set_title(_("Result"));
+        this.searchTreeview.append_column(column);
+
+        column.pack_start(renderer, false);
+        column.add_attribute(renderer, "text", 0);
+
+        column.set_cell_data_func(renderer, function() {
+            arguments[1].markup = arguments[2].get_value(arguments[3], 0);
         });
 
         this.location_length_spin = this.Window.get_object("max_loc_chars");
@@ -407,21 +385,28 @@ const WeatherPrefsWidget = new GObject.Class({
 
         let theObjects = this.Window.get_objects();
         for (let i in theObjects) {
-            let name = theObjects[i].get_name ? theObjects[i].get_name() : 'dummy';
+            let name = theObjects[i].get_buildable_id ? theObjects[i].get_buildable_id() : 'dummy';
             if (this[name] !== undefined) {
-                if (theObjects[i].class_path()[1].indexOf('GtkEntry') != -1)
+                if (theObjects[i].get_name().indexOf('GtkEntry') != -1)
                     this.initEntry(theObjects[i]);
-                else if (theObjects[i].class_path()[1].indexOf('GtkComboBoxText') != -1)
+                else if (theObjects[i].get_name().indexOf('GtkComboBoxText') != -1)
                     this.initComboBox(theObjects[i]);
-                else if (theObjects[i].class_path()[1].indexOf('GtkSwitch') != -1)
+                else if (theObjects[i].get_name().indexOf('GtkSwitch') != -1)
                     this.initSwitch(theObjects[i]);
-                else if (theObjects[i].class_path()[1].indexOf('GtkScale') != -1)
+                else if (theObjects[i].get_name().indexOf('GtkScale') != -1)
                     this.initScale(theObjects[i]);
                 this.configWidgets.push([theObjects[i], name]);
             }
         }
         if (Me.metadata.version !== undefined)
             this.Window.get_object('version').set_label(Me.metadata.version.toString());
+    },
+
+    appendToSearchList: function(text) {
+        let current = this.searchListstore.get_iter_first();
+
+        current = this.searchListstore.append();
+        this.searchListstore.set_value(current, 0, text);
     },
 
     clearEntry: function() {
@@ -433,14 +418,9 @@ const WeatherPrefsWidget = new GObject.Class({
     },
 
     showSearchMenu: function() {
-        this.searchMenu.show_all();
-        if (typeof this.searchMenu.popup_at_widget === "function") {
-            this.searchMenu.popup_at_widget(this.searchName, Gdk.Gravity.SOUTH_WEST, Gdk.Gravity.NORTH_WEST, null);
-        }
-        else
-        {
-            this.searchMenu.popup(null, null, Lang.bind(this, this.placeSearchMenu), 0, this.searchName);
-        }
+        this.searchSelection.unselect_all();
+        this.searchMenuWidget.show();
+        this.searchSelection.set_mode(Gtk.SelectionMode.SINGLE);
     },
 
     placeSearchMenu: function() {
@@ -450,14 +430,15 @@ const WeatherPrefsWidget = new GObject.Class({
     },
 
     clearSearchMenu: function() {
-        let children = this.searchMenu.get_children();
-        for (let i in children) {
-            this.searchMenu.remove(children[i]);
-        }
+        this.searchSelection.unselect_all();
+        this.searchSelection.set_mode(Gtk.SelectionMode.NONE);
+        if (this.searchListstore !== undefined)
+            this.searchListstore.clear();
+        this.searchMenuWidget.hide();
     },
 
     initEntry: function(theEntry) {
-        let name = theEntry.get_name();
+        let name = theEntry.get_buildable_id();
         theEntry.text = this[name];
         if (this[name].length != 32)
             theEntry.set_icon_from_icon_name(Gtk.PositionType.LEFT, 'dialog-warning');
@@ -473,21 +454,21 @@ const WeatherPrefsWidget = new GObject.Class({
     },
 
     initComboBox: function(theComboBox) {
-        let name = theComboBox.get_name();
+        let name = theComboBox.get_buildable_id();
         theComboBox.connect("changed", Lang.bind(this, function() {
             this[name] = arguments[0].active;
         }));
     },
 
     initSwitch: function(theSwitch) {
-        let name = theSwitch.get_name();
+        let name = theSwitch.get_buildable_id();
         theSwitch.connect("notify::active", Lang.bind(this, function() {
             this[name] = arguments[0].active;
         }));
     },
 
     initScale: function(theScale) {
-        let name = theScale.get_name();
+        let name = theScale.get_buildable_id();
         theScale.set_value(this[name]);
         this[name+'Timeout'] = undefined;
         theScale.connect("value-changed", Lang.bind(this, function(slider) {
@@ -552,6 +533,15 @@ const WeatherPrefsWidget = new GObject.Class({
                 this.actual_city = parseInt(a.to_string());
     },
 
+    searchSelectionChanged: function(select) {
+        let a = select.get_selected_rows()[0][0];
+        if ( a !== undefined ) {
+            let b = this.searchListstore.get_iter(a);
+            this.searchName.set_text(this.searchListstore.get_value(b[1], 0).toString());
+        }
+        this.clearSearchMenu();
+    },
+
     removeCity: function() {
         let city = this.city.split(" && ");
         if (!city.length)
@@ -559,28 +549,26 @@ const WeatherPrefsWidget = new GObject.Class({
         let ac = this.actual_city;
         let textDialog = _("Remove %s ?").format(this.extractLocation(city[ac]));
         let dialog = new Gtk.Dialog({
-            title: ""
+            title: "",
+            css_classes: ['openweather-dialog']
         });
         let label = new Gtk.Label({
             label: textDialog
         });
         label.margin_bottom = 12;
 
-        dialog.set_border_width(12);
-        dialog.set_modal(1);
-        dialog.set_resizable(0);
+        dialog.set_modal(true);
+        dialog.set_resizable(false);
         //dialog.set_transient_for(***** Need parent Window *****);
+        dialog.add_button(_("No"), 0);
+        let d = dialog.add_button(_("Yes"), 1);
 
-        dialog.add_button(Gtk.STOCK_NO, 0);
-        let d = dialog.add_button(Gtk.STOCK_YES, 1);
-
-        d.set_can_default(true);
-        dialog.set_default(d);
+        dialog.set_default_response(0);
 
         let dialog_area = dialog.get_content_area();
-        dialog_area.pack_start(label, 0, 0, 0);
+        dialog_area.append(label);
         dialog.connect("response", Lang.bind(this, function(w, response_id) {
-            if (response_id) {
+            if (response_id == 1) {
                 if (city.length === 0)
                     city = [];
 
@@ -601,7 +589,7 @@ const WeatherPrefsWidget = new GObject.Class({
             return 0;
         }));
 
-        dialog.show_all();
+        dialog.show();
         return 0;
     },
 
@@ -613,7 +601,7 @@ const WeatherPrefsWidget = new GObject.Class({
         this.editName.set_text(this.extractLocation(city[ac]));
         this.editCoord.set_text(this.extractCoord(city[ac]));
         this.editCombo.set_active(this.extractProvider(city[ac]) + 1);
-        this.editWidget.show_all();
+        this.editWidget.show();
         return 0;
     },
 
@@ -1115,6 +1103,6 @@ function init() {
 function buildPrefsWidget() {
     let prefs = new WeatherPrefsWidget();
     let widget = prefs.mainWidget;
-    widget.show_all();
+    widget.show();
     return widget;
 }

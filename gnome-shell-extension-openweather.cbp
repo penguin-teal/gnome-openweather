@@ -31,6 +31,7 @@
 		<Unit filename="data/Screenshot.jpg" />
 		<Unit filename="data/metadata.json.in" />
 		<Unit filename="data/org.gnome.shell.extensions.openweather.gschema.xml" />
+		<Unit filename="data/prefs.css" />
 		<Unit filename="data/stylesheet.css" />
 		<Unit filename="data/weather-settings.gif" />
 		<Unit filename="data/weather-settings.ui" />
@@ -80,10 +81,7 @@
 		<Unit filename="src/prefs.js" />
 		<Unit filename="update_revision.sh" />
 		<Extensions>
-			<envvars />
-			<code_completion />
 			<lib_finder disable_auto="1" />
-			<debugger />
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>
