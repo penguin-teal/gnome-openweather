@@ -37,6 +37,7 @@
 		<Unit filename="data/weather-settings.ui" />
 		<Unit filename="gnome-shell-extension-openweather.spec" />
 		<Unit filename="po/LINGUAS" />
+		<Unit filename="po/Makefile.in.in" />
 		<Unit filename="po/Makevars" />
 		<Unit filename="po/POTFILES.in" />
 		<Unit filename="po/ar.po" />
