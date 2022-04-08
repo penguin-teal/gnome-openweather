@@ -59,25 +59,25 @@
       <summary>Geolocation Provider</summary>
     </key>
     <key name="unit" enum="org.gnome.shell.extensions.openweather.unit">
-      <default>'fahrenheit'</default>
+      <default>'celsius'</default>
       <summary>Temperature Unit</summary>
     </key>
     <key name="pressure-unit" enum="org.gnome.shell.extensions.openweather.pressure-unit">
-      <default>'inHg'</default>
+      <default>'kPa'</default>
       <summary>Pressure Unit</summary>
     </key>
     <key name="wind-speed-unit" enum="org.gnome.shell.extensions.openweather.wind-speed-unit">
-      <default>'mph'</default>
+      <default>'kph'</default>
       <summary>Wind Speed Units</summary>
       <description>Choose the units used for wind speed. Allowed values are 'kph', 'mph', 'm/s', 'knots', 'ft/s' or 'Beaufort'.</description>
     </key>
     <key type="b" name="wind-direction">
-      <default>true</default>
+      <default>false</default>
       <summary>Wind Direction by Arrows</summary>
       <description>Choose whether to display wind direction through arrows or letters.</description>
     </key>
     <key type="s" name="city">
-      <default>'-8.5211767,179.1976747>Vaiaku, Tuvalu>-1'</default>
+      <default>'44.645,-63.572>Halifax>0'</default>
       <summary>City to be displayed</summary>
     </key>
     <key type="i" name="actual-city">
@@ -129,7 +129,7 @@
       <summary>Refresh interval (forecast)</summary>
     </key>
     <key type="b" name="center-forecast">
-      <default>false</default>
+      <default>true</default>
       <summary>Center forecastbox.</summary>
     </key>
     <key type="i" name="days-forecast">

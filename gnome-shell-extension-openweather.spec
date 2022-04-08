@@ -14,8 +14,8 @@ Group:          User Interface/Desktops
 
 # The entire source code is GPLv3+ except convenience.js, which is BSD
 License:        GPLv3+ and BSD
-URL:            https://gitlab.com/jenslody/gnome-shell-extension-openweather
-Source0:        https://gitlab.com/jenslody/gnome-shell-extension-openweather/-/archive/%{git}/%{gitlab}-%{git}.tar.gz
+URL:            https://gitlab.com/skrewball/gnome-openweather
+Source0:        https://gitlab.com/skrewball/gnome-openweather/-/archive/%{git}/%{gitlab}-%{git}.tar.gz
 BuildArch:      noarch
 
 # The version of gnome-common in CentOS7 is only 3.7.4
