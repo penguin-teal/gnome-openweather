@@ -169,10 +169,11 @@ weather-storm.png = weather-storm-symbolic.svg
     }
 
     for (let i = 0; i < iconname.length; i++) {
-        if (night && this.hasIcon(iconname[i] + '-night'))
-            return iconname[i] + '-night';
-        if (this.hasIcon(iconname[i]))
-            return iconname[i];
+        if (night && this.hasIcon(iconname[i] + '-night-symbolic'))
+            return iconname[i] + '-night-symbolic';
+        if (this.hasIcon(iconname[i] + '-symbolic'))
+            return iconname[i] + '-symbolic';
+
     }
     return 'weather-severe-alert';
 }
