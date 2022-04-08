@@ -965,7 +965,7 @@
                 </child>
                 <child>
                   <object class="GtkLabel" id="label16">
-                    <property name="label">Jens Lody (&lt;a href=&quot;mailto:openweather@jenslody.de&quot;&gt;openweather@jenslody.de&lt;/a&gt;)</property>
+                    <property name="label">skrewball (&lt;a href=&quot;mailto:skrewball@joickle.com&quot;&gt;skrewball@joickle.com&lt;/a&gt;)</property>
                     <property name="use_markup">1</property>
                   </object>
                 </child>
@@ -976,7 +976,7 @@
                 <property name="label" translatable="yes">Webpage</property>
                 <property name="receives_default">1</property>
                 <property name="halign">center</property>
-                <property name="uri">https://gitlab.com/jenslody/gnome-shell-extension-openweather</property>
+                <property name="uri">https://gitlab.com/skrewball/gnome-openweather</property>
               </object>
             </child>
             <child>
