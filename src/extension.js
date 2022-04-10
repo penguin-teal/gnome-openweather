@@ -139,6 +139,13 @@ const OPENWEATHER_CONV_MPS_IN_KPH = 3.6;
 const OPENWEATHER_CONV_MPS_IN_KNOTS = 1.94384449;
 const OPENWEATHER_CONV_MPS_IN_FPS = 3.2808399;
 
+//hack (for Wayland?) via https://gitlab.gnome.org/GNOME/gnome-shell/-/issues/1997
+Gtk.IconTheme.get_default = function() {
+    let theme = new Gtk.IconTheme();
+    theme.set_custom_theme(St.Settings.get().gtk_icon_theme);
+    return theme;
+};
+
 let _httpSession;
 let _currentWeatherCache, _forecastWeatherCache;
 let _timeCacheCurrentWeather, _timeCacheForecastWeather;
