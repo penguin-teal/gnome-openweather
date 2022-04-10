@@ -86,8 +86,6 @@ You can also use *dconf-editor* or *gsettings* to configure the extension throug
 
 On [OpenWeatherMap](https://openweathermap.org/) you can either use the extensions default-key or register to get a [personal API key](https://openweathermap.org/appid). This key has to be added in the preferences dialog. Don't forget to switch the a appropriate switch in the dialog to "off" in this case.
 
-To use [Dark Sky](https://darksky.net) you also need to [register](https://darksky.net/dev/register) and get an API key. With this key you can make 1000 requests per day for free. This should be enough for this extension in any normal use case. Do not add billing information, otherwise you might have to pay for the weather-data if something went wrong !
-
 ----
 
 # Licence
