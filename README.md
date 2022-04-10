@@ -83,6 +83,7 @@ Launch *gnome-shell-extension-prefs* (reachable also through the *OpenWeather Se
 ![Screenshot](https://gitlab.com/jenslody/gnome-shell-extension-openweather/raw/master/data/weather-settings.gif)
 
 You can also use *dconf-editor* or *gsettings* to configure the extension through the command line.
+- The settings are under the `org.gnome.shell.extensions.openweather` schema.
 
 On [OpenWeatherMap](https://openweathermap.org/) you can either use the extensions default-key or register to get a [personal API key](https://openweathermap.org/appid). This key has to be added in the preferences dialog. Don't forget to switch the a appropriate switch in the dialog to "off" in this case.
 
