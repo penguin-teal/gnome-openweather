@@ -54,7 +54,7 @@ const OPENWEATHER_URL_FORECAST = OPENWEATHER_URL_BASE + 'forecast/daily';
 function getWeatherIcon(code, night) {
 
     let iconname = ['weather-severe-alert'];
-    // see http://bugs.openweathermap.org/projects/api/wiki/Weather_Condition_Codes
+    // see https://openweathermap.org/weather-conditions
     // fallback icons are: weather-clear-night weather-clear weather-few-clouds-night weather-few-clouds weather-fog weather-overcast weather-severe-alert weather-showers weather-showers-scattered weather-snow weather-storm
     /*
 weather-clouds-night.png
