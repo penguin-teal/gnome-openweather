@@ -160,10 +160,10 @@ class OpenweatherMenuButton extends PanelMenu.Button {
         // Get locale, needed for toLocaleString, workaround for gnome-shell 3.24
         this.locale = GLib.get_language_names()[0];
 
-        if (this.locale == 'C')
-            this.locale = 'en';
-        else if (this.locale.indexOf('_') != -1)
+        if (this.locale.indexOf('_') != -1)
             this.locale = this.locale.split("_")[0];
+        else  // Fallback for 'C', 'C.UTF-8', and unknown locales.
+            this.locale = 'en';
 
         // Create user-agent string from uuid and (if present) the version
         this.user_agent = Me.metadata.uuid;
