@@ -1,3 +1,11 @@
+## Attempting to bring a this classic back from the dead. 
+
+### Please feel free to redirect your merge requests here.
+
+- renamed to gnome-openweather
+
+----
+
 ![Screenshot](https://gitlab.com/jenslody/gnome-shell-extension-openweather/raw/master/data/Screenshot.jpg)
 
 *gnome-shell-extension-openweather* is a simple extension for displaying weather conditions and forecasts in GNOME Shell, featuring support for multiple locations, no need for WOEID, a symmetrical layout and a settings panel through *gnome-shell-extension-prefs*.
