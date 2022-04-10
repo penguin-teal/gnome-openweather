@@ -168,14 +168,12 @@ weather-storm.png = weather-storm-symbolic.svg
             break;
     }
 
-    for (let i = 0; i < iconname.length; i++) {
-        if (night && this.hasIcon(iconname[i] + '-night-symbolic'))
-            return iconname[i] + '-night-symbolic';
-        if (this.hasIcon(iconname[i] + '-symbolic'))
-            return iconname[i] + '-symbolic';
-
+    if (night) {
+      iconname = iconname.flatMap(i => [i + '-night-symbolic', i]);
     }
-    return 'weather-severe-alert';
+    iconname = iconname.flatMap(i => [i, i + '-symbolic']);
+
+    return iconname.find(i => this.hasIcon(i)) || 'weather-severe-alert';
 }
 
 function getWeatherCondition(code) {
