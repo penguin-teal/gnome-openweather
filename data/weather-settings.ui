@@ -112,6 +112,11 @@
     <property name="step_increment">0.1</property>
     <property name="page_increment">2</property>
   </object>
+  <object class="GtkAdjustment" id="position-index-adj">
+    <property name="lower">0</property>
+    <property name="upper">99</property>
+    <property name="step_increment">1</property>
+  </object>
   <object class="GtkWindow" id="search-menu-widget">
     <property name="modal">1</property>
     <child>
@@ -742,12 +747,27 @@
               </object>
             </child>
             <child>
-              <object class="GtkComboBoxText" id="position_in_panel">
-                <items>
-                  <item translatable="yes">Center</item>
-                  <item translatable="yes">Right</item>
-                  <item translatable="yes">Left</item>
-                </items>
+              <object class="GtkBox">
+                <property name="spacing">12</property>
+                <child>
+                  <object class="GtkComboBoxText" id="position_in_panel">
+                    <property name="hexpand">true</property>
+                    <items>
+                      <item translatable="yes">Center</item>
+                      <item translatable="yes">Right</item>
+                      <item translatable="yes">Left</item>
+                    </items>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkSpinButton" id="position_index">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="adjustment">position-index-adj</property>
+                    <property name="climb_rate">5</property>
+                    <property name="numeric">True</property>
+                  </object>
+                </child>
                 <layout>
                   <property name="column">1</property>
                   <property name="row">0</property>
