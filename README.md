@@ -2,7 +2,7 @@
 
 ### Please feel free to redirect your merge requests here.
 
-- renamed to gnome-openweather
+- 
 
 ----
 
