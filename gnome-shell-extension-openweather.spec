@@ -1,5 +1,5 @@
 %global git 0e9e9ac
-%global uuid openweather-extension@jenslody.de
+%global uuid openweather@skrewball
 %global gitlab gnome-shell-extension-openweather
 %global checkout git%{git}
 %global checkout_date 20180616

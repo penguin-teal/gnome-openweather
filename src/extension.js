@@ -73,6 +73,7 @@ const OPENWEATHER_USE_SYMBOLIC_ICONS_KEY = 'use-symbolic-icons';
 const OPENWEATHER_USE_TEXT_ON_BUTTONS_KEY = 'use-text-on-buttons';
 const OPENWEATHER_SHOW_TEXT_IN_PANEL_KEY = 'show-text-in-panel';
 const OPENWEATHER_POSITION_IN_PANEL_KEY = 'position-in-panel';
+const OPENWEATHER_POSITION_INDEX_KEY = 'position-index';
 const OPENWEATHER_MENU_ALIGNMENT_KEY = 'menu-alignment';
 const OPENWEATHER_SHOW_COMMENT_IN_PANEL_KEY = 'show-comment-in-panel';
 const OPENWEATHER_SHOW_COMMENT_IN_FORECAST_KEY = 'show-comment-in-forecast';
@@ -741,6 +742,12 @@ class OpenweatherMenuButton extends PanelMenu.Button {
         return this._settings.get_enum(OPENWEATHER_POSITION_IN_PANEL_KEY);
     }
 
+    get _position_index() {
+        if (!this._settings)
+            this.loadConfig();
+        return this._settings.get_int(OPENWEATHER_POSITION_INDEX_KEY);
+    }
+
     get _menu_alignment() {
         if (!this._settings)
             this.loadConfig();
@@ -1154,25 +1161,29 @@ class OpenweatherMenuButton extends PanelMenu.Button {
 
     checkPositionInPanel() {
         if (this._old_position_in_panel == undefined ||
-            this._old_position_in_panel != this._position_in_panel) {
+            this._old_position_in_panel != this._position_in_panel ||
+            this._first_run ||
+            this._old_position_index != this._position_index) {
             this.get_parent().remove_actor(this);
 
             let children = null;
             switch (this._position_in_panel) {
                 case WeatherPosition.LEFT:
                     children = Main.panel._leftBox.get_children();
-                    Main.panel._leftBox.insert_child_at_index(this, children.length);
+                    Main.panel._leftBox.insert_child_at_index(this, this._position_index);
                     break;
                 case WeatherPosition.CENTER:
                     children = Main.panel._centerBox.get_children();
-                    Main.panel._centerBox.insert_child_at_index(this, children.length);
+                    Main.panel._centerBox.insert_child_at_index(this, this._position_index);
                     break;
                 case WeatherPosition.RIGHT:
                     children = Main.panel._rightBox.get_children();
-                    Main.panel._rightBox.insert_child_at_index(this, 0);
+                    Main.panel._rightBox.insert_child_at_index(this, this._position_index);
                     break;
             }
             this._old_position_in_panel = this._position_in_panel;
+            this._old_position_index = this._position_index;
+            this._first_run = 1;
         }
 
     }

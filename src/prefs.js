@@ -58,6 +58,7 @@ const OPENWEATHER_USE_SYMBOLIC_ICONS_KEY = 'use-symbolic-icons';
 const OPENWEATHER_USE_TEXT_ON_BUTTONS_KEY = 'use-text-on-buttons';
 const OPENWEATHER_SHOW_TEXT_IN_PANEL_KEY = 'show-text-in-panel';
 const OPENWEATHER_POSITION_IN_PANEL_KEY = 'position-in-panel';
+const OPENWEATHER_POSITION_INDEX_KEY = 'position-index';
 const OPENWEATHER_MENU_ALIGNMENT_KEY = 'menu-alignment';
 const OPENWEATHER_SHOW_COMMENT_IN_PANEL_KEY = 'show-comment-in-panel';
 const OPENWEATHER_SHOW_COMMENT_IN_FORECAST_KEY = 'show-comment-in-forecast';
@@ -330,6 +331,21 @@ const WeatherPrefsWidget = new GObject.Class({
                 Mainloop.source_remove(this.forecastSpinTimeout);
             this.forecastSpinTimeout = Mainloop.timeout_add(250, Lang.bind(this, function() {
                 this.refresh_interval_forecast = 60 * button.get_value();
+                return false;
+            }));
+
+        }));
+
+        this.position_index_spin = this.Window.get_object("position_index");
+        this.position_index_spin.set_value(this.position_index );
+        // prevent from continously updating the value
+        this.positionIndexSpinTimeout = undefined;
+        this.position_index_spin.connect("value-changed", Lang.bind(this, function(button) {
+
+            if (this.positionIndexSpinTimeout !== undefined)
+                Mainloop.source_remove(this.positionIndexSpinTimeout);
+            this.positionIndexSpinTimeout = Mainloop.timeout_add(250, Lang.bind(this, function() {
+                this.position_index = button.get_value();
                 return false;
             }));
 
@@ -890,6 +906,18 @@ const WeatherPrefsWidget = new GObject.Class({
         if (!this.Settings)
             this.loadConfig();
         this.Settings.set_enum(OPENWEATHER_POSITION_IN_PANEL_KEY, v);
+    },
+
+    get position_index() {
+        if (!this.Settings)
+            this.loadConfig();
+        return this.Settings.get_int(OPENWEATHER_POSITION_INDEX_KEY);
+    },
+
+    set position_index(v) {
+        if (!this.Settings)
+            this.loadConfig();
+        this.Settings.set_int(OPENWEATHER_POSITION_INDEX_KEY, v);
     },
 
     get menu_alignment() {
