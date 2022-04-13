@@ -1,8 +1,14 @@
-## Attempting to bring a this classic back from the dead. 
+# OpenWeather 2
 
-### Please feel free to redirect your merge requests here.
+### I'm bringing one of my all time favourite extensions back from the dead.
 
-- 
+#### Please feel free to redirect your merge requests here.
+
+Some outstanding issues addressed so far:
+
+- Latest GNOME support added [#303](jenslody/gnome-shell-extension-openweather#303) [#307](jenslody/gnome-shell-extension-openweather#307) [!251](jenslody/gnome-shell-extension-openweather!251)
+- Location search is finally working again. [#305](jenslody/gnome-shell-extension-openweather#305)
+- Added option to choose the position inside the panel box [!236](jenslody/gnome-shell-extension-openweather!236)
 
 ----
 
