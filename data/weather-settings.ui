@@ -58,7 +58,6 @@
             <items>
               <item translatable="yes">Extensions default weather provider</item>
               <item>https://openweathermap.org</item>
-              <item>https://darksky.net</item>
             </items>
           </object>
         </child>
@@ -199,7 +198,6 @@
             <items>
               <item translatable="yes">Extensions default weather provider</item>
               <item>https://openweathermap.org</item>
-              <item>https://darksky.net</item>
             </items>
           </object>
         </child>
@@ -342,7 +340,6 @@
               <object class="GtkComboBoxText" id="weather_provider">
                 <items>
                   <item>https://openweathermap.org</item>
-                  <item>https://darksky.net</item>
                 </items>
                 <layout>
                   <property name="column">1</property>
@@ -966,7 +963,7 @@
             </child>
             <child>
               <object class="GtkLabel" id="description-label">
-                <property name="label" translatable="yes">&lt;span&gt;Weather extension to display weather information from &lt;a href=&quot;https://openweathermap.org/&quot;&gt;Openweathermap&lt;/a&gt; or &lt;a href=&quot;https://darksky.net&quot;&gt;Dark Sky&lt;/a&gt; for almost all locations in the world.&lt;/span&gt;</property>
+                <property name="label" translatable="yes">&lt;span&gt;Weather extension to display weather information from &lt;a href=&quot;https://openweathermap.org/&quot;&gt;OpenWeather&lt;/a&gt; for any location in the world.&lt;/span&gt;</property>
                 <property name="use_markup">1</property>
                 <property name="justify">center</property>
                 <property name="wrap">1</property>

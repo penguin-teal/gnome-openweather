@@ -29,12 +29,10 @@
  * <http://www.gnu.org/licenses/>.
  *
  */
-const Gtk = imports.gi.Gtk;
-const Gdk = imports.gi.Gdk;
-const GObject = imports.gi.GObject;
+imports.gi.versions.Soup = "2.4";
+const { Gdk, Gtk, GObject, Soup } = imports.gi;
 const Gettext = imports.gettext.domain('gnome-shell-extension-openweather');
 const _ = Gettext.gettext;
-const Soup = imports.gi.Soup;
 
 const Lang = imports.lang;
 const Mainloop = imports.mainloop;
