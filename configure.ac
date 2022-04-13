@@ -1,6 +1,6 @@
 AC_PREREQ(2.63)
 dnl be carefull, the version needs to be in sync with your gnome shell version
-AC_INIT([gnome-shell-extension-openweather],[1.1],[https://gitlab.com/skrewball/gnome-openweather/issues])
+AC_INIT([gnome-shell-extension-openweather],[1.2],[https://gitlab.com/skrewball/openweather/issues])
 
 AC_CONFIG_MACRO_DIR([m4])
 AC_CONFIG_AUX_DIR([config])
@@ -46,7 +46,7 @@ AC_ARG_WITH([local-install],
 AC_SUBST(use_local_install)
 AM_CONDITIONAL(LOCAL_INSTALL, test "x${use_local_install}" == "xyes")
 
-extensiontopdir=${datadir}/gnome-shell/extensions/openweather@skrewball
+extensiontopdir=${datadir}/gnome-shell/extensions/openweather@skrewball.gitlab.com
 
 dnl This is beyond ugly. Suggestions accepted.
 if test "x${use_local_install}" == "xyes"; then

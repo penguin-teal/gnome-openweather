@@ -18,7 +18,7 @@ XGETTEXT_OPTIONS = --keyword=_ --keyword=translatable
 # or entity, or to disclaim their copyright.  The empty string stands for
 # the public domain; in this case the translators are expected to disclaim
 # their copyright.
-COPYRIGHT_HOLDER = Jens Lody
+COPYRIGHT_HOLDER = Jason Oickle
 
 # This tells whether or not to prepend "GNU " prefix to the package
 # name that gets inserted into the header of the $(DOMAIN).pot file.

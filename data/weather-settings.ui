@@ -939,7 +939,7 @@
             </child>
             <child>
               <object class="GtkLabel" id="extension-label">
-                <property name="label">&lt;b&gt;Openweather&lt;/b&gt;</property>
+                <property name="label">&lt;b&gt;OpenWeather 2&lt;/b&gt;</property>
                 <property name="use_markup">1</property>
               </object>
             </child>
@@ -982,18 +982,10 @@
                 </child>
                 <child>
                   <object class="GtkLabel" id="label16">
-                    <property name="label">skrewball (&lt;a href=&quot;mailto:skrewball@joickle.com&quot;&gt;skrewball@joickle.com&lt;/a&gt;)</property>
+                    <property name="label">Jason Oickle (&lt;a href=&quot;https://gitlab.com/skrewball/openweather&quot;&gt;Website&lt;/a&gt;)</property>
                     <property name="use_markup">1</property>
                   </object>
                 </child>
-              </object>
-            </child>
-            <child>
-              <object class="GtkLinkButton" id="gitlab-link">
-                <property name="label" translatable="yes">Webpage</property>
-                <property name="receives_default">1</property>
-                <property name="halign">center</property>
-                <property name="uri">https://gitlab.com/skrewball/gnome-openweather</property>
               </object>
             </child>
             <child>

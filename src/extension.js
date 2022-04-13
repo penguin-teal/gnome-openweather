@@ -17,6 +17,8 @@
  *     Jens Lody <jens@jenslody.de>
  * Copyright (C) 2014 -2021
  *     Jens Lody <jens@jenslody.de>,
+ * Copyright (C) 2022
+ *     Jason Oickle <openweather at joickle dot com>,
  *
  *
  * This file is part of gnome-shell-extension-openweather.
@@ -42,6 +44,7 @@ const Config = imports.misc.config;
 const DarkskyNet = Me.imports.darksky_net;
 const OpenweathermapOrg = Me.imports.openweathermap_org;
 
+imports.gi.versions.Soup = "2.4";
 const {
     Clutter, Gio, Gtk, GLib, GObject, Soup, St
 } = imports.gi;
