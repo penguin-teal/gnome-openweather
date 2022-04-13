@@ -29,7 +29,7 @@
 
 
 GITLAB="gnome-shell-extension-openweather"
-BASE_URL="https://gitlab.com/skrewball/gnome-openweather/-/archive/"
+BASE_URL="https://gitlab.com/skrewball/openweather/-/archive/"
 TARBALL_PATH="${HOME}/rpmbuild/SOURCES/"
 SPEC_PATH="${HOME}/rpmbuild/SPECS/"
 SPEC_FILE="gnome-shell-extension-openweather.spec"

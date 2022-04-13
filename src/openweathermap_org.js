@@ -19,6 +19,8 @@
  *     Jens Lody <jens@jenslody.de>,
  * Copyright (C) 2018
  *     Taylor Raack <taylor@raack.info>
+ * Copyright (C) 2022
+ *     Jason Oickle <openweather at joickle dot com>,
  *
  *
  * This file is part of gnome-shell-extension-openweather.

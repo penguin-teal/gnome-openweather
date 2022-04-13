@@ -10,6 +10,8 @@
  *     Jens Lody <jens@jenslody.de>,
  * Copyright (C) 2014 -2021
  *     Jens Lody <jens@jenslody.de>,
+ * Copyright (C) 2022
+ *     Jason Oickle <openweather at joickle dot com>,
  *
  * This file is part of gnome-shell-extension-openweather.
  *

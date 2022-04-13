@@ -1,9 +1,9 @@
 {
-"uuid": "@uuid@",
-"name": "OpenWeather",
-"description": "Weather extension to display weather information from OpenWeather",
-"shell-version": [ "40", "41", "42" ],
-"localedir": "@LOCALEDIR@",
-"url": "@url@",
-"version": "@version@"
+    "uuid": "@uuid@",
+    "name": "OpenWeather 2",
+    "description": "Display weather information for any location on Earth in the GNOME Panel",
+    "version": "@version@",
+    "shell-version": [ "40", "41", "42" ],
+    "url": "@url@",
+    "localedir": "@LOCALEDIR@"    
 }

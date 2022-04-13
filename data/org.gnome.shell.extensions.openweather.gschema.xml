@@ -77,7 +77,7 @@
       <description>Choose whether to display wind direction through arrows or letters.</description>
     </key>
     <key type="s" name="city">
-      <default>'44.645,-63.572>Halifax>0'</default>
+      <default>'49.2608724,-123.113952>Vancouver >-2'</default>
       <summary>City to be displayed</summary>
     </key>
     <key type="i" name="actual-city">

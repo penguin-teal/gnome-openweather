@@ -6,8 +6,8 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: gnome-shell-extension-openweather 1.1\n"
-"Report-Msgid-Bugs-To: https://gitlab.com/jenslody/gnome-shell-extension-"
+"Project-Id-Version: gnome-shell-extension-openweather 1.2\n"
+"Report-Msgid-Bugs-To: https://gitlab.com/skrewball/openweather"
 "openweather/issues\n"
 "POT-Creation-Date: 2021-05-09 10:46+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
