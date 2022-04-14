@@ -46,7 +46,7 @@ AC_ARG_WITH([local-install],
 AC_SUBST(use_local_install)
 AM_CONDITIONAL(LOCAL_INSTALL, test "x${use_local_install}" == "xyes")
 
-extensiontopdir=${datadir}/gnome-shell/extensions/openweather@skrewball.gitlab.com
+extensiontopdir=${datadir}/gnome-shell/extensions/openweather-extension@jenslody.de
 
 dnl This is beyond ugly. Suggestions accepted.
 if test "x${use_local_install}" == "xyes"; then

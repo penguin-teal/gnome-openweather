@@ -1,6 +1,6 @@
 {
     "uuid": "@uuid@",
-    "name": "OpenWeather 2",
+    "name": "OpenWeather",
     "description": "Display weather information for any location on Earth in the GNOME Panel",
     "version": "@version@",
     "shell-version": [ "40", "41", "42" ],

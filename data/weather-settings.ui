@@ -939,7 +939,7 @@
             </child>
             <child>
               <object class="GtkLabel" id="extension-label">
-                <property name="label">&lt;b&gt;OpenWeather 2&lt;/b&gt;</property>
+                <property name="label">&lt;b&gt;OpenWeather&lt;/b&gt;</property>
                 <property name="use_markup">1</property>
               </object>
             </child>

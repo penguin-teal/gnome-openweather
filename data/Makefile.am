@@ -3,7 +3,7 @@ extensionurl = https://gitlab.com/skrewball/openweather
 # Change these to modify how installation is performed
 topextensiondir = $(datadir)/gnome-shell/extensions
 
-uuid = "openweather@skrewball.gitlab.com"
+uuid = "openweather-extension@jenslody.de"
 
 extensiondir = $(topextensiondir)/$(uuid)
 
