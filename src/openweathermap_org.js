@@ -163,7 +163,7 @@ weather-storm.png = weather-storm-symbolic.svg
             iconname = ['weather-few-clouds'];
             break;
         case 803: //Broken clouds
-            iconname = ['weather-many-clouds', 'weather-overcast'];
+            iconname = ['weather-few-clouds', 'weather-overcast'];
             break;
         case 804: //Overcast clouds
             iconname = ['weather-overcast'];
