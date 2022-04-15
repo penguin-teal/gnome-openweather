@@ -57,17 +57,16 @@ paru -S gnome-shell-extension-openweather-git
 ### Install From Source
 
 Make sure you have the following dependencies installed:
-* `dconf`
-* `gettext`
-* `pkg-config`
-* `git`
-* `glib2` (and development packages)
-* `zip`
-* `gnome-common`
-* `autoconf`
-* `automake`
-* `gettext-devel`
-* `gnome-extensions`
+
+| Arch Based     | Debian Based                  | Fedora                 |
+| ---            | ---                           | ---                    |
+| `dconf`        | `dconf-gsettings-backend`     | `dconf`                |
+| `gnome-shell`  | `gnome-shell-extension-prefs` | `gnome-extensions-app` |
+| `git`          | `git`                         | `git`                  |
+| `zip`          | `zip`                         | `zip`                  |
+| `base-devel`   | `build-essential`             | `glib2-devel`          |
+| `gnome-common` | `gnome-common`                | `gnome-common`         |
+
 
 Run the following commands:
 
