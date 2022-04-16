@@ -118,11 +118,12 @@
   </object>
   <object class="GtkWindow" id="search-menu-widget">
     <property name="modal">1</property>
+    <property name="title" translatable="yes">Search Results</property>
     <child>
       <object class="GtkBox" id="search-menu">
         <property name="orientation">vertical</property>
-        <property name="width_request">500</property>
-        <property name="height_request">300</property>
+        <property name="width_request">1000</property>
+        <property name="height_request">500</property>
         <child>
           <object class="GtkScrolledWindow" id="search-scrolledwindow">
             <property name="vexpand">1</property>
@@ -153,22 +154,18 @@
   </object>
   <object class="GtkWindow" id="search-widget">
     <property name="modal">1</property>
+    <property name="title" translatable="yes">Search By Location Or Coordinates</property>
     <property name="destroy_with_parent">1</property>
     <child>
       <placeholder/>
     </child>
     <child>
       <object class="GtkBox" id="search-box">
+        <property name="margin_top">10</property>
+        <property name="margin_bottom">10</property>
+        <property name="margin-start">10</property>
+        <property name="margin-end">10</property>
         <property name="orientation">vertical</property>
-        <child>
-          <object class="GtkLabel" id="label1">
-            <property name="valign">center</property>
-            <property name="halign">start</property>
-            <property name="hexpand">1</property>
-            <property name="label" translatable="yes">Search by location or coordinates</property>
-            <property name="ellipsize">end</property>
-          </object>
-        </child>
         <child>
           <object class="GtkBox" id="box3">
             <property name="spacing">5</property>
@@ -310,10 +307,10 @@
         <property name="position">1</property>
         <property name="child">
           <object class="GtkBox" id="layout-box1">
-            <property name="margin_top">24</property>
-            <property name="margin_bottom">24</property>
-            <property name="margin-start">24</property>
-            <property name="margin-end">24</property>
+            <property name="margin_top">20</property>
+            <property name="margin_bottom">20</property>
+            <property name="margin-start">20</property>
+            <property name="margin-end">20</property>
             <property name="hexpand">1</property>
             <property name="vexpand">1</property>
             <child>
@@ -481,10 +478,10 @@
         <property name="position">2</property>
         <property name="child">
           <object class="GtkBox" id="layout-box2">
-            <property name="margin_top">24</property>
-            <property name="margin_bottom">24</property>
-            <property name="margin-start">24</property>
-            <property name="margin-end">24</property>
+            <property name="margin_top">20</property>
+            <property name="margin_bottom">20</property>
+            <property name="margin-start">20</property>
+            <property name="margin-end">20</property>
             <property name="hexpand">1</property>
             <property name="vexpand">1</property>
             <child>
@@ -551,10 +548,10 @@
         <property name="position">3</property>
         <property name="child">
           <object class="GtkBox" id="layout-box3">
-            <property name="margin_top">24</property>
-            <property name="margin_bottom">24</property>
-            <property name="margin-start">24</property>
-            <property name="margin-end">24</property>
+            <property name="margin_top">20</property>
+            <property name="margin_bottom">20</property>
+            <property name="margin-start">20</property>
+            <property name="margin-end">20</property>
             <property name="hexpand">1</property>
             <property name="vexpand">1</property>
             <child>
@@ -661,10 +658,10 @@
         <property name="position">4</property>
         <property name="child">
           <object class="GtkBox" id="layout-box4">
-            <property name="margin_top">24</property>
-            <property name="margin_bottom">24</property>
-            <property name="margin-start">24</property>
-            <property name="margin-end">24</property>
+            <property name="margin_top">20</property>
+            <property name="margin_bottom">20</property>
+            <property name="margin-start">20</property>
+            <property name="margin-end">20</property>
             <property name="hexpand">1</property>
             <property name="vexpand">1</property>
             <child>
@@ -966,26 +963,34 @@
         <property name="position">5</property>
         <property name="child">
           <object class="GtkBox" id="about-box">
-            <property name="margin_top">24</property>
-            <property name="margin_bottom">24</property>
+            <property name="margin_top">20</property>
+            <property name="margin_bottom">20</property>
             <property name="hexpand">1</property>
             <property name="vexpand">1</property>
             <property name="orientation">vertical</property>
             <property name="spacing">5</property>
             <child>
-              <object class="GtkPicture" id="logo-image">
-                <property name="keep_aspect_ratio">true</property>
+              <object class="GtkBox" id="logo-box">
+                <property name="hexpand">1</property>
+                <property name="vexpand">1</property>
+                <property name="halign">center</property>
+                <child>
+                  <object class="GtkPicture" id="logo-image">
+                    <property name="keep_aspect_ratio">true</property>
+                  </object>
+                </child>
               </object>
             </child>
             <child>
               <object class="GtkLabel" id="extension-label">
-                <property name="label">&lt;b&gt;OpenWeather&lt;/b&gt;</property>
+                <property name="label">&lt;span size=&quot;larger&quot;&gt;&lt;b&gt;OpenWeather&lt;/b&gt;&lt;/span&gt;</property>
                 <property name="use_markup">1</property>
               </object>
             </child>
             <child>
               <object class="GtkBox" id="box4">
                 <property name="halign">center</property>
+                <property name="margin_bottom">20</property>
                 <child>
                   <object class="GtkLabel" id="version-label">
                     <property name="halign">end</property>
@@ -1003,7 +1008,7 @@
             </child>
             <child>
               <object class="GtkLabel" id="description-label">
-                <property name="label" translatable="yes">&lt;span&gt;Weather extension to display weather information from &lt;a href=&quot;https://openweathermap.org/&quot;&gt;OpenWeather&lt;/a&gt; for any location in the world.&lt;/span&gt;</property>
+                <property name="label" translatable="yes">&lt;span&gt;Display weather information for any location on Earth in the GNOME Shell&lt;/span&gt;</property>
                 <property name="use_markup">1</property>
                 <property name="justify">center</property>
                 <property name="wrap">1</property>
@@ -1012,12 +1017,25 @@
               </object>
             </child>
             <child>
-              <object class="GtkBox" id="box10">
+              <object class="GtkBox" id="box-wdata">
                 <property name="halign">center</property>
                 <property name="spacing">5</property>
                 <child>
+                  <object class="GtkLabel" id="label-wdata">
+                    <property name="label" translatable="yes">Weather data provided by: &lt;a href=&quot;https://openweathermap.org/&quot;&gt;OpenWeatherMap&lt;/a&gt;</property>
+                    <property name="use_markup">1</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkBox" id="box10">
+                <property name="halign">center</property>
+                <property name="margin_top">20</property>
+                <property name="spacing">5</property>
+                <child>
                   <object class="GtkLabel" id="label15">
-                    <property name="label" translatable="yes">Maintained by</property>
+                    <property name="label" translatable="yes">Maintained by:</property>
                   </object>
                 </child>
                 <child>

@@ -398,9 +398,6 @@ const WeatherPrefsWidget = new GObject.Class({
 
         }));
 
-        this.logoImage = this.Window.get_object("logo-image");
-        this.logoImage.set_filename(EXTENSIONDIR + "/OpenWeather.png");
-
         let theObjects = this.Window.get_objects();
         for (let i in theObjects) {
             let name = theObjects[i].get_buildable_id ? theObjects[i].get_buildable_id() : 'dummy';
@@ -416,6 +413,10 @@ const WeatherPrefsWidget = new GObject.Class({
                 this.configWidgets.push([theObjects[i], name]);
             }
         }
+
+        this.logoImage = this.Window.get_object("logo-image");
+        this.logoImage.set_filename(EXTENSIONDIR + "/OpenWeather.png");
+
         if (Me.metadata.version !== undefined)
             this.Window.get_object('version').set_label(Me.metadata.version.toString());
     },
