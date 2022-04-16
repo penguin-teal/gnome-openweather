@@ -62,7 +62,6 @@ function getWeatherIcon(code, night) {
 weather-clouds-night.png
 weather-freezing-rain.png
 weather-hail.png
-weather-many-clouds.png
 weather-showers-day.png
 weather-showers-night.png
 weather-showers-scattered-day.png

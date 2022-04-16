@@ -398,6 +398,8 @@ const WeatherPrefsWidget = new GObject.Class({
 
         }));
 
+        this.logoImage = this.Window.get_object("logo-image");
+        this.logoImage.set_filename(EXTENSIONDIR + "/OpenWeather.png");
 
         let theObjects = this.Window.get_objects();
         for (let i in theObjects) {
