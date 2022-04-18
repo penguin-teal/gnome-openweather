@@ -5,6 +5,9 @@ topextensiondir = $(datadir)/gnome-shell/extensions
 
 uuid = "openweather-extension@jenslody.de"
 
+# Version for self builds
+GIT_VERSION = 107
+
 extensiondir = $(topextensiondir)/$(uuid)
 
 dist_extension_DATA = OpenWeather.png stylesheet.css prefs.css weather-settings.ui

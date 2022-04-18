@@ -1,9 +1,13 @@
 {
-    "uuid": "@uuid@",
-    "name": "OpenWeather",
-    "description": "Display weather information for any location on Earth in the GNOME Panel",
-    "version": "@version@",
-    "shell-version": [ "40", "41", "42" ],
-    "url": "@url@",
-    "localedir": "@LOCALEDIR@"    
+  "name": "OpenWeather",
+  "description": "Display weather information for any location on Earth in the GNOME Shell",
+  "localedir": "@LOCALEDIR@",
+  "shell-version": [
+    "40",
+    "41",
+    "42"
+  ],
+  "url": "@url@",
+  "uuid": "@uuid@",
+  "version": @version@
 }

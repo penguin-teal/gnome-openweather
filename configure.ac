@@ -24,7 +24,7 @@ PKG_PROG_PKG_CONFIG([0.22])
 
 GLIB_GSETTINGS
 
-AC_ARG_VAR(GIT_VERSION, git-version to be placed in metadata.json, will be overwritten when uploaded to gnome.org (default not set))
+AC_ARG_VAR(GIT_VERSION, [git-version to be placed in metadata.json, will be overwritten when uploaded to gnome.org])
 
 AC_ARG_WITH(desktop-dir, [  --with-desktop-dir=PATH where to install desktop files (default=PREFIX/share)])
 
