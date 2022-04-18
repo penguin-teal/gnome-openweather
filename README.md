@@ -24,17 +24,15 @@ Some outstanding issues addressed so far:
 
 After completing one of the installation methods below, restart GNOME Shell (`Alt`+`F2`, `r`, `Enter`) and enable the extension through the *gnome-extensions* app.
 
-#### To install the most recent official release: Visit OpenWeather on the [Official GNOME Extensions](https://extensions.gnome.org/extension/750/openweather) website.
+#### Official E.G.O Release
+
+Visit OpenWeather on the [Official GNOME Extensions](https://extensions.gnome.org/extension/750/openweather) website.
 
 <p align="left">
   <a href="https://extensions.gnome.org/extension/750/openweather">
     <img src="https://gitlab.com/skrewball/assets/-/raw/main/get-it-on-ego.png" width="240" style="margin-left: 5px">
   </a>
 </p>
-
-**NOTE: Currently this leads to the older version of the extension before the fork while we [transfer ownership of the E.G.O listing](https://gitlab.gnome.org/Infrastructure/extensions-web/-/issues/185). I will upload a new version as soon as it's complete!**
-
-To get the latest release you will need to use one of the below options for now:
 
 ### Package Manager
 
