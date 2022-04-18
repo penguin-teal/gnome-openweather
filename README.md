@@ -66,6 +66,7 @@ Make sure you have the following dependencies installed:
 | `zip`          | `zip`                         | `zip`                  |
 | `base-devel`   | `build-essential`             | `glib2-devel`          |
 | `gnome-common` | `gnome-common`                | `gnome-common`         |
+|                |                               | `gettext-devel`        |
 
 
 Run the following commands:
