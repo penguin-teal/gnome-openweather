@@ -1621,4 +1621,5 @@ function enable() {
 function disable() {
     openweatherMenu.stop();
     openweatherMenu.destroy();
+    openweatherMenu = null;
 }

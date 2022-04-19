@@ -1,7 +1,6 @@
 {
   "name": "OpenWeather",
   "description": "Display weather information for any location on Earth in the GNOME Shell",
-  "localedir": "@LOCALEDIR@",
   "shell-version": [
     "40",
     "41",
