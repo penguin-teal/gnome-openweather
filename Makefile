@@ -2,7 +2,7 @@
 
 UUID = openweather-extension@jenslody.de
 PKG_NAME = gnome-shell-extension-openweather
-BASE_MODULES = metadata.json LICENSE
+BASE_MODULES = metadata.json COPYING
 SRC_MODULES = extension.js openweathermap_org.js stylesheet.css prefs.js prefs.css weather-settings.ui
 EXTRA_DIRECTORIES = media
 TOLOCALIZE = $(addprefix src/, extension.js openweathermap_org.js) schemas/org.gnome.shell.extensions.openweather.gschema.xml
@@ -62,13 +62,13 @@ install-local: _build
 	cp -r ./_build/* $(INSTALLBASE)/$(UUID)/
 ifeq ($(INSTALLTYPE),system)
 	# system-wide settings and locale files
-	rm -r  $(addprefix $(INSTALLBASE)/$(UUID)/, schemas locale LICENSE)
+	rm -r  $(addprefix $(INSTALLBASE)/$(UUID)/, schemas locale COPYING)
 	mkdir -p $(SHARE_PREFIX)/glib-2.0/schemas \
 		$(SHARE_PREFIX)/locale \
 		$(SHARE_PREFIX)/licenses/$(PKG_NAME)
 	cp -r ./schemas/*gschema.xml $(SHARE_PREFIX)/glib-2.0/schemas
 	cp -r ./_build/locale/* $(SHARE_PREFIX)/locale
-	cp -r ./_build/LICENSE $(SHARE_PREFIX)/licenses/$(PKG_NAME)
+	cp -r ./_build/COPYING $(SHARE_PREFIX)/licenses/$(PKG_NAME)
 endif
 	-rm -fR _build
 	echo done
