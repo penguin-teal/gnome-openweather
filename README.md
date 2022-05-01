@@ -6,17 +6,9 @@
 
 OpenWeather (*gnome-shell-extension-openweather*) is a simple extension for displaying weather conditions and forecasts for any location on Earth in the GNOME Shell. It provides support for multiple locations with editable names using coordinates to store the locations, a beautiful layout, and more.
 
-Weather data is fetched from [OpenWeatherMap](https://openweathermap.org) including forecasts for up to ten days.
+Weather data is fetched from [OpenWeatherMap](https://openweathermap.org) including 3 hour forecasts for up to five days.
 
-*This is a fork of the original [OpenWeather](https://gitlab.com/jenslody/gnome-shell-extension-openweather) extension by @jenslody.*
-
-Some outstanding issues addressed so far:
-
-- Latest GNOME support added 76047866 | [#303](jenslody/gnome-shell-extension-openweather#303) [#307](jenslody/gnome-shell-extension-openweather#307) [!251](jenslody/gnome-shell-extension-openweather!251)
-- Location search is finally working again. !2 | [#305](jenslody/gnome-shell-extension-openweather#305)
-- Added option to choose the position inside the panel box !1 | [!236](jenslody/gnome-shell-extension-openweather!236)
-- Fix for icons not shown 25703765 | [#278](jenslody/gnome-shell-extension-openweather#278) [!243](jenslody/gnome-shell-extension-openweather!243)
-- Fix 'C.UTF-8' locale 6c83b441 | [!247](jenslody/gnome-shell-extension-openweather!247)
+*Forked from the original OpenWeather extension by @jenslody.*
 
 <br>
 
@@ -36,11 +28,11 @@ Visit OpenWeather on the [Official GNOME Extensions](https://extensions.gnome.or
 
 ### Package Manager
 
-I have added an 'official' package to the AUR that will align with the E.G.O releases. However I'm not aware of this fork updated on any other package manager repositories yet. I will add them here as they become available.
+I have an 'official' package in the AUR that aligns with the E.G.O releases. However I'm not aware if any package maintainers have updated their sources yet. I will add them here as they become available.
 
 #### [Arch Linux (AUR)](https://aur.archlinux.org/packages?O=0&K=gnome-shell-extension-openweather)
 
-For the latest 'official' version releases:
+For the latest official E.G.O version releases:
 
 ```
 paru -S gnome-shell-extension-openweather
@@ -61,30 +53,31 @@ Make sure you have the following dependencies installed:
 | `dconf`        | `dconf-gsettings-backend`     | `dconf`                |
 | `gnome-shell`  | `gnome-shell-extension-prefs` | `gnome-extensions-app` |
 | `git`          | `git`                         | `git`                  |
-| `zip`          | `zip`                         | `zip`                  |
 | `base-devel`   | `build-essential`             | `glib2-devel`          |
-| `gnome-common` | `gnome-common`                | `gnome-common`         |
 |                |                               | `gettext-devel`        |
 
 
 Run the following commands:
 
 ```
-cd ~ && git clone https://gitlab.com/skrewball/openweather.git
-cd ~/openweather
-./autogen.sh && make local-install
+git clone https://gitlab.com/skrewball/openweather.git
+```
+```
+cd openweather
+```
+```
+make && make install
 ```
 
 <br>
 
-## Configuration
+## Support OpenWeather
 
-Launch the *gnome-extensions* app look for the *OpenWeather* extension and click to activate. The settings can be accessed here and are also reachable through the settings button on the extension popup.
+OpenWeather (*gnome-shell-extension-openweather*) is provided completely free of charge. If you enjoy using this extension and would like to help support the project, please feel free to hit the button below!
 
-You can also use *dconf-editor* or *gsettings* to configure the extension through the command line.
-- The settings are under the `org.gnome.shell.extensions.openweather` schema.
-
-With [OpenWeatherMap](https://openweathermap.org) you can either use the extensions default-key or register to get a [personal API key](https://openweathermap.org/appid). This key has to be added in the preferences dialog. Don't forget to switch the a appropriate switch in the dialog to "off" in this case.
+<p align="left">
+    <a href="https://www.paypal.com/donate/?hosted_button_id=VZ7VLXPU2M9RQ" target="_blank"><img src="https://gitlab.com/skrewball/assets/-/raw/main/paypal-donate.png" width="250"></a>
+</p>
 
 <br>
 

@@ -16,6 +16,10 @@
     </child>
     <child>
       <object class="GtkBox" id="edit-box">
+        <property name="margin_top">10</property>
+        <property name="margin_bottom">10</property>
+        <property name="margin-start">10</property>
+        <property name="margin-end">10</property>
         <property name="orientation">vertical</property>
         <child>
           <object class="GtkLabel" id="label3">
@@ -363,27 +367,6 @@
                   </object>
                 </child>
                 <child>
-                  <object class="GtkEntry" id="appid_fc">
-                    <property name="max_length">32</property>
-                    <property name="width_chars">32</property>
-                    <layout>
-                      <property name="column">1</property>
-                      <property name="row">3</property>
-                    </layout>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkLabel" id="label-appid-fc">
-                    <property name="halign">start</property>
-                    <property name="hexpand">1</property>
-                    <property name="label" translatable="yes">Personal Api key from Dark Sky</property>
-                    <layout>
-                      <property name="column">0</property>
-                      <property name="row">3</property>
-                    </layout>
-                  </object>
-                </child>
-                <child>
                   <object class="GtkLabel" id="label-current-refresh">
                     <property name="halign">start</property>
                     <property name="hexpand">1</property>
@@ -422,7 +405,6 @@
                 </child>
                 <child>
                   <object class="GtkSpinButton" id="spin-forecast-refresh">
-                    <property name="tooltip_text" translatable="yes">Note: the forecast-timout is not used for Dark Sky, because they do not provide seperate downloads for current weather and forecasts.</property>
                     <property name="adjustment">forecast-refresh-adjustment</property>
                     <property name="climb_rate">5</property>
                     <property name="numeric">1</property>
@@ -707,11 +689,11 @@
                   </object>
                 </child>
                 <child>
-                  <object class="GtkLabel" id="label-icon-type">
-                    <property name="label" translatable="yes">Symbolic Icons</property>
+                  <object class="GtkLabel" id="label-use-system-icons">
+                    <property name="label" translatable="yes">Use System Icon Theme</property>
                     <layout>
                       <property name="column">0</property>
-                      <property name="row">4</property>
+                      <property name="row">5</property>
                     </layout>
                   </object>
                 </child>
@@ -720,7 +702,7 @@
                     <property name="label" translatable="yes">Text on buttons</property>
                     <layout>
                       <property name="column">0</property>
-                      <property name="row">5</property>
+                      <property name="row">6</property>
                     </layout>
                   </object>
                 </child>
@@ -729,7 +711,7 @@
                     <property name="label" translatable="yes">Temperature in Panel</property>
                     <layout>
                       <property name="column">0</property>
-                      <property name="row">6</property>
+                      <property name="row">7</property>
                     </layout>
                   </object>
                 </child>
@@ -738,7 +720,7 @@
                     <property name="label" translatable="yes">Conditions in Panel</property>
                     <layout>
                       <property name="column">0</property>
-                      <property name="row">7</property>
+                      <property name="row">8</property>
                     </layout>
                   </object>
                 </child>
@@ -747,7 +729,7 @@
                     <property name="label" translatable="yes">Conditions in Forecast</property>
                     <layout>
                       <property name="column">0</property>
-                      <property name="row">8</property>
+                      <property name="row">9</property>
                     </layout>
                   </object>
                 </child>
@@ -756,7 +738,7 @@
                     <property name="label" translatable="yes">Center forecast</property>
                     <layout>
                       <property name="column">0</property>
-                      <property name="row">9</property>
+                      <property name="row">10</property>
                     </layout>
                   </object>
                 </child>
@@ -765,7 +747,7 @@
                     <property name="label" translatable="yes">Number of days in forecast</property>
                     <layout>
                       <property name="column">0</property>
-                      <property name="row">10</property>
+                      <property name="row">11</property>
                     </layout>
                   </object>
                 </child>
@@ -774,7 +756,7 @@
                     <property name="label" translatable="yes">Maximal number of digits after the decimal point</property>
                     <layout>
                       <property name="column">0</property>
-                      <property name="row">11</property>
+                      <property name="row">12</property>
                     </layout>
                   </object>
                 </child>
@@ -839,16 +821,7 @@
                   </object>
                 </child>
                 <child>
-                  <object class="GtkSwitch" id="icon_type">
-                    <property name="halign">center</property>
-                    <layout>
-                      <property name="column">1</property>
-                      <property name="row">4</property>
-                    </layout>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkSwitch" id="use_text_on_buttons">
+                  <object class="GtkSwitch" id="use_system_icons">
                     <property name="halign">center</property>
                     <layout>
                       <property name="column">1</property>
@@ -857,7 +830,7 @@
                   </object>
                 </child>
                 <child>
-                  <object class="GtkSwitch" id="text_in_panel">
+                  <object class="GtkSwitch" id="use_text_on_buttons">
                     <property name="halign">center</property>
                     <layout>
                       <property name="column">1</property>
@@ -866,7 +839,7 @@
                   </object>
                 </child>
                 <child>
-                  <object class="GtkSwitch" id="comment_in_panel">
+                  <object class="GtkSwitch" id="text_in_panel">
                     <property name="halign">center</property>
                     <layout>
                       <property name="column">1</property>
@@ -875,7 +848,7 @@
                   </object>
                 </child>
                 <child>
-                  <object class="GtkSwitch" id="comment_in_forecast">
+                  <object class="GtkSwitch" id="comment_in_panel">
                     <property name="halign">center</property>
                     <layout>
                       <property name="column">1</property>
@@ -884,11 +857,20 @@
                   </object>
                 </child>
                 <child>
-                  <object class="GtkSwitch" id="center_forecast">
+                  <object class="GtkSwitch" id="comment_in_forecast">
                     <property name="halign">center</property>
                     <layout>
                       <property name="column">1</property>
                       <property name="row">9</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkSwitch" id="center_forecast">
+                    <property name="halign">center</property>
+                    <layout>
+                      <property name="column">1</property>
+                      <property name="row">10</property>
                     </layout>
                   </object>
                 </child>
@@ -899,15 +881,10 @@
                       <item>3</item>
                       <item>4</item>
                       <item>5</item>
-                      <item>6</item>
-                      <item>7</item>
-                      <item>8</item>
-                      <item>9</item>
-                      <item>10</item>
                     </items>
                     <layout>
                       <property name="column">1</property>
-                      <property name="row">10</property>
+                      <property name="row">11</property>
                     </layout>
                   </object>
                 </child>
@@ -921,7 +898,7 @@
                     </items>
                     <layout>
                       <property name="column">1</property>
-                      <property name="row">11</property>
+                      <property name="row">12</property>
                     </layout>
                   </object>
                 </child>
@@ -932,7 +909,7 @@
                     <property name="label" translatable="yes">Maximal length of the location text</property>
                     <layout>
                       <property name="column">0</property>
-                      <property name="row">12</property>
+                      <property name="row">13</property>
                     </layout>
                   </object>
                 </child>
@@ -943,7 +920,7 @@
                     <property name="numeric">1</property>
                     <layout>
                       <property name="column">1</property>
-                      <property name="row">12</property>
+                      <property name="row">13</property>
                     </layout>
                   </object>
                 </child>
@@ -970,15 +947,9 @@
             <property name="orientation">vertical</property>
             <property name="spacing">5</property>
             <child>
-              <object class="GtkBox" id="logo-box">
-                <property name="hexpand">1</property>
-                <property name="vexpand">1</property>
-                <property name="halign">center</property>
-                <child>
-                  <object class="GtkPicture" id="logo-image">
-                    <property name="keep_aspect_ratio">true</property>
-                  </object>
-                </child>
+              <object class="GtkImage" id="app-logo">
+                <property name="icon_name">openweather-icon</property>
+                <property name="pixel_size">100</property>
               </object>
             </child>
             <child>
@@ -1040,8 +1011,28 @@
                 </child>
                 <child>
                   <object class="GtkLabel" id="label16">
-                    <property name="label">Jason Oickle (&lt;a href=&quot;https://gitlab.com/skrewball/openweather&quot;&gt;Website&lt;/a&gt;)</property>
+                    <property name="label">Jason Oickle (&lt;a href=&quot;https://gitlab.com/skrewball&quot;&gt;@skrewball&lt;/a&gt;)</property>
                     <property name="use_markup">1</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkBox" id="box11">
+                <property name="halign">center</property>
+                <property name="spacing">5</property>
+                <child>
+                  <object class="GtkGrid" id="box11-grid">
+                    <property name="hexpand">1</property>
+                    <property name="row_spacing">5</property>
+                    <property name="column_spacing">5</property>
+                    <child>
+                      <object class="GtkLinkButton" id="paypal-button"></object>
+                    </child>
+                    <child>
+                      <object class="GtkLinkButton" id="gitlab-button"></object>
+                    </child>
+                    <child></child>
                   </object>
                 </child>
               </object>

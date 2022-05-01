@@ -6,9 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-shell-extension-openweather\n"
-"Report-Msgid-Bugs-To: https://gitlab.com/skrewball/openweather"
-"openweather/issues\n"
-"POT-Creation-Date: 2021-05-09 10:46+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-30 23:07-0300\n"
 "PO-Revision-Date: 2018-10-17 20:28+0300\n"
 "Last-Translator: Orhan Engin OKAY <orhanenginokay@hotmail.com>\n"
 "Language-Team: Turkish\n"
@@ -19,11 +18,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.0.6\n"
 
-#: src/extension.js:181
+#: src/extension.js:186
 msgid "..."
 msgstr "..."
 
-#: src/extension.js:360
+#: src/extension.js:372
 msgid ""
 "Openweathermap.org does not work without an api-key.\n"
 "Either set the switch to use the extensions default key in the preferences "
@@ -35,850 +34,540 @@ msgstr ""
 "openweathermap.org/appid adresine kayıt olup kendi kişisel anahtarınızı "
 "ekleyebilirsiniz."
 
-#: src/extension.js:414
-msgid ""
-"Dark Sky does not work without an api-key.\n"
-"Please register at https://darksky.net/dev/register and paste your personal "
-"key into the preferences dialog."
-msgstr ""
-"Dark Sky Api-anahtarı olmadan çalışmaz.\n"
-"Lütfen https://darksky.net/dev/register kayıt olun ve kişisel anahtarınızı "
-"ekleyin."
-
-#: src/extension.js:519 src/extension.js:531
+#: src/extension.js:479 src/extension.js:491
 #, javascript-format
 msgid "Can not connect to %s"
 msgstr " %s bağlanılamadı."
 
-#: src/extension.js:843 data/weather-settings.ui:300
+#: src/extension.js:803
 msgid "Locations"
 msgstr "Konumlar"
 
-#: src/extension.js:855
+#: src/extension.js:815
 msgid "Reload Weather Information"
 msgstr "Hava Bilgisini Geri Yükle"
 
-#: src/extension.js:870
+#: src/extension.js:830
 msgid "Weather data provided by:"
 msgstr "Hava durumu veri sağlayıcısı:"
 
-#: src/extension.js:880
+#: src/extension.js:840
 #, javascript-format
 msgid "Can not open %s"
 msgstr "%s açılamıyor"
 
-#: src/extension.js:887
+#: src/extension.js:847
 msgid "Weather Settings"
 msgstr "Hava Durumu Ayarları"
 
-#: src/extension.js:938 src/prefs.js:1059
+#: src/extension.js:898
 msgid "Invalid city"
 msgstr "Geçersiz Şehir"
 
-#: src/extension.js:949
+#: src/extension.js:909
 msgid "Invalid location! Please try to recreate it."
 msgstr "Geçersiz konum! Lütfen yeniden oluşturmayı deneyin."
 
-#: src/extension.js:1000 data/weather-settings.ui:567
+#: src/extension.js:971
 msgid "°F"
 msgstr "°F"
 
-#: src/extension.js:1002 data/weather-settings.ui:568
+#: src/extension.js:973
 msgid "K"
 msgstr "K"
 
-#: src/extension.js:1004 data/weather-settings.ui:569
+#: src/extension.js:975
 msgid "°Ra"
 msgstr "°Ra"
 
-#: src/extension.js:1006 data/weather-settings.ui:570
+#: src/extension.js:977
 msgid "°Ré"
 msgstr "°Ré"
 
-#: src/extension.js:1008 data/weather-settings.ui:571
+#: src/extension.js:979
 msgid "°Rø"
 msgstr "°Rø"
 
-#: src/extension.js:1010 data/weather-settings.ui:572
+#: src/extension.js:981
 msgid "°De"
 msgstr "°De"
 
-#: src/extension.js:1012 data/weather-settings.ui:573
+#: src/extension.js:983
 msgid "°N"
 msgstr "°N"
 
-#: src/extension.js:1014 data/weather-settings.ui:566
+#: src/extension.js:985
 msgid "°C"
 msgstr "°C"
 
-#: src/extension.js:1055
+#: src/extension.js:1022
 msgid "Calm"
 msgstr "Sakin"
 
-#: src/extension.js:1058
+#: src/extension.js:1025
 msgid "Light air"
 msgstr "Hafif Hava"
 
-#: src/extension.js:1061
+#: src/extension.js:1028
 msgid "Light breeze"
 msgstr "Hafif Esinti"
 
-#: src/extension.js:1064
+#: src/extension.js:1031
 msgid "Gentle breeze"
 msgstr "Hafif Esinti"
 
-#: src/extension.js:1067
+#: src/extension.js:1034
 msgid "Moderate breeze"
 msgstr "Ilımlı Esinti"
 
-#: src/extension.js:1070
+#: src/extension.js:1037
 msgid "Fresh breeze"
 msgstr "Serin Esinti"
 
-#: src/extension.js:1073
+#: src/extension.js:1040
 msgid "Strong breeze"
 msgstr "Güçlü Esinti"
 
-#: src/extension.js:1076
+#: src/extension.js:1043
 msgid "Moderate gale"
 msgstr "Ilımlı Rüzgar"
 
-#: src/extension.js:1079
+#: src/extension.js:1046
 msgid "Fresh gale"
 msgstr "Serin Rüzgar"
 
-#: src/extension.js:1082
+#: src/extension.js:1049
 msgid "Strong gale"
 msgstr "Güçlü Rüzgar"
 
-#: src/extension.js:1085
+#: src/extension.js:1052
 msgid "Storm"
 msgstr "Fırtına"
 
-#: src/extension.js:1088
+#: src/extension.js:1055
 msgid "Violent storm"
 msgstr "Şiddetli Fırtına"
 
-#: src/extension.js:1091
+#: src/extension.js:1058
 msgid "Hurricane"
 msgstr "Kasırga"
 
-#: src/extension.js:1095
+#: src/extension.js:1062
 msgid "Sunday"
 msgstr "Pazar"
 
-#: src/extension.js:1095
+#: src/extension.js:1062
 msgid "Monday"
 msgstr "Pazartesi"
 
-#: src/extension.js:1095
+#: src/extension.js:1062
 msgid "Tuesday"
 msgstr "Salı"
 
-#: src/extension.js:1095
+#: src/extension.js:1062
 msgid "Wednesday"
 msgstr "Çarşamba"
 
-#: src/extension.js:1095
+#: src/extension.js:1062
 msgid "Thursday"
 msgstr "Perşembe"
 
-#: src/extension.js:1095
+#: src/extension.js:1062
 msgid "Friday"
 msgstr "Cuma"
 
-#: src/extension.js:1095
+#: src/extension.js:1062
 msgid "Saturday"
 msgstr "Çumartesi"
 
-#: src/extension.js:1101
+#: src/extension.js:1068
 msgid "N"
 msgstr "K"
 
-#: src/extension.js:1101
+#: src/extension.js:1068
 msgid "NE"
 msgstr "KD"
 
-#: src/extension.js:1101
+#: src/extension.js:1068
 msgid "E"
 msgstr "D"
 
-#: src/extension.js:1101
+#: src/extension.js:1068
 msgid "SE"
 msgstr "GD"
 
-#: src/extension.js:1101
+#: src/extension.js:1068
 msgid "S"
 msgstr "G"
 
-#: src/extension.js:1101
+#: src/extension.js:1068
 msgid "SW"
 msgstr "GB"
 
-#: src/extension.js:1101
+#: src/extension.js:1068
 msgid "W"
 msgstr "B"
 
-#: src/extension.js:1101
+#: src/extension.js:1068
 msgid "NW"
 msgstr "KB"
 
-#: src/extension.js:1174 src/extension.js:1183 data/weather-settings.ui:600
+#: src/extension.js:1152 src/extension.js:1161
 msgid "hPa"
 msgstr "hPa"
 
-#: src/extension.js:1178 data/weather-settings.ui:601
+#: src/extension.js:1156
 msgid "inHg"
 msgstr "inHg"
 
-#: src/extension.js:1188 data/weather-settings.ui:602
+#: src/extension.js:1166
 msgid "bar"
 msgstr "bar"
 
-#: src/extension.js:1193 data/weather-settings.ui:603
+#: src/extension.js:1171
 msgid "Pa"
 msgstr "Pa"
 
-#: src/extension.js:1198 data/weather-settings.ui:604
+#: src/extension.js:1176
 msgid "kPa"
 msgstr "kPa"
 
-#: src/extension.js:1203 data/weather-settings.ui:605
+#: src/extension.js:1181
 msgid "atm"
 msgstr "atm"
 
-#: src/extension.js:1208 data/weather-settings.ui:606
+#: src/extension.js:1186
 msgid "at"
 msgstr "at"
 
-#: src/extension.js:1213 data/weather-settings.ui:607
+#: src/extension.js:1191
 msgid "Torr"
 msgstr "Torr"
 
-#: src/extension.js:1218 data/weather-settings.ui:608
+#: src/extension.js:1196
 msgid "psi"
 msgstr "psi"
 
-#: src/extension.js:1223 data/weather-settings.ui:609
+#: src/extension.js:1201
 msgid "mmHg"
 msgstr "mmHg"
 
-#: src/extension.js:1228 data/weather-settings.ui:610
+#: src/extension.js:1206
 msgid "mbar"
 msgstr "mbar"
 
-#: src/extension.js:1272 data/weather-settings.ui:586
+#: src/extension.js:1250
 msgid "m/s"
 msgstr "m/s"
 
-#: src/extension.js:1276 data/weather-settings.ui:585
+#: src/extension.js:1254
 msgid "mph"
 msgstr "mph"
 
-#: src/extension.js:1281 data/weather-settings.ui:584
+#: src/extension.js:1259
 msgid "km/h"
 msgstr "km/h"
 
-#: src/extension.js:1290 data/weather-settings.ui:587
+#: src/extension.js:1268
 msgid "kn"
 msgstr "kn"
 
-#: src/extension.js:1295 data/weather-settings.ui:588
+#: src/extension.js:1273
 msgid "ft/s"
 msgstr "kn"
 
-#: src/extension.js:1389
+#: src/extension.js:1367
 msgid "Loading ..."
 msgstr "Yükleniyor ..."
 
-#: src/extension.js:1393
+#: src/extension.js:1371
 msgid "Please wait"
 msgstr "Lütfen bekleyin"
 
-#: src/extension.js:1454
-msgid "Cloudiness:"
-msgstr "Bulanıklık:"
+#: src/extension.js:1437
+msgid "Feels Like:"
+msgstr ""
 
-#: src/extension.js:1458
+#: src/extension.js:1441
 msgid "Humidity:"
 msgstr "Nem:"
 
-#: src/extension.js:1462
+#: src/extension.js:1445
 msgid "Pressure:"
 msgstr "Basınç:"
 
-#: src/extension.js:1466
+#: src/extension.js:1449
 msgid "Wind:"
 msgstr "Rüzgar:"
 
-#: src/darksky_net.js:159 src/darksky_net.js:291 src/openweathermap_org.js:352
-#: src/openweathermap_org.js:479
+#: src/extension.js:1453
+msgid "Gusts:"
+msgstr ""
+
+#: src/openweathermap_org.js:148
+msgid "Thunderstorm with light rain"
+msgstr "Gök Gürültülü Hafif Yağış"
+
+#: src/openweathermap_org.js:150
+msgid "Thunderstorm with rain"
+msgstr "Gök Gürültülü Yağış"
+
+#: src/openweathermap_org.js:152
+msgid "Thunderstorm with heavy rain"
+msgstr "Gök Gürültülü Sağnak Yağış"
+
+#: src/openweathermap_org.js:154
+msgid "Light thunderstorm"
+msgstr "Hafif Fırtına"
+
+#: src/openweathermap_org.js:156
+msgid "Thunderstorm"
+msgstr "Fırtına"
+
+#: src/openweathermap_org.js:158
+msgid "Heavy thunderstorm"
+msgstr "Yoğun Fırtına"
+
+#: src/openweathermap_org.js:160
+msgid "Ragged thunderstorm"
+msgstr "Düzensiz Fırtına"
+
+#: src/openweathermap_org.js:162
+msgid "Thunderstorm with light drizzle"
+msgstr "Gök Gürültülü Hafif Çiseleme"
+
+#: src/openweathermap_org.js:164
+msgid "Thunderstorm with drizzle"
+msgstr "Gök Gürültülü Çiseleme"
+
+#: src/openweathermap_org.js:166
+msgid "Thunderstorm with heavy drizzle"
+msgstr "Gök Gürültülü Yoğun Çiseleme"
+
+#: src/openweathermap_org.js:168
+msgid "Light intensity drizzle"
+msgstr "Hafif Yoğunlukta Çiseleme"
+
+#: src/openweathermap_org.js:170
+msgid "Drizzle"
+msgstr "Çiseleme"
+
+#: src/openweathermap_org.js:172
+msgid "Heavy intensity drizzle"
+msgstr "Yoğun Yoğunlukta Çiseleme"
+
+#: src/openweathermap_org.js:174
+msgid "Light intensity drizzle rain"
+msgstr "Hafif Yoğunlukla Çiseleyen Yağmur"
+
+#: src/openweathermap_org.js:176
+msgid "Drizzle rain"
+msgstr "Çiseleyen Yağmur"
+
+#: src/openweathermap_org.js:178
+msgid "Heavy intensity drizzle rain"
+msgstr "Yoğun Yoğunlukla Çiseleyen Yağmur"
+
+#: src/openweathermap_org.js:180
+msgid "Shower rain and drizzle"
+msgstr "Hafif Yağmur ve Çiseleme"
+
+#: src/openweathermap_org.js:182
+msgid "Heavy shower rain and drizzle"
+msgstr "Sağnak Yağmur ve Çiseleme"
+
+#: src/openweathermap_org.js:184
+msgid "Shower drizzle"
+msgstr "Hafif Çiseleme"
+
+#: src/openweathermap_org.js:186
+msgid "Light rain"
+msgstr "Hafif Yağmur"
+
+#: src/openweathermap_org.js:188
+msgid "Moderate rain"
+msgstr "Ilımlı Yağmur"
+
+#: src/openweathermap_org.js:190
+msgid "Heavy intensity rain"
+msgstr "Sağnak Yoğunlukta Yağmur"
+
+#: src/openweathermap_org.js:192
+msgid "Very heavy rain"
+msgstr "Çok Şiddetli Yağmur"
+
+#: src/openweathermap_org.js:194
+msgid "Extreme rain"
+msgstr "Çok Sağnak Yağmur"
+
+#: src/openweathermap_org.js:196
+msgid "Freezing rain"
+msgstr "Dondurucu Yağmur"
+
+#: src/openweathermap_org.js:198
+msgid "Light intensity shower rain"
+msgstr "Hafif Yoğuklukta Çiseleyen Yağmur"
+
+#: src/openweathermap_org.js:200
+msgid "Shower rain"
+msgstr "Hafif Yağmur"
+
+#: src/openweathermap_org.js:202
+msgid "Heavy intensity shower rain"
+msgstr "Yoğu Yoğunlukta Sağnak Yağmur"
+
+#: src/openweathermap_org.js:204
+msgid "Ragged shower rain"
+msgstr "Düzensiz Hafif Yağmur"
+
+#: src/openweathermap_org.js:206
+msgid "Light snow"
+msgstr "Hafif Kar"
+
+#: src/openweathermap_org.js:208
+msgid "Snow"
+msgstr "Kar"
+
+#: src/openweathermap_org.js:210
+msgid "Heavy snow"
+msgstr "Yoğun Kar"
+
+#: src/openweathermap_org.js:212
+msgid "Sleet"
+msgstr "Sulu Kar"
+
+#: src/openweathermap_org.js:214
+msgid "Shower sleet"
+msgstr "Hafif Yağışlı Sulu Kar"
+
+#: src/openweathermap_org.js:216
+msgid "Light rain and snow"
+msgstr "Hafif Yağış ve Kar"
+
+#: src/openweathermap_org.js:218
+msgid "Rain and snow"
+msgstr "Yağış ve Kar"
+
+#: src/openweathermap_org.js:220
+msgid "Light shower snow"
+msgstr "Hafif Kar Yağışı"
+
+#: src/openweathermap_org.js:222
+msgid "Shower snow"
+msgstr "Kar Yağışı"
+
+#: src/openweathermap_org.js:224
+msgid "Heavy shower snow"
+msgstr "Yoğun Kar Yağışı"
+
+#: src/openweathermap_org.js:226
+msgid "Mist"
+msgstr "Sis"
+
+#: src/openweathermap_org.js:228
+msgid "Smoke"
+msgstr "Duman"
+
+#: src/openweathermap_org.js:230
+msgid "Haze"
+msgstr "Pus"
+
+#: src/openweathermap_org.js:232
+msgid "Sand/Dust Whirls"
+msgstr "Kum/Toz Hortumu"
+
+#: src/openweathermap_org.js:234
+msgid "Fog"
+msgstr "Sis"
+
+#: src/openweathermap_org.js:236
+msgid "Sand"
+msgstr "Kum"
+
+#: src/openweathermap_org.js:238
+msgid "Dust"
+msgstr "Toz"
+
+#: src/openweathermap_org.js:240
+msgid "VOLCANIC ASH"
+msgstr "VOLKANİK KÜL"
+
+#: src/openweathermap_org.js:242
+msgid "SQUALLS"
+msgstr "BAĞRIŞMA"
+
+#: src/openweathermap_org.js:244
+msgid "TORNADO"
+msgstr "HORTUM"
+
+#: src/openweathermap_org.js:246
+msgid "Sky is clear"
+msgstr "Temiz Hava"
+
+#: src/openweathermap_org.js:248
+msgid "Few clouds"
+msgstr "Az Bulutlu"
+
+#: src/openweathermap_org.js:250
+msgid "Scattered clouds"
+msgstr "Dağınık Bulutlu"
+
+#: src/openweathermap_org.js:252
+msgid "Broken clouds"
+msgstr "Parçalı Bulutlu"
+
+#: src/openweathermap_org.js:254
+msgid "Overcast clouds"
+msgstr "Bulutlu"
+
+#: src/openweathermap_org.js:256
+msgid "Not available"
+msgstr "Mevcut değil"
+
+#: src/openweathermap_org.js:317
 msgid "Yesterday"
 msgstr "Dün"
 
-#: src/darksky_net.js:162 src/darksky_net.js:294 src/openweathermap_org.js:354
-#: src/openweathermap_org.js:481
+#: src/openweathermap_org.js:319
 #, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
 msgstr[0] " %d gün önce"
 msgstr[1] "Vor %d Tagen"
 
-#: src/darksky_net.js:174 src/darksky_net.js:176 src/openweathermap_org.js:368
-#: src/openweathermap_org.js:370
+#: src/openweathermap_org.js:334 src/openweathermap_org.js:336
 msgid ", "
 msgstr ", "
 
-#: src/darksky_net.js:271 src/openweathermap_org.js:473
-msgid "Today"
-msgstr "Bugün"
-
-#: src/darksky_net.js:287 src/openweathermap_org.js:475
-msgid "Tomorrow"
-msgstr "Yarın"
-
-#: src/darksky_net.js:289 src/openweathermap_org.js:477
-#, javascript-format
-msgid "In %d day"
-msgid_plural "In %d days"
-msgstr[0] "%d gün içinde"
-msgstr[1] "%d gün içinde"
-
-#: src/openweathermap_org.js:183
-msgid "Thunderstorm with light rain"
-msgstr "Gök Gürültülü Hafif Yağış"
-
-#: src/openweathermap_org.js:185
-msgid "Thunderstorm with rain"
-msgstr "Gök Gürültülü Yağış"
-
-#: src/openweathermap_org.js:187
-msgid "Thunderstorm with heavy rain"
-msgstr "Gök Gürültülü Sağnak Yağış"
-
-#: src/openweathermap_org.js:189
-msgid "Light thunderstorm"
-msgstr "Hafif Fırtına"
-
-#: src/openweathermap_org.js:191
-msgid "Thunderstorm"
-msgstr "Fırtına"
-
-#: src/openweathermap_org.js:193
-msgid "Heavy thunderstorm"
-msgstr "Yoğun Fırtına"
-
-#: src/openweathermap_org.js:195
-msgid "Ragged thunderstorm"
-msgstr "Düzensiz Fırtına"
-
-#: src/openweathermap_org.js:197
-msgid "Thunderstorm with light drizzle"
-msgstr "Gök Gürültülü Hafif Çiseleme"
-
-#: src/openweathermap_org.js:199
-msgid "Thunderstorm with drizzle"
-msgstr "Gök Gürültülü Çiseleme"
-
-#: src/openweathermap_org.js:201
-msgid "Thunderstorm with heavy drizzle"
-msgstr "Gök Gürültülü Yoğun Çiseleme"
-
-#: src/openweathermap_org.js:203
-msgid "Light intensity drizzle"
-msgstr "Hafif Yoğunlukta Çiseleme"
-
-#: src/openweathermap_org.js:205
-msgid "Drizzle"
-msgstr "Çiseleme"
-
-#: src/openweathermap_org.js:207
-msgid "Heavy intensity drizzle"
-msgstr "Yoğun Yoğunlukta Çiseleme"
-
-#: src/openweathermap_org.js:209
-msgid "Light intensity drizzle rain"
-msgstr "Hafif Yoğunlukla Çiseleyen Yağmur"
-
-#: src/openweathermap_org.js:211
-msgid "Drizzle rain"
-msgstr "Çiseleyen Yağmur"
-
-#: src/openweathermap_org.js:213
-msgid "Heavy intensity drizzle rain"
-msgstr "Yoğun Yoğunlukla Çiseleyen Yağmur"
-
-#: src/openweathermap_org.js:215
-msgid "Shower rain and drizzle"
-msgstr "Hafif Yağmur ve Çiseleme"
-
-#: src/openweathermap_org.js:217
-msgid "Heavy shower rain and drizzle"
-msgstr "Sağnak Yağmur ve Çiseleme"
-
-#: src/openweathermap_org.js:219
-msgid "Shower drizzle"
-msgstr "Hafif Çiseleme"
-
-#: src/openweathermap_org.js:221
-msgid "Light rain"
-msgstr "Hafif Yağmur"
-
-#: src/openweathermap_org.js:223
-msgid "Moderate rain"
-msgstr "Ilımlı Yağmur"
-
-#: src/openweathermap_org.js:225
-msgid "Heavy intensity rain"
-msgstr "Sağnak Yoğunlukta Yağmur"
-
-#: src/openweathermap_org.js:227
-msgid "Very heavy rain"
-msgstr "Çok Şiddetli Yağmur"
-
-#: src/openweathermap_org.js:229
-msgid "Extreme rain"
-msgstr "Çok Sağnak Yağmur"
-
-#: src/openweathermap_org.js:231
-msgid "Freezing rain"
-msgstr "Dondurucu Yağmur"
-
-#: src/openweathermap_org.js:233
-msgid "Light intensity shower rain"
-msgstr "Hafif Yoğuklukta Çiseleyen Yağmur"
-
-#: src/openweathermap_org.js:235
-msgid "Shower rain"
-msgstr "Hafif Yağmur"
-
-#: src/openweathermap_org.js:237
-msgid "Heavy intensity shower rain"
-msgstr "Yoğu Yoğunlukta Sağnak Yağmur"
-
-#: src/openweathermap_org.js:239
-msgid "Ragged shower rain"
-msgstr "Düzensiz Hafif Yağmur"
-
-#: src/openweathermap_org.js:241
-msgid "Light snow"
-msgstr "Hafif Kar"
-
-#: src/openweathermap_org.js:243
-msgid "Snow"
-msgstr "Kar"
-
-#: src/openweathermap_org.js:245
-msgid "Heavy snow"
-msgstr "Yoğun Kar"
-
-#: src/openweathermap_org.js:247
-msgid "Sleet"
-msgstr "Sulu Kar"
-
-#: src/openweathermap_org.js:249
-msgid "Shower sleet"
-msgstr "Hafif Yağışlı Sulu Kar"
-
-#: src/openweathermap_org.js:251
-msgid "Light rain and snow"
-msgstr "Hafif Yağış ve Kar"
-
-#: src/openweathermap_org.js:253
-msgid "Rain and snow"
-msgstr "Yağış ve Kar"
-
-#: src/openweathermap_org.js:255
-msgid "Light shower snow"
-msgstr "Hafif Kar Yağışı"
-
-#: src/openweathermap_org.js:257
-msgid "Shower snow"
-msgstr "Kar Yağışı"
-
-#: src/openweathermap_org.js:259
-msgid "Heavy shower snow"
-msgstr "Yoğun Kar Yağışı"
-
-#: src/openweathermap_org.js:261
-msgid "Mist"
-msgstr "Sis"
-
-#: src/openweathermap_org.js:263
-msgid "Smoke"
-msgstr "Duman"
-
-#: src/openweathermap_org.js:265
-msgid "Haze"
-msgstr "Pus"
-
-#: src/openweathermap_org.js:267
-msgid "Sand/Dust Whirls"
-msgstr "Kum/Toz Hortumu"
-
-#: src/openweathermap_org.js:269
-msgid "Fog"
-msgstr "Sis"
-
-#: src/openweathermap_org.js:271
-msgid "Sand"
-msgstr "Kum"
-
-#: src/openweathermap_org.js:273
-msgid "Dust"
-msgstr "Toz"
-
-#: src/openweathermap_org.js:275
-msgid "VOLCANIC ASH"
-msgstr "VOLKANİK KÜL"
-
-#: src/openweathermap_org.js:277
-msgid "SQUALLS"
-msgstr "BAĞRIŞMA"
-
-#: src/openweathermap_org.js:279
-msgid "TORNADO"
-msgstr "HORTUM"
-
-#: src/openweathermap_org.js:281
-msgid "Sky is clear"
-msgstr "Temiz Hava"
-
-#: src/openweathermap_org.js:283
-msgid "Few clouds"
-msgstr "Az Bulutlu"
-
-#: src/openweathermap_org.js:285
-msgid "Scattered clouds"
-msgstr "Dağınık Bulutlu"
-
-#: src/openweathermap_org.js:287
-msgid "Broken clouds"
-msgstr "Parçalı Bulutlu"
-
-#: src/openweathermap_org.js:289
-msgid "Overcast clouds"
-msgstr "Bulutlu"
-
-#: src/openweathermap_org.js:291
-msgid "Not available"
-msgstr "Mevcut değil"
-
-#: src/openweathermap_org.js:384
+#: src/openweathermap_org.js:352
 msgid "?"
 msgstr ""
 
-#: src/prefs.js:197
-#, fuzzy
-msgid "Searching ..."
-msgstr "Yükleniyor ..."
-
-#: src/prefs.js:209 src/prefs.js:247 src/prefs.js:278 src/prefs.js:282
-#, javascript-format
-msgid "Invalid data when searching for \"%s\""
-msgstr " \"%s\" geçersiz veriler"
-
-#: src/prefs.js:214 src/prefs.js:254 src/prefs.js:285
-#, javascript-format
-msgid "\"%s\" not found"
-msgstr "\"%s\" bulunamadı"
-
-#: src/prefs.js:232
-#, fuzzy
-msgid "You need an AppKey to search on openmapquest."
-msgstr "developer.mapquest.com'dan kişisel uygulama anahtarınız"
-
-#: src/prefs.js:233
-#, fuzzy
-msgid "Please visit https://developer.mapquest.com/ ."
-msgstr "developer.mapquest.com tarafından kişisel uygulama anahtarı"
-
-#: src/prefs.js:248
-msgid "Do you use a valid AppKey to search on openmapquest ?"
-msgstr ""
-
-#: src/prefs.js:249
-msgid "If not, please visit https://developer.mapquest.com/ ."
-msgstr ""
-
-#: src/prefs.js:339
-msgid "Location"
-msgstr "Konum"
-
-#: src/prefs.js:350
-msgid "Provider"
-msgstr "Sağlayıcı"
-
-#: src/prefs.js:360
-msgid "Result"
-msgstr ""
-
-#: src/prefs.js:550
-#, javascript-format
-msgid "Remove %s ?"
-msgstr "Kaldır %s ?"
-
-#: src/prefs.js:563
-#, fuzzy
-msgid "No"
-msgstr "K"
-
-#: src/prefs.js:564
-msgid "Yes"
-msgstr ""
-
-#: src/prefs.js:1094
-msgid "default"
-msgstr "varsayılan"
-
-#: data/weather-settings.ui:25
-msgid "Edit name"
-msgstr "Adı düzenle"
-
-#: data/weather-settings.ui:36 data/weather-settings.ui:52
-#: data/weather-settings.ui:178
-msgid "Clear entry"
-msgstr "Girdiyi temizle"
-
-#: data/weather-settings.ui:43
-msgid "Edit coordinates"
-msgstr "Koordinatları düzenle"
-
-#: data/weather-settings.ui:59 data/weather-settings.ui:195
-msgid "Extensions default weather provider"
-msgstr "Varsayılan eklenti hava durumu sağlayıcısı"
-
-#: data/weather-settings.ui:78 data/weather-settings.ui:214
-msgid "Cancel"
-msgstr "İptal"
-
-#: data/weather-settings.ui:88 data/weather-settings.ui:224
-msgid "Save"
-msgstr "Kaydet"
-
-#: data/weather-settings.ui:164
-msgid "Search by location or coordinates"
-msgstr "Koordinat ya da konuma göre ara"
-
-#: data/weather-settings.ui:179
-msgid "e.g. Vaiaku, Tuvalu or -8.5211767,179.1976747"
-msgstr "ör. Vaiaku, Tuvalu oder -8.5211767,179.1976747"
-
-#: data/weather-settings.ui:184
-msgid "Find"
-msgstr "Bul"
-
-#: data/weather-settings.ui:318
-msgid "Chose default weather provider"
-msgstr "Varsayılan Hava Durumu Sağlayıcısını Seç"
-
-#: data/weather-settings.ui:329
-msgid "Personal Api key from openweathermap.org"
-msgstr "openweathermap.org için kişisel API anahtarı"
-
-#: data/weather-settings.ui:372
-msgid "Personal Api key from Dark Sky"
-msgstr "Dark Sky için kişisel API anahtarı"
-
-#: data/weather-settings.ui:383
-msgid "Refresh timeout for current weather [min]"
-msgstr "Mevcut hava durumu için zaman aşımını yenile [dk]"
-
-#: data/weather-settings.ui:395
-msgid "Refresh timeout for weather forecast [min]"
-msgstr "Mevcut hava tahmini için zaman aşımını yenile [dk]"
-
-#: data/weather-settings.ui:418
-msgid ""
-"Note: the forecast-timout is not used for Dark Sky, because they do not "
-"provide seperate downloads for current weather and forecasts."
-msgstr ""
-"Not: hava durumu ve tahminleri için ayrı indirmeler sağlanmadığından, "
-"tahmini zaman aşımı Dark Sky için kullanılmaz."
-
-#: data/weather-settings.ui:441
-msgid "Use extensions api-key for openweathermap.org"
-msgstr "openweathermap.org için uzantı API anahtarını kullan"
-
-#: data/weather-settings.ui:450
-msgid ""
-"Switch off, if you have your own api-key for openweathermap.org and put it "
-"into the text-box below."
-msgstr ""
-"Eğer openweather.org için kişisel API anahtarınız varsa ve metin kutusuna "
-"ekleyebiliyorsanız, Kapatın."
-
-#: data/weather-settings.ui:462
-msgid "Weather provider"
-msgstr "Hava Durumu Sağlayıcı"
-
-#: data/weather-settings.ui:478
-msgid "Chose geolocation provider"
-msgstr "Coğrafi konum sağlayıcısı seçin"
-
-#: data/weather-settings.ui:500
-msgid "Personal AppKey from developer.mapquest.com"
-msgstr "developer.mapquest.com tarafından kişisel uygulama anahtarı"
-
-#: data/weather-settings.ui:522
-msgid "Geolocation provider"
-msgstr "Coğrafi Konum Sağlayıcısı"
-
-#: data/weather-settings.ui:538
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:63
-msgid "Temperature Unit"
-msgstr "Sıcaklık Birimi"
-
-#: data/weather-settings.ui:547
-msgid "Wind Speed Unit"
-msgstr "Rüzgar Hız Birimi"
-
-#: data/weather-settings.ui:556
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:67
-msgid "Pressure Unit"
-msgstr "Basınç Birimleri"
-
-#: data/weather-settings.ui:589
-msgid "Beaufort"
-msgstr "Beaufort Ölçeği"
-
-#: data/weather-settings.ui:622
-msgid "Units"
-msgstr "Birimler"
-
-#: data/weather-settings.ui:638
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:113
-msgid "Position in Panel"
-msgstr "Panel Pozisyonu"
-
-#: data/weather-settings.ui:647
-msgid "Position of menu-box [%] from 0 (left) to 100 (right)"
-msgstr "Menü kutusunun konumu [%]  0 (sol) ile 100 (sağ) arasında"
-
-#: data/weather-settings.ui:656
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:76
-msgid "Wind Direction by Arrows"
-msgstr "Ok ile Rüzgar Yönü"
-
-#: data/weather-settings.ui:665
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:89
-msgid "Translate Conditions"
-msgstr "Şartları Çevir"
-
-#: data/weather-settings.ui:674
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:93
-msgid "Symbolic Icons"
-msgstr "Sembolik Simgeler"
-
-#: data/weather-settings.ui:683
-msgid "Text on buttons"
-msgstr "Düğme Metinleri"
-
-#: data/weather-settings.ui:692
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:101
-msgid "Temperature in Panel"
-msgstr "Paneldeki Sıcaklı"
-
-#: data/weather-settings.ui:701
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:105
-msgid "Conditions in Panel"
-msgstr "Paneldeki Koşullar"
-
-#: data/weather-settings.ui:710
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:109
-msgid "Conditions in Forecast"
-msgstr "Tahmindeki Koşullar"
-
-#: data/weather-settings.ui:719
-msgid "Center forecast"
-msgstr "Merkez tahmini"
-
-#: data/weather-settings.ui:728
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:137
-msgid "Number of days in forecast"
-msgstr "Tahmin edilen gün sayısı"
-
-#: data/weather-settings.ui:737
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:141
-msgid "Maximal number of digits after the decimal point"
-msgstr "Ondalık noktadan sonraki maksimum basamak sayısı"
-
-#: data/weather-settings.ui:747
-msgid "Center"
-msgstr "Orta"
-
-#: data/weather-settings.ui:748
-msgid "Right"
-msgstr "Sağ"
-
-#: data/weather-settings.ui:749
-msgid "Left"
-msgstr "Sol"
-
-#: data/weather-settings.ui:880
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:125
-msgid "Maximal length of the location text"
-msgstr ""
-
-#: data/weather-settings.ui:902
-msgid "Layout"
-msgstr "Düzen"
-
-#: data/weather-settings.ui:935
-msgid "Version: "
-msgstr "Versiyon:"
-
-#: data/weather-settings.ui:941
-msgid "unknown (self-build ?)"
-msgstr "bilinmeyen (kişisel-yapı ?)"
-
-#: data/weather-settings.ui:949
-msgid ""
-"<span>Weather extension to display weather information from <a href="
-"\"https://openweathermap.org/\">Openweathermap</a> or <a href=\"https://"
-"darksky.net\">Dark Sky</a> for almost all locations in the world.</span>"
-msgstr ""
-"<span>Hava durumu eklentisi neredeyse dünyadaki tüm konumların hava "
-"bilgilerini <a href=\"https://openweathermap.org/\">Openweathermap</a> yada "
-"<a href=\"https://darksky.net\">Dark Sky</a> üzerinden sağlar.</span>"
-
-#: data/weather-settings.ui:963
-msgid "Maintained by"
-msgstr "Tarafından tutulan"
-
-#: data/weather-settings.ui:976
-msgid "Webpage"
-msgstr "Web Sitesi"
-
-#: data/weather-settings.ui:986
-msgid ""
-"<span size=\"small\">This program comes with ABSOLUTELY NO WARRANTY.\n"
-"See the <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
-"\">GNU General Public License, version 2 or later</a> for details.</span>"
-msgstr ""
-"<span size=\"small\">Bu program KESİNLİKLE HİÇBİR GARANTİ ile "
-"gelmemektedir.\n"
-"Daha fazla detay için <a href=\"https://www.gnu.org/licenses/old-licenses/"
-"gpl-2.0.html\">GNU General Public License, Version 2 yada sonrasına</a> "
-"gidin.</span>"
-
-#: data/weather-settings.ui:997
-msgid "About"
-msgstr "Hakkında"
-
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:55
+#: src/openweathermap_org.js:453
+msgid "Tomorrow"
+msgstr "Yarın"
+
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:54
 msgid "Weather Provider"
 msgstr "Hava Durumu Sağlayıcı"
 
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:59
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:58
 msgid "Geolocation Provider"
 msgstr "Coğrafi Konum Sağlayıcısı"
 
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:71
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:62
+msgid "Temperature Unit"
+msgstr "Sıcaklık Birimi"
+
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:66
+msgid "Pressure Unit"
+msgstr "Basınç Birimleri"
+
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:70
 msgid "Wind Speed Units"
 msgstr "Rüzgar Hızı Birimleri"
 
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:72
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:71
 msgid ""
 "Choose the units used for wind speed. Allowed values are 'kph', 'mph', 'm/"
 "s', 'knots', 'ft/s' or 'Beaufort'."
@@ -886,52 +575,287 @@ msgstr ""
 "Hava hızı için kullanılacak birimleri seçin. İzin verilen değerler 'kph', "
 "'mph', 'm/s', 'knots', 'ft/s' oder 'Beaufort'."
 
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:77
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:75
+msgid "Wind Direction by Arrows"
+msgstr "Ok ile Rüzgar Yönü"
+
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:76
 msgid "Choose whether to display wind direction through arrows or letters."
 msgstr "Rüzgar yönünü oklarla veya harflerle göstermeyi seçin."
 
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:81
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:80
 msgid "City to be displayed"
 msgstr "Gösterilen şehir"
 
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:85
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:84
 msgid "Actual City"
 msgstr "Güncel Şehir"
 
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:97
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:88
+msgid "Translate Conditions"
+msgstr "Şartları Çevir"
+
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:92
+#, fuzzy
+msgid "System Icons"
+msgstr "Sembolik Simgeler"
+
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:96
 msgid "Use text on buttons in menu"
 msgstr "Menüdeki düğmelerdeki metni kullan"
 
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:117
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:100
+msgid "Temperature in Panel"
+msgstr "Paneldeki Sıcaklı"
+
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:104
+msgid "Conditions in Panel"
+msgstr "Paneldeki Koşullar"
+
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:108
+msgid "Conditions in Forecast"
+msgstr "Tahmindeki Koşullar"
+
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:112
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:116
+msgid "Position in Panel"
+msgstr "Panel Pozisyonu"
+
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:120
 msgid "Horizontal position of menu-box."
 msgstr "Menü kutusunun yatay konumu."
 
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:121
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:124
 msgid "Refresh interval (actual weather)"
 msgstr "Yenileme aralığı (gerçek hava durumu)"
 
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:129
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:128
+msgid "Maximal length of the location text"
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:132
 msgid "Refresh interval (forecast)"
 msgstr "Yenileme aralığı (tahmini)"
 
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:133
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:136
 msgid "Center forecastbox."
 msgstr "Merkez tahmin kutusu."
 
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:145
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:140
+msgid "Number of days in forecast"
+msgstr "Tahmin edilen gün sayısı"
+
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:144
+msgid "Maximal number of digits after the decimal point"
+msgstr "Ondalık noktadan sonraki maksimum basamak sayısı"
+
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:148
 msgid "Your personal API key from openweathermap.org"
 msgstr "openweathermap.org'dan kişisel API anahtarınız"
 
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:149
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:152
 msgid "Use the extensions default API key from openweathermap.org"
 msgstr ""
 "openweathermap.org  adresinden uzantılar için varsayılan API anahtarını "
 "kullanın"
 
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:153
-msgid "Your personal API key from Dark Sky"
-msgstr "Dark Sky'dan Kişisel API anahtarınız"
-
-#: data/org.gnome.shell.extensions.openweather.gschema.xml:157
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:156
 msgid "Your personal AppKey from developer.mapquest.com"
 msgstr "developer.mapquest.com'dan kişisel uygulama anahtarınız"
+
+#~ msgid ""
+#~ "Dark Sky does not work without an api-key.\n"
+#~ "Please register at https://darksky.net/dev/register and paste your "
+#~ "personal key into the preferences dialog."
+#~ msgstr ""
+#~ "Dark Sky Api-anahtarı olmadan çalışmaz.\n"
+#~ "Lütfen https://darksky.net/dev/register kayıt olun ve kişisel "
+#~ "anahtarınızı ekleyin."
+
+#~ msgid "Cloudiness:"
+#~ msgstr "Bulanıklık:"
+
+#~ msgid "Today"
+#~ msgstr "Bugün"
+
+#, javascript-format
+#~ msgid "In %d day"
+#~ msgid_plural "In %d days"
+#~ msgstr[0] "%d gün içinde"
+#~ msgstr[1] "%d gün içinde"
+
+#, fuzzy
+#~ msgid "Searching ..."
+#~ msgstr "Yükleniyor ..."
+
+#, javascript-format
+#~ msgid "Invalid data when searching for \"%s\""
+#~ msgstr " \"%s\" geçersiz veriler"
+
+#, javascript-format
+#~ msgid "\"%s\" not found"
+#~ msgstr "\"%s\" bulunamadı"
+
+#, fuzzy
+#~ msgid "You need an AppKey to search on openmapquest."
+#~ msgstr "developer.mapquest.com'dan kişisel uygulama anahtarınız"
+
+#, fuzzy
+#~ msgid "Please visit https://developer.mapquest.com/ ."
+#~ msgstr "developer.mapquest.com tarafından kişisel uygulama anahtarı"
+
+#~ msgid "Location"
+#~ msgstr "Konum"
+
+#~ msgid "Provider"
+#~ msgstr "Sağlayıcı"
+
+#, javascript-format
+#~ msgid "Remove %s ?"
+#~ msgstr "Kaldır %s ?"
+
+#, fuzzy
+#~ msgid "No"
+#~ msgstr "K"
+
+#~ msgid "default"
+#~ msgstr "varsayılan"
+
+#~ msgid "Edit name"
+#~ msgstr "Adı düzenle"
+
+#~ msgid "Clear entry"
+#~ msgstr "Girdiyi temizle"
+
+#~ msgid "Edit coordinates"
+#~ msgstr "Koordinatları düzenle"
+
+#~ msgid "Extensions default weather provider"
+#~ msgstr "Varsayılan eklenti hava durumu sağlayıcısı"
+
+#~ msgid "Cancel"
+#~ msgstr "İptal"
+
+#~ msgid "Save"
+#~ msgstr "Kaydet"
+
+#~ msgid "Search by location or coordinates"
+#~ msgstr "Koordinat ya da konuma göre ara"
+
+#~ msgid "e.g. Vaiaku, Tuvalu or -8.5211767,179.1976747"
+#~ msgstr "ör. Vaiaku, Tuvalu oder -8.5211767,179.1976747"
+
+#~ msgid "Find"
+#~ msgstr "Bul"
+
+#~ msgid "Chose default weather provider"
+#~ msgstr "Varsayılan Hava Durumu Sağlayıcısını Seç"
+
+#~ msgid "Personal Api key from openweathermap.org"
+#~ msgstr "openweathermap.org için kişisel API anahtarı"
+
+#~ msgid "Personal Api key from Dark Sky"
+#~ msgstr "Dark Sky için kişisel API anahtarı"
+
+#~ msgid "Refresh timeout for current weather [min]"
+#~ msgstr "Mevcut hava durumu için zaman aşımını yenile [dk]"
+
+#~ msgid "Refresh timeout for weather forecast [min]"
+#~ msgstr "Mevcut hava tahmini için zaman aşımını yenile [dk]"
+
+#~ msgid ""
+#~ "Note: the forecast-timout is not used for Dark Sky, because they do not "
+#~ "provide seperate downloads for current weather and forecasts."
+#~ msgstr ""
+#~ "Not: hava durumu ve tahminleri için ayrı indirmeler sağlanmadığından, "
+#~ "tahmini zaman aşımı Dark Sky için kullanılmaz."
+
+#~ msgid "Use extensions api-key for openweathermap.org"
+#~ msgstr "openweathermap.org için uzantı API anahtarını kullan"
+
+#~ msgid ""
+#~ "Switch off, if you have your own api-key for openweathermap.org and put "
+#~ "it into the text-box below."
+#~ msgstr ""
+#~ "Eğer openweather.org için kişisel API anahtarınız varsa ve metin kutusuna "
+#~ "ekleyebiliyorsanız, Kapatın."
+
+#~ msgid "Weather provider"
+#~ msgstr "Hava Durumu Sağlayıcı"
+
+#~ msgid "Chose geolocation provider"
+#~ msgstr "Coğrafi konum sağlayıcısı seçin"
+
+#~ msgid "Personal AppKey from developer.mapquest.com"
+#~ msgstr "developer.mapquest.com tarafından kişisel uygulama anahtarı"
+
+#~ msgid "Geolocation provider"
+#~ msgstr "Coğrafi Konum Sağlayıcısı"
+
+#~ msgid "Wind Speed Unit"
+#~ msgstr "Rüzgar Hız Birimi"
+
+#~ msgid "Beaufort"
+#~ msgstr "Beaufort Ölçeği"
+
+#~ msgid "Units"
+#~ msgstr "Birimler"
+
+#~ msgid "Position of menu-box [%] from 0 (left) to 100 (right)"
+#~ msgstr "Menü kutusunun konumu [%]  0 (sol) ile 100 (sağ) arasında"
+
+#~ msgid "Text on buttons"
+#~ msgstr "Düğme Metinleri"
+
+#~ msgid "Center forecast"
+#~ msgstr "Merkez tahmini"
+
+#~ msgid "Center"
+#~ msgstr "Orta"
+
+#~ msgid "Right"
+#~ msgstr "Sağ"
+
+#~ msgid "Left"
+#~ msgstr "Sol"
+
+#~ msgid "Layout"
+#~ msgstr "Düzen"
+
+#~ msgid "Version: "
+#~ msgstr "Versiyon:"
+
+#~ msgid "unknown (self-build ?)"
+#~ msgstr "bilinmeyen (kişisel-yapı ?)"
+
+#~ msgid ""
+#~ "<span>Weather extension to display weather information from <a href="
+#~ "\"https://openweathermap.org/\">Openweathermap</a> or <a href=\"https://"
+#~ "darksky.net\">Dark Sky</a> for almost all locations in the world.</span>"
+#~ msgstr ""
+#~ "<span>Hava durumu eklentisi neredeyse dünyadaki tüm konumların hava "
+#~ "bilgilerini <a href=\"https://openweathermap.org/\">Openweathermap</a> "
+#~ "yada <a href=\"https://darksky.net\">Dark Sky</a> üzerinden sağlar.</span>"
+
+#~ msgid "Maintained by"
+#~ msgstr "Tarafından tutulan"
+
+#~ msgid "Webpage"
+#~ msgstr "Web Sitesi"
+
+#~ msgid ""
+#~ "<span size=\"small\">This program comes with ABSOLUTELY NO WARRANTY.\n"
+#~ "See the <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
+#~ "\">GNU General Public License, version 2 or later</a> for details.</span>"
+#~ msgstr ""
+#~ "<span size=\"small\">Bu program KESİNLİKLE HİÇBİR GARANTİ ile "
+#~ "gelmemektedir.\n"
+#~ "Daha fazla detay için <a href=\"https://www.gnu.org/licenses/old-licenses/"
+#~ "gpl-2.0.html\">GNU General Public License, Version 2 yada sonrasına</a> "
+#~ "gidin.</span>"
+
+#~ msgid "About"
+#~ msgstr "Hakkında"
+
+#~ msgid "Your personal API key from Dark Sky"
+#~ msgstr "Dark Sky'dan Kişisel API anahtarınız"
