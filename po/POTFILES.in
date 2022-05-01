@@ -1,6 +1,0 @@
-src/extension.js
-src/darksky_net.js
-src/openweathermap_org.js
-src/prefs.js
-data/weather-settings.ui
-data/org.gnome.shell.extensions.openweather.gschema.xml

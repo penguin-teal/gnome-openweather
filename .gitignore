@@ -1,19 +1,11 @@
-Makefile
-Makefile.in
-Makefile.in.in
-configure
-config.log
-config.status
-aclocal.m4
-ChangeLog
-INSTALL
-autom4te.cache/
-po/POTFILES
-po/stamp-it
-data/weather-settings.desktop
-staging/
-
+# ignore compiled schemas
+*.compiled
+# ignore genrated zip files
+*.zip
+# ignore compiled po files
+*.mo
+# ignore build directory
+_build
+# ignore files with ~ attached
 *~
-*.gmo
-metadata.json
-*.gschema.valid
+

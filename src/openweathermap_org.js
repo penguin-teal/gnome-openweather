@@ -40,54 +40,23 @@
  *
  */
 
-
 const ExtensionUtils = imports.misc.extensionUtils;
 const Me = ExtensionUtils.getCurrentExtension();
 const OpenweathermapOrg = Me.imports.openweathermap_org;
-const Gettext = imports.gettext.domain('gnome-shell-extension-openweather');
+const Gettext = imports.gettext.domain(Me.metadata['gettext-domain']);
 const _ = Gettext.gettext;
 const ngettext = Gettext.ngettext;
 
 const OPENWEATHER_URL_HOST = 'api.openweathermap.org';
 const OPENWEATHER_URL_BASE = 'https://' + OPENWEATHER_URL_HOST + '/data/2.5/';
 const OPENWEATHER_URL_CURRENT = OPENWEATHER_URL_BASE + 'weather';
-const OPENWEATHER_URL_FORECAST = OPENWEATHER_URL_BASE + 'forecast/daily';
+const OPENWEATHER_URL_FORECAST = OPENWEATHER_URL_BASE + 'forecast';
 
 function getWeatherIcon(code, night) {
 
     let iconname = ['weather-severe-alert'];
     // see https://openweathermap.org/weather-conditions
-    // fallback icons are: weather-clear-night weather-clear weather-few-clouds-night weather-few-clouds weather-fog weather-overcast weather-severe-alert weather-showers weather-showers-scattered weather-snow weather-storm
-    /*
-weather-clouds-night.png
-weather-freezing-rain.png
-weather-hail.png
-weather-showers-day.png
-weather-showers-night.png
-weather-showers-scattered-day.png
-weather-showers-scattered-night.png
-weather-snow-rain.png
-weather-snow-scattered-day.png
-weather-snow-scattered-night.png
-weather-snow-scattered.png
-weather-storm-day.png
-weather-storm-night.png
 
-weather-severe-alert-symbolic.svg
-
-
-weather-clear-night.png = weather-clear-night-symbolic.svg
-weather-clear.png = weather-clear-symbolic.svg
-weather-clouds.png = weather-overcast-symbolic.svg
-weather-few-clouds-night.png = weather-few-clouds-night-symbolic.svg
-weather-few-clouds.png = weather-few-clouds-symbolic.svg
-weather-mist.png = weather-fog-symbolic.svg
-weather-showers-scattered.png = weather-showers-scattered-symbolic.svg
-weather-showers.png = weather-showers-symbolic.svg
-weather-snow.png = weather-snow-symbolic.svg
-weather-storm.png = weather-storm-symbolic.svg
-
-*/
     switch (parseInt(code, 10)) {
         case 200: //Thunderstorm with light rain
         case 201: //Thunderstorm with rain
@@ -99,7 +68,7 @@ weather-storm.png = weather-storm-symbolic.svg
         case 230: //Thunderstorm with light drizzle
         case 231: //Thunderstorm with drizzle
         case 232: //Thunderstorm with heavy drizzle
-            iconname = ['weather-storm'];
+            iconname = 'weather-storm-symbolic';
             break;
         case 300: //Light intensity drizzle
         case 301: //drizzle
@@ -110,23 +79,21 @@ weather-storm.png = weather-storm-symbolic.svg
         case 313: //Shower rain and drizzle
         case 314: //Heavy shower rain and drizzle
         case 321: //Shower drizzle
-            iconname = ['weather-showers'];
+            iconname = 'weather-showers-symbolic';
             break;
         case 500: //Light rain
         case 501: //Moderate rain
         case 502: //Heavy intensity rain
         case 503: //Very heavy rain
         case 504: //Extreme rain
-            iconname = ['weather-showers-scattered', 'weather-showers'];
-            break;
         case 511: //Freezing rain
-            iconname = ['weather-freezing-rain', 'weather-showers'];
+            iconname = 'weather-showers-scattered-symbolic';
             break;
         case 520: //Light intensity shower rain
         case 521: //Shower rain
         case 522: //Heavy intensity shower rain
         case 531: //Ragged shower rain
-            iconname = ['weather-showers'];
+            iconname = 'weather-showers-symbolic';
             break;
         case 600: //Light snow
         case 601: //Snow
@@ -138,43 +105,41 @@ weather-storm.png = weather-storm-symbolic.svg
         case 620: //Light shower snow
         case 621: //Shower snow
         case 622: //Heavy shower snow
-            iconname = ['weather-snow'];
+            iconname = 'weather-snow-symbolic';
             break;
         case 701: //Mist
         case 711: //Smoke
         case 721: //Haze
         case 741: //Fog
-            iconname = ['weather-fog'];
+            iconname = 'weather-fog-symbolic';
             break;
         case 731: //Sand/Dust Whirls
         case 751: //Sand
         case 761: //Dust
         case 762: //VOLCANIC ASH
         case 771: //SQUALLS
+            iconname = 'weather-severe-alert-symbolic';
+            break;
         case 781: //TORNADO
-            iconname = ['weather-severe-alert'];
+            iconname = 'weather-tornado-symbolic';
             break;
         case 800: //Sky is clear
-            iconname = ['weather-clear'];
+            iconname = 'weather-clear-symbolic';
+            if (night)
+                iconname = 'weather-clear-night-symbolic';
             break;
         case 801: //Few clouds
         case 802: //Scattered clouds
-            iconname = ['weather-few-clouds'];
-            break;
         case 803: //Broken clouds
-            iconname = ['weather-few-clouds', 'weather-overcast'];
+            iconname = 'weather-few-clouds-symbolic';
+            if (night)
+                iconname = 'weather-few-clouds-night-symbolic'
             break;
         case 804: //Overcast clouds
-            iconname = ['weather-overcast'];
+            iconname = 'weather-overcast-symbolic';
             break;
     }
-
-    if (night) {
-      iconname = iconname.flatMap(i => [i + '-night-symbolic', i]);
-    }
-    iconname = iconname.flatMap(i => [i, i + '-symbolic']);
-
-    return iconname.find(i => this.hasIcon(i)) || 'weather-severe-alert';
+    return iconname;
 }
 
 function getWeatherCondition(code) {
@@ -337,13 +302,13 @@ function parseWeatherCurrent() {
     let lastBuild = '-';
 
     if (this._clockFormat == "24h") {
-        sunrise = sunrise.toLocaleFormat("%R");
-        sunset = sunset.toLocaleFormat("%R");
-        lastBuild = this.lastBuildDate.toLocaleFormat("%R");
+        sunrise = sunrise.toLocaleTimeString([this.locale], { hour12: false });
+        sunset = sunset.toLocaleTimeString([this.locale], { hour12: false });
+        lastBuild = this.lastBuildDate.toLocaleTimeString([this.locale], { hour12: false });
     } else {
-        sunrise = sunrise.toLocaleFormat("%I:%M %p");
-        sunset = sunset.toLocaleFormat("%I:%M %p");
-        lastBuild = this.lastBuildDate.toLocaleFormat("%I:%M %p");
+        sunrise = sunrise.toLocaleTimeString([this.locale], { hour: 'numeric', minute: 'numeric' });
+        sunset = sunset.toLocaleTimeString([this.locale], { hour: 'numeric', minute: 'numeric' });
+        lastBuild = this.lastBuildDate.toLocaleTimeString([this.locale], { hour: 'numeric', minute: 'numeric' });
     }
 
     let beginOfDay = new Date(new Date().setHours(0, 0, 0, 0));
@@ -354,7 +319,8 @@ function parseWeatherCurrent() {
             lastBuild = ngettext("%d day ago", "%d days ago", -1 * d).format(-1 * d);
     }
 
-    this._currentWeatherIcon.icon_name = this._weatherIcon.icon_name = iconname;
+    this._currentWeatherIcon.set_gicon(this.getCustIcon(iconname));
+    this._weatherIcon.set_gicon(this.getCustIcon(iconname));
 
     let weatherInfoC = "";
     let weatherInfoT = "";
@@ -372,7 +338,7 @@ function parseWeatherCurrent() {
         this._currentWeatherLocation.text = location.substring(0, (this._loc_len_current - 3)) + "...";
     else
         this._currentWeatherLocation.text = location;
-    this._currentWeatherCloudiness.text = json.clouds.all + ' %';
+    this._currentWeatherFeelsLike.text = this.formatTemperature(json.main.feels_like);
     this._currentWeatherHumidity.text = json.main.humidity + ' %';
     this._currentWeatherPressure.text = this.formatPressure(json.main.pressure);
     this._currentWeatherSunrise.text = sunrise;
@@ -380,6 +346,8 @@ function parseWeatherCurrent() {
     this._currentWeatherBuild.text = lastBuild;
     if (json.wind != undefined && json.wind.deg != undefined) {
         this._currentWeatherWind.text = this.formatWind(json.wind.speed, this.getWindDirection(json.wind.deg));
+        if (json.wind.gust != undefined)
+            this._currentWeatherWindGusts.text = this.formatWind(json.wind.gust);
     } else {
         this._currentWeatherWind.text = _("?");
     }
@@ -421,100 +389,141 @@ function refreshWeatherCurrent() {
 }
 
 function parseWeatherForecast() {
-    if (this.forecastWeatherCache === undefined) {
+    if (this.forecastWeatherCache === undefined || this.todaysWeatherCache === undefined) {
         // this is a reentrency guard
         this.forecastWeatherCache = "in refresh";
+        this.todaysWeatherCache = "in refresh";
         this.refreshWeatherForecast();
         return;
     }
 
-    if (this.forecastWeatherCache == "in refresh")
+    if (this.forecastWeatherCache == "in refresh" || this.todaysWeatherCache == "in refresh")
         return;
 
-    let forecast = this.forecastWeatherCache;
-    let beginOfDay = new Date(new Date().setHours(0, 0, 0, 0));
+    // Refresh today's forecast
+    let forecast_today = this.todaysWeatherCache;
+    let sunrise = new Date(this.currentWeatherCache.sys.sunrise * 1000).toLocaleTimeString([this.locale], { hour12: false });
+    let sunset = new Date(this.currentWeatherCache.sys.sunset * 1000).toLocaleTimeString([this.locale], { hour12: false });
 
-    // OpenWeatherMap sometimes returns the previous day's forecast, especially in the early morning hours
-    // of the lat / lng being queried. To prevent the first forecast element in the UI from being the previous
-    // day's forecast, check for the returned forecast elements being for a previous day and maintain a
-    // forecast index advance counter to skip previous day forecasts.
-    let dateAdvanceIndex = 0;
-    for (let i = 0; i < this._days_forecast; i++) {
-        let forecastData = forecast[i];
-        if (forecastData === undefined)
-            continue;
-        let forecastDate = new Date(forecastData.dt * 1000).setHours(0,0,0,0);
-        if (forecastDate >= beginOfDay) {
-        	// forecast is at least at the beginning of the current day; no need to look any further
-        	break;
-        }
-        // forecast is behind the current day, so advance the increment index
-    	dateAdvanceIndex++;
+    for (var i = 0; i < 4; i++) {
+        let forecastTodayUi = this._todays_forecast[i];
+        let forecastDataToday = forecast_today[i];
+
+        let forecastTime = new Date(forecastDataToday.dt * 1000);
+        let forecastTemp = this.formatTemperature(forecastDataToday.main.temp);
+        let iconTime = forecastTime.toLocaleTimeString([this.locale], { hour12: false });
+        let iconname = this.getWeatherIcon(forecastDataToday.weather[0].id, iconTime < sunrise || iconTime > sunset);
+
+        let comment = forecastDataToday.weather[0].description;
+        if (this._translate_condition)
+            comment = OpenweathermapOrg.getWeatherCondition(forecastDataToday.weather[0].id);
+
+        forecastTodayUi.Time.text = forecastTime.toLocaleTimeString([this.locale], {hour: 'numeric'});
+        forecastTodayUi.Icon.set_gicon(this.getCustIcon(iconname));
+        forecastTodayUi.Temperature.text = forecastTemp;
+        forecastTodayUi.Summary.text = comment;
     }
 
-    // Refresh forecast
+    // Refresh 5 day / 3 hour forecast
+    let forecast = this.forecastWeatherCache;
+    // first remove today from forecast data if exists
+    let _now = new Date().toLocaleDateString([this.locale]);
+    for (var i = 0; i < forecast.length; i++) {
+        let _itemDate = new Date(forecast[i][0].dt * 1000);
+        let _this = _itemDate.toLocaleDateString([this.locale]);
+        if (_now === _this) {
+            forecast.shift();
+        }
+    }
+
     for (let i = 0; i < this._days_forecast; i++) {
         let forecastUi = this._forecast[i];
-        // make sure to use the dateAdvanceIndex to skip any previous day forecasts
-        let forecastData = forecast[i + dateAdvanceIndex];
-        if (forecastData === undefined)
-            continue;
+        let forecastData = forecast[i];
 
-        let t_low = this.formatTemperature(forecastData.temp.min);
-        let t_high = this.formatTemperature(forecastData.temp.max);
+        for (let j = 0; j < 8; j++) {
+            if (forecastData[j] === undefined)
+                continue;
 
-        let comment = forecastData.weather[0].description;
-        if (this._translate_condition)
-            comment = OpenweathermapOrg.getWeatherCondition(forecastData.weather[0].id);
+            let forecastDate = new Date(forecastData[j].dt * 1000);
+            if (j === 0) {
+                let beginOfDay = new Date(new Date().setHours(0, 0, 0, 0));
+                let dayLeft = Math.floor((forecastDate.getTime() - beginOfDay.getTime()) / 86400000);
 
-        let forecastDate = new Date(forecastData.dt * 1000);
-        let dayLeft = Math.floor((forecastDate.getTime() - beginOfDay.getTime()) / 86400000);
+                if (dayLeft == 1)
+                    forecastUi.Day.text = '\n'+_("Tomorrow");
+                else
+                    forecastUi.Day.text = '\n'+this.getLocaleDay(forecastDate.getDay());
+            }
+            let iconTime = forecastDate.toLocaleTimeString([this.locale], { hour12: false });
+            let iconname = this.getWeatherIcon(forecastData[j].weather[0].id, iconTime < sunrise || iconTime > sunset);
+            let forecastTemp = this.formatTemperature(forecastData[j].main.temp);
 
-        let date_string = _("Today");
-        if (dayLeft == 1)
-            date_string = _("Tomorrow");
-        else if (dayLeft > 1)
-            date_string = ngettext("In %d day", "In %d days", dayLeft).format(dayLeft);
-        else if (dayLeft == -1)
-            date_string = _("Yesterday");
-        else if (dayLeft < -1)
-            date_string = ngettext("%d day ago", "%d days ago", -1 * dayLeft).format(-1 * dayLeft);
+            let comment = forecastData[j].weather[0].description;
+            if (this._translate_condition)
+                comment = OpenweathermapOrg.getWeatherCondition(forecastData[j].weather[0].id);
 
-        forecastUi.Day.text = date_string + ' (' + this.getLocaleDay(forecastDate.getDay()) + ')\n' + forecastDate.toLocaleDateString();
-        forecastUi.Temperature.text = '\u2193 ' + t_low + '    \u2191 ' + t_high;
-        forecastUi.Summary.text = comment;
-        forecastUi.Icon.icon_name = this.getWeatherIcon(forecastData.weather[0].id);
+            forecastUi[j].Time.text = forecastDate.toLocaleTimeString([this.locale], {hour: 'numeric'});
+            forecastUi[j].Icon.set_gicon(this.getCustIcon(iconname));
+            forecastUi[j].Temperature.text = forecastTemp;
+            forecastUi[j].Summary.text = comment;
+        }
     }
 }
 
 function refreshWeatherForecast() {
 
-
     this.oldLocation = this.extractCoord(this._city);
-
     if (this.oldLocation.search(",") == -1)
         return;
 
     let params = {
         lat: this.oldLocation.split(",")[0],
         lon: this.oldLocation.split(",")[1],
-        units: 'metric',
-        cnt: '13'
+        units: 'metric'
     };
     if (this._appid)
         params.APPID = this._appid;
 
     this.load_json_async(OPENWEATHER_URL_FORECAST, params, function(json) {
         if (json && (Number(json.cod) == 200)) {
-            if (this.forecastWeatherCache != json.list) {
+
+             // Sort the data
+            let a = 0;
+            let data = json.list;
+            let todayList = [];
+            let sortedList = [];
+            sortedList[a] = [data[0]];
+
+            // Today's forecast
+            for (let i = 0; i < 4; i++)
+                todayList.push(data[i]);
+
+            if (this.todaysWeatherCache != todayList)
+                this.todaysWeatherCache = todayList;
+
+            // 5 day / 3 hour forecast
+            for (let i = 1; i < data.length; i++) {
+                let _this = new Date(data[i].dt * 1000).toLocaleDateString([this.locale]).split('/');
+                let _last = new Date(data[i-1].dt * 1000).toLocaleDateString([this.locale]).split('/');
+
+                if (_this[1] == _last[1])
+                    sortedList[a].push(data[i]);
+                else {
+                    a = a+1;
+                    sortedList[a] = [];
+                    sortedList[a].push(data[i]);
+                }
+            }
+
+            if (this.forecastWeatherCache != sortedList) {
                 this.owmCityId = json.city.id;
-                this.forecastWeatherCache = json.list;
+                this.forecastWeatherCache = sortedList;
             }
 
             this.parseWeatherForecast();
         } else {
             // we are connected, but get no (or no correct) data, so try to reload
-            // after 10 minutes (recommendded by openweathermap.org)
+            // after 10 minutes (recommended by openweathermap.org)
             this.reloadWeatherForecast(600);
         }
     });
