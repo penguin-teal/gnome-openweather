@@ -176,7 +176,7 @@ class OpenweatherMenuButton extends PanelMenu.Button {
         this.oldProvider = this._weather_provider;
         this.oldUseDefaultOwmKey = this._use_default_owm_key;
         this.oldTranslateCondition = this._translate_condition;
-        this.switchProvider();
+        this.useOpenweathermapOrg();
 
         // Load settings
         this.loadConfig();
@@ -356,14 +356,10 @@ class OpenweatherMenuButton extends PanelMenu.Button {
         }
     }
 
-    switchProvider() {
-        this.useOpenweathermapOrg();
-    }
-
     useOpenweathermapOrg() {
         this.parseWeatherForecast = OpenweathermapOrg.parseWeatherForecast;
         this.parseWeatherCurrent = OpenweathermapOrg.parseWeatherCurrent;
-        this.getWeatherIcon = OpenweathermapOrg.getWeatherIcon;
+        this.getIconName = OpenweathermapOrg.getIconName;
         this.refreshWeatherCurrent = OpenweathermapOrg.refreshWeatherCurrent;
         this.refreshWeatherForecast = OpenweathermapOrg.refreshWeatherForecast;
 
@@ -397,7 +393,7 @@ class OpenweatherMenuButton extends PanelMenu.Button {
             this.rebuildCurrentWeatherUi();
             this.rebuildFutureWeatherUi();
             if (this.providerChanged()) {
-                this.switchProvider();
+                this.useOpenweathermapOrg();
                 this.currentWeatherCache = undefined;
                 this.todaysWeatherCache = undefined;
                 this.forecastWeatherCache = undefined;
@@ -418,7 +414,7 @@ class OpenweatherMenuButton extends PanelMenu.Button {
             this.rebuildCurrentWeatherUi();
             this.rebuildFutureWeatherUi();
             if (this.providerChanged()) {
-                this.switchProvider();
+                this.useOpenweathermapOrg();
                 this.currentWeatherCache = undefined;
                 this.todaysWeatherCache = undefined;
                 this.forecastWeatherCache = undefined;
@@ -1064,7 +1060,7 @@ class OpenweatherMenuButton extends PanelMenu.Button {
         return (this._wind_direction) ? arrows[idx] : letters[idx];
     }
 
-    getCustIcon(iconname) {
+    getWeatherIcon(iconname) {
         // Built-in icons option and fallback for missing icons on some distros
         if (this._getUseSysIcons && Gtk.IconTheme.get_default().has_icon(iconname)) {
             return Gio.icon_new_for_string(iconname);
@@ -1347,8 +1343,8 @@ class OpenweatherMenuButton extends PanelMenu.Button {
             icon_size: 15,
             style_class: 'openweather-sunset-icon '
         });
-        this._sunriseIcon.set_gicon(this.getCustIcon('weather-clear-symbolic'));
-        this._sunsetIcon.set_gicon(this.getCustIcon('weather-clear-night-symbolic'));
+        this._sunriseIcon.set_gicon(this.getWeatherIcon('daytime-sunrise-symbolic'));
+        this._sunsetIcon.set_gicon(this.getWeatherIcon('daytime-sunset-symbolic'));
 
         this._buildIcon = new St.Icon({
             icon_size: 15,

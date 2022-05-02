@@ -52,9 +52,9 @@ const OPENWEATHER_URL_BASE = 'https://' + OPENWEATHER_URL_HOST + '/data/2.5/';
 const OPENWEATHER_URL_CURRENT = OPENWEATHER_URL_BASE + 'weather';
 const OPENWEATHER_URL_FORECAST = OPENWEATHER_URL_BASE + 'forecast';
 
-function getWeatherIcon(code, night) {
+function getIconName(code, night) {
 
-    let iconname = ['weather-severe-alert'];
+    let iconname = 'weather-severe-alert-symbolic';
     // see https://openweathermap.org/weather-conditions
 
     switch (parseInt(code, 10)) {
@@ -86,8 +86,10 @@ function getWeatherIcon(code, night) {
         case 502: //Heavy intensity rain
         case 503: //Very heavy rain
         case 504: //Extreme rain
-        case 511: //Freezing rain
             iconname = 'weather-showers-scattered-symbolic';
+            break;
+        case 511: //Freezing rain
+            iconname = 'weather-freezing-rain-symbolic';
             break;
         case 520: //Light intensity shower rain
         case 521: //Shower rain
@@ -110,15 +112,21 @@ function getWeatherIcon(code, night) {
         case 701: //Mist
         case 711: //Smoke
         case 721: //Haze
-        case 741: //Fog
             iconname = 'weather-fog-symbolic';
             break;
         case 731: //Sand/Dust Whirls
+            iconname = 'weather-windy-symbolic';
+            break;
+        case 741: //Fog
+            iconname = 'weather-fog-symbolic';
+            break;
         case 751: //Sand
         case 761: //Dust
         case 762: //VOLCANIC ASH
-        case 771: //SQUALLS
             iconname = 'weather-severe-alert-symbolic';
+            break;
+        case 771: //SQUALLS
+            iconname = 'weather-windy-symbolic';
             break;
         case 781: //TORNADO
             iconname = 'weather-tornado-symbolic';
@@ -286,7 +294,7 @@ function parseWeatherCurrent() {
     let sunset = new Date(json.sys.sunset * 1000);
     let now = new Date();
 
-    let iconname = this.getWeatherIcon(json.weather[0].id, now < sunrise || now > sunset);
+    let iconname = this.getIconName(json.weather[0].id, now < sunrise || now > sunset);
 
     if (this.lastBuildId === undefined)
         this.lastBuildId = 0;
@@ -319,8 +327,8 @@ function parseWeatherCurrent() {
             lastBuild = ngettext("%d day ago", "%d days ago", -1 * d).format(-1 * d);
     }
 
-    this._currentWeatherIcon.set_gicon(this.getCustIcon(iconname));
-    this._weatherIcon.set_gicon(this.getCustIcon(iconname));
+    this._currentWeatherIcon.set_gicon(this.getWeatherIcon(iconname));
+    this._weatherIcon.set_gicon(this.getWeatherIcon(iconname));
 
     let weatherInfoC = "";
     let weatherInfoT = "";
@@ -412,14 +420,14 @@ function parseWeatherForecast() {
         let forecastTime = new Date(forecastDataToday.dt * 1000);
         let forecastTemp = this.formatTemperature(forecastDataToday.main.temp);
         let iconTime = forecastTime.toLocaleTimeString([this.locale], { hour12: false });
-        let iconname = this.getWeatherIcon(forecastDataToday.weather[0].id, iconTime < sunrise || iconTime > sunset);
+        let iconname = this.getIconName(forecastDataToday.weather[0].id, iconTime < sunrise || iconTime > sunset);
 
         let comment = forecastDataToday.weather[0].description;
         if (this._translate_condition)
             comment = OpenweathermapOrg.getWeatherCondition(forecastDataToday.weather[0].id);
 
         forecastTodayUi.Time.text = forecastTime.toLocaleTimeString([this.locale], {hour: 'numeric'});
-        forecastTodayUi.Icon.set_gicon(this.getCustIcon(iconname));
+        forecastTodayUi.Icon.set_gicon(this.getWeatherIcon(iconname));
         forecastTodayUi.Temperature.text = forecastTemp;
         forecastTodayUi.Summary.text = comment;
     }
@@ -455,7 +463,7 @@ function parseWeatherForecast() {
                     forecastUi.Day.text = '\n'+this.getLocaleDay(forecastDate.getDay());
             }
             let iconTime = forecastDate.toLocaleTimeString([this.locale], { hour12: false });
-            let iconname = this.getWeatherIcon(forecastData[j].weather[0].id, iconTime < sunrise || iconTime > sunset);
+            let iconname = this.getIconName(forecastData[j].weather[0].id, iconTime < sunrise || iconTime > sunset);
             let forecastTemp = this.formatTemperature(forecastData[j].main.temp);
 
             let comment = forecastData[j].weather[0].description;
@@ -463,7 +471,7 @@ function parseWeatherForecast() {
                 comment = OpenweathermapOrg.getWeatherCondition(forecastData[j].weather[0].id);
 
             forecastUi[j].Time.text = forecastDate.toLocaleTimeString([this.locale], {hour: 'numeric'});
-            forecastUi[j].Icon.set_gicon(this.getCustIcon(iconname));
+            forecastUi[j].Icon.set_gicon(this.getWeatherIcon(iconname));
             forecastUi[j].Temperature.text = forecastTemp;
             forecastUi[j].Summary.text = comment;
         }
