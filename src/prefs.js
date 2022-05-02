@@ -31,12 +31,12 @@
  * <http://www.gnu.org/licenses/>.
  *
  */
+
 const {
     Gio, Gdk, GdkPixbuf, Gtk, GLib, GObject, Soup
 } = imports.gi;
 const ByteArray = imports.byteArray;
 const Config = imports.misc.config;
-const Mainloop = imports.mainloop;
 
 const ExtensionUtils = imports.misc.extensionUtils;
 const Me = ExtensionUtils.getCurrentExtension();
@@ -160,6 +160,7 @@ const WeatherPrefsWidget = new GObject.Class({
         this.editName.connect("icon-release", this.clearEntry.bind(this));
         this.editCoord.connect("icon-release", this.clearEntry.bind(this));
 
+        // Bind close request to close sub-windows when user clicks close button in titlebar
         this.editWidget.connect('close-request', this.editCancel.bind(this));
         this.searchWidget.connect('close-request', () => {
             this.searchWidget.hide();
@@ -314,47 +315,23 @@ const WeatherPrefsWidget = new GObject.Class({
 
         this.current_spin = this.Window.get_object("spin-current-refresh");
         this.current_spin.set_value(this.refresh_interval_current / 60);
-        // prevent from continously updating the value
-        this.currentSpinTimeout = undefined;
         this.current_spin.connect("value-changed", (button) => {
-
-            if (this.currentSpinTimeout !== undefined)
-                Mainloop.source_remove(this.currentSpinTimeout);
-            this.currentSpinTimeout = Mainloop.timeout_add(250, () => {
-                this.refresh_interval_current = 60 * button.get_value();
-                return false;
-            });
-
+            this.refresh_interval_current = 60 * button.get_value();
+            return false;
         });
 
         this.forecast_spin = this.Window.get_object("spin-forecast-refresh");
         this.forecast_spin.set_value(this.refresh_interval_forecast / 60);
-        // prevent from continously updating the value
-        this.forecastSpinTimeout = undefined;
         this.forecast_spin.connect("value-changed", (button) => {
-
-            if (this.forecastSpinTimeout !== undefined)
-                Mainloop.source_remove(this.forecastSpinTimeout);
-            this.forecastSpinTimeout = Mainloop.timeout_add(250, () => {
-                this.refresh_interval_forecast = 60 * button.get_value();
-                return false;
-            });
-
+            this.refresh_interval_forecast = 60 * button.get_value();
+            return false;
         });
 
         this.position_index_spin = this.Window.get_object("position_index");
         this.position_index_spin.set_value(this.position_index );
-        // prevent from continously updating the value
-        this.positionIndexSpinTimeout = undefined;
         this.position_index_spin.connect("value-changed", (button) => {
-
-            if (this.positionIndexSpinTimeout !== undefined)
-                Mainloop.source_remove(this.positionIndexSpinTimeout);
-            this.positionIndexSpinTimeout = Mainloop.timeout_add(250, () => {
-                this.position_index = button.get_value();
-                return false;
-            });
-
+            this.position_index = button.get_value();
+            return false;
         });
 
         let column = new Gtk.TreeViewColumn();
@@ -391,17 +368,9 @@ const WeatherPrefsWidget = new GObject.Class({
 
         this.location_length_spin = this.Window.get_object("max_loc_chars");
         this.location_length_spin.set_value(this.loc_len_current);
-        // prevent from continously updating the value
-        this.locLenSpinTimeout = undefined;
         this.location_length_spin.connect("value-changed", (button) => {
-
-            if (this.locLenSpinTimeout !== undefined)
-                Mainloop.source_remove(this.locLenSpinTimeout);
-            this.locLenSpinTimeout = Mainloop.timeout_add(250, () => {
-                this.loc_len_current = button.get_value();
-                return false;
-            });
-
+            this.loc_len_current = button.get_value();
+            return false;
         });
 
         let theObjects = this.Window.get_objects();
@@ -504,16 +473,10 @@ const WeatherPrefsWidget = new GObject.Class({
     initScale: function(theScale) {
         let name = theScale.get_buildable_id();
         theScale.set_value(this[name]);
-        this[name+'Timeout'] = undefined;
         theScale.connect("value-changed", (slider) => {
-            if (this[name+'Timeout'] !== undefined)
-                Mainloop.source_remove(this[name+'Timeout']);
-            this[name+'Timeout'] = Mainloop.timeout_add(250, () => {
-                this[name] = slider.get_value();
-                return false;
-            });
+            this[name] = slider.get_value();
+            return false;
         });
-
     },
 
     refreshUI: function() {

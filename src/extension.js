@@ -37,6 +37,7 @@
  * along with gnome-shell-extension-openweather.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
+
 const {
     Clutter, Gio, Gtk, GLib, GObject, Soup, St
 } = imports.gi;
@@ -925,14 +926,7 @@ class OpenweatherMenuButton extends PanelMenu.Button {
 
     _onPreferencesActivate() {
         this.menu.close();
-        if (typeof ExtensionUtils.openPrefs === 'function') {
-            ExtensionUtils.openPrefs();
-        } else {
-            Util.spawn([
-                "gnome-shell-extension-prefs",
-                Me.uuid
-            ]);
-        }
+        ExtensionUtils.openPrefs();
         return 0;
     }
 
