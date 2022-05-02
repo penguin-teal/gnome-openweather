@@ -378,7 +378,7 @@ function refreshWeatherCurrent() {
     if (this._appid)
         params.APPID = this._appid;
 
-    this.load_json_async(OPENWEATHER_URL_CURRENT, params, function(json) {
+    this.load_json_async(OPENWEATHER_URL_CURRENT, params, (json) => {
         if (json && (Number(json.cod) == 200)) {
 
             if (this.currentWeatherCache != json)
@@ -492,7 +492,7 @@ function refreshWeatherForecast() {
     if (this._appid)
         params.APPID = this._appid;
 
-    this.load_json_async(OPENWEATHER_URL_FORECAST, params, function(json) {
+    this.load_json_async(OPENWEATHER_URL_FORECAST, params, (json) => {
         if (json && (Number(json.cod) == 200)) {
 
              // Sort the data

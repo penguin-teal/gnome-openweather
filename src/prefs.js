@@ -32,12 +32,12 @@
  *
  */
 
+imports.gi.versions.Soup = "2.4";
 const {
     Gio, Gdk, GdkPixbuf, Gtk, GLib, GObject, Soup
 } = imports.gi;
-const ByteArray = imports.byteArray;
-const Config = imports.misc.config;
 
+const Config = imports.misc.config;
 const ExtensionUtils = imports.misc.extensionUtils;
 const Me = ExtensionUtils.getCurrentExtension();
 const Gettext = imports.gettext.domain(Me.metadata['gettext-domain']);
@@ -657,7 +657,7 @@ const WeatherPrefsWidget = new GObject.Class({
         this.treeview.get_selection().select_path(path);
     },
 
-    loadJsonAsync: function(url, params, fun) {
+    loadJsonAsync: function(url, params, fun, id) {
         if (_httpSession === undefined) {
             _httpSession = new Soup.Session();
             _httpSession.user_agent = this.user_agent;
@@ -665,28 +665,33 @@ const WeatherPrefsWidget = new GObject.Class({
             // abort previous requests.
             _httpSession.abort();
         }
-        let paramsHash = Soup.form_encode_hash(params);
-        let message = Soup.Message.new_from_encoded_form('GET', url, paramsHash);
+        let here = this;
+        let message = Soup.form_request_new_from_hash('GET', url, params);
 
-        _httpSession.send_and_read_async(message, GLib.PRIORITY_DEFAULT, null, (_httpSession, message) => {
-            
-            let jsonString = _httpSession.send_and_read_finish(message).get_data();
-            if (jsonString instanceof Uint8Array)
-                jsonString = ByteArray.toString(jsonString);
+        if (this.asyncSession === undefined)
+            this.asyncSession = {};
+
+        if (this.asyncSession[id] !== undefined && this.asyncSession[id]) {
+            _httpSession.abort();
+            this.asyncSession[id] = 0;
+        }
+        this.asyncSession[id] = 1;
+
+        _httpSession.queue_message(message, (_httpSession, message) => {
+            here.asyncSession[id] = 0;
             try {
-                if (!jsonString) {
-                    fun.call(this, 0);
+                if (!message.response_body.data) {
+                    fun.call(here, 0);
                     return 0;
                 }
-                let jp = JSON.parse(jsonString);
-                fun.call(this, jp);
-            }
-            catch (e) {
-                fun.call(this, 0);
+                let jp = JSON.parse(message.response_body.data);
+                fun.call(here, jp);
+            } catch (e) {
+                fun.call(here, 0);
                 return 0;
             }
+            return 0;
         });
-        return 0;
     },
 
     loadConfig: function() {

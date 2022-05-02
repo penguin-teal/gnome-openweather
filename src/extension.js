@@ -38,10 +38,10 @@
  *
  */
 
+imports.gi.versions.Soup = "2.4";
 const {
     Clutter, Gio, Gtk, GLib, GObject, Soup, St
 } = imports.gi;
-const ByteArray = imports.byteArray;
 const Config = imports.misc.config;
 const Mainloop = imports.mainloop;
 const GnomeSession = imports.misc.gnomeSession;
@@ -1078,25 +1078,19 @@ class OpenweatherMenuButton extends PanelMenu.Button {
             // abort previous requests.
             _httpSession.abort();
         }
-        let paramsHash = Soup.form_encode_hash(params);
-        let message = Soup.Message.new_from_encoded_form('GET', url, paramsHash);
+        let message = Soup.form_request_new_from_hash('GET', url, params);
 
-        _httpSession.send_and_read_async(message, GLib.PRIORITY_DEFAULT, null, (_httpSession, message) => {
-
-            let jsonString = _httpSession.send_and_read_finish(message).get_data();
-            if (jsonString instanceof Uint8Array)
-                jsonString = ByteArray.toString(jsonString);
+        _httpSession.queue_message(message, (_httpSession, message) => {
             try {
-                if (!jsonString) {
+                if (!message.response_body.data) {
                     fun.call(this, 0);
-                    return 0;
+                    return;
                 }
-                let jp = JSON.parse(jsonString);
+                let jp = JSON.parse(message.response_body.data);
                 fun.call(this, jp);
-            }
-            catch (e) {
+            } catch (e) {
                 fun.call(this, 0);
-                return 0;
+                return;
             }
         });
         return;
