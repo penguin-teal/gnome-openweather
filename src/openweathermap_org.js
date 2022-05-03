@@ -511,10 +511,10 @@ function refreshWeatherForecast() {
 
             // 5 day / 3 hour forecast
             for (let i = 1; i < data.length; i++) {
-                let _this = new Date(data[i].dt * 1000).toLocaleDateString([this.locale]).split('/');
-                let _last = new Date(data[i-1].dt * 1000).toLocaleDateString([this.locale]).split('/');
+                let _this = new Date(data[i].dt * 1000).toLocaleDateString([this.locale]);
+                let _last = new Date(data[i-1].dt * 1000).toLocaleDateString([this.locale]);
 
-                if (_this[1] == _last[1])
+                if (_this == _last)
                     sortedList[a].push(data[i]);
                 else {
                     a = a+1;

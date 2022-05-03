@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: simon04-gnome-shell-extension-weather\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-30 23:07-0300\n"
+"POT-Creation-Date: 2022-05-03 17:07-0300\n"
 "PO-Revision-Date: 2012-05-13 22:40+0100\n"
 "Last-Translator: Christian METZLER <neroth@xeked.com>\n"
 "Language-Team: \n"
@@ -22,11 +22,11 @@ msgstr ""
 "X-Poedit-Country: ROMANIA\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: src/extension.js:186
+#: src/extension.js:187
 msgid "..."
 msgstr "..."
 
-#: src/extension.js:372
+#: src/extension.js:369
 msgid ""
 "Openweathermap.org does not work without an api-key.\n"
 "Either set the switch to use the extensions default key in the preferences "
@@ -34,501 +34,501 @@ msgid ""
 "personal key into the preferences dialog."
 msgstr ""
 
-#: src/extension.js:479 src/extension.js:491
+#: src/extension.js:476 src/extension.js:488
 #, fuzzy, javascript-format
 msgid "Can not connect to %s"
 msgstr "Nu se poate deschide %s"
 
-#: src/extension.js:803
+#: src/extension.js:800
 msgid "Locations"
 msgstr "Locații"
 
-#: src/extension.js:815
+#: src/extension.js:812
 msgid "Reload Weather Information"
 msgstr "Actualizează prognoza"
 
-#: src/extension.js:830
+#: src/extension.js:827
 msgid "Weather data provided by:"
 msgstr "Prognoză oferită de:"
 
-#: src/extension.js:840
+#: src/extension.js:837
 #, javascript-format
 msgid "Can not open %s"
 msgstr "Nu se poate deschide %s"
 
-#: src/extension.js:847
+#: src/extension.js:844
 msgid "Weather Settings"
 msgstr "Setări"
 
-#: src/extension.js:898
+#: src/extension.js:895
 msgid "Invalid city"
 msgstr "Oraș invalid"
 
-#: src/extension.js:909
+#: src/extension.js:906
 msgid "Invalid location! Please try to recreate it."
 msgstr ""
 
-#: src/extension.js:971
+#: src/extension.js:961
 msgid "°F"
 msgstr ""
 
-#: src/extension.js:973
+#: src/extension.js:963
 msgid "K"
 msgstr ""
 
-#: src/extension.js:975
+#: src/extension.js:965
 msgid "°Ra"
 msgstr ""
 
-#: src/extension.js:977
+#: src/extension.js:967
 msgid "°Ré"
 msgstr ""
 
-#: src/extension.js:979
+#: src/extension.js:969
 msgid "°Rø"
 msgstr ""
 
-#: src/extension.js:981
+#: src/extension.js:971
 msgid "°De"
 msgstr ""
 
-#: src/extension.js:983
+#: src/extension.js:973
 msgid "°N"
 msgstr ""
 
-#: src/extension.js:985
+#: src/extension.js:975
 msgid "°C"
 msgstr ""
 
-#: src/extension.js:1022
+#: src/extension.js:1012
 msgid "Calm"
 msgstr "Calm"
 
-#: src/extension.js:1025
+#: src/extension.js:1015
 msgid "Light air"
 msgstr ""
 
-#: src/extension.js:1028
+#: src/extension.js:1018
 msgid "Light breeze"
 msgstr "Briză ușoară"
 
-#: src/extension.js:1031
+#: src/extension.js:1021
 msgid "Gentle breeze"
 msgstr "Briză ușoară"
 
-#: src/extension.js:1034
+#: src/extension.js:1024
 msgid "Moderate breeze"
 msgstr "Briză moderată"
 
-#: src/extension.js:1037
+#: src/extension.js:1027
 msgid "Fresh breeze"
 msgstr "Briză moderată"
 
-#: src/extension.js:1040
+#: src/extension.js:1030
 msgid "Strong breeze"
 msgstr "Briză puternică"
 
-#: src/extension.js:1043
+#: src/extension.js:1033
 msgid "Moderate gale"
 msgstr "Furtună moderată"
 
-#: src/extension.js:1046
+#: src/extension.js:1036
 msgid "Fresh gale"
 msgstr "Furtună moderată"
 
-#: src/extension.js:1049
+#: src/extension.js:1039
 msgid "Strong gale"
 msgstr "Furtună puternică"
 
-#: src/extension.js:1052
+#: src/extension.js:1042
 msgid "Storm"
 msgstr "Furtună"
 
-#: src/extension.js:1055
+#: src/extension.js:1045
 msgid "Violent storm"
 msgstr "Furtună puternică"
 
-#: src/extension.js:1058
+#: src/extension.js:1048
 msgid "Hurricane"
 msgstr "Uragan"
 
-#: src/extension.js:1062
+#: src/extension.js:1052
 msgid "Sunday"
 msgstr "Duminică"
 
-#: src/extension.js:1062
+#: src/extension.js:1052
 msgid "Monday"
 msgstr "Luni"
 
-#: src/extension.js:1062
+#: src/extension.js:1052
 msgid "Tuesday"
 msgstr "Marți"
 
-#: src/extension.js:1062
+#: src/extension.js:1052
 msgid "Wednesday"
 msgstr "Miercuri"
 
-#: src/extension.js:1062
+#: src/extension.js:1052
 msgid "Thursday"
 msgstr "Joi"
 
-#: src/extension.js:1062
+#: src/extension.js:1052
 msgid "Friday"
 msgstr "Vineri"
 
-#: src/extension.js:1062
+#: src/extension.js:1052
 msgid "Saturday"
 msgstr "Sâmbătă"
 
-#: src/extension.js:1068
+#: src/extension.js:1058
 msgid "N"
 msgstr ""
 
-#: src/extension.js:1068
+#: src/extension.js:1058
 msgid "NE"
 msgstr ""
 
-#: src/extension.js:1068
+#: src/extension.js:1058
 msgid "E"
 msgstr ""
 
-#: src/extension.js:1068
+#: src/extension.js:1058
 msgid "SE"
 msgstr ""
 
-#: src/extension.js:1068
+#: src/extension.js:1058
 msgid "S"
 msgstr ""
 
-#: src/extension.js:1068
+#: src/extension.js:1058
 msgid "SW"
 msgstr ""
 
-#: src/extension.js:1068
+#: src/extension.js:1058
 msgid "W"
 msgstr ""
 
-#: src/extension.js:1068
+#: src/extension.js:1058
 msgid "NW"
 msgstr ""
 
-#: src/extension.js:1152 src/extension.js:1161
+#: src/extension.js:1136 src/extension.js:1145
 msgid "hPa"
 msgstr ""
 
-#: src/extension.js:1156
+#: src/extension.js:1140
 msgid "inHg"
 msgstr ""
 
-#: src/extension.js:1166
+#: src/extension.js:1150
 msgid "bar"
 msgstr ""
 
-#: src/extension.js:1171
+#: src/extension.js:1155
 msgid "Pa"
 msgstr ""
 
-#: src/extension.js:1176
+#: src/extension.js:1160
 msgid "kPa"
 msgstr ""
 
-#: src/extension.js:1181
+#: src/extension.js:1165
 msgid "atm"
 msgstr ""
 
-#: src/extension.js:1186
+#: src/extension.js:1170
 msgid "at"
 msgstr ""
 
-#: src/extension.js:1191
+#: src/extension.js:1175
 msgid "Torr"
 msgstr ""
 
-#: src/extension.js:1196
+#: src/extension.js:1180
 msgid "psi"
 msgstr ""
 
-#: src/extension.js:1201
+#: src/extension.js:1185
 msgid "mmHg"
 msgstr ""
 
-#: src/extension.js:1206
+#: src/extension.js:1190
 msgid "mbar"
 msgstr ""
 
-#: src/extension.js:1250
+#: src/extension.js:1234
 msgid "m/s"
 msgstr ""
 
-#: src/extension.js:1254
+#: src/extension.js:1238
 msgid "mph"
 msgstr ""
 
-#: src/extension.js:1259
+#: src/extension.js:1243
 msgid "km/h"
 msgstr ""
 
-#: src/extension.js:1268
+#: src/extension.js:1252
 msgid "kn"
 msgstr ""
 
-#: src/extension.js:1273
+#: src/extension.js:1257
 msgid "ft/s"
 msgstr ""
 
-#: src/extension.js:1367
+#: src/extension.js:1351
 msgid "Loading ..."
 msgstr "Se încarcă ..."
 
-#: src/extension.js:1371
+#: src/extension.js:1355
 msgid "Please wait"
 msgstr "Așteptați"
 
-#: src/extension.js:1437
+#: src/extension.js:1421
 msgid "Feels Like:"
 msgstr ""
 
-#: src/extension.js:1441
+#: src/extension.js:1425
 msgid "Humidity:"
 msgstr "Umiditate:"
 
-#: src/extension.js:1445
+#: src/extension.js:1429
 msgid "Pressure:"
 msgstr "Presiune:"
 
-#: src/extension.js:1449
+#: src/extension.js:1433
 msgid "Wind:"
 msgstr "Vânt:"
 
-#: src/extension.js:1453
+#: src/extension.js:1437
 msgid "Gusts:"
 msgstr ""
 
-#: src/openweathermap_org.js:148
+#: src/openweathermap_org.js:156
 msgid "Thunderstorm with light rain"
 msgstr "Furtună cu ploaie ușoară"
 
-#: src/openweathermap_org.js:150
+#: src/openweathermap_org.js:158
 msgid "Thunderstorm with rain"
 msgstr "Furtună"
 
-#: src/openweathermap_org.js:152
+#: src/openweathermap_org.js:160
 msgid "Thunderstorm with heavy rain"
 msgstr "Furtună cu ploaie puternică"
 
-#: src/openweathermap_org.js:154
+#: src/openweathermap_org.js:162
 msgid "Light thunderstorm"
 msgstr "Furtună moderată"
 
-#: src/openweathermap_org.js:156
+#: src/openweathermap_org.js:164
 msgid "Thunderstorm"
 msgstr "Furtună"
 
-#: src/openweathermap_org.js:158
+#: src/openweathermap_org.js:166
 msgid "Heavy thunderstorm"
 msgstr "Furtună puternică"
 
-#: src/openweathermap_org.js:160
+#: src/openweathermap_org.js:168
 msgid "Ragged thunderstorm"
 msgstr "Furtuni izolate"
 
-#: src/openweathermap_org.js:162
+#: src/openweathermap_org.js:170
 msgid "Thunderstorm with light drizzle"
 msgstr "Furtună cu burniță"
 
-#: src/openweathermap_org.js:164
+#: src/openweathermap_org.js:172
 msgid "Thunderstorm with drizzle"
 msgstr "Furtună cu burniță"
 
-#: src/openweathermap_org.js:166
+#: src/openweathermap_org.js:174
 msgid "Thunderstorm with heavy drizzle"
 msgstr "Furtună cu burniță"
 
-#: src/openweathermap_org.js:168
+#: src/openweathermap_org.js:176
 msgid "Light intensity drizzle"
 msgstr "Burniță ușoară"
 
-#: src/openweathermap_org.js:170
+#: src/openweathermap_org.js:178
 msgid "Drizzle"
 msgstr "Burniță"
 
-#: src/openweathermap_org.js:172
+#: src/openweathermap_org.js:180
 msgid "Heavy intensity drizzle"
 msgstr "Burniță intensă"
 
-#: src/openweathermap_org.js:174
+#: src/openweathermap_org.js:182
 msgid "Light intensity drizzle rain"
 msgstr "Burniță ușoară"
 
-#: src/openweathermap_org.js:176
+#: src/openweathermap_org.js:184
 msgid "Drizzle rain"
 msgstr "Burniță"
 
-#: src/openweathermap_org.js:178
+#: src/openweathermap_org.js:186
 msgid "Heavy intensity drizzle rain"
 msgstr "Burniță intensă"
 
-#: src/openweathermap_org.js:180
+#: src/openweathermap_org.js:188
 msgid "Shower rain and drizzle"
 msgstr "Ploaie"
 
-#: src/openweathermap_org.js:182
+#: src/openweathermap_org.js:190
 msgid "Heavy shower rain and drizzle"
 msgstr "Ploaie puternică"
 
-#: src/openweathermap_org.js:184
+#: src/openweathermap_org.js:192
 msgid "Shower drizzle"
 msgstr "Burniță rece"
 
-#: src/openweathermap_org.js:186
+#: src/openweathermap_org.js:194
 msgid "Light rain"
 msgstr "Ploaie ușoară"
 
-#: src/openweathermap_org.js:188
+#: src/openweathermap_org.js:196
 msgid "Moderate rain"
 msgstr "Ploaie moderată"
 
-#: src/openweathermap_org.js:190
+#: src/openweathermap_org.js:198
 msgid "Heavy intensity rain"
 msgstr "Ploaie puternică"
 
-#: src/openweathermap_org.js:192
+#: src/openweathermap_org.js:200
 msgid "Very heavy rain"
 msgstr "Ploaie foarte puternică"
 
-#: src/openweathermap_org.js:194
+#: src/openweathermap_org.js:202
 msgid "Extreme rain"
 msgstr "Ploaie foarte puternică"
 
-#: src/openweathermap_org.js:196
+#: src/openweathermap_org.js:204
 msgid "Freezing rain"
 msgstr "Ploaie rece"
 
-#: src/openweathermap_org.js:198
+#: src/openweathermap_org.js:206
 msgid "Light intensity shower rain"
 msgstr "Averse ușoare"
 
-#: src/openweathermap_org.js:200
+#: src/openweathermap_org.js:208
 msgid "Shower rain"
 msgstr "Averse"
 
-#: src/openweathermap_org.js:202
+#: src/openweathermap_org.js:210
 msgid "Heavy intensity shower rain"
 msgstr "Averse puternice"
 
-#: src/openweathermap_org.js:204
+#: src/openweathermap_org.js:212
 msgid "Ragged shower rain"
 msgstr "Averse răzlețe"
 
-#: src/openweathermap_org.js:206
+#: src/openweathermap_org.js:214
 msgid "Light snow"
 msgstr "Ninsoare ușoară"
 
-#: src/openweathermap_org.js:208
+#: src/openweathermap_org.js:216
 msgid "Snow"
 msgstr "Ninsoare"
 
-#: src/openweathermap_org.js:210
+#: src/openweathermap_org.js:218
 msgid "Heavy snow"
 msgstr "Ninsoare abundentă"
 
-#: src/openweathermap_org.js:212
+#: src/openweathermap_org.js:220
 msgid "Sleet"
 msgstr "Lapoviță"
 
-#: src/openweathermap_org.js:214
+#: src/openweathermap_org.js:222
 msgid "Shower sleet"
 msgstr "Lapoviță"
 
-#: src/openweathermap_org.js:216
+#: src/openweathermap_org.js:224
 msgid "Light rain and snow"
 msgstr "Lapoviță"
 
-#: src/openweathermap_org.js:218
+#: src/openweathermap_org.js:226
 msgid "Rain and snow"
 msgstr "Lapoviță"
 
-#: src/openweathermap_org.js:220
+#: src/openweathermap_org.js:228
 msgid "Light shower snow"
 msgstr "Ninsoare ușoară în averse"
 
-#: src/openweathermap_org.js:222
+#: src/openweathermap_org.js:230
 msgid "Shower snow"
 msgstr "Ninsoare"
 
-#: src/openweathermap_org.js:224
+#: src/openweathermap_org.js:232
 msgid "Heavy shower snow"
 msgstr "Ninsoare abundentă"
 
-#: src/openweathermap_org.js:226
+#: src/openweathermap_org.js:234
 msgid "Mist"
 msgstr "Ceață"
 
-#: src/openweathermap_org.js:228
+#: src/openweathermap_org.js:236
 msgid "Smoke"
 msgstr "Ceață"
 
-#: src/openweathermap_org.js:230
+#: src/openweathermap_org.js:238
 msgid "Haze"
 msgstr "Ceață"
 
-#: src/openweathermap_org.js:232
+#: src/openweathermap_org.js:240
 msgid "Sand/Dust Whirls"
 msgstr ""
 
-#: src/openweathermap_org.js:234
+#: src/openweathermap_org.js:242
 msgid "Fog"
 msgstr "Ceață"
 
-#: src/openweathermap_org.js:236
+#: src/openweathermap_org.js:244
 msgid "Sand"
 msgstr "Nisip"
 
-#: src/openweathermap_org.js:238
+#: src/openweathermap_org.js:246
 msgid "Dust"
 msgstr "Praf"
 
-#: src/openweathermap_org.js:240
+#: src/openweathermap_org.js:248
 msgid "VOLCANIC ASH"
 msgstr "Cenușă vulcanică"
 
-#: src/openweathermap_org.js:242
+#: src/openweathermap_org.js:250
 msgid "SQUALLS"
 msgstr "Vijelie"
 
-#: src/openweathermap_org.js:244
+#: src/openweathermap_org.js:252
 msgid "TORNADO"
 msgstr "Tornadă"
 
-#: src/openweathermap_org.js:246
+#: src/openweathermap_org.js:254
 msgid "Sky is clear"
 msgstr "Cer senin"
 
-#: src/openweathermap_org.js:248
+#: src/openweathermap_org.js:256
 msgid "Few clouds"
 msgstr "Câțiva nori"
 
-#: src/openweathermap_org.js:250
+#: src/openweathermap_org.js:258
 msgid "Scattered clouds"
 msgstr "Nori răzleți"
 
-#: src/openweathermap_org.js:252
+#: src/openweathermap_org.js:260
 msgid "Broken clouds"
 msgstr "Parțial noros"
 
-#: src/openweathermap_org.js:254
+#: src/openweathermap_org.js:262
 msgid "Overcast clouds"
 msgstr "Majoritar înnorat"
 
-#: src/openweathermap_org.js:256
+#: src/openweathermap_org.js:264
 msgid "Not available"
 msgstr "Indisponibil"
 
-#: src/openweathermap_org.js:317
+#: src/openweathermap_org.js:325
 msgid "Yesterday"
 msgstr "Ieri"
 
-#: src/openweathermap_org.js:319
+#: src/openweathermap_org.js:327
 #, fuzzy, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
@@ -536,15 +536,15 @@ msgstr[0] "%s zile în urmă"
 msgstr[1] "%s zile în urmă"
 msgstr[2] "%s zile în urmă"
 
-#: src/openweathermap_org.js:334 src/openweathermap_org.js:336
+#: src/openweathermap_org.js:342 src/openweathermap_org.js:344
 msgid ", "
 msgstr ""
 
-#: src/openweathermap_org.js:352
+#: src/openweathermap_org.js:360
 msgid "?"
 msgstr ""
 
-#: src/openweathermap_org.js:453
+#: src/openweathermap_org.js:461
 msgid "Tomorrow"
 msgstr "Mâine"
 

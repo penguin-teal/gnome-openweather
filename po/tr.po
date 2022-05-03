@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-shell-extension-openweather\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-30 23:07-0300\n"
+"POT-Creation-Date: 2022-05-03 17:07-0300\n"
 "PO-Revision-Date: 2018-10-17 20:28+0300\n"
 "Last-Translator: Orhan Engin OKAY <orhanenginokay@hotmail.com>\n"
 "Language-Team: Turkish\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.0.6\n"
 
-#: src/extension.js:186
+#: src/extension.js:187
 msgid "..."
 msgstr "..."
 
-#: src/extension.js:372
+#: src/extension.js:369
 msgid ""
 "Openweathermap.org does not work without an api-key.\n"
 "Either set the switch to use the extensions default key in the preferences "
@@ -34,516 +34,516 @@ msgstr ""
 "openweathermap.org/appid adresine kayıt olup kendi kişisel anahtarınızı "
 "ekleyebilirsiniz."
 
-#: src/extension.js:479 src/extension.js:491
+#: src/extension.js:476 src/extension.js:488
 #, javascript-format
 msgid "Can not connect to %s"
 msgstr " %s bağlanılamadı."
 
-#: src/extension.js:803
+#: src/extension.js:800
 msgid "Locations"
 msgstr "Konumlar"
 
-#: src/extension.js:815
+#: src/extension.js:812
 msgid "Reload Weather Information"
 msgstr "Hava Bilgisini Geri Yükle"
 
-#: src/extension.js:830
+#: src/extension.js:827
 msgid "Weather data provided by:"
 msgstr "Hava durumu veri sağlayıcısı:"
 
-#: src/extension.js:840
+#: src/extension.js:837
 #, javascript-format
 msgid "Can not open %s"
 msgstr "%s açılamıyor"
 
-#: src/extension.js:847
+#: src/extension.js:844
 msgid "Weather Settings"
 msgstr "Hava Durumu Ayarları"
 
-#: src/extension.js:898
+#: src/extension.js:895
 msgid "Invalid city"
 msgstr "Geçersiz Şehir"
 
-#: src/extension.js:909
+#: src/extension.js:906
 msgid "Invalid location! Please try to recreate it."
 msgstr "Geçersiz konum! Lütfen yeniden oluşturmayı deneyin."
 
-#: src/extension.js:971
+#: src/extension.js:961
 msgid "°F"
 msgstr "°F"
 
-#: src/extension.js:973
+#: src/extension.js:963
 msgid "K"
 msgstr "K"
 
-#: src/extension.js:975
+#: src/extension.js:965
 msgid "°Ra"
 msgstr "°Ra"
 
-#: src/extension.js:977
+#: src/extension.js:967
 msgid "°Ré"
 msgstr "°Ré"
 
-#: src/extension.js:979
+#: src/extension.js:969
 msgid "°Rø"
 msgstr "°Rø"
 
-#: src/extension.js:981
+#: src/extension.js:971
 msgid "°De"
 msgstr "°De"
 
-#: src/extension.js:983
+#: src/extension.js:973
 msgid "°N"
 msgstr "°N"
 
-#: src/extension.js:985
+#: src/extension.js:975
 msgid "°C"
 msgstr "°C"
 
-#: src/extension.js:1022
+#: src/extension.js:1012
 msgid "Calm"
 msgstr "Sakin"
 
-#: src/extension.js:1025
+#: src/extension.js:1015
 msgid "Light air"
 msgstr "Hafif Hava"
 
-#: src/extension.js:1028
+#: src/extension.js:1018
 msgid "Light breeze"
 msgstr "Hafif Esinti"
 
-#: src/extension.js:1031
+#: src/extension.js:1021
 msgid "Gentle breeze"
 msgstr "Hafif Esinti"
 
-#: src/extension.js:1034
+#: src/extension.js:1024
 msgid "Moderate breeze"
 msgstr "Ilımlı Esinti"
 
-#: src/extension.js:1037
+#: src/extension.js:1027
 msgid "Fresh breeze"
 msgstr "Serin Esinti"
 
-#: src/extension.js:1040
+#: src/extension.js:1030
 msgid "Strong breeze"
 msgstr "Güçlü Esinti"
 
-#: src/extension.js:1043
+#: src/extension.js:1033
 msgid "Moderate gale"
 msgstr "Ilımlı Rüzgar"
 
-#: src/extension.js:1046
+#: src/extension.js:1036
 msgid "Fresh gale"
 msgstr "Serin Rüzgar"
 
-#: src/extension.js:1049
+#: src/extension.js:1039
 msgid "Strong gale"
 msgstr "Güçlü Rüzgar"
 
-#: src/extension.js:1052
+#: src/extension.js:1042
 msgid "Storm"
 msgstr "Fırtına"
 
-#: src/extension.js:1055
+#: src/extension.js:1045
 msgid "Violent storm"
 msgstr "Şiddetli Fırtına"
 
-#: src/extension.js:1058
+#: src/extension.js:1048
 msgid "Hurricane"
 msgstr "Kasırga"
 
-#: src/extension.js:1062
+#: src/extension.js:1052
 msgid "Sunday"
 msgstr "Pazar"
 
-#: src/extension.js:1062
+#: src/extension.js:1052
 msgid "Monday"
 msgstr "Pazartesi"
 
-#: src/extension.js:1062
+#: src/extension.js:1052
 msgid "Tuesday"
 msgstr "Salı"
 
-#: src/extension.js:1062
+#: src/extension.js:1052
 msgid "Wednesday"
 msgstr "Çarşamba"
 
-#: src/extension.js:1062
+#: src/extension.js:1052
 msgid "Thursday"
 msgstr "Perşembe"
 
-#: src/extension.js:1062
+#: src/extension.js:1052
 msgid "Friday"
 msgstr "Cuma"
 
-#: src/extension.js:1062
+#: src/extension.js:1052
 msgid "Saturday"
 msgstr "Çumartesi"
 
-#: src/extension.js:1068
+#: src/extension.js:1058
 msgid "N"
 msgstr "K"
 
-#: src/extension.js:1068
+#: src/extension.js:1058
 msgid "NE"
 msgstr "KD"
 
-#: src/extension.js:1068
+#: src/extension.js:1058
 msgid "E"
 msgstr "D"
 
-#: src/extension.js:1068
+#: src/extension.js:1058
 msgid "SE"
 msgstr "GD"
 
-#: src/extension.js:1068
+#: src/extension.js:1058
 msgid "S"
 msgstr "G"
 
-#: src/extension.js:1068
+#: src/extension.js:1058
 msgid "SW"
 msgstr "GB"
 
-#: src/extension.js:1068
+#: src/extension.js:1058
 msgid "W"
 msgstr "B"
 
-#: src/extension.js:1068
+#: src/extension.js:1058
 msgid "NW"
 msgstr "KB"
 
-#: src/extension.js:1152 src/extension.js:1161
+#: src/extension.js:1136 src/extension.js:1145
 msgid "hPa"
 msgstr "hPa"
 
-#: src/extension.js:1156
+#: src/extension.js:1140
 msgid "inHg"
 msgstr "inHg"
 
-#: src/extension.js:1166
+#: src/extension.js:1150
 msgid "bar"
 msgstr "bar"
 
-#: src/extension.js:1171
+#: src/extension.js:1155
 msgid "Pa"
 msgstr "Pa"
 
-#: src/extension.js:1176
+#: src/extension.js:1160
 msgid "kPa"
 msgstr "kPa"
 
-#: src/extension.js:1181
+#: src/extension.js:1165
 msgid "atm"
 msgstr "atm"
 
-#: src/extension.js:1186
+#: src/extension.js:1170
 msgid "at"
 msgstr "at"
 
-#: src/extension.js:1191
+#: src/extension.js:1175
 msgid "Torr"
 msgstr "Torr"
 
-#: src/extension.js:1196
+#: src/extension.js:1180
 msgid "psi"
 msgstr "psi"
 
-#: src/extension.js:1201
+#: src/extension.js:1185
 msgid "mmHg"
 msgstr "mmHg"
 
-#: src/extension.js:1206
+#: src/extension.js:1190
 msgid "mbar"
 msgstr "mbar"
 
-#: src/extension.js:1250
+#: src/extension.js:1234
 msgid "m/s"
 msgstr "m/s"
 
-#: src/extension.js:1254
+#: src/extension.js:1238
 msgid "mph"
 msgstr "mph"
 
-#: src/extension.js:1259
+#: src/extension.js:1243
 msgid "km/h"
 msgstr "km/h"
 
-#: src/extension.js:1268
+#: src/extension.js:1252
 msgid "kn"
 msgstr "kn"
 
-#: src/extension.js:1273
+#: src/extension.js:1257
 msgid "ft/s"
 msgstr "kn"
 
-#: src/extension.js:1367
+#: src/extension.js:1351
 msgid "Loading ..."
 msgstr "Yükleniyor ..."
 
-#: src/extension.js:1371
+#: src/extension.js:1355
 msgid "Please wait"
 msgstr "Lütfen bekleyin"
 
-#: src/extension.js:1437
+#: src/extension.js:1421
 msgid "Feels Like:"
 msgstr ""
 
-#: src/extension.js:1441
+#: src/extension.js:1425
 msgid "Humidity:"
 msgstr "Nem:"
 
-#: src/extension.js:1445
+#: src/extension.js:1429
 msgid "Pressure:"
 msgstr "Basınç:"
 
-#: src/extension.js:1449
+#: src/extension.js:1433
 msgid "Wind:"
 msgstr "Rüzgar:"
 
-#: src/extension.js:1453
+#: src/extension.js:1437
 msgid "Gusts:"
 msgstr ""
 
-#: src/openweathermap_org.js:148
+#: src/openweathermap_org.js:156
 msgid "Thunderstorm with light rain"
 msgstr "Gök Gürültülü Hafif Yağış"
 
-#: src/openweathermap_org.js:150
+#: src/openweathermap_org.js:158
 msgid "Thunderstorm with rain"
 msgstr "Gök Gürültülü Yağış"
 
-#: src/openweathermap_org.js:152
+#: src/openweathermap_org.js:160
 msgid "Thunderstorm with heavy rain"
 msgstr "Gök Gürültülü Sağnak Yağış"
 
-#: src/openweathermap_org.js:154
+#: src/openweathermap_org.js:162
 msgid "Light thunderstorm"
 msgstr "Hafif Fırtına"
 
-#: src/openweathermap_org.js:156
+#: src/openweathermap_org.js:164
 msgid "Thunderstorm"
 msgstr "Fırtına"
 
-#: src/openweathermap_org.js:158
+#: src/openweathermap_org.js:166
 msgid "Heavy thunderstorm"
 msgstr "Yoğun Fırtına"
 
-#: src/openweathermap_org.js:160
+#: src/openweathermap_org.js:168
 msgid "Ragged thunderstorm"
 msgstr "Düzensiz Fırtına"
 
-#: src/openweathermap_org.js:162
+#: src/openweathermap_org.js:170
 msgid "Thunderstorm with light drizzle"
 msgstr "Gök Gürültülü Hafif Çiseleme"
 
-#: src/openweathermap_org.js:164
+#: src/openweathermap_org.js:172
 msgid "Thunderstorm with drizzle"
 msgstr "Gök Gürültülü Çiseleme"
 
-#: src/openweathermap_org.js:166
+#: src/openweathermap_org.js:174
 msgid "Thunderstorm with heavy drizzle"
 msgstr "Gök Gürültülü Yoğun Çiseleme"
 
-#: src/openweathermap_org.js:168
+#: src/openweathermap_org.js:176
 msgid "Light intensity drizzle"
 msgstr "Hafif Yoğunlukta Çiseleme"
 
-#: src/openweathermap_org.js:170
+#: src/openweathermap_org.js:178
 msgid "Drizzle"
 msgstr "Çiseleme"
 
-#: src/openweathermap_org.js:172
+#: src/openweathermap_org.js:180
 msgid "Heavy intensity drizzle"
 msgstr "Yoğun Yoğunlukta Çiseleme"
 
-#: src/openweathermap_org.js:174
+#: src/openweathermap_org.js:182
 msgid "Light intensity drizzle rain"
 msgstr "Hafif Yoğunlukla Çiseleyen Yağmur"
 
-#: src/openweathermap_org.js:176
+#: src/openweathermap_org.js:184
 msgid "Drizzle rain"
 msgstr "Çiseleyen Yağmur"
 
-#: src/openweathermap_org.js:178
+#: src/openweathermap_org.js:186
 msgid "Heavy intensity drizzle rain"
 msgstr "Yoğun Yoğunlukla Çiseleyen Yağmur"
 
-#: src/openweathermap_org.js:180
+#: src/openweathermap_org.js:188
 msgid "Shower rain and drizzle"
 msgstr "Hafif Yağmur ve Çiseleme"
 
-#: src/openweathermap_org.js:182
+#: src/openweathermap_org.js:190
 msgid "Heavy shower rain and drizzle"
 msgstr "Sağnak Yağmur ve Çiseleme"
 
-#: src/openweathermap_org.js:184
+#: src/openweathermap_org.js:192
 msgid "Shower drizzle"
 msgstr "Hafif Çiseleme"
 
-#: src/openweathermap_org.js:186
+#: src/openweathermap_org.js:194
 msgid "Light rain"
 msgstr "Hafif Yağmur"
 
-#: src/openweathermap_org.js:188
+#: src/openweathermap_org.js:196
 msgid "Moderate rain"
 msgstr "Ilımlı Yağmur"
 
-#: src/openweathermap_org.js:190
+#: src/openweathermap_org.js:198
 msgid "Heavy intensity rain"
 msgstr "Sağnak Yoğunlukta Yağmur"
 
-#: src/openweathermap_org.js:192
+#: src/openweathermap_org.js:200
 msgid "Very heavy rain"
 msgstr "Çok Şiddetli Yağmur"
 
-#: src/openweathermap_org.js:194
+#: src/openweathermap_org.js:202
 msgid "Extreme rain"
 msgstr "Çok Sağnak Yağmur"
 
-#: src/openweathermap_org.js:196
+#: src/openweathermap_org.js:204
 msgid "Freezing rain"
 msgstr "Dondurucu Yağmur"
 
-#: src/openweathermap_org.js:198
+#: src/openweathermap_org.js:206
 msgid "Light intensity shower rain"
 msgstr "Hafif Yoğuklukta Çiseleyen Yağmur"
 
-#: src/openweathermap_org.js:200
+#: src/openweathermap_org.js:208
 msgid "Shower rain"
 msgstr "Hafif Yağmur"
 
-#: src/openweathermap_org.js:202
+#: src/openweathermap_org.js:210
 msgid "Heavy intensity shower rain"
 msgstr "Yoğu Yoğunlukta Sağnak Yağmur"
 
-#: src/openweathermap_org.js:204
+#: src/openweathermap_org.js:212
 msgid "Ragged shower rain"
 msgstr "Düzensiz Hafif Yağmur"
 
-#: src/openweathermap_org.js:206
+#: src/openweathermap_org.js:214
 msgid "Light snow"
 msgstr "Hafif Kar"
 
-#: src/openweathermap_org.js:208
+#: src/openweathermap_org.js:216
 msgid "Snow"
 msgstr "Kar"
 
-#: src/openweathermap_org.js:210
+#: src/openweathermap_org.js:218
 msgid "Heavy snow"
 msgstr "Yoğun Kar"
 
-#: src/openweathermap_org.js:212
+#: src/openweathermap_org.js:220
 msgid "Sleet"
 msgstr "Sulu Kar"
 
-#: src/openweathermap_org.js:214
+#: src/openweathermap_org.js:222
 msgid "Shower sleet"
 msgstr "Hafif Yağışlı Sulu Kar"
 
-#: src/openweathermap_org.js:216
+#: src/openweathermap_org.js:224
 msgid "Light rain and snow"
 msgstr "Hafif Yağış ve Kar"
 
-#: src/openweathermap_org.js:218
+#: src/openweathermap_org.js:226
 msgid "Rain and snow"
 msgstr "Yağış ve Kar"
 
-#: src/openweathermap_org.js:220
+#: src/openweathermap_org.js:228
 msgid "Light shower snow"
 msgstr "Hafif Kar Yağışı"
 
-#: src/openweathermap_org.js:222
+#: src/openweathermap_org.js:230
 msgid "Shower snow"
 msgstr "Kar Yağışı"
 
-#: src/openweathermap_org.js:224
+#: src/openweathermap_org.js:232
 msgid "Heavy shower snow"
 msgstr "Yoğun Kar Yağışı"
 
-#: src/openweathermap_org.js:226
+#: src/openweathermap_org.js:234
 msgid "Mist"
 msgstr "Sis"
 
-#: src/openweathermap_org.js:228
+#: src/openweathermap_org.js:236
 msgid "Smoke"
 msgstr "Duman"
 
-#: src/openweathermap_org.js:230
+#: src/openweathermap_org.js:238
 msgid "Haze"
 msgstr "Pus"
 
-#: src/openweathermap_org.js:232
+#: src/openweathermap_org.js:240
 msgid "Sand/Dust Whirls"
 msgstr "Kum/Toz Hortumu"
 
-#: src/openweathermap_org.js:234
+#: src/openweathermap_org.js:242
 msgid "Fog"
 msgstr "Sis"
 
-#: src/openweathermap_org.js:236
+#: src/openweathermap_org.js:244
 msgid "Sand"
 msgstr "Kum"
 
-#: src/openweathermap_org.js:238
+#: src/openweathermap_org.js:246
 msgid "Dust"
 msgstr "Toz"
 
-#: src/openweathermap_org.js:240
+#: src/openweathermap_org.js:248
 msgid "VOLCANIC ASH"
 msgstr "VOLKANİK KÜL"
 
-#: src/openweathermap_org.js:242
+#: src/openweathermap_org.js:250
 msgid "SQUALLS"
 msgstr "BAĞRIŞMA"
 
-#: src/openweathermap_org.js:244
+#: src/openweathermap_org.js:252
 msgid "TORNADO"
 msgstr "HORTUM"
 
-#: src/openweathermap_org.js:246
+#: src/openweathermap_org.js:254
 msgid "Sky is clear"
 msgstr "Temiz Hava"
 
-#: src/openweathermap_org.js:248
+#: src/openweathermap_org.js:256
 msgid "Few clouds"
 msgstr "Az Bulutlu"
 
-#: src/openweathermap_org.js:250
+#: src/openweathermap_org.js:258
 msgid "Scattered clouds"
 msgstr "Dağınık Bulutlu"
 
-#: src/openweathermap_org.js:252
+#: src/openweathermap_org.js:260
 msgid "Broken clouds"
 msgstr "Parçalı Bulutlu"
 
-#: src/openweathermap_org.js:254
+#: src/openweathermap_org.js:262
 msgid "Overcast clouds"
 msgstr "Bulutlu"
 
-#: src/openweathermap_org.js:256
+#: src/openweathermap_org.js:264
 msgid "Not available"
 msgstr "Mevcut değil"
 
-#: src/openweathermap_org.js:317
+#: src/openweathermap_org.js:325
 msgid "Yesterday"
 msgstr "Dün"
 
-#: src/openweathermap_org.js:319
+#: src/openweathermap_org.js:327
 #, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
 msgstr[0] " %d gün önce"
 msgstr[1] "Vor %d Tagen"
 
-#: src/openweathermap_org.js:334 src/openweathermap_org.js:336
+#: src/openweathermap_org.js:342 src/openweathermap_org.js:344
 msgid ", "
 msgstr ", "
 
-#: src/openweathermap_org.js:352
+#: src/openweathermap_org.js:360
 msgid "?"
 msgstr ""
 
-#: src/openweathermap_org.js:453
+#: src/openweathermap_org.js:461
 msgid "Tomorrow"
 msgstr "Yarın"
 
