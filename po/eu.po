@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-shell-extension-openweather 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-03 17:07-0300\n"
+"POT-Creation-Date: 2022-05-04 14:46-0300\n"
 "PO-Revision-Date: 2017-02-04 20:25+0100\n"
 "Last-Translator: Asier Sarasua Garmendia <asier.sarasua@gmail.com>\n"
 "Language-Team: Librezale <librezale@librezale.eus>\n"
@@ -39,7 +39,7 @@ msgstr ""
 msgid "Can not connect to %s"
 msgstr "Ezin da %s konektatu"
 
-#: src/extension.js:800
+#: src/extension.js:800 src/weather-settings.ui:302
 msgid "Locations"
 msgstr "Kokapenak"
 
@@ -60,7 +60,7 @@ msgstr "Ezin da %s ireki"
 msgid "Weather Settings"
 msgstr "Eguraldi-ezarpenak"
 
-#: src/extension.js:895
+#: src/extension.js:895 src/prefs.js:1061
 msgid "Invalid city"
 msgstr "Baliogabeko hiria"
 
@@ -68,35 +68,35 @@ msgstr "Baliogabeko hiria"
 msgid "Invalid location! Please try to recreate it."
 msgstr "Baliogabeko kokapena! Saiatu birsortzen."
 
-#: src/extension.js:961
+#: src/extension.js:961 src/weather-settings.ui:574
 msgid "°F"
 msgstr "°F"
 
-#: src/extension.js:963
+#: src/extension.js:963 src/weather-settings.ui:575
 msgid "K"
 msgstr "K"
 
-#: src/extension.js:965
+#: src/extension.js:965 src/weather-settings.ui:576
 msgid "°Ra"
 msgstr "°Ra"
 
-#: src/extension.js:967
+#: src/extension.js:967 src/weather-settings.ui:577
 msgid "°Ré"
 msgstr "°Ré"
 
-#: src/extension.js:969
+#: src/extension.js:969 src/weather-settings.ui:578
 msgid "°Rø"
 msgstr "°Rø"
 
-#: src/extension.js:971
+#: src/extension.js:971 src/weather-settings.ui:579
 msgid "°De"
 msgstr "°De"
 
-#: src/extension.js:973
+#: src/extension.js:973 src/weather-settings.ui:580
 msgid "°N"
 msgstr "°N"
 
-#: src/extension.js:975
+#: src/extension.js:975 src/weather-settings.ui:573
 msgid "°C"
 msgstr "°C"
 
@@ -212,67 +212,67 @@ msgstr "M"
 msgid "NW"
 msgstr "IM"
 
-#: src/extension.js:1136 src/extension.js:1145
+#: src/extension.js:1136 src/extension.js:1145 src/weather-settings.ui:607
 msgid "hPa"
 msgstr "hPa"
 
-#: src/extension.js:1140
+#: src/extension.js:1140 src/weather-settings.ui:608
 msgid "inHg"
 msgstr "inHg"
 
-#: src/extension.js:1150
+#: src/extension.js:1150 src/weather-settings.ui:609
 msgid "bar"
 msgstr "bar"
 
-#: src/extension.js:1155
+#: src/extension.js:1155 src/weather-settings.ui:610
 msgid "Pa"
 msgstr "Pa"
 
-#: src/extension.js:1160
+#: src/extension.js:1160 src/weather-settings.ui:611
 msgid "kPa"
 msgstr "kPa"
 
-#: src/extension.js:1165
+#: src/extension.js:1165 src/weather-settings.ui:612
 msgid "atm"
 msgstr "atm"
 
-#: src/extension.js:1170
+#: src/extension.js:1170 src/weather-settings.ui:613
 msgid "at"
 msgstr "at"
 
-#: src/extension.js:1175
+#: src/extension.js:1175 src/weather-settings.ui:614
 msgid "Torr"
 msgstr "Torr"
 
-#: src/extension.js:1180
+#: src/extension.js:1180 src/weather-settings.ui:615
 msgid "psi"
 msgstr "psi"
 
-#: src/extension.js:1185
+#: src/extension.js:1185 src/weather-settings.ui:616
 msgid "mmHg"
 msgstr "mmHg"
 
-#: src/extension.js:1190
+#: src/extension.js:1190 src/weather-settings.ui:617
 msgid "mbar"
 msgstr "mbar"
 
-#: src/extension.js:1234
+#: src/extension.js:1234 src/weather-settings.ui:593
 msgid "m/s"
 msgstr "m/s"
 
-#: src/extension.js:1238
+#: src/extension.js:1238 src/weather-settings.ui:592
 msgid "mph"
 msgstr "mph"
 
-#: src/extension.js:1243
+#: src/extension.js:1243 src/weather-settings.ui:591
 msgid "km/h"
 msgstr "km/h"
 
-#: src/extension.js:1252
+#: src/extension.js:1252 src/weather-settings.ui:594
 msgid "kn"
 msgstr "kn"
 
-#: src/extension.js:1257
+#: src/extension.js:1257 src/weather-settings.ui:595
 msgid "ft/s"
 msgstr "ft/s"
 
@@ -547,6 +547,292 @@ msgstr ""
 msgid "Tomorrow"
 msgstr "Bihar"
 
+#: src/prefs.js:208
+#, fuzzy
+msgid "Searching ..."
+msgstr "Kargatzen..."
+
+#: src/prefs.js:220 src/prefs.js:258 src/prefs.js:289 src/prefs.js:293
+#, javascript-format
+msgid "Invalid data when searching for \"%s\""
+msgstr "Baliogabeko datuak \"%s\" bilatzean"
+
+#: src/prefs.js:225 src/prefs.js:265 src/prefs.js:296
+#, javascript-format
+msgid "\"%s\" not found"
+msgstr "\"%s\" ez da aurkitu"
+
+#: src/prefs.js:243
+#, fuzzy
+msgid "You need an AppKey to search on openmapquest."
+msgstr "developer.mapquest.com guneko AppKey pertsonala"
+
+#: src/prefs.js:244
+#, fuzzy
+msgid "Please visit https://developer.mapquest.com/ ."
+msgstr "developer.mapquest.com guneko AppKey pertsonala"
+
+#: src/prefs.js:259
+#, fuzzy
+msgid "Do you use a valid AppKey to search on openmapquest ?"
+msgstr "developer.mapquest.com guneko AppKey pertsonala"
+
+#: src/prefs.js:260
+#, fuzzy
+msgid "If not, please visit https://developer.mapquest.com/ ."
+msgstr "developer.mapquest.com guneko AppKey pertsonala"
+
+#: src/prefs.js:341
+msgid "Location"
+msgstr "Kokapena"
+
+#: src/prefs.js:352
+msgid "Provider"
+msgstr "Hornitzailea"
+
+#: src/prefs.js:362
+msgid "Result"
+msgstr ""
+
+#: src/prefs.js:549
+#, javascript-format
+msgid "Remove %s ?"
+msgstr "Kendu %s ?"
+
+#: src/prefs.js:562
+#, fuzzy
+msgid "No"
+msgstr "I"
+
+#: src/prefs.js:563
+msgid "Yes"
+msgstr ""
+
+#: src/prefs.js:1094
+msgid "default"
+msgstr "Lehenetsia"
+
+#: src/weather-settings.ui:29
+msgid "Edit name"
+msgstr "Editatu izena"
+
+#: src/weather-settings.ui:40 src/weather-settings.ui:56
+#: src/weather-settings.ui:183
+msgid "Clear entry"
+msgstr "Garbitu sarrera"
+
+#: src/weather-settings.ui:47
+msgid "Edit coordinates"
+msgstr "Editatu koordenatuak"
+
+#: src/weather-settings.ui:80 src/weather-settings.ui:216
+msgid "Cancel"
+msgstr "Utzi"
+
+#: src/weather-settings.ui:90 src/weather-settings.ui:226
+msgid "Save"
+msgstr "Gorde"
+
+#: src/weather-settings.ui:124
+msgid "Search Results"
+msgstr ""
+
+#: src/weather-settings.ui:161
+#, fuzzy
+msgid "Search By Location Or Coordinates"
+msgstr "Bilatu kokapenaren edo koordenatuen arabera"
+
+#: src/weather-settings.ui:184
+msgid "e.g. Vaiaku, Tuvalu or -8.5211767,179.1976747"
+msgstr "adib. Vaiaku, Tuvalu edo -8.5211767,179.1976747"
+
+#: src/weather-settings.ui:189
+msgid "Find"
+msgstr "Bilatu"
+
+#: src/weather-settings.ui:328
+#, fuzzy
+msgid "Choose default weather provider"
+msgstr "Hautatu eguraldi-hornitzaile lehenetsia"
+
+#: src/weather-settings.ui:339
+msgid "Personal Api key from openweathermap.org"
+msgstr "openweathermap.org guneko API gako pertsonala"
+
+#: src/weather-settings.ui:371
+msgid "Refresh timeout for current weather [min]"
+msgstr "Freskatze-denbora uneko eguraldirako [min]"
+
+#: src/weather-settings.ui:383
+msgid "Refresh timeout for weather forecast [min]"
+msgstr "Freskatze-denbora eguraldi-iragarpenerako [min]"
+
+#: src/weather-settings.ui:428
+msgid "Use extensions api-key for openweathermap.org"
+msgstr "Erabili hedapenaren API gakoa openweathermap.org gunerako"
+
+#: src/weather-settings.ui:437
+msgid ""
+"Switch off, if you have your own api-key for openweathermap.org and put it "
+"into the text-box below."
+msgstr ""
+"Desmarkatu, openweathermap.org gunean zure API gako propioa baduzu, eta "
+"ezarri hura azpiko testu-kutxan."
+
+#: src/weather-settings.ui:451
+msgid "Weather provider"
+msgstr "Eguraldi-hornitzailea"
+
+#: src/weather-settings.ui:475
+#, fuzzy
+msgid "Choose geolocation provider"
+msgstr "Hautatu geokokapenaren hornitzailea"
+
+#: src/weather-settings.ui:497
+msgid "Personal AppKey from developer.mapquest.com"
+msgstr "developer.mapquest.com guneko AppKey pertsonala"
+
+#: src/weather-settings.ui:521
+msgid "Geolocation provider"
+msgstr "Geokokapenaren hornitzailea"
+
+#: src/weather-settings.ui:545
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:62
+msgid "Temperature Unit"
+msgstr "Tenperatura-unitatea"
+
+#: src/weather-settings.ui:554
+msgid "Wind Speed Unit"
+msgstr "Haize-abiaduraren unitatea"
+
+#: src/weather-settings.ui:563
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:66
+msgid "Pressure Unit"
+msgstr "Presio-unitatea"
+
+#: src/weather-settings.ui:596
+msgid "Beaufort"
+msgstr "Beaufort"
+
+#: src/weather-settings.ui:631
+msgid "Units"
+msgstr "Unitateak"
+
+#: src/weather-settings.ui:655
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:112
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:116
+msgid "Position in Panel"
+msgstr "Kokapena panelean"
+
+#: src/weather-settings.ui:664
+msgid "Position of menu-box [%] from 0 (left) to 100 (right)"
+msgstr ""
+
+#: src/weather-settings.ui:673
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:75
+msgid "Wind Direction by Arrows"
+msgstr "Haizearen norabidea gezien bidez"
+
+#: src/weather-settings.ui:682
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:88
+msgid "Translate Conditions"
+msgstr "Itzuli baldintzak"
+
+#: src/weather-settings.ui:691
+#, fuzzy
+msgid "Use System Icon Theme"
+msgstr "Ikono sinbolikoak"
+
+#: src/weather-settings.ui:700
+msgid "Text on buttons"
+msgstr "Testua botoietan"
+
+#: src/weather-settings.ui:709
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:100
+msgid "Temperature in Panel"
+msgstr "Tenperatura panelean"
+
+#: src/weather-settings.ui:718
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:104
+msgid "Conditions in Panel"
+msgstr "Baldintzak panelean"
+
+#: src/weather-settings.ui:727
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:108
+msgid "Conditions in Forecast"
+msgstr "Baldintzak iragarpenean"
+
+#: src/weather-settings.ui:736
+msgid "Center forecast"
+msgstr "Zentratu iragarpena"
+
+#: src/weather-settings.ui:745
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:140
+msgid "Number of days in forecast"
+msgstr "Egun kopurua iragarpenean"
+
+#: src/weather-settings.ui:754
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:144
+msgid "Maximal number of digits after the decimal point"
+msgstr "Dezimalen kopuru maximoa"
+
+#: src/weather-settings.ui:768
+msgid "Center"
+msgstr "Erdia"
+
+#: src/weather-settings.ui:769
+msgid "Right"
+msgstr "Eskuina"
+
+#: src/weather-settings.ui:770
+msgid "Left"
+msgstr "Ezkerra"
+
+#: src/weather-settings.ui:908
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:128
+msgid "Maximal length of the location text"
+msgstr ""
+
+#: src/weather-settings.ui:932
+msgid "Layout"
+msgstr "Diseinua"
+
+#: src/weather-settings.ui:967
+msgid "Version: "
+msgstr "Bertsioa: "
+
+#: src/weather-settings.ui:981
+msgid ""
+"<span>Display weather information for any location on Earth in the GNOME "
+"Shell</span>"
+msgstr ""
+
+#: src/weather-settings.ui:995
+msgid ""
+"Weather data provided by: <a href=\"https://openweathermap.org/"
+"\">OpenWeatherMap</a>"
+msgstr ""
+
+#: src/weather-settings.ui:1008
+#, fuzzy
+msgid "Maintained by:"
+msgstr "Mantentzailea:"
+
+#: src/weather-settings.ui:1043
+msgid ""
+"<span size=\"small\">This program comes with ABSOLUTELY NO WARRANTY.\n"
+"See the <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
+"\">GNU General Public License, version 2 or later</a> for details.</span>"
+msgstr ""
+"<span size=\"small\">Aplikazio honek ez dauka INOLAKO BERMERIK.\n"
+"Begiratu <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
+"\">GNU General Public License, 2 bertsioa edo berriagoa</a> xehetasun "
+"gehiagorako.</span>"
+
+#: src/weather-settings.ui:1054
+msgid "About"
+msgstr "Honi buruz"
+
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:54
 #, fuzzy
 msgid "Weather Provider"
@@ -556,14 +842,6 @@ msgstr "Eguraldi-hornitzailea"
 #, fuzzy
 msgid "Geolocation Provider"
 msgstr "Geokokapenaren hornitzailea"
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:62
-msgid "Temperature Unit"
-msgstr "Tenperatura-unitatea"
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:66
-msgid "Pressure Unit"
-msgstr "Presio-unitatea"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:70
 #, fuzzy
@@ -575,10 +853,6 @@ msgid ""
 "Choose the units used for wind speed. Allowed values are 'kph', 'mph', 'm/"
 "s', 'knots', 'ft/s' or 'Beaufort'."
 msgstr ""
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:75
-msgid "Wind Direction by Arrows"
-msgstr "Haizearen norabidea gezien bidez"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:76
 msgid "Choose whether to display wind direction through arrows or letters."
@@ -592,10 +866,6 @@ msgstr ""
 msgid "Actual City"
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:88
-msgid "Translate Conditions"
-msgstr "Itzuli baldintzak"
-
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:92
 #, fuzzy
 msgid "System Icons"
@@ -606,33 +876,12 @@ msgstr "Ikono sinbolikoak"
 msgid "Use text on buttons in menu"
 msgstr "Testua botoietan"
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:100
-msgid "Temperature in Panel"
-msgstr "Tenperatura panelean"
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:104
-msgid "Conditions in Panel"
-msgstr "Baldintzak panelean"
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:108
-msgid "Conditions in Forecast"
-msgstr "Baldintzak iragarpenean"
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:112
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:116
-msgid "Position in Panel"
-msgstr "Kokapena panelean"
-
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:120
 msgid "Horizontal position of menu-box."
 msgstr ""
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:124
 msgid "Refresh interval (actual weather)"
-msgstr ""
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:128
-msgid "Maximal length of the location text"
 msgstr ""
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:132
@@ -644,14 +893,6 @@ msgstr "Zentratu iragarpena"
 #, fuzzy
 msgid "Center forecastbox."
 msgstr "Zentratu iragarpena"
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:140
-msgid "Number of days in forecast"
-msgstr "Egun kopurua iragarpenean"
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:144
-msgid "Maximal number of digits after the decimal point"
-msgstr "Dezimalen kopuru maximoa"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:148
 #, fuzzy
@@ -667,6 +908,9 @@ msgstr "Erabili hedapenaren API gakoa openweathermap.org gunerako"
 #, fuzzy
 msgid "Your personal AppKey from developer.mapquest.com"
 msgstr "developer.mapquest.com guneko AppKey pertsonala"
+
+#~ msgid "unknown (self-build ?)"
+#~ msgstr "ezezaguna (norberak eraikia ?)"
 
 #~ msgid ""
 #~ "Dark Sky does not work without an api-key.\n"
@@ -689,85 +933,12 @@ msgstr "developer.mapquest.com guneko AppKey pertsonala"
 #~ msgstr[0] "Egun %d barru"
 #~ msgstr[1] "%d egun barru"
 
-#, fuzzy
-#~ msgid "Searching ..."
-#~ msgstr "Kargatzen..."
-
-#, javascript-format
-#~ msgid "Invalid data when searching for \"%s\""
-#~ msgstr "Baliogabeko datuak \"%s\" bilatzean"
-
-#, javascript-format
-#~ msgid "\"%s\" not found"
-#~ msgstr "\"%s\" ez da aurkitu"
-
-#, fuzzy
-#~ msgid "You need an AppKey to search on openmapquest."
-#~ msgstr "developer.mapquest.com guneko AppKey pertsonala"
-
-#, fuzzy
-#~ msgid "Please visit https://developer.mapquest.com/ ."
-#~ msgstr "developer.mapquest.com guneko AppKey pertsonala"
-
-#~ msgid "Location"
-#~ msgstr "Kokapena"
-
-#~ msgid "Provider"
-#~ msgstr "Hornitzailea"
-
-#, javascript-format
-#~ msgid "Remove %s ?"
-#~ msgstr "Kendu %s ?"
-
-#, fuzzy
-#~ msgid "No"
-#~ msgstr "I"
-
-#~ msgid "default"
-#~ msgstr "Lehenetsia"
-
-#~ msgid "Edit name"
-#~ msgstr "Editatu izena"
-
-#~ msgid "Clear entry"
-#~ msgstr "Garbitu sarrera"
-
-#~ msgid "Edit coordinates"
-#~ msgstr "Editatu koordenatuak"
-
 #~ msgid "Extensions default weather provider"
 #~ msgstr "Hedapenaren eguraldi-hornitzaile lehenetsia"
-
-#~ msgid "Cancel"
-#~ msgstr "Utzi"
-
-#~ msgid "Save"
-#~ msgstr "Gorde"
-
-#~ msgid "Search by location or coordinates"
-#~ msgstr "Bilatu kokapenaren edo koordenatuen arabera"
-
-#~ msgid "e.g. Vaiaku, Tuvalu or -8.5211767,179.1976747"
-#~ msgstr "adib. Vaiaku, Tuvalu edo -8.5211767,179.1976747"
-
-#~ msgid "Find"
-#~ msgstr "Bilatu"
-
-#~ msgid "Chose default weather provider"
-#~ msgstr "Hautatu eguraldi-hornitzaile lehenetsia"
-
-#~ msgid "Personal Api key from openweathermap.org"
-#~ msgstr "openweathermap.org guneko API gako pertsonala"
 
 #, fuzzy
 #~ msgid "Personal Api key from Dark Sky"
 #~ msgstr "Dark Sky guneko API gako pertsonala"
-
-#~ msgid "Refresh timeout for current weather [min]"
-#~ msgstr "Freskatze-denbora uneko eguraldirako [min]"
-
-#~ msgid "Refresh timeout for weather forecast [min]"
-#~ msgstr "Freskatze-denbora eguraldi-iragarpenerako [min]"
 
 #, fuzzy
 #~ msgid ""
@@ -777,61 +948,6 @@ msgstr "developer.mapquest.com guneko AppKey pertsonala"
 #~ "Oharra: iragarpenaren denbora-muga ez da erabiltzen Dark Sky gunearekin, "
 #~ "ez baitu deskarga bereizirik eskaintzen uneko eguraldirako eta "
 #~ "iragarpenetarako."
-
-#~ msgid "Use extensions api-key for openweathermap.org"
-#~ msgstr "Erabili hedapenaren API gakoa openweathermap.org gunerako"
-
-#~ msgid ""
-#~ "Switch off, if you have your own api-key for openweathermap.org and put "
-#~ "it into the text-box below."
-#~ msgstr ""
-#~ "Desmarkatu, openweathermap.org gunean zure API gako propioa baduzu, eta "
-#~ "ezarri hura azpiko testu-kutxan."
-
-#~ msgid "Weather provider"
-#~ msgstr "Eguraldi-hornitzailea"
-
-#~ msgid "Chose geolocation provider"
-#~ msgstr "Hautatu geokokapenaren hornitzailea"
-
-#~ msgid "Personal AppKey from developer.mapquest.com"
-#~ msgstr "developer.mapquest.com guneko AppKey pertsonala"
-
-#~ msgid "Geolocation provider"
-#~ msgstr "Geokokapenaren hornitzailea"
-
-#~ msgid "Wind Speed Unit"
-#~ msgstr "Haize-abiaduraren unitatea"
-
-#~ msgid "Beaufort"
-#~ msgstr "Beaufort"
-
-#~ msgid "Units"
-#~ msgstr "Unitateak"
-
-#~ msgid "Text on buttons"
-#~ msgstr "Testua botoietan"
-
-#~ msgid "Center forecast"
-#~ msgstr "Zentratu iragarpena"
-
-#~ msgid "Center"
-#~ msgstr "Erdia"
-
-#~ msgid "Right"
-#~ msgstr "Eskuina"
-
-#~ msgid "Left"
-#~ msgstr "Ezkerra"
-
-#~ msgid "Layout"
-#~ msgstr "Diseinua"
-
-#~ msgid "Version: "
-#~ msgstr "Bertsioa: "
-
-#~ msgid "unknown (self-build ?)"
-#~ msgstr "ezezaguna (norberak eraikia ?)"
 
 #, fuzzy
 #~ msgid ""
@@ -844,24 +960,8 @@ msgstr "developer.mapquest.com guneko AppKey pertsonala"
 #~ "\"https://darksky.net\">Dark Sky</a> dira munduko kokapen gehienetarako.</"
 #~ "span>"
 
-#~ msgid "Maintained by"
-#~ msgstr "Mantentzailea:"
-
 #~ msgid "Webpage"
 #~ msgstr "Webgunea"
-
-#~ msgid ""
-#~ "<span size=\"small\">This program comes with ABSOLUTELY NO WARRANTY.\n"
-#~ "See the <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
-#~ "\">GNU General Public License, version 2 or later</a> for details.</span>"
-#~ msgstr ""
-#~ "<span size=\"small\">Aplikazio honek ez dauka INOLAKO BERMERIK.\n"
-#~ "Begiratu <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
-#~ "\">GNU General Public License, 2 bertsioa edo berriagoa</a> xehetasun "
-#~ "gehiagorako.</span>"
-
-#~ msgid "About"
-#~ msgstr "Honi buruz"
 
 #, fuzzy
 #~ msgid "Your personal API key from Dark Sky"

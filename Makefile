@@ -5,7 +5,7 @@ PKG_NAME = gnome-shell-extension-openweather
 BASE_MODULES = metadata.json COPYING
 SRC_MODULES = extension.js openweathermap_org.js stylesheet.css prefs.js prefs.css weather-settings.ui
 EXTRA_DIRECTORIES = media
-TOLOCALIZE = $(addprefix src/, extension.js openweathermap_org.js) schemas/org.gnome.shell.extensions.openweather.gschema.xml
+TOLOCALIZE = $(addprefix src/, extension.js openweathermap_org.js prefs.js weather-settings.ui) schemas/org.gnome.shell.extensions.openweather.gschema.xml
 MSGSRC = $(wildcard po/*.po)
 
 # Packagers: Use DESTDIR for system wide installation

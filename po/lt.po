@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-shell-extension-weather\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-03 17:07-0300\n"
+"POT-Creation-Date: 2022-05-04 14:46-0300\n"
 "PO-Revision-Date: 2012-12-21 12:43+0000\n"
 "Last-Translator: Mantas Kriaučiūnas <mantas@akl.lt>\n"
 "Language-Team: Lithuanian <lt@li.org>\n"
@@ -35,7 +35,7 @@ msgstr ""
 msgid "Can not connect to %s"
 msgstr ""
 
-#: src/extension.js:800
+#: src/extension.js:800 src/weather-settings.ui:302
 msgid "Locations"
 msgstr "Vietovės"
 
@@ -56,7 +56,7 @@ msgstr ""
 msgid "Weather Settings"
 msgstr "Nustatymai (vietovė ir kt.)"
 
-#: src/extension.js:895
+#: src/extension.js:895 src/prefs.js:1061
 msgid "Invalid city"
 msgstr "Netinkama vietovė"
 
@@ -64,35 +64,35 @@ msgstr "Netinkama vietovė"
 msgid "Invalid location! Please try to recreate it."
 msgstr ""
 
-#: src/extension.js:961
+#: src/extension.js:961 src/weather-settings.ui:574
 msgid "°F"
 msgstr ""
 
-#: src/extension.js:963
+#: src/extension.js:963 src/weather-settings.ui:575
 msgid "K"
 msgstr ""
 
-#: src/extension.js:965
+#: src/extension.js:965 src/weather-settings.ui:576
 msgid "°Ra"
 msgstr ""
 
-#: src/extension.js:967
+#: src/extension.js:967 src/weather-settings.ui:577
 msgid "°Ré"
 msgstr ""
 
-#: src/extension.js:969
+#: src/extension.js:969 src/weather-settings.ui:578
 msgid "°Rø"
 msgstr ""
 
-#: src/extension.js:971
+#: src/extension.js:971 src/weather-settings.ui:579
 msgid "°De"
 msgstr ""
 
-#: src/extension.js:973
+#: src/extension.js:973 src/weather-settings.ui:580
 msgid "°N"
 msgstr ""
 
-#: src/extension.js:975
+#: src/extension.js:975 src/weather-settings.ui:573
 msgid "°C"
 msgstr ""
 
@@ -208,67 +208,67 @@ msgstr "V"
 msgid "NW"
 msgstr "ŠV"
 
-#: src/extension.js:1136 src/extension.js:1145
+#: src/extension.js:1136 src/extension.js:1145 src/weather-settings.ui:607
 msgid "hPa"
 msgstr ""
 
-#: src/extension.js:1140
+#: src/extension.js:1140 src/weather-settings.ui:608
 msgid "inHg"
 msgstr ""
 
-#: src/extension.js:1150
+#: src/extension.js:1150 src/weather-settings.ui:609
 msgid "bar"
 msgstr ""
 
-#: src/extension.js:1155
+#: src/extension.js:1155 src/weather-settings.ui:610
 msgid "Pa"
 msgstr ""
 
-#: src/extension.js:1160
+#: src/extension.js:1160 src/weather-settings.ui:611
 msgid "kPa"
 msgstr ""
 
-#: src/extension.js:1165
+#: src/extension.js:1165 src/weather-settings.ui:612
 msgid "atm"
 msgstr ""
 
-#: src/extension.js:1170
+#: src/extension.js:1170 src/weather-settings.ui:613
 msgid "at"
 msgstr ""
 
-#: src/extension.js:1175
+#: src/extension.js:1175 src/weather-settings.ui:614
 msgid "Torr"
 msgstr ""
 
-#: src/extension.js:1180
+#: src/extension.js:1180 src/weather-settings.ui:615
 msgid "psi"
 msgstr ""
 
-#: src/extension.js:1185
+#: src/extension.js:1185 src/weather-settings.ui:616
 msgid "mmHg"
 msgstr ""
 
-#: src/extension.js:1190
+#: src/extension.js:1190 src/weather-settings.ui:617
 msgid "mbar"
 msgstr ""
 
-#: src/extension.js:1234
+#: src/extension.js:1234 src/weather-settings.ui:593
 msgid "m/s"
 msgstr ""
 
-#: src/extension.js:1238
+#: src/extension.js:1238 src/weather-settings.ui:592
 msgid "mph"
 msgstr ""
 
-#: src/extension.js:1243
+#: src/extension.js:1243 src/weather-settings.ui:591
 msgid "km/h"
 msgstr ""
 
-#: src/extension.js:1252
+#: src/extension.js:1252 src/weather-settings.ui:594
 msgid "kn"
 msgstr ""
 
-#: src/extension.js:1257
+#: src/extension.js:1257 src/weather-settings.ui:595
 msgid "ft/s"
 msgstr ""
 
@@ -582,6 +582,280 @@ msgstr ""
 msgid "Tomorrow"
 msgstr "Rytoj"
 
+#: src/prefs.js:208
+#, fuzzy
+msgid "Searching ..."
+msgstr "Įkeliama..."
+
+#: src/prefs.js:220 src/prefs.js:258 src/prefs.js:289 src/prefs.js:293
+#, javascript-format
+msgid "Invalid data when searching for \"%s\""
+msgstr ""
+
+#: src/prefs.js:225 src/prefs.js:265 src/prefs.js:296
+#, javascript-format
+msgid "\"%s\" not found"
+msgstr ""
+
+#: src/prefs.js:243
+msgid "You need an AppKey to search on openmapquest."
+msgstr ""
+
+#: src/prefs.js:244
+msgid "Please visit https://developer.mapquest.com/ ."
+msgstr ""
+
+#: src/prefs.js:259
+msgid "Do you use a valid AppKey to search on openmapquest ?"
+msgstr ""
+
+#: src/prefs.js:260
+msgid "If not, please visit https://developer.mapquest.com/ ."
+msgstr ""
+
+#: src/prefs.js:341
+#, fuzzy
+msgid "Location"
+msgstr "Vietovės"
+
+#: src/prefs.js:352
+msgid "Provider"
+msgstr ""
+
+#: src/prefs.js:362
+msgid "Result"
+msgstr ""
+
+#: src/prefs.js:549
+#, javascript-format
+msgid "Remove %s ?"
+msgstr "Pašalinti %s ?"
+
+#: src/prefs.js:562
+#, fuzzy
+msgid "No"
+msgstr "Š"
+
+#: src/prefs.js:563
+msgid "Yes"
+msgstr ""
+
+#: src/prefs.js:1094
+msgid "default"
+msgstr ""
+
+#: src/weather-settings.ui:29
+msgid "Edit name"
+msgstr ""
+
+#: src/weather-settings.ui:40 src/weather-settings.ui:56
+#: src/weather-settings.ui:183
+#, fuzzy
+msgid "Clear entry"
+msgstr "Giedra"
+
+#: src/weather-settings.ui:47
+msgid "Edit coordinates"
+msgstr ""
+
+#: src/weather-settings.ui:80 src/weather-settings.ui:216
+msgid "Cancel"
+msgstr ""
+
+#: src/weather-settings.ui:90 src/weather-settings.ui:226
+msgid "Save"
+msgstr ""
+
+#: src/weather-settings.ui:124
+msgid "Search Results"
+msgstr ""
+
+#: src/weather-settings.ui:161
+msgid "Search By Location Or Coordinates"
+msgstr ""
+
+#: src/weather-settings.ui:184
+msgid "e.g. Vaiaku, Tuvalu or -8.5211767,179.1976747"
+msgstr ""
+
+#: src/weather-settings.ui:189
+msgid "Find"
+msgstr ""
+
+#: src/weather-settings.ui:328
+msgid "Choose default weather provider"
+msgstr ""
+
+#: src/weather-settings.ui:339
+msgid "Personal Api key from openweathermap.org"
+msgstr ""
+
+#: src/weather-settings.ui:371
+msgid "Refresh timeout for current weather [min]"
+msgstr ""
+
+#: src/weather-settings.ui:383
+msgid "Refresh timeout for weather forecast [min]"
+msgstr ""
+
+#: src/weather-settings.ui:428
+msgid "Use extensions api-key for openweathermap.org"
+msgstr ""
+
+#: src/weather-settings.ui:437
+msgid ""
+"Switch off, if you have your own api-key for openweathermap.org and put it "
+"into the text-box below."
+msgstr ""
+
+#: src/weather-settings.ui:451
+msgid "Weather provider"
+msgstr ""
+
+#: src/weather-settings.ui:475
+msgid "Choose geolocation provider"
+msgstr ""
+
+#: src/weather-settings.ui:497
+msgid "Personal AppKey from developer.mapquest.com"
+msgstr ""
+
+#: src/weather-settings.ui:521
+msgid "Geolocation provider"
+msgstr ""
+
+#: src/weather-settings.ui:545
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:62
+msgid "Temperature Unit"
+msgstr "Temperatūros vienetai"
+
+#: src/weather-settings.ui:554
+msgid "Wind Speed Unit"
+msgstr "Vėjo greičio vienetai"
+
+#: src/weather-settings.ui:563
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:66
+msgid "Pressure Unit"
+msgstr "Slėgio vienetai"
+
+#: src/weather-settings.ui:596
+msgid "Beaufort"
+msgstr ""
+
+#: src/weather-settings.ui:631
+msgid "Units"
+msgstr ""
+
+#: src/weather-settings.ui:655
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:112
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:116
+msgid "Position in Panel"
+msgstr "Padėtis skydelyje"
+
+#: src/weather-settings.ui:664
+msgid "Position of menu-box [%] from 0 (left) to 100 (right)"
+msgstr ""
+
+#: src/weather-settings.ui:673
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:75
+msgid "Wind Direction by Arrows"
+msgstr "Vėjo krypčiai naudoti rodykles"
+
+#: src/weather-settings.ui:682
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:88
+msgid "Translate Conditions"
+msgstr "Versti oro sąlygas"
+
+#: src/weather-settings.ui:691
+msgid "Use System Icon Theme"
+msgstr ""
+
+#: src/weather-settings.ui:700
+msgid "Text on buttons"
+msgstr ""
+
+#: src/weather-settings.ui:709
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:100
+msgid "Temperature in Panel"
+msgstr "Rodyti temperatūrą skydelyje"
+
+#: src/weather-settings.ui:718
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:104
+msgid "Conditions in Panel"
+msgstr "Rodyti oro sąlygas skydelyje"
+
+#: src/weather-settings.ui:727
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:108
+#, fuzzy
+msgid "Conditions in Forecast"
+msgstr "Rodyti oro sąlygas skydelyje"
+
+#: src/weather-settings.ui:736
+msgid "Center forecast"
+msgstr ""
+
+#: src/weather-settings.ui:745
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:140
+msgid "Number of days in forecast"
+msgstr ""
+
+#: src/weather-settings.ui:754
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:144
+msgid "Maximal number of digits after the decimal point"
+msgstr ""
+
+#: src/weather-settings.ui:768
+msgid "Center"
+msgstr "Centre"
+
+#: src/weather-settings.ui:769
+msgid "Right"
+msgstr "Dešinėje"
+
+#: src/weather-settings.ui:770
+msgid "Left"
+msgstr "Kairėje"
+
+#: src/weather-settings.ui:908
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:128
+msgid "Maximal length of the location text"
+msgstr ""
+
+#: src/weather-settings.ui:932
+msgid "Layout"
+msgstr ""
+
+#: src/weather-settings.ui:967
+msgid "Version: "
+msgstr ""
+
+#: src/weather-settings.ui:981
+msgid ""
+"<span>Display weather information for any location on Earth in the GNOME "
+"Shell</span>"
+msgstr ""
+
+#: src/weather-settings.ui:995
+msgid ""
+"Weather data provided by: <a href=\"https://openweathermap.org/"
+"\">OpenWeatherMap</a>"
+msgstr ""
+
+#: src/weather-settings.ui:1008
+msgid "Maintained by:"
+msgstr ""
+
+#: src/weather-settings.ui:1043
+msgid ""
+"<span size=\"small\">This program comes with ABSOLUTELY NO WARRANTY.\n"
+"See the <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
+"\">GNU General Public License, version 2 or later</a> for details.</span>"
+msgstr ""
+
+#: src/weather-settings.ui:1054
+msgid "About"
+msgstr ""
+
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:54
 msgid "Weather Provider"
 msgstr ""
@@ -589,14 +863,6 @@ msgstr ""
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:58
 msgid "Geolocation Provider"
 msgstr ""
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:62
-msgid "Temperature Unit"
-msgstr "Temperatūros vienetai"
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:66
-msgid "Pressure Unit"
-msgstr "Slėgio vienetai"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:70
 #, fuzzy
@@ -608,10 +874,6 @@ msgid ""
 "Choose the units used for wind speed. Allowed values are 'kph', 'mph', 'm/"
 "s', 'knots', 'ft/s' or 'Beaufort'."
 msgstr ""
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:75
-msgid "Wind Direction by Arrows"
-msgstr "Vėjo krypčiai naudoti rodykles"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:76
 msgid "Choose whether to display wind direction through arrows or letters."
@@ -625,10 +887,6 @@ msgstr ""
 msgid "Actual City"
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:88
-msgid "Translate Conditions"
-msgstr "Versti oro sąlygas"
-
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:92
 msgid "System Icons"
 msgstr ""
@@ -636,24 +894,6 @@ msgstr ""
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:96
 msgid "Use text on buttons in menu"
 msgstr ""
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:100
-msgid "Temperature in Panel"
-msgstr "Rodyti temperatūrą skydelyje"
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:104
-msgid "Conditions in Panel"
-msgstr "Rodyti oro sąlygas skydelyje"
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:108
-#, fuzzy
-msgid "Conditions in Forecast"
-msgstr "Rodyti oro sąlygas skydelyje"
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:112
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:116
-msgid "Position in Panel"
-msgstr "Padėtis skydelyje"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:120
 msgid "Horizontal position of menu-box."
@@ -663,24 +903,12 @@ msgstr ""
 msgid "Refresh interval (actual weather)"
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:128
-msgid "Maximal length of the location text"
-msgstr ""
-
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:132
 msgid "Refresh interval (forecast)"
 msgstr ""
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:136
 msgid "Center forecastbox."
-msgstr ""
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:140
-msgid "Number of days in forecast"
-msgstr ""
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:144
-msgid "Maximal number of digits after the decimal point"
 msgstr ""
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:148
@@ -703,35 +931,3 @@ msgstr ""
 #~ msgid_plural "In %d days"
 #~ msgstr[0] "Prieš %s dienas"
 #~ msgstr[1] "Prieš %s dienas"
-
-#, fuzzy
-#~ msgid "Searching ..."
-#~ msgstr "Įkeliama..."
-
-#, fuzzy
-#~ msgid "Location"
-#~ msgstr "Vietovės"
-
-#, javascript-format
-#~ msgid "Remove %s ?"
-#~ msgstr "Pašalinti %s ?"
-
-#, fuzzy
-#~ msgid "No"
-#~ msgstr "Š"
-
-#, fuzzy
-#~ msgid "Clear entry"
-#~ msgstr "Giedra"
-
-#~ msgid "Wind Speed Unit"
-#~ msgstr "Vėjo greičio vienetai"
-
-#~ msgid "Center"
-#~ msgstr "Centre"
-
-#~ msgid "Right"
-#~ msgstr "Dešinėje"
-
-#~ msgid "Left"
-#~ msgstr "Kairėje"

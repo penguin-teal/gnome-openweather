@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-03 17:07-0300\n"
+"POT-Creation-Date: 2022-05-04 14:46-0300\n"
 "PO-Revision-Date: 2017-09-18 12:43+0200\n"
 "Last-Translator: Petr Pulc <petrpulc@gmail.com>\n"
 "Language-Team: cs_CZ <czech@li.org>\n"
@@ -42,7 +42,7 @@ msgstr ""
 msgid "Can not connect to %s"
 msgstr "Nemohu se připojit k %s"
 
-#: src/extension.js:800
+#: src/extension.js:800 src/weather-settings.ui:302
 msgid "Locations"
 msgstr "Místa"
 
@@ -63,7 +63,7 @@ msgstr "Nemohu otevřít %s"
 msgid "Weather Settings"
 msgstr "Nastavení"
 
-#: src/extension.js:895
+#: src/extension.js:895 src/prefs.js:1061
 msgid "Invalid city"
 msgstr "Neplatné město"
 
@@ -71,35 +71,35 @@ msgstr "Neplatné město"
 msgid "Invalid location! Please try to recreate it."
 msgstr "Neplatné umístění! Prosím, zkuste ho vytvořit znovu."
 
-#: src/extension.js:961
+#: src/extension.js:961 src/weather-settings.ui:574
 msgid "°F"
 msgstr "°F"
 
-#: src/extension.js:963
+#: src/extension.js:963 src/weather-settings.ui:575
 msgid "K"
 msgstr "K"
 
-#: src/extension.js:965
+#: src/extension.js:965 src/weather-settings.ui:576
 msgid "°Ra"
 msgstr "°Ra"
 
-#: src/extension.js:967
+#: src/extension.js:967 src/weather-settings.ui:577
 msgid "°Ré"
 msgstr "°Ré"
 
-#: src/extension.js:969
+#: src/extension.js:969 src/weather-settings.ui:578
 msgid "°Rø"
 msgstr "°Rø"
 
-#: src/extension.js:971
+#: src/extension.js:971 src/weather-settings.ui:579
 msgid "°De"
 msgstr "°De"
 
-#: src/extension.js:973
+#: src/extension.js:973 src/weather-settings.ui:580
 msgid "°N"
 msgstr "°N"
 
-#: src/extension.js:975
+#: src/extension.js:975 src/weather-settings.ui:573
 msgid "°C"
 msgstr "°C"
 
@@ -215,67 +215,67 @@ msgstr "Z"
 msgid "NW"
 msgstr "SZ"
 
-#: src/extension.js:1136 src/extension.js:1145
+#: src/extension.js:1136 src/extension.js:1145 src/weather-settings.ui:607
 msgid "hPa"
 msgstr "hPa"
 
-#: src/extension.js:1140
+#: src/extension.js:1140 src/weather-settings.ui:608
 msgid "inHg"
 msgstr "inHg"
 
-#: src/extension.js:1150
+#: src/extension.js:1150 src/weather-settings.ui:609
 msgid "bar"
 msgstr "bar"
 
-#: src/extension.js:1155
+#: src/extension.js:1155 src/weather-settings.ui:610
 msgid "Pa"
 msgstr "Pa"
 
-#: src/extension.js:1160
+#: src/extension.js:1160 src/weather-settings.ui:611
 msgid "kPa"
 msgstr "kPa"
 
-#: src/extension.js:1165
+#: src/extension.js:1165 src/weather-settings.ui:612
 msgid "atm"
 msgstr "atm"
 
-#: src/extension.js:1170
+#: src/extension.js:1170 src/weather-settings.ui:613
 msgid "at"
 msgstr "at"
 
-#: src/extension.js:1175
+#: src/extension.js:1175 src/weather-settings.ui:614
 msgid "Torr"
 msgstr "Torr"
 
-#: src/extension.js:1180
+#: src/extension.js:1180 src/weather-settings.ui:615
 msgid "psi"
 msgstr "psi"
 
-#: src/extension.js:1185
+#: src/extension.js:1185 src/weather-settings.ui:616
 msgid "mmHg"
 msgstr "mmHg"
 
-#: src/extension.js:1190
+#: src/extension.js:1190 src/weather-settings.ui:617
 msgid "mbar"
 msgstr "mbar"
 
-#: src/extension.js:1234
+#: src/extension.js:1234 src/weather-settings.ui:593
 msgid "m/s"
 msgstr "m/s"
 
-#: src/extension.js:1238
+#: src/extension.js:1238 src/weather-settings.ui:592
 msgid "mph"
 msgstr "mph"
 
-#: src/extension.js:1243
+#: src/extension.js:1243 src/weather-settings.ui:591
 msgid "km/h"
 msgstr "km/h"
 
-#: src/extension.js:1252
+#: src/extension.js:1252 src/weather-settings.ui:594
 msgid "kn"
 msgstr "kn"
 
-#: src/extension.js:1257
+#: src/extension.js:1257 src/weather-settings.ui:595
 msgid "ft/s"
 msgstr "ft/s"
 
@@ -551,6 +551,291 @@ msgstr ""
 msgid "Tomorrow"
 msgstr "Zítra"
 
+#: src/prefs.js:208
+#, fuzzy
+msgid "Searching ..."
+msgstr "Načítání…"
+
+#: src/prefs.js:220 src/prefs.js:258 src/prefs.js:289 src/prefs.js:293
+#, javascript-format
+msgid "Invalid data when searching for \"%s\""
+msgstr "Neplatná data při hledání \"%s\""
+
+#: src/prefs.js:225 src/prefs.js:265 src/prefs.js:296
+#, javascript-format
+msgid "\"%s\" not found"
+msgstr "Místo \"%s\" nenalezeno."
+
+#: src/prefs.js:243
+#, fuzzy
+msgid "You need an AppKey to search on openmapquest."
+msgstr "Váš osobní App klíč pro developer.mapquest.com"
+
+#: src/prefs.js:244
+#, fuzzy
+msgid "Please visit https://developer.mapquest.com/ ."
+msgstr "Osobní App klíč pro developer.mapquest.com"
+
+#: src/prefs.js:259
+#, fuzzy
+msgid "Do you use a valid AppKey to search on openmapquest ?"
+msgstr "Váš osobní App klíč pro developer.mapquest.com"
+
+#: src/prefs.js:260
+#, fuzzy
+msgid "If not, please visit https://developer.mapquest.com/ ."
+msgstr "Osobní App klíč pro developer.mapquest.com"
+
+#: src/prefs.js:341
+msgid "Location"
+msgstr "Místo"
+
+#: src/prefs.js:352
+msgid "Provider"
+msgstr "Poskytovatel"
+
+#: src/prefs.js:362
+msgid "Result"
+msgstr ""
+
+#: src/prefs.js:549
+#, javascript-format
+msgid "Remove %s ?"
+msgstr "Odstranit %s?"
+
+#: src/prefs.js:562
+#, fuzzy
+msgid "No"
+msgstr "S"
+
+#: src/prefs.js:563
+msgid "Yes"
+msgstr ""
+
+#: src/prefs.js:1094
+msgid "default"
+msgstr "výchozí"
+
+#: src/weather-settings.ui:29
+msgid "Edit name"
+msgstr "Upravit název"
+
+#: src/weather-settings.ui:40 src/weather-settings.ui:56
+#: src/weather-settings.ui:183
+msgid "Clear entry"
+msgstr "Smazat položku"
+
+#: src/weather-settings.ui:47
+msgid "Edit coordinates"
+msgstr "Upravit souřadnice"
+
+#: src/weather-settings.ui:80 src/weather-settings.ui:216
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: src/weather-settings.ui:90 src/weather-settings.ui:226
+msgid "Save"
+msgstr "Uložit"
+
+#: src/weather-settings.ui:124
+msgid "Search Results"
+msgstr ""
+
+#: src/weather-settings.ui:161
+#, fuzzy
+msgid "Search By Location Or Coordinates"
+msgstr "Hledat podle umístění nebo souřadnic"
+
+#: src/weather-settings.ui:184
+msgid "e.g. Vaiaku, Tuvalu or -8.5211767,179.1976747"
+msgstr "např. Vaiaku, Tuvalu nebo -8.5211767,179.1976747"
+
+#: src/weather-settings.ui:189
+msgid "Find"
+msgstr "Hledat"
+
+#: src/weather-settings.ui:328
+#, fuzzy
+msgid "Choose default weather provider"
+msgstr "Vyberte výchozího poskytovatele předpovědi"
+
+#: src/weather-settings.ui:339
+msgid "Personal Api key from openweathermap.org"
+msgstr "Osobní API klíč pro openweathermap.org"
+
+#: src/weather-settings.ui:371
+msgid "Refresh timeout for current weather [min]"
+msgstr "Obnovit aktuální stav počasí po [min]"
+
+#: src/weather-settings.ui:383
+msgid "Refresh timeout for weather forecast [min]"
+msgstr "Obnovit předpověď počasí po [min]"
+
+#: src/weather-settings.ui:428
+msgid "Use extensions api-key for openweathermap.org"
+msgstr "Použít API klíč rozšíření pro openweathermap.org"
+
+#: src/weather-settings.ui:437
+msgid ""
+"Switch off, if you have your own api-key for openweathermap.org and put it "
+"into the text-box below."
+msgstr ""
+"Vypněte, pokud máte svůj vlastní API klíč pro openweathermap.org, a vyplňte "
+"jej do pole níže."
+
+#: src/weather-settings.ui:451
+msgid "Weather provider"
+msgstr "Poskytovatel počasí"
+
+#: src/weather-settings.ui:475
+#, fuzzy
+msgid "Choose geolocation provider"
+msgstr "Vyberte poskytovatele geolokace"
+
+#: src/weather-settings.ui:497
+msgid "Personal AppKey from developer.mapquest.com"
+msgstr "Osobní App klíč pro developer.mapquest.com"
+
+#: src/weather-settings.ui:521
+msgid "Geolocation provider"
+msgstr "Poskytovatel geolokace"
+
+#: src/weather-settings.ui:545
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:62
+msgid "Temperature Unit"
+msgstr "Jednotka teploty"
+
+#: src/weather-settings.ui:554
+msgid "Wind Speed Unit"
+msgstr "Jednotka rychlosti větru"
+
+#: src/weather-settings.ui:563
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:66
+msgid "Pressure Unit"
+msgstr "Jednotka tlaku"
+
+#: src/weather-settings.ui:596
+msgid "Beaufort"
+msgstr "Beaufort"
+
+#: src/weather-settings.ui:631
+msgid "Units"
+msgstr "Jednotky"
+
+#: src/weather-settings.ui:655
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:112
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:116
+msgid "Position in Panel"
+msgstr "Umístění na panelu"
+
+#: src/weather-settings.ui:664
+msgid "Position of menu-box [%] from 0 (left) to 100 (right)"
+msgstr "Zarovnání nabídky [v %] od 0 (vlevo) do 100 (vpravo)"
+
+#: src/weather-settings.ui:673
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:75
+msgid "Wind Direction by Arrows"
+msgstr "Směr větru jako šipku"
+
+#: src/weather-settings.ui:682
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:88
+msgid "Translate Conditions"
+msgstr "Překládat stav počasí"
+
+#: src/weather-settings.ui:691
+#, fuzzy
+msgid "Use System Icon Theme"
+msgstr "Symbolické ikony"
+
+#: src/weather-settings.ui:700
+msgid "Text on buttons"
+msgstr "Text v tlačítcích"
+
+#: src/weather-settings.ui:709
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:100
+msgid "Temperature in Panel"
+msgstr "Teplota v panelu"
+
+#: src/weather-settings.ui:718
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:104
+msgid "Conditions in Panel"
+msgstr "Stav počasí v panelu"
+
+#: src/weather-settings.ui:727
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:108
+msgid "Conditions in Forecast"
+msgstr "Stav počasí v předpovědi"
+
+#: src/weather-settings.ui:736
+msgid "Center forecast"
+msgstr "Vystředit předpověď"
+
+#: src/weather-settings.ui:745
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:140
+msgid "Number of days in forecast"
+msgstr "Počet dní předpovědi"
+
+#: src/weather-settings.ui:754
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:144
+msgid "Maximal number of digits after the decimal point"
+msgstr "Maximální počet číslic za desetinnou čárkou"
+
+#: src/weather-settings.ui:768
+msgid "Center"
+msgstr "Vprostřed"
+
+#: src/weather-settings.ui:769
+msgid "Right"
+msgstr "Vpravo"
+
+#: src/weather-settings.ui:770
+msgid "Left"
+msgstr "Vlevo"
+
+#: src/weather-settings.ui:908
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:128
+msgid "Maximal length of the location text"
+msgstr ""
+
+#: src/weather-settings.ui:932
+msgid "Layout"
+msgstr "Rozložení"
+
+#: src/weather-settings.ui:967
+msgid "Version: "
+msgstr "Verze: "
+
+#: src/weather-settings.ui:981
+msgid ""
+"<span>Display weather information for any location on Earth in the GNOME "
+"Shell</span>"
+msgstr ""
+
+#: src/weather-settings.ui:995
+msgid ""
+"Weather data provided by: <a href=\"https://openweathermap.org/"
+"\">OpenWeatherMap</a>"
+msgstr ""
+
+#: src/weather-settings.ui:1008
+#, fuzzy
+msgid "Maintained by:"
+msgstr "Spravuje"
+
+#: src/weather-settings.ui:1043
+msgid ""
+"<span size=\"small\">This program comes with ABSOLUTELY NO WARRANTY.\n"
+"See the <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
+"\">GNU General Public License, version 2 or later</a> for details.</span>"
+msgstr ""
+"<span size=\"small\">Tento program je ABSOLUTNĚ BEZ ZÁRUKY.\n"
+"Více informací získáte v <a href=\"https://www.gnu.org/licenses/old-licenses/"
+"gpl-2.0.html\">GNU General Public License, verze 2 nebo novější</a>.</span>"
+
+#: src/weather-settings.ui:1054
+msgid "About"
+msgstr "O aplikaci"
+
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:54
 msgid "Weather Provider"
 msgstr "Poskytovatel počasí"
@@ -558,14 +843,6 @@ msgstr "Poskytovatel počasí"
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:58
 msgid "Geolocation Provider"
 msgstr "Poskytovatel geolokace"
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:62
-msgid "Temperature Unit"
-msgstr "Jednotka teploty"
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:66
-msgid "Pressure Unit"
-msgstr "Jednotka tlaku"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:70
 msgid "Wind Speed Units"
@@ -579,10 +856,6 @@ msgstr ""
 "Vyberte jednotky použité pro zobrazení rychlosti větru. Povolené hodnoty "
 "jsou 'kph', 'mph', 'm/s', 'knots', 'ft/s' nebo 'Beaufort'."
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:75
-msgid "Wind Direction by Arrows"
-msgstr "Směr větru jako šipku"
-
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:76
 msgid "Choose whether to display wind direction through arrows or letters."
 msgstr "Vyberte zda má být směr větru zobrazen pomocí šipky nebo písmene."
@@ -595,10 +868,6 @@ msgstr "Zobrazované město"
 msgid "Actual City"
 msgstr "Aktuální město"
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:88
-msgid "Translate Conditions"
-msgstr "Překládat stav počasí"
-
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:92
 #, fuzzy
 msgid "System Icons"
@@ -608,23 +877,6 @@ msgstr "Symbolické ikony"
 msgid "Use text on buttons in menu"
 msgstr "Zobrazit text na tlačítkách v nabídce"
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:100
-msgid "Temperature in Panel"
-msgstr "Teplota v panelu"
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:104
-msgid "Conditions in Panel"
-msgstr "Stav počasí v panelu"
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:108
-msgid "Conditions in Forecast"
-msgstr "Stav počasí v předpovědi"
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:112
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:116
-msgid "Position in Panel"
-msgstr "Umístění na panelu"
-
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:120
 msgid "Horizontal position of menu-box."
 msgstr "Vodorovná pozice nabídky."
@@ -633,10 +885,6 @@ msgstr "Vodorovná pozice nabídky."
 msgid "Refresh interval (actual weather)"
 msgstr "Interval obnovy (aktuální počasí)"
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:128
-msgid "Maximal length of the location text"
-msgstr ""
-
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:132
 msgid "Refresh interval (forecast)"
 msgstr "Interval obnovy (předpověď)"
@@ -644,14 +892,6 @@ msgstr "Interval obnovy (předpověď)"
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:136
 msgid "Center forecastbox."
 msgstr "Vystředit předpověď."
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:140
-msgid "Number of days in forecast"
-msgstr "Počet dní předpovědi"
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:144
-msgid "Maximal number of digits after the decimal point"
-msgstr "Maximální počet číslic za desetinnou čárkou"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:148
 msgid "Your personal API key from openweathermap.org"
@@ -664,6 +904,9 @@ msgstr "Použít výchozí API klíč tohoto rozšíření pro openweathermap.or
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:156
 msgid "Your personal AppKey from developer.mapquest.com"
 msgstr "Váš osobní App klíč pro developer.mapquest.com"
+
+#~ msgid "unknown (self-build ?)"
+#~ msgstr "neznámá (vlastní ?)"
 
 #~ msgid ""
 #~ "Dark Sky does not work without an api-key.\n"
@@ -687,84 +930,11 @@ msgstr "Váš osobní App klíč pro developer.mapquest.com"
 #~ msgstr[1] "Za %d dny"
 #~ msgstr[2] "Za %d dní"
 
-#, fuzzy
-#~ msgid "Searching ..."
-#~ msgstr "Načítání…"
-
-#, javascript-format
-#~ msgid "Invalid data when searching for \"%s\""
-#~ msgstr "Neplatná data při hledání \"%s\""
-
-#, javascript-format
-#~ msgid "\"%s\" not found"
-#~ msgstr "Místo \"%s\" nenalezeno."
-
-#, fuzzy
-#~ msgid "You need an AppKey to search on openmapquest."
-#~ msgstr "Váš osobní App klíč pro developer.mapquest.com"
-
-#, fuzzy
-#~ msgid "Please visit https://developer.mapquest.com/ ."
-#~ msgstr "Osobní App klíč pro developer.mapquest.com"
-
-#~ msgid "Location"
-#~ msgstr "Místo"
-
-#~ msgid "Provider"
-#~ msgstr "Poskytovatel"
-
-#, javascript-format
-#~ msgid "Remove %s ?"
-#~ msgstr "Odstranit %s?"
-
-#, fuzzy
-#~ msgid "No"
-#~ msgstr "S"
-
-#~ msgid "default"
-#~ msgstr "výchozí"
-
-#~ msgid "Edit name"
-#~ msgstr "Upravit název"
-
-#~ msgid "Clear entry"
-#~ msgstr "Smazat položku"
-
-#~ msgid "Edit coordinates"
-#~ msgstr "Upravit souřadnice"
-
 #~ msgid "Extensions default weather provider"
 #~ msgstr "Výchozí poskytovatel předpovědi"
 
-#~ msgid "Cancel"
-#~ msgstr "Zrušit"
-
-#~ msgid "Save"
-#~ msgstr "Uložit"
-
-#~ msgid "Search by location or coordinates"
-#~ msgstr "Hledat podle umístění nebo souřadnic"
-
-#~ msgid "e.g. Vaiaku, Tuvalu or -8.5211767,179.1976747"
-#~ msgstr "např. Vaiaku, Tuvalu nebo -8.5211767,179.1976747"
-
-#~ msgid "Find"
-#~ msgstr "Hledat"
-
-#~ msgid "Chose default weather provider"
-#~ msgstr "Vyberte výchozího poskytovatele předpovědi"
-
-#~ msgid "Personal Api key from openweathermap.org"
-#~ msgstr "Osobní API klíč pro openweathermap.org"
-
 #~ msgid "Personal Api key from Dark Sky"
 #~ msgstr "Osobní API klíč pro Dark Sky"
-
-#~ msgid "Refresh timeout for current weather [min]"
-#~ msgstr "Obnovit aktuální stav počasí po [min]"
-
-#~ msgid "Refresh timeout for weather forecast [min]"
-#~ msgstr "Obnovit předpověď počasí po [min]"
 
 #~ msgid ""
 #~ "Note: the forecast-timout is not used for Dark Sky, because they do not "
@@ -772,64 +942,6 @@ msgstr "Váš osobní App klíč pro developer.mapquest.com"
 #~ msgstr ""
 #~ "Poznámka: čas pro obnovu předpovědi není v případě služby Dark Sky "
 #~ "použit, jelikož služba nenabízí informace o počasí a předpovědi odděleně."
-
-#~ msgid "Use extensions api-key for openweathermap.org"
-#~ msgstr "Použít API klíč rozšíření pro openweathermap.org"
-
-#~ msgid ""
-#~ "Switch off, if you have your own api-key for openweathermap.org and put "
-#~ "it into the text-box below."
-#~ msgstr ""
-#~ "Vypněte, pokud máte svůj vlastní API klíč pro openweathermap.org, a "
-#~ "vyplňte jej do pole níže."
-
-#~ msgid "Weather provider"
-#~ msgstr "Poskytovatel počasí"
-
-#~ msgid "Chose geolocation provider"
-#~ msgstr "Vyberte poskytovatele geolokace"
-
-#~ msgid "Personal AppKey from developer.mapquest.com"
-#~ msgstr "Osobní App klíč pro developer.mapquest.com"
-
-#~ msgid "Geolocation provider"
-#~ msgstr "Poskytovatel geolokace"
-
-#~ msgid "Wind Speed Unit"
-#~ msgstr "Jednotka rychlosti větru"
-
-#~ msgid "Beaufort"
-#~ msgstr "Beaufort"
-
-#~ msgid "Units"
-#~ msgstr "Jednotky"
-
-#~ msgid "Position of menu-box [%] from 0 (left) to 100 (right)"
-#~ msgstr "Zarovnání nabídky [v %] od 0 (vlevo) do 100 (vpravo)"
-
-#~ msgid "Text on buttons"
-#~ msgstr "Text v tlačítcích"
-
-#~ msgid "Center forecast"
-#~ msgstr "Vystředit předpověď"
-
-#~ msgid "Center"
-#~ msgstr "Vprostřed"
-
-#~ msgid "Right"
-#~ msgstr "Vpravo"
-
-#~ msgid "Left"
-#~ msgstr "Vlevo"
-
-#~ msgid "Layout"
-#~ msgstr "Rozložení"
-
-#~ msgid "Version: "
-#~ msgstr "Verze: "
-
-#~ msgid "unknown (self-build ?)"
-#~ msgstr "neznámá (vlastní ?)"
 
 #~ msgid ""
 #~ "<span>Weather extension to display weather information from <a href="
@@ -840,24 +952,8 @@ msgstr "Váš osobní App klíč pro developer.mapquest.com"
 #~ "openweathermap.org/\">Openweathermap</a> nebo <a href=\"https://darksky."
 #~ "net\">Dark Sky</a> pro téměř všechny oblasti světa.</span>"
 
-#~ msgid "Maintained by"
-#~ msgstr "Spravuje"
-
 #~ msgid "Webpage"
 #~ msgstr "Webová stránka"
-
-#~ msgid ""
-#~ "<span size=\"small\">This program comes with ABSOLUTELY NO WARRANTY.\n"
-#~ "See the <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
-#~ "\">GNU General Public License, version 2 or later</a> for details.</span>"
-#~ msgstr ""
-#~ "<span size=\"small\">Tento program je ABSOLUTNĚ BEZ ZÁRUKY.\n"
-#~ "Více informací získáte v <a href=\"https://www.gnu.org/licenses/old-"
-#~ "licenses/gpl-2.0.html\">GNU General Public License, verze 2 nebo novější</"
-#~ "a>.</span>"
-
-#~ msgid "About"
-#~ msgstr "O aplikaci"
 
 #~ msgid "Your personal API key from Dark Sky"
 #~ msgstr "Váš osobní API klíč pro Dark Sky"

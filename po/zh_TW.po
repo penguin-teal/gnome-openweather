@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-shell-extension-openweather\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-03 17:07-0300\n"
+"POT-Creation-Date: 2022-05-04 14:46-0300\n"
 "PO-Revision-Date: 2017-03-06 23:22+0800\n"
 "Last-Translator: P.-H. Lin <Cypresslin@users.noreply.github.com>\n"
 "Language-Team: Chinese (Traditional) <>\n"
@@ -40,7 +40,7 @@ msgstr ""
 msgid "Can not connect to %s"
 msgstr "無法連線至 %s"
 
-#: src/extension.js:800
+#: src/extension.js:800 src/weather-settings.ui:302
 msgid "Locations"
 msgstr "地點"
 
@@ -61,7 +61,7 @@ msgstr "無法打開 %s"
 msgid "Weather Settings"
 msgstr "天氣設定"
 
-#: src/extension.js:895
+#: src/extension.js:895 src/prefs.js:1061
 msgid "Invalid city"
 msgstr "無效的城市代碼"
 
@@ -69,35 +69,35 @@ msgstr "無效的城市代碼"
 msgid "Invalid location! Please try to recreate it."
 msgstr "無效地點！請嘗試重建一個。"
 
-#: src/extension.js:961
+#: src/extension.js:961 src/weather-settings.ui:574
 msgid "°F"
 msgstr "°F"
 
-#: src/extension.js:963
+#: src/extension.js:963 src/weather-settings.ui:575
 msgid "K"
 msgstr "K"
 
-#: src/extension.js:965
+#: src/extension.js:965 src/weather-settings.ui:576
 msgid "°Ra"
 msgstr "°Ra"
 
-#: src/extension.js:967
+#: src/extension.js:967 src/weather-settings.ui:577
 msgid "°Ré"
 msgstr "°Ré"
 
-#: src/extension.js:969
+#: src/extension.js:969 src/weather-settings.ui:578
 msgid "°Rø"
 msgstr "°Rø"
 
-#: src/extension.js:971
+#: src/extension.js:971 src/weather-settings.ui:579
 msgid "°De"
 msgstr "°De"
 
-#: src/extension.js:973
+#: src/extension.js:973 src/weather-settings.ui:580
 msgid "°N"
 msgstr "°N"
 
-#: src/extension.js:975
+#: src/extension.js:975 src/weather-settings.ui:573
 msgid "°C"
 msgstr "°C"
 
@@ -213,67 +213,67 @@ msgstr "西"
 msgid "NW"
 msgstr "西北"
 
-#: src/extension.js:1136 src/extension.js:1145
+#: src/extension.js:1136 src/extension.js:1145 src/weather-settings.ui:607
 msgid "hPa"
 msgstr "hPa"
 
-#: src/extension.js:1140
+#: src/extension.js:1140 src/weather-settings.ui:608
 msgid "inHg"
 msgstr "inHg"
 
-#: src/extension.js:1150
+#: src/extension.js:1150 src/weather-settings.ui:609
 msgid "bar"
 msgstr "bar"
 
-#: src/extension.js:1155
+#: src/extension.js:1155 src/weather-settings.ui:610
 msgid "Pa"
 msgstr "Pa"
 
-#: src/extension.js:1160
+#: src/extension.js:1160 src/weather-settings.ui:611
 msgid "kPa"
 msgstr "kPa"
 
-#: src/extension.js:1165
+#: src/extension.js:1165 src/weather-settings.ui:612
 msgid "atm"
 msgstr "atm"
 
-#: src/extension.js:1170
+#: src/extension.js:1170 src/weather-settings.ui:613
 msgid "at"
 msgstr "at"
 
-#: src/extension.js:1175
+#: src/extension.js:1175 src/weather-settings.ui:614
 msgid "Torr"
 msgstr "Torr"
 
-#: src/extension.js:1180
+#: src/extension.js:1180 src/weather-settings.ui:615
 msgid "psi"
 msgstr "PSI"
 
-#: src/extension.js:1185
+#: src/extension.js:1185 src/weather-settings.ui:616
 msgid "mmHg"
 msgstr "mmHg"
 
-#: src/extension.js:1190
+#: src/extension.js:1190 src/weather-settings.ui:617
 msgid "mbar"
 msgstr "mbar"
 
-#: src/extension.js:1234
+#: src/extension.js:1234 src/weather-settings.ui:593
 msgid "m/s"
 msgstr "m/s"
 
-#: src/extension.js:1238
+#: src/extension.js:1238 src/weather-settings.ui:592
 msgid "mph"
 msgstr "mph"
 
-#: src/extension.js:1243
+#: src/extension.js:1243 src/weather-settings.ui:591
 msgid "km/h"
 msgstr "km/h"
 
-#: src/extension.js:1252
+#: src/extension.js:1252 src/weather-settings.ui:594
 msgid "kn"
 msgstr "kn"
 
-#: src/extension.js:1257
+#: src/extension.js:1257 src/weather-settings.ui:595
 msgid "ft/s"
 msgstr "ft/s"
 
@@ -547,6 +547,291 @@ msgstr ""
 msgid "Tomorrow"
 msgstr "明天"
 
+#: src/prefs.js:208
+#, fuzzy
+msgid "Searching ..."
+msgstr "載入中 ..."
+
+#: src/prefs.js:220 src/prefs.js:258 src/prefs.js:289 src/prefs.js:293
+#, javascript-format
+msgid "Invalid data when searching for \"%s\""
+msgstr "搜尋「%s」時遇到無效資料"
+
+#: src/prefs.js:225 src/prefs.js:265 src/prefs.js:296
+#, javascript-format
+msgid "\"%s\" not found"
+msgstr "未找到「%s」"
+
+#: src/prefs.js:243
+#, fuzzy
+msgid "You need an AppKey to search on openmapquest."
+msgstr "developer.mapquest.com 的個人應用金鑰"
+
+#: src/prefs.js:244
+#, fuzzy
+msgid "Please visit https://developer.mapquest.com/ ."
+msgstr "developer.mapquest.com 的個人應用金鑰"
+
+#: src/prefs.js:259
+#, fuzzy
+msgid "Do you use a valid AppKey to search on openmapquest ?"
+msgstr "developer.mapquest.com 的個人應用金鑰"
+
+#: src/prefs.js:260
+#, fuzzy
+msgid "If not, please visit https://developer.mapquest.com/ ."
+msgstr "developer.mapquest.com 的個人應用金鑰"
+
+#: src/prefs.js:341
+msgid "Location"
+msgstr "地點"
+
+#: src/prefs.js:352
+msgid "Provider"
+msgstr "資料來源"
+
+#: src/prefs.js:362
+msgid "Result"
+msgstr ""
+
+#: src/prefs.js:549
+#, javascript-format
+msgid "Remove %s ?"
+msgstr "移除 %s ？"
+
+#: src/prefs.js:562
+#, fuzzy
+msgid "No"
+msgstr "北"
+
+#: src/prefs.js:563
+msgid "Yes"
+msgstr ""
+
+#: src/prefs.js:1094
+msgid "default"
+msgstr "預設"
+
+#: src/weather-settings.ui:29
+msgid "Edit name"
+msgstr "編輯名稱"
+
+#: src/weather-settings.ui:40 src/weather-settings.ui:56
+#: src/weather-settings.ui:183
+msgid "Clear entry"
+msgstr "清除條目"
+
+#: src/weather-settings.ui:47
+msgid "Edit coordinates"
+msgstr "編輯座標"
+
+#: src/weather-settings.ui:80 src/weather-settings.ui:216
+msgid "Cancel"
+msgstr "取消"
+
+#: src/weather-settings.ui:90 src/weather-settings.ui:226
+msgid "Save"
+msgstr "儲存"
+
+#: src/weather-settings.ui:124
+msgid "Search Results"
+msgstr ""
+
+#: src/weather-settings.ui:161
+#, fuzzy
+msgid "Search By Location Or Coordinates"
+msgstr "透過地點或座標搜尋"
+
+#: src/weather-settings.ui:184
+msgid "e.g. Vaiaku, Tuvalu or -8.5211767,179.1976747"
+msgstr "例如，「臺北」或者「25.08571815,121.5643773」"
+
+#: src/weather-settings.ui:189
+msgid "Find"
+msgstr "尋找"
+
+#: src/weather-settings.ui:328
+#, fuzzy
+msgid "Choose default weather provider"
+msgstr "選擇預設天氣資料來源"
+
+#: src/weather-settings.ui:339
+msgid "Personal Api key from openweathermap.org"
+msgstr "openweathermap.org 的個人 API 金鑰"
+
+#: src/weather-settings.ui:371
+msgid "Refresh timeout for current weather [min]"
+msgstr "更新目前天氣的逾時設定 [分鐘]"
+
+#: src/weather-settings.ui:383
+msgid "Refresh timeout for weather forecast [min]"
+msgstr "更新天氣預報的逾時設定 [分鐘]"
+
+#: src/weather-settings.ui:428
+msgid "Use extensions api-key for openweathermap.org"
+msgstr "使用本擴充套件的 openweathermap.org API 金鑰"
+
+#: src/weather-settings.ui:437
+msgid ""
+"Switch off, if you have your own api-key for openweathermap.org and put it "
+"into the text-box below."
+msgstr ""
+"如果您自己擁有 openweathermap.org 的 API 金鑰，請將其輸入到下面的文本框中，並"
+"關閉本選項。"
+
+#: src/weather-settings.ui:451
+msgid "Weather provider"
+msgstr "天氣資料來源"
+
+#: src/weather-settings.ui:475
+#, fuzzy
+msgid "Choose geolocation provider"
+msgstr "選擇地理位置資料來源"
+
+#: src/weather-settings.ui:497
+msgid "Personal AppKey from developer.mapquest.com"
+msgstr "developer.mapquest.com 的個人應用金鑰"
+
+#: src/weather-settings.ui:521
+msgid "Geolocation provider"
+msgstr "地理位置資料來源"
+
+#: src/weather-settings.ui:545
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:62
+msgid "Temperature Unit"
+msgstr "溫度單位"
+
+#: src/weather-settings.ui:554
+msgid "Wind Speed Unit"
+msgstr "風速單位"
+
+#: src/weather-settings.ui:563
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:66
+msgid "Pressure Unit"
+msgstr "氣壓單位"
+
+#: src/weather-settings.ui:596
+msgid "Beaufort"
+msgstr "蒲福風級"
+
+#: src/weather-settings.ui:631
+msgid "Units"
+msgstr "單位"
+
+#: src/weather-settings.ui:655
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:112
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:116
+msgid "Position in Panel"
+msgstr "面板上的位置"
+
+#: src/weather-settings.ui:664
+msgid "Position of menu-box [%] from 0 (left) to 100 (right)"
+msgstr "選單框的位置，從左至右，0到100"
+
+#: src/weather-settings.ui:673
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:75
+msgid "Wind Direction by Arrows"
+msgstr "使用箭頭表示風向"
+
+#: src/weather-settings.ui:682
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:88
+msgid "Translate Conditions"
+msgstr "翻譯天氣狀態"
+
+#: src/weather-settings.ui:691
+#, fuzzy
+msgid "Use System Icon Theme"
+msgstr "顯示象徵性符號"
+
+#: src/weather-settings.ui:700
+msgid "Text on buttons"
+msgstr "按鈕上顯示文字"
+
+#: src/weather-settings.ui:709
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:100
+msgid "Temperature in Panel"
+msgstr "面板上顯示溫度"
+
+#: src/weather-settings.ui:718
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:104
+msgid "Conditions in Panel"
+msgstr "面板上顯示天氣狀態"
+
+#: src/weather-settings.ui:727
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:108
+msgid "Conditions in Forecast"
+msgstr "顯示預報天氣狀態"
+
+#: src/weather-settings.ui:736
+msgid "Center forecast"
+msgstr "預報資訊置中顯示"
+
+#: src/weather-settings.ui:745
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:140
+msgid "Number of days in forecast"
+msgstr "預報的天數"
+
+#: src/weather-settings.ui:754
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:144
+msgid "Maximal number of digits after the decimal point"
+msgstr "小數點後的最大位數"
+
+#: src/weather-settings.ui:768
+msgid "Center"
+msgstr "置中"
+
+#: src/weather-settings.ui:769
+msgid "Right"
+msgstr "靠右"
+
+#: src/weather-settings.ui:770
+msgid "Left"
+msgstr "靠左"
+
+#: src/weather-settings.ui:908
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:128
+msgid "Maximal length of the location text"
+msgstr ""
+
+#: src/weather-settings.ui:932
+msgid "Layout"
+msgstr "配置"
+
+#: src/weather-settings.ui:967
+msgid "Version: "
+msgstr "版本："
+
+#: src/weather-settings.ui:981
+msgid ""
+"<span>Display weather information for any location on Earth in the GNOME "
+"Shell</span>"
+msgstr ""
+
+#: src/weather-settings.ui:995
+msgid ""
+"Weather data provided by: <a href=\"https://openweathermap.org/"
+"\">OpenWeatherMap</a>"
+msgstr ""
+
+#: src/weather-settings.ui:1008
+#, fuzzy
+msgid "Maintained by:"
+msgstr "維護者："
+
+#: src/weather-settings.ui:1043
+msgid ""
+"<span size=\"small\">This program comes with ABSOLUTELY NO WARRANTY.\n"
+"See the <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
+"\">GNU General Public License, version 2 or later</a> for details.</span>"
+msgstr ""
+"<span size=\"small\">本程式不提供任何擔保。\n"
+"參閱 <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html\">GNU "
+"通用公共授權條款，第二版或更高版本</a>以了解詳細信息。</span>"
+
+#: src/weather-settings.ui:1054
+msgid "About"
+msgstr "關於"
+
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:54
 msgid "Weather Provider"
 msgstr "天氣資料來源"
@@ -554,14 +839,6 @@ msgstr "天氣資料來源"
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:58
 msgid "Geolocation Provider"
 msgstr "地理位置資料來源"
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:62
-msgid "Temperature Unit"
-msgstr "溫度單位"
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:66
-msgid "Pressure Unit"
-msgstr "氣壓單位"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:70
 msgid "Wind Speed Units"
@@ -572,10 +849,6 @@ msgid ""
 "Choose the units used for wind speed. Allowed values are 'kph', 'mph', 'm/"
 "s', 'knots', 'ft/s' or 'Beaufort'."
 msgstr "選擇風速單位。允許 kph，mph，m/s，knots，ft/s 或 Beaufort。"
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:75
-msgid "Wind Direction by Arrows"
-msgstr "使用箭頭表示風向"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:76
 msgid "Choose whether to display wind direction through arrows or letters."
@@ -589,10 +862,6 @@ msgstr "要顯示的城市"
 msgid "Actual City"
 msgstr "實際城市"
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:88
-msgid "Translate Conditions"
-msgstr "翻譯天氣狀態"
-
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:92
 #, fuzzy
 msgid "System Icons"
@@ -602,23 +871,6 @@ msgstr "顯示象徵性符號"
 msgid "Use text on buttons in menu"
 msgstr "在選單的按鈕上使用文字"
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:100
-msgid "Temperature in Panel"
-msgstr "面板上顯示溫度"
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:104
-msgid "Conditions in Panel"
-msgstr "面板上顯示天氣狀態"
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:108
-msgid "Conditions in Forecast"
-msgstr "顯示預報天氣狀態"
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:112
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:116
-msgid "Position in Panel"
-msgstr "面板上的位置"
-
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:120
 msgid "Horizontal position of menu-box."
 msgstr "選單的水平位置。"
@@ -627,10 +879,6 @@ msgstr "選單的水平位置。"
 msgid "Refresh interval (actual weather)"
 msgstr "更新間隔（實際天氣）"
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:128
-msgid "Maximal length of the location text"
-msgstr ""
-
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:132
 msgid "Refresh interval (forecast)"
 msgstr "更新間隔（預報資訊）"
@@ -638,14 +886,6 @@ msgstr "更新間隔（預報資訊）"
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:136
 msgid "Center forecastbox."
 msgstr "將預報框置中顯示。"
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:140
-msgid "Number of days in forecast"
-msgstr "預報的天數"
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:144
-msgid "Maximal number of digits after the decimal point"
-msgstr "小數點後的最大位數"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:148
 msgid "Your personal API key from openweathermap.org"
@@ -658,6 +898,9 @@ msgstr "使用本擴充套件的 openweathermap.org API 金鑰"
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:156
 msgid "Your personal AppKey from developer.mapquest.com"
 msgstr "developer.mapquest.com 的個人應用金鑰"
+
+#~ msgid "unknown (self-build ?)"
+#~ msgstr "未知（自建？）"
 
 #~ msgid ""
 #~ "Dark Sky does not work without an api-key.\n"
@@ -679,84 +922,11 @@ msgstr "developer.mapquest.com 的個人應用金鑰"
 #~ msgid_plural "In %d days"
 #~ msgstr[0] "未來 %d 天"
 
-#, fuzzy
-#~ msgid "Searching ..."
-#~ msgstr "載入中 ..."
-
-#, javascript-format
-#~ msgid "Invalid data when searching for \"%s\""
-#~ msgstr "搜尋「%s」時遇到無效資料"
-
-#, javascript-format
-#~ msgid "\"%s\" not found"
-#~ msgstr "未找到「%s」"
-
-#, fuzzy
-#~ msgid "You need an AppKey to search on openmapquest."
-#~ msgstr "developer.mapquest.com 的個人應用金鑰"
-
-#, fuzzy
-#~ msgid "Please visit https://developer.mapquest.com/ ."
-#~ msgstr "developer.mapquest.com 的個人應用金鑰"
-
-#~ msgid "Location"
-#~ msgstr "地點"
-
-#~ msgid "Provider"
-#~ msgstr "資料來源"
-
-#, javascript-format
-#~ msgid "Remove %s ?"
-#~ msgstr "移除 %s ？"
-
-#, fuzzy
-#~ msgid "No"
-#~ msgstr "北"
-
-#~ msgid "default"
-#~ msgstr "預設"
-
-#~ msgid "Edit name"
-#~ msgstr "編輯名稱"
-
-#~ msgid "Clear entry"
-#~ msgstr "清除條目"
-
-#~ msgid "Edit coordinates"
-#~ msgstr "編輯座標"
-
 #~ msgid "Extensions default weather provider"
 #~ msgstr "擴充套件的預設天氣資料來源"
 
-#~ msgid "Cancel"
-#~ msgstr "取消"
-
-#~ msgid "Save"
-#~ msgstr "儲存"
-
-#~ msgid "Search by location or coordinates"
-#~ msgstr "透過地點或座標搜尋"
-
-#~ msgid "e.g. Vaiaku, Tuvalu or -8.5211767,179.1976747"
-#~ msgstr "例如，「臺北」或者「25.08571815,121.5643773」"
-
-#~ msgid "Find"
-#~ msgstr "尋找"
-
-#~ msgid "Chose default weather provider"
-#~ msgstr "選擇預設天氣資料來源"
-
-#~ msgid "Personal Api key from openweathermap.org"
-#~ msgstr "openweathermap.org 的個人 API 金鑰"
-
 #~ msgid "Personal Api key from Dark Sky"
 #~ msgstr "Dark Sky 的個人 API 金鑰"
-
-#~ msgid "Refresh timeout for current weather [min]"
-#~ msgstr "更新目前天氣的逾時設定 [分鐘]"
-
-#~ msgid "Refresh timeout for weather forecast [min]"
-#~ msgstr "更新天氣預報的逾時設定 [分鐘]"
 
 #~ msgid ""
 #~ "Note: the forecast-timout is not used for Dark Sky, because they do not "
@@ -764,64 +934,6 @@ msgstr "developer.mapquest.com 的個人應用金鑰"
 #~ msgstr ""
 #~ "注意：預報逾時設定不適用於 Dark Sky，因爲他們不提供目前天氣和預報的分別下"
 #~ "載。"
-
-#~ msgid "Use extensions api-key for openweathermap.org"
-#~ msgstr "使用本擴充套件的 openweathermap.org API 金鑰"
-
-#~ msgid ""
-#~ "Switch off, if you have your own api-key for openweathermap.org and put "
-#~ "it into the text-box below."
-#~ msgstr ""
-#~ "如果您自己擁有 openweathermap.org 的 API 金鑰，請將其輸入到下面的文本框"
-#~ "中，並關閉本選項。"
-
-#~ msgid "Weather provider"
-#~ msgstr "天氣資料來源"
-
-#~ msgid "Chose geolocation provider"
-#~ msgstr "選擇地理位置資料來源"
-
-#~ msgid "Personal AppKey from developer.mapquest.com"
-#~ msgstr "developer.mapquest.com 的個人應用金鑰"
-
-#~ msgid "Geolocation provider"
-#~ msgstr "地理位置資料來源"
-
-#~ msgid "Wind Speed Unit"
-#~ msgstr "風速單位"
-
-#~ msgid "Beaufort"
-#~ msgstr "蒲福風級"
-
-#~ msgid "Units"
-#~ msgstr "單位"
-
-#~ msgid "Position of menu-box [%] from 0 (left) to 100 (right)"
-#~ msgstr "選單框的位置，從左至右，0到100"
-
-#~ msgid "Text on buttons"
-#~ msgstr "按鈕上顯示文字"
-
-#~ msgid "Center forecast"
-#~ msgstr "預報資訊置中顯示"
-
-#~ msgid "Center"
-#~ msgstr "置中"
-
-#~ msgid "Right"
-#~ msgstr "靠右"
-
-#~ msgid "Left"
-#~ msgstr "靠左"
-
-#~ msgid "Layout"
-#~ msgstr "配置"
-
-#~ msgid "Version: "
-#~ msgstr "版本："
-
-#~ msgid "unknown (self-build ?)"
-#~ msgstr "未知（自建？）"
 
 #~ msgid ""
 #~ "<span>Weather extension to display weather information from <a href="
@@ -832,23 +944,8 @@ msgstr "developer.mapquest.com 的個人應用金鑰"
 #~ "\">Openweathermap</a> 或 <a href=\"https://darksky.net\">Dark Sky</a> 的天"
 #~ "氣資訊的擴充套件。</span>"
 
-#~ msgid "Maintained by"
-#~ msgstr "維護者："
-
 #~ msgid "Webpage"
 #~ msgstr "網站主頁"
-
-#~ msgid ""
-#~ "<span size=\"small\">This program comes with ABSOLUTELY NO WARRANTY.\n"
-#~ "See the <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
-#~ "\">GNU General Public License, version 2 or later</a> for details.</span>"
-#~ msgstr ""
-#~ "<span size=\"small\">本程式不提供任何擔保。\n"
-#~ "參閱 <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
-#~ "\">GNU 通用公共授權條款，第二版或更高版本</a>以了解詳細信息。</span>"
-
-#~ msgid "About"
-#~ msgstr "關於"
 
 #~ msgid "Your personal API key from Dark Sky"
 #~ msgstr "Dark Sky 的個人 API 金鑰"

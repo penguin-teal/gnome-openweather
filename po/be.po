@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-03 17:07-0300\n"
+"POT-Creation-Date: 2022-05-04 14:46-0300\n"
 "PO-Revision-Date: 2018-10-14 20:57+0300\n"
 "Last-Translator: Aliaksei <petrovsky.lexey@gmail.com>\n"
 "Language-Team: \n"
@@ -39,7 +39,7 @@ msgstr ""
 msgid "Can not connect to %s"
 msgstr "Не атрымліваецца злучыцца з %s"
 
-#: src/extension.js:800
+#: src/extension.js:800 src/weather-settings.ui:302
 msgid "Locations"
 msgstr "Гарады"
 
@@ -60,7 +60,7 @@ msgstr "Немагчыма адкрыць %s"
 msgid "Weather Settings"
 msgstr "Налады аплета надвор'я"
 
-#: src/extension.js:895
+#: src/extension.js:895 src/prefs.js:1061
 msgid "Invalid city"
 msgstr "Няправільны горад"
 
@@ -68,35 +68,35 @@ msgstr "Няправільны горад"
 msgid "Invalid location! Please try to recreate it."
 msgstr "Няправільнае месцазнаходжанне! Паспрабуйце стварыць яго нанова."
 
-#: src/extension.js:961
+#: src/extension.js:961 src/weather-settings.ui:574
 msgid "°F"
 msgstr "°F"
 
-#: src/extension.js:963
+#: src/extension.js:963 src/weather-settings.ui:575
 msgid "K"
 msgstr "K"
 
-#: src/extension.js:965
+#: src/extension.js:965 src/weather-settings.ui:576
 msgid "°Ra"
 msgstr "°Ra"
 
-#: src/extension.js:967
+#: src/extension.js:967 src/weather-settings.ui:577
 msgid "°Ré"
 msgstr "°Ré"
 
-#: src/extension.js:969
+#: src/extension.js:969 src/weather-settings.ui:578
 msgid "°Rø"
 msgstr "°Rø"
 
-#: src/extension.js:971
+#: src/extension.js:971 src/weather-settings.ui:579
 msgid "°De"
 msgstr "°De"
 
-#: src/extension.js:973
+#: src/extension.js:973 src/weather-settings.ui:580
 msgid "°N"
 msgstr "°N"
 
-#: src/extension.js:975
+#: src/extension.js:975 src/weather-settings.ui:573
 msgid "°C"
 msgstr "°C"
 
@@ -212,67 +212,67 @@ msgstr "З"
 msgid "NW"
 msgstr "ПнЗ"
 
-#: src/extension.js:1136 src/extension.js:1145
+#: src/extension.js:1136 src/extension.js:1145 src/weather-settings.ui:607
 msgid "hPa"
 msgstr "гПа"
 
-#: src/extension.js:1140
+#: src/extension.js:1140 src/weather-settings.ui:608
 msgid "inHg"
 msgstr "дзюйм рт.сл."
 
-#: src/extension.js:1150
+#: src/extension.js:1150 src/weather-settings.ui:609
 msgid "bar"
 msgstr "бар"
 
-#: src/extension.js:1155
+#: src/extension.js:1155 src/weather-settings.ui:610
 msgid "Pa"
 msgstr "Па"
 
-#: src/extension.js:1160
+#: src/extension.js:1160 src/weather-settings.ui:611
 msgid "kPa"
 msgstr "кПа"
 
-#: src/extension.js:1165
+#: src/extension.js:1165 src/weather-settings.ui:612
 msgid "atm"
 msgstr "атм"
 
-#: src/extension.js:1170
+#: src/extension.js:1170 src/weather-settings.ui:613
 msgid "at"
 msgstr "ат"
 
-#: src/extension.js:1175
+#: src/extension.js:1175 src/weather-settings.ui:614
 msgid "Torr"
 msgstr "Торр"
 
-#: src/extension.js:1180
+#: src/extension.js:1180 src/weather-settings.ui:615
 msgid "psi"
 msgstr "psi"
 
-#: src/extension.js:1185
+#: src/extension.js:1185 src/weather-settings.ui:616
 msgid "mmHg"
 msgstr "мм рт.сл."
 
-#: src/extension.js:1190
+#: src/extension.js:1190 src/weather-settings.ui:617
 msgid "mbar"
 msgstr "мбар"
 
-#: src/extension.js:1234
+#: src/extension.js:1234 src/weather-settings.ui:593
 msgid "m/s"
 msgstr "м/с"
 
-#: src/extension.js:1238
+#: src/extension.js:1238 src/weather-settings.ui:592
 msgid "mph"
 msgstr "mph"
 
-#: src/extension.js:1243
+#: src/extension.js:1243 src/weather-settings.ui:591
 msgid "km/h"
 msgstr "км/г"
 
-#: src/extension.js:1252
+#: src/extension.js:1252 src/weather-settings.ui:594
 msgid "kn"
 msgstr "уз"
 
-#: src/extension.js:1257
+#: src/extension.js:1257 src/weather-settings.ui:595
 msgid "ft/s"
 msgstr "фут/с"
 
@@ -548,6 +548,293 @@ msgstr ""
 msgid "Tomorrow"
 msgstr "Заўтра"
 
+#: src/prefs.js:208
+#, fuzzy
+msgid "Searching ..."
+msgstr "Загрузка ..."
+
+#: src/prefs.js:220 src/prefs.js:258 src/prefs.js:289 src/prefs.js:293
+#, javascript-format
+msgid "Invalid data when searching for \"%s\""
+msgstr "Памылковыя дадзеныя для пошуку \"%s\""
+
+#: src/prefs.js:225 src/prefs.js:265 src/prefs.js:296
+#, javascript-format
+msgid "\"%s\" not found"
+msgstr "\"%s\" не знойдзен"
+
+#: src/prefs.js:243
+#, fuzzy
+msgid "You need an AppKey to search on openmapquest."
+msgstr "Уласны AppKey ад developer.mapquest.com"
+
+#: src/prefs.js:244
+#, fuzzy
+msgid "Please visit https://developer.mapquest.com/ ."
+msgstr "Асабісты AppKey ад developer.mapquest.com"
+
+#: src/prefs.js:259
+#, fuzzy
+msgid "Do you use a valid AppKey to search on openmapquest ?"
+msgstr "Уласны AppKey ад developer.mapquest.com"
+
+#: src/prefs.js:260
+#, fuzzy
+msgid "If not, please visit https://developer.mapquest.com/ ."
+msgstr "Асабісты AppKey ад developer.mapquest.com"
+
+#: src/prefs.js:341
+msgid "Location"
+msgstr "Горад"
+
+#: src/prefs.js:352
+msgid "Provider"
+msgstr "Крыніца"
+
+#: src/prefs.js:362
+msgid "Result"
+msgstr ""
+
+#: src/prefs.js:549
+#, javascript-format
+msgid "Remove %s ?"
+msgstr "Выдаліць %s ?"
+
+#: src/prefs.js:562
+#, fuzzy
+msgid "No"
+msgstr "С"
+
+#: src/prefs.js:563
+msgid "Yes"
+msgstr ""
+
+#: src/prefs.js:1094
+msgid "default"
+msgstr "па змоўчанні"
+
+#: src/weather-settings.ui:29
+msgid "Edit name"
+msgstr "Рэдагаваць імя"
+
+#: src/weather-settings.ui:40 src/weather-settings.ui:56
+#: src/weather-settings.ui:183
+msgid "Clear entry"
+msgstr "Ачысціць запіс"
+
+#: src/weather-settings.ui:47
+msgid "Edit coordinates"
+msgstr "Рэдагаваць каардынаты"
+
+#: src/weather-settings.ui:80 src/weather-settings.ui:216
+msgid "Cancel"
+msgstr "Адмяніць"
+
+#: src/weather-settings.ui:90 src/weather-settings.ui:226
+msgid "Save"
+msgstr "Захаваць"
+
+#: src/weather-settings.ui:124
+msgid "Search Results"
+msgstr ""
+
+#: src/weather-settings.ui:161
+#, fuzzy
+msgid "Search By Location Or Coordinates"
+msgstr "Пошук па назве або каардынатам"
+
+#: src/weather-settings.ui:184
+msgid "e.g. Vaiaku, Tuvalu or -8.5211767,179.1976747"
+msgstr "напрыклад: Мінск, Брэст ці -8.5211767,179.1976747"
+
+#: src/weather-settings.ui:189
+msgid "Find"
+msgstr "Знайсці"
+
+#: src/weather-settings.ui:328
+#, fuzzy
+msgid "Choose default weather provider"
+msgstr "Выбар крыніцы дадзеных па замоўчванні"
+
+#: src/weather-settings.ui:339
+msgid "Personal Api key from openweathermap.org"
+msgstr "Асабісты API ключ ад openweathermap.org"
+
+#: src/weather-settings.ui:371
+msgid "Refresh timeout for current weather [min]"
+msgstr "Перыядычнасць абнаўлення бягучага прагнозу надвор'я [хвіл.]"
+
+#: src/weather-settings.ui:383
+msgid "Refresh timeout for weather forecast [min]"
+msgstr "Перыядычнасць абнаўлення прагнозу надвор'я [хвіл.]"
+
+#: src/weather-settings.ui:428
+msgid "Use extensions api-key for openweathermap.org"
+msgstr "Выкарыстоўваць API ключ дадатку ад openweathermap.org"
+
+#: src/weather-settings.ui:437
+msgid ""
+"Switch off, if you have your own api-key for openweathermap.org and put it "
+"into the text-box below."
+msgstr ""
+"Адкючыце, калі ў вас ёсць уласны API ключ ад openweathermap.org і ўвядзіце "
+"яго у поле нижэй."
+
+#: src/weather-settings.ui:451
+msgid "Weather provider"
+msgstr "Крыніца звестак аб надвор'і"
+
+#: src/weather-settings.ui:475
+#, fuzzy
+msgid "Choose geolocation provider"
+msgstr "Выбар крыніцы геазвестак"
+
+#: src/weather-settings.ui:497
+msgid "Personal AppKey from developer.mapquest.com"
+msgstr "Асабісты AppKey ад developer.mapquest.com"
+
+#: src/weather-settings.ui:521
+msgid "Geolocation provider"
+msgstr "Крыніца геададзеных"
+
+#: src/weather-settings.ui:545
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:62
+msgid "Temperature Unit"
+msgstr "Адзінкі вымярэння тэмператууры"
+
+#: src/weather-settings.ui:554
+msgid "Wind Speed Unit"
+msgstr "Адзінкі вымярэння хуткасці ветру"
+
+#: src/weather-settings.ui:563
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:66
+msgid "Pressure Unit"
+msgstr "Адзінкі вымярэння ціску"
+
+#: src/weather-settings.ui:596
+msgid "Beaufort"
+msgstr "Па шкале Бафорта"
+
+#: src/weather-settings.ui:631
+msgid "Units"
+msgstr "Адзінкі вымярэння"
+
+#: src/weather-settings.ui:655
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:112
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:116
+msgid "Position in Panel"
+msgstr "Пазіцыя на панелі"
+
+#: src/weather-settings.ui:664
+msgid "Position of menu-box [%] from 0 (left) to 100 (right)"
+msgstr "Пазіцыя акна ў [%] ад 0 (злева) да 100 (справа)"
+
+#: src/weather-settings.ui:673
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:75
+msgid "Wind Direction by Arrows"
+msgstr "Паказваць напрамак ветру стрэлкамі"
+
+#: src/weather-settings.ui:682
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:88
+msgid "Translate Conditions"
+msgstr "Перакладаць умовы надвор'я"
+
+#: src/weather-settings.ui:691
+#, fuzzy
+msgid "Use System Icon Theme"
+msgstr "Выкарыстоўваць сімвалічныя абразкі"
+
+#: src/weather-settings.ui:700
+msgid "Text on buttons"
+msgstr "Тэкст на кнопках"
+
+#: src/weather-settings.ui:709
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:100
+msgid "Temperature in Panel"
+msgstr "Паказваць тэмпературу на панэлі"
+
+#: src/weather-settings.ui:718
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:104
+msgid "Conditions in Panel"
+msgstr "Паказваць умовы надвор'я на панэлі"
+
+#: src/weather-settings.ui:727
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:108
+msgid "Conditions in Forecast"
+msgstr "Паказваць умовы надвор'я у прагнозе"
+
+#: src/weather-settings.ui:736
+msgid "Center forecast"
+msgstr "Цэнтраваць прагноз"
+
+#: src/weather-settings.ui:745
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:140
+msgid "Number of days in forecast"
+msgstr "Колькасць дзён у прагнозе"
+
+#: src/weather-settings.ui:754
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:144
+msgid "Maximal number of digits after the decimal point"
+msgstr "Колькасць знакаў пасля коскі"
+
+#: src/weather-settings.ui:768
+msgid "Center"
+msgstr "Па цэнтру"
+
+#: src/weather-settings.ui:769
+msgid "Right"
+msgstr "Справа"
+
+#: src/weather-settings.ui:770
+msgid "Left"
+msgstr "Злева"
+
+#: src/weather-settings.ui:908
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:128
+msgid "Maximal length of the location text"
+msgstr ""
+
+#: src/weather-settings.ui:932
+msgid "Layout"
+msgstr "Планіроўка"
+
+#: src/weather-settings.ui:967
+msgid "Version: "
+msgstr "Версія: "
+
+#: src/weather-settings.ui:981
+msgid ""
+"<span>Display weather information for any location on Earth in the GNOME "
+"Shell</span>"
+msgstr ""
+
+#: src/weather-settings.ui:995
+msgid ""
+"Weather data provided by: <a href=\"https://openweathermap.org/"
+"\">OpenWeatherMap</a>"
+msgstr ""
+
+#: src/weather-settings.ui:1008
+#, fuzzy
+msgid "Maintained by:"
+msgstr "Аўтар"
+
+#: src/weather-settings.ui:1043
+msgid ""
+"<span size=\"small\">This program comes with ABSOLUTELY NO WARRANTY.\n"
+"See the <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
+"\">GNU General Public License, version 2 or later</a> for details.</span>"
+msgstr ""
+"<span size=\"small\">Гэтае прыстасаванне пастаўляецца БЕЗ УСЯЛЯКІХ "
+"ГАРАНТЫЙ.\n"
+"Глядзі <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
+"\">GNU General Public License, версіі 2 ці больш позняй</a> для дэталяў.</"
+"span>"
+
+#: src/weather-settings.ui:1054
+msgid "About"
+msgstr "Пра праграму"
+
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:54
 msgid "Weather Provider"
 msgstr "Крыніца дадзеных аб надвор'і"
@@ -555,14 +842,6 @@ msgstr "Крыніца дадзеных аб надвор'і"
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:58
 msgid "Geolocation Provider"
 msgstr "Крыніца геададзеных"
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:62
-msgid "Temperature Unit"
-msgstr "Адзінкі вымярэння тэмператууры"
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:66
-msgid "Pressure Unit"
-msgstr "Адзінкі вымярэння ціску"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:70
 msgid "Wind Speed Units"
@@ -576,10 +855,6 @@ msgstr ""
 "Абярыце адзінку вымярэння хуткасці ветру. Дазволеныя значеннні: км/г, mph "
 "(мілі у гадзіну), м/с, вузлы, фут/с ці па шкале Бафорта."
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:75
-msgid "Wind Direction by Arrows"
-msgstr "Паказваць напрамак ветру стрэлкамі"
-
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:76
 msgid "Choose whether to display wind direction through arrows or letters."
 msgstr "Абярыце як паказваць напрамкі ветру - стрэлкамі ці літарамі."
@@ -592,10 +867,6 @@ msgstr "Горад для паказу"
 msgid "Actual City"
 msgstr "Бягучы горад"
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:88
-msgid "Translate Conditions"
-msgstr "Перакладаць умовы надвор'я"
-
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:92
 #, fuzzy
 msgid "System Icons"
@@ -605,23 +876,6 @@ msgstr "Выкарыстоўваць сімвалічныя абразкі"
 msgid "Use text on buttons in menu"
 msgstr "Выкарыстоўваць тэкст на кнопках у меню"
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:100
-msgid "Temperature in Panel"
-msgstr "Паказваць тэмпературу на панэлі"
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:104
-msgid "Conditions in Panel"
-msgstr "Паказваць умовы надвор'я на панэлі"
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:108
-msgid "Conditions in Forecast"
-msgstr "Паказваць умовы надвор'я у прагнозе"
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:112
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:116
-msgid "Position in Panel"
-msgstr "Пазіцыя на панелі"
-
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:120
 msgid "Horizontal position of menu-box."
 msgstr "Гарызантальнае становішча акна."
@@ -630,10 +884,6 @@ msgstr "Гарызантальнае становішча акна."
 msgid "Refresh interval (actual weather)"
 msgstr "Интэрвал абнаўлення (бягучае надвор'е)"
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:128
-msgid "Maximal length of the location text"
-msgstr ""
-
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:132
 msgid "Refresh interval (forecast)"
 msgstr "Интэрвал абнаўлення (надвор'е)"
@@ -641,14 +891,6 @@ msgstr "Интэрвал абнаўлення (надвор'е)"
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:136
 msgid "Center forecastbox."
 msgstr "Цэнтраваць прагноз."
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:140
-msgid "Number of days in forecast"
-msgstr "Колькасць дзён у прагнозе"
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:144
-msgid "Maximal number of digits after the decimal point"
-msgstr "Колькасць знакаў пасля коскі"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:148
 msgid "Your personal API key from openweathermap.org"
@@ -661,6 +903,9 @@ msgstr "Выкарыстоўваць API ключ дадатку ад openweathe
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:156
 msgid "Your personal AppKey from developer.mapquest.com"
 msgstr "Уласны AppKey ад developer.mapquest.com"
+
+#~ msgid "unknown (self-build ?)"
+#~ msgstr "невядома (уласная зборка?)"
 
 #~ msgid ""
 #~ "Dark Sky does not work without an api-key.\n"
@@ -684,84 +929,11 @@ msgstr "Уласны AppKey ад developer.mapquest.com"
 #~ msgstr[1] "На %d дні"
 #~ msgstr[2] "На %d дзён"
 
-#, fuzzy
-#~ msgid "Searching ..."
-#~ msgstr "Загрузка ..."
-
-#, javascript-format
-#~ msgid "Invalid data when searching for \"%s\""
-#~ msgstr "Памылковыя дадзеныя для пошуку \"%s\""
-
-#, javascript-format
-#~ msgid "\"%s\" not found"
-#~ msgstr "\"%s\" не знойдзен"
-
-#, fuzzy
-#~ msgid "You need an AppKey to search on openmapquest."
-#~ msgstr "Уласны AppKey ад developer.mapquest.com"
-
-#, fuzzy
-#~ msgid "Please visit https://developer.mapquest.com/ ."
-#~ msgstr "Асабісты AppKey ад developer.mapquest.com"
-
-#~ msgid "Location"
-#~ msgstr "Горад"
-
-#~ msgid "Provider"
-#~ msgstr "Крыніца"
-
-#, javascript-format
-#~ msgid "Remove %s ?"
-#~ msgstr "Выдаліць %s ?"
-
-#, fuzzy
-#~ msgid "No"
-#~ msgstr "С"
-
-#~ msgid "default"
-#~ msgstr "па змоўчанні"
-
-#~ msgid "Edit name"
-#~ msgstr "Рэдагаваць імя"
-
-#~ msgid "Clear entry"
-#~ msgstr "Ачысціць запіс"
-
-#~ msgid "Edit coordinates"
-#~ msgstr "Рэдагаваць каардынаты"
-
 #~ msgid "Extensions default weather provider"
 #~ msgstr "Крыніца дадзеных аб надвор'і па змоўчанні"
 
-#~ msgid "Cancel"
-#~ msgstr "Адмяніць"
-
-#~ msgid "Save"
-#~ msgstr "Захаваць"
-
-#~ msgid "Search by location or coordinates"
-#~ msgstr "Пошук па назве або каардынатам"
-
-#~ msgid "e.g. Vaiaku, Tuvalu or -8.5211767,179.1976747"
-#~ msgstr "напрыклад: Мінск, Брэст ці -8.5211767,179.1976747"
-
-#~ msgid "Find"
-#~ msgstr "Знайсці"
-
-#~ msgid "Chose default weather provider"
-#~ msgstr "Выбар крыніцы дадзеных па замоўчванні"
-
-#~ msgid "Personal Api key from openweathermap.org"
-#~ msgstr "Асабісты API ключ ад openweathermap.org"
-
 #~ msgid "Personal Api key from Dark Sky"
 #~ msgstr "Асабісты API ключ ад  Dark Sky"
-
-#~ msgid "Refresh timeout for current weather [min]"
-#~ msgstr "Перыядычнасць абнаўлення бягучага прагнозу надвор'я [хвіл.]"
-
-#~ msgid "Refresh timeout for weather forecast [min]"
-#~ msgstr "Перыядычнасць абнаўлення прагнозу надвор'я [хвіл.]"
 
 #~ msgid ""
 #~ "Note: the forecast-timout is not used for Dark Sky, because they do not "
@@ -770,64 +942,6 @@ msgstr "Уласны AppKey ад developer.mapquest.com"
 #~ "Заўвага: перыядычнасць абнаўлення прагнозу надвор'я не выкарыстоўваецца "
 #~ "для Dark Sky, бо ён не падтрымлівае паасобную загрузку для бягучага "
 #~ "прагнозу надвор'я."
-
-#~ msgid "Use extensions api-key for openweathermap.org"
-#~ msgstr "Выкарыстоўваць API ключ дадатку ад openweathermap.org"
-
-#~ msgid ""
-#~ "Switch off, if you have your own api-key for openweathermap.org and put "
-#~ "it into the text-box below."
-#~ msgstr ""
-#~ "Адкючыце, калі ў вас ёсць уласны API ключ ад openweathermap.org і "
-#~ "ўвядзіце яго у поле нижэй."
-
-#~ msgid "Weather provider"
-#~ msgstr "Крыніца звестак аб надвор'і"
-
-#~ msgid "Chose geolocation provider"
-#~ msgstr "Выбар крыніцы геазвестак"
-
-#~ msgid "Personal AppKey from developer.mapquest.com"
-#~ msgstr "Асабісты AppKey ад developer.mapquest.com"
-
-#~ msgid "Geolocation provider"
-#~ msgstr "Крыніца геададзеных"
-
-#~ msgid "Wind Speed Unit"
-#~ msgstr "Адзінкі вымярэння хуткасці ветру"
-
-#~ msgid "Beaufort"
-#~ msgstr "Па шкале Бафорта"
-
-#~ msgid "Units"
-#~ msgstr "Адзінкі вымярэння"
-
-#~ msgid "Position of menu-box [%] from 0 (left) to 100 (right)"
-#~ msgstr "Пазіцыя акна ў [%] ад 0 (злева) да 100 (справа)"
-
-#~ msgid "Text on buttons"
-#~ msgstr "Тэкст на кнопках"
-
-#~ msgid "Center forecast"
-#~ msgstr "Цэнтраваць прагноз"
-
-#~ msgid "Center"
-#~ msgstr "Па цэнтру"
-
-#~ msgid "Right"
-#~ msgstr "Справа"
-
-#~ msgid "Left"
-#~ msgstr "Злева"
-
-#~ msgid "Layout"
-#~ msgstr "Планіроўка"
-
-#~ msgid "Version: "
-#~ msgstr "Версія: "
-
-#~ msgid "unknown (self-build ?)"
-#~ msgstr "невядома (уласная зборка?)"
 
 #~ msgid ""
 #~ "<span>Weather extension to display weather information from <a href="
@@ -838,25 +952,8 @@ msgstr "Уласны AppKey ад developer.mapquest.com"
 #~ "\">Openweathermap</a> ці <a href=\"https://darksky.net\">Dark Sky</a> "
 #~ "амаль для усіх месцаў у свеце.</span>"
 
-#~ msgid "Maintained by"
-#~ msgstr "Аўтар"
-
 #~ msgid "Webpage"
 #~ msgstr "Хатняя старонка"
-
-#~ msgid ""
-#~ "<span size=\"small\">This program comes with ABSOLUTELY NO WARRANTY.\n"
-#~ "See the <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
-#~ "\">GNU General Public License, version 2 or later</a> for details.</span>"
-#~ msgstr ""
-#~ "<span size=\"small\">Гэтае прыстасаванне пастаўляецца БЕЗ УСЯЛЯКІХ "
-#~ "ГАРАНТЫЙ.\n"
-#~ "Глядзі <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
-#~ "\">GNU General Public License, версіі 2 ці больш позняй</a> для дэталяў.</"
-#~ "span>"
-
-#~ msgid "About"
-#~ msgstr "Пра праграму"
 
 #~ msgid "Your personal API key from Dark Sky"
 #~ msgstr "Асабісты API ключ ад Dark Sky"

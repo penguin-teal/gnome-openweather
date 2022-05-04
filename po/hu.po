@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-shell-extension-openweather\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-03 17:07-0300\n"
+"POT-Creation-Date: 2022-05-04 14:46-0300\n"
 "PO-Revision-Date: 2017-05-29 11:55+0200\n"
 "Last-Translator: Báthory Péter <bathory86p@gmail.com>\n"
 "Language-Team: \n"
@@ -39,7 +39,7 @@ msgstr ""
 msgid "Can not connect to %s"
 msgstr "Nem lehet csatlakozni ide: %s"
 
-#: src/extension.js:800
+#: src/extension.js:800 src/weather-settings.ui:302
 msgid "Locations"
 msgstr "Helyszínek"
 
@@ -60,7 +60,7 @@ msgstr "Nem lehet megnyitni %s"
 msgid "Weather Settings"
 msgstr "Meteorológiai beállítások"
 
-#: src/extension.js:895
+#: src/extension.js:895 src/prefs.js:1061
 msgid "Invalid city"
 msgstr "Érvénytelen város"
 
@@ -68,35 +68,35 @@ msgstr "Érvénytelen város"
 msgid "Invalid location! Please try to recreate it."
 msgstr "Érvénytelen helyszín! Próbálja újra létrehozni."
 
-#: src/extension.js:961
+#: src/extension.js:961 src/weather-settings.ui:574
 msgid "°F"
 msgstr "°F"
 
-#: src/extension.js:963
+#: src/extension.js:963 src/weather-settings.ui:575
 msgid "K"
 msgstr "K"
 
-#: src/extension.js:965
+#: src/extension.js:965 src/weather-settings.ui:576
 msgid "°Ra"
 msgstr "°Ra"
 
-#: src/extension.js:967
+#: src/extension.js:967 src/weather-settings.ui:577
 msgid "°Ré"
 msgstr "°Ré"
 
-#: src/extension.js:969
+#: src/extension.js:969 src/weather-settings.ui:578
 msgid "°Rø"
 msgstr "°Rø"
 
-#: src/extension.js:971
+#: src/extension.js:971 src/weather-settings.ui:579
 msgid "°De"
 msgstr "°De"
 
-#: src/extension.js:973
+#: src/extension.js:973 src/weather-settings.ui:580
 msgid "°N"
 msgstr "°N"
 
-#: src/extension.js:975
+#: src/extension.js:975 src/weather-settings.ui:573
 msgid "°C"
 msgstr "°C"
 
@@ -212,67 +212,67 @@ msgstr "NY"
 msgid "NW"
 msgstr "ÉNY"
 
-#: src/extension.js:1136 src/extension.js:1145
+#: src/extension.js:1136 src/extension.js:1145 src/weather-settings.ui:607
 msgid "hPa"
 msgstr "hPa"
 
-#: src/extension.js:1140
+#: src/extension.js:1140 src/weather-settings.ui:608
 msgid "inHg"
 msgstr "inHg"
 
-#: src/extension.js:1150
+#: src/extension.js:1150 src/weather-settings.ui:609
 msgid "bar"
 msgstr "bar"
 
-#: src/extension.js:1155
+#: src/extension.js:1155 src/weather-settings.ui:610
 msgid "Pa"
 msgstr "Pa"
 
-#: src/extension.js:1160
+#: src/extension.js:1160 src/weather-settings.ui:611
 msgid "kPa"
 msgstr "kPa"
 
-#: src/extension.js:1165
+#: src/extension.js:1165 src/weather-settings.ui:612
 msgid "atm"
 msgstr "atm"
 
-#: src/extension.js:1170
+#: src/extension.js:1170 src/weather-settings.ui:613
 msgid "at"
 msgstr "at"
 
-#: src/extension.js:1175
+#: src/extension.js:1175 src/weather-settings.ui:614
 msgid "Torr"
 msgstr "Torr"
 
-#: src/extension.js:1180
+#: src/extension.js:1180 src/weather-settings.ui:615
 msgid "psi"
 msgstr "psi"
 
-#: src/extension.js:1185
+#: src/extension.js:1185 src/weather-settings.ui:616
 msgid "mmHg"
 msgstr "mmHg"
 
-#: src/extension.js:1190
+#: src/extension.js:1190 src/weather-settings.ui:617
 msgid "mbar"
 msgstr "mbar"
 
-#: src/extension.js:1234
+#: src/extension.js:1234 src/weather-settings.ui:593
 msgid "m/s"
 msgstr "m/s"
 
-#: src/extension.js:1238
+#: src/extension.js:1238 src/weather-settings.ui:592
 msgid "mph"
 msgstr "mph"
 
-#: src/extension.js:1243
+#: src/extension.js:1243 src/weather-settings.ui:591
 msgid "km/h"
 msgstr "km/ó"
 
-#: src/extension.js:1252
+#: src/extension.js:1252 src/weather-settings.ui:594
 msgid "kn"
 msgstr "kn"
 
-#: src/extension.js:1257
+#: src/extension.js:1257 src/weather-settings.ui:595
 msgid "ft/s"
 msgstr "láb/s"
 
@@ -547,6 +547,292 @@ msgstr ""
 msgid "Tomorrow"
 msgstr "holnap"
 
+#: src/prefs.js:208
+#, fuzzy
+msgid "Searching ..."
+msgstr "Betöltés ..."
+
+#: src/prefs.js:220 src/prefs.js:258 src/prefs.js:289 src/prefs.js:293
+#, javascript-format
+msgid "Invalid data when searching for \"%s\""
+msgstr "Érvénytelen adat „%s” keresésekor"
+
+#: src/prefs.js:225 src/prefs.js:265 src/prefs.js:296
+#, javascript-format
+msgid "\"%s\" not found"
+msgstr "„%s” nem található"
+
+#: src/prefs.js:243
+#, fuzzy
+msgid "You need an AppKey to search on openmapquest."
+msgstr "Az Ön személyes API kulcsa az developer.mapquest.com-ról"
+
+#: src/prefs.js:244
+#, fuzzy
+msgid "Please visit https://developer.mapquest.com/ ."
+msgstr "Személyes API kulcs a developer.mapquest.com-ról"
+
+#: src/prefs.js:259
+#, fuzzy
+msgid "Do you use a valid AppKey to search on openmapquest ?"
+msgstr "Az Ön személyes API kulcsa az developer.mapquest.com-ról"
+
+#: src/prefs.js:260
+#, fuzzy
+msgid "If not, please visit https://developer.mapquest.com/ ."
+msgstr "Személyes API kulcs a developer.mapquest.com-ról"
+
+#: src/prefs.js:341
+msgid "Location"
+msgstr "Helyszín"
+
+#: src/prefs.js:352
+msgid "Provider"
+msgstr "Szolgáltató"
+
+#: src/prefs.js:362
+msgid "Result"
+msgstr ""
+
+#: src/prefs.js:549
+#, javascript-format
+msgid "Remove %s ?"
+msgstr "%s eltávolítása?"
+
+#: src/prefs.js:562
+#, fuzzy
+msgid "No"
+msgstr "É"
+
+#: src/prefs.js:563
+msgid "Yes"
+msgstr ""
+
+#: src/prefs.js:1094
+msgid "default"
+msgstr "alapértelmezett"
+
+#: src/weather-settings.ui:29
+msgid "Edit name"
+msgstr "Név szerkesztése"
+
+#: src/weather-settings.ui:40 src/weather-settings.ui:56
+#: src/weather-settings.ui:183
+msgid "Clear entry"
+msgstr "Bejegyzés törlése"
+
+#: src/weather-settings.ui:47
+msgid "Edit coordinates"
+msgstr "Koordináták szerkesztése"
+
+#: src/weather-settings.ui:80 src/weather-settings.ui:216
+msgid "Cancel"
+msgstr "Mégsem"
+
+#: src/weather-settings.ui:90 src/weather-settings.ui:226
+msgid "Save"
+msgstr "Mentés"
+
+#: src/weather-settings.ui:124
+msgid "Search Results"
+msgstr ""
+
+#: src/weather-settings.ui:161
+#, fuzzy
+msgid "Search By Location Or Coordinates"
+msgstr "Keresés helyszínek vagy koordináták szerint"
+
+#: src/weather-settings.ui:184
+msgid "e.g. Vaiaku, Tuvalu or -8.5211767,179.1976747"
+msgstr "pl.: Vaiaku, Tuvalu vagy -8.5211767,179.1976747"
+
+#: src/weather-settings.ui:189
+msgid "Find"
+msgstr "Keresés"
+
+#: src/weather-settings.ui:328
+#, fuzzy
+msgid "Choose default weather provider"
+msgstr "Alapértelmezett meteorológiai szolgáltató választás"
+
+#: src/weather-settings.ui:339
+msgid "Personal Api key from openweathermap.org"
+msgstr "Személyes API kulcs az openweathermap.org weboldaltól"
+
+#: src/weather-settings.ui:371
+msgid "Refresh timeout for current weather [min]"
+msgstr "Aktuális időjárás frissitési gyakorisága (perc)"
+
+#: src/weather-settings.ui:383
+msgid "Refresh timeout for weather forecast [min]"
+msgstr "Előrejelzés frissitési gyakorisága (perc)"
+
+#: src/weather-settings.ui:428
+msgid "Use extensions api-key for openweathermap.org"
+msgstr "A kiterjesztés openweathermap.org api-kulcsának használata"
+
+#: src/weather-settings.ui:437
+msgid ""
+"Switch off, if you have your own api-key for openweathermap.org and put it "
+"into the text-box below."
+msgstr ""
+"Kapcsolja ki, ha a saját openweathermap.org api-kulcsát szeretné használni, "
+"valamint másolja be azt az alábbi szövegdobozba."
+
+#: src/weather-settings.ui:451
+msgid "Weather provider"
+msgstr "Meteorológiai adatok"
+
+#: src/weather-settings.ui:475
+#, fuzzy
+msgid "Choose geolocation provider"
+msgstr "Névkereső választás"
+
+#: src/weather-settings.ui:497
+msgid "Personal AppKey from developer.mapquest.com"
+msgstr "Személyes API kulcs a developer.mapquest.com-ról"
+
+#: src/weather-settings.ui:521
+msgid "Geolocation provider"
+msgstr "Névkeresés"
+
+#: src/weather-settings.ui:545
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:62
+msgid "Temperature Unit"
+msgstr "Hőmérsékleti egység"
+
+#: src/weather-settings.ui:554
+msgid "Wind Speed Unit"
+msgstr "Szélerősség egység"
+
+#: src/weather-settings.ui:563
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:66
+msgid "Pressure Unit"
+msgstr "Nyomás egysége"
+
+#: src/weather-settings.ui:596
+msgid "Beaufort"
+msgstr "Beaufort"
+
+#: src/weather-settings.ui:631
+msgid "Units"
+msgstr "Mértékegységek"
+
+#: src/weather-settings.ui:655
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:112
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:116
+msgid "Position in Panel"
+msgstr "Elhelyezkedés a panelen"
+
+#: src/weather-settings.ui:664
+msgid "Position of menu-box [%] from 0 (left) to 100 (right)"
+msgstr "A legördülő panel pozíciója százalékban (0 - jobb, 100 - bal)"
+
+#: src/weather-settings.ui:673
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:75
+msgid "Wind Direction by Arrows"
+msgstr "Szélirány nyilakkal"
+
+#: src/weather-settings.ui:682
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:88
+msgid "Translate Conditions"
+msgstr "Időjárási körülmények fordítása"
+
+#: src/weather-settings.ui:691
+#, fuzzy
+msgid "Use System Icon Theme"
+msgstr "Jelképes ikonok"
+
+#: src/weather-settings.ui:700
+msgid "Text on buttons"
+msgstr "Felirat a gombokon"
+
+#: src/weather-settings.ui:709
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:100
+msgid "Temperature in Panel"
+msgstr "Hőmérséklet a panelen"
+
+#: src/weather-settings.ui:718
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:104
+msgid "Conditions in Panel"
+msgstr "Körülmények a panelen"
+
+#: src/weather-settings.ui:727
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:108
+msgid "Conditions in Forecast"
+msgstr "Körülmények az előrejelzésben"
+
+#: src/weather-settings.ui:736
+msgid "Center forecast"
+msgstr "Középtávú előrejelzés"
+
+#: src/weather-settings.ui:745
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:140
+msgid "Number of days in forecast"
+msgstr "Előrejelzett napok száma"
+
+#: src/weather-settings.ui:754
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:144
+msgid "Maximal number of digits after the decimal point"
+msgstr "Tizedespont után álló számjegyek száma"
+
+#: src/weather-settings.ui:768
+msgid "Center"
+msgstr "középen"
+
+#: src/weather-settings.ui:769
+msgid "Right"
+msgstr "jobbra"
+
+#: src/weather-settings.ui:770
+msgid "Left"
+msgstr "balra"
+
+#: src/weather-settings.ui:908
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:128
+msgid "Maximal length of the location text"
+msgstr ""
+
+#: src/weather-settings.ui:932
+msgid "Layout"
+msgstr "Elrendezés"
+
+#: src/weather-settings.ui:967
+msgid "Version: "
+msgstr "Verzió: "
+
+#: src/weather-settings.ui:981
+msgid ""
+"<span>Display weather information for any location on Earth in the GNOME "
+"Shell</span>"
+msgstr ""
+
+#: src/weather-settings.ui:995
+msgid ""
+"Weather data provided by: <a href=\"https://openweathermap.org/"
+"\">OpenWeatherMap</a>"
+msgstr ""
+
+#: src/weather-settings.ui:1008
+#, fuzzy
+msgid "Maintained by:"
+msgstr "Karbantartja"
+
+#: src/weather-settings.ui:1043
+msgid ""
+"<span size=\"small\">This program comes with ABSOLUTELY NO WARRANTY.\n"
+"See the <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
+"\">GNU General Public License, version 2 or later</a> for details.</span>"
+msgstr ""
+"<span size=\"small\">Ez a program SEMMILYEN GARANCIÁVAL NEM RENDELKEZIK.\n"
+"Tekintse meg <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
+"\">GNU General Public License, 2. vagy későbbi változatát</a> a részletekért."
+"</span>"
+
+#: src/weather-settings.ui:1054
+msgid "About"
+msgstr "A programról"
+
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:54
 msgid "Weather Provider"
 msgstr "Meteorológiai adat szolgáltató"
@@ -554,14 +840,6 @@ msgstr "Meteorológiai adat szolgáltató"
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:58
 msgid "Geolocation Provider"
 msgstr "Névkeresés szolgáltató"
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:62
-msgid "Temperature Unit"
-msgstr "Hőmérsékleti egység"
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:66
-msgid "Pressure Unit"
-msgstr "Nyomás egysége"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:70
 msgid "Wind Speed Units"
@@ -574,10 +852,6 @@ msgid ""
 msgstr ""
 "Válassza ki a szélsebesség mértékegységét. A rendelkezésre álló "
 "mértékegységek: 'k/h', 'mph', 'm/s', 'knots', 'ft/s' or 'Beaufort'."
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:75
-msgid "Wind Direction by Arrows"
-msgstr "Szélirány nyilakkal"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:76
 msgid "Choose whether to display wind direction through arrows or letters."
@@ -592,10 +866,6 @@ msgstr "Megjelenítendő város"
 msgid "Actual City"
 msgstr "Aktuális város"
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:88
-msgid "Translate Conditions"
-msgstr "Időjárási körülmények fordítása"
-
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:92
 #, fuzzy
 msgid "System Icons"
@@ -605,23 +875,6 @@ msgstr "Jelképes ikonok"
 msgid "Use text on buttons in menu"
 msgstr "Feliratok megjelenítése a menügombokon"
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:100
-msgid "Temperature in Panel"
-msgstr "Hőmérséklet a panelen"
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:104
-msgid "Conditions in Panel"
-msgstr "Körülmények a panelen"
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:108
-msgid "Conditions in Forecast"
-msgstr "Körülmények az előrejelzésben"
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:112
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:116
-msgid "Position in Panel"
-msgstr "Elhelyezkedés a panelen"
-
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:120
 msgid "Horizontal position of menu-box."
 msgstr "A menü doboz vízszintes pozíciója."
@@ -630,10 +883,6 @@ msgstr "A menü doboz vízszintes pozíciója."
 msgid "Refresh interval (actual weather)"
 msgstr "Frissítési gyakoriság (aktuális időjárás)"
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:128
-msgid "Maximal length of the location text"
-msgstr ""
-
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:132
 msgid "Refresh interval (forecast)"
 msgstr "Frissítési gyakoriság (előrejelzés)"
@@ -641,14 +890,6 @@ msgstr "Frissítési gyakoriság (előrejelzés)"
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:136
 msgid "Center forecastbox."
 msgstr "Előrejelzés sor középre igazítása"
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:140
-msgid "Number of days in forecast"
-msgstr "Előrejelzett napok száma"
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:144
-msgid "Maximal number of digits after the decimal point"
-msgstr "Tizedespont után álló számjegyek száma"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:148
 msgid "Your personal API key from openweathermap.org"
@@ -662,6 +903,9 @@ msgstr ""
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:156
 msgid "Your personal AppKey from developer.mapquest.com"
 msgstr "Az Ön személyes API kulcsa az developer.mapquest.com-ról"
+
+#~ msgid "unknown (self-build ?)"
+#~ msgstr "ismeretlen (saját fordítás ?)"
 
 #~ msgid ""
 #~ "Dark Sky does not work without an api-key.\n"
@@ -684,84 +928,11 @@ msgstr "Az Ön személyes API kulcsa az developer.mapquest.com-ról"
 #~ msgstr[0] "%d nap"
 #~ msgstr[1] "%d nap"
 
-#, fuzzy
-#~ msgid "Searching ..."
-#~ msgstr "Betöltés ..."
-
-#, javascript-format
-#~ msgid "Invalid data when searching for \"%s\""
-#~ msgstr "Érvénytelen adat „%s” keresésekor"
-
-#, javascript-format
-#~ msgid "\"%s\" not found"
-#~ msgstr "„%s” nem található"
-
-#, fuzzy
-#~ msgid "You need an AppKey to search on openmapquest."
-#~ msgstr "Az Ön személyes API kulcsa az developer.mapquest.com-ról"
-
-#, fuzzy
-#~ msgid "Please visit https://developer.mapquest.com/ ."
-#~ msgstr "Személyes API kulcs a developer.mapquest.com-ról"
-
-#~ msgid "Location"
-#~ msgstr "Helyszín"
-
-#~ msgid "Provider"
-#~ msgstr "Szolgáltató"
-
-#, javascript-format
-#~ msgid "Remove %s ?"
-#~ msgstr "%s eltávolítása?"
-
-#, fuzzy
-#~ msgid "No"
-#~ msgstr "É"
-
-#~ msgid "default"
-#~ msgstr "alapértelmezett"
-
-#~ msgid "Edit name"
-#~ msgstr "Név szerkesztése"
-
-#~ msgid "Clear entry"
-#~ msgstr "Bejegyzés törlése"
-
-#~ msgid "Edit coordinates"
-#~ msgstr "Koordináták szerkesztése"
-
 #~ msgid "Extensions default weather provider"
 #~ msgstr "A kiterjesztés alapértelmezett meteorológiai szolgáltatója"
 
-#~ msgid "Cancel"
-#~ msgstr "Mégsem"
-
-#~ msgid "Save"
-#~ msgstr "Mentés"
-
-#~ msgid "Search by location or coordinates"
-#~ msgstr "Keresés helyszínek vagy koordináták szerint"
-
-#~ msgid "e.g. Vaiaku, Tuvalu or -8.5211767,179.1976747"
-#~ msgstr "pl.: Vaiaku, Tuvalu vagy -8.5211767,179.1976747"
-
-#~ msgid "Find"
-#~ msgstr "Keresés"
-
-#~ msgid "Chose default weather provider"
-#~ msgstr "Alapértelmezett meteorológiai szolgáltató választás"
-
-#~ msgid "Personal Api key from openweathermap.org"
-#~ msgstr "Személyes API kulcs az openweathermap.org weboldaltól"
-
 #~ msgid "Personal Api key from Dark Sky"
 #~ msgstr "Személyes API kulcs a Dark Sky-tól"
-
-#~ msgid "Refresh timeout for current weather [min]"
-#~ msgstr "Aktuális időjárás frissitési gyakorisága (perc)"
-
-#~ msgid "Refresh timeout for weather forecast [min]"
-#~ msgstr "Előrejelzés frissitési gyakorisága (perc)"
 
 #~ msgid ""
 #~ "Note: the forecast-timout is not used for Dark Sky, because they do not "
@@ -769,64 +940,6 @@ msgstr "Az Ön személyes API kulcsa az developer.mapquest.com-ról"
 #~ msgstr ""
 #~ "Megjegyzés: a Dark Sky-nál nem lesz használatban az előrejelzés "
 #~ "intervallum, mivel nem szolgáltat külön időjárás és előrejelzés adatokat."
-
-#~ msgid "Use extensions api-key for openweathermap.org"
-#~ msgstr "A kiterjesztés openweathermap.org api-kulcsának használata"
-
-#~ msgid ""
-#~ "Switch off, if you have your own api-key for openweathermap.org and put "
-#~ "it into the text-box below."
-#~ msgstr ""
-#~ "Kapcsolja ki, ha a saját openweathermap.org api-kulcsát szeretné "
-#~ "használni, valamint másolja be azt az alábbi szövegdobozba."
-
-#~ msgid "Weather provider"
-#~ msgstr "Meteorológiai adatok"
-
-#~ msgid "Chose geolocation provider"
-#~ msgstr "Névkereső választás"
-
-#~ msgid "Personal AppKey from developer.mapquest.com"
-#~ msgstr "Személyes API kulcs a developer.mapquest.com-ról"
-
-#~ msgid "Geolocation provider"
-#~ msgstr "Névkeresés"
-
-#~ msgid "Wind Speed Unit"
-#~ msgstr "Szélerősség egység"
-
-#~ msgid "Beaufort"
-#~ msgstr "Beaufort"
-
-#~ msgid "Units"
-#~ msgstr "Mértékegységek"
-
-#~ msgid "Position of menu-box [%] from 0 (left) to 100 (right)"
-#~ msgstr "A legördülő panel pozíciója százalékban (0 - jobb, 100 - bal)"
-
-#~ msgid "Text on buttons"
-#~ msgstr "Felirat a gombokon"
-
-#~ msgid "Center forecast"
-#~ msgstr "Középtávú előrejelzés"
-
-#~ msgid "Center"
-#~ msgstr "középen"
-
-#~ msgid "Right"
-#~ msgstr "jobbra"
-
-#~ msgid "Left"
-#~ msgstr "balra"
-
-#~ msgid "Layout"
-#~ msgstr "Elrendezés"
-
-#~ msgid "Version: "
-#~ msgstr "Verzió: "
-
-#~ msgid "unknown (self-build ?)"
-#~ msgstr "ismeretlen (saját fordítás ?)"
 
 #~ msgid ""
 #~ "<span>Weather extension to display weather information from <a href="
@@ -838,24 +951,8 @@ msgstr "Az Ön személyes API kulcsa az developer.mapquest.com-ról"
 #~ "\"https://darksky.net\">Dark Sky</a> szolgáltatóktól a világ csaknem "
 #~ "összes helyszínére.</span>"
 
-#~ msgid "Maintained by"
-#~ msgstr "Karbantartja"
-
 #~ msgid "Webpage"
 #~ msgstr "Honlap"
-
-#~ msgid ""
-#~ "<span size=\"small\">This program comes with ABSOLUTELY NO WARRANTY.\n"
-#~ "See the <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
-#~ "\">GNU General Public License, version 2 or later</a> for details.</span>"
-#~ msgstr ""
-#~ "<span size=\"small\">Ez a program SEMMILYEN GARANCIÁVAL NEM RENDELKEZIK.\n"
-#~ "Tekintse meg <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0."
-#~ "html\">GNU General Public License, 2. vagy későbbi változatát</a> a "
-#~ "részletekért.</span>"
-
-#~ msgid "About"
-#~ msgstr "A programról"
 
 #~ msgid "Your personal API key from Dark Sky"
 #~ msgstr "Az Ön személyes Dark Sky API kulcsa"

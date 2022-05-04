@@ -970,7 +970,7 @@
                 <child>
                   <object class="GtkLabel" id="version">
                     <property name="halign">start</property>
-                    <property name="label" translatable="yes">unknown (self-build ?)</property>
+                    <property name="label">unknown (self-build ?)</property>
                     <property name="ellipsize">end</property>
                   </object>
                 </child>

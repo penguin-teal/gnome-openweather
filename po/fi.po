@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-shell-extension-openweather 1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-03 17:07-0300\n"
+"POT-Creation-Date: 2022-05-04 14:46-0300\n"
 "PO-Revision-Date: 2017-09-08 20:50+0300\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
 "Language-Team: \n"
@@ -35,7 +35,7 @@ msgstr ""
 msgid "Can not connect to %s"
 msgstr "Yhteys kohteeseen %s ei onnistu"
 
-#: src/extension.js:800
+#: src/extension.js:800 src/weather-settings.ui:302
 msgid "Locations"
 msgstr "Sijainnit"
 
@@ -56,7 +56,7 @@ msgstr "Ei voida avata %s"
 msgid "Weather Settings"
 msgstr "Sääasetukset"
 
-#: src/extension.js:895
+#: src/extension.js:895 src/prefs.js:1061
 msgid "Invalid city"
 msgstr "Virheellinen kaupunki"
 
@@ -64,35 +64,35 @@ msgstr "Virheellinen kaupunki"
 msgid "Invalid location! Please try to recreate it."
 msgstr "Virheellinen sijainti! Luo sijainti uudelleen."
 
-#: src/extension.js:961
+#: src/extension.js:961 src/weather-settings.ui:574
 msgid "°F"
 msgstr "°F"
 
-#: src/extension.js:963
+#: src/extension.js:963 src/weather-settings.ui:575
 msgid "K"
 msgstr "K"
 
-#: src/extension.js:965
+#: src/extension.js:965 src/weather-settings.ui:576
 msgid "°Ra"
 msgstr "°Ra"
 
-#: src/extension.js:967
+#: src/extension.js:967 src/weather-settings.ui:577
 msgid "°Ré"
 msgstr "°Ré"
 
-#: src/extension.js:969
+#: src/extension.js:969 src/weather-settings.ui:578
 msgid "°Rø"
 msgstr "°Rø"
 
-#: src/extension.js:971
+#: src/extension.js:971 src/weather-settings.ui:579
 msgid "°De"
 msgstr "°De"
 
-#: src/extension.js:973
+#: src/extension.js:973 src/weather-settings.ui:580
 msgid "°N"
 msgstr "°N"
 
-#: src/extension.js:975
+#: src/extension.js:975 src/weather-settings.ui:573
 msgid "°C"
 msgstr "°C"
 
@@ -208,67 +208,67 @@ msgstr "W"
 msgid "NW"
 msgstr "NW"
 
-#: src/extension.js:1136 src/extension.js:1145
+#: src/extension.js:1136 src/extension.js:1145 src/weather-settings.ui:607
 msgid "hPa"
 msgstr "hPa"
 
-#: src/extension.js:1140
+#: src/extension.js:1140 src/weather-settings.ui:608
 msgid "inHg"
 msgstr "inHg"
 
-#: src/extension.js:1150
+#: src/extension.js:1150 src/weather-settings.ui:609
 msgid "bar"
 msgstr "bar"
 
-#: src/extension.js:1155
+#: src/extension.js:1155 src/weather-settings.ui:610
 msgid "Pa"
 msgstr "Pa"
 
-#: src/extension.js:1160
+#: src/extension.js:1160 src/weather-settings.ui:611
 msgid "kPa"
 msgstr "kPa"
 
-#: src/extension.js:1165
+#: src/extension.js:1165 src/weather-settings.ui:612
 msgid "atm"
 msgstr "atm"
 
-#: src/extension.js:1170
+#: src/extension.js:1170 src/weather-settings.ui:613
 msgid "at"
 msgstr "at"
 
-#: src/extension.js:1175
+#: src/extension.js:1175 src/weather-settings.ui:614
 msgid "Torr"
 msgstr "torria"
 
-#: src/extension.js:1180
+#: src/extension.js:1180 src/weather-settings.ui:615
 msgid "psi"
 msgstr "psi"
 
-#: src/extension.js:1185
+#: src/extension.js:1185 src/weather-settings.ui:616
 msgid "mmHg"
 msgstr "mmHg"
 
-#: src/extension.js:1190
+#: src/extension.js:1190 src/weather-settings.ui:617
 msgid "mbar"
 msgstr "mbar"
 
-#: src/extension.js:1234
+#: src/extension.js:1234 src/weather-settings.ui:593
 msgid "m/s"
 msgstr "m/s"
 
-#: src/extension.js:1238
+#: src/extension.js:1238 src/weather-settings.ui:592
 msgid "mph"
 msgstr "mph"
 
-#: src/extension.js:1243
+#: src/extension.js:1243 src/weather-settings.ui:591
 msgid "km/h"
 msgstr "km/h"
 
-#: src/extension.js:1252
+#: src/extension.js:1252 src/weather-settings.ui:594
 msgid "kn"
 msgstr "kn"
 
-#: src/extension.js:1257
+#: src/extension.js:1257 src/weather-settings.ui:595
 msgid "ft/s"
 msgstr "ft/s"
 
@@ -543,6 +543,290 @@ msgstr ""
 msgid "Tomorrow"
 msgstr "Huomenna"
 
+#: src/prefs.js:208
+#, fuzzy
+msgid "Searching ..."
+msgstr "Ladataan..."
+
+#: src/prefs.js:220 src/prefs.js:258 src/prefs.js:289 src/prefs.js:293
+#, javascript-format
+msgid "Invalid data when searching for \"%s\""
+msgstr "Virheelliset tiedot etsiessä \"%s\""
+
+#: src/prefs.js:225 src/prefs.js:265 src/prefs.js:296
+#, javascript-format
+msgid "\"%s\" not found"
+msgstr "Ei löydetty \"%s\""
+
+#: src/prefs.js:243
+#, fuzzy
+msgid "You need an AppKey to search on openmapquest."
+msgstr "Henkilökohtainen AppKey developer.mapquest.comista"
+
+#: src/prefs.js:244
+#, fuzzy
+msgid "Please visit https://developer.mapquest.com/ ."
+msgstr "Henkilökohtainen AppKey developer.mapquest.comista"
+
+#: src/prefs.js:259
+#, fuzzy
+msgid "Do you use a valid AppKey to search on openmapquest ?"
+msgstr "Henkilökohtainen AppKey developer.mapquest.comista"
+
+#: src/prefs.js:260
+#, fuzzy
+msgid "If not, please visit https://developer.mapquest.com/ ."
+msgstr "Henkilökohtainen AppKey developer.mapquest.comista"
+
+#: src/prefs.js:341
+msgid "Location"
+msgstr "Sijainti"
+
+#: src/prefs.js:352
+msgid "Provider"
+msgstr "Tarjoaja"
+
+#: src/prefs.js:362
+msgid "Result"
+msgstr ""
+
+#: src/prefs.js:549
+#, javascript-format
+msgid "Remove %s ?"
+msgstr "Poistetaanko %s ?"
+
+#: src/prefs.js:562
+#, fuzzy
+msgid "No"
+msgstr "N"
+
+#: src/prefs.js:563
+msgid "Yes"
+msgstr ""
+
+#: src/prefs.js:1094
+msgid "default"
+msgstr "oletus"
+
+#: src/weather-settings.ui:29
+msgid "Edit name"
+msgstr "Muokkaa nimeä"
+
+#: src/weather-settings.ui:40 src/weather-settings.ui:56
+#: src/weather-settings.ui:183
+msgid "Clear entry"
+msgstr "Tyhjennä tietue"
+
+#: src/weather-settings.ui:47
+msgid "Edit coordinates"
+msgstr "Muokkaa koordinaatteja"
+
+#: src/weather-settings.ui:80 src/weather-settings.ui:216
+msgid "Cancel"
+msgstr "Peru"
+
+#: src/weather-settings.ui:90 src/weather-settings.ui:226
+msgid "Save"
+msgstr "Tallenna"
+
+#: src/weather-settings.ui:124
+msgid "Search Results"
+msgstr ""
+
+#: src/weather-settings.ui:161
+#, fuzzy
+msgid "Search By Location Or Coordinates"
+msgstr "Etsi sijaintia nimellä tai koordinaateilla"
+
+#: src/weather-settings.ui:184
+msgid "e.g. Vaiaku, Tuvalu or -8.5211767,179.1976747"
+msgstr "esim. Vaiaku, Tuvalu tai -8.5211767,179.1976747"
+
+#: src/weather-settings.ui:189
+msgid "Find"
+msgstr "Etsi"
+
+#: src/weather-settings.ui:328
+#, fuzzy
+msgid "Choose default weather provider"
+msgstr "Säätietojen oletustarjoaja"
+
+#: src/weather-settings.ui:339
+msgid "Personal Api key from openweathermap.org"
+msgstr "Henkilökohtainen API-avain openweathermap.orgista"
+
+#: src/weather-settings.ui:371
+msgid "Refresh timeout for current weather [min]"
+msgstr "Päivityksen aikakatkaisu nykyiselle säätiedoille [min]"
+
+#: src/weather-settings.ui:383
+msgid "Refresh timeout for weather forecast [min]"
+msgstr "Päivityksen aikakatkaisu sääennusteelle [min]"
+
+#: src/weather-settings.ui:428
+#, fuzzy
+msgid "Use extensions api-key for openweathermap.org"
+msgstr "Henkilökohtainen API-avain openweathermap.orgista"
+
+#: src/weather-settings.ui:437
+msgid ""
+"Switch off, if you have your own api-key for openweathermap.org and put it "
+"into the text-box below."
+msgstr ""
+
+#: src/weather-settings.ui:451
+msgid "Weather provider"
+msgstr "Säätietojen tarjoaja"
+
+#: src/weather-settings.ui:475
+#, fuzzy
+msgid "Choose geolocation provider"
+msgstr "Valitse sijainnin tarjoaja"
+
+#: src/weather-settings.ui:497
+msgid "Personal AppKey from developer.mapquest.com"
+msgstr "Henkilökohtainen AppKey developer.mapquest.comista"
+
+#: src/weather-settings.ui:521
+msgid "Geolocation provider"
+msgstr "Sijainnin tarjoaja"
+
+#: src/weather-settings.ui:545
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:62
+msgid "Temperature Unit"
+msgstr "Lämpötilan yksikkö"
+
+#: src/weather-settings.ui:554
+msgid "Wind Speed Unit"
+msgstr "Tuulen nopeuden yksikkö"
+
+#: src/weather-settings.ui:563
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:66
+msgid "Pressure Unit"
+msgstr "Paineen yksikkö"
+
+#: src/weather-settings.ui:596
+msgid "Beaufort"
+msgstr "bofori"
+
+#: src/weather-settings.ui:631
+msgid "Units"
+msgstr "Yksiköt"
+
+#: src/weather-settings.ui:655
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:112
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:116
+msgid "Position in Panel"
+msgstr "Sijainti paneelissa"
+
+#: src/weather-settings.ui:664
+msgid "Position of menu-box [%] from 0 (left) to 100 (right)"
+msgstr "Sijainti valikkolaatikolle [%] arvosta 0 (vasen) arvoon 100 (oikea)"
+
+#: src/weather-settings.ui:673
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:75
+msgid "Wind Direction by Arrows"
+msgstr "Tuulen suunta nuolina"
+
+#: src/weather-settings.ui:682
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:88
+msgid "Translate Conditions"
+msgstr "Käännä olosuhteet"
+
+#: src/weather-settings.ui:691
+#, fuzzy
+msgid "Use System Icon Theme"
+msgstr "Symboliset kuvakkeet"
+
+#: src/weather-settings.ui:700
+msgid "Text on buttons"
+msgstr "Teksti painikkeissa"
+
+#: src/weather-settings.ui:709
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:100
+msgid "Temperature in Panel"
+msgstr "Lämpötila paneelissa"
+
+#: src/weather-settings.ui:718
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:104
+msgid "Conditions in Panel"
+msgstr "Olosuhteet paneelissa"
+
+#: src/weather-settings.ui:727
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:108
+msgid "Conditions in Forecast"
+msgstr "Olosuhteet ennusteessa"
+
+#: src/weather-settings.ui:736
+msgid "Center forecast"
+msgstr "Keskitä ennuste"
+
+#: src/weather-settings.ui:745
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:140
+msgid "Number of days in forecast"
+msgstr "Päivien määrä ennusteessa"
+
+#: src/weather-settings.ui:754
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:144
+msgid "Maximal number of digits after the decimal point"
+msgstr "Desimaalipilkun jälkeen tulevien numeroiden maksimimäärä"
+
+#: src/weather-settings.ui:768
+msgid "Center"
+msgstr "Keskellä"
+
+#: src/weather-settings.ui:769
+msgid "Right"
+msgstr "Oikealla"
+
+#: src/weather-settings.ui:770
+msgid "Left"
+msgstr "Vasemmalla"
+
+#: src/weather-settings.ui:908
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:128
+msgid "Maximal length of the location text"
+msgstr ""
+
+#: src/weather-settings.ui:932
+msgid "Layout"
+msgstr "Asettelu"
+
+#: src/weather-settings.ui:967
+msgid "Version: "
+msgstr "Versio: "
+
+#: src/weather-settings.ui:981
+msgid ""
+"<span>Display weather information for any location on Earth in the GNOME "
+"Shell</span>"
+msgstr ""
+
+#: src/weather-settings.ui:995
+msgid ""
+"Weather data provided by: <a href=\"https://openweathermap.org/"
+"\">OpenWeatherMap</a>"
+msgstr ""
+
+#: src/weather-settings.ui:1008
+#, fuzzy
+msgid "Maintained by:"
+msgstr "Ylläpitäjä"
+
+#: src/weather-settings.ui:1043
+msgid ""
+"<span size=\"small\">This program comes with ABSOLUTELY NO WARRANTY.\n"
+"See the <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
+"\">GNU General Public License, version 2 or later</a> for details.</span>"
+msgstr ""
+"<span size=\"small\">Tämä ohjelma EI SISÄLLÄ MINKÄÄNLAISTA TAKUUTA.\n"
+"Lue lisätietoja <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0."
+"html\">GNU General Public -lisenssin versiosta 2 tai myöhemmästä</a>.</span>"
+
+#: src/weather-settings.ui:1054
+msgid "About"
+msgstr "Tietoja"
+
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:54
 msgid "Weather Provider"
 msgstr "Säätietojen tarjoaja"
@@ -550,14 +834,6 @@ msgstr "Säätietojen tarjoaja"
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:58
 msgid "Geolocation Provider"
 msgstr "Sijainnin tarjoaja"
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:62
-msgid "Temperature Unit"
-msgstr "Lämpötilan yksikkö"
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:66
-msgid "Pressure Unit"
-msgstr "Paineen yksikkö"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:70
 msgid "Wind Speed Units"
@@ -571,10 +847,6 @@ msgstr ""
 "Valitse yksikkö tuulen nopeudelle. Sallitut arvot ovat 'kph', 'mph', 'm/s', "
 "'knots', 'ft/s' tai 'bofori'."
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:75
-msgid "Wind Direction by Arrows"
-msgstr "Tuulen suunta nuolina"
-
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:76
 msgid "Choose whether to display wind direction through arrows or letters."
 msgstr "Valitse näytetäänkö tuulen suunta nuolina vai kirjaimina."
@@ -587,10 +859,6 @@ msgstr "Näytettävä kaupunki"
 msgid "Actual City"
 msgstr "Todellinen kaupunki"
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:88
-msgid "Translate Conditions"
-msgstr "Käännä olosuhteet"
-
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:92
 #, fuzzy
 msgid "System Icons"
@@ -600,23 +868,6 @@ msgstr "Symboliset kuvakkeet"
 msgid "Use text on buttons in menu"
 msgstr "Käytä tekstiä valikon painikkeissa"
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:100
-msgid "Temperature in Panel"
-msgstr "Lämpötila paneelissa"
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:104
-msgid "Conditions in Panel"
-msgstr "Olosuhteet paneelissa"
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:108
-msgid "Conditions in Forecast"
-msgstr "Olosuhteet ennusteessa"
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:112
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:116
-msgid "Position in Panel"
-msgstr "Sijainti paneelissa"
-
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:120
 msgid "Horizontal position of menu-box."
 msgstr "Valikkolaatikon vaakasuuntainen sijainti."
@@ -625,10 +876,6 @@ msgstr "Valikkolaatikon vaakasuuntainen sijainti."
 msgid "Refresh interval (actual weather)"
 msgstr "Päivitysväli (säätiedot)"
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:128
-msgid "Maximal length of the location text"
-msgstr ""
-
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:132
 msgid "Refresh interval (forecast)"
 msgstr "Päivitysväli (ennuste)"
@@ -636,14 +883,6 @@ msgstr "Päivitysväli (ennuste)"
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:136
 msgid "Center forecastbox."
 msgstr "Keskitä ennustelaatikko."
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:140
-msgid "Number of days in forecast"
-msgstr "Päivien määrä ennusteessa"
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:144
-msgid "Maximal number of digits after the decimal point"
-msgstr "Desimaalipilkun jälkeen tulevien numeroiden maksimimäärä"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:148
 msgid "Your personal API key from openweathermap.org"
@@ -657,6 +896,9 @@ msgstr ""
 msgid "Your personal AppKey from developer.mapquest.com"
 msgstr "Henkilökohtainen AppKey developer.mapquest.comista"
 
+#~ msgid "unknown (self-build ?)"
+#~ msgstr "tuntematon (koostettu itse?)"
+
 #~ msgid "Cloudiness:"
 #~ msgstr "Pilvisyys:"
 
@@ -669,132 +911,11 @@ msgstr "Henkilökohtainen AppKey developer.mapquest.comista"
 #~ msgstr[0] "%d päivän päästä"
 #~ msgstr[1] "%d päivän päästä"
 
-#, fuzzy
-#~ msgid "Searching ..."
-#~ msgstr "Ladataan..."
-
-#, javascript-format
-#~ msgid "Invalid data when searching for \"%s\""
-#~ msgstr "Virheelliset tiedot etsiessä \"%s\""
-
-#, javascript-format
-#~ msgid "\"%s\" not found"
-#~ msgstr "Ei löydetty \"%s\""
-
-#, fuzzy
-#~ msgid "You need an AppKey to search on openmapquest."
-#~ msgstr "Henkilökohtainen AppKey developer.mapquest.comista"
-
-#, fuzzy
-#~ msgid "Please visit https://developer.mapquest.com/ ."
-#~ msgstr "Henkilökohtainen AppKey developer.mapquest.comista"
-
-#~ msgid "Location"
-#~ msgstr "Sijainti"
-
-#~ msgid "Provider"
-#~ msgstr "Tarjoaja"
-
-#, javascript-format
-#~ msgid "Remove %s ?"
-#~ msgstr "Poistetaanko %s ?"
-
-#, fuzzy
-#~ msgid "No"
-#~ msgstr "N"
-
-#~ msgid "default"
-#~ msgstr "oletus"
-
-#~ msgid "Edit name"
-#~ msgstr "Muokkaa nimeä"
-
-#~ msgid "Clear entry"
-#~ msgstr "Tyhjennä tietue"
-
-#~ msgid "Edit coordinates"
-#~ msgstr "Muokkaa koordinaatteja"
-
 #~ msgid "Extensions default weather provider"
 #~ msgstr "Laajennusten säätietojen oletustarjoaja"
 
-#~ msgid "Cancel"
-#~ msgstr "Peru"
-
-#~ msgid "Save"
-#~ msgstr "Tallenna"
-
-#~ msgid "Search by location or coordinates"
-#~ msgstr "Etsi sijaintia nimellä tai koordinaateilla"
-
-#~ msgid "e.g. Vaiaku, Tuvalu or -8.5211767,179.1976747"
-#~ msgstr "esim. Vaiaku, Tuvalu tai -8.5211767,179.1976747"
-
-#~ msgid "Find"
-#~ msgstr "Etsi"
-
-#~ msgid "Chose default weather provider"
-#~ msgstr "Säätietojen oletustarjoaja"
-
-#~ msgid "Personal Api key from openweathermap.org"
-#~ msgstr "Henkilökohtainen API-avain openweathermap.orgista"
-
 #~ msgid "Personal Api key from Dark Sky"
 #~ msgstr "Henkilökohtainen API-avain Dark Skysta"
-
-#~ msgid "Refresh timeout for current weather [min]"
-#~ msgstr "Päivityksen aikakatkaisu nykyiselle säätiedoille [min]"
-
-#~ msgid "Refresh timeout for weather forecast [min]"
-#~ msgstr "Päivityksen aikakatkaisu sääennusteelle [min]"
-
-#~ msgid "Weather provider"
-#~ msgstr "Säätietojen tarjoaja"
-
-#~ msgid "Chose geolocation provider"
-#~ msgstr "Valitse sijainnin tarjoaja"
-
-#~ msgid "Personal AppKey from developer.mapquest.com"
-#~ msgstr "Henkilökohtainen AppKey developer.mapquest.comista"
-
-#~ msgid "Geolocation provider"
-#~ msgstr "Sijainnin tarjoaja"
-
-#~ msgid "Wind Speed Unit"
-#~ msgstr "Tuulen nopeuden yksikkö"
-
-#~ msgid "Beaufort"
-#~ msgstr "bofori"
-
-#~ msgid "Units"
-#~ msgstr "Yksiköt"
-
-#~ msgid "Position of menu-box [%] from 0 (left) to 100 (right)"
-#~ msgstr "Sijainti valikkolaatikolle [%] arvosta 0 (vasen) arvoon 100 (oikea)"
-
-#~ msgid "Text on buttons"
-#~ msgstr "Teksti painikkeissa"
-
-#~ msgid "Center forecast"
-#~ msgstr "Keskitä ennuste"
-
-#~ msgid "Center"
-#~ msgstr "Keskellä"
-
-#~ msgid "Right"
-#~ msgstr "Oikealla"
-
-#~ msgid "Left"
-#~ msgstr "Vasemmalla"
-
-#~ msgid "Layout"
-#~ msgstr "Asettelu"
-
-#~ msgid "Version: "
-#~ msgstr "Versio: "
-
-#~ msgid "unknown (self-build ?)"
-#~ msgstr "tuntematon (koostettu itse?)"
 
 #~ msgid ""
 #~ "<span>Weather extension to display weather information from <a href="
@@ -805,24 +926,8 @@ msgstr "Henkilökohtainen AppKey developer.mapquest.comista"
 #~ "openweathermap.org/\">Openweathermapista</a> tai <a href=\"https://"
 #~ "darksky.net\">Dark Skysta</a> melkein maailman jokaiseen kolkkaan.</span>"
 
-#~ msgid "Maintained by"
-#~ msgstr "Ylläpitäjä"
-
 #~ msgid "Webpage"
 #~ msgstr "Verkkosivusto"
-
-#~ msgid ""
-#~ "<span size=\"small\">This program comes with ABSOLUTELY NO WARRANTY.\n"
-#~ "See the <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
-#~ "\">GNU General Public License, version 2 or later</a> for details.</span>"
-#~ msgstr ""
-#~ "<span size=\"small\">Tämä ohjelma EI SISÄLLÄ MINKÄÄNLAISTA TAKUUTA.\n"
-#~ "Lue lisätietoja <a href=\"https://www.gnu.org/licenses/old-licenses/"
-#~ "gpl-2.0.html\">GNU General Public -lisenssin versiosta 2 tai myöhemmästä</"
-#~ "a>.</span>"
-
-#~ msgid "About"
-#~ msgstr "Tietoja"
 
 #~ msgid "Your personal API key from Dark Sky"
 #~ msgstr "Henkilökohtainen API-avaimesi Dark Skysta"
