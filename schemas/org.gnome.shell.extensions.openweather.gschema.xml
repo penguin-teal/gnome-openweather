@@ -76,7 +76,7 @@
       <description>Choose whether to display wind direction through arrows or letters.</description>
     </key>
     <key type="s" name="city">
-      <default>'43.6534817,-79.3839347>Toronto >-2'</default>
+      <default>'43.6534817,-79.3839347>Toronto >0'</default>
       <summary>City to be displayed</summary>
     </key>
     <key type="i" name="actual-city">
@@ -136,7 +136,7 @@
       <summary>Center forecastbox.</summary>
     </key>
     <key type="i" name="days-forecast">
-      <default>2</default>
+      <default>1</default>
       <summary>Number of days in forecast</summary>
     </key>
     <key type="i" name="decimal-places">

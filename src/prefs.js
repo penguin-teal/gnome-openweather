@@ -81,7 +81,6 @@ const OPENWEATHER_URL_OSM_FIND = OPENWEATHER_URL_OSM_BASE + 'search';
 
 // Keep enums in sync with GSettings schemas
 const WeatherProvider = {
-    DEFAULT: -1,
     OPENWEATHERMAP: 0
 };
 
@@ -160,15 +159,18 @@ const WeatherPrefsWidget = new GObject.Class({
         this.editName.connect("icon-release", this.clearEntry.bind(this));
         this.editCoord.connect("icon-release", this.clearEntry.bind(this));
 
-        // Bind close request to close sub-windows when user clicks close button in titlebar
-        this.editWidget.connect('close-request', this.editCancel.bind(this));
+        // Bind close request events on sub-windows when user clicks close button
         this.searchWidget.connect('close-request', () => {
+            this.clearSearchMenu();
             this.searchWidget.hide();
         });
+        this.editWidget.connect('close-request', this.editCancel.bind(this));
+        this.searchMenuWidget.connect('close-request', this.clearSearchMenu.bind(this));
 
         this.Window.get_object("tree-toolbutton-add").connect("clicked", () => {
-            this.searchName.set_text("");
             this.clearSearchMenu();
+            this.searchName.set_text("");
+            this.searchCombo.set_active(0);
             this.searchWidget.show();
         });
 
@@ -190,6 +192,7 @@ const WeatherPrefsWidget = new GObject.Class({
         this.Window.get_object("button-edit-save").connect("clicked", this.editSave.bind(this));
 
         this.Window.get_object("button-search-cancel").connect("clicked", () => {
+            this.clearSearchMenu();
             this.searchWidget.hide();
         });
 
@@ -435,8 +438,7 @@ const WeatherPrefsWidget = new GObject.Class({
     clearSearchMenu: function() {
         this.searchSelection.unselect_all();
         this.searchSelection.set_mode(Gtk.SelectionMode.NONE);
-        if (this.searchListstore !== undefined)
-            this.searchListstore.clear();
+        this.searchListstore.clear();
         this.searchMenuWidget.hide();
     },
 
@@ -597,7 +599,7 @@ const WeatherPrefsWidget = new GObject.Class({
         let ac = this.actual_city;
         this.editName.set_text(this.extractLocation(city[ac]));
         this.editCoord.set_text(this.extractCoord(city[ac]));
-        this.editCombo.set_active(this.extractProvider(city[ac]) + 1);
+        this.editCombo.set_active(0);
         this.editWidget.set_title('Editing ' + this.extractLocation(city[ac]));
         this.editWidget.show();
         return 0;
@@ -606,13 +608,14 @@ const WeatherPrefsWidget = new GObject.Class({
     searchSave: function() {
         let location = this.searchName.get_text().split(/\[/)[0];
         let coord = this.searchName.get_text().split(/\[/)[1].split(/\]/)[0];
-        let provider = this.searchCombo.get_active() - 1;
+        let provider = this.searchCombo.get_active();
 
         if (this.city)
             this.city = this.city + " && " + coord + ">" + location + ">" + provider;
         else
             this.city = coord + ">" + location + ">" + provider;
 
+        this.clearSearchMenu();
         this.searchWidget.hide();
         return 0;
     },
@@ -628,7 +631,7 @@ const WeatherPrefsWidget = new GObject.Class({
         let ac = this.actual_city;
         let location = this.editName.get_text();
         let coord = this.editCoord.get_text();
-        let provider = this.editCombo.get_active() - 1;
+        let provider = this.editCombo.get_active();
         theCity[ac] = coord + ">" + location + ">" + provider;
 
         if (theCity.length > 1)
@@ -644,6 +647,7 @@ const WeatherPrefsWidget = new GObject.Class({
     },
 
     editCancel: function() {
+        this.clearSearchMenu();
         this.editName.set_text("");
         this.editCoord.set_text("");
         this.editWidget.hide();
@@ -992,13 +996,13 @@ const WeatherPrefsWidget = new GObject.Class({
     get days_forecast() {
         if (!this.Settings)
             this.loadConfig();
-        return this.Settings.get_int(OPENWEATHER_DAYS_FORECAST) - 2;
+        return this.Settings.get_int(OPENWEATHER_DAYS_FORECAST) - 1;
     },
 
     set days_forecast(v) {
         if (!this.Settings)
             this.loadConfig();
-        this.Settings.set_int(OPENWEATHER_DAYS_FORECAST, v + 2);
+        this.Settings.set_int(OPENWEATHER_DAYS_FORECAST, v + 1);
     },
 
     get decimal_places() {

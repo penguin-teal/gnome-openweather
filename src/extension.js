@@ -385,11 +385,11 @@ class OpenweatherMenuButton extends PanelMenu.Button {
         this._settings = ExtensionUtils.getSettings(OPENWEATHER_SETTINGS_SCHEMA);
 
         if (this._cities.length === 0)
-            this._cities = "43.6534817,-79.3839347>Toronto >-2";
+            this._cities = "43.6534817,-79.3839347>Toronto >0";
 
         this._settingsC = this._settings.connect("changed", () => {
             if (this._cities.length === 0)
-                this._cities = "43.6534817,-79.3839347>Toronto >-2";
+                this._cities = "43.6534817,-79.3839347>Toronto >0";
             this.rebuildCurrentWeatherUi();
             this.rebuildFutureWeatherUi();
             if (this.providerChanged()) {
