@@ -1,11 +1,23 @@
-Elad Alfassa <elad@fedoraproject.org>,
-Mark Benjamin <weather.gnome.Markie1@dfgh.net>,
-Simon Claessens <gagalago@gmail.com>,
-Ecyrbe <ecyrbe+spam@gmail.com>,
-Timur Kristóf <venemo@msn.com>,
-Simon Legner <Simon.Legner@gmail.com>,
-Mattia Meneguzzo <odysseus@fedoraproject.org>,
-Christian Metzler <neroth@xeked.com>,
-Jens Lody <jens@jenslody.de>,
-Taylor Raack <taylor@raack.info>,
-Jason Oickle <openweather at joickle dot com>
+# This is the list of OpenWeather's significant contributors.
+#
+# This does not necessarily list everyone who has contributed
+# code. To see the full list of contributors, see the revision
+# history in source control.
+
+# Current Author
+Jason Oickle
+
+# Previous Author
+Jens Lody
+
+# The individuals below have contributed to the project at
+# some point prior to the projects current fork:
+Elad Alfassa
+Mark Benjamin
+Simon Claessens
+Ecyrbe
+Timur Kristóf
+Simon Legner
+Mattia Meneguzzo
+Christian Metzler
+Taylor Raack

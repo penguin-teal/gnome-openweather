@@ -6,9 +6,7 @@
 
 OpenWeather (*gnome-shell-extension-openweather*) is a simple extension for displaying weather conditions and forecasts for any location on Earth in the GNOME Shell. It provides support for multiple locations with editable names using coordinates to store the locations, a beautiful layout, and more.
 
-Weather data is fetched from [OpenWeatherMap](https://openweathermap.org) including 3 hour forecasts for up to five days.
-
-*Forked from the original OpenWeather extension by @jenslody. The built-in icons are sourced from the GNOME Project's [adwaita-icon-theme](https://gitlab.gnome.org/GNOME/adwaita-icon-theme)*
+Weather data is fetched from [OpenWeatherMap](https://openweathermap.org) including 3 hour forecasts for up to 5 days.
 
 <br>
 
@@ -89,31 +87,18 @@ When submitting a bug report, please make sure to provide as much information as
 
 <br>
 
-## Licence
+## Credits
 
-Copyright &copy; 2011 - 2013
-* Elad Alfassa <elad@fedoraproject.org>,
-* Mark Benjamin <weather.gnome.Markie1@dfgh.net>,
-* Simon Claessens <gagalago@gmail.com>,
-* Ecyrbe <ecyrbe+spam@gmail.com>,
-* Timur Kristóf <venemo@msn.com>,
-* Simon Legner <Simon.Legner@gmail.com>,
-* Mattia Meneguzzo <odysseus@fedoraproject.org>,
-* Christian Metzler <neroth@xeked.com>,
-* Jens Lody <jens@jenslody.de>.
+The packaged weather icons are sourced from the GNOME Project's [Adwaita Icon Theme](https://gitlab.gnome.org/GNOME/adwaita-icon-theme).
 
-Copyright &copy; 2018
-* Taylor Raack <taylor@raack.info>.
+This extension is a fork of the original OpenWeather extension by @jenslody.
 
-Copyright &copy; 2013 - 2021
-* Jens Lody <openweather@jenslody.de>.
+### Translations
 
-Copyright &copy; 2022
-* Jason Oickle <openweather[at]joickle[dot]com>.
+Special thanks to the following people for updating translation `*.po` files via merge requests since fork the project:
 
+French: @franckgaga | Slovak: @jose1711
 
-OpenWeather (*gnome-shell-extension-openweather*) is free software: you can redistribute it and/or modify it under the terms of the **GNU General Public License as published by the Free Software Foundation, either version 3** of the License, or (at your option) any later version.
+### Licence
 
-OpenWeather is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License along with OpenWeather (*gnome-shell-extension-openweather*).  If not, see <http://www.gnu.org/licenses/>.
+OpenWeather is free software available under the terms of the GPLv3 license. See [`COPYING`](https://gitlab.com/skrewball/openweather/-/blob/master/COPYING) for details.
