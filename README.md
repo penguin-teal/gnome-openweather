@@ -89,15 +89,21 @@ When submitting a bug report, please make sure to provide as much information as
 
 ## Credits
 
-The packaged weather icons are sourced from the GNOME Project's [Adwaita Icon Theme](https://gitlab.gnome.org/GNOME/adwaita-icon-theme).
-
-This extension is a fork of the original OpenWeather extension by @jenslody.
+This GNOME Extension is a fork of the original OpenWeather extension by @jenslody.
 
 ### Translations
 
-Special thanks to the following people for updating translation `*.po` files via merge requests since fork the project:
+Special thanks to the following people for updating translation `*.po` files via merge requests since forking the project:
 
 French: @franckgaga | Slovak: @jose1711
+
+### Icons
+
+OpenWeather's icon was designed by [Sihan Liu](https://www.sihanliu.com) and licensed under the [CC-BY-SA](http://creativecommons.org/licenses/by-sa/3.0/) licence.
+
+Packaged weather icons are sourced from the [GNOME Project](http://www.gnome.org)'s [Adwaita Icon Theme](https://gitlab.gnome.org/GNOME/adwaita-icon-theme) under the GPLv3 license.
+
+PayPal donate button and template used for the Gitlab button was designed by [Klemen Skerbiš](https://github.com/aha999/DonateButtons) under the GPLv3 license.
 
 ### Licence
 
