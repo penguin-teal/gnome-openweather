@@ -406,7 +406,7 @@
                     <property name="adjustment">forecast-refresh-adjustment</property>
                     <property name="climb_rate">5</property>
                     <property name="numeric">1</property>
-                    <property name="value">10</property>
+                    <property name="value">60</property>
                     <layout>
                       <property name="column">1</property>
                       <property name="row">6</property>

@@ -307,6 +307,7 @@ const WeatherPrefsWidget = new GObject.Class({
         });
 
         this.forecast_spin = this.Window.get_object("spin-forecast-refresh");
+        this.forecast_spin.set_range(60, 1440);
         this.forecast_spin.set_value(this.refresh_interval_forecast / 60);
         this.forecast_spin.connect("value-changed", (button) => {
             this.refresh_interval_forecast = 60 * button.get_value();
