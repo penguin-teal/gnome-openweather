@@ -15,6 +15,7 @@
    Copyright 2022 Jason Oickle
 */
 
+const Soup = imports.gi.Soup;
 const ExtensionUtils = imports.misc.extensionUtils;
 const Me = ExtensionUtils.getCurrentExtension();
 const OpenweathermapOrg = Me.imports.openweathermap_org;
@@ -339,38 +340,6 @@ function parseWeatherCurrent() {
     this.recalcLayout();
 }
 
-function refreshWeatherCurrent() {
-    this.oldLocation = this.extractCoord(this._city);
-
-    if (this.oldLocation.search(",") == -1)
-        return;
-
-    let params = {
-        lat: this.oldLocation.split(",")[0],
-        lon: this.oldLocation.split(",")[1],
-        units: 'metric'
-    };
-    if (this._appid)
-        params.APPID = this._appid;
-
-    this.load_json_async(OPENWEATHER_URL_CURRENT, params, (json) => {
-        if (json && (Number(json.cod) == 200)) {
-
-            if (this.currentWeatherCache != json)
-                this.currentWeatherCache = json;
-
-            this.rebuildSelectCityItem();
-
-            this.parseWeatherCurrent();
-        } else {
-            // we are connected, but get no (or no correct) data, so try to reload
-            // after 10 minutes (recommendded by openweathermap.org)
-            this.reloadWeatherCurrent(600);
-        }
-    });
-    this.reloadWeatherCurrent(this._refresh_interval_current);
-}
-
 function parseWeatherForecast() {
     if (this.forecastWeatherCache === undefined || this.todaysWeatherCache === undefined) {
         // this is a reentrency guard
@@ -453,12 +422,14 @@ function parseWeatherForecast() {
     }
 }
 
-function refreshWeatherForecast() {
+async function refreshWeatherCurrent() {
 
     this.oldLocation = this.extractCoord(this._city);
     if (this.oldLocation.search(",") == -1)
         return;
 
+    let json = undefined;
+    this.currentWeatherCache = undefined;
     let params = {
         lat: this.oldLocation.split(",")[0],
         lon: this.oldLocation.split(",")[1],
@@ -467,27 +438,130 @@ function refreshWeatherForecast() {
     if (this._appid)
         params.APPID = this._appid;
 
-    this.load_json_async(OPENWEATHER_URL_FORECAST, params, (json) => {
-        if (json && (Number(json.cod) == 200)) {
+    try {
+        json = await loadJsonAsync(OPENWEATHER_URL_CURRENT, params, this.user_agent)
+        .then(async (json) => {
+            try {
+                if (this.currentWeatherCache != json)
+                    this.currentWeatherCache = json;
 
-             // Sort the data
-            let a = 0;
-            let data = json.list;
-            let todayList = [];
-            let sortedList = [];
-            sortedList[a] = [data[0]];
+                this.rebuildSelectCityItem();
+                this.parseWeatherCurrent();
+            }
+            catch (e) {
+                log("Error processing current json data: " + e);
+            }
+        });
+    }
+    catch (e) {
+        // Something went wrong, reload after 10 minutes
+        // as per openweathermap.org recommendation.
+        this.reloadWeatherCurrent(600);
+        log("Current loadJsonAsync error: " + e);
+    }
+    this.reloadWeatherCurrent(this._refresh_interval_current);
+}
 
-            // Today's forecast
-            for (let i = 0; i < 4; i++)
-                todayList.push(data[i]);
+async function refreshWeatherForecast() {
 
+    this.oldLocation = this.extractCoord(this._city);
+    if (this.oldLocation.search(",") == -1)
+        return;
+
+    let json = undefined;
+    let sortedList = undefined;
+    let todayList = undefined;
+    this.todaysWeatherCache = undefined;
+    this.forecastWeatherCache = undefined;
+    let params = {
+        lat: this.oldLocation.split(",")[0],
+        lon: this.oldLocation.split(",")[1],
+        units: 'metric'
+    };
+    if (this._appid)
+        params.APPID = this._appid;
+
+    try {
+        json = await loadJsonAsync(OPENWEATHER_URL_FORECAST, params, this.user_agent)
+        .then(async (json) => {
+            try {
+                // Today's forecast
+                todayList = await processTodaysData(json);
+                // 5 day / 3 hour forecast
+                sortedList = await processForecastData(json, this.locale);
+            }
+            catch (e) {
+                log("Error processing forecast json data: " + e);
+            }
             if (this.todaysWeatherCache != todayList)
                 this.todaysWeatherCache = todayList;
 
-            // 5 day / 3 hour forecast
+            if (this.forecastWeatherCache != sortedList)
+                this.forecastWeatherCache = sortedList;
+
+            this.owmCityId = json.city.id;
+            this.parseWeatherForecast();
+        });
+    }
+    catch (e) {
+        // Something went wrong, reload after 10 minutes
+        // as per openweathermap.org recommendation.
+        this.reloadWeatherForecast(600);
+        log("Forecast loadJsonAsync error: " + e);
+    }
+    this.reloadWeatherForecast(this._refresh_interval_forecast);
+}
+
+function loadJsonAsync(url, params, agent) {
+    return new Promise((resolve, reject) => {
+
+        let _httpSession = new Soup.Session();
+        let message = Soup.form_request_new_from_hash('GET', url, params);
+        // add trailing space, so libsoup adds its own user-agent
+        _httpSession.user_agent = agent + ' ';
+
+        _httpSession.queue_message(message, (_httpSession, message) => {
+            try {
+                if (!message.response_body.data)
+                    reject("No data");
+
+                resolve(JSON.parse(message.response_body.data));
+            }
+            catch (e) {
+                reject("Soup queue_message error: " + e);
+            }
+        });
+    });
+}
+
+function processTodaysData(json) {
+    return new Promise((resolve, reject) => {
+        try {
+            let data = json.list;
+            let todayList = [];
+
+            for (let i = 0; i < 4; i++)
+                todayList.push(data[i]);
+
+            resolve(todayList);
+        }
+        catch (e) {
+            reject("processTodaysData error: " + e);
+        }
+    });
+}
+
+function processForecastData(json, locale) {
+    return new Promise((resolve, reject) => {
+        try {
+            let a = 0;
+            let data = json.list;
+            let sortedList = [];
+            sortedList[a] = [data[0]];
+
             for (let i = 1; i < data.length; i++) {
-                let _this = new Date(data[i].dt * 1000).toLocaleDateString([this.locale]);
-                let _last = new Date(data[i-1].dt * 1000).toLocaleDateString([this.locale]);
+                let _this = new Date(data[i].dt * 1000).toLocaleDateString([locale]);
+                let _last = new Date(data[i-1].dt * 1000).toLocaleDateString([locale]);
 
                 if (_this == _last)
                     sortedList[a].push(data[i]);
@@ -497,18 +571,10 @@ function refreshWeatherForecast() {
                     sortedList[a].push(data[i]);
                 }
             }
-
-            if (this.forecastWeatherCache != sortedList) {
-                this.owmCityId = json.city.id;
-                this.forecastWeatherCache = sortedList;
-            }
-
-            this.parseWeatherForecast();
-        } else {
-            // we are connected, but get no (or no correct) data, so try to reload
-            // after 10 minutes (recommended by openweathermap.org)
-            this.reloadWeatherForecast(600);
+            resolve(sortedList);
+        }
+        catch (e) {
+            reject("processForecastData error: " + e);
         }
     });
-    this.reloadWeatherForecast(this._refresh_interval_forecast);
 }
