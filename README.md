@@ -95,7 +95,7 @@ This GNOME Extension is a fork of the original OpenWeather extension by @jenslod
 
 Special thanks to the following people for updating translation `*.po` files via merge requests since forking the project:
 
-French: @franckgaga | Slovak: @jose1711
+French: @franckgaga | Slovak: @jose1711 | Chinese: @xiaozhangup
 
 ### Icons
 
