@@ -241,184 +241,45 @@ function getWeatherCondition(code) {
     }
 }
 
-function parseWeatherCurrent() {
+async function getWeatherCurrent() {
+    // Make sure we have data to process
     if (this.currentWeatherCache === undefined) {
-        // this is a reentrency guard
         this.currentWeatherCache = "in refresh";
         this.refreshWeatherCurrent();
         return;
     }
-
     if (this.currentWeatherCache == "in refresh")
         return;
 
     this.checkAlignment();
     this.checkPositionInPanel();
-
-    let json = this.currentWeatherCache;
-
-    this.owmCityId = json.id;
-    // Refresh current weather
-    let location = this.extractLocation(this._city);
-
-    let comment = json.weather[0].description;
-    if (this._translate_condition)
-        comment = OpenweathermapOrg.getWeatherCondition(json.weather[0].id);
-
-    let temperature = this.formatTemperature(json.main.temp);
-    let sunrise = new Date(json.sys.sunrise * 1000);
-    let sunset = new Date(json.sys.sunset * 1000);
-    let now = new Date();
-
-    let iconname = this.getIconName(json.weather[0].id, now < sunrise || now > sunset);
-
-    if (this.lastBuildId === undefined)
-        this.lastBuildId = 0;
-
-    if (this.lastBuildDate === undefined)
-        this.lastBuildDate = 0;
-
-    if (this.lastBuildId != json.dt || !this.lastBuildDate) {
-        this.lastBuildId = json.dt;
-        this.lastBuildDate = new Date(this.lastBuildId * 1000);
+    // Populate Current Weather UI
+    try {
+        await this.populateCurrentUI()
+        .then(async () => {
+            this.getWeatherForecast();
+            this.recalcLayout();
+        });
+    } catch (e) {
+        log("populateCurrentUI error: " + e);
     }
-
-    let lastBuild = '-';
-
-    if (this._clockFormat == "24h") {
-        sunrise = sunrise.toLocaleTimeString([this.locale], { hour12: false });
-        sunset = sunset.toLocaleTimeString([this.locale], { hour12: false });
-        lastBuild = this.lastBuildDate.toLocaleTimeString([this.locale], { hour12: false });
-    } else {
-        sunrise = sunrise.toLocaleTimeString([this.locale], { hour: 'numeric', minute: 'numeric' });
-        sunset = sunset.toLocaleTimeString([this.locale], { hour: 'numeric', minute: 'numeric' });
-        lastBuild = this.lastBuildDate.toLocaleTimeString([this.locale], { hour: 'numeric', minute: 'numeric' });
-    }
-
-    let beginOfDay = new Date(new Date().setHours(0, 0, 0, 0));
-    let d = Math.floor((this.lastBuildDate.getTime() - beginOfDay.getTime()) / 86400000);
-    if (d < 0) {
-        lastBuild = _("Yesterday");
-        if (d < -1)
-            lastBuild = ngettext("%d day ago", "%d days ago", -1 * d).format(-1 * d);
-    }
-
-    this._currentWeatherIcon.set_gicon(this.getWeatherIcon(iconname));
-    this._weatherIcon.set_gicon(this.getWeatherIcon(iconname));
-
-    let weatherInfoC = "";
-    let weatherInfoT = "";
-
-    if (this._comment_in_panel)
-        weatherInfoC = comment;
-
-    if (this._text_in_panel)
-        weatherInfoT = temperature;
-
-    this._weatherInfo.text = weatherInfoC + ((weatherInfoC && weatherInfoT) ? _(", ") : "") + weatherInfoT;
-
-    this._currentWeatherSummary.text = comment + _(", ") + temperature;
-    if (this._loc_len_current != 0 && location.length > this._loc_len_current)
-        this._currentWeatherLocation.text = location.substring(0, (this._loc_len_current - 3)) + "...";
-    else
-        this._currentWeatherLocation.text = location;
-    this._currentWeatherFeelsLike.text = this.formatTemperature(json.main.feels_like);
-    this._currentWeatherHumidity.text = json.main.humidity + ' %';
-    this._currentWeatherPressure.text = this.formatPressure(json.main.pressure);
-    this._currentWeatherSunrise.text = sunrise;
-    this._currentWeatherSunset.text = sunset;
-    this._currentWeatherBuild.text = lastBuild;
-    if (json.wind != undefined && json.wind.deg != undefined) {
-        this._currentWeatherWind.text = this.formatWind(json.wind.speed, this.getWindDirection(json.wind.deg));
-        if (json.wind.gust != undefined)
-            this._currentWeatherWindGusts.text = this.formatWind(json.wind.gust);
-    } else {
-        this._currentWeatherWind.text = _("?");
-    }
-
-    this.parseWeatherForecast();
-    this.recalcLayout();
 }
 
-function parseWeatherForecast() {
+async function getWeatherForecast() {
+    // Make sure we have data to process
     if (this.forecastWeatherCache === undefined || this.todaysWeatherCache === undefined) {
-        // this is a reentrency guard
         this.forecastWeatherCache = "in refresh";
         this.todaysWeatherCache = "in refresh";
         this.refreshWeatherForecast();
         return;
     }
-
     if (this.forecastWeatherCache == "in refresh" || this.todaysWeatherCache == "in refresh")
         return;
-
-    // Refresh today's forecast
-    let forecast_today = this.todaysWeatherCache;
-    let sunrise = new Date(this.currentWeatherCache.sys.sunrise * 1000).toLocaleTimeString([this.locale], { hour12: false });
-    let sunset = new Date(this.currentWeatherCache.sys.sunset * 1000).toLocaleTimeString([this.locale], { hour12: false });
-
-    for (var i = 0; i < 4; i++) {
-        let forecastTodayUi = this._todays_forecast[i];
-        let forecastDataToday = forecast_today[i];
-
-        let forecastTime = new Date(forecastDataToday.dt * 1000);
-        let forecastTemp = this.formatTemperature(forecastDataToday.main.temp);
-        let iconTime = forecastTime.toLocaleTimeString([this.locale], { hour12: false });
-        let iconname = this.getIconName(forecastDataToday.weather[0].id, iconTime < sunrise || iconTime > sunset);
-
-        let comment = forecastDataToday.weather[0].description;
-        if (this._translate_condition)
-            comment = OpenweathermapOrg.getWeatherCondition(forecastDataToday.weather[0].id);
-
-        forecastTodayUi.Time.text = forecastTime.toLocaleTimeString([this.locale], {hour: 'numeric'});
-        forecastTodayUi.Icon.set_gicon(this.getWeatherIcon(iconname));
-        forecastTodayUi.Temperature.text = forecastTemp;
-        forecastTodayUi.Summary.text = comment;
-    }
-
-    // Refresh 5 day / 3 hour forecast
-    let forecast = this.forecastWeatherCache;
-    // first remove today from forecast data if exists
-    let _now = new Date().toLocaleDateString([this.locale]);
-    for (var i = 0; i < forecast.length; i++) {
-        let _itemDate = new Date(forecast[i][0].dt * 1000);
-        let _this = _itemDate.toLocaleDateString([this.locale]);
-        if (_now === _this) {
-            forecast.shift();
-        }
-    }
-
-    for (let i = 0; i < this._days_forecast; i++) {
-        let forecastUi = this._forecast[i];
-        let forecastData = forecast[i];
-
-        for (let j = 0; j < 8; j++) {
-            if (forecastData[j] === undefined)
-                continue;
-
-            let forecastDate = new Date(forecastData[j].dt * 1000);
-            if (j === 0) {
-                let beginOfDay = new Date(new Date().setHours(0, 0, 0, 0));
-                let dayLeft = Math.floor((forecastDate.getTime() - beginOfDay.getTime()) / 86400000);
-
-                if (dayLeft == 1)
-                    forecastUi.Day.text = '\n'+_("Tomorrow");
-                else
-                    forecastUi.Day.text = '\n'+this.getLocaleDay(forecastDate.getDay());
-            }
-            let iconTime = forecastDate.toLocaleTimeString([this.locale], { hour12: false });
-            let iconname = this.getIconName(forecastData[j].weather[0].id, iconTime < sunrise || iconTime > sunset);
-            let forecastTemp = this.formatTemperature(forecastData[j].main.temp);
-
-            let comment = forecastData[j].weather[0].description;
-            if (this._translate_condition)
-                comment = OpenweathermapOrg.getWeatherCondition(forecastData[j].weather[0].id);
-
-            forecastUi[j].Time.text = forecastDate.toLocaleTimeString([this.locale], {hour: 'numeric'});
-            forecastUi[j].Icon.set_gicon(this.getWeatherIcon(iconname));
-            forecastUi[j].Temperature.text = forecastTemp;
-            forecastUi[j].Summary.text = comment;
-        }
+    // Populate Forecast Weather UI
+    try {
+        await this.populateForecastUI();
+    } catch (e) {
+        log("populateForecastUI error: " + e);
     }
 }
 
@@ -439,18 +300,13 @@ async function refreshWeatherCurrent() {
         params.APPID = this._appid;
 
     try {
-        json = await loadJsonAsync(OPENWEATHER_URL_CURRENT, params, this.user_agent)
+        json = await this.loadJsonAsync(OPENWEATHER_URL_CURRENT, params)
         .then(async (json) => {
-            try {
-                if (this.currentWeatherCache != json)
-                    this.currentWeatherCache = json;
+            if (this.currentWeatherCache != json)
+                this.currentWeatherCache = json;
 
-                this.rebuildSelectCityItem();
-                this.parseWeatherCurrent();
-            }
-            catch (e) {
-                log("Error processing current json data: " + e);
-            }
+            this.rebuildSelectCityItem();
+            this.getWeatherCurrent();
         });
     }
     catch (e) {
@@ -482,25 +338,28 @@ async function refreshWeatherForecast() {
         params.APPID = this._appid;
 
     try {
-        json = await loadJsonAsync(OPENWEATHER_URL_FORECAST, params, this.user_agent)
+        json = await this.loadJsonAsync(OPENWEATHER_URL_FORECAST, params)
         .then(async (json) => {
             try {
+                this.owmCityId = json.city.id;
                 // Today's forecast
-                todayList = await processTodaysData(json);
+                todayList = await this.processTodaysData(json)
+                .then(async (todayList) => {
+                    if (this.todaysWeatherCache != todayList)
+                        this.todaysWeatherCache = todayList;
+                });
                 // 5 day / 3 hour forecast
-                sortedList = await processForecastData(json, this.locale);
+                sortedList = await this.processForecastData(json)
+                .then(async (sortedList) => {
+                    if (this.forecastWeatherCache != sortedList)
+                        this.forecastWeatherCache = sortedList;
+
+                    this.getWeatherForecast();
+                });
             }
             catch (e) {
                 log("Error processing forecast json data: " + e);
             }
-            if (this.todaysWeatherCache != todayList)
-                this.todaysWeatherCache = todayList;
-
-            if (this.forecastWeatherCache != sortedList)
-                this.forecastWeatherCache = sortedList;
-
-            this.owmCityId = json.city.id;
-            this.parseWeatherForecast();
         });
     }
     catch (e) {
@@ -512,13 +371,188 @@ async function refreshWeatherForecast() {
     this.reloadWeatherForecast(this._refresh_interval_forecast);
 }
 
-function loadJsonAsync(url, params, agent) {
+function populateCurrentUI() {
+    return new Promise((resolve, reject) => {
+        try {
+            let json = this.currentWeatherCache;
+            this.owmCityId = json.id;
+
+            let location = this.extractLocation(this._city);
+
+            let comment = json.weather[0].description;
+            if (this._translate_condition)
+                comment = OpenweathermapOrg.getWeatherCondition(json.weather[0].id);
+
+            let temperature = this.formatTemperature(json.main.temp);
+            let sunrise = new Date(json.sys.sunrise * 1000);
+            let sunset = new Date(json.sys.sunset * 1000);
+            let now = new Date();
+
+            let iconname = OpenweathermapOrg.getIconName(json.weather[0].id, now < sunrise || now > sunset);
+
+            if (this.lastBuildId === undefined)
+                this.lastBuildId = 0;
+            if (this.lastBuildDate === undefined)
+                this.lastBuildDate = 0;
+
+            if (this.lastBuildId != json.dt || !this.lastBuildDate) {
+                this.lastBuildId = json.dt;
+                this.lastBuildDate = new Date(this.lastBuildId * 1000);
+            }
+            let lastBuild = '-';
+
+            if (this._clockFormat == "24h") {
+                sunrise = sunrise.toLocaleTimeString([this.locale], { hour12: false });
+                sunset = sunset.toLocaleTimeString([this.locale], { hour12: false });
+                lastBuild = this.lastBuildDate.toLocaleTimeString([this.locale], { hour12: false });
+            } else {
+                sunrise = sunrise.toLocaleTimeString([this.locale], { hour: 'numeric', minute: 'numeric' });
+                sunset = sunset.toLocaleTimeString([this.locale], { hour: 'numeric', minute: 'numeric' });
+                lastBuild = this.lastBuildDate.toLocaleTimeString([this.locale], { hour: 'numeric', minute: 'numeric' });
+            }
+
+            let beginOfDay = new Date(new Date().setHours(0, 0, 0, 0));
+            let d = Math.floor((this.lastBuildDate.getTime() - beginOfDay.getTime()) / 86400000);
+            if (d < 0) {
+                lastBuild = _("Yesterday");
+                if (d < -1)
+                    lastBuild = ngettext("%d day ago", "%d days ago", -1 * d).format(-1 * d);
+            }
+
+            this._currentWeatherIcon.set_gicon(this.getWeatherIcon(iconname));
+            this._weatherIcon.set_gicon(this.getWeatherIcon(iconname));
+
+            let weatherInfoC = "";
+            let weatherInfoT = "";
+
+            if (this._comment_in_panel)
+                weatherInfoC = comment;
+
+            if (this._text_in_panel)
+                weatherInfoT = temperature;
+
+            this._weatherInfo.text = weatherInfoC + ((weatherInfoC && weatherInfoT) ? _(", ") : "") + weatherInfoT;
+
+            this._currentWeatherSummary.text = comment + _(", ") + temperature;
+            if (this._loc_len_current != 0 && location.length > this._loc_len_current)
+                this._currentWeatherLocation.text = location.substring(0, (this._loc_len_current - 3)) + "...";
+            else
+                this._currentWeatherLocation.text = location;
+            this._currentWeatherFeelsLike.text = this.formatTemperature(json.main.feels_like);
+            this._currentWeatherHumidity.text = json.main.humidity + ' %';
+            this._currentWeatherPressure.text = this.formatPressure(json.main.pressure);
+            this._currentWeatherSunrise.text = sunrise;
+            this._currentWeatherSunset.text = sunset;
+            this._currentWeatherBuild.text = lastBuild;
+            if (json.wind != undefined && json.wind.deg != undefined) {
+                this._currentWeatherWind.text = this.formatWind(json.wind.speed, this.getWindDirection(json.wind.deg));
+                if (json.wind.gust != undefined)
+                    this._currentWeatherWindGusts.text = this.formatWind(json.wind.gust);
+            } else {
+                this._currentWeatherWind.text = _("?");
+            }
+            resolve(0);
+        }
+        catch (e) {
+            reject(e);
+        }
+    });
+}
+
+function populateForecastUI() {
+    return new Promise((resolve, reject) => {
+        try {
+            // Refresh today's forecast
+            let forecast_today = this.todaysWeatherCache;
+            let sunrise = new Date(this.currentWeatherCache.sys.sunrise * 1000).toLocaleTimeString([this.locale], { hour12: false });
+            let sunset = new Date(this.currentWeatherCache.sys.sunset * 1000).toLocaleTimeString([this.locale], { hour12: false });
+
+            for (var i = 0; i < 4; i++) {
+                let forecastTodayUi = this._todays_forecast[i];
+                let forecastDataToday = forecast_today[i];
+
+                let forecastTime = new Date(forecastDataToday.dt * 1000);
+                let forecastTemp = this.formatTemperature(forecastDataToday.main.temp);
+                let iconTime = forecastTime.toLocaleTimeString([this.locale], { hour12: false });
+                let iconname = OpenweathermapOrg.getIconName(forecastDataToday.weather[0].id, iconTime < sunrise || iconTime > sunset);
+
+                let comment = forecastDataToday.weather[0].description;
+                if (this._translate_condition)
+                    comment = OpenweathermapOrg.getWeatherCondition(forecastDataToday.weather[0].id);
+
+                if (this._clockFormat == "24h")
+                    forecastTodayUi.Time.text = forecastTime.toLocaleTimeString([this.locale], { hour12: false });
+                else
+                    forecastTodayUi.Time.text = forecastTime.toLocaleTimeString([this.locale], { hour: 'numeric' });
+
+                forecastTodayUi.Icon.set_gicon(this.getWeatherIcon(iconname));
+                forecastTodayUi.Temperature.text = forecastTemp;
+                forecastTodayUi.Summary.text = comment;
+            }
+
+            // Refresh 5 day / 3 hour forecast
+            let forecast = this.forecastWeatherCache;
+            // first remove today from forecast data if exists
+            let _now = new Date().toLocaleDateString([this.locale]);
+            for (var i = 0; i < forecast.length; i++) {
+                let _itemDate = new Date(forecast[i][0].dt * 1000);
+                let _this = _itemDate.toLocaleDateString([this.locale]);
+                if (_now === _this) {
+                    forecast.shift();
+                }
+            }
+
+            for (let i = 0; i < this._days_forecast; i++) {
+                let forecastUi = this._forecast[i];
+                let forecastData = forecast[i];
+
+                for (let j = 0; j < 8; j++) {
+                    if (forecastData[j] === undefined)
+                        continue;
+
+                    let forecastDate = new Date(forecastData[j].dt * 1000);
+                    if (j === 0) {
+                        let beginOfDay = new Date(new Date().setHours(0, 0, 0, 0));
+                        let dayLeft = Math.floor((forecastDate.getTime() - beginOfDay.getTime()) / 86400000);
+
+                        if (dayLeft == 1)
+                            forecastUi.Day.text = '\n'+_("Tomorrow");
+                        else
+                            forecastUi.Day.text = '\n'+this.getLocaleDay(forecastDate.getDay());
+                    }
+                    let iconTime = forecastDate.toLocaleTimeString([this.locale], { hour12: false });
+                    let iconname = OpenweathermapOrg.getIconName(forecastData[j].weather[0].id, iconTime < sunrise || iconTime > sunset);
+                    let forecastTemp = this.formatTemperature(forecastData[j].main.temp);
+
+                    let comment = forecastData[j].weather[0].description;
+                    if (this._translate_condition)
+                        comment = OpenweathermapOrg.getWeatherCondition(forecastData[j].weather[0].id);
+
+                    if (this._clockFormat == "24h")
+                        forecastUi[j].Time.text = forecastDate.toLocaleTimeString([this.locale], { hour12: false });
+                    else
+                        forecastUi[j].Time.text = forecastDate.toLocaleTimeString([this.locale], { hour: 'numeric' });
+
+                    forecastUi[j].Icon.set_gicon(this.getWeatherIcon(iconname));
+                    forecastUi[j].Temperature.text = forecastTemp;
+                    forecastUi[j].Summary.text = comment;
+                }
+            }
+            resolve(0);
+        }
+        catch (e) {
+            reject(e);
+        }
+    });
+}
+
+function loadJsonAsync(url, params) {
     return new Promise((resolve, reject) => {
 
         let _httpSession = new Soup.Session();
         let message = Soup.form_request_new_from_hash('GET', url, params);
         // add trailing space, so libsoup adds its own user-agent
-        _httpSession.user_agent = agent + ' ';
+        _httpSession.user_agent = this.user_agent + ' ';
 
         _httpSession.queue_message(message, (_httpSession, message) => {
             try {
@@ -551,7 +585,7 @@ function processTodaysData(json) {
     });
 }
 
-function processForecastData(json, locale) {
+function processForecastData(json) {
     return new Promise((resolve, reject) => {
         try {
             let a = 0;
@@ -560,8 +594,8 @@ function processForecastData(json, locale) {
             sortedList[a] = [data[0]];
 
             for (let i = 1; i < data.length; i++) {
-                let _this = new Date(data[i].dt * 1000).toLocaleDateString([locale]);
-                let _last = new Date(data[i-1].dt * 1000).toLocaleDateString([locale]);
+                let _this = new Date(data[i].dt * 1000).toLocaleDateString([this.locale]);
+                let _last = new Date(data[i-1].dt * 1000).toLocaleDateString([this.locale]);
 
                 if (_this == _last)
                     sortedList[a].push(data[i]);

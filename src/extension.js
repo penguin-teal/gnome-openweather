@@ -294,11 +294,15 @@ class OpenweatherMenuButton extends PanelMenu.Button {
     }
 
     useOpenweathermapOrg() {
-        this.parseWeatherForecast = OpenweathermapOrg.parseWeatherForecast;
-        this.parseWeatherCurrent = OpenweathermapOrg.parseWeatherCurrent;
-        this.getIconName = OpenweathermapOrg.getIconName;
+        this.getWeatherCurrent = OpenweathermapOrg.getWeatherCurrent;
+        this.getWeatherForecast = OpenweathermapOrg.getWeatherForecast;
+        this.populateCurrentUI = OpenweathermapOrg.populateCurrentUI;
+        this.populateForecastUI = OpenweathermapOrg.populateForecastUI;
         this.refreshWeatherCurrent = OpenweathermapOrg.refreshWeatherCurrent;
         this.refreshWeatherForecast = OpenweathermapOrg.refreshWeatherForecast;
+        this.loadJsonAsync = OpenweathermapOrg.loadJsonAsync;
+        this.processTodaysData = OpenweathermapOrg.processTodaysData;
+        this.processForecastData = OpenweathermapOrg.processForecastData;
         this.weatherProvider = "OpenWeatherMap";
 
         if (this._appid.toString().trim() === '')
@@ -333,7 +337,7 @@ class OpenweatherMenuButton extends PanelMenu.Button {
                 this.forecastWeatherCache = undefined;
             }
             this.rebuildButtonMenu();
-            this.parseWeatherCurrent();
+            this.getWeatherCurrent();
         });
     }
 
@@ -347,7 +351,7 @@ class OpenweatherMenuButton extends PanelMenu.Button {
                 this.todaysWeatherCache = undefined;
                 this.forecastWeatherCache = undefined;
             }
-            this.parseWeatherCurrent();
+            this.getWeatherCurrent();
         });
     }
 
@@ -422,7 +426,7 @@ class OpenweatherMenuButton extends PanelMenu.Button {
                 this.forecastWeatherCache = undefined;
                 this.todaysWeatherCache = undefined;
             }
-            this.parseWeatherCurrent();
+            this.getWeatherCurrent();
         }
     }
 
@@ -716,7 +720,7 @@ class OpenweatherMenuButton extends PanelMenu.Button {
             this.currentWeatherCache = undefined;
             this.todaysWeatherCache = undefined;
             this.forecastWeatherCache = undefined;
-            this.parseWeatherCurrent();
+            this.getWeatherCurrent();
         });
         this._urlButton.connect('clicked', () => {
             this.menu.close();
@@ -1122,7 +1126,7 @@ class OpenweatherMenuButton extends PanelMenu.Button {
             // only invalidate cached data, if we can connect the weather-providers server
             if (this._connected && !this._idle)
                 this.currentWeatherCache = undefined;
-            this.parseWeatherCurrent();
+            this.getWeatherCurrent();
             return true;
         });
     }
@@ -1139,7 +1143,7 @@ class OpenweatherMenuButton extends PanelMenu.Button {
                 this.todaysWeatherCache = undefined;
                 this.forecastWeatherCache = undefined;
             }
-            this.parseWeatherForecast();
+            this.getWeatherForecast();
             return true;
         });
     }
