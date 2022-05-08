@@ -288,7 +288,7 @@ msgstr "请稍候"
 
 #: src/extension.js:1421
 msgid "Feels Like:"
-msgstr ""
+msgstr "体感："
 
 #: src/extension.js:1425
 msgid "Humidity:"
@@ -304,7 +304,7 @@ msgstr "风："
 
 #: src/extension.js:1437
 msgid "Gusts:"
-msgstr ""
+msgstr "阵风："
 
 #: src/openweathermap_org.js:156
 msgid "Thunderstorm with light rain"
@@ -593,7 +593,7 @@ msgstr "提供源"
 
 #: src/prefs.js:362
 msgid "Result"
-msgstr ""
+msgstr "结果"
 
 #: src/prefs.js:549
 #, javascript-format
@@ -603,11 +603,11 @@ msgstr "移除 %s 吗？"
 #: src/prefs.js:562
 #, fuzzy
 msgid "No"
-msgstr "北"
+msgstr "否"
 
 #: src/prefs.js:563
 msgid "Yes"
-msgstr ""
+msgstr "是"
 
 #: src/prefs.js:1094
 msgid "default"
@@ -636,7 +636,7 @@ msgstr "保存"
 
 #: src/weather-settings.ui:124
 msgid "Search Results"
-msgstr ""
+msgstr "搜索结果"
 
 #: src/weather-settings.ui:161
 #, fuzzy
@@ -792,7 +792,7 @@ msgstr "左侧"
 #: src/weather-settings.ui:908
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:128
 msgid "Maximal length of the location text"
-msgstr ""
+msgstr "地点显示最大长度"
 
 #: src/weather-settings.ui:932
 msgid "Layout"
@@ -901,7 +901,7 @@ msgid "Your personal AppKey from developer.mapquest.com"
 msgstr "您来自 developer.mapquest.com 的个人应用密钥"
 
 #~ msgid "unknown (self-build ?)"
-#~ msgstr "未知（自己构建的？）"
+#~ msgstr "未知（自行构建？）"
 
 #~ msgid ""
 #~ "Dark Sky does not work without an api-key.\n"
