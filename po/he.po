@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-04 14:46-0300\n"
+"POT-Creation-Date: 2022-05-09 14:39-0300\n"
 "PO-Revision-Date: 2014-04-24 01:37+0300\n"
 "Last-Translator: Matanya Moses <matanya@foss.co.il>\n"
 "Language-Team: עברית <>\n"
@@ -19,11 +19,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Gtranslator 2.91.6\n"
 
-#: src/extension.js:187
+#: src/extension.js:171
 msgid "..."
 msgstr "..."
 
-#: src/extension.js:369
+#: src/extension.js:323
 msgid ""
 "Openweathermap.org does not work without an api-key.\n"
 "Either set the switch to use the extensions default key in the preferences "
@@ -31,599 +31,608 @@ msgid ""
 "personal key into the preferences dialog."
 msgstr ""
 
-#: src/extension.js:476 src/extension.js:488
+#: src/extension.js:434 src/extension.js:446
 #, fuzzy, javascript-format
 msgid "Can not connect to %s"
 msgstr "אין אפשרות לפתוח את %s"
 
-#: src/extension.js:800 src/weather-settings.ui:302
+#: src/extension.js:737 src/weather-settings.ui:302
 msgid "Locations"
 msgstr "מקומות"
 
-#: src/extension.js:812
+#: src/extension.js:741
 msgid "Reload Weather Information"
 msgstr "טעינה מחדש"
 
-#: src/extension.js:827
-msgid "Weather data provided by:"
+#: src/extension.js:745
+#, fuzzy
+msgid "Weather data by:"
 msgstr "המידע מ:"
 
-#: src/extension.js:837
+#: src/extension.js:748
+msgid "Weather Settings"
+msgstr "הגדרות"
+
+#: src/extension.js:771
 #, javascript-format
 msgid "Can not open %s"
 msgstr "אין אפשרות לפתוח את %s"
 
-#: src/extension.js:844
-msgid "Weather Settings"
-msgstr "הגדרות"
-
-#: src/extension.js:895 src/prefs.js:1061
+#: src/extension.js:819 src/prefs.js:1072
 msgid "Invalid city"
 msgstr "עיר שגויה"
 
-#: src/extension.js:906
+#: src/extension.js:830
 msgid "Invalid location! Please try to recreate it."
 msgstr ""
 
-#: src/extension.js:961 src/weather-settings.ui:574
+#: src/extension.js:870 src/weather-settings.ui:574
 msgid "°F"
 msgstr ""
 
-#: src/extension.js:963 src/weather-settings.ui:575
+#: src/extension.js:872 src/weather-settings.ui:575
 msgid "K"
 msgstr ""
 
-#: src/extension.js:965 src/weather-settings.ui:576
+#: src/extension.js:874 src/weather-settings.ui:576
 msgid "°Ra"
 msgstr ""
 
-#: src/extension.js:967 src/weather-settings.ui:577
+#: src/extension.js:876 src/weather-settings.ui:577
 msgid "°Ré"
 msgstr ""
 
-#: src/extension.js:969 src/weather-settings.ui:578
+#: src/extension.js:878 src/weather-settings.ui:578
 msgid "°Rø"
 msgstr ""
 
-#: src/extension.js:971 src/weather-settings.ui:579
+#: src/extension.js:880 src/weather-settings.ui:579
 msgid "°De"
 msgstr ""
 
-#: src/extension.js:973 src/weather-settings.ui:580
+#: src/extension.js:882 src/weather-settings.ui:580
 msgid "°N"
 msgstr ""
 
-#: src/extension.js:975 src/weather-settings.ui:573
+#: src/extension.js:884 src/weather-settings.ui:573
 msgid "°C"
 msgstr ""
 
-#: src/extension.js:1012
+#: src/extension.js:921
 msgid "Calm"
 msgstr "שקט"
 
-#: src/extension.js:1015
+#: src/extension.js:924
 msgid "Light air"
 msgstr "נשיבה קלה"
 
-#: src/extension.js:1018
+#: src/extension.js:927
 msgid "Light breeze"
 msgstr "רוח חרישית"
 
-#: src/extension.js:1021
+#: src/extension.js:930
 msgid "Gentle breeze"
 msgstr "רוח קלה"
 
-#: src/extension.js:1024
+#: src/extension.js:933
 msgid "Moderate breeze"
 msgstr "רוח מתונה"
 
-#: src/extension.js:1027
+#: src/extension.js:936
 msgid "Fresh breeze"
 msgstr "רוח ערה"
 
-#: src/extension.js:1030
+#: src/extension.js:939
 msgid "Strong breeze"
 msgstr "רוח עזה"
 
-#: src/extension.js:1033
+#: src/extension.js:942
 msgid "Moderate gale"
 msgstr "רוח סוערת"
 
-#: src/extension.js:1036
+#: src/extension.js:945
 msgid "Fresh gale"
 msgstr "סער"
 
-#: src/extension.js:1039
+#: src/extension.js:948
 msgid "Strong gale"
 msgstr "סער עז"
 
-#: src/extension.js:1042
+#: src/extension.js:951
 msgid "Storm"
 msgstr "סופה"
 
-#: src/extension.js:1045
+#: src/extension.js:954
 msgid "Violent storm"
 msgstr "סופה עזה"
 
-#: src/extension.js:1048
+#: src/extension.js:957
 msgid "Hurricane"
 msgstr "הוריקן"
 
-#: src/extension.js:1052
+#: src/extension.js:961
 msgid "Sunday"
 msgstr "יום א"
 
-#: src/extension.js:1052
+#: src/extension.js:961
 msgid "Monday"
 msgstr "יום ב"
 
-#: src/extension.js:1052
+#: src/extension.js:961
 msgid "Tuesday"
 msgstr "יום ג"
 
-#: src/extension.js:1052
+#: src/extension.js:961
 msgid "Wednesday"
 msgstr "יום ד"
 
-#: src/extension.js:1052
+#: src/extension.js:961
 msgid "Thursday"
 msgstr "יום ה"
 
-#: src/extension.js:1052
+#: src/extension.js:961
 msgid "Friday"
 msgstr "יום ו"
 
-#: src/extension.js:1052
+#: src/extension.js:961
 msgid "Saturday"
 msgstr "שבת"
 
-#: src/extension.js:1058
+#: src/extension.js:967
 msgid "N"
 msgstr "צפון"
 
-#: src/extension.js:1058
+#: src/extension.js:967
 msgid "NE"
 msgstr "צפון מזרח"
 
-#: src/extension.js:1058
+#: src/extension.js:967
 msgid "E"
 msgstr "מזרח"
 
-#: src/extension.js:1058
+#: src/extension.js:967
 msgid "SE"
 msgstr "דרום מזרח"
 
-#: src/extension.js:1058
+#: src/extension.js:967
 msgid "S"
 msgstr "דרום"
 
-#: src/extension.js:1058
+#: src/extension.js:967
 msgid "SW"
 msgstr "דרום מערב"
 
-#: src/extension.js:1058
+#: src/extension.js:967
 msgid "W"
 msgstr "מערב"
 
-#: src/extension.js:1058
+#: src/extension.js:967
 msgid "NW"
 msgstr "צפון מערב"
 
-#: src/extension.js:1136 src/extension.js:1145 src/weather-settings.ui:607
+#: src/extension.js:1020 src/extension.js:1029 src/weather-settings.ui:607
 msgid "hPa"
 msgstr ""
 
-#: src/extension.js:1140 src/weather-settings.ui:608
+#: src/extension.js:1024 src/weather-settings.ui:608
 msgid "inHg"
 msgstr ""
 
-#: src/extension.js:1150 src/weather-settings.ui:609
+#: src/extension.js:1034 src/weather-settings.ui:609
 msgid "bar"
 msgstr ""
 
-#: src/extension.js:1155 src/weather-settings.ui:610
+#: src/extension.js:1039 src/weather-settings.ui:610
 msgid "Pa"
 msgstr ""
 
-#: src/extension.js:1160 src/weather-settings.ui:611
+#: src/extension.js:1044 src/weather-settings.ui:611
 msgid "kPa"
 msgstr ""
 
-#: src/extension.js:1165 src/weather-settings.ui:612
+#: src/extension.js:1049 src/weather-settings.ui:612
 msgid "atm"
 msgstr ""
 
-#: src/extension.js:1170 src/weather-settings.ui:613
+#: src/extension.js:1054 src/weather-settings.ui:613
 msgid "at"
 msgstr ""
 
-#: src/extension.js:1175 src/weather-settings.ui:614
+#: src/extension.js:1059 src/weather-settings.ui:614
 msgid "Torr"
 msgstr ""
 
-#: src/extension.js:1180 src/weather-settings.ui:615
+#: src/extension.js:1064 src/weather-settings.ui:615
 msgid "psi"
 msgstr ""
 
-#: src/extension.js:1185 src/weather-settings.ui:616
+#: src/extension.js:1069 src/weather-settings.ui:616
 msgid "mmHg"
 msgstr ""
 
-#: src/extension.js:1190 src/weather-settings.ui:617
+#: src/extension.js:1074 src/weather-settings.ui:617
 msgid "mbar"
 msgstr ""
 
-#: src/extension.js:1234 src/weather-settings.ui:593
+#: src/extension.js:1118 src/weather-settings.ui:593
 msgid "m/s"
 msgstr ""
 
-#: src/extension.js:1238 src/weather-settings.ui:592
+#: src/extension.js:1122 src/weather-settings.ui:592
 msgid "mph"
 msgstr ""
 
-#: src/extension.js:1243 src/weather-settings.ui:591
+#: src/extension.js:1127 src/weather-settings.ui:591
 msgid "km/h"
 msgstr ""
 
-#: src/extension.js:1252 src/weather-settings.ui:594
+#: src/extension.js:1136 src/weather-settings.ui:594
 msgid "kn"
 msgstr ""
 
-#: src/extension.js:1257 src/weather-settings.ui:595
+#: src/extension.js:1141 src/weather-settings.ui:595
 msgid "ft/s"
 msgstr ""
 
-#: src/extension.js:1351
+#: src/extension.js:1228
 msgid "Loading ..."
 msgstr "טוען..."
 
-#: src/extension.js:1355
+#: src/extension.js:1232
 msgid "Please wait"
 msgstr "נא להמתין"
 
-#: src/extension.js:1421
+#: src/extension.js:1303
 msgid "Feels Like:"
 msgstr ""
 
-#: src/extension.js:1425
+#: src/extension.js:1307
 msgid "Humidity:"
 msgstr "לחות:"
 
-#: src/extension.js:1429
+#: src/extension.js:1311
 msgid "Pressure:"
 msgstr "לחץ ברומטרי:"
 
-#: src/extension.js:1433
+#: src/extension.js:1315
 msgid "Wind:"
 msgstr "רוח:"
 
-#: src/extension.js:1437
+#: src/extension.js:1319
 msgid "Gusts:"
 msgstr ""
 
-#: src/openweathermap_org.js:156
+#: src/extension.js:1450
+msgid "Tomorrow's Forecast"
+msgstr ""
+
+#: src/extension.js:1452
+msgid "Day Forecast"
+msgstr ""
+
+#: src/openweathermap_org.js:130
 msgid "Thunderstorm with light rain"
 msgstr "סופות רעמים וגשם קל"
 
-#: src/openweathermap_org.js:158
+#: src/openweathermap_org.js:132
 msgid "Thunderstorm with rain"
 msgstr "סופות רעמים וגשם"
 
-#: src/openweathermap_org.js:160
+#: src/openweathermap_org.js:134
 msgid "Thunderstorm with heavy rain"
 msgstr "סופות רעמים וגשם כבד"
 
-#: src/openweathermap_org.js:162
+#: src/openweathermap_org.js:136
 msgid "Light thunderstorm"
 msgstr "סופות רעמים קלות"
 
-#: src/openweathermap_org.js:164
+#: src/openweathermap_org.js:138
 msgid "Thunderstorm"
 msgstr "סופות רעמים"
 
-#: src/openweathermap_org.js:166
+#: src/openweathermap_org.js:140
 msgid "Heavy thunderstorm"
 msgstr "סופות רעמים כבדות"
 
-#: src/openweathermap_org.js:168
+#: src/openweathermap_org.js:142
 msgid "Ragged thunderstorm"
 msgstr "סופות רעמים יחידות"
 
-#: src/openweathermap_org.js:170
+#: src/openweathermap_org.js:144
 msgid "Thunderstorm with light drizzle"
 msgstr "סופות רעמים וטפטוף קל"
 
-#: src/openweathermap_org.js:172
+#: src/openweathermap_org.js:146
 msgid "Thunderstorm with drizzle"
 msgstr "סופות רעמים וטפטוף"
 
-#: src/openweathermap_org.js:174
+#: src/openweathermap_org.js:148
 #, fuzzy
 msgid "Thunderstorm with heavy drizzle"
 msgstr "סופות רעמים וטפטוף"
 
-#: src/openweathermap_org.js:176
+#: src/openweathermap_org.js:150
 msgid "Light intensity drizzle"
 msgstr ""
 
-#: src/openweathermap_org.js:178
+#: src/openweathermap_org.js:152
 #, fuzzy
 msgid "Drizzle"
 msgstr "טפטוף"
 
-#: src/openweathermap_org.js:180
+#: src/openweathermap_org.js:154
 msgid "Heavy intensity drizzle"
 msgstr ""
 
-#: src/openweathermap_org.js:182
+#: src/openweathermap_org.js:156
 #, fuzzy
 msgid "Light intensity drizzle rain"
 msgstr "טפטוף"
 
-#: src/openweathermap_org.js:184
+#: src/openweathermap_org.js:158
 #, fuzzy
 msgid "Drizzle rain"
 msgstr "טפטוף"
 
-#: src/openweathermap_org.js:186
+#: src/openweathermap_org.js:160
 #, fuzzy
 msgid "Heavy intensity drizzle rain"
 msgstr "טפטוף"
 
-#: src/openweathermap_org.js:188
+#: src/openweathermap_org.js:162
 #, fuzzy
 msgid "Shower rain and drizzle"
 msgstr "גשם ושלג מימי"
 
-#: src/openweathermap_org.js:190
+#: src/openweathermap_org.js:164
 msgid "Heavy shower rain and drizzle"
 msgstr ""
 
-#: src/openweathermap_org.js:192
+#: src/openweathermap_org.js:166
 #, fuzzy
 msgid "Shower drizzle"
 msgstr "טפטוף"
 
-#: src/openweathermap_org.js:194
+#: src/openweathermap_org.js:168
 msgid "Light rain"
 msgstr "גשם קל"
 
-#: src/openweathermap_org.js:196
+#: src/openweathermap_org.js:170
 #, fuzzy
 msgid "Moderate rain"
 msgstr "רוח סוערת"
 
-#: src/openweathermap_org.js:198
+#: src/openweathermap_org.js:172
 msgid "Heavy intensity rain"
 msgstr ""
 
-#: src/openweathermap_org.js:200
+#: src/openweathermap_org.js:174
 msgid "Very heavy rain"
 msgstr "גשם כבד מאוד"
 
-#: src/openweathermap_org.js:202
+#: src/openweathermap_org.js:176
 #, fuzzy
 msgid "Extreme rain"
 msgstr "גשם קפוא"
 
-#: src/openweathermap_org.js:204
+#: src/openweathermap_org.js:178
 #, fuzzy
 msgid "Freezing rain"
 msgstr "גשם קפוא"
 
-#: src/openweathermap_org.js:206
+#: src/openweathermap_org.js:180
 msgid "Light intensity shower rain"
 msgstr ""
 
-#: src/openweathermap_org.js:208
+#: src/openweathermap_org.js:182
 msgid "Shower rain"
 msgstr ""
 
-#: src/openweathermap_org.js:210
+#: src/openweathermap_org.js:184
 msgid "Heavy intensity shower rain"
 msgstr ""
 
-#: src/openweathermap_org.js:212
+#: src/openweathermap_org.js:186
 msgid "Ragged shower rain"
 msgstr ""
 
-#: src/openweathermap_org.js:214
+#: src/openweathermap_org.js:188
 msgid "Light snow"
 msgstr "שלג קל"
 
-#: src/openweathermap_org.js:216
+#: src/openweathermap_org.js:190
 msgid "Snow"
 msgstr "שלג"
 
-#: src/openweathermap_org.js:218
+#: src/openweathermap_org.js:192
 #, fuzzy
 msgid "Heavy snow"
 msgstr "שלג כבד"
 
-#: src/openweathermap_org.js:220
+#: src/openweathermap_org.js:194
 #, fuzzy
 msgid "Sleet"
 msgstr "שלג מימי"
 
-#: src/openweathermap_org.js:222
+#: src/openweathermap_org.js:196
 msgid "Shower sleet"
 msgstr ""
 
-#: src/openweathermap_org.js:224
+#: src/openweathermap_org.js:198
 msgid "Light rain and snow"
 msgstr "גשם קל מעורב בשלג"
 
-#: src/openweathermap_org.js:226
+#: src/openweathermap_org.js:200
 #, fuzzy
 msgid "Rain and snow"
 msgstr "גשם מעורב בשלג"
 
-#: src/openweathermap_org.js:228
+#: src/openweathermap_org.js:202
 #, fuzzy
 msgid "Light shower snow"
 msgstr "שלג קל"
 
-#: src/openweathermap_org.js:230
+#: src/openweathermap_org.js:204
 #, fuzzy
 msgid "Shower snow"
 msgstr "שלג כבד"
 
-#: src/openweathermap_org.js:232
+#: src/openweathermap_org.js:206
 #, fuzzy
 msgid "Heavy shower snow"
 msgstr "שלג כבד"
 
-#: src/openweathermap_org.js:234
+#: src/openweathermap_org.js:208
 msgid "Mist"
 msgstr "לחות"
 
-#: src/openweathermap_org.js:236
+#: src/openweathermap_org.js:210
 msgid "Smoke"
 msgstr "עשן"
 
-#: src/openweathermap_org.js:238
+#: src/openweathermap_org.js:212
 msgid "Haze"
 msgstr "אובך"
 
-#: src/openweathermap_org.js:240
+#: src/openweathermap_org.js:214
 msgid "Sand/Dust Whirls"
 msgstr "עלעול חול/אבק"
 
-#: src/openweathermap_org.js:242
+#: src/openweathermap_org.js:216
 msgid "Fog"
 msgstr "ערפל"
 
-#: src/openweathermap_org.js:244
+#: src/openweathermap_org.js:218
 msgid "Sand"
 msgstr "חול"
 
-#: src/openweathermap_org.js:246
+#: src/openweathermap_org.js:220
 msgid "Dust"
 msgstr "אבק"
 
-#: src/openweathermap_org.js:248
+#: src/openweathermap_org.js:222
 msgid "VOLCANIC ASH"
 msgstr "אפר וולקני"
 
-#: src/openweathermap_org.js:250
+#: src/openweathermap_org.js:224
 msgid "SQUALLS"
 msgstr "תזזית"
 
-#: src/openweathermap_org.js:252
+#: src/openweathermap_org.js:226
 msgid "TORNADO"
 msgstr "טורנדו"
 
-#: src/openweathermap_org.js:254
+#: src/openweathermap_org.js:228
 msgid "Sky is clear"
 msgstr "שמים נקיים"
 
-#: src/openweathermap_org.js:256
+#: src/openweathermap_org.js:230
 msgid "Few clouds"
 msgstr "עננים בודדים"
 
-#: src/openweathermap_org.js:258
+#: src/openweathermap_org.js:232
 msgid "Scattered clouds"
 msgstr "מעונן חלקית"
 
-#: src/openweathermap_org.js:260
+#: src/openweathermap_org.js:234
 msgid "Broken clouds"
 msgstr "מעונן"
 
-#: src/openweathermap_org.js:262
+#: src/openweathermap_org.js:236
 msgid "Overcast clouds"
 msgstr "עננות כבדה"
 
-#: src/openweathermap_org.js:264
+#: src/openweathermap_org.js:238
 msgid "Not available"
 msgstr "לא זמין"
 
-#: src/openweathermap_org.js:325
+#: src/openweathermap_org.js:421
 msgid "Yesterday"
 msgstr "אתמול"
 
-#: src/openweathermap_org.js:327
+#: src/openweathermap_org.js:423
 #, fuzzy, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
 msgstr[0] "לפני %s ימים"
 msgstr[1] "לפני %s ימים"
 
-#: src/openweathermap_org.js:342 src/openweathermap_org.js:344
+#: src/openweathermap_org.js:438 src/openweathermap_org.js:440
 msgid ", "
 msgstr ""
 
-#: src/openweathermap_org.js:360
+#: src/openweathermap_org.js:456
 msgid "?"
 msgstr ""
 
-#: src/openweathermap_org.js:461
+#: src/openweathermap_org.js:523
 msgid "Tomorrow"
 msgstr "מחר"
 
-#: src/prefs.js:208
+#: src/prefs.js:189
 #, fuzzy
 msgid "Searching ..."
 msgstr "טוען..."
 
-#: src/prefs.js:220 src/prefs.js:258 src/prefs.js:289 src/prefs.js:293
+#: src/prefs.js:201 src/prefs.js:239 src/prefs.js:270 src/prefs.js:274
 #, javascript-format
 msgid "Invalid data when searching for \"%s\""
 msgstr ""
 
-#: src/prefs.js:225 src/prefs.js:265 src/prefs.js:296
+#: src/prefs.js:206 src/prefs.js:246 src/prefs.js:277
 #, fuzzy, javascript-format
 msgid "\"%s\" not found"
 msgstr "סכמה \"%s\" לא נמצאה."
 
-#: src/prefs.js:243
+#: src/prefs.js:224
 #, fuzzy
 msgid "You need an AppKey to search on openmapquest."
 msgstr "מפתח ממשק תכנות יישומים (API) אישי מopenweathermap.org"
 
-#: src/prefs.js:244
+#: src/prefs.js:225
 #, fuzzy
 msgid "Please visit https://developer.mapquest.com/ ."
 msgstr "מפתח ממשק תכנות יישומים (API) אישי מopenweathermap.org"
 
-#: src/prefs.js:259
+#: src/prefs.js:240
 #, fuzzy
 msgid "Do you use a valid AppKey to search on openmapquest ?"
 msgstr "מפתח ממשק תכנות יישומים (API) אישי מopenweathermap.org"
 
-#: src/prefs.js:260
+#: src/prefs.js:241
 #, fuzzy
 msgid "If not, please visit https://developer.mapquest.com/ ."
 msgstr "מפתח ממשק תכנות יישומים (API) אישי מopenweathermap.org"
 
-#: src/prefs.js:341
+#: src/prefs.js:323
 #, fuzzy
 msgid "Location"
 msgstr "מקומות"
 
-#: src/prefs.js:352
+#: src/prefs.js:334
 #, fuzzy
 msgid "Provider"
 msgstr "המידע מ:"
 
-#: src/prefs.js:362
+#: src/prefs.js:344
 msgid "Result"
 msgstr ""
 
-#: src/prefs.js:549
+#: src/prefs.js:548
 #, javascript-format
 msgid "Remove %s ?"
 msgstr "הסרת %s ?"
 
-#: src/prefs.js:562
+#: src/prefs.js:561
 #, fuzzy
 msgid "No"
 msgstr "צפון"
 
-#: src/prefs.js:563
+#: src/prefs.js:562
 msgid "Yes"
 msgstr ""
 
-#: src/prefs.js:1094
+#: src/prefs.js:1105
 msgid "default"
 msgstr ""
 
@@ -737,8 +746,8 @@ msgid "Units"
 msgstr ""
 
 #: src/weather-settings.ui:655
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:112
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:116
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:120
 msgid "Position in Panel"
 msgstr "מיקום בסרגל"
 
@@ -777,73 +786,78 @@ msgstr "הצגת מזג האוויר בסרגל"
 
 #: src/weather-settings.ui:727
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:108
+msgid "Disable Forecast"
+msgstr ""
+
+#: src/weather-settings.ui:736
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:112
 #, fuzzy
 msgid "Conditions in Forecast"
 msgstr "הצגת מזג האוויר בסרגל"
 
-#: src/weather-settings.ui:736
+#: src/weather-settings.ui:745
 msgid "Center forecast"
 msgstr "מרכוז התחזית"
 
-#: src/weather-settings.ui:745
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:140
+#: src/weather-settings.ui:754
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:144
 msgid "Number of days in forecast"
 msgstr "מספר הימים בתחזית"
 
-#: src/weather-settings.ui:754
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:144
+#: src/weather-settings.ui:763
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:148
 msgid "Maximal number of digits after the decimal point"
 msgstr "מספר מרבי של ספרות אחרי הנקודה העשרונית"
 
-#: src/weather-settings.ui:768
+#: src/weather-settings.ui:777
 msgid "Center"
 msgstr "מרכז"
 
-#: src/weather-settings.ui:769
+#: src/weather-settings.ui:778
 msgid "Right"
 msgstr "ימין"
 
-#: src/weather-settings.ui:770
+#: src/weather-settings.ui:779
 msgid "Left"
 msgstr "שמאל"
 
-#: src/weather-settings.ui:908
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:128
+#: src/weather-settings.ui:926
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:132
 msgid "Maximal length of the location text"
 msgstr ""
 
-#: src/weather-settings.ui:932
+#: src/weather-settings.ui:950
 msgid "Layout"
 msgstr ""
 
-#: src/weather-settings.ui:967
+#: src/weather-settings.ui:985
 msgid "Version: "
 msgstr ""
 
-#: src/weather-settings.ui:981
+#: src/weather-settings.ui:999
 msgid ""
 "<span>Display weather information for any location on Earth in the GNOME "
 "Shell</span>"
 msgstr ""
 
-#: src/weather-settings.ui:995
+#: src/weather-settings.ui:1013
 msgid ""
 "Weather data provided by: <a href=\"https://openweathermap.org/"
 "\">OpenWeatherMap</a>"
 msgstr ""
 
-#: src/weather-settings.ui:1008
+#: src/weather-settings.ui:1026
 msgid "Maintained by:"
 msgstr ""
 
-#: src/weather-settings.ui:1043
+#: src/weather-settings.ui:1061
 msgid ""
 "<span size=\"small\">This program comes with ABSOLUTELY NO WARRANTY.\n"
 "See the <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
 "\">GNU General Public License, version 2 or later</a> for details.</span>"
 msgstr ""
 
-#: src/weather-settings.ui:1054
+#: src/weather-settings.ui:1072
 msgid "About"
 msgstr ""
 
@@ -889,35 +903,35 @@ msgstr "סמליל מייצג"
 msgid "Use text on buttons in menu"
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:120
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:124
 msgid "Horizontal position of menu-box."
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:124
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:128
 msgid "Refresh interval (actual weather)"
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:132
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:136
 #, fuzzy
 msgid "Refresh interval (forecast)"
 msgstr "מרכוז התחזית"
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:136
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:140
 #, fuzzy
 msgid "Center forecastbox."
 msgstr "מרכוז התחזית"
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:148
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:152
 #, fuzzy
 msgid "Your personal API key from openweathermap.org"
 msgstr "מפתח ממשק תכנות יישומים (API) אישי מopenweathermap.org"
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:152
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:156
 #, fuzzy
 msgid "Use the extensions default API key from openweathermap.org"
 msgstr "מפתח ממשק תכנות יישומים (API) אישי מopenweathermap.org"
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:156
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:160
 #, fuzzy
 msgid "Your personal AppKey from developer.mapquest.com"
 msgstr "מפתח ממשק תכנות יישומים (API) אישי מopenweathermap.org"

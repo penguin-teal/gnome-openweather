@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 3.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-04 14:46-0300\n"
+"POT-Creation-Date: 2022-05-09 14:39-0300\n"
 "PO-Revision-Date: 2014-05-06 20:14+0200\n"
 "Last-Translator: poseidaon <poseidaon@users.noreply.github.com>\n"
 "Language-Team: \n"
@@ -17,11 +17,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#: src/extension.js:187
+#: src/extension.js:171
 msgid "..."
 msgstr "..."
 
-#: src/extension.js:369
+#: src/extension.js:323
 msgid ""
 "Openweathermap.org does not work without an api-key.\n"
 "Either set the switch to use the extensions default key in the preferences "
@@ -29,583 +29,592 @@ msgid ""
 "personal key into the preferences dialog."
 msgstr ""
 
-#: src/extension.js:476 src/extension.js:488
+#: src/extension.js:434 src/extension.js:446
 #, fuzzy, javascript-format
 msgid "Can not connect to %s"
 msgstr "Αδύνατο το άνοιγμα %s"
 
-#: src/extension.js:800 src/weather-settings.ui:302
+#: src/extension.js:737 src/weather-settings.ui:302
 msgid "Locations"
 msgstr "Τοποθεσίες"
 
-#: src/extension.js:812
+#: src/extension.js:741
 msgid "Reload Weather Information"
 msgstr "Επαναφόρτωση Πληροφοριών Καιρού"
 
-#: src/extension.js:827
-msgid "Weather data provided by:"
+#: src/extension.js:745
+#, fuzzy
+msgid "Weather data by:"
 msgstr "Πάροχος πληροφοριών καιρού:"
 
-#: src/extension.js:837
+#: src/extension.js:748
+msgid "Weather Settings"
+msgstr "Ρυθμίσεις Καιρού"
+
+#: src/extension.js:771
 #, javascript-format
 msgid "Can not open %s"
 msgstr "Αδύνατο το άνοιγμα %s"
 
-#: src/extension.js:844
-msgid "Weather Settings"
-msgstr "Ρυθμίσεις Καιρού"
-
-#: src/extension.js:895 src/prefs.js:1061
+#: src/extension.js:819 src/prefs.js:1072
 msgid "Invalid city"
 msgstr "Μη έγκυρη πόλη"
 
-#: src/extension.js:906
+#: src/extension.js:830
 msgid "Invalid location! Please try to recreate it."
 msgstr ""
 
-#: src/extension.js:961 src/weather-settings.ui:574
+#: src/extension.js:870 src/weather-settings.ui:574
 msgid "°F"
 msgstr ""
 
-#: src/extension.js:963 src/weather-settings.ui:575
+#: src/extension.js:872 src/weather-settings.ui:575
 msgid "K"
 msgstr ""
 
-#: src/extension.js:965 src/weather-settings.ui:576
+#: src/extension.js:874 src/weather-settings.ui:576
 msgid "°Ra"
 msgstr ""
 
-#: src/extension.js:967 src/weather-settings.ui:577
+#: src/extension.js:876 src/weather-settings.ui:577
 msgid "°Ré"
 msgstr ""
 
-#: src/extension.js:969 src/weather-settings.ui:578
+#: src/extension.js:878 src/weather-settings.ui:578
 msgid "°Rø"
 msgstr ""
 
-#: src/extension.js:971 src/weather-settings.ui:579
+#: src/extension.js:880 src/weather-settings.ui:579
 msgid "°De"
 msgstr ""
 
-#: src/extension.js:973 src/weather-settings.ui:580
+#: src/extension.js:882 src/weather-settings.ui:580
 msgid "°N"
 msgstr ""
 
-#: src/extension.js:975 src/weather-settings.ui:573
+#: src/extension.js:884 src/weather-settings.ui:573
 msgid "°C"
 msgstr ""
 
-#: src/extension.js:1012
+#: src/extension.js:921
 msgid "Calm"
 msgstr "Ήρεμος"
 
-#: src/extension.js:1015
+#: src/extension.js:924
 msgid "Light air"
 msgstr "Ελαφριά αύρα"
 
-#: src/extension.js:1018
+#: src/extension.js:927
 msgid "Light breeze"
 msgstr "Ελαφρύ αεράκι"
 
-#: src/extension.js:1021
+#: src/extension.js:930
 msgid "Gentle breeze"
 msgstr "Ήρεμο αεράκι"
 
-#: src/extension.js:1024
+#: src/extension.js:933
 msgid "Moderate breeze"
 msgstr "Μέτριο αεράκι"
 
-#: src/extension.js:1027
+#: src/extension.js:936
 msgid "Fresh breeze"
 msgstr "Δροσερό αεράκι"
 
-#: src/extension.js:1030
+#: src/extension.js:939
 msgid "Strong breeze"
 msgstr "Δυνατό αεράκι"
 
-#: src/extension.js:1033
+#: src/extension.js:942
 msgid "Moderate gale"
 msgstr "Μέτρια ανεμοθύελλα"
 
-#: src/extension.js:1036
+#: src/extension.js:945
 msgid "Fresh gale"
 msgstr "Δροσερή ανεμοθύελλα"
 
-#: src/extension.js:1039
+#: src/extension.js:948
 msgid "Strong gale"
 msgstr "Δυνατή ανεμοθύελα"
 
-#: src/extension.js:1042
+#: src/extension.js:951
 msgid "Storm"
 msgstr "Θύελλα"
 
-#: src/extension.js:1045
+#: src/extension.js:954
 msgid "Violent storm"
 msgstr "Βίαιη θύελλα"
 
-#: src/extension.js:1048
+#: src/extension.js:957
 msgid "Hurricane"
 msgstr "Τυφώνας"
 
-#: src/extension.js:1052
+#: src/extension.js:961
 msgid "Sunday"
 msgstr "Κυριακή"
 
-#: src/extension.js:1052
+#: src/extension.js:961
 msgid "Monday"
 msgstr "Δευτέρα"
 
-#: src/extension.js:1052
+#: src/extension.js:961
 msgid "Tuesday"
 msgstr "Τρίτη"
 
-#: src/extension.js:1052
+#: src/extension.js:961
 msgid "Wednesday"
 msgstr "Τετάρτη"
 
-#: src/extension.js:1052
+#: src/extension.js:961
 msgid "Thursday"
 msgstr "Πέμπτη"
 
-#: src/extension.js:1052
+#: src/extension.js:961
 msgid "Friday"
 msgstr "Παρασκευή"
 
-#: src/extension.js:1052
+#: src/extension.js:961
 msgid "Saturday"
 msgstr "Σάββατο"
 
-#: src/extension.js:1058
+#: src/extension.js:967
 msgid "N"
 msgstr "Β"
 
-#: src/extension.js:1058
+#: src/extension.js:967
 msgid "NE"
 msgstr "ΒΑ"
 
-#: src/extension.js:1058
+#: src/extension.js:967
 msgid "E"
 msgstr "Α"
 
-#: src/extension.js:1058
+#: src/extension.js:967
 msgid "SE"
 msgstr "ΝΑ"
 
-#: src/extension.js:1058
+#: src/extension.js:967
 msgid "S"
 msgstr "Ν"
 
-#: src/extension.js:1058
+#: src/extension.js:967
 msgid "SW"
 msgstr "ΝΔ"
 
-#: src/extension.js:1058
+#: src/extension.js:967
 msgid "W"
 msgstr "Δ"
 
-#: src/extension.js:1058
+#: src/extension.js:967
 msgid "NW"
 msgstr "ΒΔ"
 
-#: src/extension.js:1136 src/extension.js:1145 src/weather-settings.ui:607
+#: src/extension.js:1020 src/extension.js:1029 src/weather-settings.ui:607
 msgid "hPa"
 msgstr ""
 
-#: src/extension.js:1140 src/weather-settings.ui:608
+#: src/extension.js:1024 src/weather-settings.ui:608
 msgid "inHg"
 msgstr ""
 
-#: src/extension.js:1150 src/weather-settings.ui:609
+#: src/extension.js:1034 src/weather-settings.ui:609
 msgid "bar"
 msgstr ""
 
-#: src/extension.js:1155 src/weather-settings.ui:610
+#: src/extension.js:1039 src/weather-settings.ui:610
 msgid "Pa"
 msgstr ""
 
-#: src/extension.js:1160 src/weather-settings.ui:611
+#: src/extension.js:1044 src/weather-settings.ui:611
 msgid "kPa"
 msgstr ""
 
-#: src/extension.js:1165 src/weather-settings.ui:612
+#: src/extension.js:1049 src/weather-settings.ui:612
 msgid "atm"
 msgstr ""
 
-#: src/extension.js:1170 src/weather-settings.ui:613
+#: src/extension.js:1054 src/weather-settings.ui:613
 msgid "at"
 msgstr ""
 
-#: src/extension.js:1175 src/weather-settings.ui:614
+#: src/extension.js:1059 src/weather-settings.ui:614
 msgid "Torr"
 msgstr ""
 
-#: src/extension.js:1180 src/weather-settings.ui:615
+#: src/extension.js:1064 src/weather-settings.ui:615
 msgid "psi"
 msgstr ""
 
-#: src/extension.js:1185 src/weather-settings.ui:616
+#: src/extension.js:1069 src/weather-settings.ui:616
 msgid "mmHg"
 msgstr ""
 
-#: src/extension.js:1190 src/weather-settings.ui:617
+#: src/extension.js:1074 src/weather-settings.ui:617
 msgid "mbar"
 msgstr ""
 
-#: src/extension.js:1234 src/weather-settings.ui:593
+#: src/extension.js:1118 src/weather-settings.ui:593
 msgid "m/s"
 msgstr ""
 
-#: src/extension.js:1238 src/weather-settings.ui:592
+#: src/extension.js:1122 src/weather-settings.ui:592
 msgid "mph"
 msgstr ""
 
-#: src/extension.js:1243 src/weather-settings.ui:591
+#: src/extension.js:1127 src/weather-settings.ui:591
 msgid "km/h"
 msgstr ""
 
-#: src/extension.js:1252 src/weather-settings.ui:594
+#: src/extension.js:1136 src/weather-settings.ui:594
 msgid "kn"
 msgstr ""
 
-#: src/extension.js:1257 src/weather-settings.ui:595
+#: src/extension.js:1141 src/weather-settings.ui:595
 msgid "ft/s"
 msgstr ""
 
-#: src/extension.js:1351
+#: src/extension.js:1228
 msgid "Loading ..."
 msgstr "Φόρτωση..."
 
-#: src/extension.js:1355
+#: src/extension.js:1232
 msgid "Please wait"
 msgstr "Παρακαλώ περιμένετε"
 
-#: src/extension.js:1421
+#: src/extension.js:1303
 msgid "Feels Like:"
 msgstr ""
 
-#: src/extension.js:1425
+#: src/extension.js:1307
 msgid "Humidity:"
 msgstr "Υγρασία:"
 
-#: src/extension.js:1429
+#: src/extension.js:1311
 msgid "Pressure:"
 msgstr "Πίεση:"
 
-#: src/extension.js:1433
+#: src/extension.js:1315
 msgid "Wind:"
 msgstr "Άνεμος:"
 
-#: src/extension.js:1437
+#: src/extension.js:1319
 msgid "Gusts:"
 msgstr ""
 
-#: src/openweathermap_org.js:156
+#: src/extension.js:1450
+msgid "Tomorrow's Forecast"
+msgstr ""
+
+#: src/extension.js:1452
+msgid "Day Forecast"
+msgstr ""
+
+#: src/openweathermap_org.js:130
 msgid "Thunderstorm with light rain"
 msgstr "καταιγίδα με ελαφριά βροχή"
 
-#: src/openweathermap_org.js:158
+#: src/openweathermap_org.js:132
 msgid "Thunderstorm with rain"
 msgstr "καταιγίδα με βροχή"
 
-#: src/openweathermap_org.js:160
+#: src/openweathermap_org.js:134
 msgid "Thunderstorm with heavy rain"
 msgstr "καταιγίδα με έντονη βροχόπτωση"
 
-#: src/openweathermap_org.js:162
+#: src/openweathermap_org.js:136
 msgid "Light thunderstorm"
 msgstr "ελαφριά καταιγίδα"
 
-#: src/openweathermap_org.js:164
+#: src/openweathermap_org.js:138
 msgid "Thunderstorm"
 msgstr "καταιγίδα"
 
-#: src/openweathermap_org.js:166
+#: src/openweathermap_org.js:140
 msgid "Heavy thunderstorm"
 msgstr "έντονη καταιγίδα"
 
-#: src/openweathermap_org.js:168
+#: src/openweathermap_org.js:142
 msgid "Ragged thunderstorm"
 msgstr "ισχυρή καταιγίδα"
 
-#: src/openweathermap_org.js:170
+#: src/openweathermap_org.js:144
 msgid "Thunderstorm with light drizzle"
 msgstr "καταιγίδα με ελαφρύ ψιχάλισμα"
 
-#: src/openweathermap_org.js:172
+#: src/openweathermap_org.js:146
 msgid "Thunderstorm with drizzle"
 msgstr "καταιγίδα με ψιχάλισμα"
 
-#: src/openweathermap_org.js:174
+#: src/openweathermap_org.js:148
 msgid "Thunderstorm with heavy drizzle"
 msgstr "καταιγίδα με έντονο ψιχάλισμα"
 
-#: src/openweathermap_org.js:176
+#: src/openweathermap_org.js:150
 msgid "Light intensity drizzle"
 msgstr "ελαφράς έντασης ψιχάλισμα"
 
-#: src/openweathermap_org.js:178
+#: src/openweathermap_org.js:152
 msgid "Drizzle"
 msgstr "ψιχάλες"
 
-#: src/openweathermap_org.js:180
+#: src/openweathermap_org.js:154
 msgid "Heavy intensity drizzle"
 msgstr "μεγάλης έντασης ψιχάλισμα"
 
-#: src/openweathermap_org.js:182
+#: src/openweathermap_org.js:156
 msgid "Light intensity drizzle rain"
 msgstr "ελαφράς έντασης ψιλόβροχο"
 
-#: src/openweathermap_org.js:184
+#: src/openweathermap_org.js:158
 msgid "Drizzle rain"
 msgstr "ψιλόβροχο"
 
-#: src/openweathermap_org.js:186
+#: src/openweathermap_org.js:160
 msgid "Heavy intensity drizzle rain"
 msgstr "μεγάλης έντασης ψιλόβροχο"
 
-#: src/openweathermap_org.js:188
+#: src/openweathermap_org.js:162
 msgid "Shower rain and drizzle"
 msgstr "μπόρα με βροχή και ψιλόβροχο"
 
-#: src/openweathermap_org.js:190
+#: src/openweathermap_org.js:164
 msgid "Heavy shower rain and drizzle"
 msgstr "έντονη μπόρα με βροχή και ψιλόβροχο"
 
-#: src/openweathermap_org.js:192
+#: src/openweathermap_org.js:166
 msgid "Shower drizzle"
 msgstr "μπόρα με ψιλόβροχο"
 
-#: src/openweathermap_org.js:194
+#: src/openweathermap_org.js:168
 msgid "Light rain"
 msgstr "ελαφριά βροχή"
 
-#: src/openweathermap_org.js:196
+#: src/openweathermap_org.js:170
 msgid "Moderate rain"
 msgstr "μέτρια βροχή"
 
-#: src/openweathermap_org.js:198
+#: src/openweathermap_org.js:172
 msgid "Heavy intensity rain"
 msgstr "μεγάλης έντασης βροχή"
 
-#: src/openweathermap_org.js:200
+#: src/openweathermap_org.js:174
 msgid "Very heavy rain"
 msgstr "έντονη βροχόπτωση"
 
-#: src/openweathermap_org.js:202
+#: src/openweathermap_org.js:176
 msgid "Extreme rain"
 msgstr "ακραία βροχόπτωση"
 
-#: src/openweathermap_org.js:204
+#: src/openweathermap_org.js:178
 msgid "Freezing rain"
 msgstr "παγωμένη βροχή"
 
-#: src/openweathermap_org.js:206
+#: src/openweathermap_org.js:180
 msgid "Light intensity shower rain"
 msgstr "ελαφράς έντασης μπόρα με βροχή"
 
-#: src/openweathermap_org.js:208
+#: src/openweathermap_org.js:182
 msgid "Shower rain"
 msgstr "μπόρα με βροχή"
 
-#: src/openweathermap_org.js:210
+#: src/openweathermap_org.js:184
 msgid "Heavy intensity shower rain"
 msgstr "μεγάλης έντασης μπόρα με βροχή"
 
-#: src/openweathermap_org.js:212
+#: src/openweathermap_org.js:186
 msgid "Ragged shower rain"
 msgstr "ισχυρή μπόρα με βροχή"
 
-#: src/openweathermap_org.js:214
+#: src/openweathermap_org.js:188
 msgid "Light snow"
 msgstr "ελαφριά χιονόπτωση"
 
-#: src/openweathermap_org.js:216
+#: src/openweathermap_org.js:190
 msgid "Snow"
 msgstr "χιονόπτωση"
 
-#: src/openweathermap_org.js:218
+#: src/openweathermap_org.js:192
 msgid "Heavy snow"
 msgstr "έντονη χιονόπτωση"
 
-#: src/openweathermap_org.js:220
+#: src/openweathermap_org.js:194
 msgid "Sleet"
 msgstr "πάγος"
 
-#: src/openweathermap_org.js:222
+#: src/openweathermap_org.js:196
 msgid "Shower sleet"
 msgstr "παγωμένο χιόνι"
 
-#: src/openweathermap_org.js:224
+#: src/openweathermap_org.js:198
 msgid "Light rain and snow"
 msgstr "ελαφριά βροχή και χιόνι"
 
-#: src/openweathermap_org.js:226
+#: src/openweathermap_org.js:200
 msgid "Rain and snow"
 msgstr "βροχή και χιόνι"
 
-#: src/openweathermap_org.js:228
+#: src/openweathermap_org.js:202
 msgid "Light shower snow"
 msgstr "ελαφριά χιονοθύελλα"
 
-#: src/openweathermap_org.js:230
+#: src/openweathermap_org.js:204
 msgid "Shower snow"
 msgstr "χιονοθύελλα"
 
-#: src/openweathermap_org.js:232
+#: src/openweathermap_org.js:206
 msgid "Heavy shower snow"
 msgstr "έντονη χιονοθύελλα"
 
-#: src/openweathermap_org.js:234
+#: src/openweathermap_org.js:208
 msgid "Mist"
 msgstr "ομίχλη"
 
-#: src/openweathermap_org.js:236
+#: src/openweathermap_org.js:210
 msgid "Smoke"
 msgstr "υδρατμοί"
 
-#: src/openweathermap_org.js:238
+#: src/openweathermap_org.js:212
 msgid "Haze"
 msgstr "καταχνιά"
 
-#: src/openweathermap_org.js:240
+#: src/openweathermap_org.js:214
 msgid "Sand/Dust Whirls"
 msgstr "Στρόβιλοι Άμμου/Σκόνης"
 
-#: src/openweathermap_org.js:242
+#: src/openweathermap_org.js:216
 msgid "Fog"
 msgstr "Ομιχλώδης"
 
-#: src/openweathermap_org.js:244
+#: src/openweathermap_org.js:218
 msgid "Sand"
 msgstr "άμμος"
 
-#: src/openweathermap_org.js:246
+#: src/openweathermap_org.js:220
 msgid "Dust"
 msgstr "σκόνη"
 
-#: src/openweathermap_org.js:248
+#: src/openweathermap_org.js:222
 msgid "VOLCANIC ASH"
 msgstr "ΗΦΑΙΣΤΙΑΚΗ ΤΕΦΡΑ"
 
-#: src/openweathermap_org.js:250
+#: src/openweathermap_org.js:224
 msgid "SQUALLS"
 msgstr "ΜΠΟΥΡΙΝΙ"
 
-#: src/openweathermap_org.js:252
+#: src/openweathermap_org.js:226
 msgid "TORNADO"
 msgstr "ΑΝΕΜΟΣΤΡΟΒΙΛΟΣ"
 
-#: src/openweathermap_org.js:254
+#: src/openweathermap_org.js:228
 msgid "Sky is clear"
 msgstr "καθαρός ουρανός"
 
-#: src/openweathermap_org.js:256
+#: src/openweathermap_org.js:230
 msgid "Few clouds"
 msgstr "λίγα σύννεφα"
 
-#: src/openweathermap_org.js:258
+#: src/openweathermap_org.js:232
 msgid "Scattered clouds"
 msgstr "σποραδικές νεφώσεις"
 
-#: src/openweathermap_org.js:260
+#: src/openweathermap_org.js:234
 msgid "Broken clouds"
 msgstr "διάσπαρτα σύννεφα"
 
-#: src/openweathermap_org.js:262
+#: src/openweathermap_org.js:236
 msgid "Overcast clouds"
 msgstr "κυρίως νεφελώδης"
 
-#: src/openweathermap_org.js:264
+#: src/openweathermap_org.js:238
 msgid "Not available"
 msgstr "Μη διαθέσιμο"
 
-#: src/openweathermap_org.js:325
+#: src/openweathermap_org.js:421
 msgid "Yesterday"
 msgstr "Εχθές"
 
-#: src/openweathermap_org.js:327
+#: src/openweathermap_org.js:423
 #, fuzzy, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
 msgstr[0] "εδώ και %s μέρες"
 msgstr[1] "εδώ και %s μέρες"
 
-#: src/openweathermap_org.js:342 src/openweathermap_org.js:344
+#: src/openweathermap_org.js:438 src/openweathermap_org.js:440
 msgid ", "
 msgstr ""
 
-#: src/openweathermap_org.js:360
+#: src/openweathermap_org.js:456
 msgid "?"
 msgstr ""
 
-#: src/openweathermap_org.js:461
+#: src/openweathermap_org.js:523
 msgid "Tomorrow"
 msgstr "Αύριο"
 
-#: src/prefs.js:208
+#: src/prefs.js:189
 #, fuzzy
 msgid "Searching ..."
 msgstr "Φόρτωση..."
 
-#: src/prefs.js:220 src/prefs.js:258 src/prefs.js:289 src/prefs.js:293
+#: src/prefs.js:201 src/prefs.js:239 src/prefs.js:270 src/prefs.js:274
 #, javascript-format
 msgid "Invalid data when searching for \"%s\""
 msgstr ""
 
-#: src/prefs.js:225 src/prefs.js:265 src/prefs.js:296
+#: src/prefs.js:206 src/prefs.js:246 src/prefs.js:277
 #, fuzzy, javascript-format
 msgid "\"%s\" not found"
 msgstr "Το Σχήμα \"%s\" δε βρέθηκε"
 
-#: src/prefs.js:243
+#: src/prefs.js:224
 #, fuzzy
 msgid "You need an AppKey to search on openmapquest."
 msgstr "Προσωπικό κλειδί Api από το openweathermap.org"
 
-#: src/prefs.js:244
+#: src/prefs.js:225
 #, fuzzy
 msgid "Please visit https://developer.mapquest.com/ ."
 msgstr "Προσωπικό κλειδί Api από το openweathermap.org"
 
-#: src/prefs.js:259
+#: src/prefs.js:240
 #, fuzzy
 msgid "Do you use a valid AppKey to search on openmapquest ?"
 msgstr "Προσωπικό κλειδί Api από το openweathermap.org"
 
-#: src/prefs.js:260
+#: src/prefs.js:241
 #, fuzzy
 msgid "If not, please visit https://developer.mapquest.com/ ."
 msgstr "Προσωπικό κλειδί Api από το openweathermap.org"
 
-#: src/prefs.js:341
+#: src/prefs.js:323
 #, fuzzy
 msgid "Location"
 msgstr "Τοποθεσίες"
 
-#: src/prefs.js:352
+#: src/prefs.js:334
 #, fuzzy
 msgid "Provider"
 msgstr "Πάροχος πληροφοριών καιρού:"
 
-#: src/prefs.js:362
+#: src/prefs.js:344
 msgid "Result"
 msgstr ""
 
-#: src/prefs.js:549
+#: src/prefs.js:548
 #, javascript-format
 msgid "Remove %s ?"
 msgstr "Αφαίρεση %s ;"
 
-#: src/prefs.js:562
+#: src/prefs.js:561
 #, fuzzy
 msgid "No"
 msgstr "Β"
 
-#: src/prefs.js:563
+#: src/prefs.js:562
 msgid "Yes"
 msgstr ""
 
-#: src/prefs.js:1094
+#: src/prefs.js:1105
 msgid "default"
 msgstr ""
 
@@ -719,8 +728,8 @@ msgid "Units"
 msgstr ""
 
 #: src/weather-settings.ui:655
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:112
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:116
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:120
 msgid "Position in Panel"
 msgstr "Θέση στον Πίνακα"
 
@@ -759,73 +768,78 @@ msgstr "Συνθήκες στον πίνακα"
 
 #: src/weather-settings.ui:727
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:108
+msgid "Disable Forecast"
+msgstr ""
+
+#: src/weather-settings.ui:736
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:112
 #, fuzzy
 msgid "Conditions in Forecast"
 msgstr "Συνθήκες στον πίνακα"
 
-#: src/weather-settings.ui:736
+#: src/weather-settings.ui:745
 msgid "Center forecast"
 msgstr "Πρόγνωση στο κέντρο"
 
-#: src/weather-settings.ui:745
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:140
+#: src/weather-settings.ui:754
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:144
 msgid "Number of days in forecast"
 msgstr "Αριθμός ημερών πρόγνωσης"
 
-#: src/weather-settings.ui:754
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:144
+#: src/weather-settings.ui:763
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:148
 msgid "Maximal number of digits after the decimal point"
 msgstr "Μέγιστος αριθμός ψηφίων μετά την υποδιαστολή"
 
-#: src/weather-settings.ui:768
+#: src/weather-settings.ui:777
 msgid "Center"
 msgstr "Κέντρο"
 
-#: src/weather-settings.ui:769
+#: src/weather-settings.ui:778
 msgid "Right"
 msgstr "Δεξιά"
 
-#: src/weather-settings.ui:770
+#: src/weather-settings.ui:779
 msgid "Left"
 msgstr "Αριστερά"
 
-#: src/weather-settings.ui:908
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:128
+#: src/weather-settings.ui:926
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:132
 msgid "Maximal length of the location text"
 msgstr ""
 
-#: src/weather-settings.ui:932
+#: src/weather-settings.ui:950
 msgid "Layout"
 msgstr ""
 
-#: src/weather-settings.ui:967
+#: src/weather-settings.ui:985
 msgid "Version: "
 msgstr ""
 
-#: src/weather-settings.ui:981
+#: src/weather-settings.ui:999
 msgid ""
 "<span>Display weather information for any location on Earth in the GNOME "
 "Shell</span>"
 msgstr ""
 
-#: src/weather-settings.ui:995
+#: src/weather-settings.ui:1013
 msgid ""
 "Weather data provided by: <a href=\"https://openweathermap.org/"
 "\">OpenWeatherMap</a>"
 msgstr ""
 
-#: src/weather-settings.ui:1008
+#: src/weather-settings.ui:1026
 msgid "Maintained by:"
 msgstr ""
 
-#: src/weather-settings.ui:1043
+#: src/weather-settings.ui:1061
 msgid ""
 "<span size=\"small\">This program comes with ABSOLUTELY NO WARRANTY.\n"
 "See the <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
 "\">GNU General Public License, version 2 or later</a> for details.</span>"
 msgstr ""
 
-#: src/weather-settings.ui:1054
+#: src/weather-settings.ui:1072
 msgid "About"
 msgstr ""
 
@@ -871,36 +885,36 @@ msgstr "Εικονίδια Συμβόλων"
 msgid "Use text on buttons in menu"
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:120
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:124
 msgid "Horizontal position of menu-box."
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:124
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:128
 #, fuzzy
 msgid "Refresh interval (actual weather)"
 msgstr "Πρόγνωση στο κέντρο"
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:132
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:136
 #, fuzzy
 msgid "Refresh interval (forecast)"
 msgstr "Πρόγνωση στο κέντρο"
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:136
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:140
 #, fuzzy
 msgid "Center forecastbox."
 msgstr "Πρόγνωση στο κέντρο"
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:148
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:152
 #, fuzzy
 msgid "Your personal API key from openweathermap.org"
 msgstr "Προσωπικό κλειδί Api από το openweathermap.org"
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:152
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:156
 #, fuzzy
 msgid "Use the extensions default API key from openweathermap.org"
 msgstr "Προσωπικό κλειδί Api από το openweathermap.org"
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:156
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:160
 #, fuzzy
 msgid "Your personal AppKey from developer.mapquest.com"
 msgstr "Προσωπικό κλειδί Api από το openweathermap.org"

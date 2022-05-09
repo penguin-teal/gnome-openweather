@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-shell-extension-weather 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-04 14:46-0300\n"
+"POT-Creation-Date: 2022-05-09 14:39-0300\n"
 "PO-Revision-Date: 2017-02-04 20:27+0100\n"
 "Last-Translator: WhiteCat6142 <whitecat6142@gmail.com>\n"
 "Language-Team: Japanese <takeshi.aihana@gmail.com>\n"
@@ -20,11 +20,11 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Gtranslator 2.91.7\n"
 
-#: src/extension.js:187
+#: src/extension.js:171
 msgid "..."
 msgstr ""
 
-#: src/extension.js:369
+#: src/extension.js:323
 msgid ""
 "Openweathermap.org does not work without an api-key.\n"
 "Either set the switch to use the extensions default key in the preferences "
@@ -32,576 +32,585 @@ msgid ""
 "personal key into the preferences dialog."
 msgstr ""
 
-#: src/extension.js:476 src/extension.js:488
+#: src/extension.js:434 src/extension.js:446
 #, javascript-format
 msgid "Can not connect to %s"
 msgstr "%s に接続できません"
 
-#: src/extension.js:800 src/weather-settings.ui:302
+#: src/extension.js:737 src/weather-settings.ui:302
 msgid "Locations"
 msgstr "地域"
 
-#: src/extension.js:812
+#: src/extension.js:741
 msgid "Reload Weather Information"
 msgstr "天気予報を更新する"
 
-#: src/extension.js:827
-msgid "Weather data provided by:"
+#: src/extension.js:745
+#, fuzzy
+msgid "Weather data by:"
 msgstr "気象データーの提供元:"
 
-#: src/extension.js:837
+#: src/extension.js:748
+msgid "Weather Settings"
+msgstr "設定"
+
+#: src/extension.js:771
 #, javascript-format
 msgid "Can not open %s"
 msgstr "%s を開けません"
 
-#: src/extension.js:844
-msgid "Weather Settings"
-msgstr "設定"
-
-#: src/extension.js:895 src/prefs.js:1061
+#: src/extension.js:819 src/prefs.js:1072
 msgid "Invalid city"
 msgstr "都市の名前が間違っています"
 
-#: src/extension.js:906
+#: src/extension.js:830
 msgid "Invalid location! Please try to recreate it."
 msgstr "異常な座標です 変更してください"
 
-#: src/extension.js:961 src/weather-settings.ui:574
+#: src/extension.js:870 src/weather-settings.ui:574
 msgid "°F"
 msgstr "°F"
 
-#: src/extension.js:963 src/weather-settings.ui:575
+#: src/extension.js:872 src/weather-settings.ui:575
 msgid "K"
 msgstr "K"
 
-#: src/extension.js:965 src/weather-settings.ui:576
+#: src/extension.js:874 src/weather-settings.ui:576
 msgid "°Ra"
 msgstr "°Ra"
 
-#: src/extension.js:967 src/weather-settings.ui:577
+#: src/extension.js:876 src/weather-settings.ui:577
 msgid "°Ré"
 msgstr "°Ré"
 
-#: src/extension.js:969 src/weather-settings.ui:578
+#: src/extension.js:878 src/weather-settings.ui:578
 msgid "°Rø"
 msgstr "°Rø"
 
-#: src/extension.js:971 src/weather-settings.ui:579
+#: src/extension.js:880 src/weather-settings.ui:579
 msgid "°De"
 msgstr "°De"
 
-#: src/extension.js:973 src/weather-settings.ui:580
+#: src/extension.js:882 src/weather-settings.ui:580
 msgid "°N"
 msgstr "°N"
 
-#: src/extension.js:975 src/weather-settings.ui:573
+#: src/extension.js:884 src/weather-settings.ui:573
 msgid "°C"
 msgstr "°C"
 
-#: src/extension.js:1012
+#: src/extension.js:921
 msgid "Calm"
 msgstr "平穏"
 
-#: src/extension.js:1015
+#: src/extension.js:924
 msgid "Light air"
 msgstr "至軽風"
 
-#: src/extension.js:1018
+#: src/extension.js:927
 msgid "Light breeze"
 msgstr "軽風"
 
-#: src/extension.js:1021
+#: src/extension.js:930
 msgid "Gentle breeze"
 msgstr "軟風"
 
-#: src/extension.js:1024
+#: src/extension.js:933
 msgid "Moderate breeze"
 msgstr "和風"
 
-#: src/extension.js:1027
+#: src/extension.js:936
 msgid "Fresh breeze"
 msgstr "疾風"
 
-#: src/extension.js:1030
+#: src/extension.js:939
 msgid "Strong breeze"
 msgstr "強風"
 
-#: src/extension.js:1033
+#: src/extension.js:942
 msgid "Moderate gale"
 msgstr "強風"
 
-#: src/extension.js:1036
+#: src/extension.js:945
 msgid "Fresh gale"
 msgstr "疾強風"
 
-#: src/extension.js:1039
+#: src/extension.js:948
 msgid "Strong gale"
 msgstr "大強風"
 
-#: src/extension.js:1042
+#: src/extension.js:951
 msgid "Storm"
 msgstr "暴風"
 
-#: src/extension.js:1045
+#: src/extension.js:954
 msgid "Violent storm"
 msgstr "破壊的な暴風"
 
-#: src/extension.js:1048
+#: src/extension.js:957
 msgid "Hurricane"
 msgstr "台風クラスの風"
 
-#: src/extension.js:1052
+#: src/extension.js:961
 msgid "Sunday"
 msgstr "日曜日"
 
-#: src/extension.js:1052
+#: src/extension.js:961
 msgid "Monday"
 msgstr "月曜日"
 
-#: src/extension.js:1052
+#: src/extension.js:961
 msgid "Tuesday"
 msgstr "火曜日"
 
-#: src/extension.js:1052
+#: src/extension.js:961
 msgid "Wednesday"
 msgstr "水曜日"
 
-#: src/extension.js:1052
+#: src/extension.js:961
 msgid "Thursday"
 msgstr "木曜日"
 
-#: src/extension.js:1052
+#: src/extension.js:961
 msgid "Friday"
 msgstr "金曜日"
 
-#: src/extension.js:1052
+#: src/extension.js:961
 msgid "Saturday"
 msgstr "土曜日"
 
-#: src/extension.js:1058
+#: src/extension.js:967
 msgid "N"
 msgstr "北"
 
-#: src/extension.js:1058
+#: src/extension.js:967
 msgid "NE"
 msgstr "北東"
 
-#: src/extension.js:1058
+#: src/extension.js:967
 msgid "E"
 msgstr "東"
 
-#: src/extension.js:1058
+#: src/extension.js:967
 msgid "SE"
 msgstr "南東"
 
-#: src/extension.js:1058
+#: src/extension.js:967
 msgid "S"
 msgstr "南"
 
-#: src/extension.js:1058
+#: src/extension.js:967
 msgid "SW"
 msgstr "南西"
 
-#: src/extension.js:1058
+#: src/extension.js:967
 msgid "W"
 msgstr "西"
 
-#: src/extension.js:1058
+#: src/extension.js:967
 msgid "NW"
 msgstr "北西"
 
-#: src/extension.js:1136 src/extension.js:1145 src/weather-settings.ui:607
+#: src/extension.js:1020 src/extension.js:1029 src/weather-settings.ui:607
 msgid "hPa"
 msgstr "hPa"
 
-#: src/extension.js:1140 src/weather-settings.ui:608
+#: src/extension.js:1024 src/weather-settings.ui:608
 msgid "inHg"
 msgstr "inHg"
 
-#: src/extension.js:1150 src/weather-settings.ui:609
+#: src/extension.js:1034 src/weather-settings.ui:609
 msgid "bar"
 msgstr "bar"
 
-#: src/extension.js:1155 src/weather-settings.ui:610
+#: src/extension.js:1039 src/weather-settings.ui:610
 msgid "Pa"
 msgstr "Pa"
 
-#: src/extension.js:1160 src/weather-settings.ui:611
+#: src/extension.js:1044 src/weather-settings.ui:611
 msgid "kPa"
 msgstr "kPa"
 
-#: src/extension.js:1165 src/weather-settings.ui:612
+#: src/extension.js:1049 src/weather-settings.ui:612
 msgid "atm"
 msgstr "atm"
 
-#: src/extension.js:1170 src/weather-settings.ui:613
+#: src/extension.js:1054 src/weather-settings.ui:613
 msgid "at"
 msgstr "at"
 
-#: src/extension.js:1175 src/weather-settings.ui:614
+#: src/extension.js:1059 src/weather-settings.ui:614
 msgid "Torr"
 msgstr "Torr"
 
-#: src/extension.js:1180 src/weather-settings.ui:615
+#: src/extension.js:1064 src/weather-settings.ui:615
 msgid "psi"
 msgstr "psi"
 
-#: src/extension.js:1185 src/weather-settings.ui:616
+#: src/extension.js:1069 src/weather-settings.ui:616
 msgid "mmHg"
 msgstr "mmHg"
 
-#: src/extension.js:1190 src/weather-settings.ui:617
+#: src/extension.js:1074 src/weather-settings.ui:617
 msgid "mbar"
 msgstr "mbar"
 
-#: src/extension.js:1234 src/weather-settings.ui:593
+#: src/extension.js:1118 src/weather-settings.ui:593
 msgid "m/s"
 msgstr "m/s"
 
-#: src/extension.js:1238 src/weather-settings.ui:592
+#: src/extension.js:1122 src/weather-settings.ui:592
 msgid "mph"
 msgstr "mph"
 
-#: src/extension.js:1243 src/weather-settings.ui:591
+#: src/extension.js:1127 src/weather-settings.ui:591
 msgid "km/h"
 msgstr "km/h"
 
-#: src/extension.js:1252 src/weather-settings.ui:594
+#: src/extension.js:1136 src/weather-settings.ui:594
 msgid "kn"
 msgstr "kn"
 
-#: src/extension.js:1257 src/weather-settings.ui:595
+#: src/extension.js:1141 src/weather-settings.ui:595
 msgid "ft/s"
 msgstr "ft/s"
 
-#: src/extension.js:1351
+#: src/extension.js:1228
 msgid "Loading ..."
 msgstr "読込中"
 
-#: src/extension.js:1355
+#: src/extension.js:1232
 msgid "Please wait"
 msgstr "少々お待ちください"
 
-#: src/extension.js:1421
+#: src/extension.js:1303
 msgid "Feels Like:"
 msgstr ""
 
-#: src/extension.js:1425
+#: src/extension.js:1307
 msgid "Humidity:"
 msgstr "湿度"
 
-#: src/extension.js:1429
+#: src/extension.js:1311
 msgid "Pressure:"
 msgstr "気圧"
 
-#: src/extension.js:1433
+#: src/extension.js:1315
 msgid "Wind:"
 msgstr "風"
 
-#: src/extension.js:1437
+#: src/extension.js:1319
 msgid "Gusts:"
 msgstr ""
 
-#: src/openweathermap_org.js:156
+#: src/extension.js:1450
+msgid "Tomorrow's Forecast"
+msgstr ""
+
+#: src/extension.js:1452
+msgid "Day Forecast"
+msgstr ""
+
+#: src/openweathermap_org.js:130
 msgid "Thunderstorm with light rain"
 msgstr "雷雨(小雨)"
 
-#: src/openweathermap_org.js:158
+#: src/openweathermap_org.js:132
 msgid "Thunderstorm with rain"
 msgstr "雷雨"
 
-#: src/openweathermap_org.js:160
+#: src/openweathermap_org.js:134
 msgid "Thunderstorm with heavy rain"
 msgstr "雷豪雨"
 
-#: src/openweathermap_org.js:162
+#: src/openweathermap_org.js:136
 msgid "Light thunderstorm"
 msgstr "弱い雷"
 
-#: src/openweathermap_org.js:164
+#: src/openweathermap_org.js:138
 msgid "Thunderstorm"
 msgstr "雷"
 
-#: src/openweathermap_org.js:166
+#: src/openweathermap_org.js:140
 msgid "Heavy thunderstorm"
 msgstr "激しい雷"
 
-#: src/openweathermap_org.js:168
+#: src/openweathermap_org.js:142
 msgid "Ragged thunderstorm"
 msgstr "不規則な雷"
 
-#: src/openweathermap_org.js:170
+#: src/openweathermap_org.js:144
 msgid "Thunderstorm with light drizzle"
 msgstr "薄い霧を伴った雷雨"
 
-#: src/openweathermap_org.js:172
+#: src/openweathermap_org.js:146
 msgid "Thunderstorm with drizzle"
 msgstr "霧を伴った雷雨"
 
-#: src/openweathermap_org.js:174
+#: src/openweathermap_org.js:148
 msgid "Thunderstorm with heavy drizzle"
 msgstr "濃い霧を伴った雷雨"
 
-#: src/openweathermap_org.js:176
+#: src/openweathermap_org.js:150
 msgid "Light intensity drizzle"
 msgstr "靄"
 
-#: src/openweathermap_org.js:178
+#: src/openweathermap_org.js:152
 msgid "Drizzle"
 msgstr "霧"
 
-#: src/openweathermap_org.js:180
+#: src/openweathermap_org.js:154
 msgid "Heavy intensity drizzle"
 msgstr "濃霧"
 
-#: src/openweathermap_org.js:182
+#: src/openweathermap_org.js:156
 msgid "Light intensity drizzle rain"
 msgstr "軽い霧雨"
 
-#: src/openweathermap_org.js:184
+#: src/openweathermap_org.js:158
 msgid "Drizzle rain"
 msgstr "霧雨"
 
-#: src/openweathermap_org.js:186
+#: src/openweathermap_org.js:160
 msgid "Heavy intensity drizzle rain"
 msgstr "激しい霧雨"
 
-#: src/openweathermap_org.js:188
+#: src/openweathermap_org.js:162
 msgid "Shower rain and drizzle"
 msgstr "にわか雨と霧"
 
-#: src/openweathermap_org.js:190
+#: src/openweathermap_org.js:164
 msgid "Heavy shower rain and drizzle"
 msgstr "激しいにわか雨と霧"
 
-#: src/openweathermap_org.js:192
+#: src/openweathermap_org.js:166
 msgid "Shower drizzle"
 msgstr "湿った霧"
 
-#: src/openweathermap_org.js:194
+#: src/openweathermap_org.js:168
 msgid "Light rain"
 msgstr "小雨"
 
-#: src/openweathermap_org.js:196
+#: src/openweathermap_org.js:170
 msgid "Moderate rain"
 msgstr "雨"
 
-#: src/openweathermap_org.js:198
+#: src/openweathermap_org.js:172
 msgid "Heavy intensity rain"
 msgstr "豪雨"
 
-#: src/openweathermap_org.js:200
+#: src/openweathermap_org.js:174
 msgid "Very heavy rain"
 msgstr "とても激しい雨"
 
-#: src/openweathermap_org.js:202
+#: src/openweathermap_org.js:176
 msgid "Extreme rain"
 msgstr "すさまじい雨"
 
-#: src/openweathermap_org.js:204
+#: src/openweathermap_org.js:178
 msgid "Freezing rain"
 msgstr "冷雨"
 
-#: src/openweathermap_org.js:206
+#: src/openweathermap_org.js:180
 msgid "Light intensity shower rain"
 msgstr "軽いにわか雨"
 
-#: src/openweathermap_org.js:208
+#: src/openweathermap_org.js:182
 msgid "Shower rain"
 msgstr "にわか雨"
 
-#: src/openweathermap_org.js:210
+#: src/openweathermap_org.js:184
 msgid "Heavy intensity shower rain"
 msgstr "激しいにわか雨"
 
-#: src/openweathermap_org.js:212
+#: src/openweathermap_org.js:186
 msgid "Ragged shower rain"
 msgstr "不規則なにわか雨"
 
-#: src/openweathermap_org.js:214
+#: src/openweathermap_org.js:188
 msgid "Light snow"
 msgstr "小雪"
 
-#: src/openweathermap_org.js:216
+#: src/openweathermap_org.js:190
 msgid "Snow"
 msgstr "雪"
 
-#: src/openweathermap_org.js:218
+#: src/openweathermap_org.js:192
 msgid "Heavy snow"
 msgstr "豪雪"
 
-#: src/openweathermap_org.js:220
+#: src/openweathermap_org.js:194
 msgid "Sleet"
 msgstr "みぞれ"
 
-#: src/openweathermap_org.js:222
+#: src/openweathermap_org.js:196
 msgid "Shower sleet"
 msgstr "みぞれ"
 
-#: src/openweathermap_org.js:224
+#: src/openweathermap_org.js:198
 msgid "Light rain and snow"
 msgstr "軽い雨雪"
 
-#: src/openweathermap_org.js:226
+#: src/openweathermap_org.js:200
 msgid "Rain and snow"
 msgstr "雨雪"
 
-#: src/openweathermap_org.js:228
+#: src/openweathermap_org.js:202
 msgid "Light shower snow"
 msgstr "軽いにわか雪"
 
-#: src/openweathermap_org.js:230
+#: src/openweathermap_org.js:204
 msgid "Shower snow"
 msgstr "にわか雪"
 
-#: src/openweathermap_org.js:232
+#: src/openweathermap_org.js:206
 msgid "Heavy shower snow"
 msgstr "激しいにわか雪"
 
-#: src/openweathermap_org.js:234
+#: src/openweathermap_org.js:208
 msgid "Mist"
 msgstr "霞"
 
-#: src/openweathermap_org.js:236
+#: src/openweathermap_org.js:210
 msgid "Smoke"
 msgstr "煙"
 
-#: src/openweathermap_org.js:238
+#: src/openweathermap_org.js:212
 msgid "Haze"
 msgstr "煙霧"
 
-#: src/openweathermap_org.js:240
+#: src/openweathermap_org.js:214
 msgid "Sand/Dust Whirls"
 msgstr "黄砂"
 
-#: src/openweathermap_org.js:242
+#: src/openweathermap_org.js:216
 msgid "Fog"
 msgstr "霧"
 
-#: src/openweathermap_org.js:244
+#: src/openweathermap_org.js:218
 msgid "Sand"
 msgstr "黄砂"
 
-#: src/openweathermap_org.js:246
+#: src/openweathermap_org.js:220
 msgid "Dust"
 msgstr "塵"
 
-#: src/openweathermap_org.js:248
+#: src/openweathermap_org.js:222
 msgid "VOLCANIC ASH"
 msgstr "火山灰"
 
-#: src/openweathermap_org.js:250
+#: src/openweathermap_org.js:224
 msgid "SQUALLS"
 msgstr "スコール"
 
-#: src/openweathermap_org.js:252
+#: src/openweathermap_org.js:226
 msgid "TORNADO"
 msgstr "台風"
 
-#: src/openweathermap_org.js:254
+#: src/openweathermap_org.js:228
 msgid "Sky is clear"
 msgstr "快晴"
 
-#: src/openweathermap_org.js:256
+#: src/openweathermap_org.js:230
 msgid "Few clouds"
 msgstr "晴れ"
 
-#: src/openweathermap_org.js:258
+#: src/openweathermap_org.js:232
 msgid "Scattered clouds"
 msgstr "千切れ雲(半分以下)"
 
-#: src/openweathermap_org.js:260
+#: src/openweathermap_org.js:234
 msgid "Broken clouds"
 msgstr "千切れ雲(半分以上)"
 
-#: src/openweathermap_org.js:262
+#: src/openweathermap_org.js:236
 msgid "Overcast clouds"
 msgstr "曇り"
 
-#: src/openweathermap_org.js:264
+#: src/openweathermap_org.js:238
 msgid "Not available"
 msgstr "データーなし"
 
-#: src/openweathermap_org.js:325
+#: src/openweathermap_org.js:421
 msgid "Yesterday"
 msgstr "昨日"
 
-#: src/openweathermap_org.js:327
+#: src/openweathermap_org.js:423
 #, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
 msgstr[0] "%d 日前"
 
-#: src/openweathermap_org.js:342 src/openweathermap_org.js:344
+#: src/openweathermap_org.js:438 src/openweathermap_org.js:440
 msgid ", "
 msgstr ","
 
-#: src/openweathermap_org.js:360
+#: src/openweathermap_org.js:456
 msgid "?"
 msgstr ""
 
-#: src/openweathermap_org.js:461
+#: src/openweathermap_org.js:523
 msgid "Tomorrow"
 msgstr "明日"
 
-#: src/prefs.js:208
+#: src/prefs.js:189
 #, fuzzy
 msgid "Searching ..."
 msgstr "読込中"
 
-#: src/prefs.js:220 src/prefs.js:258 src/prefs.js:289 src/prefs.js:293
+#: src/prefs.js:201 src/prefs.js:239 src/prefs.js:270 src/prefs.js:274
 #, javascript-format
 msgid "Invalid data when searching for \"%s\""
 msgstr "\"%s\" の検索中に異常が発生しました"
 
-#: src/prefs.js:225 src/prefs.js:265 src/prefs.js:296
+#: src/prefs.js:206 src/prefs.js:246 src/prefs.js:277
 #, javascript-format
 msgid "\"%s\" not found"
 msgstr "\"%s\" が見つかりませんでした"
 
-#: src/prefs.js:243
+#: src/prefs.js:224
 msgid "You need an AppKey to search on openmapquest."
 msgstr ""
 
-#: src/prefs.js:244
+#: src/prefs.js:225
 msgid "Please visit https://developer.mapquest.com/ ."
 msgstr ""
 
-#: src/prefs.js:259
+#: src/prefs.js:240
 msgid "Do you use a valid AppKey to search on openmapquest ?"
 msgstr ""
 
-#: src/prefs.js:260
+#: src/prefs.js:241
 msgid "If not, please visit https://developer.mapquest.com/ ."
 msgstr ""
 
-#: src/prefs.js:341
+#: src/prefs.js:323
 msgid "Location"
 msgstr "地域"
 
-#: src/prefs.js:352
+#: src/prefs.js:334
 msgid "Provider"
 msgstr "提供元"
 
-#: src/prefs.js:362
+#: src/prefs.js:344
 msgid "Result"
 msgstr ""
 
-#: src/prefs.js:549
+#: src/prefs.js:548
 #, javascript-format
 msgid "Remove %s ?"
 msgstr "\"%s\" を削除しますか？"
 
-#: src/prefs.js:562
+#: src/prefs.js:561
 #, fuzzy
 msgid "No"
 msgstr "北"
 
-#: src/prefs.js:563
+#: src/prefs.js:562
 msgid "Yes"
 msgstr ""
 
-#: src/prefs.js:1094
+#: src/prefs.js:1105
 msgid "default"
 msgstr "デフォルト"
 
@@ -710,8 +719,8 @@ msgid "Units"
 msgstr "単位"
 
 #: src/weather-settings.ui:655
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:112
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:116
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:120
 msgid "Position in Panel"
 msgstr "配置する場所"
 
@@ -750,66 +759,71 @@ msgstr "インジゲーターに天気を表示する"
 
 #: src/weather-settings.ui:727
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:108
+msgid "Disable Forecast"
+msgstr ""
+
+#: src/weather-settings.ui:736
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:112
 msgid "Conditions in Forecast"
 msgstr "週間天気予報に天気を表示する"
 
-#: src/weather-settings.ui:736
+#: src/weather-settings.ui:745
 msgid "Center forecast"
 msgstr ""
 
-#: src/weather-settings.ui:745
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:140
+#: src/weather-settings.ui:754
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:144
 msgid "Number of days in forecast"
 msgstr "週間天気予報に表示する日数"
 
-#: src/weather-settings.ui:754
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:144
+#: src/weather-settings.ui:763
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:148
 msgid "Maximal number of digits after the decimal point"
 msgstr "小数第何位まで表示するか"
 
-#: src/weather-settings.ui:768
+#: src/weather-settings.ui:777
 msgid "Center"
 msgstr "中央"
 
-#: src/weather-settings.ui:769
+#: src/weather-settings.ui:778
 msgid "Right"
 msgstr "右側"
 
-#: src/weather-settings.ui:770
+#: src/weather-settings.ui:779
 msgid "Left"
 msgstr "左側"
 
-#: src/weather-settings.ui:908
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:128
+#: src/weather-settings.ui:926
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:132
 msgid "Maximal length of the location text"
 msgstr ""
 
-#: src/weather-settings.ui:932
+#: src/weather-settings.ui:950
 msgid "Layout"
 msgstr "表示設定"
 
-#: src/weather-settings.ui:967
+#: src/weather-settings.ui:985
 msgid "Version: "
 msgstr "バージョン:"
 
-#: src/weather-settings.ui:981
+#: src/weather-settings.ui:999
 msgid ""
 "<span>Display weather information for any location on Earth in the GNOME "
 "Shell</span>"
 msgstr ""
 
-#: src/weather-settings.ui:995
+#: src/weather-settings.ui:1013
 msgid ""
 "Weather data provided by: <a href=\"https://openweathermap.org/"
 "\">OpenWeatherMap</a>"
 msgstr ""
 
-#: src/weather-settings.ui:1008
+#: src/weather-settings.ui:1026
 #, fuzzy
 msgid "Maintained by:"
 msgstr "メンテナー:"
 
-#: src/weather-settings.ui:1043
+#: src/weather-settings.ui:1061
 msgid ""
 "<span size=\"small\">This program comes with ABSOLUTELY NO WARRANTY.\n"
 "See the <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
@@ -819,7 +833,7 @@ msgstr ""
 "詳しくは <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
 "\">GNU General Public License, version 2 or later</a> をご覧ください。</span>"
 
-#: src/weather-settings.ui:1054
+#: src/weather-settings.ui:1072
 msgid "About"
 msgstr "ソフトについて"
 
@@ -862,31 +876,31 @@ msgstr "シンボリック・アイコンにする"
 msgid "Use text on buttons in menu"
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:120
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:124
 msgid "Horizontal position of menu-box."
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:124
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:128
 msgid "Refresh interval (actual weather)"
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:132
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:136
 msgid "Refresh interval (forecast)"
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:136
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:140
 msgid "Center forecastbox."
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:148
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:152
 msgid "Your personal API key from openweathermap.org"
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:152
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:156
 msgid "Use the extensions default API key from openweathermap.org"
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:156
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:160
 msgid "Your personal AppKey from developer.mapquest.com"
 msgstr ""
 

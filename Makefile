@@ -1,8 +1,8 @@
 # Basic Makefile
 
-UUID = openweather-extension@jenslody.de
 PKG_NAME = gnome-shell-extension-openweather
-BASE_MODULES = metadata.json COPYING
+UUID = openweather-extension@jenslody.de
+BASE_MODULES = metadata.json COPYING AUTHORS
 SRC_MODULES = extension.js openweathermap_org.js stylesheet.css prefs.js prefs.css weather-settings.ui
 EXTRA_DIRECTORIES = media
 TOLOCALIZE = $(addprefix src/, extension.js openweathermap_org.js prefs.js weather-settings.ui) schemas/org.gnome.shell.extensions.openweather.gschema.xml
