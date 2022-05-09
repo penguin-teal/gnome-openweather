@@ -43,6 +43,7 @@ const OPENWEATHER_POSITION_IN_PANEL_KEY = 'position-in-panel';
 const OPENWEATHER_POSITION_INDEX_KEY = 'position-index';
 const OPENWEATHER_MENU_ALIGNMENT_KEY = 'menu-alignment';
 const OPENWEATHER_SHOW_COMMENT_IN_PANEL_KEY = 'show-comment-in-panel';
+const OPENWEATHER_DISABLE_FORECAST_KEY = 'disable-forecast';
 const OPENWEATHER_SHOW_COMMENT_IN_FORECAST_KEY = 'show-comment-in-forecast';
 const OPENWEATHER_REFRESH_INTERVAL_CURRENT = 'refresh-interval-current';
 const OPENWEATHER_REFRESH_INTERVAL_FORECAST = 'refresh-interval-forecast';
@@ -83,11 +84,8 @@ Gtk.StyleContext.add_provider_for_display(
 
 
 let _httpSession;
-
 let mCities = null;
-
 let inRealize = false;
-
 let defaultSize = [-1, -1];
 
 const WeatherPrefsWidget = new GObject.Class({
@@ -351,6 +349,23 @@ const WeatherPrefsWidget = new GObject.Class({
 
         column.set_cell_data_func(renderer, function() {
             arguments[1].markup = arguments[2].get_value(arguments[3], 0);
+        });
+
+        this.disableForecast = this.Window.get_object("disable_forecast");
+        this.disableForecast.connect("state-set", () => {
+            let forecastDays = this.Window.get_object("days_forecast");
+            let forecastCenter = this.Window.get_object("center_forecast");
+            let forecastComment = this.Window.get_object("comment_in_forecast");
+
+            if (this.disableForecast.get_active()) {
+                forecastDays.set_sensitive(false);
+                forecastCenter.set_sensitive(false);
+                forecastComment.set_sensitive(false);
+            } else {
+                forecastDays.set_sensitive(true);
+                forecastCenter.set_sensitive(true);
+                forecastComment.set_sensitive(true);
+            }
         });
 
         this.location_length_spin = this.Window.get_object("max_loc_chars");
@@ -912,6 +927,18 @@ const WeatherPrefsWidget = new GObject.Class({
         if (!this.Settings)
             this.loadConfig();
         this.Settings.set_boolean(OPENWEATHER_SHOW_COMMENT_IN_PANEL_KEY, v);
+    },
+
+    get disable_forecast() {
+        if (!this.Settings)
+            this.loadConfig();
+        return this.Settings.get_boolean(OPENWEATHER_DISABLE_FORECAST_KEY);
+    },
+
+    set disable_forecast(v) {
+        if (!this.Settings)
+            this.loadConfig();
+        this.Settings.set_boolean(OPENWEATHER_DISABLE_FORECAST_KEY, v);
     },
 
     get comment_in_forecast() {

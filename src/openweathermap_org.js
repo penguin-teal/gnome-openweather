@@ -29,10 +29,8 @@ const OPENWEATHER_URL_CURRENT = OPENWEATHER_URL_BASE + 'weather';
 const OPENWEATHER_URL_FORECAST = OPENWEATHER_URL_BASE + 'forecast';
 
 function getIconName(code, night) {
-
     let iconname = 'weather-severe-alert-symbolic';
     // see https://openweathermap.org/weather-conditions
-
     switch (parseInt(code, 10)) {
         case 200: //Thunderstorm with light rain
         case 201: //Thunderstorm with rain
@@ -257,7 +255,7 @@ async function getWeatherCurrent() {
     try {
         await this.populateCurrentUI()
         .then(async () => {
-            this.getWeatherForecast();
+            !this._disable_forecast && this.getWeatherForecast();
             this.recalcLayout();
         });
     } catch (e) {
@@ -266,6 +264,9 @@ async function getWeatherCurrent() {
 }
 
 async function getWeatherForecast() {
+    // Did the user disable the forecast?
+    if (this._disable_forecast)
+        return;
     // Make sure we have data to process
     if (this.forecastWeatherCache === undefined || this.todaysWeatherCache === undefined) {
         this.forecastWeatherCache = "in refresh";
@@ -319,6 +320,9 @@ async function refreshWeatherCurrent() {
 }
 
 async function refreshWeatherForecast() {
+    // Did the user disable the forecast?
+    if (this._disable_forecast)
+        return;
 
     this.oldLocation = this.extractCoord(this._city);
     if (this.oldLocation.search(",") == -1)

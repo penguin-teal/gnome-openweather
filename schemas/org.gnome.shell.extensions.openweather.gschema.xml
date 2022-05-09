@@ -103,6 +103,10 @@
       <default>false</default>
       <summary>Conditions in Panel</summary>
     </key>
+    <key type="b" name="disable-forecast">
+      <default>true</default>
+      <summary>Disable Forecast</summary>
+    </key>
     <key type="b" name="show-comment-in-forecast">
       <default>true</default>
       <summary>Conditions in Forecast</summary>

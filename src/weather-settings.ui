@@ -723,11 +723,20 @@
                   </object>
                 </child>
                 <child>
+                  <object class="GtkLabel" id="disable-forecast">
+                    <property name="label" translatable="yes">Disable Forecast</property>
+                    <layout>
+                      <property name="column">0</property>
+                      <property name="row">9</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
                   <object class="GtkLabel" id="label-comment-in-forecast">
                     <property name="label" translatable="yes">Conditions in Forecast</property>
                     <layout>
                       <property name="column">0</property>
-                      <property name="row">9</property>
+                      <property name="row">10</property>
                     </layout>
                   </object>
                 </child>
@@ -736,7 +745,7 @@
                     <property name="label" translatable="yes">Center forecast</property>
                     <layout>
                       <property name="column">0</property>
-                      <property name="row">10</property>
+                      <property name="row">11</property>
                     </layout>
                   </object>
                 </child>
@@ -745,7 +754,7 @@
                     <property name="label" translatable="yes">Number of days in forecast</property>
                     <layout>
                       <property name="column">0</property>
-                      <property name="row">11</property>
+                      <property name="row">12</property>
                     </layout>
                   </object>
                 </child>
@@ -754,7 +763,7 @@
                     <property name="label" translatable="yes">Maximal number of digits after the decimal point</property>
                     <layout>
                       <property name="column">0</property>
-                      <property name="row">12</property>
+                      <property name="row">13</property>
                     </layout>
                   </object>
                 </child>
@@ -855,7 +864,7 @@
                   </object>
                 </child>
                 <child>
-                  <object class="GtkSwitch" id="comment_in_forecast">
+                  <object class="GtkSwitch" id="disable_forecast">
                     <property name="halign">center</property>
                     <layout>
                       <property name="column">1</property>
@@ -864,11 +873,20 @@
                   </object>
                 </child>
                 <child>
-                  <object class="GtkSwitch" id="center_forecast">
+                  <object class="GtkSwitch" id="comment_in_forecast">
                     <property name="halign">center</property>
                     <layout>
                       <property name="column">1</property>
                       <property name="row">10</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkSwitch" id="center_forecast">
+                    <property name="halign">center</property>
+                    <layout>
+                      <property name="column">1</property>
+                      <property name="row">11</property>
                     </layout>
                   </object>
                 </child>
@@ -883,7 +901,7 @@
                     </items>
                     <layout>
                       <property name="column">1</property>
-                      <property name="row">11</property>
+                      <property name="row">12</property>
                     </layout>
                   </object>
                 </child>
@@ -897,7 +915,7 @@
                     </items>
                     <layout>
                       <property name="column">1</property>
-                      <property name="row">12</property>
+                      <property name="row">13</property>
                     </layout>
                   </object>
                 </child>
@@ -908,7 +926,7 @@
                     <property name="label" translatable="yes">Maximal length of the location text</property>
                     <layout>
                       <property name="column">0</property>
-                      <property name="row">13</property>
+                      <property name="row">14</property>
                     </layout>
                   </object>
                 </child>
@@ -919,7 +937,7 @@
                     <property name="numeric">1</property>
                     <layout>
                       <property name="column">1</property>
-                      <property name="row">13</property>
+                      <property name="row">14</property>
                     </layout>
                   </object>
                 </child>
