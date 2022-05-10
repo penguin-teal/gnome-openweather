@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: 3.0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-09 14:39-0300\n"
-"PO-Revision-Date: 2022-05-03 12:48-0400\n"
+"PO-Revision-Date: 2022-05-10 08:42-0400\n"
 "Last-Translator: Francis Gagnon <franckgaga2@gmail.com>\n"
 "Language-Team: French <franckgaga2@gmail.com>\n"
 "Language: fr\n"
@@ -53,7 +53,6 @@ msgid "Reload Weather Information"
 msgstr "Recharger les informations météo"
 
 #: src/extension.js:745
-#, fuzzy
 msgid "Weather data by:"
 msgstr "Données météo fournies par :"
 
@@ -160,31 +159,31 @@ msgstr "Ouragan"
 
 #: src/extension.js:961
 msgid "Sunday"
-msgstr "dimanche"
+msgstr "Dimanche"
 
 #: src/extension.js:961
 msgid "Monday"
-msgstr "lundi"
+msgstr "Lundi"
 
 #: src/extension.js:961
 msgid "Tuesday"
-msgstr "mardi"
+msgstr "Mardi"
 
 #: src/extension.js:961
 msgid "Wednesday"
-msgstr "mercredi"
+msgstr "Mercredi"
 
 #: src/extension.js:961
 msgid "Thursday"
-msgstr "jeudi"
+msgstr "Jeudi"
 
 #: src/extension.js:961
 msgid "Friday"
-msgstr "vendredi"
+msgstr "Vendredi"
 
 #: src/extension.js:961
 msgid "Saturday"
-msgstr "samedi"
+msgstr "Samedi"
 
 #: src/extension.js:967
 msgid "N"
@@ -312,11 +311,11 @@ msgstr "Rafales :"
 
 #: src/extension.js:1450
 msgid "Tomorrow's Forecast"
-msgstr ""
+msgstr "Prévision de demain"
 
 #: src/extension.js:1452
 msgid "Day Forecast"
-msgstr ""
+msgstr "jours de prévision"
 
 #: src/openweathermap_org.js:130
 msgid "Thunderstorm with light rain"
@@ -562,9 +561,8 @@ msgid "Tomorrow"
 msgstr "Demain"
 
 #: src/prefs.js:189
-#, fuzzy
 msgid "Searching ..."
-msgstr "Chargement…"
+msgstr "Recherche…"
 
 #: src/prefs.js:201 src/prefs.js:239 src/prefs.js:270 src/prefs.js:274
 #, javascript-format
@@ -577,24 +575,20 @@ msgid "\"%s\" not found"
 msgstr "Schéma « %s » manquant"
 
 #: src/prefs.js:224
-#, fuzzy
 msgid "You need an AppKey to search on openmapquest."
-msgstr "Votre clef d’API personnelle de developer.mapquest.com"
+msgstr "La recherche sur openmapquest nécessite une AppKey."
 
 #: src/prefs.js:225
-#, fuzzy
 msgid "Please visit https://developer.mapquest.com/ ."
-msgstr "Clef d’API personnelle de developer.mapquest.com"
+msgstr "Veuillez visiter https://developer.mapquest.com/ ."
 
 #: src/prefs.js:240
-#, fuzzy
 msgid "Do you use a valid AppKey to search on openmapquest ?"
-msgstr "Votre clef d’API personnelle de developer.mapquest.com"
+msgstr "Votre AppKey de recherche sur openmapquest est-elle valide ?"
 
 #: src/prefs.js:241
-#, fuzzy
 msgid "If not, please visit https://developer.mapquest.com/ ."
-msgstr "Clef d’API personnelle de developer.mapquest.com"
+msgstr "Sinon, veuillez visiter https://developer.mapquest.com/ ."
 
 #: src/prefs.js:323
 msgid "Location"
@@ -606,7 +600,7 @@ msgstr "Fournisseur"
 
 #: src/prefs.js:344
 msgid "Result"
-msgstr ""
+msgstr "Résultat"
 
 #: src/prefs.js:548
 #, javascript-format
@@ -614,13 +608,12 @@ msgid "Remove %s ?"
 msgstr "Supprimer %s ?"
 
 #: src/prefs.js:561
-#, fuzzy
 msgid "No"
-msgstr "N"
+msgstr "Non"
 
 #: src/prefs.js:562
 msgid "Yes"
-msgstr ""
+msgstr "Oui"
 
 #: src/prefs.js:1105
 msgid "default"
@@ -633,7 +626,7 @@ msgstr "Éditer le nom"
 #: src/weather-settings.ui:40 src/weather-settings.ui:56
 #: src/weather-settings.ui:183
 msgid "Clear entry"
-msgstr "Dégagé"
+msgstr "Effacer l'entrée"
 
 #: src/weather-settings.ui:47
 msgid "Edit coordinates"
@@ -649,10 +642,9 @@ msgstr "Sauvegarder"
 
 #: src/weather-settings.ui:124
 msgid "Search Results"
-msgstr ""
+msgstr "Résultats de la recherche"
 
 #: src/weather-settings.ui:161
-#, fuzzy
 msgid "Search By Location Or Coordinates"
 msgstr "Chercher par lieu ou coordonnées"
 
@@ -665,7 +657,6 @@ msgid "Find"
 msgstr "Trouver"
 
 #: src/weather-settings.ui:328
-#, fuzzy
 msgid "Choose default weather provider"
 msgstr "Choisir le fournisseur météo par défaut"
 
@@ -698,7 +689,6 @@ msgid "Weather provider"
 msgstr "Fournisseur météo"
 
 #: src/weather-settings.ui:475
-#, fuzzy
 msgid "Choose geolocation provider"
 msgstr "Choisissez le fournisseur de géolocalisation"
 
@@ -753,9 +743,8 @@ msgid "Translate Conditions"
 msgstr "Traduction des conditions"
 
 #: src/weather-settings.ui:691
-#, fuzzy
 msgid "Use System Icon Theme"
-msgstr "Icônes du système"
+msgstr "Thème d'icônes du système"
 
 #: src/weather-settings.ui:700
 msgid "Text on buttons"
@@ -774,7 +763,7 @@ msgstr "Conditions sur le tableau de bord"
 #: src/weather-settings.ui:727
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:108
 msgid "Disable Forecast"
-msgstr ""
+msgstr "Désactiver les prévisions"
 
 #: src/weather-settings.ui:736
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:112
@@ -825,28 +814,31 @@ msgid ""
 "<span>Display weather information for any location on Earth in the GNOME "
 "Shell</span>"
 msgstr ""
+"<span>Affiche les informations météo pour n'importe quel lieu sur Terre dans "
+"le Shell GNOME</span>"
 
 #: src/weather-settings.ui:1013
 msgid ""
 "Weather data provided by: <a href=\"https://openweathermap.org/"
 "\">OpenWeatherMap</a>"
 msgstr ""
+"Données météo fournies par : <a href=\"https://openweathermap.org/"
+"\">OpenWeatherMap</a>"
 
 #: src/weather-settings.ui:1026
-#, fuzzy
 msgid "Maintained by:"
-msgstr "Maintenu par"
+msgstr "Maintenu par :"
 
 #: src/weather-settings.ui:1061
 msgid ""
 "<span size=\"small\">This program comes with ABSOLUTELY NO WARRANTY.\n"
-"See the <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
-"\">GNU General Public License, version 2 or later</a> for details.</span>"
+"See the <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0."
+"html\">GNU General Public License, version 2 or later</a> for details.</span>"
 msgstr ""
 "<span size=\"small\">Ce programme est fourni SANS AUCUNE GARANTIE.\n"
-"Voir la <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.fr.html"
-"\">Licence publique générale GNU, versions 2 et supérieures</a>, pour plus "
-"de détails.</span>"
+"Voir la <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.fr."
+"html\">Licence publique générale GNU, versions 2 et supérieures</a>, pour "
+"plus de détails.</span>"
 
 #: src/weather-settings.ui:1072
 msgid "About"
@@ -884,7 +876,7 @@ msgstr "Ville à afficher"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:84
 msgid "Actual City"
-msgstr "Localisation actuelle"
+msgstr "Ville actuelle"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:92
 msgid "System Icons"
@@ -961,13 +953,14 @@ msgstr "Votre clef d’API personnelle pour developer.mapquest.com"
 #~ "observations et les prévisions."
 
 #~ msgid ""
-#~ "<span>Weather extension to display weather information from <a href="
-#~ "\"https://openweathermap.org/\">Openweathermap</a> or <a href=\"https://"
-#~ "darksky.net\">Dark Sky</a> for almost all locations in the world.</span>"
+#~ "<span>Weather extension to display weather information from <a "
+#~ "href=\"https://openweathermap.org/\">Openweathermap</a> or <a "
+#~ "href=\"https://darksky.net\">Dark Sky</a> for almost all locations in the "
+#~ "world.</span>"
 #~ msgstr ""
 #~ "<span>Extension GNOME Shell permettant l’affichage des informations météo "
-#~ "d’<a href=\"https://openweathermap.org/\">Openweathermap</a> ou <a href="
-#~ "\"https://darksky.net\">Dark Sky</a>\n"
+#~ "d’<a href=\"https://openweathermap.org/\">Openweathermap</a> ou <a "
+#~ "href=\"https://darksky.net\">Dark Sky</a>\n"
 #~ " pour la plupart des localisations dans le monde.</span>"
 
 #~ msgid "Webpage"
