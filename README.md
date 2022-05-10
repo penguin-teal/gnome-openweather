@@ -1,7 +1,7 @@
 # OpenWeather
 
 <p align="left">
-    <img src="https://gitlab.com/skrewball/assets/-/raw/main/openweather-screenshot.png" width="500">
+    <img src="https://gitlab.com/skrewball/assets/-/raw/main/openweather-screenshot.png" width="600">
 </p>
 
 OpenWeather (*gnome-shell-extension-openweather*) is a simple extension for displaying weather conditions and forecasts for any location on Earth in the GNOME Shell. It provides support for multiple locations with editable names using coordinates to store the locations, a beautiful layout, and more.
@@ -89,7 +89,7 @@ When submitting a bug report, please make sure to provide as much information as
 
 ## Credits
 
-This GNOME Extension is a fork of the original OpenWeather extension by @jenslody.
+This project is a fork of the original OpenWeather extension by @jenslody. See [`AUTHORS`](https://gitlab.com/skrewball/openweather/-/blob/master/AUTHORS) for previous contributor details.
 
 ### Translations
 
