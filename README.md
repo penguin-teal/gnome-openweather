@@ -12,9 +12,9 @@ Weather data is fetched from [OpenWeatherMap](https://openweathermap.org) includ
 
 ## Installation
 
-After completing one of the installation methods below, restart GNOME Shell (`Alt`+`F2`, `r`, `Enter`) and enable the extension through the *gnome-extensions* app.
+After completing one of the installation methods below, restart GNOME Shell (*Xorg: `Alt`+`F2`, `r`, `Enter` - Wayland: `log out` or `reboot`*) and enable the extension through the *gnome-extensions* app.
 
-#### Official E.G.O Release
+### Official E.G.O Release
 
 Visit OpenWeather on the [Official GNOME Extensions](https://extensions.gnome.org/extension/750/openweather) website.
 
@@ -26,25 +26,33 @@ Visit OpenWeather on the [Official GNOME Extensions](https://extensions.gnome.or
 
 ### Package Manager
 
-I have an 'official' package in the AUR that aligns with the E.G.O releases. However I'm not aware if any package maintainers have updated their sources yet. I will add them here as they become available.
+These are the currently available 'official' release packages that align with the E.G.O release version. There is a [package in the AUR](https://aur.archlinux.org/packages/gnome-shell-extension-openweather) that I maintain myself, and `Artem Polishchuk` maintains a package in the [official Fedora repos](https://src.fedoraproject.org/rpms/gnome-shell-extension-openweather).
 
-#### [Arch Linux (AUR)](https://aur.archlinux.org/packages?O=0&K=gnome-shell-extension-openweather)
+Installing the extension this way provides a system wide installation.
 
-For the latest official E.G.O version releases:
+#### Arch Linux
+
+Install using your favourite AUR helper, for example:
 
 ```
 paru -S gnome-shell-extension-openweather
 ```
 
-A 3rd party maintains a rolling release package synced with this git repo:
+#### Fedora
+
+To install from the official fedora repos simply run:
 
 ```
-paru -S gnome-shell-extension-openweather-git
+sudo dnf install gnome-shell-extension-openweather
 ```
 
-### Install From Source
+<br>
 
-Make sure you have the following dependencies installed:
+## Install From Source
+
+This method installs to your `~/.local/share/gnome-shell/extensions` directory from the latest source code on the `master` branch.
+
+First make sure you have the following dependencies installed:
 
 | Arch Based     | Debian Based                  | Fedora                 |
 | ---            | ---                           | ---                    |
@@ -52,10 +60,10 @@ Make sure you have the following dependencies installed:
 | `gnome-shell`  | `gnome-shell-extension-prefs` | `gnome-extensions-app` |
 | `git`          | `git`                         | `git`                  |
 | `base-devel`   | `build-essential`             | `glib2-devel`          |
-|                |                               | `gettext-devel`        |
+|                | `gettext`                     | `gettext-devel`        |
 
 
-Run the following commands:
+Then run the following commands:
 
 ```
 git clone https://gitlab.com/skrewball/openweather.git
@@ -76,6 +84,13 @@ OpenWeather (*gnome-shell-extension-openweather*) is provided completely free of
 <p align="left">
     <a href="https://www.paypal.com/donate/?hosted_button_id=VZ7VLXPU2M9RQ" target="_blank"><img src="https://gitlab.com/skrewball/assets/-/raw/main/paypal-donate.png" width="250"></a>
 </p>
+
+Or you can support my work by sending some crypto:
+
+- **Bitcoin**: bc1q5r64qtsuxwfywfvesspathy2yun2aagpw58sv6
+- **Monero**: 431XdMq2GsNZUXarUPtvW1j4Amt1VAzR3JYv3CHeZdTaQvn2pSKfFHM8MZi2RpN2B4JSssbKHrxVtNWrdyNDaEh3AZnstqS
+- **Pirate Chain**: zs1eq5ju85hsutvepj9g6ysq80mlsx5wjpdty755z4l37we37crgs7lsk0zy2xyv2566gcyqlkwrla
+- **Equilibria**: Tsz4p7GZpofQpXh2QW5St2Z1bSNfLR82gQLuV6P53LGTjDgzt3YcKt6im2eoYi5bCpddMHRaivYEidA2tE3fGz3e5MmoEtTVfA
 
 <br>
 
