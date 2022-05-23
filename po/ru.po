@@ -5,22 +5,23 @@
 # Stas Solovey <whats_up@tut.by>, 2012.
 # Timon <timosha@gmail.com>, 2013.
 # Karbovnichiy Vasiliy <menstenebris@gmail.com>, 2015.
-# Ivan Komaritsyn <vantu5z@mail.ru>, 2015, 2016.
+# Ivan Komaritsyn <vantu5z@mail.ru>, 2015, 2016, 2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-05-09 14:39-0300\n"
-"PO-Revision-Date: 2017-04-26 09:20+0300\n"
-"Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
+"PO-Revision-Date: 2022-05-23 12:01+0300\n"
+"Last-Translator: vantu5z <vantu5z@mail.ru>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
-"X-Generator: Gtranslator 2.91.7\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"X-Generator: Gtranslator 40.0\n"
+"Language-Team: Russian <>\n"
 
 #: src/extension.js:171
 msgid "..."
@@ -52,9 +53,8 @@ msgid "Reload Weather Information"
 msgstr "Обновить информацию о погоде"
 
 #: src/extension.js:745
-#, fuzzy
 msgid "Weather data by:"
-msgstr "Информация о погоде предоставлена:"
+msgstr "Информация о погоде:"
 
 #: src/extension.js:748
 msgid "Weather Settings"
@@ -291,7 +291,7 @@ msgstr "Пожалуйста подождите"
 
 #: src/extension.js:1303
 msgid "Feels Like:"
-msgstr ""
+msgstr "Ощущается как:"
 
 #: src/extension.js:1307
 msgid "Humidity:"
@@ -307,15 +307,15 @@ msgstr "Ветер:"
 
 #: src/extension.js:1319
 msgid "Gusts:"
-msgstr ""
+msgstr "Порывы ветра:"
 
 #: src/extension.js:1450
 msgid "Tomorrow's Forecast"
-msgstr ""
+msgstr "Прогноз на завтра"
 
 #: src/extension.js:1452
 msgid "Day Forecast"
-msgstr ""
+msgstr "дневный прогноз погоды"
 
 #: src/openweathermap_org.js:130
 msgid "Thunderstorm with light rain"
@@ -555,16 +555,15 @@ msgstr ", "
 
 #: src/openweathermap_org.js:456
 msgid "?"
-msgstr ""
+msgstr "?"
 
 #: src/openweathermap_org.js:523
 msgid "Tomorrow"
 msgstr "Завтра"
 
 #: src/prefs.js:189
-#, fuzzy
 msgid "Searching ..."
-msgstr "Загрузка ..."
+msgstr "Поиск ..."
 
 #: src/prefs.js:201 src/prefs.js:239 src/prefs.js:270 src/prefs.js:274
 #, javascript-format
@@ -577,24 +576,20 @@ msgid "\"%s\" not found"
 msgstr "\"%s\" не найден"
 
 #: src/prefs.js:224
-#, fuzzy
 msgid "You need an AppKey to search on openmapquest."
-msgstr "Персональный AppKey от developer.mapquest.com"
+msgstr "Требуется персональный ключ (AppKey) для поиска в openmapquest."
 
 #: src/prefs.js:225
-#, fuzzy
 msgid "Please visit https://developer.mapquest.com/ ."
-msgstr "Персональный AppKey от developer.mapquest.com"
+msgstr "Пожалуйста посетите https://developer.mapquest.com/ ."
 
 #: src/prefs.js:240
-#, fuzzy
 msgid "Do you use a valid AppKey to search on openmapquest ?"
-msgstr "Персональный AppKey от developer.mapquest.com"
+msgstr "Используете ли Вы верный ключ (AppKey) для поиска в openmapquest?"
 
 #: src/prefs.js:241
-#, fuzzy
 msgid "If not, please visit https://developer.mapquest.com/ ."
-msgstr "Персональный AppKey от developer.mapquest.com"
+msgstr "Если нет, то посетите https://developer.mapquest.com/ ."
 
 #: src/prefs.js:323
 msgid "Location"
@@ -606,7 +601,7 @@ msgstr "Источник"
 
 #: src/prefs.js:344
 msgid "Result"
-msgstr ""
+msgstr "Результат"
 
 #: src/prefs.js:548
 #, javascript-format
@@ -614,13 +609,12 @@ msgid "Remove %s ?"
 msgstr "Удалить %s ?"
 
 #: src/prefs.js:561
-#, fuzzy
 msgid "No"
-msgstr "С"
+msgstr "Нет"
 
 #: src/prefs.js:562
 msgid "Yes"
-msgstr ""
+msgstr "Да"
 
 #: src/prefs.js:1105
 msgid "default"
@@ -649,10 +643,9 @@ msgstr "Сохранить"
 
 #: src/weather-settings.ui:124
 msgid "Search Results"
-msgstr ""
+msgstr "Результаты поиска"
 
 #: src/weather-settings.ui:161
-#, fuzzy
 msgid "Search By Location Or Coordinates"
 msgstr "Поиск по названию или координатам"
 
@@ -665,7 +658,6 @@ msgid "Find"
 msgstr "Найти"
 
 #: src/weather-settings.ui:328
-#, fuzzy
 msgid "Choose default weather provider"
 msgstr "Выбор источника данных о погоде по умолчанию"
 
@@ -698,7 +690,6 @@ msgid "Weather provider"
 msgstr "Источник данных о погоде"
 
 #: src/weather-settings.ui:475
-#, fuzzy
 msgid "Choose geolocation provider"
 msgstr "Выбор источника геоданных"
 
@@ -753,9 +744,8 @@ msgid "Translate Conditions"
 msgstr "Переводить погодные условия"
 
 #: src/weather-settings.ui:691
-#, fuzzy
 msgid "Use System Icon Theme"
-msgstr "Использовать символические значки"
+msgstr "Использовать значки из системной темы оформления"
 
 #: src/weather-settings.ui:700
 msgid "Text on buttons"
@@ -774,7 +764,7 @@ msgstr "Отображать погодные условия на панели"
 #: src/weather-settings.ui:727
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:108
 msgid "Disable Forecast"
-msgstr ""
+msgstr "Отключить прогноз"
 
 #: src/weather-settings.ui:736
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:112
@@ -810,7 +800,7 @@ msgstr "Слева"
 #: src/weather-settings.ui:926
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:132
 msgid "Maximal length of the location text"
-msgstr ""
+msgstr "Максимальная длина текста местоположения"
 
 #: src/weather-settings.ui:950
 msgid "Layout"
@@ -825,28 +815,31 @@ msgid ""
 "<span>Display weather information for any location on Earth in the GNOME "
 "Shell</span>"
 msgstr ""
+"<span>Отображает информацию о погоде для любого места на Земле в окружении "
+"GNOME Shell</span>"
 
 #: src/weather-settings.ui:1013
 msgid ""
 "Weather data provided by: <a href=\"https://openweathermap.org/"
 "\">OpenWeatherMap</a>"
 msgstr ""
+"Информация о погоде предоставлена: <a href=\"https://openweathermap.org/"
+"\">OpenWeatherMap</a>"
 
 #: src/weather-settings.ui:1026
-#, fuzzy
 msgid "Maintained by:"
-msgstr "Автор"
+msgstr "Автор:"
 
 #: src/weather-settings.ui:1061
 msgid ""
 "<span size=\"small\">This program comes with ABSOLUTELY NO WARRANTY.\n"
-"See the <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
-"\">GNU General Public License, version 2 or later</a> for details.</span>"
+"See the <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0."
+"html\">GNU General Public License, version 2 or later</a> for details.</span>"
 msgstr ""
 "<span size=\"small\">Эта программа распространяется БЕЗ КАКИХ ЛИБО "
 "ГАРАНТИЙ.\n"
-"Смотри <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
-"\">GNU General Public License, версии 2 или позднее</a> для информации.</"
+"Смотри <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0."
+"html\">GNU General Public License, версии 2 или позднее</a> для информации.</"
 "span>"
 
 #: src/weather-settings.ui:1072
@@ -886,9 +879,8 @@ msgid "Actual City"
 msgstr "Текущий город"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:92
-#, fuzzy
 msgid "System Icons"
-msgstr "Использовать символические значки"
+msgstr "Использовать системные значки"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:96
 msgid "Use text on buttons in menu"
@@ -962,13 +954,14 @@ msgstr "Персональный AppKey от developer.mapquest.com"
 #~ "погоды и прогноза."
 
 #~ msgid ""
-#~ "<span>Weather extension to display weather information from <a href="
-#~ "\"https://openweathermap.org/\">Openweathermap</a> or <a href=\"https://"
-#~ "darksky.net\">Dark Sky</a> for almost all locations in the world.</span>"
+#~ "<span>Weather extension to display weather information from <a "
+#~ "href=\"https://openweathermap.org/\">Openweathermap</a> or <a "
+#~ "href=\"https://darksky.net\">Dark Sky</a> for almost all locations in the "
+#~ "world.</span>"
 #~ msgstr ""
 #~ "<span>Дополнение для отображения сведений о погоде от <a href=\"https://"
-#~ "openweathermap.org/\">Openweathermap</a> или <a href=\"https://darksky.net"
-#~ "\">Dark Sky</a> для почти всех мест в мире.</span>"
+#~ "openweathermap.org/\">Openweathermap</a> или <a href=\"https://darksky."
+#~ "net\">Dark Sky</a> для почти всех мест в мире.</span>"
 
 #~ msgid "Webpage"
 #~ msgstr "Домашняя страница"
