@@ -110,16 +110,16 @@ This project is a fork of the original OpenWeather extension by @jenslody. See [
 
 Special thanks to the following people for updating translation `*.po` files via merge requests since forking the project:
 
-French: @franckgaga | Slovak: @jose1711 | Chinese: @xiaozhangup | Portuguese: @ronaldocosta | Russian: @vantu5z
+French: @franckgaga | Slovak: @jose1711 | Chinese: @xiaozhangup | Portuguese: @ronaldocosta | Russian: @vantu5z | Czech: @lev741
 
 ### Icons
 
-OpenWeather's icon was designed by [Sihan Liu](https://www.sihanliu.com) and licensed under the [CC-BY-SA](http://creativecommons.org/licenses/by-sa/3.0/) licence.
+OpenWeather's icon was designed by [Sihan Liu](https://www.sihanliu.com) and licensed under the [CC-BY-SA](http://creativecommons.org/licenses/by-sa/3.0/) license.
 
 Packaged weather icons are sourced from the [GNOME Project](http://www.gnome.org)'s [Adwaita Icon Theme](https://gitlab.gnome.org/GNOME/adwaita-icon-theme) under the GPLv3 license.
 
 PayPal donate button and template used for the Gitlab button was designed by [Klemen Skerbiš](https://github.com/aha999/DonateButtons) under the GPLv3 license.
 
-### Licence
+### License
 
 OpenWeather is free software available under the terms of the GPLv3 license. See [`COPYING`](https://gitlab.com/skrewball/openweather/-/blob/master/COPYING) for details.
