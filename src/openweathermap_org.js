@@ -258,7 +258,8 @@ async function getWeatherCurrent() {
             !this._disable_forecast && this.getWeatherForecast();
             this.recalcLayout();
         });
-    } catch (e) {
+    }
+    catch (e) {
         log("populateCurrentUI error: " + e);
     }
 }
@@ -279,9 +280,107 @@ async function getWeatherForecast() {
     // Populate Forecast Weather UI
     try {
         await this.populateForecastUI();
-    } catch (e) {
+    }
+    catch (e) {
         log("populateForecastUI error: " + e);
     }
+}
+
+async function refreshWeatherData() {
+    let json = undefined;
+    let location = this.extractCoord(this._city);
+    let params = {
+        lat: location.split(",")[0],
+        lon: location.split(",")[1],
+        units: 'metric'
+    };
+    if (this._appid)
+        params.APPID = this._appid;
+    try {
+        json = await this.loadJsonAsync(OPENWEATHER_URL_CURRENT, params)
+        .then(async (json) => {
+            if (this.currentWeatherCache != json)
+                this.currentWeatherCache = json;
+            try {
+                await this.populateCurrentUI();
+            }
+            catch (e) {
+                log("populateCurrentUI error: " + e);
+            }
+        });
+    }
+    catch (e) {
+        // Something went wrong, reload after 10 minutes
+        // as per openweathermap.org recommendation.
+        this.reloadWeatherCurrent(600);
+        log("refreshWeatherData error: " + e);
+    }
+    this.reloadWeatherCurrent(this._refresh_interval_current);
+}
+
+async function refreshForecastData() {
+    // Did the user disable the forecast?
+    if (this._disable_forecast)
+        return;
+
+    let json = undefined;
+    let sortedList = undefined;
+    let todayList = undefined;
+    let location = this.extractCoord(this._city);
+    let params = {
+        lat: location.split(",")[0],
+        lon: location.split(",")[1],
+        units: 'metric'
+    };
+    if (this._appid)
+        params.APPID = this._appid;
+
+    try {
+        json = await this.loadJsonAsync(OPENWEATHER_URL_FORECAST, params)
+        .then(async (json) => {
+            refreshing: try {
+
+                if (this.forecastJsonCache) {
+                    let _freshData = JSON.stringify(json.list[0]);
+                    let _cacheData = JSON.stringify(this.forecastJsonCache.list[0]);
+                    if (_freshData === _cacheData) {
+                        // No need to process if data unchanged
+                        break refreshing;
+                    }
+                }
+                this.forecastJsonCache = json;
+                this.todaysWeatherCache = undefined;
+                this.forecastWeatherCache = undefined;
+                this.owmCityId = json.city.id;
+                // Today's forecast
+                todayList = await this.processTodaysData(json)
+                .then(async (todayList) => {
+                    this.todaysWeatherCache = todayList;
+                });
+                // 5 day / 3 hour forecast
+                sortedList = await this.processForecastData(json)
+                .then(async (sortedList) => {
+                    this.forecastWeatherCache = sortedList;
+                    try {
+                        await this.populateForecastUI();
+                    }
+                    catch (e) {
+                        log("populateForecastUI error: " + e);
+                    }
+                });
+            }
+            catch (e) {
+                log("Error processing forecast json data: " + e);
+            }
+        });
+    }
+    catch (e) {
+        /// Something went wrong, reload after 10 minutes
+        // as per openweathermap.org recommendation.
+        this.reloadWeatherForecast(600);
+        log("refreshForecastData error: " + e);
+    }
+    this.reloadWeatherForecast(this._refresh_interval_forecast);
 }
 
 async function refreshWeatherCurrent() {

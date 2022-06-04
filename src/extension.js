@@ -120,7 +120,7 @@ Gtk.IconTheme.get_default = function() {
     return theme;
 };
 
-let _currentWeatherCache, _todaysWeatherCache, _forecastWeatherCache;
+let _currentWeatherCache, _todaysWeatherCache, _forecastWeatherCache, _forecastJsonCache;
 let _timeCacheCurrentWeather, _timeCacheForecastWeather;
 
 let OpenweatherMenuButton = GObject.registerClass(
@@ -192,6 +192,7 @@ class OpenweatherMenuButton extends PanelMenu.Button {
         this.currentWeatherCache = _currentWeatherCache;
         this.todaysWeatherCache = _todaysWeatherCache;
         this.forecastWeatherCache = _forecastWeatherCache;
+        this.forecastJsonCache = _forecastJsonCache;
         this.isForecastDisabled = this._disable_forecast;
         // Start the timers to fetch the weather data
         this.startOpenWeatherTimers();
@@ -261,6 +262,7 @@ class OpenweatherMenuButton extends PanelMenu.Button {
         _forecastWeatherCache = this.forecastWeatherCache;
         _currentWeatherCache = this.currentWeatherCache;
         _todaysWeatherCache = this.todaysWeatherCache;
+        _forecastJsonCache = this.forecastJsonCache;
 
         if (this._timeoutCurrent)
             Mainloop.source_remove(this._timeoutCurrent);
@@ -307,12 +309,14 @@ class OpenweatherMenuButton extends PanelMenu.Button {
     useOpenweathermapOrg() {
         this.getWeatherCurrent = OpenweathermapOrg.getWeatherCurrent;
         this.populateCurrentUI = OpenweathermapOrg.populateCurrentUI;
+        this.refreshWeatherData = OpenweathermapOrg.refreshWeatherData;
         this.refreshWeatherCurrent = OpenweathermapOrg.refreshWeatherCurrent;
         this.loadJsonAsync = OpenweathermapOrg.loadJsonAsync;
 
         if (!this._disable_forecast) {
             this.getWeatherForecast = OpenweathermapOrg.getWeatherForecast;
             this.populateForecastUI = OpenweathermapOrg.populateForecastUI;
+            this.refreshForecastData = OpenweathermapOrg.refreshForecastData;
             this.refreshWeatherForecast = OpenweathermapOrg.refreshWeatherForecast;
             this.processTodaysData = OpenweathermapOrg.processTodaysData;
             this.processForecastData = OpenweathermapOrg.processForecastData;
@@ -758,8 +762,10 @@ class OpenweatherMenuButton extends PanelMenu.Button {
             this._selectCity._setOpenState(!this._selectCity._getOpenState());
         });
         this._reloadButton.connect('clicked', () => {
-            this._clearWeatherCache();
-            this.getWeatherCurrent();
+            // this._clearWeatherCache();
+            // this.getWeatherCurrent();
+            this.refreshWeatherData();
+            !this._disable_forecast && this.refreshForecastData();
         });
         this._urlButton.connect('clicked', () => {
             this.menu.close();
@@ -1166,7 +1172,8 @@ class OpenweatherMenuButton extends PanelMenu.Button {
             // only invalidate cached data, if we can connect the weather-providers server
             if (this._connected && !this._idle)
                 this.currentWeatherCache = undefined;
-            this.getWeatherCurrent();
+            // this.getWeatherCurrent();
+            this.refreshWeatherData();
             return true;
         });
     }
@@ -1186,7 +1193,8 @@ class OpenweatherMenuButton extends PanelMenu.Button {
                 this.todaysWeatherCache = undefined;
                 this.forecastWeatherCache = undefined;
             }
-            this.getWeatherForecast();
+            // this.getWeatherForecast();
+            this.refreshForecastData();
             return true;
         });
     }
