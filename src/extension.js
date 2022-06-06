@@ -19,7 +19,6 @@ const {
     Clutter, Gio, Gtk, GLib, GObject, St
 } = imports.gi;
 const Config = imports.misc.config;
-const Mainloop = imports.mainloop;
 const GnomeSession = imports.misc.gnomeSession;
 
 const Util = imports.misc.util;
@@ -199,9 +198,6 @@ class OpenweatherMenuButton extends PanelMenu.Button {
         this.forecastWeatherCache = _forecastWeatherCache;
         this.forecastJsonCache = _forecastJsonCache;
 
-        // // Start the timers to fetch the weather data
-        // this.startOpenWeatherTimers();
-
         // Delay popup initialization and data fetch on the first
         // extension load, ie: first log in / restart gnome shell
         if (_firstBoot) {
@@ -253,19 +249,6 @@ class OpenweatherMenuButton extends PanelMenu.Button {
         this.menu.addMenuItem(this._selectCity);
     }
 
-    // startOpenWeatherTimers() {
-    //     if (_timeCacheCurrentWeather !== undefined) {
-    //         let diff = Math.floor(new Date(new Date() - _timeCacheCurrentWeather).getTime() / 1000);
-    //         if (diff < this._refresh_interval_current)
-    //             this.reloadWeatherCurrent(this._refresh_interval_current - diff);
-    //     }
-    //     if (!this._disable_forecast && _timeCacheForecastWeather !== undefined) {
-    //         let diff = Math.floor(new Date(new Date() - _timeCacheForecastWeather).getTime() / 1000);
-    //         if (diff < this._refresh_interval_forecast)
-    //             this.reloadWeatherForecast(this._refresh_interval_forecast - diff);
-    //     }
-    // }
-
     _onStatusChanged(status) {
         this._idle = false;
 
@@ -280,16 +263,14 @@ class OpenweatherMenuButton extends PanelMenu.Button {
         _todaysWeatherCache = this.todaysWeatherCache;
         _forecastJsonCache = this.forecastJsonCache;
 
-        if (this._timeoutCurrent)
-            Mainloop.source_remove(this._timeoutCurrent);
-
-        this._timeoutCurrent = undefined;
-
-        if (this._timeoutForecast)
-            Mainloop.source_remove(this._timeoutForecast);
-
-        this._timeoutForecast = undefined;
-
+        if (this._timeoutCurrent) {
+            GLib.source_remove(this._timeoutCurrent);
+            this._timeoutCurrent = null;
+        }
+        if (this._timeoutForecast) {
+            GLib.source_remove(this._timeoutForecast);
+            this._timeoutForecast = null;
+        }
         if (this._timeoutFirstBoot) {
             GLib.source_remove(this._timeoutFirstBoot);
             this._timeoutFirstBoot = null;
@@ -298,6 +279,11 @@ class OpenweatherMenuButton extends PanelMenu.Button {
         if (this._timeoutMenuAlignent) {
             GLib.source_remove(this._timeoutMenuAlignent);
             this._timeoutMenuAlignent = null;
+        }
+
+        if (this._timeoutCheckConnectionState) {
+            GLib.source_remove(this._timeoutCheckConnectionState);
+            this._timeoutCheckConnectionState = null;
         }
 
         if (this._presence_connection) {
@@ -309,11 +295,6 @@ class OpenweatherMenuButton extends PanelMenu.Button {
             this._network_monitor.disconnect(this._network_monitor_connection);
             this._network_monitor_connection = undefined;
         }
-
-        if (this._timeoutCheckConnectionState)
-            Mainloop.source_remove(this._timeoutCheckConnectionState);
-
-        this._timeoutCheckConnectionState = undefined;
 
         if (this._settingsC) {
             this._settings.disconnect(this._settingsC);
@@ -400,7 +381,7 @@ class OpenweatherMenuButton extends PanelMenu.Button {
                         GLib.source_remove(this._timeoutMenuAlignent);
                     // Use 1 second timeout to avoid crashes and spamming
                     // the logs while changing the slider position in prefs
-                    this._timeoutMenuAlignent = GLib.timeout_add_seconds(GLib.PRIORITY_DEFAULT, 1, () => {
+                    this._timeoutMenuAlignent = GLib.timeout_add(GLib.PRIORITY_DEFAULT, 1000, () => {
                         this.checkAlignment();
                         this._currentAlignment = this._menu_alignment;
                         this._timeoutMenuAlignent = null;
@@ -471,16 +452,16 @@ class OpenweatherMenuButton extends PanelMenu.Button {
 
     _checkConnectionStateWithRetries(interval) {
         if (this._timeoutCheckConnectionState) {
-            Mainloop.source_remove(this._timeoutCheckConnectionState);
-            this._timeoutCheckConnectionState = undefined;
+            GLib.source_remove(this._timeoutCheckConnectionState);
+            this._timeoutCheckConnectionState = null;
         }
 
-        this._timeoutCheckConnectionState = Mainloop.timeout_add(interval, () => {
-            // Delete (undefine) the variable holding the timeout-id, otherwise we can get errors, if we try to delete
+        this._timeoutCheckConnectionState = GLib.timeout_add(GLib.PRIORITY_DEFAULT, interval, () => {
+            // Nullify the variable holding the timeout-id, otherwise we can get errors, if we try to delete
             // it manually, the timeout will be destroyed automatically if we return false.
             // We just fetch it for the rare case, where the connection changes or the extension will be stopped during
             // the timeout.
-            this._timeoutCheckConnectionState = undefined;
+            this._timeoutCheckConnectionState = null;
             let url = this.getWeatherProviderURL();
             let address = Gio.NetworkAddress.parse_uri(url, 80);
             let cancellable = Gio.Cancellable.new();
@@ -506,9 +487,12 @@ class OpenweatherMenuButton extends PanelMenu.Button {
         }
         if (!this._oldConnected && this._connected) {
             let now = new Date();
-            if (_timeCacheCurrentWeather && (Math.floor(new Date(now - _timeCacheCurrentWeather).getTime() / 1000) > this._refresh_interval_current))
+            if (
+                _timeCacheCurrentWeather
+                && (Math.floor(new Date(now - _timeCacheCurrentWeather).getTime() / 1000) > this._refresh_interval_current)
+            ) {
                 this.currentWeatherCache = undefined;
-
+            }
             if (
                 !this._disable_forecast
                 && _timeCacheForecastWeather
@@ -1222,15 +1206,14 @@ class OpenweatherMenuButton extends PanelMenu.Button {
 
     reloadWeatherCurrent(interval) {
         if (this._timeoutCurrent) {
-            Mainloop.source_remove(this._timeoutCurrent);
-            this._timeoutCurrent = undefined;
+            GLib.source_remove(this._timeoutCurrent);
+            this._timeoutCurrent = null;
         }
         _timeCacheCurrentWeather = new Date();
-        this._timeoutCurrent = Mainloop.timeout_add_seconds(interval, () => {
+        this._timeoutCurrent = GLib.timeout_add_seconds(GLib.PRIORITY_DEFAULT, interval, () => {
             // only invalidate cached data, if we can connect the weather-providers server
             if (this._connected && !this._idle)
                 this.currentWeatherCache = undefined;
-            // this.getWeatherCurrent();
             this.refreshWeatherData();
             return true;
         });
@@ -1238,27 +1221,26 @@ class OpenweatherMenuButton extends PanelMenu.Button {
 
     reloadWeatherForecast(interval) {
         if (this._timeoutForecast) {
-            Mainloop.source_remove(this._timeoutForecast);
-            this._timeoutForecast = undefined;
+            GLib.source_remove(this._timeoutForecast);
+            this._timeoutForecast = null;
         }
         if (this._disable_forecast)
             return;
 
         _timeCacheForecastWeather = new Date();
-        this._timeoutForecast = Mainloop.timeout_add_seconds(interval, () => {
+        this._timeoutForecast = GLib.timeout_add_seconds(GLib.PRIORITY_DEFAULT_IDLE, interval, () => {
             // only invalidate cached data, if we can connect the weather-providers server
             if (this._connected && !this._idle) {
                 this.todaysWeatherCache = undefined;
                 this.forecastWeatherCache = undefined;
             }
-            // this.getWeatherForecast();
             this.refreshForecastData();
             return true;
         });
     }
 
     showRefreshing() {
-        this._currentWeatherSummary.text = "refreshing...";
+        this._currentWeatherSummary.text = _('Loading ...');
         this._currentWeatherIcon.icon_name = 'view-refresh-symbolic';
     }
 
