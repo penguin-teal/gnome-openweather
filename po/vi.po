@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-09 14:39-0300\n"
+"POT-Creation-Date: 2022-06-06 16:36-0300\n"
 "PO-Revision-Date: 2012-06-17 17:04+0700\n"
 "Last-Translator: Ngô Trung <ndtrung4419@gmail.com>\n"
 "Language-Team: \n"
@@ -17,11 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: src/extension.js:171
-msgid "..."
-msgstr "..."
-
-#: src/extension.js:323
+#: src/extension.js:332
 msgid ""
 "Openweathermap.org does not work without an api-key.\n"
 "Either set the switch to use the extensions default key in the preferences "
@@ -29,281 +25,281 @@ msgid ""
 "personal key into the preferences dialog."
 msgstr ""
 
-#: src/extension.js:434 src/extension.js:446
+#: src/extension.js:471 src/extension.js:483
 #, javascript-format
 msgid "Can not connect to %s"
 msgstr ""
 
-#: src/extension.js:737 src/weather-settings.ui:302
+#: src/extension.js:785 src/weather-settings.ui:302
 msgid "Locations"
 msgstr ""
 
-#: src/extension.js:741
+#: src/extension.js:789
 msgid "Reload Weather Information"
 msgstr "Tải lại dữ liệu thời tiết"
 
-#: src/extension.js:745
+#: src/extension.js:793
 msgid "Weather data by:"
 msgstr ""
 
-#: src/extension.js:748
+#: src/extension.js:796
 msgid "Weather Settings"
 msgstr "Thiết lập thời tiết"
 
-#: src/extension.js:771
+#: src/extension.js:819
 #, javascript-format
 msgid "Can not open %s"
 msgstr ""
 
-#: src/extension.js:819 src/prefs.js:1072
+#: src/extension.js:867 src/prefs.js:1077
 msgid "Invalid city"
 msgstr "Không có thành phố này"
 
-#: src/extension.js:830
+#: src/extension.js:878
 msgid "Invalid location! Please try to recreate it."
 msgstr ""
 
-#: src/extension.js:870 src/weather-settings.ui:574
+#: src/extension.js:918 src/weather-settings.ui:574
 msgid "°F"
 msgstr ""
 
-#: src/extension.js:872 src/weather-settings.ui:575
+#: src/extension.js:920 src/weather-settings.ui:575
 msgid "K"
 msgstr ""
 
-#: src/extension.js:874 src/weather-settings.ui:576
+#: src/extension.js:922 src/weather-settings.ui:576
 msgid "°Ra"
 msgstr ""
 
-#: src/extension.js:876 src/weather-settings.ui:577
+#: src/extension.js:924 src/weather-settings.ui:577
 msgid "°Ré"
 msgstr ""
 
-#: src/extension.js:878 src/weather-settings.ui:578
+#: src/extension.js:926 src/weather-settings.ui:578
 msgid "°Rø"
 msgstr ""
 
-#: src/extension.js:880 src/weather-settings.ui:579
+#: src/extension.js:928 src/weather-settings.ui:579
 msgid "°De"
 msgstr ""
 
-#: src/extension.js:882 src/weather-settings.ui:580
+#: src/extension.js:930 src/weather-settings.ui:580
 msgid "°N"
 msgstr ""
 
-#: src/extension.js:884 src/weather-settings.ui:573
+#: src/extension.js:932 src/weather-settings.ui:573
 msgid "°C"
 msgstr ""
 
-#: src/extension.js:921
+#: src/extension.js:969
 msgid "Calm"
 msgstr ""
 
-#: src/extension.js:924
+#: src/extension.js:972
 msgid "Light air"
 msgstr ""
 
-#: src/extension.js:927
+#: src/extension.js:975
 msgid "Light breeze"
 msgstr ""
 
-#: src/extension.js:930
+#: src/extension.js:978
 msgid "Gentle breeze"
 msgstr ""
 
-#: src/extension.js:933
+#: src/extension.js:981
 msgid "Moderate breeze"
 msgstr ""
 
-#: src/extension.js:936
+#: src/extension.js:984
 msgid "Fresh breeze"
 msgstr ""
 
-#: src/extension.js:939
+#: src/extension.js:987
 msgid "Strong breeze"
 msgstr ""
 
-#: src/extension.js:942
+#: src/extension.js:990
 msgid "Moderate gale"
 msgstr ""
 
-#: src/extension.js:945
+#: src/extension.js:993
 msgid "Fresh gale"
 msgstr ""
 
-#: src/extension.js:948
+#: src/extension.js:996
 msgid "Strong gale"
 msgstr ""
 
-#: src/extension.js:951
+#: src/extension.js:999
 msgid "Storm"
 msgstr ""
 
-#: src/extension.js:954
+#: src/extension.js:1002
 msgid "Violent storm"
 msgstr ""
 
-#: src/extension.js:957
+#: src/extension.js:1005
 msgid "Hurricane"
 msgstr "Cuồng phong"
 
-#: src/extension.js:961
+#: src/extension.js:1009
 msgid "Sunday"
 msgstr "Chủ Nhật"
 
-#: src/extension.js:961
+#: src/extension.js:1009
 msgid "Monday"
 msgstr "Thứ hai"
 
-#: src/extension.js:961
+#: src/extension.js:1009
 msgid "Tuesday"
 msgstr "Thứ ba"
 
-#: src/extension.js:961
+#: src/extension.js:1009
 msgid "Wednesday"
 msgstr "Thứ tư"
 
-#: src/extension.js:961
+#: src/extension.js:1009
 msgid "Thursday"
 msgstr "Thứ năm"
 
-#: src/extension.js:961
+#: src/extension.js:1009
 msgid "Friday"
 msgstr "Thứ sáu"
 
-#: src/extension.js:961
+#: src/extension.js:1009
 msgid "Saturday"
 msgstr "Thứ bảy"
 
-#: src/extension.js:967
+#: src/extension.js:1015
 msgid "N"
 msgstr "B"
 
-#: src/extension.js:967
+#: src/extension.js:1015
 msgid "NE"
 msgstr "ĐB"
 
-#: src/extension.js:967
+#: src/extension.js:1015
 msgid "E"
 msgstr "Đ"
 
-#: src/extension.js:967
+#: src/extension.js:1015
 msgid "SE"
 msgstr "ĐN"
 
-#: src/extension.js:967
+#: src/extension.js:1015
 msgid "S"
 msgstr "N"
 
-#: src/extension.js:967
+#: src/extension.js:1015
 msgid "SW"
 msgstr "TN"
 
-#: src/extension.js:967
+#: src/extension.js:1015
 msgid "W"
 msgstr "T"
 
-#: src/extension.js:967
+#: src/extension.js:1015
 msgid "NW"
 msgstr "TB"
 
-#: src/extension.js:1020 src/extension.js:1029 src/weather-settings.ui:607
+#: src/extension.js:1068 src/extension.js:1077 src/weather-settings.ui:607
 msgid "hPa"
 msgstr ""
 
-#: src/extension.js:1024 src/weather-settings.ui:608
+#: src/extension.js:1072 src/weather-settings.ui:608
 msgid "inHg"
 msgstr ""
 
-#: src/extension.js:1034 src/weather-settings.ui:609
+#: src/extension.js:1082 src/weather-settings.ui:609
 msgid "bar"
 msgstr ""
 
-#: src/extension.js:1039 src/weather-settings.ui:610
+#: src/extension.js:1087 src/weather-settings.ui:610
 msgid "Pa"
 msgstr ""
 
-#: src/extension.js:1044 src/weather-settings.ui:611
+#: src/extension.js:1092 src/weather-settings.ui:611
 msgid "kPa"
 msgstr ""
 
-#: src/extension.js:1049 src/weather-settings.ui:612
+#: src/extension.js:1097 src/weather-settings.ui:612
 msgid "atm"
 msgstr ""
 
-#: src/extension.js:1054 src/weather-settings.ui:613
+#: src/extension.js:1102 src/weather-settings.ui:613
 msgid "at"
 msgstr ""
 
-#: src/extension.js:1059 src/weather-settings.ui:614
+#: src/extension.js:1107 src/weather-settings.ui:614
 msgid "Torr"
 msgstr ""
 
-#: src/extension.js:1064 src/weather-settings.ui:615
+#: src/extension.js:1112 src/weather-settings.ui:615
 msgid "psi"
 msgstr ""
 
-#: src/extension.js:1069 src/weather-settings.ui:616
+#: src/extension.js:1117 src/weather-settings.ui:616
 msgid "mmHg"
 msgstr ""
 
-#: src/extension.js:1074 src/weather-settings.ui:617
+#: src/extension.js:1122 src/weather-settings.ui:617
 msgid "mbar"
 msgstr ""
 
-#: src/extension.js:1118 src/weather-settings.ui:593
+#: src/extension.js:1166 src/weather-settings.ui:593
 msgid "m/s"
 msgstr ""
 
-#: src/extension.js:1122 src/weather-settings.ui:592
+#: src/extension.js:1170 src/weather-settings.ui:592
 msgid "mph"
 msgstr ""
 
-#: src/extension.js:1127 src/weather-settings.ui:591
+#: src/extension.js:1175 src/weather-settings.ui:591
 msgid "km/h"
 msgstr ""
 
-#: src/extension.js:1136 src/weather-settings.ui:594
+#: src/extension.js:1184 src/weather-settings.ui:594
 msgid "kn"
 msgstr ""
 
-#: src/extension.js:1141 src/weather-settings.ui:595
+#: src/extension.js:1189 src/weather-settings.ui:595
 msgid "ft/s"
 msgstr ""
 
-#: src/extension.js:1228
+#: src/extension.js:1243 src/extension.js:1281
 msgid "Loading ..."
 msgstr "Đang tải..."
 
-#: src/extension.js:1232
+#: src/extension.js:1285
 msgid "Please wait"
 msgstr "Xin đợi một lát"
 
-#: src/extension.js:1303
+#: src/extension.js:1356
 msgid "Feels Like:"
 msgstr ""
 
-#: src/extension.js:1307
+#: src/extension.js:1360
 msgid "Humidity:"
 msgstr "Độ ẩm:"
 
-#: src/extension.js:1311
+#: src/extension.js:1364
 msgid "Pressure:"
 msgstr "Áp suất:"
 
-#: src/extension.js:1315
+#: src/extension.js:1368
 msgid "Wind:"
 msgstr "Gió:"
 
-#: src/extension.js:1319
+#: src/extension.js:1372
 msgid "Gusts:"
 msgstr ""
 
-#: src/extension.js:1450
+#: src/extension.js:1503
 msgid "Tomorrow's Forecast"
 msgstr ""
 
-#: src/extension.js:1452
+#: src/extension.js:1505
 msgid "Day Forecast"
 msgstr ""
 
@@ -566,25 +562,25 @@ msgstr "Nhiều mây"
 msgid "Not available"
 msgstr "Không có dữ liệu"
 
-#: src/openweathermap_org.js:421
+#: src/openweathermap_org.js:418
 msgid "Yesterday"
 msgstr "Hôm qua"
 
-#: src/openweathermap_org.js:423
+#: src/openweathermap_org.js:420
 #, fuzzy, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
 msgstr[0] "%s ngày trước"
 
-#: src/openweathermap_org.js:438 src/openweathermap_org.js:440
+#: src/openweathermap_org.js:435 src/openweathermap_org.js:437
 msgid ", "
 msgstr ""
 
-#: src/openweathermap_org.js:456
+#: src/openweathermap_org.js:453
 msgid "?"
 msgstr ""
 
-#: src/openweathermap_org.js:523
+#: src/openweathermap_org.js:520
 msgid "Tomorrow"
 msgstr "Ngày mai"
 
@@ -631,21 +627,21 @@ msgstr ""
 msgid "Result"
 msgstr ""
 
-#: src/prefs.js:548
+#: src/prefs.js:553
 #, javascript-format
 msgid "Remove %s ?"
 msgstr "Bạn có muốn xóa %s?"
 
-#: src/prefs.js:561
+#: src/prefs.js:566
 #, fuzzy
 msgid "No"
 msgstr "B"
 
-#: src/prefs.js:562
+#: src/prefs.js:567
 msgid "Yes"
 msgstr ""
 
-#: src/prefs.js:1105
+#: src/prefs.js:1110
 msgid "default"
 msgstr ""
 
@@ -838,33 +834,37 @@ msgid "Layout"
 msgstr ""
 
 #: src/weather-settings.ui:985
+msgid "Git Version: "
+msgstr ""
+
+#: src/weather-settings.ui:1004
 msgid "Version: "
 msgstr ""
 
-#: src/weather-settings.ui:999
+#: src/weather-settings.ui:1018
 msgid ""
 "<span>Display weather information for any location on Earth in the GNOME "
 "Shell</span>"
 msgstr ""
 
-#: src/weather-settings.ui:1013
+#: src/weather-settings.ui:1032
 msgid ""
 "Weather data provided by: <a href=\"https://openweathermap.org/"
 "\">OpenWeatherMap</a>"
 msgstr ""
 
-#: src/weather-settings.ui:1026
+#: src/weather-settings.ui:1045
 msgid "Maintained by:"
 msgstr ""
 
-#: src/weather-settings.ui:1061
+#: src/weather-settings.ui:1080
 msgid ""
 "<span size=\"small\">This program comes with ABSOLUTELY NO WARRANTY.\n"
-"See the <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
-"\">GNU General Public License, version 2 or later</a> for details.</span>"
+"See the <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0."
+"html\">GNU General Public License, version 2 or later</a> for details.</span>"
 msgstr ""
 
-#: src/weather-settings.ui:1072
+#: src/weather-settings.ui:1091
 msgid "About"
 msgstr ""
 
@@ -935,6 +935,9 @@ msgstr ""
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:160
 msgid "Your personal AppKey from developer.mapquest.com"
 msgstr ""
+
+#~ msgid "..."
+#~ msgstr "..."
 
 #~ msgid "Today"
 #~ msgstr "Hôm nay"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-05-09 14:39-0300\n"
+"POT-Creation-Date: 2022-06-06 16:36-0300\n"
 "PO-Revision-Date: 2017-10-31 22:41+0100\n"
 "Last-Translator: Vitalii Paslavskyi <vpaslavskyi@gmail.com>, 2017\n"
 "Language-Team: Vitalii Paslavskyi <vpaslavskyi@gmail.com>, 2017 \n"
@@ -15,14 +15,10 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: src/extension.js:171
-msgid "..."
-msgstr "..."
-
-#: src/extension.js:323
+#: src/extension.js:332
 msgid ""
 "Openweathermap.org does not work without an api-key.\n"
 "Either set the switch to use the extensions default key in the preferences "
@@ -35,282 +31,282 @@ msgstr ""
 "openweathermap.org/appid та вставте свій персональний ключ у діалоговому "
 "вікні налаштувань"
 
-#: src/extension.js:434 src/extension.js:446
+#: src/extension.js:471 src/extension.js:483
 #, javascript-format
 msgid "Can not connect to %s"
 msgstr "Не можу з'єднатись з %s"
 
-#: src/extension.js:737 src/weather-settings.ui:302
+#: src/extension.js:785 src/weather-settings.ui:302
 msgid "Locations"
 msgstr "Місцезнаходження"
 
-#: src/extension.js:741
+#: src/extension.js:789
 msgid "Reload Weather Information"
 msgstr "Oновити інформацію про погоду"
 
-#: src/extension.js:745
+#: src/extension.js:793
 #, fuzzy
 msgid "Weather data by:"
 msgstr "Дані про погоду надаються:"
 
-#: src/extension.js:748
+#: src/extension.js:796
 msgid "Weather Settings"
 msgstr "Налаштування погоди"
 
-#: src/extension.js:771
+#: src/extension.js:819
 #, javascript-format
 msgid "Can not open %s"
 msgstr "Не можу відкрити %s"
 
-#: src/extension.js:819 src/prefs.js:1072
+#: src/extension.js:867 src/prefs.js:1077
 msgid "Invalid city"
 msgstr "Недійсне місто"
 
-#: src/extension.js:830
+#: src/extension.js:878
 msgid "Invalid location! Please try to recreate it."
 msgstr "Недійсне місцезнаходження! Будь-ласка, спробуйте створити його знову."
 
-#: src/extension.js:870 src/weather-settings.ui:574
+#: src/extension.js:918 src/weather-settings.ui:574
 msgid "°F"
 msgstr "°F"
 
-#: src/extension.js:872 src/weather-settings.ui:575
+#: src/extension.js:920 src/weather-settings.ui:575
 msgid "K"
 msgstr "К"
 
-#: src/extension.js:874 src/weather-settings.ui:576
+#: src/extension.js:922 src/weather-settings.ui:576
 msgid "°Ra"
 msgstr ""
 
-#: src/extension.js:876 src/weather-settings.ui:577
+#: src/extension.js:924 src/weather-settings.ui:577
 msgid "°Ré"
 msgstr ""
 
-#: src/extension.js:878 src/weather-settings.ui:578
+#: src/extension.js:926 src/weather-settings.ui:578
 msgid "°Rø"
 msgstr ""
 
-#: src/extension.js:880 src/weather-settings.ui:579
+#: src/extension.js:928 src/weather-settings.ui:579
 msgid "°De"
 msgstr ""
 
-#: src/extension.js:882 src/weather-settings.ui:580
+#: src/extension.js:930 src/weather-settings.ui:580
 msgid "°N"
 msgstr ""
 
-#: src/extension.js:884 src/weather-settings.ui:573
+#: src/extension.js:932 src/weather-settings.ui:573
 msgid "°C"
 msgstr "°C"
 
-#: src/extension.js:921
+#: src/extension.js:969
 msgid "Calm"
 msgstr "Безвітряна погода"
 
-#: src/extension.js:924
+#: src/extension.js:972
 msgid "Light air"
 msgstr "Тиха погода"
 
-#: src/extension.js:927
+#: src/extension.js:975
 msgid "Light breeze"
 msgstr "Легкий вітерець"
 
-#: src/extension.js:930
+#: src/extension.js:978
 msgid "Gentle breeze"
 msgstr "М'який вітер"
 
-#: src/extension.js:933
+#: src/extension.js:981
 msgid "Moderate breeze"
 msgstr "Помірний вітер"
 
-#: src/extension.js:936
+#: src/extension.js:984
 msgid "Fresh breeze"
 msgstr "Свіжий бриз"
 
-#: src/extension.js:939
+#: src/extension.js:987
 msgid "Strong breeze"
 msgstr "Сильний вітер"
 
-#: src/extension.js:942
+#: src/extension.js:990
 msgid "Moderate gale"
 msgstr "Помірний шторм"
 
-#: src/extension.js:945
+#: src/extension.js:993
 msgid "Fresh gale"
 msgstr "Середній шторм"
 
-#: src/extension.js:948
+#: src/extension.js:996
 msgid "Strong gale"
 msgstr "Сильний шторм"
 
-#: src/extension.js:951
+#: src/extension.js:999
 msgid "Storm"
 msgstr "Шторм"
 
-#: src/extension.js:954
+#: src/extension.js:1002
 msgid "Violent storm"
 msgstr "Потужний шторм"
 
-#: src/extension.js:957
+#: src/extension.js:1005
 msgid "Hurricane"
 msgstr "Ураган"
 
-#: src/extension.js:961
+#: src/extension.js:1009
 msgid "Sunday"
 msgstr "Неділя"
 
-#: src/extension.js:961
+#: src/extension.js:1009
 msgid "Monday"
 msgstr "Понеділок"
 
-#: src/extension.js:961
+#: src/extension.js:1009
 msgid "Tuesday"
 msgstr "Вівторок"
 
-#: src/extension.js:961
+#: src/extension.js:1009
 msgid "Wednesday"
 msgstr "Середа"
 
-#: src/extension.js:961
+#: src/extension.js:1009
 msgid "Thursday"
 msgstr "Четвер"
 
-#: src/extension.js:961
+#: src/extension.js:1009
 msgid "Friday"
 msgstr "П’ятниця"
 
-#: src/extension.js:961
+#: src/extension.js:1009
 msgid "Saturday"
 msgstr "Субота"
 
-#: src/extension.js:967
+#: src/extension.js:1015
 msgid "N"
 msgstr "Пн"
 
-#: src/extension.js:967
+#: src/extension.js:1015
 msgid "NE"
 msgstr "ПнСх"
 
-#: src/extension.js:967
+#: src/extension.js:1015
 msgid "E"
 msgstr "Сх"
 
-#: src/extension.js:967
+#: src/extension.js:1015
 msgid "SE"
 msgstr "ПдСх"
 
-#: src/extension.js:967
+#: src/extension.js:1015
 msgid "S"
 msgstr "Пд"
 
-#: src/extension.js:967
+#: src/extension.js:1015
 msgid "SW"
 msgstr "ПдЗх"
 
-#: src/extension.js:967
+#: src/extension.js:1015
 msgid "W"
 msgstr "Зх"
 
-#: src/extension.js:967
+#: src/extension.js:1015
 msgid "NW"
 msgstr "ПнЗх"
 
-#: src/extension.js:1020 src/extension.js:1029 src/weather-settings.ui:607
+#: src/extension.js:1068 src/extension.js:1077 src/weather-settings.ui:607
 msgid "hPa"
 msgstr "гПа"
 
-#: src/extension.js:1024 src/weather-settings.ui:608
+#: src/extension.js:1072 src/weather-settings.ui:608
 msgid "inHg"
 msgstr "дюйм рт.ст."
 
-#: src/extension.js:1034 src/weather-settings.ui:609
+#: src/extension.js:1082 src/weather-settings.ui:609
 msgid "bar"
 msgstr "бар"
 
-#: src/extension.js:1039 src/weather-settings.ui:610
+#: src/extension.js:1087 src/weather-settings.ui:610
 msgid "Pa"
 msgstr "Па"
 
-#: src/extension.js:1044 src/weather-settings.ui:611
+#: src/extension.js:1092 src/weather-settings.ui:611
 msgid "kPa"
 msgstr "кПа"
 
-#: src/extension.js:1049 src/weather-settings.ui:612
+#: src/extension.js:1097 src/weather-settings.ui:612
 msgid "atm"
 msgstr "атм"
 
-#: src/extension.js:1054 src/weather-settings.ui:613
+#: src/extension.js:1102 src/weather-settings.ui:613
 msgid "at"
 msgstr "ат"
 
-#: src/extension.js:1059 src/weather-settings.ui:614
+#: src/extension.js:1107 src/weather-settings.ui:614
 msgid "Torr"
 msgstr "Тор"
 
-#: src/extension.js:1064 src/weather-settings.ui:615
+#: src/extension.js:1112 src/weather-settings.ui:615
 msgid "psi"
 msgstr "фунт/кв.дюйм"
 
-#: src/extension.js:1069 src/weather-settings.ui:616
+#: src/extension.js:1117 src/weather-settings.ui:616
 msgid "mmHg"
 msgstr "мм рт.ст."
 
-#: src/extension.js:1074 src/weather-settings.ui:617
+#: src/extension.js:1122 src/weather-settings.ui:617
 msgid "mbar"
 msgstr "мбар"
 
-#: src/extension.js:1118 src/weather-settings.ui:593
+#: src/extension.js:1166 src/weather-settings.ui:593
 msgid "m/s"
 msgstr "м/с"
 
-#: src/extension.js:1122 src/weather-settings.ui:592
+#: src/extension.js:1170 src/weather-settings.ui:592
 msgid "mph"
 msgstr "миль/год"
 
-#: src/extension.js:1127 src/weather-settings.ui:591
+#: src/extension.js:1175 src/weather-settings.ui:591
 msgid "km/h"
 msgstr "км/год"
 
-#: src/extension.js:1136 src/weather-settings.ui:594
+#: src/extension.js:1184 src/weather-settings.ui:594
 msgid "kn"
 msgstr "вузли"
 
-#: src/extension.js:1141 src/weather-settings.ui:595
+#: src/extension.js:1189 src/weather-settings.ui:595
 msgid "ft/s"
 msgstr "фут/с"
 
-#: src/extension.js:1228
+#: src/extension.js:1243 src/extension.js:1281
 msgid "Loading ..."
 msgstr "Завантаження ..."
 
-#: src/extension.js:1232
+#: src/extension.js:1285
 msgid "Please wait"
 msgstr "Зачекайте"
 
-#: src/extension.js:1303
+#: src/extension.js:1356
 msgid "Feels Like:"
 msgstr ""
 
-#: src/extension.js:1307
+#: src/extension.js:1360
 msgid "Humidity:"
 msgstr "Вологість:"
 
-#: src/extension.js:1311
+#: src/extension.js:1364
 msgid "Pressure:"
 msgstr "Тиск:"
 
-#: src/extension.js:1315
+#: src/extension.js:1368
 msgid "Wind:"
 msgstr "Вітер:"
 
-#: src/extension.js:1319
+#: src/extension.js:1372
 msgid "Gusts:"
 msgstr ""
 
-#: src/extension.js:1450
+#: src/extension.js:1503
 msgid "Tomorrow's Forecast"
 msgstr ""
 
-#: src/extension.js:1452
+#: src/extension.js:1505
 msgid "Day Forecast"
 msgstr ""
 
@@ -573,11 +569,11 @@ msgstr "Хмарно з проясненнями"
 msgid "Not available"
 msgstr "Недоступно"
 
-#: src/openweathermap_org.js:421
+#: src/openweathermap_org.js:418
 msgid "Yesterday"
 msgstr "Вчора"
 
-#: src/openweathermap_org.js:423
+#: src/openweathermap_org.js:420
 #, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
@@ -585,15 +581,15 @@ msgstr[0] "%d день тому"
 msgstr[1] "%d дні тому"
 msgstr[2] "%d днів тому"
 
-#: src/openweathermap_org.js:438 src/openweathermap_org.js:440
+#: src/openweathermap_org.js:435 src/openweathermap_org.js:437
 msgid ", "
 msgstr ", "
 
-#: src/openweathermap_org.js:456
+#: src/openweathermap_org.js:453
 msgid "?"
 msgstr ""
 
-#: src/openweathermap_org.js:523
+#: src/openweathermap_org.js:520
 msgid "Tomorrow"
 msgstr "Завтра"
 
@@ -644,21 +640,21 @@ msgstr "Постачальник"
 msgid "Result"
 msgstr ""
 
-#: src/prefs.js:548
+#: src/prefs.js:553
 #, javascript-format
 msgid "Remove %s ?"
 msgstr "Видалити %s ?"
 
-#: src/prefs.js:561
+#: src/prefs.js:566
 #, fuzzy
 msgid "No"
 msgstr "Пн"
 
-#: src/prefs.js:562
+#: src/prefs.js:567
 msgid "Yes"
 msgstr ""
 
-#: src/prefs.js:1105
+#: src/prefs.js:1110
 msgid "default"
 msgstr "за замовчуванням"
 
@@ -855,38 +851,43 @@ msgid "Layout"
 msgstr "Макет"
 
 #: src/weather-settings.ui:985
+#, fuzzy
+msgid "Git Version: "
+msgstr "Версія:"
+
+#: src/weather-settings.ui:1004
 msgid "Version: "
 msgstr "Версія:"
 
-#: src/weather-settings.ui:999
+#: src/weather-settings.ui:1018
 msgid ""
 "<span>Display weather information for any location on Earth in the GNOME "
 "Shell</span>"
 msgstr ""
 
-#: src/weather-settings.ui:1013
+#: src/weather-settings.ui:1032
 msgid ""
 "Weather data provided by: <a href=\"https://openweathermap.org/"
 "\">OpenWeatherMap</a>"
 msgstr ""
 
-#: src/weather-settings.ui:1026
+#: src/weather-settings.ui:1045
 #, fuzzy
 msgid "Maintained by:"
 msgstr "Підтримка"
 
-#: src/weather-settings.ui:1061
+#: src/weather-settings.ui:1080
 msgid ""
 "<span size=\"small\">This program comes with ABSOLUTELY NO WARRANTY.\n"
-"See the <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
-"\">GNU General Public License, version 2 or later</a> for details.</span>"
+"See the <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0."
+"html\">GNU General Public License, version 2 or later</a> for details.</span>"
 msgstr ""
 "<span size=\"small\">Дана програма розповсюджується АБСОЛЮТНО БЕЗ ГАРАНТІЇ.\n"
 "Ознайомтесь додатково <a href=\"https://www.gnu.org/licenses/old-licenses/"
 "gpl-2.0.html\">GNU General Public License, версія 2 чи пізніша r</a> для "
 "додаткових деталей.</span>"
 
-#: src/weather-settings.ui:1072
+#: src/weather-settings.ui:1091
 msgid "About"
 msgstr "Про програму"
 
@@ -959,6 +960,9 @@ msgstr "Використати АРІ ключ за замовчуванням �
 msgid "Your personal AppKey from developer.mapquest.com"
 msgstr "Ваш особистий ключ з developer.mapquest.com"
 
+#~ msgid "..."
+#~ msgstr "..."
+
 #~ msgid "unknown (self-build ?)"
 #~ msgstr "невідмо"
 
@@ -999,13 +1003,15 @@ msgstr "Ваш особистий ключ з developer.mapquest.com"
 #~ "прогнозу."
 
 #~ msgid ""
-#~ "<span>Weather extension to display weather information from <a href="
-#~ "\"https://openweathermap.org/\">Openweathermap</a> or <a href=\"https://"
-#~ "darksky.net\">Dark Sky</a> for almost all locations in the world.</span>"
+#~ "<span>Weather extension to display weather information from <a "
+#~ "href=\"https://openweathermap.org/\">Openweathermap</a> or <a "
+#~ "href=\"https://darksky.net\">Dark Sky</a> for almost all locations in the "
+#~ "world.</span>"
 #~ msgstr ""
-#~ "<span>Погодній додаток для відображення інформації про погоду з <a href="
-#~ "\"https://openweathermap.org/\">Openweathermap</a> або <a href=\"https://"
-#~ "darksky.net\">Dark Sky</a> для більшості міст на світі.</span>"
+#~ "<span>Погодній додаток для відображення інформації про погоду з <a "
+#~ "href=\"https://openweathermap.org/\">Openweathermap</a> або <a "
+#~ "href=\"https://darksky.net\">Dark Sky</a> для більшості міст на світі.</"
+#~ "span>"
 
 #~ msgid "Webpage"
 #~ msgstr "Сторінка в інтернеті"
