@@ -239,50 +239,39 @@ function getWeatherCondition(code) {
     }
 }
 
-async function getWeatherCurrent() {
-    // Make sure we have data to process
-    if (this.currentWeatherCache === undefined) {
-        this.currentWeatherCache = "in refresh";
-        this.refreshWeatherCurrent();
-        return;
-    }
-    if (this.currentWeatherCache == "in refresh")
-        return;
-
-    this.checkAlignment();
-    this.checkPositionInPanel();
-    // Populate Current Weather UI
+async function initWeatherData() {
     try {
-        await this.populateCurrentUI()
+        await this.refreshWeatherData()
         .then(async () => {
-            !this._disable_forecast && this.getWeatherForecast();
-            this.recalcLayout();
+            try {
+                await this.refreshForecastData()
+                .then(this.recalcLayout());
+            }
+            catch (e) {
+                log("init forecast data error: " + e);
+            }
         });
     }
     catch (e) {
-        log("populateCurrentUI error: " + e);
+        log("init current data error: " + e);
     }
 }
 
-async function getWeatherForecast() {
-    // Did the user disable the forecast?
-    if (this._disable_forecast)
-        return;
-    // Make sure we have data to process
-    if (this.forecastWeatherCache === undefined || this.todaysWeatherCache === undefined) {
-        this.forecastWeatherCache = "in refresh";
-        this.todaysWeatherCache = "in refresh";
-        this.refreshWeatherForecast();
-        return;
-    }
-    if (this.forecastWeatherCache == "in refresh" || this.todaysWeatherCache == "in refresh")
-        return;
-    // Populate Forecast Weather UI
+async function reloadWeatherCache() {
     try {
-        await this.populateForecastUI();
+        await this.populateCurrentUI()
+        .then(async () => {
+            try {
+                await this.populateForecastUI()
+                .then(this.recalcLayout());
+            }
+            catch (e) {
+                log("reload forecast cache error: " + e);
+            }
+        });
     }
     catch (e) {
-        log("populateForecastUI error: " + e);
+        log("reload current cache error: " + e);
     }
 }
 
@@ -338,14 +327,14 @@ async function refreshForecastData() {
     try {
         json = await this.loadJsonAsync(OPENWEATHER_URL_FORECAST, params)
         .then(async (json) => {
-            refreshing: try {
+            processing: try {
 
                 if (this.forecastJsonCache) {
                     let _freshData = JSON.stringify(json.list[0]);
                     let _cacheData = JSON.stringify(this.forecastJsonCache.list[0]);
                     if (_freshData === _cacheData) {
                         // No need to process if data unchanged
-                        break refreshing;
+                        break processing;
                     }
                 }
                 this.forecastJsonCache = json;
@@ -379,97 +368,6 @@ async function refreshForecastData() {
         // as per openweathermap.org recommendation.
         this.reloadWeatherForecast(600);
         log("refreshForecastData error: " + e);
-    }
-    this.reloadWeatherForecast(this._refresh_interval_forecast);
-}
-
-async function refreshWeatherCurrent() {
-
-    this.oldLocation = this.extractCoord(this._city);
-    if (this.oldLocation.search(",") == -1)
-        return;
-
-    let json = undefined;
-    this.currentWeatherCache = undefined;
-    let params = {
-        lat: this.oldLocation.split(",")[0],
-        lon: this.oldLocation.split(",")[1],
-        units: 'metric'
-    };
-    if (this._appid)
-        params.APPID = this._appid;
-
-    try {
-        json = await this.loadJsonAsync(OPENWEATHER_URL_CURRENT, params)
-        .then(async (json) => {
-            if (this.currentWeatherCache != json)
-                this.currentWeatherCache = json;
-
-            this.rebuildSelectCityItem();
-            this.getWeatherCurrent();
-        });
-    }
-    catch (e) {
-        // Something went wrong, reload after 10 minutes
-        // as per openweathermap.org recommendation.
-        this.reloadWeatherCurrent(600);
-        log("Current loadJsonAsync error: " + e);
-    }
-    this.reloadWeatherCurrent(this._refresh_interval_current);
-}
-
-async function refreshWeatherForecast() {
-    // Did the user disable the forecast?
-    if (this._disable_forecast)
-        return;
-
-    this.oldLocation = this.extractCoord(this._city);
-    if (this.oldLocation.search(",") == -1)
-        return;
-
-    let json = undefined;
-    let sortedList = undefined;
-    let todayList = undefined;
-    this.todaysWeatherCache = undefined;
-    this.forecastWeatherCache = undefined;
-    let params = {
-        lat: this.oldLocation.split(",")[0],
-        lon: this.oldLocation.split(",")[1],
-        units: 'metric'
-    };
-    if (this._appid)
-        params.APPID = this._appid;
-
-    try {
-        json = await this.loadJsonAsync(OPENWEATHER_URL_FORECAST, params)
-        .then(async (json) => {
-            try {
-                this.owmCityId = json.city.id;
-                // Today's forecast
-                todayList = await this.processTodaysData(json)
-                .then(async (todayList) => {
-                    if (this.todaysWeatherCache != todayList)
-                        this.todaysWeatherCache = todayList;
-                });
-                // 5 day / 3 hour forecast
-                sortedList = await this.processForecastData(json)
-                .then(async (sortedList) => {
-                    if (this.forecastWeatherCache != sortedList)
-                        this.forecastWeatherCache = sortedList;
-
-                    this.getWeatherForecast();
-                });
-            }
-            catch (e) {
-                log("Error processing forecast json data: " + e);
-            }
-        });
-    }
-    catch (e) {
-        // Something went wrong, reload after 10 minutes
-        // as per openweathermap.org recommendation.
-        this.reloadWeatherForecast(600);
-        log("Forecast loadJsonAsync error: " + e);
     }
     this.reloadWeatherForecast(this._refresh_interval_forecast);
 }
