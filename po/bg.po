@@ -166,7 +166,7 @@ msgstr "Понеделник"
 
 #: src/extension.js:961
 msgid "Tuesday"
-msgstr "Вторник\t\t"
+msgstr "Вторник"
 
 #: src/extension.js:961
 msgid "Wednesday"
