@@ -403,6 +403,11 @@ const WeatherPrefsWidget = new GObject.Class({
         this.gitlabButton.set_child(gitlabImage);
         this.gitlabButton.set_uri(Me.metadata.url.toString());
 
+        if (Me.metadata['git-version']) {
+            this.Window.get_object('git-ver-box').set_visible(true);
+            this.Window.get_object('git-version').set_label(Me.metadata['git-version']);
+        }
+
         if (Me.metadata.version !== undefined)
             this.Window.get_object('version').set_label(Me.metadata.version.toString());
     },

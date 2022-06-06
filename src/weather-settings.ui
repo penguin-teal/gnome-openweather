@@ -976,6 +976,25 @@
               </object>
             </child>
             <child>
+              <object class="GtkBox" id="git-ver-box">
+                <property name="halign">center</property>
+                <property name="visible">false</property>
+                <child>
+                  <object class="GtkLabel" id="git-version-label">
+                    <property name="halign">end</property>
+                    <property name="label" translatable="yes">Git Version: </property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="git-version">
+                    <property name="halign">start</property>
+                    <property name="label"></property>
+                    <property name="ellipsize">end</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
               <object class="GtkBox" id="box4">
                 <property name="halign">center</property>
                 <property name="margin_bottom">20</property>
@@ -988,7 +1007,7 @@
                 <child>
                   <object class="GtkLabel" id="version">
                     <property name="halign">start</property>
-                    <property name="label">unknown (self-build ?)</property>
+                    <property name="label"></property>
                     <property name="ellipsize">end</property>
                   </object>
                 </child>

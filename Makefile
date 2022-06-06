@@ -17,17 +17,17 @@ else
 	SHARE_PREFIX = $(DESTDIR)/usr/share
 	INSTALLBASE = $(SHARE_PREFIX)/gnome-shell/extensions
 endif
-# The command line passed variable VERSION is used to set the version string
-# in the metadata and in the generated zip-file. If no VERSION is passed, the
-# version is pulled from the latest git tag with the revision (a monotonically
-# increasing number that uniquely identifies the source tree) and the current
-# short commit SHA1. It's used as the version number in the metadata while the
-# generated zip file has no string attached.
+# Set a git version for self builds from the latest git tag with the revision
+# (a monotonically increasing number that uniquely identifies the source tree)
+# and the current short commit SHA1. (Note: not set if VERSION passed)
+GIT_VER = $(shell git describe --tags | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g')
+# The command line passed variable VERSION is used to set the version integer
+# in the metadata and in the generated zip file. If no VERSION is passed, we
+# won't touch the metadata version and instead use that for the zip file.
 ifdef VERSION
 	ZIPVER = -v$(VERSION)
 else
-	VERSION = $(shell git describe --tags | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g')
-	ZIPVER =
+	ZIPVER = -v$(shell cat metadata.json | sed '/"version"/!d' | sed s/\"version\"://g | sed s/\ //g)
 endif
 
 all: extension
@@ -95,4 +95,8 @@ _build: all
 		mkdir -p $$lf/LC_MESSAGES; \
 		cp $$l $$lf/LC_MESSAGES/$(PKG_NAME).mo; \
 	done;
-	sed -i 's/"version": .*/"version": "$(VERSION)"/'  _build/metadata.json;
+ifdef VERSION
+	sed -i 's/"version": .*/"version": $(VERSION)/' _build/metadata.json;
+else ifneq ($(strip $(GIT_VER)),)
+	sed -i '/"version": .*/i\ \ "git-version": "$(GIT_VER)",' _build/metadata.json;
+endif
