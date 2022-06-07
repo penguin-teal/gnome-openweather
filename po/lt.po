@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-shell-extension-weather\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-06 16:36-0300\n"
+"POT-Creation-Date: 2022-06-06 23:46-0300\n"
 "PO-Revision-Date: 2012-12-21 12:43+0000\n"
 "Last-Translator: Mantas Kriaučiūnas <mantas@akl.lt>\n"
 "Language-Team: Lithuanian <lt@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2012-12-24 04:00+0000\n"
 "X-Generator: Launchpad (build 16378)\n"
 
-#: src/extension.js:332
+#: src/extension.js:333
 msgid ""
 "Openweathermap.org does not work without an api-key.\n"
 "Either set the switch to use the extensions default key in the preferences "
@@ -26,281 +26,285 @@ msgid ""
 "personal key into the preferences dialog."
 msgstr ""
 
-#: src/extension.js:471 src/extension.js:483
+#: src/extension.js:472 src/extension.js:484
 #, javascript-format
 msgid "Can not connect to %s"
 msgstr ""
 
-#: src/extension.js:785 src/weather-settings.ui:302
+#: src/extension.js:786 src/weather-settings.ui:302
 msgid "Locations"
 msgstr "Vietovės"
 
-#: src/extension.js:789
+#: src/extension.js:790
 msgid "Reload Weather Information"
 msgstr "Atnaujinti orų informaciją"
 
-#: src/extension.js:793
+#: src/extension.js:794
 msgid "Weather data by:"
 msgstr ""
 
-#: src/extension.js:796
+#: src/extension.js:797
 msgid "Weather Settings"
 msgstr "Nustatymai (vietovė ir kt.)"
 
-#: src/extension.js:819
+#: src/extension.js:813
+msgid "Manual refreshes less than 2 minutes apart are ignored!"
+msgstr ""
+
+#: src/extension.js:827
 #, javascript-format
 msgid "Can not open %s"
 msgstr ""
 
-#: src/extension.js:867 src/prefs.js:1077
+#: src/extension.js:875 src/prefs.js:1077
 msgid "Invalid city"
 msgstr "Netinkama vietovė"
 
-#: src/extension.js:878
+#: src/extension.js:886
 msgid "Invalid location! Please try to recreate it."
 msgstr ""
 
-#: src/extension.js:918 src/weather-settings.ui:574
+#: src/extension.js:926 src/weather-settings.ui:574
 msgid "°F"
 msgstr ""
 
-#: src/extension.js:920 src/weather-settings.ui:575
+#: src/extension.js:928 src/weather-settings.ui:575
 msgid "K"
 msgstr ""
 
-#: src/extension.js:922 src/weather-settings.ui:576
+#: src/extension.js:930 src/weather-settings.ui:576
 msgid "°Ra"
 msgstr ""
 
-#: src/extension.js:924 src/weather-settings.ui:577
+#: src/extension.js:932 src/weather-settings.ui:577
 msgid "°Ré"
 msgstr ""
 
-#: src/extension.js:926 src/weather-settings.ui:578
+#: src/extension.js:934 src/weather-settings.ui:578
 msgid "°Rø"
 msgstr ""
 
-#: src/extension.js:928 src/weather-settings.ui:579
+#: src/extension.js:936 src/weather-settings.ui:579
 msgid "°De"
 msgstr ""
 
-#: src/extension.js:930 src/weather-settings.ui:580
+#: src/extension.js:938 src/weather-settings.ui:580
 msgid "°N"
 msgstr ""
 
-#: src/extension.js:932 src/weather-settings.ui:573
+#: src/extension.js:940 src/weather-settings.ui:573
 msgid "°C"
 msgstr ""
 
-#: src/extension.js:969
+#: src/extension.js:977
 msgid "Calm"
 msgstr "Ramu"
 
-#: src/extension.js:972
+#: src/extension.js:980
 msgid "Light air"
 msgstr ""
 
-#: src/extension.js:975
+#: src/extension.js:983
 msgid "Light breeze"
 msgstr "Lengvas vėjelis"
 
-#: src/extension.js:978
+#: src/extension.js:986
 msgid "Gentle breeze"
 msgstr "Švelnus vėjelis"
 
-#: src/extension.js:981
+#: src/extension.js:989
 msgid "Moderate breeze"
 msgstr "Vidutinis vėjelis"
 
-#: src/extension.js:984
+#: src/extension.js:992
 msgid "Fresh breeze"
 msgstr "Stiprėjantis vėjelis"
 
-#: src/extension.js:987
+#: src/extension.js:995
 msgid "Strong breeze"
 msgstr ""
 
-#: src/extension.js:990
+#: src/extension.js:998
 msgid "Moderate gale"
 msgstr "Vidutinis štormas"
 
-#: src/extension.js:993
+#: src/extension.js:1001
 msgid "Fresh gale"
 msgstr "Stiprėjantis štormas"
 
-#: src/extension.js:996
+#: src/extension.js:1004
 msgid "Strong gale"
 msgstr "Smarkus štormas"
 
-#: src/extension.js:999
+#: src/extension.js:1007
 msgid "Storm"
 msgstr "Audra"
 
-#: src/extension.js:1002
+#: src/extension.js:1010
 msgid "Violent storm"
 msgstr "Smarki audra"
 
-#: src/extension.js:1005
+#: src/extension.js:1013
 msgid "Hurricane"
 msgstr "Uraganas"
 
-#: src/extension.js:1009
+#: src/extension.js:1017
 msgid "Sunday"
 msgstr "Sekmadienis"
 
-#: src/extension.js:1009
+#: src/extension.js:1017
 msgid "Monday"
 msgstr "Pirmadienis"
 
-#: src/extension.js:1009
+#: src/extension.js:1017
 msgid "Tuesday"
 msgstr "Antradienis"
 
-#: src/extension.js:1009
+#: src/extension.js:1017
 msgid "Wednesday"
 msgstr "Trečiadienis"
 
-#: src/extension.js:1009
+#: src/extension.js:1017
 msgid "Thursday"
 msgstr "Ketvirtadienis"
 
-#: src/extension.js:1009
+#: src/extension.js:1017
 msgid "Friday"
 msgstr "Penktadienis"
 
-#: src/extension.js:1009
+#: src/extension.js:1017
 msgid "Saturday"
 msgstr "Šeštadienis"
 
-#: src/extension.js:1015
+#: src/extension.js:1023
 msgid "N"
 msgstr "Š"
 
-#: src/extension.js:1015
+#: src/extension.js:1023
 msgid "NE"
 msgstr "ŠR"
 
-#: src/extension.js:1015
+#: src/extension.js:1023
 msgid "E"
 msgstr "R"
 
-#: src/extension.js:1015
+#: src/extension.js:1023
 msgid "SE"
 msgstr "PR"
 
-#: src/extension.js:1015
+#: src/extension.js:1023
 msgid "S"
 msgstr "P"
 
-#: src/extension.js:1015
+#: src/extension.js:1023
 msgid "SW"
 msgstr "PV"
 
-#: src/extension.js:1015
+#: src/extension.js:1023
 msgid "W"
 msgstr "V"
 
-#: src/extension.js:1015
+#: src/extension.js:1023
 msgid "NW"
 msgstr "ŠV"
 
-#: src/extension.js:1068 src/extension.js:1077 src/weather-settings.ui:607
+#: src/extension.js:1076 src/extension.js:1085 src/weather-settings.ui:607
 msgid "hPa"
 msgstr ""
 
-#: src/extension.js:1072 src/weather-settings.ui:608
+#: src/extension.js:1080 src/weather-settings.ui:608
 msgid "inHg"
 msgstr ""
 
-#: src/extension.js:1082 src/weather-settings.ui:609
+#: src/extension.js:1090 src/weather-settings.ui:609
 msgid "bar"
 msgstr ""
 
-#: src/extension.js:1087 src/weather-settings.ui:610
+#: src/extension.js:1095 src/weather-settings.ui:610
 msgid "Pa"
 msgstr ""
 
-#: src/extension.js:1092 src/weather-settings.ui:611
+#: src/extension.js:1100 src/weather-settings.ui:611
 msgid "kPa"
 msgstr ""
 
-#: src/extension.js:1097 src/weather-settings.ui:612
+#: src/extension.js:1105 src/weather-settings.ui:612
 msgid "atm"
 msgstr ""
 
-#: src/extension.js:1102 src/weather-settings.ui:613
+#: src/extension.js:1110 src/weather-settings.ui:613
 msgid "at"
 msgstr ""
 
-#: src/extension.js:1107 src/weather-settings.ui:614
+#: src/extension.js:1115 src/weather-settings.ui:614
 msgid "Torr"
 msgstr ""
 
-#: src/extension.js:1112 src/weather-settings.ui:615
+#: src/extension.js:1120 src/weather-settings.ui:615
 msgid "psi"
 msgstr ""
 
-#: src/extension.js:1117 src/weather-settings.ui:616
+#: src/extension.js:1125 src/weather-settings.ui:616
 msgid "mmHg"
 msgstr ""
 
-#: src/extension.js:1122 src/weather-settings.ui:617
+#: src/extension.js:1130 src/weather-settings.ui:617
 msgid "mbar"
 msgstr ""
 
-#: src/extension.js:1166 src/weather-settings.ui:593
+#: src/extension.js:1174 src/weather-settings.ui:593
 msgid "m/s"
 msgstr ""
 
-#: src/extension.js:1170 src/weather-settings.ui:592
+#: src/extension.js:1178 src/weather-settings.ui:592
 msgid "mph"
 msgstr ""
 
-#: src/extension.js:1175 src/weather-settings.ui:591
+#: src/extension.js:1183 src/weather-settings.ui:591
 msgid "km/h"
 msgstr ""
 
-#: src/extension.js:1184 src/weather-settings.ui:594
+#: src/extension.js:1192 src/weather-settings.ui:594
 msgid "kn"
 msgstr ""
 
-#: src/extension.js:1189 src/weather-settings.ui:595
+#: src/extension.js:1197 src/weather-settings.ui:595
 msgid "ft/s"
 msgstr ""
 
-#: src/extension.js:1243 src/extension.js:1281
+#: src/extension.js:1251 src/extension.js:1289
 msgid "Loading ..."
 msgstr "Įkeliama..."
 
-#: src/extension.js:1285
+#: src/extension.js:1293
 msgid "Please wait"
 msgstr "Palaukite"
 
-#: src/extension.js:1356
+#: src/extension.js:1364
 msgid "Feels Like:"
 msgstr ""
 
-#: src/extension.js:1360
+#: src/extension.js:1368
 msgid "Humidity:"
 msgstr "Drėgnumas:"
 
-#: src/extension.js:1364
+#: src/extension.js:1372
 msgid "Pressure:"
 msgstr "Slėgis:"
 
-#: src/extension.js:1368
+#: src/extension.js:1376
 msgid "Wind:"
 msgstr "Vėjas:"
 
-#: src/extension.js:1372
+#: src/extension.js:1380
 msgid "Gusts:"
 msgstr ""
 
-#: src/extension.js:1503
+#: src/extension.js:1511
 msgid "Tomorrow's Forecast"
 msgstr ""
 
-#: src/extension.js:1505
+#: src/extension.js:1513
 msgid "Day Forecast"
 msgstr ""
 
@@ -563,26 +567,26 @@ msgstr "Daugiau debesuota"
 msgid "Not available"
 msgstr "Neprieinama"
 
-#: src/openweathermap_org.js:418
+#: src/openweathermap_org.js:425
 msgid "Yesterday"
 msgstr "Vakar"
 
-#: src/openweathermap_org.js:420
+#: src/openweathermap_org.js:427
 #, fuzzy, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
 msgstr[0] "Prieš %s dienas"
 msgstr[1] "Prieš %s dienas"
 
-#: src/openweathermap_org.js:435 src/openweathermap_org.js:437
+#: src/openweathermap_org.js:442 src/openweathermap_org.js:444
 msgid ", "
 msgstr ""
 
-#: src/openweathermap_org.js:453
+#: src/openweathermap_org.js:460
 msgid "?"
 msgstr ""
 
-#: src/openweathermap_org.js:520
+#: src/openweathermap_org.js:527
 msgid "Tomorrow"
 msgstr "Rytoj"
 
