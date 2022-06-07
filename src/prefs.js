@@ -1119,6 +1119,13 @@ function init() {
 function buildPrefsWidget() {
     let prefs = new WeatherPrefsWidget();
     let widget = prefs.mainWidget;
+
+    widget.connect('realize', () => {
+        let window = widget.get_root();
+        window.default_width = 600;
+        window.default_height = 700;
+    });
+
     widget.show();
     return widget;
 }
