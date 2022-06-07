@@ -120,7 +120,6 @@ Gtk.IconTheme.get_default = function() {
 };
 
 let _firstBoot = 1;
-let _firstBootWait = 8; // time to wait in seconds
 let _currentWeatherCache, _todaysWeatherCache, _forecastWeatherCache;
 let _timeCacheCurrentWeather, _timeCacheForecastWeather, _forecastJsonCache;
 
@@ -201,6 +200,8 @@ class OpenweatherMenuButton extends PanelMenu.Button {
         // Delay popup initialization and data fetch on the first
         // extension load, ie: first log in / restart gnome shell
         if (_firstBoot) {
+            let _firstBootWait = 8; // time to wait in seconds
+
             this._timeoutFirstBoot = GLib.timeout_add_seconds(GLib.PRIORITY_DEFAULT, _firstBootWait, () => {
                 this._checkConnectionState();
                 this.initOpenWeatherUI();
@@ -806,8 +807,15 @@ class OpenweatherMenuButton extends PanelMenu.Button {
             this._selectCity._setOpenState(!this._selectCity._getOpenState());
         });
         this._reloadButton.connect('clicked', () => {
+            if (this._lastRefresh) {
+                let _twoMinsAgo = Date.now() - 120000;
+                if (this._lastRefresh > _twoMinsAgo) {
+                    Main.notify("OpenWeather", _("Manual refreshes less than 2 minutes apart are ignored!"));
+                    return;
+                }
+            }
             this.showRefreshing();
-            this.initWeatherData();
+            this.initWeatherData(true);
         });
         this._urlButton.connect('clicked', () => {
             this.menu.close();

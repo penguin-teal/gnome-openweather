@@ -239,7 +239,10 @@ function getWeatherCondition(code) {
     }
 }
 
-async function initWeatherData() {
+async function initWeatherData(refresh) {
+    if (refresh) {
+        this._lastRefresh = Date.now();
+    }
     try {
         await this.refreshWeatherData()
         .then(async () => {
@@ -396,10 +399,14 @@ function populateCurrentUI() {
             if (this.lastBuildDate === undefined)
                 this.lastBuildDate = 0;
 
-            if (this.lastBuildId != json.dt || !this.lastBuildDate) {
+            if (this.lastBuildId != json.dt || !this.lastBuildDate)
                 this.lastBuildId = json.dt;
+
+            if (this._lastRefresh && this._lastRefresh > this.lastBuildId * 1000)
+                this.lastBuildDate = new Date(this._lastRefresh);
+            else
                 this.lastBuildDate = new Date(this.lastBuildId * 1000);
-            }
+
             let lastBuild = '-';
 
             if (this._clockFormat == "24h") {
