@@ -44,7 +44,7 @@ const OPENWEATHER_CITY_KEY = 'city';
 const OPENWEATHER_ACTUAL_CITY_KEY = 'actual-city';
 const OPENWEATHER_TRANSLATE_CONDITION_KEY = 'translate-condition';
 const OPENWEATHER_USE_SYSTEM_ICONS_KEY = 'use-system-icons';
-const OPENWEATHER_USE_TEXT_ON_BUTTONS_KEY = 'use-text-on-buttons';
+const OPENWEATHER_DELAY_EXT_INIT_KEY = 'delay-ext-init';
 const OPENWEATHER_SHOW_TEXT_IN_PANEL_KEY = 'show-text-in-panel';
 const OPENWEATHER_POSITION_IN_PANEL_KEY = 'position-in-panel';
 const OPENWEATHER_POSITION_INDEX_KEY = 'position-index';
@@ -197,11 +197,10 @@ class OpenweatherMenuButton extends PanelMenu.Button {
         this.forecastWeatherCache = _forecastWeatherCache;
         this.forecastJsonCache = _forecastJsonCache;
 
-        // Delay popup initialization and data fetch on the first
-        // extension load, ie: first log in / restart gnome shell
-        if (_firstBoot) {
-            let _firstBootWait = 8; // time to wait in seconds
-
+        let _firstBootWait = this._startupDelay;
+        if (_firstBoot && _firstBootWait != 0) {
+            // Delay popup initialization and data fetch on the first
+            // extension load, ie: first log in / restart gnome shell
             this._timeoutFirstBoot = GLib.timeout_add_seconds(GLib.PRIORITY_DEFAULT, _firstBootWait, () => {
                 this._checkConnectionState();
                 this.initOpenWeatherUI();
@@ -669,10 +668,10 @@ class OpenweatherMenuButton extends PanelMenu.Button {
         return this._settings.get_boolean(OPENWEATHER_USE_SYSTEM_ICONS_KEY) ? 1 : 0;
     }
 
-    get _use_text_on_buttons() {
+    get _startupDelay() {
         if (!this._settings)
             this.loadConfig();
-        return this._settings.get_boolean(OPENWEATHER_USE_TEXT_ON_BUTTONS_KEY) ? 1 : 0;
+        return this._settings.get_int(OPENWEATHER_DELAY_EXT_INIT_KEY);
     }
 
     get _text_in_panel() {
@@ -784,19 +783,10 @@ class OpenweatherMenuButton extends PanelMenu.Button {
         });
 
         this._locationButton = this.createButton('find-location-symbolic', _("Locations"));
-        if (this._use_text_on_buttons)
-            this._locationButton.set_label(this._locationButton.get_accessible_name());
-
         this._reloadButton = this.createButton('view-refresh-symbolic', _("Reload Weather Information"));
-        if (this._use_text_on_buttons)
-            this._reloadButton.set_label(this._reloadButton.get_accessible_name());
-
-        this._urlButton = this.createButton('', _("Weather data by:") + (this._use_text_on_buttons ? "\n" : "  ") + this.weatherProvider);
+        this._urlButton = this.createButton('', _("Weather data by: ") + this.weatherProvider);
         this._urlButton.set_label(this._urlButton.get_accessible_name());
-
         this._prefsButton = this.createButton('preferences-system-symbolic', _("Weather Settings"));
-        if (this._use_text_on_buttons)
-            this._prefsButton.set_label(this._prefsButton.get_accessible_name());
 
         this._buttonBox1.add_actor(this._locationButton);
         this._buttonBox1.add_actor(this._reloadButton);
@@ -917,6 +907,12 @@ class OpenweatherMenuButton extends PanelMenu.Button {
             this._forecastScrollBox.set_width(this._forecastExpanderBox.get_width() - this._daysBox.get_width());
             this._forecastScrollBox.show();
             this._forecastScrollBox.hscroll.show();
+
+            if (this._settings.get_boolean('expand-forecast')) {
+                this._forecastExpander.setSubmenuShown(true);
+            } else {
+                this._forecastExpander.setSubmenuShown(false);
+            }
         }
         this._buttonBox1.set_width(this._currentWeather.get_width() - this._buttonBox2.get_width());
     }

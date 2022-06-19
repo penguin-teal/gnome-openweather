@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-shell-extension-openweather\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-06 23:46-0300\n"
+"POT-Creation-Date: 2022-06-19 10:21-0300\n"
 "PO-Revision-Date: 2017-03-26 15:26+0300\n"
 "Last-Translator: Светлин Зарев <svetlin.zarev@yahoo.com>\n"
 "Language-Team: Български <>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.8.11\n"
 
-#: src/extension.js:333
+#: src/extension.js:332
 msgid ""
 "Openweathermap.org does not work without an api-key.\n"
 "Either set the switch to use the extensions default key in the preferences "
@@ -31,305 +31,311 @@ msgstr ""
 "регистрирайте на https://openweathermap.org/appid и поставете своя "
 "персонален ключ в конфигурацията."
 
-#: src/extension.js:472 src/extension.js:484
+#: src/extension.js:471 src/extension.js:483
 #, javascript-format
 msgid "Can not connect to %s"
 msgstr "Не може да се осъществи връзка с %s"
 
-#: src/extension.js:786 src/weather-settings.ui:302
+#: src/extension.js:785 src/preferences/locationsPage.js:39
+#: src/preferences/locationsPage.js:58
 msgid "Locations"
 msgstr "Местоположения"
 
-#: src/extension.js:790
+#: src/extension.js:786
 msgid "Reload Weather Information"
 msgstr "Опресни информацията"
 
-#: src/extension.js:794
+#: src/extension.js:787
 #, fuzzy
-msgid "Weather data by:"
+msgid "Weather data by: "
 msgstr "Информацията е предоставена от:"
 
-#: src/extension.js:797
+#: src/extension.js:789
 msgid "Weather Settings"
 msgstr "Настройки"
 
-#: src/extension.js:813
+#: src/extension.js:803
 msgid "Manual refreshes less than 2 minutes apart are ignored!"
 msgstr ""
 
-#: src/extension.js:827
+#: src/extension.js:817
 #, javascript-format
 msgid "Can not open %s"
 msgstr "%s не може да бъде отворен"
 
-#: src/extension.js:875 src/prefs.js:1077
+#: src/extension.js:865 src/preferences/locationsPage.js:509
 msgid "Invalid city"
 msgstr "Грешен град"
 
-#: src/extension.js:886
+#: src/extension.js:876
 msgid "Invalid location! Please try to recreate it."
 msgstr "Невалидно местоположение. Моля опитайте се да го въведете отново."
 
-#: src/extension.js:926 src/weather-settings.ui:574
+#: src/extension.js:922 src/preferences/generalPage.js:148
 msgid "°F"
 msgstr ""
 
-#: src/extension.js:928 src/weather-settings.ui:575
+#: src/extension.js:924 src/preferences/generalPage.js:149
 msgid "K"
 msgstr ""
 
-#: src/extension.js:930 src/weather-settings.ui:576
+#: src/extension.js:926 src/preferences/generalPage.js:150
 msgid "°Ra"
 msgstr ""
 
-#: src/extension.js:932 src/weather-settings.ui:577
+#: src/extension.js:928 src/preferences/generalPage.js:151
 msgid "°Ré"
 msgstr ""
 
-#: src/extension.js:934 src/weather-settings.ui:578
+#: src/extension.js:930 src/preferences/generalPage.js:152
 msgid "°Rø"
 msgstr ""
 
-#: src/extension.js:936 src/weather-settings.ui:579
+#: src/extension.js:932 src/preferences/generalPage.js:153
 msgid "°De"
 msgstr ""
 
-#: src/extension.js:938 src/weather-settings.ui:580
+#: src/extension.js:934 src/preferences/generalPage.js:154
 msgid "°N"
 msgstr ""
 
-#: src/extension.js:940 src/weather-settings.ui:573
+#: src/extension.js:936 src/preferences/generalPage.js:147
 msgid "°C"
 msgstr ""
 
-#: src/extension.js:977
+#: src/extension.js:973
 msgid "Calm"
 msgstr "спокойно"
 
-#: src/extension.js:980
+#: src/extension.js:976
 msgid "Light air"
 msgstr "Лек полъх"
 
-#: src/extension.js:983
+#: src/extension.js:979
 msgid "Light breeze"
 msgstr "Лек бриз"
 
-#: src/extension.js:986
+#: src/extension.js:982
 msgid "Gentle breeze"
 msgstr "Light breeze"
 
-#: src/extension.js:989
+#: src/extension.js:985
 msgid "Moderate breeze"
 msgstr "Умерен бриз"
 
-#: src/extension.js:992
+#: src/extension.js:988
 #, fuzzy
 msgid "Fresh breeze"
 msgstr "Бриз"
 
-#: src/extension.js:995
+#: src/extension.js:991
 msgid "Strong breeze"
 msgstr "Силен бриз"
 
-#: src/extension.js:998
+#: src/extension.js:994
 msgid "Moderate gale"
 msgstr "Умерен вихър"
 
-#: src/extension.js:1001
+#: src/extension.js:997
 #, fuzzy
 msgid "Fresh gale"
 msgstr "Вихър"
 
-#: src/extension.js:1004
+#: src/extension.js:1000
 msgid "Strong gale"
 msgstr "Силен вихър"
 
-#: src/extension.js:1007
+#: src/extension.js:1003
 msgid "Storm"
 msgstr "Буря"
 
-#: src/extension.js:1010
+#: src/extension.js:1006
 msgid "Violent storm"
 msgstr "Силна буря"
 
-#: src/extension.js:1013
+#: src/extension.js:1009
 msgid "Hurricane"
 msgstr "Ураган"
 
-#: src/extension.js:1017
+#: src/extension.js:1013
 msgid "Sunday"
 msgstr "Неделя"
 
-#: src/extension.js:1017
+#: src/extension.js:1013
 msgid "Monday"
 msgstr "Понеделник"
 
-#: src/extension.js:1017
+#: src/extension.js:1013
 msgid "Tuesday"
 msgstr "Вторник"
 
-#: src/extension.js:1017
+#: src/extension.js:1013
 msgid "Wednesday"
 msgstr "Сряда"
 
-#: src/extension.js:1017
+#: src/extension.js:1013
 msgid "Thursday"
 msgstr "Четвъртък"
 
-#: src/extension.js:1017
+#: src/extension.js:1013
 msgid "Friday"
 msgstr "Петък"
 
-#: src/extension.js:1017
+#: src/extension.js:1013
 msgid "Saturday"
 msgstr "Събота"
 
-#: src/extension.js:1023
+#: src/extension.js:1019
 msgid "N"
 msgstr "С"
 
-#: src/extension.js:1023
+#: src/extension.js:1019
 msgid "NE"
 msgstr "СИ"
 
-#: src/extension.js:1023
+#: src/extension.js:1019
 msgid "E"
 msgstr "И"
 
-#: src/extension.js:1023
+#: src/extension.js:1019
 msgid "SE"
 msgstr "ЮИ"
 
-#: src/extension.js:1023
+#: src/extension.js:1019
 msgid "S"
 msgstr "Ю"
 
-#: src/extension.js:1023
+#: src/extension.js:1019
 msgid "SW"
 msgstr "ЮЗ"
 
-#: src/extension.js:1023
+#: src/extension.js:1019
 msgid "W"
 msgstr "З"
 
-#: src/extension.js:1023
+#: src/extension.js:1019
 msgid "NW"
 msgstr "СЗ"
 
-#: src/extension.js:1076 src/extension.js:1085 src/weather-settings.ui:607
+#: src/extension.js:1072 src/extension.js:1081
+#: src/preferences/generalPage.js:177
 msgid "hPa"
 msgstr ""
 
-#: src/extension.js:1080 src/weather-settings.ui:608
+#: src/extension.js:1076 src/preferences/generalPage.js:178
 msgid "inHg"
 msgstr ""
 
-#: src/extension.js:1090 src/weather-settings.ui:609
+#: src/extension.js:1086 src/preferences/generalPage.js:179
 msgid "bar"
 msgstr ""
 
-#: src/extension.js:1095 src/weather-settings.ui:610
+#: src/extension.js:1091 src/preferences/generalPage.js:180
 msgid "Pa"
 msgstr ""
 
-#: src/extension.js:1100 src/weather-settings.ui:611
+#: src/extension.js:1096 src/preferences/generalPage.js:181
 msgid "kPa"
 msgstr ""
 
-#: src/extension.js:1105 src/weather-settings.ui:612
+#: src/extension.js:1101 src/preferences/generalPage.js:182
 msgid "atm"
 msgstr ""
 
-#: src/extension.js:1110 src/weather-settings.ui:613
+#: src/extension.js:1106 src/preferences/generalPage.js:183
 msgid "at"
 msgstr ""
 
-#: src/extension.js:1115 src/weather-settings.ui:614
+#: src/extension.js:1111 src/preferences/generalPage.js:184
 msgid "Torr"
 msgstr ""
 
-#: src/extension.js:1120 src/weather-settings.ui:615
+#: src/extension.js:1116 src/preferences/generalPage.js:185
 msgid "psi"
 msgstr ""
 
-#: src/extension.js:1125 src/weather-settings.ui:616
+#: src/extension.js:1121 src/preferences/generalPage.js:186
 msgid "mmHg"
 msgstr ""
 
-#: src/extension.js:1130 src/weather-settings.ui:617
+#: src/extension.js:1126 src/preferences/generalPage.js:187
 msgid "mbar"
 msgstr ""
 
-#: src/extension.js:1174 src/weather-settings.ui:593
+#: src/extension.js:1170 src/preferences/generalPage.js:165
 msgid "m/s"
 msgstr ""
 
-#: src/extension.js:1178 src/weather-settings.ui:592
+#: src/extension.js:1174 src/preferences/generalPage.js:164
 msgid "mph"
 msgstr ""
 
-#: src/extension.js:1183 src/weather-settings.ui:591
+#: src/extension.js:1179 src/preferences/generalPage.js:163
 msgid "km/h"
 msgstr ""
 
-#: src/extension.js:1192 src/weather-settings.ui:594
+#: src/extension.js:1188 src/preferences/generalPage.js:166
 msgid "kn"
 msgstr ""
 
-#: src/extension.js:1197 src/weather-settings.ui:595
+#: src/extension.js:1193 src/preferences/generalPage.js:167
 msgid "ft/s"
 msgstr ""
 
-#: src/extension.js:1251 src/extension.js:1289
+#: src/extension.js:1247 src/extension.js:1285
 msgid "Loading ..."
 msgstr "Зареждане..."
 
-#: src/extension.js:1293
+#: src/extension.js:1289
 msgid "Please wait"
 msgstr "Моля изчакайте"
 
-#: src/extension.js:1364
+#: src/extension.js:1360
 msgid "Feels Like:"
 msgstr ""
 
-#: src/extension.js:1368
+#: src/extension.js:1364
 msgid "Humidity:"
 msgstr "Влажност"
 
-#: src/extension.js:1372
+#: src/extension.js:1368
 msgid "Pressure:"
 msgstr "Налягане"
 
-#: src/extension.js:1376
+#: src/extension.js:1372
 msgid "Wind:"
 msgstr "Вятър"
 
-#: src/extension.js:1380
+#: src/extension.js:1376
 msgid "Gusts:"
 msgstr ""
 
-#: src/extension.js:1511
+#: src/extension.js:1507
 msgid "Tomorrow's Forecast"
 msgstr ""
 
-#: src/extension.js:1513
+#: src/extension.js:1509
 msgid "Day Forecast"
 msgstr ""
 
 #: src/openweathermap_org.js:130
-msgid "Thunderstorm with light rain"
+#, fuzzy
+msgid "Thunderstorm with Light Rain"
 msgstr "лек дъжд с гръмотевици"
 
 #: src/openweathermap_org.js:132
-msgid "Thunderstorm with rain"
+#, fuzzy
+msgid "Thunderstorm with Rain"
 msgstr "дъжд с гръмотевици"
 
 #: src/openweathermap_org.js:134
-msgid "Thunderstorm with heavy rain"
+#, fuzzy
+msgid "Thunderstorm with Heavy Rain"
 msgstr "проливен дъжд с гръмотевици"
 
 #: src/openweathermap_org.js:136
-msgid "Light thunderstorm"
+#, fuzzy
+msgid "Light Thunderstorm"
 msgstr "слаба гръмотевична буря"
 
 #: src/openweathermap_org.js:138
@@ -337,30 +343,34 @@ msgid "Thunderstorm"
 msgstr "гръмотевична буря"
 
 #: src/openweathermap_org.js:140
-msgid "Heavy thunderstorm"
+#, fuzzy
+msgid "Heavy Thunderstorm"
 msgstr "силна гръмотевична буря"
 
 #: src/openweathermap_org.js:142
 #, fuzzy
-msgid "Ragged thunderstorm"
+msgid "Ragged Thunderstorm"
 msgstr "гръмотевична буря"
 
 #: src/openweathermap_org.js:144
-msgid "Thunderstorm with light drizzle"
+#, fuzzy
+msgid "Thunderstorm with Light Drizzle"
 msgstr "гръмотевична буря с лек дъждец"
 
 #: src/openweathermap_org.js:146
-msgid "Thunderstorm with drizzle"
+#, fuzzy
+msgid "Thunderstorm with Drizzle"
 msgstr "гръмотевична буря със ситен дъжд"
 
 #: src/openweathermap_org.js:148
 #, fuzzy
-msgid "Thunderstorm with heavy drizzle"
+msgid "Thunderstorm with Heavy Drizzle"
 msgstr "гръмотевична буря със ситен дъжд"
 
 #: src/openweathermap_org.js:150
-msgid "Light intensity drizzle"
-msgstr "лек ситен дъжд"
+#, fuzzy
+msgid "Light Drizzle"
+msgstr "Лек бриз"
 
 #: src/openweathermap_org.js:152
 msgid "Drizzle"
@@ -368,86 +378,92 @@ msgstr "ситен дъжд"
 
 #: src/openweathermap_org.js:154
 #, fuzzy
-msgid "Heavy intensity drizzle"
-msgstr "силен ръмеж"
+msgid "Heavy Drizzle"
+msgstr "ситен дъжд"
 
 #: src/openweathermap_org.js:156
 #, fuzzy
-msgid "Light intensity drizzle rain"
-msgstr "лек ръмеж"
+msgid "Light Drizzle Rain"
+msgstr "ситен дъжд"
 
 #: src/openweathermap_org.js:158
 #, fuzzy
-msgid "Drizzle rain"
+msgid "Drizzle Rain"
 msgstr "ситен дъжд"
 
 #: src/openweathermap_org.js:160
 #, fuzzy
-msgid "Heavy intensity drizzle rain"
-msgstr "силен ръмеж"
+msgid "Heavy Drizzle Rain"
+msgstr "ситен дъжд"
 
 #: src/openweathermap_org.js:162
 #, fuzzy
-msgid "Shower rain and drizzle"
+msgid "Shower Rain and Drizzle"
 msgstr "дъжд"
 
 #: src/openweathermap_org.js:164
 #, fuzzy
-msgid "Heavy shower rain and drizzle"
+msgid "Heavy Rain and Drizzle"
 msgstr "силен дъжд"
 
 #: src/openweathermap_org.js:166
 #, fuzzy
-msgid "Shower drizzle"
+msgid "Shower Drizzle"
 msgstr "силен ръмеж"
 
 #: src/openweathermap_org.js:168
-msgid "Light rain"
+#, fuzzy
+msgid "Light Rain"
 msgstr "лек дъжд"
 
 #: src/openweathermap_org.js:170
-msgid "Moderate rain"
+#, fuzzy
+msgid "Moderate Rain"
 msgstr "умерен валеж"
 
 #: src/openweathermap_org.js:172
-msgid "Heavy intensity rain"
-msgstr "силен дъжд"
+#, fuzzy
+msgid "Heavy Rain"
+msgstr "силен снеговалеж"
 
 #: src/openweathermap_org.js:174
-msgid "Very heavy rain"
+#, fuzzy
+msgid "Very Heavy Rain"
 msgstr "много силен дъжд"
 
 #: src/openweathermap_org.js:176
-msgid "Extreme rain"
+#, fuzzy
+msgid "Extreme Rain"
 msgstr "много силен дъжд"
 
 #: src/openweathermap_org.js:178
 #, fuzzy
-msgid "Freezing rain"
+msgid "Freezing Rain"
 msgstr "леден дъжд"
 
 #: src/openweathermap_org.js:180
 #, fuzzy
-msgid "Light intensity shower rain"
-msgstr "слаб дъжд"
+msgid "Light Shower Rain"
+msgstr "лек снеговалеж"
 
 #: src/openweathermap_org.js:182
 #, fuzzy
-msgid "Shower rain"
+msgid "Shower Rain"
 msgstr "дъжд"
 
 #: src/openweathermap_org.js:184
 #, fuzzy
-msgid "Heavy intensity shower rain"
-msgstr "силен дъжд"
+msgid "Heavy Shower Rain"
+msgstr "силен снеговалеж"
 
 #: src/openweathermap_org.js:186
 #, fuzzy
-msgid "Ragged shower rain"
+msgid "Ragged Shower Rain"
 msgstr "дъжд"
 
 #: src/openweathermap_org.js:188
-msgid "Light snow"
+#, fuzzy
+msgid "Light Snow"
 msgstr "лек снеговалеж"
 
 #: src/openweathermap_org.js:190
@@ -455,7 +471,8 @@ msgid "Snow"
 msgstr "снеговалеж"
 
 #: src/openweathermap_org.js:192
-msgid "Heavy snow"
+#, fuzzy
+msgid "Heavy Snow"
 msgstr "силен снеговалеж"
 
 #: src/openweathermap_org.js:194
@@ -464,418 +481,609 @@ msgstr "суграшица"
 
 #: src/openweathermap_org.js:196
 #, fuzzy
-msgid "Shower sleet"
+msgid "Light Shower Sleet"
 msgstr "суграшица"
 
 #: src/openweathermap_org.js:198
-msgid "Light rain and snow"
-msgstr "слаба  суграшица"
+#, fuzzy
+msgid "Shower Sleet"
+msgstr "суграшица"
 
 #: src/openweathermap_org.js:200
-msgid "Rain and snow"
-msgstr "суграшица"
+#, fuzzy
+msgid "Light Rain and Snow"
+msgstr "слаба  суграшица"
 
 #: src/openweathermap_org.js:202
 #, fuzzy
-msgid "Light shower snow"
-msgstr "лек снеговалеж"
+msgid "Rain and Snow"
+msgstr "суграшица"
 
 #: src/openweathermap_org.js:204
 #, fuzzy
-msgid "Shower snow"
-msgstr "снеговалеж"
+msgid "Light Shower Snow"
+msgstr "лек снеговалеж"
 
 #: src/openweathermap_org.js:206
 #, fuzzy
-msgid "Heavy shower snow"
-msgstr "силен снеговалеж"
+msgid "Shower Snow"
+msgstr "снеговалеж"
 
 #: src/openweathermap_org.js:208
+#, fuzzy
+msgid "Heavy Shower Snow"
+msgstr "силен снеговалеж"
+
+#: src/openweathermap_org.js:210
 msgid "Mist"
 msgstr "мъгла"
 
-#: src/openweathermap_org.js:210
+#: src/openweathermap_org.js:212
 msgid "Smoke"
 msgstr "дим"
 
-#: src/openweathermap_org.js:212
+#: src/openweathermap_org.js:214
 msgid "Haze"
 msgstr "мараня"
 
-#: src/openweathermap_org.js:214
+#: src/openweathermap_org.js:216
 msgid "Sand/Dust Whirls"
 msgstr "пясъчни завихряния"
 
-#: src/openweathermap_org.js:216
+#: src/openweathermap_org.js:218
 msgid "Fog"
 msgstr "мъгла"
 
-#: src/openweathermap_org.js:218
+#: src/openweathermap_org.js:220
 msgid "Sand"
 msgstr "пясък"
 
-#: src/openweathermap_org.js:220
+#: src/openweathermap_org.js:222
 msgid "Dust"
 msgstr "прах"
 
-#: src/openweathermap_org.js:222
-msgid "VOLCANIC ASH"
-msgstr "вулканична пепел"
-
 #: src/openweathermap_org.js:224
-msgid "SQUALLS"
-msgstr "вихрушки"
+msgid "Volcanic Ash"
+msgstr ""
 
 #: src/openweathermap_org.js:226
-msgid "TORNADO"
-msgstr "торнадо"
+msgid "Squalls"
+msgstr ""
 
 #: src/openweathermap_org.js:228
-msgid "Sky is clear"
-msgstr "безоблачно"
+msgid "Tornado"
+msgstr ""
 
 #: src/openweathermap_org.js:230
-msgid "Few clouds"
-msgstr "слаба облачност"
+#, fuzzy
+msgid "Clear Sky"
+msgstr "Изчисти записа"
 
 #: src/openweathermap_org.js:232
-msgid "Scattered clouds"
-msgstr "разкъсана облачност"
+#, fuzzy
+msgid "Few Clouds"
+msgstr "слаба облачност"
 
 #: src/openweathermap_org.js:234
-msgid "Broken clouds"
+#, fuzzy
+msgid "Scattered Clouds"
 msgstr "разкъсана облачност"
 
 #: src/openweathermap_org.js:236
-msgid "Overcast clouds"
-msgstr "заоблачено"
+#, fuzzy
+msgid "Broken Clouds"
+msgstr "разкъсана облачност"
 
 #: src/openweathermap_org.js:238
+#, fuzzy
+msgid "Overcast Clouds"
+msgstr "заоблачено"
+
+#: src/openweathermap_org.js:240
 msgid "Not available"
 msgstr "Не е налично"
 
-#: src/openweathermap_org.js:425
+#: src/openweathermap_org.js:432
 msgid "Yesterday"
 msgstr "Вчера"
 
-#: src/openweathermap_org.js:427
+#: src/openweathermap_org.js:434
 #, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
 msgstr[0] "Преди %d ден"
 msgstr[1] "Преди %d дни"
 
-#: src/openweathermap_org.js:442 src/openweathermap_org.js:444
+#: src/openweathermap_org.js:449 src/openweathermap_org.js:451
 msgid ", "
 msgstr ""
 
-#: src/openweathermap_org.js:460
+#: src/openweathermap_org.js:467
 msgid "?"
 msgstr ""
 
-#: src/openweathermap_org.js:527
+#: src/openweathermap_org.js:536
 msgid "Tomorrow"
 msgstr "Утре"
 
-#: src/prefs.js:189
+#: src/preferences/generalPage.js:31
 #, fuzzy
-msgid "Searching ..."
-msgstr "Зареждане..."
+msgid "Settings"
+msgstr "Настройки"
 
-#: src/prefs.js:201 src/prefs.js:239 src/prefs.js:270 src/prefs.js:274
-#, javascript-format
-msgid "Invalid data when searching for \"%s\""
+#: src/preferences/generalPage.js:39
+msgid "General"
 msgstr ""
 
-#: src/prefs.js:206 src/prefs.js:246 src/prefs.js:277
-#, fuzzy, javascript-format
-msgid "\"%s\" not found"
-msgstr "\"%s\" не е намерена"
-
-#: src/prefs.js:224
-#, fuzzy
-msgid "You need an AppKey to search on openmapquest."
-msgstr "Личен API код от developer.mapquest.com"
-
-#: src/prefs.js:225
-#, fuzzy
-msgid "Please visit https://developer.mapquest.com/ ."
-msgstr "Личен API код от developer.mapquest.com"
-
-#: src/prefs.js:240
-#, fuzzy
-msgid "Do you use a valid AppKey to search on openmapquest ?"
-msgstr "Личен API код от developer.mapquest.com"
-
-#: src/prefs.js:241
-#, fuzzy
-msgid "If not, please visit https://developer.mapquest.com/ ."
-msgstr "Личен API код от developer.mapquest.com"
-
-#: src/prefs.js:323
-msgid "Location"
-msgstr "Местоположение"
-
-#: src/prefs.js:334
-msgid "Provider"
-msgstr "Доставчик на услугата"
-
-#: src/prefs.js:344
-msgid "Result"
+#: src/preferences/generalPage.js:57
+msgid "Current Weather Refresh"
 msgstr ""
 
-#: src/prefs.js:553
-#, javascript-format
-msgid "Remove %s ?"
-msgstr "Да се премахне ли %s ?"
-
-#: src/prefs.js:566
-#, fuzzy
-msgid "No"
-msgstr "С"
-
-#: src/prefs.js:567
-msgid "Yes"
+#: src/preferences/generalPage.js:58
+msgid "Current weather refresh interval in minutes"
 msgstr ""
 
-#: src/prefs.js:1110
-msgid "default"
-msgstr "по подразбиране"
+#: src/preferences/generalPage.js:80
+#, fuzzy
+msgid "Weather Forecast Refresh"
+msgstr "Прогнозата да се показва в центъра"
 
-#: src/weather-settings.ui:29
-msgid "Edit name"
-msgstr "Промени името"
-
-#: src/weather-settings.ui:40 src/weather-settings.ui:56
-#: src/weather-settings.ui:183
-msgid "Clear entry"
-msgstr "Изчисти записа"
-
-#: src/weather-settings.ui:47
-msgid "Edit coordinates"
-msgstr "Промени координатите"
-
-#: src/weather-settings.ui:80 src/weather-settings.ui:216
-msgid "Cancel"
-msgstr "Отказ"
-
-#: src/weather-settings.ui:90 src/weather-settings.ui:226
-msgid "Save"
-msgstr "Запиши"
-
-#: src/weather-settings.ui:124
-msgid "Search Results"
+#: src/preferences/generalPage.js:81
+msgid "Forecast refresh interval in minutes if enabled"
 msgstr ""
 
-#: src/weather-settings.ui:161
-#, fuzzy
-msgid "Search By Location Or Coordinates"
-msgstr "Търси по местоположение или координати"
-
-#: src/weather-settings.ui:184
-msgid "e.g. Vaiaku, Tuvalu or -8.5211767,179.1976747"
-msgstr "например Vaiaku, Tuvalu or -8.5211767,179.1976747"
-
-#: src/weather-settings.ui:189
-msgid "Find"
-msgstr "Намери"
-
-#: src/weather-settings.ui:328
-#, fuzzy
-msgid "Choose default weather provider"
-msgstr "Избери доставчик по подразбиране за метеорологична информация"
-
-#: src/weather-settings.ui:339
-msgid "Personal Api key from openweathermap.org"
-msgstr "Личен API код от openweathermap.org"
-
-#: src/weather-settings.ui:371
-msgid "Refresh timeout for current weather [min]"
+#: src/preferences/generalPage.js:92
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:104
+msgid "Disable Forecast"
 msgstr ""
 
-#: src/weather-settings.ui:383
-#, fuzzy
-msgid "Refresh timeout for weather forecast [min]"
-msgstr "Интервал на опресняване (прогноза)"
+#: src/preferences/generalPage.js:93
+msgid "Disables all fetching and processing of forecast data"
+msgstr ""
 
-#: src/weather-settings.ui:428
+#: src/preferences/generalPage.js:104
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:92
 #, fuzzy
-msgid "Use extensions api-key for openweathermap.org"
-msgstr "Личен API код от openweather.org"
+msgid "System Icons"
+msgstr "Символни икони"
 
-#: src/weather-settings.ui:437
+#: src/preferences/generalPage.js:105
+msgid "Disable to use packaged Adwaita weather icons"
+msgstr ""
+
+#: src/preferences/generalPage.js:106
 msgid ""
-"Switch off, if you have your own api-key for openweathermap.org and put it "
-"into the text-box below."
+"If you have issues with your system icons displaying correctly disable this "
+"to fix it"
 msgstr ""
 
-#: src/weather-settings.ui:451
-msgid "Weather provider"
-msgstr "Доставчик на метеорологична информация"
-
-#: src/weather-settings.ui:475
-#, fuzzy
-msgid "Choose geolocation provider"
-msgstr "Изберете доставчик на гео-локационна информация"
-
-#: src/weather-settings.ui:497
-msgid "Personal AppKey from developer.mapquest.com"
-msgstr "Личен API код от developer.mapquest.com"
-
-#: src/weather-settings.ui:521
-msgid "Geolocation provider"
-msgstr "Доставчик на гео-локационна информация"
-
-#: src/weather-settings.ui:545
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:62
-msgid "Temperature Unit"
-msgstr "Мерна единица за температура"
-
-#: src/weather-settings.ui:554
-msgid "Wind Speed Unit"
-msgstr "Мерна единица за скорост на вятъра"
-
-#: src/weather-settings.ui:563
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:66
-msgid "Pressure Unit"
-msgstr "Мерна единица за налягане"
-
-#: src/weather-settings.ui:596
-msgid "Beaufort"
+#: src/preferences/generalPage.js:126
+msgid "First Boot Delay"
 msgstr ""
 
-#: src/weather-settings.ui:631
+#: src/preferences/generalPage.js:127
+msgid "Seconds to delay popup initialization and data fetching"
+msgstr ""
+
+#: src/preferences/generalPage.js:128
+msgid ""
+"This setting only applies to the first time the extension is loaded. (first "
+"log in / restarting gnome shell)"
+msgstr ""
+
+#: src/preferences/generalPage.js:142
 msgid "Units"
 msgstr "Мерни единици"
 
-#: src/weather-settings.ui:655
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:116
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:120
-msgid "Position in Panel"
-msgstr "Позиция в панела"
+#: src/preferences/generalPage.js:156
+#, fuzzy
+msgid "Temperature"
+msgstr "Мерна единица за температура"
 
-#: src/weather-settings.ui:664
-msgid "Position of menu-box [%] from 0 (left) to 100 (right)"
+#: src/preferences/generalPage.js:168
+msgid "Beaufort"
 msgstr ""
 
-#: src/weather-settings.ui:673
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:75
-msgid "Wind Direction by Arrows"
+#: src/preferences/generalPage.js:170
+#, fuzzy
+msgid "Wind Speed"
+msgstr "Мерна единица за скорост на вятъра"
+
+#: src/preferences/generalPage.js:189
+#, fuzzy
+msgid "Pressure"
+msgstr "Налягане"
+
+#: src/preferences/generalPage.js:201 src/preferences/locationsPage.js:66
+msgid "Provider"
+msgstr "Доставчик на услугата"
+
+#: src/preferences/generalPage.js:211
+msgid "Use Extensions API Key"
+msgstr ""
+
+#: src/preferences/generalPage.js:212
+#, fuzzy
+msgid "Use the built-in API key for OpenWeatherMap"
+msgstr "Използвай API кода по подразбиране от openweathermap.org"
+
+#: src/preferences/generalPage.js:213
+#, fuzzy
+msgid ""
+"Disable this if you have your own API key from openweathermap.org and enter "
+"it below."
+msgstr "Използвай API кода по подразбиране от openweathermap.org"
+
+#: src/preferences/generalPage.js:227
+msgid "Personal API Key"
+msgstr ""
+
+#: src/preferences/layoutPage.js:31
+msgid "Layout"
+msgstr ""
+
+#: src/preferences/layoutPage.js:39
+msgid "Panel"
+msgstr ""
+
+#: src/preferences/layoutPage.js:44
+msgid "Center"
+msgstr "Центрирано"
+
+#: src/preferences/layoutPage.js:45
+msgid "Right"
+msgstr "В дясно"
+
+#: src/preferences/layoutPage.js:46
+msgid "Left"
+msgstr "В ляво"
+
+#: src/preferences/layoutPage.js:48
+#, fuzzy
+msgid "Position In Panel"
+msgstr "Позиция в панела"
+
+#: src/preferences/layoutPage.js:69
+#, fuzzy
+msgid "Position Offset"
+msgstr "Позиция в панела"
+
+#: src/preferences/layoutPage.js:70
+msgid "The position relative to other items in the box"
+msgstr ""
+
+#: src/preferences/layoutPage.js:78
+#, fuzzy
+msgid "Show the temperature in the panel"
+msgstr "Показвай температурата в панела"
+
+#: src/preferences/layoutPage.js:82
+#, fuzzy
+msgid "Temperature In Panel"
+msgstr "Показвай температурата в панела"
+
+#: src/preferences/layoutPage.js:90
+msgid "Show the weather conditions in the panel"
+msgstr ""
+
+#: src/preferences/layoutPage.js:94
+#, fuzzy
+msgid "Conditions In Panel"
+msgstr "Информация за времето в панела"
+
+#: src/preferences/layoutPage.js:107
+msgid "Popup"
+msgstr ""
+
+#: src/preferences/layoutPage.js:125
+msgid "Popup Position"
+msgstr ""
+
+#: src/preferences/layoutPage.js:126
+msgid "Alignment of the popup from left to right"
+msgstr ""
+
+#: src/preferences/layoutPage.js:137
+#, fuzzy
+msgid "Wind Direction Arrows"
 msgstr "Посока на вятъра със стрелки"
 
-#: src/weather-settings.ui:682
+#: src/preferences/layoutPage.js:148
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:88
 msgid "Translate Conditions"
 msgstr "Превеждай информацията за времето"
 
-#: src/weather-settings.ui:691
+#: src/preferences/layoutPage.js:155
+msgid "0"
+msgstr ""
+
+#: src/preferences/layoutPage.js:156 src/preferences/layoutPage.js:226
+msgid "1"
+msgstr ""
+
+#: src/preferences/layoutPage.js:157 src/preferences/layoutPage.js:227
+msgid "2"
+msgstr ""
+
+#: src/preferences/layoutPage.js:158 src/preferences/layoutPage.js:228
+msgid "3"
+msgstr ""
+
+#: src/preferences/layoutPage.js:160
 #, fuzzy
-msgid "Use System Icon Theme"
-msgstr "Символни икони"
-
-#: src/weather-settings.ui:700
-msgid "Text on buttons"
-msgstr "Текст на бутоните"
-
-#: src/weather-settings.ui:709
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:100
-msgid "Temperature in Panel"
+msgid "Temperature Decimal Places"
 msgstr "Показвай температурата в панела"
 
-#: src/weather-settings.ui:718
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:104
-msgid "Conditions in Panel"
-msgstr "Информация за времето в панела"
-
-#: src/weather-settings.ui:727
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:108
-msgid "Disable Forecast"
-msgstr ""
-
-#: src/weather-settings.ui:736
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:112
-msgid "Conditions in Forecast"
-msgstr ""
-
-#: src/weather-settings.ui:745
-msgid "Center forecast"
-msgstr "Прогнозата да се показва в центъра"
-
-#: src/weather-settings.ui:754
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:144
-msgid "Number of days in forecast"
-msgstr "Брой дни в прогнозата"
-
-#: src/weather-settings.ui:763
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:148
-msgid "Maximal number of digits after the decimal point"
+#: src/preferences/layoutPage.js:161
+#, fuzzy
+msgid "Maximum number of digits after the decimal point"
 msgstr "Брой знаци след десетичната точка"
 
-#: src/weather-settings.ui:777
-msgid "Center"
-msgstr "Центрирано"
-
-#: src/weather-settings.ui:778
-msgid "Right"
-msgstr "В дясно"
-
-#: src/weather-settings.ui:779
-msgid "Left"
-msgstr "В ляво"
-
-#: src/weather-settings.ui:926
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:132
-msgid "Maximal length of the location text"
+#: src/preferences/layoutPage.js:181
+msgid "Location Text Length"
 msgstr ""
 
-#: src/weather-settings.ui:950
-msgid "Layout"
+#: src/preferences/layoutPage.js:182
+msgid "Maximum length of the location text. A setting of '0' is unlimited"
 msgstr ""
 
-#: src/weather-settings.ui:985
+#: src/preferences/layoutPage.js:198
 #, fuzzy
-msgid "Git Version: "
-msgstr "Версия:"
+msgid "Forecast"
+msgstr "Прогнозата да се показва в центъра"
 
-#: src/weather-settings.ui:1004
-msgid "Version: "
-msgstr "Версия:"
-
-#: src/weather-settings.ui:1018
-msgid ""
-"<span>Display weather information for any location on Earth in the GNOME "
-"Shell</span>"
-msgstr ""
-
-#: src/weather-settings.ui:1032
-msgid ""
-"Weather data provided by: <a href=\"https://openweathermap.org/"
-"\">OpenWeatherMap</a>"
-msgstr ""
-
-#: src/weather-settings.ui:1045
+#: src/preferences/layoutPage.js:208
 #, fuzzy
-msgid "Maintained by:"
-msgstr "Поддържа се от"
+msgid "Center Today's Forecast"
+msgstr "Прогнозата да се показва в центъра"
 
-#: src/weather-settings.ui:1080
-msgid ""
-"<span size=\"small\">This program comes with ABSOLUTELY NO WARRANTY.\n"
-"See the <a href=\"https://www.gnu.org/licenses/old-licenses/gpl-2.0."
-"html\">GNU General Public License, version 2 or later</a> for details.</span>"
+#: src/preferences/layoutPage.js:219
+#, fuzzy
+msgid "Conditions In Forecast"
+msgstr "Информация за времето в панела"
+
+#: src/preferences/layoutPage.js:229
+msgid "4"
 msgstr ""
 
-#: src/weather-settings.ui:1091
+#: src/preferences/layoutPage.js:230
+msgid "5"
+msgstr ""
+
+#: src/preferences/layoutPage.js:232
+#, fuzzy
+msgid "Total Days In Forecast"
+msgstr "Брой дни в прогнозата"
+
+#: src/preferences/layoutPage.js:243
+msgid "Keep Forecast Expanded"
+msgstr ""
+
+#: src/preferences/locationsPage.js:54
+msgid "Add"
+msgstr ""
+
+#: src/preferences/locationsPage.js:73
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:58
+msgid "Geolocation Provider"
+msgstr "Доставчик на гео-локационна информация"
+
+#: src/preferences/locationsPage.js:74
+msgid "Provider used for location search"
+msgstr ""
+
+#: src/preferences/locationsPage.js:87
+msgid "Personal MapQuest Key"
+msgstr ""
+
+#: src/preferences/locationsPage.js:88
+#, fuzzy
+msgid "Personal API Key from developer.mapquest.com"
+msgstr "Личен API код от developer.mapquest.com"
+
+#: src/preferences/locationsPage.js:208
+#, javascript-format
+msgid "Location changed to: %s"
+msgstr ""
+
+#: src/preferences/locationsPage.js:223
+#, fuzzy
+msgid "Add New Location"
+msgstr "Местоположение"
+
+#: src/preferences/locationsPage.js:244
+#, fuzzy
+msgid "Search by Location or Coordinates"
+msgstr "Търси по местоположение или координати"
+
+#: src/preferences/locationsPage.js:250
+msgid "e.g. Vaiaku, Tuvalu or -8.5211767,179.1976747"
+msgstr "например Vaiaku, Tuvalu or -8.5211767,179.1976747"
+
+#: src/preferences/locationsPage.js:252 src/preferences/locationsPage.js:337
+#: src/preferences/locationsPage.js:354
+msgid "Clear entry"
+msgstr "Изчисти записа"
+
+#: src/preferences/locationsPage.js:261
+#, fuzzy
+msgid "Search"
+msgstr "Зареждане..."
+
+#: src/preferences/locationsPage.js:284
+msgid "We need something to search for!"
+msgstr ""
+
+#: src/preferences/locationsPage.js:307
+#, fuzzy, javascript-format
+msgid "Edit %s"
+msgstr "Промени името"
+
+#: src/preferences/locationsPage.js:329
+#, fuzzy
+msgid "Edit Name"
+msgstr "Промени името"
+
+#: src/preferences/locationsPage.js:345
+#, fuzzy
+msgid "Edit Coordinates"
+msgstr "Промени координатите"
+
+#: src/preferences/locationsPage.js:363
+msgid "Save"
+msgstr "Запиши"
+
+#: src/preferences/locationsPage.js:396
+msgid "Please complete all fields"
+msgstr ""
+
+#: src/preferences/locationsPage.js:412
+#, javascript-format
+msgid "%s has been updated"
+msgstr ""
+
+#: src/preferences/locationsPage.js:441
+#, javascript-format
+msgid "Are you sure you want to delete \"%s\"?"
+msgstr ""
+
+#: src/preferences/locationsPage.js:449
+msgid "Delete"
+msgstr ""
+
+#: src/preferences/locationsPage.js:453
+msgid "Cancel"
+msgstr "Отказ"
+
+#: src/preferences/locationsPage.js:485
+#, javascript-format
+msgid "%s has been deleted"
+msgstr ""
+
+#: src/preferences/locationsPage.js:531
+msgid "Search Results"
+msgstr ""
+
+#: src/preferences/locationsPage.js:547
+msgid "New Search"
+msgstr ""
+
+#: src/preferences/locationsPage.js:554
+#, fuzzy
+msgid "Searching ..."
+msgstr "Зареждане..."
+
+#: src/preferences/locationsPage.js:555
+#, javascript-format
+msgid "Please wait while searching for locations matching \"%s\""
+msgstr ""
+
+#: src/preferences/locationsPage.js:607
+msgid "AppKey Required"
+msgstr ""
+
+#: src/preferences/locationsPage.js:608
+#, fuzzy, javascript-format
+msgid "You need an AppKey to use MapQuest, get one at: %s"
+msgstr "Личен API код от developer.mapquest.com"
+
+#: src/preferences/locationsPage.js:705
+#, javascript-format
+msgid "Results for \"%s\""
+msgstr ""
+
+#: src/preferences/locationsPage.js:752
+#, javascript-format
+msgid "%s has been added"
+msgstr ""
+
+#: src/preferences/locationsPage.js:760
+msgid "API Error"
+msgstr ""
+
+#: src/preferences/locationsPage.js:761
+#, javascript-format
+msgid "Invalid data when searching for \"%s\"."
+msgstr ""
+
+#: src/preferences/locationsPage.js:764
+msgid "No Matches Found"
+msgstr ""
+
+#: src/preferences/locationsPage.js:765
+#, javascript-format
+msgid "No results found when searching for \"%s\"."
+msgstr ""
+
+#: src/preferences/aboutPage.js:31
 msgid "About"
 msgstr "Относно"
+
+#: src/preferences/aboutPage.js:58
+msgid ""
+"Display weather information for any location on Earth in the GNOME Shell"
+msgstr ""
+
+#: src/preferences/aboutPage.js:72
+msgid "unknown"
+msgstr ""
+
+#: src/preferences/aboutPage.js:78
+#, fuzzy
+msgid "OpenWeather Version"
+msgstr "Настройки"
+
+#: src/preferences/aboutPage.js:87
+#, fuzzy
+msgid "Git Version"
+msgstr "Версия:"
+
+#: src/preferences/aboutPage.js:95
+#, fuzzy
+msgid "GNOME Version"
+msgstr "Версия:"
+
+#: src/preferences/aboutPage.js:102
+msgid "Session Type"
+msgstr ""
+
+#: src/preferences/aboutPage.js:124
+#, fuzzy, javascript-format
+msgid "Maintained by: %s"
+msgstr "Поддържа се от"
+
+#: src/preferences/aboutPage.js:161
+#, fuzzy, javascript-format
+msgid "Weather data provided by: %s"
+msgstr "Информацията е предоставена от:"
+
+#: src/preferences/aboutPage.js:172
+msgid "This program comes with ABSOLUTELY NO WARRANTY."
+msgstr ""
+
+#: src/preferences/aboutPage.js:173
+msgid "See the"
+msgstr ""
+
+#: src/preferences/aboutPage.js:174
+msgid "GNU General Public License, version 2 or later"
+msgstr ""
+
+#: src/preferences/aboutPage.js:174
+msgid "for details."
+msgstr ""
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:54
 msgid "Weather Provider"
 msgstr "Доставчик на метеорологична информация"
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:58
-msgid "Geolocation Provider"
-msgstr "Доставчик на гео-локационна информация"
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:62
+msgid "Temperature Unit"
+msgstr "Мерна единица за температура"
+
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:66
+msgid "Pressure Unit"
+msgstr "Мерна единица за налягане"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:70
 msgid "Wind Speed Units"
@@ -889,6 +1097,10 @@ msgstr ""
 "Изберете мерната единица за скорост на вятъра. Позволените стойности са: "
 "'kph', 'mph', 'm/s', 'knots', 'ft/s' or 'Beaufort'."
 
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:75
+msgid "Wind Direction by Arrows"
+msgstr "Посока на вятъра със стрелки"
+
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:76
 msgid "Choose whether to display wind direction through arrows or letters."
 msgstr "Изберете да се показва ли посоката на вятъра със стрелки или букви"
@@ -901,30 +1113,54 @@ msgstr ""
 msgid "Actual City"
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:92
-#, fuzzy
-msgid "System Icons"
-msgstr "Символни икони"
-
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:96
-msgid "Use text on buttons in menu"
-msgstr "Показвай текст на бутоните в менюто"
+msgid "Temperature in Panel"
+msgstr "Показвай температурата в панела"
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:124
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:100
+msgid "Conditions in Panel"
+msgstr "Информация за времето в панела"
+
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:108
+msgid "Conditions in Forecast"
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:112
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:116
+msgid "Position in Panel"
+msgstr "Позиция в панела"
+
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:120
 msgid "Horizontal position of menu-box."
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:128
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:124
 msgid "Refresh interval (actual weather)"
 msgstr "Интервал на опресняване (метеорологична обстановка)"
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:136
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:128
+msgid "Maximal length of the location text"
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:132
 msgid "Refresh interval (forecast)"
 msgstr "Интервал на опресняване (прогноза)"
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:140
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:136
 msgid "Center forecastbox."
 msgstr "Прогнозата да се показва в центъра"
+
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:140
+msgid "Always keep forecast expanded"
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:144
+msgid "Number of days in forecast"
+msgstr "Брой дни в прогнозата"
+
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:148
+msgid "Maximal number of digits after the decimal point"
+msgstr "Брой знаци след десетичната точка"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:152
 msgid "Your personal API key from openweathermap.org"
@@ -938,38 +1174,14 @@ msgstr "Използвай API кода по подразбиране от openw
 msgid "Your personal AppKey from developer.mapquest.com"
 msgstr "Личен API код от developer.mapquest.com"
 
-#~ msgid "..."
-#~ msgstr "..."
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:164
+msgid "Seconds to delay popup initialization and data fetch on the first load"
+msgstr ""
 
-#~ msgid ""
-#~ "Dark Sky does not work without an api-key.\n"
-#~ "Please register at https://darksky.net/dev/register and paste your "
-#~ "personal key into the preferences dialog."
-#~ msgstr ""
-#~ "Dark Sky изисква API ключ.\n"
-#~ "Моля регистрирайте се на https://darksky.net/dev/register и поставете "
-#~ "своя персонален ключ в конфигурацията."
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:168
+msgid "Default width for the preferences window"
+msgstr ""
 
-#~ msgid "Cloudiness:"
-#~ msgstr "Облачност:"
-
-#~ msgid "Today"
-#~ msgstr "Днес"
-
-#, javascript-format
-#~ msgid "In %d day"
-#~ msgid_plural "In %d days"
-#~ msgstr[0] "До %d ден"
-#~ msgstr[1] "До %d дни"
-
-#~ msgid "Extensions default weather provider"
-#~ msgstr "Доставчик по подразбиране за метеорологична информация"
-
-#~ msgid "Personal Api key from Dark Sky"
-#~ msgstr "Личен API код от Dark Sky"
-
-#~ msgid "Webpage"
-#~ msgstr "Уеб страница"
-
-#~ msgid "Your personal API key from Dark Sky"
-#~ msgstr "Личен API код от Dark Sky"
+#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:172
+msgid "Default height for the preferences window"
+msgstr ""

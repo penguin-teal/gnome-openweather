@@ -3,9 +3,12 @@
 PKG_NAME = gnome-shell-extension-openweather
 UUID = openweather-extension@jenslody.de
 BASE_MODULES = metadata.json COPYING AUTHORS
-SRC_MODULES = extension.js openweathermap_org.js stylesheet.css prefs.js prefs.css weather-settings.ui
+SRC_MODULES = extension.js openweathermap_org.js prefs.js stylesheet.css
+PREFS_MODULES = generalPage.js layoutPage.js locationsPage.js aboutPage.js
 EXTRA_DIRECTORIES = media
-TOLOCALIZE = $(addprefix src/, extension.js openweathermap_org.js prefs.js weather-settings.ui) schemas/org.gnome.shell.extensions.openweather.gschema.xml
+TOLOCALIZE = $(addprefix src/, extension.js openweathermap_org.js prefs.js) \
+             $(addprefix src/preferences/, $(PREFS_MODULES)) \
+             schemas/org.gnome.shell.extensions.openweather.gschema.xml
 MSGSRC = $(wildcard po/*.po)
 
 # Packagers: Use DESTDIR for system wide installation
@@ -82,8 +85,9 @@ zip-file: _build
 
 _build: all
 	-rm -fR ./_build
-	mkdir -p _build
+	mkdir -p _build/preferences
 	cp $(BASE_MODULES) $(addprefix src/, $(SRC_MODULES)) _build
+	cp $(addprefix src/preferences/, $(PREFS_MODULES)) _build/preferences
 	cp -r $(EXTRA_DIRECTORIES) _build
 	mkdir -p _build/schemas
 	cp schemas/*.xml _build/schemas/
