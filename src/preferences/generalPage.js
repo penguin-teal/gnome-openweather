@@ -232,7 +232,7 @@ class OpenWeather_GeneralPage extends Adw.PreferencesPage {
             if (personalApiKey.length != 32) {
                 personalApiKeyEntry.set_icon_from_icon_name(Gtk.PositionType.LEFT, 'dialog-warning');
             } else {
-                ersonalApiKeyEntry.set_icon_from_icon_name(Gtk.PositionType.LEFT, '');
+                personalApiKeyEntry.set_icon_from_icon_name(Gtk.PositionType.LEFT, '');
             }
             personalApiKeyEntry.set_text(personalApiKey);
         }
