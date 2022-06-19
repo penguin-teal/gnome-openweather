@@ -167,14 +167,12 @@ class OpenweatherMenuButton extends PanelMenu.Button {
             icon_name: 'view-refresh-symbolic',
             style_class: 'system-status-icon openweather-icon'
         });
-        this.checkAlignment();
 
         let topBox = new St.BoxLayout();
         topBox.add_actor(this._weatherIcon);
         topBox.add_actor(this._weatherInfo);
         this.add_actor(topBox);
 
-        this.checkPositionInPanel();
         if (Main.panel._menus === undefined)
             Main.panel.menuManager.addMenu(this.menu);
         else
@@ -216,6 +214,7 @@ class OpenweatherMenuButton extends PanelMenu.Button {
     }
 
     initOpenWeatherUI() {
+        this.checkPositionInPanel();
         this._currentWeather = new PopupMenu.PopupBaseMenuItem({
             reactive: false
         });
@@ -247,6 +246,7 @@ class OpenweatherMenuButton extends PanelMenu.Button {
         this.menu.addMenuItem(new PopupMenu.PopupSeparatorMenuItem());
         this.menu.addMenuItem(this._buttonMenu);
         this.menu.addMenuItem(this._selectCity);
+        this.checkAlignment();
     }
 
     _onStatusChanged(status) {
