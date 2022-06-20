@@ -161,7 +161,8 @@ class OpenweatherMenuButton extends PanelMenu.Button {
 
         // Putting the panel item together
         this._weatherInfo = new St.Label({
-            y_align: Clutter.ActorAlign.CENTER
+            y_align: Clutter.ActorAlign.CENTER,
+            style_class: 'openweather-label'
         });
         this._weatherIcon = new St.Icon({
             icon_name: 'view-refresh-symbolic',
@@ -1253,7 +1254,7 @@ class OpenweatherMenuButton extends PanelMenu.Button {
         if (!this._disable_forecast)
             this._currentForecast.actor.destroy_all_children();
 
-        this._weatherInfo.text = (' ');
+        this._weatherInfo.text = ('...');
         this._weatherIcon.icon_name = 'view-refresh-symbolic';
 
         // This will hold the icon for the current weather

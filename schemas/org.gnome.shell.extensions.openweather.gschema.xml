@@ -160,7 +160,7 @@
       <summary>Your personal AppKey from developer.mapquest.com</summary>
     </key>
     <key type="i" name="delay-ext-init">
-      <default>8</default>
+      <default>4</default>
       <summary>Seconds to delay popup initialization and data fetch on the first load</summary>
     </key>
     <key type="i" name="prefs-default-width">

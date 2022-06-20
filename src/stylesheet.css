@@ -67,6 +67,10 @@
 	padding-left: 5px;
 }
 
+.openweather-label {
+	padding-right: 8px;
+}
+
 .openweather-current-databox-captions {
 	text-align: right;
 	padding-right: 5px;
