@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-shell-extension-openweather\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-19 10:21-0300\n"
+"POT-Creation-Date: 2022-06-20 19:43-0300\n"
 "PO-Revision-Date: 2016-10-04 00:38+0200\n"
 "Last-Translator: Khaled Hosny <khaledhosny@eglug.org>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Generator: Gtranslator 2.91.7\n"
 "X-Project-Style: gnome\n"
 
-#: src/extension.js:332
+#: src/extension.js:262
 msgid ""
 "Openweathermap.org does not work without an api-key.\n"
 "Either set the switch to use the extensions default key in the preferences "
@@ -31,561 +31,561 @@ msgstr ""
 "إما أن تختار استخدام مفتاح الامتداد المبدئي في نافذة التفضيلات أو تسجل في "
 "https://openweathermap.org/appid و تلصق المفتاح الشخصي في نافذة التفضيلات."
 
-#: src/extension.js:471 src/extension.js:483
+#: src/extension.js:408 src/extension.js:420
 #, javascript-format
 msgid "Can not connect to %s"
 msgstr "تعذّر الاتّصال بـ %s"
 
-#: src/extension.js:785 src/preferences/locationsPage.js:39
+#: src/extension.js:717 src/preferences/locationsPage.js:39
 #: src/preferences/locationsPage.js:58
 msgid "Locations"
 msgstr "الأماكن"
 
-#: src/extension.js:786
+#: src/extension.js:718
 msgid "Reload Weather Information"
 msgstr "أعِد تحميل معلومات الطقس"
 
-#: src/extension.js:787
+#: src/extension.js:719
 #, fuzzy
 msgid "Weather data by: "
 msgstr "بيانات الطقس من:"
 
-#: src/extension.js:789
+#: src/extension.js:721
 msgid "Weather Settings"
 msgstr "إعدادات الطقس"
 
-#: src/extension.js:803
+#: src/extension.js:735
 msgid "Manual refreshes less than 2 minutes apart are ignored!"
 msgstr ""
 
-#: src/extension.js:817
+#: src/extension.js:749
 #, javascript-format
 msgid "Can not open %s"
 msgstr "تعذّر فتح %s"
 
-#: src/extension.js:865 src/preferences/locationsPage.js:509
+#: src/extension.js:797 src/preferences/locationsPage.js:509
 msgid "Invalid city"
 msgstr "مدينة غير صحيحة"
 
-#: src/extension.js:876
+#: src/extension.js:808
 msgid "Invalid location! Please try to recreate it."
 msgstr "مكان غير صحيح. رجاء حاول إعادة ضبطة."
 
-#: src/extension.js:922 src/preferences/generalPage.js:148
+#: src/extension.js:854 src/preferences/generalPage.js:148
 msgid "°F"
 msgstr "°ف"
 
-#: src/extension.js:924 src/preferences/generalPage.js:149
+#: src/extension.js:856 src/preferences/generalPage.js:149
 msgid "K"
 msgstr "ك"
 
-#: src/extension.js:926 src/preferences/generalPage.js:150
+#: src/extension.js:858 src/preferences/generalPage.js:150
 msgid "°Ra"
 msgstr ""
 
-#: src/extension.js:928 src/preferences/generalPage.js:151
+#: src/extension.js:860 src/preferences/generalPage.js:151
 msgid "°Ré"
 msgstr ""
 
-#: src/extension.js:930 src/preferences/generalPage.js:152
+#: src/extension.js:862 src/preferences/generalPage.js:152
 msgid "°Rø"
 msgstr ""
 
-#: src/extension.js:932 src/preferences/generalPage.js:153
+#: src/extension.js:864 src/preferences/generalPage.js:153
 msgid "°De"
 msgstr ""
 
-#: src/extension.js:934 src/preferences/generalPage.js:154
+#: src/extension.js:866 src/preferences/generalPage.js:154
 msgid "°N"
 msgstr ""
 
-#: src/extension.js:936 src/preferences/generalPage.js:147
+#: src/extension.js:868 src/preferences/generalPage.js:147
 msgid "°C"
 msgstr "°م"
 
-#: src/extension.js:973
+#: src/extension.js:905
 msgid "Calm"
 msgstr "هادئ"
 
-#: src/extension.js:976
+#: src/extension.js:908
 msgid "Light air"
 msgstr "هواء خفيف"
 
-#: src/extension.js:979
+#: src/extension.js:911
 msgid "Light breeze"
 msgstr "نسيم خفيف"
 
-#: src/extension.js:982
+#: src/extension.js:914
 msgid "Gentle breeze"
 msgstr "نسيم علي"
 
-#: src/extension.js:985
+#: src/extension.js:917
 msgid "Moderate breeze"
 msgstr "نسيم متوسط"
 
-#: src/extension.js:988
+#: src/extension.js:920
 msgid "Fresh breeze"
 msgstr "نسيم منعش"
 
-#: src/extension.js:991
+#: src/extension.js:923
 msgid "Strong breeze"
 msgstr "نسيم قوي"
 
-#: src/extension.js:994
+#: src/extension.js:926
 msgid "Moderate gale"
 msgstr "نوبة متوسطة"
 
-#: src/extension.js:997
+#: src/extension.js:929
 msgid "Fresh gale"
 msgstr "نوبة جديدة"
 
-#: src/extension.js:1000
+#: src/extension.js:932
 msgid "Strong gale"
 msgstr "نوبة قوية"
 
-#: src/extension.js:1003
+#: src/extension.js:935
 msgid "Storm"
 msgstr "عاصفة"
 
-#: src/extension.js:1006
+#: src/extension.js:938
 msgid "Violent storm"
 msgstr "عاصفة قوية"
 
-#: src/extension.js:1009
+#: src/extension.js:941
 msgid "Hurricane"
 msgstr "إعصار"
 
-#: src/extension.js:1013
+#: src/extension.js:945
 msgid "Sunday"
 msgstr "الأحد"
 
-#: src/extension.js:1013
+#: src/extension.js:945
 msgid "Monday"
 msgstr "الإثنين"
 
-#: src/extension.js:1013
+#: src/extension.js:945
 msgid "Tuesday"
 msgstr "الثّلاثاء"
 
-#: src/extension.js:1013
+#: src/extension.js:945
 msgid "Wednesday"
 msgstr "الأربعاء"
 
-#: src/extension.js:1013
+#: src/extension.js:945
 msgid "Thursday"
 msgstr "الخميس"
 
-#: src/extension.js:1013
+#: src/extension.js:945
 msgid "Friday"
 msgstr "الجمعة"
 
-#: src/extension.js:1013
+#: src/extension.js:945
 msgid "Saturday"
 msgstr "السّبت"
 
-#: src/extension.js:1019
+#: src/extension.js:951
 msgid "N"
 msgstr "شمال"
 
-#: src/extension.js:1019
+#: src/extension.js:951
 msgid "NE"
 msgstr "شمال شرقي"
 
-#: src/extension.js:1019
+#: src/extension.js:951
 msgid "E"
 msgstr "شرق"
 
-#: src/extension.js:1019
+#: src/extension.js:951
 msgid "SE"
 msgstr "جنوب شرقي"
 
-#: src/extension.js:1019
+#: src/extension.js:951
 msgid "S"
 msgstr "جنوب"
 
-#: src/extension.js:1019
+#: src/extension.js:951
 msgid "SW"
 msgstr "جنوب غربي"
 
-#: src/extension.js:1019
+#: src/extension.js:951
 msgid "W"
 msgstr "غرب"
 
-#: src/extension.js:1019
+#: src/extension.js:951
 msgid "NW"
 msgstr "شمال غربي"
 
-#: src/extension.js:1072 src/extension.js:1081
+#: src/extension.js:1004 src/extension.js:1013
 #: src/preferences/generalPage.js:177
 msgid "hPa"
 msgstr "ه‍.باسكال"
 
-#: src/extension.js:1076 src/preferences/generalPage.js:178
+#: src/extension.js:1008 src/preferences/generalPage.js:178
 msgid "inHg"
 msgstr "بوصة زئبق"
 
-#: src/extension.js:1086 src/preferences/generalPage.js:179
+#: src/extension.js:1018 src/preferences/generalPage.js:179
 msgid "bar"
 msgstr ""
 
-#: src/extension.js:1091 src/preferences/generalPage.js:180
+#: src/extension.js:1023 src/preferences/generalPage.js:180
 msgid "Pa"
 msgstr ""
 
-#: src/extension.js:1096 src/preferences/generalPage.js:181
+#: src/extension.js:1028 src/preferences/generalPage.js:181
 msgid "kPa"
 msgstr "ك.باسكال"
 
-#: src/extension.js:1101 src/preferences/generalPage.js:182
+#: src/extension.js:1033 src/preferences/generalPage.js:182
 msgid "atm"
 msgstr ""
 
-#: src/extension.js:1106 src/preferences/generalPage.js:183
+#: src/extension.js:1038 src/preferences/generalPage.js:183
 msgid "at"
 msgstr ""
 
-#: src/extension.js:1111 src/preferences/generalPage.js:184
+#: src/extension.js:1043 src/preferences/generalPage.js:184
 msgid "Torr"
 msgstr ""
 
-#: src/extension.js:1116 src/preferences/generalPage.js:185
+#: src/extension.js:1048 src/preferences/generalPage.js:185
 msgid "psi"
 msgstr ""
 
-#: src/extension.js:1121 src/preferences/generalPage.js:186
+#: src/extension.js:1053 src/preferences/generalPage.js:186
 msgid "mmHg"
 msgstr "مم زئبق"
 
-#: src/extension.js:1126 src/preferences/generalPage.js:187
+#: src/extension.js:1058 src/preferences/generalPage.js:187
 msgid "mbar"
 msgstr ""
 
-#: src/extension.js:1170 src/preferences/generalPage.js:165
+#: src/extension.js:1106 src/preferences/generalPage.js:165
 msgid "m/s"
 msgstr "م/ث"
 
-#: src/extension.js:1174 src/preferences/generalPage.js:164
+#: src/extension.js:1111 src/preferences/generalPage.js:164
 msgid "mph"
 msgstr "ميل/س"
 
-#: src/extension.js:1179 src/preferences/generalPage.js:163
+#: src/extension.js:1116 src/preferences/generalPage.js:163
 msgid "km/h"
 msgstr "كم/س"
 
-#: src/extension.js:1188 src/preferences/generalPage.js:166
+#: src/extension.js:1125 src/preferences/generalPage.js:166
 msgid "kn"
 msgstr ""
 
-#: src/extension.js:1193 src/preferences/generalPage.js:167
+#: src/extension.js:1130 src/preferences/generalPage.js:167
 msgid "ft/s"
 msgstr "قدم\\ث"
 
-#: src/extension.js:1247 src/extension.js:1285
+#: src/extension.js:1175 src/extension.js:1213
 msgid "Loading ..."
 msgstr "يُحمّل…"
 
-#: src/extension.js:1289
+#: src/extension.js:1217
 msgid "Please wait"
 msgstr "رجاء انتظر"
 
-#: src/extension.js:1360
+#: src/extension.js:1288
 msgid "Feels Like:"
 msgstr ""
 
-#: src/extension.js:1364
+#: src/extension.js:1292
 msgid "Humidity:"
 msgstr "الرّطوبة:"
 
-#: src/extension.js:1368
+#: src/extension.js:1296
 msgid "Pressure:"
 msgstr "الضغط:"
 
-#: src/extension.js:1372
+#: src/extension.js:1300
 msgid "Wind:"
 msgstr "الرياح:"
 
-#: src/extension.js:1376
+#: src/extension.js:1304
 msgid "Gusts:"
 msgstr ""
 
-#: src/extension.js:1507
+#: src/extension.js:1435
 msgid "Tomorrow's Forecast"
 msgstr ""
 
-#: src/extension.js:1509
+#: src/extension.js:1437
 msgid "Day Forecast"
 msgstr ""
 
-#: src/openweathermap_org.js:130
+#: src/openweathermap.js:124
 #, fuzzy
 msgid "Thunderstorm with Light Rain"
 msgstr "عاصفة رعدية مع مطر خفيف"
 
-#: src/openweathermap_org.js:132
+#: src/openweathermap.js:126
 #, fuzzy
 msgid "Thunderstorm with Rain"
 msgstr "عاصفة رعدية مع مطر"
 
-#: src/openweathermap_org.js:134
+#: src/openweathermap.js:128
 #, fuzzy
 msgid "Thunderstorm with Heavy Rain"
 msgstr "عاصفة رعدية مع مطر غزير"
 
-#: src/openweathermap_org.js:136
+#: src/openweathermap.js:130
 #, fuzzy
 msgid "Light Thunderstorm"
 msgstr "عاصفة رعدية خفيفة"
 
-#: src/openweathermap_org.js:138
+#: src/openweathermap.js:132
 msgid "Thunderstorm"
 msgstr "عاصفة رعدية"
 
-#: src/openweathermap_org.js:140
+#: src/openweathermap.js:134
 #, fuzzy
 msgid "Heavy Thunderstorm"
 msgstr "عاصفة رعدية غزيرة"
 
-#: src/openweathermap_org.js:142
+#: src/openweathermap.js:136
 #, fuzzy
 msgid "Ragged Thunderstorm"
 msgstr "عاصفة رعدية متقطعة"
 
-#: src/openweathermap_org.js:144
+#: src/openweathermap.js:138
 #, fuzzy
 msgid "Thunderstorm with Light Drizzle"
 msgstr "عاصفة رعدية مع رذاذ خفيف"
 
-#: src/openweathermap_org.js:146
+#: src/openweathermap.js:140
 #, fuzzy
 msgid "Thunderstorm with Drizzle"
 msgstr "عاصفة رعدية مع رذاذ"
 
-#: src/openweathermap_org.js:148
+#: src/openweathermap.js:142
 #, fuzzy
 msgid "Thunderstorm with Heavy Drizzle"
 msgstr "عاصفة رعدية مع رذاذ غزير"
 
-#: src/openweathermap_org.js:150
+#: src/openweathermap.js:144
 #, fuzzy
 msgid "Light Drizzle"
 msgstr "نسيم خفيف"
 
-#: src/openweathermap_org.js:152
+#: src/openweathermap.js:146
 msgid "Drizzle"
 msgstr "رذاذ"
 
-#: src/openweathermap_org.js:154
+#: src/openweathermap.js:148
 #, fuzzy
 msgid "Heavy Drizzle"
 msgstr "رذاذ"
 
-#: src/openweathermap_org.js:156
+#: src/openweathermap.js:150
 #, fuzzy
 msgid "Light Drizzle Rain"
 msgstr "رذاذ"
 
-#: src/openweathermap_org.js:158
+#: src/openweathermap.js:152
 #, fuzzy
 msgid "Drizzle Rain"
 msgstr "رذاذ"
 
-#: src/openweathermap_org.js:160
+#: src/openweathermap.js:154
 #, fuzzy
 msgid "Heavy Drizzle Rain"
 msgstr "رذاذ"
 
-#: src/openweathermap_org.js:162
+#: src/openweathermap.js:156
 #, fuzzy
 msgid "Shower Rain and Drizzle"
 msgstr "زخات مطر و رذاذ"
 
-#: src/openweathermap_org.js:164
+#: src/openweathermap.js:158
 #, fuzzy
 msgid "Heavy Rain and Drizzle"
 msgstr "زخات مطر و رذاذ غزيرة"
 
-#: src/openweathermap_org.js:166
+#: src/openweathermap.js:160
 #, fuzzy
 msgid "Shower Drizzle"
 msgstr "زخات رذاذ"
 
-#: src/openweathermap_org.js:168
+#: src/openweathermap.js:162
 #, fuzzy
 msgid "Light Rain"
 msgstr "مطر خفيف"
 
-#: src/openweathermap_org.js:170
+#: src/openweathermap.js:164
 #, fuzzy
 msgid "Moderate Rain"
 msgstr "مطر معتدل"
 
-#: src/openweathermap_org.js:172
+#: src/openweathermap.js:166
 #, fuzzy
 msgid "Heavy Rain"
 msgstr "ثلوج غزيرة"
 
-#: src/openweathermap_org.js:174
+#: src/openweathermap.js:168
 #, fuzzy
 msgid "Very Heavy Rain"
 msgstr "مطر غزير جدًا"
 
-#: src/openweathermap_org.js:176
+#: src/openweathermap.js:170
 #, fuzzy
 msgid "Extreme Rain"
 msgstr "مطر شديد"
 
-#: src/openweathermap_org.js:178
+#: src/openweathermap.js:172
 #, fuzzy
 msgid "Freezing Rain"
 msgstr "مطر مجمِّد"
 
-#: src/openweathermap_org.js:180
+#: src/openweathermap.js:174
 #, fuzzy
 msgid "Light Shower Rain"
 msgstr "زخات ثلوج خفيفة"
 
-#: src/openweathermap_org.js:182
+#: src/openweathermap.js:176
 #, fuzzy
 msgid "Shower Rain"
 msgstr "زخات مطر"
 
-#: src/openweathermap_org.js:184
+#: src/openweathermap.js:178
 #, fuzzy
 msgid "Heavy Shower Rain"
 msgstr "زخات ثلوج غزيرة"
 
-#: src/openweathermap_org.js:186
+#: src/openweathermap.js:180
 #, fuzzy
 msgid "Ragged Shower Rain"
 msgstr "زخات مطر متقطعة"
 
-#: src/openweathermap_org.js:188
+#: src/openweathermap.js:182
 #, fuzzy
 msgid "Light Snow"
 msgstr "ثلوج خفيفة"
 
-#: src/openweathermap_org.js:190
+#: src/openweathermap.js:184
 msgid "Snow"
 msgstr "ثلوج"
 
-#: src/openweathermap_org.js:192
+#: src/openweathermap.js:186
 #, fuzzy
 msgid "Heavy Snow"
 msgstr "ثلوج غزيرة"
 
-#: src/openweathermap_org.js:194
+#: src/openweathermap.js:188
 msgid "Sleet"
 msgstr "جَمَد المَطَر"
 
-#: src/openweathermap_org.js:196
+#: src/openweathermap.js:190
 #, fuzzy
 msgid "Light Shower Sleet"
 msgstr "جَمَد مطر بطيء"
 
-#: src/openweathermap_org.js:198
+#: src/openweathermap.js:192
 #, fuzzy
 msgid "Shower Sleet"
 msgstr "جَمَد مطر بطيء"
 
-#: src/openweathermap_org.js:200
+#: src/openweathermap.js:194
 #, fuzzy
 msgid "Light Rain and Snow"
 msgstr "مطر خفيف و ثلوج"
 
-#: src/openweathermap_org.js:202
+#: src/openweathermap.js:196
 #, fuzzy
 msgid "Rain and Snow"
 msgstr "مطر و ثلوج"
 
-#: src/openweathermap_org.js:204
+#: src/openweathermap.js:198
 #, fuzzy
 msgid "Light Shower Snow"
 msgstr "زخات ثلوج خفيفة"
 
-#: src/openweathermap_org.js:206
+#: src/openweathermap.js:200
 #, fuzzy
 msgid "Shower Snow"
 msgstr "ثلوج أبطأ"
 
-#: src/openweathermap_org.js:208
+#: src/openweathermap.js:202
 #, fuzzy
 msgid "Heavy Shower Snow"
 msgstr "زخات ثلوج غزيرة"
 
-#: src/openweathermap_org.js:210
+#: src/openweathermap.js:204
 msgid "Mist"
 msgstr "ضباب خفيف"
 
-#: src/openweathermap_org.js:212
+#: src/openweathermap.js:206
 msgid "Smoke"
 msgstr "دخان"
 
-#: src/openweathermap_org.js:214
+#: src/openweathermap.js:208
 msgid "Haze"
 msgstr "سديم"
 
-#: src/openweathermap_org.js:216
+#: src/openweathermap.js:210
 msgid "Sand/Dust Whirls"
 msgstr "دوامات رمل و غبار"
 
-#: src/openweathermap_org.js:218
+#: src/openweathermap.js:212
 msgid "Fog"
 msgstr "ضباب"
 
-#: src/openweathermap_org.js:220
+#: src/openweathermap.js:214
 msgid "Sand"
 msgstr "رمال"
 
-#: src/openweathermap_org.js:222
+#: src/openweathermap.js:216
 msgid "Dust"
 msgstr "غبار"
 
-#: src/openweathermap_org.js:224
+#: src/openweathermap.js:218
 msgid "Volcanic Ash"
 msgstr ""
 
-#: src/openweathermap_org.js:226
+#: src/openweathermap.js:220
 msgid "Squalls"
 msgstr ""
 
-#: src/openweathermap_org.js:228
+#: src/openweathermap.js:222
 msgid "Tornado"
 msgstr ""
 
-#: src/openweathermap_org.js:230
+#: src/openweathermap.js:224
 #, fuzzy
 msgid "Clear Sky"
 msgstr "امسح الخانة"
 
-#: src/openweathermap_org.js:232
+#: src/openweathermap.js:226
 #, fuzzy
 msgid "Few Clouds"
 msgstr "سُحُب خفيفة"
 
-#: src/openweathermap_org.js:234
+#: src/openweathermap.js:228
 #, fuzzy
 msgid "Scattered Clouds"
 msgstr "سُحُب متفرقة"
 
-#: src/openweathermap_org.js:236
+#: src/openweathermap.js:230
 #, fuzzy
 msgid "Broken Clouds"
 msgstr "سُحُب مفككة"
 
-#: src/openweathermap_org.js:238
+#: src/openweathermap.js:232
 #, fuzzy
 msgid "Overcast Clouds"
 msgstr "غيوم"
 
-#: src/openweathermap_org.js:240
+#: src/openweathermap.js:234
 msgid "Not available"
 msgstr "غير متاح"
 
-#: src/openweathermap_org.js:432
+#: src/openweathermap.js:427
 msgid "Yesterday"
 msgstr "أمس"
 
-#: src/openweathermap_org.js:434
+#: src/openweathermap.js:429
 #, javascript-format
 msgid "%d day ago"
 msgid_plural "%d days ago"
@@ -596,15 +596,15 @@ msgstr[3] "منذ %d أيام"
 msgstr[4] "منذ %d يومًا"
 msgstr[5] "منذ %d يوم"
 
-#: src/openweathermap_org.js:449 src/openweathermap_org.js:451
+#: src/openweathermap.js:444 src/openweathermap.js:446
 msgid ", "
 msgstr "، "
 
-#: src/openweathermap_org.js:467
+#: src/openweathermap.js:462
 msgid "?"
 msgstr ""
 
-#: src/openweathermap_org.js:536
+#: src/openweathermap.js:531
 msgid "Tomorrow"
 msgstr "غدًا"
 
