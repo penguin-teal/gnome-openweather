@@ -18,15 +18,9 @@
 const Soup = imports.gi.Soup;
 const ExtensionUtils = imports.misc.extensionUtils;
 const Me = ExtensionUtils.getCurrentExtension();
-const OpenweathermapOrg = Me.imports.openweathermap_org;
 const Gettext = imports.gettext.domain(Me.metadata['gettext-domain']);
-const _ = Gettext.gettext;
 const ngettext = Gettext.ngettext;
-
-const OPENWEATHER_URL_HOST = 'api.openweathermap.org';
-const OPENWEATHER_URL_BASE = 'https://' + OPENWEATHER_URL_HOST + '/data/2.5/';
-const OPENWEATHER_URL_CURRENT = OPENWEATHER_URL_BASE + 'weather';
-const OPENWEATHER_URL_FORECAST = OPENWEATHER_URL_BASE + 'forecast';
+const _ = Gettext.gettext;
 
 function getIconName(code, night) {
     let iconname = 'weather-severe-alert-symbolic';
@@ -295,12 +289,12 @@ async function refreshWeatherData() {
     if (this._appid) {
         params.APPID = this._appid;
     }
+    const owmCurrentUrl = 'https://api.openweathermap.org/data/2.5/weather';
     try {
-        json = await this.loadJsonAsync(OPENWEATHER_URL_CURRENT, params)
+        json = await this.loadJsonAsync(owmCurrentUrl, params)
         .then(async (json) => {
-            if (this.currentWeatherCache != json)
-                this.currentWeatherCache = json;
             try {
+                this.currentWeatherCache = json;
                 await this.populateCurrentUI();
             }
             catch (e) {
@@ -334,8 +328,9 @@ async function refreshForecastData() {
     if (this._appid) {
         params.APPID = this._appid;
     }
+    const owmForecastUrl = 'https://api.openweathermap.org/data/2.5/forecast';
     try {
-        json = await this.loadJsonAsync(OPENWEATHER_URL_FORECAST, params)
+        json = await this.loadJsonAsync(owmForecastUrl, params)
         .then(async (json) => {
             processing: try {
 
@@ -392,14 +387,14 @@ function populateCurrentUI() {
 
             let comment = json.weather[0].description;
             if (this._translate_condition)
-                comment = OpenweathermapOrg.getWeatherCondition(json.weather[0].id);
+                comment = getWeatherCondition(json.weather[0].id);
 
             let temperature = this.formatTemperature(json.main.temp);
             let sunrise = new Date(json.sys.sunrise * 1000);
             let sunset = new Date(json.sys.sunset * 1000);
             let now = new Date();
 
-            let iconname = OpenweathermapOrg.getIconName(json.weather[0].id, now < sunrise || now > sunset);
+            let iconname = getIconName(json.weather[0].id, now < sunrise || now > sunset);
 
             if (this.lastBuildId === undefined)
                 this.lastBuildId = 0;
@@ -489,11 +484,11 @@ function populateForecastUI() {
                 let forecastTime = new Date(forecastDataToday.dt * 1000);
                 let forecastTemp = this.formatTemperature(forecastDataToday.main.temp);
                 let iconTime = forecastTime.toLocaleTimeString([this.locale], { hour12: false });
-                let iconname = OpenweathermapOrg.getIconName(forecastDataToday.weather[0].id, iconTime < sunrise || iconTime > sunset);
+                let iconname = getIconName(forecastDataToday.weather[0].id, iconTime < sunrise || iconTime > sunset);
 
                 let comment = forecastDataToday.weather[0].description;
                 if (this._translate_condition)
-                    comment = OpenweathermapOrg.getWeatherCondition(forecastDataToday.weather[0].id);
+                    comment = getWeatherCondition(forecastDataToday.weather[0].id);
 
                 if (this._clockFormat == "24h") {
                     forecastTime = forecastTime.toLocaleTimeString([this.locale], { hour12: false });
@@ -538,12 +533,12 @@ function populateForecastUI() {
                             forecastUi.Day.text = '\n'+this.getLocaleDay(forecastDate.getDay());
                     }
                     let iconTime = forecastDate.toLocaleTimeString([this.locale], { hour12: false });
-                    let iconname = OpenweathermapOrg.getIconName(forecastData[j].weather[0].id, iconTime < sunrise || iconTime > sunset);
+                    let iconname = getIconName(forecastData[j].weather[0].id, iconTime < sunrise || iconTime > sunset);
                     let forecastTemp = this.formatTemperature(forecastData[j].main.temp);
 
                     let comment = forecastData[j].weather[0].description;
                     if (this._translate_condition)
-                        comment = OpenweathermapOrg.getWeatherCondition(forecastData[j].weather[0].id);
+                        comment = getWeatherCondition(forecastData[j].weather[0].id);
 
                     if (this._clockFormat == "24h") {
                         forecastDate = forecastDate.toLocaleTimeString([this.locale], { hour12: false });
@@ -569,10 +564,17 @@ function populateForecastUI() {
 function loadJsonAsync(url, params) {
     return new Promise((resolve, reject) => {
 
+        // Create user-agent string from uuid and (if present) the version
+        let _userAgent = Me.metadata.uuid;
+        if (Me.metadata.version !== undefined && Me.metadata.version.toString().trim() !== '') {
+            _userAgent += '/';
+            _userAgent += Me.metadata.version.toString();
+        }
+
         let _httpSession = new Soup.Session();
         let message = Soup.form_request_new_from_hash('GET', url, params);
         // add trailing space, so libsoup adds its own user-agent
-        _httpSession.user_agent = this.user_agent + ' ';
+        _httpSession.user_agent = _userAgent + ' ';
 
         _httpSession.queue_message(message, (_httpSession, message) => {
             try {
