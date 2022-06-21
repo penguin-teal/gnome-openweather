@@ -251,12 +251,12 @@ async function initWeatherData(refresh) {
                 }
             }
             catch (e) {
-                log("init forecast data error: " + e);
+                logError(e);
             }
         });
     }
     catch (e) {
-        log("init current data error: " + e);
+        logError(e);
     }
 }
 
@@ -269,12 +269,12 @@ async function reloadWeatherCache() {
                 .then(this.recalcLayout());
             }
             catch (e) {
-                log("reload forecast cache error: " + e);
+                logError(e);
             }
         });
     }
     catch (e) {
-        log("reload current cache error: " + e);
+        logError(e);
     }
 }
 
@@ -298,7 +298,7 @@ async function refreshWeatherData() {
                 await this.populateCurrentUI();
             }
             catch (e) {
-                log("populateCurrentUI error: " + e);
+                logError(e);
             }
         });
     }
@@ -306,7 +306,7 @@ async function refreshWeatherData() {
         // Something went wrong, reload after 10 minutes
         // as per openweathermap.org recommendation.
         this.reloadWeatherCurrent(600);
-        log("refreshWeatherData error: " + e);
+        logError(e);
     }
     this.reloadWeatherCurrent(this._refresh_interval_current);
 }
@@ -359,12 +359,12 @@ async function refreshForecastData() {
                         await this.populateForecastUI();
                     }
                     catch (e) {
-                        log("populateForecastUI error: " + e);
+                        logError(e);
                     }
                 });
             }
             catch (e) {
-                log("Error processing forecast json data: " + e);
+                logError(e);
             }
         });
     }
@@ -372,7 +372,7 @@ async function refreshForecastData() {
         /// Something went wrong, reload after 10 minutes
         // as per openweathermap.org recommendation.
         this.reloadWeatherForecast(600);
-        log("refreshForecastData error: " + e);
+        logError(e);
     }
     this.reloadWeatherForecast(this._refresh_interval_forecast);
 }
@@ -584,7 +584,7 @@ function loadJsonAsync(url, params) {
                 resolve(JSON.parse(message.response_body.data));
             }
             catch (e) {
-                reject("Soup queue_message error: " + e);
+                reject(e);
             }
         });
     });
@@ -602,7 +602,7 @@ function processTodaysData(json) {
             resolve(todayList);
         }
         catch (e) {
-            reject("processTodaysData error: " + e);
+            reject(e);
         }
     });
 }
@@ -630,7 +630,7 @@ function processForecastData(json) {
             resolve(sortedList);
         }
         catch (e) {
-            reject("processForecastData error: " + e);
+            reject(e);
         }
     });
 }
