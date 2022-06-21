@@ -645,7 +645,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
         if (!this._settings)
             this.loadConfig();
         let v = this._settings.get_int('refresh-interval-forecast');
-        return ((v >= 600) ? v : 600);
+        return ((v >= 3600) ? v : 3600);
     }
 
     get _loc_len_current() {

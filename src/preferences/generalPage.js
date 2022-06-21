@@ -46,7 +46,7 @@ class OpenWeather_GeneralPage extends Adw.PreferencesPage {
                 upper: 1440,
                 step_increment: 1,
                 page_increment: 10,
-                value: this._settings.get_int('refresh-interval-current')
+                value: this._settings.get_int('refresh-interval-current')  / 60
             }),
             climb_rate: 5,
             numeric: true,
@@ -68,7 +68,7 @@ class OpenWeather_GeneralPage extends Adw.PreferencesPage {
                 upper: 1440,
                 step_increment: 1,
                 page_increment: 10,
-                value: this._settings.get_int('refresh-interval-forecast')
+                value: this._settings.get_int('refresh-interval-forecast')  / 60
             }),
             climb_rate: 5,
             numeric: true,
@@ -248,10 +248,10 @@ class OpenWeather_GeneralPage extends Adw.PreferencesPage {
 
         // Bind signals
         currentRefreshSpinButton.connect('value-changed', (widget) => {
-            this._settings.set_int('refresh-interval-current', widget.get_value());
+            this._settings.set_int('refresh-interval-current', 60 * widget.get_value());
         });
         forecastRefreshSpinButton.connect('value-changed', (widget) => {
-            this._settings.set_int('refresh-interval-forecast', widget.get_value());
+            this._settings.set_int('refresh-interval-forecast', 60 * widget.get_value());
         });
         disableForecastSwitch.connect('notify::active', (widget) => {
             if (widget.get_active()) {
