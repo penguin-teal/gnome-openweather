@@ -265,8 +265,19 @@ async function reloadWeatherCache() {
         await this.populateCurrentUI()
         .then(async () => {
             try {
-                await this.populateForecastUI()
-                .then(this.recalcLayout());
+                if (this._forecastDays != this._days_forecast) {
+                    // user changed forecast days, so we need to force a refresh
+                    this.forecastJsonCache = undefined;
+                    await this.refreshForecastData()
+                    .then(async () => {
+                        this._forecastDays = this._days_forecast;
+                        this.recalcLayout();
+                    });
+                } else {
+                    // otherwise we just reload the current cache
+                    await this.populateForecastUI()
+                    .then(this.recalcLayout());
+                }
             }
             catch (e) {
                 logError(e);
@@ -510,15 +521,6 @@ function populateForecastUI() {
 
             // Refresh 5 day / 3 hour forecast
             let forecast = this.forecastWeatherCache;
-            // first remove today from forecast data if exists
-            let _now = new Date().toLocaleDateString([this.locale]);
-            for (var i = 0; i < forecast.length; i++) {
-                let _itemDate = new Date(forecast[i][0].dt * 1000);
-                let _this = _itemDate.toLocaleDateString([this.locale]);
-                if (_now === _this) {
-                    forecast.shift();
-                }
-            }
 
             for (let i = 0; i < this._days_forecast; i++) {
                 let forecastUi = this._forecast[i];
@@ -616,22 +618,41 @@ function processTodaysData(json) {
 function processForecastData(json) {
     return new Promise((resolve, reject) => {
         try {
-            let a = 0;
+            let i = a = 0;
             let data = json.list;
             let sortedList = [];
-            sortedList[a] = [data[0]];
+            let _now = new Date().toLocaleDateString([this.locale]);
 
-            for (let i = 1; i < data.length; i++) {
+            for (let j = 0; j < data.length; j++) {
                 let _this = new Date(data[i].dt * 1000).toLocaleDateString([this.locale]);
-                let _last = new Date(data[i-1].dt * 1000).toLocaleDateString([this.locale]);
+                let _last = new Date(data[((i===0) ? 0 : i-1)].dt * 1000).toLocaleDateString([this.locale]);
 
-                if (_this == _last)
+                if (_now ===_this) {
+                    // Don't add today's items
+                    i++;
+                    continue;
+                }
+                if (sortedList.length === 0) {
+                    // First item in json list
+                    sortedList[a] = [data[i]];
+                    i++;
+                    continue;
+                }
+
+                if (_this == _last) {
+                    // Add item to current day
                     sortedList[a].push(data[i]);
-                else {
+                } else {
+                    if (sortedList.length === this._days_forecast) {
+                        // If we reach the forecast limit set by the user
+                        break;
+                    }
+                    // Otherwise start a new day
                     a = a+1;
                     sortedList[a] = [];
                     sortedList[a].push(data[i]);
                 }
+                i++;
             }
             resolve(sortedList);
         }

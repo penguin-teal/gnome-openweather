@@ -276,6 +276,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
 
         this._currentLocation = this.extractCoord(this._city);
         this._isForecastDisabled = this._disable_forecast;
+        this._forecastDays = this._days_forecast;
         this._currentAlignment = this._menu_alignment;
         this._providerTranslations = this._provider_translations;
 
@@ -741,7 +742,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
 
         this._locationButton = this.createButton('find-location-symbolic', _("Locations"));
         this._reloadButton = this.createButton('view-refresh-symbolic', _("Reload Weather Information"));
-        this._urlButton = this.createButton('', _("Weather data by: ") + this.weatherProvider);
+        this._urlButton = this.createButton('', _("Weather data by: %s").format(this.weatherProvider));
         this._urlButton.set_label(this._urlButton.get_accessible_name());
         this._prefsButton = this.createButton('preferences-system-symbolic', _("Weather Settings"));
 
