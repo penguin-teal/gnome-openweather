@@ -201,6 +201,19 @@ class OpenWeather_GeneralPage extends Adw.PreferencesPage {
             title: _("Provider")
         });
 
+        // OpenWeatherMap Multilingual Support
+        let providerTranslateSwitch = new Gtk.Switch({
+            valign: Gtk.Align.CENTER,
+            active: this._settings.get_boolean('owm-api-translate')
+        });
+        let providerTranslateRow = new Adw.ActionRow({
+            title: _("OpenWeatherMap Multilingual Support"),
+            subtitle: _("Using provider translations applies to weather conditions only"),
+            tooltip_text: _("Enable this to use OWM multilingual support in 46 languages if there's no built-in translations for your language yet."),
+            activatable_widget: providerTranslateSwitch
+        });
+        providerTranslateRow.add_suffix(providerTranslateSwitch);
+
         // OpenWeatherMap API key
         let useDefaultApiKey = this._settings.get_boolean('use-default-owm-key');
         let defaultApiKeySwitch = new Gtk.Switch({
@@ -242,6 +255,7 @@ class OpenWeather_GeneralPage extends Adw.PreferencesPage {
         }
         personalApiKeyRow.add_suffix(personalApiKeyEntry);
 
+        apiGroup.add(providerTranslateRow);
         apiGroup.add(defaultApiKeyRow);
         apiGroup.add(personalApiKeyRow);
         this.add(apiGroup);
@@ -275,6 +289,9 @@ class OpenWeather_GeneralPage extends Adw.PreferencesPage {
         });
         pressureUnitRow.connect('notify::selected', (widget) => {
             this._settings.set_enum('pressure-unit', widget.selected);
+        });
+        providerTranslateSwitch.connect('notify::active', (widget) => {
+            this._settings.set_boolean('owm-api-translate', widget.get_active());
         });
         defaultApiKeySwitch.connect('notify::active', (widget) => {
             if (widget.get_active()) {

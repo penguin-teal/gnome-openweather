@@ -286,8 +286,11 @@ async function refreshWeatherData() {
         lon: location.split(",")[1],
         units: 'metric'
     };
+    if (this._provider_translations) {
+        params.lang = this.locale;
+    }
     if (this._appid) {
-        params.APPID = this._appid;
+        params.appid = this._appid;
     }
     const owmCurrentUrl = 'https://api.openweathermap.org/data/2.5/weather';
     try {
@@ -325,8 +328,11 @@ async function refreshForecastData() {
         lon: location.split(",")[1],
         units: 'metric'
     };
+    if (this._provider_translations) {
+        params.lang = this.locale;
+    }
     if (this._appid) {
-        params.APPID = this._appid;
+        params.appid = this._appid;
     }
     const owmForecastUrl = 'https://api.openweathermap.org/data/2.5/forecast';
     try {
@@ -386,7 +392,7 @@ function populateCurrentUI() {
             let location = this.extractLocation(this._city);
 
             let comment = json.weather[0].description;
-            if (this._translate_condition)
+            if (this._translate_condition && !this._provider_translations)
                 comment = getWeatherCondition(json.weather[0].id);
 
             let temperature = this.formatTemperature(json.main.temp);
@@ -487,7 +493,7 @@ function populateForecastUI() {
                 let iconname = getIconName(forecastDataToday.weather[0].id, iconTime < sunrise || iconTime > sunset);
 
                 let comment = forecastDataToday.weather[0].description;
-                if (this._translate_condition)
+                if (this._translate_condition && !this._provider_translations)
                     comment = getWeatherCondition(forecastDataToday.weather[0].id);
 
                 if (this._clockFormat == "24h") {
@@ -537,7 +543,7 @@ function populateForecastUI() {
                     let forecastTemp = this.formatTemperature(forecastData[j].main.temp);
 
                     let comment = forecastData[j].weather[0].description;
-                    if (this._translate_condition)
+                    if (this._translate_condition && !this._provider_translations)
                         comment = getWeatherCondition(forecastData[j].weather[0].id);
 
                     if (this._clockFormat == "24h") {

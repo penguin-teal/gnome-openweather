@@ -140,13 +140,15 @@ class OpenWeather_LayoutPage extends Adw.PreferencesPage {
         windArrowsRow.add_suffix(windArrowsSwitch);
 
         // Translate conditions
+        this.providerTranslations = this._settings.get_boolean('owm-api-translate');
         let translateConditionsSwitch = new Gtk.Switch({
             valign: Gtk.Align.CENTER,
             active: this._settings.get_boolean('translate-condition')
         });
         let translateConditionsRow = new Adw.ActionRow({
             title: _("Translate Conditions"),
-            activatable_widget: translateConditionsSwitch
+            activatable_widget: translateConditionsSwitch,
+            visible: !this.providerTranslations
         });
         translateConditionsRow.add_suffix(translateConditionsSwitch);
 
@@ -291,7 +293,7 @@ class OpenWeather_LayoutPage extends Adw.PreferencesPage {
         forecastExpandedSwitch.connect('notify::active', (widget) => {
             this._settings.set_boolean('expand-forecast', widget.get_active());
         });
-        // Detect disable forecast change to enable/disable related options
+        // Detect settings changes to enable/disable related options
         this._settings.connect('changed', () => {
             if (this._disableForecastChanged()) {
                 if (this._settings.get_boolean('disable-forecast')) {
@@ -300,12 +302,27 @@ class OpenWeather_LayoutPage extends Adw.PreferencesPage {
                     forecastGroup.set_sensitive(true);
                 }
             }
+            else if (this._providerTranslationsChanged()) {
+                if (this._settings.get_boolean('owm-api-translate')) {
+                    translateConditionsRow.set_visible(false);
+                } else {
+                    translateConditionsRow.set_visible(true);
+                }
+            }
         });
     }
     _disableForecastChanged() {
         let _disableForecast = this._settings.get_boolean('disable-forecast');
         if (this.disableForecast != _disableForecast) {
             this.disableForecast = _disableForecast;
+            return true;
+        }
+        return false;
+    }
+    _providerTranslationsChanged() {
+        let _providerTranslations = this._settings.get_boolean('owm-api-translate');
+        if (this.providerTranslations != _providerTranslations) {
+            this.providerTranslations = _providerTranslations;
             return true;
         }
         return false;

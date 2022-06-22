@@ -277,6 +277,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
         this._currentLocation = this.extractCoord(this._city);
         this._isForecastDisabled = this._disable_forecast;
         this._currentAlignment = this._menu_alignment;
+        this._providerTranslations = this._provider_translations;
 
         // Get locale
         this.locale = GLib.get_language_names()[0];
@@ -324,6 +325,17 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
                         this._timeoutMenuAlignent = null;
                         return false; // run once then destroy
                     });
+                    return;
+                }
+                if (this.providerTranslationsChanged()) {
+                    if (this._provider_translations) {
+                        this._providerTranslations = this._provider_translations;
+                        this.showRefreshing();
+                        this._clearWeatherCache();
+                        this.initWeatherData();
+                    } else {
+                        this.reloadWeatherCache();
+                    }
                     return;
                 }
                 this.checkAlignment();
@@ -465,6 +477,13 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
         return false;
     }
 
+    providerTranslationsChanged() {
+        if (this._providerTranslations != this._provider_translations) {
+            return true;
+        }
+        return false;
+    }
+
     get _clockFormat() {
         if (!this._settingsInterface)
             this.loadConfigInterface();
@@ -578,6 +597,12 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
         if (!this._settings)
             this.loadConfig();
         return this._settings.get_boolean('translate-condition');
+    }
+
+    get _provider_translations() {
+        if (!this._settings)
+            this.loadConfig();
+        return this._settings.get_boolean('owm-api-translate');
     }
 
     get _getUseSysIcons() {
