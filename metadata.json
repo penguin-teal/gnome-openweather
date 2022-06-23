@@ -6,5 +6,5 @@
   "uuid": "openweather-extension@jenslody.de",
   "settings-schema": "org.gnome.shell.extensions.openweather",
   "gettext-domain": "gnome-shell-extension-openweather",
-  "version": 116
+  "version": 117
 }
