@@ -225,6 +225,7 @@ class OpenWeather_LayoutPage extends Adw.PreferencesPage {
 
         // Forecast days
         let forecastDays = new Gtk.StringList();
+        forecastDays.append(_("Today Only"));
         forecastDays.append(_("1"));
         forecastDays.append(_("2"));
         forecastDays.append(_("3"));
@@ -233,7 +234,7 @@ class OpenWeather_LayoutPage extends Adw.PreferencesPage {
         let forecastDaysRow = new Adw.ComboRow({
             title: _("Total Days In Forecast"),
             model: forecastDays,
-            selected: this._settings.get_int('days-forecast') - 1
+            selected: this._settings.get_int('days-forecast')
         });
 
         // Keep forecast expanded
@@ -288,7 +289,7 @@ class OpenWeather_LayoutPage extends Adw.PreferencesPage {
             this._settings.set_boolean('show-comment-in-forecast', widget.get_active());
         });
         forecastDaysRow.connect("notify::selected", (widget) => {
-            this._settings.set_int('days-forecast', widget.selected + 1);
+            this._settings.set_int('days-forecast', widget.selected);
         });
         forecastExpandedSwitch.connect('notify::active', (widget) => {
             this._settings.set_boolean('expand-forecast', widget.get_active());

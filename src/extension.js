@@ -153,11 +153,13 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
         this._currentWeather = new PopupMenu.PopupBaseMenuItem({
             reactive: false
         });
-        if (!this._disable_forecast) {
+        if (!this._isForecastDisabled) {
             this._currentForecast = new PopupMenu.PopupBaseMenuItem({
                 reactive: false
             });
-            this._forecastExpander = new PopupMenu.PopupSubMenuMenuItem("");
+            if (this._forecastDays != 0) {
+                this._forecastExpander = new PopupMenu.PopupSubMenuMenuItem("");
+            }
         }
         this._buttonMenu = new PopupMenu.PopupBaseMenuItem({
             reactive: false,
@@ -173,10 +175,12 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
         this.rebuildSelectCityItem();
 
         this.menu.addMenuItem(this._currentWeather);
-        if (!this._disable_forecast) {
+        if (!this._isForecastDisabled) {
             this.menu.addMenuItem(this._currentForecast);
-            this.menu.addMenuItem(new PopupMenu.PopupSeparatorMenuItem());
-            this.menu.addMenuItem(this._forecastExpander);
+            if (this._forecastDays != 0) {
+                this.menu.addMenuItem(new PopupMenu.PopupSeparatorMenuItem());
+                this.menu.addMenuItem(this._forecastExpander);
+            }
         }
         this.menu.addMenuItem(new PopupMenu.PopupSeparatorMenuItem());
         this.menu.addMenuItem(this._buttonMenu);
@@ -249,8 +253,9 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
         this.refreshWeatherData = OpenWeatherMap.refreshWeatherData;
         this.populateCurrentUI = OpenWeatherMap.populateCurrentUI;
 
-        if (!this._disable_forecast) {
+        if (!this._isForecastDisabled) {
             this.refreshForecastData = OpenWeatherMap.refreshForecastData;
+            this.populateTodaysUI = OpenWeatherMap.populateTodaysUI;
             this.populateForecastUI = OpenWeatherMap.populateForecastUI;
             this.processTodaysData = OpenWeatherMap.processTodaysData;
             this.processForecastData = OpenWeatherMap.processForecastData;
@@ -292,10 +297,12 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
 
             if (this.disableForecastChanged()) {
                 let _children = (this._isForecastDisabled) ? 4 : 7;
+                if (this._forecastDays === 0) {
+                    _children = this.menu.box.get_children().length-1;
+                }
                 for (let i = 0; i < _children; i++) {
                     this.menu.box.get_child_at_index(0).destroy();
                 }
-                this.useOpenWeatherMap();
                 this._isForecastDisabled = this._disable_forecast;
                 this.initOpenWeatherUI();
                 this._clearWeatherCache();
@@ -328,9 +335,35 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
                     });
                     return;
                 }
-                if (this.providerTranslationsChanged()) {
-                    if (this._provider_translations) {
-                        this._providerTranslations = this._provider_translations;
+                if (this._forecastDays != this._days_forecast) {
+                    let _oldDays = this._forecastDays;
+                    let _newDays = this._days_forecast;
+                    this._forecastDays = _newDays;
+
+                    if (_oldDays >= 1 && _newDays === 0) {
+                        this._forecastExpander.destroy();
+                        return;
+                    }
+                    else if (_oldDays === 0 && _newDays >= 1) {
+                        let _children = this.menu.box.get_children().length-1;
+                        for (let i = 0; i < _children; i++) {
+                            this.menu.box.get_child_at_index(0).destroy();
+                        }
+                        this._clearWeatherCache();
+                        this.initOpenWeatherUI();
+                        this.initWeatherData();
+                        return;
+                    }
+                    else {
+                        this.forecastJsonCache = undefined;
+                        this.rebuildFutureWeatherUi();
+                        this.reloadWeatherCache();
+                        return;
+                    }
+                }
+                if (this._providerTranslations != this._provider_translations) {
+                    this._providerTranslations = this._provider_translations;
+                    if (this._providerTranslations) {
                         this.showRefreshing();
                         this._clearWeatherCache();
                         this.initWeatherData();
@@ -444,7 +477,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
                 this.currentWeatherCache = undefined;
             }
             if (
-                !this._disable_forecast
+                !this._isForecastDisabled
                 && _timeCacheForecastWeather
                 && (Math.floor(new Date(now - _timeCacheForecastWeather).getTime() / 1000) > this._refresh_interval_forecast)
             ) {
@@ -473,13 +506,6 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
 
     menuAlignmentChanged() {
         if (this._currentAlignment != this._menu_alignment) {
-            return true;
-        }
-        return false;
-    }
-
-    providerTranslationsChanged() {
-        if (this._providerTranslations != this._provider_translations) {
             return true;
         }
         return false;
@@ -858,10 +884,10 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
         if (!this.menu.isOpen)
             return;
 
-        if (!this._disable_forecast && this._currentForecast !== undefined)
+        if (!this._isForecastDisabled && this._currentForecast !== undefined)
             this._currentForecast.set_width(this._currentWeather.get_width());
 
-        if (!this._disable_forecast && this._forecastExpander !== undefined) {
+        if (!this._isForecastDisabled && this._forecastDays != 0 && this._forecastExpander !== undefined) {
             this._forecastScrollBox.set_width(this._forecastExpanderBox.get_width() - this._daysBox.get_width());
             this._forecastScrollBox.show();
             this._forecastScrollBox.hscroll.show();
@@ -1187,7 +1213,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
             GLib.source_remove(this._timeoutForecast);
             this._timeoutForecast = null;
         }
-        if (this._disable_forecast)
+        if (this._isForecastDisabled)
             return;
 
         _timeCacheForecastWeather = new Date();
@@ -1204,7 +1230,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
 
     rebuildCurrentWeatherUi() {
         this._currentWeather.actor.destroy_all_children();
-        if (!this._disable_forecast)
+        if (!this._isForecastDisabled)
             this._currentForecast.actor.destroy_all_children();
 
         this._weatherInfo.text = ('...');
@@ -1346,7 +1372,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
         this._currentWeather.actor.add_child(box);
 
         // Today's forecast if not disabled by user
-        if (this._disable_forecast)
+        if (this._isForecastDisabled)
             return;
 
         this._todays_forecast = [];
@@ -1407,7 +1433,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     }
 
     rebuildFutureWeatherUi(cnt) {
-        if (this._disable_forecast)
+        if (this._isForecastDisabled || this._forecastDays === 0)
             return;
         this._forecastExpander.menu.box.destroy_all_children();
 
@@ -1522,7 +1548,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     }
 
     _onScroll(actor, event) {
-        if (this._disable_forecast)
+        if (this._isForecastDisabled)
             return;
 
         let dx = 0;

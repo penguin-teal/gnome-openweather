@@ -265,18 +265,20 @@ async function reloadWeatherCache() {
         await this.populateCurrentUI()
         .then(async () => {
             try {
-                if (this._forecastDays != this._days_forecast) {
-                    // user changed forecast days, so we need to force a refresh
-                    this.forecastJsonCache = undefined;
-                    await this.refreshForecastData()
-                    .then(async () => {
-                        this._forecastDays = this._days_forecast;
-                        this.recalcLayout();
-                    });
-                } else {
-                    // otherwise we just reload the current cache
-                    await this.populateForecastUI()
-                    .then(this.recalcLayout());
+                if (!this._isForecastDisabled) {
+                    if (this.forecastJsonCache === undefined) {
+                        // cache was cleared, so we need to force a refresh
+                        await this.refreshForecastData()
+                        .then(this.recalcLayout());
+                    } else {
+                        // otherwise we just reload the current cache
+                        await this.populateTodaysUI()
+                        .then(async () => {
+                            if (this._forecastDays >= 1) {
+                                await this.populateForecastUI();
+                            }
+                        }).then(this.recalcLayout());
+                    }
                 }
             }
             catch (e) {
@@ -297,7 +299,7 @@ async function refreshWeatherData() {
         lon: location.split(",")[1],
         units: 'metric'
     };
-    if (this._provider_translations) {
+    if (this._providerTranslations) {
         params.lang = this.locale;
     }
     if (this._appid) {
@@ -327,7 +329,7 @@ async function refreshWeatherData() {
 
 async function refreshForecastData() {
     // Did the user disable the forecast?
-    if (this._disable_forecast) {
+    if (this._isForecastDisabled) {
         return;
     }
     let json = undefined;
@@ -339,7 +341,7 @@ async function refreshForecastData() {
         lon: location.split(",")[1],
         units: 'metric'
     };
-    if (this._provider_translations) {
+    if (this._providerTranslations) {
         params.lang = this.locale;
     }
     if (this._appid) {
@@ -366,13 +368,23 @@ async function refreshForecastData() {
                 // Today's forecast
                 todayList = await this.processTodaysData(json)
                 .then(async (todayList) => {
-                    this.todaysWeatherCache = todayList;
+                    try {
+                        this.todaysWeatherCache = todayList;
+                        await this.populateTodaysUI();
+                    }
+                    catch (e) {
+                        logError(e);
+                    }
                 });
                 // 5 day / 3 hour forecast
+                if (this._forecastDays === 0) {
+                    // Stop if only today's forecast is enabled
+                    break processing;
+                }
                 sortedList = await this.processForecastData(json)
                 .then(async (sortedList) => {
-                    this.forecastWeatherCache = sortedList;
                     try {
+                        this.forecastWeatherCache = sortedList;
                         await this.populateForecastUI();
                     }
                     catch (e) {
@@ -403,7 +415,7 @@ function populateCurrentUI() {
             let location = this.extractLocation(this._city);
 
             let comment = json.weather[0].description;
-            if (this._translate_condition && !this._provider_translations)
+            if (this._translate_condition && !this._providerTranslations)
                 comment = getWeatherCondition(json.weather[0].id);
 
             let temperature = this.formatTemperature(json.main.temp);
@@ -486,7 +498,7 @@ function populateCurrentUI() {
     });
 }
 
-function populateForecastUI() {
+function populateTodaysUI() {
     return new Promise((resolve, reject) => {
         try {
             // Refresh today's forecast
@@ -504,7 +516,7 @@ function populateForecastUI() {
                 let iconname = getIconName(forecastDataToday.weather[0].id, iconTime < sunrise || iconTime > sunset);
 
                 let comment = forecastDataToday.weather[0].description;
-                if (this._translate_condition && !this._provider_translations)
+                if (this._translate_condition && !this._providerTranslations)
                     comment = getWeatherCondition(forecastDataToday.weather[0].id);
 
                 if (this._clockFormat == "24h") {
@@ -518,11 +530,23 @@ function populateForecastUI() {
                 forecastTodayUi.Temperature.text = forecastTemp;
                 forecastTodayUi.Summary.text = comment;
             }
+            resolve(0);
+        }
+        catch (e) {
+            reject(e);
+        }
+    });
+}
 
+function populateForecastUI() {
+    return new Promise((resolve, reject) => {
+        try {
             // Refresh 5 day / 3 hour forecast
             let forecast = this.forecastWeatherCache;
+            let sunrise = new Date(this.currentWeatherCache.sys.sunrise * 1000).toLocaleTimeString([this.locale], { hour12: false });
+            let sunset = new Date(this.currentWeatherCache.sys.sunset * 1000).toLocaleTimeString([this.locale], { hour12: false });
 
-            for (let i = 0; i < this._days_forecast; i++) {
+            for (let i = 0; i < this._forecastDays; i++) {
                 let forecastUi = this._forecast[i];
                 let forecastData = forecast[i];
 
@@ -545,7 +569,7 @@ function populateForecastUI() {
                     let forecastTemp = this.formatTemperature(forecastData[j].main.temp);
 
                     let comment = forecastData[j].weather[0].description;
-                    if (this._translate_condition && !this._provider_translations)
+                    if (this._translate_condition && !this._providerTranslations)
                         comment = getWeatherCondition(forecastData[j].weather[0].id);
 
                     if (this._clockFormat == "24h") {
@@ -643,7 +667,7 @@ function processForecastData(json) {
                     // Add item to current day
                     sortedList[a].push(data[i]);
                 } else {
-                    if (sortedList.length === this._days_forecast) {
+                    if (sortedList.length === this._forecastDays) {
                         // If we reach the forecast limit set by the user
                         break;
                     }
