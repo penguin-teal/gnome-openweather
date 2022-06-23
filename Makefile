@@ -23,7 +23,7 @@ endif
 # Set a git version for self builds from the latest git tag with the revision
 # (a monotonically increasing number that uniquely identifies the source tree)
 # and the current short commit SHA1. (Note: not set if VERSION passed)
-GIT_VER = $(shell git describe --tags | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g')
+GIT_VER = $(shell git describe --long --tags | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g')
 # The command line passed variable VERSION is used to set the version integer
 # in the metadata and in the generated zip file. If no VERSION is passed, we
 # won't touch the metadata version and instead use that for the zip file.
@@ -32,6 +32,8 @@ ifdef VERSION
 else
 	ZIPVER = -v$(shell cat metadata.json | sed '/"version"/!d' | sed s/\"version\"://g | sed s/\ //g)
 endif
+
+.PHONY: all clean extension potfile mergepo install install-local zip-file
 
 all: extension
 

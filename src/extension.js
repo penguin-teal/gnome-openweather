@@ -1486,7 +1486,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
         if (cnt === 1)
             this._forecastExpander.label.set_text( _("Tomorrow's Forecast") );
         else
-            this._forecastExpander.label.set_text(cnt + " " + _("Day Forecast") );
+            this._forecastExpander.label.set_text( _("%s Day Forecast").format(cnt) );
 
         for (let i = 0; i < cnt; i++) {
             let forecastWeather = {};

@@ -104,7 +104,7 @@
       <summary>Conditions in Panel</summary>
     </key>
     <key type="b" name="disable-forecast">
-      <default>true</default>
+      <default>false</default>
       <summary>Disable Forecast</summary>
     </key>
     <key type="b" name="show-comment-in-forecast">
@@ -144,7 +144,7 @@
       <summary>Always keep forecast expanded</summary>
     </key>
     <key type="i" name="days-forecast">
-      <default>1</default>
+      <default>2</default>
       <summary>Number of days in forecast</summary>
     </key>
     <key type="i" name="decimal-places">

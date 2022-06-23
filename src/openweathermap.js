@@ -19,7 +19,6 @@ const Soup = imports.gi.Soup;
 const ExtensionUtils = imports.misc.extensionUtils;
 const Me = ExtensionUtils.getCurrentExtension();
 const Gettext = imports.gettext.domain(Me.metadata['gettext-domain']);
-const ngettext = Gettext.ngettext;
 const _ = Gettext.gettext;
 
 function getIconName(code, night) {
@@ -412,52 +411,28 @@ function populateCurrentUI() {
             let json = this.currentWeatherCache;
             this.owmCityId = json.id;
 
-            let location = this.extractLocation(this._city);
-
             let comment = json.weather[0].description;
             if (this._translate_condition && !this._providerTranslations)
                 comment = getWeatherCondition(json.weather[0].id);
 
+            let location = this.extractLocation(this._city);
             let temperature = this.formatTemperature(json.main.temp);
             let sunrise = new Date(json.sys.sunrise * 1000);
             let sunset = new Date(json.sys.sunset * 1000);
             let now = new Date();
-
-            let iconname = getIconName(json.weather[0].id, now < sunrise || now > sunset);
-
-            if (this.lastBuildId === undefined)
-                this.lastBuildId = 0;
-            if (this.lastBuildDate === undefined)
-                this.lastBuildDate = 0;
-
-            if (this.lastBuildId != json.dt || !this.lastBuildDate)
-                this.lastBuildId = json.dt;
-
-            if (this._lastRefresh && this._lastRefresh > this.lastBuildId * 1000)
-                this.lastBuildDate = new Date(this._lastRefresh);
-            else
-                this.lastBuildDate = new Date(this.lastBuildId * 1000);
-
             let lastBuild = '-';
 
             if (this._clockFormat == "24h") {
                 sunrise = sunrise.toLocaleTimeString([this.locale], { hour12: false });
                 sunset = sunset.toLocaleTimeString([this.locale], { hour12: false });
-                lastBuild = this.lastBuildDate.toLocaleTimeString([this.locale], { hour12: false });
+                lastBuild = now.toLocaleTimeString([this.locale], { hour12: false });
             } else {
                 sunrise = sunrise.toLocaleTimeString([this.locale], { hour: 'numeric', minute: 'numeric' });
                 sunset = sunset.toLocaleTimeString([this.locale], { hour: 'numeric', minute: 'numeric' });
-                lastBuild = this.lastBuildDate.toLocaleTimeString([this.locale], { hour: 'numeric', minute: 'numeric' });
+                lastBuild = now.toLocaleTimeString([this.locale], { hour: 'numeric', minute: 'numeric' });
             }
 
-            let beginOfDay = new Date(new Date().setHours(0, 0, 0, 0));
-            let d = Math.floor((this.lastBuildDate.getTime() - beginOfDay.getTime()) / 86400000);
-            if (d < 0) {
-                lastBuild = _("Yesterday");
-                if (d < -1)
-                    lastBuild = ngettext("%d day ago", "%d days ago", -1 * d).format(-1 * d);
-            }
-
+            let iconname = getIconName(json.weather[0].id, now < sunrise || now > sunset);
             this._currentWeatherIcon.set_gicon(this.getWeatherIcon(iconname));
             this._weatherIcon.set_gicon(this.getWeatherIcon(iconname));
 
@@ -466,7 +441,6 @@ function populateCurrentUI() {
 
             if (this._comment_in_panel)
                 weatherInfoC = comment;
-
             if (this._text_in_panel)
                 weatherInfoT = temperature;
 
@@ -501,7 +475,7 @@ function populateCurrentUI() {
 function populateTodaysUI() {
     return new Promise((resolve, reject) => {
         try {
-            // Refresh today's forecast
+            // Populate today's forecast UI
             let forecast_today = this.todaysWeatherCache;
             let sunrise = new Date(this.currentWeatherCache.sys.sunrise * 1000).toLocaleTimeString([this.locale], { hour12: false });
             let sunset = new Date(this.currentWeatherCache.sys.sunset * 1000).toLocaleTimeString([this.locale], { hour12: false });
@@ -541,7 +515,7 @@ function populateTodaysUI() {
 function populateForecastUI() {
     return new Promise((resolve, reject) => {
         try {
-            // Refresh 5 day / 3 hour forecast
+            // Populate 5 day / 3 hour forecast UI
             let forecast = this.forecastWeatherCache;
             let sunrise = new Date(this.currentWeatherCache.sys.sunrise * 1000).toLocaleTimeString([this.locale], { hour12: false });
             let sunset = new Date(this.currentWeatherCache.sys.sunset * 1000).toLocaleTimeString([this.locale], { hour12: false });
@@ -604,16 +578,16 @@ function loadJsonAsync(url, params) {
         }
 
         let _httpSession = new Soup.Session();
-        let message = Soup.form_request_new_from_hash('GET', url, params);
+        let _message = Soup.form_request_new_from_hash('GET', url, params);
         // add trailing space, so libsoup adds its own user-agent
         _httpSession.user_agent = _userAgent + ' ';
 
-        _httpSession.queue_message(message, (_httpSession, message) => {
+        _httpSession.queue_message(_message, (_httpSession, _message) => {
             try {
-                if (!message.response_body.data)
+                if (!_message.response_body.data)
                     reject("No data");
 
-                resolve(JSON.parse(message.response_body.data));
+                resolve(JSON.parse(_message.response_body.data));
             }
             catch (e) {
                 reject(e);

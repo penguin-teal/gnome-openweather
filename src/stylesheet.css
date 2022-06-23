@@ -101,7 +101,8 @@
 
 .openweather-today-databox {
 	text-align: center;
-	min-width: 180px;
+	padding-right: 35px;
+	padding-left: 35px;
 }
 
 .openweather-forecast-databox {
