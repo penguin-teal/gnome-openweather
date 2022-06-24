@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: 3.0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-06-23 14:51-0300\n"
-"PO-Revision-Date: 2022-06-21 11:33-0400\n"
+"PO-Revision-Date: 2022-06-24 10:38-0400\n"
 "Last-Translator: Francis Gagnon <franckgaga2@gmail.com>\n"
 "Language-Team: French <franckgaga2@gmail.com>\n"
 "Language: fr\n"
@@ -50,9 +50,9 @@ msgid "Reload Weather Information"
 msgstr "Recharger les informations météo"
 
 #: src/extension.js:771
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "Weather data by: %s"
-msgstr "Données météo fournies par : "
+msgstr "Données météo fournies par : %s"
 
 #: src/extension.js:773
 msgid "Weather Settings"
@@ -318,9 +318,9 @@ msgid "Tomorrow's Forecast"
 msgstr "Prévision de demain"
 
 #: src/extension.js:1489
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "%s Day Forecast"
-msgstr "jours de prévision"
+msgstr "Prévision %s jours"
 
 #: src/openweathermap.js:123
 msgid "Thunderstorm with Light Rain"
@@ -652,17 +652,21 @@ msgstr "Fournisseur"
 
 #: src/preferences/generalPage.js:210
 msgid "OpenWeatherMap Multilingual Support"
-msgstr ""
+msgstr "Support multilingue d'OpenWeatherMap"
 
 #: src/preferences/generalPage.js:211
 msgid "Using provider translations applies to weather conditions only"
 msgstr ""
+"L'utilisation des traductions du fournisseur s'applique uniquement aux "
+"conditions météorologiquees"
 
 #: src/preferences/generalPage.js:212
 msgid ""
 "Enable this to use OWM multilingual support in 46 languages if there's no "
 "built-in translations for your language yet."
 msgstr ""
+"Activez ceci pour le support multilingue de OWM dans 46 langues s'il n'y a "
+"pas encore de traduction dans votre langue."
 
 #: src/preferences/generalPage.js:224
 msgid "Use Extensions API Key"
@@ -801,7 +805,7 @@ msgstr "Conditions météo dans les prévisions"
 
 #: src/preferences/layoutPage.js:228
 msgid "Today Only"
-msgstr ""
+msgstr "Aujourd'hui seulement"
 
 #: src/preferences/layoutPage.js:232
 msgid "4"
@@ -1070,7 +1074,7 @@ msgstr "Ville actuelle"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:92
 msgid "OpenWeatherMap Multilingual Support (weather descriptions only)"
-msgstr ""
+msgstr "Support multilingue d'OpenWeatherMap (descriptions météo seulement)"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:100
 msgid "Temperature in Panel"
