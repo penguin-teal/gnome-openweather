@@ -110,7 +110,7 @@ This project is a fork of the original OpenWeather extension by @jenslody. See [
 
 Special thanks to the following people for updating translation `*.po` files via merge requests since forking the project:
 
-French: @franckgaga | Slovak: @jose1711 | Chinese: @xiaozhangup | Portuguese: @ronaldocosta | Russian: @vantu5z | Czech: @lev741
+French: @franckgaga | Slovak: @jose1711 | Chinese: @xiaozhangup | Portuguese: @ronaldocosta | Russian: @vantu5z | Czech: @lev741 | Simplified Chinese: @zyw271828
 
 ### Icons
 
