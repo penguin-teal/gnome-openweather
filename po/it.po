@@ -512,7 +512,7 @@ msgstr "Cenere vulcanica"
 
 #: src/openweathermap.js:219
 msgid "Squalls"
-msgstr "Tempesa
+msgstr "Tempesa"
 
 #: src/openweathermap.js:221
 msgid "Tornado"
