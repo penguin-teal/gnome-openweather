@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-shell-extension-weather 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-23 14:51-0300\n"
+"POT-Creation-Date: 2022-07-17 16:52-0300\n"
 "PO-Revision-Date: 2017-02-04 20:27+0100\n"
 "Last-Translator: WhiteCat6142 <whitecat6142@gmail.com>\n"
 "Language-Team: Japanese <takeshi.aihana@gmail.com>\n"
@@ -314,280 +314,280 @@ msgstr ""
 msgid "%s Day Forecast"
 msgstr "週間天気予報に天気を表示する"
 
-#: src/openweathermap.js:123
+#: src/openweathermap.js:49
 #, fuzzy
 msgid "Thunderstorm with Light Rain"
 msgstr "雷雨(小雨)"
 
-#: src/openweathermap.js:125
+#: src/openweathermap.js:51
 #, fuzzy
 msgid "Thunderstorm with Rain"
 msgstr "雷雨"
 
-#: src/openweathermap.js:127
+#: src/openweathermap.js:53
 #, fuzzy
 msgid "Thunderstorm with Heavy Rain"
 msgstr "雷豪雨"
 
-#: src/openweathermap.js:129
+#: src/openweathermap.js:55
 #, fuzzy
 msgid "Light Thunderstorm"
 msgstr "弱い雷"
 
-#: src/openweathermap.js:131
+#: src/openweathermap.js:57
 msgid "Thunderstorm"
 msgstr "雷"
 
-#: src/openweathermap.js:133
+#: src/openweathermap.js:59
 #, fuzzy
 msgid "Heavy Thunderstorm"
 msgstr "激しい雷"
 
-#: src/openweathermap.js:135
+#: src/openweathermap.js:61
 #, fuzzy
 msgid "Ragged Thunderstorm"
 msgstr "不規則な雷"
 
-#: src/openweathermap.js:137
+#: src/openweathermap.js:63
 #, fuzzy
 msgid "Thunderstorm with Light Drizzle"
 msgstr "薄い霧を伴った雷雨"
 
-#: src/openweathermap.js:139
+#: src/openweathermap.js:65
 #, fuzzy
 msgid "Thunderstorm with Drizzle"
 msgstr "霧を伴った雷雨"
 
-#: src/openweathermap.js:141
+#: src/openweathermap.js:67
 #, fuzzy
 msgid "Thunderstorm with Heavy Drizzle"
 msgstr "濃い霧を伴った雷雨"
 
-#: src/openweathermap.js:143
+#: src/openweathermap.js:69
 #, fuzzy
 msgid "Light Drizzle"
 msgstr "軽風"
 
-#: src/openweathermap.js:145
+#: src/openweathermap.js:71
 msgid "Drizzle"
 msgstr "霧"
 
-#: src/openweathermap.js:147
+#: src/openweathermap.js:73
 #, fuzzy
 msgid "Heavy Drizzle"
 msgstr "霧"
 
-#: src/openweathermap.js:149
+#: src/openweathermap.js:75
 #, fuzzy
 msgid "Light Drizzle Rain"
 msgstr "霧雨"
 
-#: src/openweathermap.js:151
+#: src/openweathermap.js:77
 #, fuzzy
 msgid "Drizzle Rain"
 msgstr "霧雨"
 
-#: src/openweathermap.js:153
+#: src/openweathermap.js:79
 #, fuzzy
 msgid "Heavy Drizzle Rain"
 msgstr "霧雨"
 
-#: src/openweathermap.js:155
+#: src/openweathermap.js:81
 #, fuzzy
 msgid "Shower Rain and Drizzle"
 msgstr "にわか雨と霧"
 
-#: src/openweathermap.js:157
+#: src/openweathermap.js:83
 #, fuzzy
 msgid "Heavy Rain and Drizzle"
 msgstr "激しいにわか雨と霧"
 
-#: src/openweathermap.js:159
+#: src/openweathermap.js:85
 #, fuzzy
 msgid "Shower Drizzle"
 msgstr "湿った霧"
 
-#: src/openweathermap.js:161
+#: src/openweathermap.js:87
 #, fuzzy
 msgid "Light Rain"
 msgstr "小雨"
 
-#: src/openweathermap.js:163
+#: src/openweathermap.js:89
 #, fuzzy
 msgid "Moderate Rain"
 msgstr "雨"
 
-#: src/openweathermap.js:165
+#: src/openweathermap.js:91
 #, fuzzy
 msgid "Heavy Rain"
 msgstr "豪雪"
 
-#: src/openweathermap.js:167
+#: src/openweathermap.js:93
 #, fuzzy
 msgid "Very Heavy Rain"
 msgstr "とても激しい雨"
 
-#: src/openweathermap.js:169
+#: src/openweathermap.js:95
 #, fuzzy
 msgid "Extreme Rain"
 msgstr "すさまじい雨"
 
-#: src/openweathermap.js:171
+#: src/openweathermap.js:97
 #, fuzzy
 msgid "Freezing Rain"
 msgstr "冷雨"
 
-#: src/openweathermap.js:173
+#: src/openweathermap.js:99
 #, fuzzy
 msgid "Light Shower Rain"
 msgstr "軽いにわか雪"
 
-#: src/openweathermap.js:175
+#: src/openweathermap.js:101
 #, fuzzy
 msgid "Shower Rain"
 msgstr "にわか雨"
 
-#: src/openweathermap.js:177
+#: src/openweathermap.js:103
 #, fuzzy
 msgid "Heavy Shower Rain"
 msgstr "激しいにわか雪"
 
-#: src/openweathermap.js:179
+#: src/openweathermap.js:105
 #, fuzzy
 msgid "Ragged Shower Rain"
 msgstr "不規則なにわか雨"
 
-#: src/openweathermap.js:181
+#: src/openweathermap.js:107
 #, fuzzy
 msgid "Light Snow"
 msgstr "小雪"
 
-#: src/openweathermap.js:183
+#: src/openweathermap.js:109
 msgid "Snow"
 msgstr "雪"
 
-#: src/openweathermap.js:185
+#: src/openweathermap.js:111
 #, fuzzy
 msgid "Heavy Snow"
 msgstr "豪雪"
 
-#: src/openweathermap.js:187
+#: src/openweathermap.js:113
 msgid "Sleet"
 msgstr "みぞれ"
 
-#: src/openweathermap.js:189
+#: src/openweathermap.js:115
 #, fuzzy
 msgid "Light Shower Sleet"
 msgstr "みぞれ"
 
-#: src/openweathermap.js:191
+#: src/openweathermap.js:117
 #, fuzzy
 msgid "Shower Sleet"
 msgstr "みぞれ"
 
-#: src/openweathermap.js:193
+#: src/openweathermap.js:119
 #, fuzzy
 msgid "Light Rain and Snow"
 msgstr "軽い雨雪"
 
-#: src/openweathermap.js:195
+#: src/openweathermap.js:121
 #, fuzzy
 msgid "Rain and Snow"
 msgstr "雨雪"
 
-#: src/openweathermap.js:197
+#: src/openweathermap.js:123
 #, fuzzy
 msgid "Light Shower Snow"
 msgstr "軽いにわか雪"
 
-#: src/openweathermap.js:199
+#: src/openweathermap.js:125
 #, fuzzy
 msgid "Shower Snow"
 msgstr "にわか雪"
 
-#: src/openweathermap.js:201
+#: src/openweathermap.js:127
 #, fuzzy
 msgid "Heavy Shower Snow"
 msgstr "激しいにわか雪"
 
-#: src/openweathermap.js:203
+#: src/openweathermap.js:129
 msgid "Mist"
 msgstr "霞"
 
-#: src/openweathermap.js:205
+#: src/openweathermap.js:131
 msgid "Smoke"
 msgstr "煙"
 
-#: src/openweathermap.js:207
+#: src/openweathermap.js:133
 msgid "Haze"
 msgstr "煙霧"
 
-#: src/openweathermap.js:209
+#: src/openweathermap.js:135
 msgid "Sand/Dust Whirls"
 msgstr "黄砂"
 
-#: src/openweathermap.js:211
+#: src/openweathermap.js:137
 msgid "Fog"
 msgstr "霧"
 
-#: src/openweathermap.js:213
+#: src/openweathermap.js:139
 msgid "Sand"
 msgstr "黄砂"
 
-#: src/openweathermap.js:215
+#: src/openweathermap.js:141
 msgid "Dust"
 msgstr "塵"
 
-#: src/openweathermap.js:217
+#: src/openweathermap.js:143
 msgid "Volcanic Ash"
 msgstr ""
 
-#: src/openweathermap.js:219
+#: src/openweathermap.js:145
 msgid "Squalls"
 msgstr ""
 
-#: src/openweathermap.js:221
+#: src/openweathermap.js:147
 msgid "Tornado"
 msgstr ""
 
-#: src/openweathermap.js:223
+#: src/openweathermap.js:149
 #, fuzzy
 msgid "Clear Sky"
 msgstr "エントリーのクリア"
 
-#: src/openweathermap.js:225
+#: src/openweathermap.js:151
 #, fuzzy
 msgid "Few Clouds"
 msgstr "晴れ"
 
-#: src/openweathermap.js:227
+#: src/openweathermap.js:153
 #, fuzzy
 msgid "Scattered Clouds"
 msgstr "千切れ雲(半分以下)"
 
-#: src/openweathermap.js:229
+#: src/openweathermap.js:155
 #, fuzzy
 msgid "Broken Clouds"
 msgstr "千切れ雲(半分以上)"
 
-#: src/openweathermap.js:231
+#: src/openweathermap.js:157
 #, fuzzy
 msgid "Overcast Clouds"
 msgstr "曇り"
 
-#: src/openweathermap.js:233
+#: src/openweathermap.js:159
 msgid "Not available"
 msgstr "データーなし"
 
-#: src/openweathermap.js:447 src/openweathermap.js:449
+#: src/openweathermap.js:373 src/openweathermap.js:375
 msgid ", "
 msgstr ","
 
-#: src/openweathermap.js:465
+#: src/openweathermap.js:391
 msgid "?"
 msgstr ""
 
-#: src/openweathermap.js:537
+#: src/openweathermap.js:459
 msgid "Tomorrow"
 msgstr "明日"
 

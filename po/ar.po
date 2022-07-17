@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-shell-extension-openweather\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-23 14:51-0300\n"
+"POT-Creation-Date: 2022-07-17 16:52-0300\n"
 "PO-Revision-Date: 2016-10-04 00:38+0200\n"
 "Last-Translator: Khaled Hosny <khaledhosny@eglug.org>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
@@ -317,280 +317,280 @@ msgstr ""
 msgid "%s Day Forecast"
 msgstr "الأحوال في التنبؤات"
 
-#: src/openweathermap.js:123
+#: src/openweathermap.js:49
 #, fuzzy
 msgid "Thunderstorm with Light Rain"
 msgstr "عاصفة رعدية مع مطر خفيف"
 
-#: src/openweathermap.js:125
+#: src/openweathermap.js:51
 #, fuzzy
 msgid "Thunderstorm with Rain"
 msgstr "عاصفة رعدية مع مطر"
 
-#: src/openweathermap.js:127
+#: src/openweathermap.js:53
 #, fuzzy
 msgid "Thunderstorm with Heavy Rain"
 msgstr "عاصفة رعدية مع مطر غزير"
 
-#: src/openweathermap.js:129
+#: src/openweathermap.js:55
 #, fuzzy
 msgid "Light Thunderstorm"
 msgstr "عاصفة رعدية خفيفة"
 
-#: src/openweathermap.js:131
+#: src/openweathermap.js:57
 msgid "Thunderstorm"
 msgstr "عاصفة رعدية"
 
-#: src/openweathermap.js:133
+#: src/openweathermap.js:59
 #, fuzzy
 msgid "Heavy Thunderstorm"
 msgstr "عاصفة رعدية غزيرة"
 
-#: src/openweathermap.js:135
+#: src/openweathermap.js:61
 #, fuzzy
 msgid "Ragged Thunderstorm"
 msgstr "عاصفة رعدية متقطعة"
 
-#: src/openweathermap.js:137
+#: src/openweathermap.js:63
 #, fuzzy
 msgid "Thunderstorm with Light Drizzle"
 msgstr "عاصفة رعدية مع رذاذ خفيف"
 
-#: src/openweathermap.js:139
+#: src/openweathermap.js:65
 #, fuzzy
 msgid "Thunderstorm with Drizzle"
 msgstr "عاصفة رعدية مع رذاذ"
 
-#: src/openweathermap.js:141
+#: src/openweathermap.js:67
 #, fuzzy
 msgid "Thunderstorm with Heavy Drizzle"
 msgstr "عاصفة رعدية مع رذاذ غزير"
 
-#: src/openweathermap.js:143
+#: src/openweathermap.js:69
 #, fuzzy
 msgid "Light Drizzle"
 msgstr "نسيم خفيف"
 
-#: src/openweathermap.js:145
+#: src/openweathermap.js:71
 msgid "Drizzle"
 msgstr "رذاذ"
 
-#: src/openweathermap.js:147
+#: src/openweathermap.js:73
 #, fuzzy
 msgid "Heavy Drizzle"
 msgstr "رذاذ"
 
-#: src/openweathermap.js:149
+#: src/openweathermap.js:75
 #, fuzzy
 msgid "Light Drizzle Rain"
 msgstr "رذاذ"
 
-#: src/openweathermap.js:151
+#: src/openweathermap.js:77
 #, fuzzy
 msgid "Drizzle Rain"
 msgstr "رذاذ"
 
-#: src/openweathermap.js:153
+#: src/openweathermap.js:79
 #, fuzzy
 msgid "Heavy Drizzle Rain"
 msgstr "رذاذ"
 
-#: src/openweathermap.js:155
+#: src/openweathermap.js:81
 #, fuzzy
 msgid "Shower Rain and Drizzle"
 msgstr "زخات مطر و رذاذ"
 
-#: src/openweathermap.js:157
+#: src/openweathermap.js:83
 #, fuzzy
 msgid "Heavy Rain and Drizzle"
 msgstr "زخات مطر و رذاذ غزيرة"
 
-#: src/openweathermap.js:159
+#: src/openweathermap.js:85
 #, fuzzy
 msgid "Shower Drizzle"
 msgstr "زخات رذاذ"
 
-#: src/openweathermap.js:161
+#: src/openweathermap.js:87
 #, fuzzy
 msgid "Light Rain"
 msgstr "مطر خفيف"
 
-#: src/openweathermap.js:163
+#: src/openweathermap.js:89
 #, fuzzy
 msgid "Moderate Rain"
 msgstr "مطر معتدل"
 
-#: src/openweathermap.js:165
+#: src/openweathermap.js:91
 #, fuzzy
 msgid "Heavy Rain"
 msgstr "ثلوج غزيرة"
 
-#: src/openweathermap.js:167
+#: src/openweathermap.js:93
 #, fuzzy
 msgid "Very Heavy Rain"
 msgstr "مطر غزير جدًا"
 
-#: src/openweathermap.js:169
+#: src/openweathermap.js:95
 #, fuzzy
 msgid "Extreme Rain"
 msgstr "مطر شديد"
 
-#: src/openweathermap.js:171
+#: src/openweathermap.js:97
 #, fuzzy
 msgid "Freezing Rain"
 msgstr "مطر مجمِّد"
 
-#: src/openweathermap.js:173
+#: src/openweathermap.js:99
 #, fuzzy
 msgid "Light Shower Rain"
 msgstr "زخات ثلوج خفيفة"
 
-#: src/openweathermap.js:175
+#: src/openweathermap.js:101
 #, fuzzy
 msgid "Shower Rain"
 msgstr "زخات مطر"
 
-#: src/openweathermap.js:177
+#: src/openweathermap.js:103
 #, fuzzy
 msgid "Heavy Shower Rain"
 msgstr "زخات ثلوج غزيرة"
 
-#: src/openweathermap.js:179
+#: src/openweathermap.js:105
 #, fuzzy
 msgid "Ragged Shower Rain"
 msgstr "زخات مطر متقطعة"
 
-#: src/openweathermap.js:181
+#: src/openweathermap.js:107
 #, fuzzy
 msgid "Light Snow"
 msgstr "ثلوج خفيفة"
 
-#: src/openweathermap.js:183
+#: src/openweathermap.js:109
 msgid "Snow"
 msgstr "ثلوج"
 
-#: src/openweathermap.js:185
+#: src/openweathermap.js:111
 #, fuzzy
 msgid "Heavy Snow"
 msgstr "ثلوج غزيرة"
 
-#: src/openweathermap.js:187
+#: src/openweathermap.js:113
 msgid "Sleet"
 msgstr "جَمَد المَطَر"
 
-#: src/openweathermap.js:189
+#: src/openweathermap.js:115
 #, fuzzy
 msgid "Light Shower Sleet"
 msgstr "جَمَد مطر بطيء"
 
-#: src/openweathermap.js:191
+#: src/openweathermap.js:117
 #, fuzzy
 msgid "Shower Sleet"
 msgstr "جَمَد مطر بطيء"
 
-#: src/openweathermap.js:193
+#: src/openweathermap.js:119
 #, fuzzy
 msgid "Light Rain and Snow"
 msgstr "مطر خفيف و ثلوج"
 
-#: src/openweathermap.js:195
+#: src/openweathermap.js:121
 #, fuzzy
 msgid "Rain and Snow"
 msgstr "مطر و ثلوج"
 
-#: src/openweathermap.js:197
+#: src/openweathermap.js:123
 #, fuzzy
 msgid "Light Shower Snow"
 msgstr "زخات ثلوج خفيفة"
 
-#: src/openweathermap.js:199
+#: src/openweathermap.js:125
 #, fuzzy
 msgid "Shower Snow"
 msgstr "ثلوج أبطأ"
 
-#: src/openweathermap.js:201
+#: src/openweathermap.js:127
 #, fuzzy
 msgid "Heavy Shower Snow"
 msgstr "زخات ثلوج غزيرة"
 
-#: src/openweathermap.js:203
+#: src/openweathermap.js:129
 msgid "Mist"
 msgstr "ضباب خفيف"
 
-#: src/openweathermap.js:205
+#: src/openweathermap.js:131
 msgid "Smoke"
 msgstr "دخان"
 
-#: src/openweathermap.js:207
+#: src/openweathermap.js:133
 msgid "Haze"
 msgstr "سديم"
 
-#: src/openweathermap.js:209
+#: src/openweathermap.js:135
 msgid "Sand/Dust Whirls"
 msgstr "دوامات رمل و غبار"
 
-#: src/openweathermap.js:211
+#: src/openweathermap.js:137
 msgid "Fog"
 msgstr "ضباب"
 
-#: src/openweathermap.js:213
+#: src/openweathermap.js:139
 msgid "Sand"
 msgstr "رمال"
 
-#: src/openweathermap.js:215
+#: src/openweathermap.js:141
 msgid "Dust"
 msgstr "غبار"
 
-#: src/openweathermap.js:217
+#: src/openweathermap.js:143
 msgid "Volcanic Ash"
 msgstr ""
 
-#: src/openweathermap.js:219
+#: src/openweathermap.js:145
 msgid "Squalls"
 msgstr ""
 
-#: src/openweathermap.js:221
+#: src/openweathermap.js:147
 msgid "Tornado"
 msgstr ""
 
-#: src/openweathermap.js:223
+#: src/openweathermap.js:149
 #, fuzzy
 msgid "Clear Sky"
 msgstr "امسح الخانة"
 
-#: src/openweathermap.js:225
+#: src/openweathermap.js:151
 #, fuzzy
 msgid "Few Clouds"
 msgstr "سُحُب خفيفة"
 
-#: src/openweathermap.js:227
+#: src/openweathermap.js:153
 #, fuzzy
 msgid "Scattered Clouds"
 msgstr "سُحُب متفرقة"
 
-#: src/openweathermap.js:229
+#: src/openweathermap.js:155
 #, fuzzy
 msgid "Broken Clouds"
 msgstr "سُحُب مفككة"
 
-#: src/openweathermap.js:231
+#: src/openweathermap.js:157
 #, fuzzy
 msgid "Overcast Clouds"
 msgstr "غيوم"
 
-#: src/openweathermap.js:233
+#: src/openweathermap.js:159
 msgid "Not available"
 msgstr "غير متاح"
 
-#: src/openweathermap.js:447 src/openweathermap.js:449
+#: src/openweathermap.js:373 src/openweathermap.js:375
 msgid ", "
 msgstr "، "
 
-#: src/openweathermap.js:465
+#: src/openweathermap.js:391
 msgid "?"
 msgstr ""
 
-#: src/openweathermap.js:537
+#: src/openweathermap.js:459
 msgid "Tomorrow"
 msgstr "غدًا"
 

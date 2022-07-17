@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 3.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-23 14:51-0300\n"
+"POT-Creation-Date: 2022-07-17 16:52-0300\n"
 "PO-Revision-Date: 2022-05-22 23:53-0300\n"
 "Last-Translator: Ronaldo Costa <ronaldocosta@oceanica.ufrj.br>\n"
 "Language-Team: Brazilian Portuguese <ronaldocosta@oceanica.ufrj.br>\n"
@@ -318,280 +318,280 @@ msgstr "Previsão de amanhã"
 msgid "%s Day Forecast"
 msgstr "Previsão do dia"
 
-#: src/openweathermap.js:123
+#: src/openweathermap.js:49
 #, fuzzy
 msgid "Thunderstorm with Light Rain"
 msgstr "Temporal com chuva leve"
 
-#: src/openweathermap.js:125
+#: src/openweathermap.js:51
 #, fuzzy
 msgid "Thunderstorm with Rain"
 msgstr "Tempestade com raios"
 
-#: src/openweathermap.js:127
+#: src/openweathermap.js:53
 #, fuzzy
 msgid "Thunderstorm with Heavy Rain"
 msgstr "Temporal com chuva pesada"
 
-#: src/openweathermap.js:129
+#: src/openweathermap.js:55
 #, fuzzy
 msgid "Light Thunderstorm"
 msgstr "Tempestades isoladas"
 
-#: src/openweathermap.js:131
+#: src/openweathermap.js:57
 msgid "Thunderstorm"
 msgstr "Tempestade"
 
-#: src/openweathermap.js:133
+#: src/openweathermap.js:59
 #, fuzzy
 msgid "Heavy Thunderstorm"
 msgstr "Tempestade pesada"
 
-#: src/openweathermap.js:135
+#: src/openweathermap.js:61
 #, fuzzy
 msgid "Ragged Thunderstorm"
 msgstr "Tempestades isoladas"
 
-#: src/openweathermap.js:137
+#: src/openweathermap.js:63
 #, fuzzy
 msgid "Thunderstorm with Light Drizzle"
 msgstr "Temporal com chuvisco"
 
-#: src/openweathermap.js:139
+#: src/openweathermap.js:65
 #, fuzzy
 msgid "Thunderstorm with Drizzle"
 msgstr "Temporal com garoa"
 
-#: src/openweathermap.js:141
+#: src/openweathermap.js:67
 #, fuzzy
 msgid "Thunderstorm with Heavy Drizzle"
 msgstr "Temporal com garoa pesada"
 
-#: src/openweathermap.js:143
+#: src/openweathermap.js:69
 #, fuzzy
 msgid "Light Drizzle"
 msgstr "Brisa leve"
 
-#: src/openweathermap.js:145
+#: src/openweathermap.js:71
 msgid "Drizzle"
 msgstr "Chuvisco"
 
-#: src/openweathermap.js:147
+#: src/openweathermap.js:73
 #, fuzzy
 msgid "Heavy Drizzle"
 msgstr "Chuvisco"
 
-#: src/openweathermap.js:149
+#: src/openweathermap.js:75
 #, fuzzy
 msgid "Light Drizzle Rain"
 msgstr "Chuvisco"
 
-#: src/openweathermap.js:151
+#: src/openweathermap.js:77
 #, fuzzy
 msgid "Drizzle Rain"
 msgstr "Chuvisco"
 
-#: src/openweathermap.js:153
+#: src/openweathermap.js:79
 #, fuzzy
 msgid "Heavy Drizzle Rain"
 msgstr "Chuvisco"
 
-#: src/openweathermap.js:155
+#: src/openweathermap.js:81
 #, fuzzy
 msgid "Shower Rain and Drizzle"
 msgstr "Chuva e garoa"
 
-#: src/openweathermap.js:157
+#: src/openweathermap.js:83
 #, fuzzy
 msgid "Heavy Rain and Drizzle"
 msgstr "Chuva pesada e garoa"
 
-#: src/openweathermap.js:159
+#: src/openweathermap.js:85
 #, fuzzy
 msgid "Shower Drizzle"
 msgstr "Chuvisco"
 
-#: src/openweathermap.js:161
+#: src/openweathermap.js:87
 #, fuzzy
 msgid "Light Rain"
 msgstr "Chuva leve"
 
-#: src/openweathermap.js:163
+#: src/openweathermap.js:89
 #, fuzzy
 msgid "Moderate Rain"
 msgstr "Chuva moderada"
 
-#: src/openweathermap.js:165
+#: src/openweathermap.js:91
 #, fuzzy
 msgid "Heavy Rain"
 msgstr "Forte nevasca"
 
-#: src/openweathermap.js:167
+#: src/openweathermap.js:93
 #, fuzzy
 msgid "Very Heavy Rain"
 msgstr "Chuva muito pesada"
 
-#: src/openweathermap.js:169
+#: src/openweathermap.js:95
 #, fuzzy
 msgid "Extreme Rain"
 msgstr "Chuva forte"
 
-#: src/openweathermap.js:171
+#: src/openweathermap.js:97
 #, fuzzy
 msgid "Freezing Rain"
 msgstr "Chuva de granizo"
 
-#: src/openweathermap.js:173
+#: src/openweathermap.js:99
 #, fuzzy
 msgid "Light Shower Rain"
 msgstr "Nevadas leves"
 
-#: src/openweathermap.js:175
+#: src/openweathermap.js:101
 #, fuzzy
 msgid "Shower Rain"
 msgstr "Chuva"
 
-#: src/openweathermap.js:177
+#: src/openweathermap.js:103
 #, fuzzy
 msgid "Heavy Shower Rain"
 msgstr "Forte nevada"
 
-#: src/openweathermap.js:179
+#: src/openweathermap.js:105
 #, fuzzy
 msgid "Ragged Shower Rain"
 msgstr "Chuvas irregulares"
 
-#: src/openweathermap.js:181
+#: src/openweathermap.js:107
 #, fuzzy
 msgid "Light Snow"
 msgstr "Pouca neve"
 
-#: src/openweathermap.js:183
+#: src/openweathermap.js:109
 msgid "Snow"
 msgstr "Neve"
 
-#: src/openweathermap.js:185
+#: src/openweathermap.js:111
 #, fuzzy
 msgid "Heavy Snow"
 msgstr "Forte nevasca"
 
-#: src/openweathermap.js:187
+#: src/openweathermap.js:113
 msgid "Sleet"
 msgstr "Granizo"
 
-#: src/openweathermap.js:189
+#: src/openweathermap.js:115
 #, fuzzy
 msgid "Light Shower Sleet"
 msgstr "Chuva de granizo"
 
-#: src/openweathermap.js:191
+#: src/openweathermap.js:117
 #, fuzzy
 msgid "Shower Sleet"
 msgstr "Chuva de granizo"
 
-#: src/openweathermap.js:193
+#: src/openweathermap.js:119
 #, fuzzy
 msgid "Light Rain and Snow"
 msgstr "Chuva leve e neve"
 
-#: src/openweathermap.js:195
+#: src/openweathermap.js:121
 #, fuzzy
 msgid "Rain and Snow"
 msgstr "Chuva e neve"
 
-#: src/openweathermap.js:197
+#: src/openweathermap.js:123
 #, fuzzy
 msgid "Light Shower Snow"
 msgstr "Nevadas leves"
 
-#: src/openweathermap.js:199
+#: src/openweathermap.js:125
 #, fuzzy
 msgid "Shower Snow"
 msgstr "Nevada"
 
-#: src/openweathermap.js:201
+#: src/openweathermap.js:127
 #, fuzzy
 msgid "Heavy Shower Snow"
 msgstr "Forte nevada"
 
-#: src/openweathermap.js:203
+#: src/openweathermap.js:129
 msgid "Mist"
 msgstr "Névoa"
 
-#: src/openweathermap.js:205
+#: src/openweathermap.js:131
 msgid "Smoke"
 msgstr "Fumaça"
 
-#: src/openweathermap.js:207
+#: src/openweathermap.js:133
 msgid "Haze"
 msgstr "Neblina"
 
-#: src/openweathermap.js:209
+#: src/openweathermap.js:135
 msgid "Sand/Dust Whirls"
 msgstr "Jatos de poeira/areia"
 
-#: src/openweathermap.js:211
+#: src/openweathermap.js:137
 msgid "Fog"
 msgstr "Neblina"
 
-#: src/openweathermap.js:213
+#: src/openweathermap.js:139
 msgid "Sand"
 msgstr "Areia"
 
-#: src/openweathermap.js:215
+#: src/openweathermap.js:141
 msgid "Dust"
 msgstr "Poeira"
 
-#: src/openweathermap.js:217
+#: src/openweathermap.js:143
 msgid "Volcanic Ash"
 msgstr ""
 
-#: src/openweathermap.js:219
+#: src/openweathermap.js:145
 msgid "Squalls"
 msgstr ""
 
-#: src/openweathermap.js:221
+#: src/openweathermap.js:147
 msgid "Tornado"
 msgstr ""
 
-#: src/openweathermap.js:223
+#: src/openweathermap.js:149
 #, fuzzy
 msgid "Clear Sky"
 msgstr "Limpo"
 
-#: src/openweathermap.js:225
+#: src/openweathermap.js:151
 #, fuzzy
 msgid "Few Clouds"
 msgstr "Poucas nuvens"
 
-#: src/openweathermap.js:227
+#: src/openweathermap.js:153
 #, fuzzy
 msgid "Scattered Clouds"
 msgstr "Nuvens esparsas"
 
-#: src/openweathermap.js:229
+#: src/openweathermap.js:155
 #, fuzzy
 msgid "Broken Clouds"
 msgstr "Nublado"
 
-#: src/openweathermap.js:231
+#: src/openweathermap.js:157
 #, fuzzy
 msgid "Overcast Clouds"
 msgstr "Muito nublado"
 
-#: src/openweathermap.js:233
+#: src/openweathermap.js:159
 msgid "Not available"
 msgstr "Não disponível"
 
-#: src/openweathermap.js:447 src/openweathermap.js:449
+#: src/openweathermap.js:373 src/openweathermap.js:375
 msgid ", "
 msgstr ", "
 
-#: src/openweathermap.js:465
+#: src/openweathermap.js:391
 msgid "?"
 msgstr "?"
 
-#: src/openweathermap.js:537
+#: src/openweathermap.js:459
 msgid "Tomorrow"
 msgstr "Amanhã"
 

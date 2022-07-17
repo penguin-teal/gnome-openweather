@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 3.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-23 14:51-0300\n"
+"POT-Creation-Date: 2022-07-17 16:52-0300\n"
 "PO-Revision-Date: 2016-01-12 16:37+0100\n"
 "Last-Translator: Alessio Aletti\n"
 "Language-Team: \n"
@@ -318,239 +318,239 @@ msgstr "Previsioni per domani"
 msgid "%s Day Forecast"
 msgstr "Mostra le previsioni meteo sul pannello per %s giorni"
 
-#: src/openweathermap.js:123
+#: src/openweathermap.js:49
 msgid "Thunderstorm with Light Rain"
 msgstr "Temporale con pioggia leggera"
 
-#: src/openweathermap.js:125
+#: src/openweathermap.js:51
 msgid "Thunderstorm with Rain"
 msgstr "Temporale con pioggia"
 
-#: src/openweathermap.js:127
+#: src/openweathermap.js:53
 msgid "Thunderstorm with Heavy Rain"
 msgstr "Temporale con pioggia intensa"
 
-#: src/openweathermap.js:129
+#: src/openweathermap.js:55
 msgid "Light Thunderstorm"
 msgstr "Temporale leggero"
 
-#: src/openweathermap.js:131
+#: src/openweathermap.js:57
 msgid "Thunderstorm"
 msgstr "Temporale"
 
-#: src/openweathermap.js:133
+#: src/openweathermap.js:59
 msgid "Heavy Thunderstorm"
 msgstr "Temporale violento"
 
-#: src/openweathermap.js:135
+#: src/openweathermap.js:61
 msgid "Ragged Thunderstorm"
 msgstr "Temporali isolati"
 
-#: src/openweathermap.js:137
+#: src/openweathermap.js:63
 msgid "Thunderstorm with Light Drizzle"
 msgstr "Temporali con pioviggine leggera"
 
-#: src/openweathermap.js:139
+#: src/openweathermap.js:65
 msgid "Thunderstorm with Drizzle"
 msgstr "Temporali con pioviggine"
 
-#: src/openweathermap.js:141
+#: src/openweathermap.js:67
 msgid "Thunderstorm with Heavy Drizzle"
 msgstr "Temporali con pioviggine intensa"
 
-#: src/openweathermap.js:143
+#: src/openweathermap.js:69
 msgid "Light Drizzle"
 msgstr "Brezza leggera"
 
-#: src/openweathermap.js:145
+#: src/openweathermap.js:71
 msgid "Drizzle"
 msgstr "Pioviggine"
 
-#: src/openweathermap.js:147
+#: src/openweathermap.js:73
 msgid "Heavy Drizzle"
 msgstr "Pioviggine"
 
-#: src/openweathermap.js:149
+#: src/openweathermap.js:75
 msgid "Light Drizzle Rain"
 msgstr "Pioggerella"
 
-#: src/openweathermap.js:151
+#: src/openweathermap.js:77
 msgid "Drizzle Rain"
 msgstr "Pioggerella"
 
-#: src/openweathermap.js:153
+#: src/openweathermap.js:79
 msgid "Heavy Drizzle Rain"
 msgstr "Pioggerella"
 
-#: src/openweathermap.js:155
+#: src/openweathermap.js:81
 msgid "Shower Rain and Drizzle"
 msgstr "Pioviggine e pioggia improvvisa"
 
-#: src/openweathermap.js:157
+#: src/openweathermap.js:83
 msgid "Heavy Rain and Drizzle"
 msgstr "Pioviggine e forti piogge improvvise"
 
-#: src/openweathermap.js:159
+#: src/openweathermap.js:85
 msgid "Shower Drizzle"
 msgstr "Pioviggine improvvisa"
 
-#: src/openweathermap.js:161
+#: src/openweathermap.js:87
 msgid "Light Rain"
 msgstr "Pioggia leggera"
 
-#: src/openweathermap.js:163
+#: src/openweathermap.js:89
 msgid "Moderate Rain"
 msgstr "Pioggia moderata"
 
-#: src/openweathermap.js:165
+#: src/openweathermap.js:91
 msgid "Heavy Rain"
 msgstr "Pioggia intensa"
 
-#: src/openweathermap.js:167
+#: src/openweathermap.js:93
 msgid "Very Heavy Rain"
 msgstr "Rovesci"
 
-#: src/openweathermap.js:169
+#: src/openweathermap.js:95
 msgid "Extreme Rain"
 msgstr "Nubifragio"
 
-#: src/openweathermap.js:171
+#: src/openweathermap.js:97
 msgid "Freezing Rain"
 msgstr "Pioggia gelata"
 
-#: src/openweathermap.js:173
+#: src/openweathermap.js:99
 msgid "Light Shower Rain"
 msgstr "Leggera pioggia improvvisa"
 
-#: src/openweathermap.js:175
+#: src/openweathermap.js:101
 msgid "Shower Rain"
 msgstr "Acquazzone"
 
-#: src/openweathermap.js:177
+#: src/openweathermap.js:103
 msgid "Heavy Shower Rain"
 msgstr "Abbondanti acquazzoni"
 
-#: src/openweathermap.js:179
+#: src/openweathermap.js:105
 msgid "Ragged Shower Rain"
 msgstr "Acquazzoni sparsi"
 
-#: src/openweathermap.js:181
+#: src/openweathermap.js:107
 msgid "Light Snow"
 msgstr "Nevicate leggere"
 
-#: src/openweathermap.js:183
+#: src/openweathermap.js:109
 msgid "Snow"
 msgstr "Neve"
 
-#: src/openweathermap.js:185
+#: src/openweathermap.js:111
 msgid "Heavy Snow"
 msgstr "Nevicate intense"
 
-#: src/openweathermap.js:187
+#: src/openweathermap.js:113
 msgid "Sleet"
 msgstr "Nevischio"
 
-#: src/openweathermap.js:189
+#: src/openweathermap.js:115
 msgid "Light Shower Sleet"
 msgstr "Pioggia con nevischio"
 
-#: src/openweathermap.js:191
+#: src/openweathermap.js:117
 msgid "Shower Sleet"
 msgstr "Nevischio"
 
-#: src/openweathermap.js:193
+#: src/openweathermap.js:119
 msgid "Light Rain and Snow"
 msgstr "Pioggia leggera mista a neve"
 
-#: src/openweathermap.js:195
+#: src/openweathermap.js:121
 msgid "Rain and Snow"
 msgstr "Pioggia mista a neve"
 
-#: src/openweathermap.js:197
+#: src/openweathermap.js:123
 msgid "Light Shower Snow"
 msgstr "Deboli rovesci nevosi"
 
-#: src/openweathermap.js:199
+#: src/openweathermap.js:125
 msgid "Shower Snow"
 msgstr "Rovesci nevosi"
 
-#: src/openweathermap.js:201
+#: src/openweathermap.js:127
 msgid "Heavy Shower Snow"
 msgstr "Abbondanti rovesci nevosi"
 
-#: src/openweathermap.js:203
+#: src/openweathermap.js:129
 msgid "Mist"
 msgstr "Nebbiolina"
 
-#: src/openweathermap.js:205
+#: src/openweathermap.js:131
 msgid "Smoke"
 msgstr "Fumo"
 
-#: src/openweathermap.js:207
+#: src/openweathermap.js:133
 msgid "Haze"
 msgstr "Foschia"
 
-#: src/openweathermap.js:209
+#: src/openweathermap.js:135
 msgid "Sand/Dust Whirls"
 msgstr "Vortici di sabbia/polvere"
 
-#: src/openweathermap.js:211
+#: src/openweathermap.js:137
 msgid "Fog"
 msgstr "Nebbia"
 
-#: src/openweathermap.js:213
+#: src/openweathermap.js:139
 msgid "Sand"
 msgstr "Sabbia"
 
-#: src/openweathermap.js:215
+#: src/openweathermap.js:141
 msgid "Dust"
 msgstr "polvere"
 
-#: src/openweathermap.js:217
+#: src/openweathermap.js:143
 msgid "Volcanic Ash"
 msgstr "Cenere vulcanica"
 
-#: src/openweathermap.js:219
+#: src/openweathermap.js:145
 msgid "Squalls"
 msgstr "Tempesa"
 
-#: src/openweathermap.js:221
+#: src/openweathermap.js:147
 msgid "Tornado"
 msgstr "Tornado"
 
-#: src/openweathermap.js:223
+#: src/openweathermap.js:149
 msgid "Clear Sky"
 msgstr "Cielo sereno"
 
-#: src/openweathermap.js:225
+#: src/openweathermap.js:151
 msgid "Few Clouds"
 msgstr "Poco nuvoloso"
 
-#: src/openweathermap.js:227
+#: src/openweathermap.js:153
 msgid "Scattered Clouds"
 msgstr "Nubi sparse"
 
-#: src/openweathermap.js:229
+#: src/openweathermap.js:155
 msgid "Broken Clouds"
 msgstr "Molto nuvoloso"
 
-#: src/openweathermap.js:231
+#: src/openweathermap.js:157
 msgid "Overcast Clouds"
 msgstr "Cielo coperto"
 
-#: src/openweathermap.js:233
+#: src/openweathermap.js:159
 msgid "Not available"
 msgstr "Non disponibile"
 
-#: src/openweathermap.js:447 src/openweathermap.js:449
+#: src/openweathermap.js:373 src/openweathermap.js:375
 msgid ", "
 msgstr ","
 
-#: src/openweathermap.js:465
+#: src/openweathermap.js:391
 msgid "?"
 msgstr "?"
 
-#: src/openweathermap.js:537
+#: src/openweathermap.js:459
 msgid "Tomorrow"
 msgstr "Domani"
 
@@ -601,8 +601,8 @@ msgid ""
 "If you have issues with your system icons displaying correctly disable this "
 "to fix it"
 msgstr ""
-"Se hai problemi con la visualizzazione delle icone di sistema disabilita questo "
-"per sistemarlo"
+"Se hai problemi con la visualizzazione delle icone di sistema disabilita "
+"questo per sistemarlo"
 
 #: src/preferences/generalPage.js:126
 msgid "First Boot Delay"
@@ -617,8 +617,8 @@ msgid ""
 "This setting only applies to the first time the extension is loaded. (first "
 "log in / restarting gnome shell)"
 msgstr ""
-"Queste impostazioni verrano applicate solamente al primo caricamento dell'estensione. (Primo "
-"accesso / riavvio di gnome shell)"
+"Queste impostazioni verrano applicate solamente al primo caricamento "
+"dell'estensione. (Primo accesso / riavvio di gnome shell)"
 
 #: src/preferences/generalPage.js:142
 msgid "Units"
@@ -657,8 +657,8 @@ msgid ""
 "Enable this to use OWM multilingual support in 46 languages if there's no "
 "built-in translations for your language yet."
 msgstr ""
-"Abilita questa voce per usare OWM supporto multilingua in 46 lingue se non c'è "
-"ancora una traduzione integrata per la tua lingua"
+"Abilita questa voce per usare OWM supporto multilingua in 46 lingue se non "
+"c'è ancora una traduzione integrata per la tua lingua"
 
 #: src/preferences/generalPage.js:224
 msgid "Use Extensions API Key"
@@ -779,7 +779,8 @@ msgstr "Lunghezza del testo della località"
 
 #: src/preferences/layoutPage.js:184
 msgid "Maximum length of the location text. A setting of '0' is unlimited"
-msgstr "Massima Lunghezza del testo della località. Valora '0' indica illimitato"
+msgstr ""
+"Massima Lunghezza del testo della località. Valora '0' indica illimitato"
 
 #: src/preferences/layoutPage.js:200
 msgid "Forecast"
@@ -969,8 +970,7 @@ msgstr "Informazioni"
 #: src/preferences/aboutPage.js:58
 msgid ""
 "Display weather information for any location on Earth in the GNOME Shell"
-msgstr ""
-"Mostra informazioni meteo per ogni località della Terra in GNOME Shell"
+msgstr "Mostra informazioni meteo per ogni località della Terra in GNOME Shell"
 
 #: src/preferences/aboutPage.js:72
 msgid "unknown"
@@ -1060,7 +1060,8 @@ msgstr "Città rilevata"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:92
 msgid "OpenWeatherMap Multilingual Support (weather descriptions only)"
-msgstr "Supporto multilingue OpenWeatherMap (solo per la descrizione del meteo)"
+msgstr ""
+"Supporto multilingue OpenWeatherMap (solo per la descrizione del meteo)"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:100
 msgid "Temperature in Panel"
@@ -1125,7 +1126,9 @@ msgstr "Chiave API personale per openweathermap.org"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:168
 msgid "Seconds to delay popup initialization and data fetch on the first load"
-msgstr "Secondi di ritaro per l'inizializzazione del popup ed il recupero dei dati al primo caricamento"
+msgstr ""
+"Secondi di ritaro per l'inizializzazione del popup ed il recupero dei dati "
+"al primo caricamento"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:172
 msgid "Default width for the preferences window"

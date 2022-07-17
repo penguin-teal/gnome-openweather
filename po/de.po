@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-shell-extension-openweather\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-23 14:51-0300\n"
+"POT-Creation-Date: 2022-07-17 16:52-0300\n"
 "PO-Revision-Date: 2017-02-04 20:20+0100\n"
 "Last-Translator: Jens Lody <openweather@jenslody.de>\n"
 "Language-Team: Deutsch <openweather@jenslody.de>\n"
@@ -316,280 +316,280 @@ msgstr "Vorhersage für Morgen"
 msgid "%s Day Forecast"
 msgstr "Textanzeige in Vorhersage für %s Tage"
 
-#: src/openweathermap.js:123
+#: src/openweathermap.js:49
 #, fuzzy
 msgid "Thunderstorm with Light Rain"
 msgstr "Gewitter mit leichtem Regen"
 
-#: src/openweathermap.js:125
+#: src/openweathermap.js:51
 #, fuzzy
 msgid "Thunderstorm with Rain"
 msgstr "Gewitter mit Regen"
 
-#: src/openweathermap.js:127
+#: src/openweathermap.js:53
 #, fuzzy
 msgid "Thunderstorm with Heavy Rain"
 msgstr "Gewitter mit starkem Regen"
 
-#: src/openweathermap.js:129
+#: src/openweathermap.js:55
 #, fuzzy
 msgid "Light Thunderstorm"
 msgstr "leichte Gewitter"
 
-#: src/openweathermap.js:131
+#: src/openweathermap.js:57
 msgid "Thunderstorm"
 msgstr "Gewitter"
 
-#: src/openweathermap.js:133
+#: src/openweathermap.js:59
 #, fuzzy
 msgid "Heavy Thunderstorm"
 msgstr "schwere Gewitter"
 
-#: src/openweathermap.js:135
+#: src/openweathermap.js:61
 #, fuzzy
 msgid "Ragged Thunderstorm"
 msgstr "einige Gewitter"
 
-#: src/openweathermap.js:137
+#: src/openweathermap.js:63
 #, fuzzy
 msgid "Thunderstorm with Light Drizzle"
 msgstr "Gewitter mit leichtem Nieselregen"
 
-#: src/openweathermap.js:139
+#: src/openweathermap.js:65
 #, fuzzy
 msgid "Thunderstorm with Drizzle"
 msgstr "Gewitter mit Nieselregen"
 
-#: src/openweathermap.js:141
+#: src/openweathermap.js:67
 #, fuzzy
 msgid "Thunderstorm with Heavy Drizzle"
 msgstr "Gewitter mit starkem Nieselregen"
 
-#: src/openweathermap.js:143
+#: src/openweathermap.js:69
 #, fuzzy
 msgid "Light Drizzle"
 msgstr "Leichte Brise"
 
-#: src/openweathermap.js:145
+#: src/openweathermap.js:71
 msgid "Drizzle"
 msgstr "Nieseln"
 
-#: src/openweathermap.js:147
+#: src/openweathermap.js:73
 #, fuzzy
 msgid "Heavy Drizzle"
 msgstr "Nieseln"
 
-#: src/openweathermap.js:149
+#: src/openweathermap.js:75
 #, fuzzy
 msgid "Light Drizzle Rain"
 msgstr "Nieselregen"
 
-#: src/openweathermap.js:151
+#: src/openweathermap.js:77
 #, fuzzy
 msgid "Drizzle Rain"
 msgstr "Nieselregen"
 
-#: src/openweathermap.js:153
+#: src/openweathermap.js:79
 #, fuzzy
 msgid "Heavy Drizzle Rain"
 msgstr "Nieselregen"
 
-#: src/openweathermap.js:155
+#: src/openweathermap.js:81
 #, fuzzy
 msgid "Shower Rain and Drizzle"
 msgstr "Regenschauer und Nieseln"
 
-#: src/openweathermap.js:157
+#: src/openweathermap.js:83
 #, fuzzy
 msgid "Heavy Rain and Drizzle"
 msgstr "starke Regenschauer und Nieseln"
 
-#: src/openweathermap.js:159
+#: src/openweathermap.js:85
 #, fuzzy
 msgid "Shower Drizzle"
 msgstr "Nieselschauer"
 
-#: src/openweathermap.js:161
+#: src/openweathermap.js:87
 #, fuzzy
 msgid "Light Rain"
 msgstr "leichter Regen"
 
-#: src/openweathermap.js:163
+#: src/openweathermap.js:89
 #, fuzzy
 msgid "Moderate Rain"
 msgstr "mäßiger Regen"
 
-#: src/openweathermap.js:165
+#: src/openweathermap.js:91
 #, fuzzy
 msgid "Heavy Rain"
 msgstr "heftiger Schneefall"
 
-#: src/openweathermap.js:167
+#: src/openweathermap.js:93
 #, fuzzy
 msgid "Very Heavy Rain"
 msgstr "sehr starker Regen"
 
-#: src/openweathermap.js:169
+#: src/openweathermap.js:95
 #, fuzzy
 msgid "Extreme Rain"
 msgstr "Starkregen"
 
-#: src/openweathermap.js:171
+#: src/openweathermap.js:97
 #, fuzzy
 msgid "Freezing Rain"
 msgstr "Eisregen"
 
-#: src/openweathermap.js:173
+#: src/openweathermap.js:99
 #, fuzzy
 msgid "Light Shower Rain"
 msgstr "leichter Schneeschauer"
 
-#: src/openweathermap.js:175
+#: src/openweathermap.js:101
 #, fuzzy
 msgid "Shower Rain"
 msgstr "Regenschauer"
 
-#: src/openweathermap.js:177
+#: src/openweathermap.js:103
 #, fuzzy
 msgid "Heavy Shower Rain"
 msgstr "heftiger Schneeschauer"
 
-#: src/openweathermap.js:179
+#: src/openweathermap.js:105
 #, fuzzy
 msgid "Ragged Shower Rain"
 msgstr "einige Regenschauer"
 
-#: src/openweathermap.js:181
+#: src/openweathermap.js:107
 #, fuzzy
 msgid "Light Snow"
 msgstr "mäßiger Schnee"
 
-#: src/openweathermap.js:183
+#: src/openweathermap.js:109
 msgid "Snow"
 msgstr "Schnee"
 
-#: src/openweathermap.js:185
+#: src/openweathermap.js:111
 #, fuzzy
 msgid "Heavy Snow"
 msgstr "heftiger Schneefall"
 
-#: src/openweathermap.js:187
+#: src/openweathermap.js:113
 msgid "Sleet"
 msgstr "Graupel"
 
-#: src/openweathermap.js:189
+#: src/openweathermap.js:115
 #, fuzzy
 msgid "Light Shower Sleet"
 msgstr "Graupelschauer"
 
-#: src/openweathermap.js:191
+#: src/openweathermap.js:117
 #, fuzzy
 msgid "Shower Sleet"
 msgstr "Graupelschauer"
 
-#: src/openweathermap.js:193
+#: src/openweathermap.js:119
 #, fuzzy
 msgid "Light Rain and Snow"
 msgstr "leichter Regen und Schnee"
 
-#: src/openweathermap.js:195
+#: src/openweathermap.js:121
 #, fuzzy
 msgid "Rain and Snow"
 msgstr "Regen und Schnee"
 
-#: src/openweathermap.js:197
+#: src/openweathermap.js:123
 #, fuzzy
 msgid "Light Shower Snow"
 msgstr "leichter Schneeschauer"
 
-#: src/openweathermap.js:199
+#: src/openweathermap.js:125
 #, fuzzy
 msgid "Shower Snow"
 msgstr "Schneeschauer"
 
-#: src/openweathermap.js:201
+#: src/openweathermap.js:127
 #, fuzzy
 msgid "Heavy Shower Snow"
 msgstr "heftiger Schneeschauer"
 
-#: src/openweathermap.js:203
+#: src/openweathermap.js:129
 msgid "Mist"
 msgstr "trüb"
 
-#: src/openweathermap.js:205
+#: src/openweathermap.js:131
 msgid "Smoke"
 msgstr "Rauch"
 
-#: src/openweathermap.js:207
+#: src/openweathermap.js:133
 msgid "Haze"
 msgstr "Dunst"
 
-#: src/openweathermap.js:209
+#: src/openweathermap.js:135
 msgid "Sand/Dust Whirls"
 msgstr "Sand / Staubsturm"
 
-#: src/openweathermap.js:211
+#: src/openweathermap.js:137
 msgid "Fog"
 msgstr "Nebel"
 
-#: src/openweathermap.js:213
+#: src/openweathermap.js:139
 msgid "Sand"
 msgstr "Sand"
 
-#: src/openweathermap.js:215
+#: src/openweathermap.js:141
 msgid "Dust"
 msgstr "Staub"
 
-#: src/openweathermap.js:217
+#: src/openweathermap.js:143
 msgid "Volcanic Ash"
 msgstr "Vulkanische Asche"
 
-#: src/openweathermap.js:219
+#: src/openweathermap.js:145
 msgid "Squalls"
 msgstr "Windböen"
 
-#: src/openweathermap.js:221
+#: src/openweathermap.js:147
 msgid "Tornado"
 msgstr ""
 
-#: src/openweathermap.js:223
+#: src/openweathermap.js:149
 #, fuzzy
 msgid "Clear Sky"
 msgstr "Klarer Himmel"
 
-#: src/openweathermap.js:225
+#: src/openweathermap.js:151
 #, fuzzy
 msgid "Few Clouds"
 msgstr "ein paar Wolken"
 
-#: src/openweathermap.js:227
+#: src/openweathermap.js:153
 #, fuzzy
 msgid "Scattered Clouds"
 msgstr "überwiegend bewölkt"
 
-#: src/openweathermap.js:229
+#: src/openweathermap.js:155
 #, fuzzy
 msgid "Broken Clouds"
 msgstr "überwiegend bewölkt"
 
-#: src/openweathermap.js:231
+#: src/openweathermap.js:157
 #, fuzzy
 msgid "Overcast Clouds"
 msgstr "wolkenbedeckt"
 
-#: src/openweathermap.js:233
+#: src/openweathermap.js:159
 msgid "Not available"
 msgstr "Nicht verfügbar"
 
-#: src/openweathermap.js:447 src/openweathermap.js:449
+#: src/openweathermap.js:373 src/openweathermap.js:375
 msgid ", "
 msgstr ", "
 
-#: src/openweathermap.js:465
+#: src/openweathermap.js:391
 msgid "?"
 msgstr ""
 
-#: src/openweathermap.js:537
+#: src/openweathermap.js:459
 msgid "Tomorrow"
 msgstr "Morgen"
 
@@ -643,8 +643,8 @@ msgid ""
 "If you have issues with your system icons displaying correctly disable this "
 "to fix it"
 msgstr ""
-"Wenn Probleme beim Anzeigen der eigenen Wettersymbole aus dem System-Thema auftreten,"
-"deaktivieren Sie diesen Punkt."
+"Wenn Probleme beim Anzeigen der eigenen Wettersymbole aus dem System-Thema "
+"auftreten,deaktivieren Sie diesen Punkt."
 
 #: src/preferences/generalPage.js:126
 msgid "First Boot Delay"
@@ -702,13 +702,13 @@ msgid ""
 "Enable this to use OWM multilingual support in 46 languages if there's no "
 "built-in translations for your language yet."
 msgstr ""
-"Diesen Punkt aktiviere, um OWM Mehrsprachen-Unterstützung von 46 Sprachen zu verwenden, "
-"falls für Ihre Sprache noch keine eingebaute Übersetzung verfügbar ist."
+"Diesen Punkt aktiviere, um OWM Mehrsprachen-Unterstützung von 46 Sprachen zu "
+"verwenden, falls für Ihre Sprache noch keine eingebaute Übersetzung "
+"verfügbar ist."
 
 #: src/preferences/generalPage.js:224
 msgid "Use Extensions API Key"
-msgstr ""
-"APISchlüssel der Erweiterung verwenden"
+msgstr "APISchlüssel der Erweiterung verwenden"
 
 #: src/preferences/generalPage.js:225
 #, fuzzy
@@ -836,7 +836,9 @@ msgstr "Textlänge für Ort"
 #: src/preferences/layoutPage.js:184
 #, fuzzy
 msgid "Maximum length of the location text. A setting of '0' is unlimited"
-msgstr "maximale Zeichenzahl beim Anzeigen des Ortes, für unbegrenzt bitte '0' verwenden"
+msgstr ""
+"maximale Zeichenzahl beim Anzeigen des Ortes, für unbegrenzt bitte '0' "
+"verwenden"
 
 #: src/preferences/layoutPage.js:200
 #, fuzzy

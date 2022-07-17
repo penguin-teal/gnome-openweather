@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-23 14:51-0300\n"
+"POT-Creation-Date: 2022-07-17 16:52-0300\n"
 "PO-Revision-Date: 2017-09-17 12:46+0200\n"
 "Last-Translator: Slobodan Terzić <Xabre@archlinux.info>\n"
 "Language-Team: \n"
@@ -317,280 +317,280 @@ msgstr ""
 msgid "%s Day Forecast"
 msgstr "Uslovi u prognozi"
 
-#: src/openweathermap.js:123
+#: src/openweathermap.js:49
 #, fuzzy
 msgid "Thunderstorm with Light Rain"
 msgstr "grmljavina sa lakom kišom"
 
-#: src/openweathermap.js:125
+#: src/openweathermap.js:51
 #, fuzzy
 msgid "Thunderstorm with Rain"
 msgstr "grmljavina sa kišom"
 
-#: src/openweathermap.js:127
+#: src/openweathermap.js:53
 #, fuzzy
 msgid "Thunderstorm with Heavy Rain"
 msgstr "grmljavina sa jakom kišom"
 
-#: src/openweathermap.js:129
+#: src/openweathermap.js:55
 #, fuzzy
 msgid "Light Thunderstorm"
 msgstr "laka grmljavina"
 
-#: src/openweathermap.js:131
+#: src/openweathermap.js:57
 msgid "Thunderstorm"
 msgstr "grmljavina"
 
-#: src/openweathermap.js:133
+#: src/openweathermap.js:59
 #, fuzzy
 msgid "Heavy Thunderstorm"
 msgstr "jaka grmljavina"
 
-#: src/openweathermap.js:135
+#: src/openweathermap.js:61
 #, fuzzy
 msgid "Ragged Thunderstorm"
 msgstr "mestimična grmljavina"
 
-#: src/openweathermap.js:137
+#: src/openweathermap.js:63
 #, fuzzy
 msgid "Thunderstorm with Light Drizzle"
 msgstr "grmljavina sa lakim rominjanjem"
 
-#: src/openweathermap.js:139
+#: src/openweathermap.js:65
 #, fuzzy
 msgid "Thunderstorm with Drizzle"
 msgstr "grmljavina sa rominjanjem"
 
-#: src/openweathermap.js:141
+#: src/openweathermap.js:67
 #, fuzzy
 msgid "Thunderstorm with Heavy Drizzle"
 msgstr "grmljavina sa jakim rominjanjem"
 
-#: src/openweathermap.js:143
+#: src/openweathermap.js:69
 #, fuzzy
 msgid "Light Drizzle"
 msgstr "lagan povetarac"
 
-#: src/openweathermap.js:145
+#: src/openweathermap.js:71
 msgid "Drizzle"
 msgstr "rominjanje"
 
-#: src/openweathermap.js:147
+#: src/openweathermap.js:73
 #, fuzzy
 msgid "Heavy Drizzle"
 msgstr "rominjanje"
 
-#: src/openweathermap.js:149
+#: src/openweathermap.js:75
 #, fuzzy
 msgid "Light Drizzle Rain"
 msgstr "rominjava kiša"
 
-#: src/openweathermap.js:151
+#: src/openweathermap.js:77
 #, fuzzy
 msgid "Drizzle Rain"
 msgstr "rominjava kiša"
 
-#: src/openweathermap.js:153
+#: src/openweathermap.js:79
 #, fuzzy
 msgid "Heavy Drizzle Rain"
 msgstr "rominjava kiša"
 
-#: src/openweathermap.js:155
+#: src/openweathermap.js:81
 #, fuzzy
 msgid "Shower Rain and Drizzle"
 msgstr "pljusak i rominjanje"
 
-#: src/openweathermap.js:157
+#: src/openweathermap.js:83
 #, fuzzy
 msgid "Heavy Rain and Drizzle"
 msgstr "jak pljusak i rominjanje"
 
-#: src/openweathermap.js:159
+#: src/openweathermap.js:85
 #, fuzzy
 msgid "Shower Drizzle"
 msgstr "rominjav pljusak"
 
-#: src/openweathermap.js:161
+#: src/openweathermap.js:87
 #, fuzzy
 msgid "Light Rain"
 msgstr "lagana kiša"
 
-#: src/openweathermap.js:163
+#: src/openweathermap.js:89
 #, fuzzy
 msgid "Moderate Rain"
 msgstr "umerena kiša"
 
-#: src/openweathermap.js:165
+#: src/openweathermap.js:91
 #, fuzzy
 msgid "Heavy Rain"
 msgstr "jak sneg"
 
-#: src/openweathermap.js:167
+#: src/openweathermap.js:93
 #, fuzzy
 msgid "Very Heavy Rain"
 msgstr "vrlo jaka kiša"
 
-#: src/openweathermap.js:169
+#: src/openweathermap.js:95
 #, fuzzy
 msgid "Extreme Rain"
 msgstr "ekstremna kiša"
 
-#: src/openweathermap.js:171
+#: src/openweathermap.js:97
 #, fuzzy
 msgid "Freezing Rain"
 msgstr "ledena kiša"
 
-#: src/openweathermap.js:173
+#: src/openweathermap.js:99
 #, fuzzy
 msgid "Light Shower Rain"
 msgstr "lagan pljušteći sneg"
 
-#: src/openweathermap.js:175
+#: src/openweathermap.js:101
 #, fuzzy
 msgid "Shower Rain"
 msgstr "pljusak"
 
-#: src/openweathermap.js:177
+#: src/openweathermap.js:103
 #, fuzzy
 msgid "Heavy Shower Rain"
 msgstr "jak pljušteći sneg"
 
-#: src/openweathermap.js:179
+#: src/openweathermap.js:105
 #, fuzzy
 msgid "Ragged Shower Rain"
 msgstr "mestimični pljuskovi"
 
-#: src/openweathermap.js:181
+#: src/openweathermap.js:107
 #, fuzzy
 msgid "Light Snow"
 msgstr "lagan sneg"
 
-#: src/openweathermap.js:183
+#: src/openweathermap.js:109
 msgid "Snow"
 msgstr "Sneg"
 
-#: src/openweathermap.js:185
+#: src/openweathermap.js:111
 #, fuzzy
 msgid "Heavy Snow"
 msgstr "jak sneg"
 
-#: src/openweathermap.js:187
+#: src/openweathermap.js:113
 msgid "Sleet"
 msgstr "susnežica"
 
-#: src/openweathermap.js:189
+#: src/openweathermap.js:115
 #, fuzzy
 msgid "Light Shower Sleet"
 msgstr "pljušteća susnežica"
 
-#: src/openweathermap.js:191
+#: src/openweathermap.js:117
 #, fuzzy
 msgid "Shower Sleet"
 msgstr "pljušteća susnežica"
 
-#: src/openweathermap.js:193
+#: src/openweathermap.js:119
 #, fuzzy
 msgid "Light Rain and Snow"
 msgstr "lagana kiša i sneg"
 
-#: src/openweathermap.js:195
+#: src/openweathermap.js:121
 #, fuzzy
 msgid "Rain and Snow"
 msgstr "kiša i sneg"
 
-#: src/openweathermap.js:197
+#: src/openweathermap.js:123
 #, fuzzy
 msgid "Light Shower Snow"
 msgstr "lagan pljušteći sneg"
 
-#: src/openweathermap.js:199
+#: src/openweathermap.js:125
 #, fuzzy
 msgid "Shower Snow"
 msgstr "pljušteći sneg"
 
-#: src/openweathermap.js:201
+#: src/openweathermap.js:127
 #, fuzzy
 msgid "Heavy Shower Snow"
 msgstr "jak pljušteći sneg"
 
-#: src/openweathermap.js:203
+#: src/openweathermap.js:129
 msgid "Mist"
 msgstr "Magla"
 
-#: src/openweathermap.js:205
+#: src/openweathermap.js:131
 msgid "Smoke"
 msgstr "dim"
 
-#: src/openweathermap.js:207
+#: src/openweathermap.js:133
 msgid "Haze"
 msgstr "Izmaglica"
 
-#: src/openweathermap.js:209
+#: src/openweathermap.js:135
 msgid "Sand/Dust Whirls"
 msgstr "Vihori peska/prašine"
 
-#: src/openweathermap.js:211
+#: src/openweathermap.js:137
 msgid "Fog"
 msgstr "magla"
 
-#: src/openweathermap.js:213
+#: src/openweathermap.js:139
 msgid "Sand"
 msgstr "Pesak"
 
-#: src/openweathermap.js:215
+#: src/openweathermap.js:141
 msgid "Dust"
 msgstr "Prašina"
 
-#: src/openweathermap.js:217
+#: src/openweathermap.js:143
 msgid "Volcanic Ash"
 msgstr ""
 
-#: src/openweathermap.js:219
+#: src/openweathermap.js:145
 msgid "Squalls"
 msgstr ""
 
-#: src/openweathermap.js:221
+#: src/openweathermap.js:147
 msgid "Tornado"
 msgstr ""
 
-#: src/openweathermap.js:223
+#: src/openweathermap.js:149
 #, fuzzy
 msgid "Clear Sky"
 msgstr "očisti unos"
 
-#: src/openweathermap.js:225
+#: src/openweathermap.js:151
 #, fuzzy
 msgid "Few Clouds"
 msgstr "par oblaka"
 
-#: src/openweathermap.js:227
+#: src/openweathermap.js:153
 #, fuzzy
 msgid "Scattered Clouds"
 msgstr "raštrkani oblaci"
 
-#: src/openweathermap.js:229
+#: src/openweathermap.js:155
 #, fuzzy
 msgid "Broken Clouds"
 msgstr "mestimični oblaci"
 
-#: src/openweathermap.js:231
+#: src/openweathermap.js:157
 #, fuzzy
 msgid "Overcast Clouds"
 msgstr "tmurni oblaci"
 
-#: src/openweathermap.js:233
+#: src/openweathermap.js:159
 msgid "Not available"
 msgstr "nije dostupno"
 
-#: src/openweathermap.js:447 src/openweathermap.js:449
+#: src/openweathermap.js:373 src/openweathermap.js:375
 msgid ", "
 msgstr ", "
 
-#: src/openweathermap.js:465
+#: src/openweathermap.js:391
 msgid "?"
 msgstr ""
 
-#: src/openweathermap.js:537
+#: src/openweathermap.js:459
 msgid "Tomorrow"
 msgstr "sutra"
 

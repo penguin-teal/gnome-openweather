@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 3.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-23 14:51-0300\n"
+"POT-Creation-Date: 2022-07-17 16:52-0300\n"
 "PO-Revision-Date: 2022-06-24 10:38-0400\n"
 "Last-Translator: Francis Gagnon <franckgaga2@gmail.com>\n"
 "Language-Team: French <franckgaga2@gmail.com>\n"
@@ -322,239 +322,239 @@ msgstr "Prévision de demain"
 msgid "%s Day Forecast"
 msgstr "Prévision %s jours"
 
-#: src/openweathermap.js:123
+#: src/openweathermap.js:49
 msgid "Thunderstorm with Light Rain"
 msgstr "Orage avec pluie légère"
 
-#: src/openweathermap.js:125
+#: src/openweathermap.js:51
 msgid "Thunderstorm with Rain"
 msgstr "Orage avec pluie"
 
-#: src/openweathermap.js:127
+#: src/openweathermap.js:53
 msgid "Thunderstorm with Heavy Rain"
 msgstr "Orage avec de fortes pluies"
 
-#: src/openweathermap.js:129
+#: src/openweathermap.js:55
 msgid "Light Thunderstorm"
 msgstr "Orages légérs"
 
-#: src/openweathermap.js:131
+#: src/openweathermap.js:57
 msgid "Thunderstorm"
 msgstr "Orage"
 
-#: src/openweathermap.js:133
+#: src/openweathermap.js:59
 msgid "Heavy Thunderstorm"
 msgstr "Orage sévère"
 
-#: src/openweathermap.js:135
+#: src/openweathermap.js:61
 msgid "Ragged Thunderstorm"
 msgstr "Orages isolés"
 
-#: src/openweathermap.js:137
+#: src/openweathermap.js:63
 msgid "Thunderstorm with Light Drizzle"
 msgstr "Orage avec bruine légère"
 
-#: src/openweathermap.js:139
+#: src/openweathermap.js:65
 msgid "Thunderstorm with Drizzle"
 msgstr "Orage avec bruine"
 
-#: src/openweathermap.js:141
+#: src/openweathermap.js:67
 msgid "Thunderstorm with Heavy Drizzle"
 msgstr "Orage avec forte bruine"
 
-#: src/openweathermap.js:143
+#: src/openweathermap.js:69
 msgid "Light Drizzle"
 msgstr "Légère bruine"
 
-#: src/openweathermap.js:145
+#: src/openweathermap.js:71
 msgid "Drizzle"
 msgstr "Bruine"
 
-#: src/openweathermap.js:147
+#: src/openweathermap.js:73
 msgid "Heavy Drizzle"
 msgstr "Forte bruine"
 
-#: src/openweathermap.js:149
+#: src/openweathermap.js:75
 msgid "Light Drizzle Rain"
 msgstr "Légère bruine et pluie"
 
-#: src/openweathermap.js:151
+#: src/openweathermap.js:77
 msgid "Drizzle Rain"
 msgstr "Bruine et pluie"
 
-#: src/openweathermap.js:153
+#: src/openweathermap.js:79
 msgid "Heavy Drizzle Rain"
 msgstr "Fortes bruine et pluie"
 
-#: src/openweathermap.js:155
+#: src/openweathermap.js:81
 msgid "Shower Rain and Drizzle"
 msgstr "Averses et bruine"
 
-#: src/openweathermap.js:157
+#: src/openweathermap.js:83
 msgid "Heavy Rain and Drizzle"
 msgstr "Fortes pluie et bruine"
 
-#: src/openweathermap.js:159
+#: src/openweathermap.js:85
 msgid "Shower Drizzle"
 msgstr "Averses et bruine"
 
-#: src/openweathermap.js:161
+#: src/openweathermap.js:87
 msgid "Light Rain"
 msgstr "Légère pluie"
 
-#: src/openweathermap.js:163
+#: src/openweathermap.js:89
 msgid "Moderate Rain"
 msgstr "Pluie modérée"
 
-#: src/openweathermap.js:165
+#: src/openweathermap.js:91
 msgid "Heavy Rain"
 msgstr "Pluie forte"
 
-#: src/openweathermap.js:167
+#: src/openweathermap.js:93
 msgid "Very Heavy Rain"
 msgstr "Pluie très forte"
 
-#: src/openweathermap.js:169
+#: src/openweathermap.js:95
 msgid "Extreme Rain"
 msgstr "Pluie extrêmement forte"
 
-#: src/openweathermap.js:171
+#: src/openweathermap.js:97
 msgid "Freezing Rain"
 msgstr "Pluie verglaçante"
 
-#: src/openweathermap.js:173
+#: src/openweathermap.js:99
 msgid "Light Shower Rain"
 msgstr "Faibles averses"
 
-#: src/openweathermap.js:175
+#: src/openweathermap.js:101
 msgid "Shower Rain"
 msgstr "Averses"
 
-#: src/openweathermap.js:177
+#: src/openweathermap.js:103
 msgid "Heavy Shower Rain"
 msgstr "Fortes averses"
 
-#: src/openweathermap.js:179
+#: src/openweathermap.js:105
 msgid "Ragged Shower Rain"
 msgstr "Averses isolées"
 
-#: src/openweathermap.js:181
+#: src/openweathermap.js:107
 msgid "Light Snow"
 msgstr "Faibles chutes de neige"
 
-#: src/openweathermap.js:183
+#: src/openweathermap.js:109
 msgid "Snow"
 msgstr "Neige"
 
-#: src/openweathermap.js:185
+#: src/openweathermap.js:111
 msgid "Heavy Snow"
 msgstr "Fortes chutes de neige"
 
-#: src/openweathermap.js:187
+#: src/openweathermap.js:113
 msgid "Sleet"
 msgstr "Grésil"
 
-#: src/openweathermap.js:189
+#: src/openweathermap.js:115
 msgid "Light Shower Sleet"
 msgstr "Faibles averses de grésil"
 
-#: src/openweathermap.js:191
+#: src/openweathermap.js:117
 msgid "Shower Sleet"
 msgstr "Averse de grésil"
 
-#: src/openweathermap.js:193
+#: src/openweathermap.js:119
 msgid "Light Rain and Snow"
 msgstr "Légères neige et pluie"
 
-#: src/openweathermap.js:195
+#: src/openweathermap.js:121
 msgid "Rain and Snow"
 msgstr "Neige et pluie"
 
-#: src/openweathermap.js:197
+#: src/openweathermap.js:123
 msgid "Light Shower Snow"
 msgstr "Faibles averses de neige"
 
-#: src/openweathermap.js:199
+#: src/openweathermap.js:125
 msgid "Shower Snow"
 msgstr "Averses de neige"
 
-#: src/openweathermap.js:201
+#: src/openweathermap.js:127
 msgid "Heavy Shower Snow"
 msgstr "Fortes averses de neige"
 
-#: src/openweathermap.js:203
+#: src/openweathermap.js:129
 msgid "Mist"
 msgstr "Brouillard"
 
-#: src/openweathermap.js:205
+#: src/openweathermap.js:131
 msgid "Smoke"
 msgstr "Brume"
 
-#: src/openweathermap.js:207
+#: src/openweathermap.js:133
 msgid "Haze"
 msgstr "Brume"
 
-#: src/openweathermap.js:209
+#: src/openweathermap.js:135
 msgid "Sand/Dust Whirls"
 msgstr "Tourbillons de sable/poussière"
 
-#: src/openweathermap.js:211
+#: src/openweathermap.js:137
 msgid "Fog"
 msgstr "Brouillard"
 
-#: src/openweathermap.js:213
+#: src/openweathermap.js:139
 msgid "Sand"
 msgstr "Sable"
 
-#: src/openweathermap.js:215
+#: src/openweathermap.js:141
 msgid "Dust"
 msgstr "Poussière"
 
-#: src/openweathermap.js:217
+#: src/openweathermap.js:143
 msgid "Volcanic Ash"
 msgstr "Cendres volcaniques"
 
-#: src/openweathermap.js:219
+#: src/openweathermap.js:145
 msgid "Squalls"
 msgstr "Grains"
 
-#: src/openweathermap.js:221
+#: src/openweathermap.js:147
 msgid "Tornado"
 msgstr "Tornade"
 
-#: src/openweathermap.js:223
+#: src/openweathermap.js:149
 msgid "Clear Sky"
 msgstr "Ciel dégagé"
 
-#: src/openweathermap.js:225
+#: src/openweathermap.js:151
 msgid "Few Clouds"
 msgstr "Quelques nuages"
 
-#: src/openweathermap.js:227
+#: src/openweathermap.js:153
 msgid "Scattered Clouds"
 msgstr "Nuages épars"
 
-#: src/openweathermap.js:229
+#: src/openweathermap.js:155
 msgid "Broken Clouds"
 msgstr "Nuages fragmentés"
 
-#: src/openweathermap.js:231
+#: src/openweathermap.js:157
 msgid "Overcast Clouds"
 msgstr "Couvert"
 
-#: src/openweathermap.js:233
+#: src/openweathermap.js:159
 msgid "Not available"
 msgstr "Non disponible"
 
-#: src/openweathermap.js:447 src/openweathermap.js:449
+#: src/openweathermap.js:373 src/openweathermap.js:375
 msgid ", "
 msgstr ", "
 
-#: src/openweathermap.js:465
+#: src/openweathermap.js:391
 msgid "?"
 msgstr "?"
 
-#: src/openweathermap.js:537
+#: src/openweathermap.js:459
 msgid "Tomorrow"
 msgstr "Demain"
 
