@@ -49,7 +49,7 @@ msgstr "Ricarica le informazioni meteo"
 #: src/extension.js:771
 #, javascript-format
 msgid "Weather data by: %s"
-msgstr "Informazioni meteo fornite da:"
+msgstr "Informazioni meteo fornite da: %s"
 
 #: src/extension.js:773
 msgid "Weather Settings"
@@ -316,7 +316,7 @@ msgstr "Previsioni per domani"
 #: src/extension.js:1489
 #, javascript-format
 msgid "%s Day Forecast"
-msgstr "Mostra le previsioni meteo sul pannello"
+msgstr "Mostra le previsioni meteo sul pannello per %s giorni"
 
 #: src/openweathermap.js:123
 msgid "Thunderstorm with Light Rain"
@@ -942,7 +942,7 @@ msgstr "Risultati per \"%s\""
 #: src/preferences/locationsPage.js:752
 #, javascript-format
 msgid "%s has been added"
-msgstr "% è stato aggiunto"
+msgstr "%s è stato aggiunto"
 
 #: src/preferences/locationsPage.js:760
 msgid "API Error"
