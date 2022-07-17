@@ -21,100 +21,26 @@ const Me = ExtensionUtils.getCurrentExtension();
 const Gettext = imports.gettext.domain(Me.metadata['gettext-domain']);
 const _ = Gettext.gettext;
 
-function getIconName(code, night) {
-    let iconname = 'weather-severe-alert-symbolic';
-    // see https://openweathermap.org/weather-conditions
-    switch (parseInt(code, 10)) {
-        case 200: //Thunderstorm with light rain
-        case 201: //Thunderstorm with rain
-        case 202: //Thunderstorm with heavy rain
-        case 210: //Light thunderstorm
-        case 211: //Thunderstorm
-        case 212: //Heavy thunderstorm
-        case 221: //Ragged thunderstorm
-        case 230: //Thunderstorm with light drizzle
-        case 231: //Thunderstorm with drizzle
-        case 232: //Thunderstorm with heavy drizzle
-            iconname = 'weather-storm-symbolic';
-            break;
-        case 300: //Light intensity drizzle
-        case 301: //drizzle
-        case 302: //Heavy intensity drizzle
-        case 310: //Light intensity drizzle rain
-        case 311: //drizzle rain
-        case 312: //Heavy intensity drizzle rain
-        case 313: //Shower rain and drizzle
-        case 314: //Heavy shower rain and drizzle
-        case 321: //Shower drizzle
-            iconname = 'weather-showers-symbolic';
-            break;
-        case 500: //Light rain
-        case 501: //Moderate rain
-        case 502: //Heavy intensity rain
-        case 503: //Very heavy rain
-        case 504: //Extreme rain
-            iconname = 'weather-showers-scattered-symbolic';
-            break;
-        case 511: //Freezing rain
-            iconname = 'weather-freezing-rain-symbolic';
-            break;
-        case 520: //Light intensity shower rain
-        case 521: //Shower rain
-        case 522: //Heavy intensity shower rain
-        case 531: //Ragged shower rain
-            iconname = 'weather-showers-symbolic';
-            break;
-        case 600: //Light snow
-        case 601: //Snow
-        case 602: //Heavy snow
-        case 611: //Sleet
-        case 612: //Shower sleet
-        case 615: //Light rain and snow
-        case 616: //Rain and snow
-        case 620: //Light shower snow
-        case 621: //Shower snow
-        case 622: //Heavy shower snow
-            iconname = 'weather-snow-symbolic';
-            break;
-        case 701: //Mist
-        case 711: //Smoke
-        case 721: //Haze
-            iconname = 'weather-fog-symbolic';
-            break;
-        case 731: //Sand/Dust Whirls
-            iconname = 'weather-windy-symbolic';
-            break;
-        case 741: //Fog
-            iconname = 'weather-fog-symbolic';
-            break;
-        case 751: //Sand
-        case 761: //Dust
-        case 762: //VOLCANIC ASH
-            iconname = 'weather-severe-alert-symbolic';
-            break;
-        case 771: //SQUALLS
-            iconname = 'weather-windy-symbolic';
-            break;
-        case 781: //TORNADO
-            iconname = 'weather-tornado-symbolic';
-            break;
-        case 800: //Sky is clear
-            iconname = 'weather-clear-symbolic';
-            if (night)
-                iconname = 'weather-clear-night-symbolic';
-            break;
-        case 801: //Few clouds
-        case 802: //Scattered clouds
-        case 803: //Broken clouds
-            iconname = 'weather-few-clouds-symbolic';
-            if (night)
-                iconname = 'weather-few-clouds-night-symbolic'
-            break;
-        case 804: //Overcast clouds
-            iconname = 'weather-overcast-symbolic';
-            break;
-    }
-    return iconname;
+// Map OpenWeatherMap icon codes to icon names
+const IconMap = {
+    "01d": "weather-clear-symbolic",             // "clear sky"
+    "02d": "weather-few-clouds-symbolic",        // "few clouds"
+    "03d": "weather-few-clouds-symbolic",        // "scattered clouds"
+    "04d": "weather-overcast-symbolic",          // "broken clouds"
+    "09d": "weather-showers-scattered-symbolic", // "shower rain"
+    "10d": "weather-showers-symbolic",           // "rain"
+    "11d": "weather-storm-symbolic",             // "thunderstorm"
+    "13d": "weather-snow-symbolic",              // "snow"
+    "50d": "weather-fog-symbolic",               // "mist"
+    "01n": "weather-clear-night-symbolic",       // "clear sky night"
+    "02n": "weather-few-clouds-night-symbolic",  // "few clouds night"
+    "03n": "weather-few-clouds-night-symbolic",  // "scattered clouds night"
+    "04n": "weather-overcast-symbolic",          // "broken clouds night"
+    "09n": "weather-showers-scattered-symbolic", // "shower rain night"
+    "10n": "weather-showers-symbolic",           // "rain night"
+    "11n": "weather-storm-symbolic",             // "thunderstorm night"
+    "13n": "weather-snow-symbolic",              // "snow night"
+    "50n": "weather-fog-symbolic"                // "mist night"
 }
 
 function getWeatherCondition(code) {
@@ -432,7 +358,7 @@ function populateCurrentUI() {
                 lastBuild = now.toLocaleTimeString([this.locale], { hour: 'numeric', minute: 'numeric' });
             }
 
-            let iconname = getIconName(json.weather[0].id, now < sunrise || now > sunset);
+            let iconname = IconMap[json.weather[0].icon];
             this._currentWeatherIcon.set_gicon(this.getWeatherIcon(iconname));
             this._weatherIcon.set_gicon(this.getWeatherIcon(iconname));
 
@@ -477,8 +403,6 @@ function populateTodaysUI() {
         try {
             // Populate today's forecast UI
             let forecast_today = this.todaysWeatherCache;
-            let sunrise = new Date(this.currentWeatherCache.sys.sunrise * 1000).toLocaleTimeString([this.locale], { hour12: false });
-            let sunset = new Date(this.currentWeatherCache.sys.sunset * 1000).toLocaleTimeString([this.locale], { hour12: false });
 
             for (var i = 0; i < 4; i++) {
                 let forecastTodayUi = this._todays_forecast[i];
@@ -487,7 +411,7 @@ function populateTodaysUI() {
                 let forecastTime = new Date(forecastDataToday.dt * 1000);
                 let forecastTemp = this.formatTemperature(forecastDataToday.main.temp);
                 let iconTime = forecastTime.toLocaleTimeString([this.locale], { hour12: false });
-                let iconname = getIconName(forecastDataToday.weather[0].id, iconTime < sunrise || iconTime > sunset);
+                let iconname = IconMap[forecastDataToday.weather[0].icon];
 
                 let comment = forecastDataToday.weather[0].description;
                 if (this._translate_condition && !this._providerTranslations)
@@ -517,8 +441,6 @@ function populateForecastUI() {
         try {
             // Populate 5 day / 3 hour forecast UI
             let forecast = this.forecastWeatherCache;
-            let sunrise = new Date(this.currentWeatherCache.sys.sunrise * 1000).toLocaleTimeString([this.locale], { hour12: false });
-            let sunset = new Date(this.currentWeatherCache.sys.sunset * 1000).toLocaleTimeString([this.locale], { hour12: false });
 
             for (let i = 0; i < this._forecastDays; i++) {
                 let forecastUi = this._forecast[i];
@@ -539,7 +461,7 @@ function populateForecastUI() {
                             forecastUi.Day.text = '\n'+this.getLocaleDay(forecastDate.getDay());
                     }
                     let iconTime = forecastDate.toLocaleTimeString([this.locale], { hour12: false });
-                    let iconname = getIconName(forecastData[j].weather[0].id, iconTime < sunrise || iconTime > sunset);
+                    let iconname = IconMap[forecastData[j].weather[0].icon];
                     let forecastTemp = this.formatTemperature(forecastData[j].main.temp);
 
                     let comment = forecastData[j].weather[0].description;
