@@ -6,12 +6,15 @@
 # František Zatloukal <zatloukal.frantisek@gmail.com>, 2014.
 # Petr Pulc <petrpulc@gmail.com>, 2016, 2017.
 #
+# Weather terms adapted from the official meteorological dictionary http://slovnik.cmes.cz/hesla/en
+# 2022-08-03 Ludek Vydra <lvtran@u.k2.cz>
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: 3.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-07-17 16:52-0300\n"
-"PO-Revision-Date: 2022-06-27 17:11+0200\n"
+"PO-Revision-Date: 2022-08-03 12:52+0200\n"
 "Last-Translator: Ludek Vydra <lvtran@u.k2.cz>\n"
 "Language-Team: \n"
 "Language: cs\n"
@@ -19,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Poedit 3.1\n"
+"X-Generator: Poedit 3.1.1\n"
 
 #: src/extension.js:267
 msgid ""
@@ -115,15 +118,15 @@ msgstr "Vánek"
 
 #: src/extension.js:963
 msgid "Light breeze"
-msgstr "Větřík"
+msgstr "Slabý vítr"
 
 #: src/extension.js:966
 msgid "Gentle breeze"
-msgstr "Slabý vítr"
+msgstr "Mírný vítr"
 
 #: src/extension.js:969
 msgid "Moderate breeze"
-msgstr "Mírný vítr"
+msgstr "Dosti čersvý vítr"
 
 #: src/extension.js:972
 msgid "Fresh breeze"
@@ -135,23 +138,23 @@ msgstr "Silný vítr"
 
 #: src/extension.js:978
 msgid "Moderate gale"
-msgstr "Mírný vichr"
+msgstr "Prudký vítr"
 
 #: src/extension.js:981
 msgid "Fresh gale"
-msgstr "Čerstvý vichr"
+msgstr "Bouřlivý vítr"
 
 #: src/extension.js:984
 msgid "Strong gale"
-msgstr "Silný vichr"
+msgstr "Vichřice"
 
 #: src/extension.js:987
 msgid "Storm"
-msgstr "Plný vichr"
+msgstr "Silná vichřice"
 
 #: src/extension.js:990
 msgid "Violent storm"
-msgstr "Vichřice"
+msgstr "Mohutná vichřice"
 
 #: src/extension.js:993
 msgid "Hurricane"
@@ -388,7 +391,7 @@ msgstr "Silné mrholení s deštěm"
 
 #: src/openweathermap.js:81
 msgid "Shower Rain and Drizzle"
-msgstr "Přeháňky a mrholení"
+msgstr "Děšťové přeháňky a mrholení"
 
 #: src/openweathermap.js:83
 msgid "Heavy Rain and Drizzle"
@@ -428,7 +431,7 @@ msgstr "Mírné přeháňky"
 
 #: src/openweathermap.js:101
 msgid "Shower Rain"
-msgstr "Přeháňky"
+msgstr "Děšťové přeháňky"
 
 #: src/openweathermap.js:103
 msgid "Heavy Shower Rain"
@@ -460,7 +463,7 @@ msgstr "Lehké plískanice"
 
 #: src/openweathermap.js:117
 msgid "Shower Sleet"
-msgstr "Plískanice se sněhem"
+msgstr "Občasné plískanice"
 
 #: src/openweathermap.js:119
 msgid "Light Rain and Snow"
@@ -484,11 +487,11 @@ msgstr "Husté sněhové přeháňky"
 
 #: src/openweathermap.js:129
 msgid "Mist"
-msgstr "Mlha"
+msgstr "Kouřmo"
 
 #: src/openweathermap.js:131
 msgid "Smoke"
-msgstr "Smog"
+msgstr "Kouř"
 
 #: src/openweathermap.js:133
 msgid "Haze"
