@@ -61,6 +61,7 @@ First make sure you have the following dependencies installed:
 | `git`          | `git`                         | `git`                  |
 | `base-devel`   | `build-essential`             | `glib2-devel`          |
 |                | `gettext`                     | `gettext-devel`        |
+|                | `libsoup3`                    |                        |
 
 
 Then run the following commands:
@@ -110,7 +111,7 @@ This project is a fork of the original OpenWeather extension by @jenslody. See [
 
 Special thanks to the following people for updating translation `*.po` files via merge requests since forking the project:
 
-French: @franckgaga | Slovak: @jose1711 | Chinese: @xiaozhangup & @zyw271828 | Portuguese: @ronaldocosta | Russian: @vantu5z | Czech: @lev741
+French: @franckgaga | Slovak: @jose1711 | Chinese: @xiaozhangup & @zyw271828 | Portuguese: @ronaldocosta | Russian: @vantu5z & @tvaliiev | Czech: @lev741 | Turkish: @oguzkarayemis | German: @zeners | Polish: @MarcinScieszka | Italian: @alealetti
 
 ### Icons
 
