@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-shell-extension-openweather\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-17 16:52-0300\n"
+"POT-Creation-Date: 2022-09-18 10:49-0300\n"
 "PO-Revision-Date: 2017-03-26 15:26+0300\n"
 "Last-Translator: Светлин Зарев <svetlin.zarev@yahoo.com>\n"
 "Language-Team: Български <>\n"
@@ -36,8 +36,8 @@ msgstr ""
 msgid "Can not connect to %s"
 msgstr "Не може да се осъществи връзка с %s"
 
-#: src/extension.js:769 src/preferences/locationsPage.js:39
-#: src/preferences/locationsPage.js:58
+#: src/extension.js:769 src/preferences/locationsPage.js:37
+#: src/preferences/locationsPage.js:56
 msgid "Locations"
 msgstr "Местоположения"
 
@@ -63,7 +63,7 @@ msgstr ""
 msgid "Can not open %s"
 msgstr "%s не може да бъде отворен"
 
-#: src/extension.js:849 src/preferences/locationsPage.js:509
+#: src/extension.js:849 src/preferences/locationsPage.js:507
 msgid "Invalid city"
 msgstr "Грешен град"
 
@@ -319,280 +319,280 @@ msgstr ""
 msgid "%s Day Forecast"
 msgstr "Брой дни в прогнозата"
 
-#: src/openweathermap.js:49
+#: src/openweathermap.js:50
 #, fuzzy
 msgid "Thunderstorm with Light Rain"
 msgstr "лек дъжд с гръмотевици"
 
-#: src/openweathermap.js:51
+#: src/openweathermap.js:52
 #, fuzzy
 msgid "Thunderstorm with Rain"
 msgstr "дъжд с гръмотевици"
 
-#: src/openweathermap.js:53
+#: src/openweathermap.js:54
 #, fuzzy
 msgid "Thunderstorm with Heavy Rain"
 msgstr "проливен дъжд с гръмотевици"
 
-#: src/openweathermap.js:55
+#: src/openweathermap.js:56
 #, fuzzy
 msgid "Light Thunderstorm"
 msgstr "слаба гръмотевична буря"
 
-#: src/openweathermap.js:57
+#: src/openweathermap.js:58
 msgid "Thunderstorm"
 msgstr "гръмотевична буря"
 
-#: src/openweathermap.js:59
+#: src/openweathermap.js:60
 #, fuzzy
 msgid "Heavy Thunderstorm"
 msgstr "силна гръмотевична буря"
 
-#: src/openweathermap.js:61
+#: src/openweathermap.js:62
 #, fuzzy
 msgid "Ragged Thunderstorm"
 msgstr "гръмотевична буря"
 
-#: src/openweathermap.js:63
+#: src/openweathermap.js:64
 #, fuzzy
 msgid "Thunderstorm with Light Drizzle"
 msgstr "гръмотевична буря с лек дъждец"
 
-#: src/openweathermap.js:65
+#: src/openweathermap.js:66
 #, fuzzy
 msgid "Thunderstorm with Drizzle"
 msgstr "гръмотевична буря със ситен дъжд"
 
-#: src/openweathermap.js:67
+#: src/openweathermap.js:68
 #, fuzzy
 msgid "Thunderstorm with Heavy Drizzle"
 msgstr "гръмотевична буря със ситен дъжд"
 
-#: src/openweathermap.js:69
+#: src/openweathermap.js:70
 #, fuzzy
 msgid "Light Drizzle"
 msgstr "Лек бриз"
 
-#: src/openweathermap.js:71
+#: src/openweathermap.js:72
 msgid "Drizzle"
 msgstr "ситен дъжд"
 
-#: src/openweathermap.js:73
+#: src/openweathermap.js:74
 #, fuzzy
 msgid "Heavy Drizzle"
 msgstr "ситен дъжд"
 
-#: src/openweathermap.js:75
+#: src/openweathermap.js:76
 #, fuzzy
 msgid "Light Drizzle Rain"
 msgstr "ситен дъжд"
 
-#: src/openweathermap.js:77
+#: src/openweathermap.js:78
 #, fuzzy
 msgid "Drizzle Rain"
 msgstr "ситен дъжд"
 
-#: src/openweathermap.js:79
+#: src/openweathermap.js:80
 #, fuzzy
 msgid "Heavy Drizzle Rain"
 msgstr "ситен дъжд"
 
-#: src/openweathermap.js:81
+#: src/openweathermap.js:82
 #, fuzzy
 msgid "Shower Rain and Drizzle"
 msgstr "дъжд"
 
-#: src/openweathermap.js:83
+#: src/openweathermap.js:84
 #, fuzzy
 msgid "Heavy Rain and Drizzle"
 msgstr "силен дъжд"
 
-#: src/openweathermap.js:85
+#: src/openweathermap.js:86
 #, fuzzy
 msgid "Shower Drizzle"
 msgstr "силен ръмеж"
 
-#: src/openweathermap.js:87
+#: src/openweathermap.js:88
 #, fuzzy
 msgid "Light Rain"
 msgstr "лек дъжд"
 
-#: src/openweathermap.js:89
+#: src/openweathermap.js:90
 #, fuzzy
 msgid "Moderate Rain"
 msgstr "умерен валеж"
 
-#: src/openweathermap.js:91
+#: src/openweathermap.js:92
 #, fuzzy
 msgid "Heavy Rain"
 msgstr "силен снеговалеж"
 
-#: src/openweathermap.js:93
+#: src/openweathermap.js:94
 #, fuzzy
 msgid "Very Heavy Rain"
 msgstr "много силен дъжд"
 
-#: src/openweathermap.js:95
+#: src/openweathermap.js:96
 #, fuzzy
 msgid "Extreme Rain"
 msgstr "много силен дъжд"
 
-#: src/openweathermap.js:97
+#: src/openweathermap.js:98
 #, fuzzy
 msgid "Freezing Rain"
 msgstr "леден дъжд"
 
-#: src/openweathermap.js:99
+#: src/openweathermap.js:100
 #, fuzzy
 msgid "Light Shower Rain"
 msgstr "лек снеговалеж"
 
-#: src/openweathermap.js:101
+#: src/openweathermap.js:102
 #, fuzzy
 msgid "Shower Rain"
 msgstr "дъжд"
 
-#: src/openweathermap.js:103
+#: src/openweathermap.js:104
 #, fuzzy
 msgid "Heavy Shower Rain"
 msgstr "силен снеговалеж"
 
-#: src/openweathermap.js:105
+#: src/openweathermap.js:106
 #, fuzzy
 msgid "Ragged Shower Rain"
 msgstr "дъжд"
 
-#: src/openweathermap.js:107
+#: src/openweathermap.js:108
 #, fuzzy
 msgid "Light Snow"
 msgstr "лек снеговалеж"
 
-#: src/openweathermap.js:109
+#: src/openweathermap.js:110
 msgid "Snow"
 msgstr "снеговалеж"
 
-#: src/openweathermap.js:111
+#: src/openweathermap.js:112
 #, fuzzy
 msgid "Heavy Snow"
 msgstr "силен снеговалеж"
 
-#: src/openweathermap.js:113
+#: src/openweathermap.js:114
 msgid "Sleet"
 msgstr "суграшица"
 
-#: src/openweathermap.js:115
+#: src/openweathermap.js:116
 #, fuzzy
 msgid "Light Shower Sleet"
 msgstr "суграшица"
 
-#: src/openweathermap.js:117
+#: src/openweathermap.js:118
 #, fuzzy
 msgid "Shower Sleet"
 msgstr "суграшица"
 
-#: src/openweathermap.js:119
+#: src/openweathermap.js:120
 #, fuzzy
 msgid "Light Rain and Snow"
 msgstr "слаба  суграшица"
 
-#: src/openweathermap.js:121
+#: src/openweathermap.js:122
 #, fuzzy
 msgid "Rain and Snow"
 msgstr "суграшица"
 
-#: src/openweathermap.js:123
+#: src/openweathermap.js:124
 #, fuzzy
 msgid "Light Shower Snow"
 msgstr "лек снеговалеж"
 
-#: src/openweathermap.js:125
+#: src/openweathermap.js:126
 #, fuzzy
 msgid "Shower Snow"
 msgstr "снеговалеж"
 
-#: src/openweathermap.js:127
+#: src/openweathermap.js:128
 #, fuzzy
 msgid "Heavy Shower Snow"
 msgstr "силен снеговалеж"
 
-#: src/openweathermap.js:129
+#: src/openweathermap.js:130
 msgid "Mist"
 msgstr "мъгла"
 
-#: src/openweathermap.js:131
+#: src/openweathermap.js:132
 msgid "Smoke"
 msgstr "дим"
 
-#: src/openweathermap.js:133
+#: src/openweathermap.js:134
 msgid "Haze"
 msgstr "мараня"
 
-#: src/openweathermap.js:135
+#: src/openweathermap.js:136
 msgid "Sand/Dust Whirls"
 msgstr "пясъчни завихряния"
 
-#: src/openweathermap.js:137
+#: src/openweathermap.js:138
 msgid "Fog"
 msgstr "мъгла"
 
-#: src/openweathermap.js:139
+#: src/openweathermap.js:140
 msgid "Sand"
 msgstr "пясък"
 
-#: src/openweathermap.js:141
+#: src/openweathermap.js:142
 msgid "Dust"
 msgstr "прах"
 
-#: src/openweathermap.js:143
+#: src/openweathermap.js:144
 msgid "Volcanic Ash"
 msgstr ""
 
-#: src/openweathermap.js:145
+#: src/openweathermap.js:146
 msgid "Squalls"
 msgstr ""
 
-#: src/openweathermap.js:147
+#: src/openweathermap.js:148
 msgid "Tornado"
 msgstr ""
 
-#: src/openweathermap.js:149
+#: src/openweathermap.js:150
 #, fuzzy
 msgid "Clear Sky"
 msgstr "Изчисти записа"
 
-#: src/openweathermap.js:151
+#: src/openweathermap.js:152
 #, fuzzy
 msgid "Few Clouds"
 msgstr "слаба облачност"
 
-#: src/openweathermap.js:153
+#: src/openweathermap.js:154
 #, fuzzy
 msgid "Scattered Clouds"
 msgstr "разкъсана облачност"
 
-#: src/openweathermap.js:155
+#: src/openweathermap.js:156
 #, fuzzy
 msgid "Broken Clouds"
 msgstr "разкъсана облачност"
 
-#: src/openweathermap.js:157
+#: src/openweathermap.js:158
 #, fuzzy
 msgid "Overcast Clouds"
 msgstr "заоблачено"
 
-#: src/openweathermap.js:159
+#: src/openweathermap.js:160
 msgid "Not available"
 msgstr "Не е налично"
 
-#: src/openweathermap.js:373 src/openweathermap.js:375
+#: src/openweathermap.js:374 src/openweathermap.js:376
 msgid ", "
 msgstr ""
 
-#: src/openweathermap.js:391
+#: src/openweathermap.js:392
 msgid "?"
 msgstr ""
 
-#: src/openweathermap.js:459
+#: src/openweathermap.js:460
 msgid "Tomorrow"
 msgstr "Утре"
 
@@ -684,7 +684,7 @@ msgstr "Мерна единица за скорост на вятъра"
 msgid "Pressure"
 msgstr "Налягане"
 
-#: src/preferences/generalPage.js:201 src/preferences/locationsPage.js:66
+#: src/preferences/generalPage.js:201 src/preferences/locationsPage.js:64
 msgid "Provider"
 msgstr "Доставчик на услугата"
 
@@ -867,158 +867,158 @@ msgstr "Брой дни в прогнозата"
 msgid "Keep Forecast Expanded"
 msgstr ""
 
-#: src/preferences/locationsPage.js:54
+#: src/preferences/locationsPage.js:52
 msgid "Add"
 msgstr ""
 
-#: src/preferences/locationsPage.js:73
+#: src/preferences/locationsPage.js:71
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:58
 msgid "Geolocation Provider"
 msgstr "Доставчик на гео-локационна информация"
 
-#: src/preferences/locationsPage.js:74
+#: src/preferences/locationsPage.js:72
 msgid "Provider used for location search"
 msgstr ""
 
-#: src/preferences/locationsPage.js:87
+#: src/preferences/locationsPage.js:85
 msgid "Personal MapQuest Key"
 msgstr ""
 
-#: src/preferences/locationsPage.js:88
+#: src/preferences/locationsPage.js:86
 #, fuzzy
 msgid "Personal API Key from developer.mapquest.com"
 msgstr "Личен API код от developer.mapquest.com"
 
-#: src/preferences/locationsPage.js:208
+#: src/preferences/locationsPage.js:206
 #, javascript-format
 msgid "Location changed to: %s"
 msgstr ""
 
-#: src/preferences/locationsPage.js:223
+#: src/preferences/locationsPage.js:221
 #, fuzzy
 msgid "Add New Location"
 msgstr "Местоположение"
 
-#: src/preferences/locationsPage.js:244
+#: src/preferences/locationsPage.js:242
 #, fuzzy
 msgid "Search by Location or Coordinates"
 msgstr "Търси по местоположение или координати"
 
-#: src/preferences/locationsPage.js:250
+#: src/preferences/locationsPage.js:248
 msgid "e.g. Vaiaku, Tuvalu or -8.5211767,179.1976747"
 msgstr "например Vaiaku, Tuvalu or -8.5211767,179.1976747"
 
-#: src/preferences/locationsPage.js:252 src/preferences/locationsPage.js:337
-#: src/preferences/locationsPage.js:354
+#: src/preferences/locationsPage.js:250 src/preferences/locationsPage.js:335
+#: src/preferences/locationsPage.js:352
 msgid "Clear entry"
 msgstr "Изчисти записа"
 
-#: src/preferences/locationsPage.js:261
+#: src/preferences/locationsPage.js:259
 #, fuzzy
 msgid "Search"
 msgstr "Зареждане..."
 
-#: src/preferences/locationsPage.js:284
+#: src/preferences/locationsPage.js:282
 msgid "We need something to search for!"
 msgstr ""
 
-#: src/preferences/locationsPage.js:307
+#: src/preferences/locationsPage.js:305
 #, fuzzy, javascript-format
 msgid "Edit %s"
 msgstr "Промени името"
 
-#: src/preferences/locationsPage.js:329
+#: src/preferences/locationsPage.js:327
 #, fuzzy
 msgid "Edit Name"
 msgstr "Промени името"
 
-#: src/preferences/locationsPage.js:345
+#: src/preferences/locationsPage.js:343
 #, fuzzy
 msgid "Edit Coordinates"
 msgstr "Промени координатите"
 
-#: src/preferences/locationsPage.js:363
+#: src/preferences/locationsPage.js:361
 msgid "Save"
 msgstr "Запиши"
 
-#: src/preferences/locationsPage.js:396
+#: src/preferences/locationsPage.js:394
 msgid "Please complete all fields"
 msgstr ""
 
-#: src/preferences/locationsPage.js:412
+#: src/preferences/locationsPage.js:410
 #, javascript-format
 msgid "%s has been updated"
 msgstr ""
 
-#: src/preferences/locationsPage.js:441
+#: src/preferences/locationsPage.js:439
 #, javascript-format
 msgid "Are you sure you want to delete \"%s\"?"
 msgstr ""
 
-#: src/preferences/locationsPage.js:449
+#: src/preferences/locationsPage.js:447
 msgid "Delete"
 msgstr ""
 
-#: src/preferences/locationsPage.js:453
+#: src/preferences/locationsPage.js:451
 msgid "Cancel"
 msgstr "Отказ"
 
-#: src/preferences/locationsPage.js:485
+#: src/preferences/locationsPage.js:483
 #, javascript-format
 msgid "%s has been deleted"
 msgstr ""
 
-#: src/preferences/locationsPage.js:531
+#: src/preferences/locationsPage.js:529
 msgid "Search Results"
 msgstr ""
 
-#: src/preferences/locationsPage.js:547
+#: src/preferences/locationsPage.js:545
 msgid "New Search"
 msgstr ""
 
-#: src/preferences/locationsPage.js:554
+#: src/preferences/locationsPage.js:552
 #, fuzzy
 msgid "Searching ..."
 msgstr "Зареждане..."
 
-#: src/preferences/locationsPage.js:555
+#: src/preferences/locationsPage.js:553
 #, javascript-format
 msgid "Please wait while searching for locations matching \"%s\""
 msgstr ""
 
-#: src/preferences/locationsPage.js:607
+#: src/preferences/locationsPage.js:605
 msgid "AppKey Required"
 msgstr ""
 
-#: src/preferences/locationsPage.js:608
+#: src/preferences/locationsPage.js:606
 #, fuzzy, javascript-format
 msgid "You need an AppKey to use MapQuest, get one at: %s"
 msgstr "Личен API код от developer.mapquest.com"
 
-#: src/preferences/locationsPage.js:705
+#: src/preferences/locationsPage.js:709
 #, javascript-format
 msgid "Results for \"%s\""
 msgstr ""
 
-#: src/preferences/locationsPage.js:752
+#: src/preferences/locationsPage.js:756
 #, javascript-format
 msgid "%s has been added"
 msgstr ""
 
-#: src/preferences/locationsPage.js:760
+#: src/preferences/locationsPage.js:764
 msgid "API Error"
 msgstr ""
 
-#: src/preferences/locationsPage.js:761
+#: src/preferences/locationsPage.js:765
 #, javascript-format
 msgid "Invalid data when searching for \"%s\"."
 msgstr ""
 
-#: src/preferences/locationsPage.js:764
+#: src/preferences/locationsPage.js:768
 msgid "No Matches Found"
 msgstr ""
 
-#: src/preferences/locationsPage.js:765
+#: src/preferences/locationsPage.js:769
 #, javascript-format
 msgid "No results found when searching for \"%s\"."
 msgstr ""

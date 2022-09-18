@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-shell-extension-openweather\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-17 16:52-0300\n"
+"POT-Creation-Date: 2022-09-18 10:49-0300\n"
 "PO-Revision-Date: 2022-08-23 14:24+0300\n"
 "Last-Translator: Oğuz KARAYEMİŞ <oguzkarayemis@gmail.com>\n"
 "Language-Team: Turkish\n"
@@ -36,8 +36,8 @@ msgstr ""
 msgid "Can not connect to %s"
 msgstr "%s adresine bağlanılamadı"
 
-#: src/extension.js:769 src/preferences/locationsPage.js:39
-#: src/preferences/locationsPage.js:58
+#: src/extension.js:769 src/preferences/locationsPage.js:37
+#: src/preferences/locationsPage.js:56
 msgid "Locations"
 msgstr "Konumlar"
 
@@ -63,7 +63,7 @@ msgstr "2 dakikadan az sürede elle yenileme istemi göz ardı edilir!"
 msgid "Can not open %s"
 msgstr "%s açılamıyor"
 
-#: src/extension.js:849 src/preferences/locationsPage.js:509
+#: src/extension.js:849 src/preferences/locationsPage.js:507
 msgid "Invalid city"
 msgstr "Geçersiz Şehir"
 
@@ -317,239 +317,239 @@ msgstr "Yarının Tahmini"
 msgid "%s Day Forecast"
 msgstr "%s Günlük Hava Tahmini"
 
-#: src/openweathermap.js:49
+#: src/openweathermap.js:50
 msgid "Thunderstorm with Light Rain"
 msgstr "Hafif Yağmurlu Gök Gürültülü Fırtına"
 
-#: src/openweathermap.js:51
+#: src/openweathermap.js:52
 msgid "Thunderstorm with Rain"
 msgstr "Yağmurlu Gök Gürültülü Fırtına"
 
-#: src/openweathermap.js:53
+#: src/openweathermap.js:54
 msgid "Thunderstorm with Heavy Rain"
 msgstr "Yoğun Yağmurlu Gök Gürültülü Fırtına"
 
-#: src/openweathermap.js:55
+#: src/openweathermap.js:56
 msgid "Light Thunderstorm"
 msgstr "Hafif Gök Gürültülü Fırtına"
 
-#: src/openweathermap.js:57
+#: src/openweathermap.js:58
 msgid "Thunderstorm"
 msgstr "Gök Gürültülü Fırtına"
 
-#: src/openweathermap.js:59
+#: src/openweathermap.js:60
 msgid "Heavy Thunderstorm"
 msgstr "Yoğun Gök Gürültülü Fırtına"
 
-#: src/openweathermap.js:61
+#: src/openweathermap.js:62
 msgid "Ragged Thunderstorm"
 msgstr "Düzensiz Gök Gürültülü Fırtına"
 
-#: src/openweathermap.js:63
+#: src/openweathermap.js:64
 msgid "Thunderstorm with Light Drizzle"
 msgstr "Hafif Çiselemeli Gök Gürültülü Fırtına"
 
-#: src/openweathermap.js:65
+#: src/openweathermap.js:66
 msgid "Thunderstorm with Drizzle"
 msgstr "Çiselemeli Gök Gürültülü Fırtına"
 
-#: src/openweathermap.js:67
+#: src/openweathermap.js:68
 msgid "Thunderstorm with Heavy Drizzle"
 msgstr "Yoğun Çiselemeli Gök Gürültülü Fırtına"
 
-#: src/openweathermap.js:69
+#: src/openweathermap.js:70
 msgid "Light Drizzle"
 msgstr "Hafif Çiseleme"
 
-#: src/openweathermap.js:71
+#: src/openweathermap.js:72
 msgid "Drizzle"
 msgstr "Çiseleme"
 
-#: src/openweathermap.js:73
+#: src/openweathermap.js:74
 msgid "Heavy Drizzle"
 msgstr "Yoğun Çiseleme"
 
-#: src/openweathermap.js:75
+#: src/openweathermap.js:76
 msgid "Light Drizzle Rain"
 msgstr "Hafif Çiseleyen Yağmur"
 
-#: src/openweathermap.js:77
+#: src/openweathermap.js:78
 msgid "Drizzle Rain"
 msgstr "Çiseleyen Yağmur"
 
-#: src/openweathermap.js:79
+#: src/openweathermap.js:80
 msgid "Heavy Drizzle Rain"
 msgstr "Yoğun Çiseleyen Yağmur"
 
-#: src/openweathermap.js:81
+#: src/openweathermap.js:82
 msgid "Shower Rain and Drizzle"
 msgstr "Hafif Yağmur ve Çiseleme"
 
-#: src/openweathermap.js:83
+#: src/openweathermap.js:84
 msgid "Heavy Rain and Drizzle"
 msgstr "Yoğun Yağmur ve Çiseleme"
 
-#: src/openweathermap.js:85
+#: src/openweathermap.js:86
 msgid "Shower Drizzle"
 msgstr "Sağanak Çiseleme"
 
-#: src/openweathermap.js:87
+#: src/openweathermap.js:88
 msgid "Light Rain"
 msgstr "Hafif Yağmur"
 
-#: src/openweathermap.js:89
+#: src/openweathermap.js:90
 msgid "Moderate Rain"
 msgstr "Ilıman Yağmur"
 
-#: src/openweathermap.js:91
+#: src/openweathermap.js:92
 msgid "Heavy Rain"
 msgstr "Yoğun Yağmur"
 
-#: src/openweathermap.js:93
+#: src/openweathermap.js:94
 msgid "Very Heavy Rain"
 msgstr "Çok Şiddetli Yağmur"
 
-#: src/openweathermap.js:95
+#: src/openweathermap.js:96
 msgid "Extreme Rain"
 msgstr "Aşırı Sağanak Yağmur"
 
-#: src/openweathermap.js:97
+#: src/openweathermap.js:98
 msgid "Freezing Rain"
 msgstr "Dondurucu Yağmur"
 
-#: src/openweathermap.js:99
+#: src/openweathermap.js:100
 msgid "Light Shower Rain"
 msgstr "Hafif Sağanak Yağmur"
 
-#: src/openweathermap.js:101
+#: src/openweathermap.js:102
 msgid "Shower Rain"
 msgstr "Sağanak Yağmur"
 
-#: src/openweathermap.js:103
+#: src/openweathermap.js:104
 msgid "Heavy Shower Rain"
 msgstr "Ağır Sağanak Yağmur"
 
-#: src/openweathermap.js:105
+#: src/openweathermap.js:106
 msgid "Ragged Shower Rain"
 msgstr "Düzensiz Sağanak Yağmur"
 
-#: src/openweathermap.js:107
+#: src/openweathermap.js:108
 msgid "Light Snow"
 msgstr "Hafif Kar"
 
-#: src/openweathermap.js:109
+#: src/openweathermap.js:110
 msgid "Snow"
 msgstr "Kar"
 
-#: src/openweathermap.js:111
+#: src/openweathermap.js:112
 msgid "Heavy Snow"
 msgstr "Yoğun Kar"
 
-#: src/openweathermap.js:113
+#: src/openweathermap.js:114
 msgid "Sleet"
 msgstr "Sulu Kar"
 
-#: src/openweathermap.js:115
+#: src/openweathermap.js:116
 msgid "Light Shower Sleet"
 msgstr "Hafif Sağanak Sulu Kar"
 
-#: src/openweathermap.js:117
+#: src/openweathermap.js:118
 msgid "Shower Sleet"
 msgstr "Sağanak Sulu Kar"
 
-#: src/openweathermap.js:119
+#: src/openweathermap.js:120
 msgid "Light Rain and Snow"
 msgstr "Hafif Yağmurla Karışık Kar"
 
-#: src/openweathermap.js:121
+#: src/openweathermap.js:122
 msgid "Rain and Snow"
 msgstr "Yağmurla Karışık Kar"
 
-#: src/openweathermap.js:123
+#: src/openweathermap.js:124
 msgid "Light Shower Snow"
 msgstr "Hafif Kar Yağışı"
 
-#: src/openweathermap.js:125
+#: src/openweathermap.js:126
 msgid "Shower Snow"
 msgstr "Kar Yağışı"
 
-#: src/openweathermap.js:127
+#: src/openweathermap.js:128
 msgid "Heavy Shower Snow"
 msgstr "Yoğun ve Sağanak Şeklinde Kar"
 
-#: src/openweathermap.js:129
+#: src/openweathermap.js:130
 msgid "Mist"
 msgstr "Sis"
 
-#: src/openweathermap.js:131
+#: src/openweathermap.js:132
 msgid "Smoke"
 msgstr "Duman"
 
-#: src/openweathermap.js:133
+#: src/openweathermap.js:134
 msgid "Haze"
 msgstr "Pus"
 
-#: src/openweathermap.js:135
+#: src/openweathermap.js:136
 msgid "Sand/Dust Whirls"
 msgstr "Kum/Toz Hortumu"
 
-#: src/openweathermap.js:137
+#: src/openweathermap.js:138
 msgid "Fog"
 msgstr "Sis"
 
-#: src/openweathermap.js:139
+#: src/openweathermap.js:140
 msgid "Sand"
 msgstr "Kum"
 
-#: src/openweathermap.js:141
+#: src/openweathermap.js:142
 msgid "Dust"
 msgstr "Toz"
 
-#: src/openweathermap.js:143
+#: src/openweathermap.js:144
 msgid "Volcanic Ash"
 msgstr "Volkanik Kül"
 
-#: src/openweathermap.js:145
+#: src/openweathermap.js:146
 msgid "Squalls"
 msgstr "Kasırga"
 
-#: src/openweathermap.js:147
+#: src/openweathermap.js:148
 msgid "Tornado"
 msgstr "Tornado"
 
-#: src/openweathermap.js:149
+#: src/openweathermap.js:150
 msgid "Clear Sky"
 msgstr "Açık Gök"
 
-#: src/openweathermap.js:151
+#: src/openweathermap.js:152
 msgid "Few Clouds"
 msgstr "Az Bulutlu"
 
-#: src/openweathermap.js:153
+#: src/openweathermap.js:154
 msgid "Scattered Clouds"
 msgstr "Dağınık Bulutlu"
 
-#: src/openweathermap.js:155
+#: src/openweathermap.js:156
 msgid "Broken Clouds"
 msgstr "Parçalı Bulutlu"
 
-#: src/openweathermap.js:157
+#: src/openweathermap.js:158
 msgid "Overcast Clouds"
 msgstr "Bulutlu"
 
-#: src/openweathermap.js:159
+#: src/openweathermap.js:160
 msgid "Not available"
 msgstr "Mevcut değil"
 
-#: src/openweathermap.js:373 src/openweathermap.js:375
+#: src/openweathermap.js:374 src/openweathermap.js:376
 msgid ", "
 msgstr ", "
 
-#: src/openweathermap.js:391
+#: src/openweathermap.js:392
 msgid "?"
 msgstr "?"
 
-#: src/openweathermap.js:459
+#: src/openweathermap.js:460
 msgid "Tomorrow"
 msgstr "Yarın"
 
@@ -639,7 +639,7 @@ msgstr "Rüzgar Hızı"
 msgid "Pressure"
 msgstr "Basınç"
 
-#: src/preferences/generalPage.js:201 src/preferences/locationsPage.js:66
+#: src/preferences/generalPage.js:201 src/preferences/locationsPage.js:64
 msgid "Provider"
 msgstr "Sağlayıcı"
 
@@ -812,153 +812,153 @@ msgstr "Hava Tahminindeki Toplam Gün"
 msgid "Keep Forecast Expanded"
 msgstr "Hava Tahminin Geniş Tut"
 
-#: src/preferences/locationsPage.js:54
+#: src/preferences/locationsPage.js:52
 msgid "Add"
 msgstr "Ekle"
 
-#: src/preferences/locationsPage.js:73
+#: src/preferences/locationsPage.js:71
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:58
 msgid "Geolocation Provider"
 msgstr "Coğrafi Konum Sağlayıcısı"
 
-#: src/preferences/locationsPage.js:74
+#: src/preferences/locationsPage.js:72
 msgid "Provider used for location search"
 msgstr "Konum arama için kullanılan sağlayıcı"
 
-#: src/preferences/locationsPage.js:87
+#: src/preferences/locationsPage.js:85
 msgid "Personal MapQuest Key"
 msgstr "Kişisel MapQuest Anahtarı"
 
-#: src/preferences/locationsPage.js:88
+#: src/preferences/locationsPage.js:86
 msgid "Personal API Key from developer.mapquest.com"
 msgstr "developer.mapquest.com tarafından sağlanan kişisel uygulama anahtarı"
 
-#: src/preferences/locationsPage.js:208
+#: src/preferences/locationsPage.js:206
 #, javascript-format
 msgid "Location changed to: %s"
 msgstr "Konum %s olarak değişti"
 
-#: src/preferences/locationsPage.js:223
+#: src/preferences/locationsPage.js:221
 msgid "Add New Location"
 msgstr "Yeni Konum Ekle"
 
-#: src/preferences/locationsPage.js:244
+#: src/preferences/locationsPage.js:242
 msgid "Search by Location or Coordinates"
 msgstr "Koordinat ya da konuma göre ara"
 
-#: src/preferences/locationsPage.js:250
+#: src/preferences/locationsPage.js:248
 msgid "e.g. Vaiaku, Tuvalu or -8.5211767,179.1976747"
 msgstr "ör. Vaiaku, Tuvalu ya da -8.5211767,179.1976747"
 
-#: src/preferences/locationsPage.js:252 src/preferences/locationsPage.js:337
-#: src/preferences/locationsPage.js:354
+#: src/preferences/locationsPage.js:250 src/preferences/locationsPage.js:335
+#: src/preferences/locationsPage.js:352
 msgid "Clear entry"
 msgstr "Girdiyi temizle"
 
-#: src/preferences/locationsPage.js:261
+#: src/preferences/locationsPage.js:259
 msgid "Search"
 msgstr "Arama"
 
-#: src/preferences/locationsPage.js:284
+#: src/preferences/locationsPage.js:282
 msgid "We need something to search for!"
 msgstr "Aranacak bir şey lazım!"
 
-#: src/preferences/locationsPage.js:307
+#: src/preferences/locationsPage.js:305
 #, javascript-format
 msgid "Edit %s"
 msgstr "%s düzenle"
 
-#: src/preferences/locationsPage.js:329
+#: src/preferences/locationsPage.js:327
 msgid "Edit Name"
 msgstr "Adı düzenle"
 
-#: src/preferences/locationsPage.js:345
+#: src/preferences/locationsPage.js:343
 msgid "Edit Coordinates"
 msgstr "Koordinatları düzenle"
 
-#: src/preferences/locationsPage.js:363
+#: src/preferences/locationsPage.js:361
 msgid "Save"
 msgstr "Kaydet"
 
-#: src/preferences/locationsPage.js:396
+#: src/preferences/locationsPage.js:394
 msgid "Please complete all fields"
 msgstr "Lütfen bütün alanları doldurun"
 
-#: src/preferences/locationsPage.js:412
+#: src/preferences/locationsPage.js:410
 #, javascript-format
 msgid "%s has been updated"
 msgstr "%s güncellendi"
 
-#: src/preferences/locationsPage.js:441
+#: src/preferences/locationsPage.js:439
 #, javascript-format
 msgid "Are you sure you want to delete \"%s\"?"
 msgstr "\"%s\"yi silmek istediğinize emin misiniz?"
 
-#: src/preferences/locationsPage.js:449
+#: src/preferences/locationsPage.js:447
 msgid "Delete"
 msgstr "Sil"
 
-#: src/preferences/locationsPage.js:453
+#: src/preferences/locationsPage.js:451
 msgid "Cancel"
 msgstr "İptal"
 
-#: src/preferences/locationsPage.js:485
+#: src/preferences/locationsPage.js:483
 #, javascript-format
 msgid "%s has been deleted"
 msgstr "%s silindi"
 
-#: src/preferences/locationsPage.js:531
+#: src/preferences/locationsPage.js:529
 msgid "Search Results"
 msgstr "Arama Sonuçları"
 
-#: src/preferences/locationsPage.js:547
+#: src/preferences/locationsPage.js:545
 msgid "New Search"
 msgstr "Yeni Arama"
 
-#: src/preferences/locationsPage.js:554
+#: src/preferences/locationsPage.js:552
 msgid "Searching ..."
 msgstr "Aranıyor..."
 
-#: src/preferences/locationsPage.js:555
+#: src/preferences/locationsPage.js:553
 #, javascript-format
 msgid "Please wait while searching for locations matching \"%s\""
 msgstr "\"%s\" ile eşleşen konumlar aranırken lütfen bekleyin"
 
-#: src/preferences/locationsPage.js:607
+#: src/preferences/locationsPage.js:605
 msgid "AppKey Required"
 msgstr "Uygulama Anahtarı Gerekli"
 
-#: src/preferences/locationsPage.js:608
+#: src/preferences/locationsPage.js:606
 #, javascript-format
 msgid "You need an AppKey to use MapQuest, get one at: %s"
 msgstr ""
 "MapQuest'i kullanmak için bir Uygulama Anahtarına ihtiyacınız va,. %s "
 "adresinden edinin"
 
-#: src/preferences/locationsPage.js:705
+#: src/preferences/locationsPage.js:709
 #, javascript-format
 msgid "Results for \"%s\""
 msgstr "\"%s\" için sonuçlar"
 
-#: src/preferences/locationsPage.js:752
+#: src/preferences/locationsPage.js:756
 #, javascript-format
 msgid "%s has been added"
 msgstr "%s eklendi"
 
-#: src/preferences/locationsPage.js:760
+#: src/preferences/locationsPage.js:764
 msgid "API Error"
 msgstr "API Hatası"
 
-#: src/preferences/locationsPage.js:761
+#: src/preferences/locationsPage.js:765
 #, javascript-format
 msgid "Invalid data when searching for \"%s\"."
 msgstr "\"%s\" aranırken geçersiz veriler."
 
-#: src/preferences/locationsPage.js:764
+#: src/preferences/locationsPage.js:768
 msgid "No Matches Found"
 msgstr "Hiçbir Eşleşme Bulunamadı"
 
-#: src/preferences/locationsPage.js:765
+#: src/preferences/locationsPage.js:769
 #, javascript-format
 msgid "No results found when searching for \"%s\"."
 msgstr "\"%s\" aranırken hiçbir sonuç bulunamadı."
