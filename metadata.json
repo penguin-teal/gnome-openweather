@@ -1,10 +1,10 @@
 {
   "name": "OpenWeather",
   "description": "Display weather information for any location on Earth in the GNOME Shell",
-  "shell-version": ["42"],
+  "shell-version": ["42", "43"],
   "url": "https://gitlab.com/skrewball/openweather",
   "uuid": "openweather-extension@jenslody.de",
   "settings-schema": "org.gnome.shell.extensions.openweather",
   "gettext-domain": "gnome-shell-extension-openweather",
-  "version": 118
+  "version": 119
 }
