@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: gnome-shell-extension-openweather 119\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-18 10:49-0300\n"
-"PO-Revision-Date: 2022-10-08 21:37+0200\n"
+"PO-Revision-Date: 2022-10-15 03:06+0200\n"
 "Last-Translator: Amr Ibrahim <amribrahim1987@hotmail.com>\n"
 "Language-Team: Deutsch <openweather@jenslody.de>\n"
 "Language: de\n"
@@ -134,7 +134,7 @@ msgstr "Starke Brise"
 
 #: src/extension.js:978
 msgid "Moderate gale"
-msgstr "Steifer Wind"
+msgstr "Mäßiger Sturm"
 
 #: src/extension.js:981
 msgid "Fresh gale"
@@ -150,7 +150,7 @@ msgstr "Sturm"
 
 #: src/extension.js:990
 msgid "Violent storm"
-msgstr "Orkanartiger Sturm"
+msgstr "Heftiger Sturm"
 
 #: src/extension.js:993
 msgid "Hurricane"
@@ -283,7 +283,7 @@ msgstr "ft/s"
 
 #: src/extension.js:1227 src/extension.js:1265
 msgid "Loading ..."
-msgstr "Lade ..."
+msgstr "Laden …"
 
 #: src/extension.js:1269
 msgid "Please wait"
@@ -311,7 +311,7 @@ msgstr "Windböen:"
 
 #: src/extension.js:1487
 msgid "Tomorrow's Forecast"
-msgstr "Vorhersage für Morgen"
+msgstr "Vorhersage für morgen"
 
 #: src/extension.js:1489
 #, javascript-format
@@ -647,7 +647,7 @@ msgstr "Anbieter"
 
 #: src/preferences/generalPage.js:210
 msgid "OpenWeatherMap Multilingual Support"
-msgstr "OpenWeatherMap Mehrsprachenunterstützung"
+msgstr "OpenWeatherMap-Mehrsprachenunterstützung"
 
 #: src/preferences/generalPage.js:211
 msgid "Using provider translations applies to weather conditions only"
@@ -659,13 +659,13 @@ msgid ""
 "Enable this to use OWM multilingual support in 46 languages if there's no "
 "built-in translations for your language yet."
 msgstr ""
-"Aktivieren Sie dies, um die OpenWeatherMap Mehrsprachenunterstützung in 46 "
+"Aktivieren Sie dies, um die OpenWeatherMap-Mehrsprachenunterstützung in 46 "
 "Sprachen zu nutzen, wenn es noch keine integrierten Übersetzungen für Ihre "
 "Sprache gibt."
 
 #: src/preferences/generalPage.js:224
 msgid "Use Extensions API Key"
-msgstr "API-Schlüssel für Erweiterungen verwenden"
+msgstr "Den API-Schlüssel der Erweiterung verwenden"
 
 #: src/preferences/generalPage.js:225
 msgid "Use the built-in API key for OpenWeatherMap"
@@ -859,7 +859,7 @@ msgstr "z.B. Vaiaku, Tuvalu oder -8.5211767,179.1976747"
 #: src/preferences/locationsPage.js:250 src/preferences/locationsPage.js:335
 #: src/preferences/locationsPage.js:352
 msgid "Clear entry"
-msgstr "Inhalt löschen"
+msgstr "Eingabe löschen"
 
 #: src/preferences/locationsPage.js:259
 msgid "Search"
@@ -923,7 +923,7 @@ msgstr "Neue Suche"
 
 #: src/preferences/locationsPage.js:552
 msgid "Searching ..."
-msgstr "Suche ..."
+msgstr "Suchen …"
 
 #: src/preferences/locationsPage.js:553
 #, javascript-format
@@ -985,7 +985,7 @@ msgstr "unbekannt"
 
 #: src/preferences/aboutPage.js:78
 msgid "OpenWeather Version"
-msgstr "Version von OpenWeather"
+msgstr "OpenWeather-Version"
 
 #: src/preferences/aboutPage.js:87
 msgid "Git Version"
@@ -1069,7 +1069,7 @@ msgstr "Aktueller Ort"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:92
 msgid "OpenWeatherMap Multilingual Support (weather descriptions only)"
-msgstr "OpenWeatherMap Mehrsprachenunterstützung (nur Wetterbeschreibungen)"
+msgstr "OpenWeatherMap-Mehrsprachenunterstützung (nur Wetterbeschreibungen)"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:100
 msgid "Temperature in Panel"
