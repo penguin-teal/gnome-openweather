@@ -2,15 +2,14 @@
 # Copyright (C) 2011,2012 Free Software Foundation, Inc.
 # This file is distributed under the same license as the gnome-shell-extension-openweather package.
 # Takeshi AIHANA <takeshi.aihana@gmail.com>, 2011,2012.
-#  WhiteCat6142 <whitecat6142@gmail.com>, 2016
-# WhiteCat6142 <whitecat6142@gmail.com>, 2017.
+# WhiteCat6142 <whitecat6142@gmail.com>, 2016,2017,2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-shell-extension-weather 1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-18 10:49-0300\n"
-"PO-Revision-Date: 2017-02-04 20:27+0100\n"
+"PO-Revision-Date: 2022-12-10 11:33+0900\n"
 "Last-Translator: WhiteCat6142 <whitecat6142@gmail.com>\n"
 "Language-Team: Japanese <takeshi.aihana@gmail.com>\n"
 "Language: ja\n"
@@ -18,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Gtranslator 2.91.7\n"
+"X-Generator: Poedit 3.1.1\n"
 
 #: src/extension.js:267
 msgid ""
@@ -27,6 +26,10 @@ msgid ""
 "dialog to on or register at https://openweathermap.org/appid and paste your "
 "personal key into the preferences dialog."
 msgstr ""
+"Openweathermap.org を動かすにはapiキーが必須です。\n"
+"拡張機能のデフォルトキーを使うようダイアログで設定するか、https://"
+"openweathermap.org/appid でアカウントを制作してあなたの個人キーをダイアログ"
+"で設定して下さい。"
 
 #: src/extension.js:454 src/extension.js:466
 #, javascript-format
@@ -43,9 +46,9 @@ msgid "Reload Weather Information"
 msgstr "天気予報を更新する"
 
 #: src/extension.js:771
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "Weather data by: %s"
-msgstr "気象データーの提供元:"
+msgstr "気象データーの提供元: %s"
 
 #: src/extension.js:773
 msgid "Weather Settings"
@@ -53,7 +56,7 @@ msgstr "設定"
 
 #: src/extension.js:787
 msgid "Manual refreshes less than 2 minutes apart are ignored!"
-msgstr ""
+msgstr "2分以下の手動更新は無視されます。"
 
 #: src/extension.js:801
 #, javascript-format
@@ -66,7 +69,7 @@ msgstr "都市の名前が間違っています"
 
 #: src/extension.js:860
 msgid "Invalid location! Please try to recreate it."
-msgstr "異常な座標です 変更してください"
+msgstr "異常な座標です。変更してください。"
 
 #: src/extension.js:906 src/preferences/generalPage.js:148
 msgid "°F"
@@ -279,7 +282,7 @@ msgstr "ft/s"
 
 #: src/extension.js:1227 src/extension.js:1265
 msgid "Loading ..."
-msgstr "読込中"
+msgstr "読込中 ..."
 
 #: src/extension.js:1269
 msgid "Please wait"
@@ -287,50 +290,46 @@ msgstr "少々お待ちください"
 
 #: src/extension.js:1340
 msgid "Feels Like:"
-msgstr ""
+msgstr "体感温度:"
 
 #: src/extension.js:1344
 msgid "Humidity:"
-msgstr "湿度"
+msgstr "湿度:"
 
 #: src/extension.js:1348
 msgid "Pressure:"
-msgstr "気圧"
+msgstr "気圧:"
 
 #: src/extension.js:1352
 msgid "Wind:"
-msgstr "風"
+msgstr "風:"
 
 #: src/extension.js:1356
 msgid "Gusts:"
-msgstr ""
+msgstr "突風:"
 
 #: src/extension.js:1487
 msgid "Tomorrow's Forecast"
-msgstr ""
+msgstr "明日の天気"
 
 #: src/extension.js:1489
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "%s Day Forecast"
-msgstr "週間天気予報に天気を表示する"
+msgstr "%s 日天気予報"
 
 #: src/openweathermap.js:50
-#, fuzzy
 msgid "Thunderstorm with Light Rain"
 msgstr "雷雨(小雨)"
 
 #: src/openweathermap.js:52
-#, fuzzy
 msgid "Thunderstorm with Rain"
 msgstr "雷雨"
 
 #: src/openweathermap.js:54
-#, fuzzy
 msgid "Thunderstorm with Heavy Rain"
 msgstr "雷豪雨"
 
 #: src/openweathermap.js:56
-#, fuzzy
 msgid "Light Thunderstorm"
 msgstr "弱い雷"
 
@@ -339,126 +338,102 @@ msgid "Thunderstorm"
 msgstr "雷"
 
 #: src/openweathermap.js:60
-#, fuzzy
 msgid "Heavy Thunderstorm"
 msgstr "激しい雷"
 
 #: src/openweathermap.js:62
-#, fuzzy
 msgid "Ragged Thunderstorm"
 msgstr "不規則な雷"
 
 #: src/openweathermap.js:64
-#, fuzzy
 msgid "Thunderstorm with Light Drizzle"
 msgstr "薄い霧を伴った雷雨"
 
 #: src/openweathermap.js:66
-#, fuzzy
 msgid "Thunderstorm with Drizzle"
 msgstr "霧を伴った雷雨"
 
 #: src/openweathermap.js:68
-#, fuzzy
 msgid "Thunderstorm with Heavy Drizzle"
 msgstr "濃い霧を伴った雷雨"
 
 #: src/openweathermap.js:70
-#, fuzzy
 msgid "Light Drizzle"
-msgstr "軽風"
+msgstr "薄い霧"
 
 #: src/openweathermap.js:72
 msgid "Drizzle"
 msgstr "霧"
 
 #: src/openweathermap.js:74
-#, fuzzy
 msgid "Heavy Drizzle"
-msgstr "霧"
+msgstr "濃い霧"
 
 #: src/openweathermap.js:76
-#, fuzzy
 msgid "Light Drizzle Rain"
-msgstr "霧雨"
+msgstr "軽い霧雨"
 
 #: src/openweathermap.js:78
-#, fuzzy
 msgid "Drizzle Rain"
 msgstr "霧雨"
 
 #: src/openweathermap.js:80
-#, fuzzy
 msgid "Heavy Drizzle Rain"
-msgstr "霧雨"
+msgstr "強い霧雨"
 
 #: src/openweathermap.js:82
-#, fuzzy
 msgid "Shower Rain and Drizzle"
 msgstr "にわか雨と霧"
 
 #: src/openweathermap.js:84
-#, fuzzy
 msgid "Heavy Rain and Drizzle"
-msgstr "激しいにわか雨と霧"
+msgstr "激しい雨と霧"
 
 #: src/openweathermap.js:86
-#, fuzzy
 msgid "Shower Drizzle"
-msgstr "湿った霧"
+msgstr "にわか霧"
 
 #: src/openweathermap.js:88
-#, fuzzy
 msgid "Light Rain"
 msgstr "小雨"
 
 #: src/openweathermap.js:90
-#, fuzzy
 msgid "Moderate Rain"
 msgstr "雨"
 
 #: src/openweathermap.js:92
-#, fuzzy
 msgid "Heavy Rain"
 msgstr "豪雪"
 
 #: src/openweathermap.js:94
-#, fuzzy
 msgid "Very Heavy Rain"
-msgstr "とても激しい雨"
+msgstr "激しい雨"
 
 #: src/openweathermap.js:96
-#, fuzzy
 msgid "Extreme Rain"
 msgstr "すさまじい雨"
 
 #: src/openweathermap.js:98
-#, fuzzy
 msgid "Freezing Rain"
 msgstr "冷雨"
 
 #: src/openweathermap.js:100
-#, fuzzy
 msgid "Light Shower Rain"
-msgstr "軽いにわか雪"
+msgstr "軽いにわか雨"
 
 #: src/openweathermap.js:102
-#, fuzzy
 msgid "Shower Rain"
 msgstr "にわか雨"
 
 #: src/openweathermap.js:104
-#, fuzzy
 msgid "Heavy Shower Rain"
-msgstr "激しいにわか雪"
+msgstr "激しいシャワー雨"
 
 #: src/openweathermap.js:106
-#, fuzzy
 msgid "Ragged Shower Rain"
 msgstr "不規則なにわか雨"
 
 #: src/openweathermap.js:108
-#, fuzzy
 msgid "Light Snow"
 msgstr "小雪"
 
@@ -467,7 +442,6 @@ msgid "Snow"
 msgstr "雪"
 
 #: src/openweathermap.js:112
-#, fuzzy
 msgid "Heavy Snow"
 msgstr "豪雪"
 
@@ -476,37 +450,30 @@ msgid "Sleet"
 msgstr "みぞれ"
 
 #: src/openweathermap.js:116
-#, fuzzy
 msgid "Light Shower Sleet"
-msgstr "みぞれ"
+msgstr "軽いみぞれ"
 
 #: src/openweathermap.js:118
-#, fuzzy
 msgid "Shower Sleet"
-msgstr "みぞれ"
+msgstr "にわかみぞれ"
 
 #: src/openweathermap.js:120
-#, fuzzy
 msgid "Light Rain and Snow"
 msgstr "軽い雨雪"
 
 #: src/openweathermap.js:122
-#, fuzzy
 msgid "Rain and Snow"
 msgstr "雨雪"
 
 #: src/openweathermap.js:124
-#, fuzzy
 msgid "Light Shower Snow"
 msgstr "軽いにわか雪"
 
 #: src/openweathermap.js:126
-#, fuzzy
 msgid "Shower Snow"
 msgstr "にわか雪"
 
 #: src/openweathermap.js:128
-#, fuzzy
 msgid "Heavy Shower Snow"
 msgstr "激しいにわか雪"
 
@@ -540,38 +507,33 @@ msgstr "塵"
 
 #: src/openweathermap.js:144
 msgid "Volcanic Ash"
-msgstr ""
+msgstr "火山灰"
 
 #: src/openweathermap.js:146
 msgid "Squalls"
-msgstr ""
+msgstr "スコール"
 
 #: src/openweathermap.js:148
 msgid "Tornado"
-msgstr ""
+msgstr "台風"
 
 #: src/openweathermap.js:150
-#, fuzzy
 msgid "Clear Sky"
-msgstr "エントリーのクリア"
+msgstr "晴天"
 
 #: src/openweathermap.js:152
-#, fuzzy
 msgid "Few Clouds"
 msgstr "晴れ"
 
 #: src/openweathermap.js:154
-#, fuzzy
 msgid "Scattered Clouds"
-msgstr "千切れ雲(半分以下)"
+msgstr "千切れ雲"
 
 #: src/openweathermap.js:156
-#, fuzzy
 msgid "Broken Clouds"
-msgstr "千切れ雲(半分以上)"
+msgstr "曇りがち"
 
 #: src/openweathermap.js:158
-#, fuzzy
 msgid "Overcast Clouds"
 msgstr "曇り"
 
@@ -581,59 +543,57 @@ msgstr "データーなし"
 
 #: src/openweathermap.js:374 src/openweathermap.js:376
 msgid ", "
-msgstr ","
+msgstr ", "
 
 #: src/openweathermap.js:392
 msgid "?"
-msgstr ""
+msgstr "?"
 
 #: src/openweathermap.js:460
 msgid "Tomorrow"
 msgstr "明日"
 
 #: src/preferences/generalPage.js:31
-#, fuzzy
 msgid "Settings"
 msgstr "設定"
 
 #: src/preferences/generalPage.js:39
 msgid "General"
-msgstr ""
+msgstr "一般設定"
 
 #: src/preferences/generalPage.js:57
 msgid "Current Weather Refresh"
-msgstr ""
+msgstr "今の天気を更新"
 
 #: src/preferences/generalPage.js:58
 msgid "Current weather refresh interval in minutes"
-msgstr ""
+msgstr "天気の更新間隔(分)"
 
 #: src/preferences/generalPage.js:80
 msgid "Weather Forecast Refresh"
-msgstr ""
+msgstr "週間天気を更新"
 
 #: src/preferences/generalPage.js:81
 msgid "Forecast refresh interval in minutes if enabled"
-msgstr ""
+msgstr "週間天気の更新間隔(分、有効な場合)"
 
 #: src/preferences/generalPage.js:92
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:108
 msgid "Disable Forecast"
-msgstr ""
+msgstr "週間天気を無効化"
 
 #: src/preferences/generalPage.js:93
 msgid "Disables all fetching and processing of forecast data"
-msgstr ""
+msgstr "全てのデータ更新を無効"
 
 #: src/preferences/generalPage.js:104
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:96
-#, fuzzy
 msgid "System Icons"
-msgstr "シンボリック・アイコンにする"
+msgstr "シンボリック・アイコン"
 
 #: src/preferences/generalPage.js:105
 msgid "Disable to use packaged Adwaita weather icons"
-msgstr ""
+msgstr "Adwaitaアイコンを使用しない"
 
 #: src/preferences/generalPage.js:106
 msgid ""
@@ -643,7 +603,7 @@ msgstr ""
 
 #: src/preferences/generalPage.js:126
 msgid "First Boot Delay"
-msgstr ""
+msgstr "起動ディレイ"
 
 #: src/preferences/generalPage.js:127
 msgid "Seconds to delay popup initialization and data fetching"
@@ -660,7 +620,6 @@ msgid "Units"
 msgstr "単位"
 
 #: src/preferences/generalPage.js:156
-#, fuzzy
 msgid "Temperature"
 msgstr "気温の単位"
 
@@ -669,14 +628,12 @@ msgid "Beaufort"
 msgstr "風力階級"
 
 #: src/preferences/generalPage.js:170
-#, fuzzy
 msgid "Wind Speed"
 msgstr "風速の単位"
 
 #: src/preferences/generalPage.js:189
-#, fuzzy
 msgid "Pressure"
-msgstr "気圧"
+msgstr "気圧の単位"
 
 #: src/preferences/generalPage.js:201 src/preferences/locationsPage.js:64
 msgid "Provider"
@@ -684,11 +641,11 @@ msgstr "提供元"
 
 #: src/preferences/generalPage.js:210
 msgid "OpenWeatherMap Multilingual Support"
-msgstr ""
+msgstr "OpenWeatherMap 多言語化"
 
 #: src/preferences/generalPage.js:211
 msgid "Using provider translations applies to weather conditions only"
-msgstr ""
+msgstr "天気の表示のみ翻訳する"
 
 #: src/preferences/generalPage.js:212
 msgid ""
@@ -698,7 +655,7 @@ msgstr ""
 
 #: src/preferences/generalPage.js:224
 msgid "Use Extensions API Key"
-msgstr ""
+msgstr "拡張機能のAPIキーを使う"
 
 #: src/preferences/generalPage.js:225
 msgid "Use the built-in API key for OpenWeatherMap"
@@ -712,7 +669,7 @@ msgstr ""
 
 #: src/preferences/generalPage.js:240
 msgid "Personal API Key"
-msgstr ""
+msgstr "あなたの個人APIキー"
 
 #: src/preferences/layoutPage.js:31
 msgid "Layout"
@@ -720,7 +677,7 @@ msgstr "表示設定"
 
 #: src/preferences/layoutPage.js:39
 msgid "Panel"
-msgstr ""
+msgstr "パネル"
 
 #: src/preferences/layoutPage.js:44
 msgid "Center"
@@ -735,45 +692,40 @@ msgid "Left"
 msgstr "左側"
 
 #: src/preferences/layoutPage.js:48
-#, fuzzy
 msgid "Position In Panel"
 msgstr "配置する場所"
 
 #: src/preferences/layoutPage.js:69
-#, fuzzy
 msgid "Position Offset"
-msgstr "配置する場所"
+msgstr "オフセット"
 
 #: src/preferences/layoutPage.js:70
 msgid "The position relative to other items in the box"
 msgstr ""
 
 #: src/preferences/layoutPage.js:78
-#, fuzzy
 msgid "Show the temperature in the panel"
 msgstr "インジゲーターに気温を表示する"
 
 #: src/preferences/layoutPage.js:82
-#, fuzzy
 msgid "Temperature In Panel"
 msgstr "インジゲーターに気温を表示する"
 
 #: src/preferences/layoutPage.js:90
 msgid "Show the weather conditions in the panel"
-msgstr ""
+msgstr "インジゲーターに天気を表示する"
 
 #: src/preferences/layoutPage.js:94
-#, fuzzy
 msgid "Conditions In Panel"
 msgstr "インジゲーターに天気を表示する"
 
 #: src/preferences/layoutPage.js:107
 msgid "Popup"
-msgstr ""
+msgstr "ポップアップ"
 
 #: src/preferences/layoutPage.js:125
 msgid "Popup Position"
-msgstr ""
+msgstr "ポップアップの配置"
 
 #: src/preferences/layoutPage.js:126
 msgid "Alignment of the popup from left to right"
@@ -806,18 +758,16 @@ msgid "3"
 msgstr ""
 
 #: src/preferences/layoutPage.js:162
-#, fuzzy
 msgid "Temperature Decimal Places"
-msgstr "インジゲーターに気温を表示する"
+msgstr "気温の小数"
 
 #: src/preferences/layoutPage.js:163
-#, fuzzy
 msgid "Maximum number of digits after the decimal point"
 msgstr "小数第何位まで表示するか"
 
 #: src/preferences/layoutPage.js:183
 msgid "Location Text Length"
-msgstr ""
+msgstr "地域の文字数"
 
 #: src/preferences/layoutPage.js:184
 msgid "Maximum length of the location text. A setting of '0' is unlimited"
@@ -825,34 +775,31 @@ msgstr ""
 
 #: src/preferences/layoutPage.js:200
 msgid "Forecast"
-msgstr ""
+msgstr "週間天気予報"
 
 #: src/preferences/layoutPage.js:210
-#, fuzzy
 msgid "Center Today's Forecast"
-msgstr "週間天気予報に表示する日数"
+msgstr "今日を中央に表示する"
 
 #: src/preferences/layoutPage.js:221
-#, fuzzy
 msgid "Conditions In Forecast"
 msgstr "週間天気予報に天気を表示する"
 
 #: src/preferences/layoutPage.js:228
 msgid "Today Only"
-msgstr ""
+msgstr "今日のみ"
 
 #: src/preferences/layoutPage.js:232
 msgid "4"
-msgstr ""
+msgstr "4"
 
 #: src/preferences/layoutPage.js:233
 msgid "5"
-msgstr ""
+msgstr "5"
 
 #: src/preferences/layoutPage.js:235
-#, fuzzy
 msgid "Total Days In Forecast"
-msgstr "週間天気予報に天気を表示する"
+msgstr "週間天気予報の日数"
 
 #: src/preferences/layoutPage.js:246
 msgid "Keep Forecast Expanded"
@@ -860,7 +807,7 @@ msgstr ""
 
 #: src/preferences/locationsPage.js:52
 msgid "Add"
-msgstr ""
+msgstr "追加..."
 
 #: src/preferences/locationsPage.js:71
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:58
@@ -873,7 +820,7 @@ msgstr ""
 
 #: src/preferences/locationsPage.js:85
 msgid "Personal MapQuest Key"
-msgstr ""
+msgstr "あなたの個人MapQuestキー"
 
 #: src/preferences/locationsPage.js:86
 msgid "Personal API Key from developer.mapquest.com"
@@ -885,12 +832,10 @@ msgid "Location changed to: %s"
 msgstr ""
 
 #: src/preferences/locationsPage.js:221
-#, fuzzy
 msgid "Add New Location"
-msgstr "地域"
+msgstr "地域の追加"
 
 #: src/preferences/locationsPage.js:242
-#, fuzzy
 msgid "Search by Location or Coordinates"
 msgstr "地域または座標で検索する"
 
@@ -904,26 +849,23 @@ msgid "Clear entry"
 msgstr "エントリーのクリア"
 
 #: src/preferences/locationsPage.js:259
-#, fuzzy
 msgid "Search"
-msgstr "読込中"
+msgstr "検索"
 
 #: src/preferences/locationsPage.js:282
 msgid "We need something to search for!"
 msgstr ""
 
 #: src/preferences/locationsPage.js:305
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "Edit %s"
-msgstr "名前の編集"
+msgstr "%s 編集"
 
 #: src/preferences/locationsPage.js:327
-#, fuzzy
 msgid "Edit Name"
-msgstr "名前の編集"
+msgstr "名前の編集する"
 
 #: src/preferences/locationsPage.js:343
-#, fuzzy
 msgid "Edit Coordinates"
 msgstr "座標を編集する"
 
@@ -938,16 +880,16 @@ msgstr ""
 #: src/preferences/locationsPage.js:410
 #, javascript-format
 msgid "%s has been updated"
-msgstr ""
+msgstr "%s を更新しました"
 
 #: src/preferences/locationsPage.js:439
 #, javascript-format
 msgid "Are you sure you want to delete \"%s\"?"
-msgstr ""
+msgstr "本当に %s を削除してもいいですか?"
 
 #: src/preferences/locationsPage.js:447
 msgid "Delete"
-msgstr ""
+msgstr "削除"
 
 #: src/preferences/locationsPage.js:451
 msgid "Cancel"
@@ -956,20 +898,19 @@ msgstr "キャンセル"
 #: src/preferences/locationsPage.js:483
 #, javascript-format
 msgid "%s has been deleted"
-msgstr ""
+msgstr "%s を削除しました"
 
 #: src/preferences/locationsPage.js:529
 msgid "Search Results"
-msgstr ""
+msgstr "検索結果"
 
 #: src/preferences/locationsPage.js:545
 msgid "New Search"
-msgstr ""
+msgstr "もう一度検索"
 
 #: src/preferences/locationsPage.js:552
-#, fuzzy
 msgid "Searching ..."
-msgstr "読込中"
+msgstr "読込中 ..."
 
 #: src/preferences/locationsPage.js:553
 #, javascript-format
@@ -978,7 +919,7 @@ msgstr ""
 
 #: src/preferences/locationsPage.js:605
 msgid "AppKey Required"
-msgstr ""
+msgstr "Appkeyが必要です"
 
 #: src/preferences/locationsPage.js:606
 #, javascript-format
@@ -988,30 +929,30 @@ msgstr ""
 #: src/preferences/locationsPage.js:709
 #, javascript-format
 msgid "Results for \"%s\""
-msgstr ""
+msgstr "\"%s\"の結果"
 
 #: src/preferences/locationsPage.js:756
 #, javascript-format
 msgid "%s has been added"
-msgstr ""
+msgstr "%s を追加しました"
 
 #: src/preferences/locationsPage.js:764
 msgid "API Error"
-msgstr ""
+msgstr "エラー"
 
 #: src/preferences/locationsPage.js:765
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "Invalid data when searching for \"%s\"."
-msgstr "\"%s\" の検索中に異常が発生しました"
+msgstr "\"%s\" の検索中に異常が発生しました。"
 
 #: src/preferences/locationsPage.js:768
 msgid "No Matches Found"
 msgstr ""
 
 #: src/preferences/locationsPage.js:769
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "No results found when searching for \"%s\"."
-msgstr "\"%s\" の検索中に異常が発生しました"
+msgstr "\"%s\" が見つかりませんでした。"
 
 #: src/preferences/aboutPage.js:31
 msgid "About"
@@ -1027,33 +968,30 @@ msgid "unknown"
 msgstr ""
 
 #: src/preferences/aboutPage.js:78
-#, fuzzy
 msgid "OpenWeather Version"
-msgstr "設定"
+msgstr "OpenWeatherのバージョン:"
 
 #: src/preferences/aboutPage.js:87
-#, fuzzy
 msgid "Git Version"
-msgstr "バージョン:"
+msgstr "Gitのバージョン:"
 
 #: src/preferences/aboutPage.js:95
-#, fuzzy
 msgid "GNOME Version"
-msgstr "バージョン:"
+msgstr "GNOMEのバージョン:"
 
 #: src/preferences/aboutPage.js:102
 msgid "Session Type"
 msgstr ""
 
 #: src/preferences/aboutPage.js:124
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "Maintained by: %s"
-msgstr "メンテナー:"
+msgstr "メンテナー: %s"
 
 #: src/preferences/aboutPage.js:161
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "Weather data provided by: %s"
-msgstr "気象データーの提供元:"
+msgstr "気象データーの提供元: %s"
 
 #: src/preferences/aboutPage.js:172
 msgid "This program comes with ABSOLUTELY NO WARRANTY."
