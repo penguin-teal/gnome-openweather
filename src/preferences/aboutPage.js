@@ -16,7 +16,7 @@
 */
 
 const {
-    Adw, Gtk, GdkPixbuf, GObject
+    Adw, GLib, Gtk, GdkPixbuf, GObject
 } = imports.gi;
 
 const ExtensionUtils = imports.misc.extensionUtils;
@@ -71,7 +71,7 @@ class OpenWeather_AboutPage extends Adw.PreferencesPage {
         let infoGroup = new Adw.PreferencesGroup();
         let releaseVersion = (Me.metadata.version) ? Me.metadata.version : _("unknown");
         let gitVersion = (Me.metadata['git-version']) ? Me.metadata['git-version'] : null;
-        let windowingLabel = (Me.metadata.isWayland) ? "Wayland" : "X11";
+        let windowingLabel = GLib.getenv("XDG_SESSION_TYPE") === "wayland" ? "Wayland" : "X11";
 
         // Extension version
         let openWeatherVersionRow = new Adw.ActionRow({
