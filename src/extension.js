@@ -100,6 +100,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
         });
         this._weatherInfo = new St.Label({
             style_class: 'openweather-label',
+            text: _('Loading'),
             y_align: Clutter.ActorAlign.CENTER,
             y_expand: true
         });
