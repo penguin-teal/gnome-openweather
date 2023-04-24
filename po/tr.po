@@ -1,22 +1,24 @@
 # Turkish translation for gnome-shell-extension-openweather
 # Copyright (C) 2011-2015 Jens Lody
 # This file is distributed under the same license as the gnome-shell-extension-openweather package.
+#
 # Orhan Engin OKAY <orhanenginokay@hotmail.com>, 2018
 # Oğuz KARAYEMİŞ <oguzkarayemis@gmail.com>, 2022
+# Sabri Ünal <libreajans@gmail.com>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-shell-extension-openweather\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-18 10:49-0300\n"
-"PO-Revision-Date: 2022-08-23 14:24+0300\n"
-"Last-Translator: Oğuz KARAYEMİŞ <oguzkarayemis@gmail.com>\n"
+"PO-Revision-Date: 2023-03-31 17:34+0300\n"
+"Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Turkish\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 3.1.1\n"
 
 #: src/extension.js:267
@@ -43,7 +45,7 @@ msgstr "Konumlar"
 
 #: src/extension.js:770
 msgid "Reload Weather Information"
-msgstr "Hava Bilgisini Geri Yükle"
+msgstr "Hava Durumu Bilgisini Yeniden Yükle"
 
 #: src/extension.js:771
 #, javascript-format
@@ -56,7 +58,7 @@ msgstr "Hava Durumu Ayarları"
 
 #: src/extension.js:787
 msgid "Manual refreshes less than 2 minutes apart are ignored!"
-msgstr "2 dakikadan az sürede elle yenileme istemi göz ardı edilir!"
+msgstr "2 dakikadan kısa sürelerle yapılan elle yenilemeler göz ardı edilir."
 
 #: src/extension.js:801
 #, javascript-format
@@ -65,7 +67,7 @@ msgstr "%s açılamıyor"
 
 #: src/extension.js:849 src/preferences/locationsPage.js:507
 msgid "Invalid city"
-msgstr "Geçersiz Şehir"
+msgstr "Geçersiz şehir"
 
 #: src/extension.js:860
 msgid "Invalid location! Please try to recreate it."
@@ -117,11 +119,11 @@ msgstr "Hafif Esinti"
 
 #: src/extension.js:966
 msgid "Gentle breeze"
-msgstr "Hafif Esinti"
+msgstr "Nazik Esinti"
 
 #: src/extension.js:969
 msgid "Moderate breeze"
-msgstr "Ilıman Esinti"
+msgstr "Orta Esinti"
 
 #: src/extension.js:972
 msgid "Fresh breeze"
@@ -133,7 +135,7 @@ msgstr "Güçlü Esinti"
 
 #: src/extension.js:978
 msgid "Moderate gale"
-msgstr "Ilıman Rüzgar"
+msgstr "Orta Rüzgar"
 
 #: src/extension.js:981
 msgid "Fresh gale"
@@ -282,7 +284,7 @@ msgstr "kn"
 
 #: src/extension.js:1227 src/extension.js:1265
 msgid "Loading ..."
-msgstr "Yükleniyor ..."
+msgstr "Yükleniyor..."
 
 #: src/extension.js:1269
 msgid "Please wait"
@@ -310,7 +312,7 @@ msgstr "Bora:"
 
 #: src/extension.js:1487
 msgid "Tomorrow's Forecast"
-msgstr "Yarının Tahmini"
+msgstr "Yarının Hava Tahmini"
 
 #: src/extension.js:1489
 #, javascript-format
@@ -327,7 +329,7 @@ msgstr "Yağmurlu Gök Gürültülü Fırtına"
 
 #: src/openweathermap.js:54
 msgid "Thunderstorm with Heavy Rain"
-msgstr "Yoğun Yağmurlu Gök Gürültülü Fırtına"
+msgstr "Sağanak Yağışlı Gök Gürültülü Fırtına"
 
 #: src/openweathermap.js:56
 msgid "Light Thunderstorm"
@@ -467,15 +469,15 @@ msgstr "Yağmurla Karışık Kar"
 
 #: src/openweathermap.js:124
 msgid "Light Shower Snow"
-msgstr "Hafif Kar Yağışı"
+msgstr "Hafif Sağanak Şeklinde Kar"
 
 #: src/openweathermap.js:126
 msgid "Shower Snow"
-msgstr "Kar Yağışı"
+msgstr "Sağanak Şeklinde Kar"
 
 #: src/openweathermap.js:128
 msgid "Heavy Shower Snow"
-msgstr "Yoğun ve Sağanak Şeklinde Kar"
+msgstr "Yoğun Sağanak Şeklinde Kar"
 
 #: src/openweathermap.js:130
 msgid "Mist"
@@ -511,11 +513,11 @@ msgstr "Volkanik Kül"
 
 #: src/openweathermap.js:146
 msgid "Squalls"
-msgstr "Kasırga"
+msgstr "Yerel Fırtına"
 
 #: src/openweathermap.js:148
 msgid "Tornado"
-msgstr "Tornado"
+msgstr "Kasırga"
 
 #: src/openweathermap.js:150
 msgid "Clear Sky"
@@ -563,28 +565,29 @@ msgstr "Genel"
 
 #: src/preferences/generalPage.js:57
 msgid "Current Weather Refresh"
-msgstr "Mevcut Havayı Tazele"
+msgstr "Geçerli Hava Durumunu Yenile"
 
 #: src/preferences/generalPage.js:58
 msgid "Current weather refresh interval in minutes"
-msgstr "Mevcut hava tazeleme sıklığı (dakika)"
+msgstr "Geçerli hava durumunu yenileme sıklığı (dakika)"
 
 #: src/preferences/generalPage.js:80
 msgid "Weather Forecast Refresh"
-msgstr "Hava Tahmini Tazeleme"
+msgstr "Hava Durumu Tahmini Yenileme"
 
 #: src/preferences/generalPage.js:81
 msgid "Forecast refresh interval in minutes if enabled"
-msgstr "Eğer devredeyse tahmin tazeleme aralığı (dakika)"
+msgstr "Etkinleştirilmişse, hava tahmini tazeleme sıklığı (dakika)"
 
 #: src/preferences/generalPage.js:92
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:108
 msgid "Disable Forecast"
-msgstr "Tahmini Devre Dışı Bırak"
+msgstr "Hava Tahminini Devre Dışı Bırak"
 
 #: src/preferences/generalPage.js:93
 msgid "Disables all fetching and processing of forecast data"
-msgstr "Tahmin verisinin getirilip işlenmesini bütünüyle devre dışı bırakır"
+msgstr ""
+"Hava tahmini verisinin alınmasını ve işlenmesini tamamen devre dışı bırakır"
 
 #: src/preferences/generalPage.js:104
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:96
@@ -593,7 +596,8 @@ msgstr "Sistem Simgeleri"
 
 #: src/preferences/generalPage.js:105
 msgid "Disable to use packaged Adwaita weather icons"
-msgstr "Paketleniş Adwaita hava simgelerinin kullanımını devre dışı bırak"
+msgstr ""
+"Paketleniş Adwaita hava durumu simgelerinin kullanımını devre dışı bırak"
 
 #: src/preferences/generalPage.js:106
 msgid ""
@@ -729,15 +733,15 @@ msgstr "Panelde Koşullar"
 
 #: src/preferences/layoutPage.js:107
 msgid "Popup"
-msgstr "Açılır pencere"
+msgstr "Açılır Pencere"
 
 #: src/preferences/layoutPage.js:125
 msgid "Popup Position"
-msgstr "Açılır pencere konumu"
+msgstr "Açılır Pencere Konumu"
 
 #: src/preferences/layoutPage.js:126
 msgid "Alignment of the popup from left to right"
-msgstr "Açılır pencereden soldan sağa hizası"
+msgstr "Açılır pencerenin soldan sağa hizası"
 
 #: src/preferences/layoutPage.js:137
 msgid "Wind Direction Arrows"
@@ -786,11 +790,11 @@ msgstr "Hava Tahmini"
 
 #: src/preferences/layoutPage.js:210
 msgid "Center Today's Forecast"
-msgstr "Bugünün Merkez Tahmini"
+msgstr "Bugünün Tahminini Ortala"
 
 #: src/preferences/layoutPage.js:221
 msgid "Conditions In Forecast"
-msgstr "Tahmindeki Koşullar"
+msgstr "Hava Tahmindeki Koşullar"
 
 #: src/preferences/layoutPage.js:228
 msgid "Today Only"
@@ -810,7 +814,7 @@ msgstr "Hava Tahminindeki Toplam Gün"
 
 #: src/preferences/layoutPage.js:246
 msgid "Keep Forecast Expanded"
-msgstr "Hava Tahminin Geniş Tut"
+msgstr "Hava Tahmini Genişletilmiş Tut"
 
 #: src/preferences/locationsPage.js:52
 msgid "Add"
@@ -831,7 +835,7 @@ msgstr "Kişisel MapQuest Anahtarı"
 
 #: src/preferences/locationsPage.js:86
 msgid "Personal API Key from developer.mapquest.com"
-msgstr "developer.mapquest.com tarafından sağlanan kişisel uygulama anahtarı"
+msgstr "developer.mapquest.com tarafından sağlanan kişisel API anahtarı"
 
 #: src/preferences/locationsPage.js:206
 #, javascript-format
@@ -857,7 +861,7 @@ msgstr "Girdiyi temizle"
 
 #: src/preferences/locationsPage.js:259
 msgid "Search"
-msgstr "Arama"
+msgstr "Ara"
 
 #: src/preferences/locationsPage.js:282
 msgid "We need something to search for!"
@@ -870,11 +874,11 @@ msgstr "%s düzenle"
 
 #: src/preferences/locationsPage.js:327
 msgid "Edit Name"
-msgstr "Adı düzenle"
+msgstr "Adı Düzenle"
 
 #: src/preferences/locationsPage.js:343
 msgid "Edit Coordinates"
-msgstr "Koordinatları düzenle"
+msgstr "Koordinatları Düzenle"
 
 #: src/preferences/locationsPage.js:361
 msgid "Save"
@@ -882,7 +886,7 @@ msgstr "Kaydet"
 
 #: src/preferences/locationsPage.js:394
 msgid "Please complete all fields"
-msgstr "Lütfen bütün alanları doldurun"
+msgstr "Lütfen tüm alanları doldurun"
 
 #: src/preferences/locationsPage.js:410
 #, javascript-format
@@ -900,7 +904,7 @@ msgstr "Sil"
 
 #: src/preferences/locationsPage.js:451
 msgid "Cancel"
-msgstr "İptal"
+msgstr "İptal Et"
 
 #: src/preferences/locationsPage.js:483
 #, javascript-format
@@ -932,8 +936,8 @@ msgstr "Uygulama Anahtarı Gerekli"
 #, javascript-format
 msgid "You need an AppKey to use MapQuest, get one at: %s"
 msgstr ""
-"MapQuest'i kullanmak için bir Uygulama Anahtarına ihtiyacınız va,. %s "
-"adresinden edinin"
+"MapQuest'i kullanmak için bir Uygulama Anahtarına ihtiyacınız var. %s "
+"adresinden edinebilirsiniz"
 
 #: src/preferences/locationsPage.js:709
 #, javascript-format
@@ -952,7 +956,7 @@ msgstr "API Hatası"
 #: src/preferences/locationsPage.js:765
 #, javascript-format
 msgid "Invalid data when searching for \"%s\"."
-msgstr "\"%s\" aranırken geçersiz veriler."
+msgstr "\"%s\" aranırken geçersiz veri."
 
 #: src/preferences/locationsPage.js:768
 msgid "No Matches Found"
@@ -1005,19 +1009,21 @@ msgstr "Hava durumu veri sağlayıcısı: %s"
 
 #: src/preferences/aboutPage.js:172
 msgid "This program comes with ABSOLUTELY NO WARRANTY."
-msgstr "Bu program KATİYETLE HİÇBİR GARANTİ sunmamaktadır."
+msgstr "Bu program KESİNLİKLE HİÇBİR GARANTİ sunmamaktadır."
 
+# Burada kelimeler bilinçli olarak yer değiştirilmiştir!
 #: src/preferences/aboutPage.js:173
 msgid "See the"
-msgstr "Bakınız"
+msgstr "Ayrıntılı bilgi için"
 
 #: src/preferences/aboutPage.js:174
 msgid "GNU General Public License, version 2 or later"
 msgstr "GNU Genel Kamu Lisansı, 2. sürüm veya sonrası"
 
+# Burada kelimeler bilinçli olarak yer değiştirilmiştir!
 #: src/preferences/aboutPage.js:174
 msgid "for details."
-msgstr "ayrıntılar için."
+msgstr "sayfasına bakınız."
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:54
 msgid "Weather Provider"
@@ -1073,7 +1079,7 @@ msgstr "Paneldeki Koşullar"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:112
 msgid "Conditions in Forecast"
-msgstr "Tahmindeki Koşullar"
+msgstr "Hava Tahmini Koşulları"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:116
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:120
@@ -1086,7 +1092,7 @@ msgstr "Menü kutusunun yatay konumu."
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:128
 msgid "Refresh interval (actual weather)"
-msgstr "Tazeleme aralığı (gerçek hava durumu)"
+msgstr "Yenileme sıklığı (gerçek hava durumu)"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:132
 msgid "Maximal length of the location text"
@@ -1094,19 +1100,19 @@ msgstr "Konum metninin azami uzunluğu"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:136
 msgid "Refresh interval (forecast)"
-msgstr "Tazeleme aralığı (hava tahmin)"
+msgstr "Yenileme sıklığı (hava tahmin)"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:140
 msgid "Center forecastbox."
-msgstr "Merkez tahmin kutusu."
+msgstr "Merkez hava tahmini kutusu."
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:144
 msgid "Always keep forecast expanded"
-msgstr "Hava tahminin daima geniş tut"
+msgstr "Hava tahminini daima genişletilmiş tut"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:148
 msgid "Number of days in forecast"
-msgstr "Tahmin edilen gün sayısı"
+msgstr "Hava tahminindeki gün sayısı"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:152
 msgid "Maximal number of digits after the decimal point"
@@ -1114,13 +1120,12 @@ msgstr "Ondalık noktadan sonraki azami basamak sayısı"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:156
 msgid "Your personal API key from openweathermap.org"
-msgstr "openweathermap.org adresinden kişisel uygulama anahtarınız"
+msgstr "openweathermap.org adresinden kişisel API anahtarınız"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:160
 msgid "Use the extensions default API key from openweathermap.org"
 msgstr ""
-"openweathermap.org adresinden uzantılar için varsayılan uygulama anahtarını "
-"kullanın"
+"openweathermap.org adresinden uzantıların varsayılan API anahtarını kullan"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:164
 msgid "Your personal AppKey from developer.mapquest.com"
@@ -1128,8 +1133,7 @@ msgstr "developer.mapquest.com adresinden kişisel uygulama anahtarınız"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:168
 msgid "Seconds to delay popup initialization and data fetch on the first load"
-msgstr ""
-"İlk yüklemede açılır pencere yükleme ve veri getirme gecikmesi (saniye)"
+msgstr "İlk yüklemede açılır pencere yükleme ve veri alma gecikmesi (saniye)"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:172
 msgid "Default width for the preferences window"
