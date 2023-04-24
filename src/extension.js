@@ -75,9 +75,15 @@ const WeatherPosition = {
 };
 
 //hack (for Wayland?) via https://gitlab.gnome.org/GNOME/gnome-shell/-/issues/1997
+//https://github.com/home-sweet-gnome/dash-to-panel/commit/31e7275608fb0a4a13e406b1f841b084404c1f9e
+//https://gjs-docs.gnome.org/st11~11/st.settings#property-gtk_icon_theme
 Gtk.IconTheme.get_default = function() {
     let theme = new Gtk.IconTheme();
-    theme.set_custom_theme(St.Settings.get().gtk_icon_theme);
+    let isGtk3 = !!theme.set_custom_theme;
+    if (isGtk3)
+        theme.set_custom_theme(St.Settings.get().gtk_icon_theme);
+    else
+        theme.set_theme_name(St.Settings.get().gtk_icon_theme);
     return theme;
 };
 
