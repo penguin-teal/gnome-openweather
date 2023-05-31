@@ -2,42 +2,39 @@
 # Copyright (C) 2011
 # This file is distributed under the same license as the gnome-shell-extension-openweather package.
 # Dušan Kazik <prescott66@gmail.com>, 2011,2016, 2017.
-# Jose Riha <jose1711 gmail com>, 2022.
+# Jose Riha <jose1711 gmail com>, 2022, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: 3.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-18 10:49-0300\n"
-"PO-Revision-Date: 2022-05-04 22:10+0200\n"
+"PO-Revision-Date: 2023-05-31 22:32+0200\n"
 "Last-Translator: Jose Riha <jose1711@gmail.com>\n"
-"Language-Team: \n"
+"Language-Team: SlovakLanguage: sk\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.3.1\n"
 
 #: src/extension.js:267
 msgid ""
 "Openweathermap.org does not work without an api-key.\n"
-"Either set the switch to use the extensions default key in the preferences "
-"dialog to on or register at https://openweathermap.org/appid and paste your "
-"personal key into the preferences dialog."
+"Either set the switch to use the extensions default key in the preferences dialog to on or register at "
+"https://openweathermap.org/appid and paste your personal key into the preferences dialog."
 msgstr ""
 "Služba openweathermap.org nefunguje bez kľúča api-key.\n"
-"Buď zapnite prepínač v nastaveniach na použitie predvoleného kľúča "
-"rozšírenia, alebo sa zaregistrujte na adrese https://openweathermap.org/"
-"appid a vložte váš súkromný kľúč do dialógového okna nastavení."
+"Buď zapnite v nastaveniach prepínač na použitie predvoleného kľúča rozšírenia alebo sa zaregistrujte na "
+"adrese https://openweathermap.org/appid a vložte váš súkromný kľúč do dialógového okna nastavení."
 
 #: src/extension.js:454 src/extension.js:466
 #, javascript-format
 msgid "Can not connect to %s"
 msgstr "Nedá sa pripojiť k %s"
 
-#: src/extension.js:769 src/preferences/locationsPage.js:37
-#: src/preferences/locationsPage.js:56
+#: src/extension.js:769 src/preferences/locationsPage.js:37 src/preferences/locationsPage.js:56
 msgid "Locations"
 msgstr "Umiestnenia"
 
@@ -46,9 +43,9 @@ msgid "Reload Weather Information"
 msgstr "Znovu načítať informácie o počasí"
 
 #: src/extension.js:771
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "Weather data by: %s"
-msgstr "Údaje o počasí získané z:"
+msgstr "Údaje o počasí poskytuje: %s"
 
 #: src/extension.js:773
 msgid "Weather Settings"
@@ -56,7 +53,7 @@ msgstr "Nastavenia počasia"
 
 #: src/extension.js:787
 msgid "Manual refreshes less than 2 minutes apart are ignored!"
-msgstr ""
+msgstr "Manuálna obnova častejšie ako 2 minúty je ignorovaná!"
 
 #: src/extension.js:801
 #, javascript-format
@@ -113,15 +110,15 @@ msgstr "Vánok"
 
 #: src/extension.js:963
 msgid "Light breeze"
-msgstr "Vetrík"
+msgstr "Slabý vietor"
 
 #: src/extension.js:966
 msgid "Gentle breeze"
-msgstr "Slabý vietor"
+msgstr "Jemný vietor"
 
 #: src/extension.js:969
 msgid "Moderate breeze"
-msgstr "Mierny vietor"
+msgstr "Dosť čerstvý vietor"
 
 #: src/extension.js:972
 msgid "Fresh breeze"
@@ -133,15 +130,15 @@ msgstr "Silný vietor"
 
 #: src/extension.js:978
 msgid "Moderate gale"
-msgstr "Mierna víchrica"
+msgstr "Prudký vietor"
 
 #: src/extension.js:981
 msgid "Fresh gale"
-msgstr "Čerstvá víchrica"
+msgstr "Búrlivý vietor"
 
 #: src/extension.js:984
 msgid "Strong gale"
-msgstr "Silná víchrica"
+msgstr "Víchrica"
 
 #: src/extension.js:987
 msgid "Storm"
@@ -215,8 +212,7 @@ msgstr "Z"
 msgid "NW"
 msgstr "SZ"
 
-#: src/extension.js:1056 src/extension.js:1065
-#: src/preferences/generalPage.js:177
+#: src/extension.js:1056 src/extension.js:1065 src/preferences/generalPage.js:177
 msgid "hPa"
 msgstr "hPa"
 
@@ -290,7 +286,7 @@ msgstr "Prosím, čakajte"
 
 #: src/extension.js:1340
 msgid "Feels Like:"
-msgstr "Pocitová teplota:"
+msgstr "Pocitovo:"
 
 #: src/extension.js:1344
 msgid "Humidity:"
@@ -310,220 +306,184 @@ msgstr "V nárazoch:"
 
 #: src/extension.js:1487
 msgid "Tomorrow's Forecast"
-msgstr ""
+msgstr "Zajtrajšia predpoveď"
 
 #: src/extension.js:1489
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "%s Day Forecast"
-msgstr "Stav počasia v predpovedi"
+msgstr "Predpoveď počasia na %s dní"
 
 #: src/openweathermap.js:50
-#, fuzzy
 msgid "Thunderstorm with Light Rain"
-msgstr "búrka so slabým dažďom"
+msgstr "Búrka s miernym dažďom"
 
 #: src/openweathermap.js:52
-#, fuzzy
 msgid "Thunderstorm with Rain"
-msgstr "búrka s dažďom"
+msgstr "Búrka s dažďom"
 
 #: src/openweathermap.js:54
-#, fuzzy
 msgid "Thunderstorm with Heavy Rain"
-msgstr "búrka so silným dažďom"
+msgstr "Búrka so silným dažďom"
 
 #: src/openweathermap.js:56
-#, fuzzy
 msgid "Light Thunderstorm"
-msgstr "slabá búrka"
+msgstr "Slabá búrka"
 
 #: src/openweathermap.js:58
 msgid "Thunderstorm"
-msgstr "búrka"
+msgstr "Búrka"
 
 #: src/openweathermap.js:60
-#, fuzzy
 msgid "Heavy Thunderstorm"
-msgstr "silná búrka"
+msgstr "Silná búrka"
 
 #: src/openweathermap.js:62
-#, fuzzy
 msgid "Ragged Thunderstorm"
-msgstr "ojedinelé búrky"
+msgstr "Ojedinelé búrky"
 
 #: src/openweathermap.js:64
-#, fuzzy
 msgid "Thunderstorm with Light Drizzle"
-msgstr "búrka so slabým mrholením"
+msgstr "Búrka so slabým mrholením"
 
 #: src/openweathermap.js:66
-#, fuzzy
 msgid "Thunderstorm with Drizzle"
-msgstr "búrka s mrholením"
+msgstr "Búrka s mrholením"
 
 #: src/openweathermap.js:68
-#, fuzzy
 msgid "Thunderstorm with Heavy Drizzle"
-msgstr "búrka so silným mrholením"
+msgstr "Búrka so silným mrholením"
 
 #: src/openweathermap.js:70
-#, fuzzy
 msgid "Light Drizzle"
-msgstr "Vetrík"
+msgstr "Mierne mrholenie"
 
 #: src/openweathermap.js:72
 msgid "Drizzle"
-msgstr "mrholenie"
+msgstr "Mrholenie"
 
 #: src/openweathermap.js:74
-#, fuzzy
 msgid "Heavy Drizzle"
-msgstr "mrholenie"
+msgstr "Silné mrholenie"
 
 #: src/openweathermap.js:76
-#, fuzzy
 msgid "Light Drizzle Rain"
-msgstr "dážď s mrholením"
+msgstr "Slabé mrholenie s dažďom"
 
 #: src/openweathermap.js:78
-#, fuzzy
 msgid "Drizzle Rain"
-msgstr "dážď s mrholením"
+msgstr "Mrholenie s dažďom"
 
 #: src/openweathermap.js:80
-#, fuzzy
 msgid "Heavy Drizzle Rain"
-msgstr "dážď s mrholením"
+msgstr "Silné mrholenie s dažďom"
 
 #: src/openweathermap.js:82
-#, fuzzy
 msgid "Shower Rain and Drizzle"
-msgstr "prehánky s mrholením"
+msgstr "Prehánky s mrholením"
 
 #: src/openweathermap.js:84
-#, fuzzy
 msgid "Heavy Rain and Drizzle"
-msgstr "silné prehánky a mrholenie"
+msgstr "Silný dážď a mrholenie"
 
 #: src/openweathermap.js:86
-#, fuzzy
 msgid "Shower Drizzle"
-msgstr "prehánky s mrholením"
+msgstr "Občasné mrholenie"
 
 #: src/openweathermap.js:88
-#, fuzzy
 msgid "Light Rain"
-msgstr "slabý dážď"
+msgstr "Slabý dážď"
 
 #: src/openweathermap.js:90
-#, fuzzy
 msgid "Moderate Rain"
-msgstr "mierny dážď"
+msgstr "Mierny dážď"
 
 #: src/openweathermap.js:92
-#, fuzzy
 msgid "Heavy Rain"
-msgstr "silné sneženie"
+msgstr "Silný dážď"
 
 #: src/openweathermap.js:94
-#, fuzzy
 msgid "Very Heavy Rain"
-msgstr "veľmi silný dážď"
+msgstr "Veľmi silný dážď"
 
 #: src/openweathermap.js:96
-#, fuzzy
 msgid "Extreme Rain"
-msgstr "extrémny dážď"
+msgstr "Extrémne silný dážď"
 
 #: src/openweathermap.js:98
-#, fuzzy
 msgid "Freezing Rain"
-msgstr "mrznúci dážď"
+msgstr "Mrznúci dážď"
 
 #: src/openweathermap.js:100
-#, fuzzy
 msgid "Light Shower Rain"
-msgstr "slabé snehové prehánky"
+msgstr "Slabé prehánky"
 
 #: src/openweathermap.js:102
-#, fuzzy
 msgid "Shower Rain"
-msgstr "prehánky"
+msgstr "Prehánky"
 
 #: src/openweathermap.js:104
-#, fuzzy
 msgid "Heavy Shower Rain"
-msgstr "silné snehové prehánky"
+msgstr "Silné snehové prehánky"
 
 #: src/openweathermap.js:106
-#, fuzzy
 msgid "Ragged Shower Rain"
-msgstr "ojedinelé prehánky"
+msgstr "Ojedinelé prehánky"
 
 #: src/openweathermap.js:108
-#, fuzzy
 msgid "Light Snow"
-msgstr "slabé sneženie"
+msgstr "Slabé sneženie"
 
 #: src/openweathermap.js:110
 msgid "Snow"
-msgstr "sneženie"
+msgstr "Sneženie"
 
 #: src/openweathermap.js:112
-#, fuzzy
 msgid "Heavy Snow"
-msgstr "silné sneženie"
+msgstr "Silné sneženie"
 
 #: src/openweathermap.js:114
 msgid "Sleet"
-msgstr "poľadovica"
+msgstr "Poľadovica"
 
 #: src/openweathermap.js:116
-#, fuzzy
 msgid "Light Shower Sleet"
-msgstr "snehové prehánky s dažďom"
+msgstr "Snehové prehánky s dažďom"
 
 #: src/openweathermap.js:118
-#, fuzzy
 msgid "Shower Sleet"
-msgstr "snehové prehánky s dažďom"
+msgstr "Snehové prehánky s dažďom"
 
 #: src/openweathermap.js:120
-#, fuzzy
 msgid "Light Rain and Snow"
-msgstr "slabý dážď so snehom"
+msgstr "Slabý dážď so snehom"
 
 #: src/openweathermap.js:122
-#, fuzzy
 msgid "Rain and Snow"
-msgstr "dážď so snehom"
+msgstr "Dážď so snehom"
 
 #: src/openweathermap.js:124
-#, fuzzy
 msgid "Light Shower Snow"
-msgstr "slabé snehové prehánky"
+msgstr "Slabé snehové prehánky"
 
 #: src/openweathermap.js:126
-#, fuzzy
 msgid "Shower Snow"
-msgstr "snehové prehánky"
+msgstr "Snehové prehánky"
 
 #: src/openweathermap.js:128
-#, fuzzy
 msgid "Heavy Shower Snow"
-msgstr "silné snehové prehánky"
+msgstr "Silné snehové prehánky"
 
 #: src/openweathermap.js:130
 msgid "Mist"
-msgstr "hmla"
+msgstr "Hmla"
 
 #: src/openweathermap.js:132
 msgid "Smoke"
-msgstr "dym"
+msgstr "Dym"
 
 #: src/openweathermap.js:134
 msgid "Haze"
-msgstr "opar"
+msgstr "Opar"
 
 #: src/openweathermap.js:136
 msgid "Sand/Dust Whirls"
@@ -535,48 +495,43 @@ msgstr "Hmla"
 
 #: src/openweathermap.js:140
 msgid "Sand"
-msgstr "piesok"
+msgstr "Piesok"
 
 #: src/openweathermap.js:142
 msgid "Dust"
-msgstr "prach"
+msgstr "Prach"
 
 #: src/openweathermap.js:144
 msgid "Volcanic Ash"
-msgstr ""
+msgstr "Sopečný popol"
 
 #: src/openweathermap.js:146
 msgid "Squalls"
-msgstr ""
+msgstr "Prudké poryvy vetra"
 
 #: src/openweathermap.js:148
 msgid "Tornado"
-msgstr ""
+msgstr "Tornádo"
 
 #: src/openweathermap.js:150
-#, fuzzy
 msgid "Clear Sky"
-msgstr "Vymaže položku"
+msgstr "Jasno"
 
 #: src/openweathermap.js:152
-#, fuzzy
 msgid "Few Clouds"
-msgstr "zopár oblakov"
+msgstr "Skoro jasno"
 
 #: src/openweathermap.js:154
-#, fuzzy
 msgid "Scattered Clouds"
-msgstr "ojedinelá oblačnosť"
+msgstr "Polojasno"
 
 #: src/openweathermap.js:156
-#, fuzzy
 msgid "Broken Clouds"
-msgstr "potrhaná oblačnosť"
+msgstr "Oblačno"
 
 #: src/openweathermap.js:158
-#, fuzzy
 msgid "Overcast Clouds"
-msgstr "zamračené"
+msgstr "Zatiahnuté"
 
 #: src/openweathermap.js:160
 msgid "Not available"
@@ -595,91 +550,81 @@ msgid "Tomorrow"
 msgstr "Zajtra"
 
 #: src/preferences/generalPage.js:31
-#, fuzzy
 msgid "Settings"
-msgstr "Nastavenia počasia"
+msgstr "Nastavenia"
 
 #: src/preferences/generalPage.js:39
 msgid "General"
-msgstr ""
+msgstr "Všeobecné nastavenia"
 
 #: src/preferences/generalPage.js:57
 msgid "Current Weather Refresh"
-msgstr ""
+msgstr "Interval obnovenia aktuálneho počasia"
 
 #: src/preferences/generalPage.js:58
 msgid "Current weather refresh interval in minutes"
-msgstr ""
+msgstr "Interval obnovenia aktuálneho stavu počasia v minútach"
 
 #: src/preferences/generalPage.js:80
-#, fuzzy
 msgid "Weather Forecast Refresh"
-msgstr "Predpoveď počasia v strede"
+msgstr "Interval obnovenia predpovede počasia"
 
 #: src/preferences/generalPage.js:81
 msgid "Forecast refresh interval in minutes if enabled"
-msgstr ""
+msgstr "Interval obnovenia predpovede počasia v minútach"
 
-#: src/preferences/generalPage.js:92
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:108
+#: src/preferences/generalPage.js:92 schemas/org.gnome.shell.extensions.openweather.gschema.xml:108
 msgid "Disable Forecast"
-msgstr ""
+msgstr "Vypnúť predpoveď"
 
 #: src/preferences/generalPage.js:93
 msgid "Disables all fetching and processing of forecast data"
-msgstr ""
+msgstr "Zakáže akékoľvek načítanie a spracovanie údajov predpovede"
 
-#: src/preferences/generalPage.js:104
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:96
+#: src/preferences/generalPage.js:104 schemas/org.gnome.shell.extensions.openweather.gschema.xml:96
 msgid "System Icons"
 msgstr "Systémové ikony"
 
 #: src/preferences/generalPage.js:105
 msgid "Disable to use packaged Adwaita weather icons"
-msgstr ""
+msgstr "Zakázať používanie pribalených ikon počasia Adwaita"
 
 #: src/preferences/generalPage.js:106
-msgid ""
-"If you have issues with your system icons displaying correctly disable this "
-"to fix it"
-msgstr ""
+msgid "If you have issues with your system icons displaying correctly disable this to fix it"
+msgstr "Ak máte problémy so správnym zobrazením systémových ikon, vypnite túto funkciu"
 
 #: src/preferences/generalPage.js:126
 msgid "First Boot Delay"
-msgstr ""
+msgstr "Oneskorenie prvého spustenia"
 
 #: src/preferences/generalPage.js:127
 msgid "Seconds to delay popup initialization and data fetching"
-msgstr ""
+msgstr "Oneskorenie (v sekundách) inicializácie vyskakovacieho okna a načítania údajov"
 
 #: src/preferences/generalPage.js:128
 msgid ""
-"This setting only applies to the first time the extension is loaded. (first "
-"log in / restarting gnome shell)"
-msgstr ""
+"This setting only applies to the first time the extension is loaded. (first log in / restarting gnome shell)"
+msgstr "Toto nastavenie platí iba pri prvom načítaní rozšírenia (prvé prihlásenie/reštartovanie Gnome Shellu)"
 
 #: src/preferences/generalPage.js:142
 msgid "Units"
 msgstr "Jednotky"
 
 #: src/preferences/generalPage.js:156
-#, fuzzy
 msgid "Temperature"
-msgstr "Jednotka teploty"
+msgstr "Teplota"
 
 #: src/preferences/generalPage.js:168
 msgid "Beaufort"
 msgstr "Beaufort"
 
 #: src/preferences/generalPage.js:170
-#, fuzzy
 msgid "Wind Speed"
-msgstr "Jednotka rýchlosti vetra"
+msgstr "Rýchlosť vetra"
 
 #: src/preferences/generalPage.js:189
-#, fuzzy
 msgid "Pressure"
-msgstr "Tlak:"
+msgstr "Tlak"
 
 #: src/preferences/generalPage.js:201 src/preferences/locationsPage.js:64
 msgid "Provider"
@@ -687,39 +632,35 @@ msgstr "Poskytovateľ"
 
 #: src/preferences/generalPage.js:210
 msgid "OpenWeatherMap Multilingual Support"
-msgstr ""
+msgstr "Viacjazyčná podpora OpenWeatherMap"
 
 #: src/preferences/generalPage.js:211
 msgid "Using provider translations applies to weather conditions only"
-msgstr ""
+msgstr "Použitie prekladov poskytovateľa sa vzťahuje na poveternostné podmienky"
 
 #: src/preferences/generalPage.js:212
 msgid ""
-"Enable this to use OWM multilingual support in 46 languages if there's no "
-"built-in translations for your language yet."
+"Enable this to use OWM multilingual support in 46 languages if there's no built-in translations for your "
+"language yet."
 msgstr ""
+"Povoľte túto funkciu, aby ste mohli používať viacjazyčnú podporu OWM v 46 jazykoch, ak ešte nie sú k "
+"dispozícii zabudované preklady pre váš jazyk."
 
 #: src/preferences/generalPage.js:224
 msgid "Use Extensions API Key"
-msgstr ""
+msgstr "Použitie API kľúča rozšírenia"
 
 #: src/preferences/generalPage.js:225
-#, fuzzy
 msgid "Use the built-in API key for OpenWeatherMap"
-msgstr "Použiť predvolený API kľúč rozšírenia pre openweathermap.org"
+msgstr "Použiť zabudovaný API kľúč pre OpenWeatherMap"
 
 #: src/preferences/generalPage.js:226
-#, fuzzy
-msgid ""
-"Disable this if you have your own API key from openweathermap.org and enter "
-"it below."
-msgstr ""
-"Vypnite, ak máte svoj vlastný kľúč api-key pre službu openweathermap.org a "
-"vložte ho do textového poľa nižšie."
+msgid "Disable this if you have your own API key from openweathermap.org and enter it below."
+msgstr "Vypnite, ak máte svoj vlastný kľúč API pre službu openweathermap.org a zadajte ho nižšie."
 
 #: src/preferences/generalPage.js:240
 msgid "Personal API Key"
-msgstr ""
+msgstr "Osobný kľúč API"
 
 #: src/preferences/layoutPage.js:31
 msgid "Layout"
@@ -727,7 +668,7 @@ msgstr "Rozloženie"
 
 #: src/preferences/layoutPage.js:39
 msgid "Panel"
-msgstr ""
+msgstr "Panel"
 
 #: src/preferences/layoutPage.js:44
 msgid "Center"
@@ -742,165 +683,147 @@ msgid "Left"
 msgstr "Vľavo"
 
 #: src/preferences/layoutPage.js:48
-#, fuzzy
 msgid "Position In Panel"
 msgstr "Pozícia na paneli"
 
 #: src/preferences/layoutPage.js:69
-#, fuzzy
 msgid "Position Offset"
-msgstr "Pozícia na paneli"
+msgstr "Posun pozície"
 
 #: src/preferences/layoutPage.js:70
 msgid "The position relative to other items in the box"
-msgstr ""
+msgstr "Poloha vzhľadom k ostatným položkám v rámčeku"
 
 #: src/preferences/layoutPage.js:78
-#, fuzzy
 msgid "Show the temperature in the panel"
-msgstr "Teplota v paneli"
+msgstr "Zobraziť teplotu na paneli"
 
 #: src/preferences/layoutPage.js:82
-#, fuzzy
 msgid "Temperature In Panel"
-msgstr "Teplota v paneli"
+msgstr "Teplota na paneli"
 
 #: src/preferences/layoutPage.js:90
 msgid "Show the weather conditions in the panel"
-msgstr ""
+msgstr "Zobraziť stav počasia na paneli"
 
 #: src/preferences/layoutPage.js:94
-#, fuzzy
 msgid "Conditions In Panel"
-msgstr "Stav počasia v lište"
+msgstr "Predpoveď na paneli"
 
 #: src/preferences/layoutPage.js:107
 msgid "Popup"
-msgstr ""
+msgstr "Vyskakovacie okná"
 
 #: src/preferences/layoutPage.js:125
 msgid "Popup Position"
-msgstr ""
+msgstr "Pozícia vyskakovacieho okna"
 
 #: src/preferences/layoutPage.js:126
 msgid "Alignment of the popup from left to right"
-msgstr ""
+msgstr "Zarovnanie vyskakovacieho okna zľava doprava"
 
 #: src/preferences/layoutPage.js:137
-#, fuzzy
 msgid "Wind Direction Arrows"
-msgstr "Smer vetra indikovať šípkami"
+msgstr "Smer vetra ako šípka"
 
-#: src/preferences/layoutPage.js:149
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:88
+#: src/preferences/layoutPage.js:149 schemas/org.gnome.shell.extensions.openweather.gschema.xml:88
 msgid "Translate Conditions"
 msgstr "Prekladať stav počasia"
 
 #: src/preferences/layoutPage.js:157
 msgid "0"
-msgstr ""
+msgstr "0"
 
 #: src/preferences/layoutPage.js:158 src/preferences/layoutPage.js:229
 msgid "1"
-msgstr ""
+msgstr "1"
 
 #: src/preferences/layoutPage.js:159 src/preferences/layoutPage.js:230
 msgid "2"
-msgstr ""
+msgstr "2"
 
 #: src/preferences/layoutPage.js:160 src/preferences/layoutPage.js:231
 msgid "3"
-msgstr ""
+msgstr "3"
 
 #: src/preferences/layoutPage.js:162
-#, fuzzy
 msgid "Temperature Decimal Places"
-msgstr "Teplota v paneli"
+msgstr "Počet desatinných miest teploty"
 
 #: src/preferences/layoutPage.js:163
-#, fuzzy
 msgid "Maximum number of digits after the decimal point"
-msgstr "Maximálny počet desatinných miest"
+msgstr "Maximálny počet čísel za desatinnou čiarkou"
 
 #: src/preferences/layoutPage.js:183
 msgid "Location Text Length"
-msgstr ""
+msgstr "Maximálna dĺžka textu umiestnenia"
 
 #: src/preferences/layoutPage.js:184
-#, fuzzy
 msgid "Maximum length of the location text. A setting of '0' is unlimited"
-msgstr "Limit znakov textu umiestnenia"
+msgstr "Maximálna dĺžka textu umiestnenia (0 = neobmedzená)"
 
 #: src/preferences/layoutPage.js:200
-#, fuzzy
 msgid "Forecast"
-msgstr "Predpoveď počasia v strede"
+msgstr "Predpoveď"
 
 #: src/preferences/layoutPage.js:210
-#, fuzzy
 msgid "Center Today's Forecast"
-msgstr "Predpoveď počasia v strede"
+msgstr "Dnešná predpoveď počasia v strede"
 
 #: src/preferences/layoutPage.js:221
-#, fuzzy
 msgid "Conditions In Forecast"
 msgstr "Stav počasia v predpovedi"
 
 #: src/preferences/layoutPage.js:228
 msgid "Today Only"
-msgstr ""
+msgstr "Iba dnes"
 
 #: src/preferences/layoutPage.js:232
 msgid "4"
-msgstr ""
+msgstr "4"
 
 #: src/preferences/layoutPage.js:233
 msgid "5"
-msgstr ""
+msgstr "5"
 
 #: src/preferences/layoutPage.js:235
-#, fuzzy
 msgid "Total Days In Forecast"
-msgstr "Stav počasia v predpovedi"
+msgstr "Celkový počet dní predpovede"
 
 #: src/preferences/layoutPage.js:246
 msgid "Keep Forecast Expanded"
-msgstr ""
+msgstr "Udržovať panel predpovede stále rozbalený"
 
 #: src/preferences/locationsPage.js:52
 msgid "Add"
-msgstr ""
+msgstr "Pridať"
 
-#: src/preferences/locationsPage.js:71
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:58
+#: src/preferences/locationsPage.js:71 schemas/org.gnome.shell.extensions.openweather.gschema.xml:58
 msgid "Geolocation Provider"
 msgstr "Poskytovateľ geolokácie"
 
 #: src/preferences/locationsPage.js:72
 msgid "Provider used for location search"
-msgstr ""
+msgstr "Poskytovateľ používaný pre vyhľadávanie polohy"
 
 #: src/preferences/locationsPage.js:85
 msgid "Personal MapQuest Key"
-msgstr ""
+msgstr "Osobný kľúč MapQuest"
 
 #: src/preferences/locationsPage.js:86
-#, fuzzy
 msgid "Personal API Key from developer.mapquest.com"
-msgstr "Osobný kľúč AppKey zo služby developer.mapquest.com"
+msgstr "Osobný kľúč API od služby developer.mapquest.com"
 
 #: src/preferences/locationsPage.js:206
 #, javascript-format
 msgid "Location changed to: %s"
-msgstr ""
+msgstr "Umiestnenie zmenené na: %s"
 
 #: src/preferences/locationsPage.js:221
-#, fuzzy
 msgid "Add New Location"
-msgstr "Umiestnenie"
+msgstr "Pridať nové umiestnenie"
 
 #: src/preferences/locationsPage.js:242
-#, fuzzy
 msgid "Search by Location or Coordinates"
 msgstr "Hľadať podľa umiestnenia alebo súradníc"
 
@@ -911,29 +834,26 @@ msgstr "napr. Vaiaku, Tuvalu alebo -8.5211767,179.1976747"
 #: src/preferences/locationsPage.js:250 src/preferences/locationsPage.js:335
 #: src/preferences/locationsPage.js:352
 msgid "Clear entry"
-msgstr "Vymaže položku"
+msgstr "Odstrániť položku"
 
 #: src/preferences/locationsPage.js:259
-#, fuzzy
 msgid "Search"
-msgstr "Hľadám…"
+msgstr "Hľadať"
 
 #: src/preferences/locationsPage.js:282
 msgid "We need something to search for!"
-msgstr ""
+msgstr "Potrebujeme niečo, čo by sme mohli hľadať!"
 
 #: src/preferences/locationsPage.js:305
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "Edit %s"
-msgstr "Upraviť názov"
+msgstr "Upraviť názov %s"
 
 #: src/preferences/locationsPage.js:327
-#, fuzzy
 msgid "Edit Name"
 msgstr "Upraviť názov"
 
 #: src/preferences/locationsPage.js:343
-#, fuzzy
 msgid "Edit Coordinates"
 msgstr "Upraviť súradnice"
 
@@ -943,21 +863,21 @@ msgstr "Uložiť"
 
 #: src/preferences/locationsPage.js:394
 msgid "Please complete all fields"
-msgstr ""
+msgstr "Prosím, vyplňte všetky polia"
 
 #: src/preferences/locationsPage.js:410
 #, javascript-format
 msgid "%s has been updated"
-msgstr ""
+msgstr "%s bol aktualizovaný"
 
 #: src/preferences/locationsPage.js:439
 #, javascript-format
 msgid "Are you sure you want to delete \"%s\"?"
-msgstr ""
+msgstr "Naozaj chcete odstrániť \"%s\"?"
 
 #: src/preferences/locationsPage.js:447
 msgid "Delete"
-msgstr ""
+msgstr "Odstrániť"
 
 #: src/preferences/locationsPage.js:451
 msgid "Cancel"
@@ -966,15 +886,15 @@ msgstr "Zrušiť"
 #: src/preferences/locationsPage.js:483
 #, javascript-format
 msgid "%s has been deleted"
-msgstr ""
+msgstr "%s bolo odstránené"
 
 #: src/preferences/locationsPage.js:529
 msgid "Search Results"
-msgstr "Výsledky vyhľadávania"
+msgstr "Výsledky hľadania"
 
 #: src/preferences/locationsPage.js:545
 msgid "New Search"
-msgstr ""
+msgstr "Nové hľadanie"
 
 #: src/preferences/locationsPage.js:552
 msgid "Searching ..."
@@ -983,105 +903,98 @@ msgstr "Hľadám…"
 #: src/preferences/locationsPage.js:553
 #, javascript-format
 msgid "Please wait while searching for locations matching \"%s\""
-msgstr ""
+msgstr "Prosím, počkajte kým prehľadávam umiestnenia zodpovedajúce \"%s\""
 
 #: src/preferences/locationsPage.js:605
 msgid "AppKey Required"
-msgstr ""
+msgstr "Je vyžadovaný AppKey"
 
 #: src/preferences/locationsPage.js:606
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "You need an AppKey to use MapQuest, get one at: %s"
-msgstr "Aby ste mohli vyhľadávať na openmapquest, potrebujete kľúč AppKey."
+msgstr "Aby ste mohli použiť MapQuest, potrebujete kľúč AppKey, získajte ho na: %s"
 
 #: src/preferences/locationsPage.js:709
 #, javascript-format
 msgid "Results for \"%s\""
-msgstr ""
+msgstr "Výsledky pre \"%s\""
 
 #: src/preferences/locationsPage.js:756
 #, javascript-format
 msgid "%s has been added"
-msgstr ""
+msgstr "%s bolo pridané"
 
 #: src/preferences/locationsPage.js:764
 msgid "API Error"
-msgstr ""
+msgstr "Chyba API"
 
 #: src/preferences/locationsPage.js:765
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "Invalid data when searching for \"%s\"."
-msgstr "Neplatné údaje pri hľadaní „%s“"
+msgstr "Neplatné údaje pri hľadaní „%s“."
 
 #: src/preferences/locationsPage.js:768
 msgid "No Matches Found"
-msgstr ""
+msgstr "Nebola nájdená žiadna zhoda"
 
 #: src/preferences/locationsPage.js:769
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "No results found when searching for \"%s\"."
-msgstr "Neplatné údaje pri hľadaní „%s“"
+msgstr "Neboli nájdené žiadne výsledky pri hľadaní „%s“."
 
 #: src/preferences/aboutPage.js:31
 msgid "About"
-msgstr "O rozšírení"
+msgstr "O aplikácii"
 
 #: src/preferences/aboutPage.js:58
-#, fuzzy
-msgid ""
-"Display weather information for any location on Earth in the GNOME Shell"
-msgstr ""
-"<span>Zobrazuje informácie o počasí pre ktorékoľvek miesto na Zemi v GNOME "
-"Shelli</span>"
+msgid "Display weather information for any location on Earth in the GNOME Shell"
+msgstr "Zobrazuje informácie o počasí pre ktorékoľvek miesto na Zemi v GNOME Shelli"
 
 #: src/preferences/aboutPage.js:72
 msgid "unknown"
-msgstr ""
+msgstr "neznámy"
 
 #: src/preferences/aboutPage.js:78
-#, fuzzy
 msgid "OpenWeather Version"
-msgstr "Nastavenia počasia"
+msgstr "Verzia OpenWeather"
 
 #: src/preferences/aboutPage.js:87
-#, fuzzy
 msgid "Git Version"
-msgstr "Verzia:"
+msgstr "Git verzia"
 
 #: src/preferences/aboutPage.js:95
-#, fuzzy
 msgid "GNOME Version"
-msgstr "Verzia:"
+msgstr "Verzia GNOME"
 
 #: src/preferences/aboutPage.js:102
 msgid "Session Type"
-msgstr ""
+msgstr "Typ relácie"
 
 #: src/preferences/aboutPage.js:124
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "Maintained by: %s"
-msgstr "Spravuje:"
+msgstr "Správca projektu: %s"
 
 #: src/preferences/aboutPage.js:161
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "Weather data provided by: %s"
-msgstr "Údaje o počasí získané z:"
+msgstr "Údaje o počasí získané z: %s"
 
 #: src/preferences/aboutPage.js:172
 msgid "This program comes with ABSOLUTELY NO WARRANTY."
-msgstr ""
+msgstr "Na tento program sa nevzťahuje ABSOLUTNE ŽIADNA ZÁRUKA."
 
 #: src/preferences/aboutPage.js:173
 msgid "See the"
-msgstr ""
+msgstr "Pozri tiež"
 
 #: src/preferences/aboutPage.js:174
 msgid "GNU General Public License, version 2 or later"
-msgstr ""
+msgstr "GNU General Public License, verzia 2 alebo novšia"
 
 #: src/preferences/aboutPage.js:174
 msgid "for details."
-msgstr ""
+msgstr "pre podrobnosti."
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:54
 msgid "Weather Provider"
@@ -1101,15 +1014,14 @@ msgstr "Jednotky rýchlosti vetra"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:71
 msgid ""
-"Choose the units used for wind speed. Allowed values are 'kph', 'mph', 'm/"
-"s', 'knots', 'ft/s' or 'Beaufort'."
+"Choose the units used for wind speed. Allowed values are 'kph', 'mph', 'm/s', 'knots', 'ft/s' or 'Beaufort'."
 msgstr ""
-"Vyberte jednotky použité pre zobrazenie rýchlosti vetra. Povolené hodnoty sú "
-"'kph', 'mph', 'm/s', 'knots', 'ft/s' alebo 'Beaufort'."
+"Vyberte jednotky použité pre zobrazenie rýchlosti vetra. Povolené hodnoty sú 'kph', 'mph', 'm/s', 'knots', "
+"'ft/s' alebo 'Beaufort'."
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:75
 msgid "Wind Direction by Arrows"
-msgstr "Smer vetra indikovať šípkami"
+msgstr "Smer vetra indikovať šípkou"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:76
 msgid "Choose whether to display wind direction through arrows or letters."
@@ -1125,7 +1037,7 @@ msgstr "Aktuálne mesto"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:92
 msgid "OpenWeatherMap Multilingual Support (weather descriptions only)"
-msgstr ""
+msgstr "Viacjazyčná podpora OpenWeatherMap (iba popisy počasí)"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:100
 msgid "Temperature in Panel"
@@ -1133,7 +1045,7 @@ msgstr "Teplota v paneli"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:104
 msgid "Conditions in Panel"
-msgstr "Stav počasia v lište"
+msgstr "Stav počasia v paneli"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:112
 msgid "Conditions in Forecast"
@@ -1142,7 +1054,7 @@ msgstr "Stav počasia v predpovedi"
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:116
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:120
 msgid "Position in Panel"
-msgstr "Pozícia na paneli"
+msgstr "Umiestnenie na paneli"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:124
 msgid "Horizontal position of menu-box."
@@ -1154,7 +1066,7 @@ msgstr "Interval aktualizácie (aktuálne počasie)"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:132
 msgid "Maximal length of the location text"
-msgstr "Limit znakov textu umiestnenia"
+msgstr "Maximálna dĺžka textu umiestnenia (0 = neobmedzená)"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:136
 msgid "Refresh interval (forecast)"
@@ -1166,11 +1078,11 @@ msgstr "Predpoveď počasia v strede."
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:144
 msgid "Always keep forecast expanded"
-msgstr ""
+msgstr "Udržovať panel predpovede stále rozbalený"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:148
 msgid "Number of days in forecast"
-msgstr "Počet dní v predpovedi počasia"
+msgstr "Počet dní v predpovedi"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:152
 msgid "Maximal number of digits after the decimal point"
@@ -1186,16 +1098,16 @@ msgstr "Použiť predvolený API kľúč rozšírenia pre openweathermap.org"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:164
 msgid "Your personal AppKey from developer.mapquest.com"
-msgstr ""
+msgstr "Váš osobný AppKey od developer.mapquest.com"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:168
 msgid "Seconds to delay popup initialization and data fetch on the first load"
-msgstr ""
+msgstr "Oneskorenie (v sekundách) inicializácie vyskakovacieho okna a načítania údajov pri prvom spustení"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:172
 msgid "Default width for the preferences window"
-msgstr ""
+msgstr "Predvolená šírka okna s nastaveniami"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:176
 msgid "Default height for the preferences window"
-msgstr ""
+msgstr "Predvolená výška okna s nastaveniami"
