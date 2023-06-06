@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: gnome-shell-extension-openweather\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-09-18 10:49-0300\n"
-"PO-Revision-Date: 2017-05-29 11:55+0200\n"
-"Last-Translator: Báthory Péter <bathory86p@gmail.com>\n"
+"PO-Revision-Date: 2023-05-09 18:26+0200\n"
+"Last-Translator: infeeeee <gyetpet@mailbox.org>\n"
 "Language-Team: \n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #: src/extension.js:267
 msgid ""
@@ -45,9 +45,9 @@ msgid "Reload Weather Information"
 msgstr "Meteorológiai információ újratöltése"
 
 #: src/extension.js:771
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "Weather data by: %s"
-msgstr "Meteorológiai adatok:"
+msgstr "Meteorológiai adatok: %s"
 
 #: src/extension.js:773
 msgid "Weather Settings"
@@ -55,7 +55,7 @@ msgstr "Meteorológiai beállítások"
 
 #: src/extension.js:787
 msgid "Manual refreshes less than 2 minutes apart are ignored!"
-msgstr ""
+msgstr "2 percnél sűrűbb kézi frissítések nincsenek figyelembe véve!"
 
 #: src/extension.js:801
 #, javascript-format
@@ -156,31 +156,31 @@ msgstr "Orkán"
 
 #: src/extension.js:997
 msgid "Sunday"
-msgstr "vasárnap"
+msgstr "Vasárnap"
 
 #: src/extension.js:997
 msgid "Monday"
-msgstr "hétfő"
+msgstr "Hétfő"
 
 #: src/extension.js:997
 msgid "Tuesday"
-msgstr "kedd"
+msgstr "Kedd"
 
 #: src/extension.js:997
 msgid "Wednesday"
-msgstr "szerda"
+msgstr "Szerda"
 
 #: src/extension.js:997
 msgid "Thursday"
-msgstr "csütörtök"
+msgstr "Csütörtök"
 
 #: src/extension.js:997
 msgid "Friday"
-msgstr "péntek"
+msgstr "Péntek"
 
 #: src/extension.js:997
 msgid "Saturday"
-msgstr "szombat"
+msgstr "Szombat"
 
 #: src/extension.js:1003
 msgid "N"
@@ -289,7 +289,7 @@ msgstr "Kérem várjon"
 
 #: src/extension.js:1340
 msgid "Feels Like:"
-msgstr ""
+msgstr "Hőérzet:"
 
 #: src/extension.js:1344
 msgid "Humidity:"
@@ -305,210 +305,194 @@ msgstr "Szélerősség:"
 
 #: src/extension.js:1356
 msgid "Gusts:"
-msgstr ""
+msgstr "Széllökés:"
 
 #: src/extension.js:1487
 msgid "Tomorrow's Forecast"
-msgstr ""
+msgstr "Holnapi előrejelzés"
 
 #: src/extension.js:1489
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "%s Day Forecast"
-msgstr "Körülmények az előrejelzésben"
+msgstr "%s napi előrejelzés"
 
+# 200: vihar enyhe esővel
 #: src/openweathermap.js:50
-#, fuzzy
 msgid "Thunderstorm with Light Rain"
-msgstr "Zivatar gyenge esővel"
+msgstr "Zivatar enyhe esővel"
 
+# 201: vihar esővel
 #: src/openweathermap.js:52
-#, fuzzy
 msgid "Thunderstorm with Rain"
 msgstr "Zivatar esővel"
 
+# 202: vihar heves esővel
 #: src/openweathermap.js:54
-#, fuzzy
 msgid "Thunderstorm with Heavy Rain"
-msgstr "Zivatar záporesővel"
+msgstr "Zivatar heves esővel"
 
 #: src/openweathermap.js:56
-#, fuzzy
 msgid "Light Thunderstorm"
-msgstr "Gyenge zivatar"
+msgstr "Enyhe zivatar"
 
+# 211: vihar
 #: src/openweathermap.js:58
 msgid "Thunderstorm"
 msgstr "Zivatar"
 
+# 212: heves vihar
 #: src/openweathermap.js:60
-#, fuzzy
 msgid "Heavy Thunderstorm"
-msgstr "Erős zivatar"
+msgstr "Heves zivatar"
 
 #: src/openweathermap.js:62
-#, fuzzy
 msgid "Ragged Thunderstorm"
-msgstr "Felhőszakadás"
+msgstr "Durva vihar"
 
 #: src/openweathermap.js:64
-#, fuzzy
 msgid "Thunderstorm with Light Drizzle"
-msgstr "Zivatar gyenge szitálással"
+msgstr "Vihar enyhe szitálással"
 
 #: src/openweathermap.js:66
-#, fuzzy
 msgid "Thunderstorm with Drizzle"
-msgstr "Zivatar szitálással"
+msgstr "Vihar szitálással"
 
 #: src/openweathermap.js:68
-#, fuzzy
 msgid "Thunderstorm with Heavy Drizzle"
-msgstr "Zivatar erős szitálással"
+msgstr "Vihar erős szitálással"
 
+# 300: enyhe intenzitású szitálás
 #: src/openweathermap.js:70
-#, fuzzy
 msgid "Light Drizzle"
-msgstr "Könnyű szellő"
+msgstr "Enyhe szitálás"
 
 #: src/openweathermap.js:72
 msgid "Drizzle"
 msgstr "Szitálás"
 
+# 302: erős intenzitású szitálás
 #: src/openweathermap.js:74
-#, fuzzy
 msgid "Heavy Drizzle"
-msgstr "Szitálás"
+msgstr "Erős szitálás"
 
+# 310: enyhe intenzitású szitáló eső
 #: src/openweathermap.js:76
-#, fuzzy
 msgid "Light Drizzle Rain"
-msgstr "Szitáló eső"
+msgstr "Enyhe szitáló eső"
 
 #: src/openweathermap.js:78
-#, fuzzy
 msgid "Drizzle Rain"
 msgstr "Szitáló eső"
 
+# 312: erős intenzitású szitáló eső
 #: src/openweathermap.js:80
-#, fuzzy
 msgid "Heavy Drizzle Rain"
-msgstr "Szitáló eső"
+msgstr "Erős szitáló eső"
 
+# 313: zuhanyeső szitálás
 #: src/openweathermap.js:82
-#, fuzzy
 msgid "Shower Rain and Drizzle"
 msgstr "Záporeső és szitálás"
 
+# 314: nehéz zuhanyeső szitálás
 #: src/openweathermap.js:84
-#, fuzzy
 msgid "Heavy Rain and Drizzle"
-msgstr "Záporeső és szitálás"
+msgstr "Erős záporeső és szitálás"
 
 #: src/openweathermap.js:86
-#, fuzzy
 msgid "Shower Drizzle"
-msgstr "Záporos szitálás"
+msgstr "Zápor"
 
 #: src/openweathermap.js:88
-#, fuzzy
 msgid "Light Rain"
-msgstr "Csendes eső"
+msgstr "Enyhe eső"
 
+# 501: közepes eső
 #: src/openweathermap.js:90
-#, fuzzy
 msgid "Moderate Rain"
 msgstr "Mérsékelt eső"
 
+# 502: heves intenzitású eső
 #: src/openweathermap.js:92
-#, fuzzy
 msgid "Heavy Rain"
-msgstr "Erős havazás"
+msgstr "Heves eső"
 
 #: src/openweathermap.js:94
-#, fuzzy
 msgid "Very Heavy Rain"
-msgstr "Nagyon erős zápor"
+msgstr "Nagyon heves eső"
 
 #: src/openweathermap.js:96
-#, fuzzy
 msgid "Extreme Rain"
-msgstr "Extrém zápor"
+msgstr "Extrém eső"
 
 #: src/openweathermap.js:98
-#, fuzzy
 msgid "Freezing Rain"
-msgstr "Jégeső"
+msgstr "Ónos eső"
 
 #: src/openweathermap.js:100
-#, fuzzy
 msgid "Light Shower Rain"
-msgstr "Hószállingózás"
+msgstr "Enyhe zápor"
 
 #: src/openweathermap.js:102
-#, fuzzy
 msgid "Shower Rain"
 msgstr "Záporeső"
 
 #: src/openweathermap.js:104
-#, fuzzy
 msgid "Heavy Shower Rain"
-msgstr "Erős hózápor"
+msgstr "Heves zápor"
 
+# 531: alkalmi zuhanyok
 #: src/openweathermap.js:106
-#, fuzzy
 msgid "Ragged Shower Rain"
-msgstr "Tomboló záporeső"
+msgstr "Alkalmi záporok"
 
 #: src/openweathermap.js:108
-#, fuzzy
 msgid "Light Snow"
-msgstr "Gyenge havazás"
+msgstr "Enyhe havazás"
 
 #: src/openweathermap.js:110
 msgid "Snow"
 msgstr "Havazás"
 
 #: src/openweathermap.js:112
-#, fuzzy
 msgid "Heavy Snow"
 msgstr "Erős havazás"
 
 #: src/openweathermap.js:114
 msgid "Sleet"
-msgstr "Ónos eső"
+msgstr "Havas eső"
 
+# 612: ónos eső zuhany
 #: src/openweathermap.js:116
-#, fuzzy
 msgid "Light Shower Sleet"
-msgstr "Ónos zápor"
+msgstr "Enyhe havas zápor"
 
+# 613: ??
 #: src/openweathermap.js:118
-#, fuzzy
 msgid "Shower Sleet"
-msgstr "Ónos zápor"
+msgstr "Havas zápor"
 
+# 615: enyhe esőzés és havazás
 #: src/openweathermap.js:120
-#, fuzzy
 msgid "Light Rain and Snow"
 msgstr "Csendes havas eső"
 
+# 616: hó és eső
 #: src/openweathermap.js:122
-#, fuzzy
 msgid "Rain and Snow"
 msgstr "Havas eső"
 
+# 620: enyhe hózápor
 #: src/openweathermap.js:124
-#, fuzzy
 msgid "Light Shower Snow"
 msgstr "Hószállingózás"
 
 #: src/openweathermap.js:126
-#, fuzzy
 msgid "Shower Snow"
 msgstr "Hózápor"
 
+# 622: intenzív hózápor
 #: src/openweathermap.js:128
-#, fuzzy
 msgid "Heavy Shower Snow"
 msgstr "Erős hózápor"
 
@@ -516,17 +500,18 @@ msgstr "Erős hózápor"
 msgid "Mist"
 msgstr "Gyenge köd"
 
+# 711: köd
 #: src/openweathermap.js:132
 msgid "Smoke"
 msgstr "Füst"
 
 #: src/openweathermap.js:134
 msgid "Haze"
-msgstr "Pára"
+msgstr "Köd"
 
 #: src/openweathermap.js:136
 msgid "Sand/Dust Whirls"
-msgstr "Porördög"
+msgstr "Homokvihar"
 
 #: src/openweathermap.js:138
 msgid "Fog"
@@ -542,44 +527,41 @@ msgstr "Por"
 
 #: src/openweathermap.js:144
 msgid "Volcanic Ash"
-msgstr ""
+msgstr "Vulkáni hamu"
 
+# 771: vihar
 #: src/openweathermap.js:146
 msgid "Squalls"
-msgstr ""
+msgstr "Szélvihar"
 
+# 781: tornádó
 #: src/openweathermap.js:148
 msgid "Tornado"
-msgstr ""
+msgstr "Forgószél"
 
 #: src/openweathermap.js:150
-#, fuzzy
 msgid "Clear Sky"
-msgstr "Bejegyzés törlése"
+msgstr "Tiszta égbolt"
 
 #: src/openweathermap.js:152
-#, fuzzy
 msgid "Few Clouds"
 msgstr "Kevés felhő"
 
 #: src/openweathermap.js:154
-#, fuzzy
 msgid "Scattered Clouds"
-msgstr "Elszórtan felhős"
+msgstr "Szórványos felhőzet"
 
 #: src/openweathermap.js:156
-#, fuzzy
 msgid "Broken Clouds"
-msgstr "Szakadozott felhőzet"
+msgstr "Erős felhőzet"
 
 #: src/openweathermap.js:158
-#, fuzzy
 msgid "Overcast Clouds"
-msgstr "Borult ég"
+msgstr "Borús égbolt"
 
 #: src/openweathermap.js:160
 msgid "Not available"
-msgstr "Nem érhető el"
+msgstr "Nem elérhető"
 
 #: src/openweathermap.js:374 src/openweathermap.js:376
 msgid ", "
@@ -587,99 +569,97 @@ msgstr ", "
 
 #: src/openweathermap.js:392
 msgid "?"
-msgstr ""
+msgstr "?"
 
 #: src/openweathermap.js:460
 msgid "Tomorrow"
-msgstr "holnap"
+msgstr "Holnap"
 
 #: src/preferences/generalPage.js:31
-#, fuzzy
 msgid "Settings"
-msgstr "Meteorológiai beállítások"
+msgstr "Beállítások"
 
 #: src/preferences/generalPage.js:39
 msgid "General"
-msgstr ""
+msgstr "Általános"
 
 #: src/preferences/generalPage.js:57
 msgid "Current Weather Refresh"
-msgstr ""
+msgstr "Aktuális időjárás frissítése"
 
 #: src/preferences/generalPage.js:58
 msgid "Current weather refresh interval in minutes"
-msgstr ""
+msgstr "Aktuális időjárás frissítési időköze percben"
 
 #: src/preferences/generalPage.js:80
-#, fuzzy
 msgid "Weather Forecast Refresh"
-msgstr "Középtávú előrejelzés"
+msgstr "Időjárás előrejelzés frissítése"
 
 #: src/preferences/generalPage.js:81
 msgid "Forecast refresh interval in minutes if enabled"
-msgstr ""
+msgstr "Előrejelzés frissítési időköze percben"
 
 #: src/preferences/generalPage.js:92
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:108
 msgid "Disable Forecast"
-msgstr ""
+msgstr "Előrejelzés kikapcsolása"
 
 #: src/preferences/generalPage.js:93
 msgid "Disables all fetching and processing of forecast data"
-msgstr ""
+msgstr "Előrejelzési adatok letöltésének és feldolgozásának a kikapcsolása"
 
 #: src/preferences/generalPage.js:104
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:96
-#, fuzzy
 msgid "System Icons"
-msgstr "Jelképes ikonok"
+msgstr "Rendszer ikonok"
 
 #: src/preferences/generalPage.js:105
 msgid "Disable to use packaged Adwaita weather icons"
-msgstr ""
+msgstr "Kapcsolja ki az Adwaita ikonok használatához"
 
 #: src/preferences/generalPage.js:106
 msgid ""
 "If you have issues with your system icons displaying correctly disable this "
 "to fix it"
-msgstr ""
+msgstr "Ha a rendszer ikonokkal nem jelenik meg megfelelően, kapcsolja ki ezt"
 
 #: src/preferences/generalPage.js:126
 msgid "First Boot Delay"
-msgstr ""
+msgstr "Késleltetés első indításkor"
 
 #: src/preferences/generalPage.js:127
 msgid "Seconds to delay popup initialization and data fetching"
 msgstr ""
+"Felugró ablak betöltésének és az adatok letöltésének késleltetése "
+"másodpercben"
 
 #: src/preferences/generalPage.js:128
 msgid ""
 "This setting only applies to the first time the extension is loaded. (first "
 "log in / restarting gnome shell)"
 msgstr ""
+"Ez a beállítás csak a legelső indításra vonatkozik. (első bejelntkezés / "
+"gnome shell újraindítása)"
 
 #: src/preferences/generalPage.js:142
 msgid "Units"
 msgstr "Mértékegységek"
 
 #: src/preferences/generalPage.js:156
-#, fuzzy
 msgid "Temperature"
-msgstr "Hőmérsékleti egység"
+msgstr "Hőmérséklet"
 
 #: src/preferences/generalPage.js:168
 msgid "Beaufort"
 msgstr "Beaufort"
 
 #: src/preferences/generalPage.js:170
-#, fuzzy
 msgid "Wind Speed"
-msgstr "Szélerősség egység"
+msgstr "Szél sebesség"
 
 #: src/preferences/generalPage.js:189
-#, fuzzy
 msgid "Pressure"
-msgstr "Légnyomás:"
+msgstr "Légnyomás"
 
 #: src/preferences/generalPage.js:201 src/preferences/locationsPage.js:64
 msgid "Provider"
@@ -687,40 +667,40 @@ msgstr "Szolgáltató"
 
 #: src/preferences/generalPage.js:210
 msgid "OpenWeatherMap Multilingual Support"
-msgstr ""
+msgstr "OpenWeatherMap többnyelvű támogatás"
 
 #: src/preferences/generalPage.js:211
 msgid "Using provider translations applies to weather conditions only"
 msgstr ""
+"Szolgáltatótól kapott fordítások csak az időjárási állapotokra vonatkoznak"
 
 #: src/preferences/generalPage.js:212
 msgid ""
 "Enable this to use OWM multilingual support in 46 languages if there's no "
 "built-in translations for your language yet."
 msgstr ""
+"Engedélyezze ezt az OWM többnyelvű támogatásának használatához 46 nyelven, "
+"ha még nincs beépített fordítás az Ön nyelvére."
 
 #: src/preferences/generalPage.js:224
 msgid "Use Extensions API Key"
-msgstr ""
+msgstr "A kiterjesztés API kulcsának a használata"
 
 #: src/preferences/generalPage.js:225
-#, fuzzy
 msgid "Use the built-in API key for OpenWeatherMap"
-msgstr ""
-"Az alkalmazés alapértelmezett openweathermap.org API kulcsának használata"
+msgstr "A beépített OpenWeatherMap API kulcs használata"
 
 #: src/preferences/generalPage.js:226
-#, fuzzy
 msgid ""
 "Disable this if you have your own API key from openweathermap.org and enter "
 "it below."
 msgstr ""
-"Kapcsolja ki, ha a saját openweathermap.org api-kulcsát szeretné használni, "
-"valamint másolja be azt az alábbi szövegdobozba."
+"Kapcsolja ki ezt, ha van saját API kulcsa openweathermap.org-ról, írja be a "
+"kulcsot a következő mezőbe."
 
 #: src/preferences/generalPage.js:240
 msgid "Personal API Key"
-msgstr ""
+msgstr "Személyes API kulcs"
 
 #: src/preferences/layoutPage.js:31
 msgid "Layout"
@@ -728,148 +708,136 @@ msgstr "Elrendezés"
 
 #: src/preferences/layoutPage.js:39
 msgid "Panel"
-msgstr ""
+msgstr "Panel"
 
 #: src/preferences/layoutPage.js:44
 msgid "Center"
-msgstr "középen"
+msgstr "Középen"
 
 #: src/preferences/layoutPage.js:45
 msgid "Right"
-msgstr "jobbra"
+msgstr "Jobbra"
 
 #: src/preferences/layoutPage.js:46
 msgid "Left"
-msgstr "balra"
+msgstr "Balra"
 
 #: src/preferences/layoutPage.js:48
-#, fuzzy
 msgid "Position In Panel"
 msgstr "Elhelyezkedés a panelen"
 
 #: src/preferences/layoutPage.js:69
-#, fuzzy
 msgid "Position Offset"
-msgstr "Elhelyezkedés a panelen"
+msgstr "Pozíció eltolása"
 
 #: src/preferences/layoutPage.js:70
 msgid "The position relative to other items in the box"
-msgstr ""
+msgstr "A pozíció relatív a dobozban levő más elemekhez képest"
 
 #: src/preferences/layoutPage.js:78
-#, fuzzy
 msgid "Show the temperature in the panel"
-msgstr "Hőmérséklet a panelen"
+msgstr "Hőmérséklet megjelenítés a panelen"
 
 #: src/preferences/layoutPage.js:82
-#, fuzzy
 msgid "Temperature In Panel"
 msgstr "Hőmérséklet a panelen"
 
 #: src/preferences/layoutPage.js:90
 msgid "Show the weather conditions in the panel"
-msgstr ""
+msgstr "Időjárás állapot megjelenítése a panelen"
 
 #: src/preferences/layoutPage.js:94
-#, fuzzy
 msgid "Conditions In Panel"
-msgstr "Körülmények a panelen"
+msgstr "Állapot a panelen"
 
 #: src/preferences/layoutPage.js:107
 msgid "Popup"
-msgstr ""
+msgstr "Felugró ablak"
 
 #: src/preferences/layoutPage.js:125
 msgid "Popup Position"
-msgstr ""
+msgstr "Felugró ablak helyzete"
 
 #: src/preferences/layoutPage.js:126
 msgid "Alignment of the popup from left to right"
-msgstr ""
+msgstr "Felugró ablak illeszkedése balról jobbra"
 
 #: src/preferences/layoutPage.js:137
-#, fuzzy
 msgid "Wind Direction Arrows"
 msgstr "Szélirány nyilakkal"
 
 #: src/preferences/layoutPage.js:149
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:88
 msgid "Translate Conditions"
-msgstr "Időjárási körülmények fordítása"
+msgstr "Időjárási állapotok fordítása"
 
 #: src/preferences/layoutPage.js:157
 msgid "0"
-msgstr ""
+msgstr "0"
 
 #: src/preferences/layoutPage.js:158 src/preferences/layoutPage.js:229
 msgid "1"
-msgstr ""
+msgstr "1"
 
 #: src/preferences/layoutPage.js:159 src/preferences/layoutPage.js:230
 msgid "2"
-msgstr ""
+msgstr "2"
 
 #: src/preferences/layoutPage.js:160 src/preferences/layoutPage.js:231
 msgid "3"
-msgstr ""
+msgstr "3"
 
 #: src/preferences/layoutPage.js:162
-#, fuzzy
 msgid "Temperature Decimal Places"
-msgstr "Hőmérséklet a panelen"
+msgstr "Hőmérséklet tizedesek száma"
 
 #: src/preferences/layoutPage.js:163
-#, fuzzy
 msgid "Maximum number of digits after the decimal point"
-msgstr "Tizedespont után álló számjegyek száma"
+msgstr "Tizedespont után álló számjegyek maximmális száma"
 
 #: src/preferences/layoutPage.js:183
 msgid "Location Text Length"
-msgstr ""
+msgstr "Helyszín szöveg hossza"
 
 #: src/preferences/layoutPage.js:184
 msgid "Maximum length of the location text. A setting of '0' is unlimited"
-msgstr ""
+msgstr "Helyszín szöveg maximális hossza. 0-ra állítva végtelen"
 
 #: src/preferences/layoutPage.js:200
-#, fuzzy
 msgid "Forecast"
-msgstr "Középtávú előrejelzés"
+msgstr "Előrejelzés"
 
 #: src/preferences/layoutPage.js:210
-#, fuzzy
 msgid "Center Today's Forecast"
-msgstr "Középtávú előrejelzés"
+msgstr "Mai előrejelzés középen"
 
 #: src/preferences/layoutPage.js:221
-#, fuzzy
 msgid "Conditions In Forecast"
-msgstr "Körülmények az előrejelzésben"
+msgstr "Állapot az előrejelzésben"
 
 #: src/preferences/layoutPage.js:228
 msgid "Today Only"
-msgstr ""
+msgstr "Csak mai"
 
 #: src/preferences/layoutPage.js:232
 msgid "4"
-msgstr ""
+msgstr "4"
 
 #: src/preferences/layoutPage.js:233
 msgid "5"
-msgstr ""
+msgstr "5"
 
 #: src/preferences/layoutPage.js:235
-#, fuzzy
 msgid "Total Days In Forecast"
-msgstr "Körülmények az előrejelzésben"
+msgstr "Napok száma az előrejelzésben"
 
 #: src/preferences/layoutPage.js:246
 msgid "Keep Forecast Expanded"
-msgstr ""
+msgstr "Előrejelzés kibontva tartása"
 
 #: src/preferences/locationsPage.js:52
 msgid "Add"
-msgstr ""
+msgstr "Hozzáadás"
 
 #: src/preferences/locationsPage.js:71
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:58
@@ -878,29 +846,26 @@ msgstr "Névkeresés szolgáltató"
 
 #: src/preferences/locationsPage.js:72
 msgid "Provider used for location search"
-msgstr ""
+msgstr "Szolgálta helyszín kereséséhez"
 
 #: src/preferences/locationsPage.js:85
 msgid "Personal MapQuest Key"
-msgstr ""
+msgstr "Személyes MapQuest kulcs"
 
 #: src/preferences/locationsPage.js:86
-#, fuzzy
 msgid "Personal API Key from developer.mapquest.com"
 msgstr "Személyes API kulcs a developer.mapquest.com-ról"
 
 #: src/preferences/locationsPage.js:206
 #, javascript-format
 msgid "Location changed to: %s"
-msgstr ""
+msgstr "Helyszín megváltozott erre: %s"
 
 #: src/preferences/locationsPage.js:221
-#, fuzzy
 msgid "Add New Location"
-msgstr "Helyszín"
+msgstr "Új helyszín hozzádaása"
 
 #: src/preferences/locationsPage.js:242
-#, fuzzy
 msgid "Search by Location or Coordinates"
 msgstr "Keresés helyszínek vagy koordináták szerint"
 
@@ -914,26 +879,23 @@ msgid "Clear entry"
 msgstr "Bejegyzés törlése"
 
 #: src/preferences/locationsPage.js:259
-#, fuzzy
 msgid "Search"
-msgstr "Betöltés ..."
+msgstr "Keresés"
 
 #: src/preferences/locationsPage.js:282
 msgid "We need something to search for!"
-msgstr ""
+msgstr "Keresőkifejezés szükséges!"
 
 #: src/preferences/locationsPage.js:305
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "Edit %s"
-msgstr "Név szerkesztése"
+msgstr "%s szerkesztése"
 
 #: src/preferences/locationsPage.js:327
-#, fuzzy
 msgid "Edit Name"
 msgstr "Név szerkesztése"
 
 #: src/preferences/locationsPage.js:343
-#, fuzzy
 msgid "Edit Coordinates"
 msgstr "Koordináták szerkesztése"
 
@@ -943,21 +905,21 @@ msgstr "Mentés"
 
 #: src/preferences/locationsPage.js:394
 msgid "Please complete all fields"
-msgstr ""
+msgstr "Töltse ki az összes mezőt"
 
 #: src/preferences/locationsPage.js:410
 #, javascript-format
 msgid "%s has been updated"
-msgstr ""
+msgstr "%s frissítve lett"
 
 #: src/preferences/locationsPage.js:439
 #, javascript-format
 msgid "Are you sure you want to delete \"%s\"?"
-msgstr ""
+msgstr "Biztosan törli ezt: „%s”?"
 
 #: src/preferences/locationsPage.js:447
 msgid "Delete"
-msgstr ""
+msgstr "Törlés"
 
 #: src/preferences/locationsPage.js:451
 msgid "Cancel"
@@ -966,120 +928,118 @@ msgstr "Mégsem"
 #: src/preferences/locationsPage.js:483
 #, javascript-format
 msgid "%s has been deleted"
-msgstr ""
+msgstr "%s törölve"
 
 #: src/preferences/locationsPage.js:529
 msgid "Search Results"
-msgstr ""
+msgstr "Keresési eredmények"
 
 #: src/preferences/locationsPage.js:545
 msgid "New Search"
-msgstr ""
+msgstr "Új keresés"
 
 #: src/preferences/locationsPage.js:552
-#, fuzzy
 msgid "Searching ..."
-msgstr "Betöltés ..."
+msgstr "Keresés ..."
 
 #: src/preferences/locationsPage.js:553
 #, javascript-format
 msgid "Please wait while searching for locations matching \"%s\""
-msgstr ""
+msgstr "Kérem várjon amíg a keresés tart a következőre: „%s”"
 
 #: src/preferences/locationsPage.js:605
 msgid "AppKey Required"
-msgstr ""
+msgstr "AppKey szükséges"
 
 #: src/preferences/locationsPage.js:606
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "You need an AppKey to use MapQuest, get one at: %s"
-msgstr "Az Ön személyes API kulcsa az developer.mapquest.com-ról"
+msgstr "AppKey kell a MapQuest használatához, beszerezhető itt: %s"
 
 #: src/preferences/locationsPage.js:709
 #, javascript-format
 msgid "Results for \"%s\""
-msgstr ""
+msgstr "Eredmények erre: „%s”"
 
 #: src/preferences/locationsPage.js:756
 #, javascript-format
 msgid "%s has been added"
-msgstr ""
+msgstr "%s hozzáadva"
 
 #: src/preferences/locationsPage.js:764
 msgid "API Error"
-msgstr ""
+msgstr "API hiba"
 
 #: src/preferences/locationsPage.js:765
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "Invalid data when searching for \"%s\"."
-msgstr "Érvénytelen adat „%s” keresésekor"
+msgstr "Érvénytelen adat „%s” keresésekor."
 
 #: src/preferences/locationsPage.js:768
 msgid "No Matches Found"
-msgstr ""
+msgstr "Nincs találat"
 
 #: src/preferences/locationsPage.js:769
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "No results found when searching for \"%s\"."
-msgstr "Érvénytelen adat „%s” keresésekor"
+msgstr "Nincs találat „%s” keresésekor."
 
 #: src/preferences/aboutPage.js:31
 msgid "About"
-msgstr "A programról"
+msgstr "Névjegy"
 
 #: src/preferences/aboutPage.js:58
 msgid ""
 "Display weather information for any location on Earth in the GNOME Shell"
 msgstr ""
+"Időjárási információk megjelenítése a világ bármely pontjáról a GNOME Shell-"
+"ben"
 
 #: src/preferences/aboutPage.js:72
 msgid "unknown"
-msgstr ""
+msgstr "ismeretlen"
 
 #: src/preferences/aboutPage.js:78
-#, fuzzy
 msgid "OpenWeather Version"
-msgstr "Meteorológiai beállítások"
+msgstr "OpenWeather verzió"
 
 #: src/preferences/aboutPage.js:87
-#, fuzzy
 msgid "Git Version"
-msgstr "Verzió: "
+msgstr "Git verzió"
 
 #: src/preferences/aboutPage.js:95
-#, fuzzy
 msgid "GNOME Version"
-msgstr "Verzió: "
+msgstr "Gnome Verzió"
 
 #: src/preferences/aboutPage.js:102
 msgid "Session Type"
-msgstr ""
+msgstr "Munkamenet típusa"
 
 #: src/preferences/aboutPage.js:124
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "Maintained by: %s"
-msgstr "Karbantartja"
+msgstr "Karbantartja: %s"
 
 #: src/preferences/aboutPage.js:161
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "Weather data provided by: %s"
-msgstr "Meteorológiai adatok:"
+msgstr "Meteorológiai adatok forrása: %s"
 
 #: src/preferences/aboutPage.js:172
 msgid "This program comes with ABSOLUTELY NO WARRANTY."
-msgstr ""
+msgstr "Ez a program mindenféle GARANCIAVÁLLALÁS NÉLKÜL kerül kiadásra."
 
 #: src/preferences/aboutPage.js:173
 msgid "See the"
-msgstr ""
+msgstr "Lásd a"
 
 #: src/preferences/aboutPage.js:174
 msgid "GNU General Public License, version 2 or later"
-msgstr ""
+msgstr "GNU General Public License, 2. verzió vagy újabbat"
 
 #: src/preferences/aboutPage.js:174
 msgid "for details."
-msgstr ""
+msgstr "a részletekért."
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:54
 msgid "Weather Provider"
@@ -1124,7 +1084,7 @@ msgstr "Aktuális város"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:92
 msgid "OpenWeatherMap Multilingual Support (weather descriptions only)"
-msgstr ""
+msgstr "OpenWeatherMap többnyelvű támogatás (csak időjárás leírása)"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:100
 msgid "Temperature in Panel"
@@ -1153,7 +1113,7 @@ msgstr "Frissítési gyakoriság (aktuális időjárás)"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:132
 msgid "Maximal length of the location text"
-msgstr ""
+msgstr "Helyszín szöveg maximális hossza"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:136
 msgid "Refresh interval (forecast)"
@@ -1161,11 +1121,11 @@ msgstr "Frissítési gyakoriság (előrejelzés)"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:140
 msgid "Center forecastbox."
-msgstr "Előrejelzés sor középre igazítása"
+msgstr "Előrejelzés sor középre igazítása."
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:144
 msgid "Always keep forecast expanded"
-msgstr ""
+msgstr "Előrejelzés mindig kibontva marad"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:148
 msgid "Number of days in forecast"
@@ -1191,11 +1151,13 @@ msgstr "Az Ön személyes API kulcsa az developer.mapquest.com-ról"
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:168
 msgid "Seconds to delay popup initialization and data fetch on the first load"
 msgstr ""
+"Felugró ablak betöltésének és az adatok letöltésének késleltetése az első "
+"betöltéskor, másodpercben"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:172
 msgid "Default width for the preferences window"
-msgstr ""
+msgstr "Beállítások ablak alapértelmezett szélessége"
 
 #: schemas/org.gnome.shell.extensions.openweather.gschema.xml:176
 msgid "Default height for the preferences window"
-msgstr ""
+msgstr "Beállítások ablak alapértelmezett magassága"
