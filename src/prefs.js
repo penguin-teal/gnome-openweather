@@ -15,36 +15,37 @@
    Copyright 2022 Jason Oickle
 */
 
-const {
-    Adw, Gtk, Gdk
-} = imports.gi;
+import Gdk from "gi://Gdk";
+import Gtk from "gi://Gtk";
 
-const ExtensionUtils = imports.misc.extensionUtils;
-const Me = ExtensionUtils.getCurrentExtension();
+import {
+  ExtensionPreferences,
+  gettext as _,
+} from "resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js";
+
+import { EXTENSION_PATH } from "./extension.js";
 // Import preferences pages
-const GeneralPrefs = Me.imports.preferences.generalPage;
-const LayoutPrefs = Me.imports.preferences.layoutPage;
-const LocationsPrefs = Me.imports.preferences.locationsPage;
-const AboutPrefs = Me.imports.preferences.aboutPage;
+import * as GeneralPrefs from "./preferences/generalPage.js";
+import * as LayoutPrefs from "./preferences/layoutPage.js";
+import * as LocationsPrefs from "./preferences/locationsPage.js";
+import * as AboutPrefs from "./preferences/aboutPage.js";
 
-function init() {
-    ExtensionUtils.initTranslations(Me.metadata['gettext-domain']);
-}
-
-function fillPreferencesWindow(window) {
+export default class OpenWeatherPreferences extends ExtensionPreferences {
+  fillPreferencesWindow(window) {
     let iconTheme = Gtk.IconTheme.get_for_display(Gdk.Display.get_default());
-    if (!iconTheme.get_search_path().includes(Me.path + "/media")) {
-        iconTheme.add_search_path(Me.path + "/media");
+    if (!iconTheme.get_search_path().includes(EXTENSION_PATH + "/media")) {
+      iconTheme.add_search_path(EXTENSION_PATH + "/media");
     }
 
-    const settings = ExtensionUtils.getSettings(Me.metadata['settings-schema']);
+    window._settings = this.getSettings();
+
     const generalPage = new GeneralPrefs.GeneralPage(settings);
     const layoutPage = new LayoutPrefs.LayoutPage(settings);
     const locationsPage = new LocationsPrefs.LocationsPage(window, settings);
     const aboutPage = new AboutPrefs.AboutPage();
 
-    let prefsWidth = settings.get_int('prefs-default-width');
-    let prefsHeight = settings.get_int('prefs-default-height');
+    let prefsWidth = window._settings.get_int("prefs-default-width");
+    let prefsHeight = window._settings.get_int("prefs-default-height");
 
     window.set_default_size(prefsWidth, prefsHeight);
     window.set_search_enabled(true);
@@ -54,14 +55,15 @@ function fillPreferencesWindow(window) {
     window.add(locationsPage);
     window.add(aboutPage);
 
-    window.connect('close-request', () => {
-        let currentWidth = window.default_width;
-        let currentHeight = window.default_height;
-        // Remember user window size adjustments.
-        if (currentWidth != prefsWidth || currentHeight != prefsHeight) {
-            settings.set_int('prefs-default-width', currentWidth);
-            settings.set_int('prefs-default-height', currentHeight);
-        }
-        window.destroy();
+    window.connect("close-request", () => {
+      let currentWidth = window.default_width;
+      let currentHeight = window.default_height;
+      // Remember user window size adjustments.
+      if (currentWidth != prefsWidth || currentHeight != prefsHeight) {
+        window._settings.set_int("prefs-default-width", currentWidth);
+        window._settings.set_int("prefs-default-height", currentHeight);
+      }
+      window.destroy();
     });
+  }
 }

@@ -124,3 +124,9 @@ PayPal donate button and template used for the Gitlab button was designed by [Kl
 ### License
 
 OpenWeather is free software available under the terms of the GPLv3 license. See [`COPYING`](https://gitlab.com/skrewball/openweather/-/blob/master/COPYING) for details.
+
+
+## development
+
+* https://gjs.guide/extensions/development/creating.html#extension-js
+* env MUTTER_DEBUG_DUMMY_MODE_SPECS=1024x768 dbus-run-session -- gnome-shell --nested --wayland
