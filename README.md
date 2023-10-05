@@ -19,7 +19,7 @@ This is a fork from https://gitlab.com/skrewball/openweather
 ### dev notes
 
 * https://gjs.guide/extensions/development/creating.html#extension-js
-* env MUTTER_DEBUG_DUMMY_MODE_SPECS=1024x768 dbus-run-session -- gnome-shell --nested --wayland
+* env MUTTER_DEBUG_DUMMY_MODE_SPECS=1280x1024 dbus-run-session -- gnome-shell --nested --wayland
 * npx eslint src 
 
 

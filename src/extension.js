@@ -163,7 +163,6 @@ let OpenWeatherMenuButton = GObject.registerClass(
     }
 
     initOpenWeatherUI() {
-      console.log("init OpenWeather UI");
       this.owmCityId = 0;
       this.useOpenWeatherMap();
       this.checkPositionInPanel();
@@ -297,7 +296,6 @@ let OpenWeatherMenuButton = GObject.registerClass(
     }
 
     loadConfig() {
-      console.log("loading config");
       if (this._cities.length === 0)
         this._cities = "43.6534817,-79.3839347>Toronto >0";
 
@@ -474,7 +472,7 @@ let OpenWeatherMenuButton = GObject.registerClass(
             );
           } catch (err) {
             let title = _("Can not connect to %s").format(url);
-            console.log(title + "\n" + err.message);
+            console.warn(title + "\n" + err.message);
             this._checkConnectionStateRetry();
           }
           return false;
@@ -489,7 +487,7 @@ let OpenWeatherMenuButton = GObject.registerClass(
         let title = _("Can not connect to %s").format(
           this.getWeatherProviderURL()
         );
-        console.log(title + "\n" + err.message);
+        console.warn(title + "\n" + err.message);
         this._checkConnectionStateRetry();
         return;
       }
@@ -854,6 +852,10 @@ let OpenWeatherMenuButton = GObject.registerClass(
 
     _onPreferencesActivate() {
       this.menu.close();
+      let extensionObject = Extension.lookupByUUID(
+        "openweather-extension@jenslody.de"
+      );
+      extensionObject.openPreferences();
       return 0;
     }
 
@@ -1631,8 +1633,6 @@ export default class OpenWeatherExtension extends Extension {
    */
   constructor(metadata) {
     super(metadata);
-
-    console.log(`Initiating ${this.uuid}`);
     console.debug(`constructing ${this.metadata.name}`);
   }
 

@@ -630,7 +630,7 @@ export const SearchResultsWindow = GObject.registerClass(
             }
           );
         } catch (e) {
-          console.log("_findLocation OpenStreetMap error: " + e);
+          console.warn("_findLocation OpenStreetMap error: " + e);
         }
       }
       // MapQuest
@@ -670,7 +670,7 @@ export const SearchResultsWindow = GObject.registerClass(
             }
           );
         } catch (e) {
-          console.log("_findLocation MapQuest error: " + e);
+          console.warn("_findLocation MapQuest error: " + e);
         }
       }
       // Geocode.Farm
@@ -704,7 +704,7 @@ export const SearchResultsWindow = GObject.registerClass(
             }
           );
         } catch (e) {
-          console.log("_findLocation Geocode error: " + e);
+          console.warn("_findLocation Geocode error: " + e);
         }
       }
       return 0;
