@@ -310,6 +310,7 @@ export const LocationsPage = GObject.registerClass(
             return 0;
           }
           let resultsWindow = new SearchResultsWindow(
+            this.metadata,
             this._window,
             this._settings,
             _location
@@ -557,7 +558,7 @@ export const SearchResultsWindow = GObject.registerClass(
     GTypeName: "SearchResultsWindow",
   },
   class SearchResultsWindow extends Adw.PreferencesWindow {
-    constructor(parent, settings, location) {
+    constructor(metadata, parent, settings, location) {
       super({
         title: _("Search Results"),
         transient_for: parent,
@@ -566,6 +567,7 @@ export const SearchResultsWindow = GObject.registerClass(
       });
       let mainPage = new Adw.PreferencesPage();
       this.add(mainPage);
+      this.metadata = metadata;
       this._window = parent;
       this._settings = settings;
       this._location = location;
