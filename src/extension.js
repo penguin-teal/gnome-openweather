@@ -163,6 +163,7 @@ let OpenWeatherMenuButton = GObject.registerClass(
     }
 
     initOpenWeatherUI() {
+      console.log("init OpenWeather UI");
       this.owmCityId = 0;
       this.useOpenWeatherMap();
       this.checkPositionInPanel();
@@ -312,7 +313,6 @@ let OpenWeatherMenuButton = GObject.registerClass(
         this.locale = this.locale.split("_")[0];
       // Fallback for 'C', 'C.UTF-8', and unknown locales.
       else this.locale = "en";
-      this.initOpenWeatherUI();
 
       // Bind to settings changed signal
       this._settingsC = this.settings.connect("changed", () => {
@@ -773,7 +773,7 @@ let OpenWeatherMenuButton = GObject.registerClass(
         this.menu.close();
         let url = this.getWeatherProviderURL();
         try {
-          Gtk.show_uri(null, url, global.get_current_time());
+          Gtk.show_uri(null, url, GLib.get_current_time());
         } catch (err) {
           let title = _("Can not open %s").format(url);
           Main.notifyError(title, err);
@@ -1631,13 +1631,9 @@ export default class OpenWeatherExtension extends Extension {
    */
   constructor(metadata) {
     super(metadata);
-    let openWeatherMenu;
 
     console.log(`Initiating ${this.uuid}`);
     console.debug(`constructing ${this.metadata.name}`);
-    const gettextDomain = metadata["gettext-domain"];
-
-    this.initTranslations(gettextDomain);
   }
 
   /**
