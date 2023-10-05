@@ -938,7 +938,7 @@ let OpenWeatherMenuButton = GObject.registerClass(
         return !t ? "2" : "(" + _("Light breeze") + ")";
       else if (w > 3.4 && w <= 5.4)
         return !t ? "3" : "(" + _("Gentle breeze") + ")";
-      else if ((w > 5, 4 && w <= 7.9))
+      else if (w > 5.4 && w <= 7.9)
         return !t ? "4" : "(" + _("Moderate breeze") + ")";
       else if (w > 7.9 && w <= 10.7)
         return !t ? "5" : "(" + _("Fresh breeze") + ")";

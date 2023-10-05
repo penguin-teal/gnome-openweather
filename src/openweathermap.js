@@ -17,10 +17,7 @@
 import GLib from "gi://GLib";
 import Soup from "gi://Soup";
 
-import {
-  Extension,
-  gettext as _,
-} from "resource:///org/gnome/shell/extensions/extension.js";
+import { gettext as _ } from "resource:///org/gnome/shell/extensions/extension.js";
 
 // Map OpenWeatherMap icon codes to icon names
 const IconMap = {
@@ -289,7 +286,7 @@ export async function refreshForecastData() {
                 this.todaysWeatherCache = todayList;
                 await this.populateTodaysUI();
               } catch (e) {
-                logError(e);
+                console.error(e);
               }
             }
           );
@@ -317,7 +314,7 @@ export async function refreshForecastData() {
     /// Something went wrong, reload after 10 minutes
     // as per openweathermap.org recommendation.
     this.reloadWeatherForecast(600);
-    logError(e);
+    console.error(e);
   }
   this.reloadWeatherForecast(this._refresh_interval_forecast);
 }
