@@ -23,7 +23,6 @@ import {
   gettext as _,
 } from "resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js";
 
-import { EXTENSION_PATH } from "./extension.js";
 // Import preferences pages
 import * as GeneralPrefs from "./preferences/generalPage.js";
 import * as LayoutPrefs from "./preferences/layoutPage.js";
@@ -31,18 +30,33 @@ import * as LocationsPrefs from "./preferences/locationsPage.js";
 import * as AboutPrefs from "./preferences/aboutPage.js";
 
 export default class OpenWeatherPreferences extends ExtensionPreferences {
+  constructor(metadata) {
+    super(metadata);
+    console.debug(`constructing prefs ${this.metadata.name}`);
+  }
+
   fillPreferencesWindow(window) {
     let iconTheme = Gtk.IconTheme.get_for_display(Gdk.Display.get_default());
-    if (!iconTheme.get_search_path().includes(EXTENSION_PATH + "/media")) {
-      iconTheme.add_search_path(EXTENSION_PATH + "/media");
+    if (!iconTheme.get_search_path().includes(this.metadata.path + "/media")) {
+      iconTheme.add_search_path(this.metadata.path + "/media");
     }
 
     window._settings = this.getSettings();
 
-    const generalPage = new GeneralPrefs.GeneralPage(settings);
-    const layoutPage = new LayoutPrefs.LayoutPage(settings);
-    const locationsPage = new LocationsPrefs.LocationsPage(window, settings);
-    const aboutPage = new AboutPrefs.AboutPage();
+    const generalPage = new GeneralPrefs.GeneralPage(
+      this.metadata,
+      window._settings
+    );
+    const layoutPage = new LayoutPrefs.LayoutPage(
+      this.metadata,
+      window._settings
+    );
+    const locationsPage = new LocationsPrefs.LocationsPage(
+      this.metadata,
+      window._settings,
+      window
+    );
+    const aboutPage = new AboutPrefs.AboutPage(this.metadata);
 
     let prefsWidth = window._settings.get_int("prefs-default-width");
     let prefsHeight = window._settings.get_int("prefs-default-height");

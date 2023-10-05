@@ -541,8 +541,7 @@ let OpenWeatherMenuButton = GObject.registerClass(
     }
 
     get _clockFormat() {
-      return "24h";
-      //return SETTINGS.get_string("clock-format");
+      return SETTINGS.get_string("clock-format");
     }
 
     get _weather_provider() {
@@ -1004,7 +1003,7 @@ let OpenWeatherMenuButton = GObject.registerClass(
       } // No icon available or user prefers built in icons
       else {
         return Gio.icon_new_for_string(
-          Me.path + "/media/status/" + iconname + ".svg"
+          metadata.path + "/media/status/" + iconname + ".svg"
         );
       }
     }
@@ -1621,7 +1620,6 @@ let OpenWeatherMenuButton = GObject.registerClass(
 );
 
 export let SETTINGS = null;
-export let EXTENSION_PATH = null;
 
 export default class OpenWeatherExtension extends Extension {
   /**
@@ -1654,8 +1652,7 @@ export default class OpenWeatherExtension extends Extension {
    */
   enable() {
     console.debug(`enabling ${this.metadata.name}`);
-    SETTINGS = this.getSettings("org.gnome.shell.extensions.openweather");
-    EXTENSION_PATH = this.path;
+    SETTINGS = this.getSettings();
     this.openWeatherMenu = new OpenWeatherMenuButton();
     Main.panel.addToStatusArea("openWeatherMenu", this.openWeatherMenu);
   }
