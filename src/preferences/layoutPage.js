@@ -19,10 +19,7 @@ import Gtk from "gi://Gtk";
 import Adw from "gi://Adw";
 import GObject from "gi://GObject";
 
-import {
-  ExtensionPreferences,
-  gettext as _,
-} from "resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js";
+import { gettext as _ } from "resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js";
 
 export const LayoutPage = GObject.registerClass(
   {
@@ -326,7 +323,7 @@ export const LayoutPage = GObject.registerClass(
     }
     _disableForecastChanged() {
       let _disableForecast = this._settings.get_boolean("disable-forecast");
-      if (this.disableForecast != _disableForecast) {
+      if (this.disableForecast !== _disableForecast) {
         this.disableForecast = _disableForecast;
         return true;
       }
@@ -335,7 +332,7 @@ export const LayoutPage = GObject.registerClass(
     _providerTranslationsChanged() {
       let _providerTranslations =
         this._settings.get_boolean("owm-api-translate");
-      if (this.providerTranslations != _providerTranslations) {
+      if (this.providerTranslations !== _providerTranslations) {
         this.providerTranslations = _providerTranslations;
         return true;
       }

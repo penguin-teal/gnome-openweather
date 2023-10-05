@@ -1,4 +1,28 @@
+
+
+
 # OpenWeather
+
+
+
+## FORK
+
+This is a fork from https://gitlab.com/skrewball/openweather
+
+### goals
+
+* gnome 45 compatability
+* address lint issues
+* learn how to write a gnome extension
+* make the codebase more maintainable
+
+### dev notes
+
+* https://gjs.guide/extensions/development/creating.html#extension-js
+* env MUTTER_DEBUG_DUMMY_MODE_SPECS=1024x768 dbus-run-session -- gnome-shell --nested --wayland
+* npx eslint src 
+
+
 
 <p align="left">
     <img src="https://gitlab.com/skrewball/assets/-/raw/main/openweather-screenshot.png" width="600">
@@ -125,8 +149,3 @@ PayPal donate button and template used for the Gitlab button was designed by [Kl
 
 OpenWeather is free software available under the terms of the GPLv3 license. See [`COPYING`](https://gitlab.com/skrewball/openweather/-/blob/master/COPYING) for details.
 
-
-## development
-
-* https://gjs.guide/extensions/development/creating.html#extension-js
-* env MUTTER_DEBUG_DUMMY_MODE_SPECS=1024x768 dbus-run-session -- gnome-shell --nested --wayland

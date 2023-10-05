@@ -73,7 +73,7 @@ export default class OpenWeatherPreferences extends ExtensionPreferences {
       let currentWidth = window.default_width;
       let currentHeight = window.default_height;
       // Remember user window size adjustments.
-      if (currentWidth != prefsWidth || currentHeight != prefsHeight) {
+      if (currentWidth !== prefsWidth || currentHeight !== prefsHeight) {
         window._settings.set_int("prefs-default-width", currentWidth);
         window._settings.set_int("prefs-default-height", currentHeight);
       }

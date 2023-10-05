@@ -19,10 +19,7 @@ import Gtk from "gi://Gtk";
 import Adw from "gi://Adw";
 import GObject from "gi://GObject";
 
-import {
-  ExtensionPreferences,
-  gettext as _,
-} from "resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js";
+import { gettext as _ } from "resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js";
 
 export const GeneralPage = GObject.registerClass(
   {
@@ -254,8 +251,8 @@ export const GeneralPage = GObject.registerClass(
         activatable_widget: personalApiKeyEntry,
       });
       let personalApiKey = this._settings.get_string("appid");
-      if (personalApiKey != "") {
-        if (personalApiKey.length != 32) {
+      if (personalApiKey !== "") {
+        if (personalApiKey.length !== 32) {
           personalApiKeyEntry.set_icon_from_icon_name(
             Gtk.PositionType.LEFT,
             "dialog-warning"
@@ -329,7 +326,7 @@ export const GeneralPage = GObject.registerClass(
         this._settings.set_boolean("use-default-owm-key", widget.get_active());
       });
       personalApiKeyEntry.connect("notify::text", (widget) => {
-        if (widget.text.length == 32) {
+        if (widget.text.length === 32) {
           this._settings.set_string("appid", widget.text);
           personalApiKeyEntry.set_icon_from_icon_name(
             Gtk.PositionType.LEFT,
@@ -340,7 +337,7 @@ export const GeneralPage = GObject.registerClass(
             Gtk.PositionType.LEFT,
             "dialog-warning"
           );
-          if (widget.text.length == 0) {
+          if (widget.text.length === 0) {
             this._settings.set_string("appid", "");
           }
         }

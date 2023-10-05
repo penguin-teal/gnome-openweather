@@ -91,9 +91,10 @@ Gtk.IconTheme.get_default = function () {
 
 let OpenWeatherMenuButton = GObject.registerClass(
   class OpenWeatherMenuButton extends PanelMenu.Button {
-    _init() {
+    _init(metadata, settings) {
       super._init(0, "OpenWeatherMenuButton", false);
-      this.useOpenWeatherMap();
+      this.settings = settings;
+      this.metadata = metadata;
       // Putting the panel item together
       this._weatherIcon = new St.Icon({
         icon_name: "view-refresh-symbolic",
@@ -141,7 +142,7 @@ let OpenWeatherMenuButton = GObject.registerClass(
       this.menu.connect("open-state-changed", this.recalcLayout.bind(this));
 
       let _firstBootWait = this._startupDelay;
-      if (_firstBoot && _firstBootWait != 0) {
+      if (_firstBoot && _firstBootWait !== 0) {
         // Delay popup initialization and data fetch on the first
         // extension load, ie: first log in / restart gnome shell
         this._timeoutFirstBoot = GLib.timeout_add_seconds(
@@ -173,7 +174,7 @@ let OpenWeatherMenuButton = GObject.registerClass(
         this._currentForecast = new PopupMenu.PopupBaseMenuItem({
           reactive: false,
         });
-        if (this._forecastDays != 0) {
+        if (this._forecastDays !== 0) {
           this._forecastExpander = new PopupMenu.PopupSubMenuMenuItem("");
         }
       }
@@ -193,7 +194,7 @@ let OpenWeatherMenuButton = GObject.registerClass(
       this.menu.addMenuItem(this._currentWeather);
       if (!this._isForecastDisabled) {
         this.menu.addMenuItem(this._currentForecast);
-        if (this._forecastDays != 0) {
+        if (this._forecastDays !== 0) {
           this.menu.addMenuItem(new PopupMenu.PopupSeparatorMenuItem());
           this.menu.addMenuItem(this._forecastExpander);
         }
@@ -207,7 +208,7 @@ let OpenWeatherMenuButton = GObject.registerClass(
     _onStatusChanged(status) {
       this._idle = false;
 
-      if (status == GnomeSession.PresenceStatus.IDLE) {
+      if (status === GnomeSession.PresenceStatus.IDLE) {
         this._idle = true;
       }
     }
@@ -247,7 +248,7 @@ let OpenWeatherMenuButton = GObject.registerClass(
       }
 
       if (this._settingsC) {
-        SETTINGS.disconnect(this._settingsC);
+        this.settings.disconnect(this._settingsC);
         this._settingsC = undefined;
       }
 
@@ -264,7 +265,6 @@ let OpenWeatherMenuButton = GObject.registerClass(
     }
 
     useOpenWeatherMap() {
-      console.log("setting openweathermap functions");
       this.initWeatherData = OpenWeatherMap.initWeatherData;
       this.reloadWeatherCache = OpenWeatherMap.reloadWeatherCache;
       this.refreshWeatherData = OpenWeatherMap.refreshWeatherData;
@@ -308,14 +308,14 @@ let OpenWeatherMenuButton = GObject.registerClass(
 
       // Get locale
       this.locale = GLib.get_language_names()[0];
-      if (this.locale.indexOf("_") != -1)
+      if (this.locale.indexOf("_") !== -1)
         this.locale = this.locale.split("_")[0];
       // Fallback for 'C', 'C.UTF-8', and unknown locales.
       else this.locale = "en";
       this.initOpenWeatherUI();
 
       // Bind to settings changed signal
-      this._settingsC = SETTINGS.connect("changed", () => {
+      this._settingsC = this.settings.connect("changed", () => {
         if (this.disableForecastChanged()) {
           let _children = this._isForecastDisabled ? 4 : 7;
           if (this._forecastDays === 0) {
@@ -357,7 +357,7 @@ let OpenWeatherMenuButton = GObject.registerClass(
             );
             return;
           }
-          if (this._forecastDays != this._days_forecast) {
+          if (this._forecastDays !== this._days_forecast) {
             let _oldDays = this._forecastDays;
             let _newDays = this._days_forecast;
             this._forecastDays = _newDays;
@@ -381,7 +381,7 @@ let OpenWeatherMenuButton = GObject.registerClass(
               return;
             }
           }
-          if (this._providerTranslations != this._provider_translations) {
+          if (this._providerTranslations !== this._provider_translations) {
             this._providerTranslations = this._provider_translations;
             if (this._providerTranslations) {
               this.showRefreshing();
@@ -404,7 +404,7 @@ let OpenWeatherMenuButton = GObject.registerClass(
     }
 
     loadConfigInterface() {
-      this._settingsInterfaceC = SETTINGS.connect("changed", () => {
+      this._settingsInterfaceC = this.settings.connect("changed", () => {
         this.rebuildCurrentWeatherUi();
         this.rebuildFutureWeatherUi();
         if (this.locationChanged()) {
@@ -439,9 +439,9 @@ let OpenWeatherMenuButton = GObject.registerClass(
     _checkConnectionStateRetry() {
       if (this._checkConnectionStateRetries > 0) {
         let timeout;
-        if (this._checkConnectionStateRetries == 3) timeout = 10000;
-        else if (this._checkConnectionStateRetries == 2) timeout = 30000;
-        else if (this._checkConnectionStateRetries == 1) timeout = 60000;
+        if (this._checkConnectionStateRetries === 3) timeout = 10000;
+        else if (this._checkConnectionStateRetries === 2) timeout = 30000;
+        else if (this._checkConnectionStateRetries === 1) timeout = 60000;
 
         this._checkConnectionStateRetries -= 1;
         this._checkConnectionStateWithRetries(timeout);
@@ -474,7 +474,7 @@ let OpenWeatherMenuButton = GObject.registerClass(
             );
           } catch (err) {
             let title = _("Can not connect to %s").format(url);
-            log(title + "\n" + err.message);
+            console.log(title + "\n" + err.message);
             this._checkConnectionStateRetry();
           }
           return false;
@@ -489,7 +489,7 @@ let OpenWeatherMenuButton = GObject.registerClass(
         let title = _("Can not connect to %s").format(
           this.getWeatherProviderURL()
         );
-        log(title + "\n" + err.message);
+        console.log(title + "\n" + err.message);
         this._checkConnectionStateRetry();
         return;
       }
@@ -519,7 +519,7 @@ let OpenWeatherMenuButton = GObject.registerClass(
     }
 
     disableForecastChanged() {
-      if (this._isForecastDisabled != this._disable_forecast) {
+      if (this._isForecastDisabled !== this._disable_forecast) {
         return true;
       }
       return false;
@@ -527,21 +527,21 @@ let OpenWeatherMenuButton = GObject.registerClass(
 
     locationChanged() {
       let location = this.extractCoord(this._city);
-      if (this._currentLocation != location) {
+      if (this._currentLocation !== location) {
         return true;
       }
       return false;
     }
 
     menuAlignmentChanged() {
-      if (this._currentAlignment != this._menu_alignment) {
+      if (this._currentAlignment !== this._menu_alignment) {
         return true;
       }
       return false;
     }
 
     get _clockFormat() {
-      return SETTINGS.get_string("clock-format");
+      return this.settings.get_string("clock-format");
     }
 
     get _weather_provider() {
@@ -556,37 +556,36 @@ let OpenWeatherMenuButton = GObject.registerClass(
     }
 
     get _units() {
-      return SETTINGS.get_enum("unit");
+      return this.settings.get_enum("unit");
     }
 
     get _wind_speed_units() {
-      return SETTINGS.get_enum("wind-speed-unit");
+      return this.settings.get_enum("wind-speed-unit");
     }
 
     get _wind_direction() {
-      return SETTINGS.get_boolean("wind-direction");
+      return this.settings.get_boolean("wind-direction");
     }
 
     get _pressure_units() {
-      return SETTINGS.get_enum("pressure-unit");
+      return this.settings.get_enum("pressure-unit");
     }
 
     get _cities() {
-      return SETTINGS.get_string("city");
+      return this.settings.get_string("city");
     }
 
     set _cities(v) {
-      return SETTINGS.set_string("city", v);
+      this.settings.set_string("city", v);
     }
 
     get _actual_city() {
-      var a = SETTINGS.get_int("actual-city");
-      var b = a;
-      var cities = this._cities.split(" && ");
+      let a = this.settings.get_int("actual-city");
+      let cities = this._cities.split(" && ");
 
-      if (typeof cities != "object") cities = [cities];
+      if (typeof cities !== "object") cities = [cities];
 
-      var l = cities.length - 1;
+      let l = cities.length - 1;
 
       if (a < 0) a = 0;
 
@@ -598,11 +597,11 @@ let OpenWeatherMenuButton = GObject.registerClass(
     }
 
     set _actual_city(a) {
-      var cities = this._cities.split(" && ");
+      let cities = this._cities.split(" && ");
 
-      if (typeof cities != "object") cities = [cities];
+      if (typeof cities !== "object") cities = [cities];
 
-      var l = cities.length - 1;
+      let l = cities.length - 1;
 
       if (a < 0) a = 0;
 
@@ -610,95 +609,95 @@ let OpenWeatherMenuButton = GObject.registerClass(
 
       if (a > l) a = l;
 
-      SETTINGS.set_int("actual-city", a);
+      this.settings.set_int("actual-city", a);
     }
 
     get _city() {
       let cities = this._cities.split(" && ");
-      if (cities && typeof cities == "string") cities = [cities];
+      if (cities && typeof cities === "string") cities = [cities];
       if (!cities[0]) return "";
       cities = cities[this._actual_city];
       return cities;
     }
 
     get _translate_condition() {
-      return SETTINGS.get_boolean("translate-condition");
+      return this.settings.get_boolean("translate-condition");
     }
 
     get _provider_translations() {
-      return SETTINGS.get_boolean("owm-api-translate");
+      return this.settings.get_boolean("owm-api-translate");
     }
 
     get _getUseSysIcons() {
-      return SETTINGS.get_boolean("use-system-icons") ? 1 : 0;
+      return this.settings.get_boolean("use-system-icons") ? 1 : 0;
     }
 
     get _startupDelay() {
-      return SETTINGS.get_int("delay-ext-init");
+      return this.settings.get_int("delay-ext-init");
     }
 
     get _text_in_panel() {
-      return SETTINGS.get_boolean("show-text-in-panel");
+      return this.settings.get_boolean("show-text-in-panel");
     }
 
     get _position_in_panel() {
-      return SETTINGS.get_enum("position-in-panel");
+      return this.settings.get_enum("position-in-panel");
     }
 
     get _position_index() {
-      return SETTINGS.get_int("position-index");
+      return this.settings.get_int("position-index");
     }
 
     get _menu_alignment() {
-      return SETTINGS.get_double("menu-alignment");
+      return this.settings.get_double("menu-alignment");
     }
 
     get _comment_in_panel() {
-      return SETTINGS.get_boolean("show-comment-in-panel");
+      return this.settings.get_boolean("show-comment-in-panel");
     }
 
     get _disable_forecast() {
-      return SETTINGS.get_boolean("disable-forecast");
+      return this.settings.get_boolean("disable-forecast");
     }
 
     get _comment_in_forecast() {
-      return SETTINGS.get_boolean("show-comment-in-forecast");
+      return this.settings.get_boolean("show-comment-in-forecast");
     }
 
     get _refresh_interval_current() {
-      let v = SETTINGS.get_int("refresh-interval-current");
+      let v = this.settings.get_int("refresh-interval-current");
       return v >= 600 ? v : 600;
     }
 
     get _refresh_interval_forecast() {
-      let v = SETTINGS.get_int("refresh-interval-forecast");
+      let v = this.settings.get_int("refresh-interval-forecast");
       return v >= 3600 ? v : 3600;
     }
 
     get _loc_len_current() {
-      let v = SETTINGS.get_int("location-text-length");
+      let v = this.settings.get_int("location-text-length");
       return v > 0 ? v : 0;
     }
 
     get _center_forecast() {
-      return SETTINGS.get_boolean("center-forecast");
+      return this.settings.get_boolean("center-forecast");
     }
 
     get _days_forecast() {
-      return SETTINGS.get_int("days-forecast");
+      return this.settings.get_int("days-forecast");
     }
 
     get _decimal_places() {
-      return SETTINGS.get_int("decimal-places");
+      return this.settings.get_int("decimal-places");
     }
 
     get _appid() {
       let key = "";
-      let useDefaultKey = SETTINGS.get_boolean("use-default-owm-key");
+      let useDefaultKey = this.settings.get_boolean("use-default-owm-key");
 
       if (useDefaultKey) key = "e54ac00966ee06bcf68722c86925b326";
-      else key = SETTINGS.get_string("appid");
-      return key.length == 32 ? key : "";
+      else key = this.settings.get_string("appid");
+      return key.length === 32 ? key : "";
     }
 
     createButton(iconName, accessibleName) {
@@ -795,13 +794,13 @@ let OpenWeatherMenuButton = GObject.registerClass(
 
       let cities = this._cities;
       cities = cities.split(" && ");
-      if (cities && typeof cities == "string") cities = [cities];
+      if (cities && typeof cities === "string") cities = [cities];
       if (!cities[0]) return;
 
       for (let i = 0; cities.length > i; i++) {
         item = new PopupMenu.PopupMenuItem(this.extractLocation(cities[i]));
         item.location = i;
-        if (i == this._actual_city) {
+        if (i === this._actual_city) {
           item.setOrnament(PopupMenu.Ornament.DOT);
         }
 
@@ -810,7 +809,7 @@ let OpenWeatherMenuButton = GObject.registerClass(
         item.activate = this._onActivate;
       }
 
-      if (cities.length == 1) this._selectCity.actor.hide();
+      if (cities.length === 1) this._selectCity.actor.hide();
       else this._selectCity.actor.show();
     }
 
@@ -821,18 +820,18 @@ let OpenWeatherMenuButton = GObject.registerClass(
     extractLocation() {
       if (!arguments[0]) return "";
 
-      if (arguments[0].search(">") == -1) return _("Invalid city");
+      if (arguments[0].search(">") === -1) return _("Invalid city");
       return arguments[0].split(">")[1];
     }
 
     extractCoord() {
       let coords = 0;
 
-      if (arguments[0] && arguments[0].search(">") != -1)
+      if (arguments[0] && arguments[0].search(">") !== -1)
         coords = arguments[0].split(">")[0].replace(" ", "");
 
       if (
-        coords.search(",") == -1 ||
+        coords.search(",") === -1 ||
         isNaN(coords.split(",")[0]) ||
         isNaN(coords.split(",")[1])
       ) {
@@ -866,7 +865,7 @@ let OpenWeatherMenuButton = GObject.registerClass(
 
       if (
         !this._isForecastDisabled &&
-        this._forecastDays != 0 &&
+        this._forecastDays !== 0 &&
         this._forecastExpander !== undefined
       ) {
         this._forecastScrollBox.set_width(
@@ -875,7 +874,7 @@ let OpenWeatherMenuButton = GObject.registerClass(
         this._forecastScrollBox.show();
         this._forecastScrollBox.hscroll.show();
 
-        if (SETTINGS.get_boolean("expand-forecast")) {
+        if (this.settings.get_boolean("expand-forecast")) {
           this._forecastExpander.setSubmenuShown(true);
         } else {
           this._forecastExpander.setSubmenuShown(false);
@@ -887,13 +886,13 @@ let OpenWeatherMenuButton = GObject.registerClass(
     }
 
     unit_to_unicode() {
-      if (this._units == WeatherUnits.FAHRENHEIT) return _("\u00B0F");
-      else if (this._units == WeatherUnits.KELVIN) return _("K");
-      else if (this._units == WeatherUnits.RANKINE) return _("\u00B0Ra");
-      else if (this._units == WeatherUnits.REAUMUR) return _("\u00B0R\u00E9");
-      else if (this._units == WeatherUnits.ROEMER) return _("\u00B0R\u00F8");
-      else if (this._units == WeatherUnits.DELISLE) return _("\u00B0De");
-      else if (this._units == WeatherUnits.NEWTON) return _("\u00B0N");
+      if (this._units === WeatherUnits.FAHRENHEIT) return _("\u00B0F");
+      else if (this._units === WeatherUnits.KELVIN) return _("K");
+      else if (this._units === WeatherUnits.RANKINE) return _("\u00B0Ra");
+      else if (this._units === WeatherUnits.REAUMUR) return _("\u00B0R\u00E9");
+      else if (this._units === WeatherUnits.ROEMER) return _("\u00B0R\u00F8");
+      else if (this._units === WeatherUnits.DELISLE) return _("\u00B0De");
+      else if (this._units === WeatherUnits.NEWTON) return _("\u00B0N");
       else return _("\u00B0C");
     }
 
@@ -1003,24 +1002,24 @@ let OpenWeatherMenuButton = GObject.registerClass(
       } // No icon available or user prefers built in icons
       else {
         return Gio.icon_new_for_string(
-          metadata.path + "/media/status/" + iconname + ".svg"
+          this.metadata.path + "/media/status/" + iconname + ".svg"
         );
       }
     }
 
     checkAlignment() {
       let menuAlignment = 1.0 - this._menu_alignment / 100;
-      if (Clutter.get_default_text_direction() == Clutter.TextDirection.RTL)
+      if (Clutter.get_default_text_direction() === Clutter.TextDirection.RTL)
         menuAlignment = 1.0 - menuAlignment;
       this.menu._arrowAlignment = menuAlignment;
     }
 
     checkPositionInPanel() {
       if (
-        this._old_position_in_panel == undefined ||
-        this._old_position_in_panel != this._position_in_panel ||
+        this._old_position_in_panel === undefined ||
+        this._old_position_in_panel !== this._position_in_panel ||
         this._first_run ||
-        this._old_position_index != this._position_index
+        this._old_position_index !== this._position_index
       ) {
         this.get_parent().remove_actor(this);
 
@@ -1619,8 +1618,6 @@ let OpenWeatherMenuButton = GObject.registerClass(
   }
 );
 
-export let SETTINGS = null;
-
 export default class OpenWeatherExtension extends Extension {
   /**
    * This class is constructed once when your extension is loaded, not
@@ -1652,8 +1649,10 @@ export default class OpenWeatherExtension extends Extension {
    */
   enable() {
     console.debug(`enabling ${this.metadata.name}`);
-    SETTINGS = this.getSettings();
-    this.openWeatherMenu = new OpenWeatherMenuButton();
+    this.openWeatherMenu = new OpenWeatherMenuButton(
+      this.metadata,
+      this.getSettings()
+    );
     Main.panel.addToStatusArea("openWeatherMenu", this.openWeatherMenu);
   }
 
@@ -1670,6 +1669,5 @@ export default class OpenWeatherExtension extends Extension {
     this.openWeatherMenu.stop();
     this.openWeatherMenu.destroy();
     this.openWeatherMenu = null;
-    SETTINGS = null;
   }
 }

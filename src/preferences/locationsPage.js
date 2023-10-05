@@ -21,10 +21,7 @@ import GObject from "gi://GObject";
 import Soup from "gi://Soup";
 import GLib from "gi://GLib";
 
-import {
-  ExtensionPreferences,
-  gettext as _,
-} from "resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js";
+import { gettext as _ } from "resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js";
 
 // Keep enums in sync with GSettings schemas
 const GeolocationProvider = {
@@ -43,6 +40,7 @@ export const LocationsPage = GObject.registerClass(
         icon_name: "find-location-symbolic",
         name: "LocationsPage",
       });
+      this.metadata = metadata;
       this._window = parent;
       this._settings = settings;
       this._count = null;
@@ -95,8 +93,8 @@ export const LocationsPage = GObject.registerClass(
       let personalApiKeyMQ = this._settings.get_string(
         "geolocation-appid-mapquest"
       );
-      if (personalApiKeyMQ != "") {
-        if (personalApiKeyMQ.length != 32) {
+      if (personalApiKeyMQ !== "") {
+        if (personalApiKeyMQ.length !== 32) {
           personalApiKeyMQEntry.set_icon_from_icon_name(
             Gtk.PositionType.LEFT,
             "dialog-warning"
@@ -139,7 +137,7 @@ export const LocationsPage = GObject.registerClass(
         this._settings.set_enum("geolocation-provider", widget.selected);
       });
       personalApiKeyMQEntry.connect("notify::text", (widget) => {
-        if (widget.text.length == 32) {
+        if (widget.text.length === 32) {
           this._settings.set_string("geolocation-appid-mapquest", widget.text);
           personalApiKeyMQEntry.set_icon_from_icon_name(
             Gtk.PositionType.LEFT,
@@ -150,7 +148,7 @@ export const LocationsPage = GObject.registerClass(
             Gtk.PositionType.LEFT,
             "dialog-warning"
           );
-          if (widget.text.length == 0) {
+          if (widget.text.length === 0) {
             this._settings.set_string("geolocation-appid-mapquest", "");
           }
         }
@@ -160,17 +158,17 @@ export const LocationsPage = GObject.registerClass(
       let _city = this._settings.get_string("city");
 
       // Check if the location list UI needs updating
-      if (this._locListUi != _city) {
+      if (this._locListUi !== _city) {
         if (_city.length > 0) {
           // Remove the old list
           if (this._count) {
-            for (var i = 0; i < this._count; i++) {
+            for (let i = 0; i < this._count; i++) {
               this.locationsGroup.remove(this.location[i].Row);
             }
             this._count = null;
           }
           let city = String(_city).split(" && ");
-          if (city && typeof city == "string") {
+          if (city && typeof city === "string") {
             city = [city];
           }
           this.location = {};
@@ -201,7 +199,7 @@ export const LocationsPage = GObject.registerClass(
               title: this._extractLocation(city[i]),
               subtitle: this._extractCoord(city[i]),
               icon_name:
-                i == this._actualCity
+                i === this._actualCity
                   ? "checkbox-checked-symbolic"
                   : "checkbox-symbolic",
               activatable: true,
@@ -220,7 +218,7 @@ export const LocationsPage = GObject.registerClass(
               this._deleteLocation(i);
             });
             this.location[i].Row.connect("activated", () => {
-              if (i != this._actualCity) {
+              if (i !== this._actualCity) {
                 this.location[i].Row.set_icon_name("checkbox-checked-symbolic");
                 this.location[this._actualCity].Row.set_icon_name(
                   "checkbox-symbolic"
@@ -301,7 +299,7 @@ export const LocationsPage = GObject.registerClass(
 
       // Bind signals
       _dialog.connect("response", (w, response) => {
-        if (response == 0) {
+        if (response === 0) {
           let _location = _findEntry.get_text().trim();
           if (_location === "") {
             // no input
@@ -415,7 +413,7 @@ export const LocationsPage = GObject.registerClass(
         widget.set_text("");
       });
       _dialog.connect("response", (w, response) => {
-        if (response == 0) {
+        if (response === 0) {
           let _location = _editNameEntry.get_text();
           let _coord = _editCoordEntry.get_text();
           let _provider = 0; // preserved for future use
@@ -427,7 +425,7 @@ export const LocationsPage = GObject.registerClass(
             this._window.add_toast(_toast);
             return 0;
           }
-          if (_city.length > 0 && typeof _city != "object") {
+          if (_city.length > 0 && typeof _city !== "object") {
             _city = [_city];
           }
           _city[selected] = _coord + ">" + _location + ">" + _provider;
@@ -490,11 +488,11 @@ export const LocationsPage = GObject.registerClass(
       _dialog.show();
 
       _dialog.connect("response", (w, response) => {
-        if (response == 1) {
+        if (response === 1) {
           if (_city.length === 0) {
             _city = [];
           }
-          if (_city.length > 0 && typeof _city != "object") {
+          if (_city.length > 0 && typeof _city !== "object") {
             _city = [_city];
           }
           if (_city.length > 0) {
@@ -525,7 +523,7 @@ export const LocationsPage = GObject.registerClass(
     }
     _locationsChanged() {
       let _city = this._settings.get_string("city");
-      if (this._locListUi != _city) {
+      if (this._locListUi !== _city) {
         return true;
       }
       return false;
@@ -534,7 +532,7 @@ export const LocationsPage = GObject.registerClass(
       if (!arguments[0]) {
         return "";
       }
-      if (arguments[0].search(">") == -1) {
+      if (arguments[0].search(">") === -1) {
         return _("Invalid city");
       }
       return arguments[0].split(">")[1].trim();
@@ -543,7 +541,7 @@ export const LocationsPage = GObject.registerClass(
       if (!arguments[0]) {
         return 0;
       }
-      if (arguments[0].search(">") == -1) {
+      if (arguments[0].search(">") === -1) {
         return 0;
       }
       return arguments[0].split(">")[0];
@@ -608,7 +606,7 @@ export const SearchResultsWindow = GObject.registerClass(
     async _findLocation() {
       let json = null;
       // OpenStreetMaps
-      if (this._provider == GeolocationProvider.OPENSTREETMAPS) {
+      if (this._provider === GeolocationProvider.OPENSTREETMAPS) {
         let params = {
           format: "json",
           addressdetails: "1",
@@ -632,11 +630,11 @@ export const SearchResultsWindow = GObject.registerClass(
             }
           );
         } catch (e) {
-          log("_findLocation OpenStreetMap error: " + e);
+          console.log("_findLocation OpenStreetMap error: " + e);
         }
       }
       // MapQuest
-      else if (this._provider == GeolocationProvider.MAPQUEST) {
+      else if (this._provider === GeolocationProvider.MAPQUEST) {
         let _mqKey = this._settings.get_string("geolocation-appid-mapquest");
         if (_mqKey === "") {
           this.resultsStatus.set_title(_("AppKey Required"));
@@ -672,11 +670,11 @@ export const SearchResultsWindow = GObject.registerClass(
             }
           );
         } catch (e) {
-          log("_findLocation MapQuest error: " + e);
+          console.log("_findLocation MapQuest error: " + e);
         }
       }
       // Geocode.Farm
-      else if (this._provider == GeolocationProvider.GEOCODE) {
+      else if (this._provider === GeolocationProvider.GEOCODE) {
         let params = {
           addr: this._location,
         };
@@ -706,7 +704,7 @@ export const SearchResultsWindow = GObject.registerClass(
             }
           );
         } catch (e) {
-          log("_findLocation Geocode error: " + e);
+          console.log("_findLocation Geocode error: " + e);
         }
       }
       return 0;
@@ -714,13 +712,13 @@ export const SearchResultsWindow = GObject.registerClass(
     _loadJsonAsync(url, params) {
       return new Promise((resolve, reject) => {
         // Create user-agent string from uuid and the version
-        let _userAgent = Me.metadata.uuid;
+        let _userAgent = this.metadata.uuid;
         if (
-          Me.metadata.version !== undefined &&
-          Me.metadata.version.toString().trim() !== ""
+          this.metadata.version !== undefined &&
+          this.metadata.version.toString().trim() !== ""
         ) {
           _userAgent += "/";
-          _userAgent += Me.metadata.version.toString();
+          _userAgent += this.metadata.version.toString();
         }
 
         let _httpSession = new Soup.Session();
@@ -771,7 +769,7 @@ export const SearchResultsWindow = GObject.registerClass(
 
             let _cityText = json[i]["display_name"];
             let _cityCoord = json[i]["lat"] + "," + json[i]["lon"];
-            if (this._provider == GeolocationProvider.GEOCODE) {
+            if (this._provider === GeolocationProvider.GEOCODE) {
               _cityText = json[i].formatted_address;
               _cityCoord =
                 json[i].COORDINATES.latitude +
