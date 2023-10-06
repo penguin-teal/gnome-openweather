@@ -24,15 +24,14 @@ import {
 } from "resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js";
 
 // Import preferences pages
-import * as GeneralPrefs from "./preferences/generalPage.js";
-import * as LayoutPrefs from "./preferences/layoutPage.js";
-import * as LocationsPrefs from "./preferences/locationsPage.js";
-import * as AboutPrefs from "./preferences/aboutPage.js";
+import { GeneralPage } from "./preferences/generalPage.js";
+import { LayoutPage } from "./preferences/layoutPage.js";
+import { LocationsPage } from "./preferences/locationsPage.js";
+import { AboutPage } from "./preferences/aboutPage.js";
 
 export default class OpenWeatherPreferences extends ExtensionPreferences {
   constructor(metadata) {
     super(metadata);
-    console.debug(`constructing prefs ${this.metadata.name}`);
   }
 
   fillPreferencesWindow(window) {
@@ -43,20 +42,14 @@ export default class OpenWeatherPreferences extends ExtensionPreferences {
 
     window._settings = this.getSettings();
 
-    const generalPage = new GeneralPrefs.GeneralPage(
-      this.metadata,
-      window._settings
-    );
-    const layoutPage = new LayoutPrefs.LayoutPage(
-      this.metadata,
-      window._settings
-    );
-    const locationsPage = new LocationsPrefs.LocationsPage(
+    const generalPage = new GeneralPage(this.metadata, window._settings);
+    const layoutPage = new LayoutPage(this.metadata, window._settings);
+    const locationsPage = new LocationsPage(
       this.metadata,
       window._settings,
       window
     );
-    const aboutPage = new AboutPrefs.AboutPage(this.metadata);
+    const aboutPage = new AboutPage(this.metadata);
 
     let prefsWidth = window._settings.get_int("prefs-default-width");
     let prefsHeight = window._settings.get_int("prefs-default-height");

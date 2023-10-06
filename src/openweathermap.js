@@ -41,7 +41,7 @@ const IconMap = {
   "50n": "weather-fog-symbolic", // "mist night"
 };
 
-export function getWeatherCondition(code) {
+function getWeatherCondition(code) {
   switch (parseInt(code, 10)) {
     case 200: //Thunderstorm with light rain
       return _("Thunderstorm with Light Rain");
@@ -158,7 +158,7 @@ export function getWeatherCondition(code) {
   }
 }
 
-export async function initWeatherData(refresh) {
+async function initWeatherData(refresh) {
   if (refresh) {
     this._lastRefresh = Date.now();
   }
@@ -179,7 +179,7 @@ export async function initWeatherData(refresh) {
   }
 }
 
-export async function reloadWeatherCache() {
+async function reloadWeatherCache() {
   try {
     await this.populateCurrentUI().then(async () => {
       try {
@@ -207,7 +207,7 @@ export async function reloadWeatherCache() {
   }
 }
 
-export async function refreshWeatherData() {
+async function refreshWeatherData() {
   let json = undefined;
   let location = this.extractCoord(this._city);
   let params = {
@@ -242,7 +242,7 @@ export async function refreshWeatherData() {
   this.reloadWeatherCurrent(this._refresh_interval_current);
 }
 
-export async function refreshForecastData() {
+async function refreshForecastData() {
   // Did the user disable the forecast?
   if (this._isForecastDisabled) {
     return;
@@ -319,7 +319,7 @@ export async function refreshForecastData() {
   this.reloadWeatherForecast(this._refresh_interval_forecast);
 }
 
-export function populateCurrentUI() {
+function populateCurrentUI() {
   return new Promise((resolve, reject) => {
     try {
       let json = this.currentWeatherCache;
@@ -405,7 +405,7 @@ export function populateCurrentUI() {
   });
 }
 
-export function populateTodaysUI() {
+function populateTodaysUI() {
   return new Promise((resolve, reject) => {
     try {
       // Populate today's forecast UI
@@ -448,7 +448,7 @@ export function populateTodaysUI() {
   });
 }
 
-export function populateForecastUI() {
+function populateForecastUI() {
   return new Promise((resolve, reject) => {
     try {
       // Populate 5 day / 3 hour forecast UI
@@ -506,7 +506,7 @@ export function populateForecastUI() {
   });
 }
 
-export function loadJsonAsync(url, params) {
+function loadJsonAsync(url, params) {
   return new Promise((resolve, reject) => {
     // Create user-agent string from uuid and (if present) the version
     let _userAgent = "openweather-extension@jenslody.de/122";
@@ -541,7 +541,7 @@ export function loadJsonAsync(url, params) {
   });
 }
 
-export function processTodaysData(json) {
+function processTodaysData(json) {
   return new Promise((resolve, reject) => {
     try {
       let data = json.list;
@@ -556,7 +556,7 @@ export function processTodaysData(json) {
   });
 }
 
-export function processForecastData(json) {
+function processForecastData(json) {
   return new Promise((resolve, reject) => {
     try {
       let a = 0;
@@ -606,3 +606,16 @@ export function processForecastData(json) {
     }
   });
 }
+
+export {
+  initWeatherData,
+  reloadWeatherCache,
+  refreshWeatherData,
+  populateCurrentUI,
+  refreshForecastData,
+  populateTodaysUI,
+  populateForecastUI,
+  processTodaysData,
+  processForecastData,
+  loadJsonAsync,
+};

@@ -16,12 +16,31 @@ This is a fork from https://gitlab.com/skrewball/openweather
 * learn how to write a gnome extension
 * make the codebase more maintainable
 
+### todos
+
+* BUG: change location from menu not working
+* BUG: initial button not placed correctly
+* consider .ui files for prefs
+* consider a object for weather provider
+* review schema (e.g. clock-format)
+* should I be passing settings/metadata around?
+* merge in changes from upstream MR/distro patches if any
+* linting? global not seen
+* CI automation
+* publish automation?
+* code review
+* test plan (wayland X11, dark mode, light mode, i18n)
+* review memory leaks/network calls
+
 ### dev notes
 
 * https://gjs.guide/extensions/development/creating.html#extension-js
 * env MUTTER_DEBUG_DUMMY_MODE_SPECS=1280x1024 dbus-run-session -- gnome-shell --nested --wayland
 * npx eslint src 
-
+* https://gjs.guide/extensions/upgrading/gnome-shell-45.html#prefs-js
+* review guidelines https://gjs.guide/extensions/review-guidelines/review-guidelines.html#basics
+* https://gitlab.gnome.org/ewlsh/gjs-guide/-/tree/main/src/guides/gjs/style-guide
+* good extensions https://github.com/paperwm/PaperWM https://github.com/home-sweet-gnome/dash-to-panel https://github.com/aunetx/blur-my-shell https://github.com/daniellandau/switcher (As there is no really good central place to find documentation on writing Gnome Shell Extensions I'll list here where I got information from)
 
 
 <p align="left">
