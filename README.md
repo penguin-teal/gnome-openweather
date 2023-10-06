@@ -11,8 +11,8 @@ This is a fork from https://gitlab.com/skrewball/openweather
 
 ### goals
 
-* gnome 45 compatability
-* address lint issues
+* DONE: gnome 45 compatability
+* PARITAL: address lint issues
 * learn how to write a gnome extension
 * make the codebase more maintainable
 
@@ -31,6 +31,7 @@ This is a fork from https://gitlab.com/skrewball/openweather
 * code review
 * test plan (wayland X11, dark mode, light mode, i18n)
 * review memory leaks/network calls
+* publish fork: https://gitlab.gnome.org/Infrastructure/extensions-web/-/issues/269
 
 ### dev notes
 
@@ -41,6 +42,7 @@ This is a fork from https://gitlab.com/skrewball/openweather
 * review guidelines https://gjs.guide/extensions/review-guidelines/review-guidelines.html#basics
 * https://gitlab.gnome.org/ewlsh/gjs-guide/-/tree/main/src/guides/gjs/style-guide
 * good extensions https://github.com/paperwm/PaperWM https://github.com/home-sweet-gnome/dash-to-panel https://github.com/aunetx/blur-my-shell https://github.com/daniellandau/switcher (As there is no really good central place to find documentation on writing Gnome Shell Extensions I'll list here where I got information from)
+* seek help: https://app.element.io/#/room/#extensions:gnome.org
 
 
 <p align="left">
