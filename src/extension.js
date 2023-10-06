@@ -33,50 +33,17 @@ import * as PopupMenu from "resource:///org/gnome/shell/ui/popupMenu.js";
 import * as GnomeSession from "resource:///org/gnome/shell/misc/gnomeSession.js";
 
 import * as OpenWeatherMap from "./openweathermap.js";
+import {
+  WeatherUnits,
+  WeatherWindSpeedUnits,
+  WeatherPressureUnits,
+  WeatherPosition,
+} from "./constants.js";
 
 let _firstBoot = 1;
 let _timeCacheCurrentWeather;
 let _timeCacheForecastWeather;
 // Keep enums in sync with GSettings schemas
-const WeatherProvider = {
-  OPENWEATHERMAP: 0,
-};
-const WeatherUnits = {
-  CELSIUS: 0,
-  FAHRENHEIT: 1,
-  KELVIN: 2,
-  RANKINE: 3,
-  REAUMUR: 4,
-  ROEMER: 5,
-  DELISLE: 6,
-  NEWTON: 7,
-};
-const WeatherWindSpeedUnits = {
-  KPH: 0,
-  MPH: 1,
-  MPS: 2,
-  KNOTS: 3,
-  FPS: 4,
-  BEAUFORT: 5,
-};
-const WeatherPressureUnits = {
-  HPA: 0,
-  INHG: 1,
-  BAR: 2,
-  PA: 3,
-  KPA: 4,
-  ATM: 5,
-  AT: 6,
-  TORR: 7,
-  PSI: 8,
-  MMHG: 9,
-  MBAR: 10,
-};
-const WeatherPosition = {
-  CENTER: 0,
-  RIGHT: 1,
-  LEFT: 2,
-};
 
 //hack (for Wayland?) via https://gitlab.gnome.org/GNOME/gnome-shell/-/issues/1997
 //https://github.com/home-sweet-gnome/dash-to-panel/commit/31e7275608fb0a4a13e406b1f841b084404c1f9e
@@ -1608,30 +1575,8 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
 }
 
 export default class OpenWeatherExtension extends Extension {
-  /**
-   * This class is constructed once when your extension is loaded, not
-   * enabled. This is a good time to setup translations or anything else you
-   * only do once.
-   *
-   * You MUST NOT make any changes to GNOME Shell, connect any signals or add
-   * any event sources here.
-   *
-   * @param {ExtensionMeta} metadata - An extension meta object
-   */
-  constructor(metadata) {
-    super(metadata);
-    console.debug(`constructing ${this.metadata.name}`);
-  }
-
-  /**
-   * This function is called when your extension is enabled, which could be
-   * done in GNOME Extensions, when you log in or when the screen is unlocked.
-   *
-   * This is when you should setup any UI for your extension, change existing
-   * widgets, connect signals or modify GNOME Shell's behavior.
-   */
   enable() {
-    console.debug(`enabling ${this.metadata.name}`);
+    console.log(`enabling ${this.metadata.name}`);
     this.openWeatherMenu = new OpenWeatherMenuButton(
       this.metadata,
       this.getSettings()
@@ -1639,16 +1584,8 @@ export default class OpenWeatherExtension extends Extension {
     Main.panel.addToStatusArea("openWeatherMenu", this.openWeatherMenu);
   }
 
-  /**
-   * This function is called when your extension is uninstalled, disabled in
-   * GNOME Extensions or when the screen locks.
-   *
-   * Anything you created, modified or setup in enable() MUST be undone here.
-   * Not doing so is the most common reason extensions are rejected in review!
-   */
   disable() {
-    console.debug(`disabling ${this.metadata.name}`);
-
+    console.log(`disabling ${this.metadata.name}`);
     this.openWeatherMenu.stop();
     this.openWeatherMenu.destroy();
     this.openWeatherMenu = null;

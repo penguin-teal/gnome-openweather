@@ -3,10 +3,10 @@
 PKG_NAME = gnome-shell-extension-openweather
 UUID = openweather-extension@jenslody.de
 BASE_MODULES = metadata.json COPYING AUTHORS
-SRC_MODULES = extension.js openweathermap.js prefs.js stylesheet.css
-PREFS_MODULES = generalPage.js layoutPage.js locationsPage.js aboutPage.js
+SRC_MODULES = extension.js openweathermap.js prefs.js stylesheet.css constants.js
+PREFS_MODULES = generalPage.js layoutPage.js locationsPage.js aboutPage.js searchResultsWindow.js
 EXTRA_DIRECTORIES = media
-TOLOCALIZE = $(addprefix src/, extension.js openweathermap.js prefs.js) \
+TOLOCALIZE = $(addprefix src/, extension.js openweathermap.js prefs.js constants.js) \
              $(addprefix src/preferences/, $(PREFS_MODULES)) \
              schemas/org.gnome.shell.extensions.openweather.gschema.xml
 MSGSRC = $(wildcard po/*.po)
