@@ -59,7 +59,7 @@ class AboutPage extends Adw.PreferencesPage {
     });
     let aboutDescription = new Gtk.Label({
       label: _(
-        "Display weather information for any location on Earth in the GNOME Shell"
+        "Display weather information for any location on Earth in the GNOME Shell."
       ),
       margin_bottom: 3,
       hexpand: false,
