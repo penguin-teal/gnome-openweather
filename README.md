@@ -35,11 +35,11 @@ Then run the following commands:
 
 ```
 git clone https://github.com/penguin-teal/gnome-openweather.git
-```
-```
-cd openweather
-```
-```
+
+cd gnome-openweather
+
+git switch --detach latest
+
 make && make install
 ```
 
