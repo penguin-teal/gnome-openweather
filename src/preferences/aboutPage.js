@@ -18,7 +18,6 @@
 import Adw from "gi://Adw";
 import GLib from "gi://GLib";
 import Gtk from "gi://Gtk";
-import GdkPixbuf from "gi://GdkPixbuf";
 import GObject from "gi://GObject";
 
 import { PACKAGE_VERSION } from "resource:///org/gnome/Shell/Extensions/js/misc/config.js";
@@ -128,7 +127,6 @@ class AboutPage extends Adw.PreferencesPage {
 
     // Maintainer
     let maintainerGroup = new Adw.PreferencesGroup();
-    let imageLinksGroup = new Adw.PreferencesGroup();
 
     let maintainerBox = new Gtk.Box({
       orientation: Gtk.Orientation.VERTICAL,
@@ -136,43 +134,16 @@ class AboutPage extends Adw.PreferencesPage {
       vexpand: false,
     });
     let maintainerAbout = new Gtk.Label({
-      label: _("Maintained by: %s").format("Jason Oickle"),
+        label: _("Maintained by: %s").format(
+            "<a href=\"https://github.com/penguin-teal/gnome-openweather\">Teal Penguin</a>"
+        ),
       hexpand: false,
       vexpand: false,
     });
 
-    let pixbuf = GdkPixbuf.Pixbuf.new_from_file_at_scale(
-      metadata.path + "/media/donate-icon.png",
-      -1,
-      50,
-      true
-    );
-    let donateImage = Gtk.Picture.new_for_pixbuf(pixbuf);
-    let donateButton = new Gtk.LinkButton({
-      child: donateImage,
-      uri: "https://www.paypal.com/donate/?hosted_button_id=VZ7VLXPU2M9RQ",
-    });
-
-    pixbuf = GdkPixbuf.Pixbuf.new_from_file_at_scale(
-      metadata.path + "/media/gitlab-icon.png",
-      -1,
-      50,
-      true
-    );
-    let gitlabImage = Gtk.Picture.new_for_pixbuf(pixbuf);
-    let gitlabButton = new Gtk.LinkButton({
-      child: gitlabImage,
-      uri: metadata.url,
-    });
-    let imageLinksBox = new Adw.ActionRow();
-
     maintainerBox.append(maintainerAbout);
-    imageLinksBox.add_prefix(donateButton);
-    imageLinksBox.add_suffix(gitlabButton);
     maintainerGroup.add(maintainerBox);
-    imageLinksGroup.add(imageLinksBox);
     this.add(maintainerGroup);
-    this.add(imageLinksGroup);
 
     // Provider
     let providerGroup = new Adw.PreferencesGroup();
@@ -184,7 +155,7 @@ class AboutPage extends Adw.PreferencesPage {
     });
     let providerAbout = new Gtk.Label({
       label: _("Weather data provided by: %s").format(
-        '<a href="https://openweathermap.org">OpenWeatherMap</a>'
+        "<a href=\"https://openweathermap.org\">OpenWeatherMap</a>"
       ),
       use_markup: true,
       hexpand: false,
