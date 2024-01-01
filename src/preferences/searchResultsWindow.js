@@ -250,8 +250,25 @@ class SearchResultsWindow extends Adw.PreferencesWindow {
       }
     });
   }
+
+  // Simplify the name returned by OSM.
+  _simplifyName(s)
+  {
+    // Locations in the USA I'd expect to be City, State.
+    // Plus a city isn't always in one county anyway so this is hardly
+    // accurate
+    let usa = s.match(/^(\S+), \S+ County, (\S+), United States$/);
+    if(usa)
+    {
+        let city = usa[1];
+        let state = usa[2];
+        return `${city}, ${state}`;
+    }
+    else return s;
+  }
+
   _saveResult(widget) {
-    let _location = widget.get_title();
+    let _location = this._simplifyName(widget.get_title());
     let _coord = widget.get_subtitle();
     let _city = this._settings.get_string("city");
 
