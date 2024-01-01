@@ -134,9 +134,10 @@ class AboutPage extends Adw.PreferencesPage {
       vexpand: false,
     });
     let maintainerAbout = new Gtk.Label({
-        label: _("Maintained by: %s").format(
-            "<a href=\"https://github.com/penguin-teal/gnome-openweather\">Teal Penguin</a>"
-        ),
+      label: _("Maintained by: %s").format(
+        "<a href=\"https://github.com/penguin-teal/gnome-openweather\">Teal Penguin</a>"
+      ),
+      use_markup: true,
       hexpand: false,
       vexpand: false,
     });
