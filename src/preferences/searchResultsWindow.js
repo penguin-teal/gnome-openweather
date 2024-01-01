@@ -257,7 +257,7 @@ class SearchResultsWindow extends Adw.PreferencesWindow {
     // Locations in the USA I'd expect to be City, State.
     // Plus a city isn't always in one county anyway so this is hardly
     // accurate
-    let usa = s.match(/^(\S+), \S+ County, (\S+), United States$/);
+    let usa = s.match(/^(.+), .+ County, (.+), United States$/);
     if(usa)
     {
         let city = usa[1];
