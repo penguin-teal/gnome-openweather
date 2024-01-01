@@ -1211,7 +1211,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
   }
 
   showRefreshing() {
-    this._currentWeatherSummary.text = _("Loading ...");
+    this._currentWeatherSummary.text = "...";
     this._currentWeatherIcon.icon_name = "view-refresh-symbolic";
   }
 
@@ -1251,7 +1251,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
 
     // The summary of the current weather
     this._currentWeatherSummary = new St.Label({
-      text: _("Loading ..."),
+      text: "...",
       style_class: "openweather-current-summary",
     });
     this._currentWeatherLocation = new St.Label({
