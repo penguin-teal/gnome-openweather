@@ -280,6 +280,10 @@ msgstr ""
 msgid "ft/s"
 msgstr "قدم\\ث"
 
+#: src/extension.js:1227 src/extension.js:1265
+msgid "Loading ..."
+msgstr "يُحمّل…"
+
 #: src/extension.js:1269
 msgid "Please wait"
 msgstr "رجاء انتظر"

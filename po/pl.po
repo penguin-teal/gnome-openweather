@@ -284,6 +284,10 @@ msgstr "w."
 msgid "ft/s"
 msgstr "ft/s"
 
+#: src/extension.js:1227 src/extension.js:1265
+msgid "Loading ..."
+msgstr "Wczytywanie..."
+
 #: src/extension.js:1269
 msgid "Please wait"
 msgstr "Proszę czekać"

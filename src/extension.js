@@ -72,7 +72,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     });
     this._weatherInfo = new St.Label({
       style_class: "openweather-label",
-      text: "...",
+      text: _("Loading"),
       y_align: Clutter.ActorAlign.CENTER,
       y_expand: true,
     });
@@ -1211,7 +1211,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
   }
 
   showRefreshing() {
-    this._currentWeatherSummary.text = "...";
+    this._currentWeatherSummary.text = _("Loading ...");
     this._currentWeatherIcon.icon_name = "view-refresh-symbolic";
   }
 
@@ -1251,7 +1251,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
 
     // The summary of the current weather
     this._currentWeatherSummary = new St.Label({
-      text: "...",
+      text: _("Loading ..."),
       style_class: "openweather-current-summary",
     });
     this._currentWeatherLocation = new St.Label({

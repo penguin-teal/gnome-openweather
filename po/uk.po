@@ -280,6 +280,10 @@ msgstr "вузли"
 msgid "ft/s"
 msgstr "фут/с"
 
+#: src/extension.js:1227 src/extension.js:1265
+msgid "Loading ..."
+msgstr "Завантаження ..."
+
 #: src/extension.js:1269
 msgid "Please wait"
 msgstr "Зачекайте"

@@ -284,6 +284,10 @@ msgstr "уз"
 msgid "ft/s"
 msgstr "фут/с"
 
+#: src/extension.js:1227 src/extension.js:1265
+msgid "Loading ..."
+msgstr "Загрузка ..."
+
 #: src/extension.js:1269
 msgid "Please wait"
 msgstr "Пожалуйста подождите"

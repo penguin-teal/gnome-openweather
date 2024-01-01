@@ -275,6 +275,10 @@ msgstr ""
 msgid "ft/s"
 msgstr ""
 
+#: src/extension.js:1227 src/extension.js:1265
+msgid "Loading ..."
+msgstr "Įkeliama..."
+
 #: src/extension.js:1269
 msgid "Please wait"
 msgstr "Palaukite"
