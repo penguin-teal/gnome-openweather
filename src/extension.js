@@ -1387,7 +1387,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       let todaysForecast = {};
 
       todaysForecast.Time = new St.Label({
-        style_class: "openweather-forcast-time",
+        style_class: "openweather-forecast-time",
       });
       todaysForecast.Icon = new St.Icon({
         icon_size: 24,
@@ -1508,7 +1508,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
         forecastWeather[j] = {};
 
         forecastWeather[j].Time = new St.Label({
-          style_class: "openweather-forcast-time",
+          style_class: "openweather-forecast-time",
         });
         forecastWeather[j].Icon = new St.Icon({
           icon_size: 24,
