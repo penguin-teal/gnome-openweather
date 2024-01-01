@@ -43,8 +43,6 @@ cd openweather
 make && make install
 ```
 
-<br>
-
 ## Bugs
 
 Bugs should be reported
@@ -54,8 +52,6 @@ on the GitHub issues page.
 When submitting a bug report, please make sure to provide as much information
 as you can about the issue, your Linux distribution, GNOME Shell version,
 and OpenWeather (*gnome-shell-extension-openweather*) version.
-
-<br>
 
 ## Credits
 
