@@ -1,6 +1,8 @@
 
 # OpenWeather
 
+[![Screenshot](./openweather-screenshot.png)](./openweather-screenshot.png)
+
 OpenWeather (*gnome-shell-extension-openweather*) is a simple extension for
 displaying weather conditions and forecasts for any location on Earth in the
 GNOME Shell. It provides support for multiple locations with editable names

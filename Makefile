@@ -106,3 +106,4 @@ ifdef VERSION
 else ifneq ($(strip $(GIT_VER)),)
 	sed -i '/"version": .*/i\ \ "git-version": "$(GIT_VER)",' _build/metadata.json;
 endif
+
