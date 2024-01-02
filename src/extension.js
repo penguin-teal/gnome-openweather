@@ -491,9 +491,11 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     return false;
   }
 
-  locationChanged() {
-    let location = this.extractCoord(this._city);
-    if (this._currentLocation !== location) {
+  locationChanged()
+  {
+    let location = this._city ? this.extractCoord(this._city) : null;
+    if (this._currentLocation !== location)
+    {
       return true;
     }
     return false;
@@ -789,16 +791,15 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     return arguments[0].split(">")[1];
   }
 
-  extractCoord()
+  extractCoord(loc)
   {
-    let first = arguments[0];
-    if (first && first.search(">") !== -1)
+    if (loc && loc.search(">") !== -1)
     {
-      let coords = first.split(">")[0].replace(/\s/g, "");
+      let coords = loc.split(">")[0].replace(/\s/g, "");
+      let split = coords.split(",");
       if(
-        coords.search(",") === -1 &&
-        !isNaN(coords.split(",")[0]) &&
-        !isNaN(coords.split(",")[1])
+        split && split.length === 2 &&
+        !isNaN(split[0]) && !isNaN(split[1])
       )
       {
         return coords;
