@@ -508,13 +508,9 @@ function populateForecastUI() {
 
 function loadJsonAsync(url, params) {
   return new Promise((resolve, reject) => {
-    // Create user-agent string from uuid and (if present) the version
-    let _userAgent = "openweather-extension@jenslody.de/122";
     let _httpSession = new Soup.Session();
     let _paramsHash = Soup.form_encode_hash(params);
     let _message = Soup.Message.new_from_encoded_form("GET", url, _paramsHash);
-    // add trailing space, so libsoup adds its own user-agent
-    _httpSession.user_agent = _userAgent + " ";
 
     _httpSession.send_and_read_async(
       _message,
