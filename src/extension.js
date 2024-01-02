@@ -261,7 +261,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
 
   getWeatherProviderURL() {
     let url = "https://openweathermap.org";
-    url += "/city/" + this.owmCityId;
+    if(this.owmCityId) url += "/city/" + this.owmCityId;
     return url;
   }
 
@@ -739,11 +739,14 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     this._urlButton.connect("clicked", () => {
       this.menu.close();
       let url = this.getWeatherProviderURL();
-      try {
-        Gtk.show_uri(null, url, GLib.get_current_time());
-      } catch (err) {
+      try
+      {
+        Gtk.show_uri(null, url, 0);
+      }
+      catch (err)
+      {
         let title = _("Can not open %s").format(url);
-        Main.notifyError(title, err);
+        Main.notifyError(title, String(err));
       }
     });
     this._prefsButton.connect(
