@@ -789,8 +789,8 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     return arguments[0].split(">")[1];
   }
 
-  extractCoord() {
-
+  extractCoord()
+  {
     let first = arguments[0];
     if (first && first.search(">") !== -1)
     {
@@ -805,6 +805,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       }
     }
     else
+    {
       Main.notify(
         "OpenWeather",
         _("Invalid location! Please try to recreate it.")
