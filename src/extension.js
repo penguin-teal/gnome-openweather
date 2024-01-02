@@ -794,7 +794,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     let first = arguments[0];
     if (first && first.search(">") !== -1)
     {
-      let coords = arguments[0].split(">")[0].replace(/\s/, "");
+      let coords = first.split(">")[0].replace(/\s/, "");
       if(
         coords.search(",") === -1 &&
         !isNaN(coords.split(",")[0]) &&
