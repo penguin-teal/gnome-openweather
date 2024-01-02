@@ -133,16 +133,22 @@ class AboutPage extends Adw.PreferencesPage {
       hexpand: false,
       vexpand: false,
     });
+    let repoLink = "<a href=\"https://github.com/penguin-teal/gnome-openweather\">%s</a>";
     let maintainerAbout = new Gtk.Label({
-      label: _("Maintained by: %s").format(
-        "<a href=\"https://github.com/penguin-teal/gnome-openweather\">Teal Penguin</a>"
-      ),
+      label: _("Maintained by: %s").format(repoLink.format("Teal Penguin")),
       use_markup: true,
       hexpand: false,
       vexpand: false,
     });
+    let contribute = new Gtk.Label({
+      label: _("Contribute or translate the project on %s.").format(repoLink.format("GitHub")),
+      use_markup: true,
+      hexpand: false,
+      vexpand: false
+    });
 
     maintainerBox.append(maintainerAbout);
+    maintainerBox.append(contribute);
     maintainerGroup.add(maintainerBox);
     this.add(maintainerGroup);
 
