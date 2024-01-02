@@ -11,9 +11,7 @@ using coordinates to store the locations, a beautiful layout, and more.
 Weather data is fetched from [OpenWeatherMap](https://openweathermap.org)
 including 3 hour forecasts for up to 5 days.
 
-## v123 so far
-
-Here's what this v123 fork changes so far:
+## v123
 
 - GNOME 45 Support (from Kenneth Topp's fork)
 - Simplify unnecessarily long names (e.g. 'Savannah, Chatham County, Georgia, United States' -> 'Savnnah, Georgia')
