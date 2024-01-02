@@ -3,7 +3,7 @@
     "description": "Display weather information for any location on Earth in the GNOME Shell",
     "shell-version": [ "45" ],
     "url": "https://github.com/penguin-teal/gnome-openweather",
-    "uuid": "openweather-extension@jenslody.de",
+    "uuid": "openweather-extension@penguin-teal.github.io",
     "settings-schema": "org.gnome.shell.extensions.openweather",
     "gettext-domain": "gnome-shell-extension-openweather",
     "version": 123
