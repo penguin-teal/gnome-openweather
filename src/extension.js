@@ -828,7 +828,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
   _onPreferencesActivate() {
     this.menu.close();
     let extensionObject = Extension.lookupByUUID(
-      "openweather-extension@jenslody.de"
+      "openweather-extension@penguin-teal.github.io"
     );
     extensionObject.openPreferences();
     return 0;
