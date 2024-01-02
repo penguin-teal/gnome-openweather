@@ -790,24 +790,27 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
   }
 
   extractCoord() {
-    let coords = 0;
 
-    if (arguments[0] && arguments[0].search(">") !== -1)
-      coords = arguments[0].split(">")[0].replace(" ", "");
-
-    if (
-      coords.search(",") === -1 ||
-      isNaN(coords.split(",")[0]) ||
-      isNaN(coords.split(",")[1])
-    ) {
+    let first = arguments[0];
+    if (first && first.search(">") !== -1)
+    {
+      let coords = arguments[0].split(">")[0].replace(/\s/, "");
+      if(
+        coords.search(",") === -1 &&
+        !isNaN(coords.split(",")[0]) &&
+        !isNaN(coords.split(",")[1])
+      )
+      {
+        return coords;
+      }
+    }
+    else
       Main.notify(
         "OpenWeather",
         _("Invalid location! Please try to recreate it.")
       );
-      return 0;
+      return null;
     }
-
-    return coords;
   }
 
   extractProvider() {
