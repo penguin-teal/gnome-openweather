@@ -333,27 +333,12 @@ function populateCurrentUI() {
       let temperature = this.formatTemperature(json.main.temp);
       let sunrise = new Date(json.sys.sunrise * 1000);
       let sunset = new Date(json.sys.sunset * 1000);
-      let now = new Date();
-      let lastBuild = "-";
+      let lastBuild;
 
-      if (this._clockFormat === "24h") {
-        sunrise = sunrise.toLocaleTimeString([this.locale], { hour12: false });
-        sunset = sunset.toLocaleTimeString([this.locale], { hour12: false });
-        lastBuild = now.toLocaleTimeString([this.locale], { hour12: false });
-      } else {
-        sunrise = sunrise.toLocaleTimeString([this.locale], {
-          hour: "numeric",
-          minute: "numeric",
-        });
-        sunset = sunset.toLocaleTimeString([this.locale], {
-          hour: "numeric",
-          minute: "numeric",
-        });
-        lastBuild = now.toLocaleTimeString([this.locale], {
-          hour: "numeric",
-          minute: "numeric",
-        });
-      }
+      let timeOpts = { hour12: this._clockFormat !== "24h" };
+      sunrise = sunrise.toLocaleTimeString(this.locale, timeOpts);
+      sunset = sunset.toLocaleTimeString(this.locale, timeOpts);
+      lastBuild = new Date().toLocaleTimeString(this.locale, timeOpts);
 
       let iconname = IconMap[json.weather[0].icon];
       this._currentWeatherIcon.set_gicon(this.getWeatherIcon(iconname));
@@ -424,18 +409,13 @@ function populateTodaysUI() {
 
         let comment = forecastDataToday.weather[0].description;
         if (this._translate_condition && !this._providerTranslations)
+        {
           comment = getWeatherCondition(forecastDataToday.weather[0].id);
-
-        if (this._clockFormat === "24h") {
-          forecastTime = forecastTime.toLocaleTimeString([this.locale], {
-            hour12: false,
-          });
-          forecastTime = forecastTime.substring(0, forecastTime.length - 3);
-        } else {
-          forecastTime = forecastTime.toLocaleTimeString([this.locale], {
-            hour: "numeric",
-          });
         }
+
+        forecastTime = forecastTime.toLocaleTimeString(this.locale, {
+          hour12: this._clockFormat !== "24h"
+        });
         forecastTodayUi.Time.text = forecastTime;
         forecastTodayUi.Icon.set_gicon(this.getWeatherIcon(iconname));
         forecastTodayUi.Temperature.text = forecastTemp;
@@ -481,18 +461,13 @@ function populateForecastUI() {
 
           let comment = forecastData[j].weather[0].description;
           if (this._translate_condition && !this._providerTranslations)
+          {
             comment = getWeatherCondition(forecastData[j].weather[0].id);
-
-          if (this._clockFormat === "24h") {
-            forecastDate = forecastDate.toLocaleTimeString([this.locale], {
-              hour12: false,
-            });
-            forecastDate = forecastDate.substring(0, forecastDate.length - 3);
-          } else {
-            forecastDate = forecastDate.toLocaleTimeString([this.locale], {
-              hour: "numeric",
-            });
           }
+
+          forecastDate = forecastDate.toLocaleTimeString(this.locale, {
+              hour12: this._clockFormat !== "24h"
+          });
           forecastUi[j].Time.text = forecastDate;
           forecastUi[j].Icon.set_gicon(this.getWeatherIcon(iconname));
           forecastUi[j].Temperature.text = forecastTemp;
