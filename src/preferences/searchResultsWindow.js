@@ -70,19 +70,28 @@ class SearchResultsWindow extends Adw.PreferencesWindow {
         q: this._location,
       };
       let _osmUrl = "https://nominatim.openstreetmap.org/search";
-      try {
-        json = await this._loadJsonAsync(_osmUrl, params).then(async (json) => {
-          if (!json) {
+      try
+      {
+        json = await this._loadJsonAsync(_osmUrl, params).then(async (ret) =>
+        {
+          if (!ret)
+          {
             this._resultsError(true);
             throw new Error("Server returned an invalid response");
           }
-          if (Number(json.length) < 1) {
+          if (Number(json.length) < 1)
+          {
             this._resultsError(false);
             return 0;
-          } else {
+          }
+          else
+          {
             await this._processResults(json);
             return 0;
           }
+        }, () =>
+        {
+          this._resultsError(true);
         });
       } catch (e) {
         console.warn("_findLocation OpenStreetMap error: " + e);
@@ -189,18 +198,23 @@ class SearchResultsWindow extends Adw.PreferencesWindow {
         GLib.PRIORITY_DEFAULT,
         null,
         (_httpSession, _message) => {
-          let _jsonString = _httpSession
-            .send_and_read_finish(_message)
-            .get_data();
-          if (_jsonString instanceof Uint8Array) {
-            _jsonString = new TextDecoder().decode(_jsonString);
-          }
-          try {
-            if (!_jsonString) {
+          try
+          {
+            let jsonString = _httpSession.send_and_read_finish(_message).get_data();
+            if (jsonString instanceof Uint8Array)
+            {
+              jsonString = new TextDecoder().decode(jsonString);
+            }
+
+            if (!jsonString)
+            {
               throw new Error("No data in response body");
             }
-            resolve(JSON.parse(_jsonString));
-          } catch (e) {
+
+            resolve(JSON.parse(jsonString));
+          }
+          catch (e)
+          {
             _httpSession.abort();
             reject(e);
           }
