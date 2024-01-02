@@ -148,7 +148,7 @@
       <summary>Number of days in forecast</summary>
     </key>
     <key type="i" name="decimal-places">
-      <default>1</default>
+      <default>0</default>
       <summary>Maximal number of digits after the decimal point</summary>
     </key>
     <key type="s" name="appid">
