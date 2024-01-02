@@ -14,7 +14,7 @@ including 3 hour forecasts for up to 5 days.
 ## v123
 
 - GNOME 45 Support (from Kenneth Topp's fork)
-- Simplify unnecessarily long names (e.g. 'Savannah, Chatham County, Georgia, United States' -> 'Savnnah, Georgia')
+- Simplify unnecessarily long names (e.g. 'Savannah, Chatham County, Georgia, United States' -> 'Savannah, Georgia')
 - Making 'Loading' message '...' since it was sometimes way too long
 - Fix "Weather Data By..." URL not opening website
 - Fix weird errors that happen sometimes when deleting a location
