@@ -508,10 +508,6 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     return false;
   }
 
-  get _clockFormat() {
-    return this.settings.get_string("clock-format");
-  }
-
   get _weather_provider() {
     // Simplify until more providers are added
     return 0;
@@ -1182,6 +1178,16 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
         " " +
         unit
       );
+  }
+
+  formatTime(date)
+  {
+    return date.toLocaleTimeString(this.locale, {
+      // 12/24 hour and hide seconds
+      hour12: this.settings.get_string("clock_format") !== "24hr",
+      hour: "numeric",
+      minute: "numeric"
+    });
   }
 
   reloadWeatherCurrent(interval) {

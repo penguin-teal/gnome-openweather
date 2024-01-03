@@ -333,12 +333,7 @@ function populateCurrentUI() {
       let temperature = this.formatTemperature(json.main.temp);
       let sunrise = new Date(json.sys.sunrise * 1000);
       let sunset = new Date(json.sys.sunset * 1000);
-      let lastBuild;
-
-      let timeOpts = { hour12: this._clockFormat !== "24h" };
-      sunrise = sunrise.toLocaleTimeString(this.locale, timeOpts);
-      sunset = sunset.toLocaleTimeString(this.locale, timeOpts);
-      lastBuild = new Date().toLocaleTimeString(this.locale, timeOpts);
+      let lastBuild = new Date();
 
       let iconname = IconMap[json.weather[0].icon];
       this._currentWeatherIcon.set_gicon(this.getWeatherIcon(iconname));
@@ -370,9 +365,11 @@ function populateCurrentUI() {
       this._currentWeatherPressure.text = this.formatPressure(
         json.main.pressure
       );
-      this._currentWeatherSunrise.text = sunrise;
-      this._currentWeatherSunset.text = sunset;
-      this._currentWeatherBuild.text = lastBuild;
+
+      this._currentWeatherSunrise.text = this.formatTime(sunrise);
+      this._currentWeatherSunset.text = this.formatTime(sunset);
+      this._currentWeatherBuild.text = this.formatTime(lastBuild);
+
       if (json.wind !== undefined && json.wind.deg !== undefined) {
         this._currentWeatherWind.text = this.formatWind(
           json.wind.speed,
@@ -413,10 +410,7 @@ function populateTodaysUI() {
           comment = getWeatherCondition(forecastDataToday.weather[0].id);
         }
 
-        forecastTime = forecastTime.toLocaleTimeString(this.locale, {
-          hour12: this._clockFormat !== "24h"
-        });
-        forecastTodayUi.Time.text = forecastTime;
+        forecastTodayUi.Time.text = this.formatTime(forecastTime);
         forecastTodayUi.Icon.set_gicon(this.getWeatherIcon(iconname));
         forecastTodayUi.Temperature.text = forecastTemp;
         forecastTodayUi.Summary.text = comment;
@@ -453,9 +447,7 @@ function populateForecastUI() {
               forecastUi.Day.text =
                 "\n" + this.getLocaleDay(forecastDate.getDay());
           }
-          let iconTime = forecastDate.toLocaleTimeString([this.locale], {
-            hour12: false,
-          });
+
           let iconname = IconMap[forecastData[j].weather[0].icon];
           let forecastTemp = this.formatTemperature(forecastData[j].main.temp);
 
@@ -465,10 +457,7 @@ function populateForecastUI() {
             comment = getWeatherCondition(forecastData[j].weather[0].id);
           }
 
-          forecastDate = forecastDate.toLocaleTimeString(this.locale, {
-              hour12: this._clockFormat !== "24h"
-          });
-          forecastUi[j].Time.text = forecastDate;
+          forecastUi[j].Time.text = this.formatTime(forecastDate);
           forecastUi[j].Icon.set_gicon(this.getWeatherIcon(iconname));
           forecastUi[j].Temperature.text = forecastTemp;
           forecastUi[j].Summary.text = comment;
