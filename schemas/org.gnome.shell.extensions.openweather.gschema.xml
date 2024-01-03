@@ -48,6 +48,10 @@
     <value value="1" nick="right"/>
     <value value="2" nick="left"/>
   </enum>
+  <enum id="org.gnome.shell.extensions.openweather.clock-format">
+    <value value="0" nick="24hr" />
+    <value value="1" nick="12hr" />
+  </enum>
   <schema path="/org/gnome/shell/extensions/openweather/" id="org.gnome.shell.extensions.openweather">
     <key name="weather-provider" enum="org.gnome.shell.extensions.openweather.weather-provider">
       <default>'openweathermap'</default>
@@ -163,7 +167,7 @@
       <default>''</default>
       <summary>Your personal AppKey from developer.mapquest.com</summary>
     </key>
-    <key type="s" name="clock-format">
+    <key name="clock-format" enum="org.gnome.shell.extensions.openweather.clock-format">
       <default>'12hr'</default>
       <summary>Time format for hours. Possible values are '24hr' for 24-hour clock and '12hr' for AM/PM.</summary>
     </key>

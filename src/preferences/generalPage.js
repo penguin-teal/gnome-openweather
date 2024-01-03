@@ -195,9 +195,20 @@ class GeneralPage extends Adw.PreferencesPage {
       selected: this._settings.get_enum("pressure-unit"),
     });
 
+    // Clock Format
+    let clockFormat = new Gtk.StringList();
+    clockFormat.append(_("24-hour"));
+    clockFormat.append(_("AM / PM"));
+    let clockFormatRow = new Adw.ComboRow({
+      title: _("Time Format"),
+      model: clockFormat,
+      selected: this._settings.get_enum("clock-format")
+    });
+
     unitsGroup.add(temperatureUnitRow);
     unitsGroup.add(windSpeedUnitRow);
     unitsGroup.add(pressureUnitRow);
+    unitsGroup.add(clockFormatRow);
     this.add(unitsGroup);
 
     // Provider Settings
@@ -310,6 +321,9 @@ class GeneralPage extends Adw.PreferencesPage {
     });
     pressureUnitRow.connect("notify::selected", (widget) => {
       this._settings.set_enum("pressure-unit", widget.selected);
+    });
+    clockFormatRow.connect("notify::selected", (widget) => {
+      this._settings.set_enum("clock-format", widget.selected);
     });
     providerTranslateSwitch.connect("notify::active", (widget) => {
       this._settings.set_boolean("owm-api-translate", widget.get_active());
