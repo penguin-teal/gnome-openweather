@@ -1,0 +1,20 @@
+v124 (IN PROGRESS)
+
+Features/Improvements:
+- AM/PM or 24-hour clock option
+- Default setting for position is now 'right'
+Bug Fixes:
+- Fix searching for wrong UUID breaking most things
+
+v123
+
+Features/Improvements:
+- GNOME 45 Support (from Kenneth Topp's fork)
+- Simplify unnecessarily long names (e.g. 'Savannah, Chatham County, Georgia, United States' -> 'Savannah, Georgia')
+- Making 'Loading' message '...' since it was sometimes way too long
+- Default setting for temperature decimal places is now '0'
+Bug Fixes:
+- Fix "Weather Data By..." URL not opening website
+- Fix weird errors that happen sometimes when deleting a location
+- Fix location look-up forever "pretending" to be searching with no Internet
+
