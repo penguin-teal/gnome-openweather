@@ -61,7 +61,6 @@ class SearchResultsWindow extends Adw.PreferencesWindow {
     this.connect("close-request", this._destroy.bind(this));
   }
   async _findLocation() {
-    let json = null;
     // OpenStreetMaps
     if (this._provider === GeolocationProvider.OPENSTREETMAPS) {
       let params = {
@@ -72,9 +71,9 @@ class SearchResultsWindow extends Adw.PreferencesWindow {
       let _osmUrl = "https://nominatim.openstreetmap.org/search";
       try
       {
-        json = await this._loadJsonAsync(_osmUrl, params).then(async (ret) =>
+        this._loadJsonAsync(_osmUrl, params).then(async (json) =>
         {
-          if (!ret)
+          if (!json)
           {
             this._resultsError(true);
             throw new Error("Server returned an invalid response");
@@ -169,7 +168,8 @@ class SearchResultsWindow extends Adw.PreferencesWindow {
         console.warn("_findLocation Geocode error: " + e);
       }
     }
-    return 0;
+
+    return null;
   }
   _loadJsonAsync(url, params) {
     return new Promise((resolve, reject) => {
