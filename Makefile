@@ -44,7 +44,7 @@ clean:
 extension: ./schemas/gschemas.compiled $(MSGSRC:.po=.mo)
 
 ./schemas/gschemas.compiled: ./schemas/org.gnome.shell.extensions.openweather.gschema.xml
-	glib-compile-schemas ./schemas/
+	glib-compile-schemas --strict ./schemas/
 
 potfile: ./po/openweather.pot
 
