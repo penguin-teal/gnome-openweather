@@ -116,7 +116,7 @@
       <summary>Conditions in Forecast</summary>
     </key>
     <key name="position-in-panel" enum="org.gnome.shell.extensions.openweather.position">
-      <default>'center'</default>
+      <default>'right'</default>
       <summary>Position in Panel</summary>
     </key>
     <key type="i" name="position-index">
