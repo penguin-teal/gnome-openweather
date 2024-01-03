@@ -1184,7 +1184,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
   {
     return date.toLocaleTimeString(this.locale, {
       // 12/24 hour and hide seconds
-      hour12: this.settings.get_string("clock_format") !== "24hr",
+      hour12: this.settings.get_string("clock-format") !== "24hr",
       hour: "numeric",
       minute: "numeric"
     });
