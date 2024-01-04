@@ -169,3 +169,12 @@
 .openweather-button-action > StIcon {
 	icon-size: 16px;
 }
+
+.openweather-white {
+  color: white;
+}
+
+.openweather-black {
+  color: black;
+}
+

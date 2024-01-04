@@ -36,6 +36,12 @@ const WeatherPressureUnits = {
   MBAR: 10,
 };
 
+const HiContrastStyle = {
+  NONE: 0,
+  WHITE: 1,
+  BLACK: 2
+}
+
 const WeatherPosition = {
   CENTER: 0,
   RIGHT: 1,
@@ -54,6 +60,7 @@ export {
   WeatherUnits,
   WeatherWindSpeedUnits,
   WeatherPressureUnits,
+  HiContrastStyle,
   WeatherPosition,
   GeolocationProvider,
 };

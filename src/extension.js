@@ -38,6 +38,7 @@ import {
   WeatherWindSpeedUnits,
   WeatherPressureUnits,
   WeatherPosition,
+  HiContrastStyle,
 } from "./constants.js";
 
 let _firstBoot = 1;
@@ -558,6 +559,21 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     if (a > l) a = l;
 
     return a;
+  }
+
+  getHiConrastClass()
+  {
+    let m = this.settings.get_enum("hi-contrast");
+    console.log(`hi-contrast: ${m}`);
+    switch(m)
+    {
+      case HiContrastStyle.WHITE:
+        return "openweather-white";
+      case HiContrastStyle.BLACK:
+        return "openweather-black";
+      default:
+        return null;
+    }
   }
 
   set _actual_city(a) {
@@ -1234,6 +1250,9 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     if (!this._isForecastDisabled)
       this._currentForecast.actor.destroy_all_children();
 
+    let a11yClasses = this.getHiConrastClass() ?? "";
+    console.log(`A11y classes: ${a11yClasses}`);
+
     this._weatherInfo.text = "...";
     this._weatherIcon.icon_name = "view-refresh-symbolic";
 
@@ -1308,18 +1327,23 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     // Other labels
     this._currentWeatherFeelsLike = new St.Label({
       text: "...",
+      style_class: a11yClasses
     });
     this._currentWeatherHumidity = new St.Label({
       text: "...",
+      style_class: a11yClasses
     });
     this._currentWeatherPressure = new St.Label({
       text: "...",
+      style_class: a11yClasses
     });
     this._currentWeatherWind = new St.Label({
       text: "...",
+      style_class: a11yClasses
     });
     this._currentWeatherWindGusts = new St.Label({
       text: "...",
+      style_class: a11yClasses
     });
 
     let rb = new St.BoxLayout({
@@ -1343,30 +1367,35 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     rb_captions.add_actor(
       new St.Label({
         text: _("Feels Like:"),
+        style_class: a11yClasses
       })
     );
     rb_values.add_actor(this._currentWeatherFeelsLike);
     rb_captions.add_actor(
       new St.Label({
         text: _("Humidity:"),
+        style_class: a11yClasses
       })
     );
     rb_values.add_actor(this._currentWeatherHumidity);
     rb_captions.add_actor(
       new St.Label({
         text: _("Pressure:"),
+        style_class: a11yClasses
       })
     );
     rb_values.add_actor(this._currentWeatherPressure);
     rb_captions.add_actor(
       new St.Label({
         text: _("Wind:"),
+        style_class: a11yClasses
       })
     );
     rb_values.add_actor(this._currentWeatherWind);
     rb_captions.add_actor(
       new St.Label({
         text: _("Gusts:"),
+        style_class: a11yClasses
       })
     );
     rb_values.add_actor(this._currentWeatherWindGusts);
@@ -1449,11 +1478,13 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     if (this._isForecastDisabled || this._forecastDays === 0) return;
     this._forecastExpander.menu.box.destroy_all_children();
 
+    let a11yClasses = this.getHiConrastClass() ?? "";
+
     this._forecast = [];
     this._forecastExpanderBox = new St.BoxLayout({
       x_expand: true,
       opacity: 150,
-      style_class: "openweather-forecast-expander",
+      style_class: `openweather-forecast-expander ${a11yClasses}`,
     });
     this._forecastExpander.menu.box.add(this._forecastExpanderBox);
 
@@ -1500,10 +1531,11 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
 
     if (cnt === undefined) cnt = this._days_forecast;
 
-    if (cnt === 1)
-      this._forecastExpander.label.set_text(_("Tomorrow's Forecast"));
-    else
-      this._forecastExpander.label.set_text(_("%s Day Forecast").format(cnt));
+    let nDayForecast;
+    if (cnt === 1) nDayForecast = _("Tomorrow's Forecast");
+    else nDayForecast = _("%s Day Forecast").format(cnt);
+
+    this._forecastExpander.label.set_text(nDayForecast);
 
     for (let i = 0; i < cnt; i++) {
       let forecastWeather = {};

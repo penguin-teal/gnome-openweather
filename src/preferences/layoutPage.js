@@ -188,11 +188,24 @@ class LayoutPage extends Adw.PreferencesPage {
     });
     locationLengthRow.add_suffix(locationLengthSpinButton);
 
+    // Hi Contrast Styles
+    let hiContrast = new Gtk.StringList();
+    hiContrast.append(_("Off"));
+    hiContrast.append(_("White Text"));
+    hiContrast.append(_("Black Text"));
+    let hiContrastRow = new Adw.ComboRow({
+      title: _("High Contrast"),
+      tooltip_text: _("Enable to override GNOME shell colors"),
+      model: hiContrast,
+      selected: this._settings.get_enum("hi-contrast")
+    });
+
     popupGroup.add(weatherPopupPositionRow);
     popupGroup.add(windArrowsRow);
     popupGroup.add(translateConditionsRow);
     popupGroup.add(temperatureDigitsRow);
     popupGroup.add(locationLengthRow);
+    popupGroup.add(hiContrastRow);
     this.add(popupGroup);
 
     // Forecast Options
@@ -283,6 +296,9 @@ class LayoutPage extends Adw.PreferencesPage {
     });
     locationLengthSpinButton.connect("value-changed", (widget) => {
       this._settings.set_int("location-text-length", widget.get_value());
+    });
+    hiContrastRow.connect("notify::selected", (widget) => {
+      this._settings.set_enum("hi-contrast", widget.selected);
     });
     centerForecastSwitch.connect("notify::active", (widget) => {
       this._settings.set_boolean("center-forecast", widget.get_active());

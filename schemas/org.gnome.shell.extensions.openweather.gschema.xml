@@ -52,6 +52,11 @@
     <value value="0" nick="24hr" />
     <value value="1" nick="12hr" />
   </enum>
+  <enum id="org.gnome.shell.extensions.openweather.hi-contrast">
+    <value value="0" nick="none"></value>
+    <value value="1" nick="white"></value>
+    <value value="2" nick="black"></value>
+  </enum>
   <schema path="/org/gnome/shell/extensions/openweather/" id="org.gnome.shell.extensions.openweather">
     <key name="weather-provider" enum="org.gnome.shell.extensions.openweather.weather-provider">
       <default>'openweathermap'</default>
@@ -133,7 +138,7 @@
     </key>
     <key type="i" name="location-text-length">
       <default>0</default>
-      <summary>Maximal length of the location text</summary>
+      <summary>Maximum length of the location text</summary>
     </key>
     <key type="i" name="refresh-interval-forecast">
       <default>3600</default>
@@ -153,7 +158,7 @@
     </key>
     <key type="i" name="decimal-places">
       <default>0</default>
-      <summary>Maximal number of digits after the decimal point</summary>
+      <summary>Maximum number of digits after the decimal point</summary>
     </key>
     <key type="s" name="appid">
       <default>''</default>
@@ -182,6 +187,10 @@
     <key type="i" name="prefs-default-height">
       <default>600</default>
       <summary>Default height for the preferences window</summary>
+    </key>
+    <key name="hi-contrast" enum="org.gnome.shell.extensions.openweather.hi-contrast">
+      <default>'none'</default>
+      <summary>High contrast style to use, possible values are 'none', 'white', or 'black'.</summary>
     </key>
   </schema>
 </schemalist>
