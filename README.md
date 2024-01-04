@@ -11,14 +11,16 @@ using coordinates to store the locations, a beautiful layout, and more.
 Weather data is fetched from [OpenWeatherMap](https://openweathermap.org)
 including 3 hour forecasts for up to 5 days.
 
-## v123
+## v124
 
-- GNOME 45 Support (from Kenneth Topp's fork)
-- Simplify unnecessarily long names (e.g. 'Savannah, Chatham County, Georgia, United States' -> 'Savannah, Georgia')
-- Making 'Loading' message '...' since it was sometimes way too long
-- Fix "Weather Data By..." URL not opening website
-- Fix weird errors that happen sometimes when deleting a location
-- Fix location look-up forever "pretending" to be searching with no Internet
+v124 fixes a major bug in v123 and adds a 24-hour or AM/PM time option.
+
+Features/Improvements:
+- AM/PM or 24-hour clock option
+- Default setting for position is now 'right'
+
+Bug Fixes:
+- Fix searching for wrong UUID breaking most things
 
 ## Installation
 
