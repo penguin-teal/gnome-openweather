@@ -192,5 +192,9 @@
       <default>'none'</default>
       <summary>High contrast style to use, possible values are 'none', 'white', or 'black'.</summary>
     </key>
+    <key type="b" name="has_run">
+      <default>false</default>
+      <summary>False if this extension has never been initialized before.</summary>
+    </key>
   </schema>
 </schemalist>

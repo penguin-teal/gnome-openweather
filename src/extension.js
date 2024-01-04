@@ -561,6 +561,17 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     return a;
   }
 
+  _isFirstRun = null;
+  isFirstRun()
+  {
+    if(_isFirstRun === null)
+    {
+      _isFirstRun = this.settings.get_boolean("has_run");
+      if(!_isFirstRun) this.settings.set_boolean("has_run", true);
+    }
+    else return _isFirstRun;
+  }
+
   getHiConrastClass()
   {
     let m = this.settings.get_enum("hi-contrast");
@@ -1006,7 +1017,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     if (
       this._old_position_in_panel === undefined ||
       this._old_position_in_panel !== this._position_in_panel ||
-      this._first_run ||
+      this._is_first_run_cycle ||
       this._old_position_index !== this._position_index
     ) {
       this.get_parent().remove_actor(this);
@@ -1034,7 +1045,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       }
       this._old_position_in_panel = this._position_in_panel;
       this._old_position_index = this._position_index;
-      this._first_run = 1;
+      this._is_first_run_cycle = 1;
     }
   }
 
