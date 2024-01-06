@@ -1,6 +1,6 @@
 {
-    "name": "OpenWeather",
-    "description": "Display weather information for any location on Earth in the GNOME Shell",
+    "name": "OpenWeather 2",
+    "description": "Display weather information for any location on Earth in the GNOME Shell. Updated fork of OpenWeather.",
     "shell-version": [ "45" ],
     "url": "https://github.com/penguin-teal/gnome-openweather",
     "uuid": "openweather-extension@penguin-teal.github.io",
