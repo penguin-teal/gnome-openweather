@@ -575,7 +575,6 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
   getHiConrastClass()
   {
     let m = this.settings.get_enum("hi-contrast");
-    console.log(`hi-contrast: ${m}`);
     switch(m)
     {
       case HiContrastStyle.WHITE:
@@ -1262,7 +1261,6 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       this._currentForecast.actor.destroy_all_children();
 
     let a11yClasses = this.getHiConrastClass() ?? "";
-    console.log(`A11y classes: ${a11yClasses}`);
 
     this._weatherInfo.text = "...";
     this._weatherIcon.icon_name = "view-refresh-symbolic";
