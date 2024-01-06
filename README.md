@@ -3,6 +3,8 @@
 
 [![Screenshot](./openweather-screenshot.png)](./openweather-screenshot.png)
 
+This is a fork of Kenneth Topp's fork of the OpenWeather extension.
+
 OpenWeather (*gnome-shell-extension-openweather*) is a simple extension for
 displaying weather conditions and forecasts for any location on Earth in the
 GNOME Shell. It provides support for multiple locations with editable names
@@ -11,13 +13,14 @@ using coordinates to store the locations, a beautiful layout, and more.
 Weather data is fetched from [OpenWeatherMap](https://openweathermap.org)
 including 3 hour forecasts for up to 5 days.
 
-## v124
+## v125
 
-v124 fixes a major bug in v123 and adds a 24-hour or AM/PM time option.
+v125 changed some stuff to get on GNOME extensions.
 
-Features/Improvements:
-- AM/PM or 24-hour clock option
-- Default setting for position is now 'right'
+Features/Improvements
+
+- Name now "OpenWeather 2"
+- Description mentions this is a fork
 
 Bug Fixes:
 - Fix searching for wrong UUID breaking most things

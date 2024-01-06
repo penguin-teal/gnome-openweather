@@ -1,4 +1,14 @@
+v125
+
+v125 changed some stuff to get on GNOME extensions.
+
+Features/Improvements:
+- Name now "OpenWeather 2"
+- Description mentions this is a fork
+
 v124
+
+v124 fixes a major bug in v123 and adds a 24-hour or AM/PM time option.
 
 Features/Improvements:
 - AM/PM or 24-hour clock option
