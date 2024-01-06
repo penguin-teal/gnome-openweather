@@ -566,8 +566,8 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
   {
     if(_isFirstRun === null)
     {
-      _isFirstRun = this.settings.get_boolean("has_run");
-      if(!_isFirstRun) this.settings.set_boolean("has_run", true);
+      _isFirstRun = this.settings.get_boolean("has-run");
+      if(!_isFirstRun) this.settings.set_boolean("has-run", true);
     }
     else return _isFirstRun;
   }
