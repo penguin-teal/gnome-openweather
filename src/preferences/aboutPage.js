@@ -147,7 +147,7 @@ class AboutPage extends Adw.PreferencesPage {
       vexpand: false
     });
     let fork = new Gtk.Label({
-      label: _("This is a fork of %s's extension.").format("Jason Oickle's"),
+      label: _("This is a fork of %s's extension.").format("Jason Oickle"),
       use_markup: false,
       hexpand: false,
       vexpand: false
