@@ -4,7 +4,7 @@
     "shell-version": [ "45" ],
     "url": "https://github.com/penguin-teal/gnome-openweather",
     "uuid": "openweather-extension@penguin-teal.github.io",
-    "settings-schema": "org.gnome.shell.extensions.openweather",
-    "gettext-domain": "gnome-shell-extension-openweather",
+    "settings-schema": "org.gnome.shell.extensions.openweather2",
+    "gettext-domain": "gnome-shell-extension-openweather2",
     "version": 125
 }

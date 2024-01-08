@@ -1,6 +1,6 @@
 # Basic Makefile
 
-PKG_NAME = gnome-shell-extension-openweather
+PKG_NAME = gnome-shell-extension-openweather2
 UUID = openweather-extension@penguin-teal.github.io
 BASE_MODULES = metadata.json COPYING AUTHORS
 SRC_MODULES = extension.js openweathermap.js prefs.js stylesheet.css constants.js
@@ -8,7 +8,7 @@ PREFS_MODULES = generalPage.js layoutPage.js locationsPage.js aboutPage.js searc
 EXTRA_DIRECTORIES = media
 TOLOCALIZE = $(addprefix src/, extension.js openweathermap.js prefs.js constants.js) \
              $(addprefix src/preferences/, $(PREFS_MODULES)) \
-             schemas/org.gnome.shell.extensions.openweather.gschema.xml
+             schemas/org.gnome.shell.extensions.openweather2.gschema.xml
 MSGSRC = $(wildcard po/*.po)
 
 # Packagers: Use DESTDIR for system wide installation
@@ -43,7 +43,7 @@ clean:
 
 extension: ./schemas/gschemas.compiled $(MSGSRC:.po=.mo)
 
-./schemas/gschemas.compiled: ./schemas/org.gnome.shell.extensions.openweather.gschema.xml
+./schemas/gschemas.compiled: ./schemas/org.gnome.shell.extensions.openweather2.gschema.xml
 	glib-compile-schemas --strict ./schemas/
 
 potfile: ./po/openweather.pot

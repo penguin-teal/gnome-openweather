@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schemalist gettext-domain="gnome-shell-extension-openweather">
-  <enum id="org.gnome.shell.extensions.openweather.weather-provider">
+<schemalist gettext-domain="gnome-shell-extension-openweather2">
+  <enum id="org.gnome.shell.extensions.openweather2.weather-provider">
     <value value="0" nick="openweathermap"/>
   </enum>
-  <enum id="org.gnome.shell.extensions.openweather.geolocation-provider">
+  <enum id="org.gnome.shell.extensions.openweather2.geolocation-provider">
     <value value="0" nick="openstreetmaps"/>
     <value value="1" nick="geocode"/>
     <value value="2" nick="mapquest"/>
   </enum>
-  <enum id="org.gnome.shell.extensions.openweather.unit">
+  <enum id="org.gnome.shell.extensions.openweather2.unit">
     <value value="0" nick="celsius"/>
     <value value="1" nick="fahrenheit"/>
     <value value="2" nick="kelvin"/>
@@ -18,7 +18,7 @@
     <value value="6" nick="delisle"/>
     <value value="7" nick="newton"/>
   </enum>
-  <enum id="org.gnome.shell.extensions.openweather.pressure-unit">
+  <enum id="org.gnome.shell.extensions.openweather2.pressure-unit">
     <value value="0" nick="hPa"/>
     <value value="1" nick="inHg"/>
     <value value="2" nick="bar"/>
@@ -31,7 +31,7 @@
     <value value="9" nick="mmHg"/>
     <value value="10" nick="mbar"/>
   </enum>
-  <enum id="org.gnome.shell.extensions.openweather.wind-speed-unit">
+  <enum id="org.gnome.shell.extensions.openweather2.wind-speed-unit">
     <value value="0" nick="kph"/>
     <value value="1" nick="mph"/>
     <value value="2" nick="m/s"/>
@@ -39,42 +39,42 @@
     <value value="4" nick="ft/s"/>
     <value value="5" nick="Beaufort"/>
   </enum>
-  <enum id="org.gnome.shell.extensions.openweather.wind-dir-indicators">
+  <enum id="org.gnome.shell.extensions.openweather2.wind-dir-indicators">
     <value value="0" nick="arrows"/>
     <value value="1" nick="letters"/>
   </enum>
-  <enum id="org.gnome.shell.extensions.openweather.position">
+  <enum id="org.gnome.shell.extensions.openweather2.position">
     <value value="0" nick="center"/>
     <value value="1" nick="right"/>
     <value value="2" nick="left"/>
   </enum>
-  <enum id="org.gnome.shell.extensions.openweather.clock-format">
+  <enum id="org.gnome.shell.extensions.openweather2.clock-format">
     <value value="0" nick="24hr" />
     <value value="1" nick="12hr" />
   </enum>
-  <enum id="org.gnome.shell.extensions.openweather.hi-contrast">
+  <enum id="org.gnome.shell.extensions.openweather2.hi-contrast">
     <value value="0" nick="none"></value>
     <value value="1" nick="white"></value>
     <value value="2" nick="black"></value>
   </enum>
-  <schema path="/org/gnome/shell/extensions/openweather/" id="org.gnome.shell.extensions.openweather">
-    <key name="weather-provider" enum="org.gnome.shell.extensions.openweather.weather-provider">
+  <schema path="/org/gnome/shell/extensions/openweather2/" id="org.gnome.shell.extensions.openweather2">
+    <key name="weather-provider" enum="org.gnome.shell.extensions.openweather2.weather-provider">
       <default>'openweathermap'</default>
       <summary>Weather Provider</summary>
     </key>
-    <key name="geolocation-provider" enum="org.gnome.shell.extensions.openweather.geolocation-provider">
+    <key name="geolocation-provider" enum="org.gnome.shell.extensions.openweather2.geolocation-provider">
       <default>'openstreetmaps'</default>
       <summary>Geolocation Provider</summary>
     </key>
-    <key name="unit" enum="org.gnome.shell.extensions.openweather.unit">
+    <key name="unit" enum="org.gnome.shell.extensions.openweather2.unit">
       <default>'celsius'</default>
       <summary>Temperature Unit</summary>
     </key>
-    <key name="pressure-unit" enum="org.gnome.shell.extensions.openweather.pressure-unit">
+    <key name="pressure-unit" enum="org.gnome.shell.extensions.openweather2.pressure-unit">
       <default>'kPa'</default>
       <summary>Pressure Unit</summary>
     </key>
-    <key name="wind-speed-unit" enum="org.gnome.shell.extensions.openweather.wind-speed-unit">
+    <key name="wind-speed-unit" enum="org.gnome.shell.extensions.openweather2.wind-speed-unit">
       <default>'kph'</default>
       <summary>Wind Speed Units</summary>
       <description>Choose the units used for wind speed. Allowed values are 'kph', 'mph', 'm/s', 'knots', 'ft/s' or 'Beaufort'.</description>
@@ -120,7 +120,7 @@
       <default>true</default>
       <summary>Conditions in Forecast</summary>
     </key>
-    <key name="position-in-panel" enum="org.gnome.shell.extensions.openweather.position">
+    <key name="position-in-panel" enum="org.gnome.shell.extensions.openweather2.position">
       <default>'right'</default>
       <summary>Position in Panel</summary>
     </key>
@@ -172,7 +172,7 @@
       <default>''</default>
       <summary>Your personal AppKey from developer.mapquest.com</summary>
     </key>
-    <key name="clock-format" enum="org.gnome.shell.extensions.openweather.clock-format">
+    <key name="clock-format" enum="org.gnome.shell.extensions.openweather2.clock-format">
       <default>'12hr'</default>
       <summary>Time format for hours. Possible values are '24hr' for 24-hour clock and '12hr' for AM/PM.</summary>
     </key>
@@ -188,7 +188,7 @@
       <default>600</default>
       <summary>Default height for the preferences window</summary>
     </key>
-    <key name="hi-contrast" enum="org.gnome.shell.extensions.openweather.hi-contrast">
+    <key name="hi-contrast" enum="org.gnome.shell.extensions.openweather2.hi-contrast">
       <default>'none'</default>
       <summary>High contrast style to use, possible values are 'none', 'white', or 'black'.</summary>
     </key>
