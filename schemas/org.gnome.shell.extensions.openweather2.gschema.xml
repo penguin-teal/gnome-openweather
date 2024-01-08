@@ -90,7 +90,7 @@
     </key>
     <key type="i" name="actual-city">
       <default>0</default>
-      <summary>Actual City</summary>
+      <summary>Index of the city to display by default.</summary>
     </key>
     <key type="b" name="translate-condition">
       <default>true</default>
@@ -106,11 +106,11 @@
     </key>
     <key type="b" name="show-text-in-panel">
       <default>true</default>
-      <summary>Temperature in Panel</summary>
+      <summary>True to show temperature in the panel</summary>
     </key>
     <key type="b" name="show-comment-in-panel">
       <default>false</default>
-      <summary>Conditions in Panel</summary>
+      <summary>True to show conditions in the panel.</summary>
     </key>
     <key type="b" name="disable-forecast">
       <default>false</default>
@@ -191,6 +191,14 @@
     <key name="hi-contrast" enum="org.gnome.shell.extensions.openweather2.hi-contrast">
       <default>'none'</default>
       <summary>High contrast style to use, possible values are 'none', 'white', or 'black'.</summary>
+    </key>
+    <key type="b" name="show-sunsetrise-in-panel">
+      <default>false</default>
+      <summary>True to show the sunset/sunrise in the panel.</summary>
+    </key>
+    <key type="b" name="sun-in-panel-first">
+      <default>false</default>
+      <summary>True to show the sunset/sunrise in the panel before the temperature/conditions if enabled.</summary>
     </key>
     <key type="b" name="has-run">
       <default>false</default>

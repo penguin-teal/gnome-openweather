@@ -339,6 +339,19 @@ function populateCurrentUI() {
       this._currentWeatherIcon.set_gicon(this.getWeatherIcon(iconname));
       this._weatherIcon.set_gicon(this.getWeatherIcon(iconname));
 
+      // Which is coming, sunrise or sunset?
+      let ms = lastBuild.getTime();
+      if(ms < sunset.getTime() && ms > sunrise.getTime())
+      {
+        this.topBoxSunIcon.set_gicon(this.getWeatherIcon("daytime-sunset-symbolic"));
+        this.topBoxSunInfo.text = this.formatTime(sunset);
+      }
+      else
+      {
+        this.topBoxSunIcon.set_gicon(this.getWeatherIcon("daytime-sunrise-symbolic"));
+        this.topBoxSunInfo.text = this.formatTime(sunrise);
+      }
+
       let weatherInfoC = "";
       let weatherInfoT = "";
 
@@ -399,9 +412,7 @@ function populateTodaysUI() {
 
         let forecastTime = new Date(forecastDataToday.dt * 1000);
         let forecastTemp = this.formatTemperature(forecastDataToday.main.temp);
-        let iconTime = forecastTime.toLocaleTimeString([this.locale], {
-          hour12: false,
-        });
+
         let iconname = IconMap[forecastDataToday.weather[0].icon];
 
         let comment = forecastDataToday.weather[0].description;

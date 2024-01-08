@@ -96,10 +96,37 @@ class LayoutPage extends Adw.PreferencesPage {
     });
     conditionsInPanelRow.add_suffix(conditionsInPanelSwitch);
 
+    // Sunrise/Sunset in Panel
+    let sunsetriseInPanelSwitch = new Gtk.Switch({
+      valign: Gtk.Align.CENTER,
+      tooltip_text: _("Show the time of sunrise/sunset in the panel."),
+      active: this._settings.get_boolean("show-sunsetrise-in-panel")
+    });
+    let sunsetriseInPanelRow = new Adw.ActionRow({
+      title: _("Sunrise/Sunset In Panel"),
+      activatable_widget: sunsetriseInPanelSwitch
+    });
+    sunsetriseInPanelRow.add_suffix(sunsetriseInPanelSwitch);
+
+    // Sunrise/Sunset in Panel
+    let sunsetriseFirstSwitch = new Gtk.Switch({
+      valign: Gtk.Align.CENTER,
+      tooltip_text: _("Show the sunset/sunrise before the temperature/conditions. Requires restart."),
+      active: this._settings.get_boolean("sun-in-panel-first")
+    });
+    let sunsetriseFirstRow = new Adw.ActionRow({
+      title: _("Sunrise/Sunset First (Restart Required)"),
+      activatable_widget: sunsetriseInPanelSwitch
+    });
+    sunsetriseFirstRow.add_suffix(sunsetriseFirstSwitch);
+    sunsetriseFirstRow.set_sensitive(this._settings.get_boolean("show-sunsetrise-in-panel"));
+
     panelGroup.add(panelPositionRow);
     panelGroup.add(positionOffsetRow);
     panelGroup.add(temperatureInPanelRow);
     panelGroup.add(conditionsInPanelRow);
+    panelGroup.add(sunsetriseInPanelRow);
+    panelGroup.add(sunsetriseFirstRow);
     this.add(panelGroup);
 
     // Weather Popup Options
@@ -281,6 +308,14 @@ class LayoutPage extends Adw.PreferencesPage {
     });
     conditionsInPanelSwitch.connect("notify::active", (widget) => {
       this._settings.set_boolean("show-comment-in-panel", widget.get_active());
+    });
+    sunsetriseInPanelSwitch.connect("notify::active", (widget) => {
+      let active = widget.get_active();
+      this._settings.set_boolean("show-sunsetrise-in-panel", active);
+      sunsetriseFirstRow.set_sensitive(active);
+    });
+    sunsetriseFirstSwitch.connect("notify::active", (widget) => {
+      this._settings.set_boolean("sun-in-panel-first", widget.get_active());
     });
     weatherPopupPositionScale.connect("value-changed", (widget) => {
       this._settings.set_double("menu-alignment", widget.get_value());

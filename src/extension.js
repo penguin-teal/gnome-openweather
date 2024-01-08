@@ -62,11 +62,8 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     GObject.registerClass(this);
   }
 
-  _init(metadata, settings) {
-    super._init(0, "OpenWeatherMenuButton", false);
-    this.settings = settings;
-    this.metadata = metadata;
-    // Putting the panel item together
+  _addWeatherToBox(topBox)
+  {
     this._weatherIcon = new St.Icon({
       icon_name: "view-refresh-symbolic",
       style_class: "system-status-icon openweather-icon",
@@ -77,19 +74,61 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       y_align: Clutter.ActorAlign.CENTER,
       y_expand: true,
     });
-    let topBox = new St.BoxLayout({
-      style_class: "panel-status-menu-box",
-    });
+
     topBox.add_child(this._weatherIcon);
     topBox.add_child(this._weatherInfo);
-    this.add_child(topBox);
+  }
 
-    if (Main.panel._menus === undefined)
-      Main.panel.menuManager.addMenu(this.menu);
-    else Main.panel._menus.addMenu(this.menu);
+  _addSunToBox(topBox)
+  {
+    this.topBoxSunIcon = new St.Icon({
+      icon_name: "daytime-sunset-symbolic",
+      style_class: "system-status-icon openweather-icon"
+    });
+    this.topBoxSunInfo = new St.Label({
+      text: "...",
+      y_align: Clutter.ActorAlign.CENTER,
+      y_expand: true
+    });
+    if(!this._show_sunriseset_in_panel)
+    {
+      this.topBoxSunIcon.hide();
+      this.topBoxSunInfo.hide();
+    }
+
+    topBox.add_child(this.topBoxSunIcon);
+    topBox.add_child(this.topBoxSunInfo);
+  }
+
+  _init(metadata, settings) {
+    super._init(0, "OpenWeatherMenuButton", false);
+    this.settings = settings;
+    this.metadata = metadata;
 
     // Load settings
     this.loadConfig();
+
+    // Putting the panel item together
+    let topBox = new St.BoxLayout({
+      style_class: "panel-status-menu-box",
+    });
+
+    if(this._sun_in_panel_first)
+    {
+      this._addSunToBox(topBox);
+      this._addWeatherToBox(topBox);
+    }
+    else
+    {
+      this._addWeatherToBox(topBox);
+      this._addSunToBox(topBox);
+    }
+
+    this.add_child(topBox);
+    if (Main.panel._menus === undefined)
+      Main.panel.menuManager.addMenu(this.menu);
+    else Main.panel._menus.addMenu(this.menu);
+    //
     // Setup network things
     this._idle = false;
     this._connected = false;
@@ -644,6 +683,16 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
 
   get _comment_in_panel() {
     return this.settings.get_boolean("show-comment-in-panel");
+  }
+
+  get _show_sunriseset_in_panel()
+  {
+    return this.settings.get_boolean("show-sunsetrise-in-panel");
+  }
+
+  get _sun_in_panel_first()
+  {
+    return this.settings.get_boolean("sun-in-panel-first");
   }
 
   get _disable_forecast() {

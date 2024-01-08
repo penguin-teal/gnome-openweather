@@ -1,3 +1,10 @@
+(Development v126)
+
+Features/Improvements:
+- Option to display the time of the coming sunrise or sunset in the panel
+- Option to choose if that sun time comes before or after the temperature/conditions
+- Change settings path to not conflict with original OpenWeather extension
+
 v125
 
 v125 changed some stuff to get on GNOME extensions.
