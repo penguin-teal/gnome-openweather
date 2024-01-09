@@ -323,7 +323,21 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     else this.locale = "en";
 
     // Bind to settings changed signal
-    this._settingsC = this.settings.connect("changed", () => {
+    this._settingsC = this.settings.connect("changed", () =>
+    {
+
+      // Sunrise/sunset in panel
+      if(this._show_sunriseset_in_panel)
+      {
+        this.topBoxSunIcon.show();
+        this.topBoxSunInfo.show();
+      }
+      else
+      {
+        this.topBoxSunIcon.hide();
+        this.topBoxSunInfo.hide();
+      }
+
       if (this.disableForecastChanged()) {
         let _children = this._isForecastDisabled ? 4 : 7;
         if (this._forecastDays === 0) {
