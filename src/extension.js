@@ -16,7 +16,6 @@
 */
 import Clutter from "gi://Clutter";
 import Gio from "gi://Gio";
-import Gtk from "gi://Gtk";
 import GLib from "gi://GLib";
 import GObject from "gi://GObject";
 import St from "gi://St";
@@ -44,18 +43,6 @@ import {
 let _firstBoot = 1;
 let _timeCacheCurrentWeather;
 let _timeCacheForecastWeather;
-// Keep enums in sync with GSettings schemas
-
-//hack (for Wayland?) via https://gitlab.gnome.org/GNOME/gnome-shell/-/issues/1997
-//https://github.com/home-sweet-gnome/dash-to-panel/commit/31e7275608fb0a4a13e406b1f841b084404c1f9e
-//https://gjs-docs.gnome.org/st11~11/st.settings#property-gtk_icon_theme
-Gtk.IconTheme.get_default = function () {
-  let theme = new Gtk.IconTheme();
-  let isGtk3 = !!theme.set_custom_theme;
-  if (isGtk3) theme.set_custom_theme(St.Settings.get().gtk_icon_theme);
-  else theme.set_theme_name(St.Settings.get().gtk_icon_theme);
-  return theme;
-};
 
 class OpenWeatherMenuButton extends PanelMenu.Button {
   static {
@@ -826,7 +813,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       let url = this.getWeatherProviderURL();
       try
       {
-        Gtk.show_uri(null, url, 0);
+        Gio.AppInfo.launch_default_for_uri(url, null);
       }
       catch (err)
       {
@@ -1057,7 +1044,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     // Built-in icons option and fallback for missing icons on some distros
     if (
       this._getUseSysIcons &&
-      Gtk.IconTheme.get_default().has_icon(iconname)
+      new St.IconTheme().has_icon(iconname)
     ) {
       return Gio.icon_new_for_string(iconname);
     } // No icon available or user prefers built in icons
@@ -1596,8 +1583,8 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     this._forecastScrollBox.hscroll.margin_right = 25;
     this._forecastScrollBox.hscroll.margin_left = 25;
     this._forecastScrollBox.hscroll.hide();
-    this._forecastScrollBox.vscrollbar_policy = Gtk.PolicyType.NEVER;
-    this._forecastScrollBox.hscrollbar_policy = Gtk.PolicyType.AUTOMATIC;
+    this._forecastScrollBox.vscrollbar_policy = St.PolicyType.NEVER;
+    this._forecastScrollBox.hscrollbar_policy = St.PolicyType.AUTOMATIC;
     this._forecastScrollBox.enable_mouse_scrolling = true;
     this._forecastScrollBox.hide();
 
