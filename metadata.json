@@ -6,5 +6,5 @@
     "uuid": "openweather-extension@penguin-teal.github.io",
     "settings-schema": "org.gnome.shell.extensions.openweatherrefined",
     "gettext-domain": "gnome-shell-extension-openweatherrefined",
-    "version": 125
+    "version": 126
 }
