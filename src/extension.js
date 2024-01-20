@@ -43,6 +43,7 @@ import {
 let _firstBoot = 1;
 let _timeCacheCurrentWeather;
 let _timeCacheForecastWeather;
+let _isFirstRun = null;
 
 class OpenWeatherMenuButton extends PanelMenu.Button {
   static {
@@ -295,6 +296,21 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
   loadConfig() {
     if (this._cities.length === 0)
       this._cities = "43.6534817,-79.3839347>Toronto >0";
+
+    if(this.isFirstRun())
+    {
+      // doing January seems avoids daylight savings and gives correct
+      // UTC offset (negative because UTC-5 gives 5)
+      let off = new Date("2023/01/01").getTimezoneOffset() / -60;
+
+      // If your time zone is in the U.S. then set to imperial units
+      if(off <= -5 && off >= -8)
+      {
+        this.settings.set_enum("unit", WeatherUnits.FAHRENHEIT);
+        this.settings.set_enum("wind-speed-unit", WeatherWindSpeedUnits.MPH);
+        this.settings.set_enum("pressure-unit", WeatherPressureUnits.INHG);
+      }
+    }
 
     this._currentLocation = this.extractCoord(this._city);
     this._isForecastDisabled = this._disable_forecast;
@@ -601,15 +617,14 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     return a;
   }
 
-  _isFirstRun = null;
   isFirstRun()
   {
     if(_isFirstRun === null)
     {
-      _isFirstRun = this.settings.get_boolean("has-run");
-      if(!_isFirstRun) this.settings.set_boolean("has-run", true);
+      _isFirstRun = !this.settings.get_boolean("has-run");
+      if(_isFirstRun) this.settings.set_boolean("has-run", true);
     }
-    else return _isFirstRun;
+    return _isFirstRun;
   }
 
   getHiConrastClass()
