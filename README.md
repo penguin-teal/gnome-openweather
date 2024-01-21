@@ -13,23 +13,23 @@ using coordinates to store the locations, a beautiful layout, and more.
 Weather data is fetched from [OpenWeatherMap](https://openweathermap.org)
 including 3 hour forecasts for up to 5 days.
 
-# What's New?
+## What's New?
 
 [Check out the changelog.](./CHANGELOG.md)
-
-## GNOME Extensions Website
-
-<p align="left">
-  <a href="https://extensions.gnome.org/extension/6655/openweather">
-    <img src="./get-it-on-ego.png" width="240" style="margin-left: 5px">
-  </a>
-</p>
 
 ## Installation
 
 After completing one of the installation methods below, restart GNOME Shell
 (*Xorg: `Alt`+`F2`, `r`, `Enter` - Wayland: `log out` or `reboot`*) and
 enable the extension through the *gnome-extensions* app.
+
+### GNOME Extensions Website
+
+<p align="left">
+  <a href="https://extensions.gnome.org/extension/6655/openweather">
+    <img src="./get-it-on-ego.png" width="240" style="margin-left: 5px">
+  </a>
+</p>
 
 ### Install From Source
 
