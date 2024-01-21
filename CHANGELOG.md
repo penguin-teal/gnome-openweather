@@ -1,6 +1,7 @@
 ## v127 (WORK IN PROGRESS)
 
 Features/Improvements:
+- Option to have clock format (AM/PM or 24-hour) follow GNOME desktop setting
 - Use imperial units by default if timezone is part of contiguous United States
 - Button to reset settings to default
 

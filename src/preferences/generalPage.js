@@ -199,6 +199,7 @@ class GeneralPage extends Adw.PreferencesPage {
     let clockFormat = new Gtk.StringList();
     clockFormat.append(_("24-hour"));
     clockFormat.append(_("AM / PM"));
+    clockFormat.append(_("System"));
     let clockFormatRow = new Adw.ComboRow({
       title: _("Time Format"),
       model: clockFormat,

@@ -49,8 +49,9 @@
     <value value="2" nick="left"/>
   </enum>
   <enum id="org.gnome.shell.extensions.openweatherrefined.clock-format">
-    <value value="0" nick="24hr" />
-    <value value="1" nick="12hr" />
+    <value value="0" nick="24h" />
+    <value value="1" nick="12h" />
+    <value value="2" nick="system" />
   </enum>
   <enum id="org.gnome.shell.extensions.openweatherrefined.hi-contrast">
     <value value="0" nick="none"></value>
@@ -173,8 +174,8 @@
       <summary>Your personal AppKey from developer.mapquest.com</summary>
     </key>
     <key name="clock-format" enum="org.gnome.shell.extensions.openweatherrefined.clock-format">
-      <default>'12hr'</default>
-      <summary>Time format for hours. Possible values are '24hr' for 24-hour clock and '12hr' for AM/PM.</summary>
+      <default>'system'</default>
+      <summary>Time format for hours. Possible values are '24hr' for 24-hour clock, '12hr' for AM/PM, and 'system' to follow the GNOME setting.</summary>
     </key>
     <key type="i" name="delay-ext-init">
       <default>5</default>

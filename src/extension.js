@@ -38,6 +38,7 @@ import {
   WeatherPressureUnits,
   WeatherPosition,
   HiContrastStyle,
+  ClockFormat
 } from "./constants.js";
 
 let _firstBoot = 1;
@@ -45,6 +46,7 @@ let _timeCacheCurrentWeather;
 let _timeCacheForecastWeather;
 let _isFirstRun = null;
 let _freezeSettingsChanged = false;
+let _systemClockFormat = 1;
 
 class OpenWeatherMenuButton extends PanelMenu.Button {
   static {
@@ -303,7 +305,6 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     if(_isFirstRun === null || forceRecalc)
     {
       _isFirstRun = !this.settings.get_boolean("has-run");
-      console.log("Is First Run? " + (_isFirstRun ? "ye" : "nahhh"));
       if(_isFirstRun)
       {
         this.freezeSettingsChanged();
@@ -324,10 +325,12 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     _freezeSettingsChanged = false;
   }
 
-  firstRunImperialUnits(extension)
+  firstRunSetDefaults(extension)
   {
     if(this.isFirstRun(true))
     {
+      this.freezeSettingsChanged();
+
       // doing January seems avoids daylight savings and gives correct
       // UTC offset (negative because UTC-5 gives 5)
       let off = new Date("2023/01/01").getTimezoneOffset() / -60;
@@ -335,12 +338,12 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       // If your time zone is in the U.S. then set to imperial units
       if(off <= -5 && off >= -8)
       {
-        this.freezeSettingsChanged();
         this.settings.set_enum("unit", WeatherUnits.FAHRENHEIT);
         this.settings.set_enum("wind-speed-unit", WeatherWindSpeedUnits.MPH);
         this.settings.set_enum("pressure-unit", WeatherPressureUnits.INHG);
-        this.unfreezeSettingsChanged();
       }
+
+      this.unfreezeSettingsChanged();
     }
   }
 
@@ -350,7 +353,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     {
       if(_freezeSettingsChanged) return;
 
-      this.firstRunImperialUnits();
+      this.firstRunSetDefaults();
 
       // Sunrise/sunset in panel
       if(this._show_sunriseset_in_panel)
@@ -364,6 +367,9 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
         this.topBoxSunInfo.hide();
       }
 
+      let gnomeSettings = Gio.Settings.new("org.gnome.desktop.interface");
+      _systemClockFormat = gnomeSettings.get_enum("clock-format");
+      
       if (this.disableForecastChanged()) {
         let _children = this._isForecastDisabled ? 4 : 7;
         if (this._forecastDays === 0) {
@@ -455,7 +461,10 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     if (this._cities.length === 0)
       this._cities = "43.6534817,-79.3839347>Toronto >0";
 
-    this.firstRunImperialUnits();
+    this.firstRunSetDefaults();
+
+    let gnomeSettings = Gio.Settings.new("org.gnome.desktop.interface");
+    _systemClockFormat = gnomeSettings.get_enum("clock-format");
 
     this._currentLocation = this.extractCoord(this._city);
     this._isForecastDisabled = this._disable_forecast;
@@ -1308,9 +1317,26 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
 
   formatTime(date)
   {
+    let isHr12;
+    switch(this.settings.get_enum("clock-format"))
+    {
+      case ClockFormat._24H:
+        isHr12 = false;
+        break;
+      case ClockFormat._12H:
+        isHr12 = true;
+        break;
+      default:
+        console.warn("OpenWeather Refined invalid clock format.");
+        // FALL THRU
+      case ClockFormat.SYSTEM:
+        console.log("System clock format: " + _systemClockFormat);
+        isHr12 = _systemClockFormat === ClockFormat._12H;
+        break;
+    }
     return date.toLocaleTimeString(this.locale, {
       // 12/24 hour and hide seconds
-      hour12: this.settings.get_string("clock-format") !== "24hr",
+      hour12: isHr12,
       hour: "numeric",
       minute: "numeric"
     });

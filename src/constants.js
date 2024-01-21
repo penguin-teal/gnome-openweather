@@ -40,7 +40,13 @@ const HiContrastStyle = {
   NONE: 0,
   WHITE: 1,
   BLACK: 2
-}
+};
+
+const ClockFormat = {
+  _24H: 0,
+  _12H: 1,
+  SYSTEM: 2
+};
 
 const WeatherPosition = {
   CENTER: 0,
@@ -61,6 +67,7 @@ export {
   WeatherWindSpeedUnits,
   WeatherPressureUnits,
   HiContrastStyle,
+  ClockFormat,
   WeatherPosition,
   GeolocationProvider,
 };
