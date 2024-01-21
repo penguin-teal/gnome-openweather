@@ -290,14 +290,22 @@ class GeneralPage extends Adw.PreferencesPage {
       title: _("Reset")
     });
 
-    let resetToDefs = new Gtk.Button({
+    let resetToDefsBtn = new Gtk.Button({
       child: new Adw.ButtonContent({
         icon_name: "view-refresh-symbolic",
-        label: _("Reset Settings to Defaults"),
+        label: _("Reset"),
       }),
     });
+    let resetToDefsRow = new Adw.ActionRow({
+      title: _("Restore Defaults"),
+      tooltip_text: _(
+        "Restore all settings to the defaults."
+      ),
+      activatable_widget: resetToDefsBtn,
+    });
+    resetToDefsRow.add_suffix(resetToDefsBtn);
 
-    resetGroup.add(resetToDefs);
+    resetGroup.add(resetToDefsRow);
     this.add(resetGroup);
 
     // Bind signals
@@ -364,7 +372,7 @@ class GeneralPage extends Adw.PreferencesPage {
         }
       }
     });
-    resetToDefs.connect("clicked", () =>
+    resetToDefsBtn.connect("clicked", () =>
       {
         let keys = this._settings.list_keys();
         for(let k of keys)
