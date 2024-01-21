@@ -225,12 +225,16 @@ async function refreshWeatherData() {
   try {
     json = await this.loadJsonAsync(owmCurrentUrl, params).then(
       async (json) => {
-        try {
+        if(json)
+        {
           this.currentWeatherCache = json;
-          await this.populateCurrentUI();
-        } catch (e) {
-          console.error(e);
+          try {
+            await this.populateCurrentUI();
+          } catch (e) {
+            console.error(e);
+          }
         }
+        else console.warn("OpenWeather Refined failed to fetch weather data.");
       }
     );
   } catch (e) {
