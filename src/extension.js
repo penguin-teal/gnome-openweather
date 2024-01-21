@@ -44,6 +44,7 @@ let _firstBoot = 1;
 let _timeCacheCurrentWeather;
 let _timeCacheForecastWeather;
 let _isFirstRun = null;
+let _freezeSettingsChanged = false;
 
 class OpenWeatherMenuButton extends PanelMenu.Button {
   static {
@@ -293,11 +294,36 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     return url;
   }
 
-  loadConfig() {
-    if (this._cities.length === 0)
-      this._cities = "43.6534817,-79.3839347>Toronto >0";
 
-    if(this.isFirstRun())
+  isFirstRun(forceRecalc = false)
+  {
+    if(_isFirstRun === null || forceRecalc)
+    {
+      _isFirstRun = !this.settings.get_boolean("has-run");
+      console.log("Is First Run? " + (_isFirstRun ? "ye" : "nahhh"));
+      if(_isFirstRun)
+      {
+        this.freezeSettingsChanged();
+        this.settings.set_boolean("has-run", true);
+        this.unfreezeSettingsChanged();
+      }
+    }
+    return _isFirstRun;
+  }
+
+  freezeSettingsChanged()
+  {
+    _freezeSettingsChanged = true;
+  }
+
+  unfreezeSettingsChanged()
+  {
+    _freezeSettingsChanged = false;
+  }
+
+  firstRunImperialUnits(extension)
+  {
+    if(this.isFirstRun(true))
     {
       // doing January seems avoids daylight savings and gives correct
       // UTC offset (negative because UTC-5 gives 5)
@@ -306,28 +332,22 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       // If your time zone is in the U.S. then set to imperial units
       if(off <= -5 && off >= -8)
       {
+        this.freezeSettingsChanged();
         this.settings.set_enum("unit", WeatherUnits.FAHRENHEIT);
         this.settings.set_enum("wind-speed-unit", WeatherWindSpeedUnits.MPH);
         this.settings.set_enum("pressure-unit", WeatherPressureUnits.INHG);
+        this.unfreezeSettingsChanged();
       }
     }
+  }
 
-    this._currentLocation = this.extractCoord(this._city);
-    this._isForecastDisabled = this._disable_forecast;
-    this._forecastDays = this._days_forecast;
-    this._currentAlignment = this._menu_alignment;
-    this._providerTranslations = this._provider_translations;
-
-    // Get locale
-    this.locale = GLib.get_language_names()[0];
-    if (this.locale.indexOf("_") !== -1)
-      this.locale = this.locale.split("_")[0];
-    // Fallback for 'C', 'C.UTF-8', and unknown locales.
-    else this.locale = "en";
-
-    // Bind to settings changed signal
+  bindSettingsChanged()
+  {
     this._settingsC = this.settings.connect("changed", () =>
     {
+      if(_freezeSettingsChanged) return;
+
+      this.firstRunImperialUnits();
 
       // Sunrise/sunset in panel
       if(this._show_sunriseset_in_panel)
@@ -426,6 +446,28 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       }
       return;
     });
+  }
+
+  loadConfig() {
+    if (this._cities.length === 0)
+      this._cities = "43.6534817,-79.3839347>Toronto >0";
+
+    this.firstRunImperialUnits();
+
+    this._currentLocation = this.extractCoord(this._city);
+    this._isForecastDisabled = this._disable_forecast;
+    this._forecastDays = this._days_forecast;
+    this._currentAlignment = this._menu_alignment;
+    this._providerTranslations = this._provider_translations;
+
+    // Get locale
+    this.locale = GLib.get_language_names()[0];
+    if (this.locale.indexOf("_") !== -1)
+      this.locale = this.locale.split("_")[0];
+    // Fallback for 'C', 'C.UTF-8', and unknown locales.
+    else this.locale = "en";
+
+    this.bindSettingsChanged();
   }
 
   loadConfigInterface() {
@@ -615,16 +657,6 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     if (a > l) a = l;
 
     return a;
-  }
-
-  isFirstRun()
-  {
-    if(_isFirstRun === null)
-    {
-      _isFirstRun = !this.settings.get_boolean("has-run");
-      if(_isFirstRun) this.settings.set_boolean("has-run", true);
-    }
-    return _isFirstRun;
   }
 
   getHiConrastClass()

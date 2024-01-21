@@ -286,6 +286,20 @@ class GeneralPage extends Adw.PreferencesPage {
     apiGroup.add(personalApiKeyRow);
     this.add(apiGroup);
 
+    let resetGroup = new Adw.PreferencesGroup({
+      title: _("Reset")
+    });
+
+    let resetToDefs = new Gtk.Button({
+      child: new Adw.ButtonContent({
+        icon_name: "view-refresh-symbolic",
+        label: _("Reset Settings to Defaults"),
+      }),
+    });
+
+    resetGroup.add(resetToDefs);
+    this.add(resetGroup);
+
     // Bind signals
     currentRefreshSpinButton.connect("value-changed", (widget) => {
       this._settings.set_int(
@@ -350,6 +364,17 @@ class GeneralPage extends Adw.PreferencesPage {
         }
       }
     });
+    resetToDefs.connect("clicked", () =>
+      {
+        let keys = this._settings.list_keys();
+        for(let k of keys)
+        {
+          if(k != "has-run") this._settings.reset(k);
+        }
+        // reset has-run last since it will affect other settings
+        this._settings.reset("has-run");
+      }
+    );
   }
 }
 export { GeneralPage };
