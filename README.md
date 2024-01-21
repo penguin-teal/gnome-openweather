@@ -13,17 +13,17 @@ using coordinates to store the locations, a beautiful layout, and more.
 Weather data is fetched from [OpenWeatherMap](https://openweathermap.org)
 including 3 hour forecasts for up to 5 days.
 
-## v125
+# What's New?
 
-v125 changed some stuff to get on GNOME extensions.
+[Check out the changelog.](./CHANGELOG.md)
 
-Features/Improvements
+## GNOME Extensions Website
 
-- Name now "OpenWeather 2"
-- Description mentions this is a fork
-
-Bug Fixes:
-- Fix searching for wrong UUID breaking most things
+<p align="left">
+  <a href="https://extensions.gnome.org/extension/6655/openweather">
+    <img src="./get-it-on-ego.png" width="240" style="margin-left: 5px">
+  </a>
+</p>
 
 ## Installation
 
