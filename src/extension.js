@@ -70,8 +70,11 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
 
   _addSunToBox(topBox)
   {
+    let timeHrs = new Date().getHours();
+    let isProbDay = timeHrs >= 6 && timeHrs <= 19;
+
     this.topBoxSunIcon = new St.Icon({
-      icon_name: "daytime-sunset-symbolic",
+      icon_name: isProbDay ? "daytime-sunset-symbolic" : "daytime-sunrise-symbolic",
       style_class: "system-status-icon openweather-icon"
     });
     this.topBoxSunInfo = new St.Label({
