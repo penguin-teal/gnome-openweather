@@ -347,16 +347,14 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     {
       this.freezeSettingsChanged();
 
-      // doing January seems avoids daylight savings and gives correct
-      // UTC offset (negative because UTC-5 gives 5)
-      let off = new Date("2023/01/01").getTimezoneOffset() / -60;
+      let locInfo = getLocationInfo();
 
-      // If your time zone is in the U.S. then set to imperial units
-      if(off <= -5 && off >= -8)
+      if(locInfo && locInfo.country === "United States")
       {
         this.settings.set_enum("unit", WeatherUnits.FAHRENHEIT);
         this.settings.set_enum("wind-speed-unit", WeatherWindSpeedUnits.MPH);
         this.settings.set_enum("pressure-unit", WeatherPressureUnits.INHG);
+
       }
 
       this.unfreezeSettingsChanged();
