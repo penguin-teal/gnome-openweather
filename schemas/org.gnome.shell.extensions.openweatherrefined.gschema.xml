@@ -86,8 +86,8 @@
       <description>Choose whether to display wind direction through arrows or letters.</description>
     </key>
     <key type="s" name="city">
-      <default>'43.6534817,-79.3839347>Toronto >0'</default>
-      <summary>City to be displayed</summary>
+    <default>'here>>0'</default>
+      <summary>City to be displayed, in the format of 'LAT,LON>DISPLAY NAME>PROVIDER ID'.</summary>
     </key>
     <key type="i" name="actual-city">
       <default>0</default>
@@ -204,6 +204,10 @@
     <key type="b" name="has-run">
       <default>false</default>
       <summary>False if this extension has never been initialized before.</summary>
+    </key>
+    <key type="d" name="loc-refresh-interval">
+      <default>60.0</default>
+      <summary>How often, in minutes, to re-fetch My Location if selected.</summary>
     </key>
   </schema>
 </schemalist>

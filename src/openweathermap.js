@@ -19,6 +19,8 @@ import Soup from "gi://Soup";
 
 import { gettext as _ } from "resource:///org/gnome/shell/extensions/extension.js";
 
+import { getCachedLocInfo } from "./location.js";
+
 // Map OpenWeatherMap icon codes to icon names
 const IconMap = {
   "01d": "weather-clear-symbolic", // "clear sky"
@@ -209,7 +211,7 @@ async function reloadWeatherCache() {
 
 async function refreshWeatherData() {
   let json = undefined;
-  let location = this.extractCoord(this._city);
+  let location = await this.extractCoord(this._city);
   let params = {
     lat: location.split(",")[0],
     lon: location.split(",")[1],
@@ -254,7 +256,7 @@ async function refreshForecastData() {
   let json = undefined;
   let sortedList = undefined;
   let todayList = undefined;
-  let location = this.extractCoord(this._city);
+  let location = await this.extractCoord(this._city);
   let params = {
     lat: location.split(",")[0],
     lon: location.split(",")[1],
@@ -334,6 +336,12 @@ function populateCurrentUI() {
         comment = getWeatherCondition(json.weather[0].id);
 
       let location = this.extractLocation(this._city);
+      if(this.cityIsCurrentLoc(this._city))
+      {
+        let locObj = getCachedLocInfo();
+        location += ` (${locObj.city})`;
+      }
+
       let temperature = this.formatTemperature(json.main.temp);
       let sunrise = new Date(json.sys.sunrise * 1000);
       let sunset = new Date(json.sys.sunset * 1000);

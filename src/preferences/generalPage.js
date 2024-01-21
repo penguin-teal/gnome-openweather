@@ -83,6 +83,27 @@ class GeneralPage extends Adw.PreferencesPage {
     });
     forecastRefreshRow.add_suffix(forecastRefreshSpinButton);
 
+    // My Location Refresh
+    let myLocRefreshSpinButton = new Gtk.SpinButton({
+      adjustment: new Gtk.Adjustment({
+        lower: 10,
+        upper: 1440,
+        step_increment: 1,
+        page_increment: 10,
+        value: this._settings.get_double("loc-refresh-interval")
+      }),
+      climb_rate: 5,
+      numeric: true,
+      update_policy: "if-valid",
+      valign: Gtk.Align.CENTER
+    });
+    let myLocRefreshRow = new Adw.ActionRow({
+      title: _("My Location Refresh"),
+      subtitle: _("My location refresh interval in minutes"),
+      activatable_widget: myLocRefreshSpinButton
+    });
+    myLocRefreshRow.add_suffix(myLocRefreshSpinButton);
+    
     // disable forecast
     let disableForecastSwitch = new Gtk.Switch({
       valign: Gtk.Align.CENTER,
@@ -136,6 +157,7 @@ class GeneralPage extends Adw.PreferencesPage {
 
     generalGroup.add(currentRefreshRow);
     generalGroup.add(forecastRefreshRow);
+    generalGroup.add(myLocRefreshRow);
     generalGroup.add(disableForecastRow);
     generalGroup.add(systemIconsRow);
     generalGroup.add(startupDelayRow);
@@ -321,6 +343,9 @@ class GeneralPage extends Adw.PreferencesPage {
         "refresh-interval-forecast",
         60 * widget.get_value()
       );
+    });
+    myLocRefreshSpinButton.connect("value-changed", (widget) => {
+      this._settings.set_double("loc-refresh-interval", widget.get_value());
     });
     disableForecastSwitch.connect("notify::active", (widget) => {
       if (widget.get_active()) {

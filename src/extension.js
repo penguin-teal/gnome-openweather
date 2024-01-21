@@ -41,6 +41,14 @@ import {
   ClockFormat
 } from "./constants.js";
 
+import {
+  freeSoup,
+  getSoupSession,
+  setLocationRefreshIntervalM,
+  getLocationInfo,
+  getCachedLocInfo
+} from "./location.js"
+
 let _firstBoot = 1;
 let _timeCacheCurrentWeather;
 let _timeCacheForecastWeather;
@@ -99,9 +107,6 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     this.settings = settings;
     this.metadata = metadata;
 
-    // Load settings
-    this.loadConfig();
-
     // Putting the panel item together
     let topBox = new St.BoxLayout({
       style_class: "panel-status-menu-box",
@@ -122,48 +127,56 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     if (Main.panel._menus === undefined)
       Main.panel.menuManager.addMenu(this.menu);
     else Main.panel._menus.addMenu(this.menu);
-    //
-    // Setup network things
-    this._idle = false;
-    this._connected = false;
-    this._network_monitor = Gio.network_monitor_get_default();
 
-    // Bind signals
-    this._presence = new GnomeSession.Presence((proxy, error) => {
-      this._onStatusChanged(proxy.status);
-    });
-    this._presence_connection = this._presence.connectSignal(
-      "StatusChanged",
-      (proxy, senderName, [status]) => {
-        this._onStatusChanged(status);
-      }
-    );
-    this._network_monitor_connection = this._network_monitor.connect(
-      "network-changed",
-      this._onNetworkStateChanged.bind(this)
-    );
+    this.loadConfig().then(() =>
+    {
+      //
+      // Setup network things
+      this._idle = false;
+      this._connected = false;
+      this._network_monitor = Gio.network_monitor_get_default();
 
-    this.menu.connect("open-state-changed", this.recalcLayout.bind(this));
-
-    let _firstBootWait = this._startupDelay;
-    if (_firstBoot && _firstBootWait !== 0) {
-      // Delay popup initialization and data fetch on the first
-      // extension load, ie: first log in / restart gnome shell
-      this._timeoutFirstBoot = GLib.timeout_add_seconds(
-        GLib.PRIORITY_DEFAULT,
-        _firstBootWait,
-        () => {
-          this._checkConnectionState();
-          this.initOpenWeatherUI();
-          _firstBoot = 0;
-          this._timeoutFirstBoot = null;
-          return false; // run timer once then destroy
+      // Bind signals
+      this._presence = new GnomeSession.Presence((proxy, error) => {
+        this._onStatusChanged(proxy.status);
+      });
+      this._presence_connection = this._presence.connectSignal(
+        "StatusChanged",
+        (proxy, senderName, [status]) => {
+          this._onStatusChanged(status);
         }
       );
-    } else {
-      this._checkConnectionState();
-      this.initOpenWeatherUI();
-    }
+      this._network_monitor_connection = this._network_monitor.connect(
+        "network-changed",
+        this._onNetworkStateChanged.bind(this)
+      );
+
+      this.menu.connect("open-state-changed", this.recalcLayout.bind(this));
+
+      let _firstBootWait = this._startupDelay;
+      if (_firstBoot && _firstBootWait !== 0) {
+        // Delay popup initialization and data fetch on the first
+        // extension load, ie: first log in / restart gnome shell
+        this._timeoutFirstBoot = GLib.timeout_add_seconds(
+          GLib.PRIORITY_DEFAULT,
+          _firstBootWait,
+          () => {
+            this._checkConnectionState();
+            this.initOpenWeatherUI();
+            _firstBoot = 0;
+            this._timeoutFirstBoot = null;
+            return false; // run timer once then destroy
+          }
+        );
+      } else {
+        this._checkConnectionState();
+        this.initOpenWeatherUI();
+      }
+    }, (e) =>
+    {
+      console.error(`OpenWeather Refined error '${e}' in loadConfig.`);
+      Main.notify("OpenWeather Refined", "Failed to initialize.");
+    });
   }
 
   initOpenWeatherUI() {
@@ -217,7 +230,10 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     }
   }
 
-  stop() {
+  stop()
+  {
+    freeSoup();
+
     if (this._timeoutCurrent) {
       GLib.source_remove(this._timeoutCurrent);
       this._timeoutCurrent = null;
@@ -286,7 +302,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
 
     if (this._appid.toString().trim() === "")
       Main.notify(
-        "OpenWeather",
+        "OpenWeather Refined",
         _(
           "Openweathermap.org does not work without an api-key.\nEither set the switch to use the extensions default key in the preferences dialog to on or register at https://openweathermap.org/appid and paste your personal key into the preferences dialog."
         )
@@ -349,11 +365,13 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
 
   bindSettingsChanged()
   {
-    this._settingsC = this.settings.connect("changed", () =>
+    this._settingsC = this.settings.connect("changed", async () =>
     {
       if(_freezeSettingsChanged) return;
 
       this.firstRunSetDefaults();
+
+      setLocationRefreshIntervalM(this.settings.get_double("loc-refresh-interval"));
 
       // Sunrise/sunset in panel
       if(this._show_sunriseset_in_panel)
@@ -383,12 +401,13 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
         this._clearWeatherCache();
         this.initWeatherData();
         return;
-      } else if (this.locationChanged()) {
+      } else if (await this.locationChanged()) {
         if (this._cities.length === 0)
-          this._cities = "43.6534817,-79.3839347>Toronto >0";
+          this._cities = "here>>0";
+
         this.showRefreshing();
         if (this._selectCity._getOpenState()) this._selectCity.menu.toggle();
-        this._currentLocation = this.extractCoord(this._city);
+        this._currentLocation = await this.extractCoord(this._city);
         this.rebuildSelectCityItem();
         this._clearWeatherCache();
         this.initWeatherData();
@@ -457,16 +476,18 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     });
   }
 
-  loadConfig() {
+  async loadConfig() {
     if (this._cities.length === 0)
-      this._cities = "43.6534817,-79.3839347>Toronto >0";
+      this._cities = "here>>0";
 
     this.firstRunSetDefaults();
+
+    setLocationRefreshIntervalM(this.settings.get_double("loc-refresh-interval"));
 
     let gnomeSettings = Gio.Settings.new("org.gnome.desktop.interface");
     _systemClockFormat = gnomeSettings.get_enum("clock-format");
 
-    this._currentLocation = this.extractCoord(this._city);
+    this._currentLocation = await this.extractCoord(this._city);
     this._isForecastDisabled = this._disable_forecast;
     this._forecastDays = this._days_forecast;
     this._currentAlignment = this._menu_alignment;
@@ -482,11 +503,12 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     this.bindSettingsChanged();
   }
 
-  loadConfigInterface() {
-    this._settingsInterfaceC = this.settings.connect("changed", () => {
+  loadConfigInterface()
+  {
+    this._settingsInterfaceC = this.settings.connect("changed", async () => {
       this.rebuildCurrentWeatherUi();
       this.rebuildFutureWeatherUi();
-      if (this.locationChanged()) {
+      if (await this.locationChanged()) {
         this.rebuildSelectCityItem();
         this._clearWeatherCache();
         this.initWeatherData();
@@ -602,9 +624,9 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     return false;
   }
 
-  locationChanged()
+  async locationChanged()
   {
-    let location = this._city ? this.extractCoord(this._city) : null;
+    let location = this._city ? await this.extractCoord(this._city) : null;
     if (this._currentLocation !== location)
     {
       return true;
@@ -858,7 +880,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
         let _twoMinsAgo = Date.now() - 120000;
         if (this._lastRefresh > _twoMinsAgo) {
           Main.notify(
-            "OpenWeather",
+            "OpenWeather Refined",
             _("Manual refreshes less than 2 minutes apart are ignored!")
           );
           return;
@@ -889,7 +911,8 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     this._buttonMenu.actor.add_actor(this._buttonBox2);
   }
 
-  rebuildSelectCityItem() {
+  rebuildSelectCityItem()
+  {
     this._selectCity.menu.removeAll();
     let item = null;
 
@@ -898,8 +921,15 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     if (cities && typeof cities === "string") cities = [cities];
     if (!cities[0]) return;
 
-    for (let i = 0; cities.length > i; i++) {
-      item = new PopupMenu.PopupMenuItem(this.extractLocation(cities[i]));
+    for (let i = 0; cities.length > i; i++)
+    {
+      let locName = this.extractLocation(cities[i]);
+      if(this.cityIsCurrentLoc(cities[i]))
+      {
+        locName += ` (${getCachedLocInfo().city})`;
+      }
+
+      item = new PopupMenu.PopupMenuItem(locName);
       item.location = i;
       if (i === this._actual_city) {
         item.setOrnament(PopupMenu.Ornament.DOT);
@@ -918,18 +948,34 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     this._actual_city = this.location;
   }
 
-  extractLocation() {
-    if (!arguments[0]) return "";
-
-    if (arguments[0].search(">") === -1) return _("Invalid city");
-    return arguments[0].split(">")[1];
+  extractLocation(city)
+  {
+    let name = this.extractRawLocation(city);
+    if(!name && this.cityIsCurrentLoc(city)) return _("My Location");
+    else return name;
   }
 
-  extractCoord(loc)
+  extractRawLocation(city)
+  {
+    if (!city || city.search(">") === -1)
+    {
+      console.error("Invalid city.");
+      return null;
+    }
+    return city.split(">")[1];
+  }
+
+  async extractCoord(loc)
   {
     if (loc && loc.search(">") !== -1)
     {
       let coords = loc.split(">")[0].replace(/\s/g, "");
+      if(coords === "here")
+      {
+        let here = await getLocationInfo();
+        return `${here.lat},${here.lon}`;
+      }
+
       let split = coords.split(",");
       if(
         split && split.length === 2 &&
@@ -942,11 +988,19 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     else
     {
       Main.notify(
-        "OpenWeather",
+        "OpenWeather Refined",
         _("Invalid location! Please try to recreate it.")
       );
+      console.error("Invalid location.");
       return null;
     }
+  }
+
+  cityIsCurrentLoc(city)
+  {
+    if(!city || city.search(">") === -1) return false;
+    let coords = city.split(">")[0].replace(/\s/g, "");
+    return coords === "here";
   }
 
   extractProvider() {
@@ -1330,7 +1384,6 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
         console.warn("OpenWeather Refined invalid clock format.");
         // FALL THRU
       case ClockFormat.SYSTEM:
-        console.log("System clock format: " + _systemClockFormat);
         isHr12 = _systemClockFormat === ClockFormat._12H;
         break;
     }

@@ -192,7 +192,7 @@ class LocationsPage extends Adw.PreferencesPage {
           });
           this.location[i].Row = new Adw.ActionRow({
             title: this._extractLocation(city[i]),
-            subtitle: this._extractCoord(city[i]),
+            subtitle: this._getCoordText(city[i]),
             icon_name:
               i === this._actualCity
                 ? "checkbox-checked-symbolic"
@@ -265,13 +265,21 @@ class LocationsPage extends Adw.PreferencesPage {
       hexpand: true,
     });
     let _findEntry = new Gtk.Entry({
-      placeholder_text: _("e.g. Vaiaku, Tuvalu or -8.5211767,179.1976747"),
+      placeholder_text: _("e.g. London, England or 51.5074456,-0.1277653"),
       secondary_icon_name: "edit-clear-symbolic",
       secondary_icon_tooltip_text: _("Clear entry"),
       valign: Gtk.Align.CENTER,
       activates_default: true,
       hexpand: true,
       vexpand: false,
+      margin: 5
+    });
+    let myLocBtn = new Gtk.Button({
+      label: _("My Location"),
+      valign: Gtk.Align.END,
+      hexpand: true,
+      vexpand: false,
+      margin_bottom: 5
     });
     let _searchButton = new Gtk.Button({
       child: new Adw.ButtonContent({
@@ -286,6 +294,7 @@ class LocationsPage extends Adw.PreferencesPage {
 
     _dialogBox.append(_findLabel);
     _dialogBox.append(_findEntry);
+    _dialogBox.append(myLocBtn);
     _dialogRow.set_child(_dialogBox);
     _dialogGroup.add(_dialogRow);
     _dialogPage.add(_dialogGroup);
@@ -318,12 +327,27 @@ class LocationsPage extends Adw.PreferencesPage {
     _findEntry.connect("icon-release", (widget) => {
       widget.set_text("");
     });
+    myLocBtn.connect("clicked", () =>
+    {
+      let city = this._settings.get_string("city");
+
+      if(city) city += " && ";
+      city += "here>>0";
+      this._settings.set_string("city", city);
+
+      let toast = new Adw.Toast({
+        title: _("%s has been added").format(_("My Location")),
+      });
+      this._window.add_toast(toast);
+      _dialog.destroy();
+    });
     _dialog.connect("close-request", () => {
       _dialog.destroy();
     });
     return 0;
   }
-  _editLocation(selected) {
+  _editLocation(selected)
+  {
     let _city = this._settings.get_string("city").split(" && ");
 
     let _dialog = new Gtk.Dialog({
@@ -355,7 +379,7 @@ class LocationsPage extends Adw.PreferencesPage {
       hexpand: true,
     });
     let _editNameEntry = new Gtk.Entry({
-      text: this._extractLocation(_city[selected]),
+      text: this._extractRawLocation(_city[selected]),
       secondary_icon_name: "edit-clear-symbolic",
       secondary_icon_tooltip_text: _("Clear entry"),
       valign: Gtk.Align.CENTER,
@@ -372,7 +396,7 @@ class LocationsPage extends Adw.PreferencesPage {
       hexpand: true,
     });
     let _editCoordEntry = new Gtk.Entry({
-      text: this._extractCoord(_city[selected]),
+      text: this._getRawCoordText(_city[selected]),
       secondary_icon_name: "edit-clear-symbolic",
       secondary_icon_tooltip_text: _("Clear entry"),
       valign: Gtk.Align.CENTER,
@@ -414,11 +438,28 @@ class LocationsPage extends Adw.PreferencesPage {
         let _coord = _editCoordEntry.get_text();
         let _provider = 0; // preserved for future use
 
-        if (_coord === "" || _location === "") {
+        if (!_coord)
+        {
           let _toast = new Adw.Toast({
-            title: _("Please complete all fields"),
+            title: _("Coordinates field cannot be empty."),
           });
           this._window.add_toast(_toast);
+          return 0;
+        }
+        else if(_coord !== "here" && !/^\s*-\s*?[0-9.]\s*,\s*-\s*?[0-9.]\s*$/.test(_coord))
+        {
+          let toast = new Adw.Toast({
+            title: _("Coordinates field must be in the format of '%s' or the text '%s'.").format("0.0, 0.0", "here")
+          });
+          this._window.add_toast(toast);
+          return 0;
+        }
+        else if(!_location && _coord !== "here")
+        {
+          let toast = new Adw.Toast({
+            title: _("Name field can only be empty if coordinates are '%s'.").format("here")
+          });
+          this._window.add_toast(toast);
           return 0;
         }
         if (_city.length > 0 && typeof _city !== "object") {
@@ -524,23 +565,39 @@ class LocationsPage extends Adw.PreferencesPage {
     }
     return false;
   }
-  _extractLocation() {
-    if (!arguments[0]) {
-      return "";
-    }
-    if (arguments[0].search(">") === -1) {
-      return _("Invalid city");
-    }
-    return arguments[0].split(">")[1].trim();
+
+  cityIsCurrentLoc(city)
+  {
+    if(!city || city.search(">") === -1) return false;
+    let coords = city.split(">")[0].replace(/\s/g, "");
+    return coords === "here";
   }
-  _extractCoord() {
-    if (!arguments[0]) {
-      return 0;
-    }
-    if (arguments[0].search(">") === -1) {
-      return 0;
-    }
-    return arguments[0].split(">")[0];
+
+  _extractRawLocation(city)
+  {
+    if (!city || city.search(">") === -1) return null;
+    return city.split(">")[1];
+  }
+
+  _extractLocation(city)
+  {
+    let name = this._extractRawLocation(city);
+    if(!name && this.cityIsCurrentLoc(city)) return _("My Location");
+    else return name;
+  }
+
+  _getRawCoordText(city)
+  {
+    if (!city || city.search(">") === -1) return 0;
+    
+    return city.split(">")[0].replace(/\s/g, "");
+  }
+
+  _getCoordText(city)
+  {
+    let coords = this._getRawCoordText(city);
+    if(coords === "here") return _("My Location");
+    else return coords;
   }
 }
 
