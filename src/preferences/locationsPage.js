@@ -272,7 +272,7 @@ class LocationsPage extends Adw.PreferencesPage {
       activates_default: true,
       hexpand: true,
       vexpand: false,
-      margin: 5
+      margin_bottom: 5
     });
     let myLocBtn = new Gtk.Button({
       label: _("My Location"),
