@@ -35,7 +35,7 @@ endif
 
 .PHONY: all clean extension potfile mergepo install install-local zip-file
 
-all: extension
+all: extension _build
 
 clean:
 	rm -f ./schemas/gschemas.compiled
