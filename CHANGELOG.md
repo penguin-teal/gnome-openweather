@@ -1,8 +1,9 @@
-## v127 (WORK IN PROGRESS)
+## v127
 
 Features/Improvements:
+- Special "My Location" city that refreshes by default every 60 minutes but is adjustable
+- Use imperial units by default if in United States
 - Option to have clock format (AM/PM or 24-hour) follow GNOME desktop setting
-- Use imperial units by default if timezone is part of contiguous United States
 - Button to reset settings to default
 
 ## v126

@@ -1,10 +1,10 @@
 {
     "name": "OpenWeather Refined",
-    "description": "Display weather information for any location on Earth in the GNOME Shell. Updated fork of OpenWeather.",
+    "description": "Display weather for the current or a specified location. Fork of OpenWeather.",
     "shell-version": [ "45" ],
     "url": "https://github.com/penguin-teal/gnome-openweather",
     "uuid": "openweather-extension@penguin-teal.github.io",
     "settings-schema": "org.gnome.shell.extensions.openweatherrefined",
     "gettext-domain": "gnome-shell-extension-openweatherrefined",
-    "version": 126
+    "version": 127
 }
