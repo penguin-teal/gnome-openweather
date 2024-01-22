@@ -31,6 +31,8 @@ let locationInfo = null;
 let locationTime = new Date(0);
 let locationRefreshInterval = new Date(0).setMinutes(60);
 
+let fetchingLocation = false;
+
 function initSoup()
 {
   soupSession = new Soup.Session();
@@ -61,7 +63,6 @@ export async function getLocationInfo()
   let now = new Date();
   if(locationInfo === null || now - locationTime > locationRefreshInterval)
   {
-    locationInfo = "";
     let msg = Soup.Message.new("GET", LOC_ADDR);
     return new Promise((resolve) => {
       sess.send_and_read_async(
@@ -70,9 +71,12 @@ export async function getLocationInfo()
         null,
         (s, m) =>
         {
+          fetchingLocation = true;
+
           let response = s.send_and_read_finish(m).get_data();
           if(!response)
           {
+            fetchingLocation = false;
             locationInfo = null;
             reject();
           }
@@ -89,22 +93,17 @@ export async function getLocationInfo()
             state: obj.region,
             country: obj.country_long
           };
+          fetchingLocation = false;
           resolve(locationInfo);
         }
       );
     });
   }
-  else if(locationInfo === "")
+  else if(fetchingLocation)
   {
-    return new Promise((resolve) =>
-    {
-      (function waitForOther()
-      {
-        if(locationInfo !== "") resolve(locationInfo);
-      })();
-      setTimeout(waitForOther, 10);
-    });
+    console.warn("OpenWeather Refined: Location requested while fetching it; returning cached location.");
   }
+
   return locationInfo;
 }
 
