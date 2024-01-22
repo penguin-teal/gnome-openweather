@@ -1,5 +1,7 @@
 ## v127
 
+v127 allows to use the current location for the weather and some other improvements.
+
 Features/Improvements:
 - Special "My Location" city that refreshes by default every 60 minutes but is adjustable
 - Use imperial units by default if in United States
