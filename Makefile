@@ -33,15 +33,13 @@ else
 	ZIPVER = -v$(shell cat metadata.json | sed '/"version"/!d' | sed s/\"version\"://g | sed s/\ //g)
 endif
 
-.PHONY: all clean extension potfile mergepo install install-local zip-file
+.PHONY: all clean potfile mergepo install install-local zip-file
 
-all: extension _build
+all: _build
 
 clean:
 	rm -f ./schemas/gschemas.compiled
 	rm -f ./po/*.mo
-
-extension: ./schemas/gschemas.compiled $(MSGSRC:.po=.mo)
 
 ./schemas/gschemas.compiled: ./schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml
 	glib-compile-schemas --strict ./schemas/
@@ -85,7 +83,7 @@ zip-file: _build
 	mv _build/$(PKG_NAME)$(ZIPVER).zip ./
 	-rm -fR _build
 
-_build: all
+_build: ./schemas/gschemas.compiled $(MSGSRC:.po=.mo)
 	-rm -fR ./_build
 	mkdir -p _build/preferences
 	cp $(BASE_MODULES) $(addprefix src/, $(SRC_MODULES)) _build
