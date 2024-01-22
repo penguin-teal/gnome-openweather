@@ -1,6 +1,6 @@
 {
     "name": "OpenWeather Refined",
-    "description": "Display weather for the current or a specified location. Fork of OpenWeather.",
+    "description": "Display weather for the current or a specified location. Fork of OpenWeather.\nWeather data is provided by OpenWeatherMap.org.\nIf location is set to \"My Location,\" location is provided by infoip.io.",
     "shell-version": [ "45" ],
     "url": "https://github.com/penguin-teal/gnome-openweather",
     "uuid": "openweather-extension@penguin-teal.github.io",
