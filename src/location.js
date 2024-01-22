@@ -39,6 +39,7 @@ function initSoup()
 
 export function freeSoup()
 {
+  if(soupSession) soupSession.abort();
   soupSession = null;
 }
 
