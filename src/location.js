@@ -56,12 +56,12 @@ export function setLocationRefreshIntervalM(minutes)
   locationRefreshInterval = new Date(0).setMinutes(minutes);
 }
 
-export async function getLocationInfo()
+export async function getLocationInfo(forceRefresh)
 {
   let sess = getSoupSession();
 
   let now = new Date();
-  if(locationInfo === null || now - locationTime > locationRefreshInterval)
+  if(locationInfo === null || forceRefresh || now - locationTime > locationRefreshInterval)
   {
     let msg = Soup.Message.new("GET", LOC_ADDR);
     return new Promise((resolve) => {

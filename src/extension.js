@@ -875,7 +875,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     });
     this._reloadButton.connect("clicked", () => {
       if (this._lastRefresh) {
-        let _twoMinsAgo = Date.now() - 120000;
+        let _twoMinsAgo = Date.now() - new Date(0).setMinutes(2.0);
         if (this._lastRefresh > _twoMinsAgo) {
           Main.notify(
             "OpenWeather Refined",

@@ -19,7 +19,7 @@ import Soup from "gi://Soup";
 
 import { gettext as _ } from "resource:///org/gnome/shell/extensions/extension.js";
 
-import { getCachedLocInfo } from "./location.js";
+import { getCachedLocInfo, getLocationInfo } from "./location.js";
 
 // Map OpenWeatherMap icon codes to icon names
 const IconMap = {
@@ -166,12 +166,17 @@ async function initWeatherData(refresh) {
   }
   try {
     await this.refreshWeatherData().then(async () => {
-      try {
-        if (!this._isForecastDisabled) {
-          await this.refreshForecastData().then(this.recalcLayout());
-        } else {
-          this.recalcLayout();
+      try 
+      {
+        if(this.cityIsCurrentLoc(this._city))
+        {
+          await getLocationInfo();
+        }        if (!this._isForecastDisabled)
+        {
+          await this.refreshForecastData();
         }
+        this.recalcLayout();
+
       } catch (e) {
         console.error(e);
       }
