@@ -446,7 +446,7 @@ class LocationsPage extends Adw.PreferencesPage {
           this._window.add_toast(_toast);
           return 0;
         }
-        else if(_coord !== "here" && !/^\s*-\s*?[0-9.]\s*,\s*-\s*?[0-9.]\s*$/.test(_coord))
+        else if(_coord !== "here" && !/^\s*-?\s*[0-9]*\.[0-9]+\s*,\s*-?\s*[0-9]*\.[0-9]+\s*$/.test(_coord))
         {
           let toast = new Adw.Toast({
             title: _("Coordinates field must be in the format of '%s' or the text '%s'.").format("0.0, 0.0", "here")
