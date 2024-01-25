@@ -1501,6 +1501,13 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     this._currentWeatherIcon.icon_name = "view-refresh-symbolic";
   }
 
+  cssConcatClass(left, right)
+  {
+    if(!left) return right;
+    else if(!right) return left;
+    else return `${left} ${right}`;
+  }
+
   rebuildCurrentWeatherUi() {
     this._currentWeather.actor.destroy_all_children();
     if (!this._isForecastDisabled)
@@ -1524,7 +1531,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     });
     this._sunsetIcon = new St.Icon({
       icon_size: 15,
-      style_class: "openweather-sunset-icon ",
+      style_class: "openweather-sunset-icon",
     });
     this._sunriseIcon.set_gicon(
       this.getWeatherIcon("daytime-sunrise-symbolic")
@@ -1534,16 +1541,17 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     this._buildIcon = new St.Icon({
       icon_size: 15,
       icon_name: "view-refresh-symbolic",
-      style_class: "openweather-build-icon",
+      style_class: `openweather-build-icon ${}`,
     });
 
     // The summary of the current weather
     this._currentWeatherSummary = new St.Label({
       text: _("Loading ..."),
-      style_class: "openweather-current-summary",
+      style_class: this.cssConcatClass("openweather-current-summary", a11yClasses),
     });
     this._currentWeatherLocation = new St.Label({
       text: _("Please wait"),
+      style_class: a11yClasses
     });
 
     let bb = new St.BoxLayout({
@@ -1558,12 +1566,15 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
 
     this._currentWeatherSunrise = new St.Label({
       text: "-",
+      style_class: a11yClasses
     });
     this._currentWeatherSunset = new St.Label({
       text: "-",
+      style_class: a11yClasses
     });
     this._currentWeatherBuild = new St.Label({
       text: "-",
+      style_class: a11yClasses
     });
 
     let ab = new St.BoxLayout({
