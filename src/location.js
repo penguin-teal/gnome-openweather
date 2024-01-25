@@ -56,7 +56,7 @@ export function setLocationRefreshIntervalM(minutes)
   locationRefreshInterval = new Date(0).setMinutes(minutes);
 }
 
-export async function getLocationInfo(forceRefresh)
+export async function getLocationInfo(forceRefresh = false)
 {
   let sess = getSoupSession();
 
