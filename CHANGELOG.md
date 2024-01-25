@@ -4,9 +4,11 @@ Features/Improvements:
 - Option to only show degree sign instead of deg. fahrenheit, deg. celsisus, etc.
 - Make manual refreshes refresh current location (for "My Location")
 - No more space between temperature and degree unit
+- About page now says "OpenWeather Refined" instead of "OpenWeather"
 
 Bug Fixes:
 - Fix Edit Location refusing to save
+- Fix about page extension version being wrong/misleading when downloaded from GNOME Extension website
 
 ## v127
 

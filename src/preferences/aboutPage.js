@@ -29,7 +29,8 @@ class AboutPage extends Adw.PreferencesPage {
     GObject.registerClass(this);
   }
 
-  constructor(metadata) {
+  constructor(metadata)
+  {
     super({
       title: _("About"),
       icon_name: "help-about-symbolic",
@@ -51,7 +52,7 @@ class AboutPage extends Adw.PreferencesPage {
       pixel_size: 100,
     });
     let openWeatherLabel = new Gtk.Label({
-      label: '<span size="larger"><b>OpenWeather</b></span>',
+      label: '<span size="larger"><b>OpenWeather Refined</b></span>',
       use_markup: true,
       margin_bottom: 15,
       vexpand: true,
@@ -74,20 +75,21 @@ class AboutPage extends Adw.PreferencesPage {
 
     // Info group
     let infoGroup = new Adw.PreferencesGroup();
-    let releaseVersion = metadata.version ? metadata.version : _("unknown");
-    let gitVersion = metadata["git-version"] ? metadata["git-version"] : null;
+    let releaseVersion = String(metadata["version-name"] ?? _("Unknown"));
+    let gitVersion = String(metadata["git-version"] ?? _("Unknown"));
     let windowingLabel =
       GLib.getenv("XDG_SESSION_TYPE") === "wayland" ? "Wayland" : "X11";
 
     // Extension version
     let openWeatherVersionRow = new Adw.ActionRow({
-      title: _("OpenWeather Version"),
+      title: _("OpenWeather Refined Version"),
     });
     openWeatherVersionRow.add_suffix(
       new Gtk.Label({
-        label: releaseVersion + "",
+        label: releaseVersion,
       })
     );
+
     // Git version for self builds
     let gitVersionRow = null;
     if (gitVersion) {
@@ -96,10 +98,11 @@ class AboutPage extends Adw.PreferencesPage {
       });
       gitVersionRow.add_suffix(
         new Gtk.Label({
-          label: gitVersion + "",
+          label: gitVersion,
         })
       );
     }
+
     // shell version
     let gnomeVersionRow = new Adw.ActionRow({
       title: _("GNOME Version"),
@@ -109,6 +112,7 @@ class AboutPage extends Adw.PreferencesPage {
         label: PACKAGE_VERSION + "",
       })
     );
+
     // session type
     let sessionTypeRow = new Adw.ActionRow({
       title: _("Session Type"),
