@@ -341,20 +341,46 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     _freezeSettingsChanged = false;
   }
 
-  firstRunSetDefaults(extension)
+  hasBattery()
+  {
+    let batt = Gio.File.new_for_path("/sys/class/power_supply/BAT0");
+    return batt.query_exists();
+  }
+
+  async getDefaultCity()
+  {
+    if(hasBattery()) return "here>>0";
+    else
+    {
+      let loc = await getLocationInfo();
+
+      let placeName;
+      if(loc.country === "United States") placeName = `${loc.city}, ${loc.state}`;
+      else `${loc.city}, ${loc.country}`;
+
+      return `${loc.lat},${loc.lon}>${placeName}>0`;
+    }
+  }
+
+  async firstRunSetDefaults(extension)
   {
     if(this.isFirstRun(true))
     {
       this.freezeSettingsChanged();
 
-      let locInfo = getLocationInfo();
+      let locInfo = await getLocationInfo();
 
       if(locInfo && locInfo.country === "United States")
       {
         this.settings.set_enum("unit", WeatherUnits.FAHRENHEIT);
         this.settings.set_enum("wind-speed-unit", WeatherWindSpeedUnits.MPH);
         this.settings.set_enum("pressure-unit", WeatherPressureUnits.INHG);
+      }
 
+      let defCity = await this.getDefaultCity();
+      if(this.settings.get_string("city") !== defCity)
+      {
+        this.settings.set_string("city", defCity);
       }
 
       this.unfreezeSettingsChanged();
@@ -367,7 +393,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     {
       if(_freezeSettingsChanged) return;
 
-      this.firstRunSetDefaults();
+      await this.firstRunSetDefaults();
 
       setLocationRefreshIntervalM(this.settings.get_double("loc-refresh-interval"));
 
@@ -404,7 +430,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       else if (await this.locationChanged())
       {
         if (this._cities.length === 0)
-          this._cities = "here>>0";
+          this._cities = await this.getDefaultCity();
 
         this.showRefreshing();
         if (this._selectCity._getOpenState()) this._selectCity.menu.toggle();
@@ -483,9 +509,9 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
 
   async loadConfig() {
     if (this._cities.length === 0)
-      this._cities = "here>>0";
+      this._cities = await this.getDefaultCity();
 
-    this.firstRunSetDefaults();
+    await this.firstRunSetDefaults();
 
     setLocationRefreshIntervalM(this.settings.get_double("loc-refresh-interval"));
 
