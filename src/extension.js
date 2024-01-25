@@ -861,7 +861,9 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     return key.length === 32 ? key : "";
   }
 
-  createButton(iconName, accessibleName) {
+  createButton(iconName, accessibleName)
+  {
+    let a11yClasses = this.getHiConrastClass() ?? "";
     let button;
 
     button = new St.Button({
@@ -869,7 +871,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       can_focus: true,
       track_hover: true,
       accessible_name: accessibleName,
-      style_class: "message-list-clear-button button openweather-button-action",
+      style_class: this.cssConcatClass("message-list-clear-button button openweather-button-action", a11yClasses),
     });
 
     button.child = new St.Icon({
@@ -1496,7 +1498,8 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     );
   }
 
-  showRefreshing() {
+  showRefreshing()
+  {
     this._currentWeatherSummary.text = _("Loading ...");
     this._currentWeatherIcon.icon_name = "view-refresh-symbolic";
   }
@@ -1508,7 +1511,8 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     else return `${left} ${right}`;
   }
 
-  rebuildCurrentWeatherUi() {
+  rebuildCurrentWeatherUi()
+  {
     this._currentWeather.actor.destroy_all_children();
     if (!this._isForecastDisabled)
       this._currentForecast.actor.destroy_all_children();
@@ -1696,7 +1700,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       let todaysForecast = {};
 
       todaysForecast.Time = new St.Label({
-        style_class: "openweather-forecast-time",
+        style_class: this.cssConcatClass("openweather-forecast-time", a11yClasses),
       });
       todaysForecast.Icon = new St.Icon({
         icon_size: 24,
@@ -1704,10 +1708,10 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
         style_class: "openweather-forecast-icon",
       });
       todaysForecast.Temperature = new St.Label({
-        style_class: "openweather-forecast-temperature",
+        style_class: this.cssConcatClass("openweather-forecast-temperature", a11yClasses),
       });
       todaysForecast.Summary = new St.Label({
-        style_class: "openweather-forecast-summary",
+        style_class: this.cssConcatClass("openweather-forecast-summary", a11yClasses),
       });
       todaysForecast.Summary.clutter_text.line_wrap = true;
 
@@ -1750,7 +1754,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     this._forecastExpanderBox = new St.BoxLayout({
       x_expand: true,
       opacity: 150,
-      style_class: `openweather-forecast-expander ${a11yClasses}`,
+      style_class: this.cssConcatClass("openweather-forecast-expander", a11yClasses),
     });
     this._forecastExpander.menu.box.add(this._forecastExpanderBox);
 

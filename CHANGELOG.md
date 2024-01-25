@@ -7,6 +7,7 @@ Features/Improvements:
 - Make manual refreshes refresh current location (for "My Location")
 - No more space between temperature and degree unit
 - About page now says "OpenWeather Refined" instead of "OpenWeather"
+- High contrast now mode affects entire pop-up
 - Minor performance improvements
 
 Bug Fixes:
