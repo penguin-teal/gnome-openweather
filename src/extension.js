@@ -1272,14 +1272,19 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     );
   }
 
-  formatTemperature(temperature) {
-    switch (this._units) {
+  formatTemperature(temperature)
+  {
+    let isDegrees = false;
+    switch (this._units)
+    {
       case WeatherUnits.FAHRENHEIT:
         temperature = this.toFahrenheit(temperature);
+        isDegrees = true;
         break;
 
       case WeatherUnits.CELSIUS:
         temperature = temperature.toFixed(this._decimal_places);
+        isDegrees = true;
         break;
 
       case WeatherUnits.KELVIN:
@@ -1310,7 +1315,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       parseFloat(temperature)
         .toLocaleString(this.locale)
         .replace("-", "\u2212") +
-      " " +
+      (isDegrees ? "" : " ") +
       this.unit_to_unicode()
     );
   }
