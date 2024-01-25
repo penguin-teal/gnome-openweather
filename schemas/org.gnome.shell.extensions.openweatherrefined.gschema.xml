@@ -178,7 +178,7 @@
       <summary>Time format for hours. Possible values are '24hr' for 24-hour clock, '12hr' for AM/PM, and 'system' to follow the GNOME setting.</summary>
     </key>
     <key type="i" name="delay-ext-init">
-      <default>5</default>
+      <default>0</default>
       <summary>Seconds to delay popup initialization and data fetch on the first load</summary>
     </key>
     <key type="i" name="prefs-default-width">

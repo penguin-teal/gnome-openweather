@@ -1,6 +1,7 @@
 ## v128 (IN PROGRESS)
 
 Features/Improvements:
+- No more boot delay by default
 - Option to only show degree sign instead of deg. fahrenheit, deg. celsisus, etc.
 - Make manual refreshes refresh current location (for "My Location")
 - No more space between temperature and degree unit
