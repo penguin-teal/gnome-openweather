@@ -386,7 +386,8 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       let gnomeSettings = Gio.Settings.new("org.gnome.desktop.interface");
       _systemClockFormat = gnomeSettings.get_enum("clock-format");
       
-      if (this.disableForecastChanged()) {
+      if (this.disableForecastChanged())
+      {
         let _children = this._isForecastDisabled ? 4 : 7;
         if (this._forecastDays === 0) {
           _children = this.menu.box.get_children().length - 1;
@@ -399,7 +400,9 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
         this._clearWeatherCache();
         this.initWeatherData();
         return;
-      } else if (await this.locationChanged()) {
+      }
+      else if (await this.locationChanged())
+      {
         if (this._cities.length === 0)
           this._cities = "here>>0";
 
@@ -410,8 +413,11 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
         this._clearWeatherCache();
         this.initWeatherData();
         return;
-      } else {
-        if (this.menuAlignmentChanged()) {
+      }
+      else
+      {
+        if (this.menuAlignmentChanged())
+        {
           if (this._timeoutMenuAlignent)
             GLib.source_remove(this._timeoutMenuAlignent);
           // Use 1 second timeout to avoid crashes and spamming
@@ -428,7 +434,8 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
           );
           return;
         }
-        if (this._forecastDays !== this._days_forecast) {
+        else if (this._forecastDays !== this._days_forecast)
+        {
           let _oldDays = this._forecastDays;
           let _newDays = this._days_forecast;
           this._forecastDays = _newDays;
@@ -1045,15 +1052,38 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     );
   }
 
-  unit_to_unicode() {
-    if (this._units === WeatherUnits.FAHRENHEIT) return _("\u00B0F");
-    else if (this._units === WeatherUnits.KELVIN) return _("K");
-    else if (this._units === WeatherUnits.RANKINE) return _("\u00B0Ra");
-    else if (this._units === WeatherUnits.REAUMUR) return _("\u00B0R\u00E9");
-    else if (this._units === WeatherUnits.ROEMER) return _("\u00B0R\u00F8");
-    else if (this._units === WeatherUnits.DELISLE) return _("\u00B0De");
-    else if (this._units === WeatherUnits.NEWTON) return _("\u00B0N");
-    else return _("\u00B0C");
+  _simplifyDegrees()
+  {
+    return this.settings.get_boolean("simplify-degrees");
+  }
+
+  unit_to_unicode()
+  {
+    if(this._units !== 2 && this._simplifyDegrees()) return "\u00B0";
+    switch(this._units)
+    {
+      case WeatherUnits.CELSIUS:
+        // Don't use U+2013 because it looks weird
+        return _("\u00B0C");
+      case WeatherUnits.FAHRENHEIT:
+        // Don't use U+2109 because it looks weird
+        return _("\u00B0F");
+      case WeatherUnits.KELVIN:
+        return _("K");
+      case WeatherUnits.RANKINE:
+        return _("\u00B0Ra");
+      case WeatherUnits.REAUMUR:
+        return _("\u00B0R\u00E9");
+      case WeatherUnits.ROEMER:
+        return _("\u00B0R\u00F8");
+      case WeatherUnits.DELISLE:
+        return _("\u00B0De");
+      case WeatherUnits.NEWTON:
+        return _("\u00B0N");
+      default:
+        console.warn("OpenWeather Refined: Invalid tempeature unit.");
+        return "\u00B0";
+    }
   }
 
   toFahrenheit(t) {

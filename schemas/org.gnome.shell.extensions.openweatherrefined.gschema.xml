@@ -209,5 +209,9 @@
       <default>60.0</default>
       <summary>How often, in minutes, to re-fetch My Location if selected.</summary>
     </key>
+    <key type="b" name="simplify-degrees">
+      <default>true</default>
+      <summary>True to cut off the "F" or "C" after the degree symbol.</summary>
+    </key>
   </schema>
 </schemalist>

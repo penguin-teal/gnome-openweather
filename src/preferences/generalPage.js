@@ -170,14 +170,16 @@ class GeneralPage extends Adw.PreferencesPage {
 
     // Temperature
     let temperatureUnits = new Gtk.StringList();
-    temperatureUnits.append(_("°C"));
-    temperatureUnits.append(_("°F"));
+    temperatureUnits.append(_("\u00B0C"));
+    temperatureUnits.append(_("\u00B0F"));
     temperatureUnits.append(_("K"));
-    temperatureUnits.append(_("°Ra"));
-    temperatureUnits.append(_("°Ré"));
-    temperatureUnits.append(_("°Rø"));
-    temperatureUnits.append(_("°De"));
-    temperatureUnits.append(_("°N"));
+    temperatureUnits.append(_("\u00B0Ra"));
+    temperatureUnits.append(_("\u00B0R\u00E9"));
+    temperatureUnits.append(_("\u00B0R\u00F8"));
+    temperatureUnits.append(_("\u00B0De"));
+    temperatureUnits.append(_("\u00B0N"));
+    let selTempUnit = this._settings.get_enum("unit");
+    let unitIsDegs = selTempUnit !== 2;
     let temperatureUnitRow = new Adw.ComboRow({
       title: _("Temperature"),
       model: temperatureUnits,
@@ -228,10 +230,24 @@ class GeneralPage extends Adw.PreferencesPage {
       selected: this._settings.get_enum("clock-format")
     });
 
+    let simplifyDegSwitch = new Gtk.Switch({
+      valign: Gtk.Align.CENTER,
+      active: this._settings.get_boolean("simplify-degrees")
+    });
+    simplifyDegSwitch.set_sensitive(unitIsDegs);
+    let simplifyDegRow = new Adw.ActionRow({
+      title: _("Simplify Degrees"),
+      subtitle: _('Show "\u00B0" instead of "\u00B0C," "\u00B0F," etc.'),
+      tooltip_text: _("Enable this to cut off the \"C,\" \"F,\" etc. from degrees labels."),
+      activatable_widget: simplifyDegSwitch
+    });
+    simplifyDegRow.add_suffix(simplifyDegSwitch);
+
     unitsGroup.add(temperatureUnitRow);
     unitsGroup.add(windSpeedUnitRow);
     unitsGroup.add(pressureUnitRow);
     unitsGroup.add(clockFormatRow);
+    unitsGroup.add(simplifyDegRow);
     this.add(unitsGroup);
 
     // Provider Settings
@@ -362,7 +378,9 @@ class GeneralPage extends Adw.PreferencesPage {
       this._settings.set_int("delay-ext-init", widget.get_value());
     });
     temperatureUnitRow.connect("notify::selected", (widget) => {
-      this._settings.set_enum("unit", widget.selected);
+      let unit = widget.selected;
+      simplifyDegSwitch.set_sensitive(unit !== 2);
+      this._settings.set_enum("unit", unit);
     });
     windSpeedUnitRow.connect("notify::selected", (widget) => {
       this._settings.set_enum("wind-speed-unit", widget.selected);
@@ -373,16 +391,16 @@ class GeneralPage extends Adw.PreferencesPage {
     clockFormatRow.connect("notify::selected", (widget) => {
       this._settings.set_enum("clock-format", widget.selected);
     });
+    simplifyDegSwitch.connect("notify::active", (widget) => {
+      this._settings.set_boolean("simplify-degrees", widget.get_active());
+    });
     providerTranslateSwitch.connect("notify::active", (widget) => {
       this._settings.set_boolean("owm-api-translate", widget.get_active());
     });
     defaultApiKeySwitch.connect("notify::active", (widget) => {
-      if (widget.get_active()) {
-        personalApiKeyEntry.set_sensitive(false);
-      } else {
-        personalApiKeyEntry.set_sensitive(true);
-      }
-      this._settings.set_boolean("use-default-owm-key", widget.get_active());
+      let active = widget.get_active();
+      personalApiKeyEntry.set_sensitive(!active);
+      this._settings.set_boolean("use-default-owm-key", active);
     });
     personalApiKeyEntry.connect("notify::text", (widget) => {
       if (widget.text.length === 32) {

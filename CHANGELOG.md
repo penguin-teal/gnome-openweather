@@ -1,3 +1,13 @@
+## v128 (IN PROGRESS)
+
+Features/Improvements:
+- Option to only show degree sign instead of deg. fahrenheit, deg. celsisus, etc.
+- Make manual refreshes refresh current location (for "My Location")
+- No more space between temperature and degree unit
+
+Bug Fixes:
+- Fix Edit Location refusing to save
+
 ## v127
 
 v127 allows to use the current location for the weather and some other improvements.
