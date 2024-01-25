@@ -27,7 +27,7 @@ enable the extension through the *gnome-extensions* app.
 
 <p align="left">
   <a href="https://extensions.gnome.org/extension/6655/openweather">
-    <img src="./get-it-on-ego.png" width="240" style="margin-left: 5px">
+    <img src="./media/ego.png" width="240" style="margin-left: 5px">
   </a>
 </p>
 
