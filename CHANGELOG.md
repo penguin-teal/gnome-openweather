@@ -2,13 +2,16 @@
 
 Features/Improvements:
 - No more boot delay by default
+- Default location is now "My Location" for laptops or your current city at first load for desktops
 - Option to only show degree sign instead of deg. fahrenheit, deg. celsisus, etc.
 - Make manual refreshes refresh current location (for "My Location")
 - No more space between temperature and degree unit
 - About page now says "OpenWeather Refined" instead of "OpenWeather"
+- Minor performance improvements
 
 Bug Fixes:
 - Fix Edit Location refusing to save
+- Resetting settings now closes the preferences window since before it was un-updated and wrong
 - Fix about page extension version being wrong/misleading when downloaded from GNOME Extension website
 
 ## v127

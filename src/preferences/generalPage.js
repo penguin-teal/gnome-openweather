@@ -21,18 +21,22 @@ import GObject from "gi://GObject";
 
 import { gettext as _ } from "resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js";
 
-class GeneralPage extends Adw.PreferencesPage {
-  static {
+class GeneralPage extends Adw.PreferencesPage
+{
+  static
+  {
     GObject.registerClass(this);
   }
 
-  constructor(metadata, settings) {
+  constructor(metadata, settings, wnd)
+  {
     super({
       title: _("Settings"),
       icon_name: "preferences-system-symbolic",
       name: "GeneralPage",
     });
     this._settings = settings;
+    this._window = wnd;
 
     // General Settings
     let generalGroup = new Adw.PreferencesGroup({
@@ -427,6 +431,8 @@ class GeneralPage extends Adw.PreferencesPage {
         }
 
         this._settings.reset("frozen");
+
+        this._window.close();
       }
     );
   }

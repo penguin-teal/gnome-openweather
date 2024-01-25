@@ -175,7 +175,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     }, (e) =>
     {
       console.error(`OpenWeather Refined: Error '${e}' in loadConfig.`);
-      Main.notify("OpenWeather Refined", "Failed to initialize.");
+      Main.notify("OpenWeather Refined", _("Failed to initialize."));
     });
   }
 

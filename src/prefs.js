@@ -42,7 +42,7 @@ export default class OpenWeatherPreferences extends ExtensionPreferences {
 
     window._settings = this.getSettings();
 
-    const generalPage = new GeneralPage(this.metadata, window._settings);
+    const generalPage = new GeneralPage(this.metadata, window._settings, window);
     const layoutPage = new LayoutPage(this.metadata, window._settings);
     const locationsPage = new LocationsPage(
       this.metadata,
