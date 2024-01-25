@@ -1274,21 +1274,20 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
 
   formatTemperature(temperature)
   {
-    let isDegrees = false;
+    let isDegrees = true;
     switch (this._units)
     {
       case WeatherUnits.FAHRENHEIT:
         temperature = this.toFahrenheit(temperature);
-        isDegrees = true;
         break;
 
       case WeatherUnits.CELSIUS:
         temperature = temperature.toFixed(this._decimal_places);
-        isDegrees = true;
         break;
 
       case WeatherUnits.KELVIN:
         temperature = this.toKelvin(temperature);
+        isDegrees = false;
         break;
 
       case WeatherUnits.RANKINE:
