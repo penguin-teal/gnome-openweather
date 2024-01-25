@@ -419,12 +419,14 @@ class GeneralPage extends Adw.PreferencesPage {
     resetToDefsBtn.connect("clicked", () =>
       {
         let keys = this._settings.list_keys();
+        this._settings.set_boolean("frozen", true);
+
         for(let k of keys)
         {
-          if(k != "has-run") this._settings.reset(k);
+          this._settings.reset(k);
         }
-        // reset has-run last since it will affect other settings
-        this._settings.reset("has-run");
+
+        this._settings.reset("frozen");
       }
     );
   }

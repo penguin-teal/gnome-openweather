@@ -174,7 +174,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       }
     }, (e) =>
     {
-      console.error(`OpenWeather Refined error '${e}' in loadConfig.`);
+      console.error(`OpenWeather Refined: Error '${e}' in loadConfig.`);
       Main.notify("OpenWeather Refined", "Failed to initialize.");
     });
   }
@@ -344,15 +344,16 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
   hasBattery()
   {
     let batt = Gio.File.new_for_path("/sys/class/power_supply/BAT0");
-    return batt.query_exists();
+    return batt.query_exists(null);
   }
 
   async getDefaultCity()
   {
-    if(hasBattery()) return "here>>0";
+    if(this.hasBattery()) return "here>>0";
     else
     {
       let loc = await getLocationInfo();
+      if(!loc) return "here>>0";
 
       let placeName;
       if(loc.country === "United States") placeName = `${loc.city}, ${loc.state}`;
@@ -391,9 +392,16 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
   {
     this._settingsC = this.settings.connect("changed", async () =>
     {
-      if(_freezeSettingsChanged) return;
+      if(_freezeSettingsChanged || this.settings.get_boolean("frozen")) return;
 
-      await this.firstRunSetDefaults();
+      try
+      {
+        await this.firstRunSetDefaults();
+      }
+      catch(e)
+      {
+        console.error(`OpenWeather Refined: Error '${e}' in firstRunSetDefaults.`);
+      }
 
       setLocationRefreshIntervalM(this.settings.get_double("loc-refresh-interval"));
 
@@ -485,7 +493,8 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
             return;
           }
         }
-        if (this._providerTranslations !== this._provider_translations) {
+        else if (this._providerTranslations !== this._provider_translations)
+        {
           this._providerTranslations = this._provider_translations;
           if (this._providerTranslations) {
             this.showRefreshing();

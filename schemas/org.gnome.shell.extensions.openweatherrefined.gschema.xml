@@ -213,5 +213,9 @@
       <default>true</default>
       <summary>True to cut off the "F" or "C" after the degree symbol.</summary>
     </key>
+    <key type="b" name="frozen">
+      <default>false</default>
+      <summary>Freezes the settings changed listener; user should not change this.</summary>
+    </key>
   </schema>
 </schemalist>
