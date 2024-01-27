@@ -19,6 +19,7 @@ import Adw from "gi://Adw";
 import GLib from "gi://GLib";
 import Gtk from "gi://Gtk";
 import GObject from "gi://GObject";
+import GdkPixbuf from "gi://GdkPixbuf";
 
 import { PACKAGE_VERSION } from "resource:///org/gnome/Shell/Extensions/js/misc/config.js";
 
@@ -130,23 +131,27 @@ class AboutPage extends Adw.PreferencesPage {
     this.add(infoGroup);
 
     // Badges
+    let imgLinksGroup = new Adw.PreferencesGroup();
+    
     let pixbuf = GdkPixbuf.Pixbuf.new_from_file_at_scale("./media/ego.png", -1, 50, true);
-    let egoImg = Gtk.Picture.new_from_pixbuf(pixbuf);
+    let egoImg = Gtk.Picture.new_for_pixbuf(pixbuf);
     let egoBtn = new Gtk.LinkButton({
       child: egoImg,
       uri: "https://extensions.gnome.org/extension/6655"
     });
 
-    // TODO: GitHub badge image
+    pixbuf = GdkPixbuf.Pixbuf.new_from_file_at_scale("./media/github.png", -1, 50, true);
+    let githubImg = Gtk.Picture.new_for_pixbuf(pixbuf);
     let repoBtn = new Gtk.LinkButton({
-      child: new Gtk.Label({ text: "GitHub" }),
+      child: githubImg,
       uri: "https://github.com/penguin-teal/gnome-openweather"
     });
 
     let imgLinksBox = new Adw.ActionRow();
-    imgLinksBox.append(egoBtn);
-    imgLinksBox.append(repoBtn);
-    this.add(imgLinksBox);
+    imgLinksBox.add_prefix(egoBtn);
+    imgLinksBox.add_suffix(repoBtn);
+    imgLinksGroup.add(imgLinksBox);
+    this.add(imgLinksGroup);
 
     // Maintainer
     let maintainerGroup = new Adw.PreferencesGroup();

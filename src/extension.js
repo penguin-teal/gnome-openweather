@@ -1545,7 +1545,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     this._buildIcon = new St.Icon({
       icon_size: 15,
       icon_name: "view-refresh-symbolic",
-      style_class: `openweather-build-icon ${}`,
+      style_class: "openweather-build-icon",
     });
 
     // The summary of the current weather
