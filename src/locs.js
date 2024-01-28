@@ -18,6 +18,7 @@
 */
 
 import Gio from "gi://Gio";
+import GLib from "gi://GLib";
 import { notify } from "resource:///org/gnome/shell/ui/main.js";
 import {
     gettext as _
@@ -108,6 +109,22 @@ export class Loc
     }
   }
 
+  getPlaceDisplay()
+  {
+    let coords;
+    switch(this.#placeType)
+    {
+      case PLACE_TYPE.COORDS:
+        coords = this.#place.split(",");
+        return `${coords.lat}, ${coords.lon}`;
+      case PLACE_TYPE.MY_LOC:
+        return _("My Location");
+      default:
+        console.warn(`OpenWeather Refined: Invalid place type (${this.#placeType}).`);
+        return null;
+    }
+  }
+
   /**
     * Gets if this is a "My Location" type.
     * @returns {boolean} If this has a "My Location" place type.
@@ -145,9 +162,25 @@ export class Loc
     return new Loc(NAME_TYPE.CUSTOM, name, PLACE_TYPE.COORDS, `${lat},${lon}`);
   }
 
+  static arrsEqual(locArr1, locArr2)
+  {
+    // If one is null/undefined but the other is not not equal
+    if(Boolean(locArr1) !== Boolean(locArr2)) return false;
+    // If they compare true they must be equal
+    else if(locArr1 === locArr2) return true;
+    // If their lengths are different they're definitely not equal
+    else if(locArr1.length !== locArr2.length) return false;
+
+    for(let i in locArr1)
+    {
+      if(!locArr1[i].equals(locArr2[i])) return false;
+    }
+    return true;
+  }
+
 }
 
-function locsToJs(val)
+function fromLocsGVariant(val)
 {
   val.get_data();
   let locCount = val.n_children();
@@ -176,9 +209,23 @@ function locsToJs(val)
   return arr;
 }
 
-function jsToLocs(arr)
+function toLocsGVariant(arr)
 {
-  // TODO: Convert 2-D array to GVariant array and tuples
+  let tuples = [ ];
+  for(let l of arr)
+  {
+    let locArr = l.toArrayForm();
+    let info =
+    [
+      GLib.Variant.new_uint32(locArr[0]),
+      GLib.Variant.new_string(locArr[1]),
+      GLib.Variant.new_uint32(locArr[2]),
+      GLib.Variant.new_string(locArr[3])
+    ];
+    tuples.push(GLib.Variant.new_tuples(info));
+  }
+  let gArray = GLib.Variant.new_array("a(usus)", tuples);
+  return gArray;
 }
 
 export function settingsGetLocs(settings)
@@ -186,7 +233,7 @@ export function settingsGetLocs(settings)
   let gvariant = settings.get_value("locs");
   if(!gvariant) return [ ];
 
-  let arr = locsToJs(gvariant);
+  let arr = fromLocsGVariant(gvariant);
 
   let locs = [ ];
   for(let a of arr)
@@ -199,13 +246,7 @@ export function settingsGetLocs(settings)
 
 export function settingsSetLocs(settings, locs)
 {
-  let arr = [ ];
-  for(let l of locs)
-  {
-    arr.push(l.toArrayForm());
-  }
-  
-  settings.set_value(arr);
+  settings.set_value(toLocsGVariant(locs));
 }
 
 function tryMigrateOickle(settings)
