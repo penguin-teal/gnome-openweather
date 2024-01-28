@@ -130,29 +130,6 @@ class AboutPage extends Adw.PreferencesPage {
     infoGroup.add(sessionTypeRow);
     this.add(infoGroup);
 
-    // Badges
-    let imgLinksGroup = new Adw.PreferencesGroup();
-    
-    let pixbuf = GdkPixbuf.Pixbuf.new_from_file_at_scale("./media/ego.png", -1, 50, true);
-    let egoImg = Gtk.Picture.new_for_pixbuf(pixbuf);
-    let egoBtn = new Gtk.LinkButton({
-      child: egoImg,
-      uri: "https://extensions.gnome.org/extension/6655"
-    });
-
-    pixbuf = GdkPixbuf.Pixbuf.new_from_file_at_scale("./media/github.png", -1, 50, true);
-    let githubImg = Gtk.Picture.new_for_pixbuf(pixbuf);
-    let repoBtn = new Gtk.LinkButton({
-      child: githubImg,
-      uri: "https://github.com/penguin-teal/gnome-openweather"
-    });
-
-    let imgLinksBox = new Adw.ActionRow();
-    imgLinksBox.add_prefix(egoBtn);
-    imgLinksBox.add_suffix(repoBtn);
-    imgLinksGroup.add(imgLinksBox);
-    this.add(imgLinksGroup);
-
     // Maintainer
     let maintainerGroup = new Adw.PreferencesGroup();
 
