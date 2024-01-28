@@ -85,9 +85,10 @@
       <summary>Wind Direction by Arrows</summary>
       <description>Choose whether to display wind direction through arrows or letters.</description>
     </key>
+    <!-- 'city' no longer in use, will be migrated to 'locs' -->
     <key type="s" name="city">
-    <default>'here>>0'</default>
-      <summary>City to be displayed, in the format of 'LAT,LON>DISPLAY NAME>PROVIDER ID'.</summary>
+      <default>'here>>0'</default>
+      <summary>DEPRECATED, City to be displayed</summary>
     </key>
     <key type="i" name="actual-city">
       <default>0</default>
@@ -216,6 +217,11 @@
     <key type="b" name="frozen">
       <default>false</default>
       <summary>Freezes the settings changed listener; user should not change this.</summary>
+    </key>
+    <!-- locs: [ ( NameType, Name, LocType, LocInfo ), ... ] -->
+    <key type="a(usus)" name="locs">
+      <default>[ (1, '', 1, '') ]</default>
+      <summary>List of locations.</summary>
     </key>
   </schema>
 </schemalist>

@@ -43,11 +43,12 @@ import {
 
 import {
   freeSoup,
-  getSoupSession,
   setLocationRefreshIntervalM,
   getLocationInfo,
   getCachedLocInfo
-} from "./location.js"
+} from "./myloc.js"
+
+import { Loc, settingsGetLocs, settingsSetLocs, tryMigrate } from "./locs.js";
 
 let _firstBoot = 1;
 let _timeCacheCurrentWeather;
@@ -137,12 +138,12 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       this._network_monitor = Gio.network_monitor_get_default();
 
       // Bind signals
-      this._presence = new GnomeSession.Presence((proxy, error) => {
+      this._presence = new GnomeSession.Presence((proxy, _error) => {
         this._onStatusChanged(proxy.status);
       });
       this._presence_connection = this._presence.connectSignal(
         "StatusChanged",
-        (proxy, senderName, [status]) => {
+        (_proxy, _senderName, [status]) => {
           this._onStatusChanged(status);
         }
       );
@@ -349,39 +350,42 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
 
   async getDefaultCity()
   {
-    if(this.hasBattery()) return "here>>0";
+    if(this.hasBattery()) return Loc.myLoc();
     else
     {
-      let loc = await getLocationInfo();
-      if(!loc) return "here>>0";
+      let info = await getLocationInfo();
+      if(!info) return Loc.myLoc();
 
       let placeName;
-      if(loc.country === "United States") placeName = `${loc.city}, ${loc.state}`;
-      else `${loc.city}, ${loc.country}`;
+      if(info.country === "United States") placeName = `${info.city}, ${info.state}`;
+      else `${info.city}, ${info.country}`;
 
-      return `${loc.lat},${loc.lon}>${placeName}>0`;
+      return Loc.fromNameCoords(placeName, info.lat, info.lon);
     }
   }
 
-  async firstRunSetDefaults(extension)
+  async firstRunSetDefaults()
   {
     if(this.isFirstRun(true))
     {
       this.freezeSettingsChanged();
 
-      let locInfo = await getLocationInfo();
-
-      if(locInfo && locInfo.country === "United States")
+      if(!tryMigrate(this.settings))
       {
-        this.settings.set_enum("unit", WeatherUnits.FAHRENHEIT);
-        this.settings.set_enum("wind-speed-unit", WeatherWindSpeedUnits.MPH);
-        this.settings.set_enum("pressure-unit", WeatherPressureUnits.INHG);
-      }
+        let locInfo = await getLocationInfo();
 
-      let defCity = await this.getDefaultCity();
-      if(this.settings.get_string("city") !== defCity)
-      {
-        this.settings.set_string("city", defCity);
+        if(locInfo && locInfo.country === "United States")
+        {
+          this.settings.set_enum("unit", WeatherUnits.FAHRENHEIT);
+          this.settings.set_enum("wind-speed-unit", WeatherWindSpeedUnits.MPH);
+          this.settings.set_enum("pressure-unit", WeatherPressureUnits.INHG);
+        }
+
+        let defCity = await this.getDefaultCity();
+        if(!defCity.equals(Loc.myLoc()))
+        {
+          settingsSetLocs(this.settings, [ defCity ]);
+        }
       }
 
       this.unfreezeSettingsChanged();
@@ -401,6 +405,12 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       catch(e)
       {
         console.error(`OpenWeather Refined: Error '${e}' in firstRunSetDefaults.`);
+      }
+
+      this._cities = settingsGetLocs(this.settings);
+      if (!this._cities.length)
+      {
+        this._cities = [ await this.getDefaultCity() ];
       }
 
       setLocationRefreshIntervalM(this.settings.get_double("loc-refresh-interval"));
@@ -437,12 +447,9 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       }
       else if (await this.locationChanged())
       {
-        if (this._cities.length === 0)
-          this._cities = await this.getDefaultCity();
-
         this.showRefreshing();
         if (this._selectCity._getOpenState()) this._selectCity.menu.toggle();
-        this._currentLocation = await this.extractCoord(this._city);
+        this._currentLocation = await this._city.getCoords();
         this.rebuildSelectCityItem();
         this._clearWeatherCache();
         this.initWeatherData();
@@ -516,18 +523,21 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     });
   }
 
-  async loadConfig() {
-    if (this._cities.length === 0)
-      this._cities = await this.getDefaultCity();
-
+  async loadConfig()
+  {
     await this.firstRunSetDefaults();
+    this._cities = settingsGetLocs(this.settings);
+    if (!this._cities.length)
+    {
+      this._cities = [ await this.getDefaultCity() ];
+    }
 
     setLocationRefreshIntervalM(this.settings.get_double("loc-refresh-interval"));
 
     let gnomeSettings = Gio.Settings.new("org.gnome.desktop.interface");
     _systemClockFormat = gnomeSettings.get_enum("clock-format");
 
-    this._currentLocation = await this.extractCoord(this._city);
+    this._currentLocation = await this._city.getCoords();
     this._isForecastDisabled = this._disable_forecast;
     this._forecastDays = this._days_forecast;
     this._currentAlignment = this._menu_alignment;
@@ -666,7 +676,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
 
   async locationChanged()
   {
-    let location = this._city ? await this.extractCoord(this._city) : null;
+    let location = await this._city?.getCoords();
     if (this._currentLocation !== location)
     {
       return true;
@@ -679,17 +689,6 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       return true;
     }
     return false;
-  }
-
-  get _weather_provider() {
-    // Simplify until more providers are added
-    return 0;
-    // if (!this._settings)
-    //     this.loadConfig();
-    // let provider = this.extractProvider(this._city);
-    // if (provider == WeatherProvider.DEFAULT)
-    //     provider = this._settings.get_enum('weather-provider');
-    // return provider;
   }
 
   get _units() {
@@ -708,21 +707,10 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     return this.settings.get_enum("pressure-unit");
   }
 
-  get _cities() {
-    return this.settings.get_string("city");
-  }
-
-  set _cities(v) {
-    this.settings.set_string("city", v);
-  }
-
-  get _actual_city() {
+  get _actual_city()
+  {
     let a = this.settings.get_int("actual-city");
-    let cities = this._cities.split(" && ");
-
-    if (typeof cities !== "object") cities = [cities];
-
-    let l = cities.length - 1;
+    let l = this._cities.length - 1;
 
     if (a < 0) a = 0;
 
@@ -747,12 +735,11 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     }
   }
 
-  set _actual_city(a) {
-    let cities = this._cities.split(" && ");
+  _cities = [ ];
 
-    if (typeof cities !== "object") cities = [cities];
-
-    let l = cities.length - 1;
+  set _actual_city(a)
+  {
+    let l = this._cities.length - 1;
 
     if (a < 0) a = 0;
 
@@ -763,12 +750,9 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     this.settings.set_int("actual-city", a);
   }
 
-  get _city() {
-    let cities = this._cities.split(" && ");
-    if (cities && typeof cities === "string") cities = [cities];
-    if (!cities[0]) return "";
-    cities = cities[this._actual_city];
-    return cities;
+  get _city()
+  {
+    return this._cities[this._actual_city];
   }
 
   get _translate_condition() {
@@ -959,14 +943,12 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     let item = null;
 
     let cities = this._cities;
-    cities = cities.split(" && ");
-    if (cities && typeof cities === "string") cities = [cities];
-    if (!cities[0]) return;
+    if (!cities) return;
 
     for (let i = 0; cities.length > i; i++)
     {
-      let locName = this.extractLocation(cities[i]);
-      if(this.cityIsCurrentLoc(cities[i]))
+      let locName = cities[i].getName();
+      if(cities[i].isMyLoc())
       {
         locName += ` (${getCachedLocInfo().city})`;
       }
@@ -988,68 +970,6 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
 
   _onActivate() {
     this._actual_city = this.location;
-  }
-
-  extractLocation(city)
-  {
-    let name = this.extractRawLocation(city);
-    if(!name && this.cityIsCurrentLoc(city)) return _("My Location");
-    else return name;
-  }
-
-  extractRawLocation(city)
-  {
-    if (!city || city.search(">") === -1)
-    {
-      console.error("Invalid city.");
-      return null;
-    }
-    return city.split(">")[1];
-  }
-
-  async extractCoord(loc)
-  {
-    if (loc && loc.search(">") !== -1)
-    {
-      let coords = loc.split(">")[0].replace(/\s/g, "");
-      if(coords === "here")
-      {
-        let here = await getLocationInfo();
-        return `${here.lat},${here.lon}`;
-      }
-
-      let split = coords.split(",");
-      if(
-        split && split.length === 2 &&
-        !isNaN(split[0]) && !isNaN(split[1])
-      )
-      {
-        return coords;
-      }
-    }
-    else
-    {
-      Main.notify(
-        "OpenWeather Refined",
-        _("Invalid location! Please try to recreate it.")
-      );
-      console.error("Invalid location.");
-      return null;
-    }
-  }
-
-  cityIsCurrentLoc(city)
-  {
-    if(!city || city.search(">") === -1) return false;
-    let coords = city.split(">")[0].replace(/\s/g, "");
-    return coords === "here";
-  }
-
-  extractProvider() {
-    if (!arguments[0]) return -1;
-    if (arguments[0].split(">")[2] === undefined) return -1;
-    if (isNaN(parseInt(arguments[0].split(">")[2]))) return -1;
-    return parseInt(arguments[0].split(">")[2]);
   }
 
   _onPreferencesActivate() {

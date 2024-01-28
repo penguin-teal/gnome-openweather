@@ -19,7 +19,7 @@ import Soup from "gi://Soup";
 
 import { gettext as _ } from "resource:///org/gnome/shell/extensions/extension.js";
 
-import { getCachedLocInfo, getLocationInfo } from "./location.js";
+import { getCachedLocInfo, getLocationInfo } from "./myloc.js";
 
 // Map OpenWeatherMap icon codes to icon names
 const IconMap = {
@@ -168,10 +168,11 @@ async function initWeatherData(refresh) {
     await this.refreshWeatherData().then(async () => {
       try 
       {
-        if(this.cityIsCurrentLoc(this._city))
+        if(this._city.isMyLoc())
         {
           await getLocationInfo();
-        }        if (!this._isForecastDisabled)
+        }
+        if (!this._isForecastDisabled)
         {
           await this.refreshForecastData();
         }
@@ -214,37 +215,39 @@ async function reloadWeatherCache() {
   }
 }
 
-async function refreshWeatherData() {
-  let json = undefined;
-  let location = await this.extractCoord(this._city);
+async function refreshWeatherData()
+{
+  let location = await this._city.getCoords();
   let params = {
-    lat: location.split(",")[0],
-    lon: location.split(",")[1],
+    lat: String(location[0]),
+    lon: String(location[1]),
     units: "metric",
   };
-  if (this._providerTranslations) {
+  if (this._providerTranslations)
+  {
     params.lang = this.locale;
   }
-  if (this._appid) {
+  if (this._appid)
+  {
     params.appid = this._appid;
   }
   const owmCurrentUrl = "https://api.openweathermap.org/data/2.5/weather";
-  try {
-    json = await this.loadJsonAsync(owmCurrentUrl, params).then(
-      async (json) => {
-        if(json)
-        {
-          this.currentWeatherCache = json;
-          try {
-            await this.populateCurrentUI();
-          } catch (e) {
-            console.error(e);
-          }
-        }
-        else console.warn("OpenWeather Refined failed to fetch weather data.");
+  try
+  {
+    let json = await this.loadJsonAsync(owmCurrentUrl, params);
+    if(json)
+    {
+      this.currentWeatherCache = json;
+      try {
+        await this.populateCurrentUI();
+      } catch (e) {
+        console.error(e);
       }
-    );
-  } catch (e) {
+    }
+    else console.warn("OpenWeather Refined failed to fetch weather data.");
+  }
+  catch (e)
+  {
     // Something went wrong, reload after 10 minutes
     // as per openweathermap.org recommendation.
     this.reloadWeatherCurrent(600);
@@ -258,13 +261,12 @@ async function refreshForecastData() {
   if (this._isForecastDisabled) {
     return;
   }
-  let json = undefined;
   let sortedList = undefined;
   let todayList = undefined;
-  let location = await this.extractCoord(this._city);
+  let location = await this._city.getCoords();
   let params = {
-    lat: location.split(",")[0],
-    lon: location.split(",")[1],
+    lat: String(location[0]),
+    lon: String(location[1]),
     units: "metric",
   };
   if (this._providerTranslations) {
@@ -274,54 +276,58 @@ async function refreshForecastData() {
     params.appid = this._appid;
   }
   const owmForecastUrl = "https://api.openweathermap.org/data/2.5/forecast";
-  try {
-    json = await this.loadJsonAsync(owmForecastUrl, params).then(
-      async (json) => {
-        processing: try {
-          if (this.forecastJsonCache) {
-            let _freshData = JSON.stringify(json.list[0]);
-            let _cacheData = JSON.stringify(this.forecastJsonCache.list[0]);
-            if (_freshData === _cacheData) {
-              // No need to process if data unchanged
-              break processing;
-            }
-          }
-          this.forecastJsonCache = json;
-          this.todaysWeatherCache = undefined;
-          this.forecastWeatherCache = undefined;
-          this.owmCityId = json.city.id;
-          // Today's forecast
-          todayList = await this.processTodaysData(json).then(
-            async (todayList) => {
-              try {
-                this.todaysWeatherCache = todayList;
-                await this.populateTodaysUI();
-              } catch (e) {
-                console.error(e);
-              }
-            }
-          );
-          // 5 day / 3 hour forecast
-          if (this._forecastDays === 0) {
-            // Stop if only today's forecast is enabled
-            break processing;
-          }
-          sortedList = await this.processForecastData(json).then(
-            async (sortedList) => {
-              try {
-                this.forecastWeatherCache = sortedList;
-                await this.populateForecastUI();
-              } catch (e) {
-                console.error(e);
-              }
-            }
-          );
-        } catch (e) {
-          console.error(e);
+  try
+  {
+    let json = await this.loadJsonAsync(owmForecastUrl, params);
+    processing: try
+    {
+      if (this.forecastJsonCache)
+      {
+        let _freshData = JSON.stringify(json.list[0]);
+        let _cacheData = JSON.stringify(this.forecastJsonCache.list[0]);
+        if (_freshData === _cacheData) {
+          // No need to process if data unchanged
+          break processing;
         }
       }
-    );
-  } catch (e) {
+      this.forecastJsonCache = json;
+      this.todaysWeatherCache = undefined;
+      this.forecastWeatherCache = undefined;
+      this.owmCityId = json.city.id;
+      // Today's forecast
+      todayList = await this.processTodaysData(json).then(
+        async (todayList) => {
+          try {
+            this.todaysWeatherCache = todayList;
+            await this.populateTodaysUI();
+          } catch (e) {
+            console.error(e);
+          }
+        }
+      );
+      // 5 day / 3 hour forecast
+      if (this._forecastDays === 0) {
+        // Stop if only today's forecast is enabled
+        break processing;
+      }
+      sortedList = await this.processForecastData(json).then(
+        async (sortedList) => {
+          try {
+            this.forecastWeatherCache = sortedList;
+            await this.populateForecastUI();
+          } catch (e) {
+            console.error(e);
+          }
+        }
+      );
+    }
+    catch (e)
+    {
+      console.error(e);
+    }
+  }
+  catch (e)
+  {
     /// Something went wrong, reload after 10 minutes
     // as per openweathermap.org recommendation.
     this.reloadWeatherForecast(600);
@@ -340,8 +346,8 @@ function populateCurrentUI() {
       if (this._translate_condition && !this._providerTranslations)
         comment = getWeatherCondition(json.weather[0].id);
 
-      let location = this.extractLocation(this._city);
-      if(this.cityIsCurrentLoc(this._city))
+      let location = this._city.getName();
+      if(this._city.isMyLoc())
       {
         let locObj = getCachedLocInfo();
         location += ` (${locObj.city})`;

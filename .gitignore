@@ -12,3 +12,17 @@ _build
 
 # ignore files with ~ attached
 *~
+
+# Dependency directories
+node_modules/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# For Eslint Package
+package-lock.json
+package.json
+

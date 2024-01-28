@@ -3,10 +3,10 @@
 PKG_NAME = gnome-shell-extension-openweatherrefined
 UUID = openweather-extension@penguin-teal.github.io
 BASE_MODULES = metadata.json COPYING AUTHORS
-SRC_MODULES = extension.js openweathermap.js prefs.js stylesheet.css constants.js location.js
+SRC_MODULES = extension.js openweathermap.js prefs.js stylesheet.css constants.js myloc.js locs.js
 PREFS_MODULES = generalPage.js layoutPage.js locationsPage.js aboutPage.js searchResultsWindow.js
 EXTRA_DIRECTORIES = media
-TOLOCALIZE = $(addprefix src/, extension.js openweathermap.js prefs.js constants.js location.js) \
+TOLOCALIZE = $(addprefix src/, extension.js openweathermap.js prefs.js constants.js myloc.js locs.js) \
              $(addprefix src/preferences/, $(PREFS_MODULES)) \
              schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml
 MSGSRC = $(wildcard po/*.po)
