@@ -39,7 +39,7 @@ enable the extension through the *gnome-extensions* app.
 ### Install From Source
 
 This method installs to your `~/.local/share/gnome-shell/extensions` directory
-from the latest source code on the `master` branch.
+from the latest stable source code on the `master` branch.
 
 First make sure you have the following dependencies installed:
 
@@ -59,6 +59,7 @@ git clone https://github.com/penguin-teal/gnome-openweather.git
 
 cd gnome-openweather
 
+# This switches to the latest stable release
 git switch --detach latest
 
 make && make install
