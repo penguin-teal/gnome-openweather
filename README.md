@@ -1,6 +1,11 @@
 
 # OpenWeather
 
+*Notice!* The latest git version may not be stable. I recommend you use the
+[GNOME Extensions Website](https://extensions.gnome.org/extension/6655/openweather)
+but if you want to use the git release for whatever reason you should follow
+the instructions in [Installation](#Installation) to grab the latest release.
+
 [![Screenshot](./openweather-screenshot.png)](./openweather-screenshot.png)
 
 This is a fork of Kenneth Topp's fork of the OpenWeather extension.
