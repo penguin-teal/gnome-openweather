@@ -43,7 +43,7 @@ First make sure you have the following dependencies installed:
 
 Then run the following commands:
 
-```
+```shell
 git clone https://github.com/penguin-teal/gnome-openweather.git
 
 cd gnome-openweather
