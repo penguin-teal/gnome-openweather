@@ -33,6 +33,8 @@ else
 	ZIPVER = -v$(shell cat metadata.json | sed '/"version"/!d' | sed s/\"version\"://g | sed s/\ //g)
 endif
 
+TARGZ = ./releases/$(PKG_NAME)$(ZIPVER).tar.gz
+
 .PHONY: all clean potfile mergepo install install-local zip-file
 
 all: _build
@@ -40,6 +42,8 @@ all: _build
 clean:
 	rm -f ./schemas/gschemas.compiled
 	rm -f ./po/*.mo
+	rm -rf ./releases
+	rm -rf ./_build
 
 ./schemas/gschemas.compiled: ./schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml
 	glib-compile-schemas --strict ./schemas/
@@ -77,11 +81,19 @@ endif
 	-rm -fR _build
 	echo done
 
-zip-file: _build
-	cd _build ; \
-	zip -qr "$(PKG_NAME)$(ZIPVER).zip" .
-	mv _build/$(PKG_NAME)$(ZIPVER).zip ./
-	-rm -fR _build
+releases: _build
+	printf -- 'NEEDED: zip tar\n'
+	mkdir -p ./releases
+
+	cd ./_build ; \
+	zip -qr "../$(PKG_NAME)$(ZIPVER).zip" .
+	mv ./$(PKG_NAME)$(ZIPVER).zip ./releases
+
+	cd ./_build ; \
+	tar -czf "../$(PKG_NAME)$(ZIPVER).tar.gz" .
+	mv "./$(PKG_NAME)$(ZIPVER).tar.gz" $(TARGZ)
+	sha256sum $(TARGZ) > $(addsuffix .sha256,$(TARGZ))
+	cat $(addsuffix .sha256,$(TARGZ))
 
 _build: ./schemas/gschemas.compiled $(MSGSRC:.po=.mo)
 	-rm -fR ./_build

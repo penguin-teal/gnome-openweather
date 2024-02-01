@@ -7,8 +7,8 @@
 # ignore build directory
 _build
 
-# ignore generated zip files
-*.zip
+# ignore generated archive files
+releases/
 
 # ignore files with ~ attached
 *~
