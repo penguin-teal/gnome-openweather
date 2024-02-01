@@ -17,13 +17,6 @@ including 3 hour forecasts for up to 5 days.
 
 ## Installation
 
-After completing one of the installation methods below, restart GNOME Shell:
-
-- X11: `Alt` + `F2`, `r`, `Enter`
-- Wayland: Log out/Reboot
-
-Then enable the extension through the *gnome-extensions* app.
-
 ### GNOME Extensions Website
 
 <p align="left">
