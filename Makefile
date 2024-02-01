@@ -20,6 +20,7 @@ else
 	SHARE_PREFIX = $(DESTDIR)/usr/share
 	INSTALLBASE = $(SHARE_PREFIX)/gnome-shell/extensions
 endif
+
 # Set a git version for self builds from the latest git tag with the revision
 # (a monotonically increasing number that uniquely identifies the source tree)
 # and the current short commit SHA1. (Note: not set if VERSION passed)
@@ -28,14 +29,15 @@ GIT_VER = $(shell git describe --long --tags | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/
 # in the metadata and in the generated zip file. If no VERSION is passed, we
 # won't touch the metadata version and instead use that for the zip file.
 ifdef VERSION
-	ZIPVER = -v$(VERSION)
+	FOUNDVERSION := $(VERSION)
 else
-	ZIPVER = -v$(shell cat metadata.json | sed '/"version"/!d' | sed s/\"version\"://g | sed s/\ //g)
+	FOUNDVERSION := $(shell cat metadata.json | sed '/"version"/!d' | sed s/\"version\"://g | sed s/\ //g)
 endif
+ZIPVER = -v$(FOUNDVERSION)
 
-TARGZ = ./releases/$(PKG_NAME)$(ZIPVER).tar.gz
+TARGZ := ./releases/$(PKG_NAME)$(ZIPVER).tar.gz
 
-.PHONY: all clean potfile mergepo install install-local zip-file
+.PHONY: all clean potfile mergepo install install-local zip-file packaging
 
 all: _build
 
@@ -94,6 +96,10 @@ releases: _build
 	mv "./$(PKG_NAME)$(ZIPVER).tar.gz" $(TARGZ)
 	sha256sum $(TARGZ) > $(addsuffix .sha256,$(TARGZ))
 	cat $(addsuffix .sha256,$(TARGZ))
+
+packages: releases
+	cp $(TARGZ) ./packaging/rpm/SOURCES
+	sed -i "s/Version:       \[0-9\]+/Version:       $(FOUNDVERSION)/g"
 
 _build: ./schemas/gschemas.compiled $(MSGSRC:.po=.mo)
 	-rm -fR ./_build
