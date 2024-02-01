@@ -1,4 +1,6 @@
-## v128 (IN PROGRESS)
+## v128
+
+v128 changes how locations are stored and adds many options.
 
 Features/Improvements:
 - No more boot delay by default

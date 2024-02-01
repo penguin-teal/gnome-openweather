@@ -1,19 +1,12 @@
 
-# OpenWeather
-
-*Notice!* The latest git version may not be stable. I recommend you use the
-[GNOME Extensions Website](https://extensions.gnome.org/extension/6655/openweather)
-but if you want to use the git release for whatever reason you should follow
-the instructions in [Installation](#Installation) to grab the latest release.
+# OpenWeather Refined
 
 [![Screenshot](./openweather-screenshot.png)](./openweather-screenshot.png)
 
-This is a fork of Kenneth Topp's fork of the OpenWeather extension.
+OpenWeather Refined is a simple extension for displaying weather conditions and
+forecasts for any location on Earth in the GNOME Shell.
 
-OpenWeather (*gnome-shell-extension-openweather*) is a simple extension for
-displaying weather conditions and forecasts for any location on Earth in the
-GNOME Shell. It provides support for multiple locations with editable names
-using coordinates to store the locations, a beautiful layout, and more.
+The extension is very configurable and does not use GNOME Weather.
 
 Weather data is fetched from [OpenWeatherMap](https://openweathermap.org)
 including 3 hour forecasts for up to 5 days.
@@ -24,9 +17,12 @@ including 3 hour forecasts for up to 5 days.
 
 ## Installation
 
-After completing one of the installation methods below, restart GNOME Shell
-(*Xorg: `Alt`+`F2`, `r`, `Enter` - Wayland: `log out` or `reboot`*) and
-enable the extension through the *gnome-extensions* app.
+After completing one of the installation methods below, restart GNOME Shell:
+
+- X11: `Alt` + `F2`, `r`, `Enter`
+- Wayland: Log out/Reboot
+
+Then enable the extension through the *gnome-extensions* app.
 
 ### GNOME Extensions Website
 
