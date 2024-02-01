@@ -41,7 +41,7 @@ First make sure you have the following dependencies installed:
 |                | `gettext`                     | `gettext-devel`        |
 |                | `libsoup3`                    |                        |
 
-Then run the following commands:
+Run the following commands:
 
 ```shell
 git clone https://github.com/penguin-teal/gnome-openweather.git
@@ -53,6 +53,13 @@ git switch --detach latest
 
 make && make install
 ```
+
+Restart the GNOME shell:
+
+- X11: `Alt` + `F2`, `r`, `Enter`
+- Wayland: Log out/Reboot
+
+Now enable the extension through the *gnome-extensions* app.
 
 ## Bugs
 
