@@ -23,8 +23,7 @@ import { gettext as _ } from "resource:///org/gnome/Shell/Extensions/js/extensio
 
 class GeneralPage extends Adw.PreferencesPage
 {
-  static
-  {
+  static {
     GObject.registerClass(this);
   }
 
