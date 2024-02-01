@@ -23,13 +23,18 @@ import { gettext as _ } from "resource:///org/gnome/Shell/Extensions/js/extensio
 
 import { SearchResultsWindow } from "./searchResultsWindow.js";
 import { GeolocationProvider } from "../constants.js";
+import { Loc, settingsGetLocs, settingsSetLocs, NAME_TYPE, PLACE_TYPE } from "../locs.js";
 
-class LocationsPage extends Adw.PreferencesPage {
+class LocationsPage extends Adw.PreferencesPage
+{
   static {
     GObject.registerClass(this);
   }
 
-  constructor(metadata, settings, parent) {
+  cityIndex;
+
+  constructor(metadata, settings, parent)
+  {
     super({
       title: _("Locations"),
       icon_name: "find-location-symbolic",
@@ -40,7 +45,7 @@ class LocationsPage extends Adw.PreferencesPage {
     this._settings = settings;
     this._count = null;
     this._locListUi = null;
-    this._actualCity = this._settings.get_int("actual-city");
+    this.cityIndex = this._settings.get_int("actual-city");
     let locationProvider = this._settings.get_enum("geolocation-provider");
 
     // Locations list group
@@ -118,8 +123,9 @@ class LocationsPage extends Adw.PreferencesPage {
     addLocationButton.connect("clicked", this._addLocation.bind(this));
     // Detect change in locations
     this._settings.connect("changed", () => {
-      if (this._locationsChanged()) {
-        this._actualCity = this._settings.get_int("actual-city");
+      if (this._locationsChanged())
+      {
+        this.cityIndex = this._settings.get_int("actual-city");
         this._refreshLocations();
       }
     });
@@ -149,26 +155,30 @@ class LocationsPage extends Adw.PreferencesPage {
       }
     });
   }
-  _refreshLocations() {
-    let _city = this._settings.get_string("city");
+
+  _refreshLocations()
+  {
+    let locs = settingsGetLocs(this._settings);
 
     // Check if the location list UI needs updating
-    if (this._locListUi !== _city) {
-      if (_city.length > 0) {
+    if (this._locationsChanged(locs))
+    {
+      if (locs.length > 0)
+      {
         // Remove the old list
-        if (this._count) {
-          for (let i = 0; i < this._count; i++) {
+        if (this._count)
+        {
+          for (let i = 0; i < this._count; i++)
+          {
             this.locationsGroup.remove(this.location[i].Row);
           }
           this._count = null;
         }
-        let city = String(_city).split(" && ");
-        if (city && typeof city === "string") {
-          city = [city];
-        }
+
         this.location = {};
         // Build new location UI list
-        for (let i in city) {
+        for (let i in locs)
+        {
           this.location[i] = {};
           this.location[i].ButtonBox = new Gtk.Box({
             orientation: Gtk.Orientation.HORIZONTAL,
@@ -191,18 +201,15 @@ class LocationsPage extends Adw.PreferencesPage {
             vexpand: false,
           });
           this.location[i].Row = new Adw.ActionRow({
-            title: this._extractLocation(city[i]),
-            subtitle: this._getCoordText(city[i]),
-            icon_name:
-              i === this._actualCity
-                ? "checkbox-checked-symbolic"
-                : "checkbox-symbolic",
+            title: locs[i].getName(_),
+            subtitle: locs[i].getPlaceDisplay(_),
             activatable: true,
           });
           this.location[i].ButtonBox.append(this.location[i].EditButton);
           this.location[i].ButtonBox.append(this.location[i].DeleteButton);
           this.location[i].Row.add_suffix(this.location[i].ButtonBox);
           this.locationsGroup.add(this.location[i].Row);
+          this._setIcon(i, i === this.cityIndex);
         }
         // Bind signals
         for (let i in this.location) {
@@ -213,12 +220,12 @@ class LocationsPage extends Adw.PreferencesPage {
             this._deleteLocation(i);
           });
           this.location[i].Row.connect("activated", () => {
-            if (i !== this._actualCity) {
-              this.location[i].Row.set_icon_name("checkbox-checked-symbolic");
-              this.location[this._actualCity].Row.set_icon_name(
-                "checkbox-symbolic"
-              );
-              this._actualCity = i;
+            if (i !== this.cityIndex)
+            {
+              this._setIcon(this.cityIndex, false);
+              this._setIcon(i, true);
+
+              this.cityIndex = i;
               this._settings.set_int("actual-city", i);
               let _toast = new Adw.Toast({
                 title: _("Location changed to: %s").format(
@@ -232,11 +239,24 @@ class LocationsPage extends Adw.PreferencesPage {
         }
         this._count = Object.keys(this.location).length;
       }
-      this._locListUi = _city;
+      this._locListUi = locs;
     }
-    return 0;
+    else if(this._count)
+    {
+      for(let i of this.location)
+      {
+        this._setIcon(i, i === this.cityIndex);
+      }
+    }
   }
-  _addLocation() {
+
+  _setIcon(index, isOn)
+  {
+    this.location[index].Row.set_icon_name(isOn ? "checkbox-checked-symbolic" : "checkbox-symbolic");
+  }
+
+  _addLocation()
+  {
     let _dialog = new Gtk.Dialog({
       title: _("Add New Location"),
       use_header_bar: true,
@@ -303,9 +323,11 @@ class LocationsPage extends Adw.PreferencesPage {
 
     // Bind signals
     _dialog.connect("response", (w, response) => {
-      if (response === 0) {
-        let _location = _findEntry.get_text().trim();
-        if (_location === "") {
+      if (response === 0)
+      {
+        let location = _findEntry.get_text().trim();
+        if (!location)
+        {
           // no input
           let _toast = new Adw.Toast({
             title: _("We need something to search for!"),
@@ -317,7 +339,7 @@ class LocationsPage extends Adw.PreferencesPage {
           this.metadata,
           this._window,
           this._settings,
-          _location
+          location
         );
         resultsWindow.show();
       }
@@ -329,11 +351,12 @@ class LocationsPage extends Adw.PreferencesPage {
     });
     myLocBtn.connect("clicked", () =>
     {
-      let city = this._settings.get_string("city");
+      let locs = settingsGetLocs(this._settings);
+      if(!locs) locs = [ ];
 
-      if(city) city += " && ";
-      city += "here>>0";
-      this._settings.set_string("city", city);
+      locs.push(Loc.myLoc());
+
+      settingsSetLocs(this._settings, locs);
 
       let toast = new Adw.Toast({
         title: _("%s has been added").format(_("My Location")),
@@ -346,12 +369,13 @@ class LocationsPage extends Adw.PreferencesPage {
     });
     return 0;
   }
+
   _editLocation(selected)
   {
-    let _city = this._settings.get_string("city").split(" && ");
+    let locs = settingsGetLocs(this._settings);
 
     let _dialog = new Gtk.Dialog({
-      title: _("Edit %s").format(this._extractLocation(_city[selected])),
+      title: _("Edit %s").format(locs[selected].getName(_)),
       use_header_bar: true,
       transient_for: this._window,
       default_width: 600,
@@ -378,8 +402,18 @@ class LocationsPage extends Adw.PreferencesPage {
       margin_bottom: 5,
       hexpand: true,
     });
+    
+    let name = locs[selected].isSpecialName() ? "" : locs[selected].getName(_);
+    let place;
+    if(locs[selected].isMyLoc()) place = "here";
+    else
+    {
+      let latLon = locs[selected].getKnownCoordsSync();
+      place = `${latLon[0]}, ${latLon[1]}`;
+    }
+
     let _editNameEntry = new Gtk.Entry({
-      text: this._extractRawLocation(_city[selected]),
+      text: name,
       secondary_icon_name: "edit-clear-symbolic",
       secondary_icon_tooltip_text: _("Clear entry"),
       valign: Gtk.Align.CENTER,
@@ -396,7 +430,7 @@ class LocationsPage extends Adw.PreferencesPage {
       hexpand: true,
     });
     let _editCoordEntry = new Gtk.Entry({
-      text: this._getRawCoordText(_city[selected]),
+      text: place,
       secondary_icon_name: "edit-clear-symbolic",
       secondary_icon_tooltip_text: _("Clear entry"),
       valign: Gtk.Align.CENTER,
@@ -462,18 +496,31 @@ class LocationsPage extends Adw.PreferencesPage {
           this._window.add_toast(toast);
           return 0;
         }
-        if (_city.length > 0 && typeof _city !== "object") {
-          _city = [_city];
-        }
-        _city[selected] = _coord + ">" + _location + ">" + _provider;
 
-        if (_city.length > 1) {
-          this._settings.set_string("city", _city.join(" && "));
-        } else if (_city[0]) {
-          this._settings.set_string("city", _city[0]);
+        let nameTy, placeTy, newPlace;
+        if(_coord === "here")
+        {
+          nameTy = !_location ? NAME_TYPE.MY_LOC : NAME_TYPE.CUSTOM;
+          placeTy = PLACE_TYPE.MY_LOC;
+          newPlace = "";
         }
+        else
+        {
+          nameTy = NAME_TYPE.CUSTOM;
+          placeTy = PLACE_TYPE.COORDS;
+          let split = _coord.split(",");
+          for(let i = 0; i < 2; i++)
+          {
+            split[i] = split[i].replace(/\s/g, "");
+          }
+          newPlace = `${split[0]},${split[1]}`;
+        }
+        locs[selected] = new Loc(nameTy, _location, placeTy, newPlace);
+
+        settingsSetLocs(this._settings, locs);
+
         let _toast = new Adw.Toast({
-          title: _("%s has been updated").format(_location),
+          title: _("%s has been updated").format(locs[selected].getName(_)),
         });
         this._window.add_toast(_toast);
       }
@@ -485,11 +532,13 @@ class LocationsPage extends Adw.PreferencesPage {
     });
     return 0;
   }
-  _deleteLocation(selected) {
-    let _city = this._settings.get_string("city").split(" && ");
-    if (!_city.length) {
-      return 0;
-    }
+
+  _deleteLocation(selected)
+  {
+    let locs = settingsGetLocs(this._settings);
+
+    if (!locs.length) return;
+
     let _dialog = new Gtk.Dialog({
       title: "",
       use_header_bar: true,
@@ -499,7 +548,7 @@ class LocationsPage extends Adw.PreferencesPage {
     });
     let _dialogPage = new Adw.PreferencesPage();
     let _dialogGroup = new Adw.PreferencesGroup();
-    let _selectedName = this._extractLocation(_city[selected]);
+    let _selectedName = locs[selected].getName(_);
 
     let _dialogRow = new Adw.ActionRow({
       title: _('Are you sure you want to delete "%s"?').format(_selectedName),
@@ -525,79 +574,36 @@ class LocationsPage extends Adw.PreferencesPage {
     _dialog.show();
 
     _dialog.connect("response", (w, response) => {
-      if (response === 1) {
-        if (_city.length === 0) {
-          _city = [];
-        }
-        if (_city.length > 0 && typeof _city !== "object") {
-          _city = [_city];
-        }
-        if (_city.length > 0) {
-          _city.splice(selected, 1);
-        }
-        if (this._actualCity === selected) {
+      if (response === 1)
+      {
+        if (locs.length) locs.splice(selected, 1);
+
+        if (this.cityIndex === selected)
+        {
           this._settings.set_int("actual-city", 0);
+          this.cityIndex = 0;
+
+          this._setIcon(0, true);
         }
-        if (_city.length > 1) {
-          this._settings.set_string("city", _city.join(" && "));
-        } else if (_city[0]) {
-          this._settings.set_string("city", _city[0]);
-        } else {
-          this._settings.set_string("city", "");
-        }
+
+        settingsSetLocs(this._settings, locs);
+
         let _toast = new Adw.Toast({
           title: _("%s has been deleted").format(_selectedName),
         });
         this._window.add_toast(_toast);
       }
       _dialog.close();
-      return 0;
+      return;
     });
     _dialog.connect("close-request", () => {
       _dialog.destroy();
     });
-    return 0;
-  }
-  _locationsChanged() {
-    let _city = this._settings.get_string("city");
-    if (this._locListUi !== _city) {
-      return true;
-    }
-    return false;
   }
 
-  cityIsCurrentLoc(city)
+  _locationsChanged(current)
   {
-    if(!city || city.search(">") === -1) return false;
-    let coords = city.split(">")[0].replace(/\s/g, "");
-    return coords === "here";
-  }
-
-  _extractRawLocation(city)
-  {
-    if (!city || city.search(">") === -1) return null;
-    return city.split(">")[1];
-  }
-
-  _extractLocation(city)
-  {
-    let name = this._extractRawLocation(city);
-    if(!name && this.cityIsCurrentLoc(city)) return _("My Location");
-    else return name;
-  }
-
-  _getRawCoordText(city)
-  {
-    if (!city || city.search(">") === -1) return 0;
-    
-    return city.split(">")[0].replace(/\s/g, "");
-  }
-
-  _getCoordText(city)
-  {
-    let coords = this._getRawCoordText(city);
-    if(coords === "here") return _("My Location");
-    else return coords;
+    return !Loc.arrsEqual(this._locListUi, current);
   }
 }
 

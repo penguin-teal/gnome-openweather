@@ -19,12 +19,8 @@
 
 import Gio from "gi://Gio";
 import GLib from "gi://GLib";
-import { notify } from "resource:///org/gnome/shell/ui/main.js";
-import {
-    gettext as _
-} from "resource:///org/gnome/shell/extensions/extension.js";
 
-import { getLocationInfo } from "./myloc.js";
+import { getLocationInfo, getCachedLocInfo } from "./myloc.js";
 
 const THIS_SCHEMA_ID   = "org.gnome.shell.extensions.openweatherrefined";
 const OICKLE_SCHEMA_ID = "org.gnome.shell.extensions.openweather";
@@ -56,24 +52,57 @@ export class Loc
     */
   constructor(nameType, name, placeType, place)
   {
+    let error = false;
+
+    if(typeof nameType !== "number")
+    {
+      error = true;
+      console.error(`OpenWeather Refined: NameType (${nameType}) not a number.`);
+    }
     this.#nameType = nameType;
+
+    if(typeof name !== "string")
+    {
+      error = true;
+      console.error(`OpenWeather Refined: Name (${name}) not a string.`);
+    }
     this.#name = name;
+
+    if(typeof placeType !== "number")
+    {
+      error = true;
+      console.error(`OpenWeather Refined: PlaceType (${placeType}) not a number.`);
+    }
     this.#placeType = placeType;
+
+    if(typeof place !== "string")
+    {
+      error = true;
+      console.error(`OpenWeather Refined: Place (${place}) not a string.`);
+    }
     this.#place = place;
+
+    if(error) console.trace("OpenWeather Refined: Loc ctor backtrace");
   }
 
   /**
     * The name of the location to display.
     * @returns {string} The name to display.
     */
-  getName()
+  getName(gettext)
   {
+    if(gettext === undefined)
+    {
+      console.error("OpenWeather Refined: Loc#getName did not receive a gettext argument. Pass 'null' for no gettext.");
+      console.trace("OpenWeather Refined backtrace");
+    }
+
     switch(this.#nameType)
     {
       case NAME_TYPE.CUSTOM:
         return this.#name;
       case NAME_TYPE.MY_LOC:
-        return _("My Location");
+        return gettext ? gettext("My Location") : "My Location";
       default:
         console.warn(`OpenWeather Refined: Invalid name type (${this.#nameType}).`);
         return null;
@@ -81,7 +110,7 @@ export class Loc
   }
 
   /**
-    * Tests if the name is not special (i.e. not user-entered).
+    * Tests if the name is special (i.e. not user-entered).
     * @returns {boolean} If the name is not a user-specified string.
     */
   isSpecialName()
@@ -109,16 +138,41 @@ export class Loc
     }
   }
 
-  getPlaceDisplay()
+  /**
+    * Does a best chance at getting coords without doing any async calls.
+    * @returns {[number, number]} The [ latitude, longitude ].
+    */
+  getKnownCoordsSync()
   {
+    let info;
+    switch(this.#placeType)
+    {
+      case PLACE_TYPE.COORDS:
+        return this.#place.split(",");
+      case PLACE_TYPE.MY_LOC:
+        info = getCachedLocInfo();
+        return info ? [ 0, 0 ] : [ info.lat, info.lon ];
+      default:
+        console.warn(`OpenWeather Refined: Invalid place type (${this.#placeType}).`);
+        return null;
+    }
+  }
+
+  getPlaceDisplay(gettext)
+  {
+    if(gettext === undefined)
+    {
+      console.error("OpenWeather Refined: Loc#getPlaceDisplay did not receive a gettext argument. Pass 'null' for no gettext.");
+    }
+
     let coords;
     switch(this.#placeType)
     {
       case PLACE_TYPE.COORDS:
         coords = this.#place.split(",");
-        return `${coords.lat}, ${coords.lon}`;
+        return `${coords[0]}, ${coords[1]}`;
       case PLACE_TYPE.MY_LOC:
-        return _("My Location");
+        return gettext ? gettext("My Location") : "My Location";
       default:
         console.warn(`OpenWeather Refined: Invalid place type (${this.#placeType}).`);
         return null;
@@ -200,9 +254,9 @@ function fromLocsGVariant(val)
     }
 
     let nameTy  = tuple.get_child_value(0).get_uint32();
-    let name    = tuple.get_child_value(1).get_string();
+    let name    = tuple.get_child_value(1).get_string()[0];
     let placeTy = tuple.get_child_value(2).get_uint32();
-    let place   = tuple.get_child_value(3).get_string();
+    let place   = tuple.get_child_value(3).get_string()[0];
     arr.push([ nameTy, name, placeTy, place ]);
   }
 
@@ -222,9 +276,11 @@ function toLocsGVariant(arr)
       GLib.Variant.new_uint32(locArr[2]),
       GLib.Variant.new_string(locArr[3])
     ];
-    tuples.push(GLib.Variant.new_tuples(info));
+    tuples.push(GLib.Variant.new_tuple(info));
   }
-  let gArray = GLib.Variant.new_array("a(usus)", tuples);
+  
+  let gArray = GLib.Variant.new_array(null, tuples);
+
   return gArray;
 }
 
@@ -246,7 +302,7 @@ export function settingsGetLocs(settings)
 
 export function settingsSetLocs(settings, locs)
 {
-  settings.set_value(toLocsGVariant(locs));
+  settings.set_value("locs", toLocsGVariant(locs));
 }
 
 function tryMigrateOickle(settings)
@@ -270,8 +326,7 @@ function tryMigrateOickle(settings)
     settings.set_value(k.get_value());
   }
 
-  notify("OpenWeather Refined", _("Imported settings from original extension."));
-  console.log("OpenWeather Refined: Imported settings from original extension.");
+  console.log("OpenWeather Refined: Imported settings from old extension.");
   return true;
 }
 
@@ -285,14 +340,22 @@ function tryMigratePre128(settings)
   for(let l of sections)
   {
     let place = l.split(">")[0];
+    place = place.replace(/\s/g, "");
     let name  = l.split(">")[1];
     let isMyLoc = place === "here";
     let isMyLocName = isMyLoc && !name;
-    arr.push([isMyLocName ? 1 : 0, name, isMyLoc, isMyLoc ? "" : place]);
+    arr.push(
+      new Loc(
+        isMyLocName ? NAME_TYPE.MY_LOC : NAME_TYPE.CUSTOM,
+        name,
+        isMyLoc ? PLACE_TYPE.MY_LOC : PLACE_TYPE.COORDS,
+        isMyLoc ? "" : place
+      )
+    );
   }
 
   settings.reset("city");
-  settings.set_value("locs", arr);
+  settingsSetLocs(settings, arr);
 
   console.log("OpenWeather Refined: Migrated from cities to v128 locs.");
   return true;

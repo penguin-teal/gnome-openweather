@@ -7,13 +7,16 @@ import GLib from "gi://GLib";
 import { gettext as _ } from "resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js";
 
 import { GeolocationProvider } from "../constants.js";
+import { Loc, settingsGetLocs, settingsSetLocs } from "../locs.js";
 
-class SearchResultsWindow extends Adw.PreferencesWindow {
+class SearchResultsWindow extends Adw.PreferencesWindow
+{
   static {
     GObject.registerClass(this);
   }
 
-  constructor(metadata, parent, settings, location) {
+  constructor(metadata, parent, settings, location)
+  {
     super({
       title: _("Search Results"),
       transient_for: parent,
@@ -60,7 +63,9 @@ class SearchResultsWindow extends Adw.PreferencesWindow {
     });
     this.connect("close-request", this._destroy.bind(this));
   }
-  async _findLocation() {
+
+  async _findLocation()
+  {
     // OpenStreetMaps
     if (this._provider === GeolocationProvider.OPENSTREETMAPS) {
       let params = {
@@ -71,28 +76,22 @@ class SearchResultsWindow extends Adw.PreferencesWindow {
       let _osmUrl = "https://nominatim.openstreetmap.org/search";
       try
       {
-        this._loadJsonAsync(_osmUrl, params).then(async (json) =>
-        {
-          if (!json)
-          {
-            this._resultsError(true);
-            throw new Error("Server returned an invalid response");
-          }
-          if (Number(json.length) < 1)
-          {
-            this._resultsError(false);
-            return 0;
-          }
-          else
-          {
-            await this._processResults(json);
-            return 0;
-          }
-        }, () =>
+        let json = await this._loadJsonAsync(_osmUrl, params);
+        if(!json)
         {
           this._resultsError(true);
-        });
-      } catch (e) {
+          throw new Error("Server returned an invalid response");
+        }
+        if(Number(json.length) < 1)
+        {
+          this._resultsError(false);
+          return 0;
+        }
+        
+        this._processResults(json);
+      }
+      catch (e)
+      {
         console.warn("_findLocation OpenStreetMap error: " + e);
       }
     }
@@ -116,21 +115,24 @@ class SearchResultsWindow extends Adw.PreferencesWindow {
         q: this._location,
       };
       let _mqUrl = "https://open.mapquestapi.com/nominatim/v1/search.php";
-      try {
-        json = await this._loadJsonAsync(_mqUrl, params).then(async (json) => {
-          if (!json) {
-            this._resultsError(true);
-            throw new Error("Server returned an invalid response");
-          }
-          if (Number(json.length) < 1) {
-            this._resultsError(false);
-            return 0;
-          } else {
-            await this._processResults(json);
-            return 0;
-          }
-        });
-      } catch (e) {
+      try
+      {
+        let json = await this._loadJsonAsync(_mqUrl, params);
+        if (!json)
+        {
+          this._resultsError(true);
+          throw new Error("Server returned an invalid response");
+        }
+        if (Number(json.length) < 1) {
+          this._resultsError(false);
+          return 0;
+        } else {
+          this._processResults(json);
+          return 0;
+        }
+      }
+      catch(e)
+      {
         console.warn("_findLocation MapQuest error: " + e);
       }
     }
@@ -140,38 +142,46 @@ class SearchResultsWindow extends Adw.PreferencesWindow {
         addr: this._location,
       };
       let _gcodeUrl = "https://www.geocode.farm/v3/json/forward";
-      try {
-        json = await this._loadJsonAsync(_gcodeUrl, params).then(
-          async (json) => {
-            if (!json) {
-              this._resultsError(true);
-              throw new Error("Server returned an invalid response");
-            } else {
-              json = json.geocoding_results;
-              if (Number(json.length) < 1) {
-                this._resultsError(true);
-                throw new Error("Server returned an empty response");
-              } else {
-                if (
-                  Number(json.STATUS.result_count) < 1 ||
-                  !json.STATUS.result_count
-                ) {
-                  this._resultsError(false);
-                  return 0;
-                }
-                await this._processResults(json.RESULTS);
-              }
-            }
+      try
+      {
+        let json = await this._loadJsonAsync(_gcodeUrl, params);
+        if (!json)
+        {
+          this._resultsError(true);
+          throw new Error("Server returned an invalid response");
+        }
+        else
+        {
+          json = json.geocoding_results;
+          if (Number(json.length) < 1)
+          {
+            this._resultsError(true);
+            throw new Error("Server returned an empty response");
           }
-        );
-      } catch (e) {
+          else
+          {
+            if (
+              Number(json.STATUS.result_count) < 1 ||
+              !json.STATUS.result_count
+            ) {
+              this._resultsError(false);
+              return 0;
+            }
+            this._processResults(json.RESULTS);
+          }
+        }
+      }
+      catch (e)
+      {
         console.warn("_findLocation Geocode error: " + e);
       }
     }
 
     return null;
   }
-  _loadJsonAsync(url, params) {
+
+  _loadJsonAsync(url, params)
+  {
     return new Promise((resolve, reject) => {
       // Create user-agent string from uuid and the version
       let _userAgent = this.metadata.uuid;
@@ -197,10 +207,10 @@ class SearchResultsWindow extends Adw.PreferencesWindow {
         _message,
         GLib.PRIORITY_DEFAULT,
         null,
-        (_httpSession, _message) => {
+        (sess, msg) => {
           try
           {
-            let jsonString = _httpSession.send_and_read_finish(_message).get_data();
+            let jsonString = sess.send_and_read_finish(msg).get_data();
             if (jsonString instanceof Uint8Array)
             {
               jsonString = new TextDecoder().decode(jsonString);
@@ -215,54 +225,66 @@ class SearchResultsWindow extends Adw.PreferencesWindow {
           }
           catch (e)
           {
-            _httpSession.abort();
+            sess.abort();
             reject(e);
           }
         }
       );
     });
   }
-  _processResults(json) {
-    return new Promise((resolve, reject) => {
-      try {
-        this.resultsUi = {};
-        this.resultsGroup.remove(this.resultsStatus);
-        this.resultsGroup.set_title(
-          _('Results for "%s"').format(this._location)
-        );
-        // Build search results list UI
-        for (let i in json) {
-          this.resultsUi[i] = {};
+  _processResults(json)
+  {
+    this.resultsUi = {};
+    this.resultsGroup.remove(this.resultsStatus);
+    this.resultsGroup.set_title(
+      _('Results for "%s"').format(this._location)
+    );
+    // Build search results list UI
+    for (let i in json)
+    {
+      this.resultsUi[i] = {};
 
-          let _cityText = json[i]["display_name"];
-          let _cityCoord = json[i]["lat"] + "," + json[i]["lon"];
-          if (this._provider === GeolocationProvider.GEOCODE) {
-            _cityText = json[i].formatted_address;
-            _cityCoord =
-              json[i].COORDINATES.latitude +
-              "," +
-              json[i].COORDINATES.longitude;
-          }
-          this.resultsUi[i].Row = new Adw.ActionRow({
-            title: _cityText,
-            subtitle: _cityCoord,
-            icon_name: "find-location-symbolic",
-            activatable: true,
-          });
-          this.resultsGroup.add(this.resultsUi[i].Row);
+      let name;
+      let lat;
+      let lon;
+
+      try
+      {
+        if(this._provider === GeolocationProvider.GEOCODE)
+        {
+          name = json[i].formatted_address;
+          lat = json[i].COORDINATES.latitude;
+          lon = json[i].COORDINATES.longitude;
         }
-        // Bind signals
-        for (let i in this.resultsUi) {
-          this.resultsUi[i].Row.connect("activated", (widget) => {
-            this._saveResult(widget);
-            return 0;
-          });
+        else
+        {
+          name = json[i].display_name;
+          lat = parseFloat(json[i].lat);
+          lon = parseFloat(json[i].lon);
         }
-        resolve(0);
-      } catch (e) {
-        reject("Error processing results: " + e);
       }
-    });
+      catch(e)
+      {
+        console.error("OpenWeather Refined: Error processing results: " + e);
+        return;
+      }
+
+      let coordsText = `${lat}, ${lon}`;
+      let simpleName = this._simplifyName(name);
+
+      this.resultsUi[i].Row = new Adw.ActionRow({
+        title: simpleName,
+        subtitle: coordsText,
+        tooltip_text: name,
+        icon_name: "find-location-symbolic",
+        activatable: true
+      });
+      this.resultsGroup.add(this.resultsUi[i].Row);
+
+      this.resultsUi[i].Row.connect("activated", () => {
+        this._saveResult(simpleName, lat, lon);
+      });
+    }
   }
 
   // Simplify the name returned by OSM.
@@ -281,43 +303,46 @@ class SearchResultsWindow extends Adw.PreferencesWindow {
     else return s;
   }
 
-  _saveResult(widget) {
-    let _location = this._simplifyName(widget.get_title());
-    let _coord = widget.get_subtitle();
-    let _city = this._settings.get_string("city");
+  _saveResult(name, lat, lon)
+  {
+    let locs = settingsGetLocs(this._settings);
 
-    if (_city) {
-      _city = _city + " && " + _coord + ">" + _location + ">0";
-      this._settings.set_string("city", _city);
-    } else {
-      _city = _coord + ">" + _location + ">0";
-      this._settings.set_string("city", _city);
-    }
+    locs.push(Loc.fromNameCoords(name, lat, lon));
+
+    settingsSetLocs(this._settings, locs);
+
     let _toast = new Adw.Toast({
-      title: _("%s has been added").format(_location),
+      title: _("%s has been added").format(name),
     });
     this._window.add_toast(_toast);
     this.close();
-    return 0;
+    return;
   }
-  _resultsError(error) {
-    if (error) {
+
+  _resultsError(error)
+  {
+    if (error)
+    {
       this.resultsStatus.set_title(_("API Error"));
       this.resultsStatus.set_description(
         _('Invalid data when searching for "%s".').format(this._location)
       );
       this.resultsStatus.set_icon_name("dialog-error-symbolic");
-    } else {
+    }
+    else
+    {
       this.resultsStatus.set_title(_("No Matches Found"));
       this.resultsStatus.set_description(
         _('No results found when searching for "%s".').format(this._location)
       );
     }
-    return 0;
+    return;
   }
-  _destroy() {
+
+  _destroy()
+  {
     this.destroy();
-    return 0;
+    return;
   }
 }
 

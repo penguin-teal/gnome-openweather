@@ -189,27 +189,21 @@ async function initWeatherData(refresh) {
 
 async function reloadWeatherCache() {
   try {
-    await this.populateCurrentUI().then(async () => {
-      try {
-        if (!this._isForecastDisabled) {
-          if (this.forecastJsonCache === undefined) {
-            // cache was cleared, so we need to force a refresh
-            await this.refreshForecastData().then(this.recalcLayout());
-          } else {
-            // otherwise we just reload the current cache
-            await this.populateTodaysUI()
-              .then(async () => {
-                if (this._forecastDays >= 1) {
-                  await this.populateForecastUI();
-                }
-              })
-              .then(this.recalcLayout());
-          }
+    await this.populateCurrentUI();
+    if (!this._isForecastDisabled) {
+      if (this.forecastJsonCache === undefined) {
+        // cache was cleared, so we need to force a refresh
+        await this.refreshForecastData();
+        this.recalcLayout();
+      } else {
+        // otherwise we just reload the current cache
+        await this.populateTodaysUI();
+        if (this._forecastDays >= 1) {
+          await this.populateForecastUI();
         }
-      } catch (e) {
-        console.error(e);
+        this.recalcLayout();
       }
-    });
+    }
   } catch (e) {
     console.error(e);
   }
@@ -232,28 +226,36 @@ async function refreshWeatherData()
     params.appid = this._appid;
   }
   const owmCurrentUrl = "https://api.openweathermap.org/data/2.5/weather";
-  try
+
+  let json = await this.loadJsonAsync(owmCurrentUrl, params);
+  if(json)
   {
-    let json = await this.loadJsonAsync(owmCurrentUrl, params);
-    if(json)
+    if(json.message && Object.keys(json).length === 2)
+    {
+      // if only { message: ..., cod: ... } then an error happened
+      console.error(`OpenWeather Refined: Invalid API Request '${json.message}'.`);
+    }
+    else
     {
       this.currentWeatherCache = json;
-      try {
+      try
+      {
         await this.populateCurrentUI();
-      } catch (e) {
-        console.error(e);
+        this.reloadWeatherCurrent(this._refresh_interval_current);
+        return;
+      }
+      catch (e)
+      {
+        console.error(`OpenWeather Refined: ${e}`);
+        console.trace("OpenWeather Refined backtrace");
       }
     }
-    else console.warn("OpenWeather Refined failed to fetch weather data.");
   }
-  catch (e)
-  {
-    // Something went wrong, reload after 10 minutes
-    // as per openweathermap.org recommendation.
-    this.reloadWeatherCurrent(600);
-    console.error(e);
-  }
-  this.reloadWeatherCurrent(this._refresh_interval_current);
+  else console.warn("OpenWeather Refined: Failed to fetch weather data.");
+
+  // Something went wrong, reload after 10 minutes
+  // as per openweathermap.org recommendation.
+  this.reloadWeatherCurrent(600);
 }
 
 async function refreshForecastData() {
@@ -279,6 +281,12 @@ async function refreshForecastData() {
   try
   {
     let json = await this.loadJsonAsync(owmForecastUrl, params);
+    if(!json || (json.message && Object.keys(json).length === 2))
+    {
+      // An error happened
+      console.error(`OpenWeather Refined: Error from API '${json ? json.message : "No message"}'`);
+      return;
+    }
     processing: try
     {
       if (this.forecastJsonCache)
@@ -346,7 +354,7 @@ function populateCurrentUI() {
       if (this._translate_condition && !this._providerTranslations)
         comment = getWeatherCondition(json.weather[0].id);
 
-      let location = this._city.getName();
+      let location = this._city.getName(_);
       if(this._city.isMyLoc())
       {
         let locObj = getCachedLocInfo();
@@ -514,9 +522,9 @@ function loadJsonAsync(url, params) {
       _message,
       GLib.PRIORITY_DEFAULT,
       null,
-      (_httpSession, _message) => {
-        let _jsonString = _httpSession
-          .send_and_read_finish(_message)
+      (sess, msg) => {
+        let _jsonString = sess
+          .send_and_read_finish(msg)
           .get_data();
         if (_jsonString instanceof Uint8Array) {
           _jsonString = new TextDecoder().decode(_jsonString);
@@ -527,7 +535,7 @@ function loadJsonAsync(url, params) {
           }
           resolve(JSON.parse(_jsonString));
         } catch (e) {
-          _httpSession.abort();
+          sess.abort();
           reject(e);
         }
       }

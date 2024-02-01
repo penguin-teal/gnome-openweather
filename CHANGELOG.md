@@ -8,6 +8,10 @@ Features/Improvements:
 - No more space between temperature and degree unit
 - About page now says "OpenWeather Refined" instead of "OpenWeather"
 - High contrast now mode affects entire pop-up
+- Major re-work in the way locations are stored internally
+- Automatic migration from old (pre-v128) location format
+- Automatic import of settings from "openweather@jenslody.de"
+- Minor miscellaneous display changes
 - Minor performance improvements
 
 Bug Fixes:
