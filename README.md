@@ -21,7 +21,7 @@ including 3 hour forecasts for up to 5 days.
 
 <p align="left">
   <a href="https://extensions.gnome.org/extension/6655/openweather">
-    <img src="./media/ego.png" width="240" style="margin-left: 5px">
+    <img src="./ego.png" width="240" style="margin-left: 5px">
   </a>
 </p>
 
