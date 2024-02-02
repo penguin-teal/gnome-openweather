@@ -37,7 +37,7 @@ ZIPVER = -v$(FOUNDVERSION)
 
 TARGZ := ./releases/$(PKG_NAME)$(ZIPVER).tar.gz
 
-.PHONY: all clean potfile mergepo install install-local zip-file packaging
+.PHONY: all clean potfile mergepo install install-local zip-file
 
 all: _build
 
@@ -96,10 +96,6 @@ releases: _build
 	mv "./$(PKG_NAME)$(ZIPVER).tar.gz" $(TARGZ)
 	sha256sum $(TARGZ) > $(addsuffix .sha256,$(TARGZ))
 	cat $(addsuffix .sha256,$(TARGZ))
-
-packages: releases
-	cp $(TARGZ) ./packaging/rpm/SOURCES
-	sed -i "s/Version:       \[0-9\]+/Version:       $(FOUNDVERSION)/g"
 
 _build: ./schemas/gschemas.compiled $(MSGSRC:.po=.mo)
 	-rm -fR ./_build
