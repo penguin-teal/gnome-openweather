@@ -224,16 +224,7 @@ class AboutPage extends Adw.PreferencesPage {
       hexpand: false,
       vexpand: false,
     });
-    let locProvAbout = new Gtk.Label({
-      label: _("Location service provided by: %s").format(
-        "<a href=\"https://infoip.io\">infoip.io</a>"
-      ),
-      use_markup: true,
-      hexpand: false,
-      vexpand: false
-    });
     providerBox.append(providerAbout);
-    providerBox.append(locProvAbout);
     providerGroup.add(providerBox);
     this.add(providerGroup);
 
