@@ -17,8 +17,26 @@ class SearchResultsWindow extends Adw.PreferencesWindow
 
   constructor(metadata, parent, settings, location)
   {
+    let provider = settings.get_enum("geolocation-provider");
+    let provName;
+    switch(provider)
+    {
+      case GeolocationProvider.OPENSTREETMAPS:
+        provName = "Nominatim/OSM";
+        break;
+      case GeolocationProvider.MAPQUEST:
+        provName = "MapQuest";
+        break;
+      case GeolocationProvider.GEOCODE:
+        provName = "Geocode.farm";
+        break;
+      default:
+        provName = String(provider);
+        break;
+    }
+
     super({
-      title: _("Search Results"),
+      title: _("Search Results from %s").format(provName),
       transient_for: parent,
       search_enabled: false,
       modal: true,
@@ -29,7 +47,7 @@ class SearchResultsWindow extends Adw.PreferencesWindow
     this._window = parent;
     this._settings = settings;
     this._location = location;
-    this._provider = this._settings.get_enum("geolocation-provider");
+    this._provider = provider;
 
     // Search results group
     let searchButton = new Gtk.Button({
