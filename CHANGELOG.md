@@ -3,6 +3,7 @@
 Features:
 - Now use device location services by default (requires location permission to be on).
 - Can optionally still use HTTP location service.
+- Copy settings JSON in About settings page
 - Remove "Geocode.farm" from Geolocation Providers
 
 Bug Fixes:

@@ -49,7 +49,7 @@ export default class OpenWeatherPreferences extends ExtensionPreferences {
       window._settings,
       window
     );
-    const aboutPage = new AboutPage(this.metadata);
+    const aboutPage = new AboutPage(this.metadata, window._settings, window);
 
     let prefsWidth = window._settings.get_int("prefs-default-width");
     let prefsHeight = window._settings.get_int("prefs-default-height");

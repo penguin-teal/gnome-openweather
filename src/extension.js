@@ -406,9 +406,9 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
           settingsSetLocs(this.settings, [ defCity ]);
         }
       }
-
-      this.unfreezeSettingsChanged();
     }
+
+    this.unfreezeSettingsChanged();
   }
 
   toggleSunriseSunset()

@@ -216,6 +216,16 @@ export class Loc
       this.#place === other.#place;
   }
 
+  getNameType()
+  {
+    return this.#nameType;
+  }
+
+  getPlaceType()
+  {
+    return this.#placeType;
+  }
+
   toArrayForm()
   {
     return [ this.#nameType, this.#name, this.#placeType, this.#place ];
@@ -278,7 +288,7 @@ function fromLocsGVariant(val)
   return arr;
 }
 
-function toLocsGVariant(arr)
+export function toLocsGVariant(arr)
 {
   let tuples = [ ];
   for(let l of arr)

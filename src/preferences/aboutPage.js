@@ -16,21 +16,20 @@
 */
 
 import Adw from "gi://Adw";
-import GLib from "gi://GLib";
 import Gtk from "gi://Gtk";
 import GObject from "gi://GObject";
-import GdkPixbuf from "gi://GdkPixbuf";
 
 import { PACKAGE_VERSION } from "resource:///org/gnome/Shell/Extensions/js/misc/config.js";
 
 import { gettext as _ } from "resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js";
+import { Loc, settingsGetLocs, toLocsGVariant } from "../locs.js";
 
 class AboutPage extends Adw.PreferencesPage {
   static {
     GObject.registerClass(this);
   }
 
-  constructor(metadata)
+  constructor(metadata, settings, wnd)
   {
     super({
       title: _("About"),
@@ -78,8 +77,6 @@ class AboutPage extends Adw.PreferencesPage {
     let infoGroup = new Adw.PreferencesGroup();
     let releaseVersion = String(metadata["version-name"] ?? _("Unknown"));
     let gitVersion = String(metadata["git-version"] ?? _("Unknown"));
-    let windowingLabel =
-      GLib.getenv("XDG_SESSION_TYPE") === "wayland" ? "Wayland" : "X11";
 
     // Extension version
     let openWeatherVersionRow = new Adw.ActionRow({
@@ -110,24 +107,71 @@ class AboutPage extends Adw.PreferencesPage {
     });
     gnomeVersionRow.add_suffix(
       new Gtk.Label({
-        label: PACKAGE_VERSION + "",
+        label: String(PACKAGE_VERSION),
       })
     );
 
-    // session type
-    let sessionTypeRow = new Adw.ActionRow({
-      title: _("Session Type"),
+    // Copy settings
+    let copySettingsRow = new Adw.ActionRow({
+      title: _("Copy Settings JSON"),
     });
-    sessionTypeRow.add_suffix(
-      new Gtk.Label({
-        label: windowingLabel,
-      })
-    );
+    let copySettingsBtn = new Gtk.Button({
+      label: _("Copy")
+    });
+    copySettingsRow.add_suffix(copySettingsBtn);
+
+    copySettingsBtn.connect("clicked", (widget) =>
+    {
+      let obj =
+      {
+        "app-version": releaseVersion,
+        "git-version": gitVersion,
+        "gnome-version": String(PACKAGE_VERSION)
+      };
+      let keys = settings.list_keys();
+      for(let k of keys)
+      {
+        // Redact "locs" and older "cities" keys
+        if(k === "locs")
+        {
+          let locs = settingsGetLocs(settings);
+          for(let i in locs)
+          {
+            // Remove location names and coordinates
+            locs[i] = new Loc(
+              locs[i].getNameType(), locs[i].isMyLoc() ? "" : "<NAME>",
+              locs[i].getPlaceType(), locs[i].isMyLoc() ? "" : "<PLACE>"
+            );
+          }
+          let locsG = toLocsGVariant(locs);
+          obj[k] = locsG.print(false);
+        }
+        else if(k === "cities")
+        {
+          obj["cities"] = "<CITIES>";
+        }
+        else
+        {
+          let val = settings.get_user_value(k);
+          if(val === null) continue;
+
+          obj[k] = val.print(false);
+        }
+      }
+
+      let clipboard = widget.get_clipboard();
+      clipboard.set(JSON.stringify(obj));
+
+      let toast = new Adw.Toast({
+        title: _("Copied settings JSON to clipboard.")
+      });
+      wnd.add_toast(toast);
+    });
 
     infoGroup.add(openWeatherVersionRow);
-    gitVersion && infoGroup.add(gitVersionRow);
+    if(gitVersion) infoGroup.add(gitVersionRow);
     infoGroup.add(gnomeVersionRow);
-    infoGroup.add(sessionTypeRow);
+    infoGroup.add(copySettingsRow);
     this.add(infoGroup);
 
     // Maintainer
