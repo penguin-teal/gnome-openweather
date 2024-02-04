@@ -170,7 +170,7 @@ async function initWeatherData(refresh) {
       {
         if(this._city.isMyLoc())
         {
-          await getLocationInfo();
+          await getLocationInfo(this.settings);
         }
         if (!this._isForecastDisabled)
         {
@@ -211,7 +211,7 @@ async function reloadWeatherCache() {
 
 async function refreshWeatherData()
 {
-  let location = await this._city.getCoords();
+  let location = await this._city.getCoords(this.settings);
   let params = {
     lat: String(location[0]),
     lon: String(location[1]),
@@ -265,7 +265,7 @@ async function refreshForecastData() {
   }
   let sortedList = undefined;
   let todayList = undefined;
-  let location = await this._city.getCoords();
+  let location = await this._city.getCoords(this.settings);
   let params = {
     lat: String(location[0]),
     lon: String(location[1]),
@@ -348,6 +348,8 @@ function populateCurrentUI() {
   return new Promise((resolve, reject) => {
     try {
       let json = this.currentWeatherCache;
+      if(!json) reject("OpenWeather Refined: No weather cached.");
+
       this.owmCityId = json.id;
 
       let comment = json.weather[0].description;

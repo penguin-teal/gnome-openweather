@@ -58,6 +58,10 @@
     <value value="1" nick="white"></value>
     <value value="2" nick="black"></value>
   </enum>
+  <enum id="org.gnome.shell.extensions.openweatherrefined.my-loc-prov">
+    <value value="0" nick="geoclue"></value>
+    <value value="1" nick="ipinfoio"></value>
+  </enum>
   <schema path="/org/gnome/shell/extensions/openweatherrefined/" id="org.gnome.shell.extensions.openweatherrefined">
     <key name="weather-provider" enum="org.gnome.shell.extensions.openweatherrefined.weather-provider">
       <default>'openweathermap'</default>
@@ -222,6 +226,10 @@
     <key type="a(usus)" name="locs">
       <default>[ (1, '', 1, '') ]</default>
       <summary>List of locations.</summary>
+    </key>
+    <key name="my-loc-prov" enum="org.gnome.shell.extensions.openweatherrefined.my-loc-prov">
+      <default>'geoclue'</default>
+      <summary>Provider to use for "My Location."</summary>
     </key>
   </schema>
 </schemalist>

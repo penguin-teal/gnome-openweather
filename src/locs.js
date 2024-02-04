@@ -122,7 +122,7 @@ export class Loc
     * Gets the coordinates of the location.
     * @returns {Promise<[number, number]>} The [ latitude, longitude ].
     */
-  async getCoords()
+  async getCoords(settings)
   {
     let info;
     switch(this.#placeType)
@@ -130,7 +130,7 @@ export class Loc
       case PLACE_TYPE.COORDS:
         return this.#place.split(",");
       case PLACE_TYPE.MY_LOC:
-        info = await getLocationInfo();
+        info = await getLocationInfo(settings);
         return [ info.lat, info.lon ];
       default:
         console.warn(`OpenWeather Refined: Invalid place type (${this.#placeType}).`);

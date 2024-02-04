@@ -1,3 +1,8 @@
+## v129 (IN PROGRESS)
+
+Bug Fixes:
+- Fix "Position in Panel" only taking effect on restart
+
 ## v128
 
 v128 changes how locations are stored and adds many options.
