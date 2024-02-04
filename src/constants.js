@@ -57,6 +57,7 @@ const WeatherPosition = {
 // Keep enums in sync with GSettings schemas
 const GeolocationProvider = {
   OPENSTREETMAPS: 0,
+  /* Geocode.Farm is no longer valid but kept here for migration. */
   GEOCODE: 1,
   MAPQUEST: 2,
 };

@@ -21,6 +21,7 @@ import Gio from "gi://Gio";
 import GLib from "gi://GLib";
 
 import { getLocationInfo, getCachedLocInfo } from "./myloc.js";
+import { GeolocationProvider } from "./constants.js";
 
 const THIS_SCHEMA_ID   = "org.gnome.shell.extensions.openweatherrefined";
 const OICKLE_SCHEMA_ID = "org.gnome.shell.extensions.openweather";
@@ -375,6 +376,12 @@ function tryMigratePre128(settings)
   return true;
 }
 
+function migrateProviders(settings)
+{
+  let geoSearch = settings.get_enum("geolocation-provider");
+  if(geoSearch === GeolocationProvider.GEOCODE) settings.set_enum("geolocation-provider", GeolocationProvider.OPENSTREETMAPS);
+}
+
 /**
   * Migrates settings if needed.
   * Imports from original OpenWeather extension.
@@ -386,6 +393,7 @@ export function tryMigrate(settings)
 {
   let imported = tryMigrateOickle(settings);
   tryMigratePre128(settings);
+  migrateProviders(settings);
   return imported;
 }
 

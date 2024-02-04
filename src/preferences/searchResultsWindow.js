@@ -27,9 +27,6 @@ class SearchResultsWindow extends Adw.PreferencesWindow
       case GeolocationProvider.MAPQUEST:
         provName = "MapQuest";
         break;
-      case GeolocationProvider.GEOCODE:
-        provName = "Geocode.farm";
-        break;
       default:
         provName = String(provider);
         break;
@@ -154,46 +151,6 @@ class SearchResultsWindow extends Adw.PreferencesWindow
         console.warn("_findLocation MapQuest error: " + e);
       }
     }
-    // Geocode.Farm
-    else if (this._provider === GeolocationProvider.GEOCODE) {
-      let params = {
-        addr: this._location,
-      };
-      let _gcodeUrl = "https://www.geocode.farm/v3/json/forward";
-      try
-      {
-        let json = await this._loadJsonAsync(_gcodeUrl, params);
-        if (!json)
-        {
-          this._resultsError(true);
-          throw new Error("Server returned an invalid response");
-        }
-        else
-        {
-          json = json.geocoding_results;
-          if (Number(json.length) < 1)
-          {
-            this._resultsError(true);
-            throw new Error("Server returned an empty response");
-          }
-          else
-          {
-            if (
-              Number(json.STATUS.result_count) < 1 ||
-              !json.STATUS.result_count
-            ) {
-              this._resultsError(false);
-              return 0;
-            }
-            this._processResults(json.RESULTS);
-          }
-        }
-      }
-      catch (e)
-      {
-        console.warn("_findLocation Geocode error: " + e);
-      }
-    }
 
     return null;
   }
@@ -260,18 +217,9 @@ class SearchResultsWindow extends Adw.PreferencesWindow
 
       try
       {
-        if(this._provider === GeolocationProvider.GEOCODE)
-        {
-          name = json[i].formatted_address;
-          lat = json[i].COORDINATES.latitude;
-          lon = json[i].COORDINATES.longitude;
-        }
-        else
-        {
-          name = json[i].display_name;
-          lat = parseFloat(json[i].lat);
-          lon = parseFloat(json[i].lon);
-        }
+        name = json[i].display_name;
+        lat = parseFloat(json[i].lat);
+        lon = parseFloat(json[i].lon);
       }
       catch(e)
       {

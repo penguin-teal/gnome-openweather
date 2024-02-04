@@ -79,8 +79,7 @@ class LocationsPage extends Adw.PreferencesPage
     });
 
     let providersList = new Gtk.StringList();
-    providersList.append("OpenStreetMap");
-    providersList.append("Geocode.Farm");
+    providersList.append("Nominatim/OSM");
     providersList.append("MapQuest");
     let providersListRow = new Adw.ComboRow({
       title: _("Geolocation Provider"),
@@ -156,7 +155,20 @@ class LocationsPage extends Adw.PreferencesPage
       } else {
         personalApiKeyMQEntry.set_sensitive(false);
       }
-      this._settings.set_enum("geolocation-provider", widget.selected);
+      let inx;
+      switch(widget.selected)
+      {
+        case 0:
+          inx = GeolocationProvider.OPENSTREETMAPS;
+          break;
+        case 1:
+          inx = GeolocationProvider.MAPQUEST;
+          break;
+        default:
+          inx = GeolocationProvider.OPENSTREETMAPS;
+          break;
+      }
+      this._settings.set_enum("geolocation-provider", inx);
     });
     personalApiKeyMQEntry.connect("notify::text", (widget) => {
       if (widget.text.length === 32) {

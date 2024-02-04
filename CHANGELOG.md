@@ -3,6 +3,7 @@
 Features:
 - Now use device location services by default (requires location permission to be on).
 - Can optionally still use HTTP location service.
+- Remove "Geocode.farm" from Geolocation Providers
 
 Bug Fixes:
 - Fix "Position in Panel" only taking effect on restart

@@ -5,6 +5,7 @@
   </enum>
   <enum id="org.gnome.shell.extensions.openweatherrefined.geolocation-provider">
     <value value="0" nick="openstreetmaps"/>
+    <!-- Geocode.farm (1) is deprecated and will be changed to OSM (0) -->
     <value value="1" nick="geocode"/>
     <value value="2" nick="mapquest"/>
   </enum>
