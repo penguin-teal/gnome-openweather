@@ -185,14 +185,6 @@ class SearchResultsWindow extends Adw.PreferencesWindow
     return new Promise((resolve, reject) => {
       // Create user-agent string from uuid and the version
       let _userAgent = this.metadata.uuid;
-      if (
-        this.metadata.version !== undefined &&
-        this.metadata.version.toString().trim() !== ""
-      ) {
-        _userAgent += "/";
-        _userAgent += this.metadata.version.toString();
-      }
-
       let _httpSession = new Soup.Session();
       let _paramsHash = Soup.form_encode_hash(params);
       let _message = Soup.Message.new_from_encoded_form(
