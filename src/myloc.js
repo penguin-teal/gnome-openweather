@@ -79,7 +79,7 @@ async function httpGetLoc(locProv)
   switch(locProv)
   {
     case MyLocProv.IPINFOIO:
-      addr = "https://api.ipinfo.io";
+      addr = "https://api.infoip.io";
       break;
     default:
       console.error(`OpenWeather Refined: HTTP Get Loc called when it shouldn't have been.`);
@@ -151,7 +151,7 @@ async function httpGetLoc(locProv)
 
 async function geoclueGetLoc()
 {
-  return new Promise((resolve, reject) => {
+  let locInfo = await new Promise((resolve, reject) => {
     fetchingLocation = true;
     Geoclue.Simple.new(
       "gnome-shell-extension-openweatherrefined",
@@ -166,12 +166,12 @@ async function geoclueGetLoc()
         }
         catch(e)
         {
+          fetchingLocation = false;
+          locationTime = new Date();
           reject(`OpenWeather Refined: ${e}`);
         }
 
-        fetchingLocation = false;
-        locationTime = new Date();
-        locationInfo =
+        let locI =
         {
           lat: loc.latitude,
           lon: loc.longitude,
@@ -181,6 +181,79 @@ async function geoclueGetLoc()
           countryShort: "Unknown"
         };
 
+        resolve(locI);
+      }
+    );
+  });
+
+  return await new Promise((resolve, reject) => {
+    let sess = Soup.Session.new();
+    // Policy mandates specific user agent
+    sess.user_agent = "openweather-extension@penguin-teal.github.io";
+
+    let params =
+    {
+      lat: String(locInfo.lat),
+      lon: String(locInfo.lon),
+      format: "json",
+      // Zoom 13: "Village/suburb"
+      zoom: "13"
+    };
+    let paramsHash = Soup.form_encode_hash(params);
+    let msg = Soup.Message.new_from_encoded_form(
+      "GET",
+      "https://nominatim.openstreetmap.org/reverse",
+      paramsHash
+    );
+
+    sess.send_and_read_async(
+      msg,
+      GLib.PRIORITY_DEFAULT,
+      null,
+      (s, m) =>
+      {
+        let response;
+        try
+        {
+          response = s.send_and_read_finish(m);
+        }
+        catch(e)
+        {
+          locationInfo = locInfo;
+          fetchingLocation = false;
+          locationTime = new Date();
+          reject(e);
+        }
+        if(!response || !(response = response.get_data()))
+        {
+          locationInfo = locInfo;
+          fetchingLocation = false;
+          locationTime = new Date();
+          reject("OpenWeather Refined: Invalid response from Nominatim.");
+        }
+
+        let str = new TextDecoder().decode(response);
+        if(!str)
+        {
+          locationInfo = locInfo;
+          fetchingLocation = false;
+          locationTime = new Date();
+          reject("OpenWeather Refined: No data in JSON Nominatim HTTP response.");
+        }
+        let obj = JSON.parse(str);
+        let addr = obj.address;
+
+        fetchingLocation = false;
+        locationTime = new Date();
+        locationInfo =
+        {
+          lat: locInfo.lat,
+          lon: locInfo.lon,
+          city: addr.city,
+          state: addr.state,
+          country: addr.country,
+          countryShort: addr.country_code.toUpperCase()
+        };
         resolve(locationInfo);
       }
     );
