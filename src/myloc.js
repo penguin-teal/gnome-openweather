@@ -29,6 +29,7 @@ let soupSession = null;
 let locationInfo = null;
 let locationTime = new Date(0);
 let locationRefreshInterval = new Date(0).setMinutes(60);
+let lastMylocProv = -1;
 
 let fetchingLocation = false;
 
@@ -95,15 +96,34 @@ async function httpGetLoc(locProv)
       null,
       (s, m) =>
       {
-        let response = s.send_and_read_finish(m);
+        let response;
+        try
+        {
+          response = s.send_and_read_finish(m);
+        }
+        catch(e)
+        {
+          locationInfo = null;
+          fetchingLocation = false;
+          locationTime = new Date();
+          reject(e);
+        }
         if(!response || !(response = response.get_data()))
         {
           locationInfo = null;
           fetchingLocation = false;
-          reject("Invalid response");
+          locationTime = new Date();
+          reject("OpenWeather Refined: Invalid response");
         }
 
         let str = new TextDecoder().decode(response);
+        if(!str)
+        {
+          locationInfo = null;
+          fetchingLocation = false;
+          locationTime = new Date();
+          reject("OpenWeather Refined: No data in JSON My Location HTTP response.");
+        }
         let obj = JSON.parse(str);
 
         locationTime = new Date();
@@ -132,18 +152,34 @@ async function httpGetLoc(locProv)
 async function geoclueGetLoc()
 {
   return new Promise((resolve, reject) => {
+    fetchingLocation = true;
     Geoclue.Simple.new(
-      null,
+      "gnome-shell-extension-openweatherrefined",
       Geoclue.AccuracyLevel.NEIGHBORHOOD,
       null,
-      (result) => {
-        let simple = Geoclue.Simple.new_finish(result);
-        if(!simple) reject("No geoclue simple.");
+      (_s, result) => {
+        let loc;
+        try
+        {
+          let simple = Geoclue.Simple.new_finish(result);
+          loc = simple.get_location();
+        }
+        catch(e)
+        {
+          reject(`OpenWeather Refined: ${e}`);
+        }
 
-        let loc = simple.get_location();
-        if(!loc) reject("No geoclue location.");
-
-        console.log("OpenWeather Refined: Loc desc: " + loc.description);
+        fetchingLocation = false;
+        locationTime = new Date();
+        locationInfo =
+        {
+          lat: loc.latitude,
+          lon: loc.longitude,
+          city: "Unknown",
+          state: "Unknown",
+          country: "Unknown",
+          countryShort: "Unknown"
+        };
 
         resolve(locationInfo);
       }
@@ -160,37 +196,39 @@ export async function getLocationInfo(settings, forceRefresh = false)
   }
 
   let now = new Date();
-  if(forceRefresh || now - locationTime > locationRefreshInterval)
-  {
-    let myLocProv = settings ? settings.get_enum("my-loc-prov") : MyLocProv.GEOCLUE;
-    if(myLocProv === MyLocProv.GEOCLUE)
-    {
-      try
-      {
-        return await geoclueGetLoc();
-      }
-      catch(e)
-      {
-        console.warn(`OpenWeather Refined: Geoclue failed ('${e}'); changing provider to ipinfo.io.`);
-        myLocProv = MyLocProv.IPINFOIO;
-        if(settings) settings.set_enum("my-loc-prov", myLocProv);
-      }
-    }
-
-    try
-    {
-      return httpGetLoc(myLocProv);
-    }
-    catch(e)
-    {
-      console.error(e);
-    }
-  }
-  else if(fetchingLocation)
+  if(fetchingLocation)
   {
     console.warn("OpenWeather Refined: Location requested while fetching it; returning cached location.");
   }
+  else
+  {
+    let myLocProv = settings ? settings.get_enum("my-loc-prov") : MyLocProv.GEOCLUE;
+    if(forceRefresh || now - locationTime > locationRefreshInterval || lastMylocProv !== myLocProv)
+    {
+      if(myLocProv === MyLocProv.GEOCLUE)
+      {
+        try
+        {
+          return await geoclueGetLoc();
+        }
+        catch(e)
+        {
+          console.warn(`OpenWeather Refined: Geoclue failed ('${e}'); changing provider to ipinfo.io.`);
+          myLocProv = MyLocProv.IPINFOIO;
+          if(settings) settings.set_enum("my-loc-prov", myLocProv);
+        }
+      }
 
+      try
+      {
+        return httpGetLoc(myLocProv);
+      }
+      catch(e)
+      {
+        console.error(e);
+      }
+    }
+  }
   return locationInfo ?? DEF_LOC_INFO;
 }
 

@@ -130,8 +130,22 @@ export class Loc
       case PLACE_TYPE.COORDS:
         return this.#place.split(",");
       case PLACE_TYPE.MY_LOC:
-        info = await getLocationInfo(settings);
-        return [ info.lat, info.lon ];
+        try
+        {
+          info = await getLocationInfo(settings);
+          return [ info.lat, info.lon ];
+        }
+        catch(e)
+        {
+          console.error(e);
+          if(!settings) return [ 0.0, 0.0 ];
+          let locs = settingsGetLocs(settings);
+          for(let l of locs)
+          {
+            if(!l.isMyLoc()) return l.getCoords();
+          }
+          return [ 0.0, 0.0 ];
+        }
       default:
         console.warn(`OpenWeather Refined: Invalid place type (${this.#placeType}).`);
         return null;

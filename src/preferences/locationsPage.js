@@ -24,6 +24,7 @@ import { gettext as _ } from "resource:///org/gnome/Shell/Extensions/js/extensio
 import { SearchResultsWindow } from "./searchResultsWindow.js";
 import { GeolocationProvider } from "../constants.js";
 import { Loc, settingsGetLocs, settingsSetLocs, NAME_TYPE, PLACE_TYPE } from "../locs.js";
+import { MyLocProv } from "../myloc.js";
 
 class LocationsPage extends Adw.PreferencesPage
 {
@@ -66,6 +67,18 @@ class LocationsPage extends Adw.PreferencesPage
     let providersGroup = new Adw.PreferencesGroup({
       title: _("Provider"),
     });
+
+    let myLocProvsList = new Gtk.StringList();
+    myLocProvsList.append("Built-In (Geoclue)");
+    myLocProvsList.append("ipinfo.io");
+    this._lastMyLocProv = this._settings.get_enum("my-loc-prov");
+    let myLocProvsListRow = new Adw.ComboRow({
+      title: _("My Loc. Provider"),
+      subtitle: _("Provider for getting My Location"),
+      model: myLocProvsList,
+      selected: this._lastMyLocProv
+    });
+
     let providersList = new Gtk.StringList();
     providersList.append("OpenStreetMap");
     providersList.append("Geocode.Farm");
@@ -115,6 +128,7 @@ class LocationsPage extends Adw.PreferencesPage
     }
 
     personalApiKeyMQRow.add_suffix(personalApiKeyMQEntry);
+    providersGroup.add(myLocProvsListRow);
     providersGroup.add(providersListRow);
     providersGroup.add(personalApiKeyMQRow);
     this.add(providersGroup);
@@ -128,6 +142,14 @@ class LocationsPage extends Adw.PreferencesPage
         this.cityIndex = this._settings.get_int("actual-city");
         this._refreshLocations();
       }
+
+      if(this.myLocProvChanged())
+      {
+        myLocProvsListRow.selected = this._settings.get_enum("my-loc-prov");
+      }
+    });
+    myLocProvsListRow.connect("notify::selected", widget => {
+      this._settings.set_enum("my-loc-prov", widget.selected);
     });
     providersListRow.connect("notify::selected", (widget) => {
       if (widget.selected === GeolocationProvider.MAPQUEST) {
@@ -604,6 +626,11 @@ class LocationsPage extends Adw.PreferencesPage
   _locationsChanged(current)
   {
     return !Loc.arrsEqual(this._locListUi, current);
+  }
+
+  myLocProvChanged()
+  {
+    return this._lastMyLocProv !== this._settings.get_enum("my-loc-prov");
   }
 }
 
