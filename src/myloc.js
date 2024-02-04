@@ -36,7 +36,7 @@ let fetchingLocation = false;
 export const MyLocProv =
 {
   GEOCLUE: 0,
-  IPINFOIO: 1
+  INFOIPIO: 1
 }
 
 const DEF_LOC_INFO =
@@ -78,7 +78,7 @@ async function httpGetLoc(locProv)
   let addr;
   switch(locProv)
   {
-    case MyLocProv.IPINFOIO:
+    case MyLocProv.INFOIPIO:
       addr = "https://api.infoip.io";
       break;
     default:

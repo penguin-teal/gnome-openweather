@@ -385,7 +385,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
         catch(e)
         {
           console.warn(`OpenWeather Refined: Geoclue failed ('${e}'); changing provider to ipinfo.io.`);
-          this.settings.set_enum(MyLocProv.IPINFOIO);
+          this.settings.set_enum(MyLocProv.INFOIPIO);
         }
       }
       
