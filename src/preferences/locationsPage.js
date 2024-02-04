@@ -175,7 +175,7 @@ class LocationsPage extends Adw.PreferencesPage
           this._count = null;
         }
 
-        this.location = {};
+        this.location = [];
         // Build new location UI list
         for (let i in locs)
         {
@@ -237,13 +237,13 @@ class LocationsPage extends Adw.PreferencesPage
             return 0;
           });
         }
-        this._count = Object.keys(this.location).length;
+        this._count = this.location.length;
       }
       this._locListUi = locs;
     }
     else if(this._count)
     {
-      for(let i of this.location)
+      for(let i in this.location)
       {
         this._setIcon(i, i === this.cityIndex);
       }
