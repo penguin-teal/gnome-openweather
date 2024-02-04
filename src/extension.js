@@ -45,7 +45,9 @@ import {
   freeSoup,
   setLocationRefreshIntervalM,
   getLocationInfo,
-  getCachedLocInfo
+  getCachedLocInfo,
+  MyLocProv,
+  geoclueGetLoc
 } from "./myloc.js"
 
 import { Loc, settingsGetLocs, settingsSetLocs, tryMigrate } from "./locs.js";
@@ -354,7 +356,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     else
     {
       let info = await getLocationInfo(this.settings);
-      if(!info) return Loc.myLoc();
+      if(!info || info.countryShort === "Failed") return Loc.myLoc();
 
       return Loc.fromNameCoords(info.name, info.lat, info.lon);
     }
@@ -366,13 +368,30 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     {
       this.freezeSettingsChanged();
 
-      if(tryMigrate(this.settings))
+      let migrated = tryMigrate(this.settings);
+      if(migrated)
       {
         Main.notify("OpenWeather Refined", _("OpenWeather Refined: Imported settings from old extension."));
       }
-      else
+
+      if(this.settings.get_enum("my-loc-prov") === MyLocProv.GEOCLUE)
       {
-        let locInfo = await getLocationInfo(this.settings);
+        try
+        {
+          // Don't use Nominatim to ensure it is Geoclue that failed
+          // and not Nominatim, the Internet connection, etc.
+          await geoclueGetLoc(false);
+        }
+        catch(e)
+        {
+          console.warn(`OpenWeather Refined: Geoclue failed ('${e}'); changing provider to ipinfo.io.`);
+          this.settings.set_enum(MyLocProv.IPINFOIO);
+        }
+      }
+      
+      if(!migrated)
+      {
+        let locInfo = await getLocationInfo(this.settings, true);
 
         if(locInfo && locInfo.countryShort === "US")
         {
@@ -878,6 +897,11 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     return button;
   }
 
+  usesNominatim()
+  {
+    return this._city.isMyLoc() && this.settings.get_enum("my-loc-prov") === MyLocProv.GEOCLUE;
+  }
+
   rebuildButtonMenu() {
     this._buttonMenu.actor.destroy_all_children();
 
@@ -898,9 +922,17 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     );
     this._urlButton = this.createButton(
       "",
-      _("Weather data by: %s").format(this.weatherProvider)
+      _("Weather: %s").format(this.weatherProvider)
     );
     this._urlButton.set_label(this._urlButton.get_accessible_name());
+    if(this.usesNominatim())
+    {
+      this._nominatimBtn = this.createButton(
+      "",
+      _("Place Name: %s").format("Nominatim/OSM")
+      );
+      this._nominatimBtn.set_label(this._nominatimBtn.get_accessible_name());
+    }
     this._prefsButton = this.createButton(
       "preferences-system-symbolic",
       _("Weather Settings")
@@ -908,6 +940,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
 
     this._buttonBox1.add_actor(this._locationButton);
     this._buttonBox1.add_actor(this._reloadButton);
+    if(this.usesNominatim()) this._buttonBox2.add_actor(this._nominatimBtn);
     this._buttonBox2.add_actor(this._urlButton);
     this._buttonBox2.add_actor(this._prefsButton);
 
@@ -937,10 +970,26 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       }
       catch (err)
       {
-        let title = _("Can not open %s").format(url);
+        let title = _("Cannot open %s").format(url);
         Main.notifyError(title, String(err));
       }
     });
+    if(this.usesNominatim())
+    {
+      this._nominatimBtn.connect("clicked", () => {
+        this.menu.close();
+        let url = "https://nominatim.org/";
+        try
+        {
+          Gio.AppInfo.launch_default_for_uri(url, null);
+        }
+        catch(err)
+        {
+          let title = _("Cannot open %s").format(url);
+          Main.notifyError(title, String(err));
+        }
+      });
+    }
     this._prefsButton.connect(
       "clicked",
       this._onPreferencesActivate.bind(this)

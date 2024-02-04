@@ -1,5 +1,9 @@
 ## v129 (IN PROGRESS)
 
+Features:
+- Now use device location services by default (requires location permission to be on).
+- Can optionally still use HTTP location service.
+
 Bug Fixes:
 - Fix "Position in Panel" only taking effect on restart
 

@@ -149,7 +149,7 @@ async function httpGetLoc(locProv)
   });
 }
 
-async function geoclueGetLoc()
+export async function geoclueGetLoc(useNominatim = true)
 {
   let locInfo = await new Promise((resolve, reject) => {
     fetchingLocation = true;
@@ -185,6 +185,8 @@ async function geoclueGetLoc()
       }
     );
   });
+
+  if(!useNominatim) return locInfo;
 
   return await new Promise((resolve, reject) => {
     let sess = Soup.Session.new();
@@ -278,23 +280,16 @@ export async function getLocationInfo(settings, forceRefresh = false)
     let myLocProv = settings ? settings.get_enum("my-loc-prov") : MyLocProv.GEOCLUE;
     if(forceRefresh || now - locationTime > locationRefreshInterval || lastMylocProv !== myLocProv)
     {
-      if(myLocProv === MyLocProv.GEOCLUE)
+      try
       {
-        try
+        if(myLocProv === MyLocProv.GEOCLUE)
         {
           return await geoclueGetLoc();
         }
-        catch(e)
+        else
         {
-          console.warn(`OpenWeather Refined: Geoclue failed ('${e}'); changing provider to ipinfo.io.`);
-          myLocProv = MyLocProv.IPINFOIO;
-          if(settings) settings.set_enum("my-loc-prov", myLocProv);
+          return httpGetLoc(myLocProv);
         }
-      }
-
-      try
-      {
-        return httpGetLoc(myLocProv);
       }
       catch(e)
       {
