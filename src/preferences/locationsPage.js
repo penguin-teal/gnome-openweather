@@ -24,7 +24,6 @@ import { gettext as _ } from "resource:///org/gnome/Shell/Extensions/js/extensio
 import { SearchResultsWindow } from "./searchResultsWindow.js";
 import { GeolocationProvider } from "../constants.js";
 import { Loc, settingsGetLocs, settingsSetLocs, NAME_TYPE, PLACE_TYPE } from "../locs.js";
-import { MyLocProv } from "../myloc.js";
 
 class LocationsPage extends Adw.PreferencesPage
 {
@@ -69,8 +68,8 @@ class LocationsPage extends Adw.PreferencesPage
     });
 
     let myLocProvsList = new Gtk.StringList();
-    myLocProvsList.append("Built-In (Geoclue)");
-    myLocProvsList.append("ipinfo.io");
+    myLocProvsList.append("Built-In + Nominatim");
+    myLocProvsList.append("infoip.io");
     this._lastMyLocProv = this._settings.get_enum("my-loc-prov");
     let myLocProvsListRow = new Adw.ComboRow({
       title: _("My Loc. Provider"),
