@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-18 10:49-0300\n"
+"POT-Creation-Date: 2024-02-04 18:49-0600\n"
 "PO-Revision-Date: 2017-09-17 12:46+0200\n"
 "Last-Translator: Slobodan Terzić <Xabre@archlinux.info>\n"
 "Language-Team: \n"
@@ -19,7 +19,11 @@ msgstr ""
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Poedit 2.0.3\n"
 
-#: src/extension.js:267
+#: src/extension.js:181
+msgid "Failed to initialize."
+msgstr ""
+
+#: src/extension.js:310
 msgid ""
 "Openweathermap.org does not work without an api-key.\n"
 "Either set the switch to use the extensions default key in the preferences "
@@ -31,686 +35,731 @@ msgstr ""
 "proširenje, ili se registrujte na https://openweathermap.org/appid i unesite "
 "vaš lični ključ u dijalog postavki."
 
-#: src/extension.js:454 src/extension.js:466
+#: src/extension.js:374
+msgid "OpenWeather Refined: Imported settings from old extension."
+msgstr ""
+
+#: src/extension.js:663 src/extension.js:676
 #, javascript-format
 msgid "Can not connect to %s"
 msgstr "Ne mogu da se povežem sa %s"
 
-#: src/extension.js:769 src/preferences/locationsPage.js:37
-#: src/preferences/locationsPage.js:56
+#: src/extension.js:917 src/preferences/locationsPage.js:39
+#: src/preferences/locationsPage.js:59
 msgid "Locations"
 msgstr "Lokacije"
 
-#: src/extension.js:770
+#: src/extension.js:921
 msgid "Reload Weather Information"
 msgstr "Ponovo učitaj podatke o vremenu"
 
-#: src/extension.js:771
+#: src/extension.js:925
 #, fuzzy, javascript-format
-msgid "Weather data by: %s"
+msgid "Weather: %s"
 msgstr "Podatke o vremenu dostavlja:"
 
-#: src/extension.js:773
+#: src/extension.js:932
+#, javascript-format
+msgid "Place Name: %s"
+msgstr ""
+
+#: src/extension.js:938
 msgid "Weather Settings"
 msgstr "Postavke vremena"
 
-#: src/extension.js:787
+#: src/extension.js:956
 msgid "Manual refreshes less than 2 minutes apart are ignored!"
 msgstr ""
 
-#: src/extension.js:801
-#, javascript-format
-msgid "Can not open %s"
+#: src/extension.js:973 src/extension.js:988
+#, fuzzy, javascript-format
+msgid "Cannot open %s"
 msgstr "Ne mogu da otvorim %s"
 
-#: src/extension.js:849 src/preferences/locationsPage.js:507
-msgid "Invalid city"
-msgstr "neispravan grad"
-
-#: src/extension.js:860
-msgid "Invalid location! Please try to recreate it."
-msgstr "neispravna lokacija! Pokušajte da je ponovo napravite."
-
-#: src/extension.js:906 src/preferences/generalPage.js:148
-msgid "°F"
-msgstr "°F"
-
-#: src/extension.js:908 src/preferences/generalPage.js:149
-msgid "K"
-msgstr "K"
-
-#: src/extension.js:910 src/preferences/generalPage.js:150
-msgid "°Ra"
-msgstr "°Ra"
-
-#: src/extension.js:912 src/preferences/generalPage.js:151
-msgid "°Ré"
-msgstr "°Ré"
-
-#: src/extension.js:914 src/preferences/generalPage.js:152
-msgid "°Rø"
-msgstr "°Rø"
-
-#: src/extension.js:916 src/preferences/generalPage.js:153
-msgid "°De"
-msgstr "°De"
-
-#: src/extension.js:918 src/preferences/generalPage.js:154
-msgid "°N"
-msgstr "°N"
-
-#: src/extension.js:920 src/preferences/generalPage.js:147
+#: src/extension.js:1086 src/preferences/generalPage.js:176
 msgid "°C"
 msgstr "°C"
 
-#: src/extension.js:957
+#: src/extension.js:1089 src/preferences/generalPage.js:177
+msgid "°F"
+msgstr "°F"
+
+#: src/extension.js:1091 src/preferences/generalPage.js:178
+msgid "K"
+msgstr "K"
+
+#: src/extension.js:1093 src/preferences/generalPage.js:179
+msgid "°Ra"
+msgstr "°Ra"
+
+#: src/extension.js:1095 src/preferences/generalPage.js:180
+msgid "°Ré"
+msgstr "°Ré"
+
+#: src/extension.js:1097 src/preferences/generalPage.js:181
+msgid "°Rø"
+msgstr "°Rø"
+
+#: src/extension.js:1099 src/preferences/generalPage.js:182
+msgid "°De"
+msgstr "°De"
+
+#: src/extension.js:1101 src/preferences/generalPage.js:183
+msgid "°N"
+msgstr "°N"
+
+#: src/extension.js:1141
 msgid "Calm"
 msgstr "vedro"
 
-#: src/extension.js:960
+#: src/extension.js:1142
 msgid "Light air"
 msgstr "lagan vazduh"
 
-#: src/extension.js:963
+#: src/extension.js:1144
 msgid "Light breeze"
 msgstr "lagan povetarac"
 
-#: src/extension.js:966
+#: src/extension.js:1146
 msgid "Gentle breeze"
 msgstr "nežan povetarac"
 
-#: src/extension.js:969
+#: src/extension.js:1148
 msgid "Moderate breeze"
 msgstr "umeren povetarac"
 
-#: src/extension.js:972
+#: src/extension.js:1150
 msgid "Fresh breeze"
 msgstr "svež povetarac"
 
-#: src/extension.js:975
+#: src/extension.js:1152
 msgid "Strong breeze"
 msgstr "jak povetarac"
 
-#: src/extension.js:978
+#: src/extension.js:1154
 msgid "Moderate gale"
 msgstr "umerena bura"
 
-#: src/extension.js:981
+#: src/extension.js:1156
 msgid "Fresh gale"
 msgstr "sveža bura"
 
-#: src/extension.js:984
+#: src/extension.js:1158
 msgid "Strong gale"
 msgstr "jaka bura"
 
-#: src/extension.js:987
+#: src/extension.js:1159
 msgid "Storm"
 msgstr "oluja"
 
-#: src/extension.js:990
+#: src/extension.js:1161
 msgid "Violent storm"
 msgstr "razorna oluja"
 
-#: src/extension.js:993
+#: src/extension.js:1162
 msgid "Hurricane"
 msgstr "uragan"
 
-#: src/extension.js:997
+#: src/extension.js:1167
 msgid "Sunday"
 msgstr "nedelja"
 
-#: src/extension.js:997
+#: src/extension.js:1168
 msgid "Monday"
 msgstr "ponedeljak"
 
-#: src/extension.js:997
+#: src/extension.js:1169
 msgid "Tuesday"
 msgstr "utorak"
 
-#: src/extension.js:997
+#: src/extension.js:1170
 msgid "Wednesday"
 msgstr "sreda"
 
-#: src/extension.js:997
+#: src/extension.js:1171
 msgid "Thursday"
 msgstr "četvrtak"
 
-#: src/extension.js:997
+#: src/extension.js:1172
 msgid "Friday"
 msgstr "petak"
 
-#: src/extension.js:997
+#: src/extension.js:1173
 msgid "Saturday"
 msgstr "subota"
 
-#: src/extension.js:1003
+#: src/extension.js:1190
 msgid "N"
 msgstr "S"
 
-#: src/extension.js:1003
+#: src/extension.js:1191
 msgid "NE"
 msgstr "SI"
 
-#: src/extension.js:1003
+#: src/extension.js:1192
 msgid "E"
 msgstr "I"
 
-#: src/extension.js:1003
+#: src/extension.js:1193
 msgid "SE"
 msgstr "JI"
 
-#: src/extension.js:1003
+#: src/extension.js:1194
 msgid "S"
 msgstr "J"
 
-#: src/extension.js:1003
+#: src/extension.js:1195
 msgid "SW"
 msgstr "JZ"
 
-#: src/extension.js:1003
+#: src/extension.js:1196
 msgid "W"
 msgstr "Z"
 
-#: src/extension.js:1003
+#: src/extension.js:1197
 msgid "NW"
 msgstr "SZ"
 
-#: src/extension.js:1056 src/extension.js:1065
-#: src/preferences/generalPage.js:177
+#: src/extension.js:1262 src/extension.js:1271
+#: src/preferences/generalPage.js:208
 msgid "hPa"
 msgstr "hPa"
 
-#: src/extension.js:1060 src/preferences/generalPage.js:178
+#: src/extension.js:1266 src/preferences/generalPage.js:209
 msgid "inHg"
 msgstr "inHg"
 
-#: src/extension.js:1070 src/preferences/generalPage.js:179
+#: src/extension.js:1276 src/preferences/generalPage.js:210
 msgid "bar"
 msgstr "bar"
 
-#: src/extension.js:1075 src/preferences/generalPage.js:180
+#: src/extension.js:1281 src/preferences/generalPage.js:211
 msgid "Pa"
 msgstr "Pa"
 
-#: src/extension.js:1080 src/preferences/generalPage.js:181
+#: src/extension.js:1286 src/preferences/generalPage.js:212
 msgid "kPa"
 msgstr "kPa"
 
-#: src/extension.js:1085 src/preferences/generalPage.js:182
+#: src/extension.js:1291 src/preferences/generalPage.js:213
 msgid "atm"
 msgstr "atm"
 
-#: src/extension.js:1090 src/preferences/generalPage.js:183
+#: src/extension.js:1296 src/preferences/generalPage.js:214
 msgid "at"
 msgstr "u"
 
-#: src/extension.js:1095 src/preferences/generalPage.js:184
+#: src/extension.js:1301 src/preferences/generalPage.js:215
 msgid "Torr"
 msgstr "Torr"
 
-#: src/extension.js:1100 src/preferences/generalPage.js:185
+#: src/extension.js:1306 src/preferences/generalPage.js:216
 msgid "psi"
 msgstr "psi"
 
-#: src/extension.js:1105 src/preferences/generalPage.js:186
+#: src/extension.js:1311 src/preferences/generalPage.js:217
 msgid "mmHg"
 msgstr "mmHg"
 
-#: src/extension.js:1110 src/preferences/generalPage.js:187
+#: src/extension.js:1316 src/preferences/generalPage.js:218
 msgid "mbar"
 msgstr "mbar"
 
-#: src/extension.js:1158 src/preferences/generalPage.js:165
+#: src/extension.js:1376 src/preferences/generalPage.js:196
 msgid "m/s"
 msgstr "m/s"
 
-#: src/extension.js:1163 src/preferences/generalPage.js:164
+#: src/extension.js:1381 src/preferences/generalPage.js:195
 msgid "mph"
 msgstr "mph"
 
-#: src/extension.js:1168 src/preferences/generalPage.js:163
+#: src/extension.js:1386 src/preferences/generalPage.js:194
 msgid "km/h"
 msgstr "km/h"
 
-#: src/extension.js:1177 src/preferences/generalPage.js:166
+#: src/extension.js:1395 src/preferences/generalPage.js:197
 msgid "kn"
 msgstr "kn"
 
-#: src/extension.js:1182 src/preferences/generalPage.js:167
+#: src/extension.js:1400 src/preferences/generalPage.js:198
 msgid "ft/s"
 msgstr "ft/s"
 
-#: src/extension.js:1227 src/extension.js:1265
+#: src/extension.js:1485 src/extension.js:1535
 msgid "Loading ..."
 msgstr "Učitavanje..."
 
-#: src/extension.js:1269
+#: src/extension.js:1539
 msgid "Please wait"
 msgstr "Sačekajte"
 
-#: src/extension.js:1340
+#: src/extension.js:1621
 msgid "Feels Like:"
 msgstr ""
 
-#: src/extension.js:1344
+#: src/extension.js:1628
 msgid "Humidity:"
 msgstr "Vlažnost vazduha:"
 
-#: src/extension.js:1348
+#: src/extension.js:1635
 msgid "Pressure:"
 msgstr "Pritisak:"
 
-#: src/extension.js:1352
+#: src/extension.js:1642
 msgid "Wind:"
 msgstr "Vetar:"
 
-#: src/extension.js:1356
+#: src/extension.js:1649
 msgid "Gusts:"
 msgstr ""
 
-#: src/extension.js:1487
+#: src/extension.js:1787
 msgid "Tomorrow's Forecast"
 msgstr ""
 
-#: src/extension.js:1489
+#: src/extension.js:1788
 #, fuzzy, javascript-format
 msgid "%s Day Forecast"
 msgstr "Uslovi u prognozi"
 
-#: src/openweathermap.js:50
+#: src/openweathermap.js:49
 #, fuzzy
 msgid "Thunderstorm with Light Rain"
 msgstr "grmljavina sa lakom kišom"
 
-#: src/openweathermap.js:52
+#: src/openweathermap.js:51
 #, fuzzy
 msgid "Thunderstorm with Rain"
 msgstr "grmljavina sa kišom"
 
-#: src/openweathermap.js:54
+#: src/openweathermap.js:53
 #, fuzzy
 msgid "Thunderstorm with Heavy Rain"
 msgstr "grmljavina sa jakom kišom"
 
-#: src/openweathermap.js:56
+#: src/openweathermap.js:55
 #, fuzzy
 msgid "Light Thunderstorm"
 msgstr "laka grmljavina"
 
-#: src/openweathermap.js:58
+#: src/openweathermap.js:57
 msgid "Thunderstorm"
 msgstr "grmljavina"
 
-#: src/openweathermap.js:60
+#: src/openweathermap.js:59
 #, fuzzy
 msgid "Heavy Thunderstorm"
 msgstr "jaka grmljavina"
 
-#: src/openweathermap.js:62
+#: src/openweathermap.js:61
 #, fuzzy
 msgid "Ragged Thunderstorm"
 msgstr "mestimična grmljavina"
 
-#: src/openweathermap.js:64
+#: src/openweathermap.js:63
 #, fuzzy
 msgid "Thunderstorm with Light Drizzle"
 msgstr "grmljavina sa lakim rominjanjem"
 
-#: src/openweathermap.js:66
+#: src/openweathermap.js:65
 #, fuzzy
 msgid "Thunderstorm with Drizzle"
 msgstr "grmljavina sa rominjanjem"
 
-#: src/openweathermap.js:68
+#: src/openweathermap.js:67
 #, fuzzy
 msgid "Thunderstorm with Heavy Drizzle"
 msgstr "grmljavina sa jakim rominjanjem"
 
-#: src/openweathermap.js:70
+#: src/openweathermap.js:69
 #, fuzzy
 msgid "Light Drizzle"
 msgstr "lagan povetarac"
 
-#: src/openweathermap.js:72
+#: src/openweathermap.js:71
 msgid "Drizzle"
 msgstr "rominjanje"
 
-#: src/openweathermap.js:74
+#: src/openweathermap.js:73
 #, fuzzy
 msgid "Heavy Drizzle"
 msgstr "rominjanje"
 
-#: src/openweathermap.js:76
+#: src/openweathermap.js:75
 #, fuzzy
 msgid "Light Drizzle Rain"
 msgstr "rominjava kiša"
 
-#: src/openweathermap.js:78
+#: src/openweathermap.js:77
 #, fuzzy
 msgid "Drizzle Rain"
 msgstr "rominjava kiša"
 
-#: src/openweathermap.js:80
+#: src/openweathermap.js:79
 #, fuzzy
 msgid "Heavy Drizzle Rain"
 msgstr "rominjava kiša"
 
-#: src/openweathermap.js:82
+#: src/openweathermap.js:81
 #, fuzzy
 msgid "Shower Rain and Drizzle"
 msgstr "pljusak i rominjanje"
 
-#: src/openweathermap.js:84
+#: src/openweathermap.js:83
 #, fuzzy
 msgid "Heavy Rain and Drizzle"
 msgstr "jak pljusak i rominjanje"
 
-#: src/openweathermap.js:86
+#: src/openweathermap.js:85
 #, fuzzy
 msgid "Shower Drizzle"
 msgstr "rominjav pljusak"
 
-#: src/openweathermap.js:88
+#: src/openweathermap.js:87
 #, fuzzy
 msgid "Light Rain"
 msgstr "lagana kiša"
 
-#: src/openweathermap.js:90
+#: src/openweathermap.js:89
 #, fuzzy
 msgid "Moderate Rain"
 msgstr "umerena kiša"
 
-#: src/openweathermap.js:92
+#: src/openweathermap.js:91
 #, fuzzy
 msgid "Heavy Rain"
 msgstr "jak sneg"
 
-#: src/openweathermap.js:94
+#: src/openweathermap.js:93
 #, fuzzy
 msgid "Very Heavy Rain"
 msgstr "vrlo jaka kiša"
 
-#: src/openweathermap.js:96
+#: src/openweathermap.js:95
 #, fuzzy
 msgid "Extreme Rain"
 msgstr "ekstremna kiša"
 
-#: src/openweathermap.js:98
+#: src/openweathermap.js:97
 #, fuzzy
 msgid "Freezing Rain"
 msgstr "ledena kiša"
 
-#: src/openweathermap.js:100
+#: src/openweathermap.js:99
 #, fuzzy
 msgid "Light Shower Rain"
 msgstr "lagan pljušteći sneg"
 
-#: src/openweathermap.js:102
+#: src/openweathermap.js:101
 #, fuzzy
 msgid "Shower Rain"
 msgstr "pljusak"
 
-#: src/openweathermap.js:104
+#: src/openweathermap.js:103
 #, fuzzy
 msgid "Heavy Shower Rain"
 msgstr "jak pljušteći sneg"
 
-#: src/openweathermap.js:106
+#: src/openweathermap.js:105
 #, fuzzy
 msgid "Ragged Shower Rain"
 msgstr "mestimični pljuskovi"
 
-#: src/openweathermap.js:108
+#: src/openweathermap.js:107
 #, fuzzy
 msgid "Light Snow"
 msgstr "lagan sneg"
 
-#: src/openweathermap.js:110
+#: src/openweathermap.js:109
 msgid "Snow"
 msgstr "Sneg"
 
-#: src/openweathermap.js:112
+#: src/openweathermap.js:111
 #, fuzzy
 msgid "Heavy Snow"
 msgstr "jak sneg"
 
-#: src/openweathermap.js:114
+#: src/openweathermap.js:113
 msgid "Sleet"
 msgstr "susnežica"
 
-#: src/openweathermap.js:116
+#: src/openweathermap.js:115
 #, fuzzy
 msgid "Light Shower Sleet"
 msgstr "pljušteća susnežica"
 
-#: src/openweathermap.js:118
+#: src/openweathermap.js:117
 #, fuzzy
 msgid "Shower Sleet"
 msgstr "pljušteća susnežica"
 
-#: src/openweathermap.js:120
+#: src/openweathermap.js:119
 #, fuzzy
 msgid "Light Rain and Snow"
 msgstr "lagana kiša i sneg"
 
-#: src/openweathermap.js:122
+#: src/openweathermap.js:121
 #, fuzzy
 msgid "Rain and Snow"
 msgstr "kiša i sneg"
 
-#: src/openweathermap.js:124
+#: src/openweathermap.js:123
 #, fuzzy
 msgid "Light Shower Snow"
 msgstr "lagan pljušteći sneg"
 
-#: src/openweathermap.js:126
+#: src/openweathermap.js:125
 #, fuzzy
 msgid "Shower Snow"
 msgstr "pljušteći sneg"
 
-#: src/openweathermap.js:128
+#: src/openweathermap.js:127
 #, fuzzy
 msgid "Heavy Shower Snow"
 msgstr "jak pljušteći sneg"
 
-#: src/openweathermap.js:130
+#: src/openweathermap.js:129
 msgid "Mist"
 msgstr "Magla"
 
-#: src/openweathermap.js:132
+#: src/openweathermap.js:131
 msgid "Smoke"
 msgstr "dim"
 
-#: src/openweathermap.js:134
+#: src/openweathermap.js:133
 msgid "Haze"
 msgstr "Izmaglica"
 
-#: src/openweathermap.js:136
+#: src/openweathermap.js:135
 msgid "Sand/Dust Whirls"
 msgstr "Vihori peska/prašine"
 
-#: src/openweathermap.js:138
+#: src/openweathermap.js:137
 msgid "Fog"
 msgstr "magla"
 
-#: src/openweathermap.js:140
+#: src/openweathermap.js:139
 msgid "Sand"
 msgstr "Pesak"
 
-#: src/openweathermap.js:142
+#: src/openweathermap.js:141
 msgid "Dust"
 msgstr "Prašina"
 
-#: src/openweathermap.js:144
+#: src/openweathermap.js:143
 msgid "Volcanic Ash"
 msgstr ""
 
-#: src/openweathermap.js:146
+#: src/openweathermap.js:145
 msgid "Squalls"
 msgstr ""
 
-#: src/openweathermap.js:148
+#: src/openweathermap.js:147
 msgid "Tornado"
 msgstr ""
 
-#: src/openweathermap.js:150
+#: src/openweathermap.js:149
 #, fuzzy
 msgid "Clear Sky"
 msgstr "očisti unos"
 
-#: src/openweathermap.js:152
+#: src/openweathermap.js:151
 #, fuzzy
 msgid "Few Clouds"
 msgstr "par oblaka"
 
-#: src/openweathermap.js:154
+#: src/openweathermap.js:153
 #, fuzzy
 msgid "Scattered Clouds"
 msgstr "raštrkani oblaci"
 
-#: src/openweathermap.js:156
+#: src/openweathermap.js:155
 #, fuzzy
 msgid "Broken Clouds"
 msgstr "mestimični oblaci"
 
-#: src/openweathermap.js:158
+#: src/openweathermap.js:157
 #, fuzzy
 msgid "Overcast Clouds"
 msgstr "tmurni oblaci"
 
-#: src/openweathermap.js:160
+#: src/openweathermap.js:159
 msgid "Not available"
 msgstr "nije dostupno"
 
-#: src/openweathermap.js:374 src/openweathermap.js:376
+#: src/openweathermap.js:396 src/openweathermap.js:399
 msgid ", "
 msgstr ", "
 
-#: src/openweathermap.js:392
+#: src/openweathermap.js:427
 msgid "?"
 msgstr ""
 
-#: src/openweathermap.js:460
+#: src/openweathermap.js:489
 msgid "Tomorrow"
 msgstr "sutra"
 
-#: src/preferences/generalPage.js:31
+#: src/locs.js:106 src/locs.js:190 src/preferences/locationsPage.js:331
+#: src/preferences/locationsPage.js:395
+#, fuzzy
+msgid "My Location"
+msgstr "Lokacije"
+
+#: src/preferences/generalPage.js:33
 #, fuzzy
 msgid "Settings"
 msgstr "Postavke vremena"
 
-#: src/preferences/generalPage.js:39
+#: src/preferences/generalPage.js:42
 msgid "General"
 msgstr ""
 
-#: src/preferences/generalPage.js:57
+#: src/preferences/generalPage.js:60
 msgid "Current Weather Refresh"
 msgstr ""
 
-#: src/preferences/generalPage.js:58
+#: src/preferences/generalPage.js:61
 msgid "Current weather refresh interval in minutes"
 msgstr ""
 
-#: src/preferences/generalPage.js:80
+#: src/preferences/generalPage.js:83
 #, fuzzy
 msgid "Weather Forecast Refresh"
 msgstr "Centriranje prognoze"
 
-#: src/preferences/generalPage.js:81
+#: src/preferences/generalPage.js:84
 msgid "Forecast refresh interval in minutes if enabled"
 msgstr ""
 
-#: src/preferences/generalPage.js:92
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:108
+#: src/preferences/generalPage.js:104
+#, fuzzy
+msgid "My Location Refresh"
+msgstr "Lokacije"
+
+#: src/preferences/generalPage.js:105
+msgid "My location refresh interval in minutes"
+msgstr ""
+
+#: src/preferences/generalPage.js:116
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:124
 msgid "Disable Forecast"
 msgstr ""
 
-#: src/preferences/generalPage.js:93
+#: src/preferences/generalPage.js:117
 msgid "Disables all fetching and processing of forecast data"
 msgstr ""
 
-#: src/preferences/generalPage.js:104
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:96
+#: src/preferences/generalPage.js:128
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:112
 #, fuzzy
 msgid "System Icons"
 msgstr "Simbolične ikone"
 
-#: src/preferences/generalPage.js:105
+#: src/preferences/generalPage.js:129
 msgid "Disable to use packaged Adwaita weather icons"
 msgstr ""
 
-#: src/preferences/generalPage.js:106
+#: src/preferences/generalPage.js:131
 msgid ""
 "If you have issues with your system icons displaying correctly disable this "
 "to fix it"
 msgstr ""
 
-#: src/preferences/generalPage.js:126
+#: src/preferences/generalPage.js:152
 msgid "First Boot Delay"
 msgstr ""
 
-#: src/preferences/generalPage.js:127
+#: src/preferences/generalPage.js:153
 msgid "Seconds to delay popup initialization and data fetching"
 msgstr ""
 
-#: src/preferences/generalPage.js:128
+#: src/preferences/generalPage.js:155
 msgid ""
 "This setting only applies to the first time the extension is loaded. (first "
 "log in / restarting gnome shell)"
 msgstr ""
 
-#: src/preferences/generalPage.js:142
+#: src/preferences/generalPage.js:171
 msgid "Units"
 msgstr "Mere"
 
-#: src/preferences/generalPage.js:156
+#: src/preferences/generalPage.js:187
 #, fuzzy
 msgid "Temperature"
 msgstr "Mera temperature"
 
-#: src/preferences/generalPage.js:168
+#: src/preferences/generalPage.js:199
 msgid "Beaufort"
 msgstr "Bofor"
 
-#: src/preferences/generalPage.js:170
+#: src/preferences/generalPage.js:201
 #, fuzzy
 msgid "Wind Speed"
 msgstr "Mera brzine vetra"
 
-#: src/preferences/generalPage.js:189
+#: src/preferences/generalPage.js:220
 #, fuzzy
 msgid "Pressure"
 msgstr "Pritisak:"
 
-#: src/preferences/generalPage.js:201 src/preferences/locationsPage.js:64
+#: src/preferences/generalPage.js:227
+msgid "24-hour"
+msgstr ""
+
+#: src/preferences/generalPage.js:228
+msgid "AM / PM"
+msgstr ""
+
+#: src/preferences/generalPage.js:229
+#, fuzzy
+msgid "System"
+msgstr "Simbolične ikone"
+
+#: src/preferences/generalPage.js:231
+msgid "Time Format"
+msgstr ""
+
+#: src/preferences/generalPage.js:242
+msgid "Simplify Degrees"
+msgstr ""
+
+#: src/preferences/generalPage.js:243
+msgid "Show \"°\" instead of \"°C,\" \"°F,\" etc."
+msgstr ""
+
+#: src/preferences/generalPage.js:244
+msgid "Enable this to cut off the \"C,\" \"F,\" etc. from degrees labels."
+msgstr ""
+
+#: src/preferences/generalPage.js:258 src/preferences/locationsPage.js:67
 msgid "Provider"
 msgstr "Dostavljač"
 
-#: src/preferences/generalPage.js:210
+#: src/preferences/generalPage.js:267
 msgid "OpenWeatherMap Multilingual Support"
 msgstr ""
 
-#: src/preferences/generalPage.js:211
+#: src/preferences/generalPage.js:269
 msgid "Using provider translations applies to weather conditions only"
 msgstr ""
 
-#: src/preferences/generalPage.js:212
+#: src/preferences/generalPage.js:272
 msgid ""
 "Enable this to use OWM multilingual support in 46 languages if there's no "
 "built-in translations for your language yet."
 msgstr ""
 
-#: src/preferences/generalPage.js:224
+#: src/preferences/generalPage.js:285
 msgid "Use Extensions API Key"
 msgstr ""
 
-#: src/preferences/generalPage.js:225
+#: src/preferences/generalPage.js:286
 #, fuzzy
 msgid "Use the built-in API key for OpenWeatherMap"
 msgstr ""
 "Koristi podrazumevani API ključ sa openweathermap.org dostavljen u proširenju"
 
-#: src/preferences/generalPage.js:226
+#: src/preferences/generalPage.js:288
 #, fuzzy
 msgid ""
 "Disable this if you have your own API key from openweathermap.org and enter "
@@ -719,8 +768,20 @@ msgstr ""
 "Isključite, ukoliko imate vaš ključ za openweathermap.org i unestite ga u "
 "polje ispod."
 
-#: src/preferences/generalPage.js:240
+#: src/preferences/generalPage.js:303
 msgid "Personal API Key"
+msgstr ""
+
+#: src/preferences/generalPage.js:332 src/preferences/generalPage.js:338
+msgid "Reset"
+msgstr ""
+
+#: src/preferences/generalPage.js:342
+msgid "Restore Defaults"
+msgstr ""
+
+#: src/preferences/generalPage.js:344
+msgid "Restore all settings to the defaults."
 msgstr ""
 
 #: src/preferences/layoutPage.js:31
@@ -776,329 +837,409 @@ msgstr ""
 msgid "Conditions In Panel"
 msgstr "Uslovi na panelu"
 
-#: src/preferences/layoutPage.js:107
+#: src/preferences/layoutPage.js:102
+#, fuzzy
+msgid "Show the time of sunrise/sunset in the panel."
+msgstr "Temperatura na panelu"
+
+#: src/preferences/layoutPage.js:106
+#, fuzzy
+msgid "Sunrise/Sunset In Panel"
+msgstr "Uslovi na panelu"
+
+#: src/preferences/layoutPage.js:114
+msgid ""
+"Show the sunset/sunrise before the temperature/conditions. Requires restart."
+msgstr ""
+
+#: src/preferences/layoutPage.js:118
+msgid "Sunrise/Sunset First (Restart Required)"
+msgstr ""
+
+#: src/preferences/layoutPage.js:134
 msgid "Popup"
 msgstr ""
 
-#: src/preferences/layoutPage.js:125
+#: src/preferences/layoutPage.js:152
 msgid "Popup Position"
 msgstr ""
 
-#: src/preferences/layoutPage.js:126
+#: src/preferences/layoutPage.js:153
 msgid "Alignment of the popup from left to right"
 msgstr ""
 
-#: src/preferences/layoutPage.js:137
+#: src/preferences/layoutPage.js:164
 #, fuzzy
 msgid "Wind Direction Arrows"
 msgstr "Smer vetra pomoću strelica"
 
-#: src/preferences/layoutPage.js:149
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:88
+#: src/preferences/layoutPage.js:176
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:104
 msgid "Translate Conditions"
 msgstr "Prevod uslova"
 
-#: src/preferences/layoutPage.js:157
+#: src/preferences/layoutPage.js:184
 msgid "0"
 msgstr ""
 
-#: src/preferences/layoutPage.js:158 src/preferences/layoutPage.js:229
+#: src/preferences/layoutPage.js:185 src/preferences/layoutPage.js:271
 msgid "1"
 msgstr ""
 
-#: src/preferences/layoutPage.js:159 src/preferences/layoutPage.js:230
+#: src/preferences/layoutPage.js:186 src/preferences/layoutPage.js:272
 msgid "2"
 msgstr ""
 
-#: src/preferences/layoutPage.js:160 src/preferences/layoutPage.js:231
+#: src/preferences/layoutPage.js:187 src/preferences/layoutPage.js:273
 msgid "3"
 msgstr ""
 
-#: src/preferences/layoutPage.js:162
+#: src/preferences/layoutPage.js:189
 #, fuzzy
 msgid "Temperature Decimal Places"
 msgstr "Temperatura na panelu"
 
-#: src/preferences/layoutPage.js:163
+#: src/preferences/layoutPage.js:190
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:168
 #, fuzzy
 msgid "Maximum number of digits after the decimal point"
 msgstr "Maksimalan br. cifara nakon decimalnog zareza"
 
-#: src/preferences/layoutPage.js:183
+#: src/preferences/layoutPage.js:210
 msgid "Location Text Length"
 msgstr ""
 
-#: src/preferences/layoutPage.js:184
+#: src/preferences/layoutPage.js:212
 msgid "Maximum length of the location text. A setting of '0' is unlimited"
 msgstr ""
 
-#: src/preferences/layoutPage.js:200
+#: src/preferences/layoutPage.js:220
+msgid "Off"
+msgstr ""
+
+#: src/preferences/layoutPage.js:221
+msgid "White Text"
+msgstr ""
+
+#: src/preferences/layoutPage.js:222
+msgid "Black Text"
+msgstr ""
+
+#: src/preferences/layoutPage.js:224
+msgid "High Contrast"
+msgstr ""
+
+#: src/preferences/layoutPage.js:225
+msgid "Enable to override GNOME shell colors"
+msgstr ""
+
+#: src/preferences/layoutPage.js:242
 #, fuzzy
 msgid "Forecast"
 msgstr "Centriranje prognoze"
 
-#: src/preferences/layoutPage.js:210
+#: src/preferences/layoutPage.js:252
 #, fuzzy
 msgid "Center Today's Forecast"
 msgstr "Centriranje prognoze"
 
-#: src/preferences/layoutPage.js:221
+#: src/preferences/layoutPage.js:263
 #, fuzzy
 msgid "Conditions In Forecast"
 msgstr "Uslovi u prognozi"
 
-#: src/preferences/layoutPage.js:228
+#: src/preferences/layoutPage.js:270
 msgid "Today Only"
 msgstr ""
 
-#: src/preferences/layoutPage.js:232
+#: src/preferences/layoutPage.js:274
 msgid "4"
 msgstr ""
 
-#: src/preferences/layoutPage.js:233
+#: src/preferences/layoutPage.js:275
 msgid "5"
 msgstr ""
 
-#: src/preferences/layoutPage.js:235
+#: src/preferences/layoutPage.js:277
 #, fuzzy
 msgid "Total Days In Forecast"
 msgstr "Uslovi u prognozi"
 
-#: src/preferences/layoutPage.js:246
+#: src/preferences/layoutPage.js:288
 msgid "Keep Forecast Expanded"
 msgstr ""
 
-#: src/preferences/locationsPage.js:52
+#: src/preferences/locationsPage.js:55
 msgid "Add"
 msgstr ""
 
-#: src/preferences/locationsPage.js:71
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:58
-msgid "Geolocation Provider"
-msgstr "Dostavljač geolokacije"
+#: src/preferences/locationsPage.js:75
+#, fuzzy
+msgid "My Loc. Provider"
+msgstr "Dostavljač"
 
-#: src/preferences/locationsPage.js:72
-msgid "Provider used for location search"
+#: src/preferences/locationsPage.js:76
+msgid "Provider for getting My Location"
 msgstr ""
 
 #: src/preferences/locationsPage.js:85
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:73
+msgid "Geolocation Provider"
+msgstr "Dostavljač geolokacije"
+
+#: src/preferences/locationsPage.js:86
+msgid "Provider used for location search"
+msgstr ""
+
+#: src/preferences/locationsPage.js:100
 msgid "Personal MapQuest Key"
 msgstr ""
 
-#: src/preferences/locationsPage.js:86
+#: src/preferences/locationsPage.js:101
 #, fuzzy
 msgid "Personal API Key from developer.mapquest.com"
 msgstr "Lični api ključ sa developer.mapquest.com"
 
-#: src/preferences/locationsPage.js:206
+#: src/preferences/locationsPage.js:264
 #, javascript-format
 msgid "Location changed to: %s"
 msgstr ""
 
-#: src/preferences/locationsPage.js:221
+#: src/preferences/locationsPage.js:294
 #, fuzzy
 msgid "Add New Location"
 msgstr "Lokacija"
 
-#: src/preferences/locationsPage.js:242
+#: src/preferences/locationsPage.js:315
 #, fuzzy
 msgid "Search by Location or Coordinates"
 msgstr "Pretraga po lokaciji ili koordinatama"
 
-#: src/preferences/locationsPage.js:248
-msgid "e.g. Vaiaku, Tuvalu or -8.5211767,179.1976747"
-msgstr "npr. Beograd, Srbija ili 44.816667,20.466667"
+#: src/preferences/locationsPage.js:321
+msgid "e.g. London, England or 51.5074456,-0.1277653"
+msgstr ""
 
-#: src/preferences/locationsPage.js:250 src/preferences/locationsPage.js:335
-#: src/preferences/locationsPage.js:352
+#: src/preferences/locationsPage.js:323 src/preferences/locationsPage.js:451
+#: src/preferences/locationsPage.js:468
 msgid "Clear entry"
 msgstr "očisti unos"
 
-#: src/preferences/locationsPage.js:259
+#: src/preferences/locationsPage.js:340
 #, fuzzy
 msgid "Search"
 msgstr "Učitavanje..."
 
-#: src/preferences/locationsPage.js:282
+#: src/preferences/locationsPage.js:366
 msgid "We need something to search for!"
 msgstr ""
 
-#: src/preferences/locationsPage.js:305
-#, fuzzy, javascript-format
-msgid "Edit %s"
-msgstr "Uređivanje imena"
-
-#: src/preferences/locationsPage.js:327
-#, fuzzy
-msgid "Edit Name"
-msgstr "Uređivanje imena"
-
-#: src/preferences/locationsPage.js:343
-#, fuzzy
-msgid "Edit Coordinates"
-msgstr "Uređivanje koordinata"
-
-#: src/preferences/locationsPage.js:361
-msgid "Save"
-msgstr "Sačuvaj"
-
-#: src/preferences/locationsPage.js:394
-msgid "Please complete all fields"
-msgstr ""
-
-#: src/preferences/locationsPage.js:410
-#, javascript-format
-msgid "%s has been updated"
-msgstr ""
-
-#: src/preferences/locationsPage.js:439
-#, javascript-format
-msgid "Are you sure you want to delete \"%s\"?"
-msgstr ""
-
-#: src/preferences/locationsPage.js:447
-msgid "Delete"
-msgstr ""
-
-#: src/preferences/locationsPage.js:451
-msgid "Cancel"
-msgstr "Otkaži"
-
-#: src/preferences/locationsPage.js:483
-#, javascript-format
-msgid "%s has been deleted"
-msgstr ""
-
-#: src/preferences/locationsPage.js:529
-msgid "Search Results"
-msgstr ""
-
-#: src/preferences/locationsPage.js:545
-msgid "New Search"
-msgstr ""
-
-#: src/preferences/locationsPage.js:552
-#, fuzzy
-msgid "Searching ..."
-msgstr "Učitavanje..."
-
-#: src/preferences/locationsPage.js:553
-#, javascript-format
-msgid "Please wait while searching for locations matching \"%s\""
-msgstr ""
-
-#: src/preferences/locationsPage.js:605
-msgid "AppKey Required"
-msgstr ""
-
-#: src/preferences/locationsPage.js:606
-#, fuzzy, javascript-format
-msgid "You need an AppKey to use MapQuest, get one at: %s"
-msgstr "Lični API ključ sa openweathermap.org"
-
-#: src/preferences/locationsPage.js:709
-#, javascript-format
-msgid "Results for \"%s\""
-msgstr ""
-
-#: src/preferences/locationsPage.js:756
+#: src/preferences/locationsPage.js:395
+#: src/preferences/searchResultsWindow.js:273
 #, javascript-format
 msgid "%s has been added"
 msgstr ""
 
-#: src/preferences/locationsPage.js:764
-msgid "API Error"
+#: src/preferences/locationsPage.js:411
+#, fuzzy, javascript-format
+msgid "Edit %s"
+msgstr "Uređivanje imena"
+
+#: src/preferences/locationsPage.js:433
+#, fuzzy
+msgid "Edit Name"
+msgstr "Uređivanje imena"
+
+#: src/preferences/locationsPage.js:459
+#, fuzzy
+msgid "Edit Coordinates"
+msgstr "Uređivanje koordinata"
+
+#: src/preferences/locationsPage.js:477
+msgid "Save"
+msgstr "Sačuvaj"
+
+#: src/preferences/locationsPage.js:511
+msgid "Coordinates field cannot be empty."
 msgstr ""
 
-#: src/preferences/locationsPage.js:765
-#, fuzzy, javascript-format
-msgid "Invalid data when searching for \"%s\"."
-msgstr "Neistpravi podaci pri traženju „%s“"
-
-#: src/preferences/locationsPage.js:768
-msgid "No Matches Found"
+#: src/preferences/locationsPage.js:519
+#, javascript-format
+msgid "Coordinates field must be in the format of '%s' or the text '%s'."
 msgstr ""
 
-#: src/preferences/locationsPage.js:769
-#, fuzzy, javascript-format
-msgid "No results found when searching for \"%s\"."
-msgstr "Neistpravi podaci pri traženju „%s“"
+#: src/preferences/locationsPage.js:527
+#, javascript-format
+msgid "Name field can only be empty if coordinates are '%s'."
+msgstr ""
 
-#: src/preferences/aboutPage.js:31
+#: src/preferences/locationsPage.js:556
+#, javascript-format
+msgid "%s has been updated"
+msgstr ""
+
+#: src/preferences/locationsPage.js:587
+#, javascript-format
+msgid "Are you sure you want to delete \"%s\"?"
+msgstr ""
+
+#: src/preferences/locationsPage.js:595
+msgid "Delete"
+msgstr ""
+
+#: src/preferences/locationsPage.js:599
+msgid "Cancel"
+msgstr "Otkaži"
+
+#: src/preferences/locationsPage.js:625
+#, javascript-format
+msgid "%s has been deleted"
+msgstr ""
+
+#: src/preferences/aboutPage.js:35
 msgid "About"
 msgstr "O programu"
 
-#: src/preferences/aboutPage.js:58
+#: src/preferences/aboutPage.js:63
 msgid ""
-"Display weather information for any location on Earth in the GNOME Shell"
+"Display weather information for any location on Earth in the GNOME Shell."
 msgstr ""
 
-#: src/preferences/aboutPage.js:72
-msgid "unknown"
+#: src/preferences/aboutPage.js:78 src/preferences/aboutPage.js:79
+msgid "Unknown"
 msgstr ""
 
-#: src/preferences/aboutPage.js:78
+#: src/preferences/aboutPage.js:83
 #, fuzzy
-msgid "OpenWeather Version"
+msgid "OpenWeather Refined Version"
 msgstr "Postavke vremena"
 
-#: src/preferences/aboutPage.js:87
+#: src/preferences/aboutPage.js:95
 #, fuzzy
 msgid "Git Version"
 msgstr "Verzija:"
 
-#: src/preferences/aboutPage.js:95
+#: src/preferences/aboutPage.js:106
 #, fuzzy
 msgid "GNOME Version"
 msgstr "Verzija:"
 
-#: src/preferences/aboutPage.js:102
-msgid "Session Type"
+#: src/preferences/aboutPage.js:116
+#, fuzzy
+msgid "Copy Settings JSON"
+msgstr "Postavke vremena"
+
+#: src/preferences/aboutPage.js:119
+msgid "Copy"
 msgstr ""
 
-#: src/preferences/aboutPage.js:124
+#: src/preferences/aboutPage.js:166
+msgid "Copied settings JSON to clipboard."
+msgstr ""
+
+#: src/preferences/aboutPage.js:187
 #, fuzzy, javascript-format
 msgid "Maintained by: %s"
 msgstr "Održava"
 
-#: src/preferences/aboutPage.js:161
+#: src/preferences/aboutPage.js:193
+#, javascript-format
+msgid "Contribute or translate the project on %s."
+msgstr ""
+
+#: src/preferences/aboutPage.js:199
+#, javascript-format
+msgid "This is a fork of %s's extension."
+msgstr ""
+
+#: src/preferences/aboutPage.js:220
 #, fuzzy, javascript-format
 msgid "Weather data provided by: %s"
 msgstr "Podatke o vremenu dostavlja:"
 
-#: src/preferences/aboutPage.js:172
+#: src/preferences/aboutPage.js:234
 msgid "This program comes with ABSOLUTELY NO WARRANTY."
 msgstr ""
 
-#: src/preferences/aboutPage.js:173
+#: src/preferences/aboutPage.js:236
 msgid "See the"
 msgstr ""
 
-#: src/preferences/aboutPage.js:174
+#: src/preferences/aboutPage.js:238
 msgid "GNU General Public License, version 2 or later"
 msgstr ""
 
-#: src/preferences/aboutPage.js:174
+#: src/preferences/aboutPage.js:240
 msgid "for details."
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:54
+#: src/preferences/searchResultsWindow.js:36
+#, javascript-format
+msgid "Search Results from %s"
+msgstr ""
+
+#: src/preferences/searchResultsWindow.js:53
+msgid "New Search"
+msgstr ""
+
+#: src/preferences/searchResultsWindow.js:60
+#, fuzzy
+msgid "Searching ..."
+msgstr "Učitavanje..."
+
+#: src/preferences/searchResultsWindow.js:62
+#, javascript-format
+msgid "Please wait while searching for locations matching \"%s\""
+msgstr ""
+
+#: src/preferences/searchResultsWindow.js:117
+msgid "AppKey Required"
+msgstr ""
+
+#: src/preferences/searchResultsWindow.js:119
+#, fuzzy, javascript-format
+msgid "You need an AppKey to use MapQuest, get one at: %s"
+msgstr "Lični API ključ sa openweathermap.org"
+
+#: src/preferences/searchResultsWindow.js:207
+#, javascript-format
+msgid "Results for \"%s\""
+msgstr ""
+
+#: src/preferences/searchResultsWindow.js:284
+msgid "API Error"
+msgstr ""
+
+#: src/preferences/searchResultsWindow.js:286
+#, fuzzy, javascript-format
+msgid "Invalid data when searching for \"%s\"."
+msgstr "Neistpravi podaci pri traženju „%s“"
+
+#: src/preferences/searchResultsWindow.js:292
+msgid "No Matches Found"
+msgstr ""
+
+#: src/preferences/searchResultsWindow.js:294
+#, fuzzy, javascript-format
+msgid "No results found when searching for \"%s\"."
+msgstr "Neistpravi podaci pri traženju „%s“"
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:69
 msgid "Weather Provider"
 msgstr "Dostavljač podataka o vremenu"
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:62
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:77
 msgid "Temperature Unit"
 msgstr "Mera temperature"
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:66
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:81
 msgid "Pressure Unit"
 msgstr "Mera pritiska"
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:70
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:85
 msgid "Wind Speed Units"
 msgstr "Mere brzine vetra"
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:71
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:86
 msgid ""
 "Choose the units used for wind speed. Allowed values are 'kph', 'mph', 'm/"
 "s', 'knots', 'ft/s' or 'Beaufort'."
@@ -1106,96 +1247,160 @@ msgstr ""
 "Izaberite jedinice za brzinu vetra. Dozvoljene vrednosti su 'kph', 'mph', 'm/"
 "s', 'čvorovi', 'ft/s' ili 'Bofor'."
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:75
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:90
 msgid "Wind Direction by Arrows"
 msgstr "Smer vetra pomoću strelica"
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:76
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:91
 msgid "Choose whether to display wind direction through arrows or letters."
 msgstr "Izaberite da li prikazivati strelice ili slova za smer vetra."
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:80
-msgid "City to be displayed"
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:96
+#, fuzzy
+msgid "DEPRECATED, City to be displayed"
 msgstr "Grad koji se prikazuje"
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:84
-msgid "Actual City"
-msgstr "Stvaran grad"
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:100
+msgid "Index of the city to display by default."
+msgstr ""
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:92
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:108
 msgid "OpenWeatherMap Multilingual Support (weather descriptions only)"
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:100
-msgid "Temperature in Panel"
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:116
+#, fuzzy
+msgid "True to show temperature in the panel"
 msgstr "Temperatura na panelu"
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:104
-msgid "Conditions in Panel"
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:120
+#, fuzzy
+msgid "True to show conditions in the panel."
 msgstr "Uslovi na panelu"
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:112
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:128
 msgid "Conditions in Forecast"
 msgstr "Uslovi u prognozi"
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:116
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:120
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:132
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:136
 msgid "Position in Panel"
 msgstr "Pozicija na panelu"
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:124
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:140
 msgid "Horizontal position of menu-box."
 msgstr "Horizontalna pozicija u meniju."
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:128
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:144
 msgid "Refresh interval (actual weather)"
 msgstr "Interval osvežavanja (trenutno vreme)"
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:132
-msgid "Maximal length of the location text"
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:148
+msgid "Maximum length of the location text"
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:136
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:152
 msgid "Refresh interval (forecast)"
 msgstr "Interval osvežavanja (prognoza)"
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:140
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:156
 msgid "Center forecastbox."
 msgstr "Centriranje prognoze."
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:144
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:160
 msgid "Always keep forecast expanded"
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:148
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:164
 msgid "Number of days in forecast"
 msgstr "Broj dana u prognozi"
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:152
-msgid "Maximal number of digits after the decimal point"
-msgstr "Maksimalan br. cifara nakon decimalnog zareza"
-
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:156
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:172
 msgid "Your personal API key from openweathermap.org"
 msgstr "Lični api ključ sa openweathermap.org"
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:160
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:176
 msgid "Use the extensions default API key from openweathermap.org"
 msgstr ""
 "Koristi podrazumevani API ključ sa openweathermap.org dostavljen u proširenju"
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:164
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:180
 msgid "Your personal AppKey from developer.mapquest.com"
 msgstr "Lični API ključ sa openweathermap.org"
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:168
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:184
+msgid ""
+"Time format for hours. Possible values are '24hr' for 24-hour clock, '12hr' "
+"for AM/PM, and 'system' to follow the GNOME setting."
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:188
 msgid "Seconds to delay popup initialization and data fetch on the first load"
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:172
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:192
 msgid "Default width for the preferences window"
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.openweather.gschema.xml:176
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:196
 msgid "Default height for the preferences window"
 msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:200
+msgid ""
+"High contrast style to use, possible values are 'none', 'white', or 'black'."
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:204
+#, fuzzy
+msgid "True to show the sunset/sunrise in the panel."
+msgstr "Temperatura na panelu"
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:208
+msgid ""
+"True to show the sunset/sunrise in the panel before the temperature/"
+"conditions if enabled."
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:212
+msgid "False if this extension has never been initialized before."
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:216
+msgid "How often, in minutes, to re-fetch My Location if selected."
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:220
+msgid "True to cut off the \"F\" or \"C\" after the degree symbol."
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:224
+msgid "Freezes the settings changed listener; user should not change this."
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:229
+#, fuzzy
+msgid "List of locations."
+msgstr "Lokacije"
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:233
+msgid "Provider to use for \"My Location.\""
+msgstr ""
+
+#~ msgid "Invalid city"
+#~ msgstr "neispravan grad"
+
+#~ msgid "Invalid location! Please try to recreate it."
+#~ msgstr "neispravna lokacija! Pokušajte da je ponovo napravite."
+
+#~ msgid "e.g. Vaiaku, Tuvalu or -8.5211767,179.1976747"
+#~ msgstr "npr. Beograd, Srbija ili 44.816667,20.466667"
+
+#~ msgid "Actual City"
+#~ msgstr "Stvaran grad"
+
+#~ msgid "Temperature in Panel"
+#~ msgstr "Temperatura na panelu"
+
+#~ msgid "Maximal number of digits after the decimal point"
+#~ msgstr "Maksimalan br. cifara nakon decimalnog zareza"
