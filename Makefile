@@ -83,7 +83,7 @@ endif
 	-rm -fR _build
 	echo done
 
-releases: _build
+releases: mergepo _build
 	printf -- 'NEEDED: zip tar\n'
 	mkdir -p ./releases
 
