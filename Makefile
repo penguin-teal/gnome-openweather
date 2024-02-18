@@ -37,7 +37,7 @@ ZIPVER = -v$(FOUNDVERSION)
 
 TARGZ := ./releases/$(PKG_NAME)$(ZIPVER).tar.gz
 
-.PHONY: all clean potfile mergepo install install-local zip-file
+.PHONY: all clean potfile mergepo install install-local
 
 all: _build
 
