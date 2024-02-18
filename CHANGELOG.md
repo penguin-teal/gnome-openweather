@@ -1,4 +1,4 @@
-## v129 (IN PROGRESS)
+## v129
 
 Features:
 - Now use device location services by default (requires location permission to be on).
