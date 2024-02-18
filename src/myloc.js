@@ -107,6 +107,7 @@ async function httpGetLoc(locProv)
           fetchingLocation = false;
           locationTime = new Date();
           reject(e);
+          return;
         }
         if(!response || !(response = response.get_data()))
         {
@@ -114,6 +115,7 @@ async function httpGetLoc(locProv)
           fetchingLocation = false;
           locationTime = new Date();
           reject("OpenWeather Refined: Invalid response");
+          return;
         }
 
         let str = new TextDecoder().decode(response);
@@ -123,6 +125,7 @@ async function httpGetLoc(locProv)
           fetchingLocation = false;
           locationTime = new Date();
           reject("OpenWeather Refined: No data in JSON My Location HTTP response.");
+          return;
         }
         let obj = JSON.parse(str);
 
@@ -169,6 +172,7 @@ export async function geoclueGetLoc(useNominatim = true)
           fetchingLocation = false;
           locationTime = new Date();
           reject(`OpenWeather Refined: ${e}`);
+          return;
         }
 
         let locI =
@@ -225,6 +229,7 @@ export async function geoclueGetLoc(useNominatim = true)
           fetchingLocation = false;
           locationTime = new Date();
           reject(e);
+          return;
         }
         if(!response || !(response = response.get_data()))
         {
@@ -232,6 +237,7 @@ export async function geoclueGetLoc(useNominatim = true)
           fetchingLocation = false;
           locationTime = new Date();
           reject("OpenWeather Refined: Invalid response from Nominatim.");
+          return;
         }
 
         let str = new TextDecoder().decode(response);
@@ -241,6 +247,7 @@ export async function geoclueGetLoc(useNominatim = true)
           fetchingLocation = false;
           locationTime = new Date();
           reject("OpenWeather Refined: No data in JSON Nominatim HTTP response.");
+          return;
         }
         let obj = JSON.parse(str);
         let addr = obj.address;
