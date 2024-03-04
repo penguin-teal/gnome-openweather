@@ -755,7 +755,14 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
 
   get _actual_city()
   {
-    return this.settings.get_int("actual-city");
+    let i = this.settings.get_int("actual-city");
+    if(i > _cities.length - 1)
+    {
+      console.warn("OpenWeather Refined: Got actual city too high.");
+      i = _cities.length - 1;
+    }
+
+    return i;
   }
 
   getHiConrastClass()
@@ -776,6 +783,12 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
 
   set _actual_city(i)
   {
+    if(i > _cities.length - 1)
+    {
+      console.warn("OpenWeather Refined: Set actual city too high.");
+      i = _cities.length;
+    }
+
     this.settings.set_int("actual-city", i);
   }
 
