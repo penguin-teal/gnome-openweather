@@ -1,3 +1,13 @@
+## v130
+
+Improvements:
+- Remove "hPa" presure unit since it was a duplicate of "mbar" (existing configurations will be migrated)
+- Pressure decimal places are now independent of temperature
+- Wind speed decimal places are now independent of temperature
+
+Bug Fixes:
+- Fix panel location dropdown not working
+
 ## v129
 
 Features:
