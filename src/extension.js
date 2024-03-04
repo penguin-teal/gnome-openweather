@@ -868,6 +868,44 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     return this.settings.get_int("decimal-places");
   }
 
+  get _pressure_decimal_places()
+  {
+    let s = this.settings.get_int("pressure-decimal-places");
+    switch(s)
+    {
+      case -2:
+        switch(this._pressure_units)
+        {
+          case WeatherPressureUnits.MBAR:
+          case WeatherPressureUnits.PA:
+            return 0;
+          case WeatherPressureUnits.KPA:
+          case WeatherPressureUnits.MMHG:
+          case WeatherPressureUnits.HPA:
+          case WeatherPressureUnits.TORR:
+            return 1;
+          case WeatherPressureUnits.INHG:
+          case WeatherPressureUnits.PSI:
+            return 2;
+          case WeatherPressureUnits.ATM:
+          case WeatherPressureUnits.AT:
+          case WeatherPressureUnits.BAR:
+            return 3;
+        }
+      case -1:
+        return this._decimal_places;
+      default:
+        return s;
+    }
+  }
+
+  get _speed_decimal_places()
+  {
+    let s = this.settings.get_int("speed-decimal-places");
+    if(s === -1) return this._decimal_places;
+    else return s;
+  }
+
   get _appid() {
     let key = "";
     let useDefaultKey = this.settings.get_boolean("use-default-owm-key");
@@ -1133,10 +1171,6 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     return (Number(t) - 0.33).toFixed(this._decimal_places);
   }
 
-  toInHg(p /*, t*/) {
-    return (p / 33.86530749).toFixed(this._decimal_places);
-  }
-
   toBeaufort(w, t) {
     if (w < 0.3) return !t ? "0" : "(" + _("Calm") + ")";
     else if (w >= 0.3 && w <= 1.5) return !t ? "1" : "(" + _("Light air") + ")";
@@ -1258,67 +1292,69 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     }
   }
 
-  formatPressure(pressure) {
-    let pressure_unit = _("hPa");
-    switch (this._pressure_units) {
+  formatPressure(pressure)
+  {
+    let pressure_unit;
+    switch (this._pressure_units)
+    {
+
       case WeatherPressureUnits.INHG:
-        pressure = this.toInHg(pressure);
+        pressure *= 0.029528744;
         pressure_unit = _("inHg");
         break;
 
-      case WeatherPressureUnits.HPA:
-        pressure = pressure.toFixed(this._decimal_places);
-        pressure_unit = _("hPa");
-        break;
-
       case WeatherPressureUnits.BAR:
-        pressure = (pressure / 1000).toFixed(this._decimal_places);
+        pressure *= 0.001;
         pressure_unit = _("bar");
         break;
 
       case WeatherPressureUnits.PA:
-        pressure = (pressure * 100).toFixed(this._decimal_places);
+        pressure *= 100;
         pressure_unit = _("Pa");
         break;
 
       case WeatherPressureUnits.KPA:
-        pressure = (pressure / 10).toFixed(this._decimal_places);
+        pressure *= 0.1;
         pressure_unit = _("kPa");
         break;
 
       case WeatherPressureUnits.ATM:
-        pressure = (pressure * 0.000986923267).toFixed(this._decimal_places);
+        pressure *= 0.000986923267;
         pressure_unit = _("atm");
         break;
 
       case WeatherPressureUnits.AT:
-        pressure = (pressure * 0.00101971621298).toFixed(this._decimal_places);
+        pressure *= 0.00101971621298;
         pressure_unit = _("at");
         break;
 
       case WeatherPressureUnits.TORR:
-        pressure = (pressure * 0.750061683).toFixed(this._decimal_places);
+        pressure *= 0.750061683;
         pressure_unit = _("Torr");
         break;
 
       case WeatherPressureUnits.PSI:
-        pressure = (pressure * 0.0145037738).toFixed(this._decimal_places);
+        pressure *= 0.0145037738;
         pressure_unit = _("psi");
         break;
 
       case WeatherPressureUnits.MMHG:
-        pressure = (pressure * 0.750061683).toFixed(this._decimal_places);
+        pressure *= 0.750061683;
         pressure_unit = _("mmHg");
         break;
 
       case WeatherPressureUnits.MBAR:
-        pressure = pressure.toFixed(this._decimal_places);
         pressure_unit = _("mbar");
         break;
+
+      default:
+        throw new Error("Invalid pressure unit.");
     }
-    return (
-      parseFloat(pressure).toLocaleString(this.locale) + " " + pressure_unit
-    );
+
+    return (pressure
+      .toFixed(this._pressure_decimal_places)
+      .toLocaleString(this.locale) +
+      " " + pressure_unit);
   }
 
   formatTemperature(temperature)
@@ -1377,26 +1413,26 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
 
     switch (this._wind_speed_units) {
       case WeatherWindSpeedUnits.MPH:
-        speed = (speed * conv_MPSinMPH).toFixed(this._decimal_places);
+        speed = (speed * conv_MPSinMPH).toFixed(this._speed_decimal_places);
         unit = _("mph");
         break;
 
       case WeatherWindSpeedUnits.KPH:
-        speed = (speed * conv_MPSinKPH).toFixed(this._decimal_places);
+        speed = (speed * conv_MPSinKPH).toFixed(this._speed_decimal_places);
         unit = _("km/h");
         break;
 
       case WeatherWindSpeedUnits.MPS:
-        speed = speed.toFixed(this._decimal_places);
+        speed = speed.toFixed(this._speed_decimal_places);
         break;
 
       case WeatherWindSpeedUnits.KNOTS:
-        speed = (speed * conv_MPSinKNOTS).toFixed(this._decimal_places);
+        speed = (speed * conv_MPSinKNOTS).toFixed(this._speed_decimal_places);
         unit = _("kn");
         break;
 
       case WeatherWindSpeedUnits.FPS:
-        speed = (speed * conv_MPSinFPS).toFixed(this._decimal_places);
+        speed = (speed * conv_MPSinFPS).toFixed(this._speed_decimal_places);
         unit = _("ft/s");
         break;
 

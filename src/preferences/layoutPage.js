@@ -189,7 +189,36 @@ class LayoutPage extends Adw.PreferencesPage {
       title: _("Temperature Decimal Places"),
       tooltip_text: _("Maximum number of digits after the decimal point"),
       model: temperatureDigits,
-      selected: this._settings.get_int("decimal-places"),
+      selected: this._settings.get_int("decimal-places")
+    });
+
+    let pressureDigits = new Gtk.StringList();
+    pressureDigits.append(_("Unit Default"));
+    pressureDigits.append(_("Follow Temp."));
+    pressureDigits.append(_("0"));
+    pressureDigits.append(_("1"));
+    pressureDigits.append(_("2"));
+    pressureDigits.append(_("3"));
+    pressureDigits.append(_("4"));
+    let pressureDigitsRow = new Adw.ComboRow({
+      title: _("Pressure Decimal Places"),
+      tooltip_text: _("Maximum number of digits after the decimal point"),
+      model: pressureDigits,
+      selected: this._settings.get_int("pressure-decimal-places") + 2
+    });
+
+    let speedDigits = new Gtk.StringList();
+    speedDigits.append(_("Follow Temp."));
+    speedDigits.append(_("0"));
+    speedDigits.append(_("1"));
+    speedDigits.append(_("2"));
+    speedDigits.append(_("3"));
+    speedDigits.append(_("4"));
+    let speedDigitsRow = new Adw.ComboRow({
+      title: _("Speed Decimal Places"),
+      tooltip_text: _("Maximum number of digits after the decimal point"),
+      model: speedDigits,
+      selected: this._settings.get_int("speed-decimal-places") + 1
     });
 
     // Location length text
@@ -231,6 +260,8 @@ class LayoutPage extends Adw.PreferencesPage {
     popupGroup.add(windArrowsRow);
     popupGroup.add(translateConditionsRow);
     popupGroup.add(temperatureDigitsRow);
+    popupGroup.add(pressureDigitsRow);
+    popupGroup.add(speedDigitsRow);
     popupGroup.add(locationLengthRow);
     popupGroup.add(hiContrastRow);
     this.add(popupGroup);
@@ -328,6 +359,14 @@ class LayoutPage extends Adw.PreferencesPage {
     });
     temperatureDigitsRow.connect("notify::selected", (widget) => {
       this._settings.set_int("decimal-places", widget.selected);
+    });
+    pressureDigitsRow.connect("notify::selected", (widget) => {
+      // -2 because -2 = Unit Default, -1 = Follow Temperature
+      this._settings.set_int("pressure-decimal-places", widget.selected - 2);
+    });
+    speedDigitsRow.connect("notify::selected", (widget) => {
+      // -1 because -1 = Follow Temperature
+      this._settings.set_int("speed-decimal-places", widget.selected - 1);
     });
     locationLengthSpinButton.connect("value-changed", (widget) => {
       this._settings.set_int("location-text-length", widget.get_value());
