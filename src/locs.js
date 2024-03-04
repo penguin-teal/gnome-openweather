@@ -410,9 +410,14 @@ function migrateProviders(settings)
 export function tryMigrate(settings)
 {
   let imported = tryMigrateOickle(settings);
+  tryMigrateFromOldVersion(settings);
+  return imported;
+}
+
+export function tryMigrateFromOldVersion(settings)
+{
   tryMigratePre128(settings);
   tryMigratePre130(settings);
   migrateProviders(settings);
-  return imported;
 }
 

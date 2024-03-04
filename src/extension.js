@@ -50,7 +50,7 @@ import {
   geoclueGetLoc
 } from "./myloc.js"
 
-import { Loc, settingsGetLocs, settingsSetLocs, tryMigrate } from "./locs.js";
+import { Loc, settingsGetLocs, settingsSetLocs, tryMigrate, tryMigrateFromOldVersion } from "./locs.js";
 
 let _firstBoot = 1;
 let _timeCacheCurrentWeather;
@@ -406,6 +406,10 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
           settingsSetLocs(this.settings, [ defCity ]);
         }
       }
+    }
+    else
+    {
+      tryMigrateFromOldVersion(this.settings);
     }
 
     this.unfreezeSettingsChanged();
