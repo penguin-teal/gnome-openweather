@@ -741,16 +741,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
 
   get _actual_city()
   {
-    let a = this.settings.get_int("actual-city");
-    let l = this._cities.length - 1;
-
-    if (a < 0) a = 0;
-
-    if (l < 0) l = 0;
-
-    if (a > l) a = l;
-
-    return a;
+    return this.settings.get_int("actual-city");
   }
 
   getHiConrastClass()
@@ -769,17 +760,9 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
 
   _cities = [ ];
 
-  set _actual_city(a)
+  set _actual_city(i)
   {
-    let l = this._cities.length - 1;
-
-    if (a < 0) a = 0;
-
-    if (l < 0) l = 0;
-
-    if (a > l) a = l;
-
-    this.settings.set_int("actual-city", a);
+    this.settings.set_int("actual-city", i);
   }
 
   get _city()
@@ -1061,15 +1044,16 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
 
       this._selectCity.menu.addMenuItem(item);
       // override the items default onActivate-handler, to keep the ui open while choosing the location
-      item.activate = this._onActivate;
+      item.activate = this._onActivate.bind(this, item.location);
     }
 
     if (cities.length === 1) this._selectCity.actor.hide();
     else this._selectCity.actor.show();
   }
 
-  _onActivate() {
-    this._actual_city = this.location;
+  _onActivate(locIndex)
+  {
+    this._actual_city = locIndex;
   }
 
   _onPreferencesActivate() {
