@@ -205,7 +205,7 @@ class GeneralPage extends Adw.PreferencesPage
 
     // Pressure
     let pressureUnits = new Gtk.StringList();
-    pressureUnits.append(_("hPa"));
+    // hPa
     pressureUnits.append(_("inHg"));
     pressureUnits.append(_("bar"));
     pressureUnits.append(_("Pa"));
@@ -219,7 +219,7 @@ class GeneralPage extends Adw.PreferencesPage
     let pressureUnitRow = new Adw.ComboRow({
       title: _("Pressure"),
       model: pressureUnits,
-      selected: this._settings.get_enum("pressure-unit"),
+      selected: this._settings.get_enum("pressure-unit") - 1,
     });
 
     // Clock Format
@@ -389,7 +389,7 @@ class GeneralPage extends Adw.PreferencesPage
       this._settings.set_enum("wind-speed-unit", widget.selected);
     });
     pressureUnitRow.connect("notify::selected", (widget) => {
-      this._settings.set_enum("pressure-unit", widget.selected);
+      this._settings.set_enum("pressure-unit", widget.selected + 1);
     });
     clockFormatRow.connect("notify::selected", (widget) => {
       this._settings.set_enum("clock-format", widget.selected);

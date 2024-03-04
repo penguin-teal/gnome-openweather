@@ -21,7 +21,7 @@ import Gio from "gi://Gio";
 import GLib from "gi://GLib";
 
 import { getLocationInfo, getCachedLocInfo } from "./myloc.js";
-import { GeolocationProvider } from "./constants.js";
+import { GeolocationProvider, WeatherPressureUnits } from "./constants.js";
 
 const THIS_SCHEMA_ID   = "org.gnome.shell.extensions.openweatherrefined";
 const OICKLE_SCHEMA_ID = "org.gnome.shell.extensions.openweather";
@@ -386,6 +386,14 @@ function tryMigratePre128(settings)
   return true;
 }
 
+function tryMigratePre130(settings)
+{
+  if(settings.get_int("pressure-unit") === WeatherPressureUnits.KPA)
+  {
+    settings.set_int("pressure-unit", WeatherPressureUnits.MBAR);
+  }
+}
+
 function migrateProviders(settings)
 {
   let geoSearch = settings.get_enum("geolocation-provider");
@@ -403,6 +411,7 @@ export function tryMigrate(settings)
 {
   let imported = tryMigrateOickle(settings);
   tryMigratePre128(settings);
+  tryMigratePre130(settings);
   migrateProviders(settings);
   return imported;
 }
