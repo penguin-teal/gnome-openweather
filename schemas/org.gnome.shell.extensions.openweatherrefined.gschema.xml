@@ -240,5 +240,9 @@
       <default>'geoclue'</default>
       <summary>Provider to use for "My Location."</summary>
     </key>
+    <key type="s" name="last-init-error">
+      <default>''</default>
+      <summary>Empty or the last initialization error message.</summary>
+    </key>
   </schema>
 </schemalist>

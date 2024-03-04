@@ -59,6 +59,14 @@ let _isFirstRun = null;
 let _freezeSettingsChanged = false;
 let _systemClockFormat = 1;
 
+function toYYYYMMDD(d)
+{
+  let d = date.getUTCDate();
+  let m = date.getUTCMonth();
+  let y = date.getUTCFullYear();
+  return `${y}/${m < 10 ? '0' + m : m}/${d < 10 ? '0' + d : d}`;
+}
+
 class OpenWeatherMenuButton extends PanelMenu.Button {
   static {
     GObject.registerClass(this);
@@ -179,6 +187,8 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       console.error(`OpenWeather Refined: Error '${e}' in loadConfig.`);
       console.error(e);
       Main.notify("OpenWeather Refined", _("Failed to initialize."));
+      let now = new Date();
+      this.settings.set_string("last-init-error", `(${toYYYYMMDD(now)}) ${e}`);
     });
   }
 
