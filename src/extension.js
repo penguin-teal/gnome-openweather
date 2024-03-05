@@ -1684,6 +1684,10 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
           break;
       }
 
+      rb_captions.add_actor(l);
+      rb_values.add_actor(v);
+    }
+
     let xb = new St.BoxLayout({
       x_expand: true,
     });
