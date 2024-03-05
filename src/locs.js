@@ -288,6 +288,12 @@ function fromLocsGVariant(val)
   return arr;
 }
 
+function getLocsGVariantCount(val)
+{
+  val.get_data();
+  return val.n_children();
+}
+
 export function toLocsGVariant(arr)
 {
   let tuples = [ ];
@@ -323,6 +329,12 @@ export function settingsGetLocs(settings)
   }
 
   return locs;
+}
+
+export function settingsGetLocsCount(settings)
+{
+  let gvariant = settings.get_value("locs");
+  return gvariant ? getLocsGVariantCount(gvariant) : 0;
 }
 
 export function settingsSetLocs(settings, locs)
@@ -392,6 +404,14 @@ function tryMigratePre130(settings)
   {
     settings.set_int("pressure-unit", WeatherPressureUnits.MBAR);
   }
+
+  let locCount = settingsGetLocsCount(settings);
+  let selIndex = settings.get_int("active-city");
+  if(selIndex < 0 || selIndex > locCount)
+  {
+    settings.set_int("active-city", selIndex < 0 ? 0 : locCount - 1);
+  }
+
 }
 
 function migrateProviders(settings)
