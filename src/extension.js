@@ -1624,27 +1624,6 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     bb.add_actor(ab);
 
     // Other labels
-    this._currentWeatherFeelsLike = new St.Label({
-      text: "...",
-      style_class: a11yClasses
-    });
-    this._currentWeatherHumidity = new St.Label({
-      text: "...",
-      style_class: a11yClasses
-    });
-    this._currentWeatherPressure = new St.Label({
-      text: "...",
-      style_class: a11yClasses
-    });
-    this._currentWeatherWind = new St.Label({
-      text: "...",
-      style_class: a11yClasses
-    });
-    this._currentWeatherWindGusts = new St.Label({
-      text: "...",
-      style_class: a11yClasses
-    });
-
     let rb = new St.BoxLayout({
       x_expand: true,
       style_class: "openweather-current-databox",
@@ -1662,42 +1641,48 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     });
     rb.add_actor(rb_captions);
     rb.add_actor(rb_values);
+    
+    let sideStats =
+    [
+      _("Feels Like:"),
+      _("Humidity:"),
+      _("Pressure:"),
+      _("Wind:"),
+      _("Gusts")
+    ];
 
-    rb_captions.add_actor(
-      new St.Label({
-        text: _("Feels Like:"),
-        style_class: a11yClasses
-      })
-    );
-    rb_values.add_actor(this._currentWeatherFeelsLike);
-    rb_captions.add_actor(
-      new St.Label({
-        text: _("Humidity:"),
-        style_class: a11yClasses
-      })
-    );
-    rb_values.add_actor(this._currentWeatherHumidity);
-    rb_captions.add_actor(
-      new St.Label({
-        text: _("Pressure:"),
-        style_class: a11yClasses
-      })
-    );
-    rb_values.add_actor(this._currentWeatherPressure);
-    rb_captions.add_actor(
-      new St.Label({
-        text: _("Wind:"),
-        style_class: a11yClasses
-      })
-    );
-    rb_values.add_actor(this._currentWeatherWind);
-    rb_captions.add_actor(
-      new St.Label({
-        text: _("Gusts:"),
-        style_class: a11yClasses
-      })
-    );
-    rb_values.add_actor(this._currentWeatherWindGusts);
+    const labelCss = this.cssConcatClass("openweather-current-databox-captions", a11yClasses);
+    const valueCss = this.cssConcatClass("openweather-current-databox-values", a11yClasses);
+    for(let i of sideStats)
+    {
+      let l = new St.Label({
+        text: sideStats[i],
+        style_class: labelCss
+      });
+
+      let v = new St.Label({
+        text: "\u2026",
+        style_class: valueCss
+      });
+
+      switch(i)
+      {
+        case 0:
+          this._currentWeatherFeelsLike = v;
+          break;
+        case 1:
+          this._currentWeatherHumidity = v;
+          break;
+        case 2:
+          this._currentWeatherPressure = v;
+          break;
+        case 3:
+          this._currentWeatherWind = v;
+          break;
+        case 4:
+          this._currentWeatherWindGusts = v;
+          break;
+      }
 
     let xb = new St.BoxLayout({
       x_expand: true,
