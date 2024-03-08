@@ -40,10 +40,6 @@
     <value value="4" nick="ft/s"/>
     <value value="5" nick="Beaufort"/>
   </enum>
-  <enum id="org.gnome.shell.extensions.openweatherrefined.wind-dir-indicators">
-    <value value="0" nick="arrows"/>
-    <value value="1" nick="letters"/>
-  </enum>
   <enum id="org.gnome.shell.extensions.openweatherrefined.position">
     <value value="0" nick="center"/>
     <value value="1" nick="right"/>
@@ -86,9 +82,9 @@
       <description>Choose the units used for wind speed. Allowed values are 'kph', 'mph', 'm/s', 'knots', 'ft/s' or 'Beaufort'.</description>
     </key>
     <key type="b" name="wind-direction">
-      <default>false</default>
+      <default>true</default>
       <summary>Wind Direction by Arrows</summary>
-      <description>Choose whether to display wind direction through arrows or letters.</description>
+      <description>True to display wind direction through arrows rather than letters.</description>
     </key>
     <!-- 'city' no longer in use, will be migrated to 'locs' -->
     <key type="s" name="city">
