@@ -92,7 +92,7 @@ function tryMigratePre130(settings)
   let selIndex = settings.get_int("actual-city");
   if(selIndex < 0 || selIndex > locCount)
   {
-    settings.set_int("active-city", selIndex < 0 ? 0 : locCount - 1);
+    settings.set_int("actual-city", selIndex < 0 ? 0 : locCount - 1);
   }
 
 }
