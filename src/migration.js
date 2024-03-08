@@ -17,6 +17,14 @@
    Copyright 2024 TealPenguin
 */
 
+import Gio from "gi://Gio";
+
+import { GeolocationProvider, WeatherPressureUnits } from "./constants.js";
+import { Loc, NAME_TYPE, PLACE_TYPE, settingsSetLocs, settingsGetLocsCount } from "./locs.js";
+
+const THIS_SCHEMA_ID   = "org.gnome.shell.extensions.openweatherrefined";
+const OICKLE_SCHEMA_ID = "org.gnome.shell.extensions.openweather";
+
 function tryMigrateOickle(settings)
 {
   let keys = settings.list_keys();
@@ -81,7 +89,7 @@ function tryMigratePre130(settings)
   }
 
   let locCount = settingsGetLocsCount(settings);
-  let selIndex = settings.get_int("active-city");
+  let selIndex = settings.get_int("actual-city");
   if(selIndex < 0 || selIndex > locCount)
   {
     settings.set_int("active-city", selIndex < 0 ? 0 : locCount - 1);
@@ -102,7 +110,7 @@ function migrateProviders(settings)
   * @param {Gio.Settings} Settings to read/modify.
   * @returns {boolean} `true` if settings were IMPORTED (NOT just if migrated).
   */
-export function tryMigrate(settings)
+export function tryImportAndMigrate(settings)
 {
   let imported = tryMigrateOickle(settings);
   tryMigrateFromOldVersion(settings);

@@ -50,7 +50,8 @@ import {
   geoclueGetLoc
 } from "./myloc.js"
 
-import { Loc, settingsGetLocs, settingsSetLocs, tryMigrate, tryMigrateFromOldVersion } from "./locs.js";
+import { Loc, settingsGetLocs, settingsSetLocs } from "./locs.js";
+import { tryImportAndMigrate, tryMigrateFromOldVersion } from "./migration.js";
 
 let _firstBoot = 1;
 let _timeCacheCurrentWeather;
@@ -59,7 +60,7 @@ let _isFirstRun = null;
 let _freezeSettingsChanged = false;
 let _systemClockFormat = 1;
 
-function toYYYYMMDD(d)
+function toYYYYMMDD(date)
 {
   let d = date.getUTCDate();
   let m = date.getUTCMonth();
@@ -378,7 +379,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     {
       this.freezeSettingsChanged();
 
-      let migrated = tryMigrate(this.settings);
+      let migrated = tryImportAndMigrate(this.settings);
       if(migrated)
       {
         Main.notify("OpenWeather Refined", _("OpenWeather Refined: Imported settings from old extension."));
@@ -756,10 +757,10 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
   get _actual_city()
   {
     let i = this.settings.get_int("actual-city");
-    if(i > _cities.length - 1)
+    if(i > this._cities.length - 1)
     {
       console.warn("OpenWeather Refined: Got actual city too high.");
-      i = _cities.length - 1;
+      i = this._cities.length - 1;
     }
 
     return i;
@@ -783,10 +784,10 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
 
   set _actual_city(i)
   {
-    if(i > _cities.length - 1)
+    if(i > this._cities.length - 1)
     {
       console.warn("OpenWeather Refined: Set actual city too high.");
-      i = _cities.length;
+      i = this._cities.length;
     }
 
     this.settings.set_int("actual-city", i);

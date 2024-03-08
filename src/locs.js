@@ -17,14 +17,9 @@
    Copyright 2024 TealPenguin
 */
 
-import Gio from "gi://Gio";
 import GLib from "gi://GLib";
 
 import { getLocationInfo, getCachedLocInfo } from "./myloc.js";
-import { GeolocationProvider, WeatherPressureUnits } from "./constants.js";
-
-const THIS_SCHEMA_ID   = "org.gnome.shell.extensions.openweatherrefined";
-const OICKLE_SCHEMA_ID = "org.gnome.shell.extensions.openweather";
 
 export const NAME_TYPE = {
   CUSTOM: 0,
