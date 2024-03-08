@@ -471,6 +471,13 @@ class LocationsPage extends Adw.PreferencesPage
       hexpand: true,
       vexpand: false,
     });
+    let searchLocNotice = new Gtk.Label({
+      label: _("If you meant to search up a new location by name, " +
+        "<b>add</b> a location instead."),
+      use_markup: true,
+      margin_top: 15,
+      margin_bottom: 5
+    });
     let _saveButton = new Gtk.Button({
       child: new Adw.ButtonContent({
         icon_name: "document-save-symbolic",
@@ -486,6 +493,7 @@ class LocationsPage extends Adw.PreferencesPage
     _dialogBox.append(_editNameEntry);
     _dialogBox.append(_editCoordLabel);
     _dialogBox.append(_editCoordEntry);
+    _dialogBox.append(searchLocNotice);
     _dialogRow.set_child(_dialogBox);
     _dialogGroup.add(_dialogRow);
     _dialogPage.add(_dialogGroup);
