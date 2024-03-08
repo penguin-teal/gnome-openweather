@@ -714,6 +714,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
         this.todaysWeatherCache = undefined;
       }
       this.forecastJsonCache = undefined;
+      this.rebuildCurrentWeatherUi();
       this.initWeatherData();
     }
   }
@@ -1654,7 +1655,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
 
     const labelCss = this.cssConcatClass("openweather-current-databox-captions", a11yClasses);
     const valueCss = this.cssConcatClass("openweather-current-databox-values", a11yClasses);
-    for(let i of sideStats)
+    for(let i = 0; i < 5; i++)
     {
       let l = new St.Label({
         text: sideStats[i],

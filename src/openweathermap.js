@@ -397,35 +397,53 @@ function populateCurrentUI() {
         weatherInfoT;
 
       this._currentWeatherSummary.text = comment + _(", ") + temperature;
-      if (
-        this._loc_len_current !== 0 &&
-        location.length > this._loc_len_current
-      )
-        this._currentWeatherLocation.text =
-          location.substring(0, this._loc_len_current - 3) + "...";
-      else this._currentWeatherLocation.text = location;
-      this._currentWeatherFeelsLike.text = this.formatTemperature(
-        json.main.feels_like
-      );
-      this._currentWeatherHumidity.text = json.main.humidity + " %";
-      this._currentWeatherPressure.text = this.formatPressure(
-        json.main.pressure
-      );
+
+      let locText;
+      if (this._loc_len_current !== 0 &&
+        location.length > this._loc_len_current)
+      {
+        locText = location.substring(0, this._loc_len_current - 3) + "...";
+      }
+      else
+      {
+        locText = location;
+      }
+
+      let feelsLikeText = this.formatTemperature(json.main.feels_like);
+      let humidityText = `${json.main.humidity}%`;
+      let pressureText = this.formatPressure(json.main.pressure);
 
       this._currentWeatherSunrise.text = this.formatTime(sunrise);
       this._currentWeatherSunset.text = this.formatTime(sunset);
       this._currentWeatherBuild.text = this.formatTime(lastBuild);
 
-      if (json.wind !== undefined && json.wind.deg !== undefined) {
-        this._currentWeatherWind.text = this.formatWind(
+      let windText;
+      if (json.wind !== undefined && json.wind.deg !== undefined)
+      {
+        windText = this.formatWind(
           json.wind.speed,
           this.getWindDirection(json.wind.deg)
         );
-        if (json.wind.gust !== undefined)
-          this._currentWeatherWindGusts.text = this.formatWind(json.wind.gust);
-      } else {
-        this._currentWeatherWind.text = _("?");
       }
+      else windText = _("?");
+
+      let gustText;
+      if (json.wind.gust !== undefined)
+      {
+        gustText = this.formatWind(json.wind.gust);
+      }
+      else
+      {
+        gustText = _("?");
+      }
+
+      if(this._currentWeatherLocation) this._currentWeatherLocation.text = locText;
+      if(this._currentWeatherFeelsLike) this._currentWeatherFeelsLike.text = feelsLikeText;
+      if(this._currentWeatherHumidity) this._currentWeatherHumidity.text = humidityText;
+      if(this._currentWeatherPressure) this._currentWeatherPressure.text = pressureText;
+      if(this._currentWeatherWind) this._currentWeatherWind.text = windText;
+      if(this._currentWeatherWindGusts) this._currentWeatherWindGusts.text = gustText;
+
       resolve(0);
     } catch (e) {
       reject(e);
@@ -436,6 +454,7 @@ function populateCurrentUI() {
 function populateTodaysUI() {
   return new Promise((resolve, reject) => {
     try {
+      
       // Populate today's forecast UI
       let forecast_today = this.todaysWeatherCache;
 
