@@ -27,7 +27,7 @@ rules:
       allowNamedExports: true
   # See: https://eslint.org/docs/latest/rules/#suggestions
   block-scoped-var: error
-  complexity: warn
+  complexity: off
   consistent-return: error
   default-param-last: error
   eqeqeq:
