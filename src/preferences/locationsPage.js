@@ -619,12 +619,15 @@ class LocationsPage extends Adw.PreferencesPage
       {
         if (locs.length) locs.splice(selected, 1);
 
-        if (this.cityIndex === selected)
+        if (this.cityIndex >= selected)
         {
-          this._settings.set_int("actual-city", 0);
-          this.cityIndex = 0;
+          let newI = selected ? selected - 1 : 0;
+          this._settings.set_int("actual-city", newI);
+          this.cityIndex = newI;
 
-          this._setIcon(0, true);
+          // this may not change anything,
+          // or if the deleted one is selected select the last one
+          this._setIcon(newI, true);
         }
 
         settingsSetLocs(this._settings, locs);
