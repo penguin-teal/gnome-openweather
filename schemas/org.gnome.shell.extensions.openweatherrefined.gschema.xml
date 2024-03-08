@@ -92,7 +92,7 @@
     </key>
     <!-- 'city' no longer in use, will be migrated to 'locs' -->
     <key type="s" name="city">
-      <default>'here>>0'</default>
+      <default>''</default>
       <summary>DEPRECATED, City to be displayed</summary>
     </key>
     <key type="i" name="actual-city">
