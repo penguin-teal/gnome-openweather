@@ -1,3 +1,13 @@
+## v131
+
+Improvements:
+- Notice on how to search up new locations in "Edit Location" menu
+- No more space between humidity value and "%"
+
+Bug Fixes:
+- Fix extension not initializing sometimes
+- Fix migrations only happening on first extension download
+
 ## v130
 
 Improvements:
