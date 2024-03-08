@@ -627,7 +627,7 @@ class LocationsPage extends Adw.PreferencesPage
 
           // this may not change anything,
           // or if the deleted one is selected select the last one
-          this._setIcon(newI, true);
+          if(this.location && this.location[newI]) this._setIcon(newI, true);
         }
 
         settingsSetLocs(this._settings, locs);
