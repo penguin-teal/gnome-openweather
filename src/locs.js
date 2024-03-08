@@ -334,6 +334,10 @@ export function settingsGetLocsCount(settings)
 
 export function settingsSetLocs(settings, locs)
 {
+  if(!locs || !locs.length)
+  {
+    locs = [ Loc.myLoc() ];
+  }
   settings.set_value("locs", toLocsGVariant(locs));
 }
 
