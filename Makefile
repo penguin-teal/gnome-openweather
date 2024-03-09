@@ -39,7 +39,7 @@ ZIPVER = -v$(FOUNDVERSION)
 
 TARGZ := ./releases/$(PKG_NAME)$(ZIPVER).tar.gz
 
-.PHONY: all clean potfile mergepo install install-local
+.PHONY: all clean potfile mergepo install
 
 all: _build
 
@@ -66,9 +66,7 @@ mergepo: potfile
 ./po/%.mo: ./po/%.po
 	msgfmt -c $< -o $@
 
-install: install-local
-
-install-local: _build
+install: _build
 	rm -rf $(INSTALLBASE)/$(UUID)
 	mkdir -p $(INSTALLBASE)/$(UUID)
 	cp -r ./_build/* $(INSTALLBASE)/$(UUID)/
