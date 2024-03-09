@@ -279,13 +279,13 @@ class GeneralPage extends Adw.PreferencesPage
     let useDefaultApiKey = this._settings.get_boolean("use-default-owm-key");
     let defaultApiKeySwitch = new Gtk.Switch({
       valign: Gtk.Align.CENTER,
-      active: useDefaultApiKey,
+      active: !useDefaultApiKey,
     });
     let defaultApiKeyRow = new Adw.ActionRow({
-      title: _("Use Extensions API Key"),
-      subtitle: _("Use the built-in API key for OpenWeatherMap"),
+      title: _("Use Custom API Key"),
+      subtitle: _("Use a personal API key for OpenWeatherMap"),
       tooltip_text: _(
-        "Disable this if you have your own API key from openweathermap.org and enter it below."
+        "Enable this if you have your own API key from openweathermap.org and enter it below."
       ),
       activatable_widget: defaultApiKeySwitch,
     });
@@ -296,7 +296,7 @@ class GeneralPage extends Adw.PreferencesPage
       max_length: 32,
       width_chars: 20,
       vexpand: false,
-      sensitive: useDefaultApiKey ? false : true,
+      sensitive: !useDefaultApiKey,
       valign: Gtk.Align.CENTER,
     });
     let personalApiKeyRow = new Adw.ActionRow({
@@ -304,17 +304,23 @@ class GeneralPage extends Adw.PreferencesPage
       activatable_widget: personalApiKeyEntry,
     });
     let personalApiKey = this._settings.get_string("appid");
-    if (personalApiKey !== "") {
-      if (personalApiKey.length !== 32) {
+    if (personalApiKey)
+    {
+      if (personalApiKey.length !== 32)
+      {
         personalApiKeyEntry.set_icon_from_icon_name(
           Gtk.PositionType.LEFT,
           "dialog-warning"
         );
-      } else {
+      }
+      else
+      {
         personalApiKeyEntry.set_icon_from_icon_name(Gtk.PositionType.LEFT, "");
       }
       personalApiKeyEntry.set_text(personalApiKey);
-    } else {
+    }
+    else
+    {
       personalApiKeyEntry.set_text("");
       personalApiKeyEntry.set_icon_from_icon_name(
         Gtk.PositionType.LEFT,
@@ -402,8 +408,8 @@ class GeneralPage extends Adw.PreferencesPage
     });
     defaultApiKeySwitch.connect("notify::active", (widget) => {
       let active = widget.get_active();
-      personalApiKeyEntry.set_sensitive(!active);
-      this._settings.set_boolean("use-default-owm-key", active);
+      personalApiKeyEntry.set_sensitive(active);
+      this._settings.set_boolean("use-default-owm-key", !active);
     });
     personalApiKeyEntry.connect("notify::text", (widget) => {
       if (widget.text.length === 32) {
