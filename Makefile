@@ -3,13 +3,15 @@
 PKG_NAME = gnome-shell-extension-openweatherrefined
 UUID = openweather-extension@penguin-teal.github.io
 BASE_MODULES = metadata.json COPYING AUTHORS
-SRC_MODULES = $(shell find ./src -maxdepth 1 -type f -printf '%f ')
-PREFS_MODULES = $(shell find ./src/preferences -type f -printf '%f ')
-EXTRA_DIRECTORIES = media
-TOLOCALIZE = $(addprefix ./src/, $(SRC_MODULES)) \
-             $(addprefix ./src/preferences/, $(PREFS_MODULES)) \
+SRC_MODULES       := $(shell find ./src -maxdepth 1 -type f -printf '%f ')
+SRC_FILES		      := $(addprefix ./src/, $(SRC_MODULES))
+PREFS_MODULES     := $(shell find ./src/preferences -type f -printf '%f ')
+PREFS_FILES	     	:= $(addprefix ./src/preferences/, $(PREFS_MODULES))
+EXTRA_DIRECTORIES := media
+TOLOCALIZE        := $(SRC_FILES) $(PREFS_FILES) \
              schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml
-MSGSRC = $(wildcard po/*.po)
+MSGSRC            := $(wildcard po/*.po)
+SCHEMA_XML			  := ./schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml
 
 # Packagers: Use DESTDIR for system wide installation
 ifeq ($(strip $(DESTDIR)),)
@@ -47,7 +49,7 @@ clean:
 	rm -rf ./releases
 	rm -rf ./_build
 
-./schemas/gschemas.compiled: ./schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml
+./schemas/gschemas.compiled: $(SCHEMA_XML)
 	glib-compile-schemas --strict ./schemas/
 
 potfile: ./po/openweather.pot
@@ -97,16 +99,16 @@ releases: mergepo _build
 	sha256sum $(TARGZ) > $(addsuffix .sha256,$(TARGZ))
 	cat $(addsuffix .sha256,$(TARGZ))
 
-_build: ./schemas/gschemas.compiled $(MSGSRC:.po=.mo)
+./_build: ./schemas/gschemas.compiled $(SCHEMA_XML) $(MSGSRC:.po=.mo) $(BASE_MODULES) $(SRC_FILES) $(PREFS_FILES) $(EXTRA_DIRECTORIES)
 	-rm -fR ./_build
-	mkdir -p _build/preferences
-	cp $(BASE_MODULES) $(addprefix src/, $(SRC_MODULES)) _build
-	cp $(addprefix src/preferences/, $(PREFS_MODULES)) _build/preferences
-	cp -r $(EXTRA_DIRECTORIES) _build
-	mkdir -p _build/schemas
-	cp schemas/*.xml _build/schemas/
-	cp schemas/gschemas.compiled _build/schemas/
-	mkdir -p _build/locale
+	mkdir -p ./_build/preferences
+	cp $(BASE_MODULES) $(addprefix src/, $(SRC_MODULES)) ./_build
+	cp $(addprefix src/preferences/, $(PREFS_MODULES)) ./_build/preferences
+	cp -r $(EXTRA_DIRECTORIES) ./_build
+	mkdir -p ./_build/schemas
+	cp $(SCHEMA_XML) ./_build/schemas/
+	cp ./schemas/gschemas.compiled ./_build/schemas/
+	mkdir -p ./_build/locale
 	for l in $(MSGSRC:.po=.mo) ; do \
 		lf=_build/locale/`basename $$l .mo`; \
 		mkdir -p $$lf; \
@@ -114,8 +116,8 @@ _build: ./schemas/gschemas.compiled $(MSGSRC:.po=.mo)
 		cp $$l $$lf/LC_MESSAGES/$(PKG_NAME).mo; \
 	done;
 ifdef VERSION
-	sed -i 's/"version": .*/"version": $(VERSION)/' _build/metadata.json;
+	sed -i 's/"version": .*/"version": $(VERSION)/' ./_build/metadata.json;
 else ifneq ($(strip $(GIT_VER)),)
-	sed -i '/"version": .*/i\ \ "git-version": "$(GIT_VER)",' _build/metadata.json;
+	sed -i '/"version": .*/i\ \ "git-version": "$(GIT_VER)",' ./_build/metadata.json;
 endif
 
