@@ -39,7 +39,8 @@ ZIPVER = -v$(FOUNDVERSION)
 
 TARGZ := ./releases/$(PKG_NAME)$(ZIPVER).tar.gz
 
-.PHONY: all clean potfile mergepo install
+.PHONY: all clean potfile mergepo install help
+.SILENT: help
 
 all: _build
 
@@ -118,4 +119,24 @@ ifdef VERSION
 else ifneq ($(strip $(GIT_VER)),)
 	sed -i '/"version": .*/i\ \ "git-version": "$(GIT_VER)",' ./_build/metadata.json;
 endif
+
+help:
+	printf '\n** OpenWeather Refined v%s (%s) **\n' `grep -oP --color=never '(?<="version-name": ")[^"]*' ./metadata.json` "$(GIT_VER)"
+	printf "Switch git to latest release (recommended if you're just trying to install):\n"
+	printf '\tgit switch --detach latest\n'
+	printf 'Build to output directory (./_build):\n'
+	printf '\tmake\n'
+	printf 'Install to local user profile (log-out required after):\n'
+	printf '\tmake install\n'
+	printf 'Install system-wide (log-out required after):\n'
+	printf '\tmake install DESDIR=/usr/share\n'
+	printf 'Make Gzip and Zip archives of release build (in ./releases)\n'
+	printf '\tmake releases\n'
+	printf 'Clean build files:\n'
+	printf '\tmake clean\n'
+	printf 'See changelog:\n'
+	printf '\tless CHANGELOG.md\n'
+	printf 'Test in nested GNOME shell:\n'
+	printf '\t./nest-test.sh\n'
+	printf '\n'
 
