@@ -1,3 +1,8 @@
+## v132 (IN PROGRESS)
+
+Improvements:
+- "Use Extension API Key" now is flipped and reads "Use Custom API Key" for clarity
+
 ## v131
 
 Improvements:
