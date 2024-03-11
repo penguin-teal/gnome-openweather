@@ -15,9 +15,24 @@ including 3 hour forecasts for up to 5 days.
 
 [Check out the changelog.](./CHANGELOG.md)
 
+## Contributing
+
+Everyone is welcome to contribute! You can contribute code, or translations
+via pull requests.
+
+Run `make help` for help on make targets and scripts useful for testing.
+
+### Translating
+
+Translations are super helpful because once I forked
+this extension I have made a lot of UI additions, and I only speak English!
+
+Translations can be made by editing the language's file `./po/*.po`.
+Edit the `msgstr` field to the translation for the English in `msgid`.
+
 ## Installation
 
-### GNOME Extensions Website
+### GNOME Extensions Website (Recommended)
 
 <p align="left">
   <a href="https://extensions.gnome.org/extension/6655/openweather">
@@ -25,7 +40,17 @@ including 3 hour forecasts for up to 5 days.
   </a>
 </p>
 
+### Packages
+
+If you want a package for another platform, create an [issue](https://github.com/penguin-teal/gnome-openweather/issues/new/choose).
+If you make a package, let me know or make a pull request and list it below.
+
+- Fedora Copr [gnome-shell-extension-openweatherrefined](https://copr.fedorainfracloud.org/coprs/fiftydinar/gnome-shell-extension-openweatherrefined/) by [@fiftydinar](https://github.com/fiftydinar)
+
 ### Install From Source
+
+Tip: Once you've cloned the repo, you can run `make help` to get information
+on a lot of make target and more commands that might be useful.
 
 This method installs to your `~/.local/share/gnome-shell/extensions` directory
 from the latest stable source code on the `master` branch.
@@ -66,10 +91,6 @@ Now enable the extension through the *gnome-extensions* app.
 Bugs should be reported
 [here](https://github.com/penguin-teal/gnome-openweather/issues)
 on the GitHub issues page.
-
-When submitting a bug report, please make sure to provide as much information
-as you can about the issue, your Linux distribution, GNOME Shell version,
-and OpenWeather (*gnome-shell-extension-openweather*) version.
 
 ## Credits
 
