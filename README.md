@@ -45,6 +45,7 @@ Edit the `msgstr` field to the translation for the English in `msgid`.
 If you want a package for another platform, create an [issue](https://github.com/penguin-teal/gnome-openweather/issues/new/choose).
 If you make a package, let me know or make a pull request and list it below.
 
+- Arch AUR [gnome-shell-extension-openweatherrefined](https://aur.archlinux.org/packages/gnome-shell-extension-openweatherrefined)
 - Fedora Copr [gnome-shell-extension-openweatherrefined](https://copr.fedorainfracloud.org/coprs/fiftydinar/gnome-shell-extension-openweatherrefined/) by [@fiftydinar](https://github.com/fiftydinar)
 
 ### Install From Source
