@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: 3.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-03-07 21:21-0600\n"
-"PO-Revision-Date: 2024-03-27 14:17+0100\n"
+"PO-Revision-Date: 2024-03-27 16:07+0100\n"
 "Last-Translator: Ludek Vydra <lvtran@u.k2.cz>\n"
 "Language-Team: \n"
 "Language: cs\n"
@@ -552,7 +552,7 @@ msgstr "Vítr:"
 
 #: src/extension.js:1653
 msgid "Gusts"
-msgstr "Poryvy"
+msgstr "Poryvy:"
 
 #: src/extension.js:1825
 msgid "Tomorrow's Forecast"
