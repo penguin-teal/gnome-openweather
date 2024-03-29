@@ -83,9 +83,9 @@ function tryMigratePre128(settings)
 
 function tryMigratePre130(settings)
 {
-  if(settings.get_int("pressure-unit") === WeatherPressureUnits.KPA)
+  if(settings.get_enum("pressure-unit") === WeatherPressureUnits.KPA)
   {
-    settings.set_int("pressure-unit", WeatherPressureUnits.MBAR);
+    settings.set_enum("pressure-unit", WeatherPressureUnits.MBAR);
   }
 
   let locCount = settingsGetLocsCount(settings);
