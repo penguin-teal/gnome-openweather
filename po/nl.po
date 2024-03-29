@@ -853,7 +853,7 @@ msgstr "Sleutel vereist"
 #: src/preferences/searchResultsWindow.js:119
 #, javascript-format
 msgid "You need an AppKey to use MapQuest, get one at: %s"
-msgstr "U dient over een speciale ‘AppKey’ te beschikken. Haal deze op via %s"
+msgstr "Voor het gebruik van MapQuest dient u over een speciale ‘AppKey’ te beschikken. Haal deze op via %s"
 
 #: src/preferences/searchResultsWindow.js:207
 #, javascript-format
