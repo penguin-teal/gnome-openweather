@@ -68,6 +68,16 @@ function toYYYYMMDD(date)
   return `${y}/${m < 10 ? '0' + m : m}/${d < 10 ? '0' + d : d}`;
 }
 
+function hscroll(scrollView)
+{
+  return scrollView.hadjustment ?? scrollView.hscroll.adjustment;
+}
+
+function vscroll(scrollView)
+{
+  return scrollView.vadjustment ?? scrollView.vscroll.adjustment;
+}
+
 class OpenWeatherMenuButton extends PanelMenu.Button {
   static {
     GObject.registerClass(this);
@@ -1143,7 +1153,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
         this._forecastExpanderBox.get_width() - this._daysBox.get_width()
       );
       this._forecastScrollBox.show();
-      this._forecastScrollBox.hscroll.show();
+      this._forecastScrollBox.hscrollbar_policy = St.PolicyType.ALWAYS;
 
       if (this.settings.get_boolean("expand-forecast")) {
         this._forecastExpander.setSubmenuShown(true);
@@ -1795,7 +1805,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
 
   scrollForecastBy(delta) {
     if (this._forecastScrollBox === undefined) return;
-    this._forecastScrollBox.hscroll.adjustment.value += delta;
+    hscroll(this._forecastScrollBox).value += delta;
   }
 
   rebuildFutureWeatherUi(cnt) {
@@ -1835,19 +1845,12 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       this.scrollForecastBy(
         -1 *
           (dx / this._forecastScrollBox.width) *
-          this._forecastScrollBox.hscroll.adjustment.page_size
+          hscroll(this._forecastScrollBox).page_size
       );
       return false;
     });
     this._forecastScrollBox.add_action(pan);
     this._forecastScrollBox.connect("scroll-event", this._onScroll.bind(this));
-    this._forecastScrollBox.hscroll.connect(
-      "scroll-event",
-      this._onScroll.bind(this)
-    );
-    this._forecastScrollBox.hscroll.margin_right = 25;
-    this._forecastScrollBox.hscroll.margin_left = 25;
-    this._forecastScrollBox.hscroll.hide();
     this._forecastScrollBox.vscrollbar_policy = St.PolicyType.NEVER;
     this._forecastScrollBox.hscrollbar_policy = St.PolicyType.AUTOMATIC;
     this._forecastScrollBox.enable_mouse_scrolling = true;
@@ -1938,7 +1941,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     }
 
     this.scrollForecastBy(
-      dy * this._forecastScrollBox.hscroll.adjustment.stepIncrement
+      dy * hscroll(this._forecastScrollBox).stepIncrement
     );
     return false;
   }
