@@ -165,23 +165,42 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       this.menu.connect("open-state-changed", this.recalcLayout.bind(this));
 
       let _firstBootWait = this._startupDelay;
-      if (_firstBoot && _firstBootWait !== 0) {
+      if (_firstBoot && _firstBootWait !== 0)
+      {
         // Delay popup initialization and data fetch on the first
         // extension load, ie: first log in / restart gnome shell
         this._timeoutFirstBoot = GLib.timeout_add_seconds(
           GLib.PRIORITY_DEFAULT,
           _firstBootWait,
           () => {
-            this._checkConnectionState();
-            this.initOpenWeatherUI();
-            _firstBoot = 0;
-            this._timeoutFirstBoot = null;
-            return false; // run timer once then destroy
+            try
+            {
+              this._checkConnectionState();
+              this.initOpenWeatherUI();
+              _firstBoot = 0;
+              this._timeoutFirstBoot = null;
+            }
+            catch(e)
+            {
+              console.log("OpenWeather Refined: Error in first boot timeout.");
+              console.error(e);
+            }
+          return false; // run timer once then destroy
           }
         );
-      } else {
-        this._checkConnectionState();
-        this.initOpenWeatherUI();
+      }
+      else
+      {
+        try
+        {
+          this._checkConnectionState();
+          this.initOpenWeatherUI();
+        }
+        catch(e)
+        {
+          console.log("OpenWeather Refined: Error in immediate first boot.");
+          console.error(e);
+        }
       }
     }, (e) =>
     {
@@ -458,110 +477,125 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     }
   }
 
+  async settingsHandler()
+  {
+    if(_freezeSettingsChanged || this.settings.get_boolean("frozen")) return;
+
+    try
+    {
+      await this.firstRunSetDefaults();
+    }
+    catch(e)
+    {
+      console.error(`OpenWeather Refined: Error '${e}' in firstRunSetDefaults.`);
+      throw e;
+    }
+
+    try
+    {
+      this._cities = settingsGetLocs(this.settings);
+      if (!this._cities.length)
+      {
+        this._cities = [ await this.getDefaultCity() ];
+      }
+
+      setLocationRefreshIntervalM(this.settings.get_double("loc-refresh-interval"));
+
+      this.toggleSunriseSunset();
+
+      let gnomeSettings = Gio.Settings.new("org.gnome.desktop.interface");
+      _systemClockFormat = gnomeSettings.get_enum("clock-format");
+      
+      this.updateForecast();
+
+      if (await this.locationChanged())
+      {
+        this.showRefreshing();
+        if (this._selectCity._getOpenState()) this._selectCity.menu.toggle();
+        this._currentLocation = await this._city.getCoords(this.settings);
+        this.rebuildSelectCityItem();
+        this._clearWeatherCache();
+        this.initWeatherData();
+      }
+
+      if (this.menuAlignmentChanged())
+      {
+        if (this._timeoutMenuAlignent)
+          GLib.source_remove(this._timeoutMenuAlignent);
+        // Use 1 second timeout to avoid crashes and spamming
+        // the logs while changing the slider position in prefs
+        this._timeoutMenuAlignent = GLib.timeout_add(
+          GLib.PRIORITY_DEFAULT,
+          1000,
+          () => {
+            this.checkAlignment();
+            this._currentAlignment = this._menu_alignment;
+            this._timeoutMenuAlignent = null;
+            return false; // run once then destroy
+          }
+        );
+      }
+
+      if (this._forecastDays !== this._days_forecast)
+      {
+        let _oldDays = this._forecastDays;
+        let _newDays = this._days_forecast;
+        this._forecastDays = _newDays;
+
+        if (_oldDays >= 1 && _newDays === 0) {
+          this._forecastExpander.destroy();
+          return;
+        } else if (_oldDays === 0 && _newDays >= 1) {
+          let _children = this.menu.box.get_children().length - 1;
+          for (let i = 0; i < _children; i++) {
+            this.menu.box.get_child_at_index(0).destroy();
+          }
+          this._clearWeatherCache();
+          this.initOpenWeatherUI();
+          this.initWeatherData();
+        } else {
+          this.forecastJsonCache = undefined;
+          this.rebuildFutureWeatherUi();
+          await this.reloadWeatherCache();
+        }
+      }
+
+      if (this._providerTranslations !== this._provider_translations)
+      {
+        this._providerTranslations = this._provider_translations;
+        if (this._providerTranslations) {
+          this.showRefreshing();
+          this._clearWeatherCache();
+          this.initWeatherData();
+        } else {
+          await this.reloadWeatherCache();
+        }
+      }
+      this.checkAlignment();
+      this.checkPositionInPanel();
+      this.rebuildCurrentWeatherUi();
+      this.rebuildFutureWeatherUi();
+      this.rebuildButtonMenu();
+      await this.reloadWeatherCache();
+    }
+    catch(e)
+    {
+      console.error(e);
+      throw e;
+    }
+  }
+
   bindSettingsChanged()
   {
     this._settingsC = this.settings.connect("changed", async () =>
     {
-      if(_freezeSettingsChanged || this.settings.get_boolean("frozen")) return;
-
       try
       {
-        await this.firstRunSetDefaults();
+        await this.settingsHandler();
       }
       catch(e)
       {
-        console.error(`OpenWeather Refined: Error '${e}' in firstRunSetDefaults.`);
-      }
-
-      try
-      {
-        this._cities = settingsGetLocs(this.settings);
-        if (!this._cities.length)
-        {
-          this._cities = [ await this.getDefaultCity() ];
-        }
-
-        setLocationRefreshIntervalM(this.settings.get_double("loc-refresh-interval"));
-
-        this.toggleSunriseSunset();
-
-        let gnomeSettings = Gio.Settings.new("org.gnome.desktop.interface");
-        _systemClockFormat = gnomeSettings.get_enum("clock-format");
-        
-        this.updateForecast();
-
-        if (await this.locationChanged())
-        {
-          this.showRefreshing();
-          if (this._selectCity._getOpenState()) this._selectCity.menu.toggle();
-          this._currentLocation = await this._city.getCoords(this.settings);
-          this.rebuildSelectCityItem();
-          this._clearWeatherCache();
-          this.initWeatherData();
-        }
-
-        if (this.menuAlignmentChanged())
-        {
-          if (this._timeoutMenuAlignent)
-            GLib.source_remove(this._timeoutMenuAlignent);
-          // Use 1 second timeout to avoid crashes and spamming
-          // the logs while changing the slider position in prefs
-          this._timeoutMenuAlignent = GLib.timeout_add(
-            GLib.PRIORITY_DEFAULT,
-            1000,
-            () => {
-              this.checkAlignment();
-              this._currentAlignment = this._menu_alignment;
-              this._timeoutMenuAlignent = null;
-              return false; // run once then destroy
-            }
-          );
-        }
-
-        if (this._forecastDays !== this._days_forecast)
-        {
-          let _oldDays = this._forecastDays;
-          let _newDays = this._days_forecast;
-          this._forecastDays = _newDays;
-
-          if (_oldDays >= 1 && _newDays === 0) {
-            this._forecastExpander.destroy();
-            return;
-          } else if (_oldDays === 0 && _newDays >= 1) {
-            let _children = this.menu.box.get_children().length - 1;
-            for (let i = 0; i < _children; i++) {
-              this.menu.box.get_child_at_index(0).destroy();
-            }
-            this._clearWeatherCache();
-            this.initOpenWeatherUI();
-            this.initWeatherData();
-          } else {
-            this.forecastJsonCache = undefined;
-            this.rebuildFutureWeatherUi();
-            await this.reloadWeatherCache();
-          }
-        }
-
-        if (this._providerTranslations !== this._provider_translations)
-        {
-          this._providerTranslations = this._provider_translations;
-          if (this._providerTranslations) {
-            this.showRefreshing();
-            this._clearWeatherCache();
-            this.initWeatherData();
-          } else {
-            await this.reloadWeatherCache();
-          }
-        }
-        this.checkAlignment();
-        this.checkPositionInPanel();
-        this.rebuildCurrentWeatherUi();
-        this.rebuildFutureWeatherUi();
-        this.rebuildButtonMenu();
-        await this.reloadWeatherCache();
-      }
-      catch(e)
-      {
+        console.log("OpenWeather Refined Error in settings listener.");
         console.error(e);
       }
     });
@@ -988,11 +1022,11 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       _("Weather Settings")
     );
 
-    this._buttonBox1.add_actor(this._locationButton);
-    this._buttonBox1.add_actor(this._reloadButton);
-    if(this.usesNominatim()) this._buttonBox2.add_actor(this._nominatimBtn);
-    this._buttonBox2.add_actor(this._urlButton);
-    this._buttonBox2.add_actor(this._prefsButton);
+    this._buttonBox1.add_child(this._locationButton);
+    this._buttonBox1.add_child(this._reloadButton);
+    if(this.usesNominatim()) this._buttonBox2.add_child(this._nominatimBtn);
+    this._buttonBox2.add_child(this._urlButton);
+    this._buttonBox2.add_child(this._prefsButton);
 
     this._locationButton.connect("clicked", () => {
       this._selectCity._setOpenState(!this._selectCity._getOpenState());
@@ -1045,8 +1079,8 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       this._onPreferencesActivate.bind(this)
     );
 
-    this._buttonMenu.actor.add_actor(this._buttonBox1);
-    this._buttonMenu.actor.add_actor(this._buttonBox2);
+    this._buttonMenu.actor.add_child(this._buttonBox1);
+    this._buttonMenu.actor.add_child(this._buttonBox2);
   }
 
   rebuildSelectCityItem()
@@ -1276,7 +1310,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       this._is_first_run_cycle ||
       this._old_position_index !== this._position_index
     ) {
-      this.get_parent().remove_actor(this);
+      this.get_parent().remove_child(this);
 
       let children = null;
       switch (this._position_in_panel) {
@@ -1596,8 +1630,8 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       y_align: Clutter.ActorAlign.CENTER,
       style_class: "system-menu-action openweather-current-summarybox",
     });
-    bb.add_actor(this._currentWeatherLocation);
-    bb.add_actor(this._currentWeatherSummary);
+    bb.add_child(this._currentWeatherLocation);
+    bb.add_child(this._currentWeatherSummary);
 
     this._currentWeatherSunrise = new St.Label({
       text: "-",
@@ -1617,13 +1651,13 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       style_class: "openweather-current-infobox",
     });
 
-    ab.add_actor(this._sunriseIcon);
-    ab.add_actor(this._currentWeatherSunrise);
-    ab.add_actor(this._sunsetIcon);
-    ab.add_actor(this._currentWeatherSunset);
-    ab.add_actor(this._buildIcon);
-    ab.add_actor(this._currentWeatherBuild);
-    bb.add_actor(ab);
+    ab.add_child(this._sunriseIcon);
+    ab.add_child(this._currentWeatherSunrise);
+    ab.add_child(this._sunsetIcon);
+    ab.add_child(this._currentWeatherSunset);
+    ab.add_child(this._buildIcon);
+    ab.add_child(this._currentWeatherBuild);
+    bb.add_child(ab);
 
     // Other labels
     let rb = new St.BoxLayout({
@@ -1641,8 +1675,8 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       vertical: true,
       style_class: "system-menu-action openweather-current-databox-values",
     });
-    rb.add_actor(rb_captions);
-    rb.add_actor(rb_values);
+    rb.add_child(rb_captions);
+    rb.add_child(rb_values);
     
     let sideStats =
     [
@@ -1686,22 +1720,22 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
           break;
       }
 
-      rb_captions.add_actor(l);
-      rb_values.add_actor(v);
+      rb_captions.add_child(l);
+      rb_values.add_child(v);
     }
 
     let xb = new St.BoxLayout({
       x_expand: true,
     });
-    xb.add_actor(bb);
-    xb.add_actor(rb);
+    xb.add_child(bb);
+    xb.add_child(rb);
 
     let box = new St.BoxLayout({
       x_expand: true,
       style_class: "openweather-current-iconbox",
     });
-    box.add_actor(this._currentWeatherIcon);
-    box.add_actor(xb);
+    box.add_child(this._currentWeatherIcon);
+    box.add_child(xb);
     this._currentWeather.actor.add_child(box);
 
     // Today's forecast if not disabled by user
@@ -1746,15 +1780,15 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
         style_class: "openweather-forecast-iconbox",
       });
 
-      fib.add_actor(todaysForecast.Icon);
-      fib.add_actor(todaysForecast.Temperature);
+      fib.add_child(todaysForecast.Icon);
+      fib.add_child(todaysForecast.Temperature);
 
-      fb.add_actor(todaysForecast.Time);
-      fb.add_actor(fib);
-      if (this._comment_in_forecast) fb.add_actor(todaysForecast.Summary);
+      fb.add_child(todaysForecast.Time);
+      fb.add_child(fib);
+      if (this._comment_in_forecast) fb.add_child(todaysForecast.Summary);
 
       this._todays_forecast[i] = todaysForecast;
-      this._todaysBox.add_actor(fb);
+      this._todaysBox.add_child(fb);
     }
     this._currentForecast.actor.add_child(this._todaysBox);
   }
@@ -1776,7 +1810,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       opacity: 150,
       style_class: this.cssConcatClass("openweather-forecast-expander", a11yClasses),
     });
-    this._forecastExpander.menu.box.add(this._forecastExpanderBox);
+    this._forecastExpander.menu.box.add_child(this._forecastExpanderBox);
 
     this._daysBox = new St.BoxLayout({
       vertical: true,
@@ -1833,7 +1867,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       forecastWeather.Day = new St.Label({
         style_class: "openweather-forecast-day",
       });
-      this._daysBox.add_actor(forecastWeather.Day);
+      this._daysBox.add_child(forecastWeather.Day);
 
       let forecastWeatherBox = new St.BoxLayout({
         x_expand: true,
@@ -1869,20 +1903,20 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
           style_class: "openweather-forecast-iconbox",
         });
 
-        bib.add_actor(forecastWeather[j].Icon);
-        bib.add_actor(forecastWeather[j].Temperature);
+        bib.add_child(forecastWeather[j].Icon);
+        bib.add_child(forecastWeather[j].Temperature);
 
-        by.add_actor(forecastWeather[j].Time);
-        by.add_actor(bib);
-        if (this._comment_in_forecast) by.add_actor(forecastWeather[j].Summary);
-        forecastWeatherBox.add_actor(by);
+        by.add_child(forecastWeather[j].Time);
+        by.add_child(bib);
+        if (this._comment_in_forecast) by.add_child(forecastWeather[j].Summary);
+        forecastWeatherBox.add_child(by);
       }
       this._forecast[i] = forecastWeather;
-      this._forecastBox.add_actor(forecastWeatherBox);
+      this._forecastBox.add_child(forecastWeatherBox);
     }
-    this._forecastScrollBox.add_actor(this._forecastBox);
-    this._forecastExpanderBox.add_actor(this._daysBox);
-    this._forecastExpanderBox.add_actor(this._forecastScrollBox);
+    this._forecastScrollBox.add_child(this._forecastBox);
+    this._forecastExpanderBox.add_child(this._daysBox);
+    this._forecastExpanderBox.add_child(this._forecastScrollBox);
   }
 
   _onScroll(actor, event) {
