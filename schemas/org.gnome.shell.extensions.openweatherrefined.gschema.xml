@@ -82,7 +82,7 @@
       <description>Choose the units used for wind speed. Allowed values are 'kph', 'mph', 'm/s', 'knots', 'ft/s' or 'Beaufort'.</description>
     </key>
     <key type="b" name="wind-direction">
-      <default>true</default>
+      <default>false</default>
       <summary>Wind Direction by Arrows</summary>
       <description>True to display wind direction through arrows rather than letters.</description>
     </key>
