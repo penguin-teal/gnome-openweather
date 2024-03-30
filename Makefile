@@ -124,12 +124,12 @@ help:
 	printf '\n** OpenWeather Refined v%s (%s) **\n' `grep -oP --color=never '(?<="version-name": ")[^"]*' ./metadata.json` "$(GIT_VER)"
 	printf "Switch git to latest release (recommended if you're just trying to install):\n"
 	printf '\tgit switch --detach latest\n'
-	printf 'Build to output directory (./_build):\n'
+	printf 'Build to output directory (./_build) and regenerate translation files:\n'
 	printf '\tmake\n'
 	printf 'Install to local user profile (log-out required after):\n'
 	printf '\tmake install\n'
 	printf 'Install system-wide (log-out required after):\n'
-	printf '\tmake install DESDIR=/usr/share\n'
+	printf '\tmake install DESTDIR=/usr/share\n'
 	printf 'Make Gzip and Zip archives of release build (in ./releases)\n'
 	printf '\tmake releases\n'
 	printf 'Clean build files:\n'
