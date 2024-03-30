@@ -1452,13 +1452,14 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
         temperature = this.toNewton(temperature);
         break;
     }
-    return (
-      parseFloat(temperature)
-        .toLocaleString(this.locale)
-        .replace("-", "\u2212") +
-      (isDegrees ? "" : " ") +
-      this.unit_to_unicode()
-    );
+    
+    let string = parseFloat(temperature);
+    string = string.toLocaleString(this.locale).replace("-", "\u2212")
+
+    // turn a rounded '-0' into '0'
+    if(string === "\u22120") string = "0";
+
+    return string + (isDegrees ? "" : " ") + this.unit_to_unicode();
   }
 
   formatWind(speed, direction) {
