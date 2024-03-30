@@ -1,7 +1,14 @@
-## v132 (IN PROGRESS)
+## v132
+
+This version supports GNOME 46 (and maintains support for GNOME 45).
+
+- GNOME 46 Support
 
 Improvements:
 - "Use Extension API Key" now is flipped and reads "Use Custom API Key" for clarity
+- Revert wind direction to use letters instead of arrows by default
+- Improve Czech translations (thanks lev741)
+- Improve Dutch translations (thanks Heimen Stoffels)
 
 ## v131
 
