@@ -78,6 +78,21 @@ function vscroll(scrollView)
   return scrollView.vadjustment ?? scrollView.vscroll.adjustment;
 }
 
+function st13AddActor(parent, child)
+{
+    // Online it seems like add_actor and add_child should be synonymous
+    // But in GNOME 45 add_child seems to cause GitHub issues #16, #17, and #18
+
+    // This function is needed for backwards GNOME 45 compatibility from 46
+    if(parent.add_actor) parent.add_actor(child);
+    else parent.add_child(child);
+}
+
+function st13AddActors(parent, ...children)
+{
+    for(let c of children) st13AddActor(parent, c);
+}
+
 class OpenWeatherMenuButton extends PanelMenu.Button {
   static {
     GObject.registerClass(this);
@@ -1032,11 +1047,20 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       _("Weather Settings")
     );
 
-    this._buttonBox1.add_child(this._locationButton);
-    this._buttonBox1.add_child(this._reloadButton);
-    if(this.usesNominatim()) this._buttonBox2.add_child(this._nominatimBtn);
-    this._buttonBox2.add_child(this._urlButton);
-    this._buttonBox2.add_child(this._prefsButton);
+    st13AddActors(
+        this._buttonBox1,
+        // Children:
+        this._locationButton,
+        this._reloadButton,
+    );
+
+    if(this.usesNominatim()) st13AddActor(this._buttonBox2, this._nominatimBtn);
+    st13AddActors(
+        this._buttonBox2,
+        // Children:
+        this._urlButton,
+        this._prefsButton,
+    );
 
     this._locationButton.connect("clicked", () => {
       this._selectCity._setOpenState(!this._selectCity._getOpenState());
@@ -1089,8 +1113,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       this._onPreferencesActivate.bind(this)
     );
 
-    this._buttonMenu.actor.add_child(this._buttonBox1);
-    this._buttonMenu.actor.add_child(this._buttonBox2);
+    st13AddActors(this._buttonMenu, this._buttonBox1, this._buttonBox2);
   }
 
   rebuildSelectCityItem()
@@ -1320,7 +1343,10 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       this._is_first_run_cycle ||
       this._old_position_index !== this._position_index
     ) {
-      this.get_parent().remove_child(this);
+      let p = this.get_parent();
+      // Because St 13 is weird (see st13AddActor function above)
+      if(p.remove_actor) p.remove_actor(this);
+      else p.remove_child(this);
 
       let children = null;
       switch (this._position_in_panel) {
@@ -1641,8 +1667,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       y_align: Clutter.ActorAlign.CENTER,
       style_class: "system-menu-action openweather-current-summarybox",
     });
-    bb.add_child(this._currentWeatherLocation);
-    bb.add_child(this._currentWeatherSummary);
+    st13AddActors(bb, this._currentWeatherLocation, this._currentWeatherSummary);
 
     this._currentWeatherSunrise = new St.Label({
       text: "-",
@@ -1662,13 +1687,11 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       style_class: "openweather-current-infobox",
     });
 
-    ab.add_child(this._sunriseIcon);
-    ab.add_child(this._currentWeatherSunrise);
-    ab.add_child(this._sunsetIcon);
-    ab.add_child(this._currentWeatherSunset);
-    ab.add_child(this._buildIcon);
-    ab.add_child(this._currentWeatherBuild);
-    bb.add_child(ab);
+    st13AddActors(ab,
+      this._sunriseIcon, this._currentWeatherSunrise,
+      this._sunsetIcon, this._currentWeatherSunset,
+      this._buildIcon, this._currentWeatherBuild);
+    st13AddActor(bb, ab);
 
     // Other labels
     let rb = new St.BoxLayout({
@@ -1686,8 +1709,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       vertical: true,
       style_class: "system-menu-action openweather-current-databox-values",
     });
-    rb.add_child(rb_captions);
-    rb.add_child(rb_values);
+    st13AddActors(rb, rb_captions, rb_values);
     
     let sideStats =
     [
@@ -1731,22 +1753,21 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
           break;
       }
 
-      rb_captions.add_child(l);
-      rb_values.add_child(v);
+      st13AddActor(rb_captions, l);
+      st13AddActor(rb_values, v);
     }
 
     let xb = new St.BoxLayout({
       x_expand: true,
     });
-    xb.add_child(bb);
-    xb.add_child(rb);
+    st13AddActor(xb, bb, rb);
 
     let box = new St.BoxLayout({
       x_expand: true,
       style_class: "openweather-current-iconbox",
     });
-    box.add_child(this._currentWeatherIcon);
-    box.add_child(xb);
+
+    st13AddActors(box, this._currentWeatherIcon, xb);
     this._currentWeather.actor.add_child(box);
 
     // Today's forecast if not disabled by user
@@ -1791,15 +1812,13 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
         style_class: "openweather-forecast-iconbox",
       });
 
-      fib.add_child(todaysForecast.Icon);
-      fib.add_child(todaysForecast.Temperature);
+      st13AddActors(fib, todaysForecast.Icon, todaysForecast.Temperature);
 
-      fb.add_child(todaysForecast.Time);
-      fb.add_child(fib);
-      if (this._comment_in_forecast) fb.add_child(todaysForecast.Summary);
+      st13AddActors(fb, todaysForecast.Time, fib);
+      if (this._comment_in_forecast) st13AddActor(fb, todaysForecast.Summary);
 
       this._todays_forecast[i] = todaysForecast;
-      this._todaysBox.add_child(fb);
+      st13AddActor(this._todaysBox, fb);
     }
     this._currentForecast.actor.add_child(this._todaysBox);
   }
@@ -1821,7 +1840,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       opacity: 150,
       style_class: this.cssConcatClass("openweather-forecast-expander", a11yClasses),
     });
-    this._forecastExpander.menu.box.add_child(this._forecastExpanderBox);
+    st13AddActor(this._forecastExpander.menu.box, this._forecastExpanderBox);
 
     this._daysBox = new St.BoxLayout({
       vertical: true,
@@ -1871,7 +1890,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       forecastWeather.Day = new St.Label({
         style_class: "openweather-forecast-day",
       });
-      this._daysBox.add_child(forecastWeather.Day);
+      st13AddActor(this._daysBox, forecastWeather.Day);
 
       let forecastWeatherBox = new St.BoxLayout({
         x_expand: true,
@@ -1907,20 +1926,18 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
           style_class: "openweather-forecast-iconbox",
         });
 
-        bib.add_child(forecastWeather[j].Icon);
-        bib.add_child(forecastWeather[j].Temperature);
+        st13AddActors(bib, forecastWeather[j].Icon, forecastWeather[j].Temperature);
+        st13AddActors(by, forecastWeather[j].Time, bib);
 
-        by.add_child(forecastWeather[j].Time);
-        by.add_child(bib);
-        if (this._comment_in_forecast) by.add_child(forecastWeather[j].Summary);
-        forecastWeatherBox.add_child(by);
+        if (this._comment_in_forecast) st13AddActor(by, forecastWeather[j].Summary);
+        st13AddActor(forecastWeatherBox, by);
       }
       this._forecast[i] = forecastWeather;
-      this._forecastBox.add_child(forecastWeatherBox);
+      st13AddActor(this._forecastBox, forecastWeatherBox);
     }
-    this._forecastScrollBox.add_child(this._forecastBox);
-    this._forecastExpanderBox.add_child(this._daysBox);
-    this._forecastExpanderBox.add_child(this._forecastScrollBox);
+
+    st13AddActor(this._forecastScrollBox, this._forecastBox);
+    st13AddActors(this._forecastExpanderBox, this._daysBox, this._forecastScrollBox);
   }
 
   _onScroll(actor, event) {
