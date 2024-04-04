@@ -83,7 +83,7 @@ function tryMigratePre128(settings)
 
 function tryMigratePre130(settings)
 {
-  if(settings.get_enum("pressure-unit") === WeatherPressureUnits.KPA)
+  if(settings.get_enum("pressure-unit") === WeatherPressureUnits.HPA)
   {
     settings.set_enum("pressure-unit", WeatherPressureUnits.MBAR);
   }
