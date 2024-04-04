@@ -1760,7 +1760,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     let xb = new St.BoxLayout({
       x_expand: true,
     });
-    st13AddActor(xb, bb, rb);
+    st13AddActors(xb, bb, rb);
 
     let box = new St.BoxLayout({
       x_expand: true,
