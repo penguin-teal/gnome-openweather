@@ -1,3 +1,18 @@
+## v133
+
+This version fixes some bugs left in GNOME 45.
+
+Improvements:
+- Hide "Gusts" in pop-up if unavailable (instead of showing "?")
+- Colon after "Gusts" in pop-up
+- "-0" will now never appear as a temperature
+
+Bug Fixes:
+- Forecast blank in pop-up on GNOME 45
+- Weird positioning of panel on GNOME 45
+- Text overflowing and being ellipsised on GNOME 45
+- Fix crash on first-run if location services are off
+
 ## v132
 
 This version supports GNOME 46 (and maintains support for GNOME 45).
