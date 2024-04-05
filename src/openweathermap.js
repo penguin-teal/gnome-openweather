@@ -442,7 +442,11 @@ function populateCurrentUI() {
       if(this._currentWeatherHumidity) this._currentWeatherHumidity.text = humidityText;
       if(this._currentWeatherPressure) this._currentWeatherPressure.text = pressureText;
       if(this._currentWeatherWind) this._currentWeatherWind.text = windText;
-      if(this._currentWeatherWindGusts) this._currentWeatherWindGusts.text = gustText;
+      if(this._currentWeatherWindGusts)
+      {
+        this._currentWeatherWindGusts.text = gustText;
+        this.setGustsPanelVisibility(gustText !== "?");
+      }
 
       resolve(0);
     } catch (e) {

@@ -93,6 +93,13 @@ function st13AddActors(parent, ...children)
     for(let c of children) st13AddActor(parent, c);
 }
 
+function st13RemoveActor(parent, child)
+{
+      // Because St 13 is weird (see st13AddActor function above)
+      if(parent.remove_actor) parent.remove_actor(child);
+      else parent.remove_child(child);
+}
+
 class OpenWeatherMenuButton extends PanelMenu.Button {
   static {
     GObject.registerClass(this);
@@ -1343,10 +1350,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       this._is_first_run_cycle ||
       this._old_position_index !== this._position_index
     ) {
-      let p = this.get_parent();
-      // Because St 13 is weird (see st13AddActor function above)
-      if(p.remove_actor) p.remove_actor(this);
-      else p.remove_child(this);
+      st13RemoveActor(this.get_parent(), this);
 
       let children = null;
       switch (this._position_in_panel) {
@@ -1720,6 +1724,9 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       _("Gusts") + ":"
     ];
 
+    this.detailsRbCaptions = rb_captions;
+    this.detailsRbValues = rb_values;
+
     const labelCss = this.cssConcatClass("openweather-current-databox-captions", a11yClasses);
     const valueCss = this.cssConcatClass("openweather-current-databox-values", a11yClasses);
     for(let i = 0; i < 5; i++)
@@ -1749,6 +1756,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
           this._currentWeatherWind = v;
           break;
         case 4:
+          this._currentWeatherWindGustsLabel = l;
           this._currentWeatherWindGusts = v;
           break;
       }
@@ -1821,6 +1829,22 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       st13AddActor(this._todaysBox, fb);
     }
     this._currentForecast.actor.add_child(this._todaysBox);
+  }
+
+  setGustsPanelVisibility(isVisible)
+  {
+    let rb_captions = this.detailsRbCaptions;
+    let rb_values = this.detailsRbValues;
+    if(!isVisible)
+    {
+      st13RemoveActor(rb_captions, this._currentWeatherWindGustsLabel);
+      st13RemoveActor(rb_values, this._currentWeatherWindGusts);
+    }
+    else
+    {
+      st13AddActor(rb_captions, this._currentWeatherWindGustsLabel);
+      st13AddActor(rb_values, this._currentWeatherWindGusts);
+    }
   }
 
   scrollForecastBy(delta) {
