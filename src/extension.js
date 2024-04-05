@@ -1717,7 +1717,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       _("Humidity:"),
       _("Pressure:"),
       _("Wind:"),
-      _("Gusts")
+      _("Gusts") + ":"
     ];
 
     const labelCss = this.cssConcatClass("openweather-current-databox-captions", a11yClasses);
