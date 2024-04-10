@@ -210,7 +210,7 @@ class LocationsPage extends Adw.PreferencesPage
 
         this.location = [];
         // Build new location UI list
-        for (let i in locs)
+        for (let i = 0; i < locs.length; i++)
         {
           this.location[i] = {};
           this.location[i].ButtonBox = new Gtk.Box({
@@ -245,7 +245,8 @@ class LocationsPage extends Adw.PreferencesPage
           this._setIcon(i, i === this.cityIndex);
         }
         // Bind signals
-        for (let i in this.location) {
+        for (let i = 0; i < this.location.length; i++)
+        {
           this.location[i].EditButton.connect("clicked", () => {
             this._editLocation(i);
           });
@@ -276,7 +277,7 @@ class LocationsPage extends Adw.PreferencesPage
     }
     else if(this._count)
     {
-      for(let i in this.location)
+      for(let i = 0; i < this.location.length; i++)
       {
         this._setIcon(i, i === this.cityIndex);
       }
