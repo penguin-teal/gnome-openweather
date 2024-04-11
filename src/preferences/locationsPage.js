@@ -85,15 +85,14 @@ class LocationsPage extends Adw.PreferencesPage
       title: _("Geolocation Provider"),
       subtitle: _("Provider used for location search"),
       model: providersList,
-      selected: locationProvider,
+      selected: locationProvider > 0 ? locationProvider - 1 : 0,
     });
     // Personal MapQuest API key
     let personalApiKeyMQEntry = new Gtk.Entry({
       max_length: 32,
       width_chars: 20,
       vexpand: false,
-      sensitive:
-        locationProvider === GeolocationProvider.MAPQUEST ? true : false,
+      sensitive: locationProvider === GeolocationProvider.MAPQUEST,
       valign: Gtk.Align.CENTER,
     });
     let personalApiKeyMQRow = new Adw.ActionRow({
@@ -150,11 +149,7 @@ class LocationsPage extends Adw.PreferencesPage
       this._settings.set_enum("my-loc-prov", widget.selected);
     });
     providersListRow.connect("notify::selected", (widget) => {
-      if (widget.selected === GeolocationProvider.MAPQUEST) {
-        personalApiKeyMQEntry.set_sensitive(true);
-      } else {
-        personalApiKeyMQEntry.set_sensitive(false);
-      }
+      let isMapQuest = false;
       let inx;
       switch(widget.selected)
       {
@@ -163,11 +158,13 @@ class LocationsPage extends Adw.PreferencesPage
           break;
         case 1:
           inx = GeolocationProvider.MAPQUEST;
+          isMapQuest = true;
           break;
         default:
           inx = GeolocationProvider.OPENSTREETMAPS;
           break;
       }
+      personalApiKeyMQEntry.set_sensitive(isMapQuest);
       this._settings.set_enum("geolocation-provider", inx);
     });
     personalApiKeyMQEntry.connect("notify::text", (widget) => {
