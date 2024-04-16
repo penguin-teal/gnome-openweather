@@ -308,7 +308,7 @@ class GeneralPage extends Adw.PreferencesPage
     providerTranslateRow.add_suffix(providerTranslateSwitch);
 
     // OpenWeatherMap API key
-    let useDefaultApiKey = this._settings.get_enum(getUseDefaultKeySetting(curProv));
+    let useDefaultApiKey = this._settings.get_boolean(getUseDefaultKeySetting(curProv));
     let defaultApiKeySwitch = new Gtk.Switch({
       valign: Gtk.Align.CENTER,
       active: !useDefaultApiKey,
