@@ -20,7 +20,8 @@ import Soup from "gi://Soup";
 import { getSoupSession } from "./myloc.js"
 import { getIconName, gettextCondition } from "./weathericons.js"
 
-const WEATHERAPI_KEY = "7a4baea97ef946c7864221259240804";
+export const OPENWEATHERMAP_KEY = "b4d6a638dd4af5e668ccd8574fd90cec";
+export const WEATHERAPI_KEY = "7a4baea97ef946c7864221259240804";
 
 /**
   * @enum {number}
@@ -55,6 +56,34 @@ export function getWeatherProviderUrl(prov)
       return "https://openweathermap.org/";
     case WeatherProvider.WEATHERAPICOM:
       return "https://www.weatherapi.com/";
+    default:
+      return null;
+  }
+}
+
+export function getUseDefaultKeySetting(prov)
+{
+  switch(prov)
+  {
+    case WeatherProvider.DEFAULT:
+    case WeatherProvider.OPENWEATHERMAP:
+      return "use-default-owm-key";
+    case WeatherProvider.WEATHERAPICOM:
+      return "Use-default-weatherapidotcom-key";
+    default:
+      return null;
+  }
+}
+
+export function getCustomKeySetting(prov)
+{
+  switch(prov)
+  {
+    case WeatherProvider.DEFAULT:
+    case WeatherProvider.OPENWEATHERMAP:
+      return "appid";
+    case WeatherProvider.WEATHERAPICOM:
+      return "weatherapidotcom-key";
     default:
       return null;
   }
@@ -371,7 +400,9 @@ export async function getWeatherInfo(extension, gettext)
           units: "metric"
         };
         if(extension._providerTranslations) params.lang = extension.locale;
-        if(extension._appid) params.appid = extension._appid;
+        let apiKey = extension.getWeatherKey();
+        if(apiKey) params.appid = apiKey;
+
         let response;
         let forecastResponse;
         try
@@ -458,10 +489,11 @@ export async function getWeatherInfo(extension, gettext)
         params =
         {
           q: `${lat},${lon}`,
-          key: WEATHERAPI_KEY,
           days: String(extension._days_forecast + 1)
         };
         if(extension._providerTranslations) params.lang = extension.locale;
+        let apiKey = extension.getWeatherKey();
+        if(apiKey) params.key = apiKey;
 
         let response;
         try

@@ -21,6 +21,24 @@ import GObject from "gi://GObject";
 
 import { gettext as _ } from "resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js";
 
+import { getUseDefaultKeySetting, getCustomKeySetting, getWeatherProviderName } from "../getweather.js";
+
+function getProviderTranslateRowTitle(prov)
+{
+  return _("%s Multilingual Support").format(getWeatherProviderName(prov));
+}
+
+function getDefaultApiKeyRowSubtitle(prov)
+{
+  return _("Use a personal API key for %s").format(getWeatherProviderName(prov));
+}
+
+function getDefaultApiKeyRowTooltip(prov)
+{
+  return _("Enable this if you have your own API key from %s and enter it below."
+    ).format(getWeatherProviderName(prov));
+}
+
 class GeneralPage extends Adw.PreferencesPage
 {
   static {
@@ -126,7 +144,7 @@ class GeneralPage extends Adw.PreferencesPage
     });
     let systemIconsRow = new Adw.ActionRow({
       title: _("System Icons"),
-      subtitle: _("Disable to use packaged Adwaita weather icons"),
+      subtitle: _("Disable to use packaged %s weather icons").format("Breeze"),
       tooltip_text: _(
         "If you have issues with your system icons displaying correctly disable this to fix it"
       ),
@@ -258,35 +276,47 @@ class GeneralPage extends Adw.PreferencesPage
       title: _("Provider"),
     });
 
+
+    let curProv = this._settings.get_enum("weather-provider");
+
+    let weatherProvsList = new Gtk.StringList();
+    weatherProvsList.append("Default (OpenWeatherMap)");
+    weatherProvsList.append("OpenWeatherMap");
+    weatherProvsList.append("WeatherAPI.com");
+    let weatherProvsListRow = new Adw.ComboRow({
+      title: _("Weather Provider"),
+      subtitle: _("Provider used for weather and forecasts"),
+      model: weatherProvsList,
+      selected: curProv
+    });
+
     // OpenWeatherMap Multilingual Support
     let providerTranslateSwitch = new Gtk.Switch({
       valign: Gtk.Align.CENTER,
       active: this._settings.get_boolean("owm-api-translate"),
     });
     let providerTranslateRow = new Adw.ActionRow({
-      title: _("OpenWeatherMap Multilingual Support"),
+      title: getProviderTranslateRowTitle(curProv),
       subtitle: _(
         "Using provider translations applies to weather conditions only"
       ),
       tooltip_text: _(
-        "Enable this to use OWM multilingual support in 46 languages if there's no built-in translations for your language yet."
+        "Enable this to use provider multilingual support if there's no built-in translations for your language yet."
       ),
       activatable_widget: providerTranslateSwitch,
     });
     providerTranslateRow.add_suffix(providerTranslateSwitch);
 
     // OpenWeatherMap API key
-    let useDefaultApiKey = this._settings.get_boolean("use-default-owm-key");
+    let useDefaultApiKey = this._settings.get_enum(getUseDefaultKeySetting(curProv));
     let defaultApiKeySwitch = new Gtk.Switch({
       valign: Gtk.Align.CENTER,
       active: !useDefaultApiKey,
     });
     let defaultApiKeyRow = new Adw.ActionRow({
       title: _("Use Custom API Key"),
-      subtitle: _("Use a personal API key for OpenWeatherMap"),
-      tooltip_text: _(
-        "Enable this if you have your own API key from openweathermap.org and enter it below."
-      ),
+      subtitle: getDefaultApiKeyRowSubtitle(curProv),
+      tooltip_text: getDefaultApiKeyRowTooltip(curProv),
       activatable_widget: defaultApiKeySwitch,
     });
     defaultApiKeyRow.add_suffix(defaultApiKeySwitch);
@@ -303,10 +333,10 @@ class GeneralPage extends Adw.PreferencesPage
       title: _("Personal API Key"),
       activatable_widget: personalApiKeyEntry,
     });
-    let personalApiKey = this._settings.get_string("appid");
+    let personalApiKey = this._settings.get_string(getCustomKeySetting(curProv));
     if (personalApiKey)
     {
-      if (personalApiKey.length !== 32)
+      if (personalApiKey.length === 0)
       {
         personalApiKeyEntry.set_icon_from_icon_name(
           Gtk.PositionType.LEFT,
@@ -329,6 +359,7 @@ class GeneralPage extends Adw.PreferencesPage
     }
     personalApiKeyRow.add_suffix(personalApiKeyEntry);
 
+    apiGroup.add(weatherProvsListRow);
     apiGroup.add(providerTranslateRow);
     apiGroup.add(defaultApiKeyRow);
     apiGroup.add(personalApiKeyRow);
@@ -403,27 +434,28 @@ class GeneralPage extends Adw.PreferencesPage
     simplifyDegSwitch.connect("notify::active", (widget) => {
       this._settings.set_boolean("simplify-degrees", widget.get_active());
     });
+    weatherProvsListRow.connect("notify::selected", widget => {
+      let prov = widget.selected;
+      this._settings.set_enum("weather-provider", prov);
+      providerTranslateRow.set_title(getProviderTranslateRowTitle(prov));
+      defaultApiKeyRow.set_subtitle(getDefaultApiKeyRowSubtitle(prov));
+      defaultApiKeyRow.set_tooltip_text(getDefaultApiKeyRowTooltip(prov));
+    });
     providerTranslateSwitch.connect("notify::active", (widget) => {
       this._settings.set_boolean("owm-api-translate", widget.get_active());
     });
     defaultApiKeySwitch.connect("notify::active", (widget) => {
+      let prov = this._settings.get_enum("weather-provider");
       let active = widget.get_active();
       personalApiKeyEntry.set_sensitive(active);
-      this._settings.set_boolean("use-default-owm-key", !active);
+      this._settings.set_boolean(getUseDefaultKeySetting(prov), !active);
     });
     personalApiKeyEntry.connect("notify::text", (widget) => {
-      if (widget.text.length === 32) {
-        this._settings.set_string("appid", widget.text);
-        personalApiKeyEntry.set_icon_from_icon_name(Gtk.PositionType.LEFT, "");
-      } else {
-        personalApiKeyEntry.set_icon_from_icon_name(
-          Gtk.PositionType.LEFT,
-          "dialog-warning"
-        );
-        if (widget.text.length === 0) {
-          this._settings.set_string("appid", "");
-        }
-      }
+      let prov = this._settings.get_enum("weather-provider");
+      this._settings.set_string(getCustomKeySetting(prov), widget.text);
+
+      personalApiKeyEntry.set_icon_from_icon_name(Gtk.PositionType.LEFT,
+        widget.text.length === 0 ? "dialog-warning" : "");
     });
     resetToDefsBtn.connect("clicked", () =>
       {

@@ -67,17 +67,6 @@ class LocationsPage extends Adw.PreferencesPage
       title: _("Provider"),
     });
 
-    let weatherProvsList = new Gtk.StringList();
-    weatherProvsList.append("Default (OpenWeatherMap)");
-    weatherProvsList.append("OpenWeatherMap");
-    weatherProvsList.append("WeatherAPI.com");
-    let weatherProvsListRow = new Adw.ComboRow({
-      title: _("Weather Provider"),
-      subtitle: _("Provider used for weather and forecasts"),
-      model: weatherProvsList,
-      selected: this._settings.get_enum("weather-provider")
-    });
-
     let myLocProvsList = new Gtk.StringList();
     myLocProvsList.append("Built-In + Nominatim");
     myLocProvsList.append("infoip.io");
@@ -136,7 +125,6 @@ class LocationsPage extends Adw.PreferencesPage
     }
 
     personalApiKeyMQRow.add_suffix(personalApiKeyMQEntry);
-    providersGroup.add(weatherProvsListRow);
     providersGroup.add(myLocProvsListRow);
     providersGroup.add(providersListRow);
     providersGroup.add(personalApiKeyMQRow);
@@ -156,9 +144,6 @@ class LocationsPage extends Adw.PreferencesPage
       {
         myLocProvsListRow.selected = this._settings.get_enum("my-loc-prov");
       }
-    });
-    weatherProvsListRow.connect("notify::selected", widget => {
-      this._settings.set_enum("weather-provider", widget.selected);
     });
     myLocProvsListRow.connect("notify::selected", widget => {
       this._settings.set_enum("my-loc-prov", widget.selected);

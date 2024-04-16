@@ -177,9 +177,17 @@
       <default>''</default>
       <summary>Your personal API key from openweathermap.org</summary>
     </key>
+    <key type="s" name="weatherapidotcom-key">
+      <default>''</default>
+      <summary>Your personal API key from WeatherAPI.com</summary>
+    </key>
     <key type="b" name="use-default-owm-key">
       <default>true</default>
       <summary>Use the extensions default API key from openweathermap.org</summary>
+    </key>
+    <key type="b" name="use-default-weatherapidotcom-key">
+      <default>true</default>
+      <summary>Use the extensions default API key from WeatherAPI.com</summary>
     </key>
     <key type="s" name="geolocation-appid-mapquest">
       <default>''</default>

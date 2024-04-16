@@ -52,7 +52,13 @@ import {
 
 import { Loc, settingsGetLocs, settingsSetLocs } from "./locs.js";
 import { tryImportAndMigrate, tryMigrateFromOldVersion } from "./migration.js";
-import { getWeatherProviderName, getWeatherProviderUrl } from "./getweather.js";
+import {
+  getWeatherProviderName,
+  getWeatherProviderUrl,
+  WeatherProvider,
+  OPENWEATHERMAP_KEY,
+  WEATHERAPI_KEY
+} from "./getweather.js";
 
 let _firstBoot = 1;
 let _timeCacheCurrentWeather;
@@ -362,12 +368,12 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       this.populateForecastUI = OpenWeatherMap.populateForecastUI;
     }
 
-    if (this._appid.toString().trim() === "")
+    if (this.getWeatherKey().trim() === "")
       Main.notify(
         "OpenWeather Refined",
         _(
-          "Openweathermap.org does not work without an api-key.\nEither set the switch to use the extensions default key in the preferences dialog to on or register at https://openweathermap.org/appid and paste your personal key into the preferences dialog."
-        )
+          "%s does not work without an api-key.\nEither set the switch to use the extensions default key in the preferences dialog to on or register at %s and paste your personal key into the preferences dialog."
+        ).format(getWeatherProviderName(this.weatherProvider), getWeatherProviderUrl(this.weatherProvider))
       );
   }
 
@@ -979,13 +985,23 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     else return s;
   }
 
-  get _appid() {
-    let key = "";
-    let useDefaultKey = this.settings.get_boolean("use-default-owm-key");
-
-    if (useDefaultKey) key = "b4d6a638dd4af5e668ccd8574fd90cec";
-    else key = this.settings.get_string("appid");
-    return key.length === 32 ? key : "";
+  getWeatherKey()
+  {
+    let useDefault;
+    switch(this.weatherProvider)
+    {
+      case WeatherProvider.DEFAULT:
+      case WeatherProvider.OPENWEATHERMAP:
+        useDefault = this.settings.get_boolean("use-default-owm-key");
+        if(useDefault) return OPENWEATHERMAP_KEY;
+        else return this.settings.get_string("appid");
+      case WeatherProvider.WEATHERAPICOM:
+        useDefault = this.settings.get_boolean("use-default-weatherapidotcom-key");
+        if(useDefault) return WEATHERAPI_KEY;
+        else return this.settings.get_string("weatherapidotcom-key");
+      default:
+        return "";
+    }
   }
 
   createButton(iconName, accessibleName)
