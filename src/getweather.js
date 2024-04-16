@@ -69,7 +69,7 @@ export function getUseDefaultKeySetting(prov)
     case WeatherProvider.OPENWEATHERMAP:
       return "use-default-owm-key";
     case WeatherProvider.WEATHERAPICOM:
-      return "Use-default-weatherapidotcom-key";
+      return "use-default-weatherapidotcom-key";
     default:
       return null;
   }
