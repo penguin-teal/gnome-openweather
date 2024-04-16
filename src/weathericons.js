@@ -129,6 +129,11 @@ const WeatherApiComIconMap =
   1282: WeatherIcons.SNOW_STORM, // "Moderate or heavy snow with thunder"
 };
 
+function hasNightVariant(name)
+{
+  return ["overcast", "many-clouds", "hail", "tornado", "windy"].indexOf(name) === -1;
+}
+
 /**
   * @param {boolean} isNight
   * @param {boolean} useSymbolic
@@ -147,14 +152,14 @@ export function getIconName(provider, key, isNight, useSymbolic)
       break;
   }
 
-  name = "weather-" + name;
+  let fullName = "weather-" + name;
 
-  if(isNight) name += "-night";
-  if(useSymbolic) name += "-symbolic";
+  if(isNight && hasNightVariant(name)) fullName += "-night";
+  if(useSymbolic) fullName += "-symbolic";
   // They're's also a "-day" we're not using here,
   // but it's not for every icon for some reason so I'll just avoid using it
 
-  return name;
+  return fullName;
 }
 
 /**
