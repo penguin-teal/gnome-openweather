@@ -115,10 +115,10 @@ OpenWeather's icon was designed by [Sihan Liu](https://www.sihanliu.com) and
 licensed under the [CC-BY-SA](http://creativecommons.org/licenses/by-sa/3.0/)
 license.
 
-Packaged weather icons are sourced from the
-[GNOME Project](http://www.gnome.org)'s
-[Adwaita Icon Theme](https://gitlab.gnome.org/GNOME/adwaita-icon-theme)
-under the GPLv3 license.
+Packaged weather icons are sourced from
+[KDE](http://www.kde.org)'s
+[Breeze Icon Theme](https://github.com/KDE/breeze-icons)
+under the LGPL license.
 
 ### License
 
