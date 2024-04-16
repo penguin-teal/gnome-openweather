@@ -52,6 +52,7 @@ import {
 
 import { Loc, settingsGetLocs, settingsSetLocs } from "./locs.js";
 import { tryImportAndMigrate, tryMigrateFromOldVersion } from "./migration.js";
+import { getWeatherProviderName, getWeatherProviderUrl } from "./getweather.js";
 
 let _firstBoot = 1;
 let _timeCacheCurrentWeather;
@@ -303,10 +304,6 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       GLib.source_remove(this._timeoutCurrent);
       this._timeoutCurrent = null;
     }
-    if (this._timeoutForecast) {
-      GLib.source_remove(this._timeoutForecast);
-      this._timeoutForecast = null;
-    }
     if (this._timeoutFirstBoot) {
       GLib.source_remove(this._timeoutFirstBoot);
       this._timeoutFirstBoot = null;
@@ -349,6 +346,11 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     }
   }
 
+  get weatherProvider()
+  {
+    return this.settings.get_enum("weather-provider");
+  }
+
   useOpenWeatherMap() {
     this.initWeatherData = OpenWeatherMap.initWeatherData;
     this.reloadWeatherCache = OpenWeatherMap.reloadWeatherCache;
@@ -356,14 +358,9 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     this.populateCurrentUI = OpenWeatherMap.populateCurrentUI;
 
     if (!this._isForecastDisabled) {
-      this.refreshForecastData = OpenWeatherMap.refreshForecastData;
       this.populateTodaysUI = OpenWeatherMap.populateTodaysUI;
       this.populateForecastUI = OpenWeatherMap.populateForecastUI;
-      this.processTodaysData = OpenWeatherMap.processTodaysData;
-      this.processForecastData = OpenWeatherMap.processForecastData;
     }
-    this.loadJsonAsync = OpenWeatherMap.loadJsonAsync;
-    this.weatherProvider = "OpenWeatherMap";
 
     if (this._appid.toString().trim() === "")
       Main.notify(
@@ -373,13 +370,6 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
         )
       );
   }
-
-  getWeatherProviderURL() {
-    let url = "https://openweathermap.org";
-    if(this.owmCityId) url += "/city/" + this.owmCityId;
-    return url;
-  }
-
 
   isFirstRun(forceRecalc = false)
   {
@@ -685,6 +675,11 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     });
   }
 
+  /**
+    * @property {(Weather | null)}
+    */
+  currentWeatherCache = null;
+
   _clearWeatherCache() {
     this.currentWeatherCache = undefined;
     this.todaysWeatherCache = undefined;
@@ -731,7 +726,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
         // We just fetch it for the rare case, where the connection changes or the extension will be stopped during
         // the timeout.
         this._timeoutCheckConnectionState = null;
-        let url = this.getWeatherProviderURL();
+        let url = getWeatherProviderUrl(this.weatherProvider);
         let address = Gio.NetworkAddress.parse_uri(url, 80);
         let cancellable = Gio.Cancellable.new();
         try {
@@ -755,7 +750,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       this._connected = this._network_monitor.can_reach_finish(res);
     } catch (err) {
       let title = _("Can not connect to %s").format(
-        this.getWeatherProviderURL()
+        getWeatherProviderUrl(this.weatherProvider)
       );
       console.warn(title + "\n" + err.message);
       this._checkConnectionStateRetry();
@@ -988,7 +983,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     let key = "";
     let useDefaultKey = this.settings.get_boolean("use-default-owm-key");
 
-    if (useDefaultKey) key = "e54ac00966ee06bcf68722c86925b326";
+    if (useDefaultKey) key = "b4d6a638dd4af5e668ccd8574fd90cec";
     else key = this.settings.get_string("appid");
     return key.length === 32 ? key : "";
   }
@@ -1036,19 +1031,25 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       "view-refresh-symbolic",
       _("Reload Weather Information")
     );
-    this._urlButton = this.createButton(
+    this._provUrlButton = this.createButton(
       "",
-      _("Weather: %s").format(this.weatherProvider)
+      getWeatherProviderName(this.weatherProvider)
     );
-    this._urlButton.set_label(this._urlButton.get_accessible_name());
+    this._provUrlButton.set_label(this._provUrlButton.get_accessible_name());
     if(this.usesNominatim())
     {
       this._nominatimBtn = this.createButton(
       "",
-      _("Place Name: %s").format("Nominatim/OSM")
+      "Nominatim/OSM"
       );
       this._nominatimBtn.set_label(this._nominatimBtn.get_accessible_name());
     }
+    
+    this._seeOnlineUrlBtn = this.createButton(
+      "internet-web-browser-symbolic",
+      _("See Online")
+    );
+
     this._prefsButton = this.createButton(
       "preferences-system-symbolic",
       _("Weather Settings")
@@ -1061,11 +1062,12 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
         this._reloadButton,
     );
 
+    st13AddActor(this._buttonBox2, this._seeOnlineUrlBtn);
     if(this.usesNominatim()) st13AddActor(this._buttonBox2, this._nominatimBtn);
     st13AddActors(
         this._buttonBox2,
         // Children:
-        this._urlButton,
+        this._provUrlButton,
         this._prefsButton,
     );
 
@@ -1086,41 +1088,43 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       this.showRefreshing();
       this.initWeatherData(true);
     });
-    this._urlButton.connect("clicked", () => {
+    this._provUrlButton.connect("clicked", () => {
       this.menu.close();
-      let url = this.getWeatherProviderURL();
-      try
-      {
-        Gio.AppInfo.launch_default_for_uri(url, null);
-      }
-      catch (err)
-      {
-        let title = _("Cannot open %s").format(url);
-        Main.notifyError(title, String(err));
-      }
+      let url = getWeatherProviderUrl(this.weatherProvider);
+      this.openUrl(url);
     });
     if(this.usesNominatim())
     {
       this._nominatimBtn.connect("clicked", () => {
         this.menu.close();
-        let url = "https://nominatim.org/";
-        try
-        {
-          Gio.AppInfo.launch_default_for_uri(url, null);
-        }
-        catch(err)
-        {
-          let title = _("Cannot open %s").format(url);
-          Main.notifyError(title, String(err));
-        }
+        this.openUrl("https://nominatim.org/");
       });
     }
+    this._seeOnlineUrlBtn.connect("clicked", async () => {
+      this.menu.close();
+      let c = await this._city.getCoords(this.settings);
+      let url = `https://weather.com/weather/today/l/${c[0]},${c[1]}`;
+      this.openUrl(url);
+    });
     this._prefsButton.connect(
       "clicked",
       this._onPreferencesActivate.bind(this)
     );
 
     st13AddActors(this._buttonMenu, this._buttonBox1, this._buttonBox2);
+  }
+
+  openUrl(url)
+  {
+    try
+    {
+      Gio.AppInfo.launch_default_for_uri(url, null);
+    }
+    catch(e)
+    {
+      let title = _("Cannot open %s").format(url);
+      Main.notifyError(title, String(e));
+    }
   }
 
   rebuildSelectCityItem()
@@ -1321,19 +1325,30 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     return this._wind_direction ? arrows[idx] : letters[idx];
   }
 
-  getWeatherIcon(iconname) {
-    // Built-in icons option and fallback for missing icons on some distros
-    if (
-      this._getUseSysIcons &&
-      new St.IconTheme().has_icon(iconname)
-    ) {
-      return Gio.icon_new_for_string(iconname);
-    } // No icon available or user prefers built in icons
-    else {
-      return Gio.icon_new_for_string(
-        this.metadata.path + "/media/status/" + iconname + ".svg"
-      );
+  systemHasIcon(iconName)
+  {
+    return new St.IconTheme().has_icon(iconName);
+  }
+
+  getPackagedIconName(iconName)
+  {
+    return `${this.metadata.path}/media/status/${iconName}.jpg`
+  }
+
+  getWeatherIcon(iconName)
+  {
+    if (this._getUseSysIcons)
+    {
+      if(this.systemHasIcon(iconName)) return Gio.icon_new_for_string(iconName);
     }
+
+    let name = this.getPackagedIconName(iconName);
+
+    // If a packaged icon is requested check if it even has it
+    let file = Gio.File.new_for_path(name);
+    if(!file.query_exists(null)) name = iconName;
+
+    return Gio.icon_new_for_string(name);
   }
 
   checkAlignment() {
@@ -1581,24 +1596,6 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       interval,
       () => {
         this.refreshWeatherData().catch((e) => console.error(e));
-        return true;
-      }
-    );
-  }
-
-  reloadWeatherForecast(interval) {
-    if (this._timeoutForecast) {
-      GLib.source_remove(this._timeoutForecast);
-      this._timeoutForecast = null;
-    }
-    if (this._isForecastDisabled) return;
-
-    _timeCacheForecastWeather = new Date();
-    this._timeoutForecast = GLib.timeout_add_seconds(
-      GLib.PRIORITY_DEFAULT_IDLE,
-      interval,
-      () => {
-        this.refreshForecastData().catch((e) => console.error(e));
         return true;
       }
     );

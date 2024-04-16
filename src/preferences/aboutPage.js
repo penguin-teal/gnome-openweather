@@ -23,6 +23,7 @@ import { PACKAGE_VERSION } from "resource:///org/gnome/Shell/Extensions/js/misc/
 
 import { gettext as _ } from "resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js";
 import { Loc, settingsGetLocs, toLocsGVariant } from "../locs.js";
+import { getWeatherProviderName, getWeatherProviderUrl } from "../getweather.js";
 
 class AboutPage extends Adw.PreferencesPage {
   static {
@@ -216,9 +217,10 @@ class AboutPage extends Adw.PreferencesPage {
       hexpand: false,
       vexpand: false,
     });
+    let curProv = settings.get_enum("weather-provider");
     let providerAbout = new Gtk.Label({
       label: _("Weather data provided by: %s").format(
-        "<a href=\"https://openweathermap.org\">OpenWeatherMap</a>"
+        `<a href="${getWeatherProviderUrl(curProv)}">${getWeatherProviderName(curProv)}</a>`
       ),
       use_markup: true,
       hexpand: false,

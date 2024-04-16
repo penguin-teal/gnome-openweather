@@ -1,7 +1,3 @@
-const WeatherProvider = {
-  OPENWEATHERMAP: 0,
-};
-
 const WeatherUnits = {
   CELSIUS: 0,
   FAHRENHEIT: 1,
@@ -63,7 +59,6 @@ const GeolocationProvider = {
 };
 
 export {
-  WeatherProvider,
   WeatherUnits,
   WeatherWindSpeedUnits,
   WeatherPressureUnits,

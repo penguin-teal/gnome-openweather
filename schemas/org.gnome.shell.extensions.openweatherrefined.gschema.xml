@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schemalist gettext-domain="gnome-shell-extension-openweatherrefined">
   <enum id="org.gnome.shell.extensions.openweatherrefined.weather-provider">
-    <value value="0" nick="openweathermap"/>
+    <value value="0" nick="default" />
+    <value value="1" nick="openweathermap" />
+    <value value="2" nick="weatherapicom" />
   </enum>
   <enum id="org.gnome.shell.extensions.openweatherrefined.geolocation-provider">
     <value value="0" nick="openstreetmaps"/>
@@ -61,7 +63,7 @@
   </enum>
   <schema path="/org/gnome/shell/extensions/openweatherrefined/" id="org.gnome.shell.extensions.openweatherrefined">
     <key name="weather-provider" enum="org.gnome.shell.extensions.openweatherrefined.weather-provider">
-      <default>'openweathermap'</default>
+      <default>'default'</default>
       <summary>Weather Provider</summary>
     </key>
     <key name="geolocation-provider" enum="org.gnome.shell.extensions.openweatherrefined.geolocation-provider">
