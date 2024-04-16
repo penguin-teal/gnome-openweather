@@ -1348,21 +1348,27 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
 
   getPackagedIconName(iconName)
   {
-    return `${this.metadata.path}/media/status/${iconName}.jpg`
+    return `${this.metadata.path}/media/status/${iconName}.svg`
   }
 
   getWeatherIcon(iconName)
   {
+    let noSystemIcon = false;
     if (this._getUseSysIcons)
     {
       if(this.systemHasIcon(iconName)) return Gio.icon_new_for_string(iconName);
+      else noSystemIcon = true;
     }
 
     let name = this.getPackagedIconName(iconName);
 
     // If a packaged icon is requested check if it even has it
     let file = Gio.File.new_for_path(name);
-    if(!file.query_exists(null)) name = iconName;
+    if(!file.query_exists(null))
+    {
+      name = iconName;
+      if(noSystemIcon) console.warn(`No icon packaged or on system for ${iconName}.`);
+    }
 
     return Gio.icon_new_for_string(name);
   }
