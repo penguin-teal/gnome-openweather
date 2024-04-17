@@ -19,28 +19,6 @@ import { gettext as _ } from "resource:///org/gnome/shell/extensions/extension.j
 import { getCachedLocInfo, getLocationInfo } from "./myloc.js";
 import { getWeatherInfo } from "./getweather.js";
 
-// Map OpenWeatherMap icon codes to icon names
-const IconMap = {
-  "01d": "weather-clear-symbolic", // "clear sky"
-  "02d": "weather-few-clouds-symbolic", // "few clouds"
-  "03d": "weather-few-clouds-symbolic", // "scattered clouds"
-  "04d": "weather-overcast-symbolic", // "broken clouds"
-  "09d": "weather-showers-scattered-symbolic", // "shower rain"
-  "10d": "weather-showers-symbolic", // "rain"
-  "11d": "weather-storm-symbolic", // "thunderstorm"
-  "13d": "weather-snow-symbolic", // "snow"
-  "50d": "weather-fog-symbolic", // "mist"
-  "01n": "weather-clear-night-symbolic", // "clear sky night"
-  "02n": "weather-few-clouds-night-symbolic", // "few clouds night"
-  "03n": "weather-few-clouds-night-symbolic", // "scattered clouds night"
-  "04n": "weather-overcast-symbolic", // "broken clouds night"
-  "09n": "weather-showers-scattered-symbolic", // "shower rain night"
-  "10n": "weather-showers-symbolic", // "rain night"
-  "11n": "weather-storm-symbolic", // "thunderstorm night"
-  "13n": "weather-snow-symbolic", // "snow night"
-  "50n": "weather-fog-symbolic", // "mist night"
-};
-
 async function initWeatherData(refresh) {
   if (refresh) {
     this._lastRefresh = Date.now();
