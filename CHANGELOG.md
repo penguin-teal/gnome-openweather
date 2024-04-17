@@ -1,3 +1,16 @@
+## v134 (IN PROGRESS)
+
+This version provides a large rewrite with support for an additional provider.
+
+Improvements:
+- Choose between OpenWeatherMap.org or WeatherAPI.com
+- More icons
+- Package Breeze icons instead of Adwaita
+
+Bug Fixes:
+- Fix geolocation provider selector in preferences not working correctly
+- Checkboxes on locations in preferences finally show correctly
+
 ## v133
 
 This version fixes some bugs left in GNOME 45.
