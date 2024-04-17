@@ -167,15 +167,15 @@ export function getIconName(provider, key, isNight, useSymbolic)
   */
 const OpenWeatherMapConditionMap =
 {
-  200: "Thunderstorm with Light Rain",
-  201: "Thunderstorm with Rain",
-  202: "Thunderstorm with Heavy Rain",
+  200: "Thunderstorm with Light Rain", // Thunderstorm with light rain
+  201: "Thunderstorm with Rain", // Thunderstorm with rain
+  202: "Thunderstorm with Heavy Rain", // Thunderstorm with heavy rain
   210: "Light Thunderstorm",
   211: "Heavy Thunderstorm",
   212: "Ragged Thunderstorm",
-  230: "Thunderstorm with Light Drizzle",
-  231: "Thunderstorm with Drizzle",
-  232: "Thunderstorm with Heavy Drizzle",
+  230: "Thunderstorm with Light Drizzle", // Thunderstorm with light drizzle
+  231: "Thunderstorm with Drizzle", // Thunderstorm with drizzle
+  232: "Thunderstorm with Heavy Drizzle", // Thunderstorm with heavy drizzle
   300: "Light Drizzle",
   301: "Drizzle",
   302: "Heavy Drizzle",
@@ -253,7 +253,7 @@ const WeatherApiComConditionMap =
   1192: "Heavy Rain At Times",
   1195: "Heavy Rain",
   1198: "Light Freezing Rain",
-  1201: "Moderate Or Heavy Freezing Rain",
+  1201: "Heavy Freezing Rain", // Moderate or heavy freezing rain
   1204: "Light Sleet",
   1207: "Moderate Or Heavy Sleet",
   1210: "Patchy Light Snow",
@@ -262,20 +262,20 @@ const WeatherApiComConditionMap =
   1219: "Moderate Snow",
   1222: "Patchy Heavy Snow",
   1225: "Heavy Snow",
-  1237: "Ice Pellets",
-  1240: "Light Rain Shower",
-  1243: "Moderate Or Heavy Rain Shower",
+  1237: "Hail", // Ice pellets
+  1240: "Light Shower", // Light Rain Shower
+  1243: "Heavy Shower", // Moderate or heavy rain shower
   1246: "Torrential Rain Shower",
   1249: "Light Sleet Showers",
-  1252: "Moderate Or Heavy Sleet Showers",
+  1252: "Heavy Sleet Showers", // Moderate or Heavy Sleet Showers
   1255: "Light Snow Showers",
-  1258: "Moderate Or Heavy Snow Showers",
-  1261: "Light Showers Of Ice Pellets",
-  1264: "Moderate Or Heavy Showers Of Ice Pellets",
+  1258: "Heavy Snow Showers", // Moderate or heavy snow showers
+  1261: "Light Hail", // Light showers of ice pellets
+  1264: "Heavy Hail", // Moderate Or Heavy Showers Of Ice Pellets
   1273: "Patchy Light Rain With Thunder",
-  1276: "Moderate Or Heavy Rain With Thunder",
-  1279: "Patchy Light Snow With Thunder",
-  1282: "Moderate Or Heavy Snow With Thunder"
+  1276: "Heavy Rain with Thunder", // Moderate or heavy rain with thunder
+  1279: "Patchy Light Snow with Thunder",
+  1282: "Heavy Snow with Thunder" // Moderate or heavy snow with thunder
 };
 
 /**
