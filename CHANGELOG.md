@@ -1,13 +1,12 @@
-## v134 (IN PROGRESS)
+## v134
 
 This version provides a large rewrite with support for an additional provider.
 
 Improvements:
 - Choose between OpenWeatherMap.org or WeatherAPI.com
-- More icons
-- Package Breeze icons instead of Adwaita
 
 Bug Fixes:
+- Fix location services fail sometimes crashing extension
 - Fix geolocation provider selector in preferences not working correctly
 - Checkboxes on locations in preferences finally show correctly
 
