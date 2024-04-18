@@ -268,6 +268,27 @@ export class Weather
     return day[hoursFromNow / day[0].getDurationHours()];
   }
 
+  forecastHoursFromNow(hoursFromNow)
+  {
+    let future = new Date().getTime() + 3600000 * hoursFromNow;
+    let days = this.#forecasts.length;
+    for(let i = 0; i < days; i++)
+    {
+      let d = this.#forecasts[i];
+      let h = d[d.length - 1];
+      let endTime = h.getEnd().getTime();
+
+      if(future > endTime) continue;
+
+      let distanceHrs = (future - d[0].getStart().getTime()) / 3600000;
+      let index = Math.floor(distanceHrs / h.getDurationHours());
+      return this.#forecasts[i][index];
+    }
+
+    let lastDay = this.#forecasts[days - 1];
+    return lastDay[lastDay.length - 1];
+  }
+
 }
 
 export class Forecast
@@ -446,7 +467,10 @@ export async function getWeatherInfo(extension, gettext)
             let fIconId = h.weather[0].icon;
             let isFNight = fIconId[fIconId.length - 1] === "n";
 
-            let dt = new Date(h.dt_txt);
+            // Create Date from UTC timestamp
+            let match = h.dt_txt.match(/^([0-9]{4})-([0-9]{2})-([0-9]{2}) ([0-9]{2}):/);
+            let dt = new Date(Date.UTC(match[1], match[2] - 1, match[3], match[4]));
+
             day.push(new Forecast(
               dt,
               new Date(dt.getTime() + 3600000 * 3),

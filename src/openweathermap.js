@@ -193,7 +193,7 @@ function populateTodaysUI() {
 
       for (let i = 0; i < 4; i++)
       {
-        let h = weather.forecastAtHour(0, i * 3);
+        let h = weather.forecastHoursFromNow((i + 1) * 3);
         let w = h.weather();
 
         let forecastTodayUi = this._todays_forecast[i];
@@ -217,13 +217,14 @@ function populateForecastUI() {
       if(!weather) reject("OpenWeather Refined: No weather cached.");
       if(!weather.hasForecast()) reject("OpenWeather Refined: No forecast.");
 
+      let hrsToMidnight = 24 - new Date().getHours();
       let dayCount = Math.min(this._days_forecast + 1, weather.forecastDayCount());
       for (let i = 0; i < dayCount - 1; i++)
       {
         let forecastUi = this._forecast[i];
         for (let j = 0; j < 8; j++)
         {
-          let h = weather.forecastAtHour(i + 1, j * 3);
+          let h = weather.forecastHoursFromNow((i + 1) * 24 + hrsToMidnight + j * 3);
           let w = h.weather();
 
           let forecastDate = h.getStart();
