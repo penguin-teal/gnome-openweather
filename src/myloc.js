@@ -258,10 +258,10 @@ export async function geoclueGetLoc(useNominatim = true)
         {
           lat: locInfo.lat,
           lon: locInfo.lon,
-          city: addr.city,
-          state: addr.state,
-          country: addr.country,
-          countryShort: addr.country_code.toUpperCase()
+          city: addr.city ?? "Unknown",
+          state: addr.state ?? "Unknown",
+          country: addr.country ?? "Unknown",
+          countryShort: addr.country_code?.toUpperCase() ?? "Unknown"
         };
         resolve(locationInfo);
       }
