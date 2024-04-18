@@ -18,34 +18,36 @@
   import { WeatherProvider } from "./getweather.js"
 
 /**
+  * More icons than there currently are available because they follow
+  * the Breeze icon set, which I can't get working right now, so everything
+  * is mapped to available Adwaita icons.
   * @enum {string}
   */
 const WeatherIcons =
 {
   CLEAR: "clear",
-  CLEAR_WIND: "clear-wind",
-  CLOUDS: "clouds",
-  CLOUDS_WIND: "clouds-wind",
+  CLOUDS: "few-clouds",
   FEW_CLOUDS: "few-clouds",
-  FEW_CLOUDS_WIND: "few-clouds-wind",
   FOG: "fog",
   FREEZING_RAIN: "freezing-rain",
-  FREEZING_SCATTERED_RAIN: "freezing-scattered-rain",
-  FREEZING_SCATTERED_RAIN_STORM: "freezing-scattered-rain-storm",
+  FREEZING_SCATTERED_RAIN: "freezing-rain",
+  FREEZING_SCATTERED_RAIN_STORM: "freezing-rain",
   FREEZING_STORM: "freezing-storm",
-  HAIL: "hail",
-  MANY_CLOUDS: "many-clouds",
-  MIST: "mist",
+  HAIL: "snow",
+  MANY_CLOUDS: "overcast",
+  MIST: "fog",
   OVERCAST: "overcast",
   SHOWERS: "showers",
   SHOWERS_SCATTERED: "showers-scattered",
-  SHOWERS_SCATTERED_STORM: "showers-scattered-storm",
+  SHOWERS_SCATTERED_STORM: "storm",
   SNOW: "snow",
-  SNOW_RAIN: "snow-rain",
-  SNOW_SCATTERED: "snow-scattered",
-  SNOW_SCATTERED_STORM: "snow-scattered-storm",
-  SNOW_STORM: "snow-storm",
-  STORM: "storm"
+  SNOW_RAIN: "snow",
+  SNOW_SCATTERED: "snow",
+  SNOW_SCATTERED_STORM: "snow",
+  SNOW_STORM: "snow",
+  STORM: "storm",
+  WINDY: "windy",
+  TORNADO: "tornado"
 };
 
 // Map OpenWeatherMap icon codes to icon names
@@ -131,7 +133,7 @@ const WeatherApiComIconMap =
 
 function hasNightVariant(name)
 {
-  return ["overcast", "many-clouds", "hail", "tornado", "windy"].indexOf(name) === -1;
+  return name === "clear" || name === "few-clouds";
 }
 
 /**
@@ -155,9 +157,9 @@ export function getIconName(provider, key, isNight, useSymbolic)
   let fullName = "weather-" + name;
 
   if(isNight && hasNightVariant(name)) fullName += "-night";
-  if(useSymbolic) fullName += "-symbolic";
-  // They're's also a "-day" we're not using here,
-  // but it's not for every icon for some reason so I'll just avoid using it
+
+  // Ignore useSymbolic for now because we only package symbolic icons
+  fullName += "-symbolic";
 
   return fullName;
 }
