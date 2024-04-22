@@ -1250,34 +1250,6 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     }
   }
 
-  toFahrenheit(t) {
-    return (Number(t) * 1.8 + 32).toFixed(this._decimal_places);
-  }
-
-  toKelvin(t) {
-    return (Number(t) + 273.15).toFixed(this._decimal_places);
-  }
-
-  toRankine(t) {
-    return (Number(t) * 1.8 + 491.67).toFixed(this._decimal_places);
-  }
-
-  toReaumur(t) {
-    return (Number(t) * 0.8).toFixed(this._decimal_places);
-  }
-
-  toRoemer(t) {
-    return ((Number(t) * 21) / 40 + 7.5).toFixed(this._decimal_places);
-  }
-
-  toDelisle(t) {
-    return ((100 - Number(t)) * 1.5).toFixed(this._decimal_places);
-  }
-
-  toNewton(t) {
-    return (Number(t) - 0.33).toFixed(this._decimal_places);
-  }
-
   toBeaufort(w, t) {
     if (w < 0.3) return !t ? "0" : "(" + _("Calm") + ")";
     else if (w >= 0.3 && w <= 1.5) return !t ? "1" : "(" + _("Light air") + ")";
@@ -1481,50 +1453,52 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       " " + pressure_unit);
   }
 
-  formatTemperature(temperature)
+  formatTemperature(tempC)
   {
     let isDegrees = true;
+    let tLocal;
     switch (this._units)
     {
       case WeatherUnits.FAHRENHEIT:
-        temperature = this.toFahrenheit(temperature);
+        tLocal = tempC * 1.8 + 32;
         break;
 
       case WeatherUnits.CELSIUS:
-        temperature = temperature.toFixed(this._decimal_places);
+        tLocal = tempC;
         break;
 
       case WeatherUnits.KELVIN:
-        temperature = this.toKelvin(temperature);
+        tLocal = tempC + 273.15;
         isDegrees = false;
         break;
 
       case WeatherUnits.RANKINE:
-        temperature = this.toRankine(temperature);
+        tLocal = tempC * 1.8 + 491.67;
         break;
 
       case WeatherUnits.REAUMUR:
-        temperature = this.toReaumur(temperature);
+        tLocal = tempC / 1.25;
         break;
 
       case WeatherUnits.ROEMER:
-        temperature = this.toRoemer(temperature);
+        tLocal = tempC / 1.9047619 + 7.5;
         break;
 
       case WeatherUnits.DELISLE:
-        temperature = this.toDelisle(temperature);
+        tLocal = tempC * 1.5 - 100;
         break;
 
       case WeatherUnits.NEWTON:
-        temperature = this.toNewton(temperature);
+        tLocal = tempC / 3.03030303;
         break;
     }
     
-    let string = parseFloat(temperature);
-    string = string.toLocaleString(this.locale).replace("-", "\u2212")
-
+    let string = tLocal.toLocaleString(this.locale, { maximumFractionDigits: this._decimal_places });
+    //
     // turn a rounded '-0' into '0'
-    if(string === "\u22120") string = "0";
+    if(string === "-0") string = "0";
+
+    string = string.replace("-", "\u2212")
 
     return string + (isDegrees ? "" : " ") + this.unit_to_unicode();
   }
