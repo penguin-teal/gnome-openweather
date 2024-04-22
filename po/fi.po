@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-shell-extension-openweather 1.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-07 21:21-0600\n"
+"POT-Creation-Date: 2024-04-18 09:26-0500\n"
 "PO-Revision-Date: 2017-09-08 20:50+0300\n"
 "Last-Translator: Jiri Grönroos <jiri.gronroos+l10n@iki.fi>\n"
 "Language-Team: \n"
@@ -18,582 +18,497 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.8.7.1\n"
 
-#: src/openweathermap.js:49
-#, fuzzy
-msgid "Thunderstorm with Light Rain"
-msgstr "Ukkosmyrsky ja kevyttä sadetta"
-
-#: src/openweathermap.js:51
-#, fuzzy
-msgid "Thunderstorm with Rain"
-msgstr "Ukkosmyrsky ja sadetta"
-
-#: src/openweathermap.js:53
-#, fuzzy
-msgid "Thunderstorm with Heavy Rain"
-msgstr "Ukkosmyrsky ja rankkasadetta"
-
-#: src/openweathermap.js:55
-#, fuzzy
-msgid "Light Thunderstorm"
-msgstr "Kevyt ukkosmyrsky"
-
-#: src/openweathermap.js:57
-msgid "Thunderstorm"
-msgstr "Ukkosmyrsky"
-
-#: src/openweathermap.js:59
-#, fuzzy
-msgid "Heavy Thunderstorm"
-msgstr "Voimakas ukkosmyrsky"
-
-#: src/openweathermap.js:61
-#, fuzzy
-msgid "Ragged Thunderstorm"
-msgstr "Satunnaisia ukkosmyrskyjä"
-
-#: src/openweathermap.js:63
-#, fuzzy
-msgid "Thunderstorm with Light Drizzle"
-msgstr "Ukkosmyrsky ja kevyttä tihkusadetta"
-
-#: src/openweathermap.js:65
-#, fuzzy
-msgid "Thunderstorm with Drizzle"
-msgstr "Ukkosmyrsky ja tihkusadetta"
-
-#: src/openweathermap.js:67
-#, fuzzy
-msgid "Thunderstorm with Heavy Drizzle"
-msgstr "Ukkosmyrsky ja voimakasta tihkusadetta"
-
-#: src/openweathermap.js:69
-#, fuzzy
-msgid "Light Drizzle"
-msgstr "Heikko tuuli"
-
-#: src/openweathermap.js:71
-msgid "Drizzle"
-msgstr "Tihkusadetta"
-
-#: src/openweathermap.js:73
-#, fuzzy
-msgid "Heavy Drizzle"
-msgstr "Tihkusadetta"
-
-#: src/openweathermap.js:75
-#, fuzzy
-msgid "Light Drizzle Rain"
-msgstr "Tihkusadetta"
-
-#: src/openweathermap.js:77
-#, fuzzy
-msgid "Drizzle Rain"
-msgstr "Tihkusadetta"
-
-#: src/openweathermap.js:79
-#, fuzzy
-msgid "Heavy Drizzle Rain"
-msgstr "Tihkusadetta"
-
-#: src/openweathermap.js:81
-#, fuzzy
-msgid "Shower Rain and Drizzle"
-msgstr "Sadekuuroja ja tihkusadetta"
-
-#: src/openweathermap.js:83
-#, fuzzy
-msgid "Heavy Rain and Drizzle"
-msgstr "Voimakkaita sadekuuroja ja tihkusadetta"
-
-#: src/openweathermap.js:85
-#, fuzzy
-msgid "Shower Drizzle"
-msgstr "Tihkusadekuuroja"
-
-#: src/openweathermap.js:87
-#, fuzzy
-msgid "Light Rain"
-msgstr "Kevyttä sadetta"
-
-#: src/openweathermap.js:89
-#, fuzzy
-msgid "Moderate Rain"
-msgstr "Kohtalaista sadetta"
-
-#: src/openweathermap.js:91
-#, fuzzy
-msgid "Heavy Rain"
-msgstr "Voimakasta lumisadetta"
-
-#: src/openweathermap.js:93
-#, fuzzy
-msgid "Very Heavy Rain"
-msgstr "Erittäin voimakasta sadetta"
-
-#: src/openweathermap.js:95
-#, fuzzy
-msgid "Extreme Rain"
-msgstr "Äärimmäisen voimakasta sadetta"
-
-#: src/openweathermap.js:97
-#, fuzzy
-msgid "Freezing Rain"
-msgstr "Jäätävää sadetta"
-
-#: src/openweathermap.js:99
-#, fuzzy
-msgid "Light Shower Rain"
-msgstr "Kevyitä lumikuuroja"
-
-#: src/openweathermap.js:101
-#, fuzzy
-msgid "Shower Rain"
-msgstr "Sadekuuroja"
-
-#: src/openweathermap.js:103
-#, fuzzy
-msgid "Heavy Shower Rain"
-msgstr "Voimakkaita lumikuuroja"
-
-#: src/openweathermap.js:105
-#, fuzzy
-msgid "Ragged Shower Rain"
-msgstr "Satunnaisia sadekuuroja"
-
-#: src/openweathermap.js:107
-#, fuzzy
-msgid "Light Snow"
-msgstr "Kevyttä lumisadetta"
-
-#: src/openweathermap.js:109
-msgid "Snow"
-msgstr "Lumisadetta"
-
-#: src/openweathermap.js:111
-#, fuzzy
-msgid "Heavy Snow"
-msgstr "Voimakasta lumisadetta"
-
-#: src/openweathermap.js:113
-msgid "Sleet"
-msgstr "Räntäsadetta"
-
-#: src/openweathermap.js:115
-#, fuzzy
-msgid "Light Shower Sleet"
-msgstr "Räntäsadekuuroja"
-
-#: src/openweathermap.js:117
-#, fuzzy
-msgid "Shower Sleet"
-msgstr "Räntäsadekuuroja"
-
-#: src/openweathermap.js:119
-#, fuzzy
-msgid "Light Rain and Snow"
-msgstr "Kevyttä sadetta ja lunta"
-
-#: src/openweathermap.js:121
-#, fuzzy
-msgid "Rain and Snow"
-msgstr "Sadetta ja lunta"
-
-#: src/openweathermap.js:123
-#, fuzzy
-msgid "Light Shower Snow"
-msgstr "Kevyitä lumikuuroja"
-
-#: src/openweathermap.js:125
-#, fuzzy
-msgid "Shower Snow"
-msgstr "Lumikuuroja"
-
-#: src/openweathermap.js:127
-#, fuzzy
-msgid "Heavy Shower Snow"
-msgstr "Voimakkaita lumikuuroja"
-
-#: src/openweathermap.js:129
-msgid "Mist"
-msgstr "Usvaa"
-
-#: src/openweathermap.js:131
-msgid "Smoke"
-msgstr "Savua"
-
-#: src/openweathermap.js:133
-msgid "Haze"
-msgstr "Usvaa"
-
-#: src/openweathermap.js:135
-msgid "Sand/Dust Whirls"
-msgstr "Hiekka- ja pölypyörteitä"
-
-#: src/openweathermap.js:137
-msgid "Fog"
-msgstr "Sumua"
-
-#: src/openweathermap.js:139
-msgid "Sand"
-msgstr "Hiekkaa"
-
-#: src/openweathermap.js:141
-msgid "Dust"
-msgstr "Pölyistä"
-
-#: src/openweathermap.js:143
-msgid "Volcanic Ash"
-msgstr ""
-
-#: src/openweathermap.js:145
-msgid "Squalls"
-msgstr ""
-
-#: src/openweathermap.js:147
-msgid "Tornado"
-msgstr ""
-
-#: src/openweathermap.js:149
-#, fuzzy
-msgid "Clear Sky"
-msgstr "Tyhjennä tietue"
-
-#: src/openweathermap.js:151
-#, fuzzy
-msgid "Few Clouds"
-msgstr "Muutamia pilviä"
-
-#: src/openweathermap.js:153
-#, fuzzy
-msgid "Scattered Clouds"
-msgstr "Ajoittain pilvistä"
-
-#: src/openweathermap.js:155
-#, fuzzy
-msgid "Broken Clouds"
-msgstr "Melkein pilvistä"
-
-#: src/openweathermap.js:157
-#, fuzzy
-msgid "Overcast Clouds"
-msgstr "Pilvistä"
-
-#: src/openweathermap.js:159
+#: src/weathericons.js:292 src/weathericons.js:294 src/weathericons.js:296
 msgid "Not available"
 msgstr "Ei saatavilla"
 
-#: src/openweathermap.js:396 src/openweathermap.js:399
-msgid ", "
-msgstr ", "
-
-#: src/openweathermap.js:428 src/openweathermap.js:437
-msgid "?"
-msgstr ""
-
-#: src/openweathermap.js:508
-msgid "Tomorrow"
-msgstr "Huomenna"
-
-#: src/locs.js:101 src/locs.js:185 src/preferences/locationsPage.js:331
-#: src/preferences/locationsPage.js:395
+#: src/locs.js:101 src/locs.js:185 src/preferences/locationsPage.js:329
+#: src/preferences/locationsPage.js:393
 #, fuzzy
 msgid "My Location"
 msgstr "Sijainnit"
 
-#: src/extension.js:190
+#: src/extension.js:248
 msgid "Failed to initialize."
 msgstr ""
 
-#: src/extension.js:321
+#: src/extension.js:375
+#, javascript-format
 msgid ""
-"Openweathermap.org does not work without an api-key.\n"
+"%s does not work without an api-key.\n"
 "Either set the switch to use the extensions default key in the preferences "
-"dialog to on or register at https://openweathermap.org/appid and paste your "
-"personal key into the preferences dialog."
+"dialog to on or register at %s and paste your personal key into the "
+"preferences dialog."
 msgstr ""
 
-#: src/extension.js:385
+#: src/extension.js:432
 msgid "OpenWeather Refined: Imported settings from old extension."
 msgstr ""
 
-#: src/extension.js:678 src/extension.js:691
+#: src/extension.js:745 src/extension.js:758
 #, javascript-format
 msgid "Can not connect to %s"
 msgstr "Yhteys kohteeseen %s ei onnistu"
 
-#: src/extension.js:967 src/preferences/locationsPage.js:39
+#: src/extension.js:1044 src/preferences/locationsPage.js:39
 #: src/preferences/locationsPage.js:59
 msgid "Locations"
 msgstr "Sijainnit"
 
-#: src/extension.js:971
+#: src/extension.js:1048
 msgid "Reload Weather Information"
 msgstr "Lataa säätiedot uudelleen"
 
-#: src/extension.js:975
-#, fuzzy, javascript-format
-msgid "Weather: %s"
-msgstr "Säätiedot tarjoaa:"
-
-#: src/extension.js:982
-#, javascript-format
-msgid "Place Name: %s"
+#: src/extension.js:1066
+msgid "See Online"
 msgstr ""
 
-#: src/extension.js:988
+#: src/extension.js:1071
 msgid "Weather Settings"
 msgstr "Sääasetukset"
 
-#: src/extension.js:1006
+#: src/extension.js:1099
 msgid "Manual refreshes less than 2 minutes apart are ignored!"
 msgstr ""
 
-#: src/extension.js:1023 src/extension.js:1038
+#: src/extension.js:1141
 #, fuzzy, javascript-format
 msgid "Cannot open %s"
 msgstr "Ei voida avata %s"
 
-#: src/extension.js:1137 src/preferences/generalPage.js:176
+#: src/extension.js:1231 src/preferences/generalPage.js:194
 msgid "°C"
 msgstr "°C"
 
-#: src/extension.js:1140 src/preferences/generalPage.js:177
+#: src/extension.js:1234 src/preferences/generalPage.js:195
 msgid "°F"
 msgstr "°F"
 
-#: src/extension.js:1142 src/preferences/generalPage.js:178
+#: src/extension.js:1236 src/preferences/generalPage.js:196
 msgid "K"
 msgstr "K"
 
-#: src/extension.js:1144 src/preferences/generalPage.js:179
+#: src/extension.js:1238 src/preferences/generalPage.js:197
 msgid "°Ra"
 msgstr "°Ra"
 
-#: src/extension.js:1146 src/preferences/generalPage.js:180
+#: src/extension.js:1240 src/preferences/generalPage.js:198
 msgid "°Ré"
 msgstr "°Ré"
 
-#: src/extension.js:1148 src/preferences/generalPage.js:181
+#: src/extension.js:1242 src/preferences/generalPage.js:199
 msgid "°Rø"
 msgstr "°Rø"
 
-#: src/extension.js:1150 src/preferences/generalPage.js:182
+#: src/extension.js:1244 src/preferences/generalPage.js:200
 msgid "°De"
 msgstr "°De"
 
-#: src/extension.js:1152 src/preferences/generalPage.js:183
+#: src/extension.js:1246 src/preferences/generalPage.js:201
 msgid "°N"
 msgstr "°N"
 
-#: src/extension.js:1188
+#: src/extension.js:1282
 msgid "Calm"
 msgstr "Tyyntä"
 
-#: src/extension.js:1189
+#: src/extension.js:1283
 msgid "Light air"
 msgstr "Hiljainen tuuli"
 
-#: src/extension.js:1191
+#: src/extension.js:1285
 msgid "Light breeze"
 msgstr "Heikko tuuli"
 
-#: src/extension.js:1193
+#: src/extension.js:1287
 msgid "Gentle breeze"
 msgstr "Heikonlainen tuuli"
 
-#: src/extension.js:1195
+#: src/extension.js:1289
 msgid "Moderate breeze"
 msgstr "Kohtalainen tuuli"
 
-#: src/extension.js:1197
+#: src/extension.js:1291
 msgid "Fresh breeze"
 msgstr "Navakka tuuli"
 
-#: src/extension.js:1199
+#: src/extension.js:1293
 msgid "Strong breeze"
 msgstr "Kova tuuli"
 
-#: src/extension.js:1201
+#: src/extension.js:1295
 msgid "Moderate gale"
 msgstr "Luja tuuli"
 
-#: src/extension.js:1203
+#: src/extension.js:1297
 msgid "Fresh gale"
 msgstr "Myrskyinen tuuli"
 
-#: src/extension.js:1205
+#: src/extension.js:1299
 msgid "Strong gale"
 msgstr "Myrsky"
 
-#: src/extension.js:1206
+#: src/extension.js:1300
 msgid "Storm"
 msgstr "Kova myrsky"
 
-#: src/extension.js:1208
+#: src/extension.js:1302
 msgid "Violent storm"
 msgstr "Ankara myrsky"
 
-#: src/extension.js:1209
+#: src/extension.js:1303
 msgid "Hurricane"
 msgstr "Hirmumyrsky"
 
-#: src/extension.js:1214
+#: src/extension.js:1308
 msgid "Sunday"
 msgstr "Sunnuntai"
 
-#: src/extension.js:1215
+#: src/extension.js:1309
 msgid "Monday"
 msgstr "Maanantai"
 
-#: src/extension.js:1216
+#: src/extension.js:1310
 msgid "Tuesday"
 msgstr "Tiistai"
 
-#: src/extension.js:1217
+#: src/extension.js:1311
 msgid "Wednesday"
 msgstr "Keskiviikko"
 
-#: src/extension.js:1218
+#: src/extension.js:1312
 msgid "Thursday"
 msgstr "Torstai"
 
-#: src/extension.js:1219
+#: src/extension.js:1313
 msgid "Friday"
 msgstr "Perjantai"
 
-#: src/extension.js:1220
+#: src/extension.js:1314
 msgid "Saturday"
 msgstr "Lauantai"
 
-#: src/extension.js:1237
+#: src/extension.js:1331
 msgid "N"
 msgstr "N"
 
-#: src/extension.js:1238
+#: src/extension.js:1332
 msgid "NE"
 msgstr "NE"
 
-#: src/extension.js:1239
+#: src/extension.js:1333
 msgid "E"
 msgstr "E"
 
-#: src/extension.js:1240
+#: src/extension.js:1334
 msgid "SE"
 msgstr "SE"
 
-#: src/extension.js:1241
+#: src/extension.js:1335
 msgid "S"
 msgstr "S"
 
-#: src/extension.js:1242
+#: src/extension.js:1336
 msgid "SW"
 msgstr "SW"
 
-#: src/extension.js:1243
+#: src/extension.js:1337
 msgid "W"
 msgstr "W"
 
-#: src/extension.js:1244
+#: src/extension.js:1338
 msgid "NW"
 msgstr "NW"
 
-#: src/extension.js:1316 src/preferences/generalPage.js:209
+#: src/extension.js:1427 src/preferences/generalPage.js:227
 msgid "inHg"
 msgstr "inHg"
 
-#: src/extension.js:1321 src/preferences/generalPage.js:210
+#: src/extension.js:1432 src/preferences/generalPage.js:228
 msgid "bar"
 msgstr "bar"
 
-#: src/extension.js:1326 src/preferences/generalPage.js:211
+#: src/extension.js:1437 src/preferences/generalPage.js:229
 msgid "Pa"
 msgstr "Pa"
 
-#: src/extension.js:1331 src/preferences/generalPage.js:212
+#: src/extension.js:1442 src/preferences/generalPage.js:230
 msgid "kPa"
 msgstr "kPa"
 
-#: src/extension.js:1336 src/preferences/generalPage.js:213
+#: src/extension.js:1447 src/preferences/generalPage.js:231
 msgid "atm"
 msgstr "atm"
 
-#: src/extension.js:1341 src/preferences/generalPage.js:214
+#: src/extension.js:1452 src/preferences/generalPage.js:232
 msgid "at"
 msgstr "at"
 
-#: src/extension.js:1346 src/preferences/generalPage.js:215
+#: src/extension.js:1457 src/preferences/generalPage.js:233
 msgid "Torr"
 msgstr "torria"
 
-#: src/extension.js:1351 src/preferences/generalPage.js:216
+#: src/extension.js:1462 src/preferences/generalPage.js:234
 msgid "psi"
 msgstr "psi"
 
-#: src/extension.js:1356 src/preferences/generalPage.js:217
+#: src/extension.js:1467 src/preferences/generalPage.js:235
 msgid "mmHg"
 msgstr "mmHg"
 
-#: src/extension.js:1360 src/preferences/generalPage.js:218
+#: src/extension.js:1471 src/preferences/generalPage.js:236
 msgid "mbar"
 msgstr "mbar"
 
-#: src/extension.js:1425 src/preferences/generalPage.js:196
+#: src/extension.js:1537 src/preferences/generalPage.js:214
 msgid "m/s"
 msgstr "m/s"
 
-#: src/extension.js:1430 src/preferences/generalPage.js:195
+#: src/extension.js:1542 src/preferences/generalPage.js:213
 msgid "mph"
 msgstr "mph"
 
-#: src/extension.js:1435 src/preferences/generalPage.js:194
+#: src/extension.js:1547 src/preferences/generalPage.js:212
 msgid "km/h"
 msgstr "km/h"
 
-#: src/extension.js:1444 src/preferences/generalPage.js:197
+#: src/extension.js:1556 src/preferences/generalPage.js:215
 msgid "kn"
 msgstr "kn"
 
-#: src/extension.js:1449 src/preferences/generalPage.js:198
+#: src/extension.js:1561 src/preferences/generalPage.js:216
 msgid "ft/s"
 msgstr "ft/s"
 
-#: src/extension.js:1534 src/extension.js:1584
+#: src/extension.js:1628 src/extension.js:1678
 msgid "Loading ..."
 msgstr "Ladataan..."
 
-#: src/extension.js:1588
+#: src/extension.js:1682
 msgid "Please wait"
 msgstr "Odota hetki"
 
-#: src/extension.js:1649
+#: src/extension.js:1739
 msgid "Feels Like:"
 msgstr ""
 
-#: src/extension.js:1650
+#: src/extension.js:1740
 msgid "Humidity:"
 msgstr "Kosteus:"
 
-#: src/extension.js:1651
+#: src/extension.js:1741
 msgid "Pressure:"
 msgstr "Paine:"
 
-#: src/extension.js:1652
+#: src/extension.js:1742
 msgid "Wind:"
 msgstr "Tuuli:"
 
-#: src/extension.js:1653
+#: src/extension.js:1743
 msgid "Gusts"
 msgstr ""
 
-#: src/extension.js:1825
+#: src/extension.js:1925
 msgid "Tomorrow's Forecast"
 msgstr ""
 
-#: src/extension.js:1826
+#: src/extension.js:1926
 #, fuzzy, javascript-format
 msgid "%s Day Forecast"
 msgstr "Olosuhteet ennusteessa"
+
+#: src/openweathermap.js:139
+msgid ", "
+msgstr ", "
+
+#: src/openweathermap.js:238
+msgid "Tomorrow"
+msgstr "Huomenna"
+
+#: src/preferences/generalPage.js:28
+#, javascript-format
+msgid "%s Multilingual Support"
+msgstr ""
+
+#: src/preferences/generalPage.js:33
+#, javascript-format
+msgid "Use a personal API key for %s"
+msgstr ""
+
+#: src/preferences/generalPage.js:38
+#, fuzzy, javascript-format
+msgid "Enable this if you have your own API key from %s and enter it below."
+msgstr "Henkilökohtainen API-avaimesi openweathermap.orgista"
+
+#: src/preferences/generalPage.js:51
+#, fuzzy
+msgid "Settings"
+msgstr "Sääasetukset"
+
+#: src/preferences/generalPage.js:60
+msgid "General"
+msgstr ""
+
+#: src/preferences/generalPage.js:78
+msgid "Current Weather Refresh"
+msgstr ""
+
+#: src/preferences/generalPage.js:79
+msgid "Current weather refresh interval in minutes"
+msgstr ""
+
+#: src/preferences/generalPage.js:101
+#, fuzzy
+msgid "Weather Forecast Refresh"
+msgstr "Keskitä ennuste"
+
+#: src/preferences/generalPage.js:102
+msgid "Forecast refresh interval in minutes if enabled"
+msgstr ""
+
+#: src/preferences/generalPage.js:122
+#, fuzzy
+msgid "My Location Refresh"
+msgstr "Sijainnit"
+
+#: src/preferences/generalPage.js:123
+msgid "My location refresh interval in minutes"
+msgstr ""
+
+#: src/preferences/generalPage.js:134
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:122
+msgid "Disable Forecast"
+msgstr ""
+
+#: src/preferences/generalPage.js:135
+msgid "Disables all fetching and processing of forecast data"
+msgstr ""
+
+#: src/preferences/generalPage.js:146
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:110
+#, fuzzy
+msgid "System Icons"
+msgstr "Symboliset kuvakkeet"
+
+#: src/preferences/generalPage.js:147
+#, javascript-format
+msgid "Disable to use packaged %s weather icons"
+msgstr ""
+
+#: src/preferences/generalPage.js:149
+msgid ""
+"If you have issues with your system icons displaying correctly disable this "
+"to fix it"
+msgstr ""
+
+#: src/preferences/generalPage.js:170
+msgid "First Boot Delay"
+msgstr ""
+
+#: src/preferences/generalPage.js:171
+msgid "Seconds to delay popup initialization and data fetching"
+msgstr ""
+
+#: src/preferences/generalPage.js:173
+msgid ""
+"This setting only applies to the first time the extension is loaded. (first "
+"log in / restarting gnome shell)"
+msgstr ""
+
+#: src/preferences/generalPage.js:189
+msgid "Units"
+msgstr "Yksiköt"
+
+#: src/preferences/generalPage.js:205
+#, fuzzy
+msgid "Temperature"
+msgstr "Lämpötilan yksikkö"
+
+#: src/preferences/generalPage.js:217
+msgid "Beaufort"
+msgstr "bofori"
+
+#: src/preferences/generalPage.js:219
+#, fuzzy
+msgid "Wind Speed"
+msgstr "Tuulen nopeuden yksikkö"
+
+#: src/preferences/generalPage.js:238
+#, fuzzy
+msgid "Pressure"
+msgstr "Paine:"
+
+#: src/preferences/generalPage.js:245
+msgid "24-hour"
+msgstr ""
+
+#: src/preferences/generalPage.js:246
+msgid "AM / PM"
+msgstr ""
+
+#: src/preferences/generalPage.js:247
+#, fuzzy
+msgid "System"
+msgstr "Symboliset kuvakkeet"
+
+#: src/preferences/generalPage.js:249
+msgid "Time Format"
+msgstr ""
+
+#: src/preferences/generalPage.js:260
+msgid "Simplify Degrees"
+msgstr ""
+
+#: src/preferences/generalPage.js:261
+msgid "Show \"°\" instead of \"°C,\" \"°F,\" etc."
+msgstr ""
+
+#: src/preferences/generalPage.js:262
+msgid "Enable this to cut off the \"C,\" \"F,\" etc. from degrees labels."
+msgstr ""
+
+#: src/preferences/generalPage.js:276 src/preferences/locationsPage.js:67
+msgid "Provider"
+msgstr "Tarjoaja"
+
+#: src/preferences/generalPage.js:287
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:67
+msgid "Weather Provider"
+msgstr "Säätietojen tarjoaja"
+
+#: src/preferences/generalPage.js:288
+msgid "Provider used for weather and forecasts"
+msgstr ""
+
+#: src/preferences/generalPage.js:301
+msgid "Using provider translations applies to weather conditions only"
+msgstr ""
+
+#: src/preferences/generalPage.js:304
+msgid ""
+"Enable this to use provider multilingual support if there's no built-in "
+"translations for your language yet."
+msgstr ""
+
+#: src/preferences/generalPage.js:317
+msgid "Use Custom API Key"
+msgstr ""
+
+#: src/preferences/generalPage.js:333
+msgid "Personal API Key"
+msgstr ""
+
+#: src/preferences/generalPage.js:369 src/preferences/generalPage.js:375
+msgid "Reset"
+msgstr ""
+
+#: src/preferences/generalPage.js:379
+msgid "Restore Defaults"
+msgstr ""
+
+#: src/preferences/generalPage.js:381
+msgid "Restore all settings to the defaults."
+msgstr ""
 
 #: src/preferences/layoutPage.js:31
 msgid "Layout"
@@ -685,7 +600,7 @@ msgid "Wind Direction Arrows"
 msgstr "Tuulen suunta nuolina"
 
 #: src/preferences/layoutPage.js:176
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:100
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:102
 msgid "Translate Conditions"
 msgstr "Käännä olosuhteet"
 
@@ -803,83 +718,6 @@ msgstr "Olosuhteet ennusteessa"
 msgid "Keep Forecast Expanded"
 msgstr ""
 
-#: src/preferences/aboutPage.js:35
-msgid "About"
-msgstr "Tietoja"
-
-#: src/preferences/aboutPage.js:63
-msgid ""
-"Display weather information for any location on Earth in the GNOME Shell."
-msgstr ""
-
-#: src/preferences/aboutPage.js:78 src/preferences/aboutPage.js:79
-msgid "Unknown"
-msgstr ""
-
-#: src/preferences/aboutPage.js:83
-#, fuzzy
-msgid "OpenWeather Refined Version"
-msgstr "Sääasetukset"
-
-#: src/preferences/aboutPage.js:95
-#, fuzzy
-msgid "Git Version"
-msgstr "Versio: "
-
-#: src/preferences/aboutPage.js:106
-#, fuzzy
-msgid "GNOME Version"
-msgstr "Versio: "
-
-#: src/preferences/aboutPage.js:116
-#, fuzzy
-msgid "Copy Settings JSON"
-msgstr "Sääasetukset"
-
-#: src/preferences/aboutPage.js:119
-msgid "Copy"
-msgstr ""
-
-#: src/preferences/aboutPage.js:166
-msgid "Copied settings JSON to clipboard."
-msgstr ""
-
-#: src/preferences/aboutPage.js:187
-#, fuzzy, javascript-format
-msgid "Maintained by: %s"
-msgstr "Ylläpitäjä"
-
-#: src/preferences/aboutPage.js:193
-#, javascript-format
-msgid "Contribute or translate the project on %s."
-msgstr ""
-
-#: src/preferences/aboutPage.js:199
-#, javascript-format
-msgid "This is a fork of %s's extension."
-msgstr ""
-
-#: src/preferences/aboutPage.js:220
-#, fuzzy, javascript-format
-msgid "Weather data provided by: %s"
-msgstr "Säätiedot tarjoaa:"
-
-#: src/preferences/aboutPage.js:234
-msgid "This program comes with ABSOLUTELY NO WARRANTY."
-msgstr ""
-
-#: src/preferences/aboutPage.js:236
-msgid "See the"
-msgstr ""
-
-#: src/preferences/aboutPage.js:238
-msgid "GNU General Public License, version 2 or later"
-msgstr ""
-
-#: src/preferences/aboutPage.js:240
-msgid "for details."
-msgstr ""
-
 #: src/preferences/searchResultsWindow.js:36
 #, javascript-format
 msgid "Search Results from %s"
@@ -914,7 +752,7 @@ msgid "Results for \"%s\""
 msgstr ""
 
 #: src/preferences/searchResultsWindow.js:273
-#: src/preferences/locationsPage.js:395
+#: src/preferences/locationsPage.js:393
 #, javascript-format
 msgid "%s has been added"
 msgstr ""
@@ -937,180 +775,81 @@ msgstr ""
 msgid "No results found when searching for \"%s\"."
 msgstr "Virheelliset tiedot etsiessä \"%s\""
 
-#: src/preferences/generalPage.js:33
+#: src/preferences/aboutPage.js:36
+msgid "About"
+msgstr "Tietoja"
+
+#: src/preferences/aboutPage.js:64
+msgid ""
+"Display weather information for any location on Earth in the GNOME Shell."
+msgstr ""
+
+#: src/preferences/aboutPage.js:79 src/preferences/aboutPage.js:80
+msgid "Unknown"
+msgstr ""
+
+#: src/preferences/aboutPage.js:84
 #, fuzzy
-msgid "Settings"
+msgid "OpenWeather Refined Version"
 msgstr "Sääasetukset"
 
-#: src/preferences/generalPage.js:42
-msgid "General"
-msgstr ""
-
-#: src/preferences/generalPage.js:60
-msgid "Current Weather Refresh"
-msgstr ""
-
-#: src/preferences/generalPage.js:61
-msgid "Current weather refresh interval in minutes"
-msgstr ""
-
-#: src/preferences/generalPage.js:83
+#: src/preferences/aboutPage.js:96
 #, fuzzy
-msgid "Weather Forecast Refresh"
-msgstr "Keskitä ennuste"
+msgid "Git Version"
+msgstr "Versio: "
 
-#: src/preferences/generalPage.js:84
-msgid "Forecast refresh interval in minutes if enabled"
-msgstr ""
-
-#: src/preferences/generalPage.js:104
+#: src/preferences/aboutPage.js:107
 #, fuzzy
-msgid "My Location Refresh"
-msgstr "Sijainnit"
+msgid "GNOME Version"
+msgstr "Versio: "
 
-#: src/preferences/generalPage.js:105
-msgid "My location refresh interval in minutes"
-msgstr ""
-
-#: src/preferences/generalPage.js:116
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:120
-msgid "Disable Forecast"
-msgstr ""
-
-#: src/preferences/generalPage.js:117
-msgid "Disables all fetching and processing of forecast data"
-msgstr ""
-
-#: src/preferences/generalPage.js:128
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:108
+#: src/preferences/aboutPage.js:117
 #, fuzzy
-msgid "System Icons"
-msgstr "Symboliset kuvakkeet"
+msgid "Copy Settings JSON"
+msgstr "Sääasetukset"
 
-#: src/preferences/generalPage.js:129
-msgid "Disable to use packaged Adwaita weather icons"
+#: src/preferences/aboutPage.js:120
+msgid "Copy"
 msgstr ""
 
-#: src/preferences/generalPage.js:131
-msgid ""
-"If you have issues with your system icons displaying correctly disable this "
-"to fix it"
+#: src/preferences/aboutPage.js:167
+msgid "Copied settings JSON to clipboard."
 msgstr ""
 
-#: src/preferences/generalPage.js:152
-msgid "First Boot Delay"
+#: src/preferences/aboutPage.js:188
+#, fuzzy, javascript-format
+msgid "Maintained by: %s"
+msgstr "Ylläpitäjä"
+
+#: src/preferences/aboutPage.js:194
+#, javascript-format
+msgid "Contribute or translate the project on %s."
 msgstr ""
 
-#: src/preferences/generalPage.js:153
-msgid "Seconds to delay popup initialization and data fetching"
+#: src/preferences/aboutPage.js:200
+#, javascript-format
+msgid "This is a fork of %s's extension."
 msgstr ""
 
-#: src/preferences/generalPage.js:155
-msgid ""
-"This setting only applies to the first time the extension is loaded. (first "
-"log in / restarting gnome shell)"
+#: src/preferences/aboutPage.js:222
+#, fuzzy, javascript-format
+msgid "Weather data provided by: %s"
+msgstr "Säätiedot tarjoaa:"
+
+#: src/preferences/aboutPage.js:236
+msgid "This program comes with ABSOLUTELY NO WARRANTY."
 msgstr ""
 
-#: src/preferences/generalPage.js:171
-msgid "Units"
-msgstr "Yksiköt"
-
-#: src/preferences/generalPage.js:187
-#, fuzzy
-msgid "Temperature"
-msgstr "Lämpötilan yksikkö"
-
-#: src/preferences/generalPage.js:199
-msgid "Beaufort"
-msgstr "bofori"
-
-#: src/preferences/generalPage.js:201
-#, fuzzy
-msgid "Wind Speed"
-msgstr "Tuulen nopeuden yksikkö"
-
-#: src/preferences/generalPage.js:220
-#, fuzzy
-msgid "Pressure"
-msgstr "Paine:"
-
-#: src/preferences/generalPage.js:227
-msgid "24-hour"
+#: src/preferences/aboutPage.js:238
+msgid "See the"
 msgstr ""
 
-#: src/preferences/generalPage.js:228
-msgid "AM / PM"
+#: src/preferences/aboutPage.js:240
+msgid "GNU General Public License, version 2 or later"
 msgstr ""
 
-#: src/preferences/generalPage.js:229
-#, fuzzy
-msgid "System"
-msgstr "Symboliset kuvakkeet"
-
-#: src/preferences/generalPage.js:231
-msgid "Time Format"
-msgstr ""
-
-#: src/preferences/generalPage.js:242
-msgid "Simplify Degrees"
-msgstr ""
-
-#: src/preferences/generalPage.js:243
-msgid "Show \"°\" instead of \"°C,\" \"°F,\" etc."
-msgstr ""
-
-#: src/preferences/generalPage.js:244
-msgid "Enable this to cut off the \"C,\" \"F,\" etc. from degrees labels."
-msgstr ""
-
-#: src/preferences/generalPage.js:258 src/preferences/locationsPage.js:67
-msgid "Provider"
-msgstr "Tarjoaja"
-
-#: src/preferences/generalPage.js:267
-msgid "OpenWeatherMap Multilingual Support"
-msgstr ""
-
-#: src/preferences/generalPage.js:269
-msgid "Using provider translations applies to weather conditions only"
-msgstr ""
-
-#: src/preferences/generalPage.js:272
-msgid ""
-"Enable this to use OWM multilingual support in 46 languages if there's no "
-"built-in translations for your language yet."
-msgstr ""
-
-#: src/preferences/generalPage.js:285
-msgid "Use Extensions API Key"
-msgstr ""
-
-#: src/preferences/generalPage.js:286
-#, fuzzy
-msgid "Use the built-in API key for OpenWeatherMap"
-msgstr "Henkilökohtainen API-avain openweathermap.orgista"
-
-#: src/preferences/generalPage.js:288
-#, fuzzy
-msgid ""
-"Disable this if you have your own API key from openweathermap.org and enter "
-"it below."
-msgstr "Henkilökohtainen API-avaimesi openweathermap.orgista"
-
-#: src/preferences/generalPage.js:303
-msgid "Personal API Key"
-msgstr ""
-
-#: src/preferences/generalPage.js:332 src/preferences/generalPage.js:338
-msgid "Reset"
-msgstr ""
-
-#: src/preferences/generalPage.js:342
-msgid "Restore Defaults"
-msgstr ""
-
-#: src/preferences/generalPage.js:344
-msgid "Restore all settings to the defaults."
+#: src/preferences/aboutPage.js:242
+msgid "for details."
 msgstr ""
 
 #: src/preferences/locationsPage.js:55
@@ -1127,7 +866,7 @@ msgid "Provider for getting My Location"
 msgstr ""
 
 #: src/preferences/locationsPage.js:85
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:69
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:71
 msgid "Geolocation Provider"
 msgstr "Sijainnin tarjoaja"
 
@@ -1135,127 +874,123 @@ msgstr "Sijainnin tarjoaja"
 msgid "Provider used for location search"
 msgstr ""
 
-#: src/preferences/locationsPage.js:100
+#: src/preferences/locationsPage.js:99
 msgid "Personal MapQuest Key"
 msgstr ""
 
-#: src/preferences/locationsPage.js:101
+#: src/preferences/locationsPage.js:100
 #, fuzzy
 msgid "Personal API Key from developer.mapquest.com"
 msgstr "Henkilökohtainen AppKey developer.mapquest.comista"
 
-#: src/preferences/locationsPage.js:264
+#: src/preferences/locationsPage.js:262
 #, javascript-format
 msgid "Location changed to: %s"
 msgstr ""
 
-#: src/preferences/locationsPage.js:294
+#: src/preferences/locationsPage.js:292
 #, fuzzy
 msgid "Add New Location"
 msgstr "Sijainti"
 
-#: src/preferences/locationsPage.js:315
+#: src/preferences/locationsPage.js:313
 #, fuzzy
 msgid "Search by Location or Coordinates"
 msgstr "Etsi sijaintia nimellä tai koordinaateilla"
 
-#: src/preferences/locationsPage.js:321
+#: src/preferences/locationsPage.js:319
 msgid "e.g. London, England or 51.5074456,-0.1277653"
 msgstr ""
 
-#: src/preferences/locationsPage.js:323 src/preferences/locationsPage.js:451
-#: src/preferences/locationsPage.js:468
+#: src/preferences/locationsPage.js:321 src/preferences/locationsPage.js:449
+#: src/preferences/locationsPage.js:466
 msgid "Clear entry"
 msgstr "Tyhjennä tietue"
 
-#: src/preferences/locationsPage.js:340
+#: src/preferences/locationsPage.js:338
 #, fuzzy
 msgid "Search"
 msgstr "Ladataan..."
 
-#: src/preferences/locationsPage.js:366
+#: src/preferences/locationsPage.js:364
 msgid "We need something to search for!"
 msgstr ""
 
-#: src/preferences/locationsPage.js:411
+#: src/preferences/locationsPage.js:409
 #, fuzzy, javascript-format
 msgid "Edit %s"
 msgstr "Muokkaa nimeä"
 
-#: src/preferences/locationsPage.js:433
+#: src/preferences/locationsPage.js:431
 #, fuzzy
 msgid "Edit Name"
 msgstr "Muokkaa nimeä"
 
-#: src/preferences/locationsPage.js:459
+#: src/preferences/locationsPage.js:457
 #, fuzzy
 msgid "Edit Coordinates"
 msgstr "Muokkaa koordinaatteja"
 
-#: src/preferences/locationsPage.js:475
+#: src/preferences/locationsPage.js:473
 msgid ""
 "If you meant to search up a new location by name, <b>add</b> a location "
 "instead."
 msgstr ""
 
-#: src/preferences/locationsPage.js:484
+#: src/preferences/locationsPage.js:482
 msgid "Save"
 msgstr "Tallenna"
 
-#: src/preferences/locationsPage.js:519
+#: src/preferences/locationsPage.js:517
 msgid "Coordinates field cannot be empty."
 msgstr ""
 
-#: src/preferences/locationsPage.js:527
+#: src/preferences/locationsPage.js:525
 #, javascript-format
 msgid "Coordinates field must be in the format of '%s' or the text '%s'."
 msgstr ""
 
-#: src/preferences/locationsPage.js:535
+#: src/preferences/locationsPage.js:533
 #, javascript-format
 msgid "Name field can only be empty if coordinates are '%s'."
 msgstr ""
 
-#: src/preferences/locationsPage.js:564
+#: src/preferences/locationsPage.js:562
 #, javascript-format
 msgid "%s has been updated"
 msgstr ""
 
-#: src/preferences/locationsPage.js:595
+#: src/preferences/locationsPage.js:593
 #, javascript-format
 msgid "Are you sure you want to delete \"%s\"?"
 msgstr ""
 
-#: src/preferences/locationsPage.js:603
+#: src/preferences/locationsPage.js:601
 msgid "Delete"
 msgstr ""
 
-#: src/preferences/locationsPage.js:607
+#: src/preferences/locationsPage.js:605
 msgid "Cancel"
 msgstr "Peru"
 
-#: src/preferences/locationsPage.js:636
+#: src/preferences/locationsPage.js:634
 #, javascript-format
 msgid "%s has been deleted"
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:65
-msgid "Weather Provider"
-msgstr "Säätietojen tarjoaja"
-
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:73
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:75
 msgid "Temperature Unit"
 msgstr "Lämpötilan yksikkö"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:77
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:79
 msgid "Pressure Unit"
 msgstr "Paineen yksikkö"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:81
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:83
 msgid "Wind Speed Units"
 msgstr "Tuulen nopeuden yksiköt"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:82
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:84
 msgid ""
 "Choose the units used for wind speed. Allowed values are 'kph', 'mph', 'm/"
 "s', 'knots', 'ft/s' or 'Beaufort'."
@@ -1263,164 +998,375 @@ msgstr ""
 "Valitse yksikkö tuulen nopeudelle. Sallitut arvot ovat 'kph', 'mph', 'm/s', "
 "'knots', 'ft/s' tai 'bofori'."
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:86
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:88
 msgid "Wind Direction by Arrows"
 msgstr "Tuulen suunta nuolina"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:87
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:89
 #, fuzzy
 msgid "True to display wind direction through arrows rather than letters."
 msgstr "Valitse näytetäänkö tuulen suunta nuolina vai kirjaimina."
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:92
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:94
 #, fuzzy
 msgid "DEPRECATED, City to be displayed"
 msgstr "Näytettävä kaupunki"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:96
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:98
 msgid "Index of the city to display by default."
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:104
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:106
 msgid "OpenWeatherMap Multilingual Support (weather descriptions only)"
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:112
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:114
 #, fuzzy
 msgid "True to show temperature in the panel"
 msgstr "Lämpötila paneelissa"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:116
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:118
 #, fuzzy
 msgid "True to show conditions in the panel."
 msgstr "Olosuhteet paneelissa"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:124
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:126
 msgid "Conditions in Forecast"
 msgstr "Olosuhteet ennusteessa"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:128
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:132
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:130
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:134
 msgid "Position in Panel"
 msgstr "Sijainti paneelissa"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:136
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:138
 msgid "Horizontal position of menu-box."
 msgstr "Valikkolaatikon vaakasuuntainen sijainti."
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:140
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:142
 msgid "Refresh interval (actual weather)"
 msgstr "Päivitysväli (säätiedot)"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:144
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:146
 msgid "Maximum length of the location text"
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:148
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:150
 msgid "Refresh interval (forecast)"
 msgstr "Päivitysväli (ennuste)"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:152
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:154
 msgid "Center forecastbox."
 msgstr "Keskitä ennustelaatikko."
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:156
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:158
 msgid "Always keep forecast expanded"
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:160
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:162
 msgid "Number of days in forecast"
 msgstr "Päivien määrä ennusteessa"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:164
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:166
 #, fuzzy
 msgid "Maximum number of digits after the decimal point for temperature"
 msgstr "Desimaalipilkun jälkeen tulevien numeroiden maksimimäärä"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:168
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:170
 #, fuzzy
 msgid "Maximum number of digits after the decimal point for pressure"
 msgstr "Desimaalipilkun jälkeen tulevien numeroiden maksimimäärä"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:172
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:174
 #, fuzzy
 msgid "Maximum number of digits after the decimal point for wind speed"
 msgstr "Desimaalipilkun jälkeen tulevien numeroiden maksimimäärä"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:176
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:178
 msgid "Your personal API key from openweathermap.org"
 msgstr "Henkilökohtainen API-avaimesi openweathermap.orgista"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:180
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:182
+#, fuzzy
+msgid "Your personal API key from WeatherAPI.com"
+msgstr "Henkilökohtainen API-avaimesi openweathermap.orgista"
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:186
 msgid "Use the extensions default API key from openweathermap.org"
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:184
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:190
+#, fuzzy
+msgid "Use the extensions default API key from WeatherAPI.com"
+msgstr "Henkilökohtainen API-avain openweathermap.orgista"
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:194
 msgid "Your personal AppKey from developer.mapquest.com"
 msgstr "Henkilökohtainen AppKey developer.mapquest.comista"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:188
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:198
 msgid ""
 "Time format for hours. Possible values are '24hr' for 24-hour clock, '12hr' "
 "for AM/PM, and 'system' to follow the GNOME setting."
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:192
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:202
 msgid "Seconds to delay popup initialization and data fetch on the first load"
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:196
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:206
 msgid "Default width for the preferences window"
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:200
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:210
 msgid "Default height for the preferences window"
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:204
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:214
 msgid ""
 "High contrast style to use, possible values are 'none', 'white', or 'black'."
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:208
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:218
 #, fuzzy
 msgid "True to show the sunset/sunrise in the panel."
 msgstr "Lämpötila paneelissa"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:212
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:222
 msgid ""
 "True to show the sunset/sunrise in the panel before the temperature/"
 "conditions if enabled."
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:216
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:226
 msgid "False if this extension has never been initialized before."
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:220
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:230
 msgid "How often, in minutes, to re-fetch My Location if selected."
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:224
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:234
 msgid "True to cut off the \"F\" or \"C\" after the degree symbol."
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:228
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:238
 msgid "Freezes the settings changed listener; user should not change this."
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:233
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:243
 #, fuzzy
 msgid "List of locations."
 msgstr "Sijainnit"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:237
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:247
 msgid "Provider to use for \"My Location.\""
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:241
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:251
 msgid "Empty or the last initialization error message."
 msgstr ""
+
+#, fuzzy
+#~ msgid "Thunderstorm with Light Rain"
+#~ msgstr "Ukkosmyrsky ja kevyttä sadetta"
+
+#, fuzzy
+#~ msgid "Thunderstorm with Rain"
+#~ msgstr "Ukkosmyrsky ja sadetta"
+
+#, fuzzy
+#~ msgid "Thunderstorm with Heavy Rain"
+#~ msgstr "Ukkosmyrsky ja rankkasadetta"
+
+#, fuzzy
+#~ msgid "Light Thunderstorm"
+#~ msgstr "Kevyt ukkosmyrsky"
+
+#~ msgid "Thunderstorm"
+#~ msgstr "Ukkosmyrsky"
+
+#, fuzzy
+#~ msgid "Heavy Thunderstorm"
+#~ msgstr "Voimakas ukkosmyrsky"
+
+#, fuzzy
+#~ msgid "Ragged Thunderstorm"
+#~ msgstr "Satunnaisia ukkosmyrskyjä"
+
+#, fuzzy
+#~ msgid "Thunderstorm with Light Drizzle"
+#~ msgstr "Ukkosmyrsky ja kevyttä tihkusadetta"
+
+#, fuzzy
+#~ msgid "Thunderstorm with Drizzle"
+#~ msgstr "Ukkosmyrsky ja tihkusadetta"
+
+#, fuzzy
+#~ msgid "Thunderstorm with Heavy Drizzle"
+#~ msgstr "Ukkosmyrsky ja voimakasta tihkusadetta"
+
+#, fuzzy
+#~ msgid "Light Drizzle"
+#~ msgstr "Heikko tuuli"
+
+#~ msgid "Drizzle"
+#~ msgstr "Tihkusadetta"
+
+#, fuzzy
+#~ msgid "Heavy Drizzle"
+#~ msgstr "Tihkusadetta"
+
+#, fuzzy
+#~ msgid "Light Drizzle Rain"
+#~ msgstr "Tihkusadetta"
+
+#, fuzzy
+#~ msgid "Drizzle Rain"
+#~ msgstr "Tihkusadetta"
+
+#, fuzzy
+#~ msgid "Heavy Drizzle Rain"
+#~ msgstr "Tihkusadetta"
+
+#, fuzzy
+#~ msgid "Shower Rain and Drizzle"
+#~ msgstr "Sadekuuroja ja tihkusadetta"
+
+#, fuzzy
+#~ msgid "Heavy Rain and Drizzle"
+#~ msgstr "Voimakkaita sadekuuroja ja tihkusadetta"
+
+#, fuzzy
+#~ msgid "Shower Drizzle"
+#~ msgstr "Tihkusadekuuroja"
+
+#, fuzzy
+#~ msgid "Light Rain"
+#~ msgstr "Kevyttä sadetta"
+
+#, fuzzy
+#~ msgid "Moderate Rain"
+#~ msgstr "Kohtalaista sadetta"
+
+#, fuzzy
+#~ msgid "Heavy Rain"
+#~ msgstr "Voimakasta lumisadetta"
+
+#, fuzzy
+#~ msgid "Very Heavy Rain"
+#~ msgstr "Erittäin voimakasta sadetta"
+
+#, fuzzy
+#~ msgid "Extreme Rain"
+#~ msgstr "Äärimmäisen voimakasta sadetta"
+
+#, fuzzy
+#~ msgid "Freezing Rain"
+#~ msgstr "Jäätävää sadetta"
+
+#, fuzzy
+#~ msgid "Light Shower Rain"
+#~ msgstr "Kevyitä lumikuuroja"
+
+#, fuzzy
+#~ msgid "Shower Rain"
+#~ msgstr "Sadekuuroja"
+
+#, fuzzy
+#~ msgid "Heavy Shower Rain"
+#~ msgstr "Voimakkaita lumikuuroja"
+
+#, fuzzy
+#~ msgid "Ragged Shower Rain"
+#~ msgstr "Satunnaisia sadekuuroja"
+
+#, fuzzy
+#~ msgid "Light Snow"
+#~ msgstr "Kevyttä lumisadetta"
+
+#~ msgid "Snow"
+#~ msgstr "Lumisadetta"
+
+#, fuzzy
+#~ msgid "Heavy Snow"
+#~ msgstr "Voimakasta lumisadetta"
+
+#~ msgid "Sleet"
+#~ msgstr "Räntäsadetta"
+
+#, fuzzy
+#~ msgid "Light Shower Sleet"
+#~ msgstr "Räntäsadekuuroja"
+
+#, fuzzy
+#~ msgid "Shower Sleet"
+#~ msgstr "Räntäsadekuuroja"
+
+#, fuzzy
+#~ msgid "Light Rain and Snow"
+#~ msgstr "Kevyttä sadetta ja lunta"
+
+#, fuzzy
+#~ msgid "Rain and Snow"
+#~ msgstr "Sadetta ja lunta"
+
+#, fuzzy
+#~ msgid "Light Shower Snow"
+#~ msgstr "Kevyitä lumikuuroja"
+
+#, fuzzy
+#~ msgid "Shower Snow"
+#~ msgstr "Lumikuuroja"
+
+#, fuzzy
+#~ msgid "Heavy Shower Snow"
+#~ msgstr "Voimakkaita lumikuuroja"
+
+#~ msgid "Mist"
+#~ msgstr "Usvaa"
+
+#~ msgid "Smoke"
+#~ msgstr "Savua"
+
+#~ msgid "Haze"
+#~ msgstr "Usvaa"
+
+#~ msgid "Sand/Dust Whirls"
+#~ msgstr "Hiekka- ja pölypyörteitä"
+
+#~ msgid "Fog"
+#~ msgstr "Sumua"
+
+#~ msgid "Sand"
+#~ msgstr "Hiekkaa"
+
+#~ msgid "Dust"
+#~ msgstr "Pölyistä"
+
+#, fuzzy
+#~ msgid "Clear Sky"
+#~ msgstr "Tyhjennä tietue"
+
+#, fuzzy
+#~ msgid "Few Clouds"
+#~ msgstr "Muutamia pilviä"
+
+#, fuzzy
+#~ msgid "Scattered Clouds"
+#~ msgstr "Ajoittain pilvistä"
+
+#, fuzzy
+#~ msgid "Broken Clouds"
+#~ msgstr "Melkein pilvistä"
+
+#, fuzzy
+#~ msgid "Overcast Clouds"
+#~ msgstr "Pilvistä"
+
+#, fuzzy, javascript-format
+#~ msgid "Weather: %s"
+#~ msgstr "Säätiedot tarjoaa:"
 
 #~ msgid "hPa"
 #~ msgstr "hPa"
