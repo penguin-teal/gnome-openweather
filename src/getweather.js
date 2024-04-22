@@ -515,7 +515,7 @@ export async function getWeatherInfo(extension, gettext)
         params =
         {
           q: `${lat},${lon}`,
-          days: String(extension._days_forecast + 1)
+          days: String(extension._days_forecast + 2)
         };
         if(extension._providerTranslations) params.lang = extension.locale;
         let apiKey = extension.getWeatherKey();
