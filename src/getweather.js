@@ -131,10 +131,12 @@ export class Weather
     this.#windDirDeg = windDirDeg;
     this.#gustsMps = gustsMps;
     this.#iconName = iconName;
-    this.#condition = condition;
     this.#sunrise = sunrise;
     this.#sunset = sunset;
     this.#forecasts = forecasts ? forecasts.length > 0 ? forecasts : null : null;
+
+    if(typeof condition === "string") this.#condition = condition;
+    else throw new Error(`OpenWeather Refined Weather Condition '${condition}' was type '${typeof condition}' not string.`);
   }
 
   /**
@@ -483,7 +485,7 @@ export async function getWeatherInfo(extension, gettext)
                 h.wind?.deg,
                 h.wind?.gust,
                 getIconName(WeatherProvider.OPENWEATHERMAP, fIconId, isFNight, true),
-                getCondit(extension, h.weather[0].id, h.weather[0].condition, gettext),
+                getCondit(extension, h.weather[0].id, h.weather[0].description, gettext),
                 sunrise,
                 sunset
               )
@@ -501,7 +503,7 @@ export async function getWeatherInfo(extension, gettext)
           json.wind?.deg,
           json.wind?.gust,
           getIconName(WeatherProvider.OPENWEATHERMAP, iconId, iconId[iconId.length - 1] === "n", true),
-          getCondit(extension, json.weather[0].id, json.weather[0].condition, gettext),
+          getCondit(extension, json.weather[0].id, json.weather[0].description, gettext),
           new Date(json.sys.sunrise * 1000),
           new Date(json.sys.sunset * 1000),
           forecasts
