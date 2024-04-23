@@ -23,6 +23,17 @@ import { getIconName, gettextCondition } from "./weathericons.js"
 export const OPENWEATHERMAP_KEY = "b4d6a638dd4af5e668ccd8574fd90cec";
 export const WEATHERAPI_KEY = "7a4baea97ef946c7864221259240804";
 
+export class TooManyReqError extends Error
+{
+  provider;
+  constructor(provider)
+  {
+    super(`Provider ${getWeatherProviderName(provider)} has received too many requests.`);
+    this.provider = provider;
+    this.name = "TooManyReqError";
+  }
+}
+
 /**
   * @enum {number}
   */
@@ -87,6 +98,30 @@ export function getWeatherProvider(settings)
     return randomProvider;
   }
   else return prov;
+}
+
+let providerNotWorking = 0;
+/**
+  * Cycles the weather provider if weather provider is in random mode.
+  * @returns {boolean} `true` if the weather provider changed and the operation
+  *                    should be tried again, otherwise `false` if nothing changed.
+  */
+export function weatherProviderNotWorking(settings)
+{
+  let prov = settings.get_enum("weather-provider");
+  if(prov === WeatherProvider.DEFAULT)
+  {
+    if(!providerNotWorking) providerNotWorking = randomProvider;
+    // if we've already cycled through them all, give up
+    else if(randomProvider === providerNotWorking) return false;
+
+    randomProvider++;
+    if(randomProvider > Object.keys(WeatherProvider).length - 1) randomProvider = 1;
+    prov = randomProvider;
+
+    return true;
+  }
+  else return false;
 }
 
 export function getUseDefaultKeySetting(prov)
@@ -472,7 +507,9 @@ export async function getWeatherInfo(extension, gettext)
           console.error(`OpenWeather Refined: Invalid API Response from OpenWeatherMap ` +
             `${response[0]}/${forecastResponse[0]}: '${response[1]?.message}'` +
             `/'${forecastResponse[1]?.message}'.`);
-          return null;
+
+          if(response[0] === 429 || forecastResponse[0] === 429) throw new TooManyReqError(WeatherProvider.OPENWEATHERMAP);
+          else return null;
         }
 
         let json = response[1];
@@ -565,6 +602,8 @@ export async function getWeatherInfo(extension, gettext)
           if(json && json.error) f = json.error.message;
           else f = `Status Code ${statusCode}`;
           console.error(`OpenWeather Refined: Invalid API Response from weatherapi.com '${f}'.`);
+
+          if(statusCode === 403 && json?.error?.code === 2007) throw new TooManyReqError(WeatherProvider.WEATHERAPICOM);
           return null;
         }
 

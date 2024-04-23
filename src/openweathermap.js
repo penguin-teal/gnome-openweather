@@ -15,9 +15,10 @@
    Copyright 2022 Jason Oickle
 */
 import { gettext as _ } from "resource:///org/gnome/shell/extensions/extension.js";
+import * as Main from "resource:///org/gnome/shell/ui/main.js";
 
 import { getCachedLocInfo, getLocationInfo } from "./myloc.js";
-import { getWeatherInfo } from "./getweather.js";
+import { getWeatherInfo, getWeatherProviderName, weatherProviderNotWorking } from "./getweather.js";
 
 async function initWeatherData(refresh) {
   if (refresh) {
@@ -64,7 +65,32 @@ async function refreshWeatherData()
 {
   try
   {
-    let weather = await getWeatherInfo(this, _);
+    let weather;
+    try
+    {
+      weather = await getWeatherInfo(this, _);
+    }
+    catch(e)
+    {
+      let title, msg;
+      if(e.name === "TooManyReqError")
+      {
+        let provName = getWeatherProviderName(e.provider);
+        let tryAgain = weatherProviderNotWorking(this.settings);
+
+        if(tryAgain) this.reloadWeatherCurrent(1);
+        else
+        {
+          Main.notify(_("OpenWeather Refined Too Many Requests"),
+            _("Provider %s has too many users. Try switching weather providers in settings.").format(provName));
+        }
+
+        Main.notify(title, msg);
+        return;
+      }
+      else throw e;
+    }
+
     if(!weather)
     {
       console.warn("OpenWeather Refined: getWeatherInfo failed without an error.");

@@ -282,13 +282,13 @@ class GeneralPage extends Adw.PreferencesPage
     let curProv = this._settings.get_enum("weather-provider");
 
     let weatherProvsList = new Gtk.StringList();
-    weatherProvsList.append(_("Random"));
+    weatherProvsList.append(_("Adaptive"));
     weatherProvsList.append("OpenWeatherMap");
     weatherProvsList.append("WeatherAPI.com");
     let weatherProvsListRow = new Adw.ComboRow({
       title: _("Weather Provider"),
       subtitle: _("Provider used for weather and forecasts"),
-      tooltip_text: _("Choose 'Random' if you don't care, otherwise choose a specific provider."),
+      tooltip_text: _("Choose '%s' if you don't care, otherwise choose a specific provider.").format(_("Adaptive")),
       model: weatherProvsList,
       selected: curProv
     });
