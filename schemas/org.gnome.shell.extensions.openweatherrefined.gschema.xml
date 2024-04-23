@@ -102,7 +102,7 @@
       <summary>Translate Conditions</summary>
     </key>
     <key type="b" name="owm-api-translate">
-      <default>false</default>
+      <default>true</default>
       <summary>OpenWeatherMap Multilingual Support (weather descriptions only)</summary>
     </key>
     <key type="b" name="use-system-icons">
