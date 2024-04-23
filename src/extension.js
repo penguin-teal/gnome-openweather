@@ -55,6 +55,7 @@ import { tryImportAndMigrate, tryMigrateFromOldVersion } from "./migration.js";
 import {
   getWeatherProviderName,
   getWeatherProviderUrl,
+  getWeatherProvider,
   WeatherProvider,
   OPENWEATHERMAP_KEY,
   WEATHERAPI_KEY
@@ -354,7 +355,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
 
   get weatherProvider()
   {
-    return this.settings.get_enum("weather-provider");
+    return getWeatherProvider(this.settings);
   }
 
   useOpenWeatherMap() {
@@ -990,7 +991,6 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     let useDefault;
     switch(this.weatherProvider)
     {
-      case WeatherProvider.DEFAULT:
       case WeatherProvider.OPENWEATHERMAP:
         useDefault = this.settings.get_boolean("use-default-owm-key");
         if(useDefault) return OPENWEATHERMAP_KEY;

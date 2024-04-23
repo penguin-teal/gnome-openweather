@@ -33,11 +33,18 @@ export const WeatherProvider =
   WEATHERAPICOM: 2
 };
 
+// Corresponds to Weather providers
+export const ForecastDaysSupport =
+{
+  0: 0,
+  1: 4,
+  2: 2
+}
+
 export function getWeatherProviderName(prov)
 {
   switch(prov)
   {
-    case WeatherProvider.DEFAULT:
     case WeatherProvider.OPENWEATHERMAP:
       return "OpenWeatherMap";
     case WeatherProvider.WEATHERAPICOM:
@@ -51,7 +58,6 @@ export function getWeatherProviderUrl(prov)
 {
   switch(prov)
   {
-    case WeatherProvider.DEFAULT:
     case WeatherProvider.OPENWEATHERMAP:
       return "https://openweathermap.org/";
     case WeatherProvider.WEATHERAPICOM:
@@ -61,11 +67,32 @@ export function getWeatherProviderUrl(prov)
   }
 }
 
+// Choose a random provider each time to try to avoid rate limiting
+let randomProvider = 0;
+function chooseRandomProvider(settings)
+{
+  // WeatherAPI.com doesn't support as many forecast days as OpenWeatherMap
+  let forecastDays = settings.get_int("days-forecast");
+  let rand = Math.floor(Math.random() * (Object.keys(WeatherProvider).length - 1) + 1);
+  if(ForecastDaysSupport[rand] < forecastDays) rand = WeatherProvider.OPENWEATHERMAP;
+  return rand;
+}
+
+export function getWeatherProvider(settings)
+{
+  let prov = settings.get_enum("weather-provider");
+  if(prov === WeatherProvider.DEFAULT)
+  {
+    if(!randomProvider) randomProvider = chooseRandomProvider(settings);
+    return randomProvider;
+  }
+  else return prov;
+}
+
 export function getUseDefaultKeySetting(prov)
 {
   switch(prov)
   {
-    case WeatherProvider.DEFAULT:
     case WeatherProvider.OPENWEATHERMAP:
       return "use-default-owm-key";
     case WeatherProvider.WEATHERAPICOM:
@@ -79,7 +106,6 @@ export function getCustomKeySetting(prov)
 {
   switch(prov)
   {
-    case WeatherProvider.DEFAULT:
     case WeatherProvider.OPENWEATHERMAP:
       return "appid";
     case WeatherProvider.WEATHERAPICOM:
@@ -395,7 +421,7 @@ function getCondit(extension, code, condition, gettext)
   }
   else
   {
-    return gettextCondition(extension.settings.get_enum("weather-provider"), code, gettext);
+    return gettextCondition(getWeatherProvider(extension.settings), code, gettext);
   }
 }
 
@@ -411,9 +437,8 @@ export async function getWeatherInfo(extension, gettext)
   let lon = String(location[1]);
 
   let params;
-  switch(settings.get_enum("weather-provider"))
+  switch(getWeatherProvider(extension.settings))
   {
-    case WeatherProvider.DEFAULT:
     case WeatherProvider.OPENWEATHERMAP:
       {
         params =

@@ -145,7 +145,6 @@ export function getIconName(provider, key, isNight, useSymbolic)
   let name;
   switch(provider)
   {
-    case WeatherProvider.DEFAULT:
     case WeatherProvider.OPENWEATHERMAP:
       name = OpenWeatherMapIconMap[key];
       break;
@@ -287,7 +286,6 @@ export function gettextCondition(provider, code, gettext)
 {
   switch(provider)
   {
-    case WeatherProvider.DEFAULT:
     case WeatherProvider.OPENWEATHERMAP:
       return gettext(OpenWeatherMapConditionMap[code] ?? "Not available");
     case WeatherProvider.WEATHERAPICOM:

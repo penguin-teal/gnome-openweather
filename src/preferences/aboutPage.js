@@ -210,25 +210,29 @@ class AboutPage extends Adw.PreferencesPage {
     this.add(maintainerGroup);
 
     // Provider
-    let providerGroup = new Adw.PreferencesGroup();
-    let providerBox = new Gtk.Box({
-      orientation: Gtk.Orientation.VERTICAL,
-      margin_top: 15,
-      hexpand: false,
-      vexpand: false,
-    });
     let curProv = settings.get_enum("weather-provider");
-    let providerAbout = new Gtk.Label({
-      label: _("Weather data provided by: %s").format(
-        `<a href="${getWeatherProviderUrl(curProv)}">${getWeatherProviderName(curProv)}</a>`
-      ),
-      use_markup: true,
-      hexpand: false,
-      vexpand: false,
-    });
-    providerBox.append(providerAbout);
-    providerGroup.add(providerBox);
-    this.add(providerGroup);
+
+    if(curProv !== 0)
+    {
+      let providerGroup = new Adw.PreferencesGroup();
+      let providerBox = new Gtk.Box({
+        orientation: Gtk.Orientation.VERTICAL,
+        margin_top: 15,
+        hexpand: false,
+        vexpand: false,
+      });
+      let providerAbout = new Gtk.Label({
+        label: _("Weather data provided by: %s").format(
+          `<a href="${getWeatherProviderUrl(curProv)}">${getWeatherProviderName(curProv)}</a>`
+        ),
+        use_markup: true,
+        hexpand: false,
+        vexpand: false,
+      });
+      providerBox.append(providerAbout);
+      providerGroup.add(providerBox);
+      this.add(providerGroup);
+    }
 
     // License
     let gnuLicense =

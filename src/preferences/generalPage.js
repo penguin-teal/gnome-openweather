@@ -25,18 +25,20 @@ import { getUseDefaultKeySetting, getCustomKeySetting, getWeatherProviderName } 
 
 function getProviderTranslateRowTitle(prov)
 {
-  return _("%s Multilingual Support").format(getWeatherProviderName(prov));
+  return _("Provider Multilingual Support");
 }
 
 function getDefaultApiKeyRowSubtitle(prov)
 {
-  return _("Use a personal API key for %s").format(getWeatherProviderName(prov));
+  let name = getWeatherProviderName(prov);
+  return _("Use a personal API key for %s").format(name ?? _("Provider"));
 }
 
 function getDefaultApiKeyRowTooltip(prov)
 {
+  let name = getWeatherProviderName(prov);
   return _("Enable this if you have your own API key from %s and enter it below."
-    ).format(getWeatherProviderName(prov));
+    ).format(name ?? _("Provider"));
 }
 
 class GeneralPage extends Adw.PreferencesPage
@@ -280,17 +282,18 @@ class GeneralPage extends Adw.PreferencesPage
     let curProv = this._settings.get_enum("weather-provider");
 
     let weatherProvsList = new Gtk.StringList();
-    weatherProvsList.append("Default (OpenWeatherMap)");
+    weatherProvsList.append(_("Random"));
     weatherProvsList.append("OpenWeatherMap");
     weatherProvsList.append("WeatherAPI.com");
     let weatherProvsListRow = new Adw.ComboRow({
       title: _("Weather Provider"),
       subtitle: _("Provider used for weather and forecasts"),
+      tooltip_text: _("Choose 'Random' if you don't care, otherwise choose a specific provider."),
       model: weatherProvsList,
       selected: curProv
     });
 
-    // OpenWeatherMap Multilingual Support
+    // Provider Multilingual Support
     let providerTranslateSwitch = new Gtk.Switch({
       valign: Gtk.Align.CENTER,
       active: this._settings.get_boolean("owm-api-translate"),
@@ -307,11 +310,13 @@ class GeneralPage extends Adw.PreferencesPage
     });
     providerTranslateRow.add_suffix(providerTranslateSwitch);
 
-    // OpenWeatherMap API key
-    let useDefaultApiKey = this._settings.get_boolean(getUseDefaultKeySetting(curProv));
+    // Provider API key
+    let defaultKeySetting = getUseDefaultKeySetting(curProv);
+    let useDefaultApiKey = defaultKeySetting ? this._settings.get_boolean(getUseDefaultKeySetting(curProv)) : true;
     let defaultApiKeySwitch = new Gtk.Switch({
       valign: Gtk.Align.CENTER,
       active: !useDefaultApiKey,
+      sensitive: defaultKeySetting
     });
     let defaultApiKeyRow = new Adw.ActionRow({
       title: _("Use Custom API Key"),
@@ -333,10 +338,12 @@ class GeneralPage extends Adw.PreferencesPage
       title: _("Personal API Key"),
       activatable_widget: personalApiKeyEntry,
     });
-    let personalApiKey = this._settings.get_string(getCustomKeySetting(curProv));
+
+    let customKeySetting = getCustomKeySetting(curProv);
+    let personalApiKey = customKeySetting ? this._settings.get_string(customKeySetting) : "";
     if (personalApiKey)
     {
-      if (personalApiKey.length === 0)
+      if (personalApiKey.length === 0 && customKeySetting)
       {
         personalApiKeyEntry.set_icon_from_icon_name(
           Gtk.PositionType.LEFT,
@@ -440,6 +447,14 @@ class GeneralPage extends Adw.PreferencesPage
       providerTranslateRow.set_title(getProviderTranslateRowTitle(prov));
       defaultApiKeyRow.set_subtitle(getDefaultApiKeyRowSubtitle(prov));
       defaultApiKeyRow.set_tooltip_text(getDefaultApiKeyRowTooltip(prov));
+
+      let defKeySetting = getUseDefaultKeySetting(prov);
+      let isDefKey = defKeySetting !== null && this._settings.get_boolean(defKeySetting);
+      defaultApiKeySwitch.set_active(!isDefKey);
+      defaultApiKeySwitch.set_sensitive(defKeySetting !== null);
+      let customKeyS = getCustomKeySetting(prov);
+      personalApiKeyEntry.set_sensitive(customKeyS !== null && isDefKey);
+      personalApiKeyEntry.set_text(customKeyS !== null && this._settings.get_string(customKeyS));
     });
     providerTranslateSwitch.connect("notify::active", (widget) => {
       this._settings.set_boolean("owm-api-translate", widget.get_active());
