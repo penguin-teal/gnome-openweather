@@ -450,7 +450,7 @@ class GeneralPage extends Adw.PreferencesPage
 
       let defKeySetting = getUseDefaultKeySetting(prov);
       let isDefKey = defKeySetting !== null && this._settings.get_boolean(defKeySetting);
-      defaultApiKeySwitch.set_active(!isDefKey);
+      defaultApiKeySwitch.set_active(defKeySetting !== null && !isDefKey);
       defaultApiKeySwitch.set_sensitive(defKeySetting !== null);
       let customKeyS = getCustomKeySetting(prov);
       personalApiKeyEntry.set_sensitive(customKeyS !== null && isDefKey);
