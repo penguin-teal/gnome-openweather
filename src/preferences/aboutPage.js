@@ -18,12 +18,21 @@
 import Adw from "gi://Adw";
 import Gtk from "gi://Gtk";
 import GObject from "gi://GObject";
+import GLib from "gi://GLib";
 
 import { PACKAGE_VERSION } from "resource:///org/gnome/Shell/Extensions/js/misc/config.js";
 
 import { gettext as _ } from "resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js";
 import { Loc, settingsGetLocs, toLocsGVariant } from "../locs.js";
 import { getWeatherProviderName, getWeatherProviderUrl } from "../getweather.js";
+
+function getLocale()
+{
+    let locale = GLib.get_language_names()[0];
+    if (locale.indexOf("_") !== -1) return locale.split("_")[0];
+    // Fallback for 'C', 'C.UTF-8', and unknown locales.
+    else return "en";
+}
 
 class AboutPage extends Adw.PreferencesPage {
   static {
@@ -132,7 +141,8 @@ class AboutPage extends Adw.PreferencesPage {
       {
         "app-version": releaseVersion,
         "git-version": gitVersion,
-        "gnome-version": String(PACKAGE_VERSION)
+        "gnome-version": String(PACKAGE_VERSION),
+        "user-locale": getLocale()
       };
       let keys = settings.list_keys();
       for(let k of keys)
@@ -198,7 +208,7 @@ class AboutPage extends Adw.PreferencesPage {
 
         settings.set_boolean("frozen", true);
 
-        let skipKeys = [ "app-version", "gnome-version", "git-version", "locs" ];
+        let skipKeys = [ "app-version", "gnome-version", "git-version", "user-locale", "locs", "frozen" ];
         for(let k of Object.keys(obj))
         {
           if(skipKeys.includes(k)) continue;
