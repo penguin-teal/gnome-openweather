@@ -120,6 +120,11 @@ class AboutPage extends Adw.PreferencesPage {
       label: _("Copy")
     });
     copySettingsRow.add_suffix(copySettingsBtn);
+    
+    let pasteSettingsBtn = new Gtk.Button({
+      label: _("Paste")
+    });
+    copySettingsRow.add_suffix(pasteSettingsBtn);
 
     copySettingsBtn.connect("clicked", (widget) =>
     {
@@ -167,6 +172,46 @@ class AboutPage extends Adw.PreferencesPage {
         title: _("Copied settings JSON to clipboard.")
       });
       wnd.add_toast(toast);
+    });
+
+    pasteSettingsBtn.connect("clicked", widget => {
+      let clipboard = widget.get_clipboard();
+      clipboard.read_text_async(null, (c, result) =>
+      {
+        let text;
+        try
+        {
+          text = clipboard.read_text_finish(result);
+        }
+        catch
+        {
+          wnd.add_toast(new Adw.Toast({ title: _("Clipboard contains no text.") }));
+          return;
+        }
+
+        let obj = JSON.parse(text);
+        if(!obj)
+        {
+          wnd.add_toast(new Adw.Toast({ title: _("Clipboard didn't contain valid JSON.") }));
+          return;
+        }
+
+        settings.set_boolean("frozen", true);
+
+        let skipKeys = [ "app-version", "gnome-version", "git-version", "locs" ];
+        for(let k of Object.keys(obj))
+        {
+          if(skipKeys.includes(k)) continue;
+          let v = obj[k];
+          if(v[0] === "'" && v.endsWith("'")) settings.set_string(k, v);
+          else if(v === "true" || v === "false") settings.set_boolean(k, v === "true");
+          else if(v.includes(".")) settings.set_double(k, parseFloat(v));
+          else settings.set_int(k, parseInt(obj[k]));
+        }
+
+        settings.set_boolean("frozen", false);
+        wnd.close();
+      });
     });
 
     infoGroup.add(openWeatherVersionRow);
