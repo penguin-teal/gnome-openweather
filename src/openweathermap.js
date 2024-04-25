@@ -85,7 +85,6 @@ async function refreshWeatherData()
             _("Provider %s has too many users. Try switching weather providers in settings.").format(provName));
         }
 
-        Main.notify(title, msg);
         return;
       }
       else throw e;
