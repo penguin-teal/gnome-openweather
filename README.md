@@ -107,7 +107,7 @@ via merge requests:
 French: @franckgaga | Slovak: @jose1711 | Chinese: @xiaozhangup & @zyw271828 |
 Portuguese: @ronaldocosta | Russian: @vantu5z & @tvaliiev | Czech: @lev741 |
 Turkish: @oguzkarayemis | German: @zeners | Polish: @MarcinScieszka |
-Italian: @alealetti
+Italian: @alealetti | Dutch: @Vistaus
 
 ### Icons
 
