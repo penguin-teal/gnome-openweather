@@ -78,7 +78,11 @@ async function refreshWeatherData()
         let provName = getWeatherProviderName(e.provider);
         let tryAgain = weatherProviderNotWorking(this.settings);
 
-        if(tryAgain) this.reloadWeatherCurrent(1);
+        if(tryAgain)
+        {
+          this._provUrlButton.label = getWeatherProviderName(this.weatherProvider);
+          this.reloadWeatherCurrent(1);
+        }
         else
         {
           Main.notify(_("OpenWeather Refined Too Many Requests"),
