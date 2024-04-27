@@ -253,7 +253,7 @@ function populateForecastUI() {
         let forecastUi = this._forecast[i];
         for (let j = 0; j < 8; j++)
         {
-          let h = weather.forecastHoursFromNow((i + 1) * 24 + hrsToMidnight + j * 3);
+          let h = weather.forecastHoursFromNow(i * 24 + hrsToMidnight + j * 3);
           let w = h.weather();
 
           let forecastDate = h.getStart();
