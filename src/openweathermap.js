@@ -130,7 +130,9 @@ function populateCurrentUI()
       if(this._city.isMyLoc())
       {
         let locObj = getCachedLocInfo();
-        location += ` (${locObj.city})`;
+        let cityName = locObj.city;
+        if(cityName === "Unknown") cityName = _("Unknown");
+        location += ` (${cityName})`;
       }
 
       let iconName = w.getIconName();

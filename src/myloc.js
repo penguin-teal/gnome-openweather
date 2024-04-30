@@ -43,11 +43,11 @@ const DEF_LOC_INFO =
 {
   lat: 0.0,
   lon: 0.0,
-  city: "Failed",
-  state: "Failed",
-  country: "Failed",
-  countryShort: "Failed",
-  name: "Failed"
+  city: "Unknown",
+  state: "Unknown",
+  country: "Unknown",
+  countryShort: "Unknown",
+  name: "Unknown"
 };
 
 function initSoup()
@@ -258,10 +258,10 @@ export async function geoclueGetLoc(useNominatim = true)
         {
           lat: locInfo.lat,
           lon: locInfo.lon,
-          city: addr.city ?? "Unknown",
-          state: addr.state ?? "Unknown",
-          country: addr.country ?? "Unknown",
-          countryShort: addr.country_code?.toUpperCase() ?? "Unknown"
+          city: addr?.city ?? "Unknown",
+          state: addr?.state ?? "Unknown",
+          country: addr?.country ?? "Unknown",
+          countryShort: addr?.country_code?.toUpperCase() ?? "Unknown"
         };
         resolve(locationInfo);
       }
