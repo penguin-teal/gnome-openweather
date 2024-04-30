@@ -222,7 +222,7 @@ function populateTodaysUI() {
 
       for (let i = 0; i < 4; i++)
       {
-        let h = weather.forecastHoursFromNow((i + 1) * 3);
+        let h = weather.forecastHoursFromNow(i * 3);
         let w = h.weather();
 
         let forecastTodayUi = this._todays_forecast[i];
