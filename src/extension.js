@@ -415,7 +415,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     else
     {
       let info = await getLocationInfo(this.settings);
-      if(!info || info.countryShort === "Failed") return Loc.myLoc();
+      if(!info || info.countryShort === "Unknown") return Loc.myLoc();
 
       return Loc.fromNameCoords(info.name, info.lat, info.lon);
     }
