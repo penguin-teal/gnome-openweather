@@ -1205,11 +1205,8 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       this._forecastScrollBox.show();
       this._forecastScrollBox.hscrollbar_policy = St.PolicyType.ALWAYS;
 
-      if (this.settings.get_boolean("expand-forecast")) {
-        this._forecastExpander.setSubmenuShown(true);
-      } else {
-        this._forecastExpander.setSubmenuShown(false);
-      }
+      let expanded = this.settings.get_boolean("expand-forecast");
+      this._forecastExpander.setSubmenuShown(expanded);
     }
     this._buttonBox1.set_width(
       this._currentWeather.get_width() - this._buttonBox2.get_width()
@@ -1881,7 +1878,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
 
       this.scrollForecastBy(
         -1 *
-          (dx / this._forecastScrollBox.width) *
+          ((dy + dx) / this._forecastScrollBox.width) *
           hscroll(this._forecastScrollBox).page_size
       );
       return false;

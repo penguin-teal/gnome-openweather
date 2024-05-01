@@ -207,6 +207,12 @@ function populateCurrentUI()
         }
       }
 
+      if(this._forecast.length > this._forecastDays)
+      {
+        this._forecast.splice(this._forecastDays, this._forecast.length - this._forecastDays);
+        this.rebuildFutureWeatherUi(this._forecastDays);
+      }
+
       resolve(0);
     } catch (e) {
       reject(e);

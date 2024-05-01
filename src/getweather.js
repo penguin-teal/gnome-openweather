@@ -521,6 +521,7 @@ export async function getWeatherInfo(extension, gettext)
         let sunset = new Date(json.sys.sunset * 1000);
 
         let forecastDays = clamp(1, extension._days_forecast + 1, 5);
+        extension._forecastDays = forecastDays - 1;
 
         let forecasts = [ ];
         for(let i = 0; i < forecastDays; i++)
@@ -629,6 +630,7 @@ export async function getWeatherInfo(extension, gettext)
 
         let gotDaysForecast = json.forecast.forecastday.length;
         let forecastDays = clamp(1, extension._days_forecast + 1, gotDaysForecast);
+        extension._forecastDays = forecastDays - 1;
 
         let forecasts = [ ];
         for(let i = 0; i < forecastDays; i++)
