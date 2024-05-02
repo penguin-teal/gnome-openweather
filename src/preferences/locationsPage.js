@@ -134,6 +134,8 @@ class LocationsPage extends Adw.PreferencesPage
     addLocationButton.connect("clicked", this._addLocation.bind(this));
     // Detect change in locations
     this._settings.connect("changed", () => {
+      if(this._settings.get_boolean("frozen")) return;
+
       if (this._locationsChanged())
       {
         this.cityIndex = this._settings.get_int("actual-city");

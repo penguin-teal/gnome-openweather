@@ -391,6 +391,8 @@ class LayoutPage extends Adw.PreferencesPage {
     });
     // Detect settings changes to enable/disable related options
     this._settings.connect("changed", () => {
+      if(this._settings.get_boolean("frozen")) return;
+
       if (this._disableForecastChanged()) {
         if (this._settings.get_boolean("disable-forecast")) {
           forecastGroup.set_sensitive(false);
