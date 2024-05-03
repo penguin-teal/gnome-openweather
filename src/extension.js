@@ -158,6 +158,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     super._init(0, "OpenWeatherMenuButton", false);
     this.settings = settings;
     this.metadata = metadata;
+    this.gSettings = Gio.Settings.new("org.gnome.desktop.interface");
 
     // Putting the panel item together
     let topBox = new St.BoxLayout({
@@ -336,9 +337,16 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       this._network_monitor_connection = undefined;
     }
 
-    if (this._settingsC) {
+    if (this._settingsC)
+    {
       this.settings.disconnect(this._settingsC);
       this._settingsC = undefined;
+    }
+
+    if (this._gSettingsC)
+    {
+      this.gSettings.disconnect(this._gSettingsC);
+      this._gSettingsC = undefined;
     }
 
     if (this._settingsInterfaceC) {
@@ -532,8 +540,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
 
       this.toggleSunriseSunset();
 
-      let gnomeSettings = Gio.Settings.new("org.gnome.desktop.interface");
-      _systemClockFormat = gnomeSettings.get_enum("clock-format");
+      _systemClockFormat = this.gSettings.get_enum("clock-format");
       
       this.updateForecast();
 
@@ -614,20 +621,24 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     }
   }
 
-  bindSettingsChanged()
+  async settingsChangedHandlerWrapper()
   {
-    this._settingsC = this.settings.connect("changed", async () =>
+    try
     {
-      try
-      {
-        await this.settingsHandler();
-      }
-      catch(e)
-      {
+      await this.settingsHandler();
+    }
+    catch(e)
+    {
         console.log("OpenWeather Refined Error in settings listener.");
         console.error(e);
-      }
-    });
+    }
+  }
+
+  bindSettingsChanged()
+  {
+    this._settingsC = this.settings.connect("changed", this.settingsChangedHandlerWrapper.bind(this));
+
+    this._gSettingsC = this.gSettings.connect("changed", this.settingsChangedHandlerWrapper.bind(this));
   }
 
   async loadConfig()
@@ -641,8 +652,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
 
     setLocationRefreshIntervalM(this.settings.get_double("loc-refresh-interval"));
 
-    let gnomeSettings = Gio.Settings.new("org.gnome.desktop.interface");
-    _systemClockFormat = gnomeSettings.get_enum("clock-format");
+    _systemClockFormat = this.gSettings.get_enum("clock-format");
 
     this._currentLocation = await this._city.getCoords(this.settings);
     this._isForecastDisabled = this._disable_forecast;
