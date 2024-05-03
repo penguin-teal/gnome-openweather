@@ -73,6 +73,28 @@ export function setLocationRefreshIntervalM(minutes)
   locationRefreshInterval = new Date(0).setMinutes(minutes);
 }
 
+/**
+  * @param {string} countryShort
+  * @param {string | null} city
+  * @param {string | null} state
+  * @returns {string}
+  */
+function getNameFromCountryShort(countryShort, city, state)
+{
+  switch(countryShort)
+  {
+    case "US":
+      return `${city}, ${state}`;
+    default:
+      if(city === "Unknown") return "Unknown";
+      else return `${locationInfo.city}, ${locationInfo.country}`;
+  }
+}
+
+/**
+  * @param {MyLocProv} locProv
+  * @returns {Promise<object>}
+  */
 async function httpGetLoc(locProv)
 {
   let addr;
@@ -137,13 +159,9 @@ async function httpGetLoc(locProv)
           city: obj.city,
           state: obj.region,
           country: obj.country_long,
-          countryShort: obj.country_short
+          countryShort: obj.country_short,
+          name: getNameFromCountryShort(obj.country_short, obj.city, obj.region)
         };
-        if(locationInfo.countryShort === "US")
-        {
-          locationInfo.name = `${locationInfo.city}, ${locationInfo.state}`;
-        }
-        else locationInfo.name = `${locationInfo.city}, ${locationInfo.country}`;
 
         fetchingLocation = false;
         resolve(locationInfo);
@@ -182,7 +200,8 @@ export async function geoclueGetLoc(useNominatim = true)
           city: "Unknown",
           state: "Unknown",
           country: "Unknown",
-          countryShort: "Unknown"
+          countryShort: "Unknown",
+          name: "Unknown"
         };
 
         resolve(locI);
@@ -254,15 +273,21 @@ export async function geoclueGetLoc(useNominatim = true)
 
         fetchingLocation = false;
         locationTime = new Date();
+
+        let city = addr?.city ?? "Unknown";
+        let state = addr?.state ?? "Unknown";
+        let countryShort = addr?.country_code?.toUpperCase() ?? "Unknown";
         locationInfo =
         {
           lat: locInfo.lat,
           lon: locInfo.lon,
-          city: addr?.city ?? "Unknown",
-          state: addr?.state ?? "Unknown",
+          city: city,
+          state: state,
           country: addr?.country ?? "Unknown",
-          countryShort: addr?.country_code?.toUpperCase() ?? "Unknown"
+          countryShort: countryShort,
+          name: getNameFromCountryShort(countryShort, city, state)
         };
+
         resolve(locationInfo);
       }
     );
