@@ -618,8 +618,6 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
   {
     this._settingsC = this.settings.connect("changed", async () =>
     {
-      if(this.settings.get_boolean("frozen")) return;
-
       try
       {
         await this.settingsHandler();
