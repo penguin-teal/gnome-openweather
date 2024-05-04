@@ -1,3 +1,29 @@
+## v135
+
+This version fixes a lot of bugs and automatically chooses a provider for you
+by default.
+
+Features:
+- "Adaptive" provider which picks a random provider based on settings so one doesn't get too many requests
+- "Paste" settings option in Settings > About beside the "Copy" button
+
+Improvements:
+- Hide trailing zeroes after temperature
+- Notify if a provider blocks a request because the call limit was reached
+- Add locale to Copy Settings JSON
+- Reload time format when Clock Format (24hr or AM/PM) is changed in GNOME Settings
+
+Bug Fixes:
+- Fix condition names not showing with OpenWeatherMap
+- Fix last day forecast of WeatherAPI.com showing all the same time
+- Fix weather provider attribution button in pop-up not updating when provider changes
+- Fix extended forecast starting on wrong day
+- Fix today's forecast starting later in the day
+- Fix crash when Nominatim fails
+- Fix forecast box being too long if forecast days option is higher than the provider gives
+- Fix geoclue failing causing errors
+- Fix sunset or sunrise in panel sometimes not showing the correct approaching one
+
 ## v134
 
 This version provides a large rewrite with support for an additional provider.
