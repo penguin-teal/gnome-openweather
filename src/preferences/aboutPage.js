@@ -166,6 +166,10 @@ class AboutPage extends Adw.PreferencesPage {
         {
           obj["cities"] = "<CITIES>";
         }
+        else if(k === "appid" || k === "weatherapidotcom-key")
+        {
+          obj[k] = "<KEY>";
+        }
         else
         {
           let val = settings.get_user_value(k);
@@ -208,7 +212,7 @@ class AboutPage extends Adw.PreferencesPage {
 
         settings.set_boolean("frozen", true);
 
-        let skipKeys = [ "app-version", "gnome-version", "git-version", "user-locale", "locs", "frozen" ];
+        let skipKeys = [ "app-version", "gnome-version", "git-version", "user-locale", "locs", "frozen", "appid", "weatherapidotcom-key" ];
         for(let k of Object.keys(obj))
         {
           if(skipKeys.includes(k)) continue;
