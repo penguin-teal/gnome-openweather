@@ -78,6 +78,19 @@ export function getWeatherProviderUrl(prov)
   }
 }
 
+/**
+  * Convert a string in the form of '00:00 AM/PM' to milliseconds since
+  * 12:00 AM (0:00).
+  * @param {string} timeString
+  * @returns {number}
+  */
+function timeToMs(timeString)
+{
+  let isPm = timeString.endsWith("PM");
+  let m = timeString.match(/^([0-9]{2}):([0-9]{2})/);
+  return m[1] * 3600000 + m[2] * 60000 + (isPm ? 12 * 3600000 : 0);
+}
+
 // Choose a random provider each time to try to avoid rate limiting
 let randomProvider = 0;
 function chooseRandomProvider(settings)
@@ -517,8 +530,26 @@ export async function getWeatherInfo(extension, gettext)
         let m = json.main;
         let iconId = json.weather[0].icon;
 
-        let sunrise = new Date(json.sys.sunrise * 1000);
-        let sunset = new Date(json.sys.sunset * 1000);
+        // OpenWeatherMap bug? Sunrise/sunset seconds seems to always return
+        // for same day even if sunrise is tomorrow morning. Therefore just
+        // subtract today and we'll decide if it's tomorrow or not
+        let thisMorningMs = new Date().setHours(0, 0, 0, 0);
+        let midnightMs = thisMorningMs + 3600000 * 24;
+        let sunriseMs = json.sys.sunrise * 1000 - thisMorningMs;
+        let sunsetMs = json.sys.sunset * 1000 - thisMorningMs;
+
+        let sunrise, sunset;
+        // "pod" = Part of Day, "d" = day, "n" = night
+        if(forecastResponse[1].list[0].sys.pod === "d")
+        {
+          sunrise = new Date(sunriseMs + midnightMs);
+          sunset  = new Date(sunsetMs  + thisMorningMs);
+        }
+        else
+        {
+          sunrise = new Date(sunriseMs + thisMorningMs);
+          sunset  = new Date(sunsetMs  + midnightMs);
+        }
 
         let forecastDays = clamp(1, extension._days_forecast + 1, 5);
         extension._forecastDays = forecastDays - 1;
@@ -568,8 +599,8 @@ export async function getWeatherInfo(extension, gettext)
           json.wind?.gust,
           getIconName(WeatherProvider.OPENWEATHERMAP, iconId, iconId[iconId.length - 1] === "n", true),
           getCondit(extension, json.weather[0].id, json.weather[0].description, gettext),
-          new Date(json.sys.sunrise * 1000),
-          new Date(json.sys.sunset * 1000),
+          sunrise,
+          sunset,
           forecasts
         );
       }
@@ -603,7 +634,7 @@ export async function getWeatherInfo(extension, gettext)
           let f;
           if(json && json.error) f = json.error.message;
           else f = `Status Code ${statusCode}`;
-          console.error(`OpenWeather Refined: Invalid API Response from weatherapi.com '${f}'.`);
+          console.error(`OpenWeather Refined: Invalid API Response from WeatherAPI.com '${f}'.`);
 
           if(statusCode === 403 && json?.error?.code === 2007) throw new TooManyReqError(WeatherProvider.WEATHERAPICOM);
           return null;
@@ -624,9 +655,25 @@ export async function getWeatherInfo(extension, gettext)
         }
 
         const KPH_TO_MPS = 1.0 / 3.6;
-        // We only care about the time, so put in a random day
-        let sunrise = new Date(`2000/01/01 ${astro.sunrise}`);
-        let sunset = new Date(`2000/01/01 ${astro.sunset}`);
+
+        // Just a time is returned, we need to figure out if that time is
+        // today or tomorrow
+        let thisMorningMs = new Date().setHours(0, 0, 0, 0);
+        let midnightMs = thisMorningMs + 3600000 * 24;
+        let sunriseMs = timeToMs(astro.sunrise);
+        let sunsetMs = timeToMs(astro.sunset);
+
+        let sunrise, sunset;
+        if(m.is_day)
+        {
+          sunrise = new Date(sunriseMs + midnightMs);
+          sunset  = new Date(sunsetMs  + thisMorningMs);
+        }
+        else
+        {
+          sunrise = new Date(sunriseMs + thisMorningMs);
+          sunset  = new Date(sunsetMs  + midnightMs);
+        }
 
         let gotDaysForecast = json.forecast.forecastday.length;
         let forecastDays = clamp(1, extension._days_forecast + 1, gotDaysForecast);
