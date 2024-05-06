@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: 3.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-04-18 09:26-0500\n"
-"PO-Revision-Date: 2024-03-27 16:07+0100\n"
+"PO-Revision-Date: 2024-05-06 17:02+0200\n"
 "Last-Translator: Ludek Vydra <lvtran@u.k2.cz>\n"
 "Language-Team: \n"
 "Language: cs\n"
@@ -38,17 +38,17 @@ msgid "Failed to initialize."
 msgstr "Inicializace se nezdařila."
 
 #: src/extension.js:375
-#, fuzzy, javascript-format
+#, javascript-format
 msgid ""
 "%s does not work without an api-key.\n"
 "Either set the switch to use the extensions default key in the preferences "
 "dialog to on or register at %s and paste your personal key into the "
 "preferences dialog."
 msgstr ""
-"Zdroj Openweathermap.org nefunguje bez API klíče.\n"
-"Buď zapněte v nastavení přepínač pro výchozí klíč rozšíření, nebo se "
-"registrujte na https://openweathermap.org/appid a vložte váš osobní klíč "
-"(Api Key) do příslušného pole v dialogu nastavení."
+"%s nefunguje bez API klíče.\n"
+"Buď zapněte v nastavení přepínač pro vestavěný klíč rozšíření, nebo se "
+"registrujte na %s a vložte váš osobní klíč (Api Key) do příslušného pole v "
+"dialogu nastavení."
 
 #: src/extension.js:432
 msgid "OpenWeather Refined: Imported settings from old extension."
@@ -70,7 +70,7 @@ msgstr "Obnovit informace o počasí"
 
 #: src/extension.js:1066
 msgid "See Online"
-msgstr ""
+msgstr "Podívej se na Web"
 
 #: src/extension.js:1071
 msgid "Weather Settings"
@@ -338,21 +338,20 @@ msgid "Tomorrow"
 msgstr "Zítra"
 
 #: src/preferences/generalPage.js:28
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "%s Multilingual Support"
-msgstr "Vícejazyčná podpora OpenWeatherMap"
+msgstr "%s vícejazyčná podpora"
 
 #: src/preferences/generalPage.js:33
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "Use a personal API key for %s"
-msgstr "Osobní API klíč"
+msgstr "užijte osobní API klíč pro %s"
 
 #: src/preferences/generalPage.js:38
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "Enable this if you have your own API key from %s and enter it below."
 msgstr ""
-"Vypněte, pokud máte svůj osobní API klíč pro openweathermap.org a vyplňte "
-"jej do pole níže."
+"Zapněte pokud máte svůj osobní API klíč pro %s a vložte jej do pole níže."
 
 #: src/preferences/generalPage.js:51
 msgid "Settings"
@@ -401,9 +400,9 @@ msgid "System Icons"
 msgstr "Systémové ikony"
 
 #: src/preferences/generalPage.js:147
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "Disable to use packaged %s weather icons"
-msgstr "Zakázat používání přibalených ikon počasí Adwaita"
+msgstr "Zakázat používání přibalených %s ikon počasí"
 
 #: src/preferences/generalPage.js:149
 msgid ""
@@ -487,9 +486,8 @@ msgid "Weather Provider"
 msgstr "Poskytovatel počasí"
 
 #: src/preferences/generalPage.js:288
-#, fuzzy
 msgid "Provider used for weather and forecasts"
-msgstr "Poskytovatel používaný pro vyhledávání polohy"
+msgstr "Poskytovatel používaný pro počasí"
 
 #: src/preferences/generalPage.js:301
 msgid "Using provider translations applies to weather conditions only"
@@ -497,18 +495,16 @@ msgstr ""
 "Použití překladů poskytovatele se vztahuje pouze na povětrnostní podmínky"
 
 #: src/preferences/generalPage.js:304
-#, fuzzy
 msgid ""
 "Enable this to use provider multilingual support if there's no built-in "
 "translations for your language yet."
 msgstr ""
-"Povolte tuto funkci, abyste mohli používat vícejazyčnou podporu OWM ve 46 "
-"jazycích, pokud ještě nejsou k dispozici vestavěné překlady pro váš jazyk."
+"Povolte pro užití vícejazyčné podpory poskytovatele počasí nejsou-li k "
+"dispozici vestavěné překlady pro váš jazyk."
 
 #: src/preferences/generalPage.js:317
-#, fuzzy
 msgid "Use Custom API Key"
-msgstr "Použití klíče API rozšíření"
+msgstr "Použij vlastní API klíče"
 
 #: src/preferences/generalPage.js:333
 msgid "Personal API Key"
@@ -1078,18 +1074,16 @@ msgid "Your personal API key from openweathermap.org"
 msgstr "Váš osobní API klíč pro openweathermap.org"
 
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:182
-#, fuzzy
 msgid "Your personal API key from WeatherAPI.com"
-msgstr "Váš osobní API klíč pro openweathermap.org"
+msgstr "Váš osobní API klíč pro WeatherAPI.com"
 
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:186
 msgid "Use the extensions default API key from openweathermap.org"
 msgstr "Použít výchozí API klíč tohoto rozšíření pro openweathermap.org"
 
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:190
-#, fuzzy
 msgid "Use the extensions default API key from WeatherAPI.com"
-msgstr "Použít výchozí API klíč tohoto rozšíření pro openweathermap.org"
+msgstr "Použij vestavěný API klíč pro WeatherAPI.com"
 
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:194
 msgid "Your personal AppKey from developer.mapquest.com"
