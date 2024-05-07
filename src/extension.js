@@ -1074,7 +1074,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     }
     
     this._seeOnlineUrlBtn = this.createButton(
-      "internet-web-browser-symbolic",
+      this.getGIcon("internet-web-browser-symbolic").to_string(),
       _("See Online")
     );
 
