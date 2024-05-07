@@ -136,8 +136,8 @@ function populateCurrentUI()
       }
 
       let iconName = w.getIconName();
-      this._currentWeatherIcon.set_gicon(this.getWeatherIcon(iconName));
-      this._weatherIcon.set_gicon(this.getWeatherIcon(iconName));
+      this._currentWeatherIcon.set_gicon(this.getGIcon(iconName));
+      this._weatherIcon.set_gicon(this.getGIcon(iconName));
 
       let sunrise = w.getSunriseDate();
       let sunset = w.getSunsetDate();
@@ -147,12 +147,12 @@ function populateCurrentUI()
       let ms = lastBuild.getTime();
       if(sunrise.getTime() - ms > sunset.getTime() - ms)
       {
-        this.topBoxSunIcon.set_gicon(this.getWeatherIcon("daytime-sunset-symbolic"));
+        this.topBoxSunIcon.set_gicon(this.getGIcon("daytime-sunset-symbolic"));
         this.topBoxSunInfo.text = w.displaySunset(this);
       }
       else
       {
-        this.topBoxSunIcon.set_gicon(this.getWeatherIcon("daytime-sunrise-symbolic"));
+        this.topBoxSunIcon.set_gicon(this.getGIcon("daytime-sunrise-symbolic"));
         this.topBoxSunInfo.text = w.displaySunrise(this);
       }
 
@@ -235,7 +235,7 @@ function populateTodaysUI() {
 
         let forecastTodayUi = this._todays_forecast[i];
         forecastTodayUi.Time.text = h.displayTime(this);
-        forecastTodayUi.Icon.set_gicon(this.getWeatherIcon(w.getIconName()));
+        forecastTodayUi.Icon.set_gicon(this.getGIcon(w.getIconName()));
         forecastTodayUi.Temperature.text = w.displayTemperature(this);
         forecastTodayUi.Summary.text = w.displayCondition();
       }
@@ -279,7 +279,7 @@ function populateForecastUI() {
           }
 
           forecastUi[j].Time.text = h.displayTime(this);
-          forecastUi[j].Icon.set_gicon(this.getWeatherIcon(w.getIconName()));
+          forecastUi[j].Icon.set_gicon(this.getGIcon(w.getIconName()));
           forecastUi[j].Temperature.text = w.displayTemperature(this);
           forecastUi[j].Summary.text = w.displayCondition();
         }

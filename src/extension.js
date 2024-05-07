@@ -1332,7 +1332,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     return `${this.metadata.path}/media/status/${iconName}.svg`
   }
 
-  getWeatherIcon(iconName)
+  getGIcon(iconName)
   {
     let noSystemIcon = false;
     if (this._getUseSysIcons)
@@ -1646,9 +1646,9 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       style_class: "openweather-sunset-icon",
     });
     this._sunriseIcon.set_gicon(
-      this.getWeatherIcon("daytime-sunrise-symbolic")
+      this.getGIcon("daytime-sunrise-symbolic")
     );
-    this._sunsetIcon.set_gicon(this.getWeatherIcon("daytime-sunset-symbolic"));
+    this._sunsetIcon.set_gicon(this.getGIcon("daytime-sunset-symbolic"));
 
     this._buildIcon = new St.Icon({
       icon_size: 15,
