@@ -81,7 +81,7 @@ async function refreshWeatherData()
         if(tryAgain)
         {
           this._provUrlButton.label = getWeatherProviderName(this.weatherProvider);
-          this.reloadWeatherCurrent(1);
+          this.reloadWeatherCurrent(10, this._refresh_interval_current);
         }
         else
         {
@@ -98,7 +98,7 @@ async function refreshWeatherData()
     {
       console.warn("OpenWeather Refined: getWeatherInfo failed without an error.");
       // Try reloading after 10 minutes
-      this.reloadWeatherCurrent(600);
+      this.reloadWeatherCurrent(600, this._refresh_interval_current);
       return;
     }
 

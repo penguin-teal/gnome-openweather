@@ -1590,7 +1590,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     });
   }
 
-  reloadWeatherCurrent(interval) {
+  reloadWeatherCurrent(interval, next_interval) {
     if (this._timeoutCurrent) {
       GLib.source_remove(this._timeoutCurrent);
       this._timeoutCurrent = null;
@@ -1601,6 +1601,8 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       interval,
       () => {
         this.refreshWeatherData().catch((e) => console.error(e));
+        if (next_interval !== null)
+          reloadWeatherCurrent(next_interval);
         return true;
       }
     );
