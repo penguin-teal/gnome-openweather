@@ -244,51 +244,51 @@ msgstr ""
 
 #: src/extension.js:1447 src/preferences/generalPage.js:231
 msgid "atm"
-msgstr "ATM"
+msgstr "atm"
 
 #: src/extension.js:1452 src/preferences/generalPage.js:232
 msgid "at"
-msgstr ""
+msgstr "at"
 
 #: src/extension.js:1457 src/preferences/generalPage.js:233
 msgid "Torr"
-msgstr ""
+msgstr "Torr"
 
 #: src/extension.js:1462 src/preferences/generalPage.js:234
 msgid "psi"
-msgstr ""
+msgstr "psi"
 
 #: src/extension.js:1467 src/preferences/generalPage.js:235
 msgid "mmHg"
-msgstr ""
+msgstr "mmHg"
 
 #: src/extension.js:1471 src/preferences/generalPage.js:236
 msgid "mbar"
-msgstr ""
+msgstr "mbar"
 
 #: src/extension.js:1537 src/preferences/generalPage.js:214
 msgid "m/s"
-msgstr ""
+msgstr "m/s"
 
 #: src/extension.js:1542 src/preferences/generalPage.js:213
 msgid "mph"
-msgstr ""
+msgstr "mph"
 
 #: src/extension.js:1547 src/preferences/generalPage.js:212
 msgid "km/h"
-msgstr ""
+msgstr "km/h"
 
 #: src/extension.js:1556 src/preferences/generalPage.js:215
 msgid "kn"
-msgstr ""
+msgstr "kn"
 
 #: src/extension.js:1561 src/preferences/generalPage.js:216
 msgid "ft/s"
-msgstr ""
+msgstr "ft/s"
 
 #: src/extension.js:1628 src/extension.js:1678
 msgid "Loading ..."
-msgstr "Cargando…"
+msgstr "Cargando ..."
 
 #: src/extension.js:1682
 msgid "Please wait"
@@ -344,9 +344,7 @@ msgstr "Utilice su API key personal para %s"
 #: src/preferences/generalPage.js:38
 #, fuzzy, javascript-format
 msgid "Enable this if you have your own API key from %s and enter it below."
-msgstr ""
-"Si tiene su propia clave de API para openweathermap.org, desactive esta "
-"opción y escríbala en el cuadro siguiente."
+msgstr "Habilite esta opción si tiene su propia clave API de %s e ingresela en el siguiente cuadro"
 
 #: src/preferences/generalPage.js:51
 #, fuzzy
@@ -355,11 +353,11 @@ msgstr "Configuración de Meteorología"
 
 #: src/preferences/generalPage.js:60
 msgid "General"
-msgstr ""
+msgstr "General"
 
 #: src/preferences/generalPage.js:78
 msgid "Current Weather Refresh"
-msgstr ""
+msgstr "Intervalo actual de actualización del tiempo"
 
 #: src/preferences/generalPage.js:79
 msgid "Current weather refresh interval in minutes"
@@ -390,7 +388,7 @@ msgstr "Deshabilitar Pronóstico"
 
 #: src/preferences/generalPage.js:135
 msgid "Disables all fetching and processing of forecast data"
-msgstr ""
+msgstr "Deshabilita la busqueda y procesado de datos del pronóstico"
 
 #: src/preferences/generalPage.js:146
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:110
@@ -438,7 +436,7 @@ msgstr "Temperatura"
 
 #: src/preferences/generalPage.js:217
 msgid "Beaufort"
-msgstr ""
+msgstr "Beaufort"
 
 #: src/preferences/generalPage.js:219
 #, fuzzy
@@ -531,7 +529,7 @@ msgstr "Disposición"
 
 #: src/preferences/layoutPage.js:39
 msgid "Panel"
-msgstr ""
+msgstr "Panel"
 
 #: src/preferences/layoutPage.js:44
 msgid "Center"
@@ -623,22 +621,22 @@ msgstr "Traducir condiciones"
 #: src/preferences/layoutPage.js:184 src/preferences/layoutPage.js:198
 #: src/preferences/layoutPage.js:212
 msgid "0"
-msgstr ""
+msgstr "0"
 
 #: src/preferences/layoutPage.js:185 src/preferences/layoutPage.js:199
 #: src/preferences/layoutPage.js:213 src/preferences/layoutPage.js:302
 msgid "1"
-msgstr ""
+msgstr "1"
 
 #: src/preferences/layoutPage.js:186 src/preferences/layoutPage.js:200
 #: src/preferences/layoutPage.js:214 src/preferences/layoutPage.js:303
 msgid "2"
-msgstr ""
+msgstr "2"
 
 #: src/preferences/layoutPage.js:187 src/preferences/layoutPage.js:201
 #: src/preferences/layoutPage.js:215 src/preferences/layoutPage.js:304
 msgid "3"
-msgstr ""
+msgstr "3"
 
 #: src/preferences/layoutPage.js:189
 #, fuzzy
@@ -657,12 +655,12 @@ msgstr "Por defecto"
 
 #: src/preferences/layoutPage.js:197 src/preferences/layoutPage.js:211
 msgid "Follow Temp."
-msgstr ""
+msgstr "Igual a Temp."
 
 #: src/preferences/layoutPage.js:202 src/preferences/layoutPage.js:216
 #: src/preferences/layoutPage.js:305
 msgid "4"
-msgstr ""
+msgstr "4"
 
 #: src/preferences/layoutPage.js:204
 #, fuzzy
@@ -684,7 +682,7 @@ msgstr "Longitud mínima del texto de la ubicación. Configurado en '0' es ilimi
 
 #: src/preferences/layoutPage.js:249
 msgid "Off"
-msgstr ""
+msgstr "Deshabilitado"
 
 #: src/preferences/layoutPage.js:250
 msgid "White Text"
@@ -723,7 +721,7 @@ msgstr "Solo de hoy"
 
 #: src/preferences/layoutPage.js:306
 msgid "5"
-msgstr ""
+msgstr "5"
 
 #: src/preferences/layoutPage.js:308
 #, fuzzy
