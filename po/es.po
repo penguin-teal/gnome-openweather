@@ -334,7 +334,7 @@ msgstr "Mañana"
 #: src/preferences/generalPage.js:28
 #, javascript-format
 msgid "%s Multilingual Support"
-msgstr "Soporte multilingüe"
+msgstr "%s Soporte multilingüe"
 
 #: src/preferences/generalPage.js:33
 #, javascript-format
@@ -399,7 +399,7 @@ msgstr "Iconos del Sistema"
 #: src/preferences/generalPage.js:147
 #, javascript-format
 msgid "Disable to use packaged %s weather icons"
-msgstr "Deshabilite para usar los íconos del clíma propios de la app"
+msgstr "Deshabilite para usar los íconos del clíma propios %s de la app"
 
 #: src/preferences/generalPage.js:149
 msgid ""
@@ -423,7 +423,7 @@ msgid ""
 "log in / restarting gnome shell)"
 msgstr ""
 "Esta configuración aplica solamente en el primer inicio de la extensión. (Primer "
-"inicio de sesión / reinicio de gnome shell)
+"inicio de sesión / reinicio de gnome shell)"
 
 #: src/preferences/generalPage.js:189
 msgid "Units"
@@ -965,7 +965,7 @@ msgstr "El campo de coordenadas no puede estar vacío"
 #: src/preferences/locationsPage.js:525
 #, javascript-format
 msgid "Coordinates field must be in the format of '%s' or the text '%s'."
-msgstr "El campo de coordenadas debe estar en formato de '0.0, 0.0' o en texto aquí"
+msgstr "El campo de coordenadas debe estar en formato de '%s' o en texto aquí '%s'."
 
 #: src/preferences/locationsPage.js:533
 #, javascript-format
