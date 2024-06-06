@@ -87,6 +87,9 @@ async function refreshWeatherData()
         {
           Main.notify(_("OpenWeather Refined Too Many Requests"),
             _("Provider %s has too many users. Try switching weather providers in settings.").format(provName));
+
+          // Try reloading after 10 minutes
+          this.reloadWeatherCurrent(600);
         }
 
         return;
