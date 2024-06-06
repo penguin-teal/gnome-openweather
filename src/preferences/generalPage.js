@@ -21,7 +21,8 @@ import GObject from "gi://GObject";
 
 import { gettext as _ } from "resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js";
 
-import { getUseDefaultKeySetting, getCustomKeySetting, getWeatherProviderName } from "../getweather.js";
+import { getWeatherProviderName } from "../getweather.js";
+import { settingsGetKeys, settingsSetKeys } from "../locs.js";
 
 function getProviderTranslateRowTitle(prov)
 {
@@ -50,7 +51,7 @@ class GeneralPage extends Adw.PreferencesPage
   constructor(metadata, settings, wnd)
   {
     super({
-      title: _("Settings"),
+      title: "Settings",
       icon_name: "preferences-system-symbolic",
       name: "GeneralPage",
     });
@@ -311,12 +312,11 @@ class GeneralPage extends Adw.PreferencesPage
     providerTranslateRow.add_suffix(providerTranslateSwitch);
 
     // Provider API key
-    let defaultKeySetting = getUseDefaultKeySetting(curProv);
-    let useDefaultApiKey = defaultKeySetting ? this._settings.get_boolean(getUseDefaultKeySetting(curProv)) : true;
+    let useDefaultApiKey = settingsGetKeys(this._settings)[curProv] === "";
     let defaultApiKeySwitch = new Gtk.Switch({
       valign: Gtk.Align.CENTER,
       active: !useDefaultApiKey,
-      sensitive: defaultKeySetting
+      sensitive: useDefaultApiKey
     });
     let defaultApiKeyRow = new Adw.ActionRow({
       title: _("Use Custom API Key"),
@@ -339,11 +339,10 @@ class GeneralPage extends Adw.PreferencesPage
       activatable_widget: personalApiKeyEntry,
     });
 
-    let customKeySetting = getCustomKeySetting(curProv);
-    let personalApiKey = customKeySetting ? this._settings.get_string(customKeySetting) : "";
+    let personalApiKey = settingsGetKeys(this._settings)[curProv];
     if (personalApiKey)
     {
-      if (personalApiKey.length === 0 && customKeySetting)
+      if (personalApiKey.length === 0)
       {
         personalApiKeyEntry.set_icon_from_icon_name(
           Gtk.PositionType.LEFT,
@@ -448,26 +447,32 @@ class GeneralPage extends Adw.PreferencesPage
       defaultApiKeyRow.set_subtitle(getDefaultApiKeyRowSubtitle(prov));
       defaultApiKeyRow.set_tooltip_text(getDefaultApiKeyRowTooltip(prov));
 
-      let defKeySetting = getUseDefaultKeySetting(prov);
-      let isDefKey = defKeySetting !== null && this._settings.get_boolean(defKeySetting);
-      defaultApiKeySwitch.set_active(defKeySetting !== null && !isDefKey);
-      defaultApiKeySwitch.set_sensitive(defKeySetting !== null);
-      let customKeyS = getCustomKeySetting(prov);
-      personalApiKeyEntry.set_sensitive(customKeyS !== null && isDefKey);
-      personalApiKeyEntry.set_text(customKeyS !== null && this._settings.get_string(customKeyS));
+      let keySetting = settingsGetKeys(this._settings);
+      let isDefKey = !prov || keySetting[prov - 1] === "";
+      defaultApiKeySwitch.set_active(prov !== 0 && !isDefKey);
+      defaultApiKeySwitch.set_sensitive(prov !== 0);
+      personalApiKeyEntry.set_sensitive(prov !== 0 && isDefKey);
+      personalApiKeyEntry.set_text(keySetting[prov - 1]);
     });
     providerTranslateSwitch.connect("notify::active", (widget) => {
       this._settings.set_boolean("owm-api-translate", widget.get_active());
     });
     defaultApiKeySwitch.connect("notify::active", (widget) => {
       let prov = this._settings.get_enum("weather-provider");
+      if(prov === 0) return;
+
       let active = widget.get_active();
       personalApiKeyEntry.set_sensitive(active);
-      this._settings.set_boolean(getUseDefaultKeySetting(prov), !active);
+
+      let keySetting = settingsGetKeys(this._settings);
+      keySetting[prov - 1] = active ? personalApiKeyEntry.text : "";
+      settingsSetKeys(this._settings, keySetting);
     });
     personalApiKeyEntry.connect("notify::text", (widget) => {
       let prov = this._settings.get_enum("weather-provider");
-      this._settings.set_string(getCustomKeySetting(prov), widget.text);
+      let keys = settingsGetKeys(this._settings);
+      keys[prov] = widget.text;
+      settingsSetKeys(this._settings, keys);
 
       personalApiKeyEntry.set_icon_from_icon_name(Gtk.PositionType.LEFT,
         widget.text.length === 0 ? "dialog-warning" : "");

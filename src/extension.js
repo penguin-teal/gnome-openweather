@@ -50,15 +50,13 @@ import {
   geoclueGetLoc
 } from "./myloc.js"
 
-import { Loc, settingsGetLocs, settingsSetLocs } from "./locs.js";
+import { Loc, settingsGetKeys, settingsGetLocs, settingsSetLocs } from "./locs.js";
 import { tryImportAndMigrate, tryMigrateFromOldVersion } from "./migration.js";
 import {
   getWeatherProviderName,
   getWeatherProviderUrl,
   getWeatherProvider,
-  WeatherProvider,
-  OPENWEATHERMAP_KEY,
-  WEATHERAPI_KEY
+  DEFAULT_KEYS
 } from "./getweather.js";
 
 let _firstBoot = 1;
@@ -1000,20 +998,9 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
 
   getWeatherKey()
   {
-    let useDefault;
-    switch(this.weatherProvider)
-    {
-      case WeatherProvider.OPENWEATHERMAP:
-        useDefault = this.settings.get_boolean("use-default-owm-key");
-        if(useDefault) return OPENWEATHERMAP_KEY;
-        else return this.settings.get_string("appid");
-      case WeatherProvider.WEATHERAPICOM:
-        useDefault = this.settings.get_boolean("use-default-weatherapidotcom-key");
-        if(useDefault) return WEATHERAPI_KEY;
-        else return this.settings.get_string("weatherapidotcom-key");
-      default:
-        return "";
-    }
+    let keys = settingsGetKeys(this.settings);
+    let selected = keys[this.weatherProvider];
+    return selected ? selected : DEFAULT_KEYS[this.weatherProvider - 1];
   }
 
   createButton(iconName, accessibleName)
@@ -1601,6 +1588,9 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       interval,
       () => {
         this.refreshWeatherData().catch((e) => console.error(e));
+
+        let intervalSetting = this._refresh_interval_current;
+        if(intervalSetting !== interval) this.reloadWeatherCurrent(intervalSetting);
         return true;
       }
     );

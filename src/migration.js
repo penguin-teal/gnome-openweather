@@ -20,7 +20,7 @@
 import Gio from "gi://Gio";
 
 import { GeolocationProvider, WeatherPressureUnits } from "./constants.js";
-import { Loc, NAME_TYPE, PLACE_TYPE, settingsSetLocs, settingsGetLocsCount } from "./locs.js";
+import { Loc, NAME_TYPE, PLACE_TYPE, settingsSetLocs, settingsGetLocsCount, settingsSetKeys } from "./locs.js";
 
 const THIS_SCHEMA_ID   = "org.gnome.shell.extensions.openweatherrefined";
 const OICKLE_SCHEMA_ID = "org.gnome.shell.extensions.openweather";
@@ -97,6 +97,28 @@ function tryMigratePre130(settings)
 
 }
 
+function tryMigratePre136(settings)
+{
+  let keys = [ "", "" ];
+
+  let owmKey = settings.get_string("appid");
+  if(!settings.get_boolean("use-default-owm-key"))
+  {
+    keys[0] = owmKey;
+    settings.reset("appid");
+    settings.reset("use-default-owm-key");
+  }
+  let weatherApiKey = settings.get_string("weatherapidotcom-key");
+  if(!settings.get_boolean("use-default-weatherapidotcom-key"))
+  {
+    keys[1] = weatherApiKey;
+    settings.reset("weatherapidotcom-key");
+    settings.reset("use-default-weatherapidotcom-key");
+  }
+
+  if(keys[0] !== "" || keys[1] !== "") settingsSetKeys(keys);
+}
+
 function migrateProviders(settings)
 {
   let geoSearch = settings.get_enum("geolocation-provider");
@@ -107,6 +129,8 @@ function migrateProviders(settings)
   * Migrates settings if needed.
   * Imports from original OpenWeather extension.
   * Migrates 'cities' (127-) -> 'locs' (v128+).
+  * Migrates 'pressure-unit' (130+).
+  * Migrates custom keys (136+).
   * @param {Gio.Settings} Settings to read/modify.
   * @returns {boolean} `true` if settings were IMPORTED (NOT just if migrated).
   */
@@ -121,5 +145,6 @@ export function tryMigrateFromOldVersion(settings)
 {
   tryMigratePre128(settings);
   tryMigratePre130(settings);
+  tryMigratePre136(settings);
   migrateProviders(settings);
 }

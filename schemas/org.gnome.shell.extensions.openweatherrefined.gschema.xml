@@ -4,6 +4,7 @@
     <value value="0" nick="default" />
     <value value="1" nick="openweathermap" />
     <value value="2" nick="weatherapicom" />
+    <value value="3" nick="visualcrossing" />
   </enum>
   <enum id="org.gnome.shell.extensions.openweatherrefined.geolocation-provider">
     <value value="0" nick="openstreetmaps"/>
@@ -173,21 +174,25 @@
       <default>-1</default>
       <summary>Maximum number of digits after the decimal point for wind speed</summary>
     </key>
+    <!-- DEPRECATED. Use 'custom-keys' instead. -->
     <key type="s" name="appid">
       <default>''</default>
-      <summary>Your personal API key from openweathermap.org</summary>
+      <summary>DEPRECATED. Your personal API key from openweathermap.org</summary>
     </key>
+    <!-- DEPRECATED. Use 'custom-keys' instead. -->
     <key type="s" name="weatherapidotcom-key">
       <default>''</default>
-      <summary>Your personal API key from WeatherAPI.com</summary>
+      <summary>DEPRECATED. Your personal API key from WeatherAPI.com</summary>
     </key>
+    <!-- DEPRECATED. Use 'custom-keys' instead. -->
     <key type="b" name="use-default-owm-key">
       <default>true</default>
-      <summary>Use the extensions default API key from openweathermap.org</summary>
+      <summary>DEPRECATED. Use the extensions default API key from openweathermap.org</summary>
     </key>
+    <!-- DEPRECATED. Use 'custom-keys' instead. -->
     <key type="b" name="use-default-weatherapidotcom-key">
       <default>true</default>
-      <summary>Use the extensions default API key from WeatherAPI.com</summary>
+      <summary>DEPRECATED. Use the extensions default API key from WeatherAPI.com</summary>
     </key>
     <key type="s" name="geolocation-appid-mapquest">
       <default>''</default>
@@ -249,6 +254,10 @@
     <key type="s" name="last-init-error">
       <default>''</default>
       <summary>Empty or the last initialization error message.</summary>
+    </key>
+    <key type="as" name="custom-keys">
+      <default>[ '', '', '' ]</default>
+      <summary>Custom keys for weather providers.</summary>
     </key>
   </schema>
 </schemalist>

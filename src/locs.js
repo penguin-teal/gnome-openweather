@@ -20,6 +20,7 @@
 import GLib from "gi://GLib";
 
 import { getLocationInfo, getCachedLocInfo } from "./myloc.js";
+import { WeatherProvider } from "./getweather.js";
 
 export const NAME_TYPE = {
   CUSTOM: 0,
@@ -283,6 +284,21 @@ function fromLocsGVariant(val)
   return arr;
 }
 
+function fromKeysGVariant(val)
+{
+  val.get_data();
+  let keyCount = val.n_children();
+
+  let arr = Array.from({ length: Object.keys(WeatherProvider).length - 1 }, () => "");
+  for(let i = 0; i < keyCount; i++)
+  {
+    let k = val.get_child_value(i);
+    arr[i] = k.get_string()[0];
+  }
+
+  return arr;
+}
+
 function getLocsGVariantCount(val)
 {
   val.get_data();
@@ -310,6 +326,16 @@ export function toLocsGVariant(arr)
   return gArray;
 }
 
+export function toKeysGVariant(arr)
+{
+  let strings = [ ];
+  for(let s of arr)
+  {
+    strings.push(GLib.Variant.new_string(s));
+  }
+  return GLib.Variant.new_array(null, strings);
+}
+
 export function settingsGetLocs(settings)
 {
   let gvariant = settings.get_value("locs");
@@ -326,6 +352,11 @@ export function settingsGetLocs(settings)
   return locs;
 }
 
+export function settingsGetKeys(settings)
+{
+  return fromKeysGVariant(settings.get_value("custom-keys"));
+}
+
 export function settingsGetLocsCount(settings)
 {
   let gvariant = settings.get_value("locs");
@@ -339,5 +370,14 @@ export function settingsSetLocs(settings, locs)
     locs = [ Loc.myLoc() ];
   }
   settings.set_value("locs", toLocsGVariant(locs));
+}
+
+export function settingsSetKeys(settings, keys)
+{
+  if(!keys || !keys.length)
+  {
+    keys = [ ];
+  }
+  settings.set_value("keys", toKeysGVariant(keys));
 }
 
