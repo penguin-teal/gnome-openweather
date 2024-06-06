@@ -297,18 +297,28 @@ class LayoutPage extends Adw.PreferencesPage {
     forecastConditionsRow.add_suffix(forecastConditionsSwitch);
 
     // Forecast days
-    let forecastDays = new Gtk.StringList();
-    forecastDays.append(_("Today Only"));
-    forecastDays.append(_("1"));
-    forecastDays.append(_("2"));
-    forecastDays.append(_("3"));
-    forecastDays.append(_("4"));
-    forecastDays.append(_("5"));
-    let forecastDaysRow = new Adw.ComboRow({
-      title: _("Total Days In Forecast"),
-      model: forecastDays,
-      selected: this._settings.get_int("days-forecast"),
+    let forecastDaysSpinButton = new Gtk.SpinButton({
+      adjustment: new Gtk.Adjustment({
+        lower: 0,
+        upper: 31,
+        step_increment: 1,
+        page_increment: 3,
+        value: this._settings.get_int("days-forecast"),
+      }),
+      climb_rate: 1,
+      digits: 0,
+      numeric: true,
+      valign: Gtk.Align.CENTER
     });
+    let forecastDaysRow = new Adw.ActionRow({
+      title: _("Total Days In Forecast"),
+      tooltip_text: _(
+        "Number of days to show in forecast where a setting of '0' is only today"
+      ),
+      subtitle: _("Number of days to show in forecast. '0' means only show today.\nDifferent providers support different amounts of days.\nCurrently '%s' supports the furthest forecast of %s days.").format("Visual Crossing", "14"),
+      activatable_widget: forecastDaysSpinButton,
+    });
+    forecastDaysRow.add_suffix(forecastDaysSpinButton);
 
     // Keep forecast expanded
     let forecastExpandedSwitch = new Gtk.Switch({
@@ -383,8 +393,8 @@ class LayoutPage extends Adw.PreferencesPage {
         widget.get_active()
       );
     });
-    forecastDaysRow.connect("notify::selected", (widget) => {
-      this._settings.set_int("days-forecast", widget.selected);
+    forecastDaysSpinButton.connect("value-changed", (widget) => {
+      this._settings.set_int("days-forecast", widget.get_value());
     });
     forecastExpandedSwitch.connect("notify::active", (widget) => {
       this._settings.set_boolean("expand-forecast", widget.get_active());
