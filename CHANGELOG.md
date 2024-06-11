@@ -1,3 +1,19 @@
+## v136
+
+This version fixes issues when rate-limiting happened.
+
+Features:
+- New "Visual Crossing" weather provider with 14-day-out forecasts
+
+Improvements:
+- Total Days Forecasted is now a number input box for 0 - 31 (15+ doesn't work with any default keys i.e. you have to have a paid custom key)
+- Explanations for some more settings
+- Better Spanish translations (thanks @federicolencina)
+- Better Czech translations (thanks @lev741)
+
+Bug Fixes:
+- Fix bug where notifications spammed when a provider was rate-limiting
+
 ## v135
 
 This version fixes a lot of bugs and automatically chooses a provider for you
