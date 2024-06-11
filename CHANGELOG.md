@@ -1,4 +1,4 @@
-## v136
+## v136 (Jun 10, 2024)
 
 This version fixes issues when rate-limiting happened.
 
@@ -14,7 +14,7 @@ Improvements:
 Bug Fixes:
 - Fix bug where notifications spammed when a provider was rate-limiting
 
-## v135
+## v135 (May 4, 2024)
 
 This version fixes a lot of bugs and automatically chooses a provider for you
 by default.
@@ -40,7 +40,7 @@ Bug Fixes:
 - Fix geoclue failing causing errors
 - Fix sunset or sunrise in panel sometimes not showing the correct approaching one
 
-## v134
+## v134 (Apr 18, 2024)
 
 This version provides a large rewrite with support for an additional provider.
 
@@ -52,7 +52,7 @@ Bug Fixes:
 - Fix geolocation provider selector in preferences not working correctly
 - Checkboxes on locations in preferences finally show correctly
 
-## v133
+## v133 (Apr 5, 2024)
 
 This version fixes some bugs left in GNOME 45.
 
@@ -67,7 +67,7 @@ Bug Fixes:
 - Text overflowing and being ellipsised on GNOME 45
 - Fix crash on first-run if location services are off
 
-## v132
+## v132 (Mar 29, 2024)
 
 This version supports GNOME 46 (and maintains support for GNOME 45).
 
@@ -79,7 +79,7 @@ Improvements:
 - Improve Czech translations (thanks lev741)
 - Improve Dutch translations (thanks Heimen Stoffels)
 
-## v131
+## v131 (Mar 7, 2024)
 
 Improvements:
 - Notice on how to search up new locations in "Edit Location" menu
@@ -89,7 +89,7 @@ Bug Fixes:
 - Fix extension not initializing sometimes
 - Fix migrations only happening on first extension download
 
-## v130
+## v130 (Mar 3, 2024)
 
 Improvements:
 - Remove "hPa" presure unit since it was a duplicate of "mbar" (existing configurations will be migrated)
@@ -99,7 +99,7 @@ Improvements:
 Bug Fixes:
 - Fix panel location dropdown not working
 
-## v129
+## v129 (Feb 28, 2024)
 
 Features:
 - Now use device location services by default (requires location permission to be on).
@@ -110,7 +110,7 @@ Features:
 Bug Fixes:
 - Fix "Position in Panel" only taking effect on restart
 
-## v128
+## v128 (Jan 31, 2024)
 
 v128 changes how locations are stored and adds many options.
 
@@ -133,7 +133,7 @@ Bug Fixes:
 - Resetting settings now closes the preferences window since before it was un-updated and wrong
 - Fix about page extension version being wrong/misleading when downloaded from GNOME Extension website
 
-## v127
+## v127 (Jan 21, 2024)
 
 v127 allows to use the current location for the weather and some other improvements.
 
@@ -143,7 +143,7 @@ Features/Improvements:
 - Option to have clock format (AM/PM or 24-hour) follow GNOME desktop setting
 - Button to reset settings to default
 
-## v126
+## v126 (Jan 14, 2024)
 
 v126 had some changes to change the name and settings path, and also adds the
 feature to display the coming sunset/sunrise in the panel alongside
@@ -154,7 +154,7 @@ Features/Improvements:
 - Option to choose if that sun time comes before or after the temperature/conditions
 - Change settings path to not conflict with original OpenWeather extension
 
-## v125
+## v125 (Jan 6, 2024)
 
 v125 changed some stuff to get on GNOME extensions.
 
@@ -162,7 +162,7 @@ Features/Improvements:
 - Name now "OpenWeather 2"
 - Description mentions this is a fork
 
-## v124
+## v124 (Jan 3, 2024)
 
 v124 fixes a major bug in v123 and adds a 24-hour or AM/PM time option.
 
@@ -172,7 +172,7 @@ Features/Improvements:
 Bug Fixes:
 - Fix searching for wrong UUID breaking most things
 
-## v123
+## v123 (Jan 1, 2024)
 
 Features/Improvements:
 - GNOME 45 Support (from Kenneth Topp's fork)
