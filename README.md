@@ -122,6 +122,6 @@ under the GPLv3 license.
 
 ### License
 
-OpenWeather is free software available under the terms of the GPLv3 license.
-See [`COPYING`](./COPYING) for details.
+OpenWeather Refined is free software available under the terms of the GPLv3
+license. See [`COPYING`](./COPYING) for details.
 
