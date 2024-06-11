@@ -733,6 +733,8 @@ export async function getWeatherInfo(extension, gettext)
           return null;
         }
 
+        const KPH_TO_MPS = 1.0 / 3.6;
+
         let statusCode = response[0];
         let json = response[1];
         if(!isSuccess(statusCode))
@@ -742,9 +744,67 @@ export async function getWeatherInfo(extension, gettext)
           else f = `Status Code ${statusCode}`;
           console.error(`OpenWeather Refined: Invalid API Response from VisualCrossing.com '${f}'.`);
 
-          if(statusCode === 403 && json?.error?.code === 2007) throw new TooManyReqError(WeatherProvider.VISUALCROSSING);
+          if(statusCode === 429) throw new TooManyReqError(WeatherProvider.VISUALCROSSING);
           return null;
         }
+
+        let gotDaysForecast = json.days.length;
+        let forecastDays = clamp(1, extension._days_forecast + 1, gotDaysForecast);
+        extension._forecastDays = forecastDays - 1;
+
+        let forecasts = [ ];
+        for(let i = 0; i < forecastDays; i++)
+        {
+          let day = [ ];
+          let d = json.days[i];
+          for(let j = 0; j < d.hours.length; j++)
+          {
+            let h = d.hours[j];
+            let dt = new Date(h.datetimeEpoch * 1000);
+            let hSunriseDt = new Date(h.sunriseEpoch * 1000);
+            let hSunsetDt = new Date(h.sunsetEpoch * 1000);
+            day.push(new Forecast(
+              dt,
+              new Date(dt.getTime() + 3600000),
+              new Weather(
+                h.temp,
+                h.feelslike,
+                h.humidity,
+                h.pressure,
+                h.windspeed * KPH_TO_MPS,
+                h.winddir,
+                h.windgust * KPH_TO_MPS,
+                // Only partly cloudy and clear have "-day" or "-night" at the end but those are
+                // also the only icons with night variants
+                getIconName(WeatherProvider.VISUALCROSSING, h.icon, !h.icon.endsWith("-night"), true),
+                gettext(h.conditions),
+                hSunriseDt,
+                hSunsetDt
+              )
+            ));
+          }
+          forecasts.push(day);
+        }
+
+        let m = json.currentConditions;
+        let sunriseDt = new Date(m.sunriseEpoch * 1000);
+        let sunsetDt = new Date(m.sunsetEpoch * 1000);
+
+        return new Weather(
+          m.temp,
+          m.feelslike,
+          m.humidity,
+          m.pressure,
+          m.windspeed * KPH_TO_MPS,
+          m.winddir,
+          m.windgust * KPH_TO_MPS,
+          // See comment in forecast
+          getIconName(WeatherProvider.VISUALCROSSING, m.icon, !m.icon.endsWith("-night"), true),
+          gettext(m.conditions),
+          sunriseDt,
+          sunsetDt,
+          forecasts
+        );
       }
 
     default:

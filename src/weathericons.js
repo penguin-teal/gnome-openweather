@@ -131,6 +131,22 @@ const WeatherApiComIconMap =
   1282: WeatherIcons.SNOW_STORM, // "Moderate or heavy snow with thunder"
 };
 
+/**
+  * @enum {string}
+  */
+const VisualCrossingIconMap =
+{
+  "snow": WeatherIcons.SNOW,
+  "rain": WeatherIcons.SHOWERS,
+  "fog": WeatherIcons.FOG,
+  "wind": WeatherIcons.WINDY,
+  "cloudy": WeatherIcons.CLOUDS,
+  "partly-cloudy-day": WeatherIcons.FEW_CLOUDS,
+  "partly-cloudy-night": WeatherIcons.FEW_CLOUDS,
+  "clear-day": WeatherIcons.CLEAR,
+  "clear-night": WeatherIcons.CLEAR
+};
+
 function hasNightVariant(name)
 {
   return name === "clear" || name === "few-clouds";
@@ -150,6 +166,9 @@ export function getIconName(provider, key, isNight, useSymbolic)
       break;
     case WeatherProvider.WEATHERAPICOM:
       name = WeatherApiComIconMap[key];
+      break;
+    case WeatherProvider.VISUALCROSSING:
+      name = VisualCrossingIconMap[key];
       break;
   }
 
@@ -280,6 +299,74 @@ const WeatherApiComConditionMap =
 };
 
 /**
+  * @enum {string}
+  */
+const VisualCrossingConditionMap =
+{
+  "clear": "Clear", // Clear conditions throughout the day
+  "clearingpm": "Clear Afternoon", // Clearing in the afternoon
+  "cloudcover": "Cloud Cover", // Cloud cover
+  "cloudierpm": "Coudy Afternoon", // Becoming cloudy in the afternoon
+  "coolingdown": "Cooling Down", // Cooling down
+  "overcast": "Overcast", // Cloudy skies throughout the day
+  "precip": "Precipitation", // Precipitation
+  "precipcover": "Precipitation Cover", // Precipitation cover
+  "rainallday": "Rain All Day", // A chance of rain throughout the day
+  "rainam": "Morning Rain", // Morning rain
+  "rainampm": "Rain", // Rain in the morning and afternoon
+  "rainchance": "Chance of Rain", // A chance of rain
+  "rainclearinglater": "Rain Clearing Later", // Rain clearing later
+  "raindays": "Chance of Rain", // A chance of rain
+  "raindefinite": "Rain", // Rain
+  "rainearlyam": "Early Morning Rain", // Early morning rain
+  "rainlatepm": "Late Afternoon Rain", // Late afternoon rain
+  "rainpm": "Afternoon Rain", // Afternoon rain
+  "type_1": "Drifting Snow", // Blowing or drifting snow
+  "type_2": "Drizzle", // Drizzle
+  "type_3": "Heavy Drizzle", // Heavy Drizzle
+  "type_4": "Light Drizzle", // Light Drizzle
+  "type_5": "Heavy Rain", // Heavy Drizzle/Rain
+  "type_6": "Light Rain", // Light Drizzle/Rain
+  "type_7": "Dust Storm", // Dust storm
+  "type_8": "Fog", // Fog
+  "type_9": "Freezing Drizzle", // Freezing Drizzle/Freezing Rain
+  "type_10": "Heavy Freezing Drizzle", // Heavy Freezing Drizzle/Freezing Rain
+  "type_11": "Light Freezing Drizzle", // Light Freezing Drizzle/Freezing Rain
+  "type_12": "Freezing Fog", // Freezing Fog
+  "type_13": "Heavy Freezing Rain", // Heavy Freezing Rain
+  "type_14": "Light Freezing Rain", // Light Freezing Rain
+  "type_15": "Tornado", // Funnel Cloud/Tornado
+  "type_16": "Hail Showers", // Hail Showers
+  "type_17": "Ice", // Ice
+  "type_18": "Lightning", // Lightning Without Thunder
+  "type_19": "Mist", // Mist
+  "type_20": "Precipitation", // Precipitation In Vicinity
+  "type_21": "Rain", // Rain
+  "type_22": "Heavy Rain & Snow", // Heavy Rain And Snow
+  "type_23": "Light Rain & Snow", // Light Rain And Snow
+  "type_24": "Rain Showers", // Rain Showers
+  "type_25": "Heavy Rain", // Heavy Rain
+  "type_26": "Light Rain", // Light Rain
+  "type_27": "Sky Coverage Decreasing", // Sky Coverage Decreasing
+  "type_28": "Sky Coverage Increasing", // Sky Coverage Increasing
+  "type_29": "Sky Unchanged", // Sky Unchanged
+  "type_30": "Haze", // Smoke Or Haze
+  "type_31": "Snow", // Snow
+  "type_32": "Snow & Rain Showers", // Snow And Rain Showers
+  "type_33": "Snow Showers", // Snow Showers
+  "type_34": "Heavy Snow", // Heavy Snow
+  "type_35": "Light Snow", // Light Snow
+  "type_36": "Squalls", // Squalls
+  "type_37": "Thunderstorm", // Thunderstorm
+  "type_38": "Storm No Rain", // Thunderstorm Without Precipitation
+  "type_39": "Ice Crystals", // Diamond Dust
+  "type_40": "Hail", // Hail
+  "type_41": "Overcast", // Overcast
+  "type_42": "Partially Cloudy", // Partially cloudy
+  "type_43": "Clear" // Clear
+};
+
+/**
   * @returns {string}
   */
 export function gettextCondition(provider, code, gettext)
@@ -290,6 +377,8 @@ export function gettextCondition(provider, code, gettext)
       return gettext(OpenWeatherMapConditionMap[code] ?? "Not available");
     case WeatherProvider.WEATHERAPICOM:
       return gettext(WeatherApiComConditionMap[code] ?? "Not available");
+    case WeatherProvider.VISUALCROSSING:
+      return gettext(VisualCrossingConditionMap[code] ?? "Not available");
     default:
       return gettext("Not available");
   }

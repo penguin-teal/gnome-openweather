@@ -286,9 +286,10 @@ class GeneralPage extends Adw.PreferencesPage
     weatherProvsList.append(_("Adaptive"));
     weatherProvsList.append("OpenWeatherMap");
     weatherProvsList.append("WeatherAPI.com");
+    weatherProvsList.append("Visual Crossing");
     let weatherProvsListRow = new Adw.ComboRow({
       title: _("Weather Provider"),
-      subtitle: _("Provider used for weather and forecasts"),
+      subtitle: _("Provider used for weather and forecasts; choose \"%s\" if you don't care.").format(_("Adaptive")),
       tooltip_text: _("Choose '%s' if you don't care, otherwise choose a specific provider.").format(_("Adaptive")),
       model: weatherProvsList,
       selected: curProv
