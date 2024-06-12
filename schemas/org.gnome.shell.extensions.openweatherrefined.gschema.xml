@@ -259,5 +259,9 @@
       <default>[ '', '', '' ]</default>
       <summary>Custom keys for weather providers.</summary>
     </key>
+    <key type="b" name="precip-starts-notif">
+      <default>false</default>
+      <summary>Get a notification when precipitation starts.</summary>
+    </key>
   </schema>
 </schemalist>

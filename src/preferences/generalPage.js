@@ -274,6 +274,25 @@ class GeneralPage extends Adw.PreferencesPage
     unitsGroup.add(simplifyDegRow);
     this.add(unitsGroup);
 
+    let notifGroup = new Adw.PreferencesGroup({
+      title: _("Notifications")
+    });
+
+    let precipStartsNotifSwitch = new Gtk.Switch({
+      valign: Gtk.Align.CENTER,
+      active: this._settings.get_boolean("precip-starts-notif")
+    });
+    let precipStartsNotifRow = new Adw.ActionRow({
+      title: _("Precipitation Starting"),
+      subtitle: _("Get notified when precipitation starts (e.g. rain or snow)."),
+      tooltip_text: _("Get notified when precipitation starts (e.g. rain or snow)."),
+      activatable_widget: precipStartsNotifSwitch
+    });
+    precipStartsNotifRow.add_suffix(precipStartsNotifSwitch);
+
+    notifGroup.add(precipStartsNotifRow);
+    this.add(notifGroup);
+
     // Provider Settings
     let apiGroup = new Adw.PreferencesGroup({
       title: _("Provider"),
@@ -441,6 +460,9 @@ class GeneralPage extends Adw.PreferencesPage
     simplifyDegSwitch.connect("notify::active", (widget) => {
       this._settings.set_boolean("simplify-degrees", widget.get_active());
     });
+    precipStartsNotifSwitch.connect("notify::active", widget => {
+      this._settings.set_boolean("precip-starts-notif", widget.get_active());
+    });
     weatherProvsListRow.connect("notify::selected", widget => {
       let prov = widget.selected;
       this._settings.set_enum("weather-provider", prov);
@@ -448,33 +470,52 @@ class GeneralPage extends Adw.PreferencesPage
       defaultApiKeyRow.set_subtitle(getDefaultApiKeyRowSubtitle(prov));
       defaultApiKeyRow.set_tooltip_text(getDefaultApiKeyRowTooltip(prov));
 
-      let keySetting = settingsGetKeys(this._settings);
-      let isDefKey = !prov || keySetting[prov - 1] === "";
-      defaultApiKeySwitch.set_active(prov !== 0 && !isDefKey);
-      defaultApiKeySwitch.set_sensitive(prov !== 0);
-      personalApiKeyEntry.set_sensitive(prov !== 0 && isDefKey);
-      personalApiKeyEntry.set_text(keySetting[prov - 1]);
+      let isAdaptive = prov === 0;
+      let keyArr = settingsGetKeys(this._settings);
+      // Array Index 0 is first provider, but in the provider enum 0 = adaptive
+      // and 1 = the first provider
+      let key = isAdaptive ? "" : keyArr[prov - 1];
+      // Empty String = Default Key
+      let isDefKey = key === "";
+      // Switched on if not Adaptive and not using Default Key
+      defaultApiKeySwitch.set_active(!isAdaptive && !isDefKey);
+      // Grey out if Adaptive
+      defaultApiKeySwitch.set_sensitive(!isAdaptive);
+      // Grey out if Adaptive or using Default key
+      personalApiKeyEntry.set_sensitive(!isAdaptive && !isDefKey);
+      // Set text to an empty string if using Default, or the key
+      personalApiKeyEntry.set_text(key);
     });
     providerTranslateSwitch.connect("notify::active", (widget) => {
       this._settings.set_boolean("owm-api-translate", widget.get_active());
     });
     defaultApiKeySwitch.connect("notify::active", (widget) => {
       let prov = this._settings.get_enum("weather-provider");
+      // If somehow provider is set to Adaptive
+      // (which this should be greyed out so shouldn't happen)
+      // we'll just get out here
       if(prov === 0) return;
 
       let active = widget.get_active();
+      // Grey out key text box if we turn this off
       personalApiKeyEntry.set_sensitive(active);
 
-      let keySetting = settingsGetKeys(this._settings);
-      keySetting[prov - 1] = active ? personalApiKeyEntry.text : "";
-      settingsSetKeys(this._settings, keySetting);
+      let keyArr = settingsGetKeys(this._settings);
+      // Set the corresponding provider (where 1 in the enum is 0 in the key
+      // array) to the key or an empty string to signify default
+      keyArr[prov - 1] = active ? personalApiKeyEntry.text : "";
+      settingsSetKeys(this._settings, keyArr);
     });
     personalApiKeyEntry.connect("notify::text", (widget) => {
       let prov = this._settings.get_enum("weather-provider");
-      let keys = settingsGetKeys(this._settings);
-      keys[prov] = widget.text;
-      settingsSetKeys(this._settings, keys);
+      let keyArr = settingsGetKeys(this._settings);
+      // 1 in enum is 0 in the key array
+      // Note if this is empty, that will turn default mode on
+      keyArr[prov - 1] = widget.text;
+      settingsSetKeys(this._settings, keyArr);
 
+      // Warn if key is empty
+      // TODO: Format check individual provider keys
       personalApiKeyEntry.set_icon_from_icon_name(Gtk.PositionType.LEFT,
         widget.text.length === 0 ? "dialog-warning" : "");
     });
