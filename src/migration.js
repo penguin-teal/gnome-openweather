@@ -99,7 +99,7 @@ function tryMigratePre130(settings)
 
 function tryMigratePre136(settings)
 {
-  let keys = [ "", "" ];
+  let keys = [ "", "", "" ];
 
   let owmKey = settings.get_string("appid");
   if(!settings.get_boolean("use-default-owm-key"))
