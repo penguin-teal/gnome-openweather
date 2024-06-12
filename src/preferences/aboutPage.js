@@ -23,7 +23,7 @@ import GLib from "gi://GLib";
 import { PACKAGE_VERSION } from "resource:///org/gnome/Shell/Extensions/js/misc/config.js";
 
 import { gettext as _ } from "resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js";
-import { Loc, settingsGetLocs, toLocsGVariant } from "../locs.js";
+import { Loc, settingsGetLocs, settingsGetKeys, toLocsGVariant } from "../locs.js";
 import { getWeatherProviderName, getWeatherProviderUrl } from "../getweather.js";
 
 function getLocale()
@@ -137,6 +137,15 @@ class AboutPage extends Adw.PreferencesPage {
 
     copySettingsBtn.connect("clicked", (widget) =>
     {
+      // The settings of these keys will exist in the data but their value
+      // will be replaced with the string "<REDACTED>"
+      let redact = [
+        "appid", "weatherapidotcom-key",
+        "geolocation-appid-mapquest"
+      ];
+
+      // This object will hold the data to turn to JSON
+      // Start with some extra info here that isn't in the settings
       let obj =
       {
         "app-version": releaseVersion,
@@ -159,16 +168,24 @@ class AboutPage extends Adw.PreferencesPage {
               locs[i].getPlaceType(), locs[i].isMyLoc() ? "" : "<PLACE>"
             );
           }
-          let locsG = toLocsGVariant(locs);
-          obj[k] = locsG.print(false);
+          obj[k] = locs;
         }
         else if(k === "cities")
         {
           obj["cities"] = "<CITIES>";
         }
-        else if(k === "appid" || k === "weatherapidotcom-key")
+        else if(redact.includes(k))
         {
-          obj[k] = "<KEY>";
+          obj[k] = "<REDACTED>";
+        }
+        else if(k === "custom-keys")
+        {
+          let customKeys = settingsGetKeys(settings);
+          for(let i in customKeys)
+          {
+            customKeys[i] = customKeys[i] ? "<REDACTED>" : "";
+          }
+          obj[k] = customKeys;
         }
         else
         {
@@ -212,7 +229,12 @@ class AboutPage extends Adw.PreferencesPage {
 
         settings.set_boolean("frozen", true);
 
-        let skipKeys = [ "app-version", "gnome-version", "git-version", "user-locale", "locs", "frozen", "appid", "weatherapidotcom-key" ];
+        let skipKeys = [
+          "app-version", "gnome-version", "git-version", "user-locale", "locs",
+          "frozen", "appid", "weatherapidotcom-key", "custom-keys",
+          "use-default-owm-key", "use-default-weatherapidotcom-key",
+          "geolocation-appid-mapquest"
+        ];
         for(let k of Object.keys(obj))
         {
           if(skipKeys.includes(k)) continue;
