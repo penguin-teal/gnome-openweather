@@ -378,6 +378,6 @@ export function settingsSetKeys(settings, keys)
   {
     keys = [ ];
   }
-  settings.set_value("keys", toKeysGVariant(keys));
+  settings.set_value("custom-keys", toKeysGVariant(keys));
 }
 
