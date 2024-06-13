@@ -21,7 +21,7 @@ import GObject from "gi://GObject";
 
 import { gettext as _ } from "resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js";
 
-import { getWeatherProviderName } from "../getweather.js";
+import { WeatherProvider, getWeatherProviderName } from "../getweather.js";
 import { settingsGetKeys, settingsSetKeys } from "../locs.js";
 
 function getProviderTranslateRowTitle(prov)
@@ -40,6 +40,23 @@ function getDefaultApiKeyRowTooltip(prov)
   let name = getWeatherProviderName(prov);
   return _("Enable this if you have your own API key from %s and enter it below."
     ).format(name ?? _("Provider"));
+}
+
+function isValidKey(provider, key)
+{
+  switch(provider)
+  {
+    case WeatherProvider.OPENWEATHERMAP:
+      return /^[a-z0-9]{32,}$/.test(key);
+    case WeatherProvider.WEATHERAPICOM:
+      return /^[a-z0-9]{31,}$/.test(key);
+    case WeatherProvider.VISUALCROSSING:
+      return /^[A-Z0-9]{25,}$/.test(key);
+    case WeatherProvider.OPENMETEO:
+      return true;
+    default:
+      return false;
+  }
 }
 
 class GeneralPage extends Adw.PreferencesPage
@@ -306,6 +323,7 @@ class GeneralPage extends Adw.PreferencesPage
     weatherProvsList.append("OpenWeatherMap");
     weatherProvsList.append("WeatherAPI.com");
     weatherProvsList.append("Visual Crossing");
+    weatherProvsList.append("Open-Meteo");
     let weatherProvsListRow = new Adw.ComboRow({
       title: _("Weather Provider"),
       subtitle: _("Provider used for weather and forecasts; choose \"%s\" if you don't care.").format(_("Adaptive")),
@@ -332,11 +350,12 @@ class GeneralPage extends Adw.PreferencesPage
     providerTranslateRow.add_suffix(providerTranslateSwitch);
 
     // Provider API key
-    let useDefaultApiKey = settingsGetKeys(this._settings)[curProv] === "";
+    let curProvKey = curProv ? settingsGetKeys(this._settings)[curProv - 1] : "";
+
     let defaultApiKeySwitch = new Gtk.Switch({
       valign: Gtk.Align.CENTER,
-      active: !useDefaultApiKey,
-      sensitive: useDefaultApiKey
+      active: curProvKey !== "",
+      sensitive: curProv !== 0
     });
     let defaultApiKeyRow = new Adw.ActionRow({
       title: _("Use Custom API Key"),
@@ -351,7 +370,7 @@ class GeneralPage extends Adw.PreferencesPage
       max_length: 32,
       width_chars: 20,
       vexpand: false,
-      sensitive: !useDefaultApiKey,
+      sensitive: curProvKey !== "",
       valign: Gtk.Align.CENTER,
     });
     let personalApiKeyRow = new Adw.ActionRow({
@@ -359,30 +378,10 @@ class GeneralPage extends Adw.PreferencesPage
       activatable_widget: personalApiKeyEntry,
     });
 
-    let personalApiKey = settingsGetKeys(this._settings)[curProv];
-    if (personalApiKey)
-    {
-      if (personalApiKey.length === 0)
-      {
-        personalApiKeyEntry.set_icon_from_icon_name(
-          Gtk.PositionType.LEFT,
-          "dialog-warning"
-        );
-      }
-      else
-      {
-        personalApiKeyEntry.set_icon_from_icon_name(Gtk.PositionType.LEFT, "");
-      }
-      personalApiKeyEntry.set_text(personalApiKey);
-    }
-    else
-    {
-      personalApiKeyEntry.set_text("");
-      personalApiKeyEntry.set_icon_from_icon_name(
-        Gtk.PositionType.LEFT,
-        "dialog-warning"
-      );
-    }
+    let provKeyIsValid = isValidKey(curProv, curProvKey);
+    personalApiKeyEntry.set_icon_from_icon_name(Gtk.PositionType.LEFT,
+      provKeyIsValid ? "checkbox-checked-symbolic" : "dialog-warning");
+    personalApiKeyEntry.set_text(curProvKey);
     personalApiKeyRow.add_suffix(personalApiKeyEntry);
 
     apiGroup.add(weatherProvsListRow);
@@ -508,16 +507,20 @@ class GeneralPage extends Adw.PreferencesPage
     });
     personalApiKeyEntry.connect("notify::text", (widget) => {
       let prov = this._settings.get_enum("weather-provider");
+      if(prov === 0) return;
+
+      let key = widget.text;
+      let isValid = isValidKey(prov, key);
+      personalApiKeyEntry.set_icon_from_icon_name(Gtk.PositionType.LEFT,
+        isValid ? "checkbox-checked-symbolic" : "dialog-warning");
+      // Don't save if not a valid key
+      if(!isValid) return;
+
       let keyArr = settingsGetKeys(this._settings);
       // 1 in enum is 0 in the key array
       // Note if this is empty, that will turn default mode on
-      keyArr[prov - 1] = widget.text;
+      keyArr[prov - 1] = key;
       settingsSetKeys(this._settings, keyArr);
-
-      // Warn if key is empty
-      // TODO: Format check individual provider keys
-      personalApiKeyEntry.set_icon_from_icon_name(Gtk.PositionType.LEFT,
-        widget.text.length === 0 ? "dialog-warning" : "");
     });
     resetToDefsBtn.connect("clicked", () =>
       {
