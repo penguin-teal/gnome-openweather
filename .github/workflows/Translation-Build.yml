@@ -1,0 +1,16 @@
+name: 'Translation Build'
+
+on:
+  pull_request:
+    types: [ 'opened' ]
+    branches: [ 'main' ]
+    paths: [ '**.po' ]
+
+jobs:
+  build_translations:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - run: make mergepo
+      - run: make clean
