@@ -46,7 +46,8 @@ export const WeatherProvider =
   DEFAULT: 0,
   OPENWEATHERMAP: 1,
   WEATHERAPICOM: 2,
-  VISUALCROSSING: 3
+  VISUALCROSSING: 3,
+  OPENMETEO: 4
 };
 
 // Corresponds to Weather providers
@@ -55,7 +56,8 @@ export const ForecastDaysSupport =
   0: 0,
   1: 4,
   2: 2,
-  3: 14
+  3: 14,
+  4: 15
 }
 
 export function getWeatherProviderName(prov)
@@ -68,6 +70,8 @@ export function getWeatherProviderName(prov)
       return "WeatherAPI.com";
     case WeatherProvider.VISUALCROSSING:
       return "Visual Crossing";
+    case WeatherProvider.OPENMETEO:
+      return "Open-Meteo";
     default:
       return null;
   }
@@ -83,6 +87,8 @@ export function getWeatherProviderUrl(prov)
       return "https://www.weatherapi.com/";
     case WeatherProvider.VISUALCROSSING:
       return "https://www.visualcrossing.com/";
+    case WeatherProvider.OPENMETEO:
+      return "https://open-meteo.com/";
     default:
       return null;
   }
@@ -109,6 +115,10 @@ function chooseRandomProvider(settings)
   let forecastDays = settings.get_int("days-forecast");
   let rand = Math.floor(Math.random() * (Object.keys(WeatherProvider).length - 1) + 1);
   if(ForecastDaysSupport[rand] < forecastDays) rand = WeatherProvider.VISUALCROSSING;
+  
+  // Visual Crossing doesn't work right now (blocked if reached rate limit)
+  if(rand === WeatherProvider.VISUALCROSSING) weatherProviderNotWorking(settings);
+
   return rand;
 }
 
@@ -139,6 +149,10 @@ export function weatherProviderNotWorking(settings)
     else if(randomProvider === providerNotWorking) return false;
 
     randomProvider++;
+
+    // Visual Crossing doesn't work right now (blocked if reached rate limit)
+    if(randomProvider === WeatherProvider.VISUALCROSSING) randomProvider++;
+
     if(randomProvider > Object.keys(WeatherProvider).length - 1) randomProvider = 1;
 
     return true;
