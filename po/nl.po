@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 3.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-04-18 09:26-0500\n"
-"PO-Revision-Date: 2024-03-26 22:33+0100\n"
+"PO-Revision-Date: 2024-06-14 22:17+0200\n"
 "Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #: src/weathericons.js:292 src/weathericons.js:294 src/weathericons.js:296
 msgid "Not available"
@@ -32,17 +32,16 @@ msgid "Failed to initialize."
 msgstr "Het instellen is mislukt."
 
 #: src/extension.js:375
-#, fuzzy, javascript-format
+#, javascript-format
 msgid ""
 "%s does not work without an api-key.\n"
 "Either set the switch to use the extensions default key in the preferences "
 "dialog to on or register at %s and paste your personal key into the "
 "preferences dialog."
 msgstr ""
-"Openweathermap.org werkt niet zonder api-sleutel.\n"
-"Stel de standaard api-sleutel in in de voorkeuren of registreer op http://"
-"openweathermap.org/appid en voeg de persoonlijke api-sleutel toe in de "
-"voorkeuren."
+"%s werkt niet zonder api-sleutel.\n"
+"Stel de standaard api-sleutel in in de voorkeuren of registreer op %s en "
+"voeg de persoonlijke api-sleutel toe in de voorkeuren."
 
 #: src/extension.js:432
 msgid "OpenWeather Refined: Imported settings from old extension."
@@ -65,7 +64,7 @@ msgstr "Weeroverzicht herladen"
 
 #: src/extension.js:1066
 msgid "See Online"
-msgstr ""
+msgstr "Op website tonen"
 
 #: src/extension.js:1071
 msgid "Weather Settings"
@@ -332,21 +331,21 @@ msgid "Tomorrow"
 msgstr "Morgen"
 
 #: src/preferences/generalPage.js:28
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "%s Multilingual Support"
-msgstr "Meertalige OpenWeatherMap-ondersteuning gebruiken"
+msgstr "Meertalige %s-ondersteuning"
 
 #: src/preferences/generalPage.js:33
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "Use a personal API key for %s"
-msgstr "Persoonlijke api-sleutel"
+msgstr "Persoonlijke api-sleutel van %s gebruiken"
 
 #: src/preferences/generalPage.js:38
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "Enable this if you have your own API key from %s and enter it below."
 msgstr ""
-"Schakel uit als u over een eigen api-sleutel van openweathermap.org "
-"beschikt, en voer deze zo nodig in in onderstaand vak."
+"Schakel uit als u over een eigen api-sleutel van %s beschikt, en voer deze "
+"zo nodig in in onderstaand vak."
 
 #: src/preferences/generalPage.js:51
 msgid "Settings"
@@ -395,9 +394,9 @@ msgid "System Icons"
 msgstr "Systeempictogrammen gebruiken"
 
 #: src/preferences/generalPage.js:147
-#, fuzzy, javascript-format
+#, javascript-format
 msgid "Disable to use packaged %s weather icons"
-msgstr "Schakel uit om de meegeleverde Adwaita-pictogrammen te gebruiken"
+msgstr "Schakel uit om de meegeleverde %s-pictogrammen te gebruiken"
 
 #: src/preferences/generalPage.js:149
 msgid ""
@@ -482,27 +481,24 @@ msgid "Weather Provider"
 msgstr "Weerdienst"
 
 #: src/preferences/generalPage.js:288
-#, fuzzy
 msgid "Provider used for weather and forecasts"
-msgstr "De dienst die gebruikt wordt om te zoeken naar locaties"
+msgstr "De dienst die gebruikt wordt om weer(svoorspellingen) te tonen"
 
 #: src/preferences/generalPage.js:301
 msgid "Using provider translations applies to weather conditions only"
 msgstr "Dit is alleen van toepassing op de weersomstandigheden"
 
 #: src/preferences/generalPage.js:304
-#, fuzzy
 msgid ""
 "Enable this to use provider multilingual support if there's no built-in "
 "translations for your language yet."
 msgstr ""
-"Schakel in om meertalige (meer dan 46 talen) ondersteuning in te schakelen "
-"als uw taal nog niet door de uitbreiding wordt ondersteund"
+"Schakel in om meertalige ondersteuning in te schakelen als uw taal nog niet "
+"door de uitbreiding wordt ondersteund."
 
 #: src/preferences/generalPage.js:317
-#, fuzzy
 msgid "Use Custom API Key"
-msgstr "Meegeleverde api-sleutel gebruiken"
+msgstr "Eigen api-sleutel gebruiken"
 
 #: src/preferences/generalPage.js:333
 msgid "Personal API Key"
@@ -1071,18 +1067,16 @@ msgid "Your personal API key from openweathermap.org"
 msgstr "Persoonlijke api-sleutel van openweathermap.org"
 
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:182
-#, fuzzy
 msgid "Your personal API key from WeatherAPI.com"
-msgstr "Persoonlijke api-sleutel van openweathermap.org"
+msgstr "Persoonlijke api-sleutel van WeatherAPI.com"
 
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:186
 msgid "Use the extensions default API key from openweathermap.org"
 msgstr "Meegeleverde api-sleutel van openweathermap.org gebruiken"
 
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:190
-#, fuzzy
 msgid "Use the extensions default API key from WeatherAPI.com"
-msgstr "Meegeleverde api-sleutel van openweathermap.org gebruiken"
+msgstr "Meegeleverde api-sleutel van WeatherAPI.com gebruiken"
 
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:194
 msgid "Your personal AppKey from developer.mapquest.com"
