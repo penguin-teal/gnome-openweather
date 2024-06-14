@@ -21,6 +21,7 @@ import Gio from "gi://Gio";
 
 import { GeolocationProvider, WeatherPressureUnits } from "./constants.js";
 import { Loc, NAME_TYPE, PLACE_TYPE, settingsSetLocs, settingsGetLocsCount, settingsSetKeys } from "./locs.js";
+import { WeatherProvider } from "./getweather.js";
 
 const THIS_SCHEMA_ID   = "org.gnome.shell.extensions.openweatherrefined";
 const OICKLE_SCHEMA_ID = "org.gnome.shell.extensions.openweather";
@@ -99,7 +100,9 @@ function tryMigratePre130(settings)
 
 function tryMigratePre136(settings)
 {
-  let keys = [ "", "", "" ];
+  // Create an array of empty strings with the length of weather
+  // providers available
+  let keys = Array.from({ length: Object.keys(WeatherProvider).length - 1 }, () => "");
 
   let owmKey = settings.get_string("appid");
   if(!settings.get_boolean("use-default-owm-key"))
