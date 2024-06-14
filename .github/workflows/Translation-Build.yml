@@ -13,5 +13,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+      - run: sudo apt-get install gettext
       - run: make mergepo
       - run: make clean
