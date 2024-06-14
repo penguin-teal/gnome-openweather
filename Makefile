@@ -130,6 +130,8 @@ help:
 	printf '\tmake install\n'
 	printf 'Install system-wide (log-out required after):\n'
 	printf '\tmake install DESTDIR=/usr/share\n'
+	printf 'Build translations:\n'
+	printf '\tmake mergepo\n'
 	printf 'Make Gzip and Zip archives of release build (in ./releases)\n'
 	printf '\tmake releases\n'
 	printf 'Clean build files:\n'
