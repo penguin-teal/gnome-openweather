@@ -1,6 +1,7 @@
 name: 'Translation Build'
 
 on:
+  workflow_dispatch:
   pull_request:
     types: [ 'opened' ]
     branches: [ 'main' ]
