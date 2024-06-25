@@ -68,7 +68,7 @@ class GeneralPage extends Adw.PreferencesPage
   constructor(metadata, settings, wnd)
   {
     super({
-      title: "Settings",
+      title: _("Settings"),
       icon_name: "preferences-system-symbolic",
       name: "GeneralPage",
     });
