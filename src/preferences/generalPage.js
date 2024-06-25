@@ -350,7 +350,7 @@ class GeneralPage extends Adw.PreferencesPage
     providerTranslateRow.add_suffix(providerTranslateSwitch);
 
     // Provider API key
-    let curProvKey = curProv ? settingsGetKeys(this._settings)[curProv - 1] : "";
+    let curProvKey = curProv ? settingsGetKeys(this._settings)[curProv] : "";
 
     let defaultApiKeySwitch = new Gtk.Switch({
       valign: Gtk.Align.CENTER,
@@ -473,7 +473,7 @@ class GeneralPage extends Adw.PreferencesPage
       let keyArr = settingsGetKeys(this._settings);
       // Array Index 0 is first provider, but in the provider enum 0 = adaptive
       // and 1 = the first provider
-      let key = isAdaptive ? "" : keyArr[prov - 1];
+      let key = isAdaptive ? "" : keyArr[prov];
       // Empty String = Default Key
       let isDefKey = key === "";
       // Switched on if not Adaptive and not using Default Key
@@ -502,7 +502,7 @@ class GeneralPage extends Adw.PreferencesPage
       let keyArr = settingsGetKeys(this._settings);
       // Set the corresponding provider (where 1 in the enum is 0 in the key
       // array) to the key or an empty string to signify default
-      keyArr[prov - 1] = active ? personalApiKeyEntry.text : "";
+      keyArr[prov] = active ? personalApiKeyEntry.text : "";
       settingsSetKeys(this._settings, keyArr);
     });
     personalApiKeyEntry.connect("notify::text", (widget) => {
