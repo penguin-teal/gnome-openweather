@@ -1,0 +1,1153 @@
+# OpenWeather Refined en Translations
+# Copyright (C) 2024
+# This file is distributed under the same license as the gnome-shell-extension-openweatherrefined package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Teal Penguin <_penguin@tuta.io>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-shell-extension-openweatherrefined\n"
+"Report-Msgid-Bugs-To: Teal Penguin <_penguin@tuta.io>\n"
+"POT-Creation-Date: 2024-06-14 17:38-0500\n"
+"PO-Revision-Date: 2024-06-28 11:50-0500\n"
+"Last-Translator: Teal Penguin <_penguin@tuta.io>\n"
+"Language-Team: Teal Penguin <_penguin@tuta.io>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Gtranslator 46.1\n"
+
+#: src/openweathermap.js:88
+msgid "OpenWeather Refined Too Many Requests"
+msgstr ""
+
+#: src/openweathermap.js:89
+#, javascript-format
+msgid ""
+"Provider %s has too many users. Try switching weather providers in settings."
+msgstr ""
+
+#: src/openweathermap.js:137 src/preferences/aboutPage.js:88
+#: src/preferences/aboutPage.js:89
+msgid "Unknown"
+msgstr ""
+
+#: src/openweathermap.js:173
+msgid ", "
+msgstr ""
+
+#: src/openweathermap.js:278
+msgid "Tomorrow"
+msgstr ""
+
+#: src/locs.js:102 src/locs.js:186 src/preferences/locationsPage.js:331
+#: src/preferences/locationsPage.js:395
+msgid "My Location"
+msgstr ""
+
+#: src/weathericons.js:377 src/weathericons.js:379 src/weathericons.js:381
+#: src/weathericons.js:383
+msgid "Not available"
+msgstr ""
+
+#: src/extension.js:248
+msgid "Failed to initialize."
+msgstr ""
+
+#: src/extension.js:382
+#, javascript-format
+msgid ""
+"%s does not work without an api-key.\n"
+"Either set the switch to use the extensions default key in the preferences "
+"dialog to on or register at %s and paste your personal key into the "
+"preferences dialog."
+msgstr ""
+
+#: src/extension.js:439
+msgid "OpenWeather Refined: Imported settings from old extension."
+msgstr ""
+
+#: src/extension.js:756 src/extension.js:769
+#, javascript-format
+msgid "Can not connect to %s"
+msgstr "Cannot connect to %s"
+
+#: src/extension.js:1043 src/preferences/locationsPage.js:39
+#: src/preferences/locationsPage.js:59
+msgid "Locations"
+msgstr ""
+
+#: src/extension.js:1047
+msgid "Reload Weather Information"
+msgstr ""
+
+#: src/extension.js:1065
+msgid "See Online"
+msgstr ""
+
+#: src/extension.js:1070
+msgid "Weather Settings"
+msgstr ""
+
+#: src/extension.js:1098
+msgid "Manual refreshes less than 2 minutes apart are ignored!"
+msgstr ""
+
+#: src/extension.js:1140
+#, javascript-format
+msgid "Cannot open %s"
+msgstr ""
+
+#: src/extension.js:1227 src/preferences/generalPage.js:214
+msgid "°C"
+msgstr ""
+
+#: src/extension.js:1230 src/preferences/generalPage.js:215
+msgid "°F"
+msgstr ""
+
+#: src/extension.js:1232 src/preferences/generalPage.js:216
+msgid "K"
+msgstr ""
+
+#: src/extension.js:1234 src/preferences/generalPage.js:217
+msgid "°Ra"
+msgstr ""
+
+#: src/extension.js:1236 src/preferences/generalPage.js:218
+msgid "°Ré"
+msgstr ""
+
+#: src/extension.js:1238 src/preferences/generalPage.js:219
+msgid "°Rø"
+msgstr ""
+
+#: src/extension.js:1240 src/preferences/generalPage.js:220
+msgid "°De"
+msgstr ""
+
+#: src/extension.js:1242 src/preferences/generalPage.js:221
+msgid "°N"
+msgstr ""
+
+#: src/extension.js:1250
+msgid "Calm"
+msgstr ""
+
+#: src/extension.js:1251
+msgid "Light air"
+msgstr ""
+
+#: src/extension.js:1253
+msgid "Light breeze"
+msgstr ""
+
+#: src/extension.js:1255
+msgid "Gentle breeze"
+msgstr ""
+
+#: src/extension.js:1257
+msgid "Moderate breeze"
+msgstr ""
+
+#: src/extension.js:1259
+msgid "Fresh breeze"
+msgstr ""
+
+#: src/extension.js:1261
+msgid "Strong breeze"
+msgstr ""
+
+#: src/extension.js:1263
+msgid "Moderate gale"
+msgstr ""
+
+#: src/extension.js:1265
+msgid "Fresh gale"
+msgstr ""
+
+#: src/extension.js:1267
+msgid "Strong gale"
+msgstr ""
+
+#: src/extension.js:1268
+msgid "Storm"
+msgstr ""
+
+#: src/extension.js:1270
+msgid "Violent storm"
+msgstr ""
+
+#: src/extension.js:1271
+msgid "Hurricane"
+msgstr ""
+
+#: src/extension.js:1276
+msgid "Sunday"
+msgstr ""
+
+#: src/extension.js:1277
+msgid "Monday"
+msgstr ""
+
+#: src/extension.js:1278
+msgid "Tuesday"
+msgstr ""
+
+#: src/extension.js:1279
+msgid "Wednesday"
+msgstr ""
+
+#: src/extension.js:1280
+msgid "Thursday"
+msgstr ""
+
+#: src/extension.js:1281
+msgid "Friday"
+msgstr ""
+
+#: src/extension.js:1282
+msgid "Saturday"
+msgstr ""
+
+#: src/extension.js:1299
+msgid "N"
+msgstr ""
+
+#: src/extension.js:1300
+msgid "NE"
+msgstr ""
+
+#: src/extension.js:1301
+msgid "E"
+msgstr ""
+
+#: src/extension.js:1302
+msgid "SE"
+msgstr ""
+
+#: src/extension.js:1303
+msgid "S"
+msgstr ""
+
+#: src/extension.js:1304
+msgid "SW"
+msgstr ""
+
+#: src/extension.js:1305
+msgid "W"
+msgstr ""
+
+#: src/extension.js:1306
+msgid "NW"
+msgstr ""
+
+#: src/extension.js:1395 src/preferences/generalPage.js:247
+msgid "inHg"
+msgstr ""
+
+#: src/extension.js:1400 src/preferences/generalPage.js:248
+msgid "bar"
+msgstr ""
+
+#: src/extension.js:1405 src/preferences/generalPage.js:249
+msgid "Pa"
+msgstr ""
+
+#: src/extension.js:1410 src/preferences/generalPage.js:250
+msgid "kPa"
+msgstr ""
+
+#: src/extension.js:1415 src/preferences/generalPage.js:251
+msgid "atm"
+msgstr ""
+
+#: src/extension.js:1420 src/preferences/generalPage.js:252
+msgid "at"
+msgstr ""
+
+#: src/extension.js:1425 src/preferences/generalPage.js:253
+msgid "Torr"
+msgstr ""
+
+#: src/extension.js:1430 src/preferences/generalPage.js:254
+msgid "psi"
+msgstr ""
+
+#: src/extension.js:1435 src/preferences/generalPage.js:255
+msgid "mmHg"
+msgstr ""
+
+#: src/extension.js:1439 src/preferences/generalPage.js:256
+msgid "mbar"
+msgstr ""
+
+#: src/extension.js:1507 src/preferences/generalPage.js:234
+msgid "m/s"
+msgstr ""
+
+#: src/extension.js:1512 src/preferences/generalPage.js:233
+msgid "mph"
+msgstr ""
+
+#: src/extension.js:1517 src/preferences/generalPage.js:232
+msgid "km/h"
+msgstr "kph"
+
+#: src/extension.js:1526 src/preferences/generalPage.js:235
+msgid "kn"
+msgstr ""
+
+#: src/extension.js:1531 src/preferences/generalPage.js:236
+msgid "ft/s"
+msgstr ""
+
+#: src/extension.js:1601 src/extension.js:1651
+msgid "Loading ..."
+msgstr "Loading..."
+
+#: src/extension.js:1655
+msgid "Please wait"
+msgstr ""
+
+#: src/extension.js:1712
+msgid "Feels Like:"
+msgstr ""
+
+#: src/extension.js:1713
+msgid "Humidity:"
+msgstr ""
+
+#: src/extension.js:1714
+msgid "Pressure:"
+msgstr ""
+
+#: src/extension.js:1715
+msgid "Wind:"
+msgstr ""
+
+#: src/extension.js:1716
+msgid "Gusts"
+msgstr ""
+
+#: src/extension.js:1898
+msgid "Tomorrow's Forecast"
+msgstr ""
+
+#: src/extension.js:1899
+#, javascript-format
+msgid "%s Day Forecast"
+msgstr ""
+
+#: src/preferences/layoutPage.js:31
+msgid "Layout"
+msgstr ""
+
+#: src/preferences/layoutPage.js:39
+msgid "Panel"
+msgstr ""
+
+#: src/preferences/layoutPage.js:44
+msgid "Center"
+msgstr ""
+
+#: src/preferences/layoutPage.js:45
+msgid "Right"
+msgstr ""
+
+#: src/preferences/layoutPage.js:46
+msgid "Left"
+msgstr ""
+
+#: src/preferences/layoutPage.js:48
+msgid "Position In Panel"
+msgstr ""
+
+#: src/preferences/layoutPage.js:69
+msgid "Position Offset"
+msgstr ""
+
+#: src/preferences/layoutPage.js:70
+msgid "The position relative to other items in the box"
+msgstr ""
+
+#: src/preferences/layoutPage.js:78
+msgid "Show the temperature in the panel"
+msgstr ""
+
+#: src/preferences/layoutPage.js:82
+msgid "Temperature In Panel"
+msgstr ""
+
+#: src/preferences/layoutPage.js:90
+msgid "Show the weather conditions in the panel"
+msgstr ""
+
+#: src/preferences/layoutPage.js:94
+msgid "Conditions In Panel"
+msgstr ""
+
+#: src/preferences/layoutPage.js:102
+msgid "Show the time of sunrise/sunset in the panel."
+msgstr ""
+
+#: src/preferences/layoutPage.js:106
+msgid "Sunrise/Sunset In Panel"
+msgstr ""
+
+#: src/preferences/layoutPage.js:114
+msgid ""
+"Show the sunset/sunrise before the temperature/conditions. Requires restart."
+msgstr ""
+
+#: src/preferences/layoutPage.js:118
+msgid "Sunrise/Sunset First (Restart Required)"
+msgstr ""
+
+#: src/preferences/layoutPage.js:134
+msgid "Popup"
+msgstr ""
+
+#: src/preferences/layoutPage.js:152
+msgid "Popup Position"
+msgstr ""
+
+#: src/preferences/layoutPage.js:153
+msgid "Alignment of the popup from left to right"
+msgstr ""
+
+#: src/preferences/layoutPage.js:164
+msgid "Wind Direction Arrows"
+msgstr ""
+
+#: src/preferences/layoutPage.js:176
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:103
+msgid "Translate Conditions"
+msgstr ""
+
+#: src/preferences/layoutPage.js:184 src/preferences/layoutPage.js:198
+#: src/preferences/layoutPage.js:212
+msgid "0"
+msgstr ""
+
+#: src/preferences/layoutPage.js:185 src/preferences/layoutPage.js:199
+#: src/preferences/layoutPage.js:213
+msgid "1"
+msgstr ""
+
+#: src/preferences/layoutPage.js:186 src/preferences/layoutPage.js:200
+#: src/preferences/layoutPage.js:214
+msgid "2"
+msgstr ""
+
+#: src/preferences/layoutPage.js:187 src/preferences/layoutPage.js:201
+#: src/preferences/layoutPage.js:215
+msgid "3"
+msgstr ""
+
+#: src/preferences/layoutPage.js:189
+msgid "Temperature Decimal Places"
+msgstr ""
+
+#: src/preferences/layoutPage.js:190 src/preferences/layoutPage.js:205
+#: src/preferences/layoutPage.js:219
+msgid "Maximum number of digits after the decimal point"
+msgstr ""
+
+#: src/preferences/layoutPage.js:196
+msgid "Unit Default"
+msgstr ""
+
+#: src/preferences/layoutPage.js:197 src/preferences/layoutPage.js:211
+msgid "Follow Temp."
+msgstr ""
+
+#: src/preferences/layoutPage.js:202 src/preferences/layoutPage.js:216
+msgid "4"
+msgstr ""
+
+#: src/preferences/layoutPage.js:204
+msgid "Pressure Decimal Places"
+msgstr ""
+
+#: src/preferences/layoutPage.js:218
+msgid "Speed Decimal Places"
+msgstr ""
+
+#: src/preferences/layoutPage.js:239
+msgid "Location Text Length"
+msgstr ""
+
+#: src/preferences/layoutPage.js:241
+msgid "Maximum length of the location text. A setting of '0' is unlimited"
+msgstr ""
+
+#: src/preferences/layoutPage.js:243
+msgid "Maximum length to cut off the location text at. \"0\" is unlimited."
+msgstr ""
+
+#: src/preferences/layoutPage.js:250
+msgid "Off"
+msgstr ""
+
+#: src/preferences/layoutPage.js:251
+msgid "White Text"
+msgstr ""
+
+#: src/preferences/layoutPage.js:252
+msgid "Black Text"
+msgstr ""
+
+#: src/preferences/layoutPage.js:254
+msgid "High Contrast"
+msgstr ""
+
+#: src/preferences/layoutPage.js:255
+msgid ""
+"Override GNOME shell text colors in the pop-up with hard-coded ones that may "
+"be easier to read. This may not be very effective depending on your shell "
+"theme."
+msgstr ""
+
+#: src/preferences/layoutPage.js:256
+msgid "Enable to override GNOME shell colors"
+msgstr ""
+
+#: src/preferences/layoutPage.js:275
+msgid "Forecast"
+msgstr ""
+
+#: src/preferences/layoutPage.js:285
+msgid "Center Today's Forecast"
+msgstr ""
+
+#: src/preferences/layoutPage.js:286
+msgid "Center today's forecast instead of left-aligning it."
+msgstr ""
+
+#: src/preferences/layoutPage.js:297
+msgid "Conditions In Forecast"
+msgstr ""
+
+#: src/preferences/layoutPage.js:298
+msgid "Show the condition text (e.g. \"Cloudy\") in the forecast."
+msgstr ""
+
+#: src/preferences/layoutPage.js:318
+msgid "Total Days In Forecast"
+msgstr ""
+
+#: src/preferences/layoutPage.js:320
+msgid ""
+"Number of days to show in forecast where a setting of \"0\" is only today"
+msgstr ""
+
+#: src/preferences/layoutPage.js:322
+#, javascript-format
+msgid ""
+"Number of days to show in forecast. \"0\" means only show today.\n"
+"Different providers support different amounts of days.\n"
+"Currently \"%s\" supports the furthest forecast of %s days."
+msgstr ""
+
+#: src/preferences/layoutPage.js:333
+msgid "Keep Forecast Expanded"
+msgstr ""
+
+#: src/preferences/layoutPage.js:334
+msgid "Automatically open the forecast when the pop-up is opened."
+msgstr ""
+
+#: src/preferences/aboutPage.js:45
+msgid "About"
+msgstr ""
+
+#: src/preferences/aboutPage.js:73
+msgid ""
+"Display weather information for any location on Earth in the GNOME Shell."
+msgstr ""
+
+#: src/preferences/aboutPage.js:93
+msgid "OpenWeather Refined Version"
+msgstr ""
+
+#: src/preferences/aboutPage.js:105
+msgid "Git Version"
+msgstr ""
+
+#: src/preferences/aboutPage.js:116
+msgid "GNOME Version"
+msgstr ""
+
+#: src/preferences/aboutPage.js:126
+msgid "Copy Settings JSON"
+msgstr ""
+
+#: src/preferences/aboutPage.js:129
+msgid "Copy"
+msgstr ""
+
+#: src/preferences/aboutPage.js:134
+msgid "Paste"
+msgstr ""
+
+#: src/preferences/aboutPage.js:203
+msgid "Copied settings JSON to clipboard."
+msgstr ""
+
+#: src/preferences/aboutPage.js:219
+msgid "Clipboard contains no text."
+msgstr ""
+
+#: src/preferences/aboutPage.js:226
+msgid "Clipboard didn't contain valid JSON."
+msgstr ""
+
+#: src/preferences/aboutPage.js:269
+#, javascript-format
+msgid "Maintained by: %s"
+msgstr ""
+
+#: src/preferences/aboutPage.js:275
+#, javascript-format
+msgid "Contribute or translate the project on %s."
+msgstr ""
+
+#: src/preferences/aboutPage.js:281
+#, javascript-format
+msgid "This is a fork of %s's extension."
+msgstr ""
+
+#: src/preferences/aboutPage.js:306
+#, javascript-format
+msgid "Weather data provided by: %s"
+msgstr ""
+
+#: src/preferences/aboutPage.js:321
+msgid "This program comes with ABSOLUTELY NO WARRANTY."
+msgstr ""
+
+#: src/preferences/aboutPage.js:323
+msgid "See the"
+msgstr ""
+
+#: src/preferences/aboutPage.js:325
+msgid "GNU General Public License, version 2 or later"
+msgstr ""
+
+#: src/preferences/aboutPage.js:327
+msgid "for details."
+msgstr ""
+
+#: src/preferences/searchResultsWindow.js:36
+#, javascript-format
+msgid "Search Results from %s"
+msgstr ""
+
+#: src/preferences/searchResultsWindow.js:53
+msgid "New Search"
+msgstr ""
+
+#: src/preferences/searchResultsWindow.js:60
+msgid "Searching ..."
+msgstr ""
+
+#: src/preferences/searchResultsWindow.js:62
+#, javascript-format
+msgid "Please wait while searching for locations matching \"%s\""
+msgstr ""
+
+#: src/preferences/searchResultsWindow.js:117
+msgid "AppKey Required"
+msgstr ""
+
+#: src/preferences/searchResultsWindow.js:119
+#, javascript-format
+msgid "You need an AppKey to use MapQuest, get one at: %s"
+msgstr ""
+
+#: src/preferences/searchResultsWindow.js:207
+#, javascript-format
+msgid "Results for \"%s\""
+msgstr ""
+
+#: src/preferences/searchResultsWindow.js:273
+#: src/preferences/locationsPage.js:395
+#, javascript-format
+msgid "%s has been added"
+msgstr ""
+
+#: src/preferences/searchResultsWindow.js:284
+msgid "API Error"
+msgstr ""
+
+#: src/preferences/searchResultsWindow.js:286
+#, javascript-format
+msgid "Invalid data when searching for \"%s\"."
+msgstr ""
+
+#: src/preferences/searchResultsWindow.js:292
+msgid "No Matches Found"
+msgstr ""
+
+#: src/preferences/searchResultsWindow.js:294
+#, javascript-format
+msgid "No results found when searching for \"%s\"."
+msgstr ""
+
+#: src/preferences/generalPage.js:29
+msgid "Provider Multilingual Support"
+msgstr ""
+
+#: src/preferences/generalPage.js:35
+#, javascript-format
+msgid "Use a personal API key for %s"
+msgstr ""
+
+#: src/preferences/generalPage.js:35 src/preferences/generalPage.js:42
+#: src/preferences/generalPage.js:315 src/preferences/locationsPage.js:67
+msgid "Provider"
+msgstr ""
+
+#: src/preferences/generalPage.js:41
+#, javascript-format
+msgid "Enable this if you have your own API key from %s and enter it below."
+msgstr ""
+
+#: src/preferences/generalPage.js:80
+msgid "General"
+msgstr ""
+
+#: src/preferences/generalPage.js:98
+msgid "Current Weather Refresh"
+msgstr ""
+
+#: src/preferences/generalPage.js:99
+msgid "Current weather refresh interval in minutes"
+msgstr ""
+
+#: src/preferences/generalPage.js:121
+msgid "Weather Forecast Refresh"
+msgstr ""
+
+#: src/preferences/generalPage.js:122
+msgid "Forecast refresh interval in minutes if enabled"
+msgstr ""
+
+#: src/preferences/generalPage.js:142
+msgid "My Location Refresh"
+msgstr ""
+
+#: src/preferences/generalPage.js:143
+msgid "My location refresh interval in minutes"
+msgstr ""
+
+#: src/preferences/generalPage.js:154
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:123
+msgid "Disable Forecast"
+msgstr ""
+
+#: src/preferences/generalPage.js:155
+msgid "Disables all fetching and processing of forecast data"
+msgstr ""
+
+#: src/preferences/generalPage.js:166
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:111
+msgid "System Icons"
+msgstr ""
+
+#: src/preferences/generalPage.js:167 src/preferences/locationsPage.js:411
+#, javascript-format
+msgid "Disable to use packaged %s weather icons"
+msgstr ""
+
+#: src/preferences/generalPage.js:169
+msgid ""
+"If you have issues with your system icons displaying correctly disable this "
+"to fix it"
+msgstr ""
+
+#: src/preferences/generalPage.js:190
+msgid "First Boot Delay"
+msgstr ""
+
+#: src/preferences/generalPage.js:191
+msgid "Seconds to delay popup initialization and data fetching"
+msgstr ""
+
+#: src/preferences/generalPage.js:193 src/preferences/locationsPage.js:475
+msgid ""
+"This setting only applies to the first time the extension is loaded. (first "
+"log in / restarting gnome shell)"
+msgstr ""
+
+#: src/preferences/generalPage.js:209
+msgid "Units"
+msgstr ""
+
+#: src/preferences/generalPage.js:225
+msgid "Temperature"
+msgstr ""
+
+#: src/preferences/generalPage.js:237
+msgid "Beaufort"
+msgstr ""
+
+#: src/preferences/generalPage.js:239
+msgid "Wind Speed"
+msgstr ""
+
+#: src/preferences/generalPage.js:258
+msgid "Pressure"
+msgstr ""
+
+#: src/preferences/generalPage.js:265
+msgid "24-hour"
+msgstr ""
+
+#: src/preferences/generalPage.js:266
+msgid "AM / PM"
+msgstr ""
+
+#: src/preferences/generalPage.js:267
+msgid "System"
+msgstr ""
+
+#: src/preferences/generalPage.js:269
+msgid "Time Format"
+msgstr ""
+
+#: src/preferences/generalPage.js:280
+msgid "Simplify Degrees"
+msgstr ""
+
+#: src/preferences/generalPage.js:281
+msgid "Show \"°\" instead of \"°C,\" \"°F,\" etc."
+msgstr ""
+
+#: src/preferences/generalPage.js:282
+msgid "Enable this to cut off the \"C,\" \"F,\" etc. from degrees labels."
+msgstr ""
+
+#: src/preferences/generalPage.js:295
+msgid "Notifications"
+msgstr ""
+
+#: src/preferences/generalPage.js:303
+msgid "Precipitation Starting"
+msgstr ""
+
+#: src/preferences/generalPage.js:304 src/preferences/generalPage.js:305
+msgid "Get notified when precipitation starts (e.g. rain or snow)."
+msgstr ""
+
+#: src/preferences/generalPage.js:322 src/preferences/generalPage.js:329
+#: src/preferences/generalPage.js:330
+msgid "Adaptive"
+msgstr ""
+
+#: src/preferences/generalPage.js:328
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:68
+msgid "Weather Provider"
+msgstr ""
+
+#: src/preferences/generalPage.js:329 src/preferences/locationsPage.js:564
+#, javascript-format
+msgid ""
+"Provider used for weather and forecasts; choose \"%s\" if you don't care."
+msgstr ""
+
+#: src/preferences/generalPage.js:330 src/preferences/locationsPage.js:595
+#, javascript-format
+msgid "Choose '%s' if you don't care, otherwise choose a specific provider."
+msgstr ""
+
+#: src/preferences/generalPage.js:343
+msgid "Using provider translations applies to weather conditions only"
+msgstr ""
+
+#: src/preferences/generalPage.js:346
+msgid ""
+"Enable this to use provider multilingual support if there's no built-in "
+"translations for your language yet."
+msgstr ""
+
+#: src/preferences/generalPage.js:361
+msgid "Use Custom API Key"
+msgstr ""
+
+#: src/preferences/generalPage.js:377
+msgid "Personal API Key"
+msgstr ""
+
+#: src/preferences/generalPage.js:394 src/preferences/generalPage.js:400
+msgid "Reset"
+msgstr ""
+
+#: src/preferences/generalPage.js:404
+msgid "Restore Defaults"
+msgstr ""
+
+#: src/preferences/generalPage.js:406
+msgid "Restore all settings to the defaults."
+msgstr ""
+
+#: src/preferences/locationsPage.js:85
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:72
+msgid "Geolocation Provider"
+msgstr ""
+
+#: src/preferences/locationsPage.js:264
+#, javascript-format
+msgid "Location changed to: %s"
+msgstr ""
+
+#: src/preferences/locationsPage.js:294
+msgid "Add New Location"
+msgstr ""
+
+#: src/preferences/locationsPage.js:315
+msgid "Search by Location or Coordinates"
+msgstr ""
+
+#: src/preferences/locationsPage.js:321
+msgid "e.g. London, England or 51.5074456,-0.1277653"
+msgstr ""
+
+#: src/preferences/locationsPage.js:323 src/preferences/locationsPage.js:451
+#: src/preferences/locationsPage.js:468
+msgid "Clear entry"
+msgstr ""
+
+#: src/preferences/locationsPage.js:340
+msgid "Search"
+msgstr ""
+
+#: src/preferences/locationsPage.js:366
+msgid "We need something to search for!"
+msgstr ""
+
+#: src/preferences/locationsPage.js:433
+msgid "Edit Name"
+msgstr ""
+
+#: src/preferences/locationsPage.js:459
+msgid "Edit Coordinates"
+msgstr ""
+
+#: src/preferences/locationsPage.js:484
+msgid "Save"
+msgstr ""
+
+#: src/preferences/locationsPage.js:519
+msgid "Coordinates field cannot be empty."
+msgstr ""
+
+#: src/preferences/locationsPage.js:527
+#, javascript-format
+msgid "Coordinates field must be in the format of '%s' or the text '%s'."
+msgstr ""
+
+#: src/preferences/locationsPage.js:535
+#, javascript-format
+msgid "Name field can only be empty if coordinates are '%s'."
+msgstr ""
+
+#: src/preferences/locationsPage.js:603
+msgid "Delete"
+msgstr ""
+
+#: src/preferences/locationsPage.js:607
+msgid "Cancel"
+msgstr ""
+
+#: src/preferences/locationsPage.js:636
+#, javascript-format
+msgid "%s has been deleted"
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:76
+msgid "Temperature Unit"
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:80
+msgid "Pressure Unit"
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:84
+msgid "Wind Speed Units"
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:85
+msgid ""
+"Choose the units used for wind speed. Allowed values are 'kph', 'mph', 'm/"
+"s', 'knots', 'ft/s' or 'Beaufort'."
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:89
+msgid "Wind Direction by Arrows"
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:90
+msgid "True to display wind direction through arrows rather than letters."
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:95
+msgid "DEPRECATED, City to be displayed"
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:99
+msgid "Index of the city to display by default."
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:107
+msgid "Provider multilingual Support (weather descriptions only)"
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:115
+msgid "True to show temperature in the panel"
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:119
+msgid "True to show conditions in the panel."
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:127
+msgid "Conditions in Forecast"
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:131
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:135
+msgid "Position in Panel"
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:139
+msgid "Horizontal position of menu-box."
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:143
+msgid "Refresh interval (actual weather)"
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:147
+msgid "Maximum length of the location text"
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:151
+msgid "Refresh interval (forecast)"
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:155
+msgid "Center forecastbox."
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:159
+msgid "Always keep forecast expanded"
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:163
+msgid "Number of days in forecast"
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:167
+msgid "Maximum number of digits after the decimal point for temperature"
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:171
+msgid "Maximum number of digits after the decimal point for pressure"
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:175
+msgid "Maximum number of digits after the decimal point for wind speed"
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:180
+msgid "DEPRECATED. Your personal API key from openweathermap.org"
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:185
+msgid "DEPRECATED. Your personal API key from WeatherAPI.com"
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:190
+msgid "DEPRECATED. Use the extensions default API key from openweathermap.org"
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:195
+msgid "DEPRECATED. Use the extensions default API key from WeatherAPI.com"
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:199
+msgid "Your personal AppKey from developer.mapquest.com"
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:203
+msgid ""
+"Time format for hours. Possible values are '24hr' for 24-hour clock, '12hr' "
+"for AM/PM, and 'system' to follow the GNOME setting."
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:207
+msgid "Seconds to delay popup initialization and data fetch on the first load"
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:211
+msgid "Default width for the preferences window"
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:215
+msgid "Default height for the preferences window"
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:219
+msgid ""
+"High contrast style to use, possible values are 'none', 'white', or 'black'."
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:223
+msgid "True to show the sunset/sunrise in the panel."
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:227
+msgid ""
+"True to show the sunset/sunrise in the panel before the temperature/"
+"conditions if enabled."
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:231
+msgid "False if this extension has never been initialized before."
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:235
+msgid "How often, in minutes, to re-fetch My Location if selected."
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:239
+msgid "True to cut off the \"F\" or \"C\" after the degree symbol."
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:243
+msgid "Freezes the settings changed listener; user should not change this."
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:248
+msgid "List of locations."
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:252
+msgid "Provider to use for \"My Location.\""
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:256
+msgid "Empty or the last initialization error message."
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:260
+msgid "Custom keys for weather providers."
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:264
+msgid "Get a notification when precipitation starts."
+msgstr ""
