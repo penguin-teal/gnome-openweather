@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-shell-extension-openweatherrefined\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-25 06:19-0300\n"
+"POT-Creation-Date: 2024-06-14 17:38-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,6 +19,7 @@ msgstr ""
 
 #: src/openweathermap.js:88
 msgid "OpenWeather Refined Too Many Requests"
+
 msgstr ""
 
 #: src/openweathermap.js:89
@@ -38,6 +39,11 @@ msgstr ""
 
 #: src/openweathermap.js:278
 msgid "Tomorrow"
+msgstr ""
+
+#: src/locs.js:102 src/locs.js:186 src/preferences/locationsPage.js:331
+#: src/preferences/locationsPage.js:395
+msgid "My Location"
 msgstr ""
 
 #: src/weathericons.js:377 src/weathericons.js:379 src/weathericons.js:381
@@ -334,11 +340,6 @@ msgstr ""
 msgid "%s Day Forecast"
 msgstr ""
 
-#: src/locs.js:102 src/locs.js:186 src/preferences/locationsPage.js:331
-#: src/preferences/locationsPage.js:395
-msgid "My Location"
-msgstr ""
-
 #: src/preferences/layoutPage.js:31
 msgid "Layout"
 msgstr ""
@@ -558,186 +559,6 @@ msgstr ""
 msgid "Automatically open the forecast when the pop-up is opened."
 msgstr ""
 
-#: src/preferences/locationsPage.js:55
-msgid "Add"
-msgstr ""
-
-#: src/preferences/locationsPage.js:67 src/preferences/generalPage.js:35
-#: src/preferences/generalPage.js:42 src/preferences/generalPage.js:315
-msgid "Provider"
-msgstr ""
-
-#: src/preferences/locationsPage.js:75
-msgid "My Loc. Provider"
-msgstr ""
-
-#: src/preferences/locationsPage.js:76
-msgid "Provider for getting My Location"
-msgstr ""
-
-#: src/preferences/locationsPage.js:85
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:72
-msgid "Geolocation Provider"
-msgstr ""
-
-#: src/preferences/locationsPage.js:86
-msgid "Provider used for location search"
-msgstr ""
-
-#: src/preferences/locationsPage.js:99
-msgid "Personal MapQuest Key"
-msgstr ""
-
-#: src/preferences/locationsPage.js:100
-msgid "Personal API Key from developer.mapquest.com"
-msgstr ""
-
-#: src/preferences/locationsPage.js:264
-#, javascript-format
-msgid "Location changed to: %s"
-msgstr ""
-
-#: src/preferences/locationsPage.js:294
-msgid "Add New Location"
-msgstr ""
-
-#: src/preferences/locationsPage.js:315
-msgid "Search by Location or Coordinates"
-msgstr ""
-
-#: src/preferences/locationsPage.js:321
-msgid "e.g. London, England or 51.5074456,-0.1277653"
-msgstr ""
-
-#: src/preferences/locationsPage.js:323 src/preferences/locationsPage.js:451
-#: src/preferences/locationsPage.js:468
-msgid "Clear entry"
-msgstr ""
-
-#: src/preferences/locationsPage.js:340
-msgid "Search"
-msgstr ""
-
-#: src/preferences/locationsPage.js:366
-msgid "We need something to search for!"
-msgstr ""
-
-#: src/preferences/locationsPage.js:395
-#: src/preferences/searchResultsWindow.js:273
-#, javascript-format
-msgid "%s has been added"
-msgstr ""
-
-#: src/preferences/locationsPage.js:411
-#, javascript-format
-msgid "Edit %s"
-msgstr ""
-
-#: src/preferences/locationsPage.js:433
-msgid "Edit Name"
-msgstr ""
-
-#: src/preferences/locationsPage.js:459
-msgid "Edit Coordinates"
-msgstr ""
-
-#: src/preferences/locationsPage.js:475
-msgid ""
-"If you meant to search up a new location by name, <b>add</b> a location "
-"instead."
-msgstr ""
-
-#: src/preferences/locationsPage.js:484
-msgid "Save"
-msgstr ""
-
-#: src/preferences/locationsPage.js:519
-msgid "Coordinates field cannot be empty."
-msgstr ""
-
-#: src/preferences/locationsPage.js:527
-#, javascript-format
-msgid "Coordinates field must be in the format of '%s' or the text '%s'."
-msgstr ""
-
-#: src/preferences/locationsPage.js:535
-#, javascript-format
-msgid "Name field can only be empty if coordinates are '%s'."
-msgstr ""
-
-#: src/preferences/locationsPage.js:564
-#, javascript-format
-msgid "%s has been updated"
-msgstr ""
-
-#: src/preferences/locationsPage.js:595
-#, javascript-format
-msgid "Are you sure you want to delete \"%s\"?"
-msgstr ""
-
-#: src/preferences/locationsPage.js:603
-msgid "Delete"
-msgstr ""
-
-#: src/preferences/locationsPage.js:607
-msgid "Cancel"
-msgstr ""
-
-#: src/preferences/locationsPage.js:636
-#, javascript-format
-msgid "%s has been deleted"
-msgstr ""
-
-#: src/preferences/searchResultsWindow.js:36
-#, javascript-format
-msgid "Search Results from %s"
-msgstr ""
-
-#: src/preferences/searchResultsWindow.js:53
-msgid "New Search"
-msgstr ""
-
-#: src/preferences/searchResultsWindow.js:60
-msgid "Searching ..."
-msgstr ""
-
-#: src/preferences/searchResultsWindow.js:62
-#, javascript-format
-msgid "Please wait while searching for locations matching \"%s\""
-msgstr ""
-
-#: src/preferences/searchResultsWindow.js:117
-msgid "AppKey Required"
-msgstr ""
-
-#: src/preferences/searchResultsWindow.js:119
-#, javascript-format
-msgid "You need an AppKey to use MapQuest, get one at: %s"
-msgstr ""
-
-#: src/preferences/searchResultsWindow.js:207
-#, javascript-format
-msgid "Results for \"%s\""
-msgstr ""
-
-#: src/preferences/searchResultsWindow.js:284
-msgid "API Error"
-msgstr ""
-
-#: src/preferences/searchResultsWindow.js:286
-#, javascript-format
-msgid "Invalid data when searching for \"%s\"."
-msgstr ""
-
-#: src/preferences/searchResultsWindow.js:292
-msgid "No Matches Found"
-msgstr ""
-
-#: src/preferences/searchResultsWindow.js:294
-#, javascript-format
-msgid "No results found when searching for \"%s\"."
-msgstr ""
-
 #: src/preferences/aboutPage.js:45
 msgid "About"
 msgstr ""
@@ -819,6 +640,63 @@ msgstr ""
 msgid "for details."
 msgstr ""
 
+#: src/preferences/searchResultsWindow.js:36
+#, javascript-format
+msgid "Search Results from %s"
+msgstr ""
+
+#: src/preferences/searchResultsWindow.js:53
+msgid "New Search"
+msgstr ""
+
+#: src/preferences/searchResultsWindow.js:60
+msgid "Searching ..."
+msgstr ""
+
+#: src/preferences/searchResultsWindow.js:62
+#, javascript-format
+msgid "Please wait while searching for locations matching \"%s\""
+msgstr ""
+
+#: src/preferences/searchResultsWindow.js:117
+msgid "AppKey Required"
+msgstr ""
+
+#: src/preferences/searchResultsWindow.js:119
+#, javascript-format
+msgid "You need an AppKey to use MapQuest, get one at: %s"
+msgstr ""
+
+#: src/preferences/searchResultsWindow.js:207
+#, javascript-format
+msgid "Results for \"%s\""
+msgstr ""
+
+#: src/preferences/searchResultsWindow.js:273
+#: src/preferences/locationsPage.js:395
+#, javascript-format
+msgid "%s has been added"
+msgstr ""
+
+#: src/preferences/searchResultsWindow.js:284
+msgid "API Error"
+msgstr ""
+
+#: src/preferences/searchResultsWindow.js:286
+#, javascript-format
+msgid "Invalid data when searching for \"%s\"."
+msgstr ""
+
+#: src/preferences/searchResultsWindow.js:292
+msgid "No Matches Found"
+msgstr ""
+
+#: src/preferences/searchResultsWindow.js:294
+#, javascript-format
+msgid "No results found when searching for \"%s\"."
+msgstr ""
+
+
 #: src/preferences/generalPage.js:29
 msgid "Provider Multilingual Support"
 msgstr ""
@@ -828,13 +706,14 @@ msgstr ""
 msgid "Use a personal API key for %s"
 msgstr ""
 
+#: src/preferences/generalPage.js:35 src/preferences/generalPage.js:42
+#: src/preferences/generalPage.js:315 src/preferences/locationsPage.js:67
+msgid "Provider"
+msgstr ""
+
 #: src/preferences/generalPage.js:41
 #, javascript-format
 msgid "Enable this if you have your own API key from %s and enter it below."
-msgstr ""
-
-#: src/preferences/generalPage.js:71
-msgid "Settings"
 msgstr ""
 
 #: src/preferences/generalPage.js:80
@@ -948,6 +827,7 @@ msgstr ""
 msgid "Show \"°\" instead of \"°C,\" \"°F,\" etc."
 msgstr ""
 
+
 #: src/preferences/generalPage.js:282
 msgid "Enable this to cut off the \"C,\" \"F,\" etc. from degrees labels."
 msgstr ""
@@ -979,6 +859,7 @@ msgstr ""
 msgid ""
 "Provider used for weather and forecasts; choose \"%s\" if you don't care."
 msgstr ""
+
 
 #: src/preferences/generalPage.js:330
 #, javascript-format
@@ -1013,6 +894,128 @@ msgstr ""
 
 #: src/preferences/generalPage.js:406
 msgid "Restore all settings to the defaults."
+msgstr ""
+
+#: src/preferences/generalPage.js:29
+msgid "Provider Multilingual Support"
+msgstr ""
+
+#: src/preferences/generalPage.js:35
+#, javascript-format
+msgid "Use a personal API key for %s"
+msgstr ""
+
+#: src/preferences/generalPage.js:41
+#, javascript-format
+msgid "Enable this if you have your own API key from %s and enter it below."
+msgstr ""
+
+#: src/preferences/locationsPage.js:85
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:72
+msgid "Geolocation Provider"
+msgstr ""
+
+#: src/preferences/generalPage.js:80
+msgid "General"
+msgstr ""
+
+#: src/preferences/generalPage.js:98
+msgid "Current Weather Refresh"
+msgstr ""
+
+#: src/preferences/generalPage.js:99
+msgid "Current weather refresh interval in minutes"
+msgstr ""
+
+#: src/preferences/locationsPage.js:264
+#, javascript-format
+msgid "Location changed to: %s"
+msgstr ""
+
+#: src/preferences/locationsPage.js:294
+msgid "Add New Location"
+msgstr ""
+
+#: src/preferences/locationsPage.js:315
+msgid "Search by Location or Coordinates"
+msgstr ""
+
+#: src/preferences/locationsPage.js:321
+msgid "e.g. London, England or 51.5074456,-0.1277653"
+msgstr ""
+
+#: src/preferences/locationsPage.js:323 src/preferences/locationsPage.js:451
+#: src/preferences/locationsPage.js:468
+msgid "Clear entry"
+msgstr ""
+
+#: src/preferences/locationsPage.js:340
+msgid "Search"
+msgstr ""
+
+#: src/preferences/locationsPage.js:366
+msgid "We need something to search for!"
+msgstr ""
+
+#: src/preferences/locationsPage.js:411
+#, javascript-format
+msgid "Disable to use packaged %s weather icons"
+msgstr ""
+
+#: src/preferences/locationsPage.js:433
+msgid "Edit Name"
+msgstr ""
+
+#: src/preferences/locationsPage.js:459
+msgid "Edit Coordinates"
+msgstr ""
+
+#: src/preferences/locationsPage.js:475
+msgid ""
+"This setting only applies to the first time the extension is loaded. (first "
+"log in / restarting gnome shell)"
+msgstr ""
+
+#: src/preferences/locationsPage.js:484
+msgid "Save"
+msgstr ""
+
+#: src/preferences/locationsPage.js:519
+msgid "Coordinates field cannot be empty."
+msgstr ""
+
+#: src/preferences/locationsPage.js:527
+#, javascript-format
+msgid "Coordinates field must be in the format of '%s' or the text '%s'."
+msgstr ""
+
+#: src/preferences/locationsPage.js:535
+#, javascript-format
+msgid "Name field can only be empty if coordinates are '%s'."
+msgstr ""
+
+#: src/preferences/locationsPage.js:564
+#, javascript-format
+msgid ""
+"Provider used for weather and forecasts; choose \"%s\" if you don't care."
+msgstr ""
+
+#: src/preferences/locationsPage.js:595
+#, javascript-format
+msgid "Choose '%s' if you don't care, otherwise choose a specific provider."
+msgstr ""
+
+#: src/preferences/locationsPage.js:603
+msgid "Delete"
+msgstr ""
+
+#: src/preferences/locationsPage.js:607
+msgid "Cancel"
+msgstr ""
+
+#: src/preferences/locationsPage.js:636
+#, javascript-format
+msgid "%s has been deleted"
 msgstr ""
 
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:76

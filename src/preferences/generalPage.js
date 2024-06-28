@@ -308,7 +308,7 @@ class GeneralPage extends Adw.PreferencesPage
     precipStartsNotifRow.add_suffix(precipStartsNotifSwitch);
 
     notifGroup.add(precipStartsNotifRow);
-    this.add(notifGroup);
+    //this.add(notifGroup);
 
     // Provider Settings
     let apiGroup = new Adw.PreferencesGroup({
@@ -323,7 +323,7 @@ class GeneralPage extends Adw.PreferencesPage
     weatherProvsList.append("OpenWeatherMap");
     weatherProvsList.append("WeatherAPI.com");
     weatherProvsList.append("Visual Crossing");
-    weatherProvsList.append("Open-Meteo");
+    //weatherProvsList.append("Open-Meteo");
     let weatherProvsListRow = new Adw.ComboRow({
       title: _("Weather Provider"),
       subtitle: _("Provider used for weather and forecasts; choose \"%s\" if you don't care.").format(_("Adaptive")),
