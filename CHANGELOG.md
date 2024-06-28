@@ -1,3 +1,10 @@
+## v138 (In Progress)
+
+Improvements:
+- Better French translations (thanks @Deuchnord)
+- Better Russian translations (thanks @krotesk)
+- Better Brazilian Portugese translations (thanks @Vinicius-Madeira)
+
 ## v137 (Jun 28, 2024)
 
 This version fixes issues with setting custom API keys.

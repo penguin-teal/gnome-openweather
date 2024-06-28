@@ -104,8 +104,10 @@ for previous contributor details.
 Special thanks to the following people for updating translation `*.po` files
 via merge requests:
 
-French: @franckgaga | Slovak: @jose1711 | Chinese: @xiaozhangup & @zyw271828 |
-Portuguese: @ronaldocosta | Russian: @vantu5z & @tvaliiev | Czech: @lev741 |
+French: @franckgaga & @Deuchnord | Slovak: @jose1711 |
+Chinese: @xiaozhangup & @zyw271828 |
+Portuguese: @ronaldocosta | Brazilian Portugese: @Vinicius-Madeira |
+Russian: @vantu5z & @tvaliiev & @krotesk | Czech: @lev741 |
 Turkish: @oguzkarayemis | German: @zeners | Polish: @MarcinScieszka |
 Italian: @alealetti | Dutch: @Vistaus | Spanish: @federicolencina
 
