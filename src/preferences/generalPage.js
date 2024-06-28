@@ -308,7 +308,7 @@ class GeneralPage extends Adw.PreferencesPage
     precipStartsNotifRow.add_suffix(precipStartsNotifSwitch);
 
     notifGroup.add(precipStartsNotifRow);
-    this.add(notifGroup);
+    //this.add(notifGroup);
 
     // Provider Settings
     let apiGroup = new Adw.PreferencesGroup({
