@@ -1,3 +1,14 @@
+## v137 (Jun 28, 2024)
+
+This version fixes issues with setting custom API keys.
+
+Improvements:
+- "Visual Crossing" removed from "Adaptive" setting's pool; it currently will only work with a personal API key
+
+Bug Fixes:
+- Custom API keys not being set correctly
+- Fix some API keys not being redacted with Copy Settings button
+
 ## v136 (Jun 10, 2024)
 
 This version fixes issues when rate-limiting happened.
