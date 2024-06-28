@@ -47,7 +47,11 @@ export const WeatherProvider =
   OPENWEATHERMAP: 1,
   WEATHERAPICOM: 2,
   VISUALCROSSING: 3,
-  OPENMETEO: 4
+  OPENMETEO: 4,
+
+  // Open-Meteo not ready
+  /** Count of usable providers (excludes Adaptive). */
+  COUNT: 3
 };
 
 // Corresponds to Weather providers
@@ -113,13 +117,14 @@ function chooseRandomProvider(settings)
 {
   // WeatherAPI.com doesn't support as many forecast days as OpenWeatherMap
   let forecastDays = settings.get_int("days-forecast");
-  let rand = Math.floor(Math.random() * (Object.keys(WeatherProvider).length - 1) + 1);
-  if(ForecastDaysSupport[rand] < forecastDays) rand = WeatherProvider.VISUALCROSSING;
+  let rand = Math.floor(Math.random() * WeatherProvider.COUNT + 1);
+
+  // Should be OpenMeteo in the future
+  if(ForecastDaysSupport[rand] < forecastDays) rand = WeatherProvider.OPENWEATHERMAP;
   
+  randomProvider = rand;
   // Visual Crossing doesn't work right now (blocked if reached rate limit)
   if(rand === WeatherProvider.VISUALCROSSING) weatherProviderNotWorking(settings);
-
-  return rand;
 }
 
 export function getWeatherProvider(settings)
@@ -127,7 +132,7 @@ export function getWeatherProvider(settings)
   let prov = settings.get_enum("weather-provider");
   if(prov === WeatherProvider.DEFAULT)
   {
-    if(!randomProvider) randomProvider = chooseRandomProvider(settings);
+    if(!randomProvider) chooseRandomProvider(settings);
     return randomProvider;
   }
   else return prov;
@@ -153,7 +158,9 @@ export function weatherProviderNotWorking(settings)
     // Visual Crossing doesn't work right now (blocked if reached rate limit)
     if(randomProvider === WeatherProvider.VISUALCROSSING) randomProvider++;
 
-    if(randomProvider > Object.keys(WeatherProvider).length - 1) randomProvider = 1;
+    if(randomProvider > WeatherProvider.COUNT) randomProvider = 1;
+
+    console.log("inc rand " + typeof randomProvider + randomProvider);
 
     return true;
   }
@@ -819,6 +826,31 @@ export async function getWeatherInfo(extension, gettext)
           sunsetDt,
           forecasts
         );
+      }
+
+    case WeatherProvider.OPENMETEO:
+      {
+        params =
+        {
+          latitude: lat,
+          longitude: lon,
+          forecast_days: String(extension._days_forecast + 2),
+          wind_speed_unit: "ms"
+        };
+        if(extension._providerTranslations) params.lang = extension.locale;
+        let apiKey = extension.getWeatherKey();
+        if(apiKey) params.key = apiKey;
+
+        let response;
+        try
+        {
+          response = await loadJsonAsync("https://api.weatherapi.com/v1/forecast.json", params);
+        }
+        catch(e)
+        {
+          console.error(`OpenWeather Refined: Failed to fetch weather from weatherapi.com ('${e.message}').`);
+          return null;
+        }
       }
 
     default:

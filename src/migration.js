@@ -102,7 +102,7 @@ function tryMigratePre136(settings)
 {
   // Create an array of empty strings with the length of weather
   // providers available
-  let keys = Array.from({ length: Object.keys(WeatherProvider).length - 1 }, () => "");
+  let keys = Array.from({ length: WeatherProvider.COUNT }, () => "");
 
   let owmKey = settings.get_string("appid");
   if(!settings.get_boolean("use-default-owm-key"))

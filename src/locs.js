@@ -289,7 +289,7 @@ function fromKeysGVariant(val)
   val.get_data();
   let keyCount = val.n_children();
 
-  let arr = Array.from({ length: Object.keys(WeatherProvider).length - 1 }, () => "");
+  let arr = Array.from({ length: WeatherProvider.COUNT }, () => "");
   for(let i = 0; i < keyCount; i++)
   {
     let k = val.get_child_value(i);
