@@ -29,7 +29,7 @@ msgstr "Mevcut değil"
 #: src/preferences/locationsPage.js:393
 #, fuzzy
 msgid "My Location"
-msgstr "Konumlar"
+msgstr "Konumum"
 
 #: src/extension.js:248
 msgid "Failed to initialize."
@@ -43,10 +43,9 @@ msgid ""
 "dialog to on or register at %s and paste your personal key into the "
 "preferences dialog."
 msgstr ""
-"Openweathermap.org api-anahtarı olmadan çalışmaz.\n"
-"İstereniz eklentinin varsayılan anahtarını kullanabilir ya da https://"
-"openweathermap.org/appid adresine kayıt olup kendi kişisel anahtarınızı "
-"ekleyebilirsiniz."
+"%s api-anahtarı olmadan çalışmaz.\n"
+"İstereniz eklentinin varsayılan anahtarını kullanabilir ya da "
+"%s adresine kayıt olup kendi kişisel anahtarınızı ekleyebilirsiniz."
 
 #: src/extension.js:432
 msgid "OpenWeather Refined: Imported settings from old extension."
@@ -64,7 +63,7 @@ msgstr "Konumlar"
 
 #: src/extension.js:1048
 msgid "Reload Weather Information"
-msgstr "Hava Durumu Bilgisini Yeniden Yükle"
+msgstr "Hava Durumunu Yenile"
 
 #: src/extension.js:1066
 msgid "See Online"
@@ -285,7 +284,7 @@ msgstr "kn"
 
 #: src/extension.js:1561 src/preferences/generalPage.js:216
 msgid "ft/s"
-msgstr "kn"
+msgstr "ft/s"
 
 #: src/extension.js:1628 src/extension.js:1678
 msgid "Loading ..."
@@ -336,19 +335,19 @@ msgstr "Yarın"
 #: src/preferences/generalPage.js:28
 #, fuzzy, javascript-format
 msgid "%s Multilingual Support"
-msgstr "OpenWeatherMap Çoklu Dil Desteği"
+msgstr "%s Çoklu Dil Desteği"
 
 #: src/preferences/generalPage.js:33
 #, fuzzy, javascript-format
 msgid "Use a personal API key for %s"
-msgstr "Kişisel API Anahtarı"
+msgstr "%s için kişisel API anahtarı kullan."
 
 #: src/preferences/generalPage.js:38
 #, fuzzy, javascript-format
 msgid "Enable this if you have your own API key from %s and enter it below."
 msgstr ""
-"Eğer openweather.org için kişisel API anahtarınız varsa bunu devre dışı "
-"bırakın ve metin kutusuna ekleyin."
+"Eğer %s için kişisel API anahtarınız varsa bunu etkinleştir ve aşağıdaki "
+"kutucuğa anahtarını gir."
 
 #: src/preferences/generalPage.js:51
 msgid "Settings"
@@ -360,11 +359,11 @@ msgstr "Genel"
 
 #: src/preferences/generalPage.js:78
 msgid "Current Weather Refresh"
-msgstr "Geçerli Hava Durumunu Yenile"
+msgstr "Güncel Hava Durumunu Yenile"
 
 #: src/preferences/generalPage.js:79
 msgid "Current weather refresh interval in minutes"
-msgstr "Geçerli hava durumunu yenileme sıklığı (dakika)"
+msgstr "Güncel hava durumunu dakika cinsinden yenileme sıklığı"
 
 #: src/preferences/generalPage.js:101
 msgid "Weather Forecast Refresh"
@@ -372,17 +371,17 @@ msgstr "Hava Durumu Tahmini Yenileme"
 
 #: src/preferences/generalPage.js:102
 msgid "Forecast refresh interval in minutes if enabled"
-msgstr "Etkinleştirilmişse, hava tahmini tazeleme sıklığı (dakika)"
+msgstr "Etkinleştirilmişse, dakika cinsinden hava tahmini tazeleme sıklığı"
 
 #: src/preferences/generalPage.js:122
 #, fuzzy
 msgid "My Location Refresh"
-msgstr "Konumlar"
+msgstr "Konumumu Yenile"
 
 #: src/preferences/generalPage.js:123
 #, fuzzy
 msgid "My location refresh interval in minutes"
-msgstr "Geçerli hava durumunu yenileme sıklığı (dakika)"
+msgstr "Konumumu dakika cinsinden yenileme sıklığı"
 
 #: src/preferences/generalPage.js:134
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:122
@@ -403,7 +402,7 @@ msgstr "Sistem Simgeleri"
 #, fuzzy, javascript-format
 msgid "Disable to use packaged %s weather icons"
 msgstr ""
-"Paketleniş Adwaita hava durumu simgelerinin kullanımını devre dışı bırak"
+"Paketlenmiş %s hava durumu simgelerinin kullanımını devre dışı bırak"
 
 #: src/preferences/generalPage.js:149
 msgid ""
@@ -426,7 +425,7 @@ msgid ""
 "This setting only applies to the first time the extension is loaded. (first "
 "log in / restarting gnome shell)"
 msgstr ""
-"Bu ayar yalnızca uzantının ilk yüklenme zamanına uygulanır. (ilk giriş / "
+"Bu ayar yalnızca eklentinin ilk yüklenme zamanına uygulanır. (ilk giriş / "
 "gnome shelli yeniden başlatma)"
 
 #: src/preferences/generalPage.js:189
@@ -460,7 +459,7 @@ msgstr "ÖÖ / ÖS"
 #: src/preferences/generalPage.js:247
 #, fuzzy
 msgid "System"
-msgstr "Sistem Simgeleri"
+msgstr "Sistem"
 
 #: src/preferences/generalPage.js:249
 msgid "Time Format"
@@ -485,12 +484,12 @@ msgstr "Sağlayıcı"
 #: src/preferences/generalPage.js:287
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:67
 msgid "Weather Provider"
-msgstr "Hava Durumu Sağlayıcı"
+msgstr "Hava Durumu Sağlayıcısı"
 
 #: src/preferences/generalPage.js:288
 #, fuzzy
 msgid "Provider used for weather and forecasts"
-msgstr "Konum arama için kullanılan sağlayıcı"
+msgstr "Hava durumu ve tahmini için kullanılan sağlayıcı"
 
 #: src/preferences/generalPage.js:301
 msgid "Using provider translations applies to weather conditions only"
@@ -502,13 +501,13 @@ msgid ""
 "Enable this to use provider multilingual support if there's no built-in "
 "translations for your language yet."
 msgstr ""
-"Eğer kendi diliniz için yerleşik çeviriler yoksa, 46 dilde OWM çoklu dil "
+"Eğer kendi diliniz için yerleşik çeviriler yoksa, sağlayıcının çoklu dil "
 "desteğini kullanmak için bunu etkinleştirin."
 
 #: src/preferences/generalPage.js:317
 #, fuzzy
 msgid "Use Custom API Key"
-msgstr "Uzantının API Anahtarını Kullan"
+msgstr "Kişisel API Anahtarını Kullan"
 
 #: src/preferences/generalPage.js:333
 msgid "Personal API Key"
@@ -577,12 +576,12 @@ msgstr "Panelde Koşullar"
 #: src/preferences/layoutPage.js:102
 #, fuzzy
 msgid "Show the time of sunrise/sunset in the panel."
-msgstr "Sıcaklığı panelde göster"
+msgstr "Gün doğumu/Gün batışı saatini panelde göster."
 
 #: src/preferences/layoutPage.js:106
 #, fuzzy
 msgid "Sunrise/Sunset In Panel"
-msgstr "Panelde Koşullar"
+msgstr "Panelde Gün doğumu/Gün batışı "
 
 #: src/preferences/layoutPage.js:114
 msgid ""
@@ -637,7 +636,7 @@ msgstr "3"
 
 #: src/preferences/layoutPage.js:189
 msgid "Temperature Decimal Places"
-msgstr "Sıcaklık Ondalık Basamaklar"
+msgstr "Sıcaklığın Ondalık Basamakları"
 
 #: src/preferences/layoutPage.js:190 src/preferences/layoutPage.js:205
 #: src/preferences/layoutPage.js:219
@@ -660,12 +659,12 @@ msgstr "4"
 #: src/preferences/layoutPage.js:204
 #, fuzzy
 msgid "Pressure Decimal Places"
-msgstr "Sıcaklık Ondalık Basamaklar"
+msgstr "Basıncın Ondalık Basamakları"
 
 #: src/preferences/layoutPage.js:218
 #, fuzzy
 msgid "Speed Decimal Places"
-msgstr "Sıcaklık Ondalık Basamaklar"
+msgstr "Hızın Ondalık Basamakları"
 
 #: src/preferences/layoutPage.js:239
 msgid "Location Text Length"
@@ -726,7 +725,7 @@ msgstr "Hava Tahmini Genişletilmiş Tut"
 #: src/preferences/searchResultsWindow.js:36
 #, fuzzy, javascript-format
 msgid "Search Results from %s"
-msgstr "Arama Sonuçları"
+msgstr "%s 'dan Arama Sonuçları"
 
 #: src/preferences/searchResultsWindow.js:53
 msgid "New Search"
@@ -790,17 +789,17 @@ msgstr "Hakkında"
 msgid ""
 "Display weather information for any location on Earth in the GNOME Shell."
 msgstr ""
-"Yeryüzündeki herhangi bir konumun hava bilgilerini GNOME Kabuğu'nda gösterir"
+"Yeryüzündeki herhangi bir konumun hava bilgilerini GNOME Kabuğu'nda göster."
 
 #: src/preferences/aboutPage.js:79 src/preferences/aboutPage.js:80
 #, fuzzy
 msgid "Unknown"
-msgstr "bilinmeyen"
+msgstr "Bilinmeyen"
 
 #: src/preferences/aboutPage.js:84
 #, fuzzy
 msgid "OpenWeather Refined Version"
-msgstr "OpenWeather Sürümü"
+msgstr "OpenWeather Refined Sürümü"
 
 #: src/preferences/aboutPage.js:96
 msgid "Git Version"
@@ -813,7 +812,7 @@ msgstr "GNOME Sürümü"
 #: src/preferences/aboutPage.js:117
 #, fuzzy
 msgid "Copy Settings JSON"
-msgstr "Ayarlar"
+msgstr "Ayarları JSON Formatında Kopyala"
 
 #: src/preferences/aboutPage.js:120
 msgid "Copy"
@@ -868,7 +867,7 @@ msgstr "Ekle"
 #: src/preferences/locationsPage.js:75
 #, fuzzy
 msgid "My Loc. Provider"
-msgstr "Sağlayıcı"
+msgstr "Konum Sağlayıcım"
 
 #: src/preferences/locationsPage.js:76
 #, fuzzy
@@ -989,7 +988,7 @@ msgstr "Sıcaklık Birimi"
 
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:79
 msgid "Pressure Unit"
-msgstr "Basınç Birimleri"
+msgstr "Basınç Birimi"
 
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:83
 msgid "Wind Speed Units"
@@ -1001,16 +1000,16 @@ msgid ""
 "s', 'knots', 'ft/s' or 'Beaufort'."
 msgstr ""
 "Hava hızı için kullanılacak birimleri seçin. İzin verilen değerler 'kph', "
-"'mph', 'm/s', 'knots', 'ft/s' oder 'Beaufort'."
+"'mph', 'm/s', 'knots', 'ft/s' ve 'Beaufort'."
 
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:88
 msgid "Wind Direction by Arrows"
-msgstr "Ok ile Rüzgar Yönü"
+msgstr "Oklarla Rüzgar Yönü"
 
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:89
 #, fuzzy
 msgid "True to display wind direction through arrows rather than letters."
-msgstr "Rüzgar yönünü oklarla veya harflerle göstermeyi seçin."
+msgstr "Rüzgar yönünü harfler yerine oklarla göstermeyi seçin."
 
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:94
 #, fuzzy
@@ -1076,17 +1075,17 @@ msgstr "Hava tahminindeki gün sayısı"
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:166
 #, fuzzy
 msgid "Maximum number of digits after the decimal point for temperature"
-msgstr "Ondalık noktadan sonraki azami basamak sayısı"
+msgstr "Sıcaklık için ondalık noktadan sonraki azami basamak sayısı"
 
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:170
 #, fuzzy
 msgid "Maximum number of digits after the decimal point for pressure"
-msgstr "Ondalık noktadan sonraki azami basamak sayısı"
+msgstr "Basınç için ondalık noktadan sonraki azami basamak sayısı"
 
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:174
 #, fuzzy
 msgid "Maximum number of digits after the decimal point for wind speed"
-msgstr "Ondalık noktadan sonraki azami basamak sayısı"
+msgstr "Rüzgar hızı için ondalık noktadan sonraki azami basamak sayısı"
 
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:178
 msgid "Your personal API key from openweathermap.org"
@@ -1095,7 +1094,7 @@ msgstr "openweathermap.org adresinden kişisel API anahtarınız"
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:182
 #, fuzzy
 msgid "Your personal API key from WeatherAPI.com"
-msgstr "openweathermap.org adresinden kişisel API anahtarınız"
+msgstr "WeatherAPI.com adresinden kişisel API anahtarınız"
 
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:186
 msgid "Use the extensions default API key from openweathermap.org"
@@ -1106,7 +1105,7 @@ msgstr ""
 #, fuzzy
 msgid "Use the extensions default API key from WeatherAPI.com"
 msgstr ""
-"openweathermap.org adresinden uzantıların varsayılan API anahtarını kullan"
+"WeatherAPI.com adresinden uzantıların varsayılan API anahtarını kullan"
 
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:194
 msgid "Your personal AppKey from developer.mapquest.com"
@@ -1141,7 +1140,7 @@ veya 'black'dir."
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:218
 #, fuzzy
 msgid "True to show the sunset/sunrise in the panel."
-msgstr "Sıcaklığı panelde göster"
+msgstr "Gün doğumu/Gün batımını panelde göster"
 
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:222
 msgid ""
@@ -1170,12 +1169,12 @@ msgstr "Ayarlar değiştiğinde dinleyiciyi dondurur; kullanıcı bunu değişti
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:243
 #, fuzzy
 msgid "List of locations."
-msgstr "Konumlar"
+msgstr "Konumların listesi."
 
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:247
 #, fuzzy
 msgid "Provider to use for \"My Location.\""
-msgstr "Konum arama için kullanılan sağlayıcı"
+msgstr "\"Konumum\" için kullanılan sağlayıcı"
 
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:251
 msgid "Empty or the last initialization error message."
