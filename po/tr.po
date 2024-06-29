@@ -5,14 +5,15 @@
 # Orhan Engin OKAY <orhanenginokay@hotmail.com>, 2018
 # Oğuz KARAYEMİŞ <oguzkarayemis@gmail.com>, 2022
 # Sabri Ünal <libreajans@gmail.com>, 2023.
+# Furkan Simsekli <simseklifurkan0@gmail.com>, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gnome-shell-extension-openweather\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-04-18 09:26-0500\n"
-"PO-Revision-Date: 2023-03-31 17:34+0300\n"
-"Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
+"PO-Revision-Date: 2024-06-29 22:00+0300\n"
+"Last-Translator: Furkan Simsekli <simseklifurkan0@gmail.com>\n"
 "Language-Team: Turkish\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
