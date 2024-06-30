@@ -453,7 +453,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
           this.settings.set_enum("my-loc-prov", MyLocProv.INFOIPIO);
         }
       }
-      
+
       if(!migrated)
       {
         let locInfo = await getLocationInfo(this.settings, true);
@@ -539,7 +539,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       this.toggleSunriseSunset();
 
       _systemClockFormat = this.gSettings.get_enum("clock-format");
-      
+
       this.updateForecast();
 
       if (await this.locationChanged())
@@ -999,7 +999,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
   getWeatherKey()
   {
     let keys = settingsGetKeys(this.settings);
-    let selected = keys[this.weatherProvider];
+    let selected = keys[this.weatherProvider - 1];
     return selected ? selected : DEFAULT_KEYS[this.weatherProvider - 1];
   }
 
@@ -1059,7 +1059,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       );
       this._nominatimBtn.set_label(this._nominatimBtn.get_accessible_name());
     }
-    
+
     this._seeOnlineUrlBtn = this.createButton(
       this.getGIcon("internet-web-browser-symbolic").to_string(),
       _("See Online")
@@ -1488,7 +1488,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
         tLocal = tempC / 3.03030303;
         break;
     }
-    
+
     let string = tLocal.toLocaleString(this.locale, { maximumFractionDigits: this._decimal_places });
     //
     // turn a rounded '-0' into '0'
@@ -1706,7 +1706,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
       style_class: "system-menu-action openweather-current-databox-values",
     });
     st13AddActors(rb, rb_captions, rb_values);
-    
+
     let sideStats =
     [
       _("Feels Like:"),
