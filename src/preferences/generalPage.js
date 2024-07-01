@@ -47,15 +47,29 @@ function isValidKey(provider, key)
   switch(provider)
   {
     case WeatherProvider.OPENWEATHERMAP:
-      return /^[a-z0-9]{5,}$/.test(key);
+      return /^[a-z0-9A-Z ]{5,}$/.test(key);
     case WeatherProvider.WEATHERAPICOM:
-      return /^[a-z0-9]{5,}$/.test(key);
+      return /^[a-z0-9A-Z ]{5,}$/.test(key);
     case WeatherProvider.VISUALCROSSING:
-      return /^[A-Z0-9]{5,}$/.test(key);
+      return /^[A-Z0-9a-z ]{5,}$/.test(key);
     case WeatherProvider.OPENMETEO:
       return true;
     default:
       return false;
+  }
+}
+
+function formatKey(provider, key)
+{
+  switch(provider)
+  {
+    case WeatherProvider.OPENWEATHERMAP:
+    case WeatherProvider.WEATHERAPICOM:
+      return key.toLowerCase().replace(/\w+/, "");
+    case WeatherProvider.VISUALCROSSING:
+      return key.toUpperCase().replace(/\w+/, "");
+    default:
+      return key;
   }
 }
 
@@ -519,7 +533,7 @@ class GeneralPage extends Adw.PreferencesPage
       let keyArr = settingsGetKeys(this._settings);
       // 1 in enum is 0 in the key array
       // Note if this is empty, that will turn default mode on
-      keyArr[prov - 1] = key;
+      keyArr[prov - 1] = formatKey(key);
       settingsSetKeys(this._settings, keyArr);
     });
     resetToDefsBtn.connect("clicked", () =>
