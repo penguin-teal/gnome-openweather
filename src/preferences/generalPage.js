@@ -49,9 +49,9 @@ function isValidKey(provider, key)
     case WeatherProvider.OPENWEATHERMAP:
       return /^[a-z0-9]{32,}$/.test(key);
     case WeatherProvider.WEATHERAPICOM:
-      return /^[a-z0-9]{31,}$/.test(key);
+      return /^[a-z0-9]{5,}$/.test(key);
     case WeatherProvider.VISUALCROSSING:
-      return /^[A-Z0-9]{25,}$/.test(key);
+      return /^[A-Z0-9]{5,}$/.test(key);
     case WeatherProvider.OPENMETEO:
       return true;
     default:
