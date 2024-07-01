@@ -1135,8 +1135,8 @@ msgstr "Tercihler penceresinin varsayılan yüksekliği"
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:214
 msgid ""
 "High contrast style to use, possible values are 'none', 'white', or 'black'."
-msgstr "Kullanılacak yüksek kontrast stili. Muhtemel değerler 'none', 'white' 
-veya 'black'dir."
+msgstr "Kullanılacak yüksek kontrast stili. Muhtemel değerler 'none', 'white' "
+"veya 'black'dir."
 
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:218
 #, fuzzy
