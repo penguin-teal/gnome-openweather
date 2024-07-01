@@ -1,9 +1,17 @@
-## v138 (In Progress)
+## v138 (Jun 30, 2024)
+
+Hotfix for custom API keys and also a bunch of translations.
 
 Improvements:
 - Better French translations (thanks @Deuchnord)
 - Better Russian translations (thanks @krotesk)
 - Better Brazilian Portugese translations (thanks @Vinicius-Madeira)
+- Better Turkish translations (thanks @furkansimsekli)
+- Better English grammar
+- Woke up to 40 e-mails XD
+
+Bug Fixes:
+- Fix wrong custom API keys being used (thanks @rakkhin)
 
 ## v137 (Jun 28, 2024)
 

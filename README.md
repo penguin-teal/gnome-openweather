@@ -99,6 +99,8 @@ This project is a fork of Kenneth Topp's fork of Jason Oickle's fork of the
 original OpenWeather extension by @jenslody. See [`AUTHORS`](./AUTHORS)
 for previous contributor details.
 
+PR Hall of Fame: @rakkhin
+
 ### Translations
 
 Special thanks to the following people for updating translation `*.po` files
@@ -108,7 +110,8 @@ French: @franckgaga & @Deuchnord | Slovak: @jose1711 |
 Chinese: @xiaozhangup & @zyw271828 |
 Portuguese: @ronaldocosta | Brazilian Portugese: @Vinicius-Madeira |
 Russian: @vantu5z & @tvaliiev & @krotesk | Czech: @lev741 |
-Turkish: @oguzkarayemis | German: @zeners | Polish: @MarcinScieszka |
+Turkish: @oguzkarayemis & @furkansimsekli | German: @zeners |
+Polish: @MarcinScieszka |
 Italian: @alealetti | Dutch: @Vistaus | Spanish: @federicolencina
 
 ### Icons
