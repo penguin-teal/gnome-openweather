@@ -25,14 +25,7 @@ import { PACKAGE_VERSION } from "resource:///org/gnome/Shell/Extensions/js/misc/
 import { gettext as _ } from "resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js";
 import { Loc, settingsGetLocs, settingsGetKeys, toLocsGVariant } from "../locs.js";
 import { getWeatherProviderName, getWeatherProviderUrl } from "../getweather.js";
-
-function getLocale()
-{
-    let locale = GLib.get_language_names()[0];
-    if (locale.indexOf("_") !== -1) return locale.split("_")[0];
-    // Fallback for 'C', 'C.UTF-8', and unknown locales.
-    else return "en";
-}
+import { toLanguageCode, toLocale } from "../utils.js";
 
 function weatherDataSource(prov)
 {
@@ -151,6 +144,7 @@ class AboutPage extends Adw.PreferencesPage {
         "geolocation-appid-mapquest"
       ];
 
+      let userLocale = toLocale(toLanguageCode(settings.get_string("language")));
       // This object will hold the data to turn to JSON
       // Start with some extra info here that isn't in the settings
       let obj =
@@ -158,7 +152,7 @@ class AboutPage extends Adw.PreferencesPage {
         "app-version": releaseVersion,
         "git-version": gitVersion,
         "gnome-version": String(PACKAGE_VERSION),
-        "user-locale": getLocale()
+        "user-locale": userLocale
       };
       let keys = settings.list_keys();
       for(let k of keys)
@@ -237,7 +231,7 @@ class AboutPage extends Adw.PreferencesPage {
         settings.set_boolean("frozen", true);
 
         let skipKeys = [
-          "app-version", "gnome-version", "git-version", "user-locale", "locs",
+          "app-version", "gnome-version", "git-version", "user-locale", "language", "locs",
           "frozen", "appid", "weatherapidotcom-key", "custom-keys",
           "use-default-owm-key", "use-default-weatherapidotcom-key",
           "geolocation-appid-mapquest"

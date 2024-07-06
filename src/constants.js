@@ -1,3 +1,42 @@
+const LanguagePreference = {
+  SYSTEM: "system",
+  ARABIC: "arabic",
+  BASQUE: "basque",
+  BELARUSIAN: "belarusian",
+  BULGARIAN: "bulgarian",
+  CATALAN: "catalan",
+  "CHINESE (SIMPLIFIED)": "chinese (simplified)",
+  "CHINESE (TRADITIONAL)": "chinese (traditional)",
+  CZECH: "czech",
+  DANISH: "danish",
+  DUTCH: "dutch",
+  ENGLISH: "english",
+  FINNISH: "finnish",
+  FRENCH: "french",
+  GERMAN: "german",
+  GREEK: "greek",
+  HEBREW: "hebrew",
+  HUNGARIAN: "hungarian",
+  INDONESIAN: "indonesian",
+  ITALIAN: "italian",
+  JAPANESE: "japanese",
+  LITHUANIAN: "lithuanian",
+  "NORWEGIAN BOKMÅL": "norwegian bokmål",
+  POLISH: "polish",
+  PORTUGUESE: "portuguese",
+  "PORTUGUESE (BRAZIL)": "portuguese (brazil)",
+  ROMANIAN: "romanian",
+  RUSSIAN: "russian",
+  SERBIAN: "serbian",
+  "SERBIAN (LATIN)": "serbian (latin)",
+  SLOVAK: "slovak",
+  SPANISH: "spanish",
+  SWEDISH: "swedish",
+  TURKISH: "turkish",
+  UKRAINIAN: "ukrainian",
+  VIETNAMESE: "vietnamese",
+};
+
 const WeatherUnits = {
   CELSIUS: 0,
   FAHRENHEIT: 1,
@@ -35,13 +74,13 @@ const WeatherPressureUnits = {
 const HiContrastStyle = {
   NONE: 0,
   WHITE: 1,
-  BLACK: 2
+  BLACK: 2,
 };
 
 const ClockFormat = {
   _24H: 0,
   _12H: 1,
-  SYSTEM: 2
+  SYSTEM: 2,
 };
 
 const WeatherPosition = {
@@ -59,6 +98,7 @@ const GeolocationProvider = {
 };
 
 export {
+  LanguagePreference,
   WeatherUnits,
   WeatherWindSpeedUnits,
   WeatherPressureUnits,

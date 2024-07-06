@@ -19,6 +19,7 @@ import GLib from "gi://GLib";
 import Soup from "gi://Soup";
 import { getSoupSession } from "./myloc.js"
 import { getIconName, gettextCondition } from "./weathericons.js"
+import { toLanguageCode } from "./utils.js";
 
 export const DEFAULT_KEYS =
 [
@@ -125,6 +126,30 @@ function chooseRandomProvider(settings)
   randomProvider = rand;
   // Visual Crossing doesn't work right now (blocked if reached rate limit)
   if(rand === WeatherProvider.VISUALCROSSING) weatherProviderNotWorking(settings);
+}
+
+// Convert the locale to the according language accepted by the provider
+// e.g. the lang param for Czech is 'cs' for WeatherAPI but 'cz' for OpenWeatherMap.
+function convertLanguage(lang, weatherProvider) {
+  if (lang === "sr@latin") lang = "sr"; // sr@latin should always change to 'sr'
+  switch (weatherProvider) {
+    case WeatherProvider.OPENWEATHERMAP:
+      if (lang === "cs") lang = "cz"; 
+      if (lang === "nb") lang = "no"; 
+      break;
+    case WeatherProvider.WEATHERAPICOM:
+      if (lang === "zh_cn") lang = "zh"; 
+      if (lang === "pt_br") lang = "pt"; 
+      break;
+    case WeatherProvider.VISUALCROSSING:
+      if (lang === "zh_cn") lang = "zh"; 
+      if (lang === "zh_tw") lang = "zh"; 
+      if (lang === "pt_br") lang = "pt"; 
+      break;
+    case WeatherProvider.OPENMETEO:
+      if (lang === "pt_br") lang = "pt"; 
+  }
+  return lang
 }
 
 export function getWeatherProvider(settings)
@@ -490,7 +515,8 @@ export async function getWeatherInfo(extension, gettext)
   let lon = String(location[1]);
 
   let params;
-  switch(getWeatherProvider(extension.settings))
+  let weatherProvider = getWeatherProvider(extension.settings);
+  switch(weatherProvider)
   {
     case WeatherProvider.OPENWEATHERMAP:
       {
@@ -500,7 +526,8 @@ export async function getWeatherInfo(extension, gettext)
           lon,
           units: "metric"
         };
-        if(extension._providerTranslations) params.lang = extension.locale;
+        let lang = toLanguageCode(extension._preferred_language);
+        if(extension._providerTranslations) params.lang = convertLanguage(lang, weatherProvider);
         let apiKey = extension.getWeatherKey();
         if(apiKey) params.appid = apiKey;
 
@@ -616,7 +643,8 @@ export async function getWeatherInfo(extension, gettext)
           q: `${lat},${lon}`,
           days: String(extension._days_forecast + 2)
         };
-        if(extension._providerTranslations) params.lang = extension.locale;
+        let lang = toLanguageCode(extension._preferred_language);
+        if(extension._providerTranslations) params.lang = convertLanguage(lang, weatherProvider);
         let apiKey = extension.getWeatherKey();
         if(apiKey) params.key = apiKey;
 
@@ -738,7 +766,8 @@ export async function getWeatherInfo(extension, gettext)
           timezone: "Z",
           days: String(extension._days_forecast + 2)
         };
-        if(extension._providerTranslations) params.lang = extension.locale;
+        let lang = toLanguageCode(extension._preferred_language);
+        if(extension._providerTranslations) params.lang = convertLanguage(lang, weatherProvider);
         let apiKey = extension.getWeatherKey();
         if(apiKey) params.key = apiKey;
 
@@ -837,7 +866,8 @@ export async function getWeatherInfo(extension, gettext)
           forecast_days: String(extension._days_forecast + 2),
           wind_speed_unit: "ms"
         };
-        if(extension._providerTranslations) params.lang = extension.locale;
+        let lang = toLanguageCode(extension._preferred_language);
+        if(extension._providerTranslations) params.lang = convertLanguage(lang, weatherProvider);
         let apiKey = extension.getWeatherKey();
         if(apiKey) params.key = apiKey;
 

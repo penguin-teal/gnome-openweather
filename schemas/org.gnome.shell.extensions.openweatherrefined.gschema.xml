@@ -71,6 +71,11 @@
       <default>'openstreetmaps'</default>
       <summary>Geolocation Provider</summary>
     </key>
+    <key name="language" type="s">
+      <default>'system'</default>
+      <summary>Language</summary>
+      <description>Select the language for the app. Possible values: 'System', 'Arabic', 'Belarusian', 'Bulgarian', 'Catalan', 'Czech', 'Danish', 'German', 'Greek', 'English', 'Spanish', 'Basque', 'Finnish', 'French', 'Hebrew', 'Hungarian', 'Indonesian', 'Italian', 'Japanese', 'Lithuanian', 'Norwegian Bokmål', 'Dutch', 'Polish', 'Portuguese (Brazil)', 'Portuguese', 'Romanian', 'Russian', 'Slovak', 'Serbian', 'Serbian (Latin)', 'Swedish', 'Turkish', 'Ukrainian', 'Vietnamese', 'Chinese (Simplified)', 'Chinese (Traditional)'.</description>
+    </key>
     <key name="unit" enum="org.gnome.shell.extensions.openweatherrefined.unit">
       <default>'celsius'</default>
       <summary>Temperature Unit</summary>
