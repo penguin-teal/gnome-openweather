@@ -62,7 +62,7 @@ mergepo: potfile
 
 ./po/openweather.pot: $(TOLOCALIZE)
 	mkdir -p po
-	xgettext -k_ -kN_ --from-code utf-8 -o po/openweather.pot --package-name $(PKG_NAME) $(TOLOCALIZE)
+	xgettext -k_ -kN_ --from-code utf-8 -o po/openweather.pot --keyword=XGT --package-name $(PKG_NAME) $(TOLOCALIZE)
 
 ./po/%.mo: ./po/%.po
 	msgfmt -c $< -o $@

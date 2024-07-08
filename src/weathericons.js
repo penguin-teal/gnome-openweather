@@ -50,6 +50,21 @@ const WeatherIcons =
   TORNADO: "tornado"
 };
 
+/**
+  * This function doesn't actually do anything and returns the input.
+  * `xgettext` will pass this into the `--keyword` option which will make it
+  * appear in the translations `.pot` file.
+  * Essentially if you need text to be translated at some point but are not
+  * yet putting it through `gettext` put it in here.
+  *
+  * @param {string} x
+  * @returns {string} The input x.
+  */
+function XGT(x)
+{
+    return x;
+}
+
 // Map OpenWeatherMap icon codes to icon names
 /**
   * @enum {string}
@@ -187,60 +202,60 @@ export function getIconName(provider, key, isNight, useSymbolic)
   */
 const OpenWeatherMapConditionMap =
 {
-  200: "Thunderstorm with Light Rain", // Thunderstorm with light rain
-  201: "Thunderstorm with Rain", // Thunderstorm with rain
-  202: "Thunderstorm with Heavy Rain", // Thunderstorm with heavy rain
-  210: "Light Thunderstorm",
-  211: "Heavy Thunderstorm",
-  212: "Ragged Thunderstorm",
-  230: "Thunderstorm with Light Drizzle", // Thunderstorm with light drizzle
-  231: "Thunderstorm with Drizzle", // Thunderstorm with drizzle
-  232: "Thunderstorm with Heavy Drizzle", // Thunderstorm with heavy drizzle
-  300: "Light Drizzle",
-  301: "Drizzle",
-  302: "Heavy Drizzle",
-  310: "Light Drizzle Rain",
-  311: "Drizzle Rain",
-  312: "Heavy Drizzle Rain",
-  313: "Shower Rain and Drizzle",
-  314: "Heavy Rain and Drizzle",
-  321: "Shower Drizzle",
-  500: "Light Rain",
-  501: "Moderate Rain",
-  502: "Heavy Rain",
-  503: "Very Heavy Rain",
-  504: "Extreme Rain",
-  511: "Freezing Rain",
-  520: "Light Shower Rain",
-  521: "Shower Rain",
-  522: "Heavy Shower Rain",
-  531: "Ragged Shower Rain",
-  600: "Light Snow",
-  601: "Snow",
-  602: "Heavy Snow",
-  611: "Sleet",
-  612: "Light Shower Sleet",
-  613: "Shower Sleet",
-  615: "Light Rain and Snow",
-  616: "Rain and Snow",
-  620: "Light Shower Snow",
-  621: "Shower Snow",
-  622: "Heavy Shower Snow",
-  701: "Mist",
-  711: "Smoke",
-  721: "Haze",
-  731: "Sand/Dust Whirls",
-  741: "Fog",
-  751: "Sand",
-  761: "Dust",
-  762: "Volcanic Ash",
-  771: "Squalls",
-  781: "Tornado",
-  800: "Clear Sky",
-  801: "Few Clouds",
-  802: "Scattered Clouds",
-  803: "Broken Clouds",
-  804: "Overcast Clouds"
+  200: XGT("Thunderstorm with Light Rain"), // Thunderstorm with light rain
+  201: XGT("Thunderstorm with Rain"), // Thunderstorm with rain
+  202: XGT("Thunderstorm with Heavy Rain"), // Thunderstorm with heavy rain
+  210: XGT("Light Thunderstorm"),
+  211: XGT("Heavy Thunderstorm"),
+  212: XGT("Ragged Thunderstorm"),
+  230: XGT("Thunderstorm with Light Drizzle"), // Thunderstorm with light drizzle
+  231: XGT("Thunderstorm with Drizzle"), // Thunderstorm with drizzle
+  232: XGT("Thunderstorm with Heavy Drizzle"), // Thunderstorm with heavy drizzle
+  300: XGT("Light Drizzle"),
+  301: XGT("Drizzle"),
+  302: XGT("Heavy Drizzle"),
+  310: XGT("Light Drizzle Rain"),
+  311: XGT("Drizzle Rain"),
+  312: XGT("Heavy Drizzle Rain"),
+  313: XGT("Shower Rain and Drizzle"),
+  314: XGT("Heavy Rain and Drizzle"),
+  321: XGT("Shower Drizzle"),
+  500: XGT("Light Rain"),
+  501: XGT("Moderate Rain"),
+  502: XGT("Heavy Rain"),
+  503: XGT("Very Heavy Rain"),
+  504: XGT("Extreme Rain"),
+  511: XGT("Freezing Rain"),
+  520: XGT("Light Shower Rain"),
+  521: XGT("Shower Rain"),
+  522: XGT("Heavy Shower Rain"),
+  531: XGT("Ragged Shower Rain"),
+  600: XGT("Light Snow"),
+  601: XGT("Snow"),
+  602: XGT("Heavy Snow"),
+  611: XGT("Sleet"),
+  612: XGT("Light Shower Sleet"),
+  613: XGT("Shower Sleet"),
+  615: XGT("Light Rain and Snow"),
+  616: XGT("Rain and Snow"),
+  620: XGT("Light Shower Snow"),
+  621: XGT("Shower Snow"),
+  622: XGT("Heavy Shower Snow"),
+  701: XGT("Mist"),
+  711: XGT("Smoke"),
+  721: XGT("Haze"),
+  731: XGT("Sand/Dust Whirls"),
+  741: XGT("Fog"),
+  751: XGT("Sand"),
+  761: XGT("Dust"),
+  762: XGT("Volcanic Ash"),
+  771: XGT("Squalls"),
+  781: XGT("Tornado"),
+  800: XGT("Clear Sky"),
+  801: XGT("Few Clouds"),
+  802: XGT("Scattered Clouds"),
+  803: XGT("Broken Clouds"),
+  804: XGT("Overcast Clouds")
 };
 
 /**
@@ -248,54 +263,54 @@ const OpenWeatherMapConditionMap =
   */
 const WeatherApiComConditionMap =
 {
-  1000: "Clear",
-  1003: "Partly Cloudy",
-  1006: "Cloudy",
-  1009: "Overcast",
-  1030: "Mist",
-  1063: "Patchy Rain Possible",
-  1066: "Patchy Snow Possible",
-  1069: "Patchy Sleet Possible",
-  1072: "Patchy Freezing Drizzle Possible",
-  1087: "Thundery Outbreaks Possible",
-  1114: "Blowing Snow",
-  1117: "Blizzard",
-  1135: "Fog",
-  1147: "Freezing Fog",
-  1150: "Patchy Light Drizzle",
-  1153: "Light Drizzle",
-  1168: "Freezing Drizzle",
-  1171: "Heavy Freezing Drizzle",
-  1180: "Patchy Light Rain",
-  1183: "Light Rain",
-  1186: "Moderate Rain At Times",
-  1189: "Moderate Rain",
-  1192: "Heavy Rain At Times",
-  1195: "Heavy Rain",
-  1198: "Light Freezing Rain",
-  1201: "Heavy Freezing Rain", // Moderate or heavy freezing rain
-  1204: "Light Sleet",
-  1207: "Moderate Or Heavy Sleet",
-  1210: "Patchy Light Snow",
-  1213: "Light Snow",
-  1216: "Patchy Moderate Snow",
-  1219: "Moderate Snow",
-  1222: "Patchy Heavy Snow",
-  1225: "Heavy Snow",
-  1237: "Hail", // Ice pellets
-  1240: "Light Shower", // Light Rain Shower
-  1243: "Heavy Shower", // Moderate or heavy rain shower
-  1246: "Torrential Rain Shower",
-  1249: "Light Sleet Showers",
-  1252: "Heavy Sleet Showers", // Moderate or Heavy Sleet Showers
-  1255: "Light Snow Showers",
-  1258: "Heavy Snow Showers", // Moderate or heavy snow showers
-  1261: "Light Hail", // Light showers of ice pellets
-  1264: "Heavy Hail", // Moderate Or Heavy Showers Of Ice Pellets
-  1273: "Patchy Light Rain With Thunder",
-  1276: "Heavy Rain with Thunder", // Moderate or heavy rain with thunder
-  1279: "Patchy Light Snow with Thunder",
-  1282: "Heavy Snow with Thunder" // Moderate or heavy snow with thunder
+  1000: XGT("Clear"),
+  1003: XGT( "Partly Cloudy"),
+  1006: XGT( "Cloudy"),
+  1009: XGT( "Overcast"),
+  1030: XGT( "Mist"),
+  1063: XGT( "Patchy Rain Possible"),
+  1066: XGT( "Patchy Snow Possible"),
+  1069: XGT( "Patchy Sleet Possible"),
+  1072: XGT( "Patchy Freezing Drizzle Possible"),
+  1087: XGT( "Thundery Outbreaks Possible"),
+  1114: XGT( "Blowing Snow"),
+  1117: XGT( "Blizzard"),
+  1135: XGT( "Fog"),
+  1147: XGT( "Freezing Fog"),
+  1150: XGT( "Patchy Light Drizzle"),
+  1153: XGT( "Light Drizzle"),
+  1168: XGT( "Freezing Drizzle"),
+  1171: XGT( "Heavy Freezing Drizzle"),
+  1180: XGT( "Patchy Light Rain"),
+  1183: XGT( "Light Rain"),
+  1186: XGT( "Moderate Rain At Times"),
+  1189: XGT( "Moderate Rain"),
+  1192: XGT( "Heavy Rain At Times"),
+  1195: XGT( "Heavy Rain"),
+  1198: XGT( "Light Freezing Rain"),
+  1201: XGT( "Heavy Freezing Rain"), // Moderate or heavy freezing rain
+  1204: XGT( "Light Sleet"),
+  1207: XGT( "Moderate Or Heavy Sleet"),
+  1210: XGT( "Patchy Light Snow"),
+  1213: XGT( "Light Snow"),
+  1216: XGT( "Patchy Moderate Snow"),
+  1219: XGT( "Moderate Snow"),
+  1222: XGT( "Patchy Heavy Snow"),
+  1225: XGT( "Heavy Snow"),
+  1237: XGT( "Hail"), // Ice pellets
+  1240: XGT( "Light Shower"), // Light Rain Shower
+  1243: XGT( "Heavy Shower"), // Moderate or heavy rain shower
+  1246: XGT( "Torrential Rain Shower"),
+  1249: XGT( "Light Sleet Showers"),
+  1252: XGT( "Heavy Sleet Showers"), // Moderate or Heavy Sleet Showers
+  1255: XGT( "Light Snow Showers"),
+  1258: XGT( "Heavy Snow Showers"), // Moderate or heavy snow showers
+  1261: XGT( "Light Hail"), // Light showers of ice pellets
+  1264: XGT( "Heavy Hail"), // Moderate Or Heavy Showers Of Ice Pellets
+  1273: XGT( "Patchy Light Rain With Thunder"),
+  1276: XGT( "Heavy Rain with Thunder"), // Moderate or heavy rain with thunder
+  1279: XGT( "Patchy Light Snow with Thunder"),
+  1282: XGT("Heavy Snow with Thunder") // Moderate or heavy snow with thunder
 };
 
 /**
@@ -303,67 +318,67 @@ const WeatherApiComConditionMap =
   */
 const VisualCrossingConditionMap =
 {
-  "clear": "Clear", // Clear conditions throughout the day
-  "clearingpm": "Clear Afternoon", // Clearing in the afternoon
-  "cloudcover": "Cloud Cover", // Cloud cover
-  "cloudierpm": "Coudy Afternoon", // Becoming cloudy in the afternoon
-  "coolingdown": "Cooling Down", // Cooling down
-  "overcast": "Overcast", // Cloudy skies throughout the day
-  "precip": "Precipitation", // Precipitation
-  "precipcover": "Precipitation Cover", // Precipitation cover
-  "rainallday": "Rain All Day", // A chance of rain throughout the day
-  "rainam": "Morning Rain", // Morning rain
-  "rainampm": "Rain", // Rain in the morning and afternoon
-  "rainchance": "Chance of Rain", // A chance of rain
-  "rainclearinglater": "Rain Clearing Later", // Rain clearing later
-  "raindays": "Chance of Rain", // A chance of rain
-  "raindefinite": "Rain", // Rain
-  "rainearlyam": "Early Morning Rain", // Early morning rain
-  "rainlatepm": "Late Afternoon Rain", // Late afternoon rain
-  "rainpm": "Afternoon Rain", // Afternoon rain
-  "type_1": "Drifting Snow", // Blowing or drifting snow
-  "type_2": "Drizzle", // Drizzle
-  "type_3": "Heavy Drizzle", // Heavy Drizzle
-  "type_4": "Light Drizzle", // Light Drizzle
-  "type_5": "Heavy Rain", // Heavy Drizzle/Rain
-  "type_6": "Light Rain", // Light Drizzle/Rain
-  "type_7": "Dust Storm", // Dust storm
-  "type_8": "Fog", // Fog
-  "type_9": "Freezing Drizzle", // Freezing Drizzle/Freezing Rain
-  "type_10": "Heavy Freezing Drizzle", // Heavy Freezing Drizzle/Freezing Rain
-  "type_11": "Light Freezing Drizzle", // Light Freezing Drizzle/Freezing Rain
-  "type_12": "Freezing Fog", // Freezing Fog
-  "type_13": "Heavy Freezing Rain", // Heavy Freezing Rain
-  "type_14": "Light Freezing Rain", // Light Freezing Rain
-  "type_15": "Tornado", // Funnel Cloud/Tornado
-  "type_16": "Hail Showers", // Hail Showers
-  "type_17": "Ice", // Ice
-  "type_18": "Lightning", // Lightning Without Thunder
-  "type_19": "Mist", // Mist
-  "type_20": "Precipitation", // Precipitation In Vicinity
-  "type_21": "Rain", // Rain
-  "type_22": "Heavy Rain & Snow", // Heavy Rain And Snow
-  "type_23": "Light Rain & Snow", // Light Rain And Snow
-  "type_24": "Rain Showers", // Rain Showers
-  "type_25": "Heavy Rain", // Heavy Rain
-  "type_26": "Light Rain", // Light Rain
-  "type_27": "Sky Coverage Decreasing", // Sky Coverage Decreasing
-  "type_28": "Sky Coverage Increasing", // Sky Coverage Increasing
-  "type_29": "Sky Unchanged", // Sky Unchanged
-  "type_30": "Haze", // Smoke Or Haze
-  "type_31": "Snow", // Snow
-  "type_32": "Snow & Rain Showers", // Snow And Rain Showers
-  "type_33": "Snow Showers", // Snow Showers
-  "type_34": "Heavy Snow", // Heavy Snow
-  "type_35": "Light Snow", // Light Snow
-  "type_36": "Squalls", // Squalls
-  "type_37": "Thunderstorm", // Thunderstorm
-  "type_38": "Storm No Rain", // Thunderstorm Without Precipitation
-  "type_39": "Ice Crystals", // Diamond Dust
-  "type_40": "Hail", // Hail
-  "type_41": "Overcast", // Overcast
-  "type_42": "Partially Cloudy", // Partially cloudy
-  "type_43": "Clear" // Clear
+  "clear": XGT("Clear"), // Clear conditions throughout the day
+  "clearingpm": XGT("Clear Afternoon"), // Clearing in the afternoon
+  "cloudcover": XGT("Cloud Cover"), // Cloud cover
+  "cloudierpm": XGT("Coudy Afternoon"), // Becoming cloudy in the afternoon
+  "coolingdown": XGT("Cooling Down"), // Cooling down
+  "overcast": XGT("Overcast"), // Cloudy skies throughout the day
+  "precip": XGT("Precipitation"), // Precipitation
+  "precipcover": XGT("Precipitation Cover"), // Precipitation cover
+  "rainallday": XGT("Rain All Day"), // A chance of rain throughout the day
+  "rainam": XGT("Morning Rain"), // Morning rain
+  "rainampm": XGT("Rain"), // Rain in the morning and afternoon
+  "rainchance": XGT("Chance of Rain"), // A chance of rain
+  "rainclearinglater": XGT("Rain Clearing Later"), // Rain clearing later
+  "raindays": XGT("Chance of Rain"), // A chance of rain
+  "raindefinite": XGT("Rain"), // Rain
+  "rainearlyam": XGT("Early Morning Rain"), // Early morning rain
+  "rainlatepm": XGT("Late Afternoon Rain"), // Late afternoon rain
+  "rainpm": XGT("Afternoon Rain"), // Afternoon rain
+  "type_1": XGT("Drifting Snow"), // Blowing or drifting snow
+  "type_2": XGT("Drizzle"), // Drizzle
+  "type_3": XGT("Heavy Drizzle"), // Heavy Drizzle
+  "type_4": XGT("Light Drizzle"), // Light Drizzle
+  "type_5": XGT("Heavy Rain"), // Heavy Drizzle/Rain
+  "type_6": XGT("Light Rain"), // Light Drizzle/Rain
+  "type_7": XGT("Dust Storm"), // Dust storm
+  "type_8": XGT("Fog"), // Fog
+  "type_9": XGT("Freezing Drizzle"), // Freezing Drizzle/Freezing Rain
+  "type_10": XGT("Heavy Freezing Drizzle"), // Heavy Freezing Drizzle/Freezing Rain
+  "type_11": XGT("Light Freezing Drizzle"), // Light Freezing Drizzle/Freezing Rain
+  "type_12": XGT("Freezing Fog"), // Freezing Fog
+  "type_13": XGT("Heavy Freezing Rain"), // Heavy Freezing Rain
+  "type_14": XGT("Light Freezing Rain"), // Light Freezing Rain
+  "type_15": XGT("Tornado"), // Funnel Cloud/Tornado
+  "type_16": XGT("Hail Showers"), // Hail Showers
+  "type_17": XGT("Ice"), // Ice
+  "type_18": XGT("Lightning"), // Lightning Without Thunder
+  "type_19": XGT("Mist"), // Mist
+  "type_20": XGT("Precipitation"), // Precipitation In Vicinity
+  "type_21": XGT("Rain"), // Rain
+  "type_22": XGT("Heavy Rain & Snow"), // Heavy Rain And Snow
+  "type_23": XGT("Light Rain & Snow"), // Light Rain And Snow
+  "type_24": XGT("Rain Showers"), // Rain Showers
+  "type_25": XGT("Heavy Rain"), // Heavy Rain
+  "type_26": XGT("Light Rain"), // Light Rain
+  "type_27": XGT("Sky Coverage Decreasing"), // Sky Coverage Decreasing
+  "type_28": XGT("Sky Coverage Increasing"), // Sky Coverage Increasing
+  "type_29": XGT("Sky Unchanged"), // Sky Unchanged
+  "type_30": XGT("Haze"), // Smoke Or Haze
+  "type_31": XGT("Snow"), // Snow
+  "type_32": XGT("Snow & Rain Showers"), // Snow And Rain Showers
+  "type_33": XGT("Snow Showers"), // Snow Showers
+  "type_34": XGT("Heavy Snow"), // Heavy Snow
+  "type_35": XGT("Light Snow"), // Light Snow
+  "type_36": XGT("Squalls"), // Squalls
+  "type_37": XGT("Thunderstorm"), // Thunderstorm
+  "type_38": XGT("Storm No Rain"), // Thunderstorm Without Precipitation
+  "type_39": XGT("Ice Crystals"), // Diamond Dust
+  "type_40": XGT("Hail"), // Hail
+  "type_41": XGT("Overcast"), // Overcast
+  "type_42": XGT("Partially Cloudy"), // Partially cloudy
+  "type_43": XGT("Clear") // Clear
 };
 
 /**

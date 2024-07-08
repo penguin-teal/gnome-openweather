@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gnome-shell-extension-openweatherrefined\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-14 17:38-0500\n"
+"POT-Creation-Date: 2024-07-08 15:26-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,6 @@ msgstr ""
 
 #: src/openweathermap.js:88
 msgid "OpenWeather Refined Too Many Requests"
-
 msgstr ""
 
 #: src/openweathermap.js:89
@@ -46,8 +45,514 @@ msgstr ""
 msgid "My Location"
 msgstr ""
 
-#: src/weathericons.js:377 src/weathericons.js:379 src/weathericons.js:381
-#: src/weathericons.js:383
+#: src/weathericons.js:205
+msgid "Thunderstorm with Light Rain"
+msgstr ""
+
+#: src/weathericons.js:206
+msgid "Thunderstorm with Rain"
+msgstr ""
+
+#: src/weathericons.js:207
+msgid "Thunderstorm with Heavy Rain"
+msgstr ""
+
+#: src/weathericons.js:208
+msgid "Light Thunderstorm"
+msgstr ""
+
+#: src/weathericons.js:209
+msgid "Heavy Thunderstorm"
+msgstr ""
+
+#: src/weathericons.js:210
+msgid "Ragged Thunderstorm"
+msgstr ""
+
+#: src/weathericons.js:211
+msgid "Thunderstorm with Light Drizzle"
+msgstr ""
+
+#: src/weathericons.js:212
+msgid "Thunderstorm with Drizzle"
+msgstr ""
+
+#: src/weathericons.js:213
+msgid "Thunderstorm with Heavy Drizzle"
+msgstr ""
+
+#: src/weathericons.js:214 src/weathericons.js:281 src/weathericons.js:342
+msgid "Light Drizzle"
+msgstr ""
+
+#: src/weathericons.js:215 src/weathericons.js:340
+msgid "Drizzle"
+msgstr ""
+
+#: src/weathericons.js:216 src/weathericons.js:341
+msgid "Heavy Drizzle"
+msgstr ""
+
+#: src/weathericons.js:217
+msgid "Light Drizzle Rain"
+msgstr ""
+
+#: src/weathericons.js:218
+msgid "Drizzle Rain"
+msgstr ""
+
+#: src/weathericons.js:219
+msgid "Heavy Drizzle Rain"
+msgstr ""
+
+#: src/weathericons.js:220
+msgid "Shower Rain and Drizzle"
+msgstr ""
+
+#: src/weathericons.js:221
+msgid "Heavy Rain and Drizzle"
+msgstr ""
+
+#: src/weathericons.js:222
+msgid "Shower Drizzle"
+msgstr ""
+
+#: src/weathericons.js:223 src/weathericons.js:285 src/weathericons.js:344
+#: src/weathericons.js:364
+msgid "Light Rain"
+msgstr ""
+
+#: src/weathericons.js:224 src/weathericons.js:287
+msgid "Moderate Rain"
+msgstr ""
+
+#: src/weathericons.js:225 src/weathericons.js:289 src/weathericons.js:343
+#: src/weathericons.js:363
+msgid "Heavy Rain"
+msgstr ""
+
+#: src/weathericons.js:226
+msgid "Very Heavy Rain"
+msgstr ""
+
+#: src/weathericons.js:227
+msgid "Extreme Rain"
+msgstr ""
+
+#: src/weathericons.js:228
+msgid "Freezing Rain"
+msgstr ""
+
+#: src/weathericons.js:229
+msgid "Light Shower Rain"
+msgstr ""
+
+#: src/weathericons.js:230
+msgid "Shower Rain"
+msgstr ""
+
+#: src/weathericons.js:231
+msgid "Heavy Shower Rain"
+msgstr ""
+
+#: src/weathericons.js:232
+msgid "Ragged Shower Rain"
+msgstr ""
+
+#: src/weathericons.js:233 src/weathericons.js:295 src/weathericons.js:373
+msgid "Light Snow"
+msgstr ""
+
+#: src/weathericons.js:234 src/weathericons.js:369
+msgid "Snow"
+msgstr ""
+
+#: src/weathericons.js:235 src/weathericons.js:299 src/weathericons.js:372
+msgid "Heavy Snow"
+msgstr ""
+
+#: src/weathericons.js:236
+msgid "Sleet"
+msgstr ""
+
+#: src/weathericons.js:237
+msgid "Light Shower Sleet"
+msgstr ""
+
+#: src/weathericons.js:238
+msgid "Shower Sleet"
+msgstr ""
+
+#: src/weathericons.js:239
+msgid "Light Rain and Snow"
+msgstr ""
+
+#: src/weathericons.js:240
+msgid "Rain and Snow"
+msgstr ""
+
+#: src/weathericons.js:241
+msgid "Light Shower Snow"
+msgstr ""
+
+#: src/weathericons.js:242
+msgid "Shower Snow"
+msgstr ""
+
+#: src/weathericons.js:243
+msgid "Heavy Shower Snow"
+msgstr ""
+
+#: src/weathericons.js:244 src/weathericons.js:270 src/weathericons.js:357
+msgid "Mist"
+msgstr ""
+
+#: src/weathericons.js:245
+msgid "Smoke"
+msgstr ""
+
+#: src/weathericons.js:246 src/weathericons.js:368
+msgid "Haze"
+msgstr ""
+
+#: src/weathericons.js:247
+msgid "Sand/Dust Whirls"
+msgstr ""
+
+#: src/weathericons.js:248 src/weathericons.js:278 src/weathericons.js:346
+msgid "Fog"
+msgstr ""
+
+#: src/weathericons.js:249
+msgid "Sand"
+msgstr ""
+
+#: src/weathericons.js:250
+msgid "Dust"
+msgstr ""
+
+#: src/weathericons.js:251
+msgid "Volcanic Ash"
+msgstr ""
+
+#: src/weathericons.js:252 src/weathericons.js:374
+msgid "Squalls"
+msgstr ""
+
+#: src/weathericons.js:253 src/weathericons.js:353
+msgid "Tornado"
+msgstr ""
+
+#: src/weathericons.js:254
+msgid "Clear Sky"
+msgstr ""
+
+#: src/weathericons.js:255
+msgid "Few Clouds"
+msgstr ""
+
+#: src/weathericons.js:256
+msgid "Scattered Clouds"
+msgstr ""
+
+#: src/weathericons.js:257
+msgid "Broken Clouds"
+msgstr ""
+
+#: src/weathericons.js:258
+msgid "Overcast Clouds"
+msgstr ""
+
+#: src/weathericons.js:266 src/weathericons.js:321 src/weathericons.js:381
+msgid "Clear"
+msgstr ""
+
+#: src/weathericons.js:267
+msgid "Partly Cloudy"
+msgstr ""
+
+#: src/weathericons.js:268
+msgid "Cloudy"
+msgstr ""
+
+#: src/weathericons.js:269 src/weathericons.js:326 src/weathericons.js:379
+msgid "Overcast"
+msgstr ""
+
+#: src/weathericons.js:271
+msgid "Patchy Rain Possible"
+msgstr ""
+
+#: src/weathericons.js:272
+msgid "Patchy Snow Possible"
+msgstr ""
+
+#: src/weathericons.js:273
+msgid "Patchy Sleet Possible"
+msgstr ""
+
+#: src/weathericons.js:274
+msgid "Patchy Freezing Drizzle Possible"
+msgstr ""
+
+#: src/weathericons.js:275
+msgid "Thundery Outbreaks Possible"
+msgstr ""
+
+#: src/weathericons.js:276
+msgid "Blowing Snow"
+msgstr ""
+
+#: src/weathericons.js:277
+msgid "Blizzard"
+msgstr ""
+
+#: src/weathericons.js:279 src/weathericons.js:350
+msgid "Freezing Fog"
+msgstr ""
+
+#: src/weathericons.js:280
+msgid "Patchy Light Drizzle"
+msgstr ""
+
+#: src/weathericons.js:282 src/weathericons.js:347
+msgid "Freezing Drizzle"
+msgstr ""
+
+#: src/weathericons.js:283 src/weathericons.js:348
+msgid "Heavy Freezing Drizzle"
+msgstr ""
+
+#: src/weathericons.js:284
+msgid "Patchy Light Rain"
+msgstr ""
+
+#: src/weathericons.js:286
+msgid "Moderate Rain At Times"
+msgstr ""
+
+#: src/weathericons.js:288
+msgid "Heavy Rain At Times"
+msgstr ""
+
+#: src/weathericons.js:290 src/weathericons.js:352
+msgid "Light Freezing Rain"
+msgstr ""
+
+#: src/weathericons.js:291 src/weathericons.js:351
+msgid "Heavy Freezing Rain"
+msgstr ""
+
+#: src/weathericons.js:292
+msgid "Light Sleet"
+msgstr ""
+
+#: src/weathericons.js:293
+msgid "Moderate Or Heavy Sleet"
+msgstr ""
+
+#: src/weathericons.js:294
+msgid "Patchy Light Snow"
+msgstr ""
+
+#: src/weathericons.js:296
+msgid "Patchy Moderate Snow"
+msgstr ""
+
+#: src/weathericons.js:297
+msgid "Moderate Snow"
+msgstr ""
+
+#: src/weathericons.js:298
+msgid "Patchy Heavy Snow"
+msgstr ""
+
+#: src/weathericons.js:300 src/weathericons.js:378
+msgid "Hail"
+msgstr ""
+
+#: src/weathericons.js:301
+msgid "Light Shower"
+msgstr ""
+
+#: src/weathericons.js:302
+msgid "Heavy Shower"
+msgstr ""
+
+#: src/weathericons.js:303
+msgid "Torrential Rain Shower"
+msgstr ""
+
+#: src/weathericons.js:304
+msgid "Light Sleet Showers"
+msgstr ""
+
+#: src/weathericons.js:305
+msgid "Heavy Sleet Showers"
+msgstr ""
+
+#: src/weathericons.js:306
+msgid "Light Snow Showers"
+msgstr ""
+
+#: src/weathericons.js:307
+msgid "Heavy Snow Showers"
+msgstr ""
+
+#: src/weathericons.js:308
+msgid "Light Hail"
+msgstr ""
+
+#: src/weathericons.js:309
+msgid "Heavy Hail"
+msgstr ""
+
+#: src/weathericons.js:310
+msgid "Patchy Light Rain With Thunder"
+msgstr ""
+
+#: src/weathericons.js:311
+msgid "Heavy Rain with Thunder"
+msgstr ""
+
+#: src/weathericons.js:312
+msgid "Patchy Light Snow with Thunder"
+msgstr ""
+
+#: src/weathericons.js:313
+msgid "Heavy Snow with Thunder"
+msgstr ""
+
+#: src/weathericons.js:322
+msgid "Clear Afternoon"
+msgstr ""
+
+#: src/weathericons.js:323
+msgid "Cloud Cover"
+msgstr ""
+
+#: src/weathericons.js:324
+msgid "Coudy Afternoon"
+msgstr ""
+
+#: src/weathericons.js:325
+msgid "Cooling Down"
+msgstr ""
+
+#: src/weathericons.js:327 src/weathericons.js:358
+msgid "Precipitation"
+msgstr ""
+
+#: src/weathericons.js:328
+msgid "Precipitation Cover"
+msgstr ""
+
+#: src/weathericons.js:329
+msgid "Rain All Day"
+msgstr ""
+
+#: src/weathericons.js:330
+msgid "Morning Rain"
+msgstr ""
+
+#: src/weathericons.js:331 src/weathericons.js:335 src/weathericons.js:359
+msgid "Rain"
+msgstr ""
+
+#: src/weathericons.js:332 src/weathericons.js:334
+msgid "Chance of Rain"
+msgstr ""
+
+#: src/weathericons.js:333
+msgid "Rain Clearing Later"
+msgstr ""
+
+#: src/weathericons.js:336
+msgid "Early Morning Rain"
+msgstr ""
+
+#: src/weathericons.js:337
+msgid "Late Afternoon Rain"
+msgstr ""
+
+#: src/weathericons.js:338
+msgid "Afternoon Rain"
+msgstr ""
+
+#: src/weathericons.js:339
+msgid "Drifting Snow"
+msgstr ""
+
+#: src/weathericons.js:345
+msgid "Dust Storm"
+msgstr ""
+
+#: src/weathericons.js:349
+msgid "Light Freezing Drizzle"
+msgstr ""
+
+#: src/weathericons.js:354
+msgid "Hail Showers"
+msgstr ""
+
+#: src/weathericons.js:355
+msgid "Ice"
+msgstr ""
+
+#: src/weathericons.js:356
+msgid "Lightning"
+msgstr ""
+
+#: src/weathericons.js:360
+msgid "Heavy Rain & Snow"
+msgstr ""
+
+#: src/weathericons.js:361
+msgid "Light Rain & Snow"
+msgstr ""
+
+#: src/weathericons.js:362
+msgid "Rain Showers"
+msgstr ""
+
+#: src/weathericons.js:365
+msgid "Sky Coverage Decreasing"
+msgstr ""
+
+#: src/weathericons.js:366
+msgid "Sky Coverage Increasing"
+msgstr ""
+
+#: src/weathericons.js:367
+msgid "Sky Unchanged"
+msgstr ""
+
+#: src/weathericons.js:370
+msgid "Snow & Rain Showers"
+msgstr ""
+
+#: src/weathericons.js:371
+msgid "Snow Showers"
+msgstr ""
+
+#: src/weathericons.js:375
+msgid "Thunderstorm"
+msgstr ""
+
+#: src/weathericons.js:376
+msgid "Storm No Rain"
+msgstr ""
+
+#: src/weathericons.js:377
+msgid "Ice Crystals"
+msgstr ""
+
+#: src/weathericons.js:380
+msgid "Partially Cloudy"
+msgstr ""
+
+#: src/weathericons.js:392 src/weathericons.js:394 src/weathericons.js:396
+#: src/weathericons.js:398
 msgid "Not available"
 msgstr ""
 
@@ -99,35 +604,35 @@ msgstr ""
 msgid "Cannot open %s"
 msgstr ""
 
-#: src/extension.js:1227 src/preferences/generalPage.js:214
+#: src/extension.js:1227 src/preferences/generalPage.js:244
 msgid "°C"
 msgstr ""
 
-#: src/extension.js:1230 src/preferences/generalPage.js:215
+#: src/extension.js:1230 src/preferences/generalPage.js:245
 msgid "°F"
 msgstr ""
 
-#: src/extension.js:1232 src/preferences/generalPage.js:216
+#: src/extension.js:1232 src/preferences/generalPage.js:246
 msgid "K"
 msgstr ""
 
-#: src/extension.js:1234 src/preferences/generalPage.js:217
+#: src/extension.js:1234 src/preferences/generalPage.js:247
 msgid "°Ra"
 msgstr ""
 
-#: src/extension.js:1236 src/preferences/generalPage.js:218
+#: src/extension.js:1236 src/preferences/generalPage.js:248
 msgid "°Ré"
 msgstr ""
 
-#: src/extension.js:1238 src/preferences/generalPage.js:219
+#: src/extension.js:1238 src/preferences/generalPage.js:249
 msgid "°Rø"
 msgstr ""
 
-#: src/extension.js:1240 src/preferences/generalPage.js:220
+#: src/extension.js:1240 src/preferences/generalPage.js:250
 msgid "°De"
 msgstr ""
 
-#: src/extension.js:1242 src/preferences/generalPage.js:221
+#: src/extension.js:1242 src/preferences/generalPage.js:251
 msgid "°N"
 msgstr ""
 
@@ -243,63 +748,63 @@ msgstr ""
 msgid "NW"
 msgstr ""
 
-#: src/extension.js:1395 src/preferences/generalPage.js:247
+#: src/extension.js:1395 src/preferences/generalPage.js:277
 msgid "inHg"
 msgstr ""
 
-#: src/extension.js:1400 src/preferences/generalPage.js:248
+#: src/extension.js:1400 src/preferences/generalPage.js:278
 msgid "bar"
 msgstr ""
 
-#: src/extension.js:1405 src/preferences/generalPage.js:249
+#: src/extension.js:1405 src/preferences/generalPage.js:279
 msgid "Pa"
 msgstr ""
 
-#: src/extension.js:1410 src/preferences/generalPage.js:250
+#: src/extension.js:1410 src/preferences/generalPage.js:280
 msgid "kPa"
 msgstr ""
 
-#: src/extension.js:1415 src/preferences/generalPage.js:251
+#: src/extension.js:1415 src/preferences/generalPage.js:281
 msgid "atm"
 msgstr ""
 
-#: src/extension.js:1420 src/preferences/generalPage.js:252
+#: src/extension.js:1420 src/preferences/generalPage.js:282
 msgid "at"
 msgstr ""
 
-#: src/extension.js:1425 src/preferences/generalPage.js:253
+#: src/extension.js:1425 src/preferences/generalPage.js:283
 msgid "Torr"
 msgstr ""
 
-#: src/extension.js:1430 src/preferences/generalPage.js:254
+#: src/extension.js:1430 src/preferences/generalPage.js:284
 msgid "psi"
 msgstr ""
 
-#: src/extension.js:1435 src/preferences/generalPage.js:255
+#: src/extension.js:1435 src/preferences/generalPage.js:285
 msgid "mmHg"
 msgstr ""
 
-#: src/extension.js:1439 src/preferences/generalPage.js:256
+#: src/extension.js:1439 src/preferences/generalPage.js:286
 msgid "mbar"
 msgstr ""
 
-#: src/extension.js:1507 src/preferences/generalPage.js:234
+#: src/extension.js:1507 src/preferences/generalPage.js:264
 msgid "m/s"
 msgstr ""
 
-#: src/extension.js:1512 src/preferences/generalPage.js:233
+#: src/extension.js:1512 src/preferences/generalPage.js:263
 msgid "mph"
 msgstr ""
 
-#: src/extension.js:1517 src/preferences/generalPage.js:232
+#: src/extension.js:1517 src/preferences/generalPage.js:262
 msgid "km/h"
 msgstr ""
 
-#: src/extension.js:1526 src/preferences/generalPage.js:235
+#: src/extension.js:1526 src/preferences/generalPage.js:265
 msgid "kn"
 msgstr ""
 
-#: src/extension.js:1531 src/preferences/generalPage.js:236
+#: src/extension.js:1531 src/preferences/generalPage.js:266
 msgid "ft/s"
 msgstr ""
 
@@ -696,218 +1201,237 @@ msgstr ""
 msgid "No results found when searching for \"%s\"."
 msgstr ""
 
-
-#: src/preferences/generalPage.js:29
+#: src/preferences/generalPage.js:30
 msgid "Provider Multilingual Support"
 msgstr ""
 
-#: src/preferences/generalPage.js:35
+#: src/preferences/generalPage.js:36
 #, javascript-format
 msgid "Use a personal API key for %s"
 msgstr ""
 
-#: src/preferences/generalPage.js:35 src/preferences/generalPage.js:42
-#: src/preferences/generalPage.js:315 src/preferences/locationsPage.js:67
+#: src/preferences/generalPage.js:36 src/preferences/generalPage.js:43
+#: src/preferences/generalPage.js:346 src/preferences/locationsPage.js:67
 msgid "Provider"
 msgstr ""
 
-#: src/preferences/generalPage.js:41
+#: src/preferences/generalPage.js:42
 #, javascript-format
 msgid "Enable this if you have your own API key from %s and enter it below."
 msgstr ""
 
-#: src/preferences/generalPage.js:80
+#: src/preferences/generalPage.js:86
+msgid "Settings"
+msgstr ""
+
+#: src/preferences/generalPage.js:95
 msgid "General"
 msgstr ""
 
-#: src/preferences/generalPage.js:98
+#: src/preferences/generalPage.js:113
 msgid "Current Weather Refresh"
 msgstr ""
 
-#: src/preferences/generalPage.js:99
+#: src/preferences/generalPage.js:114
 msgid "Current weather refresh interval in minutes"
 msgstr ""
 
-#: src/preferences/generalPage.js:121
+#: src/preferences/generalPage.js:136
 msgid "Weather Forecast Refresh"
 msgstr ""
 
-#: src/preferences/generalPage.js:122
+#: src/preferences/generalPage.js:137
 msgid "Forecast refresh interval in minutes if enabled"
 msgstr ""
 
-#: src/preferences/generalPage.js:142
+#: src/preferences/generalPage.js:157
 msgid "My Location Refresh"
 msgstr ""
 
-#: src/preferences/generalPage.js:143
+#: src/preferences/generalPage.js:158
 msgid "My location refresh interval in minutes"
 msgstr ""
 
-#: src/preferences/generalPage.js:154
+#: src/preferences/generalPage.js:169
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:123
 msgid "Disable Forecast"
 msgstr ""
 
-#: src/preferences/generalPage.js:155
+#: src/preferences/generalPage.js:170
 msgid "Disables all fetching and processing of forecast data"
 msgstr ""
 
-#: src/preferences/generalPage.js:166
+#: src/preferences/generalPage.js:181
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:111
 msgid "System Icons"
 msgstr ""
 
-#: src/preferences/generalPage.js:167
+#: src/preferences/generalPage.js:182
 #, javascript-format
 msgid "Disable to use packaged %s weather icons"
 msgstr ""
 
-#: src/preferences/generalPage.js:169
+#: src/preferences/generalPage.js:184
 msgid ""
 "If you have issues with your system icons displaying correctly disable this "
 "to fix it"
 msgstr ""
 
-#: src/preferences/generalPage.js:190
+#: src/preferences/generalPage.js:205
 msgid "First Boot Delay"
 msgstr ""
 
-#: src/preferences/generalPage.js:191
+#: src/preferences/generalPage.js:206
 msgid "Seconds to delay popup initialization and data fetching"
 msgstr ""
 
-#: src/preferences/generalPage.js:193
+#: src/preferences/generalPage.js:208
 msgid ""
 "This setting only applies to the first time the extension is loaded. (first "
 "log in / restarting gnome shell)"
 msgstr ""
 
-#: src/preferences/generalPage.js:209
+#: src/preferences/generalPage.js:224
 msgid "Units"
 msgstr ""
 
-#: src/preferences/generalPage.js:225
-msgid "Temperature"
+#: src/preferences/generalPage.js:232
+msgid "U.S."
+msgstr ""
+
+#: src/preferences/generalPage.js:233
+msgid "U.K."
+msgstr ""
+
+#: src/preferences/generalPage.js:234
+msgid "Metric"
+msgstr ""
+
+#: src/preferences/generalPage.js:235
+msgid "Custom"
 msgstr ""
 
 #: src/preferences/generalPage.js:237
-msgid "Beaufort"
+msgid "Unit Preset"
 msgstr ""
 
-#: src/preferences/generalPage.js:239
-msgid "Wind Speed"
-msgstr ""
-
-#: src/preferences/generalPage.js:258
-msgid "Pressure"
-msgstr ""
-
-#: src/preferences/generalPage.js:265
-msgid "24-hour"
-msgstr ""
-
-#: src/preferences/generalPage.js:266
-msgid "AM / PM"
+#: src/preferences/generalPage.js:254
+msgid "Temperature"
 msgstr ""
 
 #: src/preferences/generalPage.js:267
-msgid "System"
+msgid "Beaufort"
 msgstr ""
 
 #: src/preferences/generalPage.js:269
-msgid "Time Format"
+msgid "Wind Speed"
 msgstr ""
 
-#: src/preferences/generalPage.js:280
-msgid "Simplify Degrees"
-msgstr ""
-
-#: src/preferences/generalPage.js:281
-msgid "Show \"°\" instead of \"°C,\" \"°F,\" etc."
-msgstr ""
-
-
-#: src/preferences/generalPage.js:282
-msgid "Enable this to cut off the \"C,\" \"F,\" etc. from degrees labels."
+#: src/preferences/generalPage.js:288
+msgid "Pressure"
 msgstr ""
 
 #: src/preferences/generalPage.js:295
+msgid "24-hour"
+msgstr ""
+
+#: src/preferences/generalPage.js:296
+msgid "AM / PM"
+msgstr ""
+
+#: src/preferences/generalPage.js:297
+msgid "System"
+msgstr ""
+
+#: src/preferences/generalPage.js:299
+msgid "Time Format"
+msgstr ""
+
+#: src/preferences/generalPage.js:310
+msgid "Simplify Degrees"
+msgstr ""
+
+#: src/preferences/generalPage.js:311
+msgid "Show \"°\" instead of \"°C,\" \"°F,\" etc."
+msgstr ""
+
+#: src/preferences/generalPage.js:312
+msgid "Enable this to cut off the \"C,\" \"F,\" etc. from degrees labels."
+msgstr ""
+
+#: src/preferences/generalPage.js:326
 msgid "Notifications"
 msgstr ""
 
-#: src/preferences/generalPage.js:303
+#: src/preferences/generalPage.js:334
 msgid "Precipitation Starting"
 msgstr ""
 
-#: src/preferences/generalPage.js:304 src/preferences/generalPage.js:305
+#: src/preferences/generalPage.js:335 src/preferences/generalPage.js:336
 msgid "Get notified when precipitation starts (e.g. rain or snow)."
 msgstr ""
 
-#: src/preferences/generalPage.js:322 src/preferences/generalPage.js:329
-#: src/preferences/generalPage.js:330
+#: src/preferences/generalPage.js:353 src/preferences/generalPage.js:360
+#: src/preferences/generalPage.js:361
 msgid "Adaptive"
 msgstr ""
 
-#: src/preferences/generalPage.js:328
+#: src/preferences/generalPage.js:359
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:68
 msgid "Weather Provider"
 msgstr ""
 
-#: src/preferences/generalPage.js:329
+#: src/preferences/generalPage.js:360
 #, javascript-format
 msgid ""
 "Provider used for weather and forecasts; choose \"%s\" if you don't care."
 msgstr ""
 
-
-#: src/preferences/generalPage.js:330
+#: src/preferences/generalPage.js:361
 #, javascript-format
 msgid "Choose '%s' if you don't care, otherwise choose a specific provider."
 msgstr ""
 
-#: src/preferences/generalPage.js:343
+#: src/preferences/generalPage.js:374
 msgid "Using provider translations applies to weather conditions only"
 msgstr ""
 
-#: src/preferences/generalPage.js:346
+#: src/preferences/generalPage.js:377
 msgid ""
 "Enable this to use provider multilingual support if there's no built-in "
 "translations for your language yet."
 msgstr ""
 
-#: src/preferences/generalPage.js:361
+#: src/preferences/generalPage.js:392
 msgid "Use Custom API Key"
 msgstr ""
 
-#: src/preferences/generalPage.js:377
+#: src/preferences/generalPage.js:408
 msgid "Personal API Key"
 msgstr ""
 
-#: src/preferences/generalPage.js:394 src/preferences/generalPage.js:400
+#: src/preferences/generalPage.js:425 src/preferences/generalPage.js:431
 msgid "Reset"
 msgstr ""
 
-#: src/preferences/generalPage.js:404
+#: src/preferences/generalPage.js:435
 msgid "Restore Defaults"
 msgstr ""
 
-#: src/preferences/generalPage.js:406
+#: src/preferences/generalPage.js:437
 msgid "Restore all settings to the defaults."
 msgstr ""
 
-#: src/preferences/generalPage.js:29
-msgid "Provider Multilingual Support"
+#: src/preferences/locationsPage.js:55
+msgid "Add"
 msgstr ""
 
-#: src/preferences/generalPage.js:35
-#, javascript-format
-msgid "Use a personal API key for %s"
+#: src/preferences/locationsPage.js:75
+msgid "My Loc. Provider"
 msgstr ""
 
-#: src/preferences/generalPage.js:41
-#, javascript-format
-msgid "Enable this if you have your own API key from %s and enter it below."
+#: src/preferences/locationsPage.js:76
+msgid "Provider for getting My Location"
 msgstr ""
 
 #: src/preferences/locationsPage.js:85
@@ -915,16 +1439,16 @@ msgstr ""
 msgid "Geolocation Provider"
 msgstr ""
 
-#: src/preferences/generalPage.js:80
-msgid "General"
+#: src/preferences/locationsPage.js:86
+msgid "Provider used for location search"
 msgstr ""
 
-#: src/preferences/generalPage.js:98
-msgid "Current Weather Refresh"
+#: src/preferences/locationsPage.js:99
+msgid "Personal MapQuest Key"
 msgstr ""
 
-#: src/preferences/generalPage.js:99
-msgid "Current weather refresh interval in minutes"
+#: src/preferences/locationsPage.js:100
+msgid "Personal API Key from developer.mapquest.com"
 msgstr ""
 
 #: src/preferences/locationsPage.js:264
@@ -959,7 +1483,7 @@ msgstr ""
 
 #: src/preferences/locationsPage.js:411
 #, javascript-format
-msgid "Disable to use packaged %s weather icons"
+msgid "Edit %s"
 msgstr ""
 
 #: src/preferences/locationsPage.js:433
@@ -972,8 +1496,8 @@ msgstr ""
 
 #: src/preferences/locationsPage.js:475
 msgid ""
-"This setting only applies to the first time the extension is loaded. (first "
-"log in / restarting gnome shell)"
+"If you meant to search up a new location by name, <b>add</b> a location "
+"instead."
 msgstr ""
 
 #: src/preferences/locationsPage.js:484
@@ -996,13 +1520,12 @@ msgstr ""
 
 #: src/preferences/locationsPage.js:564
 #, javascript-format
-msgid ""
-"Provider used for weather and forecasts; choose \"%s\" if you don't care."
+msgid "%s has been updated"
 msgstr ""
 
 #: src/preferences/locationsPage.js:595
 #, javascript-format
-msgid "Choose '%s' if you don't care, otherwise choose a specific provider."
+msgid "Are you sure you want to delete \"%s\"?"
 msgstr ""
 
 #: src/preferences/locationsPage.js:603
