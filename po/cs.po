@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 3.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-18 09:26-0500\n"
-"PO-Revision-Date: 2024-05-06 17:02+0200\n"
+"POT-Creation-Date: 2024-06-14 17:38-0500\n"
+"PO-Revision-Date: 2024-07-08 14:01+0200\n"
 "Last-Translator: Ludek Vydra <lvtran@u.k2.cz>\n"
 "Language-Team: \n"
 "Language: cs\n"
@@ -22,22 +22,48 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.4.4\n"
 
-#: src/weathericons.js:292 src/weathericons.js:294 src/weathericons.js:296
-msgid "Not available"
-msgstr "Není k dispozici"
+#: src/openweathermap.js:88
+msgid "OpenWeather Refined Too Many Requests"
+msgstr "OpenWeather odeslal příliš mnoho požadavků"
 
-#: src/locs.js:101 src/locs.js:185 src/preferences/locationsPage.js:329
-#: src/preferences/locationsPage.js:393
+#: src/openweathermap.js:89
+#, javascript-format
+msgid ""
+"Provider %s has too many users. Try switching weather providers in settings."
+msgstr ""
+"Poskytovatel %s má příliš mnoho uživatelů. Přepněte v nastavení "
+"poskytovatele počasí."
+
+#: src/openweathermap.js:137 src/preferences/aboutPage.js:88
+#: src/preferences/aboutPage.js:89
+msgid "Unknown"
+msgstr "Neznámý"
+
+#: src/openweathermap.js:173
+msgid ", "
+msgstr ", "
+
+#: src/openweathermap.js:278
+msgid "Tomorrow"
+msgstr "Zítra"
+
+#: src/locs.js:102 src/locs.js:186 src/preferences/locationsPage.js:331
+#: src/preferences/locationsPage.js:395
 msgid "My Location"
 msgstr "Má poloha"
+
+#: src/weathericons.js:377 src/weathericons.js:379 src/weathericons.js:381
+#: src/weathericons.js:383
+msgid "Not available"
+msgstr "Není k dispozici"
 
 #: src/extension.js:248
 msgid "Failed to initialize."
 msgstr "Inicializace se nezdařila."
 
-#: src/extension.js:375
+#: src/extension.js:382
 #, javascript-format
 msgid ""
 "%s does not work without an api-key.\n"
@@ -50,477 +76,284 @@ msgstr ""
 "registrujte na %s a vložte váš osobní klíč (Api Key) do příslušného pole v "
 "dialogu nastavení."
 
-#: src/extension.js:432
+#: src/extension.js:439
 msgid "OpenWeather Refined: Imported settings from old extension."
 msgstr "OpenWeather Refined: Importovaná nastavení ze starého rozšíření."
 
-#: src/extension.js:745 src/extension.js:758
+#: src/extension.js:756 src/extension.js:769
 #, javascript-format
 msgid "Can not connect to %s"
 msgstr "Nemohu se připojit k %s"
 
-#: src/extension.js:1044 src/preferences/locationsPage.js:39
+#: src/extension.js:1043 src/preferences/locationsPage.js:39
 #: src/preferences/locationsPage.js:59
 msgid "Locations"
-msgstr "Místa"
+msgstr "Lokace"
 
-#: src/extension.js:1048
+#: src/extension.js:1047
 msgid "Reload Weather Information"
 msgstr "Obnovit informace o počasí"
 
-#: src/extension.js:1066
+#: src/extension.js:1065
 msgid "See Online"
 msgstr "Podívej se na Web"
 
-#: src/extension.js:1071
+#: src/extension.js:1070
 msgid "Weather Settings"
 msgstr "Nastavení počasí"
 
-#: src/extension.js:1099
+#: src/extension.js:1098
 msgid "Manual refreshes less than 2 minutes apart are ignored!"
 msgstr "Ruční obnova častěji než 2 minuty je ignorována!"
 
-#: src/extension.js:1141
+#: src/extension.js:1140
 #, javascript-format
 msgid "Cannot open %s"
 msgstr "Nemohu otevřít %s"
 
-#: src/extension.js:1231 src/preferences/generalPage.js:194
+#: src/extension.js:1227 src/preferences/generalPage.js:214
 msgid "°C"
 msgstr "°C"
 
-#: src/extension.js:1234 src/preferences/generalPage.js:195
+#: src/extension.js:1230 src/preferences/generalPage.js:215
 msgid "°F"
 msgstr "°F"
 
-#: src/extension.js:1236 src/preferences/generalPage.js:196
+#: src/extension.js:1232 src/preferences/generalPage.js:216
 msgid "K"
 msgstr "K"
 
-#: src/extension.js:1238 src/preferences/generalPage.js:197
+#: src/extension.js:1234 src/preferences/generalPage.js:217
 msgid "°Ra"
 msgstr "°Ra"
 
-#: src/extension.js:1240 src/preferences/generalPage.js:198
+#: src/extension.js:1236 src/preferences/generalPage.js:218
 msgid "°Ré"
 msgstr "°Ré"
 
-#: src/extension.js:1242 src/preferences/generalPage.js:199
+#: src/extension.js:1238 src/preferences/generalPage.js:219
 msgid "°Rø"
 msgstr "°Rø"
 
-#: src/extension.js:1244 src/preferences/generalPage.js:200
+#: src/extension.js:1240 src/preferences/generalPage.js:220
 msgid "°De"
 msgstr "°De"
 
-#: src/extension.js:1246 src/preferences/generalPage.js:201
+#: src/extension.js:1242 src/preferences/generalPage.js:221
 msgid "°N"
 msgstr "°N"
 
-#: src/extension.js:1282
+#: src/extension.js:1250
 msgid "Calm"
 msgstr "Bezvětří"
 
-#: src/extension.js:1283
+#: src/extension.js:1251
 msgid "Light air"
 msgstr "Vánek"
 
-#: src/extension.js:1285
+#: src/extension.js:1253
 msgid "Light breeze"
 msgstr "Slabý vítr"
 
-#: src/extension.js:1287
+#: src/extension.js:1255
 msgid "Gentle breeze"
 msgstr "Mírný vítr"
 
-#: src/extension.js:1289
+#: src/extension.js:1257
 msgid "Moderate breeze"
 msgstr "Dosti čersvý vítr"
 
-#: src/extension.js:1291
+#: src/extension.js:1259
 msgid "Fresh breeze"
 msgstr "Čerstvý vítr"
 
-#: src/extension.js:1293
+#: src/extension.js:1261
 msgid "Strong breeze"
 msgstr "Silný vítr"
 
-#: src/extension.js:1295
+#: src/extension.js:1263
 msgid "Moderate gale"
 msgstr "Prudký vítr"
 
-#: src/extension.js:1297
+#: src/extension.js:1265
 msgid "Fresh gale"
 msgstr "Bouřlivý vítr"
 
-#: src/extension.js:1299
+#: src/extension.js:1267
 msgid "Strong gale"
 msgstr "Vichřice"
 
-#: src/extension.js:1300
+#: src/extension.js:1268
 msgid "Storm"
 msgstr "Silná vichřice"
 
-#: src/extension.js:1302
+#: src/extension.js:1270
 msgid "Violent storm"
 msgstr "Mohutná vichřice"
 
-#: src/extension.js:1303
+#: src/extension.js:1271
 msgid "Hurricane"
 msgstr "Orkán"
 
-#: src/extension.js:1308
+#: src/extension.js:1276
 msgid "Sunday"
 msgstr "Neděle"
 
-#: src/extension.js:1309
+#: src/extension.js:1277
 msgid "Monday"
 msgstr "Pondělí"
 
-#: src/extension.js:1310
+#: src/extension.js:1278
 msgid "Tuesday"
 msgstr "Úterý"
 
-#: src/extension.js:1311
+#: src/extension.js:1279
 msgid "Wednesday"
 msgstr "Středa"
 
-#: src/extension.js:1312
+#: src/extension.js:1280
 msgid "Thursday"
 msgstr "Čtvrtek"
 
-#: src/extension.js:1313
+#: src/extension.js:1281
 msgid "Friday"
 msgstr "Pátek"
 
-#: src/extension.js:1314
+#: src/extension.js:1282
 msgid "Saturday"
 msgstr "Sobota"
 
-#: src/extension.js:1331
+#: src/extension.js:1299
 msgid "N"
 msgstr "S"
 
-#: src/extension.js:1332
+#: src/extension.js:1300
 msgid "NE"
 msgstr "SV"
 
-#: src/extension.js:1333
+#: src/extension.js:1301
 msgid "E"
 msgstr "V"
 
-#: src/extension.js:1334
+#: src/extension.js:1302
 msgid "SE"
 msgstr "JV"
 
-#: src/extension.js:1335
+#: src/extension.js:1303
 msgid "S"
 msgstr "J"
 
-#: src/extension.js:1336
+#: src/extension.js:1304
 msgid "SW"
 msgstr "JZ"
 
-#: src/extension.js:1337
+#: src/extension.js:1305
 msgid "W"
 msgstr "Z"
 
-#: src/extension.js:1338
+#: src/extension.js:1306
 msgid "NW"
 msgstr "SZ"
 
-#: src/extension.js:1427 src/preferences/generalPage.js:227
+#: src/extension.js:1395 src/preferences/generalPage.js:247
 msgid "inHg"
 msgstr "inHg"
 
-#: src/extension.js:1432 src/preferences/generalPage.js:228
+#: src/extension.js:1400 src/preferences/generalPage.js:248
 msgid "bar"
 msgstr "bar"
 
-#: src/extension.js:1437 src/preferences/generalPage.js:229
+#: src/extension.js:1405 src/preferences/generalPage.js:249
 msgid "Pa"
 msgstr "Pa"
 
-#: src/extension.js:1442 src/preferences/generalPage.js:230
+#: src/extension.js:1410 src/preferences/generalPage.js:250
 msgid "kPa"
 msgstr "kPa"
 
-#: src/extension.js:1447 src/preferences/generalPage.js:231
+#: src/extension.js:1415 src/preferences/generalPage.js:251
 msgid "atm"
 msgstr "atm"
 
-#: src/extension.js:1452 src/preferences/generalPage.js:232
+#: src/extension.js:1420 src/preferences/generalPage.js:252
 msgid "at"
 msgstr "at"
 
-#: src/extension.js:1457 src/preferences/generalPage.js:233
+#: src/extension.js:1425 src/preferences/generalPage.js:253
 msgid "Torr"
 msgstr "Torr"
 
-#: src/extension.js:1462 src/preferences/generalPage.js:234
+#: src/extension.js:1430 src/preferences/generalPage.js:254
 msgid "psi"
 msgstr "psi"
 
-#: src/extension.js:1467 src/preferences/generalPage.js:235
+#: src/extension.js:1435 src/preferences/generalPage.js:255
 msgid "mmHg"
 msgstr "mmHg"
 
-#: src/extension.js:1471 src/preferences/generalPage.js:236
+#: src/extension.js:1439 src/preferences/generalPage.js:256
 msgid "mbar"
 msgstr "mbar"
 
-#: src/extension.js:1537 src/preferences/generalPage.js:214
+#: src/extension.js:1507 src/preferences/generalPage.js:234
 msgid "m/s"
 msgstr "m/s"
 
-#: src/extension.js:1542 src/preferences/generalPage.js:213
+#: src/extension.js:1512 src/preferences/generalPage.js:233
 msgid "mph"
 msgstr "mph"
 
-#: src/extension.js:1547 src/preferences/generalPage.js:212
+#: src/extension.js:1517 src/preferences/generalPage.js:232
 msgid "km/h"
 msgstr "km/h"
 
-#: src/extension.js:1556 src/preferences/generalPage.js:215
+#: src/extension.js:1526 src/preferences/generalPage.js:235
 msgid "kn"
 msgstr "kn"
 
-#: src/extension.js:1561 src/preferences/generalPage.js:216
+#: src/extension.js:1531 src/preferences/generalPage.js:236
 msgid "ft/s"
 msgstr "ft/s"
 
-#: src/extension.js:1628 src/extension.js:1678
+#: src/extension.js:1601 src/extension.js:1651
 msgid "Loading ..."
 msgstr "Načítání…"
 
-#: src/extension.js:1682
+#: src/extension.js:1655
 msgid "Please wait"
 msgstr "Prosím, čekejte"
 
-#: src/extension.js:1739
+#: src/extension.js:1712
 msgid "Feels Like:"
 msgstr "Pocitově:"
 
-#: src/extension.js:1740
+#: src/extension.js:1713
 msgid "Humidity:"
 msgstr "Vlhkost:"
 
-#: src/extension.js:1741
+#: src/extension.js:1714
 msgid "Pressure:"
 msgstr "Tlak:"
 
-#: src/extension.js:1742
+#: src/extension.js:1715
 msgid "Wind:"
 msgstr "Vítr:"
 
-#: src/extension.js:1743
+#: src/extension.js:1716
 msgid "Gusts"
 msgstr "Poryvy:"
 
-#: src/extension.js:1925
+#: src/extension.js:1898
 msgid "Tomorrow's Forecast"
 msgstr "Dnešní předpověď"
 
 # x denní předpověď
 # Pro jednodenní předpověď je text Dnešní předpověď
 # Ignoruj warning!
-#: src/extension.js:1926
+#: src/extension.js:1899
 #, javascript-format
 msgid "%s Day Forecast"
 msgstr "%s denní předpověď"
-
-#: src/openweathermap.js:139
-msgid ", "
-msgstr ", "
-
-#: src/openweathermap.js:238
-msgid "Tomorrow"
-msgstr "Zítra"
-
-#: src/preferences/generalPage.js:28
-#, javascript-format
-msgid "%s Multilingual Support"
-msgstr "%s vícejazyčná podpora"
-
-#: src/preferences/generalPage.js:33
-#, javascript-format
-msgid "Use a personal API key for %s"
-msgstr "užijte osobní API klíč pro %s"
-
-#: src/preferences/generalPage.js:38
-#, javascript-format
-msgid "Enable this if you have your own API key from %s and enter it below."
-msgstr ""
-"Zapněte pokud máte svůj osobní API klíč pro %s a vložte jej do pole níže."
-
-#: src/preferences/generalPage.js:51
-msgid "Settings"
-msgstr "Nastavení"
-
-#: src/preferences/generalPage.js:60
-msgid "General"
-msgstr "Obecná nastavení"
-
-#: src/preferences/generalPage.js:78
-msgid "Current Weather Refresh"
-msgstr "Interval obnovení aktuálního počasí"
-
-#: src/preferences/generalPage.js:79
-msgid "Current weather refresh interval in minutes"
-msgstr "Interval obnovování aktuálního stavu počasí v minutách"
-
-#: src/preferences/generalPage.js:101
-msgid "Weather Forecast Refresh"
-msgstr "Interval obnovení předpovědi počasí"
-
-#: src/preferences/generalPage.js:102
-msgid "Forecast refresh interval in minutes if enabled"
-msgstr "Interval obnovování předpovědi počasí v minutách"
-
-#: src/preferences/generalPage.js:122
-msgid "My Location Refresh"
-msgstr "Načtení mé polohy"
-
-#: src/preferences/generalPage.js:123
-msgid "My location refresh interval in minutes"
-msgstr "Interval obnovování mé polohy v minutách"
-
-#: src/preferences/generalPage.js:134
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:122
-msgid "Disable Forecast"
-msgstr "Vypnout předpověď"
-
-#: src/preferences/generalPage.js:135
-msgid "Disables all fetching and processing of forecast data"
-msgstr "Zakáže veškeré načítání a zpracování dat předpovědi"
-
-#: src/preferences/generalPage.js:146
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:110
-msgid "System Icons"
-msgstr "Systémové ikony"
-
-#: src/preferences/generalPage.js:147
-#, javascript-format
-msgid "Disable to use packaged %s weather icons"
-msgstr "Zakázat používání přibalených %s ikon počasí"
-
-#: src/preferences/generalPage.js:149
-msgid ""
-"If you have issues with your system icons displaying correctly disable this "
-"to fix it"
-msgstr ""
-"Pokud máte problémy se správným zobrazením systémových ikon, vypněte tuto "
-"funkci"
-
-#: src/preferences/generalPage.js:170
-msgid "First Boot Delay"
-msgstr "Zpoždění prvního spuštění"
-
-#: src/preferences/generalPage.js:171
-msgid "Seconds to delay popup initialization and data fetching"
-msgstr "Sekundy pro zpoždění inicializace vyskakovacího okna a načítání dat"
-
-#: src/preferences/generalPage.js:173
-msgid ""
-"This setting only applies to the first time the extension is loaded. (first "
-"log in / restarting gnome shell)"
-msgstr ""
-"Toto nastavení platí pouze při prvním načtení rozšíření. (první přihlášení / "
-"restartování prostředí gnome shell)"
-
-#: src/preferences/generalPage.js:189
-msgid "Units"
-msgstr "Jednotky"
-
-#: src/preferences/generalPage.js:205
-msgid "Temperature"
-msgstr "Teplota"
-
-#: src/preferences/generalPage.js:217
-msgid "Beaufort"
-msgstr "Beaufort"
-
-#: src/preferences/generalPage.js:219
-msgid "Wind Speed"
-msgstr "Rychlost větru"
-
-#: src/preferences/generalPage.js:238
-msgid "Pressure"
-msgstr "Tlak"
-
-#: src/preferences/generalPage.js:245
-msgid "24-hour"
-msgstr "24h"
-
-#: src/preferences/generalPage.js:246
-msgid "AM / PM"
-msgstr "12h"
-
-#: src/preferences/generalPage.js:247
-msgid "System"
-msgstr "Systém"
-
-#: src/preferences/generalPage.js:249
-msgid "Time Format"
-msgstr "Formát času"
-
-#: src/preferences/generalPage.js:260
-msgid "Simplify Degrees"
-msgstr "Zjednodušit zobrazení stupňů"
-
-#: src/preferences/generalPage.js:261
-msgid "Show \"°\" instead of \"°C,\" \"°F,\" etc."
-msgstr "Zobrazit \"°\" místo \"°C\", \"°F\" atd."
-
-#: src/preferences/generalPage.js:262
-msgid "Enable this to cut off the \"C,\" \"F,\" etc. from degrees labels."
-msgstr "Povolením této funkce odstřihnete označení stupňů \"C\", \"F\" atd.."
-
-#: src/preferences/generalPage.js:276 src/preferences/locationsPage.js:67
-msgid "Provider"
-msgstr "Poskytovatel"
-
-#: src/preferences/generalPage.js:287
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:67
-msgid "Weather Provider"
-msgstr "Poskytovatel počasí"
-
-#: src/preferences/generalPage.js:288
-msgid "Provider used for weather and forecasts"
-msgstr "Poskytovatel používaný pro počasí"
-
-#: src/preferences/generalPage.js:301
-msgid "Using provider translations applies to weather conditions only"
-msgstr ""
-"Použití překladů poskytovatele se vztahuje pouze na povětrnostní podmínky"
-
-#: src/preferences/generalPage.js:304
-msgid ""
-"Enable this to use provider multilingual support if there's no built-in "
-"translations for your language yet."
-msgstr ""
-"Povolte pro užití vícejazyčné podpory poskytovatele počasí nejsou-li k "
-"dispozici vestavěné překlady pro váš jazyk."
-
-#: src/preferences/generalPage.js:317
-msgid "Use Custom API Key"
-msgstr "Použij vlastní API klíče"
-
-#: src/preferences/generalPage.js:333
-msgid "Personal API Key"
-msgstr "Osobní API klíč"
-
-#: src/preferences/generalPage.js:369 src/preferences/generalPage.js:375
-msgid "Reset"
-msgstr "Reset"
-
-#: src/preferences/generalPage.js:379
-msgid "Restore Defaults"
-msgstr "Obnovit výchozí"
-
-#: src/preferences/generalPage.js:381
-msgid "Restore all settings to the defaults."
-msgstr "Obnoví všechna nastavení na výchozí hodnoty."
 
 #: src/preferences/layoutPage.js:31
 msgid "Layout"
@@ -605,7 +438,7 @@ msgid "Wind Direction Arrows"
 msgstr "Směr větru jako šipku"
 
 #: src/preferences/layoutPage.js:176
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:102
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:103
 msgid "Translate Conditions"
 msgstr "Překládat stav počasí"
 
@@ -615,17 +448,17 @@ msgid "0"
 msgstr "0"
 
 #: src/preferences/layoutPage.js:185 src/preferences/layoutPage.js:199
-#: src/preferences/layoutPage.js:213 src/preferences/layoutPage.js:302
+#: src/preferences/layoutPage.js:213
 msgid "1"
 msgstr "1"
 
 #: src/preferences/layoutPage.js:186 src/preferences/layoutPage.js:200
-#: src/preferences/layoutPage.js:214 src/preferences/layoutPage.js:303
+#: src/preferences/layoutPage.js:214
 msgid "2"
 msgstr "2"
 
 #: src/preferences/layoutPage.js:187 src/preferences/layoutPage.js:201
-#: src/preferences/layoutPage.js:215 src/preferences/layoutPage.js:304
+#: src/preferences/layoutPage.js:215
 msgid "3"
 msgstr "3"
 
@@ -644,10 +477,9 @@ msgstr "Výchozí jednotka"
 
 #: src/preferences/layoutPage.js:197 src/preferences/layoutPage.js:211
 msgid "Follow Temp."
-msgstr "Jako teplota"
+msgstr "Podle teploty."
 
 #: src/preferences/layoutPage.js:202 src/preferences/layoutPage.js:216
-#: src/preferences/layoutPage.js:305
 msgid "4"
 msgstr "4"
 
@@ -661,65 +493,182 @@ msgstr "Počet desetinných míst rychlosti"
 
 #: src/preferences/layoutPage.js:239
 msgid "Location Text Length"
-msgstr "Maximální délka textu umístění"
+msgstr "Maximální délka textu Lokace"
 
 #: src/preferences/layoutPage.js:241
 msgid "Maximum length of the location text. A setting of '0' is unlimited"
-msgstr "Maximální délka textu umístění (0 neomezeno)"
+msgstr "Maximální délka textu Lokace (0 neomezeno)"
 
-#: src/preferences/layoutPage.js:249
-msgid "Off"
-msgstr "Žádný"
+#: src/preferences/layoutPage.js:243
+msgid "Maximum length to cut off the location text at. \"0\" is unlimited."
+msgstr "Maximální délka textu Lokace (0 neomezeno)"
 
 #: src/preferences/layoutPage.js:250
+msgid "Off"
+msgstr "Ne"
+
+#: src/preferences/layoutPage.js:251
 msgid "White Text"
 msgstr "Bílý"
 
-#: src/preferences/layoutPage.js:251
+#: src/preferences/layoutPage.js:252
 msgid "Black Text"
 msgstr "Černý"
 
-#: src/preferences/layoutPage.js:253
+#: src/preferences/layoutPage.js:254
 msgid "High Contrast"
 msgstr "Vysoký kontrast"
 
-#: src/preferences/layoutPage.js:254
+#: src/preferences/layoutPage.js:255
+msgid ""
+"Override GNOME shell text colors in the pop-up with hard-coded ones that may "
+"be easier to read. This may not be very effective depending on your shell "
+"theme."
+msgstr ""
+"Přepsat barvy textu prostředí GNOME ve vyskakovacím okně na pevně zadané "
+"barvy, které mohou být lépe čitelné. Nemusí být lepší, to závisí na tématu "
+"shellu."
+
+#: src/preferences/layoutPage.js:256
 msgid "Enable to override GNOME shell colors"
 msgstr "Povolit přepsání barev prostředí GNOME"
 
 # x denní předpověď
 # Pro jednodenní předpověď je text Dnešní předpověď
 # Ignoruj warning!
-#: src/preferences/layoutPage.js:273
+#: src/preferences/layoutPage.js:275
 msgid "Forecast"
 msgstr "Předpověď"
 
-#: src/preferences/layoutPage.js:283
+#: src/preferences/layoutPage.js:285
 msgid "Center Today's Forecast"
 msgstr "Vystředit dnešní předpověď"
 
-#: src/preferences/layoutPage.js:294
+#: src/preferences/layoutPage.js:286
+msgid "Center today's forecast instead of left-aligning it."
+msgstr "Namísto zarovnání vlevo zarovnej dnešní předpověď na střed."
+
+#: src/preferences/layoutPage.js:297
 msgid "Conditions In Forecast"
 msgstr "Stav počasí v předpovědi"
 
-#: src/preferences/layoutPage.js:301
-msgid "Today Only"
-msgstr "Pouze dnes"
-
-#: src/preferences/layoutPage.js:306
-msgid "5"
-msgstr "5"
+#: src/preferences/layoutPage.js:298
+msgid "Show the condition text (e.g. \"Cloudy\") in the forecast."
+msgstr "Zobrazení textu podmínky (např. \"Zataženo\") v předpovědi."
 
 # x denní předpověď
 # Pro jednodenní předpověď je text Dnešní předpověď
 # Ignoruj warning!
-#: src/preferences/layoutPage.js:308
+#: src/preferences/layoutPage.js:318
 msgid "Total Days In Forecast"
 msgstr "Celkový počet dnů předpovědi"
 
-#: src/preferences/layoutPage.js:319
+#: src/preferences/layoutPage.js:320
+msgid ""
+"Number of days to show in forecast where a setting of \"0\" is only today"
+msgstr "Počet dnů k zobrazení v předpovědi. \"0\" znamená pouze dnešek"
+
+#: src/preferences/layoutPage.js:322
+#, javascript-format
+msgid ""
+"Number of days to show in forecast. \"0\" means only show today.\n"
+"Different providers support different amounts of days.\n"
+"Currently \"%s\" supports the furthest forecast of %s days."
+msgstr ""
+"Počet dnů, které se mají zobrazit v předpovědi. \"0\" znamená zobrazení "
+"pouze dneška.\n"
+"Různí poskytovatelé podporují různý počet dní.\n"
+"Nyní \"%s\" podporuje nejvzdálenější předpověď v délce %s dní."
+
+#: src/preferences/layoutPage.js:333
 msgid "Keep Forecast Expanded"
 msgstr "Udržuj panel předpovědi stále rozbalený"
+
+#: src/preferences/layoutPage.js:334
+msgid "Automatically open the forecast when the pop-up is opened."
+msgstr "Automaticky otevři předpověď při otevření vyskakovacího okna."
+
+#: src/preferences/aboutPage.js:45
+msgid "About"
+msgstr "O aplikaci"
+
+#: src/preferences/aboutPage.js:73
+msgid ""
+"Display weather information for any location on Earth in the GNOME Shell."
+msgstr ""
+"Zobrazí informace o počasí pro jakékoli místo na světě v panelu GNOME Shell."
+
+#: src/preferences/aboutPage.js:93
+msgid "OpenWeather Refined Version"
+msgstr "Verze"
+
+#: src/preferences/aboutPage.js:105
+msgid "Git Version"
+msgstr "Git verze"
+
+#: src/preferences/aboutPage.js:116
+msgid "GNOME Version"
+msgstr "GNOME verze"
+
+#: src/preferences/aboutPage.js:126
+msgid "Copy Settings JSON"
+msgstr "Zkopíruj nastavení do JSON"
+
+#: src/preferences/aboutPage.js:129
+msgid "Copy"
+msgstr "Kopírovat"
+
+#: src/preferences/aboutPage.js:134
+msgid "Paste"
+msgstr "Vložit"
+
+#: src/preferences/aboutPage.js:203
+msgid "Copied settings JSON to clipboard."
+msgstr "Nastavení JSON zkopírováno do schránky."
+
+#: src/preferences/aboutPage.js:219
+msgid "Clipboard contains no text."
+msgstr "Schránka neobsahuje žádný text."
+
+#: src/preferences/aboutPage.js:226
+msgid "Clipboard didn't contain valid JSON."
+msgstr "Schránka neobsahovala platný JSON."
+
+#: src/preferences/aboutPage.js:269
+#, javascript-format
+msgid "Maintained by: %s"
+msgstr "Správce projektu: %s"
+
+#: src/preferences/aboutPage.js:275
+#, javascript-format
+msgid "Contribute or translate the project on %s."
+msgstr "Přispějte nebo přeložte projekt na %s."
+
+#: src/preferences/aboutPage.js:281
+#, javascript-format
+msgid "This is a fork of %s's extension."
+msgstr "Jedná se o fork rozšíření %s."
+
+#: src/preferences/aboutPage.js:306
+#, javascript-format
+msgid "Weather data provided by: %s"
+msgstr "Data o počasí poskytuje: %s"
+
+#: src/preferences/aboutPage.js:321
+msgid "This program comes with ABSOLUTELY NO WARRANTY."
+msgstr "Na tento program se nevztahuje ABSOLUTNĚ ŽÁDNÁ ZÁRUKA."
+
+#: src/preferences/aboutPage.js:323
+msgid "See the"
+msgstr "Prostuduj"
+
+#: src/preferences/aboutPage.js:325
+msgid "GNU General Public License, version 2 or later"
+msgstr "GNU General Public License, version 2 or later"
+
+#: src/preferences/aboutPage.js:327
+msgid "for details."
+msgstr "pro detaily."
 
 #: src/preferences/searchResultsWindow.js:36
 #, javascript-format
@@ -755,7 +704,7 @@ msgid "Results for \"%s\""
 msgstr "Výsledek pro \"%s\""
 
 #: src/preferences/searchResultsWindow.js:273
-#: src/preferences/locationsPage.js:393
+#: src/preferences/locationsPage.js:395
 #, javascript-format
 msgid "%s has been added"
 msgstr "%s bylo přidáno"
@@ -778,213 +727,302 @@ msgstr "Nebyla nalezena žádná shoda"
 msgid "No results found when searching for \"%s\"."
 msgstr "Žádný výsledek při hledání \"%s\"."
 
-#: src/preferences/aboutPage.js:36
-msgid "About"
-msgstr "O aplikaci"
+#: src/preferences/generalPage.js:29
+msgid "Provider Multilingual Support"
+msgstr "Vícejazyčná podpora poskytovatele"
 
-#: src/preferences/aboutPage.js:64
-msgid ""
-"Display weather information for any location on Earth in the GNOME Shell."
+#: src/preferences/generalPage.js:35
+#, javascript-format
+msgid "Use a personal API key for %s"
+msgstr "Užijte osobní API klíč pro %s"
+
+#: src/preferences/generalPage.js:35 src/preferences/generalPage.js:42
+#: src/preferences/generalPage.js:315 src/preferences/locationsPage.js:67
+msgid "Provider"
+msgstr "Poskytovatel"
+
+#: src/preferences/generalPage.js:41
+#, javascript-format
+msgid "Enable this if you have your own API key from %s and enter it below."
 msgstr ""
-"Zobrazí informace o počasí pro jakékoli místo na světě v panelu GNOME Shell."
+"Zapněte pokud máte svůj osobní API klíč pro %s a vložte jej do pole níže."
 
-#: src/preferences/aboutPage.js:79 src/preferences/aboutPage.js:80
-msgid "Unknown"
-msgstr "Neznámý"
+#: src/preferences/generalPage.js:80
+msgid "General"
+msgstr "Obecná nastavení"
 
-#: src/preferences/aboutPage.js:84
-msgid "OpenWeather Refined Version"
-msgstr "Verze"
+#: src/preferences/generalPage.js:98
+msgid "Current Weather Refresh"
+msgstr "Interval obnovení aktuálního počasí"
 
-#: src/preferences/aboutPage.js:96
-msgid "Git Version"
-msgstr "Git verze"
+#: src/preferences/generalPage.js:99
+msgid "Current weather refresh interval in minutes"
+msgstr "Interval obnovování aktuálního stavu počasí v minutách"
 
-#: src/preferences/aboutPage.js:107
-msgid "GNOME Version"
-msgstr "GNOME verze"
+#: src/preferences/generalPage.js:121
+msgid "Weather Forecast Refresh"
+msgstr "Interval obnovení předpovědi počasí"
 
-#: src/preferences/aboutPage.js:117
-msgid "Copy Settings JSON"
-msgstr "Zkopíruj nastavení do JSON"
+#: src/preferences/generalPage.js:122
+msgid "Forecast refresh interval in minutes if enabled"
+msgstr "Interval obnovování předpovědi počasí v minutách"
 
-#: src/preferences/aboutPage.js:120
-msgid "Copy"
-msgstr "Kopírovat"
+#: src/preferences/generalPage.js:142
+msgid "My Location Refresh"
+msgstr "Načtení mé polohy"
 
-#: src/preferences/aboutPage.js:167
-msgid "Copied settings JSON to clipboard."
-msgstr "Nastavení JSON zkopírováno do schránky."
+#: src/preferences/generalPage.js:143
+msgid "My location refresh interval in minutes"
+msgstr "Interval obnovování mé polohy v minutách"
 
-#: src/preferences/aboutPage.js:188
+#: src/preferences/generalPage.js:154
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:123
+msgid "Disable Forecast"
+msgstr "Vypnout předpověď"
+
+#: src/preferences/generalPage.js:155
+msgid "Disables all fetching and processing of forecast data"
+msgstr "Zakáže veškeré načítání a zpracování dat předpovědi"
+
+#: src/preferences/generalPage.js:166
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:111
+msgid "System Icons"
+msgstr "Systémové ikony"
+
+#: src/preferences/generalPage.js:167 src/preferences/locationsPage.js:411
 #, javascript-format
-msgid "Maintained by: %s"
-msgstr "Správce projektu: %s"
+msgid "Disable to use packaged %s weather icons"
+msgstr "Zakázat používání přibalených %s ikon počasí"
 
-#: src/preferences/aboutPage.js:194
+#: src/preferences/generalPage.js:169
+msgid ""
+"If you have issues with your system icons displaying correctly disable this "
+"to fix it"
+msgstr ""
+"Pokud máte problémy se správným zobrazením systémových ikon, vypněte tuto "
+"funkci"
+
+#: src/preferences/generalPage.js:190
+msgid "First Boot Delay"
+msgstr "Zpoždění prvního spuštění"
+
+#: src/preferences/generalPage.js:191
+msgid "Seconds to delay popup initialization and data fetching"
+msgstr "Sekundy pro zpoždění inicializace vyskakovacího okna a načítání dat"
+
+#: src/preferences/generalPage.js:193 src/preferences/locationsPage.js:475
+msgid ""
+"This setting only applies to the first time the extension is loaded. (first "
+"log in / restarting gnome shell)"
+msgstr ""
+"Toto nastavení platí pouze při prvním načtení rozšíření. (první přihlášení / "
+"restartování prostředí gnome shell)"
+
+#: src/preferences/generalPage.js:209
+msgid "Units"
+msgstr "Jednotky"
+
+#: src/preferences/generalPage.js:225
+msgid "Temperature"
+msgstr "Teplota"
+
+#: src/preferences/generalPage.js:237
+msgid "Beaufort"
+msgstr "Beaufort"
+
+#: src/preferences/generalPage.js:239
+msgid "Wind Speed"
+msgstr "Rychlost větru"
+
+#: src/preferences/generalPage.js:258
+msgid "Pressure"
+msgstr "Tlak"
+
+#: src/preferences/generalPage.js:265
+msgid "24-hour"
+msgstr "24h"
+
+#: src/preferences/generalPage.js:266
+msgid "AM / PM"
+msgstr "12h"
+
+#: src/preferences/generalPage.js:267
+msgid "System"
+msgstr "Systém"
+
+#: src/preferences/generalPage.js:269
+msgid "Time Format"
+msgstr "Formát času"
+
+#: src/preferences/generalPage.js:280
+msgid "Simplify Degrees"
+msgstr "Zjednodušit zobrazení stupňů"
+
+#: src/preferences/generalPage.js:281
+msgid "Show \"°\" instead of \"°C,\" \"°F,\" etc."
+msgstr "Zobrazit \"°\" místo \"°C\", \"°F\" atd."
+
+#: src/preferences/generalPage.js:282
+msgid "Enable this to cut off the \"C,\" \"F,\" etc. from degrees labels."
+msgstr "Povolením této funkce odstřihnete označení stupňů \"C\", \"F\" atd.."
+
+#: src/preferences/generalPage.js:295
+msgid "Notifications"
+msgstr "Upozornění"
+
+#: src/preferences/generalPage.js:303
+msgid "Precipitation Starting"
+msgstr "Začátek srážek"
+
+#: src/preferences/generalPage.js:304 src/preferences/generalPage.js:305
+msgid "Get notified when precipitation starts (e.g. rain or snow)."
+msgstr "Získejte upozornění na začátek srážek (např. deště či sněžení)."
+
+#: src/preferences/generalPage.js:322 src/preferences/generalPage.js:329
+#: src/preferences/generalPage.js:330
+msgid "Adaptive"
+msgstr "Adaptivní"
+
+#: src/preferences/generalPage.js:328
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:68
+msgid "Weather Provider"
+msgstr "Poskytovatel počasí"
+
+#: src/preferences/generalPage.js:329 src/preferences/locationsPage.js:564
 #, javascript-format
-msgid "Contribute or translate the project on %s."
-msgstr "Přispějte nebo přeložte projekt na %s."
+msgid ""
+"Provider used for weather and forecasts; choose \"%s\" if you don't care."
+msgstr ""
+"Poskytovatel používaný pro počasí a předpovědi; zvolte \"%s\" pro "
+"automatické zvolení."
 
-#: src/preferences/aboutPage.js:200
+#: src/preferences/generalPage.js:330 src/preferences/locationsPage.js:595
 #, javascript-format
-msgid "This is a fork of %s's extension."
-msgstr "Jedná se o fork rozšíření %s."
+msgid "Choose '%s' if you don't care, otherwise choose a specific provider."
+msgstr ""
+"Pokud vám na tom nezáleží, vyberte možnost \"%s\". Jinak vyberte konkrétního "
+"poskytovatele."
 
-#: src/preferences/aboutPage.js:222
-#, javascript-format
-msgid "Weather data provided by: %s"
-msgstr "Data o počasí poskytuje: %s"
+#: src/preferences/generalPage.js:343
+msgid "Using provider translations applies to weather conditions only"
+msgstr ""
+"Použití překladů poskytovatele se vztahuje pouze na povětrnostní podmínky"
 
-#: src/preferences/aboutPage.js:236
-msgid "This program comes with ABSOLUTELY NO WARRANTY."
-msgstr "Na tento program se nevztahuje ABSOLUTNĚ ŽÁDNÁ ZÁRUKA."
+#: src/preferences/generalPage.js:346
+msgid ""
+"Enable this to use provider multilingual support if there's no built-in "
+"translations for your language yet."
+msgstr ""
+"Povolte pro užití vícejazyčné podpory poskytovatele počasí nejsou-li k "
+"dispozici vestavěné překlady pro váš jazyk."
 
-#: src/preferences/aboutPage.js:238
-msgid "See the"
-msgstr "Prostuduj"
+#: src/preferences/generalPage.js:361
+msgid "Use Custom API Key"
+msgstr "Použij vlastní API klíče"
 
-#: src/preferences/aboutPage.js:240
-msgid "GNU General Public License, version 2 or later"
-msgstr "GNU General Public License, version 2 or later"
+#: src/preferences/generalPage.js:377
+msgid "Personal API Key"
+msgstr "Osobní API klíč"
 
-#: src/preferences/aboutPage.js:242
-msgid "for details."
-msgstr "pro detaily."
+#: src/preferences/generalPage.js:394 src/preferences/generalPage.js:400
+msgid "Reset"
+msgstr "Reset"
 
-#: src/preferences/locationsPage.js:55
-msgid "Add"
-msgstr "Přidat"
+#: src/preferences/generalPage.js:404
+msgid "Restore Defaults"
+msgstr "Obnovit výchozí"
 
-#: src/preferences/locationsPage.js:75
-msgid "My Loc. Provider"
-msgstr "Poskytovatel mé polohy"
-
-#: src/preferences/locationsPage.js:76
-msgid "Provider for getting My Location"
-msgstr "Poskytovatel vyhledávání mé polohy"
+#: src/preferences/generalPage.js:406
+msgid "Restore all settings to the defaults."
+msgstr "Obnoví všechna nastavení na výchozí hodnoty."
 
 #: src/preferences/locationsPage.js:85
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:71
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:72
 msgid "Geolocation Provider"
 msgstr "Poskytovatel geolokace"
 
-#: src/preferences/locationsPage.js:86
-msgid "Provider used for location search"
-msgstr "Poskytovatel používaný pro vyhledávání polohy"
-
-#: src/preferences/locationsPage.js:99
-msgid "Personal MapQuest Key"
-msgstr "Osobní klíč MapQuest"
-
-#: src/preferences/locationsPage.js:100
-msgid "Personal API Key from developer.mapquest.com"
-msgstr "Osobní API klíč od developer.mapquest.com"
-
-#: src/preferences/locationsPage.js:262
+#: src/preferences/locationsPage.js:264
 #, javascript-format
 msgid "Location changed to: %s"
-msgstr "Umístění se změnilo na: %s"
+msgstr "Lokace se změnila na: %s"
 
-#: src/preferences/locationsPage.js:292
+#: src/preferences/locationsPage.js:294
 msgid "Add New Location"
-msgstr "Přidej nové umístění"
+msgstr "Přidej novou lokaci"
 
-#: src/preferences/locationsPage.js:313
+#: src/preferences/locationsPage.js:315
 msgid "Search by Location or Coordinates"
-msgstr "Hledat podle umístění nebo souřadnic"
+msgstr "Hledat podle lokace nebo souřadnic"
 
-#: src/preferences/locationsPage.js:319
+#: src/preferences/locationsPage.js:321
 msgid "e.g. London, England or 51.5074456,-0.1277653"
 msgstr "např. Londýn, Anglie nebo 51.5074456,-0.1277653"
 
-#: src/preferences/locationsPage.js:321 src/preferences/locationsPage.js:449
-#: src/preferences/locationsPage.js:466
+#: src/preferences/locationsPage.js:323 src/preferences/locationsPage.js:451
+#: src/preferences/locationsPage.js:468
 msgid "Clear entry"
 msgstr "Smazat položku"
 
-#: src/preferences/locationsPage.js:338
+#: src/preferences/locationsPage.js:340
 msgid "Search"
 msgstr "Hledání"
 
-#: src/preferences/locationsPage.js:364
+#: src/preferences/locationsPage.js:366
 msgid "We need something to search for!"
 msgstr "Potřebujeme něco, co bychom mohli hledat!"
 
-#: src/preferences/locationsPage.js:409
-#, javascript-format
-msgid "Edit %s"
-msgstr "Upravit název %s"
-
-#: src/preferences/locationsPage.js:431
+#: src/preferences/locationsPage.js:433
 msgid "Edit Name"
 msgstr "Upravit název"
 
-#: src/preferences/locationsPage.js:457
+#: src/preferences/locationsPage.js:459
 msgid "Edit Coordinates"
 msgstr "Upravit souřadnice"
 
-#: src/preferences/locationsPage.js:473
-msgid ""
-"If you meant to search up a new location by name, <b>add</b> a location "
-"instead."
-msgstr ""
-"Pro vyhledání nového umístění podle názvu jděte <b>Místa</b> , <b>Přidat</b>."
-
-#: src/preferences/locationsPage.js:482
+#: src/preferences/locationsPage.js:484
 msgid "Save"
 msgstr "Uložit"
 
-#: src/preferences/locationsPage.js:517
+#: src/preferences/locationsPage.js:519
 msgid "Coordinates field cannot be empty."
 msgstr "Pole souřadnic nesmí být prázdné."
 
-#: src/preferences/locationsPage.js:525
+#: src/preferences/locationsPage.js:527
 #, javascript-format
 msgid "Coordinates field must be in the format of '%s' or the text '%s'."
 msgstr "Pole souřadnic musí mít formát \"%s\" nebo text \"%s\"."
 
-#: src/preferences/locationsPage.js:533
+#: src/preferences/locationsPage.js:535
 #, javascript-format
 msgid "Name field can only be empty if coordinates are '%s'."
 msgstr "Pole může být prázdné pouze v případě, že souřadnice jsou '%s'."
 
-#: src/preferences/locationsPage.js:562
-#, javascript-format
-msgid "%s has been updated"
-msgstr "%s byl aktualizován"
-
-#: src/preferences/locationsPage.js:593
-#, javascript-format
-msgid "Are you sure you want to delete \"%s\"?"
-msgstr "Jste si jisti, že chcete odstranit \"%s\"?"
-
-#: src/preferences/locationsPage.js:601
+#: src/preferences/locationsPage.js:603
 msgid "Delete"
 msgstr "Odstranit"
 
-#: src/preferences/locationsPage.js:605
+#: src/preferences/locationsPage.js:607
 msgid "Cancel"
 msgstr "Zrušit"
 
-#: src/preferences/locationsPage.js:634
+#: src/preferences/locationsPage.js:636
 #, javascript-format
 msgid "%s has been deleted"
 msgstr "%s bylo odstraněno"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:75
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:76
 msgid "Temperature Unit"
 msgstr "Jednotka teploty"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:79
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:80
 msgid "Pressure Unit"
 msgstr "Jednotka tlaku"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:83
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:84
 msgid "Wind Speed Units"
 msgstr "Jednotky rychlosti větru"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:84
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:85
 msgid ""
 "Choose the units used for wind speed. Allowed values are 'kph', 'mph', 'm/"
 "s', 'knots', 'ft/s' or 'Beaufort'."
@@ -992,104 +1030,105 @@ msgstr ""
 "Vyberte jednotky použité pro zobrazení rychlosti větru. Povolené hodnoty "
 "jsou 'kph', 'mph', 'm/s', 'knots', 'ft/s' nebo 'Beaufort'."
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:88
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:89
 msgid "Wind Direction by Arrows"
 msgstr "Směr větru jako šipku"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:89
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:90
 msgid "True to display wind direction through arrows rather than letters."
 msgstr "Zobraz směr větru pomocí šipky místo písmene."
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:94
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:95
 msgid "DEPRECATED, City to be displayed"
 msgstr "Zobrazované město"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:98
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:99
 msgid "Index of the city to display by default."
 msgstr "Index města, které se má zobrazit ve výchozím nastavení."
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:106
-msgid "OpenWeatherMap Multilingual Support (weather descriptions only)"
-msgstr "Vícejazyčná podpora OpenWeatherMap (pouze popisy počasí)"
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:107
+msgid "Provider multilingual Support (weather descriptions only)"
+msgstr "Vícejazyčná podpora poskytovatele (pouze popisy počasí)"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:114
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:115
 msgid "True to show temperature in the panel"
 msgstr "Zobraz teplotu v panelu"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:118
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:119
 msgid "True to show conditions in the panel."
 msgstr "Zobraz stav počasí v panelu."
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:126
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:127
 msgid "Conditions in Forecast"
 msgstr "Stav počasí v předpovědi"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:130
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:134
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:131
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:135
 msgid "Position in Panel"
 msgstr "Umístění na panelu"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:138
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:139
 msgid "Horizontal position of menu-box."
 msgstr "Vodorovná pozice nabídky."
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:142
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:143
 msgid "Refresh interval (actual weather)"
 msgstr "Interval obnovy (aktuální počasí)"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:146
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:147
 msgid "Maximum length of the location text"
-msgstr "Maximální délka textu umístění"
+msgstr "Maximální délka textu Lokace"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:150
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:151
 msgid "Refresh interval (forecast)"
 msgstr "Interval obnovy (předpověď)"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:154
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:155
 msgid "Center forecastbox."
 msgstr "Vystředit předpověď."
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:158
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:159
 msgid "Always keep forecast expanded"
 msgstr "Udržuj panel předpovědi stále rozbalený"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:162
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:163
 msgid "Number of days in forecast"
 msgstr "Počet dnů v předpovědi"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:166
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:167
 msgid "Maximum number of digits after the decimal point for temperature"
 msgstr "Maximální počet číslic teploty za desetinnou čárkou"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:170
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:171
 msgid "Maximum number of digits after the decimal point for pressure"
 msgstr "Maximální počet číslic tlaku za desetinnou čárkou"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:174
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:175
 msgid "Maximum number of digits after the decimal point for wind speed"
 msgstr "Maximální počet číslic rychlosti větru za desetinnou čárkou"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:178
-msgid "Your personal API key from openweathermap.org"
-msgstr "Váš osobní API klíč pro openweathermap.org"
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:180
+msgid "DEPRECATED. Your personal API key from openweathermap.org"
+msgstr "ZRUŠENO. Váš osobní API klíč pro openweathermap.org"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:182
-msgid "Your personal API key from WeatherAPI.com"
-msgstr "Váš osobní API klíč pro WeatherAPI.com"
-
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:186
-msgid "Use the extensions default API key from openweathermap.org"
-msgstr "Použít výchozí API klíč tohoto rozšíření pro openweathermap.org"
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:185
+msgid "DEPRECATED. Your personal API key from WeatherAPI.com"
+msgstr "ZRUŠENO. Váš osobní API klíč pro WeatherAPI.com"
 
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:190
-msgid "Use the extensions default API key from WeatherAPI.com"
-msgstr "Použij vestavěný API klíč pro WeatherAPI.com"
+msgid "DEPRECATED. Use the extensions default API key from openweathermap.org"
+msgstr ""
+"ZRUŠENO. Použít výchozí API klíč tohoto rozšíření pro openweathermap.org"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:194
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:195
+msgid "DEPRECATED. Use the extensions default API key from WeatherAPI.com"
+msgstr "ZRUŠENO. Použij vestavěný API klíč pro WeatherAPI.com"
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:199
 msgid "Your personal AppKey from developer.mapquest.com"
 msgstr "Váš osobní App klíč od developer.mapquest.com"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:198
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:203
 msgid ""
 "Time format for hours. Possible values are '24hr' for 24-hour clock, '12hr' "
 "for AM/PM, and 'system' to follow the GNOME setting."
@@ -1097,32 +1136,32 @@ msgstr ""
 "Formát zobrazení hodin. Hodnoty: '24h', '12h' pro AM/PM a 'Systém' pro "
 "nastavení dle GNOME."
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:202
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:207
 msgid "Seconds to delay popup initialization and data fetch on the first load"
 msgstr ""
 "Sekundy pro zpoždění inicializace vyskakovacího okna a načtení dat při "
 "prvním načtení"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:206
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:211
 msgid "Default width for the preferences window"
 msgstr "Výchozí šířka okna Nastavení"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:210
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:215
 msgid "Default height for the preferences window"
 msgstr "Výchozí výška okna Nastavení"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:214
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:219
 msgid ""
 "High contrast style to use, possible values are 'none', 'white', or 'black'."
 msgstr ""
-"Styl s vysokým kontrastem, možné hodnoty jsou \"Žádný\", \"Bílý\" nebo "
+"Styl s vysokým kontrastem, možné hodnoty jsou \"Ne\", \"Bílý\" nebo "
 "\"Černý\"."
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:218
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:223
 msgid "True to show the sunset/sunrise in the panel."
 msgstr "Zobraz východ/západ slince v panelu."
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:222
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:227
 msgid ""
 "True to show the sunset/sunrise in the panel before the temperature/"
 "conditions if enabled."
@@ -1130,33 +1169,87 @@ msgstr ""
 "Zobrazení západu/ východu slunce na panelu před teplotou/podmínkami, je-li "
 "povoleno."
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:226
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:231
 msgid "False if this extension has never been initialized before."
 msgstr "False, pokud toto rozšíření nebylo nikdy předtím inicializováno."
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:230
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:235
 msgid "How often, in minutes, to re-fetch My Location if selected."
 msgstr "Četnost načítání mé polohy v minutách, pokud je vybrána."
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:234
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:239
 msgid "True to cut off the \"F\" or \"C\" after the degree symbol."
 msgstr "Zrušit písmeno \"F\" nebo \"C\" za symbolem stupně."
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:238
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:243
 msgid "Freezes the settings changed listener; user should not change this."
 msgstr "Freezes the settings changed listener; uživatel by toto neměl měnit."
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:243
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:248
 msgid "List of locations."
 msgstr "Seznam míst."
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:247
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:252
 msgid "Provider to use for \"My Location.\""
 msgstr "Poskytovatel používaný pro vyhledávání polohy"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:251
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:256
 msgid "Empty or the last initialization error message."
 msgstr "Poslední chybová zpráva inicializace."
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:260
+msgid "Custom keys for weather providers."
+msgstr "Vlastní klíče pro poskytovatele počasí."
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:264
+msgid "Get a notification when precipitation starts."
+msgstr "Získejte upozornění na začátek srážek."
+
+#~ msgid "Settings"
+#~ msgstr "Nastavení"
+
+#~ msgid "Today Only"
+#~ msgstr "Pouze dnes"
+
+#~ msgid "5"
+#~ msgstr "5"
+
+#~ msgid "Add"
+#~ msgstr "Přidat"
+
+#~ msgid "My Loc. Provider"
+#~ msgstr "Poskytovatel mé polohy"
+
+#~ msgid "Provider for getting My Location"
+#~ msgstr "Poskytovatel vyhledávání mé polohy"
+
+#~ msgid "Provider used for location search"
+#~ msgstr "Poskytovatel používaný pro vyhledávání polohy"
+
+#~ msgid "Personal MapQuest Key"
+#~ msgstr "Osobní klíč MapQuest"
+
+#~ msgid "Personal API Key from developer.mapquest.com"
+#~ msgstr "Osobní API klíč od developer.mapquest.com"
+
+#, javascript-format
+#~ msgid "Edit %s"
+#~ msgstr "Upravit název %s"
+
+#~ msgid ""
+#~ "If you meant to search up a new location by name, <b>add</b> a location "
+#~ "instead."
+#~ msgstr ""
+#~ "Pro vyhledání nového umístění podle názvu jděte <b>Místa</b> , <b>Přidat</"
+#~ "b>."
+
+#, javascript-format
+#~ msgid "%s has been updated"
+#~ msgstr "%s byl aktualizován"
+
+#, javascript-format
+#~ msgid "Are you sure you want to delete \"%s\"?"
+#~ msgstr "Jste si jisti, že chcete odstranit \"%s\"?"
 
 #~ msgid "Thunderstorm with Light Rain"
 #~ msgstr "Bouřky a mírný déšť"
