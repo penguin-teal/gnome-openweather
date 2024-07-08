@@ -58,6 +58,7 @@ import {
   getWeatherProvider,
   DEFAULT_KEYS
 } from "./getweather.js";
+import { setUnitSetFromSettings, UnitPresets } from "./unitPresets.js";
 
 let _firstBoot = 1;
 let _timeCacheCurrentWeather;
@@ -460,10 +461,13 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
 
         if(locInfo && locInfo.countryShort === "US")
         {
-          this.settings.set_enum("unit", WeatherUnits.FAHRENHEIT);
-          this.settings.set_enum("wind-speed-unit", WeatherWindSpeedUnits.MPH);
-          this.settings.set_enum("pressure-unit", WeatherPressureUnits.INHG);
+          setUnitSetFromSettings(this.settings, UnitPresets.US);
         }
+        else if(locInfo && locInfo.countryShort === "GB")
+        {
+          setUnitSetFromSettings(this.settings, UnitPresets.UK);
+        }
+        // Otherwise settings defaults are UnitPresets.METRIC
 
         let defCity = await this.getDefaultCity();
         if(!defCity.equals(Loc.myLoc()))

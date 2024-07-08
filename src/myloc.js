@@ -91,6 +91,16 @@ function getNameFromCountryShort(countryShort, city, state)
   }
 }
 
+function sanitizeCountryShort(str)
+{
+  if(str === "Unknown") return str;
+
+  str = str.toUpperCase();
+  str = str.replace(/[^A-Z]/, "");
+  if(str === "UK") str = "GB";
+  return str;
+}
+
 /**
   * @param {MyLocProv} locProv
   * @returns {Promise<object>}
@@ -159,7 +169,7 @@ async function httpGetLoc(locProv)
           city: obj.city,
           state: obj.region,
           country: obj.country_long,
-          countryShort: obj.country_short,
+          countryShort: sanitizeCountryShort(obj.country_short),
           name: getNameFromCountryShort(obj.country_short, obj.city, obj.region)
         };
 
@@ -277,6 +287,7 @@ export async function geoclueGetLoc(useNominatim = true)
         let city = addr?.city ?? "Unknown";
         let state = addr?.state ?? "Unknown";
         let countryShort = addr?.country_code?.toUpperCase() ?? "Unknown";
+        countryShort = sanitizeCountryShort(countryShort);
         locationInfo =
         {
           lat: locInfo.lat,

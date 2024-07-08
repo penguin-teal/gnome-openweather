@@ -23,6 +23,7 @@ import { gettext as _ } from "resource:///org/gnome/Shell/Extensions/js/extensio
 
 import { WeatherProvider, getWeatherProviderName } from "../getweather.js";
 import { settingsGetKeys, settingsSetKeys } from "../locs.js";
+import { UnitSet, UnitPresets, setUnitSetFromSettings, getUnitSetFromSettings, unitSetMatchesPreset } from "../unitPresets.js";
 
 function getProviderTranslateRowTitle(prov)
 {
@@ -222,6 +223,21 @@ class GeneralPage extends Adw.PreferencesPage
     let unitsGroup = new Adw.PreferencesGroup({
       title: _("Units"),
     });
+    
+    let selUnitSet = getUnitSetFromSettings(this._settings);
+    const unitPresetListOrder = [ "US", "UK", "METRIC" ];
+    let selUnitPreset = unitSetMatchesPreset(selUnitSet);
+
+    let unitPresetList = new Gtk.StringList();
+    unitPresetList.append(_("U.S."));
+    unitPresetList.append(_("U.K."));
+    unitPresetList.append(_("Metric"));
+    unitPresetList.append(_("Custom"));
+    let unitPresetRow = new Adw.ComboRow({
+      title: _("Unit Preset"),
+      model: unitPresetList,
+      selected: selUnitPreset ? unitPresetListOrder.indexOf(selUnitPreset) : 3
+    });
 
     // Temperature
     let temperatureUnits = new Gtk.StringList();
@@ -233,12 +249,12 @@ class GeneralPage extends Adw.PreferencesPage
     temperatureUnits.append(_("\u00B0R\u00F8"));
     temperatureUnits.append(_("\u00B0De"));
     temperatureUnits.append(_("\u00B0N"));
-    let selTempUnit = this._settings.get_enum("unit");
-    let unitIsDegs = selTempUnit !== 2;
+    let unitIsDegs = selUnitSet.temp !== 2;
     let temperatureUnitRow = new Adw.ComboRow({
       title: _("Temperature"),
       model: temperatureUnits,
-      selected: this._settings.get_enum("unit"),
+      selected: selUnitSet.temp,
+      visible: selUnitPreset === null
     });
 
     // Wind speed
@@ -252,7 +268,8 @@ class GeneralPage extends Adw.PreferencesPage
     let windSpeedUnitRow = new Adw.ComboRow({
       title: _("Wind Speed"),
       model: windSpeedUnits,
-      selected: this._settings.get_enum("wind-speed-unit"),
+      selected: selUnitSet.speed,
+      visible: selUnitPreset === null
     });
 
     // Pressure
@@ -271,7 +288,8 @@ class GeneralPage extends Adw.PreferencesPage
     let pressureUnitRow = new Adw.ComboRow({
       title: _("Pressure"),
       model: pressureUnits,
-      selected: this._settings.get_enum("pressure-unit") - 1,
+      selected: selUnitSet.press - 1,
+      visible: selUnitPreset === null
     });
 
     // Clock Format
@@ -298,6 +316,7 @@ class GeneralPage extends Adw.PreferencesPage
     });
     simplifyDegRow.add_suffix(simplifyDegSwitch);
 
+    unitsGroup.add(unitPresetRow);
     unitsGroup.add(temperatureUnitRow);
     unitsGroup.add(windSpeedUnitRow);
     unitsGroup.add(pressureUnitRow);
@@ -455,6 +474,27 @@ class GeneralPage extends Adw.PreferencesPage
     });
     startupDelaySpinButton.connect("value-changed", (widget) => {
       this._settings.set_int("delay-ext-init", widget.get_value());
+    });
+    unitPresetRow.connect("notify::selected", widget => {
+      // 0-2 = Presets, 3 = Custom
+      let isCustom = widget.selected === 3;
+      temperatureUnitRow.set_visible(isCustom);
+      windSpeedUnitRow.set_visible(isCustom);
+      pressureUnitRow.set_visible(isCustom);
+
+      if(isCustom)
+      {
+        let unitSet = getUnitSetFromSettings(this._settings);
+        temperatureUnitRow.set_selected(unitSet.temp);
+        windSpeedUnitRow.set_selected(unitSet.speed);
+        pressureUnitRow.set_selected(unitSet.press - 1);
+      }
+      else
+      {
+        let presetStr = unitPresetListOrder[widget.selected];
+        let preset = UnitPresets[presetStr];
+        setUnitSetFromSettings(this._settings, preset);
+      }
     });
     temperatureUnitRow.connect("notify::selected", (widget) => {
       let unit = widget.selected;
