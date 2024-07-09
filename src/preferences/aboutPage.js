@@ -34,6 +34,13 @@ function getLocale()
     else return "en";
 }
 
+function weatherDataSource(prov)
+{
+  return _("Weather data provided by: %s").format(
+    `<a href="${getWeatherProviderUrl(prov)}">${getWeatherProviderName(prov)}</a>`
+  );
+}
+
 class AboutPage extends Adw.PreferencesPage {
   static {
     GObject.registerClass(this);
@@ -293,27 +300,22 @@ class AboutPage extends Adw.PreferencesPage {
     // Provider
     let curProv = settings.get_enum("weather-provider");
 
-    if(curProv !== 0)
-    {
-      let providerGroup = new Adw.PreferencesGroup();
-      let providerBox = new Gtk.Box({
-        orientation: Gtk.Orientation.VERTICAL,
-        margin_top: 15,
-        hexpand: false,
-        vexpand: false,
-      });
-      let providerAbout = new Gtk.Label({
-        label: _("Weather data provided by: %s").format(
-          `<a href="${getWeatherProviderUrl(curProv)}">${getWeatherProviderName(curProv)}</a>`
-        ),
-        use_markup: true,
-        hexpand: false,
-        vexpand: false,
-      });
-      providerBox.append(providerAbout);
-      providerGroup.add(providerBox);
-      this.add(providerGroup);
-    }
+    let providerGroup = new Adw.PreferencesGroup({ visible: curProv !== 0 });
+    let providerBox = new Gtk.Box({
+      orientation: Gtk.Orientation.VERTICAL,
+      margin_top: 15,
+      hexpand: false,
+      vexpand: false,
+    });
+    let providerAbout = new Gtk.Label({
+      label: weatherDataSource(curProv),
+      use_markup: true,
+      hexpand: false,
+      vexpand: false,
+    });
+    providerBox.append(providerAbout);
+    providerGroup.add(providerBox);
+    this.add(providerGroup);
 
     // License
     let gnuLicense =
@@ -340,6 +342,12 @@ class AboutPage extends Adw.PreferencesPage {
     gplLabelBox.append(gplLabel);
     gplGroup.add(gplLabelBox);
     this.add(gplGroup);
+
+    settings.connect("changed", () => {
+      let prov = settings.get_enum("weather-provider");
+      providerAbout.set_label(weatherDataSource(prov));
+      providerGroup.set_visible(prov !== 0);
+    });
   }
 }
 
