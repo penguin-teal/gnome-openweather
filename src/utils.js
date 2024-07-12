@@ -2,7 +2,6 @@ import GLib from "gi://GLib";
 import { LanguagePreference } from "./constants.js";
 
 export function getLocale() {
-  // Get locale from the system
   let locale = GLib.get_language_names()[0];
   if (locale.indexOf("_") !== -1)
     locale = locale.split("_")[0];
@@ -18,119 +17,100 @@ export function toLocale(lang) {
 }
 
 export function toLanguageCode(language) {
-  let lang;
-  switch(language.toLowerCase()) {
-    case LanguagePreference.SYSTEM:
-    lang = "system";
-    break;
+  switch(language) {
     case LanguagePreference.ARABIC:
-      lang = "ar";
-      break;
-    case LanguagePreference.BELARUSIAN:
-      lang = "be";
-      break;
-    case LanguagePreference.BULGARIAN:
-      lang = "bg";
-      break;
-    case LanguagePreference.CATALAN:
-      lang = "ca";
-      break;
-    case LanguagePreference.CZECH:
-      lang = "cs";
-      break;
-    case LanguagePreference.DANISH:
-      lang = "da";
-      break;
-    case LanguagePreference.GERMAN:
-      lang = "de";
-      break;
-    case LanguagePreference.GREEK:
-      lang = "el";
-      break;
-    case LanguagePreference.ENGLISH:
-      lang = "en";
-      break;
-    case LanguagePreference.SPANISH:
-      lang = "es";
-      break;
+      return "ar";
     case LanguagePreference.BASQUE:
-      lang = "eu";
-      break;
-    case LanguagePreference.FINNISH:
-      lang = "fi";
-      break;
-    case LanguagePreference.FRENCH:
-      lang = "fr";
-      break;
-    case LanguagePreference.HEBREW:
-      lang = "he";
-      break;
-    case LanguagePreference.HUNGARIAN:
-      lang = "hu";
-      break;
-    case LanguagePreference.INDONESIAN:
-      lang = "id";
-      break;
-    case LanguagePreference.ITALIAN:
-      lang = "it";
-      break;
-    case LanguagePreference.JAPANESE:
-      lang = "ja";
-      break;
-    case LanguagePreference.LITHUANIAN:
-      lang = "lt";
-      break;
-    case LanguagePreference["NORWEGIAN BOKMÅL"]:
-      lang = "nb";
-      break;
+      return "eu";
+    case LanguagePreference.BELARUSIAN:
+      return "be";
+    case LanguagePreference.BULGARIAN:
+      return "bg";
+    case LanguagePreference.CATALAN:
+      return "ca";
+    case LanguagePreference["CHINESE-SIMPLIFIED"]:
+      return "zh_cn";
+    case LanguagePreference["CHINESE-TRADITIONAL"]:
+      return "zh_tw";
+    case LanguagePreference.CZECH:
+      return "cs";
+    case LanguagePreference.DANISH:
+      return "da";
     case LanguagePreference.DUTCH:
-      lang = "nl";
-      break;
+      return "nl";
+    case LanguagePreference.ENGLISH:
+      return "en";
+    case LanguagePreference.FINNISH:
+      return "fi";
+    case LanguagePreference.FRENCH:
+      return "fr";
+    case LanguagePreference.GERMAN:
+      return "de";
+    case LanguagePreference.GREEK:
+      return "el";
+    case LanguagePreference.HEBREW:
+      return "he";
+    case LanguagePreference.HUNGARIAN:
+      return "hu";
+    case LanguagePreference.INDONESIAN:
+      return "id";
+    case LanguagePreference.ITALIAN:
+      return "it";
+    case LanguagePreference.JAPANESE:
+      return "ja";
+    case LanguagePreference.LITHUANIAN:
+      return "lt";
+    case LanguagePreference["NORWEGIAN-BOKMÅL"]:
+      return "nb";
     case LanguagePreference.POLISH:
-      lang = "pl";
-      break;
-    case LanguagePreference["PORTUGUESE (BRAZIL)"]:
-      lang = "pt_br";
-      break;
+      return "pl";
     case LanguagePreference.PORTUGUESE:
-      lang = "pt";
-      break;
+      return "pt";
+    case LanguagePreference["PORTUGUESE-BRAZIL"]:
+      return "pt_br";
     case LanguagePreference.ROMANIAN:
-      lang = "ro";
-      break;
+      return "ro";
     case LanguagePreference.RUSSIAN:
-      lang = "ru";
-      break;
-    case LanguagePreference.SLOVAK:
-      lang = "sk";
-      break;
+      return "ru";
     case LanguagePreference.SERBIAN:
-      lang = "sr";
-      break;
-    case LanguagePreference["SERBIAN (LATIN)"]:
-      lang = "sr@latin";
-      break;
+      return "sr";
+    case LanguagePreference["SERBIAN-LATIN"]:
+      return "sr@latin";
+    case LanguagePreference.SLOVAK:
+      return "sk";
+    case LanguagePreference.SPANISH:
+      return "es";
     case LanguagePreference.SWEDISH:
-      lang = "sv"
-      break;
+      return "sv";
+    case LanguagePreference.SYSTEM:
+      return "system";
     case LanguagePreference.TURKISH:
-      lang = "tr"
-      break;
+      return "tr";
     case LanguagePreference.UKRAINIAN:
-      lang = "uk"
-      break;
+      return "uk";
     case LanguagePreference.VIETNAMESE:
-      lang = "vi"
-      break;
-    case LanguagePreference["CHINESE (SIMPLIFIED)"]:
-      lang = "zh_cn";
-      break;
-    case LanguagePreference["CHINESE (TRADITIONAL)"]:
-      lang = "zh_tw"
-      break;
+      return "vi";
     default:
-      lang = "en"
-      break;
+      return "en";
   }
-    return lang;
+}
+
+/**
+ * Compares a string against all the keys in an object/enum
+ * and returns the value of the key matched.
+ * 
+ * @param {string} str String to compare with the object/enum
+ * @param {object} obj Object/enum that will be compared
+ * @returns {number} Value of the key that matched with the string, should be an index. 
+ */
+export function getEnumIndex(str, obj) {
+  str = str.toLowerCase();
+
+  for (let key in obj) {
+    let k = key.toLowerCase();
+    if (str.includes(k)) {
+      return obj[key]
+    }
+  }
+  return 0;
 }

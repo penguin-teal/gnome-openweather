@@ -516,6 +516,8 @@ export async function getWeatherInfo(extension, gettext)
 
   let params;
   let weatherProvider = getWeatherProvider(extension.settings);
+  let lang = convertLanguage(extension._preferred_language, weatherProvider);
+
   switch(weatherProvider)
   {
     case WeatherProvider.OPENWEATHERMAP:
@@ -526,8 +528,7 @@ export async function getWeatherInfo(extension, gettext)
           lon,
           units: "metric"
         };
-        let lang = toLanguageCode(extension._preferred_language);
-        if(extension._providerTranslations) params.lang = convertLanguage(lang, weatherProvider);
+        if(extension._providerTranslations) params.lang = lang;
         let apiKey = extension.getWeatherKey();
         if(apiKey) params.appid = apiKey;
 
@@ -643,8 +644,7 @@ export async function getWeatherInfo(extension, gettext)
           q: `${lat},${lon}`,
           days: String(extension._days_forecast + 2)
         };
-        let lang = toLanguageCode(extension._preferred_language);
-        if(extension._providerTranslations) params.lang = convertLanguage(lang, weatherProvider);
+        if(extension._providerTranslations) params.lang = lang;
         let apiKey = extension.getWeatherKey();
         if(apiKey) params.key = apiKey;
 
@@ -766,8 +766,7 @@ export async function getWeatherInfo(extension, gettext)
           timezone: "Z",
           days: String(extension._days_forecast + 2)
         };
-        let lang = toLanguageCode(extension._preferred_language);
-        if(extension._providerTranslations) params.lang = convertLanguage(lang, weatherProvider);
+        if(extension._providerTranslations) params.lang = lang;
         let apiKey = extension.getWeatherKey();
         if(apiKey) params.key = apiKey;
 
@@ -866,8 +865,7 @@ export async function getWeatherInfo(extension, gettext)
           forecast_days: String(extension._days_forecast + 2),
           wind_speed_unit: "ms"
         };
-        let lang = toLanguageCode(extension._preferred_language);
-        if(extension._providerTranslations) params.lang = convertLanguage(lang, weatherProvider);
+        if(extension._providerTranslations) params.lang = lang;
         let apiKey = extension.getWeatherKey();
         if(apiKey) params.key = apiKey;
 

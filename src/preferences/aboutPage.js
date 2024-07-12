@@ -24,8 +24,9 @@ import { PACKAGE_VERSION } from "resource:///org/gnome/Shell/Extensions/js/misc/
 
 import { gettext as _ } from "resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js";
 import { Loc, settingsGetLocs, settingsGetKeys, toLocsGVariant } from "../locs.js";
-import { getWeatherProviderName, getWeatherProviderUrl } from "../getweather.js";
-import { toLanguageCode, toLocale } from "../utils.js";
+import { getWeatherProviderName, getWeatherProviderUrl, WeatherProvider } from "../getweather.js";
+import { getEnumIndex, getLocale, toLanguageCode, toLocale } from "../utils.js";
+import { ClockFormat, LanguagePreference, WeatherPosition } from "../constants.js";
 
 function weatherDataSource(prov)
 {
@@ -144,7 +145,9 @@ class AboutPage extends Adw.PreferencesPage {
         "geolocation-appid-mapquest"
       ];
 
-      let userLocale = toLocale(toLanguageCode(settings.get_string("language")));
+      // Locale defined from the language selected by the user
+      let customLocale = toLocale(toLanguageCode(settings.get_enum("language")));
+
       // This object will hold the data to turn to JSON
       // Start with some extra info here that isn't in the settings
       let obj =
@@ -152,7 +155,8 @@ class AboutPage extends Adw.PreferencesPage {
         "app-version": releaseVersion,
         "git-version": gitVersion,
         "gnome-version": String(PACKAGE_VERSION),
-        "user-locale": userLocale
+        "user-locale": getLocale(),
+        "custom-locale" : customLocale
       };
       let keys = settings.list_keys();
       for(let k of keys)
@@ -231,15 +235,32 @@ class AboutPage extends Adw.PreferencesPage {
         settings.set_boolean("frozen", true);
 
         let skipKeys = [
-          "app-version", "gnome-version", "git-version", "user-locale", "language", "locs",
+          "app-version", "gnome-version", "git-version", "user-locale", "custom-locale", "locs",
           "frozen", "appid", "weatherapidotcom-key", "custom-keys",
           "use-default-owm-key", "use-default-weatherapidotcom-key",
           "geolocation-appid-mapquest"
         ];
+        let enums = {
+          "language": LanguagePreference,
+          "weather-provider": WeatherProvider,
+          "clock-format": ClockFormat,
+          "position-in-panel": WeatherPosition
+        };
+
+        outerLoop:
         for(let k of Object.keys(obj))
         {
           if(skipKeys.includes(k)) continue;
           let v = obj[k];
+
+          for (let enumKey in enums) {
+              if (enumKey.includes(k)) {
+                let index = getEnumIndex(v, enums[enumKey])
+                settings.set_enum(k, index)
+                continue outerLoop;
+              }
+          }
+
           if(v[0] === "'" && v.endsWith("'")) settings.set_string(k, v);
           else if(v === "true" || v === "false") settings.set_boolean(k, v === "true");
           else if(v.includes(".")) settings.set_double(k, parseFloat(v));

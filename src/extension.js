@@ -534,7 +534,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     try
     {
 
-      let lang = toLanguageCode(this._preferred_language)
+      let lang = this._preferred_language
       if (this._language !== lang) {
         this._language = lang;
       }
@@ -676,12 +676,14 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     this._providerTranslations = this._provider_translations;
     this._language = this._preferred_language;
 
-    // Get locale
+    // Get locale from system
     this.locale = getLocale();
 
-    // Switch locale if a language is selected
-    if (this.locale !== toLocale(toLanguageCode(this._language) && "system")) {
-      this.locale = toLocale(toLanguageCode(this._language)); // Convert selected language to locale
+    // Switch locale if the language locale is different and not 'system'
+    let langLoc = toLocale(this._language);
+    
+    if (this.locale !== langLoc && langLoc !== "system") {
+      this.locale = langLoc; 
     }
     
     this.bindSettingsChanged();
@@ -898,7 +900,9 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
 
   get _preferred_language() 
   {
-    return this.settings.get_string("language");
+    let lang = this.settings.get_enum("language");
+    lang = toLanguageCode(lang);
+    return lang; 
   }
 
   get _translate_condition() {
