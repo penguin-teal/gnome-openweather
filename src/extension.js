@@ -38,7 +38,7 @@ import {
   WeatherPressureUnits,
   WeatherPosition,
   HiContrastStyle,
-  ClockFormat
+  ClockFormat,
 } from "./constants.js";
 
 import {
@@ -59,6 +59,7 @@ import {
   DEFAULT_KEYS
 } from "./getweather.js";
 import { setUnitSetFromSettings, UnitPresets } from "./unitPresets.js";
+import { getLocale, toLanguageCode, toLocale } from "./utils.js";
 
 let _firstBoot = 1;
 let _timeCacheCurrentWeather;
@@ -532,6 +533,18 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
 
     try
     {
+
+      let lang = this._preferred_language
+      if (this._language !== lang) {
+        this._language = lang;
+      }
+
+      let locale = toLocale(lang);
+      if (locale === "system") locale = getLocale();
+      if (this.locale !== locale) {
+        this.locale = locale;
+      }
+      
       this._cities = settingsGetLocs(this.settings);
       if (!this._cities.length)
       {
@@ -661,14 +674,18 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     this._forecastDays = this._days_forecast;
     this._currentAlignment = this._menu_alignment;
     this._providerTranslations = this._provider_translations;
+    this._language = this._preferred_language;
 
-    // Get locale
-    this.locale = GLib.get_language_names()[0];
-    if (this.locale.indexOf("_") !== -1)
-      this.locale = this.locale.split("_")[0];
-    // Fallback for 'C', 'C.UTF-8', and unknown locales.
-    else this.locale = "en";
+    // Get locale from system
+    this.locale = getLocale();
 
+    // Switch locale if the language locale is different and not 'system'
+    let langLoc = toLocale(this._language);
+    
+    if (this.locale !== langLoc && langLoc !== "system") {
+      this.locale = langLoc; 
+    }
+    
     this.bindSettingsChanged();
   }
 
@@ -879,6 +896,13 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
   get _city()
   {
     return this._cities[this._actual_city];
+  }
+
+  get _preferred_language() 
+  {
+    let lang = this.settings.get_enum("language");
+    lang = toLanguageCode(lang);
+    return lang; 
   }
 
   get _translate_condition() {

@@ -25,7 +25,7 @@ import { WeatherProvider, getWeatherProviderName } from "../getweather.js";
 import { settingsGetKeys, settingsSetKeys } from "../locs.js";
 import { UnitSet, UnitPresets, setUnitSetFromSettings, getUnitSetFromSettings, unitSetMatchesPreset } from "../unitPresets.js";
 
-function getProviderTranslateRowTitle(prov)
+function getProviderTranslateRowTitle(prov) 
 {
   return _("Provider Multilingual Support");
 }
@@ -40,12 +40,12 @@ function getDefaultApiKeyRowTooltip(prov)
 {
   let name = getWeatherProviderName(prov);
   return _("Enable this if you have your own API key from %s and enter it below."
-    ).format(name ?? _("Provider"));
+  ).format(name ?? _("Provider"));
 }
 
 function isValidKey(provider, key)
 {
-  switch(provider)
+  switch(provider) 
   {
     case WeatherProvider.OPENWEATHERMAP:
       return /^[a-z0-9A-Z ]{5,}$/.test(key);
@@ -159,7 +159,7 @@ class GeneralPage extends Adw.PreferencesPage
       activatable_widget: myLocRefreshSpinButton
     });
     myLocRefreshRow.add_suffix(myLocRefreshSpinButton);
-    
+
     // disable forecast
     let disableForecastSwitch = new Gtk.Switch({
       valign: Gtk.Align.CENTER,
@@ -348,7 +348,6 @@ class GeneralPage extends Adw.PreferencesPage
       title: _("Provider"),
     });
 
-
     let curProv = this._settings.get_enum("weather-provider");
 
     let weatherProvsList = new Gtk.StringList();
@@ -364,23 +363,6 @@ class GeneralPage extends Adw.PreferencesPage
       model: weatherProvsList,
       selected: curProv
     });
-
-    // Provider Multilingual Support
-    let providerTranslateSwitch = new Gtk.Switch({
-      valign: Gtk.Align.CENTER,
-      active: this._settings.get_boolean("owm-api-translate"),
-    });
-    let providerTranslateRow = new Adw.ActionRow({
-      title: getProviderTranslateRowTitle(curProv),
-      subtitle: _(
-        "Using provider translations applies to weather conditions only"
-      ),
-      tooltip_text: _(
-        "Enable this to use provider multilingual support if there's no built-in translations for your language yet."
-      ),
-      activatable_widget: providerTranslateSwitch,
-    });
-    providerTranslateRow.add_suffix(providerTranslateSwitch);
 
     // Provider API key
     let curProvKey = curProv ? settingsGetKeys(this._settings)[curProv - 1] : "";
@@ -418,11 +400,86 @@ class GeneralPage extends Adw.PreferencesPage
     personalApiKeyRow.add_suffix(personalApiKeyEntry);
 
     apiGroup.add(weatherProvsListRow);
-    apiGroup.add(providerTranslateRow);
     apiGroup.add(defaultApiKeyRow);
     apiGroup.add(personalApiKeyRow);
     this.add(apiGroup);
 
+    // Language Group
+    let languageGroup = new Adw.PreferencesGroup({
+      title: _("Language"),
+    });
+
+    // Provider Multilingual Support
+    let providerTranslateSwitch = new Gtk.Switch({
+      valign: Gtk.Align.CENTER,
+      active: this._settings.get_boolean("owm-api-translate"),
+    });
+    let providerTranslateRow = new Adw.ActionRow({
+      title: getProviderTranslateRowTitle(curProv),
+      subtitle: _(
+        "Using provider translations applies to weather conditions only"
+      ),
+      tooltip_text: _(
+        "Enable this to use provider multilingual support if there's no built-in translations for your language yet"
+      ),
+      activatable_widget: providerTranslateSwitch,
+    });
+    providerTranslateRow.add_suffix(providerTranslateSwitch);
+
+    // Language
+    let languageList = new Gtk.StringList();
+    languageList.append(_("System"));
+    languageList.append(_("Arabic"));
+    languageList.append(_("Basque"));
+    languageList.append(_("Belarusian"));
+    languageList.append(_("Bulgarian"));
+    languageList.append(_("Catalan"));
+    languageList.append(_("Chinese (Simplified)"));
+    languageList.append(_("Chinese (Traditional)"));
+    languageList.append(_("Czech"));
+    languageList.append(_("Danish"));
+    languageList.append(_("Dutch"));
+    languageList.append(_("English"));
+    languageList.append(_("Finnish"));
+    languageList.append(_("French"));
+    languageList.append(_("German"));
+    languageList.append(_("Greek"));
+    languageList.append(_("Hebrew"));
+    languageList.append(_("Hungarian"));
+    languageList.append(_("Indonesian"));
+    languageList.append(_("Italian"));
+    languageList.append(_("Japanese"));
+    languageList.append(_("Lithuanian"));
+    languageList.append(_("Norwegian Bokmål"));
+    languageList.append(_("Polish"));
+    languageList.append(_("Portuguese"));
+    languageList.append(_("Portuguese (Brazil)"));
+    languageList.append(_("Romanian"));
+    languageList.append(_("Russian"));
+    languageList.append(_("Serbian"));
+    languageList.append(_("Serbian (Latin)"));
+    languageList.append(_("Slovak"));
+    languageList.append(_("Spanish"));
+    languageList.append(_("Swedish"));
+    languageList.append(_("Turkish"));
+    languageList.append(_("Ukrainian"));
+    languageList.append(_("Vietnamese"));
+
+    let languageRow = new Adw.ComboRow({
+      title: _("Language"),
+      subtitle: _("Only applies to the weather conditions shown in the popup menu\nYou must have the Provider Multilingual Support enabled for this to work"),
+      tooltip_text: _("If it doesn't work for your language, try switching the provider!"),
+      model: languageList,
+      selected: this._settings.get_enum("language"),
+      activatable_widget: providerTranslateSwitch
+    });
+    languageRow.set_sensitive(this._settings.get_boolean("owm-api-translate"))
+
+    languageGroup.add(providerTranslateRow)
+    languageGroup.add(languageRow);
+    this.add(languageGroup);
+
+    // Reset
     let resetGroup = new Adw.PreferencesGroup({
       title: _("Reset")
     });
@@ -496,6 +553,9 @@ class GeneralPage extends Adw.PreferencesPage
         setUnitSetFromSettings(this._settings, preset);
       }
     });
+    languageRow.connect("notify::selected", (widget) => {
+      this._settings.set_enum("language", widget.selected);
+    });
     temperatureUnitRow.connect("notify::selected", (widget) => {
       let unit = widget.selected;
       simplifyDegSwitch.set_sensitive(unit !== 2);
@@ -540,7 +600,9 @@ class GeneralPage extends Adw.PreferencesPage
       personalApiKeyEntry.set_text(key);
     });
     providerTranslateSwitch.connect("notify::active", (widget) => {
-      this._settings.set_boolean("owm-api-translate", widget.get_active());
+      let active = widget.get_active();
+      this._settings.set_boolean("owm-api-translate", active);
+      languageRow.set_sensitive(active);
     });
     defaultApiKeySwitch.connect("notify::active", (widget) => {
       let prov = this._settings.get_enum("weather-provider");
@@ -578,17 +640,17 @@ class GeneralPage extends Adw.PreferencesPage
     });
     resetToDefsBtn.connect("clicked", () =>
       {
-        let keys = this._settings.list_keys();
-        this._settings.set_boolean("frozen", true);
+      let keys = this._settings.list_keys();
+      this._settings.set_boolean("frozen", true);
 
         for(let k of keys)
         {
-          this._settings.reset(k);
-        }
+        this._settings.reset(k);
+      }
 
-        this._settings.reset("frozen");
+      this._settings.reset("frozen");
 
-        this._window.close();
+      this._window.close();
       }
     );
   }
