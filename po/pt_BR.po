@@ -11,10 +11,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 3.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-25 05:40-0300\n"
-"PO-Revision-Date: 2022-10-16 22:09-0300\n"
+"POT-Creation-Date: 2024-07-12 23:16-0300\n"
+"PO-Revision-Date: 2024-07-13 00:47-0300\n"
 "Last-Translator: Vinicius Madeira <viniciussmadeira@gmail.com>\n"
-"Language-Team: Brazilian Portuguese <ronaldocosta@oceanica.ufrj.br>\n"
+"Language-Team: Brazilian Portuguese <>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -30,10 +30,12 @@ msgstr "OpenWeather Refined - Muitas requisições"
 #, javascript-format
 msgid ""
 "Provider %s has too many users. Try switching weather providers in settings."
-msgstr "O Provedor %s possui muitos usuários. Tente alterar o provedor nas configurações."
+msgstr ""
+"O Fornecedor %s possui muitos usuários. Tente alterar o fornecedor nas "
+"configurações."
 
-#: src/openweathermap.js:137 src/preferences/aboutPage.js:88
-#: src/preferences/aboutPage.js:89
+#: src/openweathermap.js:137 src/preferences/aboutPage.js:89
+#: src/preferences/aboutPage.js:90
 msgid "Unknown"
 msgstr "Desconhecido"
 
@@ -45,16 +47,527 @@ msgstr ", "
 msgid "Tomorrow"
 msgstr "Amanhã"
 
-#: src/weathericons.js:377 src/weathericons.js:379 src/weathericons.js:381
-#: src/weathericons.js:383
+#: src/locs.js:102 src/locs.js:186 src/preferences/locationsPage.js:331
+#: src/preferences/locationsPage.js:395
+msgid "My Location"
+msgstr "Minha localização"
+
+#: src/weathericons.js:205
+msgid "Thunderstorm with Light Rain"
+msgstr "Temporal com chuva leve"
+
+#: src/weathericons.js:206
+msgid "Thunderstorm with Rain"
+msgstr "Tempestade com raios"
+
+#: src/weathericons.js:207
+msgid "Thunderstorm with Heavy Rain"
+msgstr "Temporal com chuva pesada"
+
+#: src/weathericons.js:208
+msgid "Light Thunderstorm"
+msgstr "Tempestades isoladas"
+
+#: src/weathericons.js:209
+msgid "Heavy Thunderstorm"
+msgstr "Tempestade pesada"
+
+#: src/weathericons.js:210
+msgid "Ragged Thunderstorm"
+msgstr "Tempestades isoladas"
+
+#: src/weathericons.js:211
+msgid "Thunderstorm with Light Drizzle"
+msgstr "Temporal com chuvisco"
+
+#: src/weathericons.js:212
+msgid "Thunderstorm with Drizzle"
+msgstr "Temporal com garoa"
+
+#: src/weathericons.js:213
+msgid "Thunderstorm with Heavy Drizzle"
+msgstr "Temporal com garoa pesada"
+
+#: src/weathericons.js:214 src/weathericons.js:281 src/weathericons.js:342
+msgid "Light Drizzle"
+msgstr "Chuvisco"
+
+#: src/weathericons.js:215 src/weathericons.js:340
+msgid "Drizzle"
+msgstr "Garoa"
+
+#: src/weathericons.js:216 src/weathericons.js:341
+msgid "Heavy Drizzle"
+msgstr "Garoa pesada"
+
+#: src/weathericons.js:217
+msgid "Light Drizzle Rain"
+msgstr "Chuvisco"
+
+#: src/weathericons.js:218
+msgid "Drizzle Rain"
+msgstr "Garoa"
+
+#: src/weathericons.js:219
+msgid "Heavy Drizzle Rain"
+msgstr "Garoa Pesada"
+
+#: src/weathericons.js:220
+msgid "Shower Rain and Drizzle"
+msgstr "Chuvisco com Chuvas Esparsas"
+
+#: src/weathericons.js:221
+msgid "Heavy Rain and Drizzle"
+msgstr "Chuva Pesada e Garoa"
+
+#: src/weathericons.js:222
+msgid "Shower Drizzle"
+msgstr "Chuvisco Intermitente"
+
+#: src/weathericons.js:223 src/weathericons.js:285 src/weathericons.js:344
+#: src/weathericons.js:364
+msgid "Light Rain"
+msgstr "Chuva Fraca"
+
+#: src/weathericons.js:224 src/weathericons.js:287
+msgid "Moderate Rain"
+msgstr "Chuva Moderada"
+
+#: src/weathericons.js:225 src/weathericons.js:289 src/weathericons.js:343
+#: src/weathericons.js:363
+msgid "Heavy Rain"
+msgstr "Chuva Forte"
+
+#: src/weathericons.js:226
+msgid "Very Heavy Rain"
+msgstr "Chuva Muito Forte"
+
+#: src/weathericons.js:227
+msgid "Extreme Rain"
+msgstr "Chuva Intensa"
+
+#: src/weathericons.js:228
+msgid "Freezing Rain"
+msgstr "Chuva Congelada"
+
+#: src/weathericons.js:229
+msgid "Light Shower Rain"
+msgstr "Chuva Fraca Esparsas"
+
+#: src/weathericons.js:230
+msgid "Shower Rain"
+msgstr "Chuva Esparsa"
+
+#: src/weathericons.js:231
+msgid "Heavy Shower Rain"
+msgstr "Chuva Forte Esparsas"
+
+#: src/weathericons.js:232
+msgid "Ragged Shower Rain"
+msgstr "Chuvas Isoladas"
+
+#: src/weathericons.js:233 src/weathericons.js:295 src/weathericons.js:373
+msgid "Light Snow"
+msgstr "Pouca neve"
+
+#: src/weathericons.js:234 src/weathericons.js:369
+msgid "Snow"
+msgstr "Neve"
+
+#: src/weathericons.js:235 src/weathericons.js:299 src/weathericons.js:372
+msgid "Heavy Snow"
+msgstr "Nevasca"
+
+#: src/weathericons.js:236
+msgid "Sleet"
+msgstr "Granizo"
+
+#: src/weathericons.js:237
+msgid "Light Shower Sleet"
+msgstr "Granizo intermitente"
+
+#: src/weathericons.js:238
+msgid "Shower Sleet"
+msgstr "Chuva de granizo"
+
+#: src/weathericons.js:239
+msgid "Light Rain and Snow"
+msgstr "Chuva leve e neve"
+
+#: src/weathericons.js:240
+msgid "Rain and Snow"
+msgstr "Chuva e neve"
+
+#: src/weathericons.js:241
+msgid "Light Shower Snow"
+msgstr "Pouca neve intermitente"
+
+#: src/weathericons.js:242
+msgid "Shower Snow"
+msgstr "Nevada intermitente"
+
+#: src/weathericons.js:243
+msgid "Heavy Shower Snow"
+msgstr "Forte nevada intermitente"
+
+#: src/weathericons.js:244 src/weathericons.js:270 src/weathericons.js:357
+msgid "Mist"
+msgstr "Névoa úmida"
+
+#: src/weathericons.js:245
+msgid "Smoke"
+msgstr "Fumaça"
+
+#: src/weathericons.js:246 src/weathericons.js:368
+msgid "Haze"
+msgstr "Névoa seca"
+
+#: src/weathericons.js:247
+msgid "Sand/Dust Whirls"
+msgstr "Jatos de poeira/areia"
+
+#: src/weathericons.js:248 src/weathericons.js:278 src/weathericons.js:346
+msgid "Fog"
+msgstr "Nevoeiro"
+
+#: src/weathericons.js:249
+msgid "Sand"
+msgstr "Areia"
+
+#: src/weathericons.js:250
+msgid "Dust"
+msgstr "Poeira"
+
+#: src/weathericons.js:251
+msgid "Volcanic Ash"
+msgstr "Cinza Vulcânica"
+
+#: src/weathericons.js:252 src/weathericons.js:374
+msgid "Squalls"
+msgstr "Rajadas"
+
+#: src/weathericons.js:253 src/weathericons.js:353
+msgid "Tornado"
+msgstr "Tornado"
+
+#: src/weathericons.js:254
+msgid "Clear Sky"
+msgstr "Céu Limpo"
+
+#: src/weathericons.js:255
+msgid "Few Clouds"
+msgstr "Poucas nuvens"
+
+#: src/weathericons.js:256
+msgid "Scattered Clouds"
+msgstr "Nuvens esparsas"
+
+#: src/weathericons.js:257
+msgid "Broken Clouds"
+msgstr "Parcialmente nublado"
+
+#: src/weathericons.js:258
+msgid "Overcast Clouds"
+msgstr "Nublado"
+
+#: src/weathericons.js:266 src/weathericons.js:321 src/weathericons.js:381
+msgid "Clear"
+msgstr "Céu Limpo"
+
+#: src/weathericons.js:267
+msgid "Partly Cloudy"
+msgstr "Parcialmente Nublado"
+
+#: src/weathericons.js:268
+msgid "Cloudy"
+msgstr "Poucas nuvens"
+
+#: src/weathericons.js:269 src/weathericons.js:326 src/weathericons.js:379
+msgid "Overcast"
+msgstr "Nublado"
+
+#: src/weathericons.js:271
+msgid "Patchy Rain Possible"
+msgstr "Probabilidade de Chuva Isolada"
+
+#: src/weathericons.js:272
+msgid "Patchy Snow Possible"
+msgstr "Probabilidade de Neve Isolada"
+
+#: src/weathericons.js:273
+msgid "Patchy Sleet Possible"
+msgstr "Probabilidade de Granizo Isolado"
+
+#: src/weathericons.js:274
+msgid "Patchy Freezing Drizzle Possible"
+msgstr "Probabilidade de Garoa Gelada e Isolada"
+
+#: src/weathericons.js:275
+msgid "Thundery Outbreaks Possible"
+msgstr "Probabilidade de Trovoadas"
+
+#: src/weathericons.js:276
+msgid "Blowing Snow"
+msgstr "Pouca neve"
+
+#: src/weathericons.js:277
+msgid "Blizzard"
+msgstr "Tempestade de Neve"
+
+#: src/weathericons.js:279 src/weathericons.js:350
+msgid "Freezing Fog"
+msgstr "Chuva Congelada"
+
+#: src/weathericons.js:280
+msgid "Patchy Light Drizzle"
+msgstr "Chuvisco"
+
+#: src/weathericons.js:282 src/weathericons.js:347
+msgid "Freezing Drizzle"
+msgstr "Chuva Congelada"
+
+#: src/weathericons.js:283 src/weathericons.js:348
+msgid "Heavy Freezing Drizzle"
+msgstr "Garoa pesada"
+
+#: src/weathericons.js:284
+msgid "Patchy Light Rain"
+msgstr "Chuva Fraca"
+
+#: src/weathericons.js:286
+msgid "Moderate Rain At Times"
+msgstr "Chuva Moderada"
+
+#: src/weathericons.js:288
+msgid "Heavy Rain At Times"
+msgstr "Chuva Forte"
+
+#: src/weathericons.js:290 src/weathericons.js:352
+msgid "Light Freezing Rain"
+msgstr "Chuva Fraca e Gelada"
+
+#: src/weathericons.js:291 src/weathericons.js:351
+msgid "Heavy Freezing Rain"
+msgstr "Chuva Forte a Gelada"
+
+#: src/weathericons.js:292
+msgid "Light Sleet"
+msgstr "Granizo Fraco"
+
+#: src/weathericons.js:293
+msgid "Moderate Or Heavy Sleet"
+msgstr "Granizo Moderado ou Forte"
+
+#: src/weathericons.js:294
+msgid "Patchy Light Snow"
+msgstr "Neve Frace e Irregular"
+
+#: src/weathericons.js:296
+msgid "Patchy Moderate Snow"
+msgstr "Chuva Moderada e Irregular"
+
+#: src/weathericons.js:297
+msgid "Moderate Snow"
+msgstr "Neve Moderada"
+
+#: src/weathericons.js:298
+msgid "Patchy Heavy Snow"
+msgstr "Neve Forte e Irregular"
+
+#: src/weathericons.js:300 src/weathericons.js:378
+msgid "Hail"
+msgstr "Granizo"
+
+#: src/weathericons.js:301
+msgid "Light Shower"
+msgstr "Chuva Fraca Esparsas"
+
+#: src/weathericons.js:302
+msgid "Heavy Shower"
+msgstr "Chuva Forte Esparsas"
+
+#: src/weathericons.js:303
+msgid "Torrential Rain Shower"
+msgstr "Chuva Torrencial"
+
+#: src/weathericons.js:304
+msgid "Light Sleet Showers"
+msgstr "Chuva Fraca de Granizo"
+
+#: src/weathericons.js:305
+msgid "Heavy Sleet Showers"
+msgstr "Chuva Forte de Granizo"
+
+#: src/weathericons.js:306
+msgid "Light Snow Showers"
+msgstr "Nevasca Fraca"
+
+#: src/weathericons.js:307
+msgid "Heavy Snow Showers"
+msgstr "Nevasca Forte"
+
+#: src/weathericons.js:308
+msgid "Light Hail"
+msgstr "Granizo Fraco"
+
+#: src/weathericons.js:309
+msgid "Heavy Hail"
+msgstr "Chuva Forte"
+
+#: src/weathericons.js:310
+msgid "Patchy Light Rain With Thunder"
+msgstr "Chuva Fraca Isolada com Trovoadas"
+
+#: src/weathericons.js:311
+msgid "Heavy Rain with Thunder"
+msgstr "Chuva Forte com Trovoadas"
+
+#: src/weathericons.js:312
+msgid "Patchy Light Snow with Thunder"
+msgstr "Neve Fraca Isolada com Trovoadas"
+
+#: src/weathericons.js:313
+msgid "Heavy Snow with Thunder"
+msgstr "Neve Forte com Trovoadas"
+
+#: src/weathericons.js:322
+msgid "Clear Afternoon"
+msgstr "Limpo"
+
+#: src/weathericons.js:323
+msgid "Cloud Cover"
+msgstr "Nublado"
+
+#: src/weathericons.js:324
+msgid "Coudy Afternoon"
+msgstr "Nublado"
+
+#: src/weathericons.js:325
+msgid "Cooling Down"
+msgstr "Esfriando"
+
+#: src/weathericons.js:327 src/weathericons.js:358
+msgid "Precipitation"
+msgstr "Início da precipitação"
+
+#: src/weathericons.js:328
+msgid "Precipitation Cover"
+msgstr "Início da precipitação"
+
+#: src/weathericons.js:329
+msgid "Rain All Day"
+msgstr "Chuva o Dia Todo"
+
+#: src/weathericons.js:330
+msgid "Morning Rain"
+msgstr "Chuva Congelada"
+
+#: src/weathericons.js:331 src/weathericons.js:335 src/weathericons.js:359
+msgid "Rain"
+msgstr "Chuva"
+
+#: src/weathericons.js:332 src/weathericons.js:334
+msgid "Chance of Rain"
+msgstr "Probabilidade de Chuva"
+
+#: src/weathericons.js:333
+msgid "Rain Clearing Later"
+msgstr "Chuva Diminuindo Mais Tarde"
+
+#: src/weathericons.js:336
+msgid "Early Morning Rain"
+msgstr "Chuva Matinal"
+
+#: src/weathericons.js:337
+msgid "Late Afternoon Rain"
+msgstr "Chuva de Fim de Tarde"
+
+#: src/weathericons.js:338
+msgid "Afternoon Rain"
+msgstr "Chuva da Tarde"
+
+#: src/weathericons.js:339
+msgid "Drifting Snow"
+msgstr "Pouca neve"
+
+#: src/weathericons.js:345
+msgid "Dust Storm"
+msgstr "Tempestade de Poeira"
+
+#: src/weathericons.js:349
+msgid "Light Freezing Drizzle"
+msgstr "Chuvisco Gelado"
+
+#: src/weathericons.js:354
+msgid "Hail Showers"
+msgstr "Chuva de Granizo"
+
+#: src/weathericons.js:355
+msgid "Ice"
+msgstr "Gelo"
+
+#: src/weathericons.js:356
+msgid "Lightning"
+msgstr "Relampejando"
+
+#: src/weathericons.js:360
+msgid "Heavy Rain & Snow"
+msgstr "Chuva e Neve Forte"
+
+#: src/weathericons.js:361
+msgid "Light Rain & Snow"
+msgstr "Chuva e Neve Fraca"
+
+#: src/weathericons.js:362
+msgid "Rain Showers"
+msgstr "Chuva"
+
+#: src/weathericons.js:365
+msgid "Sky Coverage Decreasing"
+msgstr "Aumento na Cobertura do Céu"
+
+#: src/weathericons.js:366
+msgid "Sky Coverage Increasing"
+msgstr "Diminuição na Cobertura do Céu"
+
+#: src/weathericons.js:367
+msgid "Sky Unchanged"
+msgstr "Céu Inalterado"
+
+#: src/weathericons.js:370
+msgid "Snow & Rain Showers"
+msgstr "Pancadas de Chuva e Nevasca"
+
+#: src/weathericons.js:371
+msgid "Snow Showers"
+msgstr "Chuva e Neve"
+
+#: src/weathericons.js:375
+msgid "Thunderstorm"
+msgstr "Tempestade"
+
+#: src/weathericons.js:376
+msgid "Storm No Rain"
+msgstr "Tempestade Sem Chuva"
+
+#: src/weathericons.js:377
+msgid "Ice Crystals"
+msgstr "Cristais de Gelo"
+
+#: src/weathericons.js:380
+msgid "Partially Cloudy"
+msgstr "Parcialmente Nublado"
+
+#: src/weathericons.js:392 src/weathericons.js:394 src/weathericons.js:396
+#: src/weathericons.js:398
 msgid "Not available"
 msgstr "Não disponível"
 
-#: src/extension.js:248
+#: src/extension.js:250
 msgid "Failed to initialize."
 msgstr "Falha ao iniciar."
 
-#: src/extension.js:382
+#: src/extension.js:384
 msgid ""
 "%s does not work without an api-key.\n"
 "Either set the switch to use the extensions default key in the preferences "
@@ -63,288 +576,284 @@ msgid ""
 msgstr ""
 "Openweathermap.org não funciona sem uma api-key.\n"
 "Configure para usar a chave padrão da extensão nas preferências ou registre-"
-"se em https://openweathermap.org/appid e cole sua chave pessoal no dialogo "
+"se em %s e cole sua chave pessoal no dialogo "
 "de preferências."
 
-#: src/extension.js:439
+#: src/extension.js:441
 msgid "OpenWeather Refined: Imported settings from old extension."
 msgstr "OpenWeather Refined: Importe as configurações da extensão antiga."
 
-#: src/extension.js:756 src/extension.js:769
+#: src/extension.js:777 src/extension.js:790
 #, javascript-format
 msgid "Can not connect to %s"
 msgstr "Impossível conectar a %s"
 
-#: src/extension.js:1043 src/preferences/locationsPage.js:39
+#: src/extension.js:1071 src/preferences/locationsPage.js:39
 #: src/preferences/locationsPage.js:59
 msgid "Locations"
 msgstr "Locais"
 
-#: src/extension.js:1047
+#: src/extension.js:1075
 msgid "Reload Weather Information"
 msgstr "Recarregar informações meteorológicas"
 
-#: src/extension.js:1065
+#: src/extension.js:1093
 msgid "See Online"
 msgstr "Veja Online"
 
-#: src/extension.js:1070
+#: src/extension.js:1098
 msgid "Weather Settings"
 msgstr "Configurações do clima"
 
-#: src/extension.js:1098
+#: src/extension.js:1126
 msgid "Manual refreshes less than 2 minutes apart are ignored!"
 msgstr "Atualizações em menos de 2 minutos são ignoradas!"
 
-#: src/extension.js:1140
+#: src/extension.js:1168
+#, javascript-format
 msgid "Cannot open %s"
 msgstr "Impossível abrir %s"
 
-#: src/extension.js:1227 src/preferences/generalPage.js:214
+#: src/extension.js:1255 src/preferences/generalPage.js:244
 msgid "°C"
 msgstr "°C"
 
-#: src/extension.js:1230 src/preferences/generalPage.js:215
+#: src/extension.js:1258 src/preferences/generalPage.js:245
 msgid "°F"
 msgstr "°F"
 
-#: src/extension.js:1232 src/preferences/generalPage.js:216
+#: src/extension.js:1260 src/preferences/generalPage.js:246
 msgid "K"
 msgstr "K"
 
-#: src/extension.js:1234 src/preferences/generalPage.js:217
+#: src/extension.js:1262 src/preferences/generalPage.js:247
 msgid "°Ra"
 msgstr "°Ra"
 
-#: src/extension.js:1236 src/preferences/generalPage.js:218
+#: src/extension.js:1264 src/preferences/generalPage.js:248
 msgid "°Ré"
 msgstr "°Ré"
 
-#: src/extension.js:1238 src/preferences/generalPage.js:219
+#: src/extension.js:1266 src/preferences/generalPage.js:249
 msgid "°Rø"
 msgstr "°Rø"
 
-#: src/extension.js:1240 src/preferences/generalPage.js:220
+#: src/extension.js:1268 src/preferences/generalPage.js:250
 msgid "°De"
 msgstr "°De"
 
-#: src/extension.js:1242 src/preferences/generalPage.js:221
+#: src/extension.js:1270 src/preferences/generalPage.js:251
 msgid "°N"
 msgstr "°N"
 
-#: src/extension.js:1250
+#: src/extension.js:1278
 msgid "Calm"
 msgstr "Calmo"
 
-#: src/extension.js:1251
+#: src/extension.js:1279
 msgid "Light air"
 msgstr "Aragem"
 
-#: src/extension.js:1253
+#: src/extension.js:1281
 msgid "Light breeze"
 msgstr "Brisa leve"
 
-#: src/extension.js:1255
+#: src/extension.js:1283
 msgid "Gentle breeze"
 msgstr "Brisa fraca"
 
-#: src/extension.js:1257
+#: src/extension.js:1285
 msgid "Moderate breeze"
 msgstr "Brisa moderada"
 
-#: src/extension.js:1259
+#: src/extension.js:1287
 msgid "Fresh breeze"
 msgstr "Brisa forte"
 
-#: src/extension.js:1261
+#: src/extension.js:1289
 msgid "Strong breeze"
 msgstr "Vento fresco"
 
-#: src/extension.js:1263
+#: src/extension.js:1291
 msgid "Moderate gale"
 msgstr "Vento forte"
 
-#: src/extension.js:1265
+#: src/extension.js:1293
 msgid "Fresh gale"
 msgstr "Ventania"
 
-#: src/extension.js:1267
+#: src/extension.js:1295
 msgid "Strong gale"
 msgstr "Ventania forte"
 
-#: src/extension.js:1268
+#: src/extension.js:1296
 msgid "Storm"
 msgstr "Tempestade"
 
-#: src/extension.js:1270
+#: src/extension.js:1298
 msgid "Violent storm"
 msgstr "Tempestade violenta"
 
-#: src/extension.js:1271
+#: src/extension.js:1299
 msgid "Hurricane"
 msgstr "Furacão"
 
-#: src/extension.js:1276
+#: src/extension.js:1304
 msgid "Sunday"
 msgstr "Domingo"
 
-#: src/extension.js:1277
+#: src/extension.js:1305
 msgid "Monday"
 msgstr "Segunda-feira"
 
-#: src/extension.js:1278
+#: src/extension.js:1306
 msgid "Tuesday"
 msgstr "Terça-feira"
 
-#: src/extension.js:1279
+#: src/extension.js:1307
 msgid "Wednesday"
 msgstr "Quarta-feira"
 
-#: src/extension.js:1280
+#: src/extension.js:1308
 msgid "Thursday"
 msgstr "Quinta-feira"
 
-#: src/extension.js:1281
+#: src/extension.js:1309
 msgid "Friday"
 msgstr "Sexta-feira"
 
-#: src/extension.js:1282
+#: src/extension.js:1310
 msgid "Saturday"
 msgstr "Sábado"
 
-#: src/extension.js:1299
+#: src/extension.js:1327
 msgid "N"
 msgstr "N"
 
-#: src/extension.js:1300
+#: src/extension.js:1328
 msgid "NE"
 msgstr "NE"
 
-#: src/extension.js:1301
+#: src/extension.js:1329
 msgid "E"
 msgstr "L"
 
-#: src/extension.js:1302
+#: src/extension.js:1330
 msgid "SE"
 msgstr "SE"
 
-#: src/extension.js:1303
+#: src/extension.js:1331
 msgid "S"
 msgstr "S"
 
-#: src/extension.js:1304
+#: src/extension.js:1332
 msgid "SW"
 msgstr "SO"
 
-#: src/extension.js:1305
+#: src/extension.js:1333
 msgid "W"
 msgstr "O"
 
-#: src/extension.js:1306
+#: src/extension.js:1334
 msgid "NW"
 msgstr "NO"
 
-#: src/extension.js:1395 src/preferences/generalPage.js:247
+#: src/extension.js:1423 src/preferences/generalPage.js:278
 msgid "inHg"
 msgstr "inHg"
 
-#: src/extension.js:1400 src/preferences/generalPage.js:248
+#: src/extension.js:1428 src/preferences/generalPage.js:279
 msgid "bar"
 msgstr "bar"
 
-#: src/extension.js:1405 src/preferences/generalPage.js:249
+#: src/extension.js:1433 src/preferences/generalPage.js:280
 msgid "Pa"
 msgstr "Pa"
 
-#: src/extension.js:1410 src/preferences/generalPage.js:250
+#: src/extension.js:1438 src/preferences/generalPage.js:281
 msgid "kPa"
 msgstr "kPa"
 
-#: src/extension.js:1415 src/preferences/generalPage.js:251
+#: src/extension.js:1443 src/preferences/generalPage.js:282
 msgid "atm"
 msgstr "atm"
 
-#: src/extension.js:1420 src/preferences/generalPage.js:252
+#: src/extension.js:1448 src/preferences/generalPage.js:283
 msgid "at"
 msgstr "at"
 
-#: src/extension.js:1425 src/preferences/generalPage.js:253
+#: src/extension.js:1453 src/preferences/generalPage.js:284
 msgid "Torr"
 msgstr "Torr"
 
-#: src/extension.js:1430 src/preferences/generalPage.js:254
+#: src/extension.js:1458 src/preferences/generalPage.js:285
 msgid "psi"
 msgstr "psi"
 
-#: src/extension.js:1435 src/preferences/generalPage.js:255
+#: src/extension.js:1463 src/preferences/generalPage.js:286
 msgid "mmHg"
 msgstr "mmHg"
 
-#: src/extension.js:1439 src/preferences/generalPage.js:256
+#: src/extension.js:1467 src/preferences/generalPage.js:287
 msgid "mbar"
 msgstr "mbar"
 
-#: src/extension.js:1507 src/preferences/generalPage.js:234
+#: src/extension.js:1535 src/preferences/generalPage.js:264
 msgid "m/s"
 msgstr "m/s"
 
-#: src/extension.js:1512 src/preferences/generalPage.js:233
+#: src/extension.js:1540 src/preferences/generalPage.js:263
 msgid "mph"
 msgstr "mph"
 
-#: src/extension.js:1517 src/preferences/generalPage.js:232
+#: src/extension.js:1545 src/preferences/generalPage.js:262
 msgid "km/h"
 msgstr "km/h"
 
-#: src/extension.js:1526 src/preferences/generalPage.js:235
+#: src/extension.js:1554 src/preferences/generalPage.js:265
 msgid "kn"
 msgstr "kn"
 
-#: src/extension.js:1531 src/preferences/generalPage.js:236
+#: src/extension.js:1559 src/preferences/generalPage.js:266
 msgid "ft/s"
 msgstr "ft/s"
 
-#: src/extension.js:1601 src/extension.js:1651
+#: src/extension.js:1629 src/extension.js:1679
 msgid "Loading ..."
 msgstr "Carregando ..."
 
-#: src/extension.js:1655
+#: src/extension.js:1683
 msgid "Please wait"
 msgstr "Espere um momento"
 
-#: src/extension.js:1712
+#: src/extension.js:1740
 msgid "Feels Like:"
 msgstr "Sensação térmica:"
 
-#: src/extension.js:1713
+#: src/extension.js:1741
 msgid "Humidity:"
 msgstr "Umidade:"
 
-#: src/extension.js:1714
+#: src/extension.js:1742
 msgid "Pressure:"
 msgstr "Pressão:"
 
-#: src/extension.js:1715
+#: src/extension.js:1743
 msgid "Wind:"
 msgstr "Vento:"
 
-#: src/extension.js:1716
+#: src/extension.js:1744
 msgid "Gusts"
 msgstr "Rajadas"
 
-#: src/extension.js:1898
+#: src/extension.js:1926
 msgid "Tomorrow's Forecast"
 msgstr "Previsão de amanhã"
 
-#: src/extension.js:1899
+#: src/extension.js:1927
 #, javascript-format
 msgid "%s Day Forecast"
 msgstr "Previsão para %s dias"
-
-#: src/locs.js:102 src/locs.js:186 src/preferences/locationsPage.js:331
-#: src/preferences/locationsPage.js:395
-msgid "My Location"
-msgstr "Minha localização"
 
 #: src/preferences/layoutPage.js:31
 msgid "Layout"
@@ -406,7 +915,8 @@ msgstr "Nascer/Pôr do sol no painel"
 msgid ""
 "Show the sunset/sunrise before the temperature/conditions. Requires restart."
 msgstr ""
-"Mostrar nascer/pôr do sol antes da temperatura/condições. Requer reinicialização."
+"Mostrar nascer/pôr do sol antes da temperatura/condições. Requer "
+"reinicialização."
 
 #: src/preferences/layoutPage.js:118
 msgid "Sunrise/Sunset First (Restart Required)"
@@ -429,7 +939,7 @@ msgid "Wind Direction Arrows"
 msgstr "Direção do vento usando setas"
 
 #: src/preferences/layoutPage.js:176
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:103
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:146
 msgid "Translate Conditions"
 msgstr "Traduzir condições"
 
@@ -516,9 +1026,9 @@ msgid ""
 "be easier to read. This may not be very effective depending on your shell "
 "theme."
 msgstr ""
-"Sobrescreva as cores de texto do GNOME shell no pop-up com valores pré-definidos "
-"que possam ser mais fáceis de serem lidos. Pode não ser efetivo dependendo do "
-"tema do seu gnome shell."
+"Sobrescreva as cores de texto do GNOME shell no pop-up com valores pré-"
+"definidos que possam ser mais fáceis de serem lidos. Pode não ser efetivo "
+"dependendo do tema do seu gnome shell."
 
 #: src/preferences/layoutPage.js:256
 msgid "Enable to override GNOME shell colors"
@@ -561,7 +1071,7 @@ msgid ""
 "Currently \"%s\" supports the furthest forecast of %s days."
 msgstr ""
 "Número de dias a exibir na previsão. \"0\" só exibirá hoje.\n"
-"Provedores diferentes suportam diferentes quantias de dias.\n"
+"Fornecedores diferentes suportam diferentes quantias de dias.\n"
 "Atualmente o \"%s\" suporta previsões até %s dias."
 
 #: src/preferences/layoutPage.js:333
@@ -576,8 +1086,8 @@ msgstr "Abrir a previsão automaticamente quando o pop-up for aberto."
 msgid "Add"
 msgstr "Adicionar"
 
-#: src/preferences/locationsPage.js:67 src/preferences/generalPage.js:35
-#: src/preferences/generalPage.js:42 src/preferences/generalPage.js:315
+#: src/preferences/locationsPage.js:67 src/preferences/generalPage.js:36
+#: src/preferences/generalPage.js:43 src/preferences/generalPage.js:348
 msgid "Provider"
 msgstr "Fornecedor"
 
@@ -587,16 +1097,16 @@ msgstr "Fornecedor"
 
 #: src/preferences/locationsPage.js:76
 msgid "Provider for getting My Location"
-msgstr "Provedor utilizado para os dados de localização"
+msgstr "Fornecedor utilizado para os dados de localização"
 
 #: src/preferences/locationsPage.js:85
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:72
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:110
 msgid "Geolocation Provider"
 msgstr "Geolocalização fornecida por"
 
 #: src/preferences/locationsPage.js:86
 msgid "Provider used for location search"
-msgstr "Provedor utilizado para os dados de localização"
+msgstr "Fornecedor utilizado para os dados de localização"
 
 #: src/preferences/locationsPage.js:99
 msgid "Personal MapQuest Key"
@@ -660,7 +1170,8 @@ msgid ""
 "If you meant to search up a new location by name, <b>add</b> a location "
 "instead."
 msgstr ""
-"Se você pretendia procurar uma nova localização por nome, <b>adicione</b> uma localização. "
+"Se você pretendia procurar uma nova localização por nome, <b>adicione</b> "
+"uma localização. "
 
 #: src/preferences/locationsPage.js:484
 msgid "Save"
@@ -705,7 +1216,7 @@ msgstr "%s foi apagado"
 
 #: src/preferences/searchResultsWindow.js:36
 msgid "Search Results from %s"
-msgstr "Procurar resultados"
+msgstr "Procurar resultados do %s"
 
 #: src/preferences/searchResultsWindow.js:53
 msgid "New Search"
@@ -753,298 +1264,478 @@ msgstr "Nenhum resultado encontrado"
 msgid "No results found when searching for \"%s\"."
 msgstr "Sem resultados de busca para \"%s\"."
 
-#: src/preferences/aboutPage.js:45
+#: src/preferences/aboutPage.js:33
+#, javascript-format
+msgid "Weather data provided by: %s"
+msgstr "Dados meteorológicos por: %s"
+
+#: src/preferences/aboutPage.js:46
 msgid "About"
 msgstr "Sobre"
 
-#: src/preferences/aboutPage.js:73
+#: src/preferences/aboutPage.js:74
 msgid ""
 "Display weather information for any location on Earth in the GNOME Shell."
 msgstr ""
 "Exibe informações meteorológicas de qualquer lugar da Terra no GNOME Shell"
 
-#: src/preferences/aboutPage.js:93
+#: src/preferences/aboutPage.js:94
 msgid "OpenWeather Refined Version"
 msgstr "Versão do OpenWeather"
 
-#: src/preferences/aboutPage.js:105
+#: src/preferences/aboutPage.js:106
 msgid "Git Version"
 msgstr "Versão do Git"
 
-#: src/preferences/aboutPage.js:116
+#: src/preferences/aboutPage.js:117
 msgid "GNOME Version"
 msgstr "Versão do GNOME"
 
-#: src/preferences/aboutPage.js:126
+#: src/preferences/aboutPage.js:127
 msgid "Copy Settings JSON"
 msgstr "Copiar JSON de configurações"
 
-#: src/preferences/aboutPage.js:129
+#: src/preferences/aboutPage.js:130
 msgid "Copy"
 msgstr "Copiar"
 
-#: src/preferences/aboutPage.js:134
+#: src/preferences/aboutPage.js:135
 msgid "Paste"
 msgstr "Colar"
 
-#: src/preferences/aboutPage.js:203
+#: src/preferences/aboutPage.js:208
 msgid "Copied settings JSON to clipboard."
 msgstr "Configurações JSON copiadas para a área de transferência."
 
-#: src/preferences/aboutPage.js:219
+#: src/preferences/aboutPage.js:224
 msgid "Clipboard contains no text."
 msgstr "Sua área de transferência não possui texto."
 
-#: src/preferences/aboutPage.js:226
+#: src/preferences/aboutPage.js:231
 msgid "Clipboard didn't contain valid JSON."
 msgstr "Sua área de transferência não possuía JSON válido."
 
-#: src/preferences/aboutPage.js:269
+#: src/preferences/aboutPage.js:291
 #, javascript-format
 msgid "Maintained by: %s"
 msgstr "Mantido por: %s"
 
-#: src/preferences/aboutPage.js:275
+#: src/preferences/aboutPage.js:297
 #, javascript-format
 msgid "Contribute or translate the project on %s."
 msgstr "Contribua ou traduza este projeto em %s."
 
-#: src/preferences/aboutPage.js:281
+#: src/preferences/aboutPage.js:303
 #, javascript-format
 msgid "This is a fork of %s's extension."
 msgstr "Este projeto é um 'fork' da extensão do %s."
 
-#: src/preferences/aboutPage.js:306
-#, javascript-format
-msgid "Weather data provided by: %s"
-msgstr "Dados meteorológicos por: %s"
-
-#: src/preferences/aboutPage.js:321
+#: src/preferences/aboutPage.js:338
 msgid "This program comes with ABSOLUTELY NO WARRANTY."
 msgstr "Esse programa não contem nenhum tipo de garantia."
 
-#: src/preferences/aboutPage.js:323
+#: src/preferences/aboutPage.js:340
 msgid "See the"
 msgstr "Consulte a"
 
-#: src/preferences/aboutPage.js:325
+#: src/preferences/aboutPage.js:342
 msgid "GNU General Public License, version 2 or later"
 msgstr "Licença Pública Geral GNU, versão 2 ou posterior"
 
-#: src/preferences/aboutPage.js:327
+#: src/preferences/aboutPage.js:344
 msgid "for details."
 msgstr "para detalhes."
 
-#: src/preferences/generalPage.js:29
+#: src/preferences/generalPage.js:30
 msgid "Provider Multilingual Support"
 msgstr "Suporte Multi-idiomas do Provedor"
 
-#: src/preferences/generalPage.js:35
+#: src/preferences/generalPage.js:36
 msgid "Use a personal API key for %s"
 msgstr "Key API a ser usada"
 
-#: src/preferences/generalPage.js:41
+#: src/preferences/generalPage.js:42
 msgid "Enable this if you have your own API key from %s and enter it below."
 msgstr ""
-"Desative se você tiver a sua api-key do openweathermap.org e adicione na "
+"Habilite se você tiver a sua própria chave de API do %s e adicione na "
 "caixa de texto a seguir."
 
-#: src/preferences/generalPage.js:71
+#: src/preferences/generalPage.js:86
 msgid "Settings"
 msgstr "Configurações"
 
-#: src/preferences/generalPage.js:80
+#: src/preferences/generalPage.js:95
 msgid "General"
 msgstr "Geral"
 
-#: src/preferences/generalPage.js:98
+#: src/preferences/generalPage.js:113
 msgid "Current Weather Refresh"
 msgstr "Intervalo de atualização do clima atual"
 
-#: src/preferences/generalPage.js:99
+#: src/preferences/generalPage.js:114
 msgid "Current weather refresh interval in minutes"
 msgstr "Intervalo de atualização do clima atual em minutos"
 
-#: src/preferences/generalPage.js:121
+#: src/preferences/generalPage.js:136
 msgid "Weather Forecast Refresh"
 msgstr "Intervalo de atualização da previsão"
 
-#: src/preferences/generalPage.js:122
+#: src/preferences/generalPage.js:137
 msgid "Forecast refresh interval in minutes if enabled"
 msgstr "Intervalo de atualização da previsão em minutos, se habilitado"
 
-#: src/preferences/generalPage.js:142
+#: src/preferences/generalPage.js:157
 msgid "My Location Refresh"
 msgstr "Atualizar minha localização"
 
-#: src/preferences/generalPage.js:143
+#: src/preferences/generalPage.js:158
 msgid "My location refresh interval in minutes"
 msgstr "Intervalo de atualização do clima atual em minutos"
 
-#: src/preferences/generalPage.js:154
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:123
+#: src/preferences/generalPage.js:169
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:166
 msgid "Disable Forecast"
 msgstr "Desativar previsão"
 
-#: src/preferences/generalPage.js:155
+#: src/preferences/generalPage.js:170
 msgid "Disables all fetching and processing of forecast data"
 msgstr "Desativar a atualização e processamento de dados de previsão"
 
-#: src/preferences/generalPage.js:166
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:111
+#: src/preferences/generalPage.js:181
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:154
 msgid "System Icons"
 msgstr "Ícones do sistema"
 
-#: src/preferences/generalPage.js:167
+#: src/preferences/generalPage.js:182
+#, javascript-format
 msgid "Disable to use packaged %s weather icons"
 msgstr "Desabilitar para utilizar o pacotes de ícones %s"
 
-#: src/preferences/generalPage.js:169
+#: src/preferences/generalPage.js:184
 msgid ""
 "If you have issues with your system icons displaying correctly disable this "
 "to fix it"
 msgstr "Desabilite essa opção se houver conflito com os ícones do sistema"
 
-#: src/preferences/generalPage.js:190
+#: src/preferences/generalPage.js:205
 msgid "First Boot Delay"
 msgstr "Atraso na primeira incialização"
 
-#: src/preferences/generalPage.js:191
+#: src/preferences/generalPage.js:206
 msgid "Seconds to delay popup initialization and data fetching"
 msgstr "Atraso em segundos desde a incialização para atualizar os dados"
 
-#: src/preferences/generalPage.js:193
+#: src/preferences/generalPage.js:208
 msgid ""
 "This setting only applies to the first time the extension is loaded. (first "
 "log in / restarting gnome shell)"
 msgstr ""
 "Isso só se aplica na primeira vez que a extensão é carregada no gnome shell"
 
-#: src/preferences/generalPage.js:209
+#: src/preferences/generalPage.js:224
 msgid "Units"
 msgstr "Unidades"
 
-#: src/preferences/generalPage.js:225
+#: src/preferences/generalPage.js:232
+msgid "U.S."
+msgstr "EUA"
+
+#: src/preferences/generalPage.js:233
+msgid "U.K."
+msgstr "Reino Unido"
+
+#: src/preferences/generalPage.js:234
+msgid "Metric"
+msgstr "Métrico"
+
+#: src/preferences/generalPage.js:235
+msgid "Custom"
+msgstr "Personalizado"
+
+#: src/preferences/generalPage.js:237
+msgid "Unit Preset"
+msgstr "Predefinição de Unidades"
+
+#: src/preferences/generalPage.js:254
 msgid "Temperature"
 msgstr "Temperatura"
 
-#: src/preferences/generalPage.js:237
+#: src/preferences/generalPage.js:267
 msgid "Beaufort"
 msgstr "Beaufort"
 
-#: src/preferences/generalPage.js:239
+#: src/preferences/generalPage.js:269
 msgid "Wind Speed"
 msgstr "Velocidade do vento"
 
-#: src/preferences/generalPage.js:258
+#: src/preferences/generalPage.js:289
 msgid "Pressure"
 msgstr "Pressão"
 
-#: src/preferences/generalPage.js:265
+#: src/preferences/generalPage.js:297
 msgid "24-hour"
 msgstr "24 horas"
 
-#: src/preferences/generalPage.js:266
+#: src/preferences/generalPage.js:298
 msgid "AM / PM"
 msgstr "12 horas"
 
-#: src/preferences/generalPage.js:267
+#: src/preferences/generalPage.js:299 src/preferences/generalPage.js:431
 msgid "System"
 msgstr "Sistema"
 
-#: src/preferences/generalPage.js:269
+#: src/preferences/generalPage.js:301
 msgid "Time Format"
 msgstr "Formato do horário"
 
-#: src/preferences/generalPage.js:280
+#: src/preferences/generalPage.js:312
 msgid "Simplify Degrees"
 msgstr "Simplificar graus"
 
-#: src/preferences/generalPage.js:281
+#: src/preferences/generalPage.js:313
 msgid "Show \"°\" instead of \"°C,\" \"°F,\" etc."
 msgstr "Exibir '°' no lugar de '°C', '°F,' etc."
 
-#: src/preferences/generalPage.js:282
+#: src/preferences/generalPage.js:314
 msgid "Enable this to cut off the \"C,\" \"F,\" etc. from degrees labels."
 msgstr "Habilite isto para tirar o 'C', 'F', etc. dos rótulos de graus."
 
-#: src/preferences/generalPage.js:295
+#: src/preferences/generalPage.js:328
 msgid "Notifications"
 msgstr "Notificações"
 
-#: src/preferences/generalPage.js:303
+#: src/preferences/generalPage.js:336
 msgid "Precipitation Starting"
 msgstr "Início da precipitação"
 
-#: src/preferences/generalPage.js:304 src/preferences/generalPage.js:305
+#: src/preferences/generalPage.js:337 src/preferences/generalPage.js:338
 msgid "Get notified when precipitation starts (e.g. rain or snow)."
 msgstr "Seja notificado quando começar a precipitar (ex: chuva ou neve)."
 
-#: src/preferences/generalPage.js:322 src/preferences/generalPage.js:329
-#: src/preferences/generalPage.js:330
+#: src/preferences/generalPage.js:354 src/preferences/generalPage.js:361
+#: src/preferences/generalPage.js:362
 msgid "Adaptive"
 msgstr "Adaptativo"
 
-#: src/preferences/generalPage.js:328
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:68
+#: src/preferences/generalPage.js:360
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:106
 msgid "Weather Provider"
 msgstr "Meteorologia fornecida por"
 
-#: src/preferences/generalPage.js:329
+#: src/preferences/generalPage.js:361
 msgid ""
 "Provider used for weather and forecasts; choose \"%s\" if you don't care."
 msgstr "Provedor utilizado para os dados de localização"
 
-#: src/preferences/generalPage.js:330
+#: src/preferences/generalPage.js:362
 #, javascript-format
 msgid "Choose '%s' if you don't care, otherwise choose a specific provider."
-msgstr "Escolha '%s' se você não se incomoda, caso contrário, escolha um provedor específico."
-
-#: src/preferences/generalPage.js:343
-msgid "Using provider translations applies to weather conditions only"
-msgstr "Usar a tradução providenciada se aplica apenas as condições do clima"
-
-#: src/preferences/generalPage.js:346
-msgid ""
-"Enable this to use provider multilingual support if there's no built-in "
-"translations for your language yet."
 msgstr ""
-"Habilite isso para usar o suporte multilinguístico OWM em 46 linguagens se "
-"não existe tradução para a sua linguagem."
+"Escolha '%s' se você não se incomoda, caso contrário, escolha um provedor "
+"específico."
 
-#: src/preferences/generalPage.js:361
+#: src/preferences/generalPage.js:376
 msgid "Use Custom API Key"
 msgstr "Usar a API key da extensão"
 
-#: src/preferences/generalPage.js:377
+#: src/preferences/generalPage.js:392
 msgid "Personal API Key"
 msgstr "Key API a ser usada"
 
-#: src/preferences/generalPage.js:394 src/preferences/generalPage.js:400
+#: src/preferences/generalPage.js:409 src/preferences/generalPage.js:469
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:127
+msgid "Language"
+msgstr "Idioma"
+
+#: src/preferences/generalPage.js:420
+msgid "Using provider translations applies to weather conditions only"
+msgstr "Usar a tradução do provedor se aplica apenas as condições do clima"
+
+#: src/preferences/generalPage.js:423
+msgid ""
+"Enable this to use provider multilingual support if there's no built-in "
+"translations for your language yet"
+msgstr ""
+"Habilite isso para usar o suporte multi-idiomas do fornecedor se "
+"não existir tradução no seu idioma."
+
+#: src/preferences/generalPage.js:432
+msgid "Arabic"
+msgstr "Árabe"
+
+#: src/preferences/generalPage.js:433
+msgid "Basque"
+msgstr "Basco"
+
+#: src/preferences/generalPage.js:434
+msgid "Belarusian"
+msgstr "Bielorusso"
+
+#: src/preferences/generalPage.js:435
+msgid "Bulgarian"
+msgstr "Búlgaro"
+
+#: src/preferences/generalPage.js:436
+msgid "Catalan"
+msgstr "Catalão"
+
+#: src/preferences/generalPage.js:437
+msgid "Chinese (Simplified)"
+msgstr "Chinês (Simplificado)"
+
+#: src/preferences/generalPage.js:438
+msgid "Chinese (Traditional)"
+msgstr "Chinês (Tradicional)"
+
+#: src/preferences/generalPage.js:439
+msgid "Czech"
+msgstr "Tcheco"
+
+#: src/preferences/generalPage.js:440
+msgid "Danish"
+msgstr "Dinamarquês"
+
+#: src/preferences/generalPage.js:441
+msgid "Dutch"
+msgstr "Holandês"
+
+#: src/preferences/generalPage.js:442
+msgid "English"
+msgstr "Inglês"
+
+#: src/preferences/generalPage.js:443
+msgid "Finnish"
+msgstr "Finlandês"
+
+#: src/preferences/generalPage.js:444
+msgid "French"
+msgstr "Francês"
+
+#: src/preferences/generalPage.js:445
+msgid "German"
+msgstr "Alemão"
+
+#: src/preferences/generalPage.js:446
+msgid "Greek"
+msgstr "Grego"
+
+#: src/preferences/generalPage.js:447
+msgid "Hebrew"
+msgstr "Hebraico"
+
+#: src/preferences/generalPage.js:448
+msgid "Hungarian"
+msgstr "Húngaro"
+
+#: src/preferences/generalPage.js:449
+msgid "Indonesian"
+msgstr "Indonésio"
+
+#: src/preferences/generalPage.js:450
+msgid "Italian"
+msgstr "Italiano"
+
+#: src/preferences/generalPage.js:451
+msgid "Japanese"
+msgstr "Japonês"
+
+#: src/preferences/generalPage.js:452
+msgid "Lithuanian"
+msgstr "Lituano"
+
+#: src/preferences/generalPage.js:453
+msgid "Norwegian Bokmål"
+msgstr "Norueguês"
+
+#: src/preferences/generalPage.js:454
+msgid "Polish"
+msgstr "Polonês"
+
+#: src/preferences/generalPage.js:455
+msgid "Portuguese"
+msgstr "Português"
+
+#: src/preferences/generalPage.js:456
+msgid "Portuguese (Brazil)"
+msgstr "Português (Brasil)"
+
+#: src/preferences/generalPage.js:457
+msgid "Romanian"
+msgstr "Romeno"
+
+#: src/preferences/generalPage.js:458
+msgid "Russian"
+msgstr "Russo"
+
+#: src/preferences/generalPage.js:459
+msgid "Serbian"
+msgstr "Sérvio"
+
+#: src/preferences/generalPage.js:460
+msgid "Serbian (Latin)"
+msgstr "Sérvio (Latino)"
+
+#: src/preferences/generalPage.js:461
+msgid "Slovak"
+msgstr "Eslovaco"
+
+#: src/preferences/generalPage.js:462
+msgid "Spanish"
+msgstr "Espanhol"
+
+#: src/preferences/generalPage.js:463
+msgid "Swedish"
+msgstr "Sueco"
+
+#: src/preferences/generalPage.js:464
+msgid "Turkish"
+msgstr "Turco"
+
+#: src/preferences/generalPage.js:465
+msgid "Ukrainian"
+msgstr "Ucraniano"
+
+#: src/preferences/generalPage.js:466
+msgid "Vietnamese"
+msgstr "Vietnamita"
+
+#: src/preferences/generalPage.js:470
+msgid ""
+"Only applies to the weather conditions shown in the popup menu\n"
+"You must have the Provider Multilingual Support enabled for this to work"
+msgstr ""
+"Só se aplica para as condições climáticas exibidas no popup\n"
+"Você deve ter o Suporte Multi-idiomas do Provedor habilitado para funcionar"
+
+#: src/preferences/generalPage.js:471
+msgid "If it doesn't work for your language, try switching the provider!"
+msgstr "Se não funcionar para o seu idioma, tente alterar o fornecedor!"
+
+#: src/preferences/generalPage.js:484 src/preferences/generalPage.js:490
 msgid "Reset"
 msgstr "Restaurar"
 
-#: src/preferences/generalPage.js:404
+#: src/preferences/generalPage.js:494
 msgid "Restore Defaults"
 msgstr "Restaurar Padrões"
 
-#: src/preferences/generalPage.js:406
+#: src/preferences/generalPage.js:496
 msgid "Restore all settings to the defaults."
 msgstr "Restaurar todas as configurações aos padrões."
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:76
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:114
 msgid "Temperature Unit"
 msgstr "Unidade de temperatura"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:80
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:118
 msgid "Pressure Unit"
 msgstr "Unidade de pressão"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:84
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:122
 msgid "Wind Speed Units"
 msgstr "Unidade de velocidade do vento"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:85
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:123
 msgid ""
 "Choose the units used for wind speed. Allowed values are 'kph', 'mph', 'm/"
 "s', 'knots', 'ft/s' or 'Beaufort'."
@@ -1052,179 +1743,196 @@ msgstr ""
 "Escolha as unidades usadas para velocidade do vento. Os valores permitidos "
 "são \"kph\", \"mph\", \"m/s\", \"nós\", 'ft/s\" ou \"Beaufort\"."
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:89
-msgid "Wind Direction by Arrows"
-msgstr "Direção do vento usando setas"
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:128
+msgid ""
+"Select the language for the app. Possible values: 'System', 'Arabic', "
+"'Basque', 'Belarusian', 'Bulgarian', 'Catalan', 'Chinese (Simplified)', "
+"'Chinese (Traditional)', 'Czech', 'Danish', 'Dutch', 'English', 'Finnish', "
+"'French', 'German', 'Greek', 'Hebrew', 'Hungarian', 'Indonesian', 'Italian', "
+"'Japanese', 'Lithuanian', 'Norwegian Bokmål', 'Polish', 'Portuguese', "
+"'Portuguese (Brazil)', 'Romanian', 'Russian', 'Serbian', 'Serbian (Latin)', "
+"'Slovak', 'Spanish', 'Swedish', 'Turkish', 'Ukrainian', 'Vietnamese'"
+msgstr ""
+"Selecione o idioma para o app. Valores possíveis: 'Sistema', 'Árabe', "
+"'Basco', 'Bielorusso', 'Búlgaro', 'Catalão', 'Chinês (Simplificado)', "
+"'Chinês (Tradicional)', 'Tcheco', 'Dinamarquês', 'Holandês', 'Inglês', 'Finlandês', "
+"'Francês', 'Alemão', 'Grego', 'Hebraico', 'Húngaro', 'Indonésio', 'Italiano', "
+"'Japonês', 'Lituano', 'Norueguês', 'Polonês', 'Português', "
+"'Português (Brasil)', 'Romeno', 'Russo', 'Sérvio', 'Sérvio (Latino)', "
+"'Eslovaco', 'Espanhol', 'Sueco', 'Turco', 'Ucraniano', 'Vietnamita'"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:90
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:132
+msgid "Wind Direction by Arrows"
+msgstr "Direção do Vento usando Setas"
+
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:133
 msgid "True to display wind direction through arrows rather than letters."
 msgstr "Escolha se quer exibir a direção do vento através de setas ou letras."
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:95
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:138
 #, fuzzy
 msgid "DEPRECATED, City to be displayed"
 msgstr "Cidade a ser mostrada"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:99
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:142
 msgid "Index of the city to display by default."
 msgstr "Índice da cidade a ser exibida por padrão."
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:107
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:150
 msgid "Provider multilingual Support (weather descriptions only)"
 msgstr "Suporte multi-idiomas do Provedor (descrições do clima)"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:115
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:158
 msgid "True to show temperature in the panel"
 msgstr "Mostrar a temperatura no painel"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:119
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:162
 msgid "True to show conditions in the panel."
 msgstr "Mostrar as condições do clima no painel"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:127
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:170
 msgid "Conditions in Forecast"
 msgstr "Condições na previsão"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:131
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:135
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:174
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:178
 msgid "Position in Panel"
 msgstr "Posição no painel"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:139
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:182
 msgid "Horizontal position of menu-box."
 msgstr "Posição horizontal da caixa de menu."
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:143
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:186
 msgid "Refresh interval (actual weather)"
 msgstr "Intervalo de atualização (clima atual)"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:147
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:190
 msgid "Maximum length of the location text"
 msgstr "Tamanho máximo do texto de localização"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:151
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:194
 msgid "Refresh interval (forecast)"
 msgstr "Intervalo de atualização (previsão)"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:155
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:198
 msgid "Center forecastbox."
 msgstr "Previsão central."
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:159
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:202
 msgid "Always keep forecast expanded"
 msgstr "Manter a previsão extendida"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:163
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:206
 msgid "Number of days in forecast"
 msgstr "Número de dias de previsão"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:167
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:210
 msgid "Maximum number of digits after the decimal point for temperature"
 msgstr "Numero máximo de dígitos decimais para a temperatura no painel"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:171
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:214
 msgid "Maximum number of digits after the decimal point for pressure"
 msgstr "Numero máximo de dígitos decimais para a pressão no painel"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:175
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:218
 msgid "Maximum number of digits after the decimal point for wind speed"
 msgstr "Numero máximo de dígitos decimais para a velocidade do vento no painel"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:180
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:223
 msgid "DEPRECATED. Your personal API key from openweathermap.org"
 msgstr "API key pessoal do openweathermap.org"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:185
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:228
 #, fuzzy
 msgid "DEPRECATED. Your personal API key from WeatherAPI.com"
 msgstr "API key pessoal do openweathermap.org"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:190
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:233
 #, fuzzy
 msgid "DEPRECATED. Use the extensions default API key from openweathermap.org"
 msgstr "Use a API key padrão da extensão do openweathermap.org"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:195
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:238
 #, fuzzy
 msgid "DEPRECATED. Use the extensions default API key from WeatherAPI.com"
 msgstr "Use a API key padrão da extensão do openweathermap.org"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:199
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:242
 msgid "Your personal AppKey from developer.mapquest.com"
 msgstr "AppKey pessoal do developer.mapquest.com"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:203
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:246
 msgid ""
 "Time format for hours. Possible values are '24hr' for 24-hour clock, '12hr' "
 "for AM/PM, and 'system' to follow the GNOME setting."
 msgstr ""
-"Formato para as horas. Valores possíveis são '24 horas', '12 horas', "
-"e 'Sistema' para seguir a configuração do GNOME."
+"Formato para as horas. Valores possíveis são '24 horas', '12 horas', e "
+"'Sistema' para seguir a configuração do GNOME."
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:207
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:250
 msgid "Seconds to delay popup initialization and data fetch on the first load"
 msgstr ""
 "Segundos de atraso do popup e de atualização de dados durante a incialização"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:211
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:254
 msgid "Default width for the preferences window"
 msgstr "Largura padrão da janela de preferências"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:215
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:258
 msgid "Default height for the preferences window"
 msgstr "Altura padrão da janela de preferêcias"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:219
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:262
 msgid ""
 "High contrast style to use, possible values are 'none', 'white', or 'black'."
 msgstr ""
-"Estilo de alto contraste a ser utilizado, valores possíveis são 'desligado', 'branco', ou 'preto'."
+"Estilo de alto contraste a ser utilizado, valores possíveis são 'desligado', "
+"'branco', ou 'preto'."
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:223
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:266
 msgid "True to show the sunset/sunrise in the panel."
 msgstr "Mostrar o nascer/pôr do sol no painel."
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:227
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:270
 msgid ""
 "True to show the sunset/sunrise in the panel before the temperature/"
 "conditions if enabled."
 msgstr "Mostrar nascer/pôr do sol no painel antes da temperatura/condições."
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:231
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:274
 msgid "False if this extension has never been initialized before."
 msgstr "Falso caso a extensão nunca foi inicializada."
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:235
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:278
 msgid "How often, in minutes, to re-fetch My Location if selected."
-msgstr "" 
-"Frequência, em minutos, para buscar novamente os dados de "
-"localização."
+msgstr "Frequência, em minutos, para buscar novamente os dados de localização."
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:239
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:282
 msgid "True to cut off the \"F\" or \"C\" after the degree symbol."
 msgstr "Retirar o 'F' ou 'C' após o símbolo de graus."
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:243
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:286
 msgid "Freezes the settings changed listener; user should not change this."
 msgstr "Congela o listener de configurações; usuário não deve alterar."
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:248
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:291
 msgid "List of locations."
 msgstr "Lista de locais."
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:252
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:295
 msgid "Provider to use for \"My Location.\""
-msgstr "Provedor utilizado para os dados de localização"
+msgstr "Fornecedor utilizado para os dados de localização"
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:256
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:299
 msgid "Empty or the last initialization error message."
 msgstr "Vazio ou mensagem de erro da última inicialização."
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:260
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:303
 msgid "Custom keys for weather providers."
-msgstr "Chaves customizadas para provedores de clima."
+msgstr "Chaves customizadas para fornecedores de clima."
 
-#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:264
+#: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:307
 msgid "Get a notification when precipitation starts."
 msgstr "Receba uma notificação quando começar a precipitar."
 
@@ -1233,171 +1941,6 @@ msgstr "Receba uma notificação quando começar a precipitar."
 
 #~ msgid "5"
 #~ msgstr "5"
-
-#~ msgid "Thunderstorm with Light Rain"
-#~ msgstr "Temporal com chuva leve"
-
-#~ msgid "Thunderstorm with Rain"
-#~ msgstr "Tempestade com raios"
-
-#~ msgid "Thunderstorm with Heavy Rain"
-#~ msgstr "Temporal com chuva pesada"
-
-#~ msgid "Light Thunderstorm"
-#~ msgstr "Tempestades isoladas"
-
-#~ msgid "Thunderstorm"
-#~ msgstr "Tempestade"
-
-#~ msgid "Heavy Thunderstorm"
-#~ msgstr "Tempestade pesada"
-
-#~ msgid "Ragged Thunderstorm"
-#~ msgstr "Tempestades isoladas"
-
-#~ msgid "Thunderstorm with Light Drizzle"
-#~ msgstr "Temporal com chuvisco"
-
-#~ msgid "Thunderstorm with Drizzle"
-#~ msgstr "Temporal com garoa"
-
-#~ msgid "Thunderstorm with Heavy Drizzle"
-#~ msgstr "Temporal com garoa pesada"
-
-#~ msgid "Light Drizzle"
-#~ msgstr "Chuvisco"
-
-#~ msgid "Drizzle"
-#~ msgstr "Garoa"
-
-#~ msgid "Heavy Drizzle"
-#~ msgstr "Garoa pesada"
-
-#~ msgid "Light Drizzle Rain"
-#~ msgstr "Chuvisco"
-
-#~ msgid "Drizzle Rain"
-#~ msgstr "Garoa"
-
-#~ msgid "Heavy Drizzle Rain"
-#~ msgstr "Garoa Pesada"
-
-#~ msgid "Shower Rain and Drizzle"
-#~ msgstr "Chuvisco com Chuvas Esparsas"
-
-#~ msgid "Heavy Rain and Drizzle"
-#~ msgstr "Chuva Pesada e Garoa"
-
-#~ msgid "Shower Drizzle"
-#~ msgstr "Chuvisco Intermitente"
-
-#~ msgid "Light Rain"
-#~ msgstr "Chuva Fraca"
-
-#~ msgid "Moderate Rain"
-#~ msgstr "Chuva Moderada"
-
-#~ msgid "Heavy Rain"
-#~ msgstr "Chuva Forte"
-
-#~ msgid "Very Heavy Rain"
-#~ msgstr "Chuva Muito Forte"
-
-#~ msgid "Extreme Rain"
-#~ msgstr "Chuva Intensa"
-
-#~ msgid "Freezing Rain"
-#~ msgstr "Chuva Congelada"
-
-#~ msgid "Light Shower Rain"
-#~ msgstr "Chuva Fraca Esparsas"
-
-#~ msgid "Shower Rain"
-#~ msgstr "Chuva Esparsa"
-
-#~ msgid "Heavy Shower Rain"
-#~ msgstr "Chuva Forte Esparsas"
-
-#~ msgid "Ragged Shower Rain"
-#~ msgstr "Chuvas Isoladas"
-
-#~ msgid "Light Snow"
-#~ msgstr "Pouca neve"
-
-#~ msgid "Snow"
-#~ msgstr "Neve"
-
-#~ msgid "Heavy Snow"
-#~ msgstr "Nevasca"
-
-#~ msgid "Sleet"
-#~ msgstr "Granizo"
-
-#~ msgid "Light Shower Sleet"
-#~ msgstr "Granizo intermitente"
-
-#~ msgid "Shower Sleet"
-#~ msgstr "Chuva de granizo"
-
-#~ msgid "Light Rain and Snow"
-#~ msgstr "Chuva leve e neve"
-
-#~ msgid "Rain and Snow"
-#~ msgstr "Chuva e neve"
-
-#~ msgid "Light Shower Snow"
-#~ msgstr "Pouca neve intermitente"
-
-#~ msgid "Shower Snow"
-#~ msgstr "Nevada intermitente"
-
-#~ msgid "Heavy Shower Snow"
-#~ msgstr "Forte nevada intermitente"
-
-#~ msgid "Mist"
-#~ msgstr "Névoa humida"
-
-#~ msgid "Smoke"
-#~ msgstr "Fumaça"
-
-#~ msgid "Haze"
-#~ msgstr "Névoa seca"
-
-#~ msgid "Sand/Dust Whirls"
-#~ msgstr "Jatos de poeira/areia"
-
-#~ msgid "Fog"
-#~ msgstr "Nevoeiro"
-
-#~ msgid "Sand"
-#~ msgstr "Areia"
-
-#~ msgid "Dust"
-#~ msgstr "Poeira"
-
-#~ msgid "Volcanic Ash"
-#~ msgstr "Cinza Vulcânica"
-
-#~ msgid "Squalls"
-#~ msgstr "Rajadas"
-
-#~ msgid "Tornado"
-#~ msgstr "Tornado"
-
-#~ msgid "Clear Sky"
-#~ msgstr "Céu Limpo"
-
-#~ msgid "Few Clouds"
-#~ msgstr "Poucas nuvens"
-
-#~ msgid "Scattered Clouds"
-#~ msgstr "Nuvens esparsas"
-
-#~ msgid "Broken Clouds"
-#~ msgstr "Parcialmente nublado"
-
-#~ msgid "Overcast Clouds"
-#~ msgstr "Nublado"
 
 #~ msgid "?"
 #~ msgstr "?"
