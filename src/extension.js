@@ -1805,7 +1805,7 @@ class OpenWeatherMenuButton extends PanelMenu.Button {
     this._todaysBox = new St.BoxLayout({
       x_expand: true,
       x_align: this._center_forecast
-        ? Clutter.ActorAlign.END
+        ? Clutter.ActorAlign.CENTER
         : Clutter.ActorAlign.START,
       style_class: "openweather-today-box",
     });
