@@ -16,14 +16,13 @@
 */
 
 import Gio from "gi://Gio";
-import GLib from "gi://GLib";
 
 export async function loadProviderFile(providerId)
 {
   return new Promise((resolve, reject) => {
     if(!/[a-z0-9]/.test(providerId)) reject("Provider ID not lowercase alphanumeric.");
 
-    let file = Gio.File.new_for_path(`./providers/${providerId}`);
+    let file = Gio.File.new_for_path(`./providers/${providerId}.jsonc`);
     file.load_contents_async(
       null,
       (result) =>

@@ -1,0 +1,17 @@
+{
+  "$schema": "../schemas/provider.schema.json",
+  "id": "openweathermap",
+  "friendly-name": "OpenWeatherMap",
+
+  "temp-unit": "celsius",
+  "pressure-unit": "mbar",
+  "speed-unit": "kph",
+  "time-format": "openweathermap",
+
+  "lang-var": "lang",
+  "lat-var": "lat",
+  "lon-var": "lon",
+
+  "url-current": "",
+  "url-current-vars": { "units": "metric" }
+}
