@@ -48,10 +48,48 @@
     <value value="1" nick="right"/>
     <value value="2" nick="left"/>
   </enum>
-  <enum id="org.gnome.shell.extensions.openweatherrefined.clock-format">
+    <enum id="org.gnome.shell.extensions.openweatherrefined.clock-format">
     <value value="0" nick="24h" />
     <value value="1" nick="12h" />
     <value value="2" nick="system" />
+  </enum>
+  <enum id="org.gnome.shell.extensions.openweatherrefined.language">
+    <value value="0" nick="system" />
+    <value value="1" nick="arabic" />
+    <value value="2" nick="basque" />
+    <value value="3" nick="belarusian" />
+    <value value="4" nick="bulgarian" />
+    <value value="5" nick="catalan" />
+    <value value="6" nick="chinese-simplified" />
+    <value value="7" nick="chinese-traditional" />
+    <value value="8" nick="czech" />
+    <value value="9" nick="danish" />
+    <value value="10" nick="dutch" />
+    <value value="11" nick="english" />
+    <value value="12" nick="finnish" />
+    <value value="13" nick="french" />
+    <value value="14" nick="german" />
+    <value value="15" nick="greek" />
+    <value value="16" nick="hebrew" />
+    <value value="17" nick="hungarian" />
+    <value value="18" nick="indonesian" />
+    <value value="19" nick="italian" />
+    <value value="20" nick="japanese" />
+    <value value="21" nick="lithuanian" />
+    <value value="22" nick="norwegian-bokmål" />
+    <value value="23" nick="polish" />
+    <value value="24" nick="portuguese" />
+    <value value="25" nick="portuguese-brazil" />
+    <value value="26" nick="romanian" />
+    <value value="27" nick="russian" />
+    <value value="28" nick="serbian" />
+    <value value="29" nick="serbian-latin" />
+    <value value="30" nick="slovak" />
+    <value value="31" nick="spanish" />
+    <value value="32" nick="swedish" />
+    <value value="33" nick="turkish" />
+    <value value="34" nick="ukrainian" />
+    <value value="35" nick="vietnamese" />
   </enum>
   <enum id="org.gnome.shell.extensions.openweatherrefined.hi-contrast">
     <value value="0" nick="none"></value>
@@ -83,6 +121,11 @@
       <default>'kph'</default>
       <summary>Wind Speed Units</summary>
       <description>Choose the units used for wind speed. Allowed values are 'kph', 'mph', 'm/s', 'knots', 'ft/s' or 'Beaufort'.</description>
+    </key>
+    <key name="language" enum="org.gnome.shell.extensions.openweatherrefined.language">
+      <default>'system'</default>
+      <summary>Language</summary>
+      <description>Select the language for the app. Possible values: 'System', 'Arabic', 'Basque', 'Belarusian', 'Bulgarian', 'Catalan', 'Chinese (Simplified)', 'Chinese (Traditional)', 'Czech', 'Danish', 'Dutch', 'English', 'Finnish', 'French', 'German', 'Greek', 'Hebrew', 'Hungarian', 'Indonesian', 'Italian', 'Japanese', 'Lithuanian', 'Norwegian Bokmål', 'Polish', 'Portuguese', 'Portuguese (Brazil)', 'Romanian', 'Russian', 'Serbian', 'Serbian (Latin)', 'Slovak', 'Spanish', 'Swedish', 'Turkish', 'Ukrainian', 'Vietnamese'</description>
     </key>
     <key type="b" name="wind-direction">
       <default>false</default>
