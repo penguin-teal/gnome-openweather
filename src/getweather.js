@@ -19,6 +19,8 @@ import GLib from "gi://GLib";
 import Soup from "gi://Soup";
 import { getSoupSession } from "./myloc.js"
 import { getIconName, gettextCondition } from "./weathericons.js"
+import { WeatherUnits, WeatherPressureUnits, WeatherWindSpeedUnits } from "./constants.js";
+import { loadProviderFile } from "./providerFile.js";
 
 export const DEFAULT_KEYS =
 [
@@ -35,6 +37,23 @@ export class TooManyReqError extends Error
     super(`Provider ${getWeatherProviderName(provider)} has received too many requests.`);
     this.provider = provider;
     this.name = "TooManyReqError";
+  }
+}
+
+export class InvalidProtocolError extends Error
+{
+  /**
+    * @type {string}
+    */
+  protocol;
+  /**
+    * @param {string} protocol
+    */
+  constructor(protocol)
+  {
+    super(`Invalid protocol "${protocol}"`);
+    this.protocol = protocol;
+    this.name = "InvalidProtocolError";
   }
 }
 
@@ -165,6 +184,174 @@ export function weatherProviderNotWorking(settings)
     return true;
   }
   else return false;
+}
+
+/**
+  * @enum
+  * Format to read in a DateTime from a string.
+  */
+export const TimeFormat = {
+  /**
+  * Seconds since Unix epoch.
+  */
+  UNIX_S: 0,
+  /**
+  * Milliseconds since Unix epoch.
+  */
+  UNIX_MS: 1,
+  /**
+  * OpenWeatherMap bug? Sunrise/sunset seconds seems to always return
+  * for same day even if sunrise is tomorrow morning. Therefore just
+  * subtract today and we'll decide if it's tomorrow or not.
+  */
+  OPENWEATHERMAP: 2,
+}
+
+/**
+  * Contains the keys for interpretting the JSON information returned by a
+  * weather provider. All the string fields such as "temp" are keys in the
+  * form of for example `topLevel.nextLevel[0]` to access the "58" in
+  * `{ topLevel: { nextLevel: [ 58, 7 ] } }`
+  */
+export class Provider
+{
+  #id;
+  #friendlyName;
+
+  #urlCurrent;
+  #urlCurrentVars;
+  #langVar;
+  #latlonVar;
+  #latVar;
+  #lonVar;
+  #apiKeyVar;
+  #apiKey;
+  #allowCustomApiKey;
+
+  #tempUnit;
+  #temp;
+  #feelsLike;
+
+  #humidity;
+
+  #pressureUnit;
+  #pressure;
+
+  #speedUnit;
+  #wind;
+  #windDir;
+  #gusts;
+
+  #timeFormat;
+  #sunrise;
+  #sunset;
+
+  /**
+    * @param {string} id Descriptive ID for this provider
+    * @param {string} friendlyName Display name
+    * @param {number} tempUnit Units of temperature returned from `WeatherUnits`
+    * @param {string} temp Temperature key
+    * @param {string} feelsLike Feels like temperature key
+    * @param {string} humidity Humidity percentage key
+    * @param {number} pressureUnit Units of pressure returned from `WeatherPressureUnits`
+    * @param {string} pressure Pressure key
+    * @param {number} speedUnit Units of speed for wind returned from `WeatherWindSpeedUnits`
+    * @param {string} wind Wind key
+    * @param {string} windDir Wind direction key
+    * @param {string} gusts Gusts key
+    * @param {number} timeFormat Format in which to read a timestamp from `TimeFormat`
+    * @param {string} sunrise Sunrise key
+    * @param {string} sunset Sunset key
+    * @param {string} urlCurrent URL to query for current weather
+    * @param {(string|null)} langVar Variable to insert language into (e.g. the `lang` in `?lang=en_US`)
+    * @param {(string|null)} latlonVar Variable to insert coords like `-5..64,4.82` into (e.g. the `q` in `?q=4,5`)
+    * @param {(string|null)} latVar Variable to insert latitude into
+    * @param {(string|null)} lonVar Variable to insert longitude into
+    * @param {(Record<string,string>|null)} Additional variables to append to URL
+    * @param {(string|null)} apiKeyVar Variable to insert API key into
+    * @param {(string|null)} apiKey Default API key to use.
+    * @param {(boolean|null)} allowCustomApiKey If you can use a custom API key. Defaults to `false`.
+    */
+  constructor(id, friendlyName, tempUnit, temp, feelsLike, humidity,
+    pressureUnit, pressure, speedUnit, wind, windDir, gusts,
+    timeFormat, sunrise, sunset,
+    urlCurrent, langVar, latlonVar, latVar, lonVar, urlCurrentVars,
+    apiKeyVar, apiKey, allowCustomApiKey)
+  {
+    this.#id = id;
+    this.#friendlyName = friendlyName;
+    this.#tempUnit = tempUnit;
+    this.#temp = temp;
+    this.#feelsLike = feelsLike;
+    this.#humidity = humidity;
+    this.#pressureUnit = pressureUnit;
+    this.#pressure = pressure;
+    this.#speedUnit = speedUnit;
+    this.#wind = wind;
+    this.#windDir = windDir;
+    this.#gusts = gusts;
+    this.#timeFormat = timeFormat;
+    this.#sunrise = sunrise;
+    this.#sunset = sunset;
+    this.#urlCurrent = urlCurrent;
+    this.#langVar = langVar;
+    this.#latlonVar = latlonVar;
+    this.#latVar = latVar;
+    this.#lonVar = lonVar;
+    this.#urlCurrentVars = urlCurrentVars;
+    this.#apiKeyVar = apiKeyVar;
+    this.#apiKey = apiKey;
+    this.#allowCustomApiKey = allowCustomApiKey ?? false;
+  }
+
+  /** @returns {string} */
+  get id() { return this.#id; }
+  /** @returns {string} */
+  get friendlyName() { return this.#friendlyName; }
+  /** @returns {number} `WeatherUnits` */
+  get tempUnit() { return this.#tempUnit; }
+  /** @returns {string} */
+  get temp() { return this.#temp; }
+  /** @returns {string} */
+  get feelsLike() { return this.#feelsLike; }
+  /** @returns {string} */
+  get humidity() { return this.#humidity; }
+  /** @returns {number} `WeatherPressureUnits` */
+  get pressureUnit() { return this.#pressureUnit; }
+  /** @returns {string} */
+  get pressure() { return this.#pressure; }
+  /** @returns {number} `WeatherWindSpeedUnits` */
+  get speedUnit() { return this.#speedUnit; }
+  /** @returns {string} */
+  get wind() { return this.#wind; }
+  /** @returns {string} */
+  get windDir() { return this.#windDir; }
+  /** @returns {string} */
+  get gusts() { return this.#gusts; }
+  /** @returns {number} `TimeFormat` */
+  get timeFormat() { return this.#timeFormat; }
+  /** @returns {string} */
+  get sunrise() { return this.#sunrise; }
+  /** @returns {string} */
+  get sunset() { return this.#sunset; }
+  /** @returns {string} */
+  get urlCurrent() { return this.#urlCurrent; }
+  /** @returns {(string|null)} */
+  get langVar() { return this.#langVar; }
+  /** @returns {(string|null)} */
+  get latlonVar() { return this.#latlonVar; }
+  /** @returns {(string|null)} */
+  get latVar() { return this.#latVar; }
+  /** @returns {(string|null)} */
+  get lonVar() { return this.#lonVar; }
+  /** @returns {(Record<string,string>|null)} */
+  get urlCurrentVars() { return this.#urlCurrentVars; }
+  /** @returns {(string|null)} */
+  get apiKeyVar() { return this.#apiKeyVar; }
+  /** @returns {(string|null)} */
+  get apiKey() { return this.#apiKey; }
+  /** @returns {boolean} */
+  get allowCustomApiKey() { return this.#allowCustomApiKey; }
 }
 
 export class Weather
@@ -476,6 +663,75 @@ function getCondit(extension, code, condition, gettext)
   {
     return gettextCondition(getWeatherProvider(extension.settings), code, gettext);
   }
+}
+
+function friendlyToKey(str)
+{
+  return String(str).toUpperCase().replace(" ", "_");
+}
+
+/**
+  * An object of the JSON provider schema.
+  * @param {Object} Provider info.
+  * @returns {Provider} A provider.
+  */
+function createProvider(obj, allowArbitraryProtocols)
+{
+  let tempUnit = friendlyToKey(obj["temp-unit"]);
+  let pressureUnit = friendlyToKey(obj["pressure-unit"]);
+  let speedUnit = friendlyToKey(obj["speed-unit"]);
+  let timeFormat = friendlyToKey(obj["time-format"]);
+
+  let currentUrl = String(obj["url-current"]);
+  if(!allowArbitraryProtocols && !/https?:\/\//.test(currentUrl))
+  {
+    throw new InvalidProtocolError(currentUrl.split(":")[0]);
+  }
+
+  let currentUrlParams = obj["url-current-vars"];
+  if(typeof currentUrlParams !== "object")
+  {
+    throw new Error("url-current-vars not an object.");
+  }
+  for(let n in currentUrlParams)
+  {
+    let val = currentUrlParams[n];
+    if(val !== "string") currentUrlParams[n] = String(val);
+  }
+
+  return new Provider(
+    String(obj["id"]),
+    String(obj["friendly-name"]),
+    WeatherUnits[tempUnit],
+    String(obj["temp"]),
+    String(obj["feels-like"]),
+    String(obj["humidity"]),
+    WeatherPressureUnits[pressureUnit],
+    String(obj["pressure"]),
+    WeatherWindSpeedUnits[speedUnit],
+    String(obj["wind"]),
+    String(obj["wind-direction"]),
+    String(obj["gusts"]),
+    TimeFormat[timeFormat],
+    String(obj["sunrise"]),
+    String(obj["sunset"]),
+    currentUrl,
+    String(obj["lang-var"]),
+    String(obj["latlon-var"]),
+    String(obj["lat-var"]),
+    String(obj["lon-var"]),
+    currentUrlParams,
+    String(obj["api-key-var"]),
+    String(obj["api-key"]),
+    Boolean(obj["allow-custom-api-key"])
+  );
+}
+
+export async function loadProvider(providerId, settings)
+{
+  let obj = await loadProviderFile(providerId);
+  let allowArbProtocols = settings.get_boolean("allow-arbitrary-protocols");
+  return createProvider(obj, allowArbProtocols);
 }
 
 /**

@@ -1,0 +1,49 @@
+{
+  "$id": "https://penguin-teal.github.io/weather-provider.schema.json",
+  "title": "Provider",
+  "description": "Weather provider",
+  "type": "object",
+  "properties":
+  {
+    "id": { "description": "Unique ID", "type": "string" },
+    "friendly-name": { "description": "User Friendly Name", "type": "string" },
+    "temp-unit": {
+      "description": "Temperature Unit",
+      "type": "string",
+      "enum": [ "celsius", "fahrenheit", "kelvin", "rankine", "reamur", "roemer", "delisle", "newton" ]
+    },
+    "temp": { "description": "Temperature Key", "type": "string" },
+    "feels-like": { "description": "Feels-Like Temperature Key", "type": "string" },
+    "humidity": { "description": "Humidity Key", "type": "string" },
+    "pressure-unit": {
+      "description": "Pressure Unit",
+      "type": "string",
+      "enum": [ "inHg", "bar", "Pa", "kPa", "atm", "at", "Torr", "psi", "mmHg", "mbar" ]
+    },
+    "pressure": { "description": "Pressure Key", "type": "string" },
+    "speed-unit": {
+      "description": "Speed Unit",
+      "type": "string",
+      "enum": [ "kph", "mph", "mps", "knots", "fps", "beaufort" ]
+    },
+    "wind": { "description": "Wind Key", "type": "string" },
+    "wind-direction": { "description": "Wind Direction Key", "type": "string" },
+    "gusts": { "description": "Gusts Key", "type": "string" },
+    "time-format": {
+      "description": "Time Format",
+      "type": "string",
+      "enum": [ "unix s", "unix ms", "openweathermap" ]
+    },
+    "sunrise": { "description": "Sunrise Time Key", "type": "string" },
+    "sunset": { "description": "Sunset Time Key", "type": "string" },
+    "url-current": { "description": "Current Weather URL Endpoint", "type": "string" },
+    "lang-var": { "description": "Lang URL Query Variable", "type": "string" },
+    "latlon-var": { "description": "Latitude,Longitude URL Query Variable", "type": "string" },
+    "lat-var": { "description": "Latitude URL Query Variable", "type": "string" },
+    "lon-var": { "description": "Longitude URL Query Variable", "type": "string" },
+    "url-current-vars": { "description": "Additional URL Query Variables", "type": "object" },
+    "api-key-var": { "description": "API Key URL Query Variable", "type": "string" },
+    "api-key": { "description": "Default API Key", "type": "string" },
+    "allow-custom-api-key": { "description": "If A Custom API Key Can Be Used", "type": "boolean" }
+  }
+}
