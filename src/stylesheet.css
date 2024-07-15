@@ -101,18 +101,18 @@
 
 .openweather-today-databox {
 	text-align: center;
-	padding-right: 35px;
-	padding-left: 35px;
+	padding-right: 15px;
+	padding-left: 15px;
 }
 
 .openweather-forecast-databox {
 	text-align: center;
-	min-width: 180px;
-	min-height: 120px;
+	min-width: 150px;
+	min-height: 100px;
 }
 
 .openweather-forecast-day {
-	min-height: 120px;
+	min-height: 100px;
 	padding: 0px 2px 0px 0px;
 	text-align: right;
 	font-weight: bold;
