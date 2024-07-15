@@ -263,5 +263,9 @@
       <default>false</default>
       <summary>Get a notification when precipitation starts.</summary>
     </key>
+    <key type="b" name="allow-arbitrary-protocols">
+      <default>false</default>
+      <summary>Allow non-HTTP (or HTTPS) URI protocols in Weather Providers.</summary>
+    </key>
   </schema>
 </schemalist>
