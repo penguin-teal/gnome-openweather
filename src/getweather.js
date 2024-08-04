@@ -1080,7 +1080,7 @@ export async function getWeatherInfo(extension, gettext)
                 h.windgust * KPH_TO_MPS,
                 // Only partly cloudy and clear have "-day" or "-night" at the end but those are
                 // also the only icons with night variants
-                getIconName(WeatherProvider.VISUALCROSSING, h.icon, !h.icon.endsWith("-night"), true),
+                getIconName(WeatherProvider.VISUALCROSSING, h.icon, h.icon.endsWith("-night"), true),
                 gettext(h.conditions),
                 hSunriseDt,
                 hSunsetDt
@@ -1103,7 +1103,7 @@ export async function getWeatherInfo(extension, gettext)
           m.winddir,
           m.windgust * KPH_TO_MPS,
           // See comment in forecast
-          getIconName(WeatherProvider.VISUALCROSSING, m.icon, !m.icon.endsWith("-night"), true),
+          getIconName(WeatherProvider.VISUALCROSSING, m.icon, m.icon.endsWith("-night"), true),
           gettext(m.conditions),
           sunriseDt,
           sunsetDt,
