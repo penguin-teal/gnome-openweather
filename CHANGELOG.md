@@ -1,3 +1,10 @@
+## v139 (Sep 23, 2024)
+
+GNOME 47 support.
+
+Improvements:
+- Add GNOME 47 to metadata.json
+
 ## v138 (Jun 30, 2024)
 
 Hotfix for custom API keys and also a bunch of translations.
