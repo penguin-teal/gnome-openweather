@@ -1,7 +1,7 @@
 {
     "name": "OpenWeather Refined",
     "description": "Display weather for the current or a specified location. Fork of OpenWeather.\nWeather data is provided by OpenWeatherMap.org or WeatherAPI.com or VisualCrossing.com.\nIf location is set to \"My Location,\" which is the case by default on laptops, this extension will use location services and Nominatim (from OpenStreetMap.org), or infoip.io if that failed.",
-    "shell-version": [ "45", "46", "47" ],
+    "shell-version": [ "45", "46", "47", "48" ],
     "url": "https://github.com/penguin-teal/gnome-openweather",
     "uuid": "openweather-extension@penguin-teal.github.io",
     "settings-schema": "org.gnome.shell.extensions.openweatherrefined",
