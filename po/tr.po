@@ -193,7 +193,7 @@ msgstr "Cuma"
 
 #: src/extension.js:1314
 msgid "Saturday"
-msgstr "Çumartesi"
+msgstr "Cumartesi"
 
 #: src/extension.js:1331
 msgid "N"
@@ -577,22 +577,22 @@ msgstr "Panelde Koşullar"
 #: src/preferences/layoutPage.js:102
 #, fuzzy
 msgid "Show the time of sunrise/sunset in the panel."
-msgstr "Gün doğumu/Gün batışı saatini panelde göster."
+msgstr "Gün doğumu/Gün batımı saatini panelde göster."
 
 #: src/preferences/layoutPage.js:106
 #, fuzzy
 msgid "Sunrise/Sunset In Panel"
-msgstr "Panelde Gün doğumu/Gün batışı "
+msgstr "Panelde Gün doğumu/Gün batımı "
 
 #: src/preferences/layoutPage.js:114
 msgid ""
 "Show the sunset/sunrise before the temperature/conditions. Requires restart."
-msgstr "Gün doğumu/Gün batışını hava sıcaklığı/durumundan sonra göster. "
+msgstr "Gün doğumu/Gün batımını hava sıcaklığı/durumundan sonra göster. "
 "Yeniden başlatma gerekir."
 
 #: src/preferences/layoutPage.js:118
 msgid "Sunrise/Sunset First (Restart Required)"
-msgstr "Önce Gün doğumu/Gün batışı (Yeniden Başlatma Gerekir)"
+msgstr "Önce Gün doğumu/Gün batımı (Yeniden Başlatma Gerekir)"
 
 #: src/preferences/layoutPage.js:134
 msgid "Popup"
@@ -705,7 +705,7 @@ msgstr "Bugünün Tahminini Ortala"
 
 #: src/preferences/layoutPage.js:294
 msgid "Conditions In Forecast"
-msgstr "Hava Tahmindeki Koşullar"
+msgstr "Hava Tahminindeki Koşullar"
 
 #: src/preferences/layoutPage.js:301
 msgid "Today Only"
@@ -1148,7 +1148,7 @@ msgid ""
 "True to show the sunset/sunrise in the panel before the temperature/"
 "conditions if enabled."
 msgstr ""
-"Hava durumu şartları etkinleştirildiyse panelde güneş batışı/doğuşunu "
+"Hava durumu şartları etkinleştirildiyse panelde güneş batımı/doğuşunu "
 "sıcaklıktan önce göstermek için True."
 
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:226
@@ -1165,7 +1165,7 @@ msgstr "Derece sembolünden sonra \"F\" veya \"C\"'yi kaldırmak için True."
 
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:238
 msgid "Freezes the settings changed listener; user should not change this."
-msgstr "Ayarlar değiştiğinde dinleyiciyi dondurur; kullanıcı bunu değiştirmemeli."
+msgstr "Ayarlar değiştiğinde dinleyiciyi askıya alır; kullanıcı bunu değiştirmemelidir."
 
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:243
 #, fuzzy
@@ -1179,7 +1179,7 @@ msgstr "\"Konumum\" için kullanılan sağlayıcı"
 
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:251
 msgid "Empty or the last initialization error message."
-msgstr "Boş veya son başlatma hatası iletileri."
+msgstr "Boş veya son başlatma hatası iletisi."
 
 #~ msgid "Thunderstorm with Light Rain"
 #~ msgstr "Hafif Yağmurlu Gök Gürültülü Fırtına"
