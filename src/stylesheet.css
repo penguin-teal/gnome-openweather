@@ -3,11 +3,6 @@
 	padding: 13px;
 }
 
-.openweather-button:hover {
-	border: none;
-	padding: 14px;
-}
-
 .openweather-button > StIcon {
 	icon-size: 6px;
 }
@@ -158,12 +153,6 @@
 	min-width: 22px;
 	padding: 10px;
 	font-size: 100%;
-}
-
-.openweather-button-action:hover,
-.openweather-button-action:focus {
-	border: none;
-	padding: 11px;
 }
 
 .openweather-button-action > StIcon {
