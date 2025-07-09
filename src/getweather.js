@@ -573,7 +573,7 @@ export class Weather
 
       let distanceHrs = (future - d[0].getStart().getTime()) / 3600000;
       let index = Math.ceil(distanceHrs / h.getDurationHours());
-      if(index >= this.#forecasts[i].length) index = this.#forecasts[i].length - 1;
+      if(index >= this.#forecasts[i].length) continue;
       return this.#forecasts[i][index];
     }
 
