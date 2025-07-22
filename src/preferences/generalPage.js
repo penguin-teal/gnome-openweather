@@ -573,7 +573,7 @@ class GeneralPage extends Adw.PreferencesPage
       let keyArr = settingsGetKeys(this._settings);
       // 1 in enum is 0 in the key array
       // Note if this is empty, that will turn default mode on
-      keyArr[prov - 1] = formatKey(key);
+      keyArr[prov - 1] = formatKey(prov, key);
       settingsSetKeys(this._settings, keyArr);
     });
     resetToDefsBtn.connect("clicked", () =>
