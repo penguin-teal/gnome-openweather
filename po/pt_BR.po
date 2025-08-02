@@ -63,8 +63,8 @@ msgid ""
 msgstr ""
 "Openweathermap.org não funciona sem uma api-key.\n"
 "Configure para usar a chave padrão da extensão nas preferências ou registre-"
-"se em https://openweathermap.org/appid e cole sua chave pessoal no dialogo "
-"de preferências."
+"se em https://openweathermap.org/appid e cole sua chave pessoal na caixa de "
+"diálogo de preferências."
 
 #: src/extension.js:439
 msgid "OpenWeather Refined: Imported settings from old extension."
@@ -455,12 +455,12 @@ msgstr "3"
 
 #: src/preferences/layoutPage.js:189
 msgid "Temperature Decimal Places"
-msgstr "Digitos decimais da Temperatura"
+msgstr "Dígitos decimais da Temperatura"
 
 #: src/preferences/layoutPage.js:190 src/preferences/layoutPage.js:205
 #: src/preferences/layoutPage.js:219
 msgid "Maximum number of digits after the decimal point"
-msgstr "Numero máximo de dígitos decimais no painel"
+msgstr "Número máximo de dígitos decimais no painel"
 
 #: src/preferences/layoutPage.js:196
 msgid "Unit Default"
@@ -476,11 +476,11 @@ msgstr "4"
 
 #: src/preferences/layoutPage.js:204
 msgid "Pressure Decimal Places"
-msgstr "Digitos decimais da Pressão"
+msgstr "Dígitos decimais da Pressão"
 
 #: src/preferences/layoutPage.js:218
 msgid "Speed Decimal Places"
-msgstr "Digitos decimais da Velocidade"
+msgstr "Dígitos decimais da Velocidade"
 
 #: src/preferences/layoutPage.js:239
 msgid "Location Text Length"
@@ -551,7 +551,7 @@ msgstr "Total de Dias na Previsão"
 #: src/preferences/layoutPage.js:320
 msgid ""
 "Number of days to show in forecast where a setting of \"0\" is only today"
-msgstr "Número de dias para exibir a previsão."
+msgstr "Número de dias para exibir a previsão, onde a configurção de \"0\" é somente hoje."
 
 #: src/preferences/layoutPage.js:322
 #, javascript-format
@@ -560,8 +560,8 @@ msgid ""
 "Different providers support different amounts of days.\n"
 "Currently \"%s\" supports the furthest forecast of %s days."
 msgstr ""
-"Número de dias a exibir na previsão. \"0\" só exibirá hoje.\n"
-"Provedores diferentes suportam diferentes quantias de dias.\n"
+"Número de dias a exibir na previsão. \"0\" significa que só exibirá hoje.\n"
+"Provedores diferentes suportam diferentes quantidades de dias.\n"
 "Atualmente o \"%s\" suporta previsões até %s dias."
 
 #: src/preferences/layoutPage.js:333
@@ -579,11 +579,11 @@ msgstr "Adicionar"
 #: src/preferences/locationsPage.js:67 src/preferences/generalPage.js:35
 #: src/preferences/generalPage.js:42 src/preferences/generalPage.js:315
 msgid "Provider"
-msgstr "Fornecedor"
+msgstr "Provedor"
 
 #: src/preferences/locationsPage.js:75
 msgid "My Loc. Provider"
-msgstr "Fornecedor"
+msgstr "Provedor"
 
 #: src/preferences/locationsPage.js:76
 msgid "Provider for getting My Location"
@@ -718,7 +718,7 @@ msgstr "Procurando ..."
 #: src/preferences/searchResultsWindow.js:62
 #, javascript-format
 msgid "Please wait while searching for locations matching \"%s\""
-msgstr "Aguarde, pesquisando locais com \"%s\""
+msgstr "Por favor aguarde, pesquisando locais com \"%s\""
 
 #: src/preferences/searchResultsWindow.js:117
 msgid "AppKey Required"
@@ -1009,8 +1009,8 @@ msgid ""
 "Enable this to use provider multilingual support if there's no built-in "
 "translations for your language yet."
 msgstr ""
-"Habilite isso para usar o suporte multilinguístico OWM em 46 linguagens se "
-"não existe tradução para a sua linguagem."
+"Habilite isso para usar o suporte multilinguístico se "
+"não existir tradução para a sua linguagem ainda."
 
 #: src/preferences/generalPage.js:361
 msgid "Use Custom API Key"
@@ -1030,7 +1030,7 @@ msgstr "Restaurar Padrões"
 
 #: src/preferences/generalPage.js:406
 msgid "Restore all settings to the defaults."
-msgstr "Restaurar todas as configurações aos padrões."
+msgstr "Restaurar todas as configurações padrões."
 
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:76
 msgid "Temperature Unit"
@@ -1050,7 +1050,7 @@ msgid ""
 "s', 'knots', 'ft/s' or 'Beaufort'."
 msgstr ""
 "Escolha as unidades usadas para velocidade do vento. Os valores permitidos "
-"são \"kph\", \"mph\", \"m/s\", \"nós\", 'ft/s\" ou \"Beaufort\"."
+"são \"km/h\", \"mph\", \"m/s\", \"nós\", 'ft/s\" ou \"Beaufort\"."
 
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:89
 msgid "Wind Direction by Arrows"
@@ -1120,15 +1120,15 @@ msgstr "Número de dias de previsão"
 
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:167
 msgid "Maximum number of digits after the decimal point for temperature"
-msgstr "Numero máximo de dígitos decimais para a temperatura no painel"
+msgstr "Número máximo de dígitos decimais para a temperatura no painel"
 
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:171
 msgid "Maximum number of digits after the decimal point for pressure"
-msgstr "Numero máximo de dígitos decimais para a pressão no painel"
+msgstr "Número máximo de dígitos decimais para a pressão no painel"
 
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:175
 msgid "Maximum number of digits after the decimal point for wind speed"
-msgstr "Numero máximo de dígitos decimais para a velocidade do vento no painel"
+msgstr "Número máximo de dígitos decimais para a velocidade do vento no painel"
 
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:180
 msgid "DEPRECATED. Your personal API key from openweathermap.org"
@@ -1355,7 +1355,7 @@ msgstr "Receba uma notificação quando começar a precipitar."
 #~ msgstr "Forte nevada intermitente"
 
 #~ msgid "Mist"
-#~ msgstr "Névoa humida"
+#~ msgstr "Névoa úmida"
 
 #~ msgid "Smoke"
 #~ msgstr "Fumaça"
@@ -1437,4 +1437,4 @@ msgstr "Receba uma notificação quando começar a precipitar."
 #~ msgstr "Condições no painel"
 
 #~ msgid "Maximal number of digits after the decimal point"
-#~ msgstr "Numero de máximo de dígitos decimais"
+#~ msgstr "Número de máximo de dígitos decimais"
