@@ -49,7 +49,7 @@ msgstr ""
 
 #: src/extension.js:432
 msgid "OpenWeather Refined: Imported settings from old extension."
-msgstr ""
+msgstr "OpenWeather Refined: Einstellung der alten Erweiterung importiert."
 
 #: src/extension.js:745 src/extension.js:758
 #, javascript-format
@@ -67,7 +67,7 @@ msgstr "Wetterinformation nachladen"
 
 #: src/extension.js:1066
 msgid "See Online"
-msgstr ""
+msgstr "Online anzeigen"
 
 #: src/extension.js:1071
 msgid "Weather Settings"
@@ -449,7 +449,7 @@ msgstr "Druck"
 
 #: src/preferences/generalPage.js:245
 msgid "24-hour"
-msgstr ""
+msgstr "24-Stunden"
 
 #: src/preferences/generalPage.js:246
 msgid "AM / PM"
@@ -462,19 +462,19 @@ msgstr "System-Symbole"
 
 #: src/preferences/generalPage.js:249
 msgid "Time Format"
-msgstr ""
+msgstr "Zeit Format"
 
 #: src/preferences/generalPage.js:260
 msgid "Simplify Degrees"
-msgstr ""
+msgstr "Einfache Gradanzeige"
 
 #: src/preferences/generalPage.js:261
 msgid "Show \"°\" instead of \"°C,\" \"°F,\" etc."
-msgstr ""
+msgstr "Zeigt \"°\" anstelle von \"°C,\" \"°F,\" etc. an"
 
 #: src/preferences/generalPage.js:262
 msgid "Enable this to cut off the \"C,\" \"F,\" etc. from degrees labels."
-msgstr ""
+msgstr "Aktivieren Sie dies, um \"C,\" \"F,\" etc. von der Gradanzeige zu entfernen."
 
 #: src/preferences/generalPage.js:276 src/preferences/locationsPage.js:67
 msgid "Provider"
@@ -516,15 +516,15 @@ msgstr "Persönlicher API-Schlüssel"
 
 #: src/preferences/generalPage.js:369 src/preferences/generalPage.js:375
 msgid "Reset"
-msgstr ""
+msgstr "Zurücksetzen"
 
 #: src/preferences/generalPage.js:379
 msgid "Restore Defaults"
-msgstr ""
+msgstr "Standardwerte wiederherstellen"
 
 #: src/preferences/generalPage.js:381
 msgid "Restore all settings to the defaults."
-msgstr ""
+msgstr "Alle Einstellung auf Standardwerte zurücksetzen."
 
 #: src/preferences/layoutPage.js:31
 msgid "Layout"
@@ -588,10 +588,11 @@ msgstr "Wetterbedingungen im Panel"
 msgid ""
 "Show the sunset/sunrise before the temperature/conditions. Requires restart."
 msgstr ""
+"Zeigt Sonnenauf-/untergang vor der Temperatur/Wetterbedingung. Erfordert Neustart."
 
 #: src/preferences/layoutPage.js:118
 msgid "Sunrise/Sunset First (Restart Required)"
-msgstr ""
+msgstr "Sonnenaufgang/Sonnenuntergang zuerst (Neustart erforderlich)"
 
 #: src/preferences/layoutPage.js:134
 msgid "Popup"
@@ -645,11 +646,11 @@ msgstr "Maximale Anzahl von Nachkommastellen"
 
 #: src/preferences/layoutPage.js:196
 msgid "Unit Default"
-msgstr ""
+msgstr "Einheitenstandard"
 
 #: src/preferences/layoutPage.js:197 src/preferences/layoutPage.js:211
 msgid "Follow Temp."
-msgstr ""
+msgstr "Wie Temp."
 
 #: src/preferences/layoutPage.js:202 src/preferences/layoutPage.js:216
 #: src/preferences/layoutPage.js:305
@@ -678,23 +679,23 @@ msgstr ""
 
 #: src/preferences/layoutPage.js:249
 msgid "Off"
-msgstr ""
+msgstr "Aus"
 
 #: src/preferences/layoutPage.js:250
 msgid "White Text"
-msgstr ""
+msgstr "Heller Text"
 
 #: src/preferences/layoutPage.js:251
 msgid "Black Text"
-msgstr ""
+msgstr "Dunkler Text"
 
 #: src/preferences/layoutPage.js:253
 msgid "High Contrast"
-msgstr ""
+msgstr "Hoher Kontrast"
 
 #: src/preferences/layoutPage.js:254
 msgid "Enable to override GNOME shell colors"
-msgstr ""
+msgstr "Aktivieren Sie dies, um die GNOME shell Farben zu überschreiben"
 
 #: src/preferences/layoutPage.js:273
 msgid "Forecast"
@@ -818,11 +819,11 @@ msgstr "Einstellungen"
 
 #: src/preferences/aboutPage.js:120
 msgid "Copy"
-msgstr ""
+msgstr "Kopieren"
 
 #: src/preferences/aboutPage.js:167
 msgid "Copied settings JSON to clipboard."
-msgstr ""
+msgstr "JSON Einstellungen in die Zwischenablage kopiert."
 
 #: src/preferences/aboutPage.js:188
 #, javascript-format
@@ -832,12 +833,12 @@ msgstr "Verwaltet von: %s"
 #: src/preferences/aboutPage.js:194
 #, javascript-format
 msgid "Contribute or translate the project on %s."
-msgstr ""
+msgstr "Trage zum Projekt bei, oder Übersetze es auf %s."
 
 #: src/preferences/aboutPage.js:200
 #, javascript-format
 msgid "This is a fork of %s's extension."
-msgstr ""
+msgstr "Dies ist ein Fork von %s's Erweiterung."
 
 #: src/preferences/aboutPage.js:222
 #, javascript-format
@@ -906,7 +907,7 @@ msgstr "Nach Orten oder Koordinaten suchen"
 
 #: src/preferences/locationsPage.js:319
 msgid "e.g. London, England or 51.5074456,-0.1277653"
-msgstr ""
+msgstr "zB. London, England oder 51.5074456,-0.1277653"
 
 #: src/preferences/locationsPage.js:321 src/preferences/locationsPage.js:449
 #: src/preferences/locationsPage.js:466
@@ -939,6 +940,8 @@ msgid ""
 "If you meant to search up a new location by name, <b>add</b> a location "
 "instead."
 msgstr ""
+"Wenn Sie einen neuen Standort anhand des Namens suchen wollen, nutzen Sie "
+"<b>Hinzufügen</b> eines neuen Standortes."
 
 #: src/preferences/locationsPage.js:482
 msgid "Save"
@@ -946,17 +949,18 @@ msgstr "Speichern"
 
 #: src/preferences/locationsPage.js:517
 msgid "Coordinates field cannot be empty."
-msgstr ""
+msgstr "Koordinaten Feld darf nicht leer sein."
 
 #: src/preferences/locationsPage.js:525
 #, javascript-format
 msgid "Coordinates field must be in the format of '%s' or the text '%s'."
-msgstr ""
+msgstr "Koordinatenfeld muss vom Format: '%s', oder der Text '%s' sein."
 
 #: src/preferences/locationsPage.js:533
 #, javascript-format
 msgid "Name field can only be empty if coordinates are '%s'."
-msgstr ""
+msgstr "Namens Feld kann nur dann leer sein, wenn die "
+"Koordinaten '%s' sind."
 
 #: src/preferences/locationsPage.js:562
 #, javascript-format
@@ -1019,7 +1023,7 @@ msgstr "Anzuzeigender Ort"
 
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:98
 msgid "Index of the city to display by default."
-msgstr ""
+msgstr "Index der Stadt, welche als Standard angezeigt wird."
 
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:106
 msgid "OpenWeatherMap Multilingual Support (weather descriptions only)"
@@ -1117,6 +1121,8 @@ msgid ""
 "Time format for hours. Possible values are '24hr' for 24-hour clock, '12hr' "
 "for AM/PM, and 'system' to follow the GNOME setting."
 msgstr ""
+"Zeit Format für Stunden. Mögliche Werte sind '24hr' für 24-Stunden Zeitformat, "
+"'12hr' für AM/PM Zeitformat, sowie 'system' um den GNOME Einstellungen zu folgen."
 
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:202
 msgid "Seconds to delay popup initialization and data fetch on the first load"
@@ -1136,6 +1142,7 @@ msgstr "Standardhöhe für das Einstellungsfenster"
 msgid ""
 "High contrast style to use, possible values are 'none', 'white', or 'black'."
 msgstr ""
+"Verwendeter hoher Kontraststile, mögliche Werte sind 'none', 'white' oder 'black'."
 
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:218
 #, fuzzy
@@ -1147,22 +1154,25 @@ msgid ""
 "True to show the sunset/sunrise in the panel before the temperature/"
 "conditions if enabled."
 msgstr ""
+"True, um den Sonnenauf-/untergang im Panel vor der Temperatur/Wetterbedingung "
+"anzuzeigen, wenn diese aktiviert sind."
 
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:226
 msgid "False if this extension has never been initialized before."
-msgstr ""
+msgstr "False, falls diese Erweiterung noch nie initialisiert wurde."
 
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:230
 msgid "How often, in minutes, to re-fetch My Location if selected."
-msgstr ""
+msgstr "Wie oft, in Minuten, der Standort neu geladen wird, wenn dies aktiviert ist."
 
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:234
 msgid "True to cut off the \"F\" or \"C\" after the degree symbol."
-msgstr ""
+msgstr "True, um das \"F\" oder \"C\" nach dem Grad-Symbol nicht anzuzeigen."
 
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:238
 msgid "Freezes the settings changed listener; user should not change this."
-msgstr ""
+msgstr "Pausiert den settings changed listener; Nutzer sollten "
+"diese Einstellung nicht ändern."
 
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:243
 #, fuzzy
@@ -1176,7 +1186,7 @@ msgstr "Für die Ortssuche verwendeter Anbieter"
 
 #: schemas/org.gnome.shell.extensions.openweatherrefined.gschema.xml:251
 msgid "Empty or the last initialization error message."
-msgstr ""
+msgstr "Leer, oder die letzte Initialisierungsfehlermeldung."
 
 #~ msgid "Thunderstorm with Light Rain"
 #~ msgstr "Gewitter mit leichtem Regen"
