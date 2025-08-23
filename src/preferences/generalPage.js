@@ -66,9 +66,9 @@ function formatKey(provider, key)
   {
     case WeatherProvider.OPENWEATHERMAP:
     case WeatherProvider.WEATHERAPICOM:
-      return key.toLowerCase().replace(/\w+/, "");
+      return key.toLowerCase().replaceAll(/\s+/g, "");
     case WeatherProvider.VISUALCROSSING:
-      return key.toUpperCase().replace(/\w+/, "");
+      return key.toUpperCase().replaceAll(/\s+/g, "");
     default:
       return key;
   }
