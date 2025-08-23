@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: 3.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-08 15:26-0500\n"
-"PO-Revision-Date: 2024-07-09 12:32+0200\n"
+"PO-Revision-Date: 2024-09-28 23:01+0200\n"
 "Last-Translator: Ludek Vydra <lvtran@u.k2.cz>\n"
 "Language-Team: \n"
 "Language: cs\n"
@@ -666,7 +666,7 @@ msgstr "Mírný vítr"
 
 #: src/extension.js:1257
 msgid "Moderate breeze"
-msgstr "Dosti čersvý vítr"
+msgstr "Dosti čerstvý vítr"
 
 #: src/extension.js:1259
 msgid "Fresh breeze"
