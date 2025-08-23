@@ -393,6 +393,7 @@ export class Weather
 
   #sunrise;
   #sunset;
+  #sunriseTomorrow;
 
   #forecasts;
 
@@ -408,9 +409,10 @@ export class Weather
     * @param {string} condition
     * @param {Date} sunrise
     * @param {Date} sunset
+    * @param {Date} sunriseTomorrow
     * @param {(Forecast[][] | null)} forecasts
     */
-  constructor(tempC, feelsLikeC, humidityPercent, pressureMBar, windMps, windDirDeg, gustsMps, iconName, condition, sunrise, sunset, forecasts = null)
+  constructor(tempC, feelsLikeC, humidityPercent, pressureMBar, windMps, windDirDeg, gustsMps, iconName, condition, sunrise, sunset, sunriseTomorrow = null, forecasts = null)
   {
     this.#tempC = tempC;
     this.#feelsLikeC = feelsLikeC;
@@ -422,6 +424,7 @@ export class Weather
     this.#iconName = iconName;
     this.#sunrise = sunrise;
     this.#sunset = sunset;
+    this.#sunriseTomorrow = sunriseTomorrow;
     this.#forecasts = forecasts ? forecasts.length > 0 ? forecasts : null : null;
 
     if(typeof condition === "string") this.#condition = condition;
@@ -515,6 +518,22 @@ export class Weather
   getSunriseDate()
   {
     return this.#sunrise;
+  }
+
+  /**
+    * @returns {string}
+    */
+  displaySunriseTomorrow(extension)
+  {
+    return extension.formatTime(this.#sunriseTomorrow);
+  }
+
+  /**
+    * @returns {Date}
+    */
+  getSunriseTomorrowDate()
+  {
+    return this.#sunriseTomorrow;
   }
 
   /**
@@ -789,13 +808,16 @@ export async function getWeatherInfo(extension, gettext)
 
         let response;
         let forecastResponse;
+        let dailyResponse;
         try
         {
           let cur = loadJsonAsync("https://api.openweathermap.org/data/2.5/weather", params);
           let fore = loadJsonAsync("https://api.openweathermap.org/data/2.5/forecast", params);
-          let allResp = await Promise.all([ cur, fore ]);
+          let daily = loadJsonAsync("https://api.openweathermap.org/data/2.5/forecast/daily", params);
+          let allResp = await Promise.all([ cur, fore, daily ]);
           response = allResp[0];
           forecastResponse = allResp[1];
+          dailyResponse = allResp[2];
         }
         catch(e)
         {
@@ -813,30 +835,30 @@ export async function getWeatherInfo(extension, gettext)
           else return null;
         }
 
+        if (!isSuccess(dailyResponse[0]))
+        {
+          console.warn(`OpenWeather Refined: couldn't get daily forecast; try a personal API key`);
+          dailyResponse = null;
+        }
+
         let json = response[1];
         let m = json.main;
         let iconId = json.weather[0].icon;
 
-        // OpenWeatherMap bug? Sunrise/sunset seconds seems to always return
-        // for same day even if sunrise is tomorrow morning. Therefore just
-        // subtract today and we'll decide if it's tomorrow or not
-        let thisMorningMs = new Date().setHours(0, 0, 0, 0);
-        let midnightMs = thisMorningMs + 3600000 * 24;
-        let sunriseMs = json.sys.sunrise * 1000 - thisMorningMs;
-        let sunsetMs = json.sys.sunset * 1000 - thisMorningMs;
+        let sunriseMs = json.sys.sunrise * 1000;
+        let sunsetMs = json.sys.sunset * 1000;
+        let sunriseTomorrowMs = sunriseMs * 1000 + 24 * 3600 * 1000;
 
-        let sunrise, sunset;
-        // "pod" = Part of Day, "d" = day, "n" = night
-        if(forecastResponse[1].list[0].sys.pod === "d")
-        {
-          sunrise = new Date(sunriseMs + midnightMs);
-          sunset  = new Date(sunsetMs  + thisMorningMs);
+        if (dailyResponse !== null) {
+          let jsonDaily = dailyResponse[1];
+          sunriseTomorrowMs = jsonDaily.list[1].sunrise * 1000;
         }
-        else
-        {
-          sunrise = new Date(sunriseMs + thisMorningMs);
-          sunset  = new Date(sunsetMs  + midnightMs);
-        }
+
+        let sunrise, sunset, sunriseTomorrow;
+        sunrise = new Date(sunriseMs);
+        sunset = new Date(sunsetMs);
+        sunriseTomorrow = new Date(sunriseTomorrowMs);
+
 
         let forecastDays = clamp(1, extension._days_forecast + 1, 5);
         extension._forecastDays = forecastDays - 1;
@@ -869,7 +891,8 @@ export async function getWeatherInfo(extension, gettext)
                 getIconName(WeatherProvider.OPENWEATHERMAP, fIconId, isFNight, true),
                 getCondit(extension, h.weather[0].id, h.weather[0].description, gettext),
                 sunrise,
-                sunset
+                sunset,
+                sunrise
               )
             ));
           }
@@ -888,6 +911,7 @@ export async function getWeatherInfo(extension, gettext)
           getCondit(extension, json.weather[0].id, json.weather[0].description, gettext),
           sunrise,
           sunset,
+          sunrise,
           forecasts
         );
       }
@@ -929,9 +953,11 @@ export async function getWeatherInfo(extension, gettext)
 
         let m = json.current;
         let astro;
+        let astroTomorrow;
         try
         {
           astro = json.forecast.forecastday[0].astro;
+          astroTomorrow = json.forecast.forecastday[1].astro;
         }
         catch(e)
         {
@@ -943,24 +969,14 @@ export async function getWeatherInfo(extension, gettext)
 
         const KPH_TO_MPS = 1.0 / 3.6;
 
-        // Just a time is returned, we need to figure out if that time is
-        // today or tomorrow
         let thisMorningMs = new Date().setHours(0, 0, 0, 0);
-        let midnightMs = thisMorningMs + 3600000 * 24;
-        let sunriseMs = timeToMs(astro.sunrise);
-        let sunsetMs = timeToMs(astro.sunset);
-
-        let sunrise, sunset;
-        if(m.is_day)
-        {
-          sunrise = new Date(sunriseMs + midnightMs);
-          sunset  = new Date(sunsetMs  + thisMorningMs);
-        }
-        else
-        {
-          sunrise = new Date(sunriseMs + thisMorningMs);
-          sunset  = new Date(sunsetMs  + midnightMs);
-        }
+        let sunriseMs = timeToMs(astro.sunrise) + thisMorningMs;
+        let sunsetMs = timeToMs(astro.sunset) + thisMorningMs;
+        let sunriseTomorrowMs = timeToMs(astroTomorrow.sunrise) + 24 * 3600 * 1000 + thisMorningMs;
+        let sunrise, sunset, sunriseTomorrow;
+        sunrise = new Date(sunriseMs);
+        sunset = new Date(sunsetMs);
+        sunriseTomorrow = new Date(sunriseTomorrowMs);
 
         let gotDaysForecast = json.forecast.forecastday.length;
         let forecastDays = clamp(1, extension._days_forecast + 1, gotDaysForecast);
@@ -989,7 +1005,8 @@ export async function getWeatherInfo(extension, gettext)
                 getIconName(WeatherProvider.WEATHERAPICOM, h.condition.code, !h.is_day, true),
                 getCondit(extension, h.condition.code, h.condition.text, gettext),
                 sunrise,
-                sunset
+                sunset,
+                sunriseTomorrow
               )
             ));
           }
@@ -1008,6 +1025,7 @@ export async function getWeatherInfo(extension, gettext)
           getCondit(extension, m.condition.code, m.condition.text, gettext),
           sunrise,
           sunset,
+          sunriseTomorrow,
           forecasts
         );
       }
@@ -1018,7 +1036,6 @@ export async function getWeatherInfo(extension, gettext)
         {
           unitGroup: "metric",
           contentType: "json",
-          timezone: "Z",
           days: String(extension._days_forecast + 2)
         };
         if(extension._providerTranslations) params.lang = lang;
@@ -1061,6 +1078,7 @@ export async function getWeatherInfo(extension, gettext)
         {
           let day = [ ];
           let d = json.days[i];
+
           for(let j = 0; j < d.hours.length; j++)
           {
             let h = d.hours[j];
@@ -1083,7 +1101,8 @@ export async function getWeatherInfo(extension, gettext)
                 getIconName(WeatherProvider.VISUALCROSSING, h.icon, h.icon.endsWith("-night"), true),
                 gettext(h.conditions),
                 hSunriseDt,
-                hSunsetDt
+                hSunsetDt,
+                hSunriseDt
               )
             ));
           }
@@ -1093,6 +1112,7 @@ export async function getWeatherInfo(extension, gettext)
         let m = json.currentConditions;
         let sunriseDt = new Date(m.sunriseEpoch * 1000);
         let sunsetDt = new Date(m.sunsetEpoch * 1000);
+        let sunriseTomorrowDt = new Date(json.days[1].sunriseEpoch * 1000);
 
         return new Weather(
           m.temp,
@@ -1107,6 +1127,7 @@ export async function getWeatherInfo(extension, gettext)
           gettext(m.conditions),
           sunriseDt,
           sunsetDt,
+          sunriseTomorrowDt,
           forecasts
         );
       }
